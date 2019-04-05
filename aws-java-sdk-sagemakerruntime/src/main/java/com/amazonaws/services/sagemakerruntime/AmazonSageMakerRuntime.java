@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ import com.amazonaws.services.sagemakerruntime.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon SageMaker runtime API.
+ * The Amazon SageMaker runtime API.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -48,19 +48,30 @@ public interface AmazonSageMakerRuntime {
      * </p>
      * <p>
      * For an overview of Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>.
      * </p>
      * <p>
      * Amazon SageMaker strips all POST headers except those supported by the API. Amazon SageMaker might add additional
      * headers. You should not rely on the behavior of headers outside those enumerated in the request syntax.
      * </p>
+     * <p>
+     * Cals to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version 4. For information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating Requests
+     * (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
+     * </p>
+     * <note>
+     * <p>
+     * Endpoints are scoped to an individual account, and are not public. The URL does not contain the account ID, but
+     * Amazon SageMaker determines the account ID from the authentication token that is supplied by the caller.
+     * </p>
+     * </note>
      * 
      * @param invokeEndpointRequest
      * @return Result of the InvokeEndpoint operation returned by the service.
      * @throws InternalFailureException
-     *         Internal failure occurred.
+     *         An internal failure occurred.
      * @throws ServiceUnavailableException
-     *         Service is unavailable. Try your call again.
+     *         The service is unavailable. Try your call again.
      * @throws ValidationErrorException
      *         Inspect your request and try again.
      * @throws ModelErrorException

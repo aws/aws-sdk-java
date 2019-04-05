@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediapackage.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -46,6 +47,8 @@ public class CreateOriginEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mssPackage").build();
     private static final MarshallingInfo<Integer> STARTOVERWINDOWSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startoverWindowSeconds").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<Integer> TIMEDELAYSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeDelaySeconds").build();
     private static final MarshallingInfo<List> WHITELIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -76,6 +79,7 @@ public class CreateOriginEndpointRequestMarshaller {
             protocolMarshaller.marshall(createOriginEndpointRequest.getManifestName(), MANIFESTNAME_BINDING);
             protocolMarshaller.marshall(createOriginEndpointRequest.getMssPackage(), MSSPACKAGE_BINDING);
             protocolMarshaller.marshall(createOriginEndpointRequest.getStartoverWindowSeconds(), STARTOVERWINDOWSECONDS_BINDING);
+            protocolMarshaller.marshall(createOriginEndpointRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createOriginEndpointRequest.getTimeDelaySeconds(), TIMEDELAYSECONDS_BINDING);
             protocolMarshaller.marshall(createOriginEndpointRequest.getWhitelist(), WHITELIST_BINDING);
         } catch (Exception e) {

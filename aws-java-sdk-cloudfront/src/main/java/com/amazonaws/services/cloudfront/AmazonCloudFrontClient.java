@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.cloudfront.AmazonCloudFrontClientBuilder;
 import com.amazonaws.services.cloudfront.waiters.AmazonCloudFrontWaiters;
 
@@ -59,6 +61,7 @@ import com.amazonaws.services.cloudfront.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCloudFrontClient extends AmazonWebServiceClient implements AmazonCloudFront {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -71,6 +74,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     /**
      * List of exception unmarshallers for all modeled exceptions
@@ -160,6 +165,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     public AmazonCloudFrontClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -225,6 +231,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -243,8 +250,23 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *        Object providing client parameters.
      */
     AmazonCloudFrontClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on CloudFront using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonCloudFrontClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -291,7 +313,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionProfilesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLocationCodeExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidForwardCookiesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FieldLevelEncryptionProfileSizeExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
@@ -309,6 +330,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyLambdaFunctionAssociationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidViewerCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DistributionNotDisabledExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyOriginGroupsPerDistributionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDefaultRootObjectExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AccessDeniedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
@@ -368,7 +390,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -395,6 +417,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudFrontOriginAccessIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -413,8 +438,24 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Creates a new web distribution. Send a <code>POST</code> request to the
-     * <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.
+     * Creates a new web distribution. You create a CloudFront distribution to tell CloudFront where you want content to
+     * be delivered from, and the details about how to track and manage content delivery. Send a <code>POST</code>
+     * request to the <code>/<i>CloudFront API version</i>/distribution</code>/<code>distribution ID</code> resource.
+     * </p>
+     * <important>
+     * <p>
+     * When you update a distribution, there are more required fields than when you create a distribution. When you
+     * update your distribution by using <a>UpdateDistribution</a>, follow the steps included in the documentation to
+     * get the current configuration and then make your updates. This helps to make sure that you include all of the
+     * required fields. To view a summary, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html"
+     * >Required Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using Adobe Flash Media Server's RTMP protocol, you set up a different kind of CloudFront
+     * distribution. For more information, see <a>CreateStreamingDistribution</a>.
      * </p>
      * 
      * @param createDistributionRequest
@@ -458,6 +499,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         No origin exists with the specified <code>Origin Id</code>.
      * @throws TooManyOriginsException
      *         You cannot create more origins for the distribution.
+     * @throws TooManyOriginGroupsPerDistributionException
+     *         Processing your request would cause you to exceed the maximum number of origin groups allowed.
      * @throws TooManyCacheBehaviorsException
      *         You cannot create more cache behaviors for the distribution.
      * @throws TooManyCookieNamesInWhiteListException
@@ -500,7 +543,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The maximum number of distributions have been associated with the specified configuration for field-level
      *         encryption.
      * @sample AmazonCloudFront.CreateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -525,6 +568,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -587,6 +633,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         No origin exists with the specified <code>Origin Id</code>.
      * @throws TooManyOriginsException
      *         You cannot create more origins for the distribution.
+     * @throws TooManyOriginGroupsPerDistributionException
+     *         Processing your request would cause you to exceed the maximum number of origin groups allowed.
      * @throws TooManyCacheBehaviorsException
      *         You cannot create more cache behaviors for the distribution.
      * @throws TooManyCookieNamesInWhiteListException
@@ -630,7 +678,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The maximum number of distributions have been associated with the specified configuration for field-level
      *         encryption.
      * @sample AmazonCloudFront.CreateDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -655,6 +703,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDistributionWithTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -695,7 +746,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws QueryArgProfileEmptyException
      *         No profile specified for the field-level encryption query argument.
      * @sample AmazonCloudFront.CreateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -721,6 +772,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFieldLevelEncryptionConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -761,7 +815,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyFieldLevelEncryptionFieldPatternsException
      *         The maximum number of field patterns for field-level encryption have been created.
      * @sample AmazonCloudFront.CreateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -787,6 +841,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFieldLevelEncryptionProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -827,7 +884,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateInvalidation" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateInvalidation" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -852,6 +909,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInvalidation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -884,7 +944,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The maximum number of public keys for field-level encryption have been created. To create a new public
      *         key, delete one of the existing keys.
      * @sample AmazonCloudFront.CreatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -909,6 +969,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -984,7 +1047,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1009,6 +1072,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStreamingDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1057,7 +1123,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidTaggingException
      * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CreateStreamingDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1084,6 +1150,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStreamingDistributionWithTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1118,7 +1187,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @throws CloudFrontOriginAccessIdentityInUseException
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1145,6 +1214,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCloudFrontOriginAccessIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1239,7 +1311,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -1264,6 +1336,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1298,7 +1373,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws FieldLevelEncryptionConfigInUseException
      *         The specified configuration for field-level encryption is in use.
      * @sample AmazonCloudFront.DeleteFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1324,6 +1399,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFieldLevelEncryptionConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1358,7 +1436,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws FieldLevelEncryptionProfileInUseException
      *         The specified profile for field-level encryption is in use.
      * @sample AmazonCloudFront.DeleteFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1384,6 +1462,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFieldLevelEncryptionProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1418,7 +1499,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeletePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeletePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeletePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1443,63 +1524,15 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<DeletePublicKeyResult> responseHandler = new StaxResponseHandler<DeletePublicKeyResult>(
                     new DeletePublicKeyResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * @param deleteServiceLinkedRoleRequest
-     * @return Result of the DeleteServiceLinkedRole operation returned by the service.
-     * @throws InvalidArgumentException
-     *         The argument is invalid.
-     * @throws AccessDeniedException
-     *         Access denied.
-     * @throws ResourceInUseException
-     * @throws NoSuchResourceException
-     * @sample AmazonCloudFront.DeleteServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public DeleteServiceLinkedRoleResult deleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request) {
-        request = beforeClientExecution(request);
-        return executeDeleteServiceLinkedRole(request);
-    }
-
-    @SdkInternalApi
-    final DeleteServiceLinkedRoleResult executeDeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest deleteServiceLinkedRoleRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(deleteServiceLinkedRoleRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteServiceLinkedRoleRequest> request = null;
-        Response<DeleteServiceLinkedRoleResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteServiceLinkedRoleRequestMarshaller().marshall(super.beforeMarshalling(deleteServiceLinkedRoleRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            StaxResponseHandler<DeleteServiceLinkedRoleResult> responseHandler = new StaxResponseHandler<DeleteServiceLinkedRoleResult>(
-                    new DeleteServiceLinkedRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1589,7 +1622,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1614,6 +1647,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStreamingDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1643,7 +1679,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1669,6 +1705,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudFrontOriginAccessIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1700,7 +1739,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentityConfig
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetCloudFrontOriginAccessIdentityConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1727,6 +1766,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudFrontOriginAccessIdentityConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1756,7 +1798,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetDistribution" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1781,6 +1823,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1810,7 +1855,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1835,6 +1880,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributionConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1863,7 +1911,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionConfigException
      *         The specified configuration for field-level encryption doesn't exist.
      * @sample AmazonCloudFront.GetFieldLevelEncryption
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryption"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryption"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1888,6 +1936,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryption");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1916,7 +1967,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionConfigException
      *         The specified configuration for field-level encryption doesn't exist.
      * @sample AmazonCloudFront.GetFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1941,6 +1992,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryptionConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1969,7 +2023,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @sample AmazonCloudFront.GetFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1994,6 +2048,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryptionProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2022,7 +2079,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @sample AmazonCloudFront.GetFieldLevelEncryptionProfileConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfileConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetFieldLevelEncryptionProfileConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2049,6 +2106,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryptionProfileConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2080,7 +2140,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetInvalidation" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetInvalidation" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2105,6 +2165,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInvalidation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2133,7 +2196,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @sample AmazonCloudFront.GetPublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetPublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2158,6 +2221,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2185,7 +2251,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @sample AmazonCloudFront.GetPublicKeyConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKeyConfig" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetPublicKeyConfig" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -2210,6 +2276,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPublicKeyConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2239,7 +2308,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2264,6 +2333,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStreamingDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2293,7 +2365,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/GetStreamingDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2318,6 +2390,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStreamingDistributionConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2345,7 +2420,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListCloudFrontOriginAccessIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListCloudFrontOriginAccessIdentities"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2372,6 +2447,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCloudFrontOriginAccessIdentities");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2399,7 +2477,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListDistributions" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -2424,6 +2502,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2452,7 +2533,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The argument is invalid.
      * @throws InvalidWebACLIdException
      * @sample AmazonCloudFront.ListDistributionsByWebACLId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributionsByWebACLId"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListDistributionsByWebACLId"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2477,6 +2558,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributionsByWebACLId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2503,7 +2587,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListFieldLevelEncryptionConfigs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionConfigs"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListFieldLevelEncryptionConfigs"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2529,6 +2613,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFieldLevelEncryptionConfigs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2555,7 +2642,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListFieldLevelEncryptionProfiles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionProfiles"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListFieldLevelEncryptionProfiles"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2581,6 +2668,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFieldLevelEncryptionProfiles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2612,7 +2702,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.ListInvalidations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListInvalidations" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListInvalidations" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -2637,6 +2727,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvalidations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2663,7 +2756,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListPublicKeys
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListPublicKeys" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListPublicKeys" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2688,6 +2781,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPublicKeys");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2715,7 +2811,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListStreamingDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListStreamingDistributions"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2740,6 +2836,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreamingDistributions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2771,7 +2870,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListTagsForResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -2796,6 +2895,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2827,7 +2929,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2852,6 +2954,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2882,7 +2987,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UntagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UntagResource" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2907,6 +3012,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2948,7 +3056,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2975,6 +3083,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCloudFrontOriginAccessIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2993,13 +3104,27 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Updates the configuration for a web distribution. Perform the following steps.
+     * Updates the configuration for a web distribution.
+     * </p>
+     * <important>
+     * <p>
+     * When you update a distribution, there are more required fields than when you create a distribution. When you
+     * update your distribution by using this API action, follow the steps here to get the current configuration and
+     * then make your updates, to make sure that you include all of the required fields. To view a summary, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html"
+     * >Required Fields for Create Distribution and Update Distribution</a> in the <i>Amazon CloudFront Developer
+     * Guide</i>.
+     * </p>
+     * </important>
+     * <p>
+     * The update process includes getting the current distribution configuration, updating the XML document that is
+     * returned to make your changes, and then submitting an <code>UpdateDistribution</code> request to make the
+     * updates.
      * </p>
      * <p>
-     * For information about updating a distribution using the CloudFront console, see <a
+     * For information about updating a distribution using the CloudFront console instead, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html"
-     * >Creating or Updating a Web Distribution Using the CloudFront Console </a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.
+     * >Creating a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * <b>To update a web distribution using the CloudFront API</b>
@@ -3012,23 +3137,47 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * </p>
      * <note>
      * <p>
-     * If you update the distribution again, you need to get a new <code>Etag</code> header.
+     * If you update the distribution again, you must get a new <code>Etag</code> header.
      * </p>
      * </note></li>
      * <li>
      * <p>
      * Update the XML document that was returned in the response to your <code>GetDistributionConfig</code> request to
-     * include the desired changes. You can't change the value of <code>CallerReference</code>. If you try to change
-     * this value, CloudFront returns an <code>IllegalUpdate</code> error.
+     * include your changes.
      * </p>
      * <important>
      * <p>
+     * When you edit the XML file, be aware of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must strip out the ETag parameter that is returned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Additional fields are required when you update a distribution. There may be fields included in the XML file for
+     * features that you haven't configured for your distribution. This is expected and required to successfully update
+     * the distribution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can't change the value of <code>CallerReference</code>. If you try to change this value, CloudFront returns
+     * an <code>IllegalUpdate</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * The new configuration replaces the existing configuration; the values that you specify in an
-     * <code>UpdateDistribution</code> request are not merged into the existing configuration. When you add, delete, or
+     * <code>UpdateDistribution</code> request are not merged into your existing configuration. When you add, delete, or
      * replace values in an element that allows multiple values (for example, <code>CNAME</code>), you must specify all
      * of the values that you want to appear in the updated distribution. In addition, you must update the corresponding
      * <code>Quantity</code> element.
      * </p>
+     * </li>
+     * </ul>
      * </important></li>
      * <li>
      * <p>
@@ -3060,16 +3209,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * Optional: Submit a <a>GetDistribution</a> request to confirm that your changes have propagated. When propagation
      * is complete, the value of <code>Status</code> is <code>Deployed</code>.
      * </p>
-     * <important>
-     * <p>
-     * Beginning with the 2012-05-05 version of the CloudFront API, we made substantial changes to the format of the XML
-     * document that you include in the request body when you create or update a distribution. With previous versions of
-     * the API, we discovered that it was too easy to accidentally delete one or more values for an element that accepts
-     * multiple values, for example, CNAMEs and trusted signers. Our changes for the 2012-05-05 release are intended to
-     * prevent these accidental deletions and to notify you when there's a mismatch between the number of values you say
-     * you're specifying in the <code>Quantity</code> element and the number of values you're actually specifying.
-     * </p>
-     * </important></li>
+     * </li>
      * </ol>
      * 
      * @param updateDistributionRequest
@@ -3114,6 +3254,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         No origin exists with the specified <code>Origin Id</code>.
      * @throws TooManyOriginsException
      *         You cannot create more origins for the distribution.
+     * @throws TooManyOriginGroupsPerDistributionException
+     *         Processing your request would cause you to exceed the maximum number of origin groups allowed.
      * @throws TooManyCacheBehaviorsException
      *         You cannot create more cache behaviors for the distribution.
      * @throws TooManyCookieNamesInWhiteListException
@@ -3153,7 +3295,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The maximum number of distributions have been associated with the specified configuration for field-level
      *         encryption.
      * @sample AmazonCloudFront.UpdateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -3178,6 +3320,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3224,7 +3369,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws QueryArgProfileEmptyException
      *         No profile specified for the field-level encryption query argument.
      * @sample AmazonCloudFront.UpdateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -3250,6 +3395,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFieldLevelEncryptionConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3298,7 +3446,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyFieldLevelEncryptionFieldPatternsException
      *         The maximum number of field patterns for field-level encryption have been created.
      * @sample AmazonCloudFront.UpdateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -3324,6 +3472,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFieldLevelEncryptionProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3362,7 +3513,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.UpdatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -3387,6 +3538,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3437,7 +3591,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.UpdateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/UpdateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -3462,6 +3616,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStreamingDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3502,9 +3659,18 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -3514,7 +3680,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -3522,8 +3688,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

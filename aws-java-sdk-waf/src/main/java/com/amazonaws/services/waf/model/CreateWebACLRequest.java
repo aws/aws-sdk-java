@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      * <code>MetricName</code> after you create the <code>WebACL</code>.
      * </p>
      */
@@ -103,13 +103,13 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      * <code>MetricName</code> after you create the <code>WebACL</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      *        <code>MetricName</code> after you create the <code>WebACL</code>.
      */
 
@@ -120,12 +120,12 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      * <code>MetricName</code> after you create the <code>WebACL</code>.
      * </p>
      * 
      * @return A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     *         alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *         alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      *         <code>MetricName</code> after you create the <code>WebACL</code>.
      */
 
@@ -136,13 +136,13 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      * <code>MetricName</code> after you create the <code>WebACL</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      *        <code>MetricName</code> after you create the <code>WebACL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -239,7 +239,8 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

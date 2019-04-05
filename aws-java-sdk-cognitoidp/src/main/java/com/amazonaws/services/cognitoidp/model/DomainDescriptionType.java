@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,12 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+     * </p>
+     */
+    private CustomDomainConfigType customDomainConfig;
 
     /**
      * <p>
@@ -385,7 +391,48 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+     * </p>
+     * 
+     * @param customDomainConfig
+     *        The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+     */
+
+    public void setCustomDomainConfig(CustomDomainConfigType customDomainConfig) {
+        this.customDomainConfig = customDomainConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+     * </p>
+     * 
+     * @return The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+     */
+
+    public CustomDomainConfigType getCustomDomainConfig() {
+        return this.customDomainConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+     * </p>
+     * 
+     * @param customDomainConfig
+     *        The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainDescriptionType withCustomDomainConfig(CustomDomainConfigType customDomainConfig) {
+        setCustomDomainConfig(customDomainConfig);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -408,7 +455,9 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getCustomDomainConfig() != null)
+            sb.append("CustomDomainConfig: ").append(getCustomDomainConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -451,6 +500,10 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getCustomDomainConfig() == null ^ this.getCustomDomainConfig() == null)
+            return false;
+        if (other.getCustomDomainConfig() != null && other.getCustomDomainConfig().equals(this.getCustomDomainConfig()) == false)
+            return false;
         return true;
     }
 
@@ -466,6 +519,7 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getCloudFrontDistribution() == null) ? 0 : getCloudFrontDistribution().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCustomDomainConfig() == null) ? 0 : getCustomDomainConfig().hashCode());
         return hashCode;
     }
 

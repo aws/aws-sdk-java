@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,12 +23,27 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateCachediSCSIVolumeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the configured volume.
+     * </p>
+     */
     private String volumeARN;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to
+     * connect to the target.
+     * </p>
+     */
     private String targetARN;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the configured volume.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the configured volume.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -36,7 +51,11 @@ public class CreateCachediSCSIVolumeResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the configured volume.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the configured volume.
      */
 
     public String getVolumeARN() {
@@ -44,7 +63,12 @@ public class CreateCachediSCSIVolumeResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the configured volume.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the configured volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +78,14 @@ public class CreateCachediSCSIVolumeResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to
+     * connect to the target.
+     * </p>
+     * 
      * @param targetARN
+     *        The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use
+     *        to connect to the target.
      */
 
     public void setTargetARN(String targetARN) {
@@ -62,7 +93,13 @@ public class CreateCachediSCSIVolumeResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to
+     * connect to the target.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can
+     *         use to connect to the target.
      */
 
     public String getTargetARN() {
@@ -70,7 +107,14 @@ public class CreateCachediSCSIVolumeResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use to
+     * connect to the target.
+     * </p>
+     * 
      * @param targetARN
+     *        The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI name that initiators can use
+     *        to connect to the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +124,8 @@ public class CreateCachediSCSIVolumeResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,39 @@ public class AWSCloudHSMV2AsyncClient extends AWSCloudHSMV2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CopyBackupToRegionResult> copyBackupToRegionAsync(CopyBackupToRegionRequest request) {
+
+        return copyBackupToRegionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyBackupToRegionResult> copyBackupToRegionAsync(final CopyBackupToRegionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CopyBackupToRegionRequest, CopyBackupToRegionResult> asyncHandler) {
+        final CopyBackupToRegionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CopyBackupToRegionResult>() {
+            @Override
+            public CopyBackupToRegionResult call() throws Exception {
+                CopyBackupToRegionResult result = null;
+
+                try {
+                    result = executeCopyBackupToRegion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request) {
 
         return createClusterAsync(request, null);
@@ -113,6 +146,39 @@ public class AWSCloudHSMV2AsyncClient extends AWSCloudHSMV2Client implements AWS
 
                 try {
                     result = executeCreateHsm(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBackupResult> deleteBackupAsync(DeleteBackupRequest request) {
+
+        return deleteBackupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBackupResult> deleteBackupAsync(final DeleteBackupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBackupRequest, DeleteBackupResult> asyncHandler) {
+        final DeleteBackupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBackupResult>() {
+            @Override
+            public DeleteBackupResult call() throws Exception {
+                DeleteBackupResult result = null;
+
+                try {
+                    result = executeDeleteBackup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -311,6 +377,39 @@ public class AWSCloudHSMV2AsyncClient extends AWSCloudHSMV2Client implements AWS
 
                 try {
                     result = executeListTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreBackupResult> restoreBackupAsync(RestoreBackupRequest request) {
+
+        return restoreBackupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreBackupResult> restoreBackupAsync(final RestoreBackupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreBackupRequest, RestoreBackupResult> asyncHandler) {
+        final RestoreBackupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestoreBackupResult>() {
+            @Override
+            public RestoreBackupResult call() throws Exception {
+                RestoreBackupResult result = null;
+
+                try {
+                    result = executeRestoreBackup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

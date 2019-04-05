@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.kinesisanalytics.AmazonKinesisAnalyticsClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -53,6 +55,7 @@ import com.amazonaws.services.kinesisanalytics.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient implements AmazonKinesisAnalytics {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -63,6 +66,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -96,6 +101,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.kinesisanalytics.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalytics.model.UnsupportedOperationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
                                     com.amazonaws.services.kinesisanalytics.model.ServiceUnavailableException.class))
@@ -185,6 +193,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
     public AmazonKinesisAnalyticsClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -250,6 +259,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -268,8 +278,23 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *        Object providing client parameters.
      */
     AmazonKinesisAnalyticsClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Kinesis Analytics using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonKinesisAnalyticsClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -303,6 +328,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.AddApplicationCloudWatchLoggingOption
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption"
@@ -332,6 +358,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationCloudWatchLoggingOption");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -380,6 +409,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         attempting to edit the same application at the same time.
      * @throws CodeValidationException
      *         User-provided application code (query) is invalid. This can be a simple syntax error.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.AddApplicationInput
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput"
      *      target="_top">AWS API Documentation</a>
@@ -406,6 +436,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationInput");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -440,6 +473,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.AddApplicationInputProcessingConfiguration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration"
@@ -469,6 +503,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationInputProcessingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -492,21 +529,20 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * </p>
      * <p>
      * If you want Amazon Kinesis Analytics to deliver data from an in-application stream within your application to an
-     * external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an Amazon
+     * external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS
      * Lambda function), you add the relevant configuration to your application using this operation. You can configure
      * one or more outputs for your application. Each output configuration maps an in-application stream and an external
      * destination.
      * </p>
      * <p>
      * You can use one of the output configurations to deliver data from your in-application error stream to an external
-     * destination so that you can analyze the errors. For conceptual information, see <a
+     * destination so that you can analyze the errors. For more information, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding Application
      * Output (Destination)</a>.
      * </p>
      * <p>
-     * Note that any configuration update, including adding a streaming source using this operation, results in a new
-     * version of the application. You can use the <a>DescribeApplication</a> operation to find the current application
-     * version.
+     * Any configuration update, including adding a streaming source using this operation, results in a new version of
+     * the application. You can use the <a>DescribeApplication</a> operation to find the current application version.
      * </p>
      * <p>
      * For the limits on the number of application inputs and outputs you can configure, see <a
@@ -527,6 +563,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.AddApplicationOutput
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput"
      *      target="_top">AWS API Documentation</a>
@@ -553,6 +590,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationOutput");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -600,6 +640,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.AddApplicationReferenceDataSource
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource"
@@ -629,6 +670,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationReferenceDataSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -713,6 +757,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -748,6 +795,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         Specified application can't be found.
      * @throws ResourceInUseException
      *         Application is not available for this operation.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.DeleteApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication"
      *      target="_top">AWS API Documentation</a>
@@ -774,6 +822,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -809,6 +860,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.DeleteApplicationCloudWatchLoggingOption
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption"
@@ -838,6 +890,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationCloudWatchLoggingOption");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -871,6 +926,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.DeleteApplicationInputProcessingConfiguration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration"
@@ -901,6 +957,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationInputProcessingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -938,6 +997,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.DeleteApplicationOutput
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput"
      *      target="_top">AWS API Documentation</a>
@@ -965,6 +1025,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationOutput");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1006,6 +1069,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.DeleteApplicationReferenceDataSource
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource"
@@ -1035,6 +1099,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationReferenceDataSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1069,6 +1136,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @return Result of the DescribeApplication operation returned by the service.
      * @throws ResourceNotFoundException
      *         Specified application can't be found.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.DescribeApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication"
      *      target="_top">AWS API Documentation</a>
@@ -1095,6 +1163,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1133,7 +1204,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws InvalidArgumentException
      *         Specified input parameter value is invalid.
      * @throws UnableToDetectSchemaException
-     *         Data format is not valid, Amazon Kinesis Analytics is not able to detect schema for the given streaming
+     *         Data format is not valid. Amazon Kinesis Analytics is not able to detect schema for the given streaming
      *         source.
      * @throws ResourceProvisionedThroughputExceededException
      *         Discovery failed to get a record from the streaming source because of the Amazon Kinesis Streams
@@ -1141,7 +1212,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the
      *         Amazon Kinesis Streams API Reference.
      * @throws ServiceUnavailableException
-     *         The service is unavailable, back off and retry the operation.
+     *         The service is unavailable. Back off and retry the operation.
      * @sample AmazonKinesisAnalytics.DiscoverInputSchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema"
      *      target="_top">AWS API Documentation</a>
@@ -1168,6 +1239,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DiscoverInputSchema");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1227,6 +1301,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1274,6 +1351,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         Specified input parameter value is invalid.
      * @throws InvalidApplicationConfigurationException
      *         User-provided application configuration is not valid.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.StartApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication"
      *      target="_top">AWS API Documentation</a>
@@ -1300,6 +1378,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1333,6 +1414,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         Specified application can't be found.
      * @throws ResourceInUseException
      *         Application is not available for this operation.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.StopApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication"
      *      target="_top">AWS API Documentation</a>
@@ -1359,6 +1441,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1401,6 +1486,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws UnsupportedOperationException
      * @sample AmazonKinesisAnalytics.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication"
      *      target="_top">AWS API Documentation</a>
@@ -1427,6 +1513,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1467,9 +1556,18 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1479,7 +1577,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1487,8 +1585,17 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

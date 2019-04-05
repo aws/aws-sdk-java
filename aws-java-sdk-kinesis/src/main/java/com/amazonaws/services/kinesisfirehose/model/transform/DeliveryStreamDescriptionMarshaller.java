@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,14 +34,16 @@ public class DeliveryStreamDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamARN").build();
     private static final MarshallingInfo<String> DELIVERYSTREAMSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamStatus").build();
+    private static final MarshallingInfo<StructuredPojo> DELIVERYSTREAMENCRYPTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamEncryptionConfiguration").build();
     private static final MarshallingInfo<String> DELIVERYSTREAMTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamType").build();
     private static final MarshallingInfo<String> VERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("VersionId").build();
     private static final MarshallingInfo<java.util.Date> CREATETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Source").build();
     private static final MarshallingInfo<List> DESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -68,6 +70,7 @@ public class DeliveryStreamDescriptionMarshaller {
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamName(), DELIVERYSTREAMNAME_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamARN(), DELIVERYSTREAMARN_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamStatus(), DELIVERYSTREAMSTATUS_BINDING);
+            protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamEncryptionConfiguration(), DELIVERYSTREAMENCRYPTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamType(), DELIVERYSTREAMTYPE_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getVersionId(), VERSIONID_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getCreateTimestamp(), CREATETIMESTAMP_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class TestInvokeMethodRequestMarshaller {
             .marshallLocationName("body").build();
     private static final MarshallingInfo<Map> HEADERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("headers").build();
+    private static final MarshallingInfo<Map> MULTIVALUEHEADERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("multiValueHeaders").build();
     private static final MarshallingInfo<String> CLIENTCERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientCertificateId").build();
     private static final MarshallingInfo<Map> STAGEVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -68,6 +70,7 @@ public class TestInvokeMethodRequestMarshaller {
             protocolMarshaller.marshall(testInvokeMethodRequest.getPathWithQueryString(), PATHWITHQUERYSTRING_BINDING);
             protocolMarshaller.marshall(testInvokeMethodRequest.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(testInvokeMethodRequest.getHeaders(), HEADERS_BINDING);
+            protocolMarshaller.marshall(testInvokeMethodRequest.getMultiValueHeaders(), MULTIVALUEHEADERS_BINDING);
             protocolMarshaller.marshall(testInvokeMethodRequest.getClientCertificateId(), CLIENTCERTIFICATEID_BINDING);
             protocolMarshaller.marshall(testInvokeMethodRequest.getStageVariables(), STAGEVARIABLES_BINDING);
         } catch (Exception e) {

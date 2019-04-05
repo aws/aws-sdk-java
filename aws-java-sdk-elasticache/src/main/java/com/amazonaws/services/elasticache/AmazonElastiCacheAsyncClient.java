@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -537,6 +537,39 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
 
                 try {
                     result = executeCreateSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicationGroup> decreaseReplicaCountAsync(DecreaseReplicaCountRequest request) {
+
+        return decreaseReplicaCountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicationGroup> decreaseReplicaCountAsync(final DecreaseReplicaCountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DecreaseReplicaCountRequest, ReplicationGroup> asyncHandler) {
+        final DecreaseReplicaCountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ReplicationGroup>() {
+            @Override
+            public ReplicationGroup call() throws Exception {
+                ReplicationGroup result = null;
+
+                try {
+                    result = executeDecreaseReplicaCount(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1377,6 +1410,39 @@ public class AmazonElastiCacheAsyncClient extends AmazonElastiCacheClient implem
             com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult> asyncHandler) {
 
         return describeSnapshotsAsync(new DescribeSnapshotsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicationGroup> increaseReplicaCountAsync(IncreaseReplicaCountRequest request) {
+
+        return increaseReplicaCountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplicationGroup> increaseReplicaCountAsync(final IncreaseReplicaCountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<IncreaseReplicaCountRequest, ReplicationGroup> asyncHandler) {
+        final IncreaseReplicaCountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ReplicationGroup>() {
+            @Override
+            public ReplicationGroup call() throws Exception {
+                ReplicationGroup result = null;
+
+                try {
+                    result = executeIncreaseReplicaCount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

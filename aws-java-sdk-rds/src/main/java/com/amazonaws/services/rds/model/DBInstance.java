@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -198,8 +198,16 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBInstanceIdentifiers;
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
+     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
+     * Read Replicas.
      * </p>
+     * <note>
+     * <p>
+     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBClusterIdentifiers;
     /**
@@ -237,27 +245,6 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
      * internal instance with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b>true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b>false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
      * </p>
      */
     private Boolean publiclyAccessible;
@@ -328,6 +315,13 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB
+     * instance has no effect on the DB cluster setting. For more information, see <a>DBCluster</a>.
+     * </p>
      */
     private Boolean copyTagsToSnapshot;
     /**
@@ -353,8 +347,8 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
      * of the existing primary instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      */
     private Integer promotionTier;
@@ -414,10 +408,48 @@ public class DBInstance implements Serializable, Cloneable {
     private String performanceInsightsKMSKeyId;
     /**
      * <p>
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * </p>
+     */
+    private Integer performanceInsightsRetentionPeriod;
+    /**
+     * <p>
      * A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enabledCloudwatchLogsExports;
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
+    /**
+     * <p>
+     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this value is
+     * set to true. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * Instance</a>.
+     * </p>
+     */
+    private Boolean deletionProtection;
+    /**
+     * <p>
+     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DBInstanceRole> associatedRoles;
+    /**
+     * <p>
+     * Specifies the listener connection endpoint for SQL Server Always On.
+     * </p>
+     */
+    private Endpoint listenerEndpoint;
 
     /**
      * <p>
@@ -1680,10 +1712,24 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
+     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
+     * Read Replicas.
      * </p>
+     * <note>
+     * <p>
+     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * </p>
+     * </note>
      * 
-     * @return Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * @return Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
+     *         Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
+     *         MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
+     *         cross region Aurora Read Replicas.</p> <note>
+     *         <p>
+     *         Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *         </p>
      */
 
     public java.util.List<String> getReadReplicaDBClusterIdentifiers() {
@@ -1695,11 +1741,25 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
+     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
+     * Read Replicas.
      * </p>
+     * <note>
+     * <p>
+     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * </p>
+     * </note>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
+     *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
+     *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
+     *        cross region Aurora Read Replicas.</p> <note>
+     *        <p>
+     *        Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *        </p>
      */
 
     public void setReadReplicaDBClusterIdentifiers(java.util.Collection<String> readReplicaDBClusterIdentifiers) {
@@ -1713,8 +1773,16 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
+     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
+     * Read Replicas.
      * </p>
+     * <note>
+     * <p>
+     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setReadReplicaDBClusterIdentifiers(java.util.Collection)} or
@@ -1722,7 +1790,13 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
+     *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
+     *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
+     *        cross region Aurora Read Replicas.</p> <note>
+     *        <p>
+     *        Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1738,11 +1812,25 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     * Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a Read
+     * Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB
+     * cluster for the Aurora Read Replica is shown. This output does not contain information about cross region Aurora
+     * Read Replicas.
      * </p>
+     * <note>
+     * <p>
+     * Currently, each RDS DB instance can have only one Aurora Read Replica.
+     * </p>
+     * </note>
      * 
      * @param readReplicaDBClusterIdentifiers
-     *        Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this DB instance.
+     *        Contains one or more identifiers of Aurora DB clusters to which the RDS DB instance is replicated as a
+     *        Read Replica. For example, when you create an Aurora Read Replica of an RDS MySQL DB instance, the Aurora
+     *        MySQL DB cluster for the Aurora Read Replica is shown. This output does not contain information about
+     *        cross region Aurora Read Replicas.</p> <note>
+     *        <p>
+     *        Currently, each RDS DB instance can have only one Aurora Read Replica.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1991,52 +2079,11 @@ public class DBInstance implements Serializable, Cloneable {
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b>true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b>false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
-     * </p>
      * 
      * @param publiclyAccessible
      *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *        <p>
-     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *        list shows the default behavior in each case.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>Default VPC:</b>true
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>VPC:</b>false
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
-     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *        specifies an internal instance with a DNS name that resolves to a private IP address.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -2049,51 +2096,10 @@ public class DBInstance implements Serializable, Cloneable {
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b>true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b>false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
-     * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *         <p>
-     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *         list shows the default behavior in each case.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>Default VPC:</b>true
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>VPC:</b>false
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
-     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *         specifies an internal instance with a DNS name that resolves to a private IP address.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -2106,52 +2112,11 @@ public class DBInstance implements Serializable, Cloneable {
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b>true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b>false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
-     * </p>
      * 
      * @param publiclyAccessible
      *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *        <p>
-     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *        list shows the default behavior in each case.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>Default VPC:</b>true
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>VPC:</b>false
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
-     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *        specifies an internal instance with a DNS name that resolves to a private IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2166,51 +2131,10 @@ public class DBInstance implements Serializable, Cloneable {
      * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
      * internal instance with a DNS name that resolves to a private IP address.
      * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b>true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b>false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
-     * </p>
      * 
      * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
      *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *         <p>
-     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *         list shows the default behavior in each case.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>Default VPC:</b>true
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>VPC:</b>false
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
-     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *         specifies an internal instance with a DNS name that resolves to a private IP address.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -2717,9 +2641,22 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB
+     * instance has no effect on the DB cluster setting. For more information, see <a>DBCluster</a>.
+     * </p>
      * 
      * @param copyTagsToSnapshot
-     *        Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
+     *        Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora
+     *        DB instance has no effect on the DB cluster setting. For more information, see <a>DBCluster</a>.
      */
 
     public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
@@ -2730,8 +2667,21 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB
+     * instance has no effect on the DB cluster setting. For more information, see <a>DBCluster</a>.
+     * </p>
      * 
-     * @return Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
+     * @return Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
+     *         <p>
+     *         <b>Amazon Aurora</b>
+     *         </p>
+     *         <p>
+     *         Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora
+     *         DB instance has no effect on the DB cluster setting. For more information, see <a>DBCluster</a>.
      */
 
     public Boolean getCopyTagsToSnapshot() {
@@ -2742,9 +2692,22 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB
+     * instance has no effect on the DB cluster setting. For more information, see <a>DBCluster</a>.
+     * </p>
      * 
      * @param copyTagsToSnapshot
-     *        Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
+     *        Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora
+     *        DB instance has no effect on the DB cluster setting. For more information, see <a>DBCluster</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2757,8 +2720,21 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora DB
+     * instance has no effect on the DB cluster setting. For more information, see <a>DBCluster</a>.
+     * </p>
      * 
-     * @return Specifies whether tags are copied from the DB instance to snapshots of the DB instance.
+     * @return Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
+     *         <p>
+     *         <b>Amazon Aurora</b>
+     *         </p>
+     *         <p>
+     *         Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this value for an Aurora
+     *         DB instance has no effect on the DB cluster setting. For more information, see <a>DBCluster</a>.
      */
 
     public Boolean isCopyTagsToSnapshot() {
@@ -2898,15 +2874,15 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
      * of the existing primary instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param promotionTier
      *        A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
      *        failure of the existing primary instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     *        > Fault Tolerance for an Aurora DB Cluster</a>.
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     *        > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public void setPromotionTier(Integer promotionTier) {
@@ -2917,14 +2893,14 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
      * of the existing primary instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @return A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
      *         failure of the existing primary instance. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     *         > Fault Tolerance for an Aurora DB Cluster</a>.
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     *         > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public Integer getPromotionTier() {
@@ -2935,15 +2911,15 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a failure
      * of the existing primary instance. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     * > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
      * @param promotionTier
      *        A value that specifies the order in which an Aurora Replica is promoted to the primary instance after a
      *        failure of the existing primary instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance"
-     *        > Fault Tolerance for an Aurora DB Cluster</a>.
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance"
+     *        > Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3360,10 +3336,59 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * 
-     * @return A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * @param performanceInsightsRetentionPeriod
+     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     */
+
+    public void setPerformanceInsightsRetentionPeriod(Integer performanceInsightsRetentionPeriod) {
+        this.performanceInsightsRetentionPeriod = performanceInsightsRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * </p>
+     * 
+     * @return The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     */
+
+    public Integer getPerformanceInsightsRetentionPeriod() {
+        return this.performanceInsightsRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * </p>
+     * 
+     * @param performanceInsightsRetentionPeriod
+     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withPerformanceInsightsRetentionPeriod(Integer performanceInsightsRetentionPeriod) {
+        setPerformanceInsightsRetentionPeriod(performanceInsightsRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
+     *         <p>
+     *         Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *         Files</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public java.util.List<String> getEnabledCloudwatchLogsExports() {
@@ -3377,9 +3402,18 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A list of log types that this DB instance is configured to export to CloudWatch Logs.
      * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
+     *        <p>
+     *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *        Files</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
@@ -3396,13 +3430,22 @@ public class DBInstance implements Serializable, Cloneable {
      * A list of log types that this DB instance is configured to export to CloudWatch Logs.
      * </p>
      * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEnabledCloudwatchLogsExports(java.util.Collection)} or
      * {@link #withEnabledCloudwatchLogsExports(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
+     *        <p>
+     *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *        Files</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3420,9 +3463,18 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * A list of log types that this DB instance is configured to export to CloudWatch Logs.
      * </p>
+     * <p>
+     * Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     * Files</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @param enabledCloudwatchLogsExports
-     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.
+     *        A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
+     *        <p>
+     *        Log types vary by DB engine. For information about the log types for each DB engine, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon RDS Database Log
+     *        Files</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3432,7 +3484,270 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @return The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     */
+
+    public java.util.List<ProcessorFeature> getProcessorFeatures() {
+        if (processorFeatures == null) {
+            processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>();
+        }
+        return processorFeatures;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     */
+
+    public void setProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        if (processorFeatures == null) {
+            this.processorFeatures = null;
+            return;
+        }
+
+        this.processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures);
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProcessorFeatures(java.util.Collection)} or {@link #withProcessorFeatures(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withProcessorFeatures(ProcessorFeature... processorFeatures) {
+        if (this.processorFeatures == null) {
+            setProcessorFeatures(new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures.length));
+        }
+        for (ProcessorFeature ele : processorFeatures) {
+            this.processorFeatures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        setProcessorFeatures(processorFeatures);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this value is
+     * set to true. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * Instance</a>.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this
+     *        value is set to true. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *        Instance</a>.
+     */
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this value is
+     * set to true. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * Instance</a>.
+     * </p>
+     * 
+     * @return Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this
+     *         value is set to true. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *         Instance</a>.
+     */
+
+    public Boolean getDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this value is
+     * set to true. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * Instance</a>.
+     * </p>
+     * 
+     * @param deletionProtection
+     *        Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this
+     *        value is set to true. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *        Instance</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withDeletionProtection(Boolean deletionProtection) {
+        setDeletionProtection(deletionProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this value is
+     * set to true. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     * Instance</a>.
+     * </p>
+     * 
+     * @return Indicates if the DB instance has deletion protection enabled. The database can't be deleted when this
+     *         value is set to true. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html"> Deleting a DB
+     *         Instance</a>.
+     */
+
+    public Boolean isDeletionProtection() {
+        return this.deletionProtection;
+    }
+
+    /**
+     * <p>
+     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * </p>
+     * 
+     * @return The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     */
+
+    public java.util.List<DBInstanceRole> getAssociatedRoles() {
+        if (associatedRoles == null) {
+            associatedRoles = new com.amazonaws.internal.SdkInternalList<DBInstanceRole>();
+        }
+        return associatedRoles;
+    }
+
+    /**
+     * <p>
+     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * </p>
+     * 
+     * @param associatedRoles
+     *        The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     */
+
+    public void setAssociatedRoles(java.util.Collection<DBInstanceRole> associatedRoles) {
+        if (associatedRoles == null) {
+            this.associatedRoles = null;
+            return;
+        }
+
+        this.associatedRoles = new com.amazonaws.internal.SdkInternalList<DBInstanceRole>(associatedRoles);
+    }
+
+    /**
+     * <p>
+     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssociatedRoles(java.util.Collection)} or {@link #withAssociatedRoles(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param associatedRoles
+     *        The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withAssociatedRoles(DBInstanceRole... associatedRoles) {
+        if (this.associatedRoles == null) {
+            setAssociatedRoles(new com.amazonaws.internal.SdkInternalList<DBInstanceRole>(associatedRoles.length));
+        }
+        for (DBInstanceRole ele : associatedRoles) {
+            this.associatedRoles.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * </p>
+     * 
+     * @param associatedRoles
+     *        The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withAssociatedRoles(java.util.Collection<DBInstanceRole> associatedRoles) {
+        setAssociatedRoles(associatedRoles);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the listener connection endpoint for SQL Server Always On.
+     * </p>
+     * 
+     * @param listenerEndpoint
+     *        Specifies the listener connection endpoint for SQL Server Always On.
+     */
+
+    public void setListenerEndpoint(Endpoint listenerEndpoint) {
+        this.listenerEndpoint = listenerEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies the listener connection endpoint for SQL Server Always On.
+     * </p>
+     * 
+     * @return Specifies the listener connection endpoint for SQL Server Always On.
+     */
+
+    public Endpoint getListenerEndpoint() {
+        return this.listenerEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies the listener connection endpoint for SQL Server Always On.
+     * </p>
+     * 
+     * @param listenerEndpoint
+     *        Specifies the listener connection endpoint for SQL Server Always On.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withListenerEndpoint(Endpoint listenerEndpoint) {
+        setListenerEndpoint(listenerEndpoint);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -3544,8 +3859,18 @@ public class DBInstance implements Serializable, Cloneable {
             sb.append("PerformanceInsightsEnabled: ").append(getPerformanceInsightsEnabled()).append(",");
         if (getPerformanceInsightsKMSKeyId() != null)
             sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId()).append(",");
+        if (getPerformanceInsightsRetentionPeriod() != null)
+            sb.append("PerformanceInsightsRetentionPeriod: ").append(getPerformanceInsightsRetentionPeriod()).append(",");
         if (getEnabledCloudwatchLogsExports() != null)
-            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports());
+            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports()).append(",");
+        if (getProcessorFeatures() != null)
+            sb.append("ProcessorFeatures: ").append(getProcessorFeatures()).append(",");
+        if (getDeletionProtection() != null)
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getAssociatedRoles() != null)
+            sb.append("AssociatedRoles: ").append(getAssociatedRoles()).append(",");
+        if (getListenerEndpoint() != null)
+            sb.append("ListenerEndpoint: ").append(getListenerEndpoint());
         sb.append("}");
         return sb.toString();
     }
@@ -3769,9 +4094,30 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getPerformanceInsightsKMSKeyId() != null && other.getPerformanceInsightsKMSKeyId().equals(this.getPerformanceInsightsKMSKeyId()) == false)
             return false;
+        if (other.getPerformanceInsightsRetentionPeriod() == null ^ this.getPerformanceInsightsRetentionPeriod() == null)
+            return false;
+        if (other.getPerformanceInsightsRetentionPeriod() != null
+                && other.getPerformanceInsightsRetentionPeriod().equals(this.getPerformanceInsightsRetentionPeriod()) == false)
+            return false;
         if (other.getEnabledCloudwatchLogsExports() == null ^ this.getEnabledCloudwatchLogsExports() == null)
             return false;
         if (other.getEnabledCloudwatchLogsExports() != null && other.getEnabledCloudwatchLogsExports().equals(this.getEnabledCloudwatchLogsExports()) == false)
+            return false;
+        if (other.getProcessorFeatures() == null ^ this.getProcessorFeatures() == null)
+            return false;
+        if (other.getProcessorFeatures() != null && other.getProcessorFeatures().equals(this.getProcessorFeatures()) == false)
+            return false;
+        if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
+            return false;
+        if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
+        if (other.getAssociatedRoles() == null ^ this.getAssociatedRoles() == null)
+            return false;
+        if (other.getAssociatedRoles() != null && other.getAssociatedRoles().equals(this.getAssociatedRoles()) == false)
+            return false;
+        if (other.getListenerEndpoint() == null ^ this.getListenerEndpoint() == null)
+            return false;
+        if (other.getListenerEndpoint() != null && other.getListenerEndpoint().equals(this.getListenerEndpoint()) == false)
             return false;
         return true;
     }
@@ -3832,7 +4178,12 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsEnabled() == null) ? 0 : getPerformanceInsightsEnabled().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
+        hashCode = prime * hashCode + ((getPerformanceInsightsRetentionPeriod() == null) ? 0 : getPerformanceInsightsRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getAssociatedRoles() == null) ? 0 : getAssociatedRoles().hashCode());
+        hashCode = prime * hashCode + ((getListenerEndpoint() == null) ? 0 : getListenerEndpoint().hashCode());
         return hashCode;
     }
 

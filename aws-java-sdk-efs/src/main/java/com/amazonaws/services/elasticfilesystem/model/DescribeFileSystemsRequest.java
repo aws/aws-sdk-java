@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,8 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Specifies the maximum number of file systems to return in the response (integer). This parameter value
-     * must be greater than 0. The number of items that Amazon EFS returns is the minimum of the <code>MaxItems</code>
-     * parameter specified in the request and the service's internal maximum number of items per page.
+     * (Optional) Specifies the maximum number of file systems to return in the response (integer). Currently, this
+     * number is automatically set to 10.
      * </p>
      */
     private Integer maxItems;
@@ -57,16 +56,13 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Specifies the maximum number of file systems to return in the response (integer). This parameter value
-     * must be greater than 0. The number of items that Amazon EFS returns is the minimum of the <code>MaxItems</code>
-     * parameter specified in the request and the service's internal maximum number of items per page.
+     * (Optional) Specifies the maximum number of file systems to return in the response (integer). Currently, this
+     * number is automatically set to 10.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Specifies the maximum number of file systems to return in the response (integer). This
-     *        parameter value must be greater than 0. The number of items that Amazon EFS returns is the minimum of the
-     *        <code>MaxItems</code> parameter specified in the request and the service's internal maximum number of
-     *        items per page.
+     *        (Optional) Specifies the maximum number of file systems to return in the response (integer). Currently,
+     *        this number is automatically set to 10.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -75,15 +71,12 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Specifies the maximum number of file systems to return in the response (integer). This parameter value
-     * must be greater than 0. The number of items that Amazon EFS returns is the minimum of the <code>MaxItems</code>
-     * parameter specified in the request and the service's internal maximum number of items per page.
+     * (Optional) Specifies the maximum number of file systems to return in the response (integer). Currently, this
+     * number is automatically set to 10.
      * </p>
      * 
-     * @return (Optional) Specifies the maximum number of file systems to return in the response (integer). This
-     *         parameter value must be greater than 0. The number of items that Amazon EFS returns is the minimum of the
-     *         <code>MaxItems</code> parameter specified in the request and the service's internal maximum number of
-     *         items per page.
+     * @return (Optional) Specifies the maximum number of file systems to return in the response (integer). Currently,
+     *         this number is automatically set to 10.
      */
 
     public Integer getMaxItems() {
@@ -92,16 +85,13 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Specifies the maximum number of file systems to return in the response (integer). This parameter value
-     * must be greater than 0. The number of items that Amazon EFS returns is the minimum of the <code>MaxItems</code>
-     * parameter specified in the request and the service's internal maximum number of items per page.
+     * (Optional) Specifies the maximum number of file systems to return in the response (integer). Currently, this
+     * number is automatically set to 10.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Specifies the maximum number of file systems to return in the response (integer). This
-     *        parameter value must be greater than 0. The number of items that Amazon EFS returns is the minimum of the
-     *        <code>MaxItems</code> parameter specified in the request and the service's internal maximum number of
-     *        items per page.
+     *        (Optional) Specifies the maximum number of file systems to return in the response (integer). Currently,
+     *        this number is automatically set to 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,7 +233,8 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

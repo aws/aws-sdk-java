@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,11 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
+    public CreateExclusionsPreviewResult createExclusionsPreview(CreateExclusionsPreviewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateResourceGroupResult createResourceGroup(CreateResourceGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -93,6 +98,11 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
+    public DescribeExclusionsResult describeExclusions(DescribeExclusionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeFindingsResult describeFindings(DescribeFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +119,11 @@ public class AbstractAmazonInspector implements AmazonInspector {
 
     @Override
     public GetAssessmentReportResult getAssessmentReport(GetAssessmentReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetExclusionsPreviewResult getExclusionsPreview(GetExclusionsPreviewRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -139,6 +154,11 @@ public class AbstractAmazonInspector implements AmazonInspector {
 
     @Override
     public ListEventSubscriptionsResult listEventSubscriptions(ListEventSubscriptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListExclusionsResult listExclusions(ListExclusionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * attribute name.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/FacetAttributeReference"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/FacetAttributeReference"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -32,7 +32,7 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target facet name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      */
@@ -40,7 +40,7 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target attribute name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      */
@@ -49,13 +49,13 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target facet name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param targetFacetName
-     *        The target facet name that is associated with the facet reference. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        The target facet name that is associated with the facet reference. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      */
 
@@ -66,12 +66,12 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target facet name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @return The target facet name that is associated with the facet reference. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *         >Attribute References</a> for more information.
      */
 
@@ -82,13 +82,13 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target facet name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param targetFacetName
-     *        The target facet name that is associated with the facet reference. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        The target facet name that is associated with the facet reference. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -101,13 +101,13 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target attribute name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param targetAttributeName
-     *        The target attribute name that is associated with the facet reference. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        The target attribute name that is associated with the facet reference. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      */
 
@@ -118,12 +118,12 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target attribute name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @return The target attribute name that is associated with the facet reference. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *         >Attribute References</a> for more information.
      */
 
@@ -134,13 +134,13 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The target attribute name that is associated with the facet reference. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param targetAttributeName
-     *        The target attribute name that is associated with the facet reference. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        The target attribute name that is associated with the facet reference. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -151,7 +151,8 @@ public class FacetAttributeReference implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

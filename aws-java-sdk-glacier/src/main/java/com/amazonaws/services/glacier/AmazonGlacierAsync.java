@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,10 +36,9 @@ import com.amazonaws.services.glacier.model.*;
  * failure and recovery, or time-consuming hardware migrations.
  * </p>
  * <p>
- * Amazon Glacier is a great storage choice when low storage cost is paramount, your data is rarely retrieved, and
- * retrieval latency of several hours is acceptable. If your application requires fast or frequent access to your data,
- * consider using Amazon S3. For more information, see <a href="http://aws.amazon.com/s3/">Amazon Simple Storage Service
- * (Amazon S3)</a>.
+ * Amazon Glacier is a great storage choice when low storage cost is paramount and your data is rarely retrieved. If
+ * your application requires fast or frequent access to your data, consider using Amazon S3. For more information, see
+ * <a href="http://aws.amazon.com/s3/">Amazon Simple Storage Service (Amazon S3)</a>.
  * </p>
  * <p>
  * You can store any kind of data in any format. There is no maximum limit on the total amount of data you can store in
@@ -1589,8 +1588,8 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * </p>
      * <p>
      * You can set a maximum limit for the number of jobs returned in the response by specifying the <code>limit</code>
-     * parameter in the request. The default limit is 1000. The number of jobs returned might be fewer than the limit,
-     * but the number of returned jobs never exceeds the limit.
+     * parameter in the request. The default limit is 50. The number of jobs returned might be fewer than the limit, but
+     * the number of returned jobs never exceeds the limit.
      * </p>
      * <p>
      * Additionally, you can filter the jobs list returned by specifying the optional <code>statuscode</code> parameter
@@ -1635,8 +1634,8 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * </p>
      * <p>
      * You can set a maximum limit for the number of jobs returned in the response by specifying the <code>limit</code>
-     * parameter in the request. The default limit is 1000. The number of jobs returned might be fewer than the limit,
-     * but the number of returned jobs never exceeds the limit.
+     * parameter in the request. The default limit is 50. The number of jobs returned might be fewer than the limit, but
+     * the number of returned jobs never exceeds the limit.
      * </p>
      * <p>
      * Additionally, you can filter the jobs list returned by specifying the optional <code>statuscode</code> parameter
@@ -1669,12 +1668,12 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * completed or aborted. The list returned in the List Multipart Upload response has no guaranteed order.
      * </p>
      * <p>
-     * The List Multipart Uploads operation supports pagination. By default, this operation returns up to 1,000
-     * multipart uploads in the response. You should always check the response for a <code>marker</code> at which to
-     * continue the list; if there are no more items the <code>marker</code> is <code>null</code>. To return a list of
-     * multipart uploads that begins at a specific upload, set the <code>marker</code> request parameter to the value
-     * you obtained from a previous List Multipart Upload request. You can also limit the number of uploads returned in
-     * the response by specifying the <code>limit</code> parameter in the request.
+     * The List Multipart Uploads operation supports pagination. By default, this operation returns up to 50 multipart
+     * uploads in the response. You should always check the response for a <code>marker</code> at which to continue the
+     * list; if there are no more items the <code>marker</code> is <code>null</code>. To return a list of multipart
+     * uploads that begins at a specific upload, set the <code>marker</code> request parameter to the value you obtained
+     * from a previous List Multipart Upload request. You can also limit the number of uploads returned in the response
+     * by specifying the <code>limit</code> parameter in the request.
      * </p>
      * <p>
      * Note the difference between this operation and listing parts (<a>ListParts</a>). The List Multipart Uploads
@@ -1710,12 +1709,12 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * completed or aborted. The list returned in the List Multipart Upload response has no guaranteed order.
      * </p>
      * <p>
-     * The List Multipart Uploads operation supports pagination. By default, this operation returns up to 1,000
-     * multipart uploads in the response. You should always check the response for a <code>marker</code> at which to
-     * continue the list; if there are no more items the <code>marker</code> is <code>null</code>. To return a list of
-     * multipart uploads that begins at a specific upload, set the <code>marker</code> request parameter to the value
-     * you obtained from a previous List Multipart Upload request. You can also limit the number of uploads returned in
-     * the response by specifying the <code>limit</code> parameter in the request.
+     * The List Multipart Uploads operation supports pagination. By default, this operation returns up to 50 multipart
+     * uploads in the response. You should always check the response for a <code>marker</code> at which to continue the
+     * list; if there are no more items the <code>marker</code> is <code>null</code>. To return a list of multipart
+     * uploads that begins at a specific upload, set the <code>marker</code> request parameter to the value you obtained
+     * from a previous List Multipart Upload request. You can also limit the number of uploads returned in the response
+     * by specifying the <code>limit</code> parameter in the request.
      * </p>
      * <p>
      * Note the difference between this operation and listing parts (<a>ListParts</a>). The List Multipart Uploads
@@ -1757,9 +1756,9 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * Parts response is sorted by part range.
      * </p>
      * <p>
-     * The List Parts operation supports pagination. By default, this operation returns up to 1,000 uploaded parts in
-     * the response. You should always check the response for a <code>marker</code> at which to continue the list; if
-     * there are no more items the <code>marker</code> is <code>null</code>. To return a list of parts that begins at a
+     * The List Parts operation supports pagination. By default, this operation returns up to 50 uploaded parts in the
+     * response. You should always check the response for a <code>marker</code> at which to continue the list; if there
+     * are no more items the <code>marker</code> is <code>null</code>. To return a list of parts that begins at a
      * specific part, set the <code>marker</code> request parameter to the value you obtained from a previous List Parts
      * request. You can also limit the number of parts returned in the response by specifying the <code>limit</code>
      * parameter in the request.
@@ -1795,9 +1794,9 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * Parts response is sorted by part range.
      * </p>
      * <p>
-     * The List Parts operation supports pagination. By default, this operation returns up to 1,000 uploaded parts in
-     * the response. You should always check the response for a <code>marker</code> at which to continue the list; if
-     * there are no more items the <code>marker</code> is <code>null</code>. To return a list of parts that begins at a
+     * The List Parts operation supports pagination. By default, this operation returns up to 50 uploaded parts in the
+     * response. You should always check the response for a <code>marker</code> at which to continue the list; if there
+     * are no more items the <code>marker</code> is <code>null</code>. To return a list of parts that begins at a
      * specific part, set the <code>marker</code> request parameter to the value you obtained from a previous List Parts
      * request. You can also limit the number of parts returned in the response by specifying the <code>limit</code>
      * parameter in the request.
@@ -1896,7 +1895,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * ASCII-sorted by vault name.
      * </p>
      * <p>
-     * By default, this operation returns up to 1,000 items. If there are more vaults to list, the response
+     * By default, this operation returns up to 10 items. If there are more vaults to list, the response
      * <code>marker</code> field contains the vault Amazon Resource Name (ARN) at which to continue the list with a new
      * List Vaults request; otherwise, the <code>marker</code> field is <code>null</code>. To return a list of vaults
      * that begins at a specific vault, set the <code>marker</code> request parameter to the vault ARN you obtained from
@@ -1931,7 +1930,7 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * ASCII-sorted by vault name.
      * </p>
      * <p>
-     * By default, this operation returns up to 1,000 items. If there are more vaults to list, the response
+     * By default, this operation returns up to 10 items. If there are more vaults to list, the response
      * <code>marker</code> field contains the vault Amazon Resource Name (ARN) at which to continue the list with a new
      * List Vaults request; otherwise, the <code>marker</code> field is <code>null</code>. To return a list of vaults
      * that begins at a specific vault, set the <code>marker</code> request parameter to the vault ARN you obtained from

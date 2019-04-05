@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ExportJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3UrlPrefix").build();
     private static final MarshallingInfo<String> SEGMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SegmentId").build();
+    private static final MarshallingInfo<Integer> SEGMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SegmentVersion").build();
 
     private static final ExportJobRequestMarshaller instance = new ExportJobRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ExportJobRequestMarshaller {
             protocolMarshaller.marshall(exportJobRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(exportJobRequest.getS3UrlPrefix(), S3URLPREFIX_BINDING);
             protocolMarshaller.marshall(exportJobRequest.getSegmentId(), SEGMENTID_BINDING);
+            protocolMarshaller.marshall(exportJobRequest.getSegmentVersion(), SEGMENTVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

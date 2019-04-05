@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,8 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Use Manual audio remixing (RemixSettings) to adjust audio levels for each output channel. With audio remixing, you
- * can output more or fewer audio channels than your input audio source provides.
+ * Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel in each output of your job.
+ * With audio remixing, you can output more or fewer audio channels than your input audio source provides.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/RemixSettings" target="_top">AWS API
  *      Documentation</a>
@@ -27,6 +27,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel.
+     * Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the
+     * input channel unchanged to the output channel (no attenuation or amplification).
+     */
     private ChannelMapping channelMapping;
     /**
      * Specify the number of audio channels from your input that you want to use in your output. With remixing, you
@@ -38,7 +43,14 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer channelsOut;
 
     /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel.
+     * Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the
+     * input channel unchanged to the output channel (no attenuation or amplification).
+     * 
      * @param channelMapping
+     *        Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each
+     *        channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0
+     *        passes the input channel unchanged to the output channel (no attenuation or amplification).
      */
 
     public void setChannelMapping(ChannelMapping channelMapping) {
@@ -46,7 +58,13 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel.
+     * Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the
+     * input channel unchanged to the output channel (no attenuation or amplification).
+     * 
+     * @return Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each
+     *         channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of
+     *         0 passes the input channel unchanged to the output channel (no attenuation or amplification).
      */
 
     public ChannelMapping getChannelMapping() {
@@ -54,7 +72,14 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel.
+     * Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the
+     * input channel unchanged to the output channel (no attenuation or amplification).
+     * 
      * @param channelMapping
+     *        Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each
+     *        channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0
+     *        passes the input channel unchanged to the output channel (no attenuation or amplification).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,7 +169,8 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

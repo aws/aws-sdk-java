@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,11 +34,23 @@ public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String vTLDeviceARN;
-
+    /**
+     * <p>
+     * Specifies the type of device that the VTL device emulates.
+     * </p>
+     */
     private String vTLDeviceType;
-
+    /**
+     * <p>
+     * Specifies the vendor of the device that the VTL device object emulates.
+     * </p>
+     */
     private String vTLDeviceVendor;
-
+    /**
+     * <p>
+     * Specifies the model number of device that the VTL device emulates.
+     * </p>
+     */
     private String vTLDeviceProductIdentifier;
     /**
      * <p>
@@ -88,7 +100,12 @@ public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the type of device that the VTL device emulates.
+     * </p>
+     * 
      * @param vTLDeviceType
+     *        Specifies the type of device that the VTL device emulates.
      */
 
     public void setVTLDeviceType(String vTLDeviceType) {
@@ -96,7 +113,11 @@ public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the type of device that the VTL device emulates.
+     * </p>
+     * 
+     * @return Specifies the type of device that the VTL device emulates.
      */
 
     public String getVTLDeviceType() {
@@ -104,7 +125,12 @@ public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the type of device that the VTL device emulates.
+     * </p>
+     * 
      * @param vTLDeviceType
+     *        Specifies the type of device that the VTL device emulates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,7 +140,12 @@ public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the vendor of the device that the VTL device object emulates.
+     * </p>
+     * 
      * @param vTLDeviceVendor
+     *        Specifies the vendor of the device that the VTL device object emulates.
      */
 
     public void setVTLDeviceVendor(String vTLDeviceVendor) {
@@ -122,7 +153,11 @@ public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the vendor of the device that the VTL device object emulates.
+     * </p>
+     * 
+     * @return Specifies the vendor of the device that the VTL device object emulates.
      */
 
     public String getVTLDeviceVendor() {
@@ -130,7 +165,12 @@ public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the vendor of the device that the VTL device object emulates.
+     * </p>
+     * 
      * @param vTLDeviceVendor
+     *        Specifies the vendor of the device that the VTL device object emulates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,7 +180,12 @@ public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the model number of device that the VTL device emulates.
+     * </p>
+     * 
      * @param vTLDeviceProductIdentifier
+     *        Specifies the model number of device that the VTL device emulates.
      */
 
     public void setVTLDeviceProductIdentifier(String vTLDeviceProductIdentifier) {
@@ -148,7 +193,11 @@ public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the model number of device that the VTL device emulates.
+     * </p>
+     * 
+     * @return Specifies the model number of device that the VTL device emulates.
      */
 
     public String getVTLDeviceProductIdentifier() {
@@ -156,7 +205,12 @@ public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the model number of device that the VTL device emulates.
+     * </p>
+     * 
      * @param vTLDeviceProductIdentifier
+     *        Specifies the model number of device that the VTL device emulates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,7 +260,8 @@ public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

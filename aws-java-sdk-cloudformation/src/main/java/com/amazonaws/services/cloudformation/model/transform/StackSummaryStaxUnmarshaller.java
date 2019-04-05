@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,17 +59,17 @@ public class StackSummaryStaxUnmarshaller implements Unmarshaller<StackSummary, 
                 }
 
                 if (context.testExpression("CreationTime", targetDepth)) {
-                    stackSummary.setCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackSummary.setCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("LastUpdatedTime", targetDepth)) {
-                    stackSummary.setLastUpdatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackSummary.setLastUpdatedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("DeletionTime", targetDepth)) {
-                    stackSummary.setDeletionTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    stackSummary.setDeletionTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -90,6 +90,11 @@ public class StackSummaryStaxUnmarshaller implements Unmarshaller<StackSummary, 
 
                 if (context.testExpression("RootId", targetDepth)) {
                     stackSummary.setRootId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DriftInformation", targetDepth)) {
+                    stackSummary.setDriftInformation(StackDriftInformationSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

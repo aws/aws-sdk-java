@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,10 +50,22 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private ProjectSource source;
     /**
      * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     */
+    private java.util.List<ProjectSource> secondarySources;
+    /**
+     * <p>
      * Information to be changed about the build output artifacts for the build project.
      * </p>
      */
     private ProjectArtifacts artifacts;
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     */
+    private java.util.List<ProjectArtifacts> secondaryArtifacts;
     /**
      * <p>
      * Stores recently used information so that it can be quickly accessed at a later time.
@@ -82,12 +94,24 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer timeoutInMinutes;
     /**
      * <p>
-     * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
-     * build output artifacts.
+     * The number of minutes a build is allowed to be queued before it times out.
      * </p>
+     */
+    private Integer queuedTimeoutInMinutes;
+    /**
      * <p>
-     * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
+     * </p>
+     * <note>
+     * <p>
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      */
     private String encryptionKey;
@@ -108,10 +132,17 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * Set this to true to generate a publicly accessible URL for your project's build badge.
      * </p>
      */
     private Boolean badgeEnabled;
+    /**
+     * <p>
+     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
+     * bucket, or both.
+     * </p>
+     */
+    private LogsConfig logsConfig;
 
     /**
      * <p>
@@ -259,6 +290,76 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @return An array of <code>ProjectSource</code> objects.
+     */
+
+    public java.util.List<ProjectSource> getSecondarySources() {
+        return secondarySources;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @param secondarySources
+     *        An array of <code>ProjectSource</code> objects.
+     */
+
+    public void setSecondarySources(java.util.Collection<ProjectSource> secondarySources) {
+        if (secondarySources == null) {
+            this.secondarySources = null;
+            return;
+        }
+
+        this.secondarySources = new java.util.ArrayList<ProjectSource>(secondarySources);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondarySources(java.util.Collection)} or {@link #withSecondarySources(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param secondarySources
+     *        An array of <code>ProjectSource</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withSecondarySources(ProjectSource... secondarySources) {
+        if (this.secondarySources == null) {
+            setSecondarySources(new java.util.ArrayList<ProjectSource>(secondarySources.length));
+        }
+        for (ProjectSource ele : secondarySources) {
+            this.secondarySources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @param secondarySources
+     *        An array of <code>ProjectSource</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withSecondarySources(java.util.Collection<ProjectSource> secondarySources) {
+        setSecondarySources(secondarySources);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information to be changed about the build output artifacts for the build project.
      * </p>
      * 
@@ -294,6 +395,76 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public UpdateProjectRequest withArtifacts(ProjectArtifacts artifacts) {
         setArtifacts(artifacts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @return An array of <code>ProjectSource</code> objects.
+     */
+
+    public java.util.List<ProjectArtifacts> getSecondaryArtifacts() {
+        return secondaryArtifacts;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @param secondaryArtifacts
+     *        An array of <code>ProjectSource</code> objects.
+     */
+
+    public void setSecondaryArtifacts(java.util.Collection<ProjectArtifacts> secondaryArtifacts) {
+        if (secondaryArtifacts == null) {
+            this.secondaryArtifacts = null;
+            return;
+        }
+
+        this.secondaryArtifacts = new java.util.ArrayList<ProjectArtifacts>(secondaryArtifacts);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecondaryArtifacts(java.util.Collection)} or {@link #withSecondaryArtifacts(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param secondaryArtifacts
+     *        An array of <code>ProjectSource</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withSecondaryArtifacts(ProjectArtifacts... secondaryArtifacts) {
+        if (this.secondaryArtifacts == null) {
+            setSecondaryArtifacts(new java.util.ArrayList<ProjectArtifacts>(secondaryArtifacts.length));
+        }
+        for (ProjectArtifacts ele : secondaryArtifacts) {
+            this.secondaryArtifacts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProjectSource</code> objects.
+     * </p>
+     * 
+     * @param secondaryArtifacts
+     *        An array of <code>ProjectSource</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withSecondaryArtifacts(java.util.Collection<ProjectArtifacts> secondaryArtifacts) {
+        setSecondaryArtifacts(secondaryArtifacts);
         return this;
     }
 
@@ -471,20 +642,71 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
-     * build output artifacts.
+     * The number of minutes a build is allowed to be queued before it times out.
      * </p>
+     * 
+     * @param queuedTimeoutInMinutes
+     *        The number of minutes a build is allowed to be queued before it times out.
+     */
+
+    public void setQueuedTimeoutInMinutes(Integer queuedTimeoutInMinutes) {
+        this.queuedTimeoutInMinutes = queuedTimeoutInMinutes;
+    }
+
+    /**
      * <p>
-     * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).
+     * The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     * 
+     * @return The number of minutes a build is allowed to be queued before it times out.
+     */
+
+    public Integer getQueuedTimeoutInMinutes() {
+        return this.queuedTimeoutInMinutes;
+    }
+
+    /**
+     * <p>
+     * The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     * 
+     * @param queuedTimeoutInMinutes
+     *        The number of minutes a build is allowed to be queued before it times out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withQueuedTimeoutInMinutes(Integer queuedTimeoutInMinutes) {
+        setQueuedTimeoutInMinutes(queuedTimeoutInMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
+     * </p>
+     * <note>
+     * <p>
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
      * @param encryptionKey
-     *        The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
-     *        the build output artifacts.</p>
+     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
+     *        output artifacts.</p> <note>
      *        <p>
-     *        You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     *        format <code>alias/<i>alias-name</i> </code>).
+     *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
+     *        permission to that key.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *        the format <code>alias/<i>alias-name</i> </code>).
      */
 
     public void setEncryptionKey(String encryptionKey) {
@@ -493,19 +715,30 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
-     * build output artifacts.
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
      * </p>
+     * <note>
      * <p>
-     * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
-     * @return The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
-     *         the build output artifacts.</p>
+     * @return The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
+     *         output artifacts.</p> <note>
      *         <p>
-     *         You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     *         format <code>alias/<i>alias-name</i> </code>).
+     *         You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
+     *         permission to that key.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *         the format <code>alias/<i>alias-name</i> </code>).
      */
 
     public String getEncryptionKey() {
@@ -514,20 +747,31 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
-     * build output artifacts.
+     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+     * artifacts.
      * </p>
+     * <note>
      * <p>
-     * You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the format
-     * <code>alias/<i>alias-name</i> </code>).
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
      * @param encryptionKey
-     *        The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
-     *        the build output artifacts.</p>
+     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
+     *        output artifacts.</p> <note>
      *        <p>
-     *        You can specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     *        format <code>alias/<i>alias-name</i> </code>).
+     *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
+     *        permission to that key.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *        the format <code>alias/<i>alias-name</i> </code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -668,11 +912,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * Set this to true to generate a publicly accessible URL for your project's build badge.
      * </p>
      * 
      * @param badgeEnabled
-     *        Set this to true to generate a publicly-accessible URL for your project's build badge.
+     *        Set this to true to generate a publicly accessible URL for your project's build badge.
      */
 
     public void setBadgeEnabled(Boolean badgeEnabled) {
@@ -681,10 +925,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * Set this to true to generate a publicly accessible URL for your project's build badge.
      * </p>
      * 
-     * @return Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * @return Set this to true to generate a publicly accessible URL for your project's build badge.
      */
 
     public Boolean getBadgeEnabled() {
@@ -693,11 +937,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * Set this to true to generate a publicly accessible URL for your project's build badge.
      * </p>
      * 
      * @param badgeEnabled
-     *        Set this to true to generate a publicly-accessible URL for your project's build badge.
+     *        Set this to true to generate a publicly accessible URL for your project's build badge.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -708,10 +952,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * Set this to true to generate a publicly accessible URL for your project's build badge.
      * </p>
      * 
-     * @return Set this to true to generate a publicly-accessible URL for your project's build badge.
+     * @return Set this to true to generate a publicly accessible URL for your project's build badge.
      */
 
     public Boolean isBadgeEnabled() {
@@ -719,7 +963,54 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
+     * bucket, or both.
+     * </p>
+     * 
+     * @param logsConfig
+     *        Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in
+     *        an S3 bucket, or both.
+     */
+
+    public void setLogsConfig(LogsConfig logsConfig) {
+        this.logsConfig = logsConfig;
+    }
+
+    /**
+     * <p>
+     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
+     * bucket, or both.
+     * </p>
+     * 
+     * @return Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs
+     *         in an S3 bucket, or both.
+     */
+
+    public LogsConfig getLogsConfig() {
+        return this.logsConfig;
+    }
+
+    /**
+     * <p>
+     * Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in an S3
+     * bucket, or both.
+     * </p>
+     * 
+     * @param logsConfig
+     *        Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs, logs in
+     *        an S3 bucket, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withLogsConfig(LogsConfig logsConfig) {
+        setLogsConfig(logsConfig);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -735,8 +1026,12 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Description: ").append(getDescription()).append(",");
         if (getSource() != null)
             sb.append("Source: ").append(getSource()).append(",");
+        if (getSecondarySources() != null)
+            sb.append("SecondarySources: ").append(getSecondarySources()).append(",");
         if (getArtifacts() != null)
             sb.append("Artifacts: ").append(getArtifacts()).append(",");
+        if (getSecondaryArtifacts() != null)
+            sb.append("SecondaryArtifacts: ").append(getSecondaryArtifacts()).append(",");
         if (getCache() != null)
             sb.append("Cache: ").append(getCache()).append(",");
         if (getEnvironment() != null)
@@ -745,6 +1040,8 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getTimeoutInMinutes() != null)
             sb.append("TimeoutInMinutes: ").append(getTimeoutInMinutes()).append(",");
+        if (getQueuedTimeoutInMinutes() != null)
+            sb.append("QueuedTimeoutInMinutes: ").append(getQueuedTimeoutInMinutes()).append(",");
         if (getEncryptionKey() != null)
             sb.append("EncryptionKey: ").append(getEncryptionKey()).append(",");
         if (getTags() != null)
@@ -752,7 +1049,9 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getBadgeEnabled() != null)
-            sb.append("BadgeEnabled: ").append(getBadgeEnabled());
+            sb.append("BadgeEnabled: ").append(getBadgeEnabled()).append(",");
+        if (getLogsConfig() != null)
+            sb.append("LogsConfig: ").append(getLogsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -779,9 +1078,17 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
+        if (other.getSecondarySources() == null ^ this.getSecondarySources() == null)
+            return false;
+        if (other.getSecondarySources() != null && other.getSecondarySources().equals(this.getSecondarySources()) == false)
+            return false;
         if (other.getArtifacts() == null ^ this.getArtifacts() == null)
             return false;
         if (other.getArtifacts() != null && other.getArtifacts().equals(this.getArtifacts()) == false)
+            return false;
+        if (other.getSecondaryArtifacts() == null ^ this.getSecondaryArtifacts() == null)
+            return false;
+        if (other.getSecondaryArtifacts() != null && other.getSecondaryArtifacts().equals(this.getSecondaryArtifacts()) == false)
             return false;
         if (other.getCache() == null ^ this.getCache() == null)
             return false;
@@ -799,6 +1106,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTimeoutInMinutes() != null && other.getTimeoutInMinutes().equals(this.getTimeoutInMinutes()) == false)
             return false;
+        if (other.getQueuedTimeoutInMinutes() == null ^ this.getQueuedTimeoutInMinutes() == null)
+            return false;
+        if (other.getQueuedTimeoutInMinutes() != null && other.getQueuedTimeoutInMinutes().equals(this.getQueuedTimeoutInMinutes()) == false)
+            return false;
         if (other.getEncryptionKey() == null ^ this.getEncryptionKey() == null)
             return false;
         if (other.getEncryptionKey() != null && other.getEncryptionKey().equals(this.getEncryptionKey()) == false)
@@ -815,6 +1126,10 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getBadgeEnabled() != null && other.getBadgeEnabled().equals(this.getBadgeEnabled()) == false)
             return false;
+        if (other.getLogsConfig() == null ^ this.getLogsConfig() == null)
+            return false;
+        if (other.getLogsConfig() != null && other.getLogsConfig().equals(this.getLogsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -826,15 +1141,19 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getSecondarySources() == null) ? 0 : getSecondarySources().hashCode());
         hashCode = prime * hashCode + ((getArtifacts() == null) ? 0 : getArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getSecondaryArtifacts() == null) ? 0 : getSecondaryArtifacts().hashCode());
         hashCode = prime * hashCode + ((getCache() == null) ? 0 : getCache().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode());
+        hashCode = prime * hashCode + ((getQueuedTimeoutInMinutes() == null) ? 0 : getQueuedTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getBadgeEnabled() == null) ? 0 : getBadgeEnabled().hashCode());
+        hashCode = prime * hashCode + ((getLogsConfig() == null) ? 0 : getLogsConfig().hashCode());
         return hashCode;
     }
 

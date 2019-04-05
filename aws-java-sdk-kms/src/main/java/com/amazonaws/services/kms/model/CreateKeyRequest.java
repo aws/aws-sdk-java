@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,20 +85,49 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String keyUsage;
     /**
      * <p>
-     * The source of the CMK's key material.
+     * The source of the CMK's key material. You cannot change the origin after you create the CMK.
      * </p>
      * <p>
-     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this parameter is set to
-     * <code>EXTERNAL</code>, the request creates a CMK without key material so that you can import key material from
-     * your existing key management infrastructure. For more information about importing key material into AWS KMS, see
-     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
-     * the <i>AWS Key Management Service Developer Guide</i>.
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material in its own key store.
      * </p>
      * <p>
-     * The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
+     * import key material from your existing key management infrastructure. For more information about importing key
+     * material into AWS KMS, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in a AWS KMS <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> and
+     * creates its key material in the associated AWS CloudHSM cluster. You must also use the
+     * <code>CustomKeyStoreId</code> parameter to identify the custom key store.
      * </p>
      */
     private String origin;
+    /**
+     * <p>
+     * Creates the CMK in the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> and the
+     * key material in its associated AWS CloudHSM cluster. To create a CMK in a custom key store, you must also specify
+     * the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS CloudHSM cluster that is
+     * associated with the custom key store must have at least two active HSMs, each in a different Availability Zone in
+     * the Region.
+     * </p>
+     * <p>
+     * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * <p>
+     * The response includes the custom key store ID and the ID of the AWS CloudHSM cluster.
+     * </p>
+     * <p>
+     * This operation is part of the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store
+     * feature</a> feature in AWS KMS, which combines the convenience and extensive integration of AWS KMS with the
+     * isolation and control of a single-tenant key store.
+     * </p>
+     */
+    private String customKeyStoreId;
     /**
      * <p>
      * A flag to indicate whether to bypass the key policy lockout safety check.
@@ -534,31 +563,42 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The source of the CMK's key material.
+     * The source of the CMK's key material. You cannot change the origin after you create the CMK.
      * </p>
      * <p>
-     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this parameter is set to
-     * <code>EXTERNAL</code>, the request creates a CMK without key material so that you can import key material from
-     * your existing key management infrastructure. For more information about importing key material into AWS KMS, see
-     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
-     * the <i>AWS Key Management Service Developer Guide</i>.
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material in its own key store.
      * </p>
      * <p>
-     * The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
+     * import key material from your existing key management infrastructure. For more information about importing key
+     * material into AWS KMS, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in a AWS KMS <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> and
+     * creates its key material in the associated AWS CloudHSM cluster. You must also use the
+     * <code>CustomKeyStoreId</code> parameter to identify the custom key store.
      * </p>
      * 
      * @param origin
-     *        The source of the CMK's key material.</p>
+     *        The source of the CMK's key material. You cannot change the origin after you create the CMK.</p>
      *        <p>
-     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this parameter is
-     *        set to <code>EXTERNAL</code>, the request creates a CMK without key material so that you can import key
-     *        material from your existing key management infrastructure. For more information about importing key
-     *        material into AWS KMS, see <a
+     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material in its own key store.
+     *        </p>
+     *        <p>
+     *        When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
+     *        can import key material from your existing key management infrastructure. For more information about
+     *        importing key material into AWS KMS, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a>
      *        in the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+     *        When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in a AWS KMS <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
+     *        and creates its key material in the associated AWS CloudHSM cluster. You must also use the
+     *        <code>CustomKeyStoreId</code> parameter to identify the custom key store.
      * @see OriginType
      */
 
@@ -568,30 +608,41 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The source of the CMK's key material.
+     * The source of the CMK's key material. You cannot change the origin after you create the CMK.
      * </p>
      * <p>
-     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this parameter is set to
-     * <code>EXTERNAL</code>, the request creates a CMK without key material so that you can import key material from
-     * your existing key management infrastructure. For more information about importing key material into AWS KMS, see
-     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
-     * the <i>AWS Key Management Service Developer Guide</i>.
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material in its own key store.
      * </p>
      * <p>
-     * The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
+     * import key material from your existing key management infrastructure. For more information about importing key
+     * material into AWS KMS, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in a AWS KMS <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> and
+     * creates its key material in the associated AWS CloudHSM cluster. You must also use the
+     * <code>CustomKeyStoreId</code> parameter to identify the custom key store.
      * </p>
      * 
-     * @return The source of the CMK's key material.</p>
+     * @return The source of the CMK's key material. You cannot change the origin after you create the CMK.</p>
      *         <p>
-     *         The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this parameter is
-     *         set to <code>EXTERNAL</code>, the request creates a CMK without key material so that you can import key
-     *         material from your existing key management infrastructure. For more information about importing key
-     *         material into AWS KMS, see <a
+     *         The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material in its own key store.
+     *         </p>
+     *         <p>
+     *         When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
+     *         can import key material from your existing key management infrastructure. For more information about
+     *         importing key material into AWS KMS, see <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key
      *         Material</a> in the <i>AWS Key Management Service Developer Guide</i>.
      *         </p>
      *         <p>
-     *         The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+     *         When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in a AWS KMS <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
+     *         and creates its key material in the associated AWS CloudHSM cluster. You must also use the
+     *         <code>CustomKeyStoreId</code> parameter to identify the custom key store.
      * @see OriginType
      */
 
@@ -601,31 +652,42 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The source of the CMK's key material.
+     * The source of the CMK's key material. You cannot change the origin after you create the CMK.
      * </p>
      * <p>
-     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this parameter is set to
-     * <code>EXTERNAL</code>, the request creates a CMK without key material so that you can import key material from
-     * your existing key management infrastructure. For more information about importing key material into AWS KMS, see
-     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
-     * the <i>AWS Key Management Service Developer Guide</i>.
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material in its own key store.
      * </p>
      * <p>
-     * The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
+     * import key material from your existing key management infrastructure. For more information about importing key
+     * material into AWS KMS, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in a AWS KMS <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> and
+     * creates its key material in the associated AWS CloudHSM cluster. You must also use the
+     * <code>CustomKeyStoreId</code> parameter to identify the custom key store.
      * </p>
      * 
      * @param origin
-     *        The source of the CMK's key material.</p>
+     *        The source of the CMK's key material. You cannot change the origin after you create the CMK.</p>
      *        <p>
-     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this parameter is
-     *        set to <code>EXTERNAL</code>, the request creates a CMK without key material so that you can import key
-     *        material from your existing key management infrastructure. For more information about importing key
-     *        material into AWS KMS, see <a
+     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material in its own key store.
+     *        </p>
+     *        <p>
+     *        When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
+     *        can import key material from your existing key management infrastructure. For more information about
+     *        importing key material into AWS KMS, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a>
      *        in the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+     *        When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in a AWS KMS <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
+     *        and creates its key material in the associated AWS CloudHSM cluster. You must also use the
+     *        <code>CustomKeyStoreId</code> parameter to identify the custom key store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginType
      */
@@ -637,31 +699,42 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The source of the CMK's key material.
+     * The source of the CMK's key material. You cannot change the origin after you create the CMK.
      * </p>
      * <p>
-     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this parameter is set to
-     * <code>EXTERNAL</code>, the request creates a CMK without key material so that you can import key material from
-     * your existing key management infrastructure. For more information about importing key material into AWS KMS, see
-     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
-     * the <i>AWS Key Management Service Developer Guide</i>.
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material in its own key store.
      * </p>
      * <p>
-     * The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
+     * import key material from your existing key management infrastructure. For more information about importing key
+     * material into AWS KMS, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in a AWS KMS <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> and
+     * creates its key material in the associated AWS CloudHSM cluster. You must also use the
+     * <code>CustomKeyStoreId</code> parameter to identify the custom key store.
      * </p>
      * 
      * @param origin
-     *        The source of the CMK's key material.</p>
+     *        The source of the CMK's key material. You cannot change the origin after you create the CMK.</p>
      *        <p>
-     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this parameter is
-     *        set to <code>EXTERNAL</code>, the request creates a CMK without key material so that you can import key
-     *        material from your existing key management infrastructure. For more information about importing key
-     *        material into AWS KMS, see <a
+     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material in its own key store.
+     *        </p>
+     *        <p>
+     *        When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
+     *        can import key material from your existing key management infrastructure. For more information about
+     *        importing key material into AWS KMS, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a>
      *        in the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+     *        When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in a AWS KMS <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
+     *        and creates its key material in the associated AWS CloudHSM cluster. You must also use the
+     *        <code>CustomKeyStoreId</code> parameter to identify the custom key store.
      * @see OriginType
      */
 
@@ -671,37 +744,187 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The source of the CMK's key material.
+     * The source of the CMK's key material. You cannot change the origin after you create the CMK.
      * </p>
      * <p>
-     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this parameter is set to
-     * <code>EXTERNAL</code>, the request creates a CMK without key material so that you can import key material from
-     * your existing key management infrastructure. For more information about importing key material into AWS KMS, see
-     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
-     * the <i>AWS Key Management Service Developer Guide</i>.
+     * The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material in its own key store.
      * </p>
      * <p>
-     * The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+     * When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you can
+     * import key material from your existing key management infrastructure. For more information about importing key
+     * material into AWS KMS, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the
+     * <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in a AWS KMS <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> and
+     * creates its key material in the associated AWS CloudHSM cluster. You must also use the
+     * <code>CustomKeyStoreId</code> parameter to identify the custom key store.
      * </p>
      * 
      * @param origin
-     *        The source of the CMK's key material.</p>
+     *        The source of the CMK's key material. You cannot change the origin after you create the CMK.</p>
      *        <p>
-     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material. When this parameter is
-     *        set to <code>EXTERNAL</code>, the request creates a CMK without key material so that you can import key
-     *        material from your existing key management infrastructure. For more information about importing key
-     *        material into AWS KMS, see <a
+     *        The default is <code>AWS_KMS</code>, which means AWS KMS creates the key material in its own key store.
+     *        </p>
+     *        <p>
+     *        When the parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
+     *        can import key material from your existing key management infrastructure. For more information about
+     *        importing key material into AWS KMS, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a>
      *        in the <i>AWS Key Management Service Developer Guide</i>.
      *        </p>
      *        <p>
-     *        The CMK's <code>Origin</code> is immutable and is set when the CMK is created.
+     *        When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in a AWS KMS <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
+     *        and creates its key material in the associated AWS CloudHSM cluster. You must also use the
+     *        <code>CustomKeyStoreId</code> parameter to identify the custom key store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginType
      */
 
     public CreateKeyRequest withOrigin(OriginType origin) {
         this.origin = origin.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Creates the CMK in the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> and the
+     * key material in its associated AWS CloudHSM cluster. To create a CMK in a custom key store, you must also specify
+     * the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS CloudHSM cluster that is
+     * associated with the custom key store must have at least two active HSMs, each in a different Availability Zone in
+     * the Region.
+     * </p>
+     * <p>
+     * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * <p>
+     * The response includes the custom key store ID and the ID of the AWS CloudHSM cluster.
+     * </p>
+     * <p>
+     * This operation is part of the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store
+     * feature</a> feature in AWS KMS, which combines the convenience and extensive integration of AWS KMS with the
+     * isolation and control of a single-tenant key store.
+     * </p>
+     * 
+     * @param customKeyStoreId
+     *        Creates the CMK in the specified <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
+     *        and the key material in its associated AWS CloudHSM cluster. To create a CMK in a custom key store, you
+     *        must also specify the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS
+     *        CloudHSM cluster that is associated with the custom key store must have at least two active HSMs, each in
+     *        a different Availability Zone in the Region.</p>
+     *        <p>
+     *        To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     *        </p>
+     *        <p>
+     *        The response includes the custom key store ID and the ID of the AWS CloudHSM cluster.
+     *        </p>
+     *        <p>
+     *        This operation is part of the <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key
+     *        Store feature</a> feature in AWS KMS, which combines the convenience and extensive integration of AWS KMS
+     *        with the isolation and control of a single-tenant key store.
+     */
+
+    public void setCustomKeyStoreId(String customKeyStoreId) {
+        this.customKeyStoreId = customKeyStoreId;
+    }
+
+    /**
+     * <p>
+     * Creates the CMK in the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> and the
+     * key material in its associated AWS CloudHSM cluster. To create a CMK in a custom key store, you must also specify
+     * the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS CloudHSM cluster that is
+     * associated with the custom key store must have at least two active HSMs, each in a different Availability Zone in
+     * the Region.
+     * </p>
+     * <p>
+     * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * <p>
+     * The response includes the custom key store ID and the ID of the AWS CloudHSM cluster.
+     * </p>
+     * <p>
+     * This operation is part of the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store
+     * feature</a> feature in AWS KMS, which combines the convenience and extensive integration of AWS KMS with the
+     * isolation and control of a single-tenant key store.
+     * </p>
+     * 
+     * @return Creates the CMK in the specified <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
+     *         and the key material in its associated AWS CloudHSM cluster. To create a CMK in a custom key store, you
+     *         must also specify the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS
+     *         CloudHSM cluster that is associated with the custom key store must have at least two active HSMs, each in
+     *         a different Availability Zone in the Region.</p>
+     *         <p>
+     *         To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     *         </p>
+     *         <p>
+     *         The response includes the custom key store ID and the ID of the AWS CloudHSM cluster.
+     *         </p>
+     *         <p>
+     *         This operation is part of the <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key
+     *         Store feature</a> feature in AWS KMS, which combines the convenience and extensive integration of AWS KMS
+     *         with the isolation and control of a single-tenant key store.
+     */
+
+    public String getCustomKeyStoreId() {
+        return this.customKeyStoreId;
+    }
+
+    /**
+     * <p>
+     * Creates the CMK in the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> and the
+     * key material in its associated AWS CloudHSM cluster. To create a CMK in a custom key store, you must also specify
+     * the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS CloudHSM cluster that is
+     * associated with the custom key store must have at least two active HSMs, each in a different Availability Zone in
+     * the Region.
+     * </p>
+     * <p>
+     * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * <p>
+     * The response includes the custom key store ID and the ID of the AWS CloudHSM cluster.
+     * </p>
+     * <p>
+     * This operation is part of the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store
+     * feature</a> feature in AWS KMS, which combines the convenience and extensive integration of AWS KMS with the
+     * isolation and control of a single-tenant key store.
+     * </p>
+     * 
+     * @param customKeyStoreId
+     *        Creates the CMK in the specified <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
+     *        and the key material in its associated AWS CloudHSM cluster. To create a CMK in a custom key store, you
+     *        must also specify the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS
+     *        CloudHSM cluster that is associated with the custom key store must have at least two active HSMs, each in
+     *        a different Availability Zone in the Region.</p>
+     *        <p>
+     *        To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     *        </p>
+     *        <p>
+     *        The response includes the custom key store ID and the ID of the AWS CloudHSM cluster.
+     *        </p>
+     *        <p>
+     *        This operation is part of the <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key
+     *        Store feature</a> feature in AWS KMS, which combines the convenience and extensive integration of AWS KMS
+     *        with the isolation and control of a single-tenant key store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateKeyRequest withCustomKeyStoreId(String customKeyStoreId) {
+        setCustomKeyStoreId(customKeyStoreId);
         return this;
     }
 
@@ -1003,7 +1226,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1021,6 +1245,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("KeyUsage: ").append(getKeyUsage()).append(",");
         if (getOrigin() != null)
             sb.append("Origin: ").append(getOrigin()).append(",");
+        if (getCustomKeyStoreId() != null)
+            sb.append("CustomKeyStoreId: ").append(getCustomKeyStoreId()).append(",");
         if (getBypassPolicyLockoutSafetyCheck() != null)
             sb.append("BypassPolicyLockoutSafetyCheck: ").append(getBypassPolicyLockoutSafetyCheck()).append(",");
         if (getTags() != null)
@@ -1055,6 +1281,10 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getOrigin() != null && other.getOrigin().equals(this.getOrigin()) == false)
             return false;
+        if (other.getCustomKeyStoreId() == null ^ this.getCustomKeyStoreId() == null)
+            return false;
+        if (other.getCustomKeyStoreId() != null && other.getCustomKeyStoreId().equals(this.getCustomKeyStoreId()) == false)
+            return false;
         if (other.getBypassPolicyLockoutSafetyCheck() == null ^ this.getBypassPolicyLockoutSafetyCheck() == null)
             return false;
         if (other.getBypassPolicyLockoutSafetyCheck() != null
@@ -1076,6 +1306,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getKeyUsage() == null) ? 0 : getKeyUsage().hashCode());
         hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
+        hashCode = prime * hashCode + ((getCustomKeyStoreId() == null) ? 0 : getCustomKeyStoreId().hashCode());
         hashCode = prime * hashCode + ((getBypassPolicyLockoutSafetyCheck() == null) ? 0 : getBypassPolicyLockoutSafetyCheck().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

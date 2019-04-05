@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the CreateConnection operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnection" target="_top">AWS API
  *      Documentation</a>
@@ -28,16 +25,38 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The location of the connection.
+     * </p>
+     */
     private String location;
-
+    /**
+     * <p>
+     * The bandwidth of the connection.
+     * </p>
+     */
     private String bandwidth;
-
+    /**
+     * <p>
+     * The name of the connection.
+     * </p>
+     */
     private String connectionName;
-
+    /**
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     */
     private String lagId;
 
     /**
+     * <p>
+     * The location of the connection.
+     * </p>
+     * 
      * @param location
+     *        The location of the connection.
      */
 
     public void setLocation(String location) {
@@ -45,7 +64,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The location of the connection.
+     * </p>
+     * 
+     * @return The location of the connection.
      */
 
     public String getLocation() {
@@ -53,7 +76,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The location of the connection.
+     * </p>
+     * 
      * @param location
+     *        The location of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,7 +91,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The bandwidth of the connection.
+     * </p>
+     * 
      * @param bandwidth
+     *        The bandwidth of the connection.
      */
 
     public void setBandwidth(String bandwidth) {
@@ -71,7 +104,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The bandwidth of the connection.
+     * </p>
+     * 
+     * @return The bandwidth of the connection.
      */
 
     public String getBandwidth() {
@@ -79,7 +116,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The bandwidth of the connection.
+     * </p>
+     * 
      * @param bandwidth
+     *        The bandwidth of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,7 +131,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the connection.
+     * </p>
+     * 
      * @param connectionName
+     *        The name of the connection.
      */
 
     public void setConnectionName(String connectionName) {
@@ -97,7 +144,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the connection.
+     * </p>
+     * 
+     * @return The name of the connection.
      */
 
     public String getConnectionName() {
@@ -105,7 +156,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the connection.
+     * </p>
+     * 
      * @param connectionName
+     *        The name of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,7 +171,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     * 
      * @param lagId
+     *        The ID of the LAG.
      */
 
     public void setLagId(String lagId) {
@@ -123,7 +184,11 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     * 
+     * @return The ID of the LAG.
      */
 
     public String getLagId() {
@@ -131,7 +196,12 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The ID of the LAG.
+     * </p>
+     * 
      * @param lagId
+     *        The ID of the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,7 +211,8 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

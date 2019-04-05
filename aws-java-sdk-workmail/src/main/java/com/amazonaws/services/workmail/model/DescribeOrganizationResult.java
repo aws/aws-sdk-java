@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
     private String directoryId;
     /**
      * <p>
-     * The type of directory associated with the Amazon WorkMail organization.
+     * The type of directory associated with the WorkMail organization.
      * </p>
      */
     private String directoryType;
@@ -61,13 +61,13 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
     private String defaultMailDomain;
     /**
      * <p>
-     * The date at which the organization became usable in the Amazon WorkMail context, in UNIX epoch time format.
+     * The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.
      * </p>
      */
     private java.util.Date completedDate;
     /**
      * <p>
-     * The (optional) error message indicating if unexpected behavior was encountered with regards to the organization.
+     * (Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.
      * </p>
      */
     private String errorMessage;
@@ -234,11 +234,11 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of directory associated with the Amazon WorkMail organization.
+     * The type of directory associated with the WorkMail organization.
      * </p>
      * 
      * @param directoryType
-     *        The type of directory associated with the Amazon WorkMail organization.
+     *        The type of directory associated with the WorkMail organization.
      */
 
     public void setDirectoryType(String directoryType) {
@@ -247,10 +247,10 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of directory associated with the Amazon WorkMail organization.
+     * The type of directory associated with the WorkMail organization.
      * </p>
      * 
-     * @return The type of directory associated with the Amazon WorkMail organization.
+     * @return The type of directory associated with the WorkMail organization.
      */
 
     public String getDirectoryType() {
@@ -259,11 +259,11 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of directory associated with the Amazon WorkMail organization.
+     * The type of directory associated with the WorkMail organization.
      * </p>
      * 
      * @param directoryType
-     *        The type of directory associated with the Amazon WorkMail organization.
+     *        The type of directory associated with the WorkMail organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,12 +314,11 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date at which the organization became usable in the Amazon WorkMail context, in UNIX epoch time format.
+     * The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.
      * </p>
      * 
      * @param completedDate
-     *        The date at which the organization became usable in the Amazon WorkMail context, in UNIX epoch time
-     *        format.
+     *        The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.
      */
 
     public void setCompletedDate(java.util.Date completedDate) {
@@ -328,11 +327,10 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date at which the organization became usable in the Amazon WorkMail context, in UNIX epoch time format.
+     * The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.
      * </p>
      * 
-     * @return The date at which the organization became usable in the Amazon WorkMail context, in UNIX epoch time
-     *         format.
+     * @return The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.
      */
 
     public java.util.Date getCompletedDate() {
@@ -341,12 +339,11 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date at which the organization became usable in the Amazon WorkMail context, in UNIX epoch time format.
+     * The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.
      * </p>
      * 
      * @param completedDate
-     *        The date at which the organization became usable in the Amazon WorkMail context, in UNIX epoch time
-     *        format.
+     *        The date at which the organization became usable in the WorkMail context, in UNIX epoch time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,11 +354,11 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The (optional) error message indicating if unexpected behavior was encountered with regards to the organization.
+     * (Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.
      * </p>
      * 
      * @param errorMessage
-     *        The (optional) error message indicating if unexpected behavior was encountered with regards to the
+     *        (Optional) The error message indicating if unexpected behavior was encountered with regards to the
      *        organization.
      */
 
@@ -371,10 +368,10 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The (optional) error message indicating if unexpected behavior was encountered with regards to the organization.
+     * (Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.
      * </p>
      * 
-     * @return The (optional) error message indicating if unexpected behavior was encountered with regards to the
+     * @return (Optional) The error message indicating if unexpected behavior was encountered with regards to the
      *         organization.
      */
 
@@ -384,11 +381,11 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The (optional) error message indicating if unexpected behavior was encountered with regards to the organization.
+     * (Optional) The error message indicating if unexpected behavior was encountered with regards to the organization.
      * </p>
      * 
      * @param errorMessage
-     *        The (optional) error message indicating if unexpected behavior was encountered with regards to the
+     *        (Optional) The error message indicating if unexpected behavior was encountered with regards to the
      *        organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -399,7 +396,8 @@ public class DescribeOrganizationResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

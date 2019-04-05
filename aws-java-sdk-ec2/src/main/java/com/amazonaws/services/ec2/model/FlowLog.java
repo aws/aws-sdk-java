@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,11 +33,11 @@ public class FlowLog implements Serializable, Cloneable {
     private java.util.Date creationTime;
     /**
      * <p>
-     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling
-     * has been applied for one or more network interfaces, or that you've reached the limit on the number of CloudWatch
-     * Logs log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the
-     * flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates
-     * an internal error.
+     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs throttling
+     * has been applied for one or more network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role associated with the flow log does not
+     * have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
+     * error.
      * </p>
      */
     private String deliverLogsErrorMessage;
@@ -83,6 +83,23 @@ public class FlowLog implements Serializable, Cloneable {
      * </p>
      */
     private String trafficType;
+    /**
+     * <p>
+     * Specifies the type of destination to which the flow log data is published. Flow log data can be published to
+     * CloudWatch Logs or Amazon S3.
+     * </p>
+     */
+    private String logDestinationType;
+    /**
+     * <p>
+     * Specifies the destination to which the flow log data is published. Flow log data can be published to an
+     * CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this element
+     * indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the data is published. If the
+     * flow log publishes to Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which the data is
+     * published.
+     * </p>
+     */
+    private String logDestination;
 
     /**
      * <p>
@@ -126,18 +143,18 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling
-     * has been applied for one or more network interfaces, or that you've reached the limit on the number of CloudWatch
-     * Logs log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the
-     * flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates
-     * an internal error.
+     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs throttling
+     * has been applied for one or more network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role associated with the flow log does not
+     * have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
+     * error.
      * </p>
      * 
      * @param deliverLogsErrorMessage
-     *        Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs
+     *        Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs
      *        throttling has been applied for one or more network interfaces, or that you've reached the limit on the
-     *        number of CloudWatch Logs log groups that you can create. <code>Access error</code> indicates that the IAM
-     *        role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs.
+     *        number of log groups that you can create. <code>Access error</code> indicates that the IAM role associated
+     *        with the flow log does not have sufficient permissions to publish to CloudWatch Logs.
      *        <code>Unknown error</code> indicates an internal error.
      */
 
@@ -147,17 +164,17 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling
-     * has been applied for one or more network interfaces, or that you've reached the limit on the number of CloudWatch
-     * Logs log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the
-     * flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates
-     * an internal error.
+     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs throttling
+     * has been applied for one or more network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role associated with the flow log does not
+     * have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
+     * error.
      * </p>
      * 
-     * @return Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs
+     * @return Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs
      *         throttling has been applied for one or more network interfaces, or that you've reached the limit on the
-     *         number of CloudWatch Logs log groups that you can create. <code>Access error</code> indicates that the
-     *         IAM role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs.
+     *         number of log groups that you can create. <code>Access error</code> indicates that the IAM role
+     *         associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs.
      *         <code>Unknown error</code> indicates an internal error.
      */
 
@@ -167,18 +184,18 @@ public class FlowLog implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs throttling
-     * has been applied for one or more network interfaces, or that you've reached the limit on the number of CloudWatch
-     * Logs log groups that you can create. <code>Access error</code> indicates that the IAM role associated with the
-     * flow log does not have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates
-     * an internal error.
+     * Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs throttling
+     * has been applied for one or more network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role associated with the flow log does not
+     * have sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
+     * error.
      * </p>
      * 
      * @param deliverLogsErrorMessage
-     *        Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch logs
+     *        Information about the error that occurred. <code>Rate limited</code> indicates that CloudWatch Logs
      *        throttling has been applied for one or more network interfaces, or that you've reached the limit on the
-     *        number of CloudWatch Logs log groups that you can create. <code>Access error</code> indicates that the IAM
-     *        role associated with the flow log does not have sufficient permissions to publish to CloudWatch Logs.
+     *        number of log groups that you can create. <code>Access error</code> indicates that the IAM role associated
+     *        with the flow log does not have sufficient permissions to publish to CloudWatch Logs.
      *        <code>Unknown error</code> indicates an internal error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -502,7 +519,155 @@ public class FlowLog implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Specifies the type of destination to which the flow log data is published. Flow log data can be published to
+     * CloudWatch Logs or Amazon S3.
+     * </p>
+     * 
+     * @param logDestinationType
+     *        Specifies the type of destination to which the flow log data is published. Flow log data can be published
+     *        to CloudWatch Logs or Amazon S3.
+     * @see LogDestinationType
+     */
+
+    public void setLogDestinationType(String logDestinationType) {
+        this.logDestinationType = logDestinationType;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of destination to which the flow log data is published. Flow log data can be published to
+     * CloudWatch Logs or Amazon S3.
+     * </p>
+     * 
+     * @return Specifies the type of destination to which the flow log data is published. Flow log data can be published
+     *         to CloudWatch Logs or Amazon S3.
+     * @see LogDestinationType
+     */
+
+    public String getLogDestinationType() {
+        return this.logDestinationType;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of destination to which the flow log data is published. Flow log data can be published to
+     * CloudWatch Logs or Amazon S3.
+     * </p>
+     * 
+     * @param logDestinationType
+     *        Specifies the type of destination to which the flow log data is published. Flow log data can be published
+     *        to CloudWatch Logs or Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogDestinationType
+     */
+
+    public FlowLog withLogDestinationType(String logDestinationType) {
+        setLogDestinationType(logDestinationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of destination to which the flow log data is published. Flow log data can be published to
+     * CloudWatch Logs or Amazon S3.
+     * </p>
+     * 
+     * @param logDestinationType
+     *        Specifies the type of destination to which the flow log data is published. Flow log data can be published
+     *        to CloudWatch Logs or Amazon S3.
+     * @see LogDestinationType
+     */
+
+    public void setLogDestinationType(LogDestinationType logDestinationType) {
+        withLogDestinationType(logDestinationType);
+    }
+
+    /**
+     * <p>
+     * Specifies the type of destination to which the flow log data is published. Flow log data can be published to
+     * CloudWatch Logs or Amazon S3.
+     * </p>
+     * 
+     * @param logDestinationType
+     *        Specifies the type of destination to which the flow log data is published. Flow log data can be published
+     *        to CloudWatch Logs or Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogDestinationType
+     */
+
+    public FlowLog withLogDestinationType(LogDestinationType logDestinationType) {
+        this.logDestinationType = logDestinationType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination to which the flow log data is published. Flow log data can be published to an
+     * CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this element
+     * indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the data is published. If the
+     * flow log publishes to Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which the data is
+     * published.
+     * </p>
+     * 
+     * @param logDestination
+     *        Specifies the destination to which the flow log data is published. Flow log data can be published to an
+     *        CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this
+     *        element indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the data is
+     *        published. If the flow log publishes to Amazon S3, this element indicates the ARN of the Amazon S3 bucket
+     *        to which the data is published.
+     */
+
+    public void setLogDestination(String logDestination) {
+        this.logDestination = logDestination;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination to which the flow log data is published. Flow log data can be published to an
+     * CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this element
+     * indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the data is published. If the
+     * flow log publishes to Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which the data is
+     * published.
+     * </p>
+     * 
+     * @return Specifies the destination to which the flow log data is published. Flow log data can be published to an
+     *         CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this
+     *         element indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the data is
+     *         published. If the flow log publishes to Amazon S3, this element indicates the ARN of the Amazon S3 bucket
+     *         to which the data is published.
+     */
+
+    public String getLogDestination() {
+        return this.logDestination;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination to which the flow log data is published. Flow log data can be published to an
+     * CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this element
+     * indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the data is published. If the
+     * flow log publishes to Amazon S3, this element indicates the ARN of the Amazon S3 bucket to which the data is
+     * published.
+     * </p>
+     * 
+     * @param logDestination
+     *        Specifies the destination to which the flow log data is published. Flow log data can be published to an
+     *        CloudWatch Logs log group or an Amazon S3 bucket. If the flow log publishes to CloudWatch Logs, this
+     *        element indicates the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the data is
+     *        published. If the flow log publishes to Amazon S3, this element indicates the ARN of the Amazon S3 bucket
+     *        to which the data is published.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FlowLog withLogDestination(String logDestination) {
+        setLogDestination(logDestination);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -529,7 +694,11 @@ public class FlowLog implements Serializable, Cloneable {
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getTrafficType() != null)
-            sb.append("TrafficType: ").append(getTrafficType());
+            sb.append("TrafficType: ").append(getTrafficType()).append(",");
+        if (getLogDestinationType() != null)
+            sb.append("LogDestinationType: ").append(getLogDestinationType()).append(",");
+        if (getLogDestination() != null)
+            sb.append("LogDestination: ").append(getLogDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -580,6 +749,14 @@ public class FlowLog implements Serializable, Cloneable {
             return false;
         if (other.getTrafficType() != null && other.getTrafficType().equals(this.getTrafficType()) == false)
             return false;
+        if (other.getLogDestinationType() == null ^ this.getLogDestinationType() == null)
+            return false;
+        if (other.getLogDestinationType() != null && other.getLogDestinationType().equals(this.getLogDestinationType()) == false)
+            return false;
+        if (other.getLogDestination() == null ^ this.getLogDestination() == null)
+            return false;
+        if (other.getLogDestination() != null && other.getLogDestination().equals(this.getLogDestination()) == false)
+            return false;
         return true;
     }
 
@@ -597,6 +774,8 @@ public class FlowLog implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getTrafficType() == null) ? 0 : getTrafficType().hashCode());
+        hashCode = prime * hashCode + ((getLogDestinationType() == null) ? 0 : getLogDestinationType().hashCode());
+        hashCode = prime * hashCode + ((getLogDestination() == null) ? 0 : getLogDestination().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -65,8 +65,8 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
-     * path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -97,6 +97,18 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      */
     private java.util.List<String> values;
+
+    private HostHeaderConditionConfig hostHeaderConfig;
+
+    private PathPatternConditionConfig pathPatternConfig;
+
+    private HttpHeaderConditionConfig httpHeaderConfig;
+
+    private QueryStringConditionConfig queryStringConfig;
+
+    private HttpRequestMethodConditionConfig httpRequestMethodConfig;
+
+    private SourceIpConditionConfig sourceIpConfig;
 
     /**
      * <p>
@@ -145,7 +157,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -171,8 +183,8 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
-     * path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -206,7 +218,7 @@ public class RuleCondition implements Serializable, Cloneable {
      *         <p>
      *         If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *         my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *         any of the following characters. Note that you can include up to three wildcard characters.
+     *         any of the following characters. You can include up to three wildcard characters.
      *         </p>
      *         <ul>
      *         <li>
@@ -232,8 +244,8 @@ public class RuleCondition implements Serializable, Cloneable {
      *         </ul>
      *         <p>
      *         If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
-     *         /img/*). A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of
-     *         the following characters. Note that you can include up to three wildcard characters.
+     *         /img/*). A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of
+     *         the following characters. You can include up to three wildcard characters.
      *         </p>
      *         <ul>
      *         <li>
@@ -274,7 +286,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -300,8 +312,8 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
-     * path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -336,7 +348,7 @@ public class RuleCondition implements Serializable, Cloneable {
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        any of the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -362,8 +374,8 @@ public class RuleCondition implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
-     *        /img/*). A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of
-     *        the following characters. Note that you can include up to three wildcard characters.
+     *        /img/*). A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of
+     *        the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -409,7 +421,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -435,8 +447,8 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
-     * path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -476,7 +488,7 @@ public class RuleCondition implements Serializable, Cloneable {
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        any of the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -502,8 +514,8 @@ public class RuleCondition implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
-     *        /img/*). A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of
-     *        the following characters. Note that you can include up to three wildcard characters.
+     *        /img/*). A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of
+     *        the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -551,7 +563,7 @@ public class RuleCondition implements Serializable, Cloneable {
      * <p>
      * If the field name is <code>host-header</code>, you can specify a single host name (for example, my.example.com).
      * A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -577,8 +589,8 @@ public class RuleCondition implements Serializable, Cloneable {
      * </ul>
      * <p>
      * If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example, /img/*). A
-     * path pattern is case sensitive, can be up to 128 characters in length, and can contain any of the following
-     * characters. Note that you can include up to three wildcard characters.
+     * path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following
+     * characters. You can include up to three wildcard characters.
      * </p>
      * <ul>
      * <li>
@@ -613,7 +625,7 @@ public class RuleCondition implements Serializable, Cloneable {
      *        <p>
      *        If the field name is <code>host-header</code>, you can specify a single host name (for example,
      *        my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain
-     *        any of the following characters. Note that you can include up to three wildcard characters.
+     *        any of the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -639,8 +651,8 @@ public class RuleCondition implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        If the field name is <code>path-pattern</code>, you can specify a single path pattern (for example,
-     *        /img/*). A path pattern is case sensitive, can be up to 128 characters in length, and can contain any of
-     *        the following characters. Note that you can include up to three wildcard characters.
+     *        /img/*). A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of
+     *        the following characters. You can include up to three wildcard characters.
      *        </p>
      *        <ul>
      *        <li>
@@ -677,7 +689,164 @@ public class RuleCondition implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * @param hostHeaderConfig
+     */
+
+    public void setHostHeaderConfig(HostHeaderConditionConfig hostHeaderConfig) {
+        this.hostHeaderConfig = hostHeaderConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public HostHeaderConditionConfig getHostHeaderConfig() {
+        return this.hostHeaderConfig;
+    }
+
+    /**
+     * @param hostHeaderConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleCondition withHostHeaderConfig(HostHeaderConditionConfig hostHeaderConfig) {
+        setHostHeaderConfig(hostHeaderConfig);
+        return this;
+    }
+
+    /**
+     * @param pathPatternConfig
+     */
+
+    public void setPathPatternConfig(PathPatternConditionConfig pathPatternConfig) {
+        this.pathPatternConfig = pathPatternConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public PathPatternConditionConfig getPathPatternConfig() {
+        return this.pathPatternConfig;
+    }
+
+    /**
+     * @param pathPatternConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleCondition withPathPatternConfig(PathPatternConditionConfig pathPatternConfig) {
+        setPathPatternConfig(pathPatternConfig);
+        return this;
+    }
+
+    /**
+     * @param httpHeaderConfig
+     */
+
+    public void setHttpHeaderConfig(HttpHeaderConditionConfig httpHeaderConfig) {
+        this.httpHeaderConfig = httpHeaderConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public HttpHeaderConditionConfig getHttpHeaderConfig() {
+        return this.httpHeaderConfig;
+    }
+
+    /**
+     * @param httpHeaderConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleCondition withHttpHeaderConfig(HttpHeaderConditionConfig httpHeaderConfig) {
+        setHttpHeaderConfig(httpHeaderConfig);
+        return this;
+    }
+
+    /**
+     * @param queryStringConfig
+     */
+
+    public void setQueryStringConfig(QueryStringConditionConfig queryStringConfig) {
+        this.queryStringConfig = queryStringConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public QueryStringConditionConfig getQueryStringConfig() {
+        return this.queryStringConfig;
+    }
+
+    /**
+     * @param queryStringConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleCondition withQueryStringConfig(QueryStringConditionConfig queryStringConfig) {
+        setQueryStringConfig(queryStringConfig);
+        return this;
+    }
+
+    /**
+     * @param httpRequestMethodConfig
+     */
+
+    public void setHttpRequestMethodConfig(HttpRequestMethodConditionConfig httpRequestMethodConfig) {
+        this.httpRequestMethodConfig = httpRequestMethodConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public HttpRequestMethodConditionConfig getHttpRequestMethodConfig() {
+        return this.httpRequestMethodConfig;
+    }
+
+    /**
+     * @param httpRequestMethodConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleCondition withHttpRequestMethodConfig(HttpRequestMethodConditionConfig httpRequestMethodConfig) {
+        setHttpRequestMethodConfig(httpRequestMethodConfig);
+        return this;
+    }
+
+    /**
+     * @param sourceIpConfig
+     */
+
+    public void setSourceIpConfig(SourceIpConditionConfig sourceIpConfig) {
+        this.sourceIpConfig = sourceIpConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public SourceIpConditionConfig getSourceIpConfig() {
+        return this.sourceIpConfig;
+    }
+
+    /**
+     * @param sourceIpConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleCondition withSourceIpConfig(SourceIpConditionConfig sourceIpConfig) {
+        setSourceIpConfig(sourceIpConfig);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -690,7 +859,19 @@ public class RuleCondition implements Serializable, Cloneable {
         if (getField() != null)
             sb.append("Field: ").append(getField()).append(",");
         if (getValues() != null)
-            sb.append("Values: ").append(getValues());
+            sb.append("Values: ").append(getValues()).append(",");
+        if (getHostHeaderConfig() != null)
+            sb.append("HostHeaderConfig: ").append(getHostHeaderConfig()).append(",");
+        if (getPathPatternConfig() != null)
+            sb.append("PathPatternConfig: ").append(getPathPatternConfig()).append(",");
+        if (getHttpHeaderConfig() != null)
+            sb.append("HttpHeaderConfig: ").append(getHttpHeaderConfig()).append(",");
+        if (getQueryStringConfig() != null)
+            sb.append("QueryStringConfig: ").append(getQueryStringConfig()).append(",");
+        if (getHttpRequestMethodConfig() != null)
+            sb.append("HttpRequestMethodConfig: ").append(getHttpRequestMethodConfig()).append(",");
+        if (getSourceIpConfig() != null)
+            sb.append("SourceIpConfig: ").append(getSourceIpConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -713,6 +894,30 @@ public class RuleCondition implements Serializable, Cloneable {
             return false;
         if (other.getValues() != null && other.getValues().equals(this.getValues()) == false)
             return false;
+        if (other.getHostHeaderConfig() == null ^ this.getHostHeaderConfig() == null)
+            return false;
+        if (other.getHostHeaderConfig() != null && other.getHostHeaderConfig().equals(this.getHostHeaderConfig()) == false)
+            return false;
+        if (other.getPathPatternConfig() == null ^ this.getPathPatternConfig() == null)
+            return false;
+        if (other.getPathPatternConfig() != null && other.getPathPatternConfig().equals(this.getPathPatternConfig()) == false)
+            return false;
+        if (other.getHttpHeaderConfig() == null ^ this.getHttpHeaderConfig() == null)
+            return false;
+        if (other.getHttpHeaderConfig() != null && other.getHttpHeaderConfig().equals(this.getHttpHeaderConfig()) == false)
+            return false;
+        if (other.getQueryStringConfig() == null ^ this.getQueryStringConfig() == null)
+            return false;
+        if (other.getQueryStringConfig() != null && other.getQueryStringConfig().equals(this.getQueryStringConfig()) == false)
+            return false;
+        if (other.getHttpRequestMethodConfig() == null ^ this.getHttpRequestMethodConfig() == null)
+            return false;
+        if (other.getHttpRequestMethodConfig() != null && other.getHttpRequestMethodConfig().equals(this.getHttpRequestMethodConfig()) == false)
+            return false;
+        if (other.getSourceIpConfig() == null ^ this.getSourceIpConfig() == null)
+            return false;
+        if (other.getSourceIpConfig() != null && other.getSourceIpConfig().equals(this.getSourceIpConfig()) == false)
+            return false;
         return true;
     }
 
@@ -723,6 +928,12 @@ public class RuleCondition implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getField() == null) ? 0 : getField().hashCode());
         hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode());
+        hashCode = prime * hashCode + ((getHostHeaderConfig() == null) ? 0 : getHostHeaderConfig().hashCode());
+        hashCode = prime * hashCode + ((getPathPatternConfig() == null) ? 0 : getPathPatternConfig().hashCode());
+        hashCode = prime * hashCode + ((getHttpHeaderConfig() == null) ? 0 : getHttpHeaderConfig().hashCode());
+        hashCode = prime * hashCode + ((getQueryStringConfig() == null) ? 0 : getQueryStringConfig().hashCode());
+        hashCode = prime * hashCode + ((getHttpRequestMethodConfig() == null) ? 0 : getHttpRequestMethodConfig().hashCode());
+        hashCode = prime * hashCode + ((getSourceIpConfig() == null) ? 0 : getSourceIpConfig().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,13 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String type;
     /**
      * <p>
-     * The IAM service role ARN for the data source. The system assumes this role when accessing the data source.
+     * The AWS IAM service role ARN for the data source. The system assumes this role when accessing the data source.
      * </p>
      */
     private String serviceRoleArn;
     /**
      * <p>
-     * DynamoDB settings.
+     * Amazon DynamoDB settings.
      * </p>
      */
     private DynamodbDataSourceConfig dynamodbConfig;
@@ -69,10 +69,22 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private LambdaDataSourceConfig lambdaConfig;
     /**
      * <p>
-     * Amazon Elasticsearch settings.
+     * Amazon Elasticsearch Service settings.
      * </p>
      */
     private ElasticsearchDataSourceConfig elasticsearchConfig;
+    /**
+     * <p>
+     * HTTP endpoint settings.
+     * </p>
+     */
+    private HttpDataSourceConfig httpConfig;
+    /**
+     * <p>
+     * Relational database settings.
+     * </p>
+     */
+    private RelationalDatabaseDataSourceConfig relationalDatabaseConfig;
 
     /**
      * <p>
@@ -255,11 +267,12 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IAM service role ARN for the data source. The system assumes this role when accessing the data source.
+     * The AWS IAM service role ARN for the data source. The system assumes this role when accessing the data source.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM service role ARN for the data source. The system assumes this role when accessing the data source.
+     *        The AWS IAM service role ARN for the data source. The system assumes this role when accessing the data
+     *        source.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -268,10 +281,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IAM service role ARN for the data source. The system assumes this role when accessing the data source.
+     * The AWS IAM service role ARN for the data source. The system assumes this role when accessing the data source.
      * </p>
      * 
-     * @return The IAM service role ARN for the data source. The system assumes this role when accessing the data
+     * @return The AWS IAM service role ARN for the data source. The system assumes this role when accessing the data
      *         source.
      */
 
@@ -281,11 +294,12 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IAM service role ARN for the data source. The system assumes this role when accessing the data source.
+     * The AWS IAM service role ARN for the data source. The system assumes this role when accessing the data source.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM service role ARN for the data source. The system assumes this role when accessing the data source.
+     *        The AWS IAM service role ARN for the data source. The system assumes this role when accessing the data
+     *        source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,11 +310,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * DynamoDB settings.
+     * Amazon DynamoDB settings.
      * </p>
      * 
      * @param dynamodbConfig
-     *        DynamoDB settings.
+     *        Amazon DynamoDB settings.
      */
 
     public void setDynamodbConfig(DynamodbDataSourceConfig dynamodbConfig) {
@@ -309,10 +323,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * DynamoDB settings.
+     * Amazon DynamoDB settings.
      * </p>
      * 
-     * @return DynamoDB settings.
+     * @return Amazon DynamoDB settings.
      */
 
     public DynamodbDataSourceConfig getDynamodbConfig() {
@@ -321,11 +335,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * DynamoDB settings.
+     * Amazon DynamoDB settings.
      * </p>
      * 
      * @param dynamodbConfig
-     *        DynamoDB settings.
+     *        Amazon DynamoDB settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -376,11 +390,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Amazon Elasticsearch settings.
+     * Amazon Elasticsearch Service settings.
      * </p>
      * 
      * @param elasticsearchConfig
-     *        Amazon Elasticsearch settings.
+     *        Amazon Elasticsearch Service settings.
      */
 
     public void setElasticsearchConfig(ElasticsearchDataSourceConfig elasticsearchConfig) {
@@ -389,10 +403,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Amazon Elasticsearch settings.
+     * Amazon Elasticsearch Service settings.
      * </p>
      * 
-     * @return Amazon Elasticsearch settings.
+     * @return Amazon Elasticsearch Service settings.
      */
 
     public ElasticsearchDataSourceConfig getElasticsearchConfig() {
@@ -401,11 +415,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Amazon Elasticsearch settings.
+     * Amazon Elasticsearch Service settings.
      * </p>
      * 
      * @param elasticsearchConfig
-     *        Amazon Elasticsearch settings.
+     *        Amazon Elasticsearch Service settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,7 +429,88 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * HTTP endpoint settings.
+     * </p>
+     * 
+     * @param httpConfig
+     *        HTTP endpoint settings.
+     */
+
+    public void setHttpConfig(HttpDataSourceConfig httpConfig) {
+        this.httpConfig = httpConfig;
+    }
+
+    /**
+     * <p>
+     * HTTP endpoint settings.
+     * </p>
+     * 
+     * @return HTTP endpoint settings.
+     */
+
+    public HttpDataSourceConfig getHttpConfig() {
+        return this.httpConfig;
+    }
+
+    /**
+     * <p>
+     * HTTP endpoint settings.
+     * </p>
+     * 
+     * @param httpConfig
+     *        HTTP endpoint settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSourceRequest withHttpConfig(HttpDataSourceConfig httpConfig) {
+        setHttpConfig(httpConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Relational database settings.
+     * </p>
+     * 
+     * @param relationalDatabaseConfig
+     *        Relational database settings.
+     */
+
+    public void setRelationalDatabaseConfig(RelationalDatabaseDataSourceConfig relationalDatabaseConfig) {
+        this.relationalDatabaseConfig = relationalDatabaseConfig;
+    }
+
+    /**
+     * <p>
+     * Relational database settings.
+     * </p>
+     * 
+     * @return Relational database settings.
+     */
+
+    public RelationalDatabaseDataSourceConfig getRelationalDatabaseConfig() {
+        return this.relationalDatabaseConfig;
+    }
+
+    /**
+     * <p>
+     * Relational database settings.
+     * </p>
+     * 
+     * @param relationalDatabaseConfig
+     *        Relational database settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDataSourceRequest withRelationalDatabaseConfig(RelationalDatabaseDataSourceConfig relationalDatabaseConfig) {
+        setRelationalDatabaseConfig(relationalDatabaseConfig);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -440,7 +535,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getLambdaConfig() != null)
             sb.append("LambdaConfig: ").append(getLambdaConfig()).append(",");
         if (getElasticsearchConfig() != null)
-            sb.append("ElasticsearchConfig: ").append(getElasticsearchConfig());
+            sb.append("ElasticsearchConfig: ").append(getElasticsearchConfig()).append(",");
+        if (getHttpConfig() != null)
+            sb.append("HttpConfig: ").append(getHttpConfig()).append(",");
+        if (getRelationalDatabaseConfig() != null)
+            sb.append("RelationalDatabaseConfig: ").append(getRelationalDatabaseConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -487,6 +586,14 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getElasticsearchConfig() != null && other.getElasticsearchConfig().equals(this.getElasticsearchConfig()) == false)
             return false;
+        if (other.getHttpConfig() == null ^ this.getHttpConfig() == null)
+            return false;
+        if (other.getHttpConfig() != null && other.getHttpConfig().equals(this.getHttpConfig()) == false)
+            return false;
+        if (other.getRelationalDatabaseConfig() == null ^ this.getRelationalDatabaseConfig() == null)
+            return false;
+        if (other.getRelationalDatabaseConfig() != null && other.getRelationalDatabaseConfig().equals(this.getRelationalDatabaseConfig()) == false)
+            return false;
         return true;
     }
 
@@ -503,6 +610,8 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getDynamodbConfig() == null) ? 0 : getDynamodbConfig().hashCode());
         hashCode = prime * hashCode + ((getLambdaConfig() == null) ? 0 : getLambdaConfig().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchConfig() == null) ? 0 : getElasticsearchConfig().hashCode());
+        hashCode = prime * hashCode + ((getHttpConfig() == null) ? 0 : getHttpConfig().hashCode());
+        hashCode = prime * hashCode + ((getRelationalDatabaseConfig() == null) ? 0 : getRelationalDatabaseConfig().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
     private String hash;
     /**
      * <p>
-     * Sha256 or Sha1.
+     * The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.
      * </p>
      * <note>
      * <p>
@@ -62,6 +62,12 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The version of the artifact associated with the document.
+     * </p>
+     */
+    private String versionName;
     /**
      * <p>
      * The AWS user account that created the document.
@@ -80,6 +86,14 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * </p>
+     */
+    private String statusInformation;
     /**
      * <p>
      * The document version.
@@ -149,6 +163,12 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Details about the document attachments, including names, locations, sizes, etc.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AttachmentInformation> attachmentsInformation;
 
     /**
      * <p>
@@ -256,7 +276,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Sha256 or Sha1.
+     * The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.
      * </p>
      * <note>
      * <p>
@@ -265,7 +285,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param hashType
-     *        Sha256 or Sha1.</p> <note>
+     *        The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
      *        <p>
      *        Sha1 hashes have been deprecated.
      *        </p>
@@ -278,7 +298,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Sha256 or Sha1.
+     * The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.
      * </p>
      * <note>
      * <p>
@@ -286,7 +306,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * 
-     * @return Sha256 or Sha1.</p> <note>
+     * @return The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
      *         <p>
      *         Sha1 hashes have been deprecated.
      *         </p>
@@ -299,7 +319,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Sha256 or Sha1.
+     * The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.
      * </p>
      * <note>
      * <p>
@@ -308,7 +328,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param hashType
-     *        Sha256 or Sha1.</p> <note>
+     *        The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
      *        <p>
      *        Sha1 hashes have been deprecated.
      *        </p>
@@ -323,7 +343,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Sha256 or Sha1.
+     * The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.
      * </p>
      * <note>
      * <p>
@@ -332,7 +352,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param hashType
-     *        Sha256 or Sha1.</p> <note>
+     *        The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
      *        <p>
      *        Sha1 hashes have been deprecated.
      *        </p>
@@ -345,7 +365,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Sha256 or Sha1.
+     * The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.
      * </p>
      * <note>
      * <p>
@@ -354,7 +374,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param hashType
-     *        Sha256 or Sha1.</p> <note>
+     *        The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
      *        <p>
      *        Sha1 hashes have been deprecated.
      *        </p>
@@ -404,6 +424,46 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     public DocumentDescription withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the artifact associated with the document.
+     * </p>
+     * 
+     * @param versionName
+     *        The version of the artifact associated with the document.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * The version of the artifact associated with the document.
+     * </p>
+     * 
+     * @return The version of the artifact associated with the document.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * The version of the artifact associated with the document.
+     * </p>
+     * 
+     * @param versionName
+     *        The version of the artifact associated with the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withVersionName(String versionName) {
+        setVersionName(versionName);
         return this;
     }
 
@@ -557,6 +617,58 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     public DocumentDescription withStatus(DocumentStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * </p>
+     * 
+     * @param statusInformation
+     *        A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     *        <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     *        "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     */
+
+    public void setStatusInformation(String statusInformation) {
+        this.statusInformation = statusInformation;
+    }
+
+    /**
+     * <p>
+     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * </p>
+     * 
+     * @return A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     *         <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     *         "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     */
+
+    public String getStatusInformation() {
+        return this.statusInformation;
+    }
+
+    /**
+     * <p>
+     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * </p>
+     * 
+     * @param statusInformation
+     *        A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     *        <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     *        "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withStatusInformation(String statusInformation) {
+        setStatusInformation(statusInformation);
         return this;
     }
 
@@ -1212,7 +1324,81 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Details about the document attachments, including names, locations, sizes, etc.
+     * </p>
+     * 
+     * @return Details about the document attachments, including names, locations, sizes, etc.
+     */
+
+    public java.util.List<AttachmentInformation> getAttachmentsInformation() {
+        if (attachmentsInformation == null) {
+            attachmentsInformation = new com.amazonaws.internal.SdkInternalList<AttachmentInformation>();
+        }
+        return attachmentsInformation;
+    }
+
+    /**
+     * <p>
+     * Details about the document attachments, including names, locations, sizes, etc.
+     * </p>
+     * 
+     * @param attachmentsInformation
+     *        Details about the document attachments, including names, locations, sizes, etc.
+     */
+
+    public void setAttachmentsInformation(java.util.Collection<AttachmentInformation> attachmentsInformation) {
+        if (attachmentsInformation == null) {
+            this.attachmentsInformation = null;
+            return;
+        }
+
+        this.attachmentsInformation = new com.amazonaws.internal.SdkInternalList<AttachmentInformation>(attachmentsInformation);
+    }
+
+    /**
+     * <p>
+     * Details about the document attachments, including names, locations, sizes, etc.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachmentsInformation(java.util.Collection)} or
+     * {@link #withAttachmentsInformation(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param attachmentsInformation
+     *        Details about the document attachments, including names, locations, sizes, etc.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withAttachmentsInformation(AttachmentInformation... attachmentsInformation) {
+        if (this.attachmentsInformation == null) {
+            setAttachmentsInformation(new com.amazonaws.internal.SdkInternalList<AttachmentInformation>(attachmentsInformation.length));
+        }
+        for (AttachmentInformation ele : attachmentsInformation) {
+            this.attachmentsInformation.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about the document attachments, including names, locations, sizes, etc.
+     * </p>
+     * 
+     * @param attachmentsInformation
+     *        Details about the document attachments, including names, locations, sizes, etc.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withAttachmentsInformation(java.util.Collection<AttachmentInformation> attachmentsInformation) {
+        setAttachmentsInformation(attachmentsInformation);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1230,12 +1416,16 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
             sb.append("HashType: ").append(getHashType()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getOwner() != null)
             sb.append("Owner: ").append(getOwner()).append(",");
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusInformation() != null)
+            sb.append("StatusInformation: ").append(getStatusInformation()).append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getDescription() != null)
@@ -1257,7 +1447,9 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
         if (getTargetType() != null)
             sb.append("TargetType: ").append(getTargetType()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAttachmentsInformation() != null)
+            sb.append("AttachmentsInformation: ").append(getAttachmentsInformation());
         sb.append("}");
         return sb.toString();
     }
@@ -1288,6 +1480,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
+            return false;
         if (other.getOwner() == null ^ this.getOwner() == null)
             return false;
         if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
@@ -1299,6 +1495,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getStatusInformation() == null ^ this.getStatusInformation() == null)
+            return false;
+        if (other.getStatusInformation() != null && other.getStatusInformation().equals(this.getStatusInformation()) == false)
             return false;
         if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
             return false;
@@ -1344,6 +1544,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAttachmentsInformation() == null ^ this.getAttachmentsInformation() == null)
+            return false;
+        if (other.getAttachmentsInformation() != null && other.getAttachmentsInformation().equals(this.getAttachmentsInformation()) == false)
+            return false;
         return true;
     }
 
@@ -1356,9 +1560,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getHash() == null) ? 0 : getHash().hashCode());
         hashCode = prime * hashCode + ((getHashType() == null) ? 0 : getHashType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusInformation() == null) ? 0 : getStatusInformation().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
@@ -1370,6 +1576,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
         hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentsInformation() == null) ? 0 : getAttachmentsInformation().hashCode());
         return hashCode;
     }
 

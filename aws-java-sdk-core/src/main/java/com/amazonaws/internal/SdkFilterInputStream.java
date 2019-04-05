@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@ package com.amazonaws.internal;
 
 import static com.amazonaws.util.SdkRuntime.shouldAbort;
 
+import com.amazonaws.AbortedException;
+import com.amazonaws.annotation.SdkProtectedApi;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
-import com.amazonaws.AbortedException;
 
 /**
  * Base class for AWS Java SDK specific {@link FilterInputStream}.
@@ -31,6 +31,14 @@ public class SdkFilterInputStream extends FilterInputStream implements
 
     protected SdkFilterInputStream(InputStream in) {
         super(in);
+    }
+
+    /**
+     * @return The wrapped stream.
+     */
+    @SdkProtectedApi
+    public InputStream getDelegateStream() {
+        return in;
     }
 
     @Override

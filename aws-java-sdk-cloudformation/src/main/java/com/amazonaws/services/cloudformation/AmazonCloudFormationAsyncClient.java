@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -660,6 +660,41 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeStackDriftDetectionStatusResult> describeStackDriftDetectionStatusAsync(
+            DescribeStackDriftDetectionStatusRequest request) {
+
+        return describeStackDriftDetectionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStackDriftDetectionStatusResult> describeStackDriftDetectionStatusAsync(
+            final DescribeStackDriftDetectionStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStackDriftDetectionStatusRequest, DescribeStackDriftDetectionStatusResult> asyncHandler) {
+        final DescribeStackDriftDetectionStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStackDriftDetectionStatusResult>() {
+            @Override
+            public DescribeStackDriftDetectionStatusResult call() throws Exception {
+                DescribeStackDriftDetectionStatusResult result = null;
+
+                try {
+                    result = executeDescribeStackDriftDetectionStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeStackEventsResult> describeStackEventsAsync(DescribeStackEventsRequest request) {
 
         return describeStackEventsAsync(request, null);
@@ -743,6 +778,39 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
 
                 try {
                     result = executeDescribeStackResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStackResourceDriftsResult> describeStackResourceDriftsAsync(DescribeStackResourceDriftsRequest request) {
+
+        return describeStackResourceDriftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStackResourceDriftsResult> describeStackResourceDriftsAsync(final DescribeStackResourceDriftsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStackResourceDriftsRequest, DescribeStackResourceDriftsResult> asyncHandler) {
+        final DescribeStackResourceDriftsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStackResourceDriftsResult>() {
+            @Override
+            public DescribeStackResourceDriftsResult call() throws Exception {
+                DescribeStackResourceDriftsResult result = null;
+
+                try {
+                    result = executeDescribeStackResourceDrifts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -911,6 +979,72 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient 
             com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult> asyncHandler) {
 
         return describeStacksAsync(new DescribeStacksRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectStackDriftResult> detectStackDriftAsync(DetectStackDriftRequest request) {
+
+        return detectStackDriftAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectStackDriftResult> detectStackDriftAsync(final DetectStackDriftRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetectStackDriftRequest, DetectStackDriftResult> asyncHandler) {
+        final DetectStackDriftRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetectStackDriftResult>() {
+            @Override
+            public DetectStackDriftResult call() throws Exception {
+                DetectStackDriftResult result = null;
+
+                try {
+                    result = executeDetectStackDrift(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectStackResourceDriftResult> detectStackResourceDriftAsync(DetectStackResourceDriftRequest request) {
+
+        return detectStackResourceDriftAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectStackResourceDriftResult> detectStackResourceDriftAsync(final DetectStackResourceDriftRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetectStackResourceDriftRequest, DetectStackResourceDriftResult> asyncHandler) {
+        final DetectStackResourceDriftRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetectStackResourceDriftResult>() {
+            @Override
+            public DetectStackResourceDriftResult call() throws Exception {
+                DetectStackResourceDriftResult result = null;
+
+                try {
+                    result = executeDetectStackResourceDrift(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

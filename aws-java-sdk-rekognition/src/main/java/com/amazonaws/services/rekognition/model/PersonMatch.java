@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a person whose face matches a face(s) in a Amazon Rekognition collection. Includes information
- * about the faces in the Amazon Rekognition collection (, information about the person (<a>PersonDetail</a>) and the
- * timestamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by .
+ * Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information
+ * about the faces in the Amazon Rekognition collection (<a>FaceMatch</a>), information about the person
+ * (<a>PersonDetail</a>), and the time stamp for when the person was detected in a video. An array of
+ * <code>PersonMatch</code> objects is returned by <a>GetFaceSearch</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -197,7 +198,8 @@ public class PersonMatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

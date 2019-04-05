@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,18 @@ public class SkillSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean supportsLinking;
+    /**
+     * <p>
+     * Whether the skill is enabled under the user's account, or if it requires linking to be used.
+     * </p>
+     */
+    private String enablementType;
+    /**
+     * <p>
+     * Whether the skill is publicly available or is a private skill.
+     * </p>
+     */
+    private String skillType;
 
     /**
      * <p>
@@ -180,7 +192,126 @@ public class SkillSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Whether the skill is enabled under the user's account, or if it requires linking to be used.
+     * </p>
+     * 
+     * @param enablementType
+     *        Whether the skill is enabled under the user's account, or if it requires linking to be used.
+     * @see EnablementType
+     */
+
+    public void setEnablementType(String enablementType) {
+        this.enablementType = enablementType;
+    }
+
+    /**
+     * <p>
+     * Whether the skill is enabled under the user's account, or if it requires linking to be used.
+     * </p>
+     * 
+     * @return Whether the skill is enabled under the user's account, or if it requires linking to be used.
+     * @see EnablementType
+     */
+
+    public String getEnablementType() {
+        return this.enablementType;
+    }
+
+    /**
+     * <p>
+     * Whether the skill is enabled under the user's account, or if it requires linking to be used.
+     * </p>
+     * 
+     * @param enablementType
+     *        Whether the skill is enabled under the user's account, or if it requires linking to be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnablementType
+     */
+
+    public SkillSummary withEnablementType(String enablementType) {
+        setEnablementType(enablementType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the skill is enabled under the user's account, or if it requires linking to be used.
+     * </p>
+     * 
+     * @param enablementType
+     *        Whether the skill is enabled under the user's account, or if it requires linking to be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnablementType
+     */
+
+    public SkillSummary withEnablementType(EnablementType enablementType) {
+        this.enablementType = enablementType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the skill is publicly available or is a private skill.
+     * </p>
+     * 
+     * @param skillType
+     *        Whether the skill is publicly available or is a private skill.
+     * @see SkillType
+     */
+
+    public void setSkillType(String skillType) {
+        this.skillType = skillType;
+    }
+
+    /**
+     * <p>
+     * Whether the skill is publicly available or is a private skill.
+     * </p>
+     * 
+     * @return Whether the skill is publicly available or is a private skill.
+     * @see SkillType
+     */
+
+    public String getSkillType() {
+        return this.skillType;
+    }
+
+    /**
+     * <p>
+     * Whether the skill is publicly available or is a private skill.
+     * </p>
+     * 
+     * @param skillType
+     *        Whether the skill is publicly available or is a private skill.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkillType
+     */
+
+    public SkillSummary withSkillType(String skillType) {
+        setSkillType(skillType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the skill is publicly available or is a private skill.
+     * </p>
+     * 
+     * @param skillType
+     *        Whether the skill is publicly available or is a private skill.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SkillType
+     */
+
+    public SkillSummary withSkillType(SkillType skillType) {
+        this.skillType = skillType.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -195,7 +326,11 @@ public class SkillSummary implements Serializable, Cloneable, StructuredPojo {
         if (getSkillName() != null)
             sb.append("SkillName: ").append(getSkillName()).append(",");
         if (getSupportsLinking() != null)
-            sb.append("SupportsLinking: ").append(getSupportsLinking());
+            sb.append("SupportsLinking: ").append(getSupportsLinking()).append(",");
+        if (getEnablementType() != null)
+            sb.append("EnablementType: ").append(getEnablementType()).append(",");
+        if (getSkillType() != null)
+            sb.append("SkillType: ").append(getSkillType());
         sb.append("}");
         return sb.toString();
     }
@@ -222,6 +357,14 @@ public class SkillSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSupportsLinking() != null && other.getSupportsLinking().equals(this.getSupportsLinking()) == false)
             return false;
+        if (other.getEnablementType() == null ^ this.getEnablementType() == null)
+            return false;
+        if (other.getEnablementType() != null && other.getEnablementType().equals(this.getEnablementType()) == false)
+            return false;
+        if (other.getSkillType() == null ^ this.getSkillType() == null)
+            return false;
+        if (other.getSkillType() != null && other.getSkillType().equals(this.getSkillType()) == false)
+            return false;
         return true;
     }
 
@@ -233,6 +376,8 @@ public class SkillSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSkillId() == null) ? 0 : getSkillId().hashCode());
         hashCode = prime * hashCode + ((getSkillName() == null) ? 0 : getSkillName().hashCode());
         hashCode = prime * hashCode + ((getSupportsLinking() == null) ? 0 : getSupportsLinking().hashCode());
+        hashCode = prime * hashCode + ((getEnablementType() == null) ? 0 : getEnablementType().hashCode());
+        hashCode = prime * hashCode + ((getSkillType() == null) ? 0 : getSkillType().hashCode());
         return hashCode;
     }
 

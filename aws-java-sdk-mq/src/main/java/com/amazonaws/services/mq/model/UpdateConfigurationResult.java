@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,8 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
 
     /** Required. The Amazon Resource Name (ARN) of the configuration. */
     private String arn;
+    /** Required. The date and time of the configuration. */
+    private java.util.Date created;
     /** Required. The unique ID that Amazon MQ generates for the configuration. */
     private String id;
     /** The latest revision of the configuration. */
@@ -68,6 +70,40 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
 
     public UpdateConfigurationResult withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * Required. The date and time of the configuration.
+     * 
+     * @param created
+     *        Required. The date and time of the configuration.
+     */
+
+    public void setCreated(java.util.Date created) {
+        this.created = created;
+    }
+
+    /**
+     * Required. The date and time of the configuration.
+     * 
+     * @return Required. The date and time of the configuration.
+     */
+
+    public java.util.Date getCreated() {
+        return this.created;
+    }
+
+    /**
+     * Required. The date and time of the configuration.
+     * 
+     * @param created
+     *        Required. The date and time of the configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateConfigurationResult withCreated(java.util.Date created) {
+        setCreated(created);
         return this;
     }
 
@@ -242,7 +278,8 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -254,6 +291,8 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getCreated() != null)
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getLatestRevision() != null)
@@ -280,6 +319,10 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getCreated() == null ^ this.getCreated() == null)
+            return false;
+        if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -305,6 +348,7 @@ public class UpdateConfigurationResult extends com.amazonaws.AmazonWebServiceRes
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getLatestRevision() == null) ? 0 : getLatestRevision().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

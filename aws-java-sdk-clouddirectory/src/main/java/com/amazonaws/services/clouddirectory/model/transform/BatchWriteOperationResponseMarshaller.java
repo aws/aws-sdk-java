@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,8 @@ public class BatchWriteOperationResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttachTypedLink").build();
     private static final MarshallingInfo<StructuredPojo> DETACHTYPEDLINK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DetachTypedLink").build();
+    private static final MarshallingInfo<StructuredPojo> UPDATELINKATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateLinkAttributes").build();
 
     private static final BatchWriteOperationResponseMarshaller instance = new BatchWriteOperationResponseMarshaller();
 
@@ -86,6 +88,7 @@ public class BatchWriteOperationResponseMarshaller {
             protocolMarshaller.marshall(batchWriteOperationResponse.getDetachFromIndex(), DETACHFROMINDEX_BINDING);
             protocolMarshaller.marshall(batchWriteOperationResponse.getAttachTypedLink(), ATTACHTYPEDLINK_BINDING);
             protocolMarshaller.marshall(batchWriteOperationResponse.getDetachTypedLink(), DETACHTYPEDLINK_BINDING);
+            protocolMarshaller.marshall(batchWriteOperationResponse.getUpdateLinkAttributes(), UPDATELINKATTRIBUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

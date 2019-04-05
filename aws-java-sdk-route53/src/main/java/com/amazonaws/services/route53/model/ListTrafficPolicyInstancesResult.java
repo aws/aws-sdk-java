@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance that Amazon Route 53 will return if you submit another
+     * the first traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      */
@@ -44,7 +44,7 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the
-     * first traffic policy instance that Amazon Route 53 will return if you submit another
+     * first traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      */
@@ -158,13 +158,13 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance that Amazon Route 53 will return if you submit another
+     * the first traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param hostedZoneIdMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted
-     *        zone of the first traffic policy instance that Amazon Route 53 will return if you submit another
+     *        zone of the first traffic policy instance that Route 53 will return if you submit another
      *        <code>ListTrafficPolicyInstances</code> request.
      */
 
@@ -175,12 +175,12 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance that Amazon Route 53 will return if you submit another
+     * the first traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted
-     *         zone of the first traffic policy instance that Amazon Route 53 will return if you submit another
+     *         zone of the first traffic policy instance that Route 53 will return if you submit another
      *         <code>ListTrafficPolicyInstances</code> request.
      */
 
@@ -191,13 +191,13 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of
-     * the first traffic policy instance that Amazon Route 53 will return if you submit another
+     * the first traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param hostedZoneIdMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted
-     *        zone of the first traffic policy instance that Amazon Route 53 will return if you submit another
+     *        zone of the first traffic policy instance that Route 53 will return if you submit another
      *        <code>ListTrafficPolicyInstances</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -210,13 +210,13 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the
-     * first traffic policy instance that Amazon Route 53 will return if you submit another
+     * first traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param trafficPolicyInstanceNameMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name
-     *        of the first traffic policy instance that Amazon Route 53 will return if you submit another
+     *        of the first traffic policy instance that Route 53 will return if you submit another
      *        <code>ListTrafficPolicyInstances</code> request.
      */
 
@@ -227,12 +227,12 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the
-     * first traffic policy instance that Amazon Route 53 will return if you submit another
+     * first traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the
-     *         name of the first traffic policy instance that Amazon Route 53 will return if you submit another
+     *         name of the first traffic policy instance that Route 53 will return if you submit another
      *         <code>ListTrafficPolicyInstances</code> request.
      */
 
@@ -243,13 +243,13 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the
-     * first traffic policy instance that Amazon Route 53 will return if you submit another
+     * first traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request.
      * </p>
      * 
      * @param trafficPolicyInstanceNameMarker
      *        If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name
-     *        of the first traffic policy instance that Amazon Route 53 will return if you submit another
+     *        of the first traffic policy instance that Route 53 will return if you submit another
      *        <code>ListTrafficPolicyInstances</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -479,7 +479,8 @@ public class ListTrafficPolicyInstancesResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

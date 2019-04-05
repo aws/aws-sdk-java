@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private String datasetArn;
+    /**
+     * <p>
+     * How long, in days, data set contents are kept for the data set.
+     * </p>
+     */
+    private RetentionPeriod retentionPeriod;
 
     /**
      * <p>
@@ -117,7 +123,48 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * How long, in days, data set contents are kept for the data set.
+     * </p>
+     * 
+     * @param retentionPeriod
+     *        How long, in days, data set contents are kept for the data set.
+     */
+
+    public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
+        this.retentionPeriod = retentionPeriod;
+    }
+
+    /**
+     * <p>
+     * How long, in days, data set contents are kept for the data set.
+     * </p>
+     * 
+     * @return How long, in days, data set contents are kept for the data set.
+     */
+
+    public RetentionPeriod getRetentionPeriod() {
+        return this.retentionPeriod;
+    }
+
+    /**
+     * <p>
+     * How long, in days, data set contents are kept for the data set.
+     * </p>
+     * 
+     * @param retentionPeriod
+     *        How long, in days, data set contents are kept for the data set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetResult withRetentionPeriod(RetentionPeriod retentionPeriod) {
+        setRetentionPeriod(retentionPeriod);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -130,7 +177,9 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getDatasetName() != null)
             sb.append("DatasetName: ").append(getDatasetName()).append(",");
         if (getDatasetArn() != null)
-            sb.append("DatasetArn: ").append(getDatasetArn());
+            sb.append("DatasetArn: ").append(getDatasetArn()).append(",");
+        if (getRetentionPeriod() != null)
+            sb.append("RetentionPeriod: ").append(getRetentionPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -153,6 +202,10 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getDatasetArn() != null && other.getDatasetArn().equals(this.getDatasetArn()) == false)
             return false;
+        if (other.getRetentionPeriod() == null ^ this.getRetentionPeriod() == null)
+            return false;
+        if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -163,6 +216,7 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
 
         hashCode = prime * hashCode + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
         hashCode = prime * hashCode + ((getDatasetArn() == null) ? 0 : getDatasetArn().hashCode());
+        hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         return hashCode;
     }
 

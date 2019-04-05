@@ -20,7 +20,12 @@
                         continue;
                     }
                     if (context.testExpression("${memberModel.mapModel.valueLocationName}", targetDepth)) {
-                        entry.setValue(${memberModel.mapModel.valueModel.variable.simpleType}StaxUnmarshaller.getInstance().unmarshall(context));
+                        <#if memberModel.mapModel.valueModel.variable.simpleType == "Date">
+                        <#local timestampFormat = memberModel.timestampFormat />
+                            entry.setValue(DateStaxUnmarshallerFactory.getInstance("${timestampFormat}").unmarshall(context));
+                        <#else>
+                             entry.setValue(${memberModel.mapModel.valueModel.variable.simpleType}StaxUnmarshaller.getInstance().unmarshall(context));
+                        </#if>
                         continue;
                     }
                 } else if (xmlEvent.isEndElement()) {

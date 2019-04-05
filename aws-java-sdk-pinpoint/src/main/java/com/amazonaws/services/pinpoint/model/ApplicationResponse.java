@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,48 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApplicationResponse implements Serializable, Cloneable, StructuredPojo {
 
+    /** The arn for the application. */
+    private String arn;
     /** The unique application ID. */
     private String id;
     /** The display name of the application. */
     private String name;
+    /** The Tags for the application. */
+    private java.util.Map<String, String> tags;
+
+    /**
+     * The arn for the application.
+     * 
+     * @param arn
+     *        The arn for the application.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * The arn for the application.
+     * 
+     * @return The arn for the application.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * The arn for the application.
+     * 
+     * @param arn
+     *        The arn for the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationResponse withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
 
     /**
      * The unique application ID.
@@ -100,7 +138,63 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * The Tags for the application.
+     * 
+     * @return The Tags for the application.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * The Tags for the application.
+     * 
+     * @param tags
+     *        The Tags for the application.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * The Tags for the application.
+     * 
+     * @param tags
+     *        The Tags for the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationResponse withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public ApplicationResponse addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationResponse clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -110,10 +204,14 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -128,6 +226,10 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
         if (obj instanceof ApplicationResponse == false)
             return false;
         ApplicationResponse other = (ApplicationResponse) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -135,6 +237,10 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -144,8 +250,10 @@ public class ApplicationResponse implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

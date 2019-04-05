@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ public class DeleteInventoryResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * A summary of the delete operation. For more information about this summary, see <a href=
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary"
-     * >Understanding the Delete Inventory Summary</a>.
+     * >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private InventoryDeletionSummary deletionSummary;
@@ -142,13 +142,13 @@ public class DeleteInventoryResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * A summary of the delete operation. For more information about this summary, see <a href=
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary"
-     * >Understanding the Delete Inventory Summary</a>.
+     * >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param deletionSummary
      *        A summary of the delete operation. For more information about this summary, see <a href=
      *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary"
-     *        >Understanding the Delete Inventory Summary</a>.
+     *        >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setDeletionSummary(InventoryDeletionSummary deletionSummary) {
@@ -159,12 +159,12 @@ public class DeleteInventoryResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * A summary of the delete operation. For more information about this summary, see <a href=
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary"
-     * >Understanding the Delete Inventory Summary</a>.
+     * >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @return A summary of the delete operation. For more information about this summary, see <a href=
      *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary"
-     *         >Understanding the Delete Inventory Summary</a>.
+     *         >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public InventoryDeletionSummary getDeletionSummary() {
@@ -175,13 +175,13 @@ public class DeleteInventoryResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * A summary of the delete operation. For more information about this summary, see <a href=
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary"
-     * >Understanding the Delete Inventory Summary</a>.
+     * >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param deletionSummary
      *        A summary of the delete operation. For more information about this summary, see <a href=
      *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary"
-     *        >Understanding the Delete Inventory Summary</a>.
+     *        >Understanding the Delete Inventory Summary</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,7 +191,8 @@ public class DeleteInventoryResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

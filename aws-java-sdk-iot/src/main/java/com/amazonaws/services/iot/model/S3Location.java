@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The location in S3 the contains the files to stream.
+ * The S3 location.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,30 +27,30 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 bucket that contains the file to stream.
+     * The S3 bucket.
      * </p>
      */
     private String bucket;
     /**
      * <p>
-     * The name of the file within the S3 bucket to stream.
+     * The S3 key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The file version.
+     * The S3 bucket version.
      * </p>
      */
     private String version;
 
     /**
      * <p>
-     * The S3 bucket that contains the file to stream.
+     * The S3 bucket.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that contains the file to stream.
+     *        The S3 bucket.
      */
 
     public void setBucket(String bucket) {
@@ -59,10 +59,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 bucket that contains the file to stream.
+     * The S3 bucket.
      * </p>
      * 
-     * @return The S3 bucket that contains the file to stream.
+     * @return The S3 bucket.
      */
 
     public String getBucket() {
@@ -71,11 +71,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 bucket that contains the file to stream.
+     * The S3 bucket.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that contains the file to stream.
+     *        The S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the file within the S3 bucket to stream.
+     * The S3 key.
      * </p>
      * 
      * @param key
-     *        The name of the file within the S3 bucket to stream.
+     *        The S3 key.
      */
 
     public void setKey(String key) {
@@ -99,10 +99,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the file within the S3 bucket to stream.
+     * The S3 key.
      * </p>
      * 
-     * @return The name of the file within the S3 bucket to stream.
+     * @return The S3 key.
      */
 
     public String getKey() {
@@ -111,11 +111,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the file within the S3 bucket to stream.
+     * The S3 key.
      * </p>
      * 
      * @param key
-     *        The name of the file within the S3 bucket to stream.
+     *        The S3 key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file version.
+     * The S3 bucket version.
      * </p>
      * 
      * @param version
-     *        The file version.
+     *        The S3 bucket version.
      */
 
     public void setVersion(String version) {
@@ -139,10 +139,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file version.
+     * The S3 bucket version.
      * </p>
      * 
-     * @return The file version.
+     * @return The S3 bucket version.
      */
 
     public String getVersion() {
@@ -151,11 +151,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file version.
+     * The S3 bucket version.
      * </p>
      * 
      * @param version
-     *        The file version.
+     *        The S3 bucket version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +165,8 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

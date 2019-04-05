@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,15 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String languageCode;
+    /**
+     * <p>
+     * Boolean value indicating whether to return any bilingual voices that use the specified language as an additional
+     * language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice
+     * that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but
+     * not if you specify <code>no</code>.
+     * </p>
+     */
+    private Boolean includeAdditionalLanguageCodes;
     /**
      * <p>
      * An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this
@@ -130,6 +139,82 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Boolean value indicating whether to return any bilingual voices that use the specified language as an additional
+     * language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice
+     * that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but
+     * not if you specify <code>no</code>.
+     * </p>
+     * 
+     * @param includeAdditionalLanguageCodes
+     *        Boolean value indicating whether to return any bilingual voices that use the specified language as an
+     *        additional language. For instance, if you request all languages that use US English (es-US), and there is
+     *        an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you
+     *        specify <code>yes</code> but not if you specify <code>no</code>.
+     */
+
+    public void setIncludeAdditionalLanguageCodes(Boolean includeAdditionalLanguageCodes) {
+        this.includeAdditionalLanguageCodes = includeAdditionalLanguageCodes;
+    }
+
+    /**
+     * <p>
+     * Boolean value indicating whether to return any bilingual voices that use the specified language as an additional
+     * language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice
+     * that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but
+     * not if you specify <code>no</code>.
+     * </p>
+     * 
+     * @return Boolean value indicating whether to return any bilingual voices that use the specified language as an
+     *         additional language. For instance, if you request all languages that use US English (es-US), and there is
+     *         an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you
+     *         specify <code>yes</code> but not if you specify <code>no</code>.
+     */
+
+    public Boolean getIncludeAdditionalLanguageCodes() {
+        return this.includeAdditionalLanguageCodes;
+    }
+
+    /**
+     * <p>
+     * Boolean value indicating whether to return any bilingual voices that use the specified language as an additional
+     * language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice
+     * that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but
+     * not if you specify <code>no</code>.
+     * </p>
+     * 
+     * @param includeAdditionalLanguageCodes
+     *        Boolean value indicating whether to return any bilingual voices that use the specified language as an
+     *        additional language. For instance, if you request all languages that use US English (es-US), and there is
+     *        an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you
+     *        specify <code>yes</code> but not if you specify <code>no</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVoicesRequest withIncludeAdditionalLanguageCodes(Boolean includeAdditionalLanguageCodes) {
+        setIncludeAdditionalLanguageCodes(includeAdditionalLanguageCodes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Boolean value indicating whether to return any bilingual voices that use the specified language as an additional
+     * language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice
+     * that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but
+     * not if you specify <code>no</code>.
+     * </p>
+     * 
+     * @return Boolean value indicating whether to return any bilingual voices that use the specified language as an
+     *         additional language. For instance, if you request all languages that use US English (es-US), and there is
+     *         an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you
+     *         specify <code>yes</code> but not if you specify <code>no</code>.
+     */
+
+    public Boolean isIncludeAdditionalLanguageCodes() {
+        return this.includeAdditionalLanguageCodes;
+    }
+
+    /**
+     * <p>
      * An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this
      * indicates where to continue the listing.
      * </p>
@@ -175,7 +260,8 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -187,6 +273,8 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
         sb.append("{");
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
+        if (getIncludeAdditionalLanguageCodes() != null)
+            sb.append("IncludeAdditionalLanguageCodes: ").append(getIncludeAdditionalLanguageCodes()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -207,6 +295,11 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getLanguageCode() != null && other.getLanguageCode().equals(this.getLanguageCode()) == false)
             return false;
+        if (other.getIncludeAdditionalLanguageCodes() == null ^ this.getIncludeAdditionalLanguageCodes() == null)
+            return false;
+        if (other.getIncludeAdditionalLanguageCodes() != null
+                && other.getIncludeAdditionalLanguageCodes().equals(this.getIncludeAdditionalLanguageCodes()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -220,6 +313,7 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
+        hashCode = prime * hashCode + ((getIncludeAdditionalLanguageCodes() == null) ? 0 : getIncludeAdditionalLanguageCodes().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

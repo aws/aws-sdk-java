@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class NewPrivateVirtualInterfaceMarshaller {
             .marshallLocationName("vlan").build();
     private static final MarshallingInfo<Integer> ASN_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("asn").build();
+    private static final MarshallingInfo<Integer> MTU_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("mtu").build();
     private static final MarshallingInfo<String> AUTHKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("authKey").build();
     private static final MarshallingInfo<String> AMAZONADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -65,6 +67,7 @@ public class NewPrivateVirtualInterfaceMarshaller {
             protocolMarshaller.marshall(newPrivateVirtualInterface.getVirtualInterfaceName(), VIRTUALINTERFACENAME_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterface.getVlan(), VLAN_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterface.getAsn(), ASN_BINDING);
+            protocolMarshaller.marshall(newPrivateVirtualInterface.getMtu(), MTU_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterface.getAuthKey(), AUTHKEY_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterface.getAmazonAddress(), AMAZONADDRESS_BINDING);
             protocolMarshaller.marshall(newPrivateVirtualInterface.getCustomerAddress(), CUSTOMERADDRESS_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class RtmpGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheLength").build();
     private static final MarshallingInfo<String> CAPTIONDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("captionData").build();
+    private static final MarshallingInfo<String> INPUTLOSSACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputLossAction").build();
     private static final MarshallingInfo<Integer> RESTARTDELAY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("restartDelay").build();
 
@@ -58,6 +60,7 @@ public class RtmpGroupSettingsMarshaller {
             protocolMarshaller.marshall(rtmpGroupSettings.getCacheFullBehavior(), CACHEFULLBEHAVIOR_BINDING);
             protocolMarshaller.marshall(rtmpGroupSettings.getCacheLength(), CACHELENGTH_BINDING);
             protocolMarshaller.marshall(rtmpGroupSettings.getCaptionData(), CAPTIONDATA_BINDING);
+            protocolMarshaller.marshall(rtmpGroupSettings.getInputLossAction(), INPUTLOSSACTION_BINDING);
             protocolMarshaller.marshall(rtmpGroupSettings.getRestartDelay(), RESTARTDELAY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

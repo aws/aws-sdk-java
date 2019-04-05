@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A
- * command invocation applies to one instance. For example, if a user executes SendCommand against three instances, then
- * a command invocation is created for each requested instance ID. A command invocation returns status and detail
- * information about a command you executed.
+ * command invocation applies to one instance. For example, if a user runs SendCommand against three instances, then a
+ * command invocation is created for each requested instance ID. A command invocation returns status and detail
+ * information about a command you ran.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CommandInvocation" target="_top">AWS API
@@ -86,8 +86,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * StatusDetails includes more information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than Status. For more information about
      * these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     * Status</a>. StatusDetails can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -184,6 +184,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private NotificationConfig notificationConfig;
+    /**
+     * <p>
+     * CloudWatch Logs information where you want Systems Manager to send the command output.
+     * </p>
+     */
+    private CloudWatchOutputConfig cloudWatchOutputConfig;
 
     /**
      * <p>
@@ -550,8 +556,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * StatusDetails includes more information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than Status. For more information about
      * these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     * Status</a>. StatusDetails can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -615,8 +621,9 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      *        StatusDetails includes more information than Status because it includes states resulting from error and
      *        concurrency control parameters. StatusDetails can show different results than Status. For more information
      *        about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     *        Status</a>. StatusDetails can be one of the following values:</p>
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -685,8 +692,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * StatusDetails includes more information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than Status. For more information about
      * these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     * Status</a>. StatusDetails can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -749,8 +756,9 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      *         StatusDetails includes more information than Status because it includes states resulting from error and
      *         concurrency control parameters. StatusDetails can show different results than Status. For more
      *         information about these statuses, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     *         Status</a>. StatusDetails can be one of the following values:</p>
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *         Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *         following values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -819,8 +827,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      * StatusDetails includes more information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than Status. For more information about
      * these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     * Status</a>. StatusDetails can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -884,8 +892,9 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      *        StatusDetails includes more information than Status because it includes states resulting from error and
      *        concurrency control parameters. StatusDetails can show different results than Status. For more information
      *        about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     *        Status</a>. StatusDetails can be one of the following values:</p>
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1236,7 +1245,48 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * CloudWatch Logs information where you want Systems Manager to send the command output.
+     * </p>
+     * 
+     * @param cloudWatchOutputConfig
+     *        CloudWatch Logs information where you want Systems Manager to send the command output.
+     */
+
+    public void setCloudWatchOutputConfig(CloudWatchOutputConfig cloudWatchOutputConfig) {
+        this.cloudWatchOutputConfig = cloudWatchOutputConfig;
+    }
+
+    /**
+     * <p>
+     * CloudWatch Logs information where you want Systems Manager to send the command output.
+     * </p>
+     * 
+     * @return CloudWatch Logs information where you want Systems Manager to send the command output.
+     */
+
+    public CloudWatchOutputConfig getCloudWatchOutputConfig() {
+        return this.cloudWatchOutputConfig;
+    }
+
+    /**
+     * <p>
+     * CloudWatch Logs information where you want Systems Manager to send the command output.
+     * </p>
+     * 
+     * @param cloudWatchOutputConfig
+     *        CloudWatch Logs information where you want Systems Manager to send the command output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CommandInvocation withCloudWatchOutputConfig(CloudWatchOutputConfig cloudWatchOutputConfig) {
+        setCloudWatchOutputConfig(cloudWatchOutputConfig);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1275,7 +1325,9 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
         if (getServiceRole() != null)
             sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getNotificationConfig() != null)
-            sb.append("NotificationConfig: ").append(getNotificationConfig());
+            sb.append("NotificationConfig: ").append(getNotificationConfig()).append(",");
+        if (getCloudWatchOutputConfig() != null)
+            sb.append("CloudWatchOutputConfig: ").append(getCloudWatchOutputConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1350,6 +1402,10 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getNotificationConfig() != null && other.getNotificationConfig().equals(this.getNotificationConfig()) == false)
             return false;
+        if (other.getCloudWatchOutputConfig() == null ^ this.getCloudWatchOutputConfig() == null)
+            return false;
+        if (other.getCloudWatchOutputConfig() != null && other.getCloudWatchOutputConfig().equals(this.getCloudWatchOutputConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1373,6 +1429,7 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCommandPlugins() == null) ? 0 : getCommandPlugins().hashCode());
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getNotificationConfig() == null) ? 0 : getNotificationConfig().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchOutputConfig() == null) ? 0 : getCloudWatchOutputConfig().hashCode());
         return hashCode;
     }
 

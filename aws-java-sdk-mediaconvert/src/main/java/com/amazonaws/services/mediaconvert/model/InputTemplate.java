@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,17 +41,34 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
      * outputs. You can use mutiple captions selectors per input.
      */
     private java.util.Map<String, CaptionSelector> captionSelectors;
-
+    /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * controllable for MPEG2 and uncompressed video inputs.
+     */
     private String deblockFilter;
-
+    /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
+     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     */
     private String denoiseFilter;
-
+    /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
+     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
+     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
+     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     */
     private String filterEnable;
     /**
      * Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The
      * range is -5 to 5. Default is 0.
      */
     private Integer filterStrength;
+    /**
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
+     */
+    private ImageInserter imageInserter;
     /**
      * (InputClippings) contains sets of start and end times that together specify a portion of the input to be used in
      * the outputs. If you provide only a start time, the clip will be the entire input from that point to the end. If
@@ -66,11 +83,20 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
      * specify doesn't exist, the transcoding service will use this default.
      */
     private Integer programNumber;
-
+    /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
+     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     */
     private String psiControl;
-
+    /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
+     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
+     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
+     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     */
     private String timecodeSource;
-
+    /** Selector for video. */
     private VideoSelector videoSelector;
 
     /**
@@ -257,7 +283,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * controllable for MPEG2 and uncompressed video inputs.
+     * 
      * @param deblockFilter
+     *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
+     *        manaully controllable for MPEG2 and uncompressed video inputs.
      * @see InputDeblockFilter
      */
 
@@ -266,7 +297,11 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * controllable for MPEG2 and uncompressed video inputs.
+     * 
+     * @return Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
+     *         manaully controllable for MPEG2 and uncompressed video inputs.
      * @see InputDeblockFilter
      */
 
@@ -275,7 +310,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * controllable for MPEG2 and uncompressed video inputs.
+     * 
      * @param deblockFilter
+     *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
+     *        manaully controllable for MPEG2 and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDeblockFilter
      */
@@ -286,7 +326,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * controllable for MPEG2 and uncompressed video inputs.
+     * 
      * @param deblockFilter
+     *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
+     *        manaully controllable for MPEG2 and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDeblockFilter
      */
@@ -297,7 +342,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
+     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * 
      * @param denoiseFilter
+     *        Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
+     *        to MPEG2, H.264, H.265, and uncompressed video inputs.
      * @see InputDenoiseFilter
      */
 
@@ -306,7 +356,11 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
+     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * 
+     * @return Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
+     *         to MPEG2, H.264, H.265, and uncompressed video inputs.
      * @see InputDenoiseFilter
      */
 
@@ -315,7 +369,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
+     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * 
      * @param denoiseFilter
+     *        Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
+     *        to MPEG2, H.264, H.265, and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDenoiseFilter
      */
@@ -326,7 +385,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to
+     * MPEG2, H.264, H.265, and uncompressed video inputs.
+     * 
      * @param denoiseFilter
+     *        Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable
+     *        to MPEG2, H.264, H.265, and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDenoiseFilter
      */
@@ -337,7 +401,19 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
+     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
+     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
+     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * 
      * @param filterEnable
+     *        Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
+     *        deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     *        Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
+     *        depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
+     *        the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
+     *        regardless of input type.
      * @see InputFilterEnable
      */
 
@@ -346,7 +422,18 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
+     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
+     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
+     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * 
+     * @return Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
+     *         deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     *         Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
+     *         depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
+     *         the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
+     *         regardless of input type.
      * @see InputFilterEnable
      */
 
@@ -355,7 +442,19 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
+     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
+     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
+     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * 
      * @param filterEnable
+     *        Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
+     *        deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     *        Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
+     *        depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
+     *        the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
+     *        regardless of input type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFilterEnable
      */
@@ -366,7 +465,19 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
+     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
+     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
+     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
+     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * 
      * @param filterEnable
+     *        Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
+     *        deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
+     *        Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
+     *        depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
+     *        the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
+     *        regardless of input type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFilterEnable
      */
@@ -413,6 +524,46 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
 
     public InputTemplate withFilterStrength(Integer filterStrength) {
         setFilterStrength(filterStrength);
+        return this;
+    }
+
+    /**
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
+     * 
+     * @param imageInserter
+     *        Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *        feature for each input individually. This setting is disabled by default.
+     */
+
+    public void setImageInserter(ImageInserter imageInserter) {
+        this.imageInserter = imageInserter;
+    }
+
+    /**
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
+     * 
+     * @return Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *         feature for each input individually. This setting is disabled by default.
+     */
+
+    public ImageInserter getImageInserter() {
+        return this.imageInserter;
+    }
+
+    /**
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
+     * 
+     * @param imageInserter
+     *        Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *        feature for each input individually. This setting is disabled by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputTemplate withImageInserter(ImageInserter imageInserter) {
+        setImageInserter(imageInserter);
         return this;
     }
 
@@ -557,7 +708,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
+     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * 
      * @param psiControl
+     *        Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
+     *        scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
      * @see InputPsiControl
      */
 
@@ -566,7 +722,11 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
+     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * 
+     * @return Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
+     *         scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
      * @see InputPsiControl
      */
 
@@ -575,7 +735,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
+     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * 
      * @param psiControl
+     *        Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
+     *        scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputPsiControl
      */
@@ -586,7 +751,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. *
+     * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
+     * 
      * @param psiControl
+     *        Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to
+     *        scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputPsiControl
      */
@@ -597,7 +767,19 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
+     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
+     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
+     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * 
      * @param timecodeSource
+     *        Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
+     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
+     *        this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or
+     *        by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
+     *        HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
+     *        timecodes.
      * @see InputTimecodeSource
      */
 
@@ -606,7 +788,18 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
+     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
+     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
+     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * 
+     * @return Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
+     *         apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
+     *         this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED)
+     *         or by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
+     *         HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
+     *         timecodes.
      * @see InputTimecodeSource
      */
 
@@ -615,7 +808,19 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
+     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
+     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
+     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * 
      * @param timecodeSource
+     *        Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
+     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
+     *        this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or
+     *        by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
+     *        HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
+     *        timecodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputTimecodeSource
      */
@@ -626,7 +831,19 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
+     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
+     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
+     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * 
      * @param timecodeSource
+     *        Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
+     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
+     *        this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or
+     *        by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
+     *        HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
+     *        timecodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputTimecodeSource
      */
@@ -637,7 +854,10 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Selector for video.
+     * 
      * @param videoSelector
+     *        Selector for video.
      */
 
     public void setVideoSelector(VideoSelector videoSelector) {
@@ -645,7 +865,9 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Selector for video.
+     * 
+     * @return Selector for video.
      */
 
     public VideoSelector getVideoSelector() {
@@ -653,7 +875,10 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Selector for video.
+     * 
      * @param videoSelector
+     *        Selector for video.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -663,7 +888,8 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -687,6 +913,8 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
             sb.append("FilterEnable: ").append(getFilterEnable()).append(",");
         if (getFilterStrength() != null)
             sb.append("FilterStrength: ").append(getFilterStrength()).append(",");
+        if (getImageInserter() != null)
+            sb.append("ImageInserter: ").append(getImageInserter()).append(",");
         if (getInputClippings() != null)
             sb.append("InputClippings: ").append(getInputClippings()).append(",");
         if (getProgramNumber() != null)
@@ -739,6 +967,10 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFilterStrength() != null && other.getFilterStrength().equals(this.getFilterStrength()) == false)
             return false;
+        if (other.getImageInserter() == null ^ this.getImageInserter() == null)
+            return false;
+        if (other.getImageInserter() != null && other.getImageInserter().equals(this.getImageInserter()) == false)
+            return false;
         if (other.getInputClippings() == null ^ this.getInputClippings() == null)
             return false;
         if (other.getInputClippings() != null && other.getInputClippings().equals(this.getInputClippings()) == false)
@@ -774,6 +1006,7 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDenoiseFilter() == null) ? 0 : getDenoiseFilter().hashCode());
         hashCode = prime * hashCode + ((getFilterEnable() == null) ? 0 : getFilterEnable().hashCode());
         hashCode = prime * hashCode + ((getFilterStrength() == null) ? 0 : getFilterStrength().hashCode());
+        hashCode = prime * hashCode + ((getImageInserter() == null) ? 0 : getImageInserter().hashCode());
         hashCode = prime * hashCode + ((getInputClippings() == null) ? 0 : getInputClippings().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
         hashCode = prime * hashCode + ((getPsiControl() == null) ? 0 : getPsiControl().hashCode());

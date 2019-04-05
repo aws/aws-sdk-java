@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,18 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
      * associated to the video, separate by ','.
      */
     private String audioRenditionSets;
-
+    /**
+     * Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only
+     * stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
+     * Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default.
+     * Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select,
+     * Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in
+     * the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the
+     * client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO,
+     * AUTOSELECT=NO
+     */
     private String audioTrackType;
-
+    /** When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest */
     private String iFrameOnlyManifest;
     /** String concatenated to end of segment filenames. Accepts "Format Identifiers":#format_identifier_parameters. */
     private String segmentModifier;
@@ -115,7 +124,24 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only
+     * stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
+     * Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default.
+     * Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select,
+     * Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in
+     * the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the
+     * client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO,
+     * AUTOSELECT=NO
+     * 
      * @param audioTrackType
+     *        Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this
+     *        audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the
+     *        HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play
+     *        back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES
+     *        Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by
+     *        default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate
+     *        Audio, not Auto Select Alternate rendition that the client will not try to play back by default.
+     *        Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
      * @see HlsAudioTrackType
      */
 
@@ -124,7 +150,23 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only
+     * stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
+     * Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default.
+     * Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select,
+     * Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in
+     * the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the
+     * client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO,
+     * AUTOSELECT=NO
+     * 
+     * @return Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this
+     *         audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the
+     *         HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to
+     *         play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES
+     *         Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by
+     *         default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate
+     *         Audio, not Auto Select Alternate rendition that the client will not try to play back by default.
+     *         Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
      * @see HlsAudioTrackType
      */
 
@@ -133,7 +175,24 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only
+     * stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
+     * Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default.
+     * Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select,
+     * Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in
+     * the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the
+     * client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO,
+     * AUTOSELECT=NO
+     * 
      * @param audioTrackType
+     *        Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this
+     *        audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the
+     *        HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play
+     *        back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES
+     *        Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by
+     *        default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate
+     *        Audio, not Auto Select Alternate rendition that the client will not try to play back by default.
+     *        Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsAudioTrackType
      */
@@ -144,7 +203,24 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only
+     * stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest.
+     * Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default.
+     * Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select,
+     * Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in
+     * the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the
+     * client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO,
+     * AUTOSELECT=NO
+     * 
      * @param audioTrackType
+     *        Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this
+     *        audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the
+     *        HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play
+     *        back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES
+     *        Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by
+     *        default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate
+     *        Audio, not Auto Select Alternate rendition that the client will not try to play back by default.
+     *        Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsAudioTrackType
      */
@@ -155,7 +231,10 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     * 
      * @param iFrameOnlyManifest
+     *        When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
      * @see HlsIFrameOnlyManifest
      */
 
@@ -164,7 +243,9 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     * 
+     * @return When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
      * @see HlsIFrameOnlyManifest
      */
 
@@ -173,7 +254,10 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     * 
      * @param iFrameOnlyManifest
+     *        When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsIFrameOnlyManifest
      */
@@ -184,7 +268,10 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
+     * 
      * @param iFrameOnlyManifest
+     *        When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsIFrameOnlyManifest
      */
@@ -232,7 +319,8 @@ public class HlsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

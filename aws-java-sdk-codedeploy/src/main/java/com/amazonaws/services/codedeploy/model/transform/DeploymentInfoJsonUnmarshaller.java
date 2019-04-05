@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,15 +82,15 @@ public class DeploymentInfoJsonUnmarshaller implements Unmarshaller<DeploymentIn
                 }
                 if (context.testExpression("createTime", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setCreateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deploymentInfo.setCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deploymentInfo.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("completeTime", targetDepth)) {
                     context.nextToken();
-                    deploymentInfo.setCompleteTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    deploymentInfo.setCompleteTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("deploymentOverview", targetDepth)) {
                     context.nextToken();

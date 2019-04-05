@@ -15,25 +15,25 @@
 
 package com.amazonaws.codegen.model.config.templates;
 
+import static com.amazonaws.codegen.internal.Constants.PROTOCOL_CONFIG_LOCATION;
+import static java.util.Collections.singletonList;
+
 import com.amazonaws.codegen.internal.ClassLoaderHelper;
 import com.amazonaws.codegen.internal.Jackson;
 import com.amazonaws.codegen.model.intermediate.Protocol;
-
 import java.io.InputStream;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import static com.amazonaws.codegen.internal.Constants.PROTOCOL_CONFIG_LOCATION;
-
 public class CodeGenTemplatesConfig {
-
 
     private TopLevelTemplate syncClientBuilder = new TopLevelTemplate("/templates/common/SyncClientBuilder.ftl", null);
     private TopLevelTemplate asyncClientBuilder = new TopLevelTemplate("/templates/common/AsyncClientBuilder.ftl", null);
     private TopLevelTemplate sdkFunctionClass = new TopLevelTemplate("/templates/waiter/SdkFunction.ftl", null);
     private TopLevelTemplate acceptorClass = new TopLevelTemplate("/templates/waiter/Acceptor.ftl", null);
     private TopLevelTemplate waiterClass = new TopLevelTemplate("/templates/waiter/Waiter.ftl", null);
+    private TopLevelTemplate endpointDiscoveryCache = new TopLevelTemplate("/templates/endpoint-discovery/Cache.ftl", null);
+    private TopLevelTemplate endpointDiscoveryCacheLoader = new TopLevelTemplate("/templates/endpoint-discovery/CacheLoader.ftl", null);
     private TopLevelTemplate syncClient;
     private TopLevelTemplate asyncClient;
     private TopLevelTemplate syncAbstractClass;
@@ -60,7 +60,7 @@ public class CodeGenTemplatesConfig {
     private TopLevelTemplate apiGatewayGradleBuildTemplate = new TopLevelTemplate("/templates/api-gateway/gradle/build.gradle.ftl", null);
     private TopLevelTemplate apiGatewayGradleSettingsTemplate = new TopLevelTemplate("/templates/api-gateway/gradle/settings.gradle.ftl", null);
     private TopLevelTemplate apiGatewayReadmeTemplate =
-            new TopLevelTemplate("/templates/api-gateway/README.md.ftl", Collections.singletonList(
+            new TopLevelTemplate("/templates/api-gateway/README.md.ftl", singletonList(
                     new ChildTemplate("/templates/api-gateway/README_Dependencies.ftl", "README_Dependencies")));
 
     private List<ChildTemplate> commonChildTemplates;
@@ -91,6 +91,11 @@ public class CodeGenTemplatesConfig {
                                                CodeGenTemplatesConfig override) {
 
         CodeGenTemplatesConfig merged = new CodeGenTemplatesConfig();
+
+        merged.setSyncClientBuilder(TopLevelTemplate.merge(
+            config.getSyncClientBuilder(), override.getSyncClientBuilder()));
+        merged.setAsyncClientBuilder(TopLevelTemplate.merge(
+            config.getAsyncClientBuilder(), override.getAsyncClientBuilder()));
 
         merged.setSyncClient(TopLevelTemplate.merge(
                 config.getSyncClient(), override.getSyncClient()));
@@ -385,5 +390,13 @@ public class CodeGenTemplatesConfig {
 
     public TopLevelTemplate getApiGatewayReadmeTemplate() {
         return apiGatewayReadmeTemplate;
+    }
+
+    public TopLevelTemplate getEndpointDiscoveryCache() {
+        return endpointDiscoveryCache;
+    }
+
+    public TopLevelTemplate getEndpointDiscoveryCacheLoader() {
+        return endpointDiscoveryCacheLoader;
     }
 }

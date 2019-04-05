@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes an Open Id Connect configuration.
+ * Describes an OpenID Connect configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/OpenIDConnectConfig" target="_top">AWS API
@@ -30,16 +30,16 @@ public class OpenIDConnectConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The issuer for the open id connect configuration. The issuer returned by discovery MUST exactly match the value
-     * of iss in the ID Token.
+     * The issuer for the OpenID Connect configuration. The issuer returned by discovery must exactly match the value of
+     * <code>iss</code> in the ID token.
      * </p>
      */
     private String issuer;
     /**
      * <p>
-     * The client identifier of the Relying party at the OpenID Provider. This identifier is typically obtained when the
-     * Relying party is registered with the OpenID Provider. You can specify a regular expression so the AWS AppSync can
-     * validate against multiple client identifiers at a time
+     * The client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained
+     * when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so
+     * the AWS AppSync can validate against multiple client identifiers at a time.
      * </p>
      */
     private String clientId;
@@ -58,13 +58,13 @@ public class OpenIDConnectConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The issuer for the open id connect configuration. The issuer returned by discovery MUST exactly match the value
-     * of iss in the ID Token.
+     * The issuer for the OpenID Connect configuration. The issuer returned by discovery must exactly match the value of
+     * <code>iss</code> in the ID token.
      * </p>
      * 
      * @param issuer
-     *        The issuer for the open id connect configuration. The issuer returned by discovery MUST exactly match the
-     *        value of iss in the ID Token.
+     *        The issuer for the OpenID Connect configuration. The issuer returned by discovery must exactly match the
+     *        value of <code>iss</code> in the ID token.
      */
 
     public void setIssuer(String issuer) {
@@ -73,12 +73,12 @@ public class OpenIDConnectConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The issuer for the open id connect configuration. The issuer returned by discovery MUST exactly match the value
-     * of iss in the ID Token.
+     * The issuer for the OpenID Connect configuration. The issuer returned by discovery must exactly match the value of
+     * <code>iss</code> in the ID token.
      * </p>
      * 
-     * @return The issuer for the open id connect configuration. The issuer returned by discovery MUST exactly match the
-     *         value of iss in the ID Token.
+     * @return The issuer for the OpenID Connect configuration. The issuer returned by discovery must exactly match the
+     *         value of <code>iss</code> in the ID token.
      */
 
     public String getIssuer() {
@@ -87,13 +87,13 @@ public class OpenIDConnectConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The issuer for the open id connect configuration. The issuer returned by discovery MUST exactly match the value
-     * of iss in the ID Token.
+     * The issuer for the OpenID Connect configuration. The issuer returned by discovery must exactly match the value of
+     * <code>iss</code> in the ID token.
      * </p>
      * 
      * @param issuer
-     *        The issuer for the open id connect configuration. The issuer returned by discovery MUST exactly match the
-     *        value of iss in the ID Token.
+     *        The issuer for the OpenID Connect configuration. The issuer returned by discovery must exactly match the
+     *        value of <code>iss</code> in the ID token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,15 +104,15 @@ public class OpenIDConnectConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The client identifier of the Relying party at the OpenID Provider. This identifier is typically obtained when the
-     * Relying party is registered with the OpenID Provider. You can specify a regular expression so the AWS AppSync can
-     * validate against multiple client identifiers at a time
+     * The client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained
+     * when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so
+     * the AWS AppSync can validate against multiple client identifiers at a time.
      * </p>
      * 
      * @param clientId
-     *        The client identifier of the Relying party at the OpenID Provider. This identifier is typically obtained
-     *        when the Relying party is registered with the OpenID Provider. You can specify a regular expression so the
-     *        AWS AppSync can validate against multiple client identifiers at a time
+     *        The client identifier of the Relying party at the OpenID identity provider. This identifier is typically
+     *        obtained when the Relying party is registered with the OpenID identity provider. You can specify a regular
+     *        expression so the AWS AppSync can validate against multiple client identifiers at a time.
      */
 
     public void setClientId(String clientId) {
@@ -121,14 +121,14 @@ public class OpenIDConnectConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The client identifier of the Relying party at the OpenID Provider. This identifier is typically obtained when the
-     * Relying party is registered with the OpenID Provider. You can specify a regular expression so the AWS AppSync can
-     * validate against multiple client identifiers at a time
+     * The client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained
+     * when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so
+     * the AWS AppSync can validate against multiple client identifiers at a time.
      * </p>
      * 
-     * @return The client identifier of the Relying party at the OpenID Provider. This identifier is typically obtained
-     *         when the Relying party is registered with the OpenID Provider. You can specify a regular expression so
-     *         the AWS AppSync can validate against multiple client identifiers at a time
+     * @return The client identifier of the Relying party at the OpenID identity provider. This identifier is typically
+     *         obtained when the Relying party is registered with the OpenID identity provider. You can specify a
+     *         regular expression so the AWS AppSync can validate against multiple client identifiers at a time.
      */
 
     public String getClientId() {
@@ -137,15 +137,15 @@ public class OpenIDConnectConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The client identifier of the Relying party at the OpenID Provider. This identifier is typically obtained when the
-     * Relying party is registered with the OpenID Provider. You can specify a regular expression so the AWS AppSync can
-     * validate against multiple client identifiers at a time
+     * The client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained
+     * when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so
+     * the AWS AppSync can validate against multiple client identifiers at a time.
      * </p>
      * 
      * @param clientId
-     *        The client identifier of the Relying party at the OpenID Provider. This identifier is typically obtained
-     *        when the Relying party is registered with the OpenID Provider. You can specify a regular expression so the
-     *        AWS AppSync can validate against multiple client identifiers at a time
+     *        The client identifier of the Relying party at the OpenID identity provider. This identifier is typically
+     *        obtained when the Relying party is registered with the OpenID identity provider. You can specify a regular
+     *        expression so the AWS AppSync can validate against multiple client identifiers at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,7 +235,8 @@ public class OpenIDConnectConfig implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<AttachVolumeResult> attachVolumeAsync(AttachVolumeRequest request) {
+
+        return attachVolumeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachVolumeResult> attachVolumeAsync(AttachVolumeRequest request,
+            com.amazonaws.handlers.AsyncHandler<AttachVolumeRequest, AttachVolumeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelArchivalResult> cancelArchivalAsync(CancelArchivalRequest request) {
 
         return cancelArchivalAsync(request, null);
@@ -140,6 +153,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     @Override
     public java.util.concurrent.Future<CreateNFSFileShareResult> createNFSFileShareAsync(CreateNFSFileShareRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateNFSFileShareRequest, CreateNFSFileShareResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSMBFileShareResult> createSMBFileShareAsync(CreateSMBFileShareRequest request) {
+
+        return createSMBFileShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSMBFileShareResult> createSMBFileShareAsync(CreateSMBFileShareRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSMBFileShareRequest, CreateSMBFileShareResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -407,6 +433,32 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSMBFileSharesResult> describeSMBFileSharesAsync(DescribeSMBFileSharesRequest request) {
+
+        return describeSMBFileSharesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSMBFileSharesResult> describeSMBFileSharesAsync(DescribeSMBFileSharesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeSMBFileSharesRequest, DescribeSMBFileSharesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSMBSettingsResult> describeSMBSettingsAsync(DescribeSMBSettingsRequest request) {
+
+        return describeSMBSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSMBSettingsResult> describeSMBSettingsAsync(DescribeSMBSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeSMBSettingsRequest, DescribeSMBSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotScheduleResult> describeSnapshotScheduleAsync(DescribeSnapshotScheduleRequest request) {
 
         return describeSnapshotScheduleAsync(request, null);
@@ -534,6 +586,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<DetachVolumeResult> detachVolumeAsync(DetachVolumeRequest request) {
+
+        return detachVolumeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachVolumeResult> detachVolumeAsync(DetachVolumeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetachVolumeRequest, DetachVolumeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableGatewayResult> disableGatewayAsync(DisableGatewayRequest request) {
 
         return disableGatewayAsync(request, null);
@@ -542,6 +607,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     @Override
     public java.util.concurrent.Future<DisableGatewayResult> disableGatewayAsync(DisableGatewayRequest request,
             com.amazonaws.handlers.AsyncHandler<DisableGatewayRequest, DisableGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<JoinDomainResult> joinDomainAsync(JoinDomainRequest request) {
+
+        return joinDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<JoinDomainResult> joinDomainAsync(JoinDomainRequest request,
+            com.amazonaws.handlers.AsyncHandler<JoinDomainRequest, JoinDomainResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -811,6 +889,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<SetSMBGuestPasswordResult> setSMBGuestPasswordAsync(SetSMBGuestPasswordRequest request) {
+
+        return setSMBGuestPasswordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSMBGuestPasswordResult> setSMBGuestPasswordAsync(SetSMBGuestPasswordRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetSMBGuestPasswordRequest, SetSMBGuestPasswordResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ShutdownGatewayResult> shutdownGatewayAsync(ShutdownGatewayRequest request) {
 
         return shutdownGatewayAsync(request, null);
@@ -910,6 +1001,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     @Override
     public java.util.concurrent.Future<UpdateNFSFileShareResult> updateNFSFileShareAsync(UpdateNFSFileShareRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateNFSFileShareRequest, UpdateNFSFileShareResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSMBFileShareResult> updateSMBFileShareAsync(UpdateSMBFileShareRequest request) {
+
+        return updateSMBFileShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSMBFileShareResult> updateSMBFileShareAsync(UpdateSMBFileShareRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSMBFileShareRequest, UpdateSMBFileShareResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

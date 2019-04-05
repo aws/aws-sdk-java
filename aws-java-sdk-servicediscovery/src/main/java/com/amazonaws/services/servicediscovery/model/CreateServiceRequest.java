@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
+     * The ID of the namespace that you want to use to create the service.
+     * </p>
+     */
+    private String namespaceId;
+    /**
+     * <p>
      * A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
      * retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be any unique
      * string, for example, a date/time stamp.
@@ -47,24 +53,40 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String description;
     /**
      * <p>
-     * A complex type that contains information about the records that you want Route 53 to create when you register an
-     * instance.
+     * A complex type that contains information about the Amazon Route 53 records that you want AWS Cloud Map to create
+     * when you register an instance.
      * </p>
      */
     private DnsConfig dnsConfig;
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, Route 53 associates the health check with all the records that you specify
-     * in <code>DnsConfig</code>.
+     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health check.
+     * If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route 53 DNS
+     * records that you specify in <code>DnsConfig</code>.
      * </p>
+     * <important>
      * <p>
-     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
-     * Pricing</a>.
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * <p>
+     * For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS
+     * Cloud Map Pricing</a>.
      * </p>
      */
     private HealthCheckConfig healthCheckConfig;
-
+    /**
+     * <p>
+     * A complex type that contains information about an optional custom health check.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     */
     private HealthCheckCustomConfig healthCheckCustomConfig;
 
     /**
@@ -104,6 +126,46 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateServiceRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the namespace that you want to use to create the service.
+     * </p>
+     * 
+     * @param namespaceId
+     *        The ID of the namespace that you want to use to create the service.
+     */
+
+    public void setNamespaceId(String namespaceId) {
+        this.namespaceId = namespaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the namespace that you want to use to create the service.
+     * </p>
+     * 
+     * @return The ID of the namespace that you want to use to create the service.
+     */
+
+    public String getNamespaceId() {
+        return this.namespaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the namespace that you want to use to create the service.
+     * </p>
+     * 
+     * @param namespaceId
+     *        The ID of the namespace that you want to use to create the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withNamespaceId(String namespaceId) {
+        setNamespaceId(namespaceId);
         return this;
     }
 
@@ -201,13 +263,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A complex type that contains information about the records that you want Route 53 to create when you register an
-     * instance.
+     * A complex type that contains information about the Amazon Route 53 records that you want AWS Cloud Map to create
+     * when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the records that you want Route 53 to create when you
-     *        register an instance.
+     *        A complex type that contains information about the Amazon Route 53 records that you want AWS Cloud Map to
+     *        create when you register an instance.
      */
 
     public void setDnsConfig(DnsConfig dnsConfig) {
@@ -216,12 +278,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A complex type that contains information about the records that you want Route 53 to create when you register an
-     * instance.
+     * A complex type that contains information about the Amazon Route 53 records that you want AWS Cloud Map to create
+     * when you register an instance.
      * </p>
      * 
-     * @return A complex type that contains information about the records that you want Route 53 to create when you
-     *         register an instance.
+     * @return A complex type that contains information about the Amazon Route 53 records that you want AWS Cloud Map to
+     *         create when you register an instance.
      */
 
     public DnsConfig getDnsConfig() {
@@ -230,13 +292,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A complex type that contains information about the records that you want Route 53 to create when you register an
-     * instance.
+     * A complex type that contains information about the Amazon Route 53 records that you want AWS Cloud Map to create
+     * when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the records that you want Route 53 to create when you
-     *        register an instance.
+     *        A complex type that contains information about the Amazon Route 53 records that you want AWS Cloud Map to
+     *        create when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,22 +309,33 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, Route 53 associates the health check with all the records that you specify
-     * in <code>DnsConfig</code>.
+     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health check.
+     * If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route 53 DNS
+     * records that you specify in <code>DnsConfig</code>.
      * </p>
+     * <important>
      * <p>
-     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
-     * Pricing</a>.
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * <p>
+     * For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS
+     * Cloud Map Pricing</a>.
      * </p>
      * 
      * @param healthCheckConfig
-     *        <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If
-     *        you specify settings for a health check, Route 53 associates the health check with all the records that
-     *        you specify in <code>DnsConfig</code>.</p>
+     *        <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health
+     *        check. If you specify settings for a health check, AWS Cloud Map associates the health check with all the
+     *        Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+     *        <p>
+     *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *        or <code>HealthCheckConfig</code> but not both.
+     *        </p>
+     *        </important>
      *        <p>
      *        For information about the charges for health checks, see <a
-     *        href="http://aws.amazon.com/route53/pricing">Route 53 Pricing</a>.
+     *        href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map Pricing</a>.
      */
 
     public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
@@ -271,21 +344,32 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, Route 53 associates the health check with all the records that you specify
-     * in <code>DnsConfig</code>.
+     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health check.
+     * If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route 53 DNS
+     * records that you specify in <code>DnsConfig</code>.
      * </p>
+     * <important>
      * <p>
-     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
-     * Pricing</a>.
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * <p>
+     * For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS
+     * Cloud Map Pricing</a>.
      * </p>
      * 
-     * @return <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If
-     *         you specify settings for a health check, Route 53 associates the health check with all the records that
-     *         you specify in <code>DnsConfig</code>.</p>
+     * @return <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health
+     *         check. If you specify settings for a health check, AWS Cloud Map associates the health check with all the
+     *         Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+     *         <p>
+     *         If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *         or <code>HealthCheckConfig</code> but not both.
+     *         </p>
+     *         </important>
      *         <p>
      *         For information about the charges for health checks, see <a
-     *         href="http://aws.amazon.com/route53/pricing">Route 53 Pricing</a>.
+     *         href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map Pricing</a>.
      */
 
     public HealthCheckConfig getHealthCheckConfig() {
@@ -294,22 +378,33 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, Route 53 associates the health check with all the records that you specify
-     * in <code>DnsConfig</code>.
+     * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health check.
+     * If you specify settings for a health check, AWS Cloud Map associates the health check with all the Route 53 DNS
+     * records that you specify in <code>DnsConfig</code>.
      * </p>
+     * <important>
      * <p>
-     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
-     * Pricing</a>.
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * <p>
+     * For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS
+     * Cloud Map Pricing</a>.
      * </p>
      * 
      * @param healthCheckConfig
-     *        <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If
-     *        you specify settings for a health check, Route 53 associates the health check with all the records that
-     *        you specify in <code>DnsConfig</code>.</p>
+     *        <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional Route 53 health
+     *        check. If you specify settings for a health check, AWS Cloud Map associates the health check with all the
+     *        Route 53 DNS records that you specify in <code>DnsConfig</code>.</p> <important>
+     *        <p>
+     *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *        or <code>HealthCheckConfig</code> but not both.
+     *        </p>
+     *        </important>
      *        <p>
      *        For information about the charges for health checks, see <a
-     *        href="http://aws.amazon.com/route53/pricing">Route 53 Pricing</a>.
+     *        href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map Pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,7 +414,22 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A complex type that contains information about an optional custom health check.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * 
      * @param healthCheckCustomConfig
+     *        A complex type that contains information about an optional custom health check.</p> <important>
+     *        <p>
+     *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *        or <code>HealthCheckConfig</code> but not both.
+     *        </p>
      */
 
     public void setHealthCheckCustomConfig(HealthCheckCustomConfig healthCheckCustomConfig) {
@@ -327,7 +437,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * A complex type that contains information about an optional custom health check.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * 
+     * @return A complex type that contains information about an optional custom health check.</p> <important>
+     *         <p>
+     *         If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *         or <code>HealthCheckConfig</code> but not both.
+     *         </p>
      */
 
     public HealthCheckCustomConfig getHealthCheckCustomConfig() {
@@ -335,7 +459,22 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A complex type that contains information about an optional custom health check.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * 
      * @param healthCheckCustomConfig
+     *        A complex type that contains information about an optional custom health check.</p> <important>
+     *        <p>
+     *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *        or <code>HealthCheckConfig</code> but not both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,7 +484,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -357,6 +497,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getNamespaceId() != null)
+            sb.append("NamespaceId: ").append(getNamespaceId()).append(",");
         if (getCreatorRequestId() != null)
             sb.append("CreatorRequestId: ").append(getCreatorRequestId()).append(",");
         if (getDescription() != null)
@@ -384,6 +526,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getNamespaceId() == null ^ this.getNamespaceId() == null)
+            return false;
+        if (other.getNamespaceId() != null && other.getNamespaceId().equals(this.getNamespaceId()) == false)
             return false;
         if (other.getCreatorRequestId() == null ^ this.getCreatorRequestId() == null)
             return false;
@@ -414,6 +560,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getNamespaceId() == null) ? 0 : getNamespaceId().hashCode());
         hashCode = prime * hashCode + ((getCreatorRequestId() == null) ? 0 : getCreatorRequestId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDnsConfig() == null) ? 0 : getDnsConfig().hashCode());

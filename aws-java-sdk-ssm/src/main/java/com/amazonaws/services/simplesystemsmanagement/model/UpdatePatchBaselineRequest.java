@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     private String name;
     /**
      * <p>
-     * A set of global filters used to exclude patches from the baseline.
+     * A set of global filters used to include patches in the baseline.
      * </p>
      */
     private PatchFilterGroup globalFilters;
@@ -84,6 +84,28 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> rejectedPatches;
+    /**
+     * <p>
+     * The action for Patch Manager to take on patches included in the RejectedPackages list.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only if it is a dependency of
+     * another package. It is considered compliant with the patch baseline, and its status is reported as
+     * <i>InstalledOther</i>. This is the default action if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them as dependencies, are not
+     * installed under any circumstances. If a package was installed before it was added to the Rejected patches list,
+     * it is considered non-compliant with the patch baseline, and its status is reported as <i>InstalledRejected</i>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String rejectedPatchesAction;
     /**
      * <p>
      * A description of the patch baseline.
@@ -187,11 +209,11 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A set of global filters used to exclude patches from the baseline.
+     * A set of global filters used to include patches in the baseline.
      * </p>
      * 
      * @param globalFilters
-     *        A set of global filters used to exclude patches from the baseline.
+     *        A set of global filters used to include patches in the baseline.
      */
 
     public void setGlobalFilters(PatchFilterGroup globalFilters) {
@@ -200,10 +222,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A set of global filters used to exclude patches from the baseline.
+     * A set of global filters used to include patches in the baseline.
      * </p>
      * 
-     * @return A set of global filters used to exclude patches from the baseline.
+     * @return A set of global filters used to include patches in the baseline.
      */
 
     public PatchFilterGroup getGlobalFilters() {
@@ -212,11 +234,11 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A set of global filters used to exclude patches from the baseline.
+     * A set of global filters used to include patches in the baseline.
      * </p>
      * 
      * @param globalFilters
-     *        A set of global filters used to exclude patches from the baseline.
+     *        A set of global filters used to include patches in the baseline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -626,6 +648,239 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The action for Patch Manager to take on patches included in the RejectedPackages list.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only if it is a dependency of
+     * another package. It is considered compliant with the patch baseline, and its status is reported as
+     * <i>InstalledOther</i>. This is the default action if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them as dependencies, are not
+     * installed under any circumstances. If a package was installed before it was added to the Rejected patches list,
+     * it is considered non-compliant with the patch baseline, and its status is reported as <i>InstalledRejected</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param rejectedPatchesAction
+     *        The action for Patch Manager to take on patches included in the RejectedPackages list.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only if it is a dependency
+     *        of another package. It is considered compliant with the patch baseline, and its status is reported as
+     *        <i>InstalledOther</i>. This is the default action if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them as dependencies, are
+     *        not installed under any circumstances. If a package was installed before it was added to the Rejected
+     *        patches list, it is considered non-compliant with the patch baseline, and its status is reported as
+     *        <i>InstalledRejected</i>.
+     *        </p>
+     *        </li>
+     * @see PatchAction
+     */
+
+    public void setRejectedPatchesAction(String rejectedPatchesAction) {
+        this.rejectedPatchesAction = rejectedPatchesAction;
+    }
+
+    /**
+     * <p>
+     * The action for Patch Manager to take on patches included in the RejectedPackages list.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only if it is a dependency of
+     * another package. It is considered compliant with the patch baseline, and its status is reported as
+     * <i>InstalledOther</i>. This is the default action if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them as dependencies, are not
+     * installed under any circumstances. If a package was installed before it was added to the Rejected patches list,
+     * it is considered non-compliant with the patch baseline, and its status is reported as <i>InstalledRejected</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The action for Patch Manager to take on patches included in the RejectedPackages list.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only if it is a
+     *         dependency of another package. It is considered compliant with the patch baseline, and its status is
+     *         reported as <i>InstalledOther</i>. This is the default action if no option is specified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them as dependencies, are
+     *         not installed under any circumstances. If a package was installed before it was added to the Rejected
+     *         patches list, it is considered non-compliant with the patch baseline, and its status is reported as
+     *         <i>InstalledRejected</i>.
+     *         </p>
+     *         </li>
+     * @see PatchAction
+     */
+
+    public String getRejectedPatchesAction() {
+        return this.rejectedPatchesAction;
+    }
+
+    /**
+     * <p>
+     * The action for Patch Manager to take on patches included in the RejectedPackages list.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only if it is a dependency of
+     * another package. It is considered compliant with the patch baseline, and its status is reported as
+     * <i>InstalledOther</i>. This is the default action if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them as dependencies, are not
+     * installed under any circumstances. If a package was installed before it was added to the Rejected patches list,
+     * it is considered non-compliant with the patch baseline, and its status is reported as <i>InstalledRejected</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param rejectedPatchesAction
+     *        The action for Patch Manager to take on patches included in the RejectedPackages list.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only if it is a dependency
+     *        of another package. It is considered compliant with the patch baseline, and its status is reported as
+     *        <i>InstalledOther</i>. This is the default action if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them as dependencies, are
+     *        not installed under any circumstances. If a package was installed before it was added to the Rejected
+     *        patches list, it is considered non-compliant with the patch baseline, and its status is reported as
+     *        <i>InstalledRejected</i>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchAction
+     */
+
+    public UpdatePatchBaselineRequest withRejectedPatchesAction(String rejectedPatchesAction) {
+        setRejectedPatchesAction(rejectedPatchesAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The action for Patch Manager to take on patches included in the RejectedPackages list.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only if it is a dependency of
+     * another package. It is considered compliant with the patch baseline, and its status is reported as
+     * <i>InstalledOther</i>. This is the default action if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them as dependencies, are not
+     * installed under any circumstances. If a package was installed before it was added to the Rejected patches list,
+     * it is considered non-compliant with the patch baseline, and its status is reported as <i>InstalledRejected</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param rejectedPatchesAction
+     *        The action for Patch Manager to take on patches included in the RejectedPackages list.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only if it is a dependency
+     *        of another package. It is considered compliant with the patch baseline, and its status is reported as
+     *        <i>InstalledOther</i>. This is the default action if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them as dependencies, are
+     *        not installed under any circumstances. If a package was installed before it was added to the Rejected
+     *        patches list, it is considered non-compliant with the patch baseline, and its status is reported as
+     *        <i>InstalledRejected</i>.
+     *        </p>
+     *        </li>
+     * @see PatchAction
+     */
+
+    public void setRejectedPatchesAction(PatchAction rejectedPatchesAction) {
+        withRejectedPatchesAction(rejectedPatchesAction);
+    }
+
+    /**
+     * <p>
+     * The action for Patch Manager to take on patches included in the RejectedPackages list.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only if it is a dependency of
+     * another package. It is considered compliant with the patch baseline, and its status is reported as
+     * <i>InstalledOther</i>. This is the default action if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them as dependencies, are not
+     * installed under any circumstances. If a package was installed before it was added to the Rejected patches list,
+     * it is considered non-compliant with the patch baseline, and its status is reported as <i>InstalledRejected</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param rejectedPatchesAction
+     *        The action for Patch Manager to take on patches included in the RejectedPackages list.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches list is installed only if it is a dependency
+     *        of another package. It is considered compliant with the patch baseline, and its status is reported as
+     *        <i>InstalledOther</i>. This is the default action if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>BLOCK</b>: Packages in the RejectedPatches list, and packages that include them as dependencies, are
+     *        not installed under any circumstances. If a package was installed before it was added to the Rejected
+     *        patches list, it is considered non-compliant with the patch baseline, and its status is reported as
+     *        <i>InstalledRejected</i>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchAction
+     */
+
+    public UpdatePatchBaselineRequest withRejectedPatchesAction(PatchAction rejectedPatchesAction) {
+        this.rejectedPatchesAction = rejectedPatchesAction.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * A description of the patch baseline.
      * </p>
      * 
@@ -806,7 +1061,8 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -832,6 +1088,8 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("ApprovedPatchesEnableNonSecurity: ").append(getApprovedPatchesEnableNonSecurity()).append(",");
         if (getRejectedPatches() != null)
             sb.append("RejectedPatches: ").append(getRejectedPatches()).append(",");
+        if (getRejectedPatchesAction() != null)
+            sb.append("RejectedPatchesAction: ").append(getRejectedPatchesAction()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getSources() != null)
@@ -886,6 +1144,10 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getRejectedPatches() != null && other.getRejectedPatches().equals(this.getRejectedPatches()) == false)
             return false;
+        if (other.getRejectedPatchesAction() == null ^ this.getRejectedPatchesAction() == null)
+            return false;
+        if (other.getRejectedPatchesAction() != null && other.getRejectedPatchesAction().equals(this.getRejectedPatchesAction()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -914,6 +1176,7 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getApprovedPatchesComplianceLevel() == null) ? 0 : getApprovedPatchesComplianceLevel().hashCode());
         hashCode = prime * hashCode + ((getApprovedPatchesEnableNonSecurity() == null) ? 0 : getApprovedPatchesEnableNonSecurity().hashCode());
         hashCode = prime * hashCode + ((getRejectedPatches() == null) ? 0 : getRejectedPatches().hashCode());
+        hashCode = prime * hashCode + ((getRejectedPatchesAction() == null) ? 0 : getRejectedPatchesAction().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getReplace() == null) ? 0 : getReplace().hashCode());

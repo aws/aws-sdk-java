@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,7 +73,9 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     private String status;
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      */
     private String definition;
@@ -423,11 +425,15 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      * 
      * @param definition
-     *        The Amazon States Language definition of the state machine.
+     *        The Amazon States Language definition of the state machine. See <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *        States Language</a>.
      */
 
     public void setDefinition(String definition) {
@@ -436,10 +442,14 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      * 
-     * @return The Amazon States Language definition of the state machine.
+     * @return The Amazon States Language definition of the state machine. See <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *         States Language</a>.
      */
 
     public String getDefinition() {
@@ -448,11 +458,15 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon States Language definition of the state machine.
+     * The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * Language</a>.
      * </p>
      * 
      * @param definition
-     *        The Amazon States Language definition of the state machine.
+     *        The Amazon States Language definition of the state machine. See <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *        States Language</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,7 +562,8 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -565,7 +580,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getDefinition() != null)
-            sb.append("Definition: ").append(getDefinition()).append(",");
+            sb.append("Definition: ").append("***Sensitive Data Redacted***").append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getCreationDate() != null)

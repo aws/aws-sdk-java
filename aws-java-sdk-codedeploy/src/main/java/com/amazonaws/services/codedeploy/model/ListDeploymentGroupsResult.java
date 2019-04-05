@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class ListDeploymentGroupsResult extends com.amazonaws.AmazonWebServiceRe
     private String applicationName;
     /**
      * <p>
-     * A list of corresponding deployment group names.
+     * A list of deployment group names.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> deploymentGroups;
@@ -88,10 +88,10 @@ public class ListDeploymentGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of corresponding deployment group names.
+     * A list of deployment group names.
      * </p>
      * 
-     * @return A list of corresponding deployment group names.
+     * @return A list of deployment group names.
      */
 
     public java.util.List<String> getDeploymentGroups() {
@@ -103,11 +103,11 @@ public class ListDeploymentGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of corresponding deployment group names.
+     * A list of deployment group names.
      * </p>
      * 
      * @param deploymentGroups
-     *        A list of corresponding deployment group names.
+     *        A list of deployment group names.
      */
 
     public void setDeploymentGroups(java.util.Collection<String> deploymentGroups) {
@@ -121,7 +121,7 @@ public class ListDeploymentGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of corresponding deployment group names.
+     * A list of deployment group names.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,7 +130,7 @@ public class ListDeploymentGroupsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param deploymentGroups
-     *        A list of corresponding deployment group names.
+     *        A list of deployment group names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +146,11 @@ public class ListDeploymentGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of corresponding deployment group names.
+     * A list of deployment group names.
      * </p>
      * 
      * @param deploymentGroups
-     *        A list of corresponding deployment group names.
+     *        A list of deployment group names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,7 +206,8 @@ public class ListDeploymentGroupsResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

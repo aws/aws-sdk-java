@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class AbstractAWSServerlessApplicationRepository implements AWSServerless
     }
 
     @Override
+    public CreateCloudFormationTemplateResult createCloudFormationTemplate(CreateCloudFormationTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +59,16 @@ public class AbstractAWSServerlessApplicationRepository implements AWSServerless
 
     @Override
     public GetApplicationPolicyResult getApplicationPolicy(GetApplicationPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCloudFormationTemplateResult getCloudFormationTemplate(GetCloudFormationTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListApplicationDependenciesResult listApplicationDependencies(ListApplicationDependenciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

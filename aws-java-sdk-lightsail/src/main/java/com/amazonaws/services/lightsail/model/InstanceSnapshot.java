@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     private java.util.Date createdAt;
     /**
      * <p>
-     * The region name and availability zone where you created the snapshot.
+     * The region name and Availability Zone where you created the snapshot.
      * </p>
      */
     private ResourceLocation location;
@@ -66,6 +66,13 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
     /**
      * <p>
      * The state the snapshot is in.
@@ -297,11 +304,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The region name and availability zone where you created the snapshot.
+     * The region name and Availability Zone where you created the snapshot.
      * </p>
      * 
      * @param location
-     *        The region name and availability zone where you created the snapshot.
+     *        The region name and Availability Zone where you created the snapshot.
      */
 
     public void setLocation(ResourceLocation location) {
@@ -310,10 +317,10 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The region name and availability zone where you created the snapshot.
+     * The region name and Availability Zone where you created the snapshot.
      * </p>
      * 
-     * @return The region name and availability zone where you created the snapshot.
+     * @return The region name and Availability Zone where you created the snapshot.
      */
 
     public ResourceLocation getLocation() {
@@ -322,11 +329,11 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The region name and availability zone where you created the snapshot.
+     * The region name and Availability Zone where you created the snapshot.
      * </p>
      * 
      * @param location
-     *        The region name and availability zone where you created the snapshot.
+     *        The region name and Availability Zone where you created the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,6 +412,88 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
 
     public InstanceSnapshot withResourceType(ResourceType resourceType) {
         this.resourceType = resourceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @return The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *         <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *         Guide</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceSnapshot withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values for the resource. For more information about tags in Lightsail, see the
+     *        <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev
+     *        Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceSnapshot withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -804,7 +893,8 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -826,6 +916,8 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
             sb.append("Location: ").append(getLocation()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getProgress() != null)
@@ -880,6 +972,10 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
@@ -926,6 +1022,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
         hashCode = prime * hashCode + ((getFromAttachedDisks() == null) ? 0 : getFromAttachedDisks().hashCode());

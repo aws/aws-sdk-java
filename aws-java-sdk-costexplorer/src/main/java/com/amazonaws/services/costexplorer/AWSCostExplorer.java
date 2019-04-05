@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ import com.amazonaws.services.costexplorer.model.*;
  * </p>
  * <p>
  * <p>
- * The Cost Explorer API allows you to programmatically query your cost and usage data. You can query for aggregated
+ * The Cost Explorer API enables you to programmatically query your cost and usage data. You can query for aggregated
  * data such as total monthly costs or total daily usage. You can also query for granular data, such as the number of
  * daily write operations for Amazon DynamoDB database tables in your production environment.
  * </p>
@@ -40,7 +40,7 @@ import com.amazonaws.services.costexplorer.model.*;
  * <ul>
  * <li>
  * <p>
- * https://ce.us-east-1.amazonaws.com
+ * <code>https://ce.us-east-1.amazonaws.com</code>
  * </p>
  * </li>
  * </ul>
@@ -65,9 +65,10 @@ public interface AWSCostExplorer {
      * Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric, such as
      * <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter
      * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
-     * range. For a complete list of valid dimensions, see the
-     * <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> </code>
-     * operation. Master accounts in an organization in AWS Organizations have access to all member accounts.
+     * range. For a complete list of valid dimensions, see the <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
+     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * member accounts.
      * </p>
      * 
      * @param getCostAndUsageRequest
@@ -88,6 +89,24 @@ public interface AWSCostExplorer {
      *      Documentation</a>
      */
     GetCostAndUsageResult getCostAndUsage(GetCostAndUsageRequest getCostAndUsageRequest);
+
+    /**
+     * <p>
+     * Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period
+     * that you select, based on your past costs.
+     * </p>
+     * 
+     * @param getCostForecastRequest
+     * @return Result of the GetCostForecast operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @sample AWSCostExplorer.GetCostForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCostForecastResult getCostForecast(GetCostForecastRequest getCostForecastRequest);
 
     /**
      * <p>
@@ -116,7 +135,7 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves the reservation coverage for your account. This allows you to see how much of your Amazon Elastic
+     * Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic
      * Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a
      * reservation. An organization's master account can see the coverage of the associated member accounts. For any
      * time period, you can filter data about reservation usage by the following dimensions:
@@ -188,8 +207,8 @@ public interface AWSCostExplorer {
      * </p>
      * 
      * @param getReservationCoverageRequest
-     *        You can use the following request parameters to query for how much of your instance usage is covered by a
-     *        reservation.
+     *        You can use the following request parameters to query for how much of your instance usage a reservation
+     *        covered.
      * @return Result of the GetReservationCoverage operation returned by the service.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
@@ -215,12 +234,12 @@ public interface AWSCostExplorer {
      * RI to purchase to maximize your estimated savings.
      * </p>
      * <p>
-     * For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and c4 family usage in the US West
-     * (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family usage.
-     * AWS recommends the smallest size instance in an instance family. This makes it easier to purchase a size-flexible
-     * RI. AWS also shows the equal number of normalized units so that you can purchase any instance size that you want.
-     * For this example, your RI recommendation would be for <code>c4.large</code>, because that is the smallest size
-     * instance in the c4 instance family.
+     * For example, AWS automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US
+     * West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family
+     * usage. AWS recommends the smallest size instance in an instance family. This makes it easier to purchase a
+     * size-flexible RI. AWS also shows the equal number of normalized units so that you can purchase any instance size
+     * that you want. For this example, your RI recommendation would be for <code>c4.large</code> because that is the
+     * smallest size instance in the c4 instance family.
      * </p>
      * 
      * @param getReservationPurchaseRecommendationRequest

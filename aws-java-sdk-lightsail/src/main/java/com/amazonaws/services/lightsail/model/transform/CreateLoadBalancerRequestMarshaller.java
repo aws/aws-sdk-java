@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class CreateLoadBalancerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateDomainName").build();
     private static final MarshallingInfo<List> CERTIFICATEALTERNATIVENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateAlternativeNames").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateLoadBalancerRequestMarshaller instance = new CreateLoadBalancerRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateLoadBalancerRequestMarshaller {
             protocolMarshaller.marshall(createLoadBalancerRequest.getCertificateName(), CERTIFICATENAME_BINDING);
             protocolMarshaller.marshall(createLoadBalancerRequest.getCertificateDomainName(), CERTIFICATEDOMAINNAME_BINDING);
             protocolMarshaller.marshall(createLoadBalancerRequest.getCertificateAlternativeNames(), CERTIFICATEALTERNATIVENAMES_BINDING);
+            protocolMarshaller.marshall(createLoadBalancerRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

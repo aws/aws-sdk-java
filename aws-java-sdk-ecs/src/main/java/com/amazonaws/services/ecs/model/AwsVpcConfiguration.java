@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,34 +30,53 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
-     * AwsVpcConfiguration.
+     * The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per
+     * <code>AwsVpcConfiguration</code>.
      * </p>
+     * <note>
+     * <p>
+     * All specified subnets must be from the same VPC.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnets;
     /**
      * <p>
      * The security groups associated with the task or service. If you do not specify a security group, the default
-     * security group for the VPC is used. There is a limit of 5 security groups able to be specified per
-     * AwsVpcConfiguration.
+     * security group for the VPC is used. There is a limit of 5 security groups that can be specified per
+     * <code>AwsVpcConfiguration</code>.
      * </p>
+     * <note>
+     * <p>
+     * All specified security groups must be from the same VPC.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
     /**
      * <p>
-     * Whether the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address. The default value is
+     * <code>DISABLED</code>.
      * </p>
      */
     private String assignPublicIp;
 
     /**
      * <p>
-     * The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
-     * AwsVpcConfiguration.
+     * The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per
+     * <code>AwsVpcConfiguration</code>.
      * </p>
+     * <note>
+     * <p>
+     * All specified subnets must be from the same VPC.
+     * </p>
+     * </note>
      * 
-     * @return The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
-     *         AwsVpcConfiguration.
+     * @return The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per
+     *         <code>AwsVpcConfiguration</code>.</p> <note>
+     *         <p>
+     *         All specified subnets must be from the same VPC.
+     *         </p>
      */
 
     public java.util.List<String> getSubnets() {
@@ -69,13 +88,21 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
-     * AwsVpcConfiguration.
+     * The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per
+     * <code>AwsVpcConfiguration</code>.
      * </p>
+     * <note>
+     * <p>
+     * All specified subnets must be from the same VPC.
+     * </p>
+     * </note>
      * 
      * @param subnets
-     *        The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
-     *        AwsVpcConfiguration.
+     *        The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per
+     *        <code>AwsVpcConfiguration</code>.</p> <note>
+     *        <p>
+     *        All specified subnets must be from the same VPC.
+     *        </p>
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -89,9 +116,14 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
-     * AwsVpcConfiguration.
+     * The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per
+     * <code>AwsVpcConfiguration</code>.
      * </p>
+     * <note>
+     * <p>
+     * All specified subnets must be from the same VPC.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
@@ -99,8 +131,11 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param subnets
-     *        The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
-     *        AwsVpcConfiguration.
+     *        The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per
+     *        <code>AwsVpcConfiguration</code>.</p> <note>
+     *        <p>
+     *        All specified subnets must be from the same VPC.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,13 +151,21 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
-     * AwsVpcConfiguration.
+     * The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per
+     * <code>AwsVpcConfiguration</code>.
      * </p>
+     * <note>
+     * <p>
+     * All specified subnets must be from the same VPC.
+     * </p>
+     * </note>
      * 
      * @param subnets
-     *        The subnets associated with the task or service. There is a limit of 10 subnets able to be specified per
-     *        AwsVpcConfiguration.
+     *        The subnets associated with the task or service. There is a limit of 16 subnets that can be specified per
+     *        <code>AwsVpcConfiguration</code>.</p> <note>
+     *        <p>
+     *        All specified subnets must be from the same VPC.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,13 +177,21 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The security groups associated with the task or service. If you do not specify a security group, the default
-     * security group for the VPC is used. There is a limit of 5 security groups able to be specified per
-     * AwsVpcConfiguration.
+     * security group for the VPC is used. There is a limit of 5 security groups that can be specified per
+     * <code>AwsVpcConfiguration</code>.
      * </p>
+     * <note>
+     * <p>
+     * All specified security groups must be from the same VPC.
+     * </p>
+     * </note>
      * 
      * @return The security groups associated with the task or service. If you do not specify a security group, the
-     *         default security group for the VPC is used. There is a limit of 5 security groups able to be specified
-     *         per AwsVpcConfiguration.
+     *         default security group for the VPC is used. There is a limit of 5 security groups that can be specified
+     *         per <code>AwsVpcConfiguration</code>.</p> <note>
+     *         <p>
+     *         All specified security groups must be from the same VPC.
+     *         </p>
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -153,14 +204,22 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The security groups associated with the task or service. If you do not specify a security group, the default
-     * security group for the VPC is used. There is a limit of 5 security groups able to be specified per
-     * AwsVpcConfiguration.
+     * security group for the VPC is used. There is a limit of 5 security groups that can be specified per
+     * <code>AwsVpcConfiguration</code>.
      * </p>
+     * <note>
+     * <p>
+     * All specified security groups must be from the same VPC.
+     * </p>
+     * </note>
      * 
      * @param securityGroups
      *        The security groups associated with the task or service. If you do not specify a security group, the
-     *        default security group for the VPC is used. There is a limit of 5 security groups able to be specified per
-     *        AwsVpcConfiguration.
+     *        default security group for the VPC is used. There is a limit of 5 security groups that can be specified
+     *        per <code>AwsVpcConfiguration</code>.</p> <note>
+     *        <p>
+     *        All specified security groups must be from the same VPC.
+     *        </p>
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -175,9 +234,14 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The security groups associated with the task or service. If you do not specify a security group, the default
-     * security group for the VPC is used. There is a limit of 5 security groups able to be specified per
-     * AwsVpcConfiguration.
+     * security group for the VPC is used. There is a limit of 5 security groups that can be specified per
+     * <code>AwsVpcConfiguration</code>.
      * </p>
+     * <note>
+     * <p>
+     * All specified security groups must be from the same VPC.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
@@ -186,8 +250,11 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
      * 
      * @param securityGroups
      *        The security groups associated with the task or service. If you do not specify a security group, the
-     *        default security group for the VPC is used. There is a limit of 5 security groups able to be specified per
-     *        AwsVpcConfiguration.
+     *        default security group for the VPC is used. There is a limit of 5 security groups that can be specified
+     *        per <code>AwsVpcConfiguration</code>.</p> <note>
+     *        <p>
+     *        All specified security groups must be from the same VPC.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,14 +271,22 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The security groups associated with the task or service. If you do not specify a security group, the default
-     * security group for the VPC is used. There is a limit of 5 security groups able to be specified per
-     * AwsVpcConfiguration.
+     * security group for the VPC is used. There is a limit of 5 security groups that can be specified per
+     * <code>AwsVpcConfiguration</code>.
      * </p>
+     * <note>
+     * <p>
+     * All specified security groups must be from the same VPC.
+     * </p>
+     * </note>
      * 
      * @param securityGroups
      *        The security groups associated with the task or service. If you do not specify a security group, the
-     *        default security group for the VPC is used. There is a limit of 5 security groups able to be specified per
-     *        AwsVpcConfiguration.
+     *        default security group for the VPC is used. There is a limit of 5 security groups that can be specified
+     *        per <code>AwsVpcConfiguration</code>.</p> <note>
+     *        <p>
+     *        All specified security groups must be from the same VPC.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,11 +297,13 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address. The default value is
+     * <code>DISABLED</code>.
      * </p>
      * 
      * @param assignPublicIp
-     *        Whether the task's elastic network interface receives a public IP address.
+     *        Whether the task's elastic network interface receives a public IP address. The default value is
+     *        <code>DISABLED</code>.
      * @see AssignPublicIp
      */
 
@@ -236,10 +313,12 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address. The default value is
+     * <code>DISABLED</code>.
      * </p>
      * 
-     * @return Whether the task's elastic network interface receives a public IP address.
+     * @return Whether the task's elastic network interface receives a public IP address. The default value is
+     *         <code>DISABLED</code>.
      * @see AssignPublicIp
      */
 
@@ -249,11 +328,13 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address. The default value is
+     * <code>DISABLED</code>.
      * </p>
      * 
      * @param assignPublicIp
-     *        Whether the task's elastic network interface receives a public IP address.
+     *        Whether the task's elastic network interface receives a public IP address. The default value is
+     *        <code>DISABLED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignPublicIp
      */
@@ -265,11 +346,13 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address. The default value is
+     * <code>DISABLED</code>.
      * </p>
      * 
      * @param assignPublicIp
-     *        Whether the task's elastic network interface receives a public IP address.
+     *        Whether the task's elastic network interface receives a public IP address. The default value is
+     *        <code>DISABLED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignPublicIp
      */
@@ -280,7 +363,8 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,8 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The definition of AWS Cost and Usage Report. Customer can specify the report name, time unit, report format,
- * compression format, S3 bucket and additional artifacts and schema elements in the definition.
+ * <p>
+ * The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression
+ * format, S3 bucket, additional artifacts, and schema elements in the definition.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ReportDefinition" target="_top">AWS API
  *      Documentation</a>
@@ -34,7 +36,12 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     private String format;
 
     private String compression;
-
+    /**
+     * <p>
+     * A list of strings that indicate additional content that Amazon Web Services includes in the report, such as
+     * individual resource IDs.
+     * </p>
+     */
     private java.util.List<String> additionalSchemaElements;
 
     private String s3Bucket;
@@ -42,8 +49,26 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     private String s3Prefix;
 
     private String s3Region;
-
+    /**
+     * <p>
+     * A list of manifests that you want Amazon Web Services to create for this report.
+     * </p>
+     */
     private java.util.List<String> additionalArtifacts;
+    /**
+     * <p>
+     * Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services
+     * detects charges related to previous months. These charges can include refunds, credits, or support fees.
+     * </p>
+     */
+    private Boolean refreshClosedReports;
+    /**
+     * <p>
+     * Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in
+     * addition to the previous versions.
+     * </p>
+     */
+    private String reportVersioning;
 
     /**
      * @param reportName
@@ -219,7 +244,13 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * A list of strings that indicate additional content that Amazon Web Services includes in the report, such as
+     * individual resource IDs.
+     * </p>
+     * 
+     * @return A list of strings that indicate additional content that Amazon Web Services includes in the report, such
+     *         as individual resource IDs.
      * @see SchemaElement
      */
 
@@ -228,7 +259,14 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A list of strings that indicate additional content that Amazon Web Services includes in the report, such as
+     * individual resource IDs.
+     * </p>
+     * 
      * @param additionalSchemaElements
+     *        A list of strings that indicate additional content that Amazon Web Services includes in the report, such
+     *        as individual resource IDs.
      * @see SchemaElement
      */
 
@@ -243,12 +281,18 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * A list of strings that indicate additional content that Amazon Web Services includes in the report, such as
+     * individual resource IDs.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAdditionalSchemaElements(java.util.Collection)} or
      * {@link #withAdditionalSchemaElements(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param additionalSchemaElements
+     *        A list of strings that indicate additional content that Amazon Web Services includes in the report, such
+     *        as individual resource IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SchemaElement
      */
@@ -264,7 +308,14 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A list of strings that indicate additional content that Amazon Web Services includes in the report, such as
+     * individual resource IDs.
+     * </p>
+     * 
      * @param additionalSchemaElements
+     *        A list of strings that indicate additional content that Amazon Web Services includes in the report, such
+     *        as individual resource IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SchemaElement
      */
@@ -275,7 +326,14 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A list of strings that indicate additional content that Amazon Web Services includes in the report, such as
+     * individual resource IDs.
+     * </p>
+     * 
      * @param additionalSchemaElements
+     *        A list of strings that indicate additional content that Amazon Web Services includes in the report, such
+     *        as individual resource IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SchemaElement
      */
@@ -395,7 +453,11 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * A list of manifests that you want Amazon Web Services to create for this report.
+     * </p>
+     * 
+     * @return A list of manifests that you want Amazon Web Services to create for this report.
      * @see AdditionalArtifact
      */
 
@@ -404,7 +466,12 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A list of manifests that you want Amazon Web Services to create for this report.
+     * </p>
+     * 
      * @param additionalArtifacts
+     *        A list of manifests that you want Amazon Web Services to create for this report.
      * @see AdditionalArtifact
      */
 
@@ -419,12 +486,16 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * A list of manifests that you want Amazon Web Services to create for this report.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAdditionalArtifacts(java.util.Collection)} or {@link #withAdditionalArtifacts(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param additionalArtifacts
+     *        A list of manifests that you want Amazon Web Services to create for this report.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalArtifact
      */
@@ -440,7 +511,12 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A list of manifests that you want Amazon Web Services to create for this report.
+     * </p>
+     * 
      * @param additionalArtifacts
+     *        A list of manifests that you want Amazon Web Services to create for this report.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalArtifact
      */
@@ -451,7 +527,12 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A list of manifests that you want Amazon Web Services to create for this report.
+     * </p>
+     * 
      * @param additionalArtifacts
+     *        A list of manifests that you want Amazon Web Services to create for this report.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdditionalArtifact
      */
@@ -470,7 +551,155 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services
+     * detects charges related to previous months. These charges can include refunds, credits, or support fees.
+     * </p>
+     * 
+     * @param refreshClosedReports
+     *        Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web
+     *        Services detects charges related to previous months. These charges can include refunds, credits, or
+     *        support fees.
+     */
+
+    public void setRefreshClosedReports(Boolean refreshClosedReports) {
+        this.refreshClosedReports = refreshClosedReports;
+    }
+
+    /**
+     * <p>
+     * Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services
+     * detects charges related to previous months. These charges can include refunds, credits, or support fees.
+     * </p>
+     * 
+     * @return Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web
+     *         Services detects charges related to previous months. These charges can include refunds, credits, or
+     *         support fees.
+     */
+
+    public Boolean getRefreshClosedReports() {
+        return this.refreshClosedReports;
+    }
+
+    /**
+     * <p>
+     * Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services
+     * detects charges related to previous months. These charges can include refunds, credits, or support fees.
+     * </p>
+     * 
+     * @param refreshClosedReports
+     *        Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web
+     *        Services detects charges related to previous months. These charges can include refunds, credits, or
+     *        support fees.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportDefinition withRefreshClosedReports(Boolean refreshClosedReports) {
+        setRefreshClosedReports(refreshClosedReports);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services
+     * detects charges related to previous months. These charges can include refunds, credits, or support fees.
+     * </p>
+     * 
+     * @return Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web
+     *         Services detects charges related to previous months. These charges can include refunds, credits, or
+     *         support fees.
+     */
+
+    public Boolean isRefreshClosedReports() {
+        return this.refreshClosedReports;
+    }
+
+    /**
+     * <p>
+     * Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in
+     * addition to the previous versions.
+     * </p>
+     * 
+     * @param reportVersioning
+     *        Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the
+     *        report in addition to the previous versions.
+     * @see ReportVersioning
+     */
+
+    public void setReportVersioning(String reportVersioning) {
+        this.reportVersioning = reportVersioning;
+    }
+
+    /**
+     * <p>
+     * Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in
+     * addition to the previous versions.
+     * </p>
+     * 
+     * @return Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the
+     *         report in addition to the previous versions.
+     * @see ReportVersioning
+     */
+
+    public String getReportVersioning() {
+        return this.reportVersioning;
+    }
+
+    /**
+     * <p>
+     * Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in
+     * addition to the previous versions.
+     * </p>
+     * 
+     * @param reportVersioning
+     *        Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the
+     *        report in addition to the previous versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReportVersioning
+     */
+
+    public ReportDefinition withReportVersioning(String reportVersioning) {
+        setReportVersioning(reportVersioning);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in
+     * addition to the previous versions.
+     * </p>
+     * 
+     * @param reportVersioning
+     *        Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the
+     *        report in addition to the previous versions.
+     * @see ReportVersioning
+     */
+
+    public void setReportVersioning(ReportVersioning reportVersioning) {
+        withReportVersioning(reportVersioning);
+    }
+
+    /**
+     * <p>
+     * Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in
+     * addition to the previous versions.
+     * </p>
+     * 
+     * @param reportVersioning
+     *        Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the
+     *        report in addition to the previous versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReportVersioning
+     */
+
+    public ReportDefinition withReportVersioning(ReportVersioning reportVersioning) {
+        this.reportVersioning = reportVersioning.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -497,7 +726,11 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
         if (getS3Region() != null)
             sb.append("S3Region: ").append(getS3Region()).append(",");
         if (getAdditionalArtifacts() != null)
-            sb.append("AdditionalArtifacts: ").append(getAdditionalArtifacts());
+            sb.append("AdditionalArtifacts: ").append(getAdditionalArtifacts()).append(",");
+        if (getRefreshClosedReports() != null)
+            sb.append("RefreshClosedReports: ").append(getRefreshClosedReports()).append(",");
+        if (getReportVersioning() != null)
+            sb.append("ReportVersioning: ").append(getReportVersioning());
         sb.append("}");
         return sb.toString();
     }
@@ -548,6 +781,14 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAdditionalArtifacts() != null && other.getAdditionalArtifacts().equals(this.getAdditionalArtifacts()) == false)
             return false;
+        if (other.getRefreshClosedReports() == null ^ this.getRefreshClosedReports() == null)
+            return false;
+        if (other.getRefreshClosedReports() != null && other.getRefreshClosedReports().equals(this.getRefreshClosedReports()) == false)
+            return false;
+        if (other.getReportVersioning() == null ^ this.getReportVersioning() == null)
+            return false;
+        if (other.getReportVersioning() != null && other.getReportVersioning().equals(this.getReportVersioning()) == false)
+            return false;
         return true;
     }
 
@@ -565,6 +806,8 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getS3Prefix() == null) ? 0 : getS3Prefix().hashCode());
         hashCode = prime * hashCode + ((getS3Region() == null) ? 0 : getS3Region().hashCode());
         hashCode = prime * hashCode + ((getAdditionalArtifacts() == null) ? 0 : getAdditionalArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getRefreshClosedReports() == null) ? 0 : getRefreshClosedReports().hashCode());
+        hashCode = prime * hashCode + ((getReportVersioning() == null) ? 0 : getReportVersioning().hashCode());
         return hashCode;
     }
 

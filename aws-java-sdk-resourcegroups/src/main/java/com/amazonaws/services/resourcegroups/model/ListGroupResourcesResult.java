@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,14 @@ public class ListGroupResourcesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and
+     * <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+     * <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     * </p>
+     */
+    private java.util.List<QueryError> queryErrors;
 
     /**
      * <p>
@@ -150,7 +158,94 @@ public class ListGroupResourcesResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and
+     * <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+     * <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     * </p>
+     * 
+     * @return A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code>
+     *         and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+     *         <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     */
+
+    public java.util.List<QueryError> getQueryErrors() {
+        return queryErrors;
+    }
+
+    /**
+     * <p>
+     * A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and
+     * <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+     * <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     * </p>
+     * 
+     * @param queryErrors
+     *        A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code>
+     *        and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+     *        <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     */
+
+    public void setQueryErrors(java.util.Collection<QueryError> queryErrors) {
+        if (queryErrors == null) {
+            this.queryErrors = null;
+            return;
+        }
+
+        this.queryErrors = new java.util.ArrayList<QueryError>(queryErrors);
+    }
+
+    /**
+     * <p>
+     * A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and
+     * <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+     * <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setQueryErrors(java.util.Collection)} or {@link #withQueryErrors(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param queryErrors
+     *        A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code>
+     *        and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+     *        <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListGroupResourcesResult withQueryErrors(QueryError... queryErrors) {
+        if (this.queryErrors == null) {
+            setQueryErrors(new java.util.ArrayList<QueryError>(queryErrors.length));
+        }
+        for (QueryError ele : queryErrors) {
+            this.queryErrors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and
+     * <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+     * <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     * </p>
+     * 
+     * @param queryErrors
+     *        A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code>
+     *        and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
+     *        <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListGroupResourcesResult withQueryErrors(java.util.Collection<QueryError> queryErrors) {
+        setQueryErrors(queryErrors);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -163,7 +258,9 @@ public class ListGroupResourcesResult extends com.amazonaws.AmazonWebServiceResu
         if (getResourceIdentifiers() != null)
             sb.append("ResourceIdentifiers: ").append(getResourceIdentifiers()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getQueryErrors() != null)
+            sb.append("QueryErrors: ").append(getQueryErrors());
         sb.append("}");
         return sb.toString();
     }
@@ -186,6 +283,10 @@ public class ListGroupResourcesResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getQueryErrors() == null ^ this.getQueryErrors() == null)
+            return false;
+        if (other.getQueryErrors() != null && other.getQueryErrors().equals(this.getQueryErrors()) == false)
+            return false;
         return true;
     }
 
@@ -196,6 +297,7 @@ public class ListGroupResourcesResult extends com.amazonaws.AmazonWebServiceResu
 
         hashCode = prime * hashCode + ((getResourceIdentifiers() == null) ? 0 : getResourceIdentifiers().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getQueryErrors() == null) ? 0 : getQueryErrors().hashCode());
         return hashCode;
     }
 

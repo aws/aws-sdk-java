@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,11 +68,6 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
                 EbsBlockDevice ebs = registerImageRequestBlockDeviceMappingsListValue.getEbs();
                 if (ebs != null) {
 
-                    if (ebs.getEncrypted() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
-                                StringUtils.fromBoolean(ebs.getEncrypted()));
-                    }
-
                     if (ebs.getDeleteOnTermination() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
                                 StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
@@ -80,10 +75,6 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
 
                     if (ebs.getIops() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebs.getIops()));
-                    }
-
-                    if (ebs.getKmsKeyId() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId", StringUtils.fromString(ebs.getKmsKeyId()));
                     }
 
                     if (ebs.getSnapshotId() != null) {
@@ -99,6 +90,15 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
                     if (ebs.getVolumeType() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
                                 StringUtils.fromString(ebs.getVolumeType()));
+                    }
+
+                    if (ebs.getEncrypted() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
+                                StringUtils.fromBoolean(ebs.getEncrypted()));
+                    }
+
+                    if (ebs.getKmsKeyId() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId", StringUtils.fromString(ebs.getKmsKeyId()));
                     }
                 }
 

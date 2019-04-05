@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -120,8 +120,7 @@ public class CopyCallable implements Callable<CopyResult> {
      * @return True if this CopyCallable is processing a multi-part copy.
      */
     public boolean isMultipartCopy() {
-        return (metadata.getContentLength() > configuration
-                .getMultipartCopyThreshold());
+        return metadata.getContentLength() > configuration.getMultipartCopyThreshold();
     }
 
     public CopyResult call() throws Exception {
@@ -239,6 +238,12 @@ public class CopyCallable implements Callable<CopyResult> {
         req.setObjectMetadata(newObjectMetadata);
 
         populateMetadataWithEncryptionParams(metadata,newObjectMetadata);
+
+        req.setTagging(origReq.getNewObjectTagging());
+
+        req.withObjectLockMode(origReq.getObjectLockMode())
+           .withObjectLockLegalHoldStatus(origReq.getObjectLockLegalHoldStatus())
+           .withObjectLockRetainUntilDate(origReq.getObjectLockRetainUntilDate());
 
         String uploadId = s3.initiateMultipartUpload(req).getUploadId();
         log.debug("Initiated new multipart upload: " + uploadId);

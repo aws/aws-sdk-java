@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,41 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.Date expirationDate;
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers
+     * or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify
+     * the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you
+     * specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises
+     * servers or VMs.
+     * </p>
+     * </important>
+     * <p>
+     * You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers and VMs
+     * after they connect to Systems Manager for the first time and are assigned a managed instance ID. This means they
+     * are listed in the AWS Systems Manager console with an ID that is prefixed with "mi-". For information about how
+     * to add tags to your managed instances, see <a>AddTagsToResource</a>. For information about how to remove tags
+     * from your managed instances, see <a>RemoveTagsFromResource</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -322,7 +357,309 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers
+     * or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify
+     * the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you
+     * specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises
+     * servers or VMs.
+     * </p>
+     * </important>
+     * <p>
+     * You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers and VMs
+     * after they connect to Systems Manager for the first time and are assigned a managed instance ID. This means they
+     * are listed in the AWS Systems Manager console with an ID that is prefixed with "mi-". For information about how
+     * to add tags to your managed instances, see <a>AddTagsToResource</a>. For information about how to remove tags
+     * from your managed instances, see <a>RemoveTagsFromResource</a>.
+     * </p>
+     * 
+     * @return Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *         ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to
+     *         identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate.
+     *         In this case, you could specify the following key name/value pairs:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Key=OS,Value=Windows</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Key=Environment,Value=Production</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <important>
+     *         <p>
+     *         When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code.
+     *         When you specify the activation ID and code, tags assigned to the activation are automatically applied to
+     *         the on-premises servers or VMs.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers
+     *         and VMs after they connect to Systems Manager for the first time and are assigned a managed instance ID.
+     *         This means they are listed in the AWS Systems Manager console with an ID that is prefixed with "mi-". For
+     *         information about how to add tags to your managed instances, see <a>AddTagsToResource</a>. For
+     *         information about how to remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers
+     * or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify
+     * the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you
+     * specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises
+     * servers or VMs.
+     * </p>
+     * </important>
+     * <p>
+     * You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers and VMs
+     * after they connect to Systems Manager for the first time and are assigned a managed instance ID. This means they
+     * are listed in the AWS Systems Manager console with an ID that is prefixed with "mi-". For information about how
+     * to add tags to your managed instances, see <a>AddTagsToResource</a>. For information about how to remove tags
+     * from your managed instances, see <a>RemoveTagsFromResource</a>.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to
+     *        identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate.
+     *        In this case, you could specify the following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code.
+     *        When you specify the activation ID and code, tags assigned to the activation are automatically applied to
+     *        the on-premises servers or VMs.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers and
+     *        VMs after they connect to Systems Manager for the first time and are assigned a managed instance ID. This
+     *        means they are listed in the AWS Systems Manager console with an ID that is prefixed with "mi-". For
+     *        information about how to add tags to your managed instances, see <a>AddTagsToResource</a>. For information
+     *        about how to remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers
+     * or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify
+     * the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you
+     * specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises
+     * servers or VMs.
+     * </p>
+     * </important>
+     * <p>
+     * You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers and VMs
+     * after they connect to Systems Manager for the first time and are assigned a managed instance ID. This means they
+     * are listed in the AWS Systems Manager console with an ID that is prefixed with "mi-". For information about how
+     * to add tags to your managed instances, see <a>AddTagsToResource</a>. For information about how to remove tags
+     * from your managed instances, see <a>RemoveTagsFromResource</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to
+     *        identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate.
+     *        In this case, you could specify the following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code.
+     *        When you specify the activation ID and code, tags assigned to the activation are automatically applied to
+     *        the on-premises servers or VMs.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers and
+     *        VMs after they connect to Systems Manager for the first time and are assigned a managed instance ID. This
+     *        means they are listed in the AWS Systems Manager console with an ID that is prefixed with "mi-". For
+     *        information about how to add tags to your managed instances, see <a>AddTagsToResource</a>. For information
+     *        about how to remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateActivationRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers
+     * or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify
+     * the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you
+     * specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises
+     * servers or VMs.
+     * </p>
+     * </important>
+     * <p>
+     * You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers and VMs
+     * after they connect to Systems Manager for the first time and are assigned a managed instance ID. This means they
+     * are listed in the AWS Systems Manager console with an ID that is prefixed with "mi-". For information about how
+     * to add tags to your managed instances, see <a>AddTagsToResource</a>. For information about how to remove tags
+     * from your managed instances, see <a>RemoveTagsFromResource</a>.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to
+     *        identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate.
+     *        In this case, you could specify the following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code.
+     *        When you specify the activation ID and code, tags assigned to the activation are automatically applied to
+     *        the on-premises servers or VMs.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers and
+     *        VMs after they connect to Systems Manager for the first time and are assigned a managed instance ID. This
+     *        means they are listed in the AWS Systems Manager console with an ID that is prefixed with "mi-". For
+     *        information about how to add tags to your managed instances, see <a>AddTagsToResource</a>. For information
+     *        about how to remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateActivationRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -341,7 +678,9 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
         if (getRegistrationLimit() != null)
             sb.append("RegistrationLimit: ").append(getRegistrationLimit()).append(",");
         if (getExpirationDate() != null)
-            sb.append("ExpirationDate: ").append(getExpirationDate());
+            sb.append("ExpirationDate: ").append(getExpirationDate()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -376,6 +715,10 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getExpirationDate() != null && other.getExpirationDate().equals(this.getExpirationDate()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -389,6 +732,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getIamRole() == null) ? 0 : getIamRole().hashCode());
         hashCode = prime * hashCode + ((getRegistrationLimit() == null) ? 0 : getRegistrationLimit().hashCode());
         hashCode = prime * hashCode + ((getExpirationDate() == null) ? 0 : getExpirationDate().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

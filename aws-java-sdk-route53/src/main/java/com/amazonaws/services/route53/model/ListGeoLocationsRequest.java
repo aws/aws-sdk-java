@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,25 +31,25 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The code for the continent with which you want to start listing locations that Amazon Route 53 supports for
-     * geolocation. If Amazon Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
-     * true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in
-     * <code>StartContinentCode</code> to return the next page of results.
+     * geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and
+     * if <code>NextContinentCode</code> from the previous response has a value, enter that value in
+     * <code>startcontinentcode</code> to return the next page of results.
      * </p>
      * <p>
-     * Include <code>StartContinentCode</code> only if you want to list continents. Don't include
-     * <code>StartContinentCode</code> when you're listing countries or countries with their subdivisions.
+     * Include <code>startcontinentcode</code> only if you want to list continents. Don't include
+     * <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.
      * </p>
      */
     private String startContinentCode;
     /**
      * <p>
      * The code for the country with which you want to start listing locations that Amazon Route 53 supports for
-     * geolocation. If Amazon Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
+     * geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
      * <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value
-     * in <code>StartCountryCode</code> to return the next page of results.
+     * in <code>startcountrycode</code> to return the next page of results.
      * </p>
      * <p>
-     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      */
@@ -57,20 +57,20 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The code for the subdivision (for example, state or province) with which you want to start listing locations that
-     * Amazon Route 53 supports for geolocation. If Amazon Route 53 has already returned a page or more of results, if
+     * Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if
      * <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response
-     * has a value, enter that value in <code>StartSubdivisionCode</code> to return the next page of results.
+     * has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.
      * </p>
      * <p>
-     * To list subdivisions of a country, you must include both <code>StartCountryCode</code> and
-     * <code>StartSubdivisionCode</code>.
+     * To list subdivisions of a country, you must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.
      * </p>
      */
     private String startSubdivisionCode;
     /**
      * <p>
      * (Optional) The maximum number of geolocations to be included in the response body for this request. If more than
-     * <code>MaxItems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in
+     * <code>maxitems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in
      * the response is <code>true</code>.
      * </p>
      */
@@ -79,23 +79,23 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The code for the continent with which you want to start listing locations that Amazon Route 53 supports for
-     * geolocation. If Amazon Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
-     * true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in
-     * <code>StartContinentCode</code> to return the next page of results.
+     * geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and
+     * if <code>NextContinentCode</code> from the previous response has a value, enter that value in
+     * <code>startcontinentcode</code> to return the next page of results.
      * </p>
      * <p>
-     * Include <code>StartContinentCode</code> only if you want to list continents. Don't include
-     * <code>StartContinentCode</code> when you're listing countries or countries with their subdivisions.
+     * Include <code>startcontinentcode</code> only if you want to list continents. Don't include
+     * <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.
      * </p>
      * 
      * @param startContinentCode
      *        The code for the continent with which you want to start listing locations that Amazon Route 53 supports
-     *        for geolocation. If Amazon Route 53 has already returned a page or more of results, if
-     *        <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a
-     *        value, enter that value in <code>StartContinentCode</code> to return the next page of results.</p>
+     *        for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code>
+     *        is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in
+     *        <code>startcontinentcode</code> to return the next page of results.</p>
      *        <p>
-     *        Include <code>StartContinentCode</code> only if you want to list continents. Don't include
-     *        <code>StartContinentCode</code> when you're listing countries or countries with their subdivisions.
+     *        Include <code>startcontinentcode</code> only if you want to list continents. Don't include
+     *        <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.
      */
 
     public void setStartContinentCode(String startContinentCode) {
@@ -105,22 +105,22 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The code for the continent with which you want to start listing locations that Amazon Route 53 supports for
-     * geolocation. If Amazon Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
-     * true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in
-     * <code>StartContinentCode</code> to return the next page of results.
+     * geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and
+     * if <code>NextContinentCode</code> from the previous response has a value, enter that value in
+     * <code>startcontinentcode</code> to return the next page of results.
      * </p>
      * <p>
-     * Include <code>StartContinentCode</code> only if you want to list continents. Don't include
-     * <code>StartContinentCode</code> when you're listing countries or countries with their subdivisions.
+     * Include <code>startcontinentcode</code> only if you want to list continents. Don't include
+     * <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.
      * </p>
      * 
      * @return The code for the continent with which you want to start listing locations that Amazon Route 53 supports
-     *         for geolocation. If Amazon Route 53 has already returned a page or more of results, if
-     *         <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a
-     *         value, enter that value in <code>StartContinentCode</code> to return the next page of results.</p>
+     *         for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code>
+     *         is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value
+     *         in <code>startcontinentcode</code> to return the next page of results.</p>
      *         <p>
-     *         Include <code>StartContinentCode</code> only if you want to list continents. Don't include
-     *         <code>StartContinentCode</code> when you're listing countries or countries with their subdivisions.
+     *         Include <code>startcontinentcode</code> only if you want to list continents. Don't include
+     *         <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.
      */
 
     public String getStartContinentCode() {
@@ -130,23 +130,23 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The code for the continent with which you want to start listing locations that Amazon Route 53 supports for
-     * geolocation. If Amazon Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
-     * true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in
-     * <code>StartContinentCode</code> to return the next page of results.
+     * geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and
+     * if <code>NextContinentCode</code> from the previous response has a value, enter that value in
+     * <code>startcontinentcode</code> to return the next page of results.
      * </p>
      * <p>
-     * Include <code>StartContinentCode</code> only if you want to list continents. Don't include
-     * <code>StartContinentCode</code> when you're listing countries or countries with their subdivisions.
+     * Include <code>startcontinentcode</code> only if you want to list continents. Don't include
+     * <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.
      * </p>
      * 
      * @param startContinentCode
      *        The code for the continent with which you want to start listing locations that Amazon Route 53 supports
-     *        for geolocation. If Amazon Route 53 has already returned a page or more of results, if
-     *        <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a
-     *        value, enter that value in <code>StartContinentCode</code> to return the next page of results.</p>
+     *        for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code>
+     *        is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in
+     *        <code>startcontinentcode</code> to return the next page of results.</p>
      *        <p>
-     *        Include <code>StartContinentCode</code> only if you want to list continents. Don't include
-     *        <code>StartContinentCode</code> when you're listing countries or countries with their subdivisions.
+     *        Include <code>startcontinentcode</code> only if you want to list continents. Don't include
+     *        <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,23 +158,22 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The code for the country with which you want to start listing locations that Amazon Route 53 supports for
-     * geolocation. If Amazon Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
+     * geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
      * <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value
-     * in <code>StartCountryCode</code> to return the next page of results.
+     * in <code>startcountrycode</code> to return the next page of results.
      * </p>
      * <p>
-     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      * 
      * @param startCountryCode
      *        The code for the country with which you want to start listing locations that Amazon Route 53 supports for
-     *        geolocation. If Amazon Route 53 has already returned a page or more of results, if
-     *        <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the previous
-     *        response has a value, enter that value in <code>StartCountryCode</code> to return the next page of
-     *        results.</p>
+     *        geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
+     *        <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that
+     *        value in <code>startcountrycode</code> to return the next page of results.</p>
      *        <p>
-     *        Amazon Route 53 uses the two-letter country codes that are specified in <a
+     *        Route 53 uses the two-letter country codes that are specified in <a
      *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      */
 
@@ -185,22 +184,21 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The code for the country with which you want to start listing locations that Amazon Route 53 supports for
-     * geolocation. If Amazon Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
+     * geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
      * <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value
-     * in <code>StartCountryCode</code> to return the next page of results.
+     * in <code>startcountrycode</code> to return the next page of results.
      * </p>
      * <p>
-     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      * 
      * @return The code for the country with which you want to start listing locations that Amazon Route 53 supports for
-     *         geolocation. If Amazon Route 53 has already returned a page or more of results, if
-     *         <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the previous
-     *         response has a value, enter that value in <code>StartCountryCode</code> to return the next page of
-     *         results.</p>
+     *         geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
+     *         <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that
+     *         value in <code>startcountrycode</code> to return the next page of results.</p>
      *         <p>
-     *         Amazon Route 53 uses the two-letter country codes that are specified in <a
+     *         Route 53 uses the two-letter country codes that are specified in <a
      *         href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      */
 
@@ -211,23 +209,22 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The code for the country with which you want to start listing locations that Amazon Route 53 supports for
-     * geolocation. If Amazon Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
+     * geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
      * <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value
-     * in <code>StartCountryCode</code> to return the next page of results.
+     * in <code>startcountrycode</code> to return the next page of results.
      * </p>
      * <p>
-     * Amazon Route 53 uses the two-letter country codes that are specified in <a
+     * Route 53 uses the two-letter country codes that are specified in <a
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * </p>
      * 
      * @param startCountryCode
      *        The code for the country with which you want to start listing locations that Amazon Route 53 supports for
-     *        geolocation. If Amazon Route 53 has already returned a page or more of results, if
-     *        <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the previous
-     *        response has a value, enter that value in <code>StartCountryCode</code> to return the next page of
-     *        results.</p>
+     *        geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is
+     *        <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that
+     *        value in <code>startcountrycode</code> to return the next page of results.</p>
      *        <p>
-     *        Amazon Route 53 uses the two-letter country codes that are specified in <a
+     *        Route 53 uses the two-letter country codes that are specified in <a
      *        href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -240,24 +237,24 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The code for the subdivision (for example, state or province) with which you want to start listing locations that
-     * Amazon Route 53 supports for geolocation. If Amazon Route 53 has already returned a page or more of results, if
+     * Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if
      * <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response
-     * has a value, enter that value in <code>StartSubdivisionCode</code> to return the next page of results.
+     * has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.
      * </p>
      * <p>
-     * To list subdivisions of a country, you must include both <code>StartCountryCode</code> and
-     * <code>StartSubdivisionCode</code>.
+     * To list subdivisions of a country, you must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.
      * </p>
      * 
      * @param startSubdivisionCode
      *        The code for the subdivision (for example, state or province) with which you want to start listing
-     *        locations that Amazon Route 53 supports for geolocation. If Amazon Route 53 has already returned a page or
-     *        more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code>
-     *        from the previous response has a value, enter that value in <code>StartSubdivisionCode</code> to return
-     *        the next page of results.</p>
+     *        locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more
+     *        of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from
+     *        the previous response has a value, enter that value in <code>startsubdivisioncode</code> to return the
+     *        next page of results.</p>
      *        <p>
-     *        To list subdivisions of a country, you must include both <code>StartCountryCode</code> and
-     *        <code>StartSubdivisionCode</code>.
+     *        To list subdivisions of a country, you must include both <code>startcountrycode</code> and
+     *        <code>startsubdivisioncode</code>.
      */
 
     public void setStartSubdivisionCode(String startSubdivisionCode) {
@@ -267,23 +264,23 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The code for the subdivision (for example, state or province) with which you want to start listing locations that
-     * Amazon Route 53 supports for geolocation. If Amazon Route 53 has already returned a page or more of results, if
+     * Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if
      * <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response
-     * has a value, enter that value in <code>StartSubdivisionCode</code> to return the next page of results.
+     * has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.
      * </p>
      * <p>
-     * To list subdivisions of a country, you must include both <code>StartCountryCode</code> and
-     * <code>StartSubdivisionCode</code>.
+     * To list subdivisions of a country, you must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.
      * </p>
      * 
      * @return The code for the subdivision (for example, state or province) with which you want to start listing
-     *         locations that Amazon Route 53 supports for geolocation. If Amazon Route 53 has already returned a page
-     *         or more of results, if <code>IsTruncated</code> is <code>true</code>, and if
-     *         <code>NextSubdivisionCode</code> from the previous response has a value, enter that value in
-     *         <code>StartSubdivisionCode</code> to return the next page of results.</p>
+     *         locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more
+     *         of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code>
+     *         from the previous response has a value, enter that value in <code>startsubdivisioncode</code> to return
+     *         the next page of results.</p>
      *         <p>
-     *         To list subdivisions of a country, you must include both <code>StartCountryCode</code> and
-     *         <code>StartSubdivisionCode</code>.
+     *         To list subdivisions of a country, you must include both <code>startcountrycode</code> and
+     *         <code>startsubdivisioncode</code>.
      */
 
     public String getStartSubdivisionCode() {
@@ -293,24 +290,24 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The code for the subdivision (for example, state or province) with which you want to start listing locations that
-     * Amazon Route 53 supports for geolocation. If Amazon Route 53 has already returned a page or more of results, if
+     * Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if
      * <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response
-     * has a value, enter that value in <code>StartSubdivisionCode</code> to return the next page of results.
+     * has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.
      * </p>
      * <p>
-     * To list subdivisions of a country, you must include both <code>StartCountryCode</code> and
-     * <code>StartSubdivisionCode</code>.
+     * To list subdivisions of a country, you must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.
      * </p>
      * 
      * @param startSubdivisionCode
      *        The code for the subdivision (for example, state or province) with which you want to start listing
-     *        locations that Amazon Route 53 supports for geolocation. If Amazon Route 53 has already returned a page or
-     *        more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code>
-     *        from the previous response has a value, enter that value in <code>StartSubdivisionCode</code> to return
-     *        the next page of results.</p>
+     *        locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more
+     *        of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from
+     *        the previous response has a value, enter that value in <code>startsubdivisioncode</code> to return the
+     *        next page of results.</p>
      *        <p>
-     *        To list subdivisions of a country, you must include both <code>StartCountryCode</code> and
-     *        <code>StartSubdivisionCode</code>.
+     *        To list subdivisions of a country, you must include both <code>startcountrycode</code> and
+     *        <code>startsubdivisioncode</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,13 +319,13 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) The maximum number of geolocations to be included in the response body for this request. If more than
-     * <code>MaxItems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in
+     * <code>maxitems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in
      * the response is <code>true</code>.
      * </p>
      * 
      * @param maxItems
      *        (Optional) The maximum number of geolocations to be included in the response body for this request. If
-     *        more than <code>MaxItems</code> geolocations remain to be listed, then the value of the
+     *        more than <code>maxitems</code> geolocations remain to be listed, then the value of the
      *        <code>IsTruncated</code> element in the response is <code>true</code>.
      */
 
@@ -339,12 +336,12 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) The maximum number of geolocations to be included in the response body for this request. If more than
-     * <code>MaxItems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in
+     * <code>maxitems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in
      * the response is <code>true</code>.
      * </p>
      * 
      * @return (Optional) The maximum number of geolocations to be included in the response body for this request. If
-     *         more than <code>MaxItems</code> geolocations remain to be listed, then the value of the
+     *         more than <code>maxitems</code> geolocations remain to be listed, then the value of the
      *         <code>IsTruncated</code> element in the response is <code>true</code>.
      */
 
@@ -355,13 +352,13 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) The maximum number of geolocations to be included in the response body for this request. If more than
-     * <code>MaxItems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in
+     * <code>maxitems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in
      * the response is <code>true</code>.
      * </p>
      * 
      * @param maxItems
      *        (Optional) The maximum number of geolocations to be included in the response body for this request. If
-     *        more than <code>MaxItems</code> geolocations remain to be listed, then the value of the
+     *        more than <code>maxitems</code> geolocations remain to be listed, then the value of the
      *        <code>IsTruncated</code> element in the response is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -372,7 +369,8 @@ public class ListGeoLocationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

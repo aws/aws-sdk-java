@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,13 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private java.util.List<Service> services;
+    /**
+     * <p>
+     * A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may
+     * show traces from an older version of the group's filter expression.
+     * </p>
+     */
+    private Boolean containsOldGroupVersions;
     /**
      * <p>
      * Pagination token. Not used.
@@ -200,6 +207,66 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may
+     * show traces from an older version of the group's filter expression.
+     * </p>
+     * 
+     * @param containsOldGroupVersions
+     *        A flag indicating whether the group's filter expression has been consistent, or if the returned service
+     *        graph may show traces from an older version of the group's filter expression.
+     */
+
+    public void setContainsOldGroupVersions(Boolean containsOldGroupVersions) {
+        this.containsOldGroupVersions = containsOldGroupVersions;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may
+     * show traces from an older version of the group's filter expression.
+     * </p>
+     * 
+     * @return A flag indicating whether the group's filter expression has been consistent, or if the returned service
+     *         graph may show traces from an older version of the group's filter expression.
+     */
+
+    public Boolean getContainsOldGroupVersions() {
+        return this.containsOldGroupVersions;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may
+     * show traces from an older version of the group's filter expression.
+     * </p>
+     * 
+     * @param containsOldGroupVersions
+     *        A flag indicating whether the group's filter expression has been consistent, or if the returned service
+     *        graph may show traces from an older version of the group's filter expression.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetServiceGraphResult withContainsOldGroupVersions(Boolean containsOldGroupVersions) {
+        setContainsOldGroupVersions(containsOldGroupVersions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether the group's filter expression has been consistent, or if the returned service graph may
+     * show traces from an older version of the group's filter expression.
+     * </p>
+     * 
+     * @return A flag indicating whether the group's filter expression has been consistent, or if the returned service
+     *         graph may show traces from an older version of the group's filter expression.
+     */
+
+    public Boolean isContainsOldGroupVersions() {
+        return this.containsOldGroupVersions;
+    }
+
+    /**
+     * <p>
      * Pagination token. Not used.
      * </p>
      * 
@@ -239,7 +306,8 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -255,6 +323,8 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getServices() != null)
             sb.append("Services: ").append(getServices()).append(",");
+        if (getContainsOldGroupVersions() != null)
+            sb.append("ContainsOldGroupVersions: ").append(getContainsOldGroupVersions()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -283,6 +353,10 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getServices() != null && other.getServices().equals(this.getServices()) == false)
             return false;
+        if (other.getContainsOldGroupVersions() == null ^ this.getContainsOldGroupVersions() == null)
+            return false;
+        if (other.getContainsOldGroupVersions() != null && other.getContainsOldGroupVersions().equals(this.getContainsOldGroupVersions()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -298,6 +372,7 @@ public class GetServiceGraphResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getServices() == null) ? 0 : getServices().hashCode());
+        hashCode = prime * hashCode + ((getContainsOldGroupVersions() == null) ? 0 : getContainsOldGroupVersions().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

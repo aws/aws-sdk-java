@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,13 @@ public class InventoryAggregator implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InventoryAggregator> aggregators;
+    /**
+     * <p>
+     * A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of
+     * resources that match and don't match the specified criteria.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InventoryGroup> groups;
 
     /**
      * <p>
@@ -155,7 +162,89 @@ public class InventoryAggregator implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of
+     * resources that match and don't match the specified criteria.
+     * </p>
+     * 
+     * @return A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of
+     *         resources that match and don't match the specified criteria.
+     */
+
+    public java.util.List<InventoryGroup> getGroups() {
+        if (groups == null) {
+            groups = new com.amazonaws.internal.SdkInternalList<InventoryGroup>();
+        }
+        return groups;
+    }
+
+    /**
+     * <p>
+     * A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of
+     * resources that match and don't match the specified criteria.
+     * </p>
+     * 
+     * @param groups
+     *        A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of
+     *        resources that match and don't match the specified criteria.
+     */
+
+    public void setGroups(java.util.Collection<InventoryGroup> groups) {
+        if (groups == null) {
+            this.groups = null;
+            return;
+        }
+
+        this.groups = new com.amazonaws.internal.SdkInternalList<InventoryGroup>(groups);
+    }
+
+    /**
+     * <p>
+     * A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of
+     * resources that match and don't match the specified criteria.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param groups
+     *        A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of
+     *        resources that match and don't match the specified criteria.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InventoryAggregator withGroups(InventoryGroup... groups) {
+        if (this.groups == null) {
+            setGroups(new com.amazonaws.internal.SdkInternalList<InventoryGroup>(groups.length));
+        }
+        for (InventoryGroup ele : groups) {
+            this.groups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of
+     * resources that match and don't match the specified criteria.
+     * </p>
+     * 
+     * @param groups
+     *        A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of
+     *        resources that match and don't match the specified criteria.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InventoryAggregator withGroups(java.util.Collection<InventoryGroup> groups) {
+        setGroups(groups);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -168,7 +257,9 @@ public class InventoryAggregator implements Serializable, Cloneable, StructuredP
         if (getExpression() != null)
             sb.append("Expression: ").append(getExpression()).append(",");
         if (getAggregators() != null)
-            sb.append("Aggregators: ").append(getAggregators());
+            sb.append("Aggregators: ").append(getAggregators()).append(",");
+        if (getGroups() != null)
+            sb.append("Groups: ").append(getGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -191,6 +282,10 @@ public class InventoryAggregator implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAggregators() != null && other.getAggregators().equals(this.getAggregators()) == false)
             return false;
+        if (other.getGroups() == null ^ this.getGroups() == null)
+            return false;
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
+            return false;
         return true;
     }
 
@@ -201,6 +296,7 @@ public class InventoryAggregator implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getExpression() == null) ? 0 : getExpression().hashCode());
         hashCode = prime * hashCode + ((getAggregators() == null) ? 0 : getAggregators().hashCode());
+        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
         return hashCode;
     }
 

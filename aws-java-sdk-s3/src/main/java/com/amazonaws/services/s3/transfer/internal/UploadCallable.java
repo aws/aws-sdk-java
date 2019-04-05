@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,8 +26,6 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-import com.amazonaws.services.s3.model.ObjectTagging;
-import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -296,7 +294,7 @@ public class UploadCallable implements Callable<UploadResult> {
                 transferProgress.updateProgress(summary.getSize());
                 continue;
             }
-            futures.add(threadPool.submit(new UploadPartCallable(s3, request)));
+            futures.add(threadPool.submit(new UploadPartCallable(s3, request, shouldCalculatePartMd5())));
         }
     }
 
@@ -357,9 +355,19 @@ public class UploadCallable implements Callable<UploadResult> {
            .withRequestMetricCollector(origReq.getRequestMetricCollector())
            ;
 
+        req.withObjectLockMode(origReq.getObjectLockMode())
+           .withObjectLockRetainUntilDate(origReq.getObjectLockRetainUntilDate())
+           .withObjectLockLegalHoldStatus(origReq.getObjectLockLegalHoldStatus());
+
         String uploadId = s3.initiateMultipartUpload(req).getUploadId();
         log.debug("Initiated new multipart upload: " + uploadId);
 
         return uploadId;
+    }
+
+    private boolean shouldCalculatePartMd5() {
+        return origReq.getObjectLockMode() != null
+                || origReq.getObjectLockRetainUntilDate() != null
+                || origReq.getObjectLockLegalHoldStatus() != null;
     }
 }

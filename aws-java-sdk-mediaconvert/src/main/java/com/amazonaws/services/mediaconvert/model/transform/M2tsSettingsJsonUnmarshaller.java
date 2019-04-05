@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -100,6 +100,10 @@ public class M2tsSettingsJsonUnmarshaller implements Unmarshaller<M2tsSettings, 
                     context.nextToken();
                     m2tsSettings.setEsRateInPes(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("forceTsVideoEbpOrder", targetDepth)) {
+                    context.nextToken();
+                    m2tsSettings.setForceTsVideoEbpOrder(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("fragmentTime", targetDepth)) {
                     context.nextToken();
                     m2tsSettings.setFragmentTime(context.getUnmarshaller(Double.class).unmarshall(context));
@@ -151,6 +155,10 @@ public class M2tsSettingsJsonUnmarshaller implements Unmarshaller<M2tsSettings, 
                 if (context.testExpression("rateMode", targetDepth)) {
                     context.nextToken();
                     m2tsSettings.setRateMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("scte35Esam", targetDepth)) {
+                    context.nextToken();
+                    m2tsSettings.setScte35Esam(M2tsScte35EsamJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scte35Pid", targetDepth)) {
                     context.nextToken();

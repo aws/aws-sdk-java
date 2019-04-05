@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,7 @@ public enum VoiceId {
     Penelope("Penelope"),
     Chantal("Chantal"),
     Celine("Celine"),
+    Lea("Lea"),
     Mathieu("Mathieu"),
     Dora("Dora"),
     Karl("Karl"),
@@ -71,7 +72,11 @@ public enum VoiceId {
     Vicki("Vicki"),
     Takumi("Takumi"),
     Seoyeon("Seoyeon"),
-    Aditi("Aditi");
+    Aditi("Aditi"),
+    Zhiyu("Zhiyu"),
+    Bianca("Bianca"),
+    Lucia("Lucia"),
+    Mia("Mia");
 
     private String value;
 

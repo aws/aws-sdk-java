@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,13 @@ public class DuplicateRequestException extends com.amazonaws.services.servicedis
     private static final long serialVersionUID = 1L;
 
     /**
+     * <p>
+     * The ID of the operation that is already in progress.
+     * </p>
+     */
+    private String duplicateOperationId;
+
+    /**
      * Constructs a new DuplicateRequestException with the specified error message.
      *
      * @param message
@@ -31,6 +38,48 @@ public class DuplicateRequestException extends com.amazonaws.services.servicedis
      */
     public DuplicateRequestException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * The ID of the operation that is already in progress.
+     * </p>
+     * 
+     * @param duplicateOperationId
+     *        The ID of the operation that is already in progress.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("DuplicateOperationId")
+    public void setDuplicateOperationId(String duplicateOperationId) {
+        this.duplicateOperationId = duplicateOperationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the operation that is already in progress.
+     * </p>
+     * 
+     * @return The ID of the operation that is already in progress.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("DuplicateOperationId")
+    public String getDuplicateOperationId() {
+        return this.duplicateOperationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the operation that is already in progress.
+     * </p>
+     * 
+     * @param duplicateOperationId
+     *        The ID of the operation that is already in progress.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DuplicateRequestException withDuplicateOperationId(String duplicateOperationId) {
+        setDuplicateOperationId(duplicateOperationId);
+        return this;
     }
 
 }

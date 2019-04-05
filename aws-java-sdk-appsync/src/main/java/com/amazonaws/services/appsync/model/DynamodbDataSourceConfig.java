@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a DynamoDB data source configuration.
+ * Describes an Amazon DynamoDB data source configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DynamodbDataSourceConfig" target="_top">AWS
@@ -36,7 +36,7 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
     private String tableName;
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      */
     private String awsRegion;
@@ -89,11 +89,11 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS region.
+     *        The AWS Region.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -102,10 +102,10 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      * 
-     * @return The AWS region.
+     * @return The AWS Region.
      */
 
     public String getAwsRegion() {
@@ -114,11 +114,11 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The AWS region.
+     * The AWS Region.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS region.
+     *        The AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,7 +180,8 @@ public class DynamodbDataSourceConfig implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

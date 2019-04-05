@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,8 +30,12 @@ public class UpdateDocumentRequestMarshaller {
 
     private static final MarshallingInfo<String> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Content").build();
+    private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Attachments").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionName").build();
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
     private static final MarshallingInfo<String> DOCUMENTFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -55,7 +60,9 @@ public class UpdateDocumentRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateDocumentRequest.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(updateDocumentRequest.getAttachments(), ATTACHMENTS_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateDocumentRequest.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getDocumentFormat(), DOCUMENTFORMAT_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getTargetType(), TARGETTYPE_BINDING);

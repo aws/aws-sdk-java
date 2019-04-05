@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,16 +48,16 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * The value of the yum repo configuration. For example:
      * </p>
      * <p>
-     * <code>cachedir=/var/cache/yum/$basesearch</code>
+     * <code>[main]</code>
      * </p>
      * <p>
-     * <code>$releasever</code>
+     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      * </p>
      * <p>
      * <code>keepcache=0</code>
      * </p>
      * <p>
-     * <code>debualevel=2</code>
+     * <code>debuglevel=2</code>
      * </p>
      */
     private String configuration;
@@ -196,31 +196,31 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * The value of the yum repo configuration. For example:
      * </p>
      * <p>
-     * <code>cachedir=/var/cache/yum/$basesearch</code>
+     * <code>[main]</code>
      * </p>
      * <p>
-     * <code>$releasever</code>
+     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      * </p>
      * <p>
      * <code>keepcache=0</code>
      * </p>
      * <p>
-     * <code>debualevel=2</code>
+     * <code>debuglevel=2</code>
      * </p>
      * 
      * @param configuration
      *        The value of the yum repo configuration. For example:</p>
      *        <p>
-     *        <code>cachedir=/var/cache/yum/$basesearch</code>
+     *        <code>[main]</code>
      *        </p>
      *        <p>
-     *        <code>$releasever</code>
+     *        <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      *        </p>
      *        <p>
      *        <code>keepcache=0</code>
      *        </p>
      *        <p>
-     *        <code>debualevel=2</code>
+     *        <code>debuglevel=2</code>
      */
 
     public void setConfiguration(String configuration) {
@@ -232,30 +232,30 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * The value of the yum repo configuration. For example:
      * </p>
      * <p>
-     * <code>cachedir=/var/cache/yum/$basesearch</code>
+     * <code>[main]</code>
      * </p>
      * <p>
-     * <code>$releasever</code>
+     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      * </p>
      * <p>
      * <code>keepcache=0</code>
      * </p>
      * <p>
-     * <code>debualevel=2</code>
+     * <code>debuglevel=2</code>
      * </p>
      * 
      * @return The value of the yum repo configuration. For example:</p>
      *         <p>
-     *         <code>cachedir=/var/cache/yum/$basesearch</code>
+     *         <code>[main]</code>
      *         </p>
      *         <p>
-     *         <code>$releasever</code>
+     *         <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      *         </p>
      *         <p>
      *         <code>keepcache=0</code>
      *         </p>
      *         <p>
-     *         <code>debualevel=2</code>
+     *         <code>debuglevel=2</code>
      */
 
     public String getConfiguration() {
@@ -267,31 +267,31 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * The value of the yum repo configuration. For example:
      * </p>
      * <p>
-     * <code>cachedir=/var/cache/yum/$basesearch</code>
+     * <code>[main]</code>
      * </p>
      * <p>
-     * <code>$releasever</code>
+     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      * </p>
      * <p>
      * <code>keepcache=0</code>
      * </p>
      * <p>
-     * <code>debualevel=2</code>
+     * <code>debuglevel=2</code>
      * </p>
      * 
      * @param configuration
      *        The value of the yum repo configuration. For example:</p>
      *        <p>
-     *        <code>cachedir=/var/cache/yum/$basesearch</code>
+     *        <code>[main]</code>
      *        </p>
      *        <p>
-     *        <code>$releasever</code>
+     *        <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      *        </p>
      *        <p>
      *        <code>keepcache=0</code>
      *        </p>
      *        <p>
-     *        <code>debualevel=2</code>
+     *        <code>debuglevel=2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,7 +301,8 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -316,7 +317,7 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
         if (getProducts() != null)
             sb.append("Products: ").append(getProducts()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: ").append(getConfiguration());
+            sb.append("Configuration: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

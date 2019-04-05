@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A summary of an invalidation request.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/InvalidationSummary" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/InvalidationSummary" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -32,7 +32,11 @@ public class InvalidationSummary implements Serializable, Cloneable {
      * </p>
      */
     private String id;
-
+    /**
+     * <p>
+     * The time that an invalidation request was created.
+     * </p>
+     */
     private java.util.Date createTime;
     /**
      * <p>
@@ -82,7 +86,12 @@ public class InvalidationSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time that an invalidation request was created.
+     * </p>
+     * 
      * @param createTime
+     *        The time that an invalidation request was created.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -90,7 +99,11 @@ public class InvalidationSummary implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The time that an invalidation request was created.
+     * </p>
+     * 
+     * @return The time that an invalidation request was created.
      */
 
     public java.util.Date getCreateTime() {
@@ -98,7 +111,12 @@ public class InvalidationSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time that an invalidation request was created.
+     * </p>
+     * 
      * @param createTime
+     *        The time that an invalidation request was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,7 +166,8 @@ public class InvalidationSummary implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,8 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String policyName;
     /**
      * <p>
-     * The identity to which the policy is attached.
+     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
+     * which the policy is attached.
      * </p>
      */
     private String target;
@@ -75,11 +76,14 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identity to which the policy is attached.
+     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
+     * which the policy is attached.
      * </p>
      * 
      * @param target
-     *        The identity to which the policy is attached.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
+     *        which the policy is attached.
      */
 
     public void setTarget(String target) {
@@ -88,10 +92,13 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identity to which the policy is attached.
+     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
+     * which the policy is attached.
      * </p>
      * 
-     * @return The identity to which the policy is attached.
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
+     *         which the policy is attached.
      */
 
     public String getTarget() {
@@ -100,11 +107,14 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identity to which the policy is attached.
+     * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
+     * which the policy is attached.
      * </p>
      * 
      * @param target
-     *        The identity to which the policy is attached.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to
+     *        which the policy is attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,7 +124,8 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

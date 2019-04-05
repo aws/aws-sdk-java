@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,14 @@ public class DescribeIpGroupsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IDs of one or more IP access control groups.
+     * The identifiers of one or more IP access control groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groupIds;
     /**
      * <p>
-     * The token for the next set of results. (You received this token from a previous call.)
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      */
     private String nextToken;
@@ -46,10 +47,10 @@ public class DescribeIpGroupsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IDs of one or more IP access control groups.
+     * The identifiers of one or more IP access control groups.
      * </p>
      * 
-     * @return The IDs of one or more IP access control groups.
+     * @return The identifiers of one or more IP access control groups.
      */
 
     public java.util.List<String> getGroupIds() {
@@ -61,11 +62,11 @@ public class DescribeIpGroupsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IDs of one or more IP access control groups.
+     * The identifiers of one or more IP access control groups.
      * </p>
      * 
      * @param groupIds
-     *        The IDs of one or more IP access control groups.
+     *        The identifiers of one or more IP access control groups.
      */
 
     public void setGroupIds(java.util.Collection<String> groupIds) {
@@ -79,7 +80,7 @@ public class DescribeIpGroupsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IDs of one or more IP access control groups.
+     * The identifiers of one or more IP access control groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +89,7 @@ public class DescribeIpGroupsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param groupIds
-     *        The IDs of one or more IP access control groups.
+     *        The identifiers of one or more IP access control groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +105,11 @@ public class DescribeIpGroupsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The IDs of one or more IP access control groups.
+     * The identifiers of one or more IP access control groups.
      * </p>
      * 
      * @param groupIds
-     *        The IDs of one or more IP access control groups.
+     *        The identifiers of one or more IP access control groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +120,13 @@ public class DescribeIpGroupsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The token for the next set of results. (You received this token from a previous call.)
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results. (You received this token from a previous call.)
+     *        If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to
+     *        receive the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -132,10 +135,12 @@ public class DescribeIpGroupsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The token for the next set of results. (You received this token from a previous call.)
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      * 
-     * @return The token for the next set of results. (You received this token from a previous call.)
+     * @return If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to
+     *         receive the next set of results.
      */
 
     public String getNextToken() {
@@ -144,11 +149,13 @@ public class DescribeIpGroupsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The token for the next set of results. (You received this token from a previous call.)
+     * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
+     * the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results. (You received this token from a previous call.)
+     *        If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to
+     *        receive the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,7 +205,8 @@ public class DescribeIpGroupsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

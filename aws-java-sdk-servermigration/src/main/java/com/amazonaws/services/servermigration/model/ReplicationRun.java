@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Object representing a Replication Run
+ * <p>
+ * Represents a replication run.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ReplicationRun" target="_top">AWS API
  *      Documentation</a>
@@ -26,24 +28,105 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The identifier of the replication run.
+     * </p>
+     */
     private String replicationRunId;
-
+    /**
+     * <p>
+     * The state of the replication run.
+     * </p>
+     */
     private String state;
-
+    /**
+     * <p>
+     * The type of replication run.
+     * </p>
+     */
     private String type;
-
+    /**
+     * <p>
+     * Details of the current stage of the replication run.
+     * </p>
+     */
+    private ReplicationRunStageDetails stageDetails;
+    /**
+     * <p>
+     * The description of the current status of the replication job.
+     * </p>
+     */
     private String statusMessage;
-
+    /**
+     * <p>
+     * The identifier of the Amazon Machine Image (AMI) from the replication run.
+     * </p>
+     */
     private String amiId;
-
+    /**
+     * <p>
+     * The start time of the next replication run.
+     * </p>
+     */
     private java.util.Date scheduledStartTime;
-
+    /**
+     * <p>
+     * The completion time of the last replication run.
+     * </p>
+     */
     private java.util.Date completedTime;
-
+    /**
+     * <p>
+     * The description of the replication run.
+     * </p>
+     */
     private String description;
+    /**
+     * <p>
+     * Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * </p>
+     */
+    private Boolean encrypted;
+    /**
+     * <p>
+     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KMS key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key alias
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
+     * <p>
+     * The identifier of the replication run.
+     * </p>
+     * 
      * @param replicationRunId
+     *        The identifier of the replication run.
      */
 
     public void setReplicationRunId(String replicationRunId) {
@@ -51,7 +134,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the replication run.
+     * </p>
+     * 
+     * @return The identifier of the replication run.
      */
 
     public String getReplicationRunId() {
@@ -59,7 +146,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier of the replication run.
+     * </p>
+     * 
      * @param replicationRunId
+     *        The identifier of the replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,7 +161,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the replication run.
+     * </p>
+     * 
      * @param state
+     *        The state of the replication run.
      * @see ReplicationRunState
      */
 
@@ -78,7 +175,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The state of the replication run.
+     * </p>
+     * 
+     * @return The state of the replication run.
      * @see ReplicationRunState
      */
 
@@ -87,7 +188,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the replication run.
+     * </p>
+     * 
      * @param state
+     *        The state of the replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationRunState
      */
@@ -98,7 +204,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the replication run.
+     * </p>
+     * 
      * @param state
+     *        The state of the replication run.
      * @see ReplicationRunState
      */
 
@@ -107,7 +218,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the replication run.
+     * </p>
+     * 
      * @param state
+     *        The state of the replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationRunState
      */
@@ -118,7 +234,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of replication run.
+     * </p>
+     * 
      * @param type
+     *        The type of replication run.
      * @see ReplicationRunType
      */
 
@@ -127,7 +248,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The type of replication run.
+     * </p>
+     * 
+     * @return The type of replication run.
      * @see ReplicationRunType
      */
 
@@ -136,7 +261,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of replication run.
+     * </p>
+     * 
      * @param type
+     *        The type of replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationRunType
      */
@@ -147,7 +277,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of replication run.
+     * </p>
+     * 
      * @param type
+     *        The type of replication run.
      * @see ReplicationRunType
      */
 
@@ -156,7 +291,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of replication run.
+     * </p>
+     * 
      * @param type
+     *        The type of replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationRunType
      */
@@ -167,7 +307,52 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Details of the current stage of the replication run.
+     * </p>
+     * 
+     * @param stageDetails
+     *        Details of the current stage of the replication run.
+     */
+
+    public void setStageDetails(ReplicationRunStageDetails stageDetails) {
+        this.stageDetails = stageDetails;
+    }
+
+    /**
+     * <p>
+     * Details of the current stage of the replication run.
+     * </p>
+     * 
+     * @return Details of the current stage of the replication run.
+     */
+
+    public ReplicationRunStageDetails getStageDetails() {
+        return this.stageDetails;
+    }
+
+    /**
+     * <p>
+     * Details of the current stage of the replication run.
+     * </p>
+     * 
+     * @param stageDetails
+     *        Details of the current stage of the replication run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationRun withStageDetails(ReplicationRunStageDetails stageDetails) {
+        setStageDetails(stageDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the current status of the replication job.
+     * </p>
+     * 
      * @param statusMessage
+     *        The description of the current status of the replication job.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -175,7 +360,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The description of the current status of the replication job.
+     * </p>
+     * 
+     * @return The description of the current status of the replication job.
      */
 
     public String getStatusMessage() {
@@ -183,7 +372,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The description of the current status of the replication job.
+     * </p>
+     * 
      * @param statusMessage
+     *        The description of the current status of the replication job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,7 +387,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier of the Amazon Machine Image (AMI) from the replication run.
+     * </p>
+     * 
      * @param amiId
+     *        The identifier of the Amazon Machine Image (AMI) from the replication run.
      */
 
     public void setAmiId(String amiId) {
@@ -201,7 +400,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the Amazon Machine Image (AMI) from the replication run.
+     * </p>
+     * 
+     * @return The identifier of the Amazon Machine Image (AMI) from the replication run.
      */
 
     public String getAmiId() {
@@ -209,7 +412,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier of the Amazon Machine Image (AMI) from the replication run.
+     * </p>
+     * 
      * @param amiId
+     *        The identifier of the Amazon Machine Image (AMI) from the replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,7 +427,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The start time of the next replication run.
+     * </p>
+     * 
      * @param scheduledStartTime
+     *        The start time of the next replication run.
      */
 
     public void setScheduledStartTime(java.util.Date scheduledStartTime) {
@@ -227,7 +440,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The start time of the next replication run.
+     * </p>
+     * 
+     * @return The start time of the next replication run.
      */
 
     public java.util.Date getScheduledStartTime() {
@@ -235,7 +452,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The start time of the next replication run.
+     * </p>
+     * 
      * @param scheduledStartTime
+     *        The start time of the next replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,7 +467,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The completion time of the last replication run.
+     * </p>
+     * 
      * @param completedTime
+     *        The completion time of the last replication run.
      */
 
     public void setCompletedTime(java.util.Date completedTime) {
@@ -253,7 +480,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The completion time of the last replication run.
+     * </p>
+     * 
+     * @return The completion time of the last replication run.
      */
 
     public java.util.Date getCompletedTime() {
@@ -261,7 +492,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The completion time of the last replication run.
+     * </p>
+     * 
      * @param completedTime
+     *        The completion time of the last replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,7 +507,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The description of the replication run.
+     * </p>
+     * 
      * @param description
+     *        The description of the replication run.
      */
 
     public void setDescription(String description) {
@@ -279,7 +520,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The description of the replication run.
+     * </p>
+     * 
+     * @return The description of the replication run.
      */
 
     public String getDescription() {
@@ -287,7 +532,12 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The description of the replication run.
+     * </p>
+     * 
      * @param description
+     *        The description of the replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,7 +547,250 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * </p>
+     * 
+     * @param encrypted
+     *        Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     */
+
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    /**
+     * <p>
+     * Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * </p>
+     * 
+     * @return Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     */
+
+    public Boolean getEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * </p>
+     * 
+     * @param encrypted
+     *        Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationRun withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * </p>
+     * 
+     * @return Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KMS key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key alias
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        KMS key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KMS key alias
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN referring to KMS key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN referring to KMS key alias
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
+     *        used.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KMS key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key alias
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * </p>
+     * 
+     * @return KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         KMS key ID
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         KMS key alias
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARN referring to KMS key ID
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARN referring to KMS key alias
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
+     *         used.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KMS key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key alias
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        KMS key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KMS key alias
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN referring to KMS key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN referring to KMS key alias
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
+     *        used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationRun withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -313,6 +806,8 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
             sb.append("State: ").append(getState()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getStageDetails() != null)
+            sb.append("StageDetails: ").append(getStageDetails()).append(",");
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getAmiId() != null)
@@ -322,7 +817,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
         if (getCompletedTime() != null)
             sb.append("CompletedTime: ").append(getCompletedTime()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -349,6 +848,10 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getStageDetails() == null ^ this.getStageDetails() == null)
+            return false;
+        if (other.getStageDetails() != null && other.getStageDetails().equals(this.getStageDetails()) == false)
+            return false;
         if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
@@ -369,6 +872,14 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -380,11 +891,14 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getReplicationRunId() == null) ? 0 : getReplicationRunId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getStageDetails() == null) ? 0 : getStageDetails().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getAmiId() == null) ? 0 : getAmiId().hashCode());
         hashCode = prime * hashCode + ((getScheduledStartTime() == null) ? 0 : getScheduledStartTime().hashCode());
         hashCode = prime * hashCode + ((getCompletedTime() == null) ? 0 : getCompletedTime().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,11 @@ public class SecretVersionsListEntryJsonUnmarshaller implements Unmarshaller<Sec
                 }
                 if (context.testExpression("LastAccessedDate", targetDepth)) {
                     context.nextToken();
-                    secretVersionsListEntry.setLastAccessedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    secretVersionsListEntry.setLastAccessedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    secretVersionsListEntry.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    secretVersionsListEntry.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

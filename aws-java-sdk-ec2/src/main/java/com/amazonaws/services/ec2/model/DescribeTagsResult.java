@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceResult;
 
 /**
- * <p>
- * Contains the output of DescribeTags.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -28,13 +26,13 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
+     * results to return.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A list of tags.
+     * The tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagDescription> tags;
@@ -42,12 +40,12 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
+     * results to return.
      * </p>
      * 
      * @param nextToken
      *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return..
+     *        more results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -57,11 +55,11 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
+     * results to return.
      * </p>
      * 
      * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return..
+     *         more results to return.
      */
 
     public String getNextToken() {
@@ -71,12 +69,12 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return..
+     * results to return.
      * </p>
      * 
      * @param nextToken
      *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return..
+     *        more results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,10 +85,10 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of tags.
+     * The tags.
      * </p>
      * 
-     * @return A list of tags.
+     * @return The tags.
      */
 
     public java.util.List<TagDescription> getTags() {
@@ -102,11 +100,11 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of tags.
+     * The tags.
      * </p>
      * 
      * @param tags
-     *        A list of tags.
+     *        The tags.
      */
 
     public void setTags(java.util.Collection<TagDescription> tags) {
@@ -120,7 +118,7 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of tags.
+     * The tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +127,7 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param tags
-     *        A list of tags.
+     *        The tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +143,11 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A list of tags.
+     * The tags.
      * </p>
      * 
      * @param tags
-     *        A list of tags.
+     *        The tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,7 +157,8 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

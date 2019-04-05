@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,8 +43,8 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
     private String accessKeyId;
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
-     * means it is not.
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls;
+     * <code>Inactive</code> means it is not.
      * </p>
      */
     private String status;
@@ -137,12 +137,12 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
-     * means it is not.
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls;
+     * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is valid for API calls;
+     *        The status of the access key. <code>Active</code> means that the key is valid for API calls;
      *        <code>Inactive</code> means it is not.
      * @see StatusType
      */
@@ -153,11 +153,11 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
-     * means it is not.
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls;
+     * <code>Inactive</code> means it is not.
      * </p>
      * 
-     * @return The status of the access key. <code>Active</code> means the key is valid for API calls;
+     * @return The status of the access key. <code>Active</code> means that the key is valid for API calls;
      *         <code>Inactive</code> means it is not.
      * @see StatusType
      */
@@ -168,12 +168,12 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
-     * means it is not.
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls;
+     * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is valid for API calls;
+     *        The status of the access key. <code>Active</code> means that the key is valid for API calls;
      *        <code>Inactive</code> means it is not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
@@ -186,12 +186,12 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
-     * means it is not.
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls;
+     * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is valid for API calls;
+     *        The status of the access key. <code>Active</code> means that the key is valid for API calls;
      *        <code>Inactive</code> means it is not.
      * @see StatusType
      */
@@ -202,12 +202,12 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls; <code>Inactive</code>
-     * means it is not.
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls;
+     * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is valid for API calls;
+     *        The status of the access key. <code>Active</code> means that the key is valid for API calls;
      *        <code>Inactive</code> means it is not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
@@ -259,7 +259,8 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

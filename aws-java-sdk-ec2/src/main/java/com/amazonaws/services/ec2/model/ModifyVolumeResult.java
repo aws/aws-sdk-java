@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class ModifyVolumeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A <a>VolumeModification</a> object.
+     * Information about the volume modification.
      * </p>
      */
     private VolumeModification volumeModification;
 
     /**
      * <p>
-     * A <a>VolumeModification</a> object.
+     * Information about the volume modification.
      * </p>
      * 
      * @param volumeModification
-     *        A <a>VolumeModification</a> object.
+     *        Information about the volume modification.
      */
 
     public void setVolumeModification(VolumeModification volumeModification) {
@@ -45,10 +45,10 @@ public class ModifyVolumeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A <a>VolumeModification</a> object.
+     * Information about the volume modification.
      * </p>
      * 
-     * @return A <a>VolumeModification</a> object.
+     * @return Information about the volume modification.
      */
 
     public VolumeModification getVolumeModification() {
@@ -57,11 +57,11 @@ public class ModifyVolumeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A <a>VolumeModification</a> object.
+     * Information about the volume modification.
      * </p>
      * 
      * @param volumeModification
-     *        A <a>VolumeModification</a> object.
+     *        Information about the volume modification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +71,8 @@ public class ModifyVolumeResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

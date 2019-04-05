@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>public</code> - Return all DB snapshots that have been marked as public.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     * </p>
+     * <p>
+     * For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     * Guide.</i> </a>
+     * </p>
+     * <p>
+     * The <code>awsbackup</code> type does not apply to Aurora.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
@@ -156,6 +169,12 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Boolean includePublic;
+    /**
+     * <p>
+     * A specific DB resource ID to describe.
+     * </p>
+     */
+    private String dbiResourceId;
 
     /**
      * <p>
@@ -422,6 +441,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>public</code> - Return all DB snapshots that have been marked as public.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     * </p>
+     * <p>
+     * For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     * Guide.</i> </a>
+     * </p>
+     * <p>
+     * The <code>awsbackup</code> type does not apply to Aurora.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
@@ -459,6 +491,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>public</code> - Return all DB snapshots that have been marked as public.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     *        </p>
+     *        <p>
+     *        For information about AWS Backup, see the <a
+     *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     *        Guide.</i> </a>
+     *        </p>
+     *        <p>
+     *        The <code>awsbackup</code> type does not apply to Aurora.
      *        </p>
      *        </li>
      *        </ul>
@@ -507,6 +552,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>public</code> - Return all DB snapshots that have been marked as public.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     * </p>
+     * <p>
+     * For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     * Guide.</i> </a>
+     * </p>
+     * <p>
+     * The <code>awsbackup</code> type does not apply to Aurora.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
@@ -543,6 +601,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *         <li>
      *         <p>
      *         <code>public</code> - Return all DB snapshots that have been marked as public.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     *         </p>
+     *         <p>
+     *         For information about AWS Backup, see the <a
+     *         href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     *         Guide.</i> </a>
+     *         </p>
+     *         <p>
+     *         The <code>awsbackup</code> type does not apply to Aurora.
      *         </p>
      *         </li>
      *         </ul>
@@ -591,6 +662,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>public</code> - Return all DB snapshots that have been marked as public.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     * </p>
+     * <p>
+     * For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     * Guide.</i> </a>
+     * </p>
+     * <p>
+     * The <code>awsbackup</code> type does not apply to Aurora.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you don't specify a <code>SnapshotType</code> value, then both automated and manual snapshots are returned.
@@ -628,6 +712,19 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <li>
      *        <p>
      *        <code>public</code> - Return all DB snapshots that have been marked as public.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup service.
+     *        </p>
+     *        <p>
+     *        For information about AWS Backup, see the <a
+     *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"> <i>AWS Backup Developer
+     *        Guide.</i> </a>
+     *        </p>
+     *        <p>
+     *        The <code>awsbackup</code> type does not apply to Aurora.
      *        </p>
      *        </li>
      *        </ul>
@@ -1031,7 +1128,48 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A specific DB resource ID to describe.
+     * </p>
+     * 
+     * @param dbiResourceId
+     *        A specific DB resource ID to describe.
+     */
+
+    public void setDbiResourceId(String dbiResourceId) {
+        this.dbiResourceId = dbiResourceId;
+    }
+
+    /**
+     * <p>
+     * A specific DB resource ID to describe.
+     * </p>
+     * 
+     * @return A specific DB resource ID to describe.
+     */
+
+    public String getDbiResourceId() {
+        return this.dbiResourceId;
+    }
+
+    /**
+     * <p>
+     * A specific DB resource ID to describe.
+     * </p>
+     * 
+     * @param dbiResourceId
+     *        A specific DB resource ID to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDBSnapshotsRequest withDbiResourceId(String dbiResourceId) {
+        setDbiResourceId(dbiResourceId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1056,7 +1194,9 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
         if (getIncludeShared() != null)
             sb.append("IncludeShared: ").append(getIncludeShared()).append(",");
         if (getIncludePublic() != null)
-            sb.append("IncludePublic: ").append(getIncludePublic());
+            sb.append("IncludePublic: ").append(getIncludePublic()).append(",");
+        if (getDbiResourceId() != null)
+            sb.append("DbiResourceId: ").append(getDbiResourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -1103,6 +1243,10 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getIncludePublic() != null && other.getIncludePublic().equals(this.getIncludePublic()) == false)
             return false;
+        if (other.getDbiResourceId() == null ^ this.getDbiResourceId() == null)
+            return false;
+        if (other.getDbiResourceId() != null && other.getDbiResourceId().equals(this.getDbiResourceId()) == false)
+            return false;
         return true;
     }
 
@@ -1119,6 +1263,7 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getIncludeShared() == null) ? 0 : getIncludeShared().hashCode());
         hashCode = prime * hashCode + ((getIncludePublic() == null) ? 0 : getIncludePublic().hashCode());
+        hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode());
         return hashCode;
     }
 

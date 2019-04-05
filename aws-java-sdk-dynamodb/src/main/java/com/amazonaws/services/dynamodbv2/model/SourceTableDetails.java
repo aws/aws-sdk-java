@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,27 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Long itemCount;
+    /**
+     * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend
+     * using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String billingMode;
 
     /**
      * <p>
@@ -428,7 +449,183 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend
+     * using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param billingMode
+     *        Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *        be changed later.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend
+     *        using <code>PROVISIONED</code> for predictable workloads.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We
+     *        recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        </p>
+     *        </li>
+     * @see BillingMode
+     */
+
+    public void setBillingMode(String billingMode) {
+        this.billingMode = billingMode;
+    }
+
+    /**
+     * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend
+     * using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *         be changed later.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend
+     *         using <code>PROVISIONED</code> for predictable workloads.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We
+     *         recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *         </p>
+     *         </li>
+     * @see BillingMode
+     */
+
+    public String getBillingMode() {
+        return this.billingMode;
+    }
+
+    /**
+     * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend
+     * using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param billingMode
+     *        Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *        be changed later.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend
+     *        using <code>PROVISIONED</code> for predictable workloads.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We
+     *        recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingMode
+     */
+
+    public SourceTableDetails withBillingMode(String billingMode) {
+        setBillingMode(billingMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Controls how you are charged for read and write throughput and how you manage capacity. This setting can be
+     * changed later.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend using
+     * <code>PROVISIONED</code> for predictable workloads.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend
+     * using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param billingMode
+     *        Controls how you are charged for read and write throughput and how you manage capacity. This setting can
+     *        be changed later.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>. We recommend
+     *        using <code>PROVISIONED</code> for predictable workloads.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We
+     *        recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingMode
+     */
+
+    public SourceTableDetails withBillingMode(BillingMode billingMode) {
+        this.billingMode = billingMode.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -453,7 +650,9 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
         if (getProvisionedThroughput() != null)
             sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput()).append(",");
         if (getItemCount() != null)
-            sb.append("ItemCount: ").append(getItemCount());
+            sb.append("ItemCount: ").append(getItemCount()).append(",");
+        if (getBillingMode() != null)
+            sb.append("BillingMode: ").append(getBillingMode());
         sb.append("}");
         return sb.toString();
     }
@@ -500,6 +699,10 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getItemCount() != null && other.getItemCount().equals(this.getItemCount()) == false)
             return false;
+        if (other.getBillingMode() == null ^ this.getBillingMode() == null)
+            return false;
+        if (other.getBillingMode() != null && other.getBillingMode().equals(this.getBillingMode()) == false)
+            return false;
         return true;
     }
 
@@ -516,6 +719,7 @@ public class SourceTableDetails implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getTableCreationDateTime() == null) ? 0 : getTableCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
         hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
+        hashCode = prime * hashCode + ((getBillingMode() == null) ? 0 : getBillingMode().hashCode());
         return hashCode;
     }
 

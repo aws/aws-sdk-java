@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,16 +99,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
+     * For more information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
-     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information on the
-     * supported operating systems, see <a
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported
+     * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
-     * more information on how to use custom AMIs with OpsWorks, see <a
+     * more information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -527,16 +527,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
+     * For more information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
-     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information on the
-     * supported operating systems, see <a
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported
+     * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
-     * more information on how to use custom AMIs with OpsWorks, see <a
+     * more information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -584,16 +584,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on the supported operating systems, see <a
+     *        For more information about supported operating systems, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *        Operating Systems</a>.
      *        </p>
      *        <p>
      *        The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
-     *        you must use the AmiId parameter to specify the custom AMI that you want to use. For more information on
-     *        the supported operating systems, see <a
+     *        you must use the AmiId parameter to specify the custom AMI that you want to use. For more information
+     *        about supported operating systems, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *        Systems</a>. For more information on how to use custom AMIs with OpsWorks, see <a
+     *        Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      *        </p>
@@ -647,16 +647,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
+     * For more information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
-     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information on the
-     * supported operating systems, see <a
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported
+     * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
-     * more information on how to use custom AMIs with OpsWorks, see <a
+     * more information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -703,16 +703,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information on the supported operating systems, see <a
+     *         For more information about supported operating systems, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *         Operating Systems</a>.
      *         </p>
      *         <p>
      *         The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
-     *         you must use the AmiId parameter to specify the custom AMI that you want to use. For more information on
-     *         the supported operating systems, see <a
+     *         you must use the AmiId parameter to specify the custom AMI that you want to use. For more information
+     *         about supported operating systems, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>. For more information on how to use custom AMIs with OpsWorks, see <a
+     *         Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *         AMIs</a>.
      *         </p>
@@ -766,16 +766,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
+     * For more information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
-     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information on the
-     * supported operating systems, see <a
+     * must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported
+     * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For
-     * more information on how to use custom AMIs with OpsWorks, see <a
+     * more information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -823,16 +823,16 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on the supported operating systems, see <a
+     *        For more information about supported operating systems, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *        Operating Systems</a>.
      *        </p>
      *        <p>
      *        The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
-     *        you must use the AmiId parameter to specify the custom AMI that you want to use. For more information on
-     *        the supported operating systems, see <a
+     *        you must use the AmiId parameter to specify the custom AMI that you want to use. For more information
+     *        about supported operating systems, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *        Systems</a>. For more information on how to use custom AMIs with OpsWorks, see <a
+     *        Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      *        </p>
@@ -1381,7 +1381,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

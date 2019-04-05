@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,14 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The unique ID of your Amazon Pinpoint application. */
     private String applicationId;
-
+    /** The unique ID of the campaign. */
     private String campaignId;
-
+    /** The version of the campaign. */
     private String version;
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -40,7 +44,9 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * The unique ID of your Amazon Pinpoint application.
+     * 
+     * @return The unique ID of your Amazon Pinpoint application.
      */
 
     public String getApplicationId() {
@@ -48,7 +54,10 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +67,10 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * The unique ID of the campaign.
+     * 
      * @param campaignId
+     *        The unique ID of the campaign.
      */
 
     public void setCampaignId(String campaignId) {
@@ -66,7 +78,9 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * The unique ID of the campaign.
+     * 
+     * @return The unique ID of the campaign.
      */
 
     public String getCampaignId() {
@@ -74,7 +88,10 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * The unique ID of the campaign.
+     * 
      * @param campaignId
+     *        The unique ID of the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +101,10 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * The version of the campaign.
+     * 
      * @param version
+     *        The version of the campaign.
      */
 
     public void setVersion(String version) {
@@ -92,7 +112,9 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * The version of the campaign.
+     * 
+     * @return The version of the campaign.
      */
 
     public String getVersion() {
@@ -100,7 +122,10 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * The version of the campaign.
+     * 
      * @param version
+     *        The version of the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +135,8 @@ public class GetCampaignVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

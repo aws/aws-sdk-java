@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are executed in order.
+     * contains a list of steps that are run in order.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StepExecution> stepExecutions;
@@ -110,19 +110,19 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     private String parentAutomationExecutionId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * The Amazon Resource Name (ARN) of the user who ran the automation.
      * </p>
      */
     private String executedBy;
     /**
      * <p>
-     * The name of the currently executing step.
+     * The name of the step that is currently running.
      * </p>
      */
     private String currentStepName;
     /**
      * <p>
-     * The action of the currently executing step.
+     * The action of the step that is currently running.
      * </p>
      */
     private String currentAction;
@@ -138,6 +138,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
+    /**
+     * <p>
+     * The specified key-value mapping of document parameters to target resources.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>> targetMaps;
     /**
      * <p>
      * A list of resolved targets in the rate control execution.
@@ -162,6 +168,19 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String target;
+    /**
+     * <p>
+     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TargetLocation> targetLocations;
+    /**
+     * <p>
+     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     * Automation execution.
+     * </p>
+     */
+    private ProgressCounters progressCounters;
 
     /**
      * <p>
@@ -439,11 +458,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are executed in order.
+     * contains a list of steps that are run in order.
      * </p>
      * 
      * @return A list of details about the current state of all steps that comprise an execution. An Automation document
-     *         contains a list of steps that are executed in order.
+     *         contains a list of steps that are run in order.
      */
 
     public java.util.List<StepExecution> getStepExecutions() {
@@ -456,12 +475,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are executed in order.
+     * contains a list of steps that are run in order.
      * </p>
      * 
      * @param stepExecutions
      *        A list of details about the current state of all steps that comprise an execution. An Automation document
-     *        contains a list of steps that are executed in order.
+     *        contains a list of steps that are run in order.
      */
 
     public void setStepExecutions(java.util.Collection<StepExecution> stepExecutions) {
@@ -476,7 +495,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are executed in order.
+     * contains a list of steps that are run in order.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -486,7 +505,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * 
      * @param stepExecutions
      *        A list of details about the current state of all steps that comprise an execution. An Automation document
-     *        contains a list of steps that are executed in order.
+     *        contains a list of steps that are run in order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -503,12 +522,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A list of details about the current state of all steps that comprise an execution. An Automation document
-     * contains a list of steps that are executed in order.
+     * contains a list of steps that are run in order.
      * </p>
      * 
      * @param stepExecutions
      *        A list of details about the current state of all steps that comprise an execution. An Automation document
-     *        contains a list of steps that are executed in order.
+     *        contains a list of steps that are run in order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -854,11 +873,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * The Amazon Resource Name (ARN) of the user who ran the automation.
      * </p>
      * 
      * @param executedBy
-     *        The Amazon Resource Name (ARN) of the user who executed the automation.
+     *        The Amazon Resource Name (ARN) of the user who ran the automation.
      */
 
     public void setExecutedBy(String executedBy) {
@@ -867,10 +886,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * The Amazon Resource Name (ARN) of the user who ran the automation.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the user who executed the automation.
+     * @return The Amazon Resource Name (ARN) of the user who ran the automation.
      */
 
     public String getExecutedBy() {
@@ -879,11 +898,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the user who executed the automation.
+     * The Amazon Resource Name (ARN) of the user who ran the automation.
      * </p>
      * 
      * @param executedBy
-     *        The Amazon Resource Name (ARN) of the user who executed the automation.
+     *        The Amazon Resource Name (ARN) of the user who ran the automation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -894,11 +913,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the currently executing step.
+     * The name of the step that is currently running.
      * </p>
      * 
      * @param currentStepName
-     *        The name of the currently executing step.
+     *        The name of the step that is currently running.
      */
 
     public void setCurrentStepName(String currentStepName) {
@@ -907,10 +926,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the currently executing step.
+     * The name of the step that is currently running.
      * </p>
      * 
-     * @return The name of the currently executing step.
+     * @return The name of the step that is currently running.
      */
 
     public String getCurrentStepName() {
@@ -919,11 +938,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the currently executing step.
+     * The name of the step that is currently running.
      * </p>
      * 
      * @param currentStepName
-     *        The name of the currently executing step.
+     *        The name of the step that is currently running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -934,11 +953,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action of the currently executing step.
+     * The action of the step that is currently running.
      * </p>
      * 
      * @param currentAction
-     *        The action of the currently executing step.
+     *        The action of the step that is currently running.
      */
 
     public void setCurrentAction(String currentAction) {
@@ -947,10 +966,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action of the currently executing step.
+     * The action of the step that is currently running.
      * </p>
      * 
-     * @return The action of the currently executing step.
+     * @return The action of the step that is currently running.
      */
 
     public String getCurrentAction() {
@@ -959,11 +978,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The action of the currently executing step.
+     * The action of the step that is currently running.
      * </p>
      * 
      * @param currentAction
-     *        The action of the currently executing step.
+     *        The action of the step that is currently running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1082,6 +1101,79 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     public AutomationExecution withTargets(java.util.Collection<Target> targets) {
         setTargets(targets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The specified key-value mapping of document parameters to target resources.
+     * </p>
+     * 
+     * @return The specified key-value mapping of document parameters to target resources.
+     */
+
+    public java.util.List<java.util.Map<String, java.util.List<String>>> getTargetMaps() {
+        if (targetMaps == null) {
+            targetMaps = new com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>>();
+        }
+        return targetMaps;
+    }
+
+    /**
+     * <p>
+     * The specified key-value mapping of document parameters to target resources.
+     * </p>
+     * 
+     * @param targetMaps
+     *        The specified key-value mapping of document parameters to target resources.
+     */
+
+    public void setTargetMaps(java.util.Collection<java.util.Map<String, java.util.List<String>>> targetMaps) {
+        if (targetMaps == null) {
+            this.targetMaps = null;
+            return;
+        }
+
+        this.targetMaps = new com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>>(targetMaps);
+    }
+
+    /**
+     * <p>
+     * The specified key-value mapping of document parameters to target resources.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetMaps(java.util.Collection)} or {@link #withTargetMaps(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param targetMaps
+     *        The specified key-value mapping of document parameters to target resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withTargetMaps(java.util.Map<String, java.util.List<String>>... targetMaps) {
+        if (this.targetMaps == null) {
+            setTargetMaps(new com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>>(targetMaps.length));
+        }
+        for (java.util.Map<String, java.util.List<String>> ele : targetMaps) {
+            this.targetMaps.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The specified key-value mapping of document parameters to target resources.
+     * </p>
+     * 
+     * @param targetMaps
+     *        The specified key-value mapping of document parameters to target resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withTargetMaps(java.util.Collection<java.util.Map<String, java.util.List<String>>> targetMaps) {
+        setTargetMaps(targetMaps);
         return this;
     }
 
@@ -1246,7 +1338,127 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * </p>
+     * 
+     * @return The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     */
+
+    public java.util.List<TargetLocation> getTargetLocations() {
+        if (targetLocations == null) {
+            targetLocations = new com.amazonaws.internal.SdkInternalList<TargetLocation>();
+        }
+        return targetLocations;
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * </p>
+     * 
+     * @param targetLocations
+     *        The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     */
+
+    public void setTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
+        if (targetLocations == null) {
+            this.targetLocations = null;
+            return;
+        }
+
+        this.targetLocations = new com.amazonaws.internal.SdkInternalList<TargetLocation>(targetLocations);
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetLocations(java.util.Collection)} or {@link #withTargetLocations(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param targetLocations
+     *        The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withTargetLocations(TargetLocation... targetLocations) {
+        if (this.targetLocations == null) {
+            setTargetLocations(new com.amazonaws.internal.SdkInternalList<TargetLocation>(targetLocations.length));
+        }
+        for (TargetLocation ele : targetLocations) {
+            this.targetLocations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * </p>
+     * 
+     * @param targetLocations
+     *        The combination of AWS Regions and/or AWS accounts where you want to run the Automation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withTargetLocations(java.util.Collection<TargetLocation> targetLocations) {
+        setTargetLocations(targetLocations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     * Automation execution.
+     * </p>
+     * 
+     * @param progressCounters
+     *        An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     *        Automation execution.
+     */
+
+    public void setProgressCounters(ProgressCounters progressCounters) {
+        this.progressCounters = progressCounters;
+    }
+
+    /**
+     * <p>
+     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     * Automation execution.
+     * </p>
+     * 
+     * @return An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     *         Automation execution.
+     */
+
+    public ProgressCounters getProgressCounters() {
+        return this.progressCounters;
+    }
+
+    /**
+     * <p>
+     * An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     * Automation execution.
+     * </p>
+     * 
+     * @param progressCounters
+     *        An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account
+     *        Automation execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withProgressCounters(ProgressCounters progressCounters) {
+        setProgressCounters(progressCounters);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1292,6 +1504,8 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
             sb.append("TargetParameterName: ").append(getTargetParameterName()).append(",");
         if (getTargets() != null)
             sb.append("Targets: ").append(getTargets()).append(",");
+        if (getTargetMaps() != null)
+            sb.append("TargetMaps: ").append(getTargetMaps()).append(",");
         if (getResolvedTargets() != null)
             sb.append("ResolvedTargets: ").append(getResolvedTargets()).append(",");
         if (getMaxConcurrency() != null)
@@ -1299,7 +1513,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         if (getMaxErrors() != null)
             sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
         if (getTarget() != null)
-            sb.append("Target: ").append(getTarget());
+            sb.append("Target: ").append(getTarget()).append(",");
+        if (getTargetLocations() != null)
+            sb.append("TargetLocations: ").append(getTargetLocations()).append(",");
+        if (getProgressCounters() != null)
+            sb.append("ProgressCounters: ").append(getProgressCounters());
         sb.append("}");
         return sb.toString();
     }
@@ -1386,6 +1604,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
             return false;
+        if (other.getTargetMaps() == null ^ this.getTargetMaps() == null)
+            return false;
+        if (other.getTargetMaps() != null && other.getTargetMaps().equals(this.getTargetMaps()) == false)
+            return false;
         if (other.getResolvedTargets() == null ^ this.getResolvedTargets() == null)
             return false;
         if (other.getResolvedTargets() != null && other.getResolvedTargets().equals(this.getResolvedTargets()) == false)
@@ -1401,6 +1623,14 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         if (other.getTarget() == null ^ this.getTarget() == null)
             return false;
         if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
+            return false;
+        if (other.getTargetLocations() == null ^ this.getTargetLocations() == null)
+            return false;
+        if (other.getTargetLocations() != null && other.getTargetLocations().equals(this.getTargetLocations()) == false)
+            return false;
+        if (other.getProgressCounters() == null ^ this.getProgressCounters() == null)
+            return false;
+        if (other.getProgressCounters() != null && other.getProgressCounters().equals(this.getProgressCounters()) == false)
             return false;
         return true;
     }
@@ -1428,10 +1658,13 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getCurrentAction() == null) ? 0 : getCurrentAction().hashCode());
         hashCode = prime * hashCode + ((getTargetParameterName() == null) ? 0 : getTargetParameterName().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
+        hashCode = prime * hashCode + ((getTargetMaps() == null) ? 0 : getTargetMaps().hashCode());
         hashCode = prime * hashCode + ((getResolvedTargets() == null) ? 0 : getResolvedTargets().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
+        hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
+        hashCode = prime * hashCode + ((getProgressCounters() == null) ? 0 : getProgressCounters().hashCode());
         return hashCode;
     }
 

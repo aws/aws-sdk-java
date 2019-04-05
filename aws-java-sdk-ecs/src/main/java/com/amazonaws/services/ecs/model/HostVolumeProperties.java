@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details on a container instance host volume.
+ * Details on a container instance bind mount host volume.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HostVolumeProperties" target="_top">AWS API
@@ -30,12 +30,12 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The path on the host container instance that is presented to the container. If this parameter is empty, then the
-     * Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
-     * <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
-     * container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
-     * folder are exported.
+     * When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host
+     * container instance that is presented to the container. If this parameter is empty, then the Docker daemon has
+     * assigned a host path for you. If the <code>host</code> parameter contains a <code>sourcePath</code> file
+     * location, then the data volume persists at the specified location on the host container instance until you delete
+     * it manually. If the <code>sourcePath</code> value does not exist on the host container instance, the Docker
+     * daemon creates it. If the location does exist, the contents of the source path folder are exported.
      * </p>
      * <p>
      * If you are using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.
@@ -45,20 +45,21 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The path on the host container instance that is presented to the container. If this parameter is empty, then the
-     * Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
-     * <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
-     * container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
-     * folder are exported.
+     * When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host
+     * container instance that is presented to the container. If this parameter is empty, then the Docker daemon has
+     * assigned a host path for you. If the <code>host</code> parameter contains a <code>sourcePath</code> file
+     * location, then the data volume persists at the specified location on the host container instance until you delete
+     * it manually. If the <code>sourcePath</code> value does not exist on the host container instance, the Docker
+     * daemon creates it. If the location does exist, the contents of the source path folder are exported.
      * </p>
      * <p>
      * If you are using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.
      * </p>
      * 
      * @param sourcePath
-     *        The path on the host container instance that is presented to the container. If this parameter is empty,
-     *        then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
+     *        When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the
+     *        host container instance that is presented to the container. If this parameter is empty, then the Docker
+     *        daemon has assigned a host path for you. If the <code>host</code> parameter contains a
      *        <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
      *        container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on
      *        the host container instance, the Docker daemon creates it. If the location does exist, the contents of the
@@ -73,19 +74,20 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The path on the host container instance that is presented to the container. If this parameter is empty, then the
-     * Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
-     * <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
-     * container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
-     * folder are exported.
+     * When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host
+     * container instance that is presented to the container. If this parameter is empty, then the Docker daemon has
+     * assigned a host path for you. If the <code>host</code> parameter contains a <code>sourcePath</code> file
+     * location, then the data volume persists at the specified location on the host container instance until you delete
+     * it manually. If the <code>sourcePath</code> value does not exist on the host container instance, the Docker
+     * daemon creates it. If the location does exist, the contents of the source path folder are exported.
      * </p>
      * <p>
      * If you are using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.
      * </p>
      * 
-     * @return The path on the host container instance that is presented to the container. If this parameter is empty,
-     *         then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
+     * @return When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on
+     *         the host container instance that is presented to the container. If this parameter is empty, then the
+     *         Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
      *         <code>sourcePath</code> file location, then the data volume persists at the specified location on the
      *         host container instance until you delete it manually. If the <code>sourcePath</code> value does not exist
      *         on the host container instance, the Docker daemon creates it. If the location does exist, the contents of
@@ -100,20 +102,21 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The path on the host container instance that is presented to the container. If this parameter is empty, then the
-     * Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
-     * <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
-     * container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on the host
-     * container instance, the Docker daemon creates it. If the location does exist, the contents of the source path
-     * folder are exported.
+     * When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host
+     * container instance that is presented to the container. If this parameter is empty, then the Docker daemon has
+     * assigned a host path for you. If the <code>host</code> parameter contains a <code>sourcePath</code> file
+     * location, then the data volume persists at the specified location on the host container instance until you delete
+     * it manually. If the <code>sourcePath</code> value does not exist on the host container instance, the Docker
+     * daemon creates it. If the location does exist, the contents of the source path folder are exported.
      * </p>
      * <p>
      * If you are using the Fargate launch type, the <code>sourcePath</code> parameter is not supported.
      * </p>
      * 
      * @param sourcePath
-     *        The path on the host container instance that is presented to the container. If this parameter is empty,
-     *        then the Docker daemon has assigned a host path for you. If the <code>host</code> parameter contains a
+     *        When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the
+     *        host container instance that is presented to the container. If this parameter is empty, then the Docker
+     *        daemon has assigned a host path for you. If the <code>host</code> parameter contains a
      *        <code>sourcePath</code> file location, then the data volume persists at the specified location on the host
      *        container instance until you delete it manually. If the <code>sourcePath</code> value does not exist on
      *        the host container instance, the Docker daemon creates it. If the location does exist, the contents of the
@@ -129,7 +132,8 @@ public class HostVolumeProperties implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

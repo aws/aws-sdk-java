@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,7 @@ public class NodeJsonUnmarshaller implements Unmarshaller<Node, JsonUnmarshaller
                 }
                 if (context.testExpression("NodeCreateTime", targetDepth)) {
                     context.nextToken();
-                    node.setNodeCreateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    node.setNodeCreateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZone", targetDepth)) {
                     context.nextToken();

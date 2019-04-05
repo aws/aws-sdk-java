@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,7 +61,7 @@ public class HostReservationStaxUnmarshaller implements Unmarshaller<HostReserva
                 }
 
                 if (context.testExpression("end", targetDepth)) {
-                    hostReservation.setEnd(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    hostReservation.setEnd(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -101,7 +101,7 @@ public class HostReservationStaxUnmarshaller implements Unmarshaller<HostReserva
                 }
 
                 if (context.testExpression("start", targetDepth)) {
-                    hostReservation.setStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    hostReservation.setStart(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -114,6 +114,17 @@ public class HostReservationStaxUnmarshaller implements Unmarshaller<HostReserva
                     hostReservation.setUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    hostReservation.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    hostReservation.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return hostReservation;

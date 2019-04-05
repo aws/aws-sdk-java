@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,21 +27,28 @@ public class ContinueDeploymentRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The deployment ID of the blue/green deployment for which you want to start rerouting traffic to the replacement
+     * The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement
      * environment.
      * </p>
      */
     private String deploymentId;
+    /**
+     * <p>
+     * The status of the deployment's waiting period. READY_WAIT indicates the deployment is ready to start shifting
+     * traffic. TERMINATION_WAIT indicates the traffic is shifted, but the original target is not terminated.
+     * </p>
+     */
+    private String deploymentWaitType;
 
     /**
      * <p>
-     * The deployment ID of the blue/green deployment for which you want to start rerouting traffic to the replacement
+     * The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement
      * environment.
      * </p>
      * 
      * @param deploymentId
-     *        The deployment ID of the blue/green deployment for which you want to start rerouting traffic to the
-     *        replacement environment.
+     *        The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement
+     *        environment.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -50,12 +57,12 @@ public class ContinueDeploymentRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The deployment ID of the blue/green deployment for which you want to start rerouting traffic to the replacement
+     * The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement
      * environment.
      * </p>
      * 
-     * @return The deployment ID of the blue/green deployment for which you want to start rerouting traffic to the
-     *         replacement environment.
+     * @return The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement
+     *         environment.
      */
 
     public String getDeploymentId() {
@@ -64,13 +71,13 @@ public class ContinueDeploymentRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The deployment ID of the blue/green deployment for which you want to start rerouting traffic to the replacement
+     * The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement
      * environment.
      * </p>
      * 
      * @param deploymentId
-     *        The deployment ID of the blue/green deployment for which you want to start rerouting traffic to the
-     *        replacement environment.
+     *        The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement
+     *        environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +87,79 @@ public class ContinueDeploymentRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The status of the deployment's waiting period. READY_WAIT indicates the deployment is ready to start shifting
+     * traffic. TERMINATION_WAIT indicates the traffic is shifted, but the original target is not terminated.
+     * </p>
+     * 
+     * @param deploymentWaitType
+     *        The status of the deployment's waiting period. READY_WAIT indicates the deployment is ready to start
+     *        shifting traffic. TERMINATION_WAIT indicates the traffic is shifted, but the original target is not
+     *        terminated.
+     * @see DeploymentWaitType
+     */
+
+    public void setDeploymentWaitType(String deploymentWaitType) {
+        this.deploymentWaitType = deploymentWaitType;
+    }
+
+    /**
+     * <p>
+     * The status of the deployment's waiting period. READY_WAIT indicates the deployment is ready to start shifting
+     * traffic. TERMINATION_WAIT indicates the traffic is shifted, but the original target is not terminated.
+     * </p>
+     * 
+     * @return The status of the deployment's waiting period. READY_WAIT indicates the deployment is ready to start
+     *         shifting traffic. TERMINATION_WAIT indicates the traffic is shifted, but the original target is not
+     *         terminated.
+     * @see DeploymentWaitType
+     */
+
+    public String getDeploymentWaitType() {
+        return this.deploymentWaitType;
+    }
+
+    /**
+     * <p>
+     * The status of the deployment's waiting period. READY_WAIT indicates the deployment is ready to start shifting
+     * traffic. TERMINATION_WAIT indicates the traffic is shifted, but the original target is not terminated.
+     * </p>
+     * 
+     * @param deploymentWaitType
+     *        The status of the deployment's waiting period. READY_WAIT indicates the deployment is ready to start
+     *        shifting traffic. TERMINATION_WAIT indicates the traffic is shifted, but the original target is not
+     *        terminated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeploymentWaitType
+     */
+
+    public ContinueDeploymentRequest withDeploymentWaitType(String deploymentWaitType) {
+        setDeploymentWaitType(deploymentWaitType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the deployment's waiting period. READY_WAIT indicates the deployment is ready to start shifting
+     * traffic. TERMINATION_WAIT indicates the traffic is shifted, but the original target is not terminated.
+     * </p>
+     * 
+     * @param deploymentWaitType
+     *        The status of the deployment's waiting period. READY_WAIT indicates the deployment is ready to start
+     *        shifting traffic. TERMINATION_WAIT indicates the traffic is shifted, but the original target is not
+     *        terminated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeploymentWaitType
+     */
+
+    public ContinueDeploymentRequest withDeploymentWaitType(DeploymentWaitType deploymentWaitType) {
+        this.deploymentWaitType = deploymentWaitType.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -91,7 +170,9 @@ public class ContinueDeploymentRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: ").append(getDeploymentId());
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
+        if (getDeploymentWaitType() != null)
+            sb.append("DeploymentWaitType: ").append(getDeploymentWaitType());
         sb.append("}");
         return sb.toString();
     }
@@ -110,6 +191,10 @@ public class ContinueDeploymentRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
             return false;
+        if (other.getDeploymentWaitType() == null ^ this.getDeploymentWaitType() == null)
+            return false;
+        if (other.getDeploymentWaitType() != null && other.getDeploymentWaitType().equals(this.getDeploymentWaitType()) == false)
+            return false;
         return true;
     }
 
@@ -119,6 +204,7 @@ public class ContinueDeploymentRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getDeploymentWaitType() == null) ? 0 : getDeploymentWaitType().hashCode());
         return hashCode;
     }
 

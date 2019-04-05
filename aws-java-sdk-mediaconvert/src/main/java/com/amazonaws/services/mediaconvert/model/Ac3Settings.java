@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,17 +28,26 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /** Average bitrate in bits/second. Valid bitrates depend on the coding mode. */
     private Integer bitrate;
-
+    /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these
+     * values.
+     */
     private String bitstreamMode;
-
+    /** Dolby Digital coding mode. Determines number of channels. */
     private String codingMode;
     /** Sets the dialnorm for the output. If blank and input audio is Dolby Digital, dialnorm will be passed through. */
     private Integer dialnorm;
-
+    /**
+     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby
+     * Digital specification.
+     */
     private String dynamicRangeCompressionProfile;
-
+    /** Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode. */
     private String lfeFilter;
-
+    /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this
+     * audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+     */
     private String metadataControl;
     /** Sample rate in hz. Sample rate is always 48000. */
     private Integer sampleRate;
@@ -78,7 +87,12 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these
+     * values.
+     * 
      * @param bitstreamMode
+     *        Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on
+     *        these values.
      * @see Ac3BitstreamMode
      */
 
@@ -87,7 +101,11 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these
+     * values.
+     * 
+     * @return Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on
+     *         these values.
      * @see Ac3BitstreamMode
      */
 
@@ -96,7 +114,12 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these
+     * values.
+     * 
      * @param bitstreamMode
+     *        Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on
+     *        these values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3BitstreamMode
      */
@@ -107,7 +130,12 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these
+     * values.
+     * 
      * @param bitstreamMode
+     *        Specifies the "Bitstream Mode" (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on
+     *        these values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3BitstreamMode
      */
@@ -118,7 +146,10 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Dolby Digital coding mode. Determines number of channels.
+     * 
      * @param codingMode
+     *        Dolby Digital coding mode. Determines number of channels.
      * @see Ac3CodingMode
      */
 
@@ -127,7 +158,9 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Dolby Digital coding mode. Determines number of channels.
+     * 
+     * @return Dolby Digital coding mode. Determines number of channels.
      * @see Ac3CodingMode
      */
 
@@ -136,7 +169,10 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Dolby Digital coding mode. Determines number of channels.
+     * 
      * @param codingMode
+     *        Dolby Digital coding mode. Determines number of channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3CodingMode
      */
@@ -147,7 +183,10 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Dolby Digital coding mode. Determines number of channels.
+     * 
      * @param codingMode
+     *        Dolby Digital coding mode. Determines number of channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3CodingMode
      */
@@ -195,7 +234,12 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby
+     * Digital specification.
+     * 
      * @param dynamicRangeCompressionProfile
+     *        If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in
+     *        the Dolby Digital specification.
      * @see Ac3DynamicRangeCompressionProfile
      */
 
@@ -204,7 +248,11 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby
+     * Digital specification.
+     * 
+     * @return If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in
+     *         the Dolby Digital specification.
      * @see Ac3DynamicRangeCompressionProfile
      */
 
@@ -213,7 +261,12 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby
+     * Digital specification.
+     * 
      * @param dynamicRangeCompressionProfile
+     *        If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in
+     *        the Dolby Digital specification.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3DynamicRangeCompressionProfile
      */
@@ -224,7 +277,12 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby
+     * Digital specification.
+     * 
      * @param dynamicRangeCompressionProfile
+     *        If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in
+     *        the Dolby Digital specification.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3DynamicRangeCompressionProfile
      */
@@ -235,7 +293,10 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+     * 
      * @param lfeFilter
+     *        Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
      * @see Ac3LfeFilter
      */
 
@@ -244,7 +305,9 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+     * 
+     * @return Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
      * @see Ac3LfeFilter
      */
 
@@ -253,7 +316,10 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+     * 
      * @param lfeFilter
+     *        Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3LfeFilter
      */
@@ -264,7 +330,10 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+     * 
      * @param lfeFilter
+     *        Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3LfeFilter
      */
@@ -275,7 +344,13 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this
+     * audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+     * 
      * @param metadataControl
+     *        When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that
+     *        supplied this audio data. If audio was not supplied from one of these streams, then the static metadata
+     *        settings will be used.
      * @see Ac3MetadataControl
      */
 
@@ -284,7 +359,12 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this
+     * audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+     * 
+     * @return When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that
+     *         supplied this audio data. If audio was not supplied from one of these streams, then the static metadata
+     *         settings will be used.
      * @see Ac3MetadataControl
      */
 
@@ -293,7 +373,13 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this
+     * audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+     * 
      * @param metadataControl
+     *        When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that
+     *        supplied this audio data. If audio was not supplied from one of these streams, then the static metadata
+     *        settings will be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3MetadataControl
      */
@@ -304,7 +390,13 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this
+     * audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+     * 
      * @param metadataControl
+     *        When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that
+     *        supplied this audio data. If audio was not supplied from one of these streams, then the static metadata
+     *        settings will be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3MetadataControl
      */
@@ -349,7 +441,8 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

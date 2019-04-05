@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,13 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
      * </p>
      */
     private Boolean processing;
+    /**
+     * <p>
+     * The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is
+     * undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * </p>
+     */
+    private Boolean upgradeProcessing;
 
     private String elasticsearchVersion;
     /**
@@ -136,6 +143,12 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
     private EncryptionAtRestOptions encryptionAtRestOptions;
     /**
      * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     */
+    private NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions;
+    /**
+     * <p>
      * Specifies the status of the <code>AdvancedOptions</code>
      * </p>
      */
@@ -146,6 +159,12 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
      * </p>
      */
     private java.util.Map<String, LogPublishingOption> logPublishingOptions;
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     */
+    private ServiceSoftwareOptions serviceSoftwareOptions;
 
     /**
      * <p>
@@ -599,6 +618,66 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is
+     * undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * </p>
+     * 
+     * @param upgradeProcessing
+     *        The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service
+     *        is undergoing a version upgrade. <code>False</code> if the configuration is active.
+     */
+
+    public void setUpgradeProcessing(Boolean upgradeProcessing) {
+        this.upgradeProcessing = upgradeProcessing;
+    }
+
+    /**
+     * <p>
+     * The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is
+     * undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * </p>
+     * 
+     * @return The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service
+     *         is undergoing a version upgrade. <code>False</code> if the configuration is active.
+     */
+
+    public Boolean getUpgradeProcessing() {
+        return this.upgradeProcessing;
+    }
+
+    /**
+     * <p>
+     * The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is
+     * undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * </p>
+     * 
+     * @param upgradeProcessing
+     *        The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service
+     *        is undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withUpgradeProcessing(Boolean upgradeProcessing) {
+        setUpgradeProcessing(upgradeProcessing);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service is
+     * undergoing a version upgrade. <code>False</code> if the configuration is active.
+     * </p>
+     * 
+     * @return The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon Elasticsearch Service
+     *         is undergoing a version upgrade. <code>False</code> if the configuration is active.
+     */
+
+    public Boolean isUpgradeProcessing() {
+        return this.upgradeProcessing;
+    }
+
+    /**
      * @param elasticsearchVersion
      */
 
@@ -942,6 +1021,46 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     */
+
+    public void setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
+        this.nodeToNodeEncryptionOptions = nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     * 
+     * @return Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     */
+
+    public NodeToNodeEncryptionOptions getNodeToNodeEncryptionOptions() {
+        return this.nodeToNodeEncryptionOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * </p>
+     * 
+     * @param nodeToNodeEncryptionOptions
+     *        Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
+        setNodeToNodeEncryptionOptions(nodeToNodeEncryptionOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the status of the <code>AdvancedOptions</code>
      * </p>
      * 
@@ -1063,7 +1182,48 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     * 
+     * @param serviceSoftwareOptions
+     *        The current status of the Elasticsearch domain's service software.
+     */
+
+    public void setServiceSoftwareOptions(ServiceSoftwareOptions serviceSoftwareOptions) {
+        this.serviceSoftwareOptions = serviceSoftwareOptions;
+    }
+
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     * 
+     * @return The current status of the Elasticsearch domain's service software.
+     */
+
+    public ServiceSoftwareOptions getServiceSoftwareOptions() {
+        return this.serviceSoftwareOptions;
+    }
+
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's service software.
+     * </p>
+     * 
+     * @param serviceSoftwareOptions
+     *        The current status of the Elasticsearch domain's service software.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withServiceSoftwareOptions(ServiceSoftwareOptions serviceSoftwareOptions) {
+        setServiceSoftwareOptions(serviceSoftwareOptions);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1089,6 +1249,8 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
             sb.append("Endpoints: ").append(getEndpoints()).append(",");
         if (getProcessing() != null)
             sb.append("Processing: ").append(getProcessing()).append(",");
+        if (getUpgradeProcessing() != null)
+            sb.append("UpgradeProcessing: ").append(getUpgradeProcessing()).append(",");
         if (getElasticsearchVersion() != null)
             sb.append("ElasticsearchVersion: ").append(getElasticsearchVersion()).append(",");
         if (getElasticsearchClusterConfig() != null)
@@ -1105,10 +1267,14 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
             sb.append("CognitoOptions: ").append(getCognitoOptions()).append(",");
         if (getEncryptionAtRestOptions() != null)
             sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions()).append(",");
+        if (getNodeToNodeEncryptionOptions() != null)
+            sb.append("NodeToNodeEncryptionOptions: ").append(getNodeToNodeEncryptionOptions()).append(",");
         if (getAdvancedOptions() != null)
             sb.append("AdvancedOptions: ").append(getAdvancedOptions()).append(",");
         if (getLogPublishingOptions() != null)
-            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions());
+            sb.append("LogPublishingOptions: ").append(getLogPublishingOptions()).append(",");
+        if (getServiceSoftwareOptions() != null)
+            sb.append("ServiceSoftwareOptions: ").append(getServiceSoftwareOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1155,6 +1321,10 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
             return false;
         if (other.getProcessing() != null && other.getProcessing().equals(this.getProcessing()) == false)
             return false;
+        if (other.getUpgradeProcessing() == null ^ this.getUpgradeProcessing() == null)
+            return false;
+        if (other.getUpgradeProcessing() != null && other.getUpgradeProcessing().equals(this.getUpgradeProcessing()) == false)
+            return false;
         if (other.getElasticsearchVersion() == null ^ this.getElasticsearchVersion() == null)
             return false;
         if (other.getElasticsearchVersion() != null && other.getElasticsearchVersion().equals(this.getElasticsearchVersion()) == false)
@@ -1187,6 +1357,10 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
             return false;
         if (other.getEncryptionAtRestOptions() != null && other.getEncryptionAtRestOptions().equals(this.getEncryptionAtRestOptions()) == false)
             return false;
+        if (other.getNodeToNodeEncryptionOptions() == null ^ this.getNodeToNodeEncryptionOptions() == null)
+            return false;
+        if (other.getNodeToNodeEncryptionOptions() != null && other.getNodeToNodeEncryptionOptions().equals(this.getNodeToNodeEncryptionOptions()) == false)
+            return false;
         if (other.getAdvancedOptions() == null ^ this.getAdvancedOptions() == null)
             return false;
         if (other.getAdvancedOptions() != null && other.getAdvancedOptions().equals(this.getAdvancedOptions()) == false)
@@ -1194,6 +1368,10 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
         if (other.getLogPublishingOptions() == null ^ this.getLogPublishingOptions() == null)
             return false;
         if (other.getLogPublishingOptions() != null && other.getLogPublishingOptions().equals(this.getLogPublishingOptions()) == false)
+            return false;
+        if (other.getServiceSoftwareOptions() == null ^ this.getServiceSoftwareOptions() == null)
+            return false;
+        if (other.getServiceSoftwareOptions() != null && other.getServiceSoftwareOptions().equals(this.getServiceSoftwareOptions()) == false)
             return false;
         return true;
     }
@@ -1211,6 +1389,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         hashCode = prime * hashCode + ((getProcessing() == null) ? 0 : getProcessing().hashCode());
+        hashCode = prime * hashCode + ((getUpgradeProcessing() == null) ? 0 : getUpgradeProcessing().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchVersion() == null) ? 0 : getElasticsearchVersion().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchClusterConfig() == null) ? 0 : getElasticsearchClusterConfig().hashCode());
         hashCode = prime * hashCode + ((getEBSOptions() == null) ? 0 : getEBSOptions().hashCode());
@@ -1219,8 +1398,10 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
         hashCode = prime * hashCode + ((getCognitoOptions() == null) ? 0 : getCognitoOptions().hashCode());
         hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
+        hashCode = prime * hashCode + ((getNodeToNodeEncryptionOptions() == null) ? 0 : getNodeToNodeEncryptionOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
+        hashCode = prime * hashCode + ((getServiceSoftwareOptions() == null) ? 0 : getServiceSoftwareOptions().hashCode());
         return hashCode;
     }
 

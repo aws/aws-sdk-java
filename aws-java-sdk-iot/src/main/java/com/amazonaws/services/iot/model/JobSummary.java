@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,19 +60,19 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job was created.
+     * The time, in seconds since the epoch, when the job was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job was last updated.
+     * The time, in seconds since the epoch, when the job was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job completed.
+     * The time, in seconds since the epoch, when the job completed.
      * </p>
      */
     private java.util.Date completedAt;
@@ -341,11 +341,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job was created.
+     * The time, in seconds since the epoch, when the job was created.
      * </p>
      * 
      * @param createdAt
-     *        The time, in milliseconds since the epoch, when the job was created.
+     *        The time, in seconds since the epoch, when the job was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -354,10 +354,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job was created.
+     * The time, in seconds since the epoch, when the job was created.
      * </p>
      * 
-     * @return The time, in milliseconds since the epoch, when the job was created.
+     * @return The time, in seconds since the epoch, when the job was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -366,11 +366,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job was created.
+     * The time, in seconds since the epoch, when the job was created.
      * </p>
      * 
      * @param createdAt
-     *        The time, in milliseconds since the epoch, when the job was created.
+     *        The time, in seconds since the epoch, when the job was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,11 +381,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job was last updated.
+     * The time, in seconds since the epoch, when the job was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The time, in milliseconds since the epoch, when the job was last updated.
+     *        The time, in seconds since the epoch, when the job was last updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -394,10 +394,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job was last updated.
+     * The time, in seconds since the epoch, when the job was last updated.
      * </p>
      * 
-     * @return The time, in milliseconds since the epoch, when the job was last updated.
+     * @return The time, in seconds since the epoch, when the job was last updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -406,11 +406,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job was last updated.
+     * The time, in seconds since the epoch, when the job was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The time, in milliseconds since the epoch, when the job was last updated.
+     *        The time, in seconds since the epoch, when the job was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,11 +421,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job completed.
+     * The time, in seconds since the epoch, when the job completed.
      * </p>
      * 
      * @param completedAt
-     *        The time, in milliseconds since the epoch, when the job completed.
+     *        The time, in seconds since the epoch, when the job completed.
      */
 
     public void setCompletedAt(java.util.Date completedAt) {
@@ -434,10 +434,10 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job completed.
+     * The time, in seconds since the epoch, when the job completed.
      * </p>
      * 
-     * @return The time, in milliseconds since the epoch, when the job completed.
+     * @return The time, in seconds since the epoch, when the job completed.
      */
 
     public java.util.Date getCompletedAt() {
@@ -446,11 +446,11 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job completed.
+     * The time, in seconds since the epoch, when the job completed.
      * </p>
      * 
      * @param completedAt
-     *        The time, in milliseconds since the epoch, when the job completed.
+     *        The time, in seconds since the epoch, when the job completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,7 +460,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

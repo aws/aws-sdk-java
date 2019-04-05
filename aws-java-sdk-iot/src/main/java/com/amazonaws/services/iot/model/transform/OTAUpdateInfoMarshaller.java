@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,13 +34,15 @@ public class OTAUpdateInfoMarshaller {
     private static final MarshallingInfo<String> OTAUPDATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("otaUpdateArn").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModifiedDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModifiedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("targets").build();
+    private static final MarshallingInfo<StructuredPojo> AWSJOBEXECUTIONSROLLOUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsJobExecutionsRolloutConfig").build();
     private static final MarshallingInfo<String> TARGETSELECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetSelection").build();
     private static final MarshallingInfo<List> OTAUPDATEFILES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -78,6 +80,7 @@ public class OTAUpdateInfoMarshaller {
             protocolMarshaller.marshall(oTAUpdateInfo.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(oTAUpdateInfo.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(oTAUpdateInfo.getTargets(), TARGETS_BINDING);
+            protocolMarshaller.marshall(oTAUpdateInfo.getAwsJobExecutionsRolloutConfig(), AWSJOBEXECUTIONSROLLOUTCONFIG_BINDING);
             protocolMarshaller.marshall(oTAUpdateInfo.getTargetSelection(), TARGETSELECTION_BINDING);
             protocolMarshaller.marshall(oTAUpdateInfo.getOtaUpdateFiles(), OTAUPDATEFILES_BINDING);
             protocolMarshaller.marshall(oTAUpdateInfo.getOtaUpdateStatus(), OTAUPDATESTATUS_BINDING);

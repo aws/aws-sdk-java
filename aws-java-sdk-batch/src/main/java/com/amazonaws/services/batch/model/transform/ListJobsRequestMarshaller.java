@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ListJobsRequestMarshaller {
             .marshallLocationName("jobQueue").build();
     private static final MarshallingInfo<String> ARRAYJOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("arrayJobId").build();
+    private static final MarshallingInfo<String> MULTINODEJOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("multiNodeJobId").build();
     private static final MarshallingInfo<String> JOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobStatus").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -56,6 +58,7 @@ public class ListJobsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listJobsRequest.getJobQueue(), JOBQUEUE_BINDING);
             protocolMarshaller.marshall(listJobsRequest.getArrayJobId(), ARRAYJOBID_BINDING);
+            protocolMarshaller.marshall(listJobsRequest.getMultiNodeJobId(), MULTINODEJOBID_BINDING);
             protocolMarshaller.marshall(listJobsRequest.getJobStatus(), JOBSTATUS_BINDING);
             protocolMarshaller.marshall(listJobsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listJobsRequest.getNextToken(), NEXTTOKEN_BINDING);

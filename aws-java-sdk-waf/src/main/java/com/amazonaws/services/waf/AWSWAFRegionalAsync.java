@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,10 +29,10 @@ import com.amazonaws.services.waf.model.*;
  * This is the <i>AWS WAF Regional API Reference</i> for using AWS WAF with Elastic Load Balancing (ELB) Application
  * Load Balancers. The AWS WAF actions and data types listed in the reference are available for protecting Application
  * Load Balancers. You can use these actions and data types by means of the endpoints listed in <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">AWS Regions and Endpoints</a>. This guide
+ * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">AWS Regions and Endpoints</a>. This guide
  * is for developers who need detailed information about the AWS WAF API actions, data types, and errors. For detailed
  * information about AWS WAF features and an overview of how to use the AWS WAF API, see the <a
- * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -40,7 +40,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
-     * Associates a web ACL with a resource.
+     * Associates a web ACL with a resource, either an application load balancer or Amazon API Gateway stage.
      * </p>
      * 
      * @param associateWebACLRequest
@@ -53,7 +53,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
-     * Associates a web ACL with a resource.
+     * Associates a web ACL with a resource, either an application load balancer or Amazon API Gateway stage.
      * </p>
      * 
      * @param associateWebACLRequest
@@ -106,7 +106,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createByteMatchSetRequest
@@ -154,7 +154,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createByteMatchSetRequest
@@ -206,7 +206,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createGeoMatchSetRequest
@@ -253,7 +253,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createGeoMatchSetRequest
@@ -271,10 +271,10 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
-     * Creates an <a>IPSet</a>, which you use to specify which web requests you want to allow or block based on the IP
-     * addresses that the requests originate from. For example, if you're receiving a lot of requests from one or more
-     * individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can create
-     * an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF to block the requests.
+     * Creates an <a>IPSet</a>, which you use to specify which web requests that you want to allow or block based on the
+     * IP addresses that the requests originate from. For example, if you're receiving a lot of requests from one or
+     * more individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can
+     * create an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure an <code>IPSet</code>, perform the following steps:
@@ -305,7 +305,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createIPSetRequest
@@ -318,10 +318,10 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
-     * Creates an <a>IPSet</a>, which you use to specify which web requests you want to allow or block based on the IP
-     * addresses that the requests originate from. For example, if you're receiving a lot of requests from one or more
-     * individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can create
-     * an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF to block the requests.
+     * Creates an <a>IPSet</a>, which you use to specify which web requests that you want to allow or block based on the
+     * IP addresses that the requests originate from. For example, if you're receiving a lot of requests from one or
+     * more individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can
+     * create an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure an <code>IPSet</code>, perform the following steps:
@@ -352,7 +352,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createIPSetRequest
@@ -474,7 +474,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRateBasedRuleRequest
@@ -591,7 +591,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRateBasedRuleRequest
@@ -646,7 +646,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexMatchSetRequest
@@ -696,7 +696,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexMatchSetRequest
@@ -747,7 +747,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexPatternSetRequest
@@ -793,7 +793,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexPatternSetRequest
@@ -814,7 +814,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects,
      * and other predicates that identify the requests that you want to block. If you add more than one predicate to a
      * <code>Rule</code>, a request must match all of the specifications to be allowed or blocked. For example, suppose
-     * you add the following to a <code>Rule</code>:
+     * that you add the following to a <code>Rule</code>:
      * </p>
      * <ul>
      * <li>
@@ -875,7 +875,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleRequest
@@ -891,7 +891,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects,
      * and other predicates that identify the requests that you want to block. If you add more than one predicate to a
      * <code>Rule</code>, a request must match all of the specifications to be allowed or blocked. For example, suppose
-     * you add the following to a <code>Rule</code>:
+     * that you add the following to a <code>Rule</code>:
      * </p>
      * <ul>
      * <li>
@@ -952,7 +952,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleRequest
@@ -995,7 +995,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ul>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleGroupRequest
@@ -1033,7 +1033,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ul>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleGroupRequest
@@ -1087,7 +1087,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSizeConstraintSetRequest
@@ -1136,7 +1136,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSizeConstraintSetRequest
@@ -1188,7 +1188,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSqlInjectionMatchSetRequest
@@ -1237,7 +1237,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSqlInjectionMatchSetRequest
@@ -1310,7 +1310,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createWebACLRequest
@@ -1376,7 +1376,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createWebACLRequest
@@ -1428,7 +1428,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createXssMatchSetRequest
@@ -1476,7 +1476,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createXssMatchSetRequest
@@ -1737,6 +1737,39 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      */
     java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(DeleteIPSetRequest deleteIPSetRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteIPSetRequest, DeleteIPSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently deletes the <a>LoggingConfiguration</a> from the specified web ACL.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     * @return A Java Future containing the result of the DeleteLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsync.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(
+            DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Permanently deletes the <a>LoggingConfiguration</a> from the specified web ACL.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(
+            DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLoggingConfigurationRequest, DeleteLoggingConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -2470,7 +2503,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
-     * Removes a web ACL from the specified resource.
+     * Removes a web ACL from the specified resource, either an application load balancer or Amazon API Gateway stage.
      * </p>
      * 
      * @param disassociateWebACLRequest
@@ -2483,7 +2516,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
-     * Removes a web ACL from the specified resource.
+     * Removes a web ACL from the specified resource, either an application load balancer or Amazon API Gateway stage.
      * </p>
      * 
      * @param disassociateWebACLRequest
@@ -2606,7 +2639,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * <li>
      * <p>
-     * <code>IN_SYNC</code>: Propagation is complete.
+     * <code>INSYNC</code>: Propagation is complete.
      * </p>
      * </li>
      * </ul>
@@ -2638,7 +2671,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * <li>
      * <p>
-     * <code>IN_SYNC</code>: Propagation is complete.
+     * <code>INSYNC</code>: Propagation is complete.
      * </p>
      * </li>
      * </ul>
@@ -2717,6 +2750,37 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      */
     java.util.concurrent.Future<GetIPSetResult> getIPSetAsync(GetIPSetRequest getIPSetRequest,
             com.amazonaws.handlers.AsyncHandler<GetIPSetRequest, GetIPSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
+     * </p>
+     * 
+     * @param getLoggingConfigurationRequest
+     * @return A Java Future containing the result of the GetLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsync.GetLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(GetLoggingConfigurationRequest getLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
+     * </p>
+     * 
+     * @param getLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.GetLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(GetLoggingConfigurationRequest getLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLoggingConfigurationRequest, GetLoggingConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -3097,7 +3161,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
-     * Returns the web ACL for the specified resource.
+     * Returns the web ACL for the specified resource, either an application load balancer or Amazon API Gateway stage.
      * </p>
      * 
      * @param getWebACLForResourceRequest
@@ -3110,7 +3174,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
-     * Returns the web ACL for the specified resource.
+     * Returns the web ACL for the specified resource, either an application load balancer or Amazon API Gateway stage.
      * </p>
      * 
      * @param getWebACLForResourceRequest
@@ -3286,6 +3350,39 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      */
     java.util.concurrent.Future<ListIPSetsResult> listIPSetsAsync(ListIPSetsRequest listIPSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListIPSetsRequest, ListIPSetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <a>LoggingConfiguration</a> objects.
+     * </p>
+     * 
+     * @param listLoggingConfigurationsRequest
+     * @return A Java Future containing the result of the ListLoggingConfigurations operation returned by the service.
+     * @sample AWSWAFRegionalAsync.ListLoggingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLoggingConfigurationsResult> listLoggingConfigurationsAsync(
+            ListLoggingConfigurationsRequest listLoggingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>LoggingConfiguration</a> objects.
+     * </p>
+     * 
+     * @param listLoggingConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLoggingConfigurations operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.ListLoggingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLoggingConfigurationsResult> listLoggingConfigurationsAsync(
+            ListLoggingConfigurationsRequest listLoggingConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLoggingConfigurationsRequest, ListLoggingConfigurationsResult> asyncHandler);
 
     /**
      * <p>
@@ -3636,6 +3733,87 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
 
     /**
      * <p>
+     * Associates a <a>LoggingConfiguration</a> with a specified web ACL.
+     * </p>
+     * <p>
+     * You can access information about all traffic that AWS WAF inspects using the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create an Amazon Kinesis Data Firehose .
+     * </p>
+     * <p>
+     * Create the data firehose with a PUT source and in the region that you are operating. However, if you are
+     * capturing logs for Amazon CloudFront, always create the firehose in US East (N. Virginia).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a
+     * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose. For more
+     * information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
+     * Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
+     * </p>
+     * 
+     * @param putLoggingConfigurationRequest
+     * @return A Java Future containing the result of the PutLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsync.PutLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutLoggingConfigurationResult> putLoggingConfigurationAsync(PutLoggingConfigurationRequest putLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Associates a <a>LoggingConfiguration</a> with a specified web ACL.
+     * </p>
+     * <p>
+     * You can access information about all traffic that AWS WAF inspects using the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create an Amazon Kinesis Data Firehose .
+     * </p>
+     * <p>
+     * Create the data firehose with a PUT source and in the region that you are operating. However, if you are
+     * capturing logs for Amazon CloudFront, always create the firehose in US East (N. Virginia).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a
+     * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose. For more
+     * information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
+     * Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
+     * </p>
+     * 
+     * @param putLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutLoggingConfiguration operation returned by the service.
+     * @sample AWSWAFRegionalAsyncHandler.PutLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/PutLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutLoggingConfigurationResult> putLoggingConfigurationAsync(PutLoggingConfigurationRequest putLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutLoggingConfigurationRequest, PutLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
      * across accounts.
      * </p>
@@ -3660,8 +3838,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * <li>
      * <p>
-     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and
-     * <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>,
+     * <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code>
+     * . Any extra or wildcard actions in the policy will be rejected.
      * </p>
      * </li>
      * <li>
@@ -3727,8 +3906,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * <li>
      * <p>
-     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and
-     * <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>,
+     * <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code>
+     * . Any extra or wildcard actions in the policy will be rejected.
      * </p>
      * </li>
      * <li>
@@ -3839,7 +4019,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateByteMatchSetRequest
@@ -3916,7 +4096,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateByteMatchSetRequest
@@ -3983,7 +4163,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateGeoMatchSetRequest
@@ -4045,7 +4225,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateGeoMatchSetRequest
@@ -4087,8 +4267,8 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
-     * For more information about CIDR notation, see the Wikipedia entry <a
+     * AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
+     * ranges: /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
      * <p>
@@ -4149,8 +4329,11 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * one.
      * </p>
      * <p>
+     * You can insert a maximum of 1000 addresses in a single request.
+     * </p>
+     * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateIPSetRequest
@@ -4187,8 +4370,8 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
-     * For more information about CIDR notation, see the Wikipedia entry <a
+     * AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
+     * ranges: /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
      * <p>
@@ -4249,8 +4432,11 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * one.
      * </p>
      * <p>
+     * You can insert a maximum of 1000 addresses in a single request.
+     * </p>
+     * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateIPSetRequest
@@ -4478,7 +4664,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexMatchSetRequest
@@ -4550,7 +4736,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexMatchSetRequest
@@ -4634,7 +4820,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexPatternSetRequest
@@ -4713,7 +4899,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexPatternSetRequest
@@ -4734,7 +4920,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * Inserts or deletes <a>Predicate</a> objects in a <code>Rule</code>. Each <code>Predicate</code> object identifies
      * a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that specifies the web requests that you want to
      * allow, block, or count. If you add more than one predicate to a <code>Rule</code>, a request must match all of
-     * the specifications to be allowed, blocked, or counted. For example, suppose you add the following to a
+     * the specifications to be allowed, blocked, or counted. For example, suppose that you add the following to a
      * <code>Rule</code>:
      * </p>
      * <ul>
@@ -4791,7 +4977,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleRequest
@@ -4807,7 +4993,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * Inserts or deletes <a>Predicate</a> objects in a <code>Rule</code>. Each <code>Predicate</code> object identifies
      * a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that specifies the web requests that you want to
      * allow, block, or count. If you add more than one predicate to a <code>Rule</code>, a request must match all of
-     * the specifications to be allowed, blocked, or counted. For example, suppose you add the following to a
+     * the specifications to be allowed, blocked, or counted. For example, suppose that you add the following to a
      * <code>Rule</code>:
      * </p>
      * <ul>
@@ -4864,7 +5050,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleRequest
@@ -4922,7 +5108,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleGroupRequest
@@ -4975,7 +5161,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleGroupRequest
@@ -5015,6 +5201,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * length. Note that transformations of the request body are not supported because the AWS resource forwards only
      * the first <code>8192</code> bytes of your request to AWS WAF.
      * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -5058,7 +5247,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSizeConstraintSetRequest
@@ -5093,6 +5282,9 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * length. Note that transformations of the request body are not supported because the AWS resource forwards only
      * the first <code>8192</code> bytes of your request to AWS WAF.
      * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -5136,7 +5328,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSizeConstraintSetRequest
@@ -5167,7 +5359,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
@@ -5175,13 +5367,16 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for snippets of malicious SQL code.
      * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
      * </li>
      * </ul>
      * <p>
-     * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests you want to allow, block,
-     * or count. For example, if you're receiving requests that contain snippets of SQL code in the query string and you
-     * want to block the requests, you can create a <code>SqlInjectionMatchSet</code> with the applicable settings, and
-     * then configure AWS WAF to block the requests.
+     * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests that you want to allow,
+     * block, or count. For example, if you're receiving requests that contain snippets of SQL code in the query string
+     * and you want to block the requests, you can create a <code>SqlInjectionMatchSet</code> with the applicable
+     * settings, and then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure a <code>SqlInjectionMatchSet</code>, perform the following steps:
@@ -5207,7 +5402,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSqlInjectionMatchSetRequest
@@ -5235,7 +5430,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
@@ -5243,13 +5438,16 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for snippets of malicious SQL code.
      * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
      * </li>
      * </ul>
      * <p>
-     * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests you want to allow, block,
-     * or count. For example, if you're receiving requests that contain snippets of SQL code in the query string and you
-     * want to block the requests, you can create a <code>SqlInjectionMatchSet</code> with the applicable settings, and
-     * then configure AWS WAF to block the requests.
+     * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests that you want to allow,
+     * block, or count. For example, if you're receiving requests that contain snippets of SQL code in the query string
+     * and you want to block the requests, you can create a <code>SqlInjectionMatchSet</code> with the applicable
+     * settings, and then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure a <code>SqlInjectionMatchSet</code>, perform the following steps:
@@ -5275,7 +5473,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSqlInjectionMatchSetRequest
@@ -5309,8 +5507,8 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * <li>
      * <p>
-     * The <code>Rules</code> that you want to add and/or delete. If you want to replace one <code>Rule</code> with
-     * another, you delete the existing <code>Rule</code> and add the new one.
+     * The <code>Rules</code> that you want to add or delete. If you want to replace one <code>Rule</code> with another,
+     * you delete the existing <code>Rule</code> and add the new one.
      * </p>
      * </li>
      * <li>
@@ -5324,10 +5522,10 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * The order in which you want AWS WAF to evaluate the <code>Rules</code> in a <code>WebACL</code>. If you add more
      * than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates each request against the
      * <code>Rules</code> in order based on the value of <code>Priority</code>. (The <code>Rule</code> that has the
-     * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all of the predicates
-     * (such as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes
-     * the corresponding action, allow or block, and doesn't evaluate the request against the remaining
-     * <code>Rules</code> in the <code>WebACL</code>, if any.
+     * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all the predicates (such
+     * as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes the
+     * corresponding action, allow or block, and doesn't evaluate the request against the remaining <code>Rules</code>
+     * in the <code>WebACL</code>, if any.
      * </p>
      * </li>
      * </ul>
@@ -5365,6 +5563,15 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <code>WebACL</code>, to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
      * distribution.
      * </p>
+     * <p>
+     * The <code>ActivatedRule</code> can be a rule group. If you specify a rule group as your
+     * <code>ActivatedRule</code>, you can exclude specific rules from that rule group.
+     * </p>
+     * <p>
+     * If you already have a rule group associated with a web ACL and want to submit an <code>UpdateWebACL</code>
+     * request to exclude certain rules from that rule group, you must first remove the rule group from the web ACL, the
+     * re-insert it again, specifying the excluded rules. For details, see <a>ActivatedRule$ExcludedRules</a>.
+     * </p>
      * </li>
      * </ol>
      * <p>
@@ -5374,7 +5581,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateWebACLRequest
@@ -5401,8 +5608,8 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </li>
      * <li>
      * <p>
-     * The <code>Rules</code> that you want to add and/or delete. If you want to replace one <code>Rule</code> with
-     * another, you delete the existing <code>Rule</code> and add the new one.
+     * The <code>Rules</code> that you want to add or delete. If you want to replace one <code>Rule</code> with another,
+     * you delete the existing <code>Rule</code> and add the new one.
      * </p>
      * </li>
      * <li>
@@ -5416,10 +5623,10 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * The order in which you want AWS WAF to evaluate the <code>Rules</code> in a <code>WebACL</code>. If you add more
      * than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates each request against the
      * <code>Rules</code> in order based on the value of <code>Priority</code>. (The <code>Rule</code> that has the
-     * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all of the predicates
-     * (such as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes
-     * the corresponding action, allow or block, and doesn't evaluate the request against the remaining
-     * <code>Rules</code> in the <code>WebACL</code>, if any.
+     * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all the predicates (such
+     * as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes the
+     * corresponding action, allow or block, and doesn't evaluate the request against the remaining <code>Rules</code>
+     * in the <code>WebACL</code>, if any.
      * </p>
      * </li>
      * </ul>
@@ -5457,6 +5664,15 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <code>WebACL</code>, to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
      * distribution.
      * </p>
+     * <p>
+     * The <code>ActivatedRule</code> can be a rule group. If you specify a rule group as your
+     * <code>ActivatedRule</code>, you can exclude specific rules from that rule group.
+     * </p>
+     * <p>
+     * If you already have a rule group associated with a web ACL and want to submit an <code>UpdateWebACL</code>
+     * request to exclude certain rules from that rule group, you must first remove the rule group from the web ACL, the
+     * re-insert it again, specifying the excluded rules. For details, see <a>ActivatedRule$ExcludedRules</a>.
+     * </p>
      * </li>
      * </ol>
      * <p>
@@ -5466,7 +5682,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateWebACLRequest
@@ -5490,14 +5706,14 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <ul>
      * <li>
      * <p>
-     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
+     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change an
      * <code>XssMatchTuple</code>, you delete the existing object and add a new one.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
@@ -5505,13 +5721,16 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for cross-site scripting attacks.
      * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
      * </li>
      * </ul>
      * <p>
-     * You use <code>XssMatchSet</code> objects to specify which CloudFront requests you want to allow, block, or count.
-     * For example, if you're receiving requests that contain cross-site scripting attacks in the request body and you
-     * want to block the requests, you can create an <code>XssMatchSet</code> with the applicable settings, and then
-     * configure AWS WAF to block the requests.
+     * You use <code>XssMatchSet</code> objects to specify which CloudFront requests that you want to allow, block, or
+     * count. For example, if you're receiving requests that contain cross-site scripting attacks in the request body
+     * and you want to block the requests, you can create an <code>XssMatchSet</code> with the applicable settings, and
+     * then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure an <code>XssMatchSet</code>, perform the following steps:
@@ -5537,7 +5756,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateXssMatchSetRequest
@@ -5557,14 +5776,14 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <ul>
      * <li>
      * <p>
-     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
+     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change an
      * <code>XssMatchTuple</code>, you delete the existing object and add a new one.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
@@ -5572,13 +5791,16 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for cross-site scripting attacks.
      * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
      * </li>
      * </ul>
      * <p>
-     * You use <code>XssMatchSet</code> objects to specify which CloudFront requests you want to allow, block, or count.
-     * For example, if you're receiving requests that contain cross-site scripting attacks in the request body and you
-     * want to block the requests, you can create an <code>XssMatchSet</code> with the applicable settings, and then
-     * configure AWS WAF to block the requests.
+     * You use <code>XssMatchSet</code> objects to specify which CloudFront requests that you want to allow, block, or
+     * count. For example, if you're receiving requests that contain cross-site scripting attacks in the request body
+     * and you want to block the requests, you can create an <code>XssMatchSet</code> with the applicable settings, and
+     * then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure an <code>XssMatchSet</code>, perform the following steps:
@@ -5604,7 +5826,7 @@ public interface AWSWAFRegionalAsync extends AWSWAFRegional {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateXssMatchSetRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeviceDescription implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The ARN of the device.
+     * </p>
+     */
+    private String arn;
     /**
      * <p>
      * An array of zero or more elements of DeviceAttribute objects providing user specified device attributes.
@@ -55,6 +61,52 @@ public class DeviceDescription implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * The tags currently associated with the AWS IoT 1-Click device.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * The ARN of the device.
+     * </p>
+     * 
+     * @param arn
+     *        The ARN of the device.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the device.
+     * </p>
+     * 
+     * @return The ARN of the device.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the device.
+     * </p>
+     * 
+     * @param arn
+     *        The ARN of the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeviceDescription withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
 
     /**
      * <p>
@@ -290,7 +342,69 @@ public class DeviceDescription implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tags currently associated with the AWS IoT 1-Click device.
+     * </p>
+     * 
+     * @return The tags currently associated with the AWS IoT 1-Click device.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags currently associated with the AWS IoT 1-Click device.
+     * </p>
+     * 
+     * @param tags
+     *        The tags currently associated with the AWS IoT 1-Click device.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags currently associated with the AWS IoT 1-Click device.
+     * </p>
+     * 
+     * @param tags
+     *        The tags currently associated with the AWS IoT 1-Click device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeviceDescription withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public DeviceDescription addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeviceDescription clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -300,6 +414,8 @@ public class DeviceDescription implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getDeviceId() != null)
@@ -309,7 +425,9 @@ public class DeviceDescription implements Serializable, Cloneable, StructuredPoj
         if (getRemainingLife() != null)
             sb.append("RemainingLife: ").append(getRemainingLife()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -324,6 +442,10 @@ public class DeviceDescription implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof DeviceDescription == false)
             return false;
         DeviceDescription other = (DeviceDescription) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
@@ -344,6 +466,10 @@ public class DeviceDescription implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -352,11 +478,13 @@ public class DeviceDescription implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getDeviceId() == null) ? 0 : getDeviceId().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getRemainingLife() == null) ? 0 : getRemainingLife().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

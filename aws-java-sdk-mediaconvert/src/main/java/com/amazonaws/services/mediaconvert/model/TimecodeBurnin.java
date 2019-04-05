@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,10 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
 
     /** Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48. */
     private Integer fontSize;
-
+    /**
+     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in
+     * timecode on output video.
+     */
     private String position;
     /**
      * Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will
@@ -73,7 +76,12 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in
+     * timecode on output video.
+     * 
      * @param position
+     *        Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the
+     *        burned-in timecode on output video.
      * @see TimecodeBurninPosition
      */
 
@@ -82,7 +90,11 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in
+     * timecode on output video.
+     * 
+     * @return Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the
+     *         burned-in timecode on output video.
      * @see TimecodeBurninPosition
      */
 
@@ -91,7 +103,12 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in
+     * timecode on output video.
+     * 
      * @param position
+     *        Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the
+     *        burned-in timecode on output video.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimecodeBurninPosition
      */
@@ -102,7 +119,12 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in
+     * timecode on output video.
+     * 
      * @param position
+     *        Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the
+     *        burned-in timecode on output video.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimecodeBurninPosition
      */
@@ -165,7 +187,8 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

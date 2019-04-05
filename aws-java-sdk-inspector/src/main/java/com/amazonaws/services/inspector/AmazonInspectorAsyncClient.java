@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -348,6 +348,39 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExclusionsPreviewResult> createExclusionsPreviewAsync(CreateExclusionsPreviewRequest request) {
+
+        return createExclusionsPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExclusionsPreviewResult> createExclusionsPreviewAsync(final CreateExclusionsPreviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateExclusionsPreviewRequest, CreateExclusionsPreviewResult> asyncHandler) {
+        final CreateExclusionsPreviewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateExclusionsPreviewResult>() {
+            @Override
+            public CreateExclusionsPreviewResult call() throws Exception {
+                CreateExclusionsPreviewResult result = null;
+
+                try {
+                    result = executeCreateExclusionsPreview(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateResourceGroupResult> createResourceGroupAsync(CreateResourceGroupRequest request) {
 
         return createResourceGroupAsync(request, null);
@@ -613,6 +646,39 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeExclusionsResult> describeExclusionsAsync(DescribeExclusionsRequest request) {
+
+        return describeExclusionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeExclusionsResult> describeExclusionsAsync(final DescribeExclusionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeExclusionsRequest, DescribeExclusionsResult> asyncHandler) {
+        final DescribeExclusionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeExclusionsResult>() {
+            @Override
+            public DescribeExclusionsResult call() throws Exception {
+                DescribeExclusionsResult result = null;
+
+                try {
+                    result = executeDescribeExclusions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFindingsResult> describeFindingsAsync(DescribeFindingsRequest request) {
 
         return describeFindingsAsync(request, null);
@@ -729,6 +795,39 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
 
                 try {
                     result = executeGetAssessmentReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExclusionsPreviewResult> getExclusionsPreviewAsync(GetExclusionsPreviewRequest request) {
+
+        return getExclusionsPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExclusionsPreviewResult> getExclusionsPreviewAsync(final GetExclusionsPreviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetExclusionsPreviewRequest, GetExclusionsPreviewResult> asyncHandler) {
+        final GetExclusionsPreviewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetExclusionsPreviewResult>() {
+            @Override
+            public GetExclusionsPreviewResult call() throws Exception {
+                GetExclusionsPreviewResult result = null;
+
+                try {
+                    result = executeGetExclusionsPreview(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -927,6 +1026,39 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
 
                 try {
                     result = executeListEventSubscriptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExclusionsResult> listExclusionsAsync(ListExclusionsRequest request) {
+
+        return listExclusionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExclusionsResult> listExclusionsAsync(final ListExclusionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListExclusionsRequest, ListExclusionsResult> asyncHandler) {
+        final ListExclusionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListExclusionsResult>() {
+            @Override
+            public ListExclusionsResult call() throws Exception {
+                ListExclusionsResult result = null;
+
+                try {
+                    result = executeListExclusions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

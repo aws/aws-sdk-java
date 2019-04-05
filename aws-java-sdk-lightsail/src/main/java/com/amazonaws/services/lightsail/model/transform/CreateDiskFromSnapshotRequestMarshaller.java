@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class CreateDiskFromSnapshotRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availabilityZone").build();
     private static final MarshallingInfo<Integer> SIZEINGB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sizeInGb").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateDiskFromSnapshotRequestMarshaller instance = new CreateDiskFromSnapshotRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class CreateDiskFromSnapshotRequestMarshaller {
             protocolMarshaller.marshall(createDiskFromSnapshotRequest.getDiskSnapshotName(), DISKSNAPSHOTNAME_BINDING);
             protocolMarshaller.marshall(createDiskFromSnapshotRequest.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(createDiskFromSnapshotRequest.getSizeInGb(), SIZEINGB_BINDING);
+            protocolMarshaller.marshall(createDiskFromSnapshotRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

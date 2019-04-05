@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.cloudtrail.AWSCloudTrailClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -75,6 +77,7 @@ import com.amazonaws.services.cloudtrail.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCloudTrail {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -85,6 +88,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -97,6 +102,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CloudTrailARNInvalidException").withModeledClass(
                                     com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientDependencyServiceAccessPermissionException").withModeledClass(
+                                    com.amazonaws.services.cloudtrail.model.InsufficientDependencyServiceAccessPermissionException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidCloudWatchLogsRoleArnException").withModeledClass(
                                     com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException.class))
@@ -125,6 +133,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                             new JsonErrorShapeMetadata().withErrorCode("KmsException").withModeledClass(
                                     com.amazonaws.services.cloudtrail.model.KmsException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationNotInAllFeaturesModeException").withModeledClass(
+                                    com.amazonaws.services.cloudtrail.model.OrganizationNotInAllFeaturesModeException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("S3BucketDoesNotExistException").withModeledClass(
                                     com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException.class))
                     .addErrorMetadata(
@@ -143,6 +154,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                             new JsonErrorShapeMetadata().withErrorCode("CloudWatchLogsDeliveryUnavailableException").withModeledClass(
                                     com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CloudTrailAccessNotEnabledException").withModeledClass(
+                                    com.amazonaws.services.cloudtrail.model.CloudTrailAccessNotEnabledException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTrailNameException").withModeledClass(
                                     com.amazonaws.services.cloudtrail.model.InvalidTrailNameException.class))
                     .addErrorMetadata(
@@ -151,6 +165,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InsufficientEncryptionPolicyException").withModeledClass(
                                     com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotOrganizationMasterAccountException").withModeledClass(
+                                    com.amazonaws.services.cloudtrail.model.NotOrganizationMasterAccountException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTagParameterException").withModeledClass(
                                     com.amazonaws.services.cloudtrail.model.InvalidTagParameterException.class))
@@ -175,6 +192,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InsufficientSnsTopicPolicyException").withModeledClass(
                                     com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationsNotInUseException").withModeledClass(
+                                    com.amazonaws.services.cloudtrail.model.OrganizationsNotInUseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
                                     com.amazonaws.services.cloudtrail.model.InvalidNextTokenException.class))
@@ -278,6 +298,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
     public AWSCloudTrailClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -343,6 +364,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -361,8 +383,23 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *        Object providing client parameters.
      */
     AWSCloudTrailClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on CloudTrail using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSCloudTrailClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -394,7 +431,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when an operation is called with an invalid trail ARN. The format of a trail ARN
      *         is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not supported by CloudTrail.
      * @throws TagsLimitExceededException
@@ -437,6 +474,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.AddTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags" target="_top">AWS API
      *      Documentation</a>
@@ -463,6 +506,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -560,6 +606,35 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws CloudTrailAccessNotEnabledException
+     *         This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS
+     *         Organizations. For more information, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+     *         Trusted Access with Other AWS Services</a> and <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws OrganizationsNotInUseException
+     *         This exception is thrown when the request is made from an AWS account that is not a member of an
+     *         organization. To make this request, sign in using the credentials of an account that belongs to an
+     *         organization.
+     * @throws OrganizationNotInAllFeaturesModeException
+     *         This exception is thrown when AWS Organizations is not configured to support all features. All features
+     *         must be enabled in AWS Organization to support creating an organization trail. For more information, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.CreateTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail" target="_top">AWS API
      *      Documentation</a>
@@ -586,6 +661,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrail");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -647,6 +725,22 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.DeleteTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail" target="_top">AWS API
      *      Documentation</a>
@@ -673,6 +767,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrail");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -727,6 +824,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -756,7 +856,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * <ul>
      * <li>
      * <p>
-     * The S3 objects that you are logging for data events.
+     * If your event selector includes read-only events, write-only events, or all events. This applies to both
+     * management events and data events.
      * </p>
      * </li>
      * <li>
@@ -766,7 +867,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * </li>
      * <li>
      * <p>
-     * If your event selector includes read-only events, write-only events, or all.
+     * If your event selector includes data events, the Amazon S3 objects or AWS Lambda functions that you are logging
+     * for data events.
      * </p>
      * </li>
      * </ul>
@@ -840,6 +942,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventSelectors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -925,6 +1030,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrailStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -992,6 +1100,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPublicKeys");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1027,7 +1138,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when an operation is called with an invalid trail ARN. The format of a trail ARN
      *         is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not supported by CloudTrail.
      * @throws InvalidTrailNameException
@@ -1093,6 +1204,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1111,11 +1225,17 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Looks up API activity events captured by CloudTrail that create, update, or delete resources in your account.
-     * Events for a region can be looked up for the times in which you had CloudTrail turned on in that region during
-     * the last seven days. Lookup supports the following attributes:
+     * Looks up <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events"
+     * >management events</a> captured by CloudTrail. Events for a region can be looked up in that region during the
+     * last 90 days. Lookup supports the following attributes:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * AWS access key
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Event ID
@@ -1129,6 +1249,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * <li>
      * <p>
      * Event source
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Read only
      * </p>
      * </li>
      * <li>
@@ -1148,7 +1273,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * </li>
      * </ul>
      * <p>
-     * All attributes are optional. The default number of results returned is 10, with a maximum of 50 possible. The
+     * All attributes are optional. The default number of results returned is 50, with a maximum of 50 possible. The
      * response includes a token that you can use to get the next page of results.
      * </p>
      * <important>
@@ -1202,6 +1327,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LookupEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1225,10 +1353,14 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Configures an event selector for your trail. Use event selectors to specify whether you want your trail to log
-     * management and/or data events. When an event occurs in your account, CloudTrail evaluates the event selectors in
-     * all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If
-     * the event doesn't match any event selector, the trail doesn't log the event.
+     * Configures an event selector for your trail. Use event selectors to further specify the management and data event
+     * settings for your trail. By default, trails created without specific event selectors will be configured to log
+     * all read and write management events, and no data events.
+     * </p>
+     * <p>
+     * When an event occurs in your account, CloudTrail evaluates the event selectors in all trails. For each trail, if
+     * the event matches any event selector, the trail processes and logs the event. If the event doesn't match any
+     * event selector, the trail doesn't log the event.
      * </p>
      * <p>
      * Example
@@ -1268,7 +1400,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
      * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
-     * >Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
+     * >Logging Data and Management Events for Trails </a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in AWS
+     * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putEventSelectorsRequest
@@ -1309,8 +1443,14 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
      * @throws InvalidEventSelectorsException
-     *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with an invalid
-     *         number of event selectors, data resources, or an invalid value for a parameter:</p>
+     *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of
+     *         event selectors or data resources that is not valid. The combination of event selectors and data
+     *         resources is not valid. A trail can have up to 5 event selectors. A trail is limited to 250 data
+     *         resources. These data resources can be distributed across event selectors, but the overall total cannot
+     *         exceed 250.</p>
+     *         <p>
+     *         You can:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1319,7 +1459,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         </li>
      *         <li>
      *         <p>
-     *         Specify a valid number of data resources (1 to 250) for an event selector.
+     *         Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of
+     *         resources on an individual event selector is configurable up to 250. However, this upper limit is allowed
+     *         only if the total number of data resources does not exceed 250 across all event selectors for a trail.
      *         </p>
      *         </li>
      *         <li>
@@ -1332,6 +1474,18 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.PutEventSelectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors" target="_top">AWS
      *      API Documentation</a>
@@ -1358,6 +1512,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEventSelectors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1388,7 +1545,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when an operation is called with an invalid trail ARN. The format of a trail ARN
      *         is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws ResourceTypeNotSupportedException
      *         This exception is thrown when the specified resource type is not supported by CloudTrail.
      * @throws InvalidTrailNameException
@@ -1429,6 +1586,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.RemoveTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags" target="_top">AWS API
      *      Documentation</a>
@@ -1455,6 +1618,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1516,6 +1682,22 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.StartLogging
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging" target="_top">AWS API
      *      Documentation</a>
@@ -1542,6 +1724,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartLogging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1605,6 +1790,22 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.StopLogging
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging" target="_top">AWS API
      *      Documentation</a>
@@ -1631,6 +1832,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopLogging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1732,6 +1936,35 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws CloudTrailAccessNotEnabledException
+     *         This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS
+     *         Organizations. For more information, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+     *         Trusted Access with Other AWS Services</a> and <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization trail is
+     *         lacking one or more required permissions for creating an organization trail in a required service. For
+     *         more information, see <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws OrganizationsNotInUseException
+     *         This exception is thrown when the request is made from an AWS account that is not a member of an
+     *         organization. To make this request, sign in using the credentials of an account that belongs to an
+     *         organization.
+     * @throws NotOrganizationMasterAccountException
+     *         This exception is thrown when the AWS account making the request to create or update an organization
+     *         trail is not the master account for an organization in AWS Organizations. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws OrganizationNotInAllFeaturesModeException
+     *         This exception is thrown when AWS Organizations is not configured to support all features. All features
+     *         must be enabled in AWS Organization to support creating an organization trail. For more information, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
      * @sample AWSCloudTrail.UpdateTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail" target="_top">AWS API
      *      Documentation</a>
@@ -1758,6 +1991,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrail");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1798,9 +2034,18 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1810,7 +2055,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1818,8 +2063,17 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

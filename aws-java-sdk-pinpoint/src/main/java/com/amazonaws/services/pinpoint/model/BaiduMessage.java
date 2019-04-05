@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
      * specify. Possible values include: OPEN_APP | DEEP_LINK | URL
      */
     private String action;
-    /** The message body of the notification, the email body or the text message. */
+    /** The message body of the notification. */
     private String body;
     /**
      * The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody'
@@ -66,6 +66,11 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     private String sound;
     /** Default message substitutions. Can be overridden by individual address substitutions. */
     private java.util.Map<String, java.util.List<String>> substitutions;
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device is
+     * offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     */
+    private Integer timeToLive;
     /** The message title that displays above the message on the user's device. */
     private String title;
     /** The URL to open in the user's mobile browser. Used if the value for Action is URL. */
@@ -155,10 +160,10 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      * 
      * @param body
-     *        The message body of the notification, the email body or the text message.
+     *        The message body of the notification.
      */
 
     public void setBody(String body) {
@@ -166,9 +171,9 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      * 
-     * @return The message body of the notification, the email body or the text message.
+     * @return The message body of the notification.
      */
 
     public String getBody() {
@@ -176,10 +181,10 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      * 
      * @param body
-     *        The message body of the notification, the email body or the text message.
+     *        The message body of the notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -573,6 +578,46 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device is
+     * offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     * 
+     * @param timeToLive
+     *        This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device
+     *        is offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     */
+
+    public void setTimeToLive(Integer timeToLive) {
+        this.timeToLive = timeToLive;
+    }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device is
+     * offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     * 
+     * @return This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device
+     *         is offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     */
+
+    public Integer getTimeToLive() {
+        return this.timeToLive;
+    }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device is
+     * offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     * 
+     * @param timeToLive
+     *        This parameter specifies how long (in seconds) the message should be kept in Baidu storage if the device
+     *        is offline. The and the default value and the maximum time to live supported is 7 days (604800 seconds)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BaiduMessage withTimeToLive(Integer timeToLive) {
+        setTimeToLive(timeToLive);
+        return this;
+    }
+
+    /**
      * The message title that displays above the message on the user's device.
      * 
      * @param title
@@ -641,7 +686,8 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -673,6 +719,8 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
             sb.append("Sound: ").append(getSound()).append(",");
         if (getSubstitutions() != null)
             sb.append("Substitutions: ").append(getSubstitutions()).append(",");
+        if (getTimeToLive() != null)
+            sb.append("TimeToLive: ").append(getTimeToLive()).append(",");
         if (getTitle() != null)
             sb.append("Title: ").append(getTitle()).append(",");
         if (getUrl() != null)
@@ -735,6 +783,10 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSubstitutions() != null && other.getSubstitutions().equals(this.getSubstitutions()) == false)
             return false;
+        if (other.getTimeToLive() == null ^ this.getTimeToLive() == null)
+            return false;
+        if (other.getTimeToLive() != null && other.getTimeToLive().equals(this.getTimeToLive()) == false)
+            return false;
         if (other.getTitle() == null ^ this.getTitle() == null)
             return false;
         if (other.getTitle() != null && other.getTitle().equals(this.getTitle()) == false)
@@ -762,6 +814,7 @@ public class BaiduMessage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSmallImageIconUrl() == null) ? 0 : getSmallImageIconUrl().hashCode());
         hashCode = prime * hashCode + ((getSound() == null) ? 0 : getSound().hashCode());
         hashCode = prime * hashCode + ((getSubstitutions() == null) ? 0 : getSubstitutions().hashCode());
+        hashCode = prime * hashCode + ((getTimeToLive() == null) ? 0 : getTimeToLive().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         return hashCode;

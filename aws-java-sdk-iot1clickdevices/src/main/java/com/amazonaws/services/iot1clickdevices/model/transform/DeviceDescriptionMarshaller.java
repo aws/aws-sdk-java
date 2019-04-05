@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeviceDescriptionMarshaller {
 
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
     private static final MarshallingInfo<Map> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("attributes").build();
     private static final MarshallingInfo<String> DEVICEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -39,6 +41,8 @@ public class DeviceDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remainingLife").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final DeviceDescriptionMarshaller instance = new DeviceDescriptionMarshaller();
 
@@ -56,11 +60,13 @@ public class DeviceDescriptionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(deviceDescription.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(deviceDescription.getAttributes(), ATTRIBUTES_BINDING);
             protocolMarshaller.marshall(deviceDescription.getDeviceId(), DEVICEID_BINDING);
             protocolMarshaller.marshall(deviceDescription.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(deviceDescription.getRemainingLife(), REMAININGLIFE_BINDING);
             protocolMarshaller.marshall(deviceDescription.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(deviceDescription.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

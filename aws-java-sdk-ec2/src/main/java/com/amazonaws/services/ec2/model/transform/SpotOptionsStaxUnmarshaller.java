@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,26 @@ public class SpotOptionsStaxUnmarshaller implements Unmarshaller<SpotOptions, St
 
                 if (context.testExpression("instanceInterruptionBehavior", targetDepth)) {
                     spotOptions.setInstanceInterruptionBehavior(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("instancePoolsToUseCount", targetDepth)) {
+                    spotOptions.setInstancePoolsToUseCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("singleInstanceType", targetDepth)) {
+                    spotOptions.setSingleInstanceType(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("singleAvailabilityZone", targetDepth)) {
+                    spotOptions.setSingleAvailabilityZone(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("minTargetCapacity", targetDepth)) {
+                    spotOptions.setMinTargetCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class DescribeReplicationTasksRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxRecords").build();
     private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Marker").build();
+    private static final MarshallingInfo<Boolean> WITHOUTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WithoutSettings").build();
 
     private static final DescribeReplicationTasksRequestMarshaller instance = new DescribeReplicationTasksRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class DescribeReplicationTasksRequestMarshaller {
             protocolMarshaller.marshall(describeReplicationTasksRequest.getFilters(), FILTERS_BINDING);
             protocolMarshaller.marshall(describeReplicationTasksRequest.getMaxRecords(), MAXRECORDS_BINDING);
             protocolMarshaller.marshall(describeReplicationTasksRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(describeReplicationTasksRequest.getWithoutSettings(), WITHOUTSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

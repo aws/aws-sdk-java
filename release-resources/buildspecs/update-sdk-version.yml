@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+    - pip install awscli --upgrade --user
+
+  build:
+    commands:
+    - CURRENT_VERSION=$(aws dynamodb get-item --table-name $TABLE_NAME --region $REGION --key "{\"module-name\":{\"S\":\"aws-java-sdk\"}}" --attributes-to-get "released-version" | grep "S" | cut -d'"' -f 4)
+    -
+    - MAJOR=$(echo $CURRENT_VERSION | cut -d'.' -f1)
+    - MINOR=$(echo $CURRENT_VERSION | cut -d'.' -f2)
+    - POINT=$(echo $CURRENT_VERSION | cut -d'.' -f3)
+    - NEW_VERSION="$MAJOR.$MINOR.$((POINT + 1))"
+    - echo "New version - $NEW_VERSION"
+    -
+    - aws dynamodb put-item --table-name $TABLE_NAME --region $REGION --item "{\"module-name\":{\"S\":\"aws-java-sdk\"},\"released-version\":{\"S\":\"$NEW_VERSION\"}}"
+    - echo "Table $TABLE_NAME updated with new version $NEW_VERSION"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,8 @@ public class H264SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parNumerator").build();
     private static final MarshallingInfo<String> PROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("profile").build();
+    private static final MarshallingInfo<Integer> QVBRQUALITYLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("qvbrQualityLevel").build();
     private static final MarshallingInfo<String> RATECONTROLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rateControlMode").build();
     private static final MarshallingInfo<String> SCANTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -91,6 +93,8 @@ public class H264SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("softness").build();
     private static final MarshallingInfo<String> SPATIALAQ_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("spatialAq").build();
+    private static final MarshallingInfo<String> SUBGOPLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subgopLength").build();
     private static final MarshallingInfo<String> SYNTAX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("syntax").build();
     private static final MarshallingInfo<String> TEMPORALAQ_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -140,12 +144,14 @@ public class H264SettingsMarshaller {
             protocolMarshaller.marshall(h264Settings.getParDenominator(), PARDENOMINATOR_BINDING);
             protocolMarshaller.marshall(h264Settings.getParNumerator(), PARNUMERATOR_BINDING);
             protocolMarshaller.marshall(h264Settings.getProfile(), PROFILE_BINDING);
+            protocolMarshaller.marshall(h264Settings.getQvbrQualityLevel(), QVBRQUALITYLEVEL_BINDING);
             protocolMarshaller.marshall(h264Settings.getRateControlMode(), RATECONTROLMODE_BINDING);
             protocolMarshaller.marshall(h264Settings.getScanType(), SCANTYPE_BINDING);
             protocolMarshaller.marshall(h264Settings.getSceneChangeDetect(), SCENECHANGEDETECT_BINDING);
             protocolMarshaller.marshall(h264Settings.getSlices(), SLICES_BINDING);
             protocolMarshaller.marshall(h264Settings.getSoftness(), SOFTNESS_BINDING);
             protocolMarshaller.marshall(h264Settings.getSpatialAq(), SPATIALAQ_BINDING);
+            protocolMarshaller.marshall(h264Settings.getSubgopLength(), SUBGOPLENGTH_BINDING);
             protocolMarshaller.marshall(h264Settings.getSyntax(), SYNTAX_BINDING);
             protocolMarshaller.marshall(h264Settings.getTemporalAq(), TEMPORALAQ_BINDING);
             protocolMarshaller.marshall(h264Settings.getTimecodeInsertion(), TIMECODEINSERTION_BINDING);

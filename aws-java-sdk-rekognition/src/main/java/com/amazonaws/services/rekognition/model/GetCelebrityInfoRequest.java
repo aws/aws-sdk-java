@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,21 +22,21 @@ public class GetCelebrityInfoRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID for the celebrity. You get the celebrity ID from a call to the operation, which recognizes celebrities in
-     * an image.
+     * The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
+     * which recognizes celebrities in an image.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The ID for the celebrity. You get the celebrity ID from a call to the operation, which recognizes celebrities in
-     * an image.
+     * The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
+     * which recognizes celebrities in an image.
      * </p>
      * 
      * @param id
-     *        The ID for the celebrity. You get the celebrity ID from a call to the operation, which recognizes
-     *        celebrities in an image.
+     *        The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a>
+     *        operation, which recognizes celebrities in an image.
      */
 
     public void setId(String id) {
@@ -45,12 +45,12 @@ public class GetCelebrityInfoRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID for the celebrity. You get the celebrity ID from a call to the operation, which recognizes celebrities in
-     * an image.
+     * The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
+     * which recognizes celebrities in an image.
      * </p>
      * 
-     * @return The ID for the celebrity. You get the celebrity ID from a call to the operation, which recognizes
-     *         celebrities in an image.
+     * @return The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a>
+     *         operation, which recognizes celebrities in an image.
      */
 
     public String getId() {
@@ -59,13 +59,13 @@ public class GetCelebrityInfoRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID for the celebrity. You get the celebrity ID from a call to the operation, which recognizes celebrities in
-     * an image.
+     * The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a> operation,
+     * which recognizes celebrities in an image.
      * </p>
      * 
      * @param id
-     *        The ID for the celebrity. You get the celebrity ID from a call to the operation, which recognizes
-     *        celebrities in an image.
+     *        The ID for the celebrity. You get the celebrity ID from a call to the <a>RecognizeCelebrities</a>
+     *        operation, which recognizes celebrities in an image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,7 +75,8 @@ public class GetCelebrityInfoRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

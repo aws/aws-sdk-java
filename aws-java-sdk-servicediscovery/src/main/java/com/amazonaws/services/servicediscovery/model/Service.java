@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that Route 53 assigned to the service when you created it.
+     * The ID that AWS Cloud Map assigned to the service when you created it.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
      * </p>
      */
     private String arn;
@@ -46,6 +46,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The ID of the namespace that was used to create the service.
+     * </p>
+     */
+    private String namespaceId;
     /**
      * <p>
      * The description of the service.
@@ -61,24 +67,34 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private Integer instanceCount;
     /**
      * <p>
-     * A complex type that contains information about the records that you want Route 53 to create when you register an
-     * instance.
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * when you register an instance.
      * </p>
      */
     private DnsConfig dnsConfig;
     /**
      * <p>
      * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, Route 53 associates the health check with all the records that you specify
+     * specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify
      * in <code>DnsConfig</code>.
      * </p>
      * <p>
-     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
-     * Pricing</a>.
+     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.
      * </p>
      */
     private HealthCheckConfig healthCheckConfig;
-
+    /**
+     * <p>
+     * A complex type that contains information about an optional custom health check.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     */
     private HealthCheckCustomConfig healthCheckCustomConfig;
     /**
      * <p>
@@ -99,11 +115,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that Route 53 assigned to the service when you created it.
+     * The ID that AWS Cloud Map assigned to the service when you created it.
      * </p>
      * 
      * @param id
-     *        The ID that Route 53 assigned to the service when you created it.
+     *        The ID that AWS Cloud Map assigned to the service when you created it.
      */
 
     public void setId(String id) {
@@ -112,10 +128,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that Route 53 assigned to the service when you created it.
+     * The ID that AWS Cloud Map assigned to the service when you created it.
      * </p>
      * 
-     * @return The ID that Route 53 assigned to the service when you created it.
+     * @return The ID that AWS Cloud Map assigned to the service when you created it.
      */
 
     public String getId() {
@@ -124,11 +140,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that Route 53 assigned to the service when you created it.
+     * The ID that AWS Cloud Map assigned to the service when you created it.
      * </p>
      * 
      * @param id
-     *        The ID that Route 53 assigned to the service when you created it.
+     *        The ID that AWS Cloud Map assigned to the service when you created it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +155,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
+     *        The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
      */
 
     public void setArn(String arn) {
@@ -152,10 +168,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
+     * @return The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
      */
 
     public String getArn() {
@@ -164,11 +180,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
+     *        The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,6 +230,46 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     public Service withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the namespace that was used to create the service.
+     * </p>
+     * 
+     * @param namespaceId
+     *        The ID of the namespace that was used to create the service.
+     */
+
+    public void setNamespaceId(String namespaceId) {
+        this.namespaceId = namespaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the namespace that was used to create the service.
+     * </p>
+     * 
+     * @return The ID of the namespace that was used to create the service.
+     */
+
+    public String getNamespaceId() {
+        return this.namespaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the namespace that was used to create the service.
+     * </p>
+     * 
+     * @param namespaceId
+     *        The ID of the namespace that was used to create the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withNamespaceId(String namespaceId) {
+        setNamespaceId(namespaceId);
         return this;
     }
 
@@ -305,13 +361,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the records that you want Route 53 to create when you register an
-     * instance.
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the records that you want Route 53 to create when you
-     *        register an instance.
+     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
+     *        create when you register an instance.
      */
 
     public void setDnsConfig(DnsConfig dnsConfig) {
@@ -320,12 +376,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the records that you want Route 53 to create when you register an
-     * instance.
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * when you register an instance.
      * </p>
      * 
-     * @return A complex type that contains information about the records that you want Route 53 to create when you
-     *         register an instance.
+     * @return A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
+     *         create when you register an instance.
      */
 
     public DnsConfig getDnsConfig() {
@@ -334,13 +390,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the records that you want Route 53 to create when you register an
-     * instance.
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the records that you want Route 53 to create when you
-     *        register an instance.
+     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
+     *        create when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,21 +408,21 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, Route 53 associates the health check with all the records that you specify
+     * specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify
      * in <code>DnsConfig</code>.
      * </p>
      * <p>
-     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
-     * Pricing</a>.
+     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.
      * </p>
      * 
      * @param healthCheckConfig
      *        <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If
-     *        you specify settings for a health check, Route 53 associates the health check with all the records that
+     *        you specify settings for a health check, AWS Cloud Map associates the health check with the records that
      *        you specify in <code>DnsConfig</code>.</p>
      *        <p>
      *        For information about the charges for health checks, see <a
-     *        href="http://aws.amazon.com/route53/pricing">Route 53 Pricing</a>.
+     *        href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
      */
 
     public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
@@ -376,20 +432,20 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, Route 53 associates the health check with all the records that you specify
+     * specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify
      * in <code>DnsConfig</code>.
      * </p>
      * <p>
-     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
-     * Pricing</a>.
+     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.
      * </p>
      * 
      * @return <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If
-     *         you specify settings for a health check, Route 53 associates the health check with all the records that
+     *         you specify settings for a health check, AWS Cloud Map associates the health check with the records that
      *         you specify in <code>DnsConfig</code>.</p>
      *         <p>
      *         For information about the charges for health checks, see <a
-     *         href="http://aws.amazon.com/route53/pricing">Route 53 Pricing</a>.
+     *         href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
      */
 
     public HealthCheckConfig getHealthCheckConfig() {
@@ -399,21 +455,21 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you
-     * specify settings for a health check, Route 53 associates the health check with all the records that you specify
+     * specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify
      * in <code>DnsConfig</code>.
      * </p>
      * <p>
-     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
-     * Pricing</a>.
+     * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * Route 53 Pricing</a>.
      * </p>
      * 
      * @param healthCheckConfig
      *        <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If
-     *        you specify settings for a health check, Route 53 associates the health check with all the records that
+     *        you specify settings for a health check, AWS Cloud Map associates the health check with the records that
      *        you specify in <code>DnsConfig</code>.</p>
      *        <p>
      *        For information about the charges for health checks, see <a
-     *        href="http://aws.amazon.com/route53/pricing">Route 53 Pricing</a>.
+     *        href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -423,7 +479,22 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A complex type that contains information about an optional custom health check.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * 
      * @param healthCheckCustomConfig
+     *        A complex type that contains information about an optional custom health check.</p> <important>
+     *        <p>
+     *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *        or <code>HealthCheckConfig</code> but not both.
+     *        </p>
      */
 
     public void setHealthCheckCustomConfig(HealthCheckCustomConfig healthCheckCustomConfig) {
@@ -431,7 +502,21 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A complex type that contains information about an optional custom health check.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * 
+     * @return A complex type that contains information about an optional custom health check.</p> <important>
+     *         <p>
+     *         If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *         or <code>HealthCheckConfig</code> but not both.
+     *         </p>
      */
 
     public HealthCheckCustomConfig getHealthCheckCustomConfig() {
@@ -439,7 +524,22 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A complex type that contains information about an optional custom health check.
+     * </p>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * 
      * @param healthCheckCustomConfig
+     *        A complex type that contains information about an optional custom health check.</p> <important>
+     *        <p>
+     *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *        or <code>HealthCheckConfig</code> but not both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -553,7 +653,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -569,6 +670,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getNamespaceId() != null)
+            sb.append("NamespaceId: ").append(getNamespaceId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getInstanceCount() != null)
@@ -609,6 +712,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getNamespaceId() == null ^ this.getNamespaceId() == null)
+            return false;
+        if (other.getNamespaceId() != null && other.getNamespaceId().equals(this.getNamespaceId()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -648,6 +755,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getNamespaceId() == null) ? 0 : getNamespaceId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getDnsConfig() == null) ? 0 : getDnsConfig().hashCode());

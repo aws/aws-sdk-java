@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,16 +25,30 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** Optional. A description of the queue you are creating. */
+    /** Optional. A description of the queue that you are creating. */
     private String description;
-    /** The name of the queue you are creating. */
+    /** The name of the queue that you are creating. */
     private String name;
+    /**
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute,
+     * billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+     * regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the
+     * API to create a queue, the default is on-demand.
+     */
+    private String pricingPlan;
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     */
+    private ReservationPlanSettings reservationPlanSettings;
+    /** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
+    private java.util.Map<String, String> tags;
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      * 
      * @param description
-     *        Optional. A description of the queue you are creating.
+     *        Optional. A description of the queue that you are creating.
      */
 
     public void setDescription(String description) {
@@ -42,9 +56,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      * 
-     * @return Optional. A description of the queue you are creating.
+     * @return Optional. A description of the queue that you are creating.
      */
 
     public String getDescription() {
@@ -52,10 +66,10 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      * 
      * @param description
-     *        Optional. A description of the queue you are creating.
+     *        Optional. A description of the queue that you are creating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +79,10 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      * 
      * @param name
-     *        The name of the queue you are creating.
+     *        The name of the queue that you are creating.
      */
 
     public void setName(String name) {
@@ -76,9 +90,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      * 
-     * @return The name of the queue you are creating.
+     * @return The name of the queue that you are creating.
      */
 
     public String getName() {
@@ -86,10 +100,10 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      * 
      * @param name
-     *        The name of the queue you are creating.
+     *        The name of the queue that you are creating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,7 +113,181 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute,
+     * billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+     * regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the
+     * API to create a queue, the default is on-demand.
+     * 
+     * @param pricingPlan
+     *        Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per
+     *        minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the
+     *        entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month
+     *        commitment. When you use the API to create a queue, the default is on-demand.
+     * @see PricingPlan
+     */
+
+    public void setPricingPlan(String pricingPlan) {
+        this.pricingPlan = pricingPlan;
+    }
+
+    /**
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute,
+     * billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+     * regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the
+     * API to create a queue, the default is on-demand.
+     * 
+     * @return Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per
+     *         minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the
+     *         entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month
+     *         commitment. When you use the API to create a queue, the default is on-demand.
+     * @see PricingPlan
+     */
+
+    public String getPricingPlan() {
+        return this.pricingPlan;
+    }
+
+    /**
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute,
+     * billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+     * regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the
+     * API to create a queue, the default is on-demand.
+     * 
+     * @param pricingPlan
+     *        Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per
+     *        minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the
+     *        entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month
+     *        commitment. When you use the API to create a queue, the default is on-demand.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public CreateQueueRequest withPricingPlan(String pricingPlan) {
+        setPricingPlan(pricingPlan);
+        return this;
+    }
+
+    /**
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute,
+     * billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+     * regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the
+     * API to create a queue, the default is on-demand.
+     * 
+     * @param pricingPlan
+     *        Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per
+     *        minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the
+     *        entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month
+     *        commitment. When you use the API to create a queue, the default is on-demand.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public CreateQueueRequest withPricingPlan(PricingPlan pricingPlan) {
+        this.pricingPlan = pricingPlan.toString();
+        return this;
+    }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     * 
+     * @param reservationPlanSettings
+     *        Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     *        on-demand queues.
+     */
+
+    public void setReservationPlanSettings(ReservationPlanSettings reservationPlanSettings) {
+        this.reservationPlanSettings = reservationPlanSettings;
+    }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     * 
+     * @return Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable
+     *         to on-demand queues.
+     */
+
+    public ReservationPlanSettings getReservationPlanSettings() {
+        return this.reservationPlanSettings;
+    }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     * on-demand queues.
+     * 
+     * @param reservationPlanSettings
+     *        Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to
+     *        on-demand queues.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateQueueRequest withReservationPlanSettings(ReservationPlanSettings reservationPlanSettings) {
+        setReservationPlanSettings(reservationPlanSettings);
+        return this;
+    }
+
+    /**
+     * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+     * 
+     * @return The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a
+     *         key.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+     * 
+     * @param tags
+     *        The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a
+     *        key.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+     * 
+     * @param tags
+     *        The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a
+     *        key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateQueueRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateQueueRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateQueueRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -112,7 +300,13 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getPricingPlan() != null)
+            sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
+        if (getReservationPlanSettings() != null)
+            sb.append("ReservationPlanSettings: ").append(getReservationPlanSettings()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -135,6 +329,18 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
+            return false;
+        if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
+            return false;
+        if (other.getReservationPlanSettings() == null ^ this.getReservationPlanSettings() == null)
+            return false;
+        if (other.getReservationPlanSettings() != null && other.getReservationPlanSettings().equals(this.getReservationPlanSettings()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -145,6 +351,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
+        hashCode = prime * hashCode + ((getReservationPlanSettings() == null) ? 0 : getReservationPlanSettings().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

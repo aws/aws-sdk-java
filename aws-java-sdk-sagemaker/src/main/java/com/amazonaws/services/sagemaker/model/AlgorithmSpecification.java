@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,12 +20,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies the training algorithm to use in a <a
- * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a> request.
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a> request.
  * </p>
  * <p>
  * For more information about algorithms provided by Amazon SageMaker, see <a
- * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own
- * algorithms, see <a>your-algorithms</a>.
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your
+ * own algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+ * Algorithms with Amazon SageMaker</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmSpecification" target="_top">AWS
@@ -37,14 +38,27 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
-     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     * paths for built-in algorithms, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      */
     private String trainingImage;
     /**
      * <p>
+     * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
+     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
+     * for <code>TrainingImage</code>.
+     * </p>
+     */
+    private String algorithmName;
+    /**
+     * <p>
      * The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
      * <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage
      * Volume, and mounts the directory to docker volume for training container. If an algorithm supports the
      * <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container.
@@ -62,16 +76,34 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </p>
      */
     private String trainingInputMode;
+    /**
+     * <p>
+     * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
+     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * </p>
+     */
+    private java.util.List<MetricDefinition> metricDefinitions;
 
     /**
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
-     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     * paths for built-in algorithms, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @param trainingImage
      *        The registry path of the Docker image that contains the training algorithm. For information about docker
-     *        registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     *        registry paths for built-in algorithms, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
+     *        >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
+     *        Amazon SageMaker</a>.
      */
 
     public void setTrainingImage(String trainingImage) {
@@ -81,11 +113,22 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
-     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     * paths for built-in algorithms, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @return The registry path of the Docker image that contains the training algorithm. For information about docker
-     *         registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     *         registry paths for built-in algorithms, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
+     *         >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *         <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms
+     *         with Amazon SageMaker</a>.
      */
 
     public String getTrainingImage() {
@@ -95,12 +138,23 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The registry path of the Docker image that contains the training algorithm. For information about docker registry
-     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     * paths for built-in algorithms, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own
+     * Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
      * @param trainingImage
      *        The registry path of the Docker image that contains the training algorithm. For information about docker
-     *        registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
+     *        registry paths for built-in algorithms, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html"
+     *        >Algorithms Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports both
+     *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
+     *        Amazon SageMaker</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,8 +165,60 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
+     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
+     * for <code>TrainingImage</code>.
+     * </p>
+     * 
+     * @param algorithmName
+     *        The name of the algorithm resource to use for the training job. This must be an algorithm resource that
+     *        you created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't
+     *        specify a value for <code>TrainingImage</code>.
+     */
+
+    public void setAlgorithmName(String algorithmName) {
+        this.algorithmName = algorithmName;
+    }
+
+    /**
+     * <p>
+     * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
+     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
+     * for <code>TrainingImage</code>.
+     * </p>
+     * 
+     * @return The name of the algorithm resource to use for the training job. This must be an algorithm resource that
+     *         you created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't
+     *         specify a value for <code>TrainingImage</code>.
+     */
+
+    public String getAlgorithmName() {
+        return this.algorithmName;
+    }
+
+    /**
+     * <p>
+     * The name of the algorithm resource to use for the training job. This must be an algorithm resource that you
+     * created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't specify a value
+     * for <code>TrainingImage</code>.
+     * </p>
+     * 
+     * @param algorithmName
+     *        The name of the algorithm resource to use for the training job. This must be an algorithm resource that
+     *        you created or subscribe to on AWS Marketplace. If you specify a value for this parameter, you can't
+     *        specify a value for <code>TrainingImage</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlgorithmSpecification withAlgorithmName(String algorithmName) {
+        setAlgorithmName(algorithmName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
      * <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage
      * Volume, and mounts the directory to docker volume for training container. If an algorithm supports the
      * <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container.
@@ -131,7 +237,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * 
      * @param trainingInputMode
      *        The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support,
-     *        see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
+     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
      *        supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the
      *        provisioned ML storage Volume, and mounts the directory to docker volume for training container. If an
      *        algorithm supports the <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the
@@ -157,7 +263,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
      * <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage
      * Volume, and mounts the directory to docker volume for training container. If an algorithm supports the
      * <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container.
@@ -175,7 +281,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @return The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support,
-     *         see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
+     *         see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
      *         supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the
      *         provisioned ML storage Volume, and mounts the directory to docker volume for training container. If an
      *         algorithm supports the <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to
@@ -201,7 +307,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
      * <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage
      * Volume, and mounts the directory to docker volume for training container. If an algorithm supports the
      * <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container.
@@ -220,7 +326,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * 
      * @param trainingInputMode
      *        The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support,
-     *        see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
+     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
      *        supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the
      *        provisioned ML storage Volume, and mounts the directory to docker volume for training container. If an
      *        algorithm supports the <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the
@@ -248,7 +354,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm supports the
      * <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage
      * Volume, and mounts the directory to docker volume for training container. If an algorithm supports the
      * <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the container.
@@ -267,7 +373,7 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * 
      * @param trainingInputMode
      *        The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support,
-     *        see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
+     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. If an algorithm
      *        supports the <code>File</code> input mode, Amazon SageMaker downloads the training data from S3 to the
      *        provisioned ML storage Volume, and mounts the directory to docker volume for training container. If an
      *        algorithm supports the <code>Pipe</code> input mode, Amazon SageMaker streams data directly from S3 to the
@@ -293,7 +399,86 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
+     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * </p>
+     * 
+     * @return A list of metric definition objects. Each object specifies the metric name and regular expressions used
+     *         to parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     */
+
+    public java.util.List<MetricDefinition> getMetricDefinitions() {
+        return metricDefinitions;
+    }
+
+    /**
+     * <p>
+     * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
+     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * </p>
+     * 
+     * @param metricDefinitions
+     *        A list of metric definition objects. Each object specifies the metric name and regular expressions used to
+     *        parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     */
+
+    public void setMetricDefinitions(java.util.Collection<MetricDefinition> metricDefinitions) {
+        if (metricDefinitions == null) {
+            this.metricDefinitions = null;
+            return;
+        }
+
+        this.metricDefinitions = new java.util.ArrayList<MetricDefinition>(metricDefinitions);
+    }
+
+    /**
+     * <p>
+     * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
+     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetricDefinitions(java.util.Collection)} or {@link #withMetricDefinitions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param metricDefinitions
+     *        A list of metric definition objects. Each object specifies the metric name and regular expressions used to
+     *        parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlgorithmSpecification withMetricDefinitions(MetricDefinition... metricDefinitions) {
+        if (this.metricDefinitions == null) {
+            setMetricDefinitions(new java.util.ArrayList<MetricDefinition>(metricDefinitions.length));
+        }
+        for (MetricDefinition ele : metricDefinitions) {
+            this.metricDefinitions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of metric definition objects. Each object specifies the metric name and regular expressions used to parse
+     * algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * </p>
+     * 
+     * @param metricDefinitions
+     *        A list of metric definition objects. Each object specifies the metric name and regular expressions used to
+     *        parse algorithm logs. Amazon SageMaker publishes each metric to Amazon CloudWatch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlgorithmSpecification withMetricDefinitions(java.util.Collection<MetricDefinition> metricDefinitions) {
+        setMetricDefinitions(metricDefinitions);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -305,8 +490,12 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
         sb.append("{");
         if (getTrainingImage() != null)
             sb.append("TrainingImage: ").append(getTrainingImage()).append(",");
+        if (getAlgorithmName() != null)
+            sb.append("AlgorithmName: ").append(getAlgorithmName()).append(",");
         if (getTrainingInputMode() != null)
-            sb.append("TrainingInputMode: ").append(getTrainingInputMode());
+            sb.append("TrainingInputMode: ").append(getTrainingInputMode()).append(",");
+        if (getMetricDefinitions() != null)
+            sb.append("MetricDefinitions: ").append(getMetricDefinitions());
         sb.append("}");
         return sb.toString();
     }
@@ -325,9 +514,17 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
             return false;
         if (other.getTrainingImage() != null && other.getTrainingImage().equals(this.getTrainingImage()) == false)
             return false;
+        if (other.getAlgorithmName() == null ^ this.getAlgorithmName() == null)
+            return false;
+        if (other.getAlgorithmName() != null && other.getAlgorithmName().equals(this.getAlgorithmName()) == false)
+            return false;
         if (other.getTrainingInputMode() == null ^ this.getTrainingInputMode() == null)
             return false;
         if (other.getTrainingInputMode() != null && other.getTrainingInputMode().equals(this.getTrainingInputMode()) == false)
+            return false;
+        if (other.getMetricDefinitions() == null ^ this.getMetricDefinitions() == null)
+            return false;
+        if (other.getMetricDefinitions() != null && other.getMetricDefinitions().equals(this.getMetricDefinitions()) == false)
             return false;
         return true;
     }
@@ -338,7 +535,9 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTrainingImage() == null) ? 0 : getTrainingImage().hashCode());
+        hashCode = prime * hashCode + ((getAlgorithmName() == null) ? 0 : getAlgorithmName().hashCode());
         hashCode = prime * hashCode + ((getTrainingInputMode() == null) ? 0 : getTrainingInputMode().hashCode());
+        hashCode = prime * hashCode + ((getMetricDefinitions() == null) ? 0 : getMetricDefinitions().hashCode());
         return hashCode;
     }
 

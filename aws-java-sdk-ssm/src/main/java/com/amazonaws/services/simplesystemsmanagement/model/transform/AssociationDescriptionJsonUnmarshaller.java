@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,11 +62,11 @@ public class AssociationDescriptionJsonUnmarshaller implements Unmarshaller<Asso
                 }
                 if (context.testExpression("Date", targetDepth)) {
                     context.nextToken();
-                    associationDescription.setDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    associationDescription.setDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastUpdateAssociationDate", targetDepth)) {
                     context.nextToken();
-                    associationDescription.setLastUpdateAssociationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    associationDescription.setLastUpdateAssociationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -79,6 +79,10 @@ public class AssociationDescriptionJsonUnmarshaller implements Unmarshaller<Asso
                 if (context.testExpression("DocumentVersion", targetDepth)) {
                     context.nextToken();
                     associationDescription.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AutomationTargetParameterName", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setAutomationTargetParameterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
@@ -103,15 +107,27 @@ public class AssociationDescriptionJsonUnmarshaller implements Unmarshaller<Asso
                 }
                 if (context.testExpression("LastExecutionDate", targetDepth)) {
                     context.nextToken();
-                    associationDescription.setLastExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    associationDescription.setLastExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastSuccessfulExecutionDate", targetDepth)) {
                     context.nextToken();
-                    associationDescription.setLastSuccessfulExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    associationDescription.setLastSuccessfulExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AssociationName", targetDepth)) {
                     context.nextToken();
                     associationDescription.setAssociationName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxErrors", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setMaxErrors(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxConcurrency", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setMaxConcurrency(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ComplianceSeverity", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setComplianceSeverity(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class ProvisionProductRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedProductName").build();
     private static final MarshallingInfo<List> PROVISIONINGPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningParameters").build();
+    private static final MarshallingInfo<StructuredPojo> PROVISIONINGPREFERENCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningPreferences").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<List> NOTIFICATIONARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -72,6 +74,7 @@ public class ProvisionProductRequestMarshaller {
             protocolMarshaller.marshall(provisionProductRequest.getPathId(), PATHID_BINDING);
             protocolMarshaller.marshall(provisionProductRequest.getProvisionedProductName(), PROVISIONEDPRODUCTNAME_BINDING);
             protocolMarshaller.marshall(provisionProductRequest.getProvisioningParameters(), PROVISIONINGPARAMETERS_BINDING);
+            protocolMarshaller.marshall(provisionProductRequest.getProvisioningPreferences(), PROVISIONINGPREFERENCES_BINDING);
             protocolMarshaller.marshall(provisionProductRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(provisionProductRequest.getNotificationArns(), NOTIFICATIONARNS_BINDING);
             protocolMarshaller.marshall(provisionProductRequest.getProvisionToken(), PROVISIONTOKEN_BINDING);

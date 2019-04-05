@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,15 +70,15 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
                 }
                 if (context.testExpression("StartedOn", targetDepth)) {
                     context.nextToken();
-                    jobRun.setStartedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobRun.setStartedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastModifiedOn", targetDepth)) {
                     context.nextToken();
-                    jobRun.setLastModifiedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobRun.setLastModifiedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletedOn", targetDepth)) {
                     context.nextToken();
-                    jobRun.setCompletedOn(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobRun.setCompletedOn(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("JobRunState", targetDepth)) {
                     context.nextToken();
@@ -108,6 +108,22 @@ public class JobRunJsonUnmarshaller implements Unmarshaller<JobRun, JsonUnmarsha
                 if (context.testExpression("Timeout", targetDepth)) {
                     context.nextToken();
                     jobRun.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxCapacity", targetDepth)) {
+                    context.nextToken();
+                    jobRun.setMaxCapacity(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("NotificationProperty", targetDepth)) {
+                    context.nextToken();
+                    jobRun.setNotificationProperty(NotificationPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SecurityConfiguration", targetDepth)) {
+                    context.nextToken();
+                    jobRun.setSecurityConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LogGroupName", targetDepth)) {
+                    context.nextToken();
+                    jobRun.setLogGroupName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,9 +62,10 @@ public interface AmazonSNS {
      * this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -300,6 +301,9 @@ public interface AmazonSNS {
      *         Indicates an internal service error.
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.CreateTopic
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateTopic" target="_top">AWS API
      *      Documentation</a>
@@ -512,6 +516,9 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.GetTopicAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetTopicAttributes" target="_top">AWS API
      *      Documentation</a>
@@ -534,6 +541,9 @@ public interface AmazonSNS {
      * the NextToken string received from the previous call. When there are no more records to return, NextToken will be
      * null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
      * Amazon SNS Mobile Push Notifications</a>.
+     * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
      * </p>
      * 
      * @param listEndpointsByPlatformApplicationRequest
@@ -594,6 +604,9 @@ public interface AmazonSNS {
      * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>.
      * </p>
+     * <p>
+     * This action is throttled at 15 transactions per second (TPS).
+     * </p>
      * 
      * @param listPlatformApplicationsRequest
      *        Input for ListPlatformApplications action.
@@ -622,6 +635,9 @@ public interface AmazonSNS {
      * Returns a list of the requester's subscriptions. Each call returns a limited list of subscriptions, up to 100. If
      * there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter
      * in a new <code>ListSubscriptions</code> call to get further results.
+     * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
      * </p>
      * 
      * @param listSubscriptionsRequest
@@ -658,6 +674,9 @@ public interface AmazonSNS {
      * Returns a list of the subscriptions to a specific topic. Each call returns a limited list of subscriptions, up to
      * 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code>
      * parameter in a new <code>ListSubscriptionsByTopic</code> call to get further results.
+     * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
      * </p>
      * 
      * @param listSubscriptionsByTopicRequest
@@ -696,6 +715,9 @@ public interface AmazonSNS {
      * Returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there are
      * more topics, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new
      * <code>ListTopics</code> call to get further results.
+     * </p>
+     * <p>
+     * This action is throttled at 30 transactions per second (TPS).
      * </p>
      * 
      * @param listTopicsRequest
@@ -755,9 +777,15 @@ public interface AmazonSNS {
 
     /**
      * <p>
-     * Sends a message to all of a topic's subscribed endpoints. When a <code>messageId</code> is returned, the message
-     * has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the
-     * outgoing message to each subscribed endpoint depends on the notification protocol.
+     * Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly to a phone number.
+     * </p>
+     * <p>
+     * If you send a message to a topic, Amazon SNS delivers the message to each endpoint that is subscribed to the
+     * topic. The format of the message depends on the notification protocol for each subscribed endpoint.
+     * </p>
+     * <p>
+     * When a <code>messageId</code> is returned, the message has been saved and Amazon SNS will attempt to deliver it
+     * shortly.
      * </p>
      * <p>
      * To use the <code>Publish</code> action for sending a message to a mobile endpoint, such as an app on a Kindle
@@ -787,6 +815,26 @@ public interface AmazonSNS {
      *         Exception error indicating platform application disabled.
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
+     * @throws KMSDisabledException
+     *         The request was rejected because the specified customer master key (CMK) isn't enabled.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource isn't valid for this request. For
+     *         more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     *         Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer
+     *         Guide</i>.
+     * @throws KMSNotFoundException
+     *         The request was rejected because the specified entity or resource can't be found.
+     * @throws KMSOptInRequiredException
+     *         The AWS access key ID needs a subscription for the service.
+     * @throws KMSThrottlingException
+     *         The request was denied due to request throttling. For more information about throttling, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
+     *         the <i>AWS Key Management Service Developer Guide.</i>
+     * @throws KMSAccessDeniedException
+     *         The ciphertext references a key that doesn't exist or that you don't have access to.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.Publish
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish" target="_top">AWS API
      *      Documentation</a>
@@ -917,7 +965,7 @@ public interface AmazonSNS {
 
     /**
      * <p>
-     * Allows a subscription owner to set an attribute of the topic to a new value.
+     * Allows a subscription owner to set an attribute of the subscription to a new value.
      * </p>
      * 
      * @param setSubscriptionAttributesRequest
@@ -925,6 +973,9 @@ public interface AmazonSNS {
      * @return Result of the SetSubscriptionAttributes operation returned by the service.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws FilterPolicyLimitExceededException
+     *         Indicates that the number of filter polices in your AWS account exceeds the limit. To add more filter
+     *         polices, submit an SNS Limit Increase case in the AWS Support Center.
      * @throws InternalErrorException
      *         Indicates an internal service error.
      * @throws NotFoundException
@@ -960,6 +1011,9 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.SetTopicAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetTopicAttributes" target="_top">AWS API
      *      Documentation</a>
@@ -979,12 +1033,18 @@ public interface AmazonSNS {
      * subscription, the endpoint owner must call the <code>ConfirmSubscription</code> action with the token from the
      * confirmation message. Confirmation tokens are valid for three days.
      * </p>
+     * <p>
+     * This action is throttled at 100 transactions per second (TPS).
+     * </p>
      * 
      * @param subscribeRequest
      *        Input for Subscribe action.
      * @return Result of the Subscribe operation returned by the service.
      * @throws SubscriptionLimitExceededException
      *         Indicates that the customer already owns the maximum allowed number of subscriptions.
+     * @throws FilterPolicyLimitExceededException
+     *         Indicates that the number of filter polices in your AWS account exceeds the limit. To add more filter
+     *         polices, submit an SNS Limit Increase case in the AWS Support Center.
      * @throws InvalidParameterException
      *         Indicates that a request parameter does not comply with the associated constraints.
      * @throws InternalErrorException
@@ -993,6 +1053,9 @@ public interface AmazonSNS {
      *         Indicates that the requested resource does not exist.
      * @throws AuthorizationErrorException
      *         Indicates that the user has been denied access to the requested resource.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.Subscribe
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe" target="_top">AWS API
      *      Documentation</a>
@@ -1014,6 +1077,9 @@ public interface AmazonSNS {
      * final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the
      * topic if the <code>Unsubscribe</code> request was unintended.
      * </p>
+     * <p>
+     * This action is throttled at 100 transactions per second (TPS).
+     * </p>
      * 
      * @param unsubscribeRequest
      *        Input for Unsubscribe action.
@@ -1026,6 +1092,9 @@ public interface AmazonSNS {
      *         Indicates that the user has been denied access to the requested resource.
      * @throws NotFoundException
      *         Indicates that the requested resource does not exist.
+     * @throws InvalidSecurityException
+     *         The credential signature isn't valid. You must use an HTTPS endpoint and sign your request using
+     *         Signature Version 4.
      * @sample AmazonSNS.Unsubscribe
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe" target="_top">AWS API
      *      Documentation</a>

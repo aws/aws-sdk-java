@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon Technologies, Inc.
+ * Copyright 2011-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -433,10 +433,6 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
          * @return the itself for chained calls
          */
         public Builder withRoleSessionDurationSeconds(int roleSessionDurationSeconds) {
-            if (roleSessionDurationSeconds < 900 || roleSessionDurationSeconds > 3600) {
-                throw new IllegalArgumentException(
-                        "Assume Role session duration should be in the range of 15min - 1Hr");
-            }
             this.roleSessionDurationSeconds = roleSessionDurationSeconds;
             return this;
         }

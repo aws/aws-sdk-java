@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,11 +33,11 @@ public class GenericRevisionInfoMarshaller {
     private static final MarshallingInfo<List> DEPLOYMENTGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentGroups").build();
     private static final MarshallingInfo<java.util.Date> FIRSTUSEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firstUsedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firstUsedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUSEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUsedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUsedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> REGISTERTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registerTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registerTime").timestampFormat("unixTimestamp").build();
 
     private static final GenericRevisionInfoMarshaller instance = new GenericRevisionInfoMarshaller();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * If query results are encrypted in Amazon S3, indicates the Amazon S3 encryption option used.
+ * If query results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE-KMS</code>
+ * or <code>CSE-KMS</code>) and key information.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/EncryptionConfiguration" target="_top">AWS API
@@ -33,6 +34,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>), server-side
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
+     * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
      * </p>
      */
     private String encryptionOption;
@@ -49,11 +55,20 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
      * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
+     * </p>
      * 
      * @param encryptionOption
      *        Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>),
      *        server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with
-     *        KMS-managed keys (CSE-KMS) is used.
+     *        KMS-managed keys (CSE-KMS) is used.</p>
+     *        <p>
+     *        If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's
+     *        setting for encryption is used. It specifies whether query results must be encrypted, for all queries that
+     *        run in this workgroup.
      * @see EncryptionOption
      */
 
@@ -67,10 +82,19 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
      * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
+     * </p>
      * 
      * @return Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>),
      *         server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with
-     *         KMS-managed keys (CSE-KMS) is used.
+     *         KMS-managed keys (CSE-KMS) is used.</p>
+     *         <p>
+     *         If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's
+     *         setting for encryption is used. It specifies whether query results must be encrypted, for all queries
+     *         that run in this workgroup.
      * @see EncryptionOption
      */
 
@@ -84,11 +108,20 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
      * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
+     * </p>
      * 
      * @param encryptionOption
      *        Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>),
      *        server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with
-     *        KMS-managed keys (CSE-KMS) is used.
+     *        KMS-managed keys (CSE-KMS) is used.</p>
+     *        <p>
+     *        If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's
+     *        setting for encryption is used. It specifies whether query results must be encrypted, for all queries that
+     *        run in this workgroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionOption
      */
@@ -104,11 +137,20 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
      * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
+     * </p>
      * 
      * @param encryptionOption
      *        Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>),
      *        server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with
-     *        KMS-managed keys (CSE-KMS) is used.
+     *        KMS-managed keys (CSE-KMS) is used.</p>
+     *        <p>
+     *        If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's
+     *        setting for encryption is used. It specifies whether query results must be encrypted, for all queries that
+     *        run in this workgroup.
      * @see EncryptionOption
      */
 
@@ -122,11 +164,20 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
      * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
+     * </p>
      * 
      * @param encryptionOption
      *        Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>),
      *        server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with
-     *        KMS-managed keys (CSE-KMS) is used.
+     *        KMS-managed keys (CSE-KMS) is used.</p>
+     *        <p>
+     *        If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's
+     *        setting for encryption is used. It specifies whether query results must be encrypted, for all queries that
+     *        run in this workgroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionOption
      */
@@ -177,7 +228,8 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

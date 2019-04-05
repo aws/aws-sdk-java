@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,6 +15,9 @@
 package com.amazonaws.protocol.json.internal;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.protocol.MarshallingInfo;
+import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.TimestampFormat;
 import java.util.Date;
 
 @SdkInternalApi
@@ -39,7 +42,16 @@ public class HeaderMarshallers {
     public static final JsonMarshaller<Boolean> BOOLEAN = new SimpleHeaderMarshaller<Boolean>(
             ValueToStringConverters.FROM_BOOLEAN);
 
-    public static final JsonMarshaller<Date> DATE = new SimpleHeaderMarshaller<Date>(ValueToStringConverters.FROM_DATE);
+    public static final JsonMarshaller<Date> DATE = new SimpleHeaderMarshaller<Date>(ValueToStringConverters.FROM_DATE) {
+        @Override
+        public void marshall(Date val, JsonMarshallerContext context, MarshallingInfo<Date> marshallingInfo) {
+            TimestampFormat timestampFormat = marshallingInfo.timestampFormat();
+            if (TimestampFormat.UNKNOWN.equals(timestampFormat)) {
+                timestampFormat = TimestampFormat.ISO_8601;
+            }
+            context.request().addHeader(marshallingInfo.marshallLocationName(), StringUtils.fromDate(val, timestampFormat.getFormat()));
+        }
+    };
 
     private static class SimpleHeaderMarshaller<T> implements JsonMarshaller<T> {
 
@@ -50,8 +62,8 @@ public class HeaderMarshallers {
         }
 
         @Override
-        public void marshall(T val, JsonMarshallerContext context, String paramName) {
-            context.request().addHeader(paramName, converter.convert(val));
+        public void marshall(T val, JsonMarshallerContext context, MarshallingInfo<T> marshallingInfo) {
+            context.request().addHeader(marshallingInfo.marshallLocationName(), converter.convert(val));
         }
     }
 

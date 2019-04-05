@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,21 @@ public class AbstractAWSElasticsearchAsync extends AbstractAWSElasticsearch impl
     @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelElasticsearchServiceSoftwareUpdateResult> cancelElasticsearchServiceSoftwareUpdateAsync(
+            CancelElasticsearchServiceSoftwareUpdateRequest request) {
+
+        return cancelElasticsearchServiceSoftwareUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelElasticsearchServiceSoftwareUpdateResult> cancelElasticsearchServiceSoftwareUpdateAsync(
+            CancelElasticsearchServiceSoftwareUpdateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelElasticsearchServiceSoftwareUpdateRequest, CancelElasticsearchServiceSoftwareUpdateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -166,6 +181,47 @@ public class AbstractAWSElasticsearchAsync extends AbstractAWSElasticsearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetCompatibleElasticsearchVersionsResult> getCompatibleElasticsearchVersionsAsync(
+            GetCompatibleElasticsearchVersionsRequest request) {
+
+        return getCompatibleElasticsearchVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCompatibleElasticsearchVersionsResult> getCompatibleElasticsearchVersionsAsync(
+            GetCompatibleElasticsearchVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCompatibleElasticsearchVersionsRequest, GetCompatibleElasticsearchVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUpgradeHistoryResult> getUpgradeHistoryAsync(GetUpgradeHistoryRequest request) {
+
+        return getUpgradeHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUpgradeHistoryResult> getUpgradeHistoryAsync(GetUpgradeHistoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetUpgradeHistoryRequest, GetUpgradeHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUpgradeStatusResult> getUpgradeStatusAsync(GetUpgradeStatusRequest request) {
+
+        return getUpgradeStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUpgradeStatusResult> getUpgradeStatusAsync(GetUpgradeStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDomainNamesResult> listDomainNamesAsync(ListDomainNamesRequest request) {
 
         return listDomainNamesAsync(request, null);
@@ -246,6 +302,21 @@ public class AbstractAWSElasticsearchAsync extends AbstractAWSElasticsearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<StartElasticsearchServiceSoftwareUpdateResult> startElasticsearchServiceSoftwareUpdateAsync(
+            StartElasticsearchServiceSoftwareUpdateRequest request) {
+
+        return startElasticsearchServiceSoftwareUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartElasticsearchServiceSoftwareUpdateResult> startElasticsearchServiceSoftwareUpdateAsync(
+            StartElasticsearchServiceSoftwareUpdateRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartElasticsearchServiceSoftwareUpdateRequest, StartElasticsearchServiceSoftwareUpdateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateElasticsearchDomainConfigResult> updateElasticsearchDomainConfigAsync(
             UpdateElasticsearchDomainConfigRequest request) {
 
@@ -256,6 +327,19 @@ public class AbstractAWSElasticsearchAsync extends AbstractAWSElasticsearch impl
     public java.util.concurrent.Future<UpdateElasticsearchDomainConfigResult> updateElasticsearchDomainConfigAsync(
             UpdateElasticsearchDomainConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateElasticsearchDomainConfigRequest, UpdateElasticsearchDomainConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeElasticsearchDomainResult> upgradeElasticsearchDomainAsync(UpgradeElasticsearchDomainRequest request) {
+
+        return upgradeElasticsearchDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeElasticsearchDomainResult> upgradeElasticsearchDomainAsync(UpgradeElasticsearchDomainRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpgradeElasticsearchDomainRequest, UpgradeElasticsearchDomainResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class VideoSelectorMarshaller {
             .marshallLocationName("pid").build();
     private static final MarshallingInfo<Integer> PROGRAMNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("programNumber").build();
+    private static final MarshallingInfo<String> ROTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("rotate").build();
 
     private static final VideoSelectorMarshaller instance = new VideoSelectorMarshaller();
 
@@ -59,6 +61,7 @@ public class VideoSelectorMarshaller {
             protocolMarshaller.marshall(videoSelector.getHdr10Metadata(), HDR10METADATA_BINDING);
             protocolMarshaller.marshall(videoSelector.getPid(), PID_BINDING);
             protocolMarshaller.marshall(videoSelector.getProgramNumber(), PROGRAMNUMBER_BINDING);
+            protocolMarshaller.marshall(videoSelector.getRotate(), ROTATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,17 +26,24 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AudioNormalizationSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to the EBU
+     * R-128 specification.
+     */
     private String algorithm;
-
+    /**
+     * When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured
+     * but not adjusted.
+     */
     private String algorithmControl;
     /**
      * Content measuring above this level will be corrected to the target level. Content measuring below this level will
      * not be corrected. Gating only applies when not using real_time_correction.
      */
     private Integer correctionGateLevel;
-
+    /** If set to LOG, log each output's audio track loudness to a CSV file. */
     private String loudnessLogging;
-
+    /** If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness. */
     private String peakCalculation;
     /**
      * Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the
@@ -46,7 +53,12 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     private Double targetLkfs;
 
     /**
+     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to the EBU
+     * R-128 specification.
+     * 
      * @param algorithm
+     *        Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to
+     *        the EBU R-128 specification.
      * @see AudioNormalizationAlgorithm
      */
 
@@ -55,7 +67,11 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to the EBU
+     * R-128 specification.
+     * 
+     * @return Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to
+     *         the EBU R-128 specification.
      * @see AudioNormalizationAlgorithm
      */
 
@@ -64,7 +80,12 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to the EBU
+     * R-128 specification.
+     * 
      * @param algorithm
+     *        Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to
+     *        the EBU R-128 specification.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioNormalizationAlgorithm
      */
@@ -75,7 +96,12 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to the EBU
+     * R-128 specification.
+     * 
      * @param algorithm
+     *        Audio normalization algorithm to use. 1770-1 conforms to the CALM Act specification, 1770-2 conforms to
+     *        the EBU R-128 specification.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioNormalizationAlgorithm
      */
@@ -86,7 +112,12 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured
+     * but not adjusted.
+     * 
      * @param algorithmControl
+     *        When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be
+     *        measured but not adjusted.
      * @see AudioNormalizationAlgorithmControl
      */
 
@@ -95,7 +126,11 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured
+     * but not adjusted.
+     * 
+     * @return When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be
+     *         measured but not adjusted.
      * @see AudioNormalizationAlgorithmControl
      */
 
@@ -104,7 +139,12 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured
+     * but not adjusted.
+     * 
      * @param algorithmControl
+     *        When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be
+     *        measured but not adjusted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioNormalizationAlgorithmControl
      */
@@ -115,7 +155,12 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured
+     * but not adjusted.
+     * 
      * @param algorithmControl
+     *        When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be
+     *        measured but not adjusted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioNormalizationAlgorithmControl
      */
@@ -166,7 +211,10 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * If set to LOG, log each output's audio track loudness to a CSV file.
+     * 
      * @param loudnessLogging
+     *        If set to LOG, log each output's audio track loudness to a CSV file.
      * @see AudioNormalizationLoudnessLogging
      */
 
@@ -175,7 +223,9 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * If set to LOG, log each output's audio track loudness to a CSV file.
+     * 
+     * @return If set to LOG, log each output's audio track loudness to a CSV file.
      * @see AudioNormalizationLoudnessLogging
      */
 
@@ -184,7 +234,10 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * If set to LOG, log each output's audio track loudness to a CSV file.
+     * 
      * @param loudnessLogging
+     *        If set to LOG, log each output's audio track loudness to a CSV file.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioNormalizationLoudnessLogging
      */
@@ -195,7 +248,10 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * If set to LOG, log each output's audio track loudness to a CSV file.
+     * 
      * @param loudnessLogging
+     *        If set to LOG, log each output's audio track loudness to a CSV file.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioNormalizationLoudnessLogging
      */
@@ -206,7 +262,10 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
+     * 
      * @param peakCalculation
+     *        If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
      * @see AudioNormalizationPeakCalculation
      */
 
@@ -215,7 +274,9 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
+     * 
+     * @return If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
      * @see AudioNormalizationPeakCalculation
      */
 
@@ -224,7 +285,10 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
+     * 
      * @param peakCalculation
+     *        If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioNormalizationPeakCalculation
      */
@@ -235,7 +299,10 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
+     * 
      * @param peakCalculation
+     *        If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AudioNormalizationPeakCalculation
      */
@@ -292,7 +359,8 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,6 +99,12 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
      * </p>
      */
     private String username;
+    /**
+     * <p>
+     * Describes the public SSH host keys or the RDP certificate.
+     * </p>
+     */
+    private java.util.List<HostKeyAttributes> hostKeys;
 
     /**
      * <p>
@@ -591,7 +597,78 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Describes the public SSH host keys or the RDP certificate.
+     * </p>
+     * 
+     * @return Describes the public SSH host keys or the RDP certificate.
+     */
+
+    public java.util.List<HostKeyAttributes> getHostKeys() {
+        return hostKeys;
+    }
+
+    /**
+     * <p>
+     * Describes the public SSH host keys or the RDP certificate.
+     * </p>
+     * 
+     * @param hostKeys
+     *        Describes the public SSH host keys or the RDP certificate.
+     */
+
+    public void setHostKeys(java.util.Collection<HostKeyAttributes> hostKeys) {
+        if (hostKeys == null) {
+            this.hostKeys = null;
+            return;
+        }
+
+        this.hostKeys = new java.util.ArrayList<HostKeyAttributes>(hostKeys);
+    }
+
+    /**
+     * <p>
+     * Describes the public SSH host keys or the RDP certificate.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHostKeys(java.util.Collection)} or {@link #withHostKeys(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param hostKeys
+     *        Describes the public SSH host keys or the RDP certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceAccessDetails withHostKeys(HostKeyAttributes... hostKeys) {
+        if (this.hostKeys == null) {
+            setHostKeys(new java.util.ArrayList<HostKeyAttributes>(hostKeys.length));
+        }
+        for (HostKeyAttributes ele : hostKeys) {
+            this.hostKeys.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the public SSH host keys or the RDP certificate.
+     * </p>
+     * 
+     * @param hostKeys
+     *        Describes the public SSH host keys or the RDP certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceAccessDetails withHostKeys(java.util.Collection<HostKeyAttributes> hostKeys) {
+        setHostKeys(hostKeys);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -618,7 +695,9 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
         if (getInstanceName() != null)
             sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername());
+            sb.append("Username: ").append(getUsername()).append(",");
+        if (getHostKeys() != null)
+            sb.append("HostKeys: ").append(getHostKeys());
         sb.append("}");
         return sb.toString();
     }
@@ -669,6 +748,10 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
+        if (other.getHostKeys() == null ^ this.getHostKeys() == null)
+            return false;
+        if (other.getHostKeys() != null && other.getHostKeys().equals(this.getHostKeys()) == false)
+            return false;
         return true;
     }
 
@@ -686,6 +769,7 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getHostKeys() == null) ? 0 : getHostKeys().hashCode());
         return hashCode;
     }
 

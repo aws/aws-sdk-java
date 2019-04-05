@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,12 +25,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/InstanceSummary" target="_top">AWS API
  *      Documentation</a>
  */
+@Deprecated
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InstanceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      */
     private String deploymentId;
@@ -80,7 +81,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
     private String status;
     /**
      * <p>
-     * A timestamp indicating when the instance information was last updated.
+     * A timestamp that indicaties when the instance information was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
@@ -111,11 +112,11 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
      * @param deploymentId
-     *        The deployment ID.
+     *        The unique ID of a deployment.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -124,10 +125,10 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
-     * @return The deployment ID.
+     * @return The unique ID of a deployment.
      */
 
     public String getDeploymentId() {
@@ -136,11 +137,11 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
      * @param deploymentId
-     *        The deployment ID.
+     *        The unique ID of a deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,7 +262,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      * @see InstanceStatus
      */
-
+    @Deprecated
     public void setStatus(String status) {
         this.status = status;
     }
@@ -337,7 +338,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      * @see InstanceStatus
      */
-
+    @Deprecated
     public String getStatus() {
         return this.status;
     }
@@ -415,7 +416,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceStatus
      */
-
+    @Deprecated
     public InstanceSummary withStatus(String status) {
         setStatus(status);
         return this;
@@ -493,7 +494,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      * @see InstanceStatus
      */
-
+    @Deprecated
     public void setStatus(InstanceStatus status) {
         withStatus(status);
     }
@@ -571,7 +572,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceStatus
      */
-
+    @Deprecated
     public InstanceSummary withStatus(InstanceStatus status) {
         this.status = status.toString();
         return this;
@@ -579,11 +580,11 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A timestamp indicating when the instance information was last updated.
+     * A timestamp that indicaties when the instance information was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        A timestamp indicating when the instance information was last updated.
+     *        A timestamp that indicaties when the instance information was last updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -592,10 +593,10 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A timestamp indicating when the instance information was last updated.
+     * A timestamp that indicaties when the instance information was last updated.
      * </p>
      * 
-     * @return A timestamp indicating when the instance information was last updated.
+     * @return A timestamp that indicaties when the instance information was last updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -604,11 +605,11 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A timestamp indicating when the instance information was last updated.
+     * A timestamp that indicaties when the instance information was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        A timestamp indicating when the instance information was last updated.
+     *        A timestamp that indicaties when the instance information was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -879,7 +880,8 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

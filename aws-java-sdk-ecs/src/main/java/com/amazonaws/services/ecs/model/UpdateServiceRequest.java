@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,7 +79,11 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
-     * The platform version you want to update your service to run.
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String platformVersion;
@@ -97,9 +101,9 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
-     * scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service
-     * scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     * health checks, you can specify a health check grace period of up to 1,800 seconds. During that time, the ECS
+     * service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
+     * service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      */
     private Integer healthCheckGracePeriodSeconds;
@@ -439,11 +443,19 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version you want to update your service to run.
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version you want to update your service to run.
+     *        The platform version on which your tasks in the service are running. A platform version is only specified
+     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
+     *        is used by default. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setPlatformVersion(String platformVersion) {
@@ -452,10 +464,18 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version you want to update your service to run.
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version you want to update your service to run.
+     * @return The platform version on which your tasks in the service are running. A platform version is only specified
+     *         for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform
+     *         version is used by default. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getPlatformVersion() {
@@ -464,11 +484,19 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The platform version you want to update your service to run.
+     * The platform version on which your tasks in the service are running. A platform version is only specified for
+     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version you want to update your service to run.
+     *        The platform version on which your tasks in the service are running. A platform version is only specified
+     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
+     *        is used by default. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -558,19 +586,19 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
-     * scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service
-     * scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     * health checks, you can specify a health check grace period of up to 1,800 seconds. During that time, the ECS
+     * service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
+     * service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
      *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
      *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
-     *        Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
-     *        which the ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period
-     *        can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have
-     *        time to come up.
+     *        Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds. During
+     *        that time, the ECS service scheduler ignores the Elastic Load Balancing health check status. This grace
+     *        period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they
+     *        have time to come up.
      */
 
     public void setHealthCheckGracePeriodSeconds(Integer healthCheckGracePeriodSeconds) {
@@ -582,18 +610,18 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
-     * scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service
-     * scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     * health checks, you can specify a health check grace period of up to 1,800 seconds. During that time, the ECS
+     * service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
+     * service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @return The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic
      *         Load Balancing target health checks after a task has first started. This is only valid if your service is
      *         configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
-     *         Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
-     *         which the ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period
-     *         can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have
-     *         time to come up.
+     *         Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds. During
+     *         that time, the ECS service scheduler ignores the Elastic Load Balancing health check status. This grace
+     *         period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before
+     *         they have time to come up.
      */
 
     public Integer getHealthCheckGracePeriodSeconds() {
@@ -605,19 +633,19 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
      * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
-     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
-     * scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service
-     * scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     * health checks, you can specify a health check grace period of up to 1,800 seconds. During that time, the ECS
+     * service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS
+     * service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
      *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
      *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
-     *        Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
-     *        which the ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period
-     *        can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have
-     *        time to come up.
+     *        Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds. During
+     *        that time, the ECS service scheduler ignores the Elastic Load Balancing health check status. This grace
+     *        period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they
+     *        have time to come up.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -627,7 +655,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

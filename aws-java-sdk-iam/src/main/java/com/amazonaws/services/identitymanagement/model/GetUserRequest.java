@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class GetUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to the user making the request. This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
-     * upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters:
-     * _+=,.@-
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
+     * following characters: _+=,.@-
      * </p>
      */
     private String userName;
@@ -43,16 +43,16 @@ public class GetUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to the user making the request. This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
-     * upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters:
-     * _+=,.@-
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
+     * following characters: _+=,.@-
      * </p>
      * 
      * @param userName
      *        The name of the user to get information about.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to the user making the request. This
-     *        parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *        parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: _+=,.@-
      */
@@ -67,15 +67,15 @@ public class GetUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to the user making the request. This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
-     * upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters:
-     * _+=,.@-
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
+     * following characters: _+=,.@-
      * </p>
      * 
      * @return The name of the user to get information about.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to the user making the request. This
-     *         parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *         parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *         any of the following characters: _+=,.@-
      */
@@ -90,16 +90,16 @@ public class GetUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to the user making the request. This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
-     * upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters:
-     * _+=,.@-
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
+     * following characters: _+=,.@-
      * </p>
      * 
      * @param userName
      *        The name of the user to get information about.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to the user making the request. This
-     *        parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *        parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
      *        any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -111,7 +111,8 @@ public class GetUserRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

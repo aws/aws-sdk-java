@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * destinations.
      * </p>
      * <p>
-     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda
      * destinations, or any combination of the three.
      * </p>
      * <p>
@@ -383,7 +383,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * destinations.
      * </p>
      * <p>
-     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda
      * destinations, or any combination of the three.
      * </p>
      * <p>
@@ -400,7 +400,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * @return You can configure application output to write data from any of the in-application streams to up to three
      *         destinations.</p>
      *         <p>
-     *         These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     *         These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda
      *         destinations, or any combination of the three.
      *         </p>
      *         <p>
@@ -426,7 +426,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * destinations.
      * </p>
      * <p>
-     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda
      * destinations, or any combination of the three.
      * </p>
      * <p>
@@ -444,7 +444,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        You can configure application output to write data from any of the in-application streams to up to three
      *        destinations.</p>
      *        <p>
-     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda
      *        destinations, or any combination of the three.
      *        </p>
      *        <p>
@@ -475,7 +475,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * destinations.
      * </p>
      * <p>
-     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda
      * destinations, or any combination of the three.
      * </p>
      * <p>
@@ -498,7 +498,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        You can configure application output to write data from any of the in-application streams to up to three
      *        destinations.</p>
      *        <p>
-     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda
      *        destinations, or any combination of the three.
      *        </p>
      *        <p>
@@ -531,7 +531,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * destinations.
      * </p>
      * <p>
-     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     * These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda
      * destinations, or any combination of the three.
      * </p>
      * <p>
@@ -549,7 +549,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        You can configure application output to write data from any of the in-application streams to up to three
      *        destinations.</p>
      *        <p>
-     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon Lambda
+     *        These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda
      *        destinations, or any combination of the three.
      *        </p>
      *        <p>
@@ -780,7 +780,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

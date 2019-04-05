@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,9 @@ public enum ConstraintViolationExceptionReason {
     ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED"),
     MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE("MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE"),
     MASTER_ACCOUNT_MISSING_CONTACT_INFO("MASTER_ACCOUNT_MISSING_CONTACT_INFO"),
-    ORGANIZATION_NOT_IN_ALL_FEATURES_MODE("ORGANIZATION_NOT_IN_ALL_FEATURES_MODE");
+    ORGANIZATION_NOT_IN_ALL_FEATURES_MODE("ORGANIZATION_NOT_IN_ALL_FEATURES_MODE"),
+    EMAIL_VERIFICATION_CODE_EXPIRED("EMAIL_VERIFICATION_CODE_EXPIRED"),
+    WAIT_PERIOD_ACTIVE("WAIT_PERIOD_ACTIVE");
 
     private String value;
 

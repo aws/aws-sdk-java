@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
 
+    /** Accelerated transcoding is currently in private preview. Contact AWS for more information. */
+    private AccelerationSettings accelerationSettings;
     /** An identifier for this resource that is unique within all of AWS. */
     private String arn;
     /** An optional category you create to organize your job templates. */
@@ -43,13 +45,56 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
      * to the default queue.
      */
     private String queue;
-
+    /**
+     * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     * created from it.
+     */
     private JobTemplateSettings settings;
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     */
+    private String statusUpdateInterval;
     /**
      * A job template can be of two types: system or custom. System or built-in job templates can't be modified or
      * deleted by the user.
      */
     private String type;
+
+    /**
+     * Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     * 
+     * @param accelerationSettings
+     *        Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     */
+
+    public void setAccelerationSettings(AccelerationSettings accelerationSettings) {
+        this.accelerationSettings = accelerationSettings;
+    }
+
+    /**
+     * Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     * 
+     * @return Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     */
+
+    public AccelerationSettings getAccelerationSettings() {
+        return this.accelerationSettings;
+    }
+
+    /**
+     * Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     * 
+     * @param accelerationSettings
+     *        Accelerated transcoding is currently in private preview. Contact AWS for more information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobTemplate withAccelerationSettings(AccelerationSettings accelerationSettings) {
+        setAccelerationSettings(accelerationSettings);
+        return this;
+    }
 
     /**
      * An identifier for this resource that is unique within all of AWS.
@@ -296,7 +341,12 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     * created from it.
+     * 
      * @param settings
+     *        JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     *        created from it.
      */
 
     public void setSettings(JobTemplateSettings settings) {
@@ -304,7 +354,11 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     * created from it.
+     * 
+     * @return JobTemplateSettings contains all the transcode settings saved in the template that will be applied to
+     *         jobs created from it.
      */
 
     public JobTemplateSettings getSettings() {
@@ -312,12 +366,84 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     * created from it.
+     * 
      * @param settings
+     *        JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     *        created from it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public JobTemplate withSettings(JobTemplateSettings settings) {
         setSettings(settings);
+        return this;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateInterval
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @see StatusUpdateInterval
+     */
+
+    public void setStatusUpdateInterval(String statusUpdateInterval) {
+        this.statusUpdateInterval = statusUpdateInterval;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @return Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *         in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *         service begins processing your job to the time it completes the transcode or encounters an error.
+     * @see StatusUpdateInterval
+     */
+
+    public String getStatusUpdateInterval() {
+        return this.statusUpdateInterval;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateInterval
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusUpdateInterval
+     */
+
+    public JobTemplate withStatusUpdateInterval(String statusUpdateInterval) {
+        setStatusUpdateInterval(statusUpdateInterval);
+        return this;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateInterval
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusUpdateInterval
+     */
+
+    public JobTemplate withStatusUpdateInterval(StatusUpdateInterval statusUpdateInterval) {
+        this.statusUpdateInterval = statusUpdateInterval.toString();
         return this;
     }
 
@@ -381,7 +507,8 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -391,6 +518,8 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccelerationSettings() != null)
+            sb.append("AccelerationSettings: ").append(getAccelerationSettings()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCategory() != null)
@@ -407,6 +536,8 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
             sb.append("Queue: ").append(getQueue()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getStatusUpdateInterval() != null)
+            sb.append("StatusUpdateInterval: ").append(getStatusUpdateInterval()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType());
         sb.append("}");
@@ -423,6 +554,10 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof JobTemplate == false)
             return false;
         JobTemplate other = (JobTemplate) obj;
+        if (other.getAccelerationSettings() == null ^ this.getAccelerationSettings() == null)
+            return false;
+        if (other.getAccelerationSettings() != null && other.getAccelerationSettings().equals(this.getAccelerationSettings()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -455,6 +590,10 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getStatusUpdateInterval() == null ^ this.getStatusUpdateInterval() == null)
+            return false;
+        if (other.getStatusUpdateInterval() != null && other.getStatusUpdateInterval().equals(this.getStatusUpdateInterval()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -467,6 +606,7 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccelerationSettings() == null) ? 0 : getAccelerationSettings().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
@@ -475,6 +615,7 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getStatusUpdateInterval() == null) ? 0 : getStatusUpdateInterval().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }

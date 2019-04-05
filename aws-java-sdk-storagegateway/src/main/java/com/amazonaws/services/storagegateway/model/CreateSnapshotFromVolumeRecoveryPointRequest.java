@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,12 +25,31 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a> operation to
+     * return to retrieve the TargetARN for specified VolumeARN.
+     * </p>
+     */
     private String volumeARN;
-
+    /**
+     * <p>
+     * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
+     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * field
+     * </p>
+     */
     private String snapshotDescription;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a> operation to
+     * return to retrieve the TargetARN for specified VolumeARN.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a>
+     *        operation to return to retrieve the TargetARN for specified VolumeARN.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -38,7 +57,13 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a> operation to
+     * return to retrieve the TargetARN for specified VolumeARN.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a>
+     *         operation to return to retrieve the TargetARN for specified VolumeARN.
      */
 
     public String getVolumeARN() {
@@ -46,7 +71,14 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a> operation to
+     * return to retrieve the TargetARN for specified VolumeARN.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a>
+     *        operation to return to retrieve the TargetARN for specified VolumeARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +88,16 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.
     }
 
     /**
+     * <p>
+     * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
+     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * field
+     * </p>
+     * 
      * @param snapshotDescription
+     *        Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
+     *        panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
+     *        <b>Description</b> field
      */
 
     public void setSnapshotDescription(String snapshotDescription) {
@@ -64,7 +105,15 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.
     }
 
     /**
-     * @return
+     * <p>
+     * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
+     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * field
+     * </p>
+     * 
+     * @return Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
+     *         panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
+     *         <b>Description</b> field
      */
 
     public String getSnapshotDescription() {
@@ -72,7 +121,16 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.
     }
 
     /**
+     * <p>
+     * Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots panel
+     * in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b>
+     * field
+     * </p>
+     * 
      * @param snapshotDescription
+     *        Textual description of the snapshot that appears in the Amazon EC2 console, Elastic Block Store snapshots
+     *        panel in the <b>Description</b> field, and in the AWS Storage Gateway snapshot <b>Details</b> pane,
+     *        <b>Description</b> field
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +140,8 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends com.amazonaws.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

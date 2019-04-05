@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker
      * passes all of the data in the body to the model.
      * </p>
+     * <p>
+     * For information about the format of the request body, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * </p>
      */
     private java.nio.ByteBuffer body;
     /**
@@ -51,6 +55,8 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String accept;
+    /** <p/> */
+    private String customAttributes;
 
     /**
      * <p>
@@ -104,6 +110,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * passes all of the data in the body to the model.
      * </p>
      * <p>
+     * For information about the format of the request body, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * </p>
+     * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
@@ -116,7 +126,11 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param body
      *        Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon
-     *        SageMaker passes all of the data in the body to the model.
+     *        SageMaker passes all of the data in the body to the model. </p>
+     *        <p>
+     *        For information about the format of the request body, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *        Formats—Inference</a>.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -129,6 +143,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * passes all of the data in the body to the model.
      * </p>
      * <p>
+     * For information about the format of the request body, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
+     * </p>
+     * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
      * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
@@ -137,7 +155,11 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon
-     *         SageMaker passes all of the data in the body to the model.
+     *         SageMaker passes all of the data in the body to the model. </p>
+     *         <p>
+     *         For information about the format of the request body, see <a
+     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *         Formats—Inference</a>.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -148,6 +170,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker
      * passes all of the data in the body to the model.
+     * </p>
+     * <p>
+     * For information about the format of the request body, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats—Inference</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -162,7 +188,11 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param body
      *        Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon
-     *        SageMaker passes all of the data in the body to the model.
+     *        SageMaker passes all of the data in the body to the model. </p>
+     *        <p>
+     *        For information about the format of the request body, see <a
+     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+     *        Formats—Inference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,7 +282,40 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p/>
+     * 
+     * @param customAttributes
+     */
+
+    public void setCustomAttributes(String customAttributes) {
+        this.customAttributes = customAttributes;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public String getCustomAttributes() {
+        return this.customAttributes;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param customAttributes
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeEndpointRequest withCustomAttributes(String customAttributes) {
+        setCustomAttributes(customAttributes);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -265,11 +328,13 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getEndpointName() != null)
             sb.append("EndpointName: ").append(getEndpointName()).append(",");
         if (getBody() != null)
-            sb.append("Body: ").append(getBody()).append(",");
+            sb.append("Body: ").append("***Sensitive Data Redacted***").append(",");
         if (getContentType() != null)
             sb.append("ContentType: ").append(getContentType()).append(",");
         if (getAccept() != null)
-            sb.append("Accept: ").append(getAccept());
+            sb.append("Accept: ").append(getAccept()).append(",");
+        if (getCustomAttributes() != null)
+            sb.append("CustomAttributes: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -300,6 +365,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAccept() != null && other.getAccept().equals(this.getAccept()) == false)
             return false;
+        if (other.getCustomAttributes() == null ^ this.getCustomAttributes() == null)
+            return false;
+        if (other.getCustomAttributes() != null && other.getCustomAttributes().equals(this.getCustomAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -312,6 +381,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getAccept() == null) ? 0 : getAccept().hashCode());
+        hashCode = prime * hashCode + ((getCustomAttributes() == null) ? 0 : getCustomAttributes().hashCode());
         return hashCode;
     }
 

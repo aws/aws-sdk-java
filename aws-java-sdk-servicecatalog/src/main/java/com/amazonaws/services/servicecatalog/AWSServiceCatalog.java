@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,9 +55,10 @@ public interface AWSServiceCatalog {
      * protocol from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -159,6 +160,28 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Associates a self-service action with a provisioning artifact.
+     * </p>
+     * 
+     * @param associateServiceActionWithProvisioningArtifactRequest
+     * @return Result of the AssociateServiceActionWithProvisioningArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
+     * @sample AWSServiceCatalog.AssociateServiceActionWithProvisioningArtifact
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateServiceActionWithProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateServiceActionWithProvisioningArtifactResult associateServiceActionWithProvisioningArtifact(
+            AssociateServiceActionWithProvisioningArtifactRequest associateServiceActionWithProvisioningArtifactRequest);
+
+    /**
+     * <p>
      * Associate the specified TagOption with the specified portfolio or product.
      * </p>
      * 
@@ -185,6 +208,40 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     AssociateTagOptionWithResourceResult associateTagOptionWithResource(AssociateTagOptionWithResourceRequest associateTagOptionWithResourceRequest);
+
+    /**
+     * <p>
+     * Associates multiple self-service actions with provisioning artifacts.
+     * </p>
+     * 
+     * @param batchAssociateServiceActionWithProvisioningArtifactRequest
+     * @return Result of the BatchAssociateServiceActionWithProvisioningArtifact operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.BatchAssociateServiceActionWithProvisioningArtifact
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchAssociateServiceActionWithProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchAssociateServiceActionWithProvisioningArtifactResult batchAssociateServiceActionWithProvisioningArtifact(
+            BatchAssociateServiceActionWithProvisioningArtifactRequest batchAssociateServiceActionWithProvisioningArtifactRequest);
+
+    /**
+     * <p>
+     * Disassociates a batch of self-service actions from the specified provisioning artifact.
+     * </p>
+     * 
+     * @param batchDisassociateServiceActionFromProvisioningArtifactRequest
+     * @return Result of the BatchDisassociateServiceActionFromProvisioningArtifact operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.BatchDisassociateServiceActionFromProvisioningArtifact
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/BatchDisassociateServiceActionFromProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchDisassociateServiceActionFromProvisioningArtifactResult batchDisassociateServiceActionFromProvisioningArtifact(
+            BatchDisassociateServiceActionFromProvisioningArtifactRequest batchDisassociateServiceActionFromProvisioningArtifactRequest);
 
     /**
      * <p>
@@ -257,7 +314,9 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Shares the specified portfolio with the specified account.
+     * Shares the specified portfolio with the specified account or organization node. Shares to an organization node
+     * can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to
+     * create a portfolio share to an organization node.
      * </p>
      * 
      * @param createPortfolioShareRequest
@@ -269,6 +328,8 @@ public interface AWSServiceCatalog {
      *         or increase your service limits and retry the operation.
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are not valid.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
      * @sample AWSServiceCatalog.CreatePortfolioShare
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare"
      *      target="_top">AWS API Documentation</a>
@@ -351,6 +412,24 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Creates a self-service action.
+     * </p>
+     * 
+     * @param createServiceActionRequest
+     * @return Result of the CreateServiceAction operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
+     *         or increase your service limits and retry the operation.
+     * @sample AWSServiceCatalog.CreateServiceAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateServiceAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateServiceActionResult createServiceAction(CreateServiceActionRequest createServiceActionRequest);
+
+    /**
+     * <p>
      * Creates a TagOption.
      * </p>
      * 
@@ -417,13 +496,18 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Stops sharing the specified portfolio with the specified account.
+     * Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization
+     * node can only be deleted by the master account of an Organization.
      * </p>
      * 
      * @param deletePortfolioShareRequest
      * @return Result of the DeletePortfolioShare operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
      * @sample AWSServiceCatalog.DeletePortfolioShare
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare"
      *      target="_top">AWS API Documentation</a>
@@ -498,6 +582,23 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Deletes a self-service action.
+     * </p>
+     * 
+     * @param deleteServiceActionRequest
+     * @return Result of the DeleteServiceAction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceInUseException
+     *         A resource that is currently in use. Ensure that the resource is not in use and retry the operation.
+     * @sample AWSServiceCatalog.DeleteServiceAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteServiceAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteServiceActionResult deleteServiceAction(DeleteServiceActionRequest deleteServiceActionRequest);
+
+    /**
+     * <p>
      * Deletes the specified TagOption.
      * </p>
      * <p>
@@ -564,6 +665,26 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     DescribePortfolioResult describePortfolio(DescribePortfolioRequest describePortfolioRequest);
+
+    /**
+     * <p>
+     * Gets the status of the specified portfolio share operation. This API can only be called by the master account in
+     * the organization.
+     * </p>
+     * 
+     * @param describePortfolioShareStatusRequest
+     * @return Result of the DescribePortfolioShareStatus operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
+     * @sample AWSServiceCatalog.DescribePortfolioShareStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePortfolioShareStatusResult describePortfolioShareStatus(DescribePortfolioShareStatusRequest describePortfolioShareStatusRequest);
 
     /**
      * <p>
@@ -707,6 +828,21 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Describes a self-service action.
+     * </p>
+     * 
+     * @param describeServiceActionRequest
+     * @return Result of the DescribeServiceAction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeServiceAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeServiceActionResult describeServiceAction(DescribeServiceActionRequest describeServiceActionRequest);
+
+    /**
+     * <p>
      * Gets information about the specified TagOption.
      * </p>
      * 
@@ -723,6 +859,29 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeTagOptionResult describeTagOption(DescribeTagOptionRequest describeTagOptionRequest);
+
+    /**
+     * <p>
+     * Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but
+     * it will prevent you from creating new shares throughout your organization. Current shares will not be in sync
+     * with your organization structure if it changes after calling this API. This API can only be called by the master
+     * account in the organization.
+     * </p>
+     * 
+     * @param disableAWSOrganizationsAccessRequest
+     * @return Result of the DisableAWSOrganizationsAccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
+     * @sample AWSServiceCatalog.DisableAWSOrganizationsAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisableAWSOrganizationsAccessResult disableAWSOrganizationsAccess(DisableAWSOrganizationsAccessRequest disableAWSOrganizationsAccessRequest);
 
     /**
      * <p>
@@ -764,6 +923,23 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Disassociates the specified self-service action association from the specified provisioning artifact.
+     * </p>
+     * 
+     * @param disassociateServiceActionFromProvisioningArtifactRequest
+     * @return Result of the DisassociateServiceActionFromProvisioningArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DisassociateServiceActionFromProvisioningArtifact
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateServiceActionFromProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateServiceActionFromProvisioningArtifactResult disassociateServiceActionFromProvisioningArtifact(
+            DisassociateServiceActionFromProvisioningArtifactRequest disassociateServiceActionFromProvisioningArtifactRequest);
+
+    /**
+     * <p>
      * Disassociates the specified TagOption from the specified resource.
      * </p>
      * 
@@ -780,6 +956,32 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateTagOptionFromResourceResult disassociateTagOptionFromResource(DisassociateTagOptionFromResourceRequest disassociateTagOptionFromResourceRequest);
+
+    /**
+     * <p>
+     * Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive
+     * updates on your organization in order to sync your shares with the current structure. This API can only be called
+     * by the master account in the organization.
+     * </p>
+     * <p>
+     * By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so
+     * that your shares can be in sync with any changes in your AWS Organizations structure.
+     * </p>
+     * 
+     * @param enableAWSOrganizationsAccessRequest
+     * @return Result of the EnableAWSOrganizationsAccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
+     * @sample AWSServiceCatalog.EnableAWSOrganizationsAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    EnableAWSOrganizationsAccessResult enableAWSOrganizationsAccess(EnableAWSOrganizationsAccessRequest enableAWSOrganizationsAccessRequest);
 
     /**
      * <p>
@@ -803,6 +1005,46 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Executes a self-service action against a provisioned product.
+     * </p>
+     * 
+     * @param executeProvisionedProductServiceActionRequest
+     * @return Result of the ExecuteProvisionedProductServiceAction operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in a state that is not valid. Check your resources to
+     *         ensure that they are in valid states before retrying the operation.
+     * @sample AWSServiceCatalog.ExecuteProvisionedProductServiceAction
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductServiceAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ExecuteProvisionedProductServiceActionResult executeProvisionedProductServiceAction(
+            ExecuteProvisionedProductServiceActionRequest executeProvisionedProductServiceActionRequest);
+
+    /**
+     * <p>
+     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master
+     * account in the organization.
+     * </p>
+     * 
+     * @param getAWSOrganizationsAccessStatusRequest
+     * @return Result of the GetAWSOrganizationsAccessStatus operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
+     * @sample AWSServiceCatalog.GetAWSOrganizationsAccessStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAWSOrganizationsAccessStatusResult getAWSOrganizationsAccessStatus(GetAWSOrganizationsAccessStatusRequest getAWSOrganizationsAccessStatusRequest);
+
+    /**
+     * <p>
      * Lists all portfolios for which sharing was accepted by this account.
      * </p>
      * 
@@ -810,6 +1052,8 @@ public interface AWSServiceCatalog {
      * @return Result of the ListAcceptedPortfolioShares operation returned by the service.
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are not valid.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
      * @sample AWSServiceCatalog.ListAcceptedPortfolioShares
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListAcceptedPortfolioShares"
      *      target="_top">AWS API Documentation</a>
@@ -850,6 +1094,26 @@ public interface AWSServiceCatalog {
      *      API Documentation</a>
      */
     ListLaunchPathsResult listLaunchPaths(ListLaunchPathsRequest listLaunchPathsRequest);
+
+    /**
+     * <p>
+     * Lists the organization nodes that have access to the specified portfolio. This API can only be called by the
+     * master account in the organization.
+     * </p>
+     * 
+     * @param listOrganizationPortfolioAccessRequest
+     * @return Result of the ListOrganizationPortfolioAccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws OperationNotSupportedException
+     *         The operation is not supported.
+     * @sample AWSServiceCatalog.ListOrganizationPortfolioAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListOrganizationPortfolioAccessResult listOrganizationPortfolioAccess(ListOrganizationPortfolioAccessRequest listOrganizationPortfolioAccessRequest);
 
     /**
      * <p>
@@ -951,6 +1215,25 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Lists all provisioning artifacts (also known as versions) for the specified self-service action.
+     * </p>
+     * 
+     * @param listProvisioningArtifactsForServiceActionRequest
+     * @return Result of the ListProvisioningArtifactsForServiceAction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.ListProvisioningArtifactsForServiceAction
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisioningArtifactsForServiceAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListProvisioningArtifactsForServiceActionResult listProvisioningArtifactsForServiceAction(
+            ListProvisioningArtifactsForServiceActionRequest listProvisioningArtifactsForServiceActionRequest);
+
+    /**
+     * <p>
      * Lists the specified requests or all performed requests.
      * </p>
      * 
@@ -984,6 +1267,41 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     ListResourcesForTagOptionResult listResourcesForTagOption(ListResourcesForTagOptionRequest listResourcesForTagOptionRequest);
+
+    /**
+     * <p>
+     * Lists all self-service actions.
+     * </p>
+     * 
+     * @param listServiceActionsRequest
+     * @return Result of the ListServiceActions operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.ListServiceActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListServiceActionsResult listServiceActions(ListServiceActionsRequest listServiceActionsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of self-service actions associated with the specified Product ID and Provisioning
+     * Artifact ID.
+     * </p>
+     * 
+     * @param listServiceActionsForProvisioningArtifactRequest
+     * @return Result of the ListServiceActionsForProvisioningArtifact operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.ListServiceActionsForProvisioningArtifact
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListServiceActionsForProvisioningArtifact"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListServiceActionsForProvisioningArtifactResult listServiceActionsForProvisioningArtifact(
+            ListServiceActionsForProvisioningArtifactRequest listServiceActionsForProvisioningArtifactRequest);
 
     /**
      * <p>
@@ -1243,6 +1561,23 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateProvisioningArtifactResult updateProvisioningArtifact(UpdateProvisioningArtifactRequest updateProvisioningArtifactRequest);
+
+    /**
+     * <p>
+     * Updates a self-service action.
+     * </p>
+     * 
+     * @param updateServiceActionRequest
+     * @return Result of the UpdateServiceAction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @sample AWSServiceCatalog.UpdateServiceAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateServiceAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateServiceActionResult updateServiceAction(UpdateServiceActionRequest updateServiceActionRequest);
 
     /**
      * <p>

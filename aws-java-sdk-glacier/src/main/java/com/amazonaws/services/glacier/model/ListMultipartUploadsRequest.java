@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class ListMultipartUploadsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List
-     * Uploads operation returns up to 1,000 uploads.
+     * Uploads operation returns up to 50 uploads.
      * </p>
      */
     private String limit;
@@ -192,12 +192,12 @@ public class ListMultipartUploadsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List
-     * Uploads operation returns up to 1,000 uploads.
+     * Uploads operation returns up to 50 uploads.
      * </p>
      * 
      * @param limit
      *        Specifies the maximum number of uploads returned in the response body. If this value is not specified, the
-     *        List Uploads operation returns up to 1,000 uploads.
+     *        List Uploads operation returns up to 50 uploads.
      */
 
     public void setLimit(String limit) {
@@ -207,11 +207,11 @@ public class ListMultipartUploadsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List
-     * Uploads operation returns up to 1,000 uploads.
+     * Uploads operation returns up to 50 uploads.
      * </p>
      * 
      * @return Specifies the maximum number of uploads returned in the response body. If this value is not specified,
-     *         the List Uploads operation returns up to 1,000 uploads.
+     *         the List Uploads operation returns up to 50 uploads.
      */
 
     public String getLimit() {
@@ -221,12 +221,12 @@ public class ListMultipartUploadsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Specifies the maximum number of uploads returned in the response body. If this value is not specified, the List
-     * Uploads operation returns up to 1,000 uploads.
+     * Uploads operation returns up to 50 uploads.
      * </p>
      * 
      * @param limit
      *        Specifies the maximum number of uploads returned in the response body. If this value is not specified, the
-     *        List Uploads operation returns up to 1,000 uploads.
+     *        List Uploads operation returns up to 50 uploads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,7 +288,8 @@ public class ListMultipartUploadsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

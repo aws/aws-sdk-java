@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes VPC configuration information.
+ * Describes VPC configuration information for fleets and image builders.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/VpcConfig" target="_top">AWS API
@@ -30,23 +30,26 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets to which a network interface is established from the fleet instance.
+     * The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder
+     * instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
      * </p>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * The security groups for the fleet.
+     * The identifiers of the security groups for the fleet or image builder.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
 
     /**
      * <p>
-     * The subnets to which a network interface is established from the fleet instance.
+     * The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder
+     * instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
      * </p>
      * 
-     * @return The subnets to which a network interface is established from the fleet instance.
+     * @return The identifiers of the subnets to which a network interface is attached from the fleet instance or image
+     *         builder instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -55,11 +58,13 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets to which a network interface is established from the fleet instance.
+     * The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder
+     * instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
      * </p>
      * 
      * @param subnetIds
-     *        The subnets to which a network interface is established from the fleet instance.
+     *        The identifiers of the subnets to which a network interface is attached from the fleet instance or image
+     *        builder instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -73,7 +78,8 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets to which a network interface is established from the fleet instance.
+     * The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder
+     * instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +88,8 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param subnetIds
-     *        The subnets to which a network interface is established from the fleet instance.
+     *        The identifiers of the subnets to which a network interface is attached from the fleet instance or image
+     *        builder instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +105,13 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets to which a network interface is established from the fleet instance.
+     * The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder
+     * instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
      * </p>
      * 
      * @param subnetIds
-     *        The subnets to which a network interface is established from the fleet instance.
+     *        The identifiers of the subnets to which a network interface is attached from the fleet instance or image
+     *        builder instance. Fleet instances use one or two subnets. Image builder instances use one subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,10 +122,10 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the fleet.
+     * The identifiers of the security groups for the fleet or image builder.
      * </p>
      * 
-     * @return The security groups for the fleet.
+     * @return The identifiers of the security groups for the fleet or image builder.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -125,11 +134,11 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the fleet.
+     * The identifiers of the security groups for the fleet or image builder.
      * </p>
      * 
      * @param securityGroupIds
-     *        The security groups for the fleet.
+     *        The identifiers of the security groups for the fleet or image builder.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -143,7 +152,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the fleet.
+     * The identifiers of the security groups for the fleet or image builder.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -152,7 +161,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param securityGroupIds
-     *        The security groups for the fleet.
+     *        The identifiers of the security groups for the fleet or image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +177,11 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the fleet.
+     * The identifiers of the security groups for the fleet or image builder.
      * </p>
      * 
      * @param securityGroupIds
-     *        The security groups for the fleet.
+     *        The identifiers of the security groups for the fleet or image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,7 +191,8 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

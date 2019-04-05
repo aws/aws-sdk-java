@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,10 @@ public enum DeviceAttribute {
     APPIUM_VERSION("APPIUM_VERSION"),
     INSTANCE_ARN("INSTANCE_ARN"),
     INSTANCE_LABELS("INSTANCE_LABELS"),
-    FLEET_TYPE("FLEET_TYPE");
+    FLEET_TYPE("FLEET_TYPE"),
+    OS_VERSION("OS_VERSION"),
+    MODEL("MODEL"),
+    AVAILABILITY("AVAILABILITY");
 
     private String value;
 

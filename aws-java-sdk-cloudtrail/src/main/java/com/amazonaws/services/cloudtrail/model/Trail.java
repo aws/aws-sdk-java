@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,7 +64,7 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * delivered. The format of a topic ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      * </p>
      */
     private String snsTopicARN;
@@ -91,7 +91,7 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * Specifies the ARN of the trail. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String trailARN;
@@ -120,7 +120,7 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * KMS key in the format:
      * </p>
      * <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     private String kmsKeyId;
@@ -130,6 +130,12 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean hasCustomEventSelectors;
+    /**
+     * <p>
+     * Specifies whether the trail is an organization trail.
+     * </p>
+     */
+    private Boolean isOrganizationTrail;
 
     /**
      * <p>
@@ -327,14 +333,14 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * delivered. The format of a topic ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      * </p>
      * 
      * @param snsTopicARN
      *        Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are
      *        delivered. The format of a topic ARN is:</p>
      *        <p>
-     *        <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     *        <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      */
 
     public void setSnsTopicARN(String snsTopicARN) {
@@ -347,13 +353,13 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * delivered. The format of a topic ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      * </p>
      * 
      * @return Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are
      *         delivered. The format of a topic ARN is:</p>
      *         <p>
-     *         <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     *         <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      */
 
     public String getSnsTopicARN() {
@@ -366,14 +372,14 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * delivered. The format of a topic ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      * </p>
      * 
      * @param snsTopicARN
      *        Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are
      *        delivered. The format of a topic ARN is:</p>
      *        <p>
-     *        <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     *        <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -533,13 +539,13 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * Specifies the ARN of the trail. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param trailARN
      *        Specifies the ARN of the trail. The format of a trail ARN is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public void setTrailARN(String trailARN) {
@@ -551,12 +557,12 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * Specifies the ARN of the trail. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies the ARN of the trail. The format of a trail ARN is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public String getTrailARN() {
@@ -568,13 +574,13 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * Specifies the ARN of the trail. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param trailARN
      *        Specifies the ARN of the trail. The format of a trail ARN is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -727,14 +733,14 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * KMS key in the format:
      * </p>
      * <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
      * @param kmsKeyId
      *        Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified
      *        ARN to a KMS key in the format:</p>
      *        <p>
-     *        <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -747,13 +753,13 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * KMS key in the format:
      * </p>
      * <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
      * @return Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified
      *         ARN to a KMS key in the format:</p>
      *         <p>
-     *         <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *         <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      */
 
     public String getKmsKeyId() {
@@ -766,14 +772,14 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
      * KMS key in the format:
      * </p>
      * <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
      * @param kmsKeyId
      *        Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified
      *        ARN to a KMS key in the format:</p>
      *        <p>
-     *        <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -835,7 +841,60 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Specifies whether the trail is an organization trail.
+     * </p>
+     * 
+     * @param isOrganizationTrail
+     *        Specifies whether the trail is an organization trail.
+     */
+
+    public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
+        this.isOrganizationTrail = isOrganizationTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is an organization trail.
+     * </p>
+     * 
+     * @return Specifies whether the trail is an organization trail.
+     */
+
+    public Boolean getIsOrganizationTrail() {
+        return this.isOrganizationTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is an organization trail.
+     * </p>
+     * 
+     * @param isOrganizationTrail
+     *        Specifies whether the trail is an organization trail.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Trail withIsOrganizationTrail(Boolean isOrganizationTrail) {
+        setIsOrganizationTrail(isOrganizationTrail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is an organization trail.
+     * </p>
+     * 
+     * @return Specifies whether the trail is an organization trail.
+     */
+
+    public Boolean isOrganizationTrail() {
+        return this.isOrganizationTrail;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -872,7 +931,9 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getHasCustomEventSelectors() != null)
-            sb.append("HasCustomEventSelectors: ").append(getHasCustomEventSelectors());
+            sb.append("HasCustomEventSelectors: ").append(getHasCustomEventSelectors()).append(",");
+        if (getIsOrganizationTrail() != null)
+            sb.append("IsOrganizationTrail: ").append(getIsOrganizationTrail());
         sb.append("}");
         return sb.toString();
     }
@@ -943,6 +1004,10 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHasCustomEventSelectors() != null && other.getHasCustomEventSelectors().equals(this.getHasCustomEventSelectors()) == false)
             return false;
+        if (other.getIsOrganizationTrail() == null ^ this.getIsOrganizationTrail() == null)
+            return false;
+        if (other.getIsOrganizationTrail() != null && other.getIsOrganizationTrail().equals(this.getIsOrganizationTrail()) == false)
+            return false;
         return true;
     }
 
@@ -965,6 +1030,7 @@ public class Trail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getHasCustomEventSelectors() == null) ? 0 : getHasCustomEventSelectors().hashCode());
+        hashCode = prime * hashCode + ((getIsOrganizationTrail() == null) ? 0 : getIsOrganizationTrail().hashCode());
         return hashCode;
     }
 

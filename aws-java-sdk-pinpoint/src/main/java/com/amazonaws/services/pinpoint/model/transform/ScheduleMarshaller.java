@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class ScheduleMarshaller {
 
     private static final MarshallingInfo<String> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("EndTime").build();
+    private static final MarshallingInfo<StructuredPojo> EVENTFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventFilter").build();
     private static final MarshallingInfo<String> FREQUENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Frequency").build();
     private static final MarshallingInfo<Boolean> ISLOCALTIME_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -57,6 +59,7 @@ public class ScheduleMarshaller {
 
         try {
             protocolMarshaller.marshall(schedule.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(schedule.getEventFilter(), EVENTFILTER_BINDING);
             protocolMarshaller.marshall(schedule.getFrequency(), FREQUENCY_BINDING);
             protocolMarshaller.marshall(schedule.getIsLocalTime(), ISLOCALTIME_BINDING);
             protocolMarshaller.marshall(schedule.getQuietTime(), QUIETTIME_BINDING);

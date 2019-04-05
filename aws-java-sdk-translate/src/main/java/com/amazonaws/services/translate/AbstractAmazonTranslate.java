@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,26 @@ import com.amazonaws.*;
 public class AbstractAmazonTranslate implements AmazonTranslate {
 
     protected AbstractAmazonTranslate() {
+    }
+
+    @Override
+    public DeleteTerminologyResult deleteTerminology(DeleteTerminologyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTerminologyResult getTerminology(GetTerminologyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportTerminologyResult importTerminology(ImportTerminologyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTerminologiesResult listTerminologies(ListTerminologiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

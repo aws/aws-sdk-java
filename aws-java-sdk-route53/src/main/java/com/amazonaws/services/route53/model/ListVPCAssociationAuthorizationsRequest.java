@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If
-     * you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.
+     * you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.
      * </p>
      */
     private String maxResults;
@@ -152,13 +152,12 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If
-     * you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.
+     * you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.
      * </p>
      * 
      * @param maxResults
      *        <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to
-     *        return. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs
-     *        per page.
+     *        return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.
      */
 
     public void setMaxResults(String maxResults) {
@@ -168,12 +167,12 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If
-     * you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.
+     * you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.
      * </p>
      * 
      * @return <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to
-     *         return. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs
-     *         per page.
+     *         return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per
+     *         page.
      */
 
     public String getMaxResults() {
@@ -183,13 +182,12 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If
-     * you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.
+     * you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.
      * </p>
      * 
      * @param maxResults
      *        <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to
-     *        return. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs
-     *        per page.
+     *        return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,7 +197,8 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

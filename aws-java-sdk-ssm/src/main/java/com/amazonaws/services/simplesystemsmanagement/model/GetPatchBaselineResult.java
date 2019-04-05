@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,13 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> rejectedPatches;
+    /**
+     * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     */
+    private String rejectedPatchesAction;
     /**
      * <p>
      * Patch groups included in the patch baseline.
@@ -624,6 +631,94 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     * 
+     * @param rejectedPatchesAction
+     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
+     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     *        dependency.
+     * @see PatchAction
+     */
+
+    public void setRejectedPatchesAction(String rejectedPatchesAction) {
+        this.rejectedPatchesAction = rejectedPatchesAction;
+    }
+
+    /**
+     * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     * 
+     * @return The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
+     *         if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     *         dependency.
+     * @see PatchAction
+     */
+
+    public String getRejectedPatchesAction() {
+        return this.rejectedPatchesAction;
+    }
+
+    /**
+     * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     * 
+     * @param rejectedPatchesAction
+     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
+     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     *        dependency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchAction
+     */
+
+    public GetPatchBaselineResult withRejectedPatchesAction(String rejectedPatchesAction) {
+        setRejectedPatchesAction(rejectedPatchesAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     * 
+     * @param rejectedPatchesAction
+     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
+     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     *        dependency.
+     * @see PatchAction
+     */
+
+    public void setRejectedPatchesAction(PatchAction rejectedPatchesAction) {
+        withRejectedPatchesAction(rejectedPatchesAction);
+    }
+
+    /**
+     * <p>
+     * The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it
+     * is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+     * </p>
+     * 
+     * @param rejectedPatchesAction
+     *        The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only
+     *        if it is a dependency of another package, or blocked entirely along with packages that include it as a
+     *        dependency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchAction
+     */
+
+    public GetPatchBaselineResult withRejectedPatchesAction(PatchAction rejectedPatchesAction) {
+        this.rejectedPatchesAction = rejectedPatchesAction.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Patch groups included in the patch baseline.
      * </p>
      * 
@@ -897,7 +992,8 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -925,6 +1021,8 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("ApprovedPatchesEnableNonSecurity: ").append(getApprovedPatchesEnableNonSecurity()).append(",");
         if (getRejectedPatches() != null)
             sb.append("RejectedPatches: ").append(getRejectedPatches()).append(",");
+        if (getRejectedPatchesAction() != null)
+            sb.append("RejectedPatchesAction: ").append(getRejectedPatchesAction()).append(",");
         if (getPatchGroups() != null)
             sb.append("PatchGroups: ").append(getPatchGroups()).append(",");
         if (getCreatedDate() != null)
@@ -987,6 +1085,10 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getRejectedPatches() != null && other.getRejectedPatches().equals(this.getRejectedPatches()) == false)
             return false;
+        if (other.getRejectedPatchesAction() == null ^ this.getRejectedPatchesAction() == null)
+            return false;
+        if (other.getRejectedPatchesAction() != null && other.getRejectedPatchesAction().equals(this.getRejectedPatchesAction()) == false)
+            return false;
         if (other.getPatchGroups() == null ^ this.getPatchGroups() == null)
             return false;
         if (other.getPatchGroups() != null && other.getPatchGroups().equals(this.getPatchGroups()) == false)
@@ -1024,6 +1126,7 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getApprovedPatchesComplianceLevel() == null) ? 0 : getApprovedPatchesComplianceLevel().hashCode());
         hashCode = prime * hashCode + ((getApprovedPatchesEnableNonSecurity() == null) ? 0 : getApprovedPatchesEnableNonSecurity().hashCode());
         hashCode = prime * hashCode + ((getRejectedPatches() == null) ? 0 : getRejectedPatches().hashCode());
+        hashCode = prime * hashCode + ((getRejectedPatchesAction() == null) ? 0 : getRejectedPatchesAction().hashCode());
         hashCode = prime * hashCode + ((getPatchGroups() == null) ? 0 : getPatchGroups().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getModifiedDate() == null) ? 0 : getModifiedDate().hashCode());

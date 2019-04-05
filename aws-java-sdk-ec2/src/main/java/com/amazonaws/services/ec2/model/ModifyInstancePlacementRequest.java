@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.ModifyInstancePlacementRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for ModifyInstancePlacement.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -37,8 +35,8 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The name of the placement group in which to place the instance. For spread placement groups, the instance must
-     * have a tenancy of <code>default</code>. For cluster placement groups, the instance must have a tenancy of
-     * <code>default</code> or <code>dedicated</code>.
+     * have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a
+     * tenancy of <code>default</code> or <code>dedicated</code>.
      * </p>
      * <p>
      * To remove an instance from a placement group, specify an empty string ("").
@@ -63,6 +61,12 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private String tenancy;
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private Integer partitionNumber;
 
     /**
      * <p>
@@ -140,8 +144,8 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The name of the placement group in which to place the instance. For spread placement groups, the instance must
-     * have a tenancy of <code>default</code>. For cluster placement groups, the instance must have a tenancy of
-     * <code>default</code> or <code>dedicated</code>.
+     * have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a
+     * tenancy of <code>default</code> or <code>dedicated</code>.
      * </p>
      * <p>
      * To remove an instance from a placement group, specify an empty string ("").
@@ -149,8 +153,8 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * 
      * @param groupName
      *        The name of the placement group in which to place the instance. For spread placement groups, the instance
-     *        must have a tenancy of <code>default</code>. For cluster placement groups, the instance must have a
-     *        tenancy of <code>default</code> or <code>dedicated</code>.</p>
+     *        must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must
+     *        have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
      *        <p>
      *        To remove an instance from a placement group, specify an empty string ("").
      */
@@ -162,16 +166,16 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The name of the placement group in which to place the instance. For spread placement groups, the instance must
-     * have a tenancy of <code>default</code>. For cluster placement groups, the instance must have a tenancy of
-     * <code>default</code> or <code>dedicated</code>.
+     * have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a
+     * tenancy of <code>default</code> or <code>dedicated</code>.
      * </p>
      * <p>
      * To remove an instance from a placement group, specify an empty string ("").
      * </p>
      * 
      * @return The name of the placement group in which to place the instance. For spread placement groups, the instance
-     *         must have a tenancy of <code>default</code>. For cluster placement groups, the instance must have a
-     *         tenancy of <code>default</code> or <code>dedicated</code>.</p>
+     *         must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance
+     *         must have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
      *         <p>
      *         To remove an instance from a placement group, specify an empty string ("").
      */
@@ -183,8 +187,8 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * The name of the placement group in which to place the instance. For spread placement groups, the instance must
-     * have a tenancy of <code>default</code>. For cluster placement groups, the instance must have a tenancy of
-     * <code>default</code> or <code>dedicated</code>.
+     * have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must have a
+     * tenancy of <code>default</code> or <code>dedicated</code>.
      * </p>
      * <p>
      * To remove an instance from a placement group, specify an empty string ("").
@@ -192,8 +196,8 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * 
      * @param groupName
      *        The name of the placement group in which to place the instance. For spread placement groups, the instance
-     *        must have a tenancy of <code>default</code>. For cluster placement groups, the instance must have a
-     *        tenancy of <code>default</code> or <code>dedicated</code>.</p>
+     *        must have a tenancy of <code>default</code>. For cluster and partition placement groups, the instance must
+     *        have a tenancy of <code>default</code> or <code>dedicated</code>.</p>
      *        <p>
      *        To remove an instance from a placement group, specify an empty string ("").
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -358,6 +362,46 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param partitionNumber
+     *        Reserved for future use.
+     */
+
+    public void setPartitionNumber(Integer partitionNumber) {
+        this.partitionNumber = partitionNumber;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return Reserved for future use.
+     */
+
+    public Integer getPartitionNumber() {
+        return this.partitionNumber;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param partitionNumber
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyInstancePlacementRequest withPartitionNumber(Integer partitionNumber) {
+        setPartitionNumber(partitionNumber);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -369,7 +413,8 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -388,7 +433,9 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getTenancy() != null)
-            sb.append("Tenancy: ").append(getTenancy());
+            sb.append("Tenancy: ").append(getTenancy()).append(",");
+        if (getPartitionNumber() != null)
+            sb.append("PartitionNumber: ").append(getPartitionNumber());
         sb.append("}");
         return sb.toString();
     }
@@ -423,6 +470,10 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getTenancy() != null && other.getTenancy().equals(this.getTenancy()) == false)
             return false;
+        if (other.getPartitionNumber() == null ^ this.getPartitionNumber() == null)
+            return false;
+        if (other.getPartitionNumber() != null && other.getPartitionNumber().equals(this.getPartitionNumber()) == false)
+            return false;
         return true;
     }
 
@@ -436,6 +487,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
+        hashCode = prime * hashCode + ((getPartitionNumber() == null) ? 0 : getPartitionNumber().hashCode());
         return hashCode;
     }
 

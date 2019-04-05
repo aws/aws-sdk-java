@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,9 +26,13 @@ public enum TestType {
     APPIUM_JAVA_JUNIT("APPIUM_JAVA_JUNIT"),
     APPIUM_JAVA_TESTNG("APPIUM_JAVA_TESTNG"),
     APPIUM_PYTHON("APPIUM_PYTHON"),
+    APPIUM_NODE("APPIUM_NODE"),
+    APPIUM_RUBY("APPIUM_RUBY"),
     APPIUM_WEB_JAVA_JUNIT("APPIUM_WEB_JAVA_JUNIT"),
     APPIUM_WEB_JAVA_TESTNG("APPIUM_WEB_JAVA_TESTNG"),
     APPIUM_WEB_PYTHON("APPIUM_WEB_PYTHON"),
+    APPIUM_WEB_NODE("APPIUM_WEB_NODE"),
+    APPIUM_WEB_RUBY("APPIUM_WEB_RUBY"),
     CALABASH("CALABASH"),
     INSTRUMENTATION("INSTRUMENTATION"),
     UIAUTOMATION("UIAUTOMATION"),

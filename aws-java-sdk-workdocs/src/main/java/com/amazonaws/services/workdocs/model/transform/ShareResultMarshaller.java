@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class ShareResultMarshaller {
 
     private static final MarshallingInfo<String> PRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalId").build();
+    private static final MarshallingInfo<String> INVITEEPRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InviteePrincipalId").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Role").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class ShareResultMarshaller {
 
         try {
             protocolMarshaller.marshall(shareResult.getPrincipalId(), PRINCIPALID_BINDING);
+            protocolMarshaller.marshall(shareResult.getInviteePrincipalId(), INVITEEPRINCIPALID_BINDING);
             protocolMarshaller.marshall(shareResult.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(shareResult.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(shareResult.getShareId(), SHAREID_BINDING);

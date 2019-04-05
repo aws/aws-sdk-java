@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The message configuration.
+ * Message definitions for the default message and any messages that are tailored for specific channels.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DirectMessageConfiguration"
  *      target="_top">AWS API Documentation</a>
@@ -36,10 +36,14 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
     private DefaultMessage defaultMessage;
     /** The default push notification message for all push channels. */
     private DefaultPushNotificationMessage defaultPushNotificationMessage;
+    /** The message to Email channels. Overrides the default message. */
+    private EmailMessage emailMessage;
     /** The message to GCM channels. Overrides the default push notification message. */
     private GCMMessage gCMMessage;
     /** The message to SMS channels. Overrides the default message. */
     private SMSMessage sMSMessage;
+    /** The message to Voice channels. Overrides the default message. */
+    private VoiceMessage voiceMessage;
 
     /**
      * The message to ADM channels. Overrides the default push notification message.
@@ -212,6 +216,40 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
+     * The message to Email channels. Overrides the default message.
+     * 
+     * @param emailMessage
+     *        The message to Email channels. Overrides the default message.
+     */
+
+    public void setEmailMessage(EmailMessage emailMessage) {
+        this.emailMessage = emailMessage;
+    }
+
+    /**
+     * The message to Email channels. Overrides the default message.
+     * 
+     * @return The message to Email channels. Overrides the default message.
+     */
+
+    public EmailMessage getEmailMessage() {
+        return this.emailMessage;
+    }
+
+    /**
+     * The message to Email channels. Overrides the default message.
+     * 
+     * @param emailMessage
+     *        The message to Email channels. Overrides the default message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DirectMessageConfiguration withEmailMessage(EmailMessage emailMessage) {
+        setEmailMessage(emailMessage);
+        return this;
+    }
+
+    /**
      * The message to GCM channels. Overrides the default push notification message.
      * 
      * @param gCMMessage
@@ -280,7 +318,42 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * The message to Voice channels. Overrides the default message.
+     * 
+     * @param voiceMessage
+     *        The message to Voice channels. Overrides the default message.
+     */
+
+    public void setVoiceMessage(VoiceMessage voiceMessage) {
+        this.voiceMessage = voiceMessage;
+    }
+
+    /**
+     * The message to Voice channels. Overrides the default message.
+     * 
+     * @return The message to Voice channels. Overrides the default message.
+     */
+
+    public VoiceMessage getVoiceMessage() {
+        return this.voiceMessage;
+    }
+
+    /**
+     * The message to Voice channels. Overrides the default message.
+     * 
+     * @param voiceMessage
+     *        The message to Voice channels. Overrides the default message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DirectMessageConfiguration withVoiceMessage(VoiceMessage voiceMessage) {
+        setVoiceMessage(voiceMessage);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -300,10 +373,14 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
             sb.append("DefaultMessage: ").append(getDefaultMessage()).append(",");
         if (getDefaultPushNotificationMessage() != null)
             sb.append("DefaultPushNotificationMessage: ").append(getDefaultPushNotificationMessage()).append(",");
+        if (getEmailMessage() != null)
+            sb.append("EmailMessage: ").append(getEmailMessage()).append(",");
         if (getGCMMessage() != null)
             sb.append("GCMMessage: ").append(getGCMMessage()).append(",");
         if (getSMSMessage() != null)
-            sb.append("SMSMessage: ").append(getSMSMessage());
+            sb.append("SMSMessage: ").append(getSMSMessage()).append(",");
+        if (getVoiceMessage() != null)
+            sb.append("VoiceMessage: ").append(getVoiceMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -339,6 +416,10 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
         if (other.getDefaultPushNotificationMessage() != null
                 && other.getDefaultPushNotificationMessage().equals(this.getDefaultPushNotificationMessage()) == false)
             return false;
+        if (other.getEmailMessage() == null ^ this.getEmailMessage() == null)
+            return false;
+        if (other.getEmailMessage() != null && other.getEmailMessage().equals(this.getEmailMessage()) == false)
+            return false;
         if (other.getGCMMessage() == null ^ this.getGCMMessage() == null)
             return false;
         if (other.getGCMMessage() != null && other.getGCMMessage().equals(this.getGCMMessage()) == false)
@@ -346,6 +427,10 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
         if (other.getSMSMessage() == null ^ this.getSMSMessage() == null)
             return false;
         if (other.getSMSMessage() != null && other.getSMSMessage().equals(this.getSMSMessage()) == false)
+            return false;
+        if (other.getVoiceMessage() == null ^ this.getVoiceMessage() == null)
+            return false;
+        if (other.getVoiceMessage() != null && other.getVoiceMessage().equals(this.getVoiceMessage()) == false)
             return false;
         return true;
     }
@@ -360,8 +445,10 @@ public class DirectMessageConfiguration implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getBaiduMessage() == null) ? 0 : getBaiduMessage().hashCode());
         hashCode = prime * hashCode + ((getDefaultMessage() == null) ? 0 : getDefaultMessage().hashCode());
         hashCode = prime * hashCode + ((getDefaultPushNotificationMessage() == null) ? 0 : getDefaultPushNotificationMessage().hashCode());
+        hashCode = prime * hashCode + ((getEmailMessage() == null) ? 0 : getEmailMessage().hashCode());
         hashCode = prime * hashCode + ((getGCMMessage() == null) ? 0 : getGCMMessage().hashCode());
         hashCode = prime * hashCode + ((getSMSMessage() == null) ? 0 : getSMSMessage().hashCode());
+        hashCode = prime * hashCode + ((getVoiceMessage() == null) ? 0 : getVoiceMessage().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The parent commit ID is not valid. The specified parent commit ID does not exist in the specified branch of the
- * repository.
+ * The parent commit ID is not valid because it does not exist. The specified parent commit ID does not exist in the
+ * specified branch of the repository.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

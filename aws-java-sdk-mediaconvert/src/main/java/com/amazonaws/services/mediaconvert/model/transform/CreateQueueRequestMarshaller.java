@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.mediaconvert.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -31,6 +33,12 @@ public class CreateQueueRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> PRICINGPLAN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pricingPlan").build();
+    private static final MarshallingInfo<StructuredPojo> RESERVATIONPLANSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reservationPlanSettings").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateQueueRequestMarshaller instance = new CreateQueueRequestMarshaller();
 
@@ -50,6 +58,9 @@ public class CreateQueueRequestMarshaller {
         try {
             protocolMarshaller.marshall(createQueueRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createQueueRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createQueueRequest.getPricingPlan(), PRICINGPLAN_BINDING);
+            protocolMarshaller.marshall(createQueueRequest.getReservationPlanSettings(), RESERVATIONPLANSETTINGS_BINDING);
+            protocolMarshaller.marshall(createQueueRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

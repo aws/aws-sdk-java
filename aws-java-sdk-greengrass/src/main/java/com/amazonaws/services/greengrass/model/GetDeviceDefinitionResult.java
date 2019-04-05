@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class GetDeviceDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     private String latestVersionArn;
     /** The name of the definition. */
     private String name;
+    /** The tags for the definition. */
+    private java.util.Map<String, String> tags;
 
     /**
      * The ARN of the definition.
@@ -277,7 +279,63 @@ public class GetDeviceDefinitionResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * The tags for the definition.
+     * 
+     * @return The tags for the definition.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * The tags for the definition.
+     * 
+     * @param tags
+     *        The tags for the definition.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * The tags for the definition.
+     * 
+     * @param tags
+     *        The tags for the definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeviceDefinitionResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public GetDeviceDefinitionResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeviceDefinitionResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -300,7 +358,9 @@ public class GetDeviceDefinitionResult extends com.amazonaws.AmazonWebServiceRes
         if (getLatestVersionArn() != null)
             sb.append("LatestVersionArn: ").append(getLatestVersionArn()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -343,6 +403,10 @@ public class GetDeviceDefinitionResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -358,6 +422,7 @@ public class GetDeviceDefinitionResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getLatestVersion() == null) ? 0 : getLatestVersion().hashCode());
         hashCode = prime * hashCode + ((getLatestVersionArn() == null) ? 0 : getLatestVersionArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

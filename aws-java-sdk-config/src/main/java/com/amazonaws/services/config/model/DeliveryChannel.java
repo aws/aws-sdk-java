@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
      * S3 Bucket</a> in the AWS Config Developer Guide.
      * </p>
      */
@@ -64,7 +64,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * If you choose a topic from another account, the topic must have policies that grant access permissions to AWS
      * Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
      * SNS Topic</a> in the AWS Config Developer Guide.
      * </p>
      */
@@ -142,7 +142,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
      * S3 Bucket</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -152,7 +152,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant
      *        access permissions to AWS Config. For more information, see <a
-     *        href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
      *        Amazon S3 Bucket</a> in the AWS Config Developer Guide.
      */
 
@@ -168,7 +168,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
      * S3 Bucket</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -177,7 +177,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant
      *         access permissions to AWS Config. For more information, see <a
-     *         href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
+     *         href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
      *         Amazon S3 Bucket</a> in the AWS Config Developer Guide.
      */
 
@@ -193,7 +193,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the Amazon
      * S3 Bucket</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -203,7 +203,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        If you specify a bucket that belongs to another AWS account, that bucket must have policies that grant
      *        access permissions to AWS Config. For more information, see <a
-     *        href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions for the
      *        Amazon S3 Bucket</a> in the AWS Config Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -261,7 +261,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * If you choose a topic from another account, the topic must have policies that grant access permissions to AWS
      * Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
      * SNS Topic</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -271,7 +271,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        If you choose a topic from another account, the topic must have policies that grant access permissions to
      *        AWS Config. For more information, see <a
-     *        href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
      *        Amazon SNS Topic</a> in the AWS Config Developer Guide.
      */
 
@@ -287,7 +287,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * If you choose a topic from another account, the topic must have policies that grant access permissions to AWS
      * Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
      * SNS Topic</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -296,7 +296,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         If you choose a topic from another account, the topic must have policies that grant access permissions to
      *         AWS Config. For more information, see <a
-     *         href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
+     *         href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
      *         Amazon SNS Topic</a> in the AWS Config Developer Guide.
      */
 
@@ -312,7 +312,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * If you choose a topic from another account, the topic must have policies that grant access permissions to AWS
      * Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the Amazon
      * SNS Topic</a> in the AWS Config Developer Guide.
      * </p>
      * 
@@ -322,7 +322,7 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        If you choose a topic from another account, the topic must have policies that grant access permissions to
      *        AWS Config. For more information, see <a
-     *        href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions for the
      *        Amazon SNS Topic</a> in the AWS Config Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -373,7 +373,8 @@ public class DeliveryChannel implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

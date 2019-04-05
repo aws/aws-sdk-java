@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The state of the data set and the reason it is in this state.
+ * The state of the data set contents and the reason they are in this state.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentStatus" target="_top">AWS
@@ -30,24 +30,24 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the data set. Can be one of "CREATING", "SUCCEEDED" or "FAILED".
+     * The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The reason the data set is in this state.
+     * The reason the data set contents are in this state.
      * </p>
      */
     private String reason;
 
     /**
      * <p>
-     * The state of the data set. Can be one of "CREATING", "SUCCEEDED" or "FAILED".
+     * The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
      * </p>
      * 
      * @param state
-     *        The state of the data set. Can be one of "CREATING", "SUCCEEDED" or "FAILED".
+     *        The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
      * @see DatasetContentState
      */
 
@@ -57,10 +57,10 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the data set. Can be one of "CREATING", "SUCCEEDED" or "FAILED".
+     * The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
      * </p>
      * 
-     * @return The state of the data set. Can be one of "CREATING", "SUCCEEDED" or "FAILED".
+     * @return The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
      * @see DatasetContentState
      */
 
@@ -70,11 +70,11 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the data set. Can be one of "CREATING", "SUCCEEDED" or "FAILED".
+     * The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
      * </p>
      * 
      * @param state
-     *        The state of the data set. Can be one of "CREATING", "SUCCEEDED" or "FAILED".
+     *        The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatasetContentState
      */
@@ -86,11 +86,11 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The state of the data set. Can be one of "CREATING", "SUCCEEDED" or "FAILED".
+     * The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
      * </p>
      * 
      * @param state
-     *        The state of the data set. Can be one of "CREATING", "SUCCEEDED" or "FAILED".
+     *        The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED" or "FAILED".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatasetContentState
      */
@@ -102,11 +102,11 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The reason the data set is in this state.
+     * The reason the data set contents are in this state.
      * </p>
      * 
      * @param reason
-     *        The reason the data set is in this state.
+     *        The reason the data set contents are in this state.
      */
 
     public void setReason(String reason) {
@@ -115,10 +115,10 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The reason the data set is in this state.
+     * The reason the data set contents are in this state.
      * </p>
      * 
-     * @return The reason the data set is in this state.
+     * @return The reason the data set contents are in this state.
      */
 
     public String getReason() {
@@ -127,11 +127,11 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The reason the data set is in this state.
+     * The reason the data set contents are in this state.
      * </p>
      * 
      * @param reason
-     *        The reason the data set is in this state.
+     *        The reason the data set contents are in this state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,7 +141,8 @@ public class DatasetContentStatus implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

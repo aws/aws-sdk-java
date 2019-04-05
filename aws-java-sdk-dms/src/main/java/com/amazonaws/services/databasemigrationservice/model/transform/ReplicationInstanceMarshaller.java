@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class ReplicationInstanceMarshaller {
     private static final MarshallingInfo<Integer> ALLOCATEDSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllocatedStorage").build();
     private static final MarshallingInfo<java.util.Date> INSTANCECREATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceCreateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceCreateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> VPCSECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcSecurityGroups").build();
     private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -71,7 +71,9 @@ public class ReplicationInstanceMarshaller {
     private static final MarshallingInfo<String> SECONDARYAVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecondaryAvailabilityZone").build();
     private static final MarshallingInfo<java.util.Date> FREEUNTIL_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FreeUntil").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FreeUntil").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> DNSNAMESERVERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsNameServers").build();
 
     private static final ReplicationInstanceMarshaller instance = new ReplicationInstanceMarshaller();
 
@@ -111,6 +113,7 @@ public class ReplicationInstanceMarshaller {
             protocolMarshaller.marshall(replicationInstance.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
             protocolMarshaller.marshall(replicationInstance.getSecondaryAvailabilityZone(), SECONDARYAVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(replicationInstance.getFreeUntil(), FREEUNTIL_BINDING);
+            protocolMarshaller.marshall(replicationInstance.getDnsNameServers(), DNSNAMESERVERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

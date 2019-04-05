@@ -14,6 +14,23 @@
     "uid":"cloudhsmv2-2017-04-28"
   },
   "operations":{
+    "CopyBackupToRegion":{
+      "name":"CopyBackupToRegion",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CopyBackupToRegionRequest"},
+      "output":{"shape":"CopyBackupToRegionResponse"},
+      "errors":[
+        {"shape":"CloudHsmInternalFailureException"},
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmInvalidRequestException"},
+        {"shape":"CloudHsmAccessDeniedException"}
+      ],
+      "documentation":"<p>Copy an AWS CloudHSM cluster backup to a different region.</p>"
+    },
     "CreateCluster":{
       "name":"CreateCluster",
       "http":{
@@ -47,6 +64,23 @@
         {"shape":"CloudHsmAccessDeniedException"}
       ],
       "documentation":"<p>Creates a new hardware security module (HSM) in the specified AWS CloudHSM cluster.</p>"
+    },
+    "DeleteBackup":{
+      "name":"DeleteBackup",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteBackupRequest"},
+      "output":{"shape":"DeleteBackupResponse"},
+      "errors":[
+        {"shape":"CloudHsmInternalFailureException"},
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmInvalidRequestException"},
+        {"shape":"CloudHsmAccessDeniedException"}
+      ],
+      "documentation":"<p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request. For more information on restoring a backup, see <a>RestoreBackup</a> </p>"
     },
     "DeleteCluster":{
       "name":"DeleteCluster",
@@ -149,6 +183,23 @@
       ],
       "documentation":"<p>Gets a list of tags for the specified AWS CloudHSM cluster.</p> <p>This is a paginated operation, which means that each response might contain only a subset of all the tags. When the response contains only a subset of tags, it includes a <code>NextToken</code> value. Use this value in a subsequent <code>ListTags</code> request to get more tags. When you receive a response with no <code>NextToken</code> (or an empty or null value), that means there are no more tags to get.</p>"
     },
+    "RestoreBackup":{
+      "name":"RestoreBackup",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RestoreBackupRequest"},
+      "output":{"shape":"RestoreBackupResponse"},
+      "errors":[
+        {"shape":"CloudHsmInternalFailureException"},
+        {"shape":"CloudHsmServiceException"},
+        {"shape":"CloudHsmResourceNotFoundException"},
+        {"shape":"CloudHsmInvalidRequestException"},
+        {"shape":"CloudHsmAccessDeniedException"}
+      ],
+      "documentation":"<p>Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For more information on deleting a backup, see <a>DeleteBackup</a>.</p>"
+    },
     "TagResource":{
       "name":"TagResource",
       "http":{
@@ -204,6 +255,14 @@
         "CreateTimestamp":{
           "shape":"Timestamp",
           "documentation":"<p>The date and time when the backup was created.</p>"
+        },
+        "CopyTimestamp":{"shape":"Timestamp"},
+        "SourceRegion":{"shape":"Region"},
+        "SourceBackup":{"shape":"BackupId"},
+        "SourceCluster":{"shape":"ClusterId"},
+        "DeleteTimestamp":{
+          "shape":"Timestamp",
+          "documentation":"<p>The date and time when the backup will be permanently deleted.</p>"
         }
       },
       "documentation":"<p>Contains information about a backup of an AWS CloudHSM cluster.</p>"
@@ -221,13 +280,15 @@
       "enum":[
         "CREATE_IN_PROGRESS",
         "READY",
-        "DELETED"
+        "DELETED",
+        "PENDING_DELETION"
       ]
     },
     "Backups":{
       "type":"list",
       "member":{"shape":"Backup"}
     },
+    "Boolean":{"type":"boolean"},
     "Cert":{
       "type":"string",
       "max":5000,
@@ -380,6 +441,32 @@
       "type":"list",
       "member":{"shape":"Cluster"}
     },
+    "CopyBackupToRegionRequest":{
+      "type":"structure",
+      "required":[
+        "DestinationRegion",
+        "BackupId"
+      ],
+      "members":{
+        "DestinationRegion":{
+          "shape":"Region",
+          "documentation":"<p>The AWS region that will contain your copied CloudHSM cluster backup.</p>"
+        },
+        "BackupId":{
+          "shape":"BackupId",
+          "documentation":"<p>The ID of the backup that will be copied to the destination region. </p>"
+        }
+      }
+    },
+    "CopyBackupToRegionResponse":{
+      "type":"structure",
+      "members":{
+        "DestinationBackup":{
+          "shape":"DestinationBackup",
+          "documentation":"<p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <a>DescribeBackups</a> operation on the backup that will be copied to the destination region.</p>"
+        }
+      }
+    },
     "CreateClusterRequest":{
       "type":"structure",
       "required":[
@@ -437,6 +524,25 @@
         "Hsm":{
           "shape":"Hsm",
           "documentation":"<p>Information about the HSM that was created.</p>"
+        }
+      }
+    },
+    "DeleteBackupRequest":{
+      "type":"structure",
+      "required":["BackupId"],
+      "members":{
+        "BackupId":{
+          "shape":"BackupId",
+          "documentation":"<p>The ID of the backup to be deleted. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>"
+        }
+      }
+    },
+    "DeleteBackupResponse":{
+      "type":"structure",
+      "members":{
+        "Backup":{
+          "shape":"Backup",
+          "documentation":"<p>Information on the <code>Backup</code> object deleted.</p>"
         }
       }
     },
@@ -503,8 +609,9 @@
         },
         "Filters":{
           "shape":"Filters",
-          "documentation":"<p>One or more filters to limit the items returned in the response.</p> <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p> <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>"
-        }
+          "documentation":"<p>One or more filters to limit the items returned in the response.</p> <p>Use the <code>backupIds</code> filter to return only the specified backups. Specify backups by their backup identifier (ID).</p> <p>Use the <code>sourceBackupIds</code> filter to return only the backups created from a source backup. The <code>sourceBackupID</code> of a source backup is returned by the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code> filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to return only backups that match the specified state.</p>"
+        },
+        "SortAscending":{"shape":"Boolean"}
       }
     },
     "DescribeBackupsResponse":{
@@ -550,13 +657,22 @@
         }
       }
     },
+    "DestinationBackup":{
+      "type":"structure",
+      "members":{
+        "CreateTimestamp":{"shape":"Timestamp"},
+        "SourceRegion":{"shape":"Region"},
+        "SourceBackup":{"shape":"BackupId"},
+        "SourceCluster":{"shape":"ClusterId"}
+      }
+    },
     "EniId":{
       "type":"string",
       "pattern":"eni-[0-9a-fA-F]{8,17}"
     },
     "ExternalAz":{
       "type":"string",
-      "pattern":"[a-z]{2}(-(gov|isob|iso))?-(east|west|north|south|central){1,2}-\\d[a-z]"
+      "pattern":"[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\\d[a-z]"
     },
     "ExternalSubnetMapping":{
       "type":"map",
@@ -718,6 +834,29 @@
       "type":"string",
       "max":32,
       "min":7
+    },
+    "Region":{
+      "type":"string",
+      "pattern":"[a-z]{2}(-(gov))?-(east|west|north|south|central){1,2}-\\d"
+    },
+    "RestoreBackupRequest":{
+      "type":"structure",
+      "required":["BackupId"],
+      "members":{
+        "BackupId":{
+          "shape":"BackupId",
+          "documentation":"<p>The ID of the backup to be restored. To find the ID of a backup, use the <a>DescribeBackups</a> operation.</p>"
+        }
+      }
+    },
+    "RestoreBackupResponse":{
+      "type":"structure",
+      "members":{
+        "Backup":{
+          "shape":"Backup",
+          "documentation":"<p>Information on the <code>Backup</code> object created.</p>"
+        }
+      }
     },
     "SecurityGroup":{
       "type":"string",

@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2018 Amazon Technologies, Inc.
+ * Copyright 2014-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -286,6 +286,46 @@ public class S3EventNotification {
         }
     }
 
+    public static class GlacierEventDataEntity {
+        private final RestoreEventDataEntity restoreEventData;
+
+        @JsonCreator
+        public GlacierEventDataEntity(
+                @JsonProperty(value = "restoreEventData") RestoreEventDataEntity restoreEventData)
+        {
+            this.restoreEventData = restoreEventData;
+        }
+
+        public RestoreEventDataEntity getRestoreEventData() {
+            return restoreEventData;
+        }
+    }
+
+    public static class RestoreEventDataEntity {
+        private DateTime lifecycleRestorationExpiryTime;
+        private final String lifecycleRestoreStorageClass;
+
+        @JsonCreator
+        public RestoreEventDataEntity(
+                @JsonProperty("lifecycleRestorationExpiryTime") String lifecycleRestorationExpiryTime,
+                @JsonProperty("lifecycleRestoreStorageClass") String lifecycleRestoreStorageClass)
+        {
+            if (lifecycleRestorationExpiryTime != null) {
+                this.lifecycleRestorationExpiryTime = DateTime.parse(lifecycleRestorationExpiryTime);
+            }
+            this.lifecycleRestoreStorageClass = lifecycleRestoreStorageClass;
+        }
+
+        @JsonSerialize(using=DateTimeJsonSerializer.class)
+        public DateTime getLifecycleRestorationExpiryTime() {
+            return lifecycleRestorationExpiryTime;
+        }
+
+        public String getLifecycleRestoreStorageClass() {
+            return lifecycleRestoreStorageClass;
+        }
+    }
+
     public static class S3EventNotificationRecord {
 
         private final String awsRegion;
@@ -297,6 +337,31 @@ public class S3EventNotification {
         private final ResponseElementsEntity responseElements;
         private final S3Entity s3;
         private final UserIdentityEntity userIdentity;
+        private final GlacierEventDataEntity glacierEventData;
+
+        @Deprecated
+        public S3EventNotificationRecord(
+                String awsRegion,
+                String eventName,
+                String eventSource,
+                String eventTime,
+                String eventVersion,
+                RequestParametersEntity requestParameters,
+                ResponseElementsEntity responseElements,
+                S3Entity s3,
+                UserIdentityEntity userIdentity)
+        {
+            this(awsRegion,
+                 eventName,
+                 eventSource,
+                 eventTime,
+                 eventVersion,
+                 requestParameters,
+                 responseElements,
+                 s3,
+                 userIdentity,
+                 null);
+        }
 
         @JsonCreator
         public S3EventNotificationRecord(
@@ -308,7 +373,8 @@ public class S3EventNotification {
                 @JsonProperty(value = "requestParameters") RequestParametersEntity requestParameters,
                 @JsonProperty(value = "responseElements") ResponseElementsEntity responseElements,
                 @JsonProperty(value = "s3") S3Entity s3,
-                @JsonProperty(value = "userIdentity") UserIdentityEntity userIdentity)
+                @JsonProperty(value = "userIdentity") UserIdentityEntity userIdentity,
+                @JsonProperty(value = "glacierEventData") GlacierEventDataEntity glacierEventData)
         {
             this.awsRegion = awsRegion;
             this.eventName = eventName;
@@ -324,6 +390,7 @@ public class S3EventNotification {
             this.responseElements = responseElements;
             this.s3 = s3;
             this.userIdentity = userIdentity;
+            this.glacierEventData = glacierEventData;
         }
 
         public String getAwsRegion() {
@@ -361,6 +428,10 @@ public class S3EventNotification {
 
         public UserIdentityEntity getUserIdentity() {
             return userIdentity;
+        }
+
+        public GlacierEventDataEntity getGlacierEventData() {
+            return glacierEventData;
         }
     }
 }

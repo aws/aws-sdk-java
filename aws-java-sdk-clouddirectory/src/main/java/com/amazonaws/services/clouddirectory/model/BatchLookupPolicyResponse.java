@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Represents the output of a <a>LookupPolicy</a> response operation.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchLookupPolicyResponse"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchLookupPolicyResponse"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -31,8 +31,9 @@ public class BatchLookupPolicyResponse implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-     * <code>PolicyType</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * <code>PolicyType</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      */
     private java.util.List<PolicyToPath> policyToPathList;
@@ -46,13 +47,14 @@ public class BatchLookupPolicyResponse implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-     * <code>PolicyType</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * <code>PolicyType</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @return Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
-     *         and <code>PolicyType</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *         and <code>PolicyType</code>. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *         >Policies</a>.
      */
 
@@ -63,14 +65,15 @@ public class BatchLookupPolicyResponse implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-     * <code>PolicyType</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * <code>PolicyType</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @param policyToPathList
      *        Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
-     *        and <code>PolicyType</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        and <code>PolicyType</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      */
 
@@ -86,8 +89,9 @@ public class BatchLookupPolicyResponse implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-     * <code>PolicyType</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * <code>PolicyType</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,8 +101,8 @@ public class BatchLookupPolicyResponse implements Serializable, Cloneable, Struc
      * 
      * @param policyToPathList
      *        Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
-     *        and <code>PolicyType</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        and <code>PolicyType</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -116,14 +120,15 @@ public class BatchLookupPolicyResponse implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
-     * <code>PolicyType</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * <code>PolicyType</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @param policyToPathList
      *        Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
-     *        and <code>PolicyType</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        and <code>PolicyType</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -174,7 +179,8 @@ public class BatchLookupPolicyResponse implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

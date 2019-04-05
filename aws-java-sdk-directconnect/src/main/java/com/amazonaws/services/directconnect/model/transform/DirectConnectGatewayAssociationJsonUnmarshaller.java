@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,31 @@ public class DirectConnectGatewayAssociationJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     directConnectGatewayAssociation.setDirectConnectGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("directConnectGatewayOwnerAccount", targetDepth)) {
+                    context.nextToken();
+                    directConnectGatewayAssociation.setDirectConnectGatewayOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("associationState", targetDepth)) {
+                    context.nextToken();
+                    directConnectGatewayAssociation.setAssociationState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("stateChangeError", targetDepth)) {
+                    context.nextToken();
+                    directConnectGatewayAssociation.setStateChangeError(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("associatedGateway", targetDepth)) {
+                    context.nextToken();
+                    directConnectGatewayAssociation.setAssociatedGateway(AssociatedGatewayJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("associationId", targetDepth)) {
+                    context.nextToken();
+                    directConnectGatewayAssociation.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("allowedPrefixesToDirectConnectGateway", targetDepth)) {
+                    context.nextToken();
+                    directConnectGatewayAssociation.setAllowedPrefixesToDirectConnectGateway(new ListUnmarshaller<RouteFilterPrefix>(
+                            RouteFilterPrefixJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("virtualGatewayId", targetDepth)) {
                     context.nextToken();
                     directConnectGatewayAssociation.setVirtualGatewayId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,14 +88,6 @@ public class DirectConnectGatewayAssociationJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("virtualGatewayOwnerAccount", targetDepth)) {
                     context.nextToken();
                     directConnectGatewayAssociation.setVirtualGatewayOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("associationState", targetDepth)) {
-                    context.nextToken();
-                    directConnectGatewayAssociation.setAssociationState(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("stateChangeError", targetDepth)) {
-                    context.nextToken();
-                    directConnectGatewayAssociation.setStateChangeError(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

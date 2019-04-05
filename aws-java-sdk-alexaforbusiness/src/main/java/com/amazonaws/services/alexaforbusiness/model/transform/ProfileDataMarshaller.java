@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ProfileDataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfileArn").build();
     private static final MarshallingInfo<String> PROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfileName").build();
+    private static final MarshallingInfo<Boolean> ISDEFAULT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsDefault").build();
     private static final MarshallingInfo<String> ADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Address").build();
     private static final MarshallingInfo<String> TIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,6 +62,7 @@ public class ProfileDataMarshaller {
         try {
             protocolMarshaller.marshall(profileData.getProfileArn(), PROFILEARN_BINDING);
             protocolMarshaller.marshall(profileData.getProfileName(), PROFILENAME_BINDING);
+            protocolMarshaller.marshall(profileData.getIsDefault(), ISDEFAULT_BINDING);
             protocolMarshaller.marshall(profileData.getAddress(), ADDRESS_BINDING);
             protocolMarshaller.marshall(profileData.getTimezone(), TIMEZONE_BINDING);
             protocolMarshaller.marshall(profileData.getDistanceUnit(), DISTANCEUNIT_BINDING);

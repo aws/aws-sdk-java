@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,7 @@ public class ExportInfoJsonUnmarshaller implements Unmarshaller<ExportInfo, Json
                 }
                 if (context.testExpression("exportRequestTime", targetDepth)) {
                     context.nextToken();
-                    exportInfo.setExportRequestTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    exportInfo.setExportRequestTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("isTruncated", targetDepth)) {
                     context.nextToken();
@@ -74,11 +74,11 @@ public class ExportInfoJsonUnmarshaller implements Unmarshaller<ExportInfo, Json
                 }
                 if (context.testExpression("requestedStartTime", targetDepth)) {
                     context.nextToken();
-                    exportInfo.setRequestedStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    exportInfo.setRequestedStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("requestedEndTime", targetDepth)) {
                     context.nextToken();
-                    exportInfo.setRequestedEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    exportInfo.setRequestedEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

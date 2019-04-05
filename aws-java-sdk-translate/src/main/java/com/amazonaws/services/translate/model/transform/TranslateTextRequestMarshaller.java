@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.translate.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class TranslateTextRequestMarshaller {
 
     private static final MarshallingInfo<String> TEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Text").build();
+    private static final MarshallingInfo<List> TERMINOLOGYNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TerminologyNames").build();
     private static final MarshallingInfo<String> SOURCELANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceLanguageCode").build();
     private static final MarshallingInfo<String> TARGETLANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +54,7 @@ public class TranslateTextRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(translateTextRequest.getText(), TEXT_BINDING);
+            protocolMarshaller.marshall(translateTextRequest.getTerminologyNames(), TERMINOLOGYNAMES_BINDING);
             protocolMarshaller.marshall(translateTextRequest.getSourceLanguageCode(), SOURCELANGUAGECODE_BINDING);
             protocolMarshaller.marshall(translateTextRequest.getTargetLanguageCode(), TARGETLANGUAGECODE_BINDING);
         } catch (Exception e) {

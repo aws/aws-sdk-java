@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class DescribeDatastoreRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String datastoreName;
+    /**
+     * <p>
+     * If true, additional statistical information about the datastore is included in the response.
+     * </p>
+     */
+    private Boolean includeStatistics;
 
     /**
      * <p>
@@ -73,7 +79,60 @@ public class DescribeDatastoreRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * If true, additional statistical information about the datastore is included in the response.
+     * </p>
+     * 
+     * @param includeStatistics
+     *        If true, additional statistical information about the datastore is included in the response.
+     */
+
+    public void setIncludeStatistics(Boolean includeStatistics) {
+        this.includeStatistics = includeStatistics;
+    }
+
+    /**
+     * <p>
+     * If true, additional statistical information about the datastore is included in the response.
+     * </p>
+     * 
+     * @return If true, additional statistical information about the datastore is included in the response.
+     */
+
+    public Boolean getIncludeStatistics() {
+        return this.includeStatistics;
+    }
+
+    /**
+     * <p>
+     * If true, additional statistical information about the datastore is included in the response.
+     * </p>
+     * 
+     * @param includeStatistics
+     *        If true, additional statistical information about the datastore is included in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatastoreRequest withIncludeStatistics(Boolean includeStatistics) {
+        setIncludeStatistics(includeStatistics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, additional statistical information about the datastore is included in the response.
+     * </p>
+     * 
+     * @return If true, additional statistical information about the datastore is included in the response.
+     */
+
+    public Boolean isIncludeStatistics() {
+        return this.includeStatistics;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -84,7 +143,9 @@ public class DescribeDatastoreRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDatastoreName() != null)
-            sb.append("DatastoreName: ").append(getDatastoreName());
+            sb.append("DatastoreName: ").append(getDatastoreName()).append(",");
+        if (getIncludeStatistics() != null)
+            sb.append("IncludeStatistics: ").append(getIncludeStatistics());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +164,10 @@ public class DescribeDatastoreRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getDatastoreName() != null && other.getDatastoreName().equals(this.getDatastoreName()) == false)
             return false;
+        if (other.getIncludeStatistics() == null ^ this.getIncludeStatistics() == null)
+            return false;
+        if (other.getIncludeStatistics() != null && other.getIncludeStatistics().equals(this.getIncludeStatistics()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +177,7 @@ public class DescribeDatastoreRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDatastoreName() == null) ? 0 : getDatastoreName().hashCode());
+        hashCode = prime * hashCode + ((getIncludeStatistics() == null) ? 0 : getIncludeStatistics().hashCode());
         return hashCode;
     }
 

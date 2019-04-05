@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,18 +34,29 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * Contains a value that specifies the type of indexing performed. Valid values are:
      * </p>
-     * <ol>
+     * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains only registry data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
      * </p>
      * </li>
-     * </ol>
+     * <li>
+     * <p>
+     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing
+     * connectivity status data.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String schema;
 
@@ -152,30 +163,53 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * Contains a value that specifies the type of indexing performed. Valid values are:
      * </p>
-     * <ol>
+     * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains only registry data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
      * </p>
      * </li>
-     * </ol>
+     * <li>
+     * <p>
+     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing
+     * connectivity status data.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param schema
      *        Contains a value that specifies the type of indexing performed. Valid values are:</p>
-     *        <ol>
+     *        <ul>
      *        <li>
      *        <p>
-     *        REGISTRY – Your thing index will contain only registry data.
+     *        REGISTRY – Your thing index contains only registry data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     *        REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status
+     *        data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and
+     *        thing connectivity status data.
      *        </p>
      *        </li>
      */
@@ -188,29 +222,52 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * Contains a value that specifies the type of indexing performed. Valid values are:
      * </p>
-     * <ol>
+     * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains only registry data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
      * </p>
      * </li>
-     * </ol>
+     * <li>
+     * <p>
+     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing
+     * connectivity status data.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Contains a value that specifies the type of indexing performed. Valid values are:</p>
-     *         <ol>
+     *         <ul>
      *         <li>
      *         <p>
-     *         REGISTRY – Your thing index will contain only registry data.
+     *         REGISTRY – Your thing index contains only registry data.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     *         REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status
+     *         data.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and
+     *         thing connectivity status data.
      *         </p>
      *         </li>
      */
@@ -223,30 +280,53 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * Contains a value that specifies the type of indexing performed. Valid values are:
      * </p>
-     * <ol>
+     * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains only registry data.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
      * </p>
      * </li>
-     * </ol>
+     * <li>
+     * <p>
+     * REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing
+     * connectivity status data.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param schema
      *        Contains a value that specifies the type of indexing performed. Valid values are:</p>
-     *        <ol>
+     *        <ul>
      *        <li>
      *        <p>
-     *        REGISTRY – Your thing index will contain only registry data.
+     *        REGISTRY – Your thing index contains only registry data.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     *        REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status
+     *        data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and
+     *        thing connectivity status data.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -258,7 +338,8 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

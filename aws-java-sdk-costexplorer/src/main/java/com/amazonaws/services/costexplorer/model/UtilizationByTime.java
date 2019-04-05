@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,30 +30,30 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The period of time over which this utilization was used.
+     * The period of time that this utilization was used for.
      * </p>
      */
     private DateInterval timePeriod;
     /**
      * <p>
-     * The groups that are included in this utilization result.
+     * The groups that this utilization result uses.
      * </p>
      */
     private java.util.List<ReservationUtilizationGroup> groups;
     /**
      * <p>
-     * The total number of RI hours that were used.
+     * The total number of reservation hours that were used.
      * </p>
      */
     private ReservationAggregates total;
 
     /**
      * <p>
-     * The period of time over which this utilization was used.
+     * The period of time that this utilization was used for.
      * </p>
      * 
      * @param timePeriod
-     *        The period of time over which this utilization was used.
+     *        The period of time that this utilization was used for.
      */
 
     public void setTimePeriod(DateInterval timePeriod) {
@@ -62,10 +62,10 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The period of time over which this utilization was used.
+     * The period of time that this utilization was used for.
      * </p>
      * 
-     * @return The period of time over which this utilization was used.
+     * @return The period of time that this utilization was used for.
      */
 
     public DateInterval getTimePeriod() {
@@ -74,11 +74,11 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The period of time over which this utilization was used.
+     * The period of time that this utilization was used for.
      * </p>
      * 
      * @param timePeriod
-     *        The period of time over which this utilization was used.
+     *        The period of time that this utilization was used for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,10 +89,10 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The groups that are included in this utilization result.
+     * The groups that this utilization result uses.
      * </p>
      * 
-     * @return The groups that are included in this utilization result.
+     * @return The groups that this utilization result uses.
      */
 
     public java.util.List<ReservationUtilizationGroup> getGroups() {
@@ -101,11 +101,11 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The groups that are included in this utilization result.
+     * The groups that this utilization result uses.
      * </p>
      * 
      * @param groups
-     *        The groups that are included in this utilization result.
+     *        The groups that this utilization result uses.
      */
 
     public void setGroups(java.util.Collection<ReservationUtilizationGroup> groups) {
@@ -119,7 +119,7 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The groups that are included in this utilization result.
+     * The groups that this utilization result uses.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -128,7 +128,7 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param groups
-     *        The groups that are included in this utilization result.
+     *        The groups that this utilization result uses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The groups that are included in this utilization result.
+     * The groups that this utilization result uses.
      * </p>
      * 
      * @param groups
-     *        The groups that are included in this utilization result.
+     *        The groups that this utilization result uses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +159,11 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The total number of RI hours that were used.
+     * The total number of reservation hours that were used.
      * </p>
      * 
      * @param total
-     *        The total number of RI hours that were used.
+     *        The total number of reservation hours that were used.
      */
 
     public void setTotal(ReservationAggregates total) {
@@ -172,10 +172,10 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The total number of RI hours that were used.
+     * The total number of reservation hours that were used.
      * </p>
      * 
-     * @return The total number of RI hours that were used.
+     * @return The total number of reservation hours that were used.
      */
 
     public ReservationAggregates getTotal() {
@@ -184,11 +184,11 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The total number of RI hours that were used.
+     * The total number of reservation hours that were used.
      * </p>
      * 
      * @param total
-     *        The total number of RI hours that were used.
+     *        The total number of reservation hours that were used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,7 +198,8 @@ public class UtilizationByTime implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

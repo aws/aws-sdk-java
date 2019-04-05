@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ public class PathSerializationTest {
                         .inputPath(null)
                         .outputPath(null)
                         .resultPath(null)
+                        .parameters(null)
                         .transition(end()))
                 .build();
         assertStateMachineMatches("TaskStateWithExplicitNullPaths.json", stateMachine);
@@ -67,6 +68,7 @@ public class PathSerializationTest {
                         .inputPath("$.input")
                         .outputPath("$.output")
                         .resultPath("$.result")
+                        .parameters("{\"foo\": 42}")
                         .transition(end()))
                 .build();
         assertStateMachineMatches("TaskStateWithNonNullPaths.json", stateMachine);
@@ -96,6 +98,7 @@ public class PathSerializationTest {
                         .inputPath(null)
                         .outputPath(null)
                         .resultPath(null)
+                        .parameters(null)
                         .transition(end()))
                 .build();
         assertStateMachineMatches("ParallelStateWithExplicitNullPaths.json", stateMachine);
@@ -112,6 +115,7 @@ public class PathSerializationTest {
                         .inputPath("$.input")
                         .outputPath("$.output")
                         .resultPath("$.result")
+                        .parameters("[42, \"foo\", {}]")
                         .transition(end()))
                 .build();
         assertStateMachineMatches("ParallelStateWithNonNullPaths.json", stateMachine);
@@ -135,6 +139,7 @@ public class PathSerializationTest {
                         .inputPath(null)
                         .outputPath(null)
                         .resultPath(null)
+                        .parameters(null)
                         .transition(end()))
                 .build();
         assertStateMachineMatches("PassStateWithExplicitNullPaths.json", stateMachine);
@@ -148,6 +153,7 @@ public class PathSerializationTest {
                         .inputPath("$.input")
                         .outputPath("$.output")
                         .resultPath("$.result")
+                        .parameters("\"foo\"")
                         .transition(end()))
                 .build();
         assertStateMachineMatches("PassStateWithNonNullPaths.json", stateMachine);

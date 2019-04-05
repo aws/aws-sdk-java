@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class EC2MetadataUtils {
 
     private static final String REGION = "region";
     private static final String INSTANCE_IDENTITY_DOCUMENT = "instance-identity/document";
+    private static final String INSTANCE_IDENTITY_SIGNATURE = "instance-identity/signature";
     private static final String EC2_METADATA_ROOT = "/latest/meta-data";
     private static final String EC2_USERDATA_ROOT = "/latest/user-data/";
     private static final String EC2_DYNAMICDATA_ROOT = "/latest/dynamic/";
@@ -245,6 +246,13 @@ public class EC2MetadataUtils {
                 EC2_DYNAMICDATA_ROOT + INSTANCE_IDENTITY_DOCUMENT));
     }
 
+    /**
+     * Get the signature of the instance.
+     */
+    public static String getInstanceSignature() {
+        return fetchData(EC2_DYNAMICDATA_ROOT + INSTANCE_IDENTITY_SIGNATURE);
+    }
+
     static InstanceInfo doGetInstanceInfo(String json) {
         if (null != json) {
             try {
@@ -396,7 +404,7 @@ public class EC2MetadataUtils {
                 items = Arrays.asList(response.split("\n"));
             return items;
         } catch (AmazonClientException ace) {
-            log.warn("Unable to retrieve the requested metadata.");
+            log.warn("Unable to retrieve the requested metadata (" + path + "). " + ace.getMessage(), ace);
             return null;
         } catch (Exception e) {
             // Retry on any other exceptions

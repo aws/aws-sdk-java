@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,13 +66,13 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
     private java.util.Date endTime;
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      */
     private String taskType;
@@ -352,11 +352,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the executed task.
+     *        The ARN of the task that ran.
      */
 
     public void setTaskArn(String taskArn) {
@@ -365,10 +365,10 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
-     * @return The ARN of the executed task.
+     * @return The ARN of the task that ran.
      */
 
     public String getTaskArn() {
@@ -377,11 +377,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the executed task.
+     *        The ARN of the task that ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,11 +392,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      * 
      * @param taskType
-     *        The type of executed task.
+     *        The type of task that ran.
      * @see MaintenanceWindowTaskType
      */
 
@@ -406,10 +406,10 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      * 
-     * @return The type of executed task.
+     * @return The type of task that ran.
      * @see MaintenanceWindowTaskType
      */
 
@@ -419,11 +419,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      * 
      * @param taskType
-     *        The type of executed task.
+     *        The type of task that ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -435,11 +435,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      * 
      * @param taskType
-     *        The type of executed task.
+     *        The type of task that ran.
      * @see MaintenanceWindowTaskType
      */
 
@@ -449,11 +449,11 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
 
     /**
      * <p>
-     * The type of executed task.
+     * The type of task that ran.
      * </p>
      * 
      * @param taskType
-     *        The type of executed task.
+     *        The type of task that ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -464,7 +464,8 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

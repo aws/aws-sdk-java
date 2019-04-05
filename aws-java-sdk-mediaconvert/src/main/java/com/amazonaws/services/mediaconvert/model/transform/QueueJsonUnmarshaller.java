@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class QueueJsonUnmarshaller implements Unmarshaller<Queue, JsonUnmarshall
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    queue.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    queue.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
@@ -62,15 +62,31 @@ public class QueueJsonUnmarshaller implements Unmarshaller<Queue, JsonUnmarshall
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
                     context.nextToken();
-                    queue.setLastUpdated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    queue.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     queue.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("pricingPlan", targetDepth)) {
+                    context.nextToken();
+                    queue.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("progressingJobsCount", targetDepth)) {
+                    context.nextToken();
+                    queue.setProgressingJobsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("reservationPlan", targetDepth)) {
+                    context.nextToken();
+                    queue.setReservationPlan(ReservationPlanJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     queue.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("submittedJobsCount", targetDepth)) {
+                    context.nextToken();
+                    queue.setSubmittedJobsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a celebrity recognized by the operation.
+ * Provides information about a celebrity recognized by the <a>RecognizeCelebrities</a> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -52,7 +52,7 @@ public class Celebrity implements Serializable, Cloneable, StructuredPojo {
     private ComparedFace face;
     /**
      * <p>
-     * The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     * The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      * </p>
      */
     private Float matchConfidence;
@@ -257,11 +257,11 @@ public class Celebrity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     * The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      * </p>
      * 
      * @param matchConfidence
-     *        The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     *        The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      */
 
     public void setMatchConfidence(Float matchConfidence) {
@@ -270,10 +270,10 @@ public class Celebrity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     * The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      * </p>
      * 
-     * @return The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     * @return The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      */
 
     public Float getMatchConfidence() {
@@ -282,11 +282,11 @@ public class Celebrity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     * The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      * </p>
      * 
      * @param matchConfidence
-     *        The confidence, in percentage, that Rekognition has that the recognized face is the celebrity.
+     *        The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,7 +296,8 @@ public class Celebrity implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

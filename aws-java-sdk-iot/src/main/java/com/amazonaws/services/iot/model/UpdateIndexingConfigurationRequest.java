@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,12 @@ public class UpdateIndexingConfigurationRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private ThingIndexingConfiguration thingIndexingConfiguration;
+    /**
+     * <p>
+     * Thing group indexing configuration.
+     * </p>
+     */
+    private ThingGroupIndexingConfiguration thingGroupIndexingConfiguration;
 
     /**
      * <p>
@@ -68,7 +74,48 @@ public class UpdateIndexingConfigurationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Thing group indexing configuration.
+     * </p>
+     * 
+     * @param thingGroupIndexingConfiguration
+     *        Thing group indexing configuration.
+     */
+
+    public void setThingGroupIndexingConfiguration(ThingGroupIndexingConfiguration thingGroupIndexingConfiguration) {
+        this.thingGroupIndexingConfiguration = thingGroupIndexingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Thing group indexing configuration.
+     * </p>
+     * 
+     * @return Thing group indexing configuration.
+     */
+
+    public ThingGroupIndexingConfiguration getThingGroupIndexingConfiguration() {
+        return this.thingGroupIndexingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Thing group indexing configuration.
+     * </p>
+     * 
+     * @param thingGroupIndexingConfiguration
+     *        Thing group indexing configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIndexingConfigurationRequest withThingGroupIndexingConfiguration(ThingGroupIndexingConfiguration thingGroupIndexingConfiguration) {
+        setThingGroupIndexingConfiguration(thingGroupIndexingConfiguration);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -79,7 +126,9 @@ public class UpdateIndexingConfigurationRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingIndexingConfiguration() != null)
-            sb.append("ThingIndexingConfiguration: ").append(getThingIndexingConfiguration());
+            sb.append("ThingIndexingConfiguration: ").append(getThingIndexingConfiguration()).append(",");
+        if (getThingGroupIndexingConfiguration() != null)
+            sb.append("ThingGroupIndexingConfiguration: ").append(getThingGroupIndexingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -98,6 +147,11 @@ public class UpdateIndexingConfigurationRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getThingIndexingConfiguration() != null && other.getThingIndexingConfiguration().equals(this.getThingIndexingConfiguration()) == false)
             return false;
+        if (other.getThingGroupIndexingConfiguration() == null ^ this.getThingGroupIndexingConfiguration() == null)
+            return false;
+        if (other.getThingGroupIndexingConfiguration() != null
+                && other.getThingGroupIndexingConfiguration().equals(this.getThingGroupIndexingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -107,6 +161,7 @@ public class UpdateIndexingConfigurationRequest extends com.amazonaws.AmazonWebS
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getThingIndexingConfiguration() == null) ? 0 : getThingIndexingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getThingGroupIndexingConfiguration() == null) ? 0 : getThingGroupIndexingConfiguration().hashCode());
         return hashCode;
     }
 

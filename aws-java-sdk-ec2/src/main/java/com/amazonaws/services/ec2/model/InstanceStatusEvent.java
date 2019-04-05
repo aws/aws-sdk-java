@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,12 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The ID of the event.
+     * </p>
+     */
+    private String instanceEventId;
+    /**
+     * <p>
      * The event code.
      * </p>
      */
@@ -54,6 +60,52 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date notBefore;
+    /**
+     * <p>
+     * The deadline for starting the event.
+     * </p>
+     */
+    private java.util.Date notBeforeDeadline;
+
+    /**
+     * <p>
+     * The ID of the event.
+     * </p>
+     * 
+     * @param instanceEventId
+     *        The ID of the event.
+     */
+
+    public void setInstanceEventId(String instanceEventId) {
+        this.instanceEventId = instanceEventId;
+    }
+
+    /**
+     * <p>
+     * The ID of the event.
+     * </p>
+     * 
+     * @return The ID of the event.
+     */
+
+    public String getInstanceEventId() {
+        return this.instanceEventId;
+    }
+
+    /**
+     * <p>
+     * The ID of the event.
+     * </p>
+     * 
+     * @param instanceEventId
+     *        The ID of the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceStatusEvent withInstanceEventId(String instanceEventId) {
+        setInstanceEventId(instanceEventId);
+        return this;
+    }
 
     /**
      * <p>
@@ -270,7 +322,48 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The deadline for starting the event.
+     * </p>
+     * 
+     * @param notBeforeDeadline
+     *        The deadline for starting the event.
+     */
+
+    public void setNotBeforeDeadline(java.util.Date notBeforeDeadline) {
+        this.notBeforeDeadline = notBeforeDeadline;
+    }
+
+    /**
+     * <p>
+     * The deadline for starting the event.
+     * </p>
+     * 
+     * @return The deadline for starting the event.
+     */
+
+    public java.util.Date getNotBeforeDeadline() {
+        return this.notBeforeDeadline;
+    }
+
+    /**
+     * <p>
+     * The deadline for starting the event.
+     * </p>
+     * 
+     * @param notBeforeDeadline
+     *        The deadline for starting the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceStatusEvent withNotBeforeDeadline(java.util.Date notBeforeDeadline) {
+        setNotBeforeDeadline(notBeforeDeadline);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -280,6 +373,8 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getInstanceEventId() != null)
+            sb.append("InstanceEventId: ").append(getInstanceEventId()).append(",");
         if (getCode() != null)
             sb.append("Code: ").append(getCode()).append(",");
         if (getDescription() != null)
@@ -287,7 +382,9 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
         if (getNotAfter() != null)
             sb.append("NotAfter: ").append(getNotAfter()).append(",");
         if (getNotBefore() != null)
-            sb.append("NotBefore: ").append(getNotBefore());
+            sb.append("NotBefore: ").append(getNotBefore()).append(",");
+        if (getNotBeforeDeadline() != null)
+            sb.append("NotBeforeDeadline: ").append(getNotBeforeDeadline());
         sb.append("}");
         return sb.toString();
     }
@@ -302,6 +399,10 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
         if (obj instanceof InstanceStatusEvent == false)
             return false;
         InstanceStatusEvent other = (InstanceStatusEvent) obj;
+        if (other.getInstanceEventId() == null ^ this.getInstanceEventId() == null)
+            return false;
+        if (other.getInstanceEventId() != null && other.getInstanceEventId().equals(this.getInstanceEventId()) == false)
+            return false;
         if (other.getCode() == null ^ this.getCode() == null)
             return false;
         if (other.getCode() != null && other.getCode().equals(this.getCode()) == false)
@@ -318,6 +419,10 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
             return false;
         if (other.getNotBefore() != null && other.getNotBefore().equals(this.getNotBefore()) == false)
             return false;
+        if (other.getNotBeforeDeadline() == null ^ this.getNotBeforeDeadline() == null)
+            return false;
+        if (other.getNotBeforeDeadline() != null && other.getNotBeforeDeadline().equals(this.getNotBeforeDeadline()) == false)
+            return false;
         return true;
     }
 
@@ -326,10 +431,12 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getInstanceEventId() == null) ? 0 : getInstanceEventId().hashCode());
         hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getNotAfter() == null) ? 0 : getNotAfter().hashCode());
         hashCode = prime * hashCode + ((getNotBefore() == null) ? 0 : getNotBefore().hashCode());
+        hashCode = prime * hashCode + ((getNotBeforeDeadline() == null) ? 0 : getNotBeforeDeadline().hashCode());
         return hashCode;
     }
 

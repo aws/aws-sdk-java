@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration" target="_top">AWS
  *      API Documentation</a>
@@ -28,51 +27,95 @@ public class GetFunctionConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Lambda function for which you want to retrieve the configuration information.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * Using this optional parameter you can specify a function version or an alias name. If you specify function
-     * version, the API uses qualified function ARN and returns information about the specific function version. If you
-     * specify an alias name, the API uses the alias ARN and returns information about the function version to which the
-     * alias points.
-     * </p>
-     * <p>
-     * If you don't specify this parameter, the API uses unqualified function ARN, and returns information about the
-     * <code>$LATEST</code> function version.
+     * Specify a version or alias to get details about a published version of the function.
      * </p>
      */
     private String qualifier;
 
     /**
      * <p>
-     * The name of the Lambda function for which you want to retrieve the configuration information.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function for which you want to retrieve the configuration information.</p>
+     *        The name of the Lambda function, version, or alias.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *        full ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -81,23 +124,57 @@ public class GetFunctionConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Lambda function for which you want to retrieve the configuration information.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
-     * @return The name of the Lambda function for which you want to retrieve the configuration information.</p>
+     * @return The name of the Lambda function, version, or alias.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *         Name (ARN) of the function (for example,
-     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *         specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *         <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *         full ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -106,24 +183,58 @@ public class GetFunctionConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Lambda function for which you want to retrieve the configuration information.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function for which you want to retrieve the configuration information.</p>
+     *        The name of the Lambda function, version, or alias.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *        full ARN. If you specify only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,24 +245,11 @@ public class GetFunctionConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Using this optional parameter you can specify a function version or an alias name. If you specify function
-     * version, the API uses qualified function ARN and returns information about the specific function version. If you
-     * specify an alias name, the API uses the alias ARN and returns information about the function version to which the
-     * alias points.
-     * </p>
-     * <p>
-     * If you don't specify this parameter, the API uses unqualified function ARN, and returns information about the
-     * <code>$LATEST</code> function version.
+     * Specify a version or alias to get details about a published version of the function.
      * </p>
      * 
      * @param qualifier
-     *        Using this optional parameter you can specify a function version or an alias name. If you specify function
-     *        version, the API uses qualified function ARN and returns information about the specific function version.
-     *        If you specify an alias name, the API uses the alias ARN and returns information about the function
-     *        version to which the alias points.</p>
-     *        <p>
-     *        If you don't specify this parameter, the API uses unqualified function ARN, and returns information about
-     *        the <code>$LATEST</code> function version.
+     *        Specify a version or alias to get details about a published version of the function.
      */
 
     public void setQualifier(String qualifier) {
@@ -160,23 +258,10 @@ public class GetFunctionConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Using this optional parameter you can specify a function version or an alias name. If you specify function
-     * version, the API uses qualified function ARN and returns information about the specific function version. If you
-     * specify an alias name, the API uses the alias ARN and returns information about the function version to which the
-     * alias points.
-     * </p>
-     * <p>
-     * If you don't specify this parameter, the API uses unqualified function ARN, and returns information about the
-     * <code>$LATEST</code> function version.
+     * Specify a version or alias to get details about a published version of the function.
      * </p>
      * 
-     * @return Using this optional parameter you can specify a function version or an alias name. If you specify
-     *         function version, the API uses qualified function ARN and returns information about the specific function
-     *         version. If you specify an alias name, the API uses the alias ARN and returns information about the
-     *         function version to which the alias points.</p>
-     *         <p>
-     *         If you don't specify this parameter, the API uses unqualified function ARN, and returns information about
-     *         the <code>$LATEST</code> function version.
+     * @return Specify a version or alias to get details about a published version of the function.
      */
 
     public String getQualifier() {
@@ -185,24 +270,11 @@ public class GetFunctionConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Using this optional parameter you can specify a function version or an alias name. If you specify function
-     * version, the API uses qualified function ARN and returns information about the specific function version. If you
-     * specify an alias name, the API uses the alias ARN and returns information about the function version to which the
-     * alias points.
-     * </p>
-     * <p>
-     * If you don't specify this parameter, the API uses unqualified function ARN, and returns information about the
-     * <code>$LATEST</code> function version.
+     * Specify a version or alias to get details about a published version of the function.
      * </p>
      * 
      * @param qualifier
-     *        Using this optional parameter you can specify a function version or an alias name. If you specify function
-     *        version, the API uses qualified function ARN and returns information about the specific function version.
-     *        If you specify an alias name, the API uses the alias ARN and returns information about the function
-     *        version to which the alias points.</p>
-     *        <p>
-     *        If you don't specify this parameter, the API uses unqualified function ARN, and returns information about
-     *        the <code>$LATEST</code> function version.
+     *        Specify a version or alias to get details about a published version of the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,7 +284,8 @@ public class GetFunctionConfigurationRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

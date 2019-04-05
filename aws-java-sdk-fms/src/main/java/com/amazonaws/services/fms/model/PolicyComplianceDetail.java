@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,14 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.Date expiredAt;
+    /**
+     * <p>
+     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
+     * non-compliant. The details include the name of the dependent service and the error message received that
+     * indicates the problem with the service.
+     * </p>
+     */
+    private java.util.Map<String, String> issueInfoMap;
 
     /**
      * <p>
@@ -350,7 +358,81 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
+     * non-compliant. The details include the name of the dependent service and the error message received that
+     * indicates the problem with the service.
+     * </p>
+     * 
+     * @return Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a
+     *         resource to be non-compliant. The details include the name of the dependent service and the error message
+     *         received that indicates the problem with the service.
+     */
+
+    public java.util.Map<String, String> getIssueInfoMap() {
+        return issueInfoMap;
+    }
+
+    /**
+     * <p>
+     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
+     * non-compliant. The details include the name of the dependent service and the error message received that
+     * indicates the problem with the service.
+     * </p>
+     * 
+     * @param issueInfoMap
+     *        Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource
+     *        to be non-compliant. The details include the name of the dependent service and the error message received
+     *        that indicates the problem with the service.
+     */
+
+    public void setIssueInfoMap(java.util.Map<String, String> issueInfoMap) {
+        this.issueInfoMap = issueInfoMap;
+    }
+
+    /**
+     * <p>
+     * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
+     * non-compliant. The details include the name of the dependent service and the error message received that
+     * indicates the problem with the service.
+     * </p>
+     * 
+     * @param issueInfoMap
+     *        Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource
+     *        to be non-compliant. The details include the name of the dependent service and the error message received
+     *        that indicates the problem with the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyComplianceDetail withIssueInfoMap(java.util.Map<String, String> issueInfoMap) {
+        setIssueInfoMap(issueInfoMap);
+        return this;
+    }
+
+    public PolicyComplianceDetail addIssueInfoMapEntry(String key, String value) {
+        if (null == this.issueInfoMap) {
+            this.issueInfoMap = new java.util.HashMap<String, String>();
+        }
+        if (this.issueInfoMap.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.issueInfoMap.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into IssueInfoMap.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PolicyComplianceDetail clearIssueInfoMapEntries() {
+        this.issueInfoMap = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -371,7 +453,9 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
         if (getEvaluationLimitExceeded() != null)
             sb.append("EvaluationLimitExceeded: ").append(getEvaluationLimitExceeded()).append(",");
         if (getExpiredAt() != null)
-            sb.append("ExpiredAt: ").append(getExpiredAt());
+            sb.append("ExpiredAt: ").append(getExpiredAt()).append(",");
+        if (getIssueInfoMap() != null)
+            sb.append("IssueInfoMap: ").append(getIssueInfoMap());
         sb.append("}");
         return sb.toString();
     }
@@ -410,6 +494,10 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
             return false;
         if (other.getExpiredAt() != null && other.getExpiredAt().equals(this.getExpiredAt()) == false)
             return false;
+        if (other.getIssueInfoMap() == null ^ this.getIssueInfoMap() == null)
+            return false;
+        if (other.getIssueInfoMap() != null && other.getIssueInfoMap().equals(this.getIssueInfoMap()) == false)
+            return false;
         return true;
     }
 
@@ -424,6 +512,7 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getViolators() == null) ? 0 : getViolators().hashCode());
         hashCode = prime * hashCode + ((getEvaluationLimitExceeded() == null) ? 0 : getEvaluationLimitExceeded().hashCode());
         hashCode = prime * hashCode + ((getExpiredAt() == null) ? 0 : getExpiredAt().hashCode());
+        hashCode = prime * hashCode + ((getIssueInfoMap() == null) ? 0 : getIssueInfoMap().hashCode());
         return hashCode;
     }
 

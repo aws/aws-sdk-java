@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,12 +22,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Describes an API key.
  * </p>
  * <p>
- * Customers invoke AWS AppSync GraphQL APIs with API keys as an identity mechanism. There are two key versions:
+ * Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key
+ * versions:
  * </p>
  * <p>
  * <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key
- * expiration is managed by DynamoDB TTL. The keys will cease to be valid after Feb 21, 2018 and should not be used
- * after that date.
+ * expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be
+ * used after that date.
  * </p>
  * <ul>
  * <li>
@@ -52,9 +53,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted
- * because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the
- * table after Feb 21, 2018.
+ * Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically
+ * deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys
+ * from the table after February 21, 2018.
  * </p>
  * </li>
  * </ul>
@@ -86,7 +87,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * Expiration is stored in DynamoDB as seconds.
+ * Expiration is stored in Amazon DynamoDB as seconds.
  * </p>
  * </li>
  * </ul>
@@ -244,7 +245,8 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

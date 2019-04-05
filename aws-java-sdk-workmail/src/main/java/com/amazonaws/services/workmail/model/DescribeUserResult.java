@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,16 +50,16 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * Amazon WorkMail).
+     * WorkMail).
      * </p>
      */
     private String state;
     /**
      * <p>
-     * In certain cases other entities are modeled as users. If interoperability is enabled, resources are imported into
-     * Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different directory types,
-     * administrators can distinguish between a user that is not registered to Amazon WorkMail (is disabled and has a
-     * user role) and the administrative users of the directory. The values are USER, RESOURCE, and SYSTEM_USER.
+     * In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported
+     * into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types,
+     * administrators can distinguish between an unregistered user (account is disabled and has a user role) and the
+     * directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * </p>
      */
     private String userRole;
@@ -239,12 +239,12 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * Amazon WorkMail).
+     * WorkMail).
      * </p>
      * 
      * @param state
      *        The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered
-     *        to Amazon WorkMail).
+     *        to WorkMail).
      * @see EntityState
      */
 
@@ -255,11 +255,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * Amazon WorkMail).
+     * WorkMail).
      * </p>
      * 
      * @return The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never
-     *         registered to Amazon WorkMail).
+     *         registered to WorkMail).
      * @see EntityState
      */
 
@@ -270,12 +270,12 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * Amazon WorkMail).
+     * WorkMail).
      * </p>
      * 
      * @param state
      *        The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered
-     *        to Amazon WorkMail).
+     *        to WorkMail).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityState
      */
@@ -288,12 +288,12 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * Amazon WorkMail).
+     * WorkMail).
      * </p>
      * 
      * @param state
      *        The state of a user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered
-     *        to Amazon WorkMail).
+     *        to WorkMail).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityState
      */
@@ -305,18 +305,17 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * In certain cases other entities are modeled as users. If interoperability is enabled, resources are imported into
-     * Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different directory types,
-     * administrators can distinguish between a user that is not registered to Amazon WorkMail (is disabled and has a
-     * user role) and the administrative users of the directory. The values are USER, RESOURCE, and SYSTEM_USER.
+     * In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported
+     * into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types,
+     * administrators can distinguish between an unregistered user (account is disabled and has a user role) and the
+     * directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * </p>
      * 
      * @param userRole
-     *        In certain cases other entities are modeled as users. If interoperability is enabled, resources are
-     *        imported into Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different
-     *        directory types, administrators can distinguish between a user that is not registered to Amazon WorkMail
-     *        (is disabled and has a user role) and the administrative users of the directory. The values are USER,
-     *        RESOURCE, and SYSTEM_USER.
+     *        In certain cases, other entities are modeled as users. If interoperability is enabled, resources are
+     *        imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different
+     *        directory types, administrators can distinguish between an unregistered user (account is disabled and has
+     *        a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * @see UserRole
      */
 
@@ -326,17 +325,16 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * In certain cases other entities are modeled as users. If interoperability is enabled, resources are imported into
-     * Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different directory types,
-     * administrators can distinguish between a user that is not registered to Amazon WorkMail (is disabled and has a
-     * user role) and the administrative users of the directory. The values are USER, RESOURCE, and SYSTEM_USER.
+     * In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported
+     * into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types,
+     * administrators can distinguish between an unregistered user (account is disabled and has a user role) and the
+     * directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * </p>
      * 
-     * @return In certain cases other entities are modeled as users. If interoperability is enabled, resources are
-     *         imported into Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different
-     *         directory types, administrators can distinguish between a user that is not registered to Amazon WorkMail
-     *         (is disabled and has a user role) and the administrative users of the directory. The values are USER,
-     *         RESOURCE, and SYSTEM_USER.
+     * @return In certain cases, other entities are modeled as users. If interoperability is enabled, resources are
+     *         imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different
+     *         directory types, administrators can distinguish between an unregistered user (account is disabled and has
+     *         a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * @see UserRole
      */
 
@@ -346,18 +344,17 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * In certain cases other entities are modeled as users. If interoperability is enabled, resources are imported into
-     * Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different directory types,
-     * administrators can distinguish between a user that is not registered to Amazon WorkMail (is disabled and has a
-     * user role) and the administrative users of the directory. The values are USER, RESOURCE, and SYSTEM_USER.
+     * In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported
+     * into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types,
+     * administrators can distinguish between an unregistered user (account is disabled and has a user role) and the
+     * directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * </p>
      * 
      * @param userRole
-     *        In certain cases other entities are modeled as users. If interoperability is enabled, resources are
-     *        imported into Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different
-     *        directory types, administrators can distinguish between a user that is not registered to Amazon WorkMail
-     *        (is disabled and has a user role) and the administrative users of the directory. The values are USER,
-     *        RESOURCE, and SYSTEM_USER.
+     *        In certain cases, other entities are modeled as users. If interoperability is enabled, resources are
+     *        imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different
+     *        directory types, administrators can distinguish between an unregistered user (account is disabled and has
+     *        a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserRole
      */
@@ -369,18 +366,17 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * In certain cases other entities are modeled as users. If interoperability is enabled, resources are imported into
-     * Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different directory types,
-     * administrators can distinguish between a user that is not registered to Amazon WorkMail (is disabled and has a
-     * user role) and the administrative users of the directory. The values are USER, RESOURCE, and SYSTEM_USER.
+     * In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported
+     * into Amazon WorkMail as users. Because different WorkMail organizations rely on different directory types,
+     * administrators can distinguish between an unregistered user (account is disabled and has a user role) and the
+     * directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * </p>
      * 
      * @param userRole
-     *        In certain cases other entities are modeled as users. If interoperability is enabled, resources are
-     *        imported into Amazon WorkMail as users. Because different Amazon WorkMail organizations rely on different
-     *        directory types, administrators can distinguish between a user that is not registered to Amazon WorkMail
-     *        (is disabled and has a user role) and the administrative users of the directory. The values are USER,
-     *        RESOURCE, and SYSTEM_USER.
+     *        In certain cases, other entities are modeled as users. If interoperability is enabled, resources are
+     *        imported into Amazon WorkMail as users. Because different WorkMail organizations rely on different
+     *        directory types, administrators can distinguish between an unregistered user (account is disabled and has
+     *        a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserRole
      */
@@ -471,7 +467,8 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

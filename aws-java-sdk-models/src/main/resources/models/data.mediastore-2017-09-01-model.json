@@ -84,7 +84,7 @@
         {"shape":"ContainerNotFoundException"},
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Uploads an object to the specified path. Object sizes are limited to 10 MB.</p>",
+      "documentation":"<p>Uploads an object to the specified path. Object sizes are limited to 25 MB.</p>",
       "authtype":"v4-unsigned-body"
     }
   },
@@ -104,7 +104,7 @@
     },
     "ContentType":{
       "type":"string",
-      "pattern":"^[\\w\\-\\/\\.]{1,255}$"
+      "pattern":"^[\\w\\-\\/\\.\\+]{1,255}$"
     },
     "DeleteObjectRequest":{
       "type":"structure",
@@ -317,13 +317,13 @@
         },
         "MaxResults":{
           "shape":"ListLimit",
-          "documentation":"<p>The maximum results to return. The service might return fewer results.</p>",
+          "documentation":"<p>The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.</p> <p>If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of 1,000 results per page.</p>",
           "location":"querystring",
           "locationName":"MaxResults"
         },
         "NextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for the same container and path. Tokens expire after 15 minutes.</p>",
+          "documentation":"<p>The token that identifies which batch of results that you want to see. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListItems</code> request a second time and specify the <code>NextToken</code> value.</p> <p>Tokens expire after 15 minutes.</p>",
           "location":"querystring",
           "locationName":"NextToken"
         }
@@ -334,11 +334,11 @@
       "members":{
         "Items":{
           "shape":"ItemList",
-          "documentation":"<p>Metadata entries for the folders and objects at the requested path.</p>"
+          "documentation":"<p>The metadata entries for the folders and objects at the requested path.</p>"
         },
         "NextToken":{
           "shape":"PaginationToken",
-          "documentation":"<p>The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.</p>"
+          "documentation":"<p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>"
         }
       }
     },
@@ -428,7 +428,7 @@
         },
         "StorageClass":{
           "shape":"StorageClass",
-          "documentation":"<p>The storage class where the object was persisted. Should be “Temporal”.</p>"
+          "documentation":"<p>The storage class where the object was persisted. The class should be “Temporal”.</p>"
         }
       }
     },

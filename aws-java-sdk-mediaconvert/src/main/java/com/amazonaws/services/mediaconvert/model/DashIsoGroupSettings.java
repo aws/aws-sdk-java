@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * input file. If your job has multiple inputs, the service uses the filename of the first input file.
      */
     private String destination;
+    /** Settings associated with the destination. Will vary based on the type of destination */
+    private DestinationSettings destinationSettings;
     /** DRM settings. */
     private DashIsoEncryptionSettings encryption;
     /**
@@ -46,11 +48,14 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * cause the creation of many output files as in other output types.
      */
     private Integer fragmentLength;
-
+    /** Supports HbbTV specification as indicated */
     private String hbbtvCompliance;
     /** Minimum time of initially buffered media that is needed to ensure smooth playout. */
     private Integer minBufferTime;
-
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
+     * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+     */
     private String segmentControl;
     /**
      * Length of mpd segments to create (in seconds). Note that segments will end on the next keyframe after this number
@@ -58,6 +63,14 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * internal to a single output file and it does not cause the creation of many output files as in other output types.
      */
     private Integer segmentLength;
+    /**
+     * When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest
+     * shows precise segment durations. The segment duration information appears inside the SegmentTimeline element,
+     * inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your
+     * DASH manifest are approximate. The segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
+     */
+    private String writeSegmentTimelineInRepresentation;
 
     /**
      * A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used
@@ -149,6 +162,40 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @param destinationSettings
+     *        Settings associated with the destination. Will vary based on the type of destination
+     */
+
+    public void setDestinationSettings(DestinationSettings destinationSettings) {
+        this.destinationSettings = destinationSettings;
+    }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @return Settings associated with the destination. Will vary based on the type of destination
+     */
+
+    public DestinationSettings getDestinationSettings() {
+        return this.destinationSettings;
+    }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @param destinationSettings
+     *        Settings associated with the destination. Will vary based on the type of destination
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashIsoGroupSettings withDestinationSettings(DestinationSettings destinationSettings) {
+        setDestinationSettings(destinationSettings);
+        return this;
+    }
+
+    /**
      * DRM settings.
      * 
      * @param encryption
@@ -235,7 +282,10 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Supports HbbTV specification as indicated
+     * 
      * @param hbbtvCompliance
+     *        Supports HbbTV specification as indicated
      * @see DashIsoHbbtvCompliance
      */
 
@@ -244,7 +294,9 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * Supports HbbTV specification as indicated
+     * 
+     * @return Supports HbbTV specification as indicated
      * @see DashIsoHbbtvCompliance
      */
 
@@ -253,7 +305,10 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Supports HbbTV specification as indicated
+     * 
      * @param hbbtvCompliance
+     *        Supports HbbTV specification as indicated
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoHbbtvCompliance
      */
@@ -264,7 +319,10 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Supports HbbTV specification as indicated
+     * 
      * @param hbbtvCompliance
+     *        Supports HbbTV specification as indicated
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoHbbtvCompliance
      */
@@ -309,7 +367,12 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
+     * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+     * 
      * @param segmentControl
+     *        When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the
+     *        Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      * @see DashIsoSegmentControl
      */
 
@@ -318,7 +381,11 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
+     * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+     * 
+     * @return When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the
+     *         Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      * @see DashIsoSegmentControl
      */
 
@@ -327,7 +394,12 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
+     * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+     * 
      * @param segmentControl
+     *        When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the
+     *        Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoSegmentControl
      */
@@ -338,7 +410,12 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
+     * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
+     * 
      * @param segmentControl
+     *        When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the
+     *        Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashIsoSegmentControl
      */
@@ -398,7 +475,91 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest
+     * shows precise segment durations. The segment duration information appears inside the SegmentTimeline element,
+     * inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your
+     * DASH manifest are approximate. The segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
+     * 
+     * @param writeSegmentTimelineInRepresentation
+     *        When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH
+     *        manifest shows precise segment durations. The segment duration information appears inside the
+     *        SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't
+     *        enabled, the segment durations in your DASH manifest are approximate. The segment duration information
+     *        appears in the duration attribute of the SegmentTemplate element.
+     * @see DashIsoWriteSegmentTimelineInRepresentation
+     */
+
+    public void setWriteSegmentTimelineInRepresentation(String writeSegmentTimelineInRepresentation) {
+        this.writeSegmentTimelineInRepresentation = writeSegmentTimelineInRepresentation;
+    }
+
+    /**
+     * When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest
+     * shows precise segment durations. The segment duration information appears inside the SegmentTimeline element,
+     * inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your
+     * DASH manifest are approximate. The segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
+     * 
+     * @return When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH
+     *         manifest shows precise segment durations. The segment duration information appears inside the
+     *         SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't
+     *         enabled, the segment durations in your DASH manifest are approximate. The segment duration information
+     *         appears in the duration attribute of the SegmentTemplate element.
+     * @see DashIsoWriteSegmentTimelineInRepresentation
+     */
+
+    public String getWriteSegmentTimelineInRepresentation() {
+        return this.writeSegmentTimelineInRepresentation;
+    }
+
+    /**
+     * When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest
+     * shows precise segment durations. The segment duration information appears inside the SegmentTimeline element,
+     * inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your
+     * DASH manifest are approximate. The segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
+     * 
+     * @param writeSegmentTimelineInRepresentation
+     *        When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH
+     *        manifest shows precise segment durations. The segment duration information appears inside the
+     *        SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't
+     *        enabled, the segment durations in your DASH manifest are approximate. The segment duration information
+     *        appears in the duration attribute of the SegmentTemplate element.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoWriteSegmentTimelineInRepresentation
+     */
+
+    public DashIsoGroupSettings withWriteSegmentTimelineInRepresentation(String writeSegmentTimelineInRepresentation) {
+        setWriteSegmentTimelineInRepresentation(writeSegmentTimelineInRepresentation);
+        return this;
+    }
+
+    /**
+     * When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest
+     * shows precise segment durations. The segment duration information appears inside the SegmentTimeline element,
+     * inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your
+     * DASH manifest are approximate. The segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
+     * 
+     * @param writeSegmentTimelineInRepresentation
+     *        When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH
+     *        manifest shows precise segment durations. The segment duration information appears inside the
+     *        SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't
+     *        enabled, the segment durations in your DASH manifest are approximate. The segment duration information
+     *        appears in the duration attribute of the SegmentTemplate element.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoWriteSegmentTimelineInRepresentation
+     */
+
+    public DashIsoGroupSettings withWriteSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation writeSegmentTimelineInRepresentation) {
+        this.writeSegmentTimelineInRepresentation = writeSegmentTimelineInRepresentation.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -412,6 +573,8 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
             sb.append("BaseUrl: ").append(getBaseUrl()).append(",");
         if (getDestination() != null)
             sb.append("Destination: ").append(getDestination()).append(",");
+        if (getDestinationSettings() != null)
+            sb.append("DestinationSettings: ").append(getDestinationSettings()).append(",");
         if (getEncryption() != null)
             sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getFragmentLength() != null)
@@ -423,7 +586,9 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         if (getSegmentControl() != null)
             sb.append("SegmentControl: ").append(getSegmentControl()).append(",");
         if (getSegmentLength() != null)
-            sb.append("SegmentLength: ").append(getSegmentLength());
+            sb.append("SegmentLength: ").append(getSegmentLength()).append(",");
+        if (getWriteSegmentTimelineInRepresentation() != null)
+            sb.append("WriteSegmentTimelineInRepresentation: ").append(getWriteSegmentTimelineInRepresentation());
         sb.append("}");
         return sb.toString();
     }
@@ -445,6 +610,10 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         if (other.getDestination() == null ^ this.getDestination() == null)
             return false;
         if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
+            return false;
+        if (other.getDestinationSettings() == null ^ this.getDestinationSettings() == null)
+            return false;
+        if (other.getDestinationSettings() != null && other.getDestinationSettings().equals(this.getDestinationSettings()) == false)
             return false;
         if (other.getEncryption() == null ^ this.getEncryption() == null)
             return false;
@@ -470,6 +639,11 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
             return false;
         if (other.getSegmentLength() != null && other.getSegmentLength().equals(this.getSegmentLength()) == false)
             return false;
+        if (other.getWriteSegmentTimelineInRepresentation() == null ^ this.getWriteSegmentTimelineInRepresentation() == null)
+            return false;
+        if (other.getWriteSegmentTimelineInRepresentation() != null
+                && other.getWriteSegmentTimelineInRepresentation().equals(this.getWriteSegmentTimelineInRepresentation()) == false)
+            return false;
         return true;
     }
 
@@ -480,12 +654,14 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getBaseUrl() == null) ? 0 : getBaseUrl().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
+        hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getFragmentLength() == null) ? 0 : getFragmentLength().hashCode());
         hashCode = prime * hashCode + ((getHbbtvCompliance() == null) ? 0 : getHbbtvCompliance().hashCode());
         hashCode = prime * hashCode + ((getMinBufferTime() == null) ? 0 : getMinBufferTime().hashCode());
         hashCode = prime * hashCode + ((getSegmentControl() == null) ? 0 : getSegmentControl().hashCode());
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());
+        hashCode = prime * hashCode + ((getWriteSegmentTimelineInRepresentation() == null) ? 0 : getWriteSegmentTimelineInRepresentation().hashCode());
         return hashCode;
     }
 

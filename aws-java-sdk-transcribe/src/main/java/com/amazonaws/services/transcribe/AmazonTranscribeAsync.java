@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,39 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      */
     java.util.concurrent.Future<CreateVocabularyResult> createVocabularyAsync(CreateVocabularyRequest createVocabularyRequest,
             com.amazonaws.handlers.AsyncHandler<CreateVocabularyRequest, CreateVocabularyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a previously submitted transcription job along with any other generated results such as the
+     * transcription, models, and so on.
+     * </p>
+     * 
+     * @param deleteTranscriptionJobRequest
+     * @return A Java Future containing the result of the DeleteTranscriptionJob operation returned by the service.
+     * @sample AmazonTranscribeAsync.DeleteTranscriptionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTranscriptionJobResult> deleteTranscriptionJobAsync(DeleteTranscriptionJobRequest deleteTranscriptionJobRequest);
+
+    /**
+     * <p>
+     * Deletes a previously submitted transcription job along with any other generated results such as the
+     * transcription, models, and so on.
+     * </p>
+     * 
+     * @param deleteTranscriptionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTranscriptionJob operation returned by the service.
+     * @sample AmazonTranscribeAsyncHandler.DeleteTranscriptionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTranscriptionJobResult> deleteTranscriptionJobAsync(DeleteTranscriptionJobRequest deleteTranscriptionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTranscriptionJobRequest, DeleteTranscriptionJobResult> asyncHandler);
 
     /**
      * <p>
@@ -259,7 +292,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates an existing vocabulary with new values.
+     * Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the
+     * existing information with the values that you provide in the request.
      * </p>
      * 
      * @param updateVocabularyRequest
@@ -272,7 +306,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates an existing vocabulary with new values.
+     * Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the
+     * existing information with the values that you provide in the request.
      * </p>
      * 
      * @param updateVocabularyRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class CatalogImportStatusMarshaller {
     private static final MarshallingInfo<Boolean> IMPORTCOMPLETED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportCompleted").build();
     private static final MarshallingInfo<java.util.Date> IMPORTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> IMPORTEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportedBy").build();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
     private String organizationId;
     /**
      * <p>
-     * The identifier for the group to which the members are associated.
+     * The identifier for the group to which the members (users or groups) are associated.
      * </p>
      */
     private String groupId;
@@ -92,11 +92,11 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the group to which the members are associated.
+     * The identifier for the group to which the members (users or groups) are associated.
      * </p>
      * 
      * @param groupId
-     *        The identifier for the group to which the members are associated.
+     *        The identifier for the group to which the members (users or groups) are associated.
      */
 
     public void setGroupId(String groupId) {
@@ -105,10 +105,10 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the group to which the members are associated.
+     * The identifier for the group to which the members (users or groups) are associated.
      * </p>
      * 
-     * @return The identifier for the group to which the members are associated.
+     * @return The identifier for the group to which the members (users or groups) are associated.
      */
 
     public String getGroupId() {
@@ -117,11 +117,11 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier for the group to which the members are associated.
+     * The identifier for the group to which the members (users or groups) are associated.
      * </p>
      * 
      * @param groupId
-     *        The identifier for the group to which the members are associated.
+     *        The identifier for the group to which the members (users or groups) are associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,7 +211,8 @@ public class ListGroupMembersRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

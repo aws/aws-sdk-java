@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,13 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private Datastore datastore;
+    /**
+     * <p>
+     * Additional statistical information about the data store. Included if the 'includeStatistics' parameter is set to
+     * true in the request.
+     * </p>
+     */
+    private DatastoreStatistics statistics;
 
     /**
      * <p>
@@ -71,7 +78,54 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Additional statistical information about the data store. Included if the 'includeStatistics' parameter is set to
+     * true in the request.
+     * </p>
+     * 
+     * @param statistics
+     *        Additional statistical information about the data store. Included if the 'includeStatistics' parameter is
+     *        set to true in the request.
+     */
+
+    public void setStatistics(DatastoreStatistics statistics) {
+        this.statistics = statistics;
+    }
+
+    /**
+     * <p>
+     * Additional statistical information about the data store. Included if the 'includeStatistics' parameter is set to
+     * true in the request.
+     * </p>
+     * 
+     * @return Additional statistical information about the data store. Included if the 'includeStatistics' parameter is
+     *         set to true in the request.
+     */
+
+    public DatastoreStatistics getStatistics() {
+        return this.statistics;
+    }
+
+    /**
+     * <p>
+     * Additional statistical information about the data store. Included if the 'includeStatistics' parameter is set to
+     * true in the request.
+     * </p>
+     * 
+     * @param statistics
+     *        Additional statistical information about the data store. Included if the 'includeStatistics' parameter is
+     *        set to true in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatastoreResult withStatistics(DatastoreStatistics statistics) {
+        setStatistics(statistics);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -82,7 +136,9 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDatastore() != null)
-            sb.append("Datastore: ").append(getDatastore());
+            sb.append("Datastore: ").append(getDatastore()).append(",");
+        if (getStatistics() != null)
+            sb.append("Statistics: ").append(getStatistics());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +157,10 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getDatastore() != null && other.getDatastore().equals(this.getDatastore()) == false)
             return false;
+        if (other.getStatistics() == null ^ this.getStatistics() == null)
+            return false;
+        if (other.getStatistics() != null && other.getStatistics().equals(this.getStatistics()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +170,7 @@ public class DescribeDatastoreResult extends com.amazonaws.AmazonWebServiceResul
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDatastore() == null) ? 0 : getDatastore().hashCode());
+        hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         return hashCode;
     }
 

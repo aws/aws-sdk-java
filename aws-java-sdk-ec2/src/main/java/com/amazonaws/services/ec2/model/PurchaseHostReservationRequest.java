@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -44,7 +44,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     private String currencyCode;
     /**
      * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * The IDs of the Dedicated Hosts with which the reservation will be associated.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> hostIdSet;
@@ -52,7 +52,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      * <p>
      * The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's
      * upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit,
-     * the request will fail. This is used to ensure that the purchase does not exceed the expected upfront cost of the
+     * the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the
      * purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price
      * of USD 100, specify 100.00.
      * </p>
@@ -68,13 +68,13 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
      *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -85,12 +85,12 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
      *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -101,13 +101,13 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
      *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -212,10 +212,10 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * The IDs of the Dedicated Hosts with which the reservation will be associated.
      * </p>
      * 
-     * @return The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * @return The IDs of the Dedicated Hosts with which the reservation will be associated.
      */
 
     public java.util.List<String> getHostIdSet() {
@@ -227,11 +227,11 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * The IDs of the Dedicated Hosts with which the reservation will be associated.
      * </p>
      * 
      * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     *        The IDs of the Dedicated Hosts with which the reservation will be associated.
      */
 
     public void setHostIdSet(java.util.Collection<String> hostIdSet) {
@@ -245,7 +245,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * The IDs of the Dedicated Hosts with which the reservation will be associated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -254,7 +254,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      * </p>
      * 
      * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     *        The IDs of the Dedicated Hosts with which the reservation will be associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,11 +270,11 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     * The IDs of the Dedicated Hosts with which the reservation will be associated.
      * </p>
      * 
      * @param hostIdSet
-     *        The ID/s of the Dedicated Host/s that the reservation will be associated with.
+     *        The IDs of the Dedicated Hosts with which the reservation will be associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,7 +287,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      * <p>
      * The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's
      * upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit,
-     * the request will fail. This is used to ensure that the purchase does not exceed the expected upfront cost of the
+     * the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the
      * purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price
      * of USD 100, specify 100.00.
      * </p>
@@ -295,7 +295,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      * @param limitPrice
      *        The specified limit is checked against the total upfront cost of the reservation (calculated as the
      *        offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the
-     *        specified price limit, the request will fail. This is used to ensure that the purchase does not exceed the
+     *        specified price limit, the request fails. This is used to ensure that the purchase does not exceed the
      *        expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For
      *        example, to indicate a limit price of USD 100, specify 100.00.
      */
@@ -308,16 +308,16 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      * <p>
      * The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's
      * upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit,
-     * the request will fail. This is used to ensure that the purchase does not exceed the expected upfront cost of the
+     * the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the
      * purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price
      * of USD 100, specify 100.00.
      * </p>
      * 
      * @return The specified limit is checked against the total upfront cost of the reservation (calculated as the
      *         offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the
-     *         specified price limit, the request will fail. This is used to ensure that the purchase does not exceed
-     *         the expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>.
-     *         For example, to indicate a limit price of USD 100, specify 100.00.
+     *         specified price limit, the request fails. This is used to ensure that the purchase does not exceed the
+     *         expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For
+     *         example, to indicate a limit price of USD 100, specify 100.00.
      */
 
     public String getLimitPrice() {
@@ -328,7 +328,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      * <p>
      * The specified limit is checked against the total upfront cost of the reservation (calculated as the offering's
      * upfront cost multiplied by the host count). If the total upfront cost is greater than the specified price limit,
-     * the request will fail. This is used to ensure that the purchase does not exceed the expected upfront cost of the
+     * the request fails. This is used to ensure that the purchase does not exceed the expected upfront cost of the
      * purchase. At this time, the only supported currency is <code>USD</code>. For example, to indicate a limit price
      * of USD 100, specify 100.00.
      * </p>
@@ -336,7 +336,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      * @param limitPrice
      *        The specified limit is checked against the total upfront cost of the reservation (calculated as the
      *        offering's upfront cost multiplied by the host count). If the total upfront cost is greater than the
-     *        specified price limit, the request will fail. This is used to ensure that the purchase does not exceed the
+     *        specified price limit, the request fails. This is used to ensure that the purchase does not exceed the
      *        expected upfront cost of the purchase. At this time, the only supported currency is <code>USD</code>. For
      *        example, to indicate a limit price of USD 100, specify 100.00.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -399,7 +399,8 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon Simple
- * Notification Service topic or an email address.
+ * The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS
+ * topic or an email address.
  * </p>
  * <p>
  * For example, an email subscriber would have the following parameters:
@@ -168,7 +168,8 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -181,7 +182,7 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
         if (getSubscriptionType() != null)
             sb.append("SubscriptionType: ").append(getSubscriptionType()).append(",");
         if (getAddress() != null)
-            sb.append("Address: ").append(getAddress());
+            sb.append("Address: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

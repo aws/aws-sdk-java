@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -189,6 +189,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Represents the settings used to enable server-side encryption on the cluster.
+     * </p>
+     */
+    private SSESpecification sSESpecification;
 
     /**
      * <p>
@@ -1299,7 +1305,48 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Represents the settings used to enable server-side encryption on the cluster.
+     * </p>
+     * 
+     * @param sSESpecification
+     *        Represents the settings used to enable server-side encryption on the cluster.
+     */
+
+    public void setSSESpecification(SSESpecification sSESpecification) {
+        this.sSESpecification = sSESpecification;
+    }
+
+    /**
+     * <p>
+     * Represents the settings used to enable server-side encryption on the cluster.
+     * </p>
+     * 
+     * @return Represents the settings used to enable server-side encryption on the cluster.
+     */
+
+    public SSESpecification getSSESpecification() {
+        return this.sSESpecification;
+    }
+
+    /**
+     * <p>
+     * Represents the settings used to enable server-side encryption on the cluster.
+     * </p>
+     * 
+     * @param sSESpecification
+     *        Represents the settings used to enable server-side encryption on the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withSSESpecification(SSESpecification sSESpecification) {
+        setSSESpecification(sSESpecification);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1332,7 +1379,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getParameterGroupName() != null)
             sb.append("ParameterGroupName: ").append(getParameterGroupName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSSESpecification() != null)
+            sb.append("SSESpecification: ").append(getSSESpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -1395,6 +1444,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSSESpecification() == null ^ this.getSSESpecification() == null)
+            return false;
+        if (other.getSSESpecification() != null && other.getSSESpecification().equals(this.getSSESpecification()) == false)
+            return false;
         return true;
     }
 
@@ -1415,6 +1468,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getParameterGroupName() == null) ? 0 : getParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSSESpecification() == null) ? 0 : getSSESpecification().hashCode());
         return hashCode;
     }
 

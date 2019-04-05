@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,11 +81,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * to inspect collected data before it is shared with the service.
  * </p>
  * </important>
- * <p>
- * Your AWS account must be granted access to Application Discovery Service, a process called <i>whitelisting</i>. This
- * is true for AWS partners and customers alike. To request access, <a
- * href="http://aws.amazon.com/application-discovery/">sign up for Application Discovery Service</a>.
- * </p>
  * <p>
  * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for
  * Application Discovery Service. The topic for each action shows the API request parameters and the response.
@@ -344,6 +339,39 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteImportDataResult> batchDeleteImportDataAsync(BatchDeleteImportDataRequest request) {
+
+        return batchDeleteImportDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteImportDataResult> batchDeleteImportDataAsync(final BatchDeleteImportDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteImportDataRequest, BatchDeleteImportDataResult> asyncHandler) {
+        final BatchDeleteImportDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteImportDataResult>() {
+            @Override
+            public BatchDeleteImportDataResult call() throws Exception {
+                BatchDeleteImportDataResult result = null;
+
+                try {
+                    result = executeBatchDeleteImportData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request) {
 
         return createApplicationAsync(request, null);
@@ -542,6 +570,39 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeContinuousExportsResult> describeContinuousExportsAsync(DescribeContinuousExportsRequest request) {
+
+        return describeContinuousExportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeContinuousExportsResult> describeContinuousExportsAsync(final DescribeContinuousExportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeContinuousExportsRequest, DescribeContinuousExportsResult> asyncHandler) {
+        final DescribeContinuousExportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeContinuousExportsResult>() {
+            @Override
+            public DescribeContinuousExportsResult call() throws Exception {
+                DescribeContinuousExportsResult result = null;
+
+                try {
+                    result = executeDescribeContinuousExports(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     @Deprecated
     public java.util.concurrent.Future<DescribeExportConfigurationsResult> describeExportConfigurationsAsync(DescribeExportConfigurationsRequest request) {
 
@@ -594,6 +655,39 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
 
                 try {
                     result = executeDescribeExportTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImportTasksResult> describeImportTasksAsync(DescribeImportTasksRequest request) {
+
+        return describeImportTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImportTasksResult> describeImportTasksAsync(final DescribeImportTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeImportTasksRequest, DescribeImportTasksResult> asyncHandler) {
+        final DescribeImportTasksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeImportTasksResult>() {
+            @Override
+            public DescribeImportTasksResult call() throws Exception {
+                DescribeImportTasksResult result = null;
+
+                try {
+                    result = executeDescribeImportTasks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -812,6 +906,39 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     }
 
     @Override
+    public java.util.concurrent.Future<StartContinuousExportResult> startContinuousExportAsync(StartContinuousExportRequest request) {
+
+        return startContinuousExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartContinuousExportResult> startContinuousExportAsync(final StartContinuousExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartContinuousExportRequest, StartContinuousExportResult> asyncHandler) {
+        final StartContinuousExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartContinuousExportResult>() {
+            @Override
+            public StartContinuousExportResult call() throws Exception {
+                StartContinuousExportResult result = null;
+
+                try {
+                    result = executeStartContinuousExport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartDataCollectionByAgentIdsResult> startDataCollectionByAgentIdsAsync(StartDataCollectionByAgentIdsRequest request) {
 
         return startDataCollectionByAgentIdsAsync(request, null);
@@ -863,6 +990,72 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
 
                 try {
                     result = executeStartExportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportTaskResult> startImportTaskAsync(StartImportTaskRequest request) {
+
+        return startImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportTaskResult> startImportTaskAsync(final StartImportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartImportTaskRequest, StartImportTaskResult> asyncHandler) {
+        final StartImportTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartImportTaskResult>() {
+            @Override
+            public StartImportTaskResult call() throws Exception {
+                StartImportTaskResult result = null;
+
+                try {
+                    result = executeStartImportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopContinuousExportResult> stopContinuousExportAsync(StopContinuousExportRequest request) {
+
+        return stopContinuousExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopContinuousExportResult> stopContinuousExportAsync(final StopContinuousExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopContinuousExportRequest, StopContinuousExportResult> asyncHandler) {
+        final StopContinuousExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopContinuousExportResult>() {
+            @Override
+            public StopContinuousExportResult call() throws Exception {
+                StopContinuousExportResult result = null;
+
+                try {
+                    result = executeStopContinuousExport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

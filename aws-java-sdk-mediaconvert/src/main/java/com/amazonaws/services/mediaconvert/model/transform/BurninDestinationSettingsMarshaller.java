@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class BurninDestinationSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fontOpacity").build();
     private static final MarshallingInfo<Integer> FONTRESOLUTION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fontResolution").build();
+    private static final MarshallingInfo<String> FONTSCRIPT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fontScript").build();
     private static final MarshallingInfo<Integer> FONTSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fontSize").build();
     private static final MarshallingInfo<String> OUTLINECOLOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -82,6 +84,7 @@ public class BurninDestinationSettingsMarshaller {
             protocolMarshaller.marshall(burninDestinationSettings.getFontColor(), FONTCOLOR_BINDING);
             protocolMarshaller.marshall(burninDestinationSettings.getFontOpacity(), FONTOPACITY_BINDING);
             protocolMarshaller.marshall(burninDestinationSettings.getFontResolution(), FONTRESOLUTION_BINDING);
+            protocolMarshaller.marshall(burninDestinationSettings.getFontScript(), FONTSCRIPT_BINDING);
             protocolMarshaller.marshall(burninDestinationSettings.getFontSize(), FONTSIZE_BINDING);
             protocolMarshaller.marshall(burninDestinationSettings.getOutlineColor(), OUTLINECOLOR_BINDING);
             protocolMarshaller.marshall(burninDestinationSettings.getOutlineSize(), OUTLINESIZE_BINDING);

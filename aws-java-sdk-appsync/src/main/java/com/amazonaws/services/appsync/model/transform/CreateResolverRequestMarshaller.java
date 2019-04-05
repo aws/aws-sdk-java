@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,10 @@ public class CreateResolverRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestMappingTemplate").build();
     private static final MarshallingInfo<String> RESPONSEMAPPINGTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("responseMappingTemplate").build();
+    private static final MarshallingInfo<String> KIND_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("kind").build();
+    private static final MarshallingInfo<StructuredPojo> PIPELINECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineConfig").build();
 
     private static final CreateResolverRequestMarshaller instance = new CreateResolverRequestMarshaller();
 
@@ -62,6 +66,8 @@ public class CreateResolverRequestMarshaller {
             protocolMarshaller.marshall(createResolverRequest.getDataSourceName(), DATASOURCENAME_BINDING);
             protocolMarshaller.marshall(createResolverRequest.getRequestMappingTemplate(), REQUESTMAPPINGTEMPLATE_BINDING);
             protocolMarshaller.marshall(createResolverRequest.getResponseMappingTemplate(), RESPONSEMAPPINGTEMPLATE_BINDING);
+            protocolMarshaller.marshall(createResolverRequest.getKind(), KIND_BINDING);
+            protocolMarshaller.marshall(createResolverRequest.getPipelineConfig(), PIPELINECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

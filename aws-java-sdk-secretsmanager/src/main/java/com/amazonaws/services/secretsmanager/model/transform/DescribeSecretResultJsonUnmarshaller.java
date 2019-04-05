@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,19 +78,19 @@ public class DescribeSecretResultJsonUnmarshaller implements Unmarshaller<Descri
                 }
                 if (context.testExpression("LastRotatedDate", targetDepth)) {
                     context.nextToken();
-                    describeSecretResult.setLastRotatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeSecretResult.setLastRotatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastChangedDate", targetDepth)) {
                     context.nextToken();
-                    describeSecretResult.setLastChangedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeSecretResult.setLastChangedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastAccessedDate", targetDepth)) {
                     context.nextToken();
-                    describeSecretResult.setLastAccessedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeSecretResult.setLastAccessedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("DeletedDate", targetDepth)) {
                     context.nextToken();
-                    describeSecretResult.setDeletedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    describeSecretResult.setDeletedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();

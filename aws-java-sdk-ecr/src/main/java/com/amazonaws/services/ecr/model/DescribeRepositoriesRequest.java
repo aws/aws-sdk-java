@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,9 +61,9 @@ public class DescribeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      * this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a
      * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
      * can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeRepositories</code>
-     * returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you
-     * specify repositories with <code>repositoryNames</code>.
+     * value. This value can be between 1 and 1000. If this parameter is not used, then
+     * <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
+     * This option cannot be used when you specify repositories with <code>repositoryNames</code>.
      * </p>
      */
     private Integer maxResults;
@@ -292,9 +292,9 @@ public class DescribeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      * this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a
      * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
      * can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeRepositories</code>
-     * returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you
-     * specify repositories with <code>repositoryNames</code>.
+     * value. This value can be between 1 and 1000. If this parameter is not used, then
+     * <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
+     * This option cannot be used when you specify repositories with <code>repositoryNames</code>.
      * </p>
      * 
      * @param maxResults
@@ -302,7 +302,7 @@ public class DescribeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      *        output. When this parameter is used, <code>DescribeRepositories</code> only returns
      *        <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The
      *        remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code>
-     *        request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this
+     *        request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this
      *        parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a
      *        <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with
      *        <code>repositoryNames</code>.
@@ -318,9 +318,9 @@ public class DescribeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      * this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a
      * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
      * can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeRepositories</code>
-     * returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you
-     * specify repositories with <code>repositoryNames</code>.
+     * value. This value can be between 1 and 1000. If this parameter is not used, then
+     * <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
+     * This option cannot be used when you specify repositories with <code>repositoryNames</code>.
      * </p>
      * 
      * @return The maximum number of repository results returned by <code>DescribeRepositories</code> in paginated
@@ -328,8 +328,8 @@ public class DescribeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      *         <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element.
      *         The remaining results of the initial request can be seen by sending another
      *         <code>DescribeRepositories</code> request with the returned <code>nextToken</code> value. This value can
-     *         be between 1 and 100. If this parameter is not used, then <code>DescribeRepositories</code> returns up to
-     *         100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you
+     *         be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code> returns up
+     *         to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you
      *         specify repositories with <code>repositoryNames</code>.
      */
 
@@ -343,9 +343,9 @@ public class DescribeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      * this parameter is used, <code>DescribeRepositories</code> only returns <code>maxResults</code> results in a
      * single page along with a <code>nextToken</code> response element. The remaining results of the initial request
      * can be seen by sending another <code>DescribeRepositories</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeRepositories</code>
-     * returns up to 100 results and a <code>nextToken</code> value, if applicable. This option cannot be used when you
-     * specify repositories with <code>repositoryNames</code>.
+     * value. This value can be between 1 and 1000. If this parameter is not used, then
+     * <code>DescribeRepositories</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
+     * This option cannot be used when you specify repositories with <code>repositoryNames</code>.
      * </p>
      * 
      * @param maxResults
@@ -353,7 +353,7 @@ public class DescribeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
      *        output. When this parameter is used, <code>DescribeRepositories</code> only returns
      *        <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The
      *        remaining results of the initial request can be seen by sending another <code>DescribeRepositories</code>
-     *        request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this
+     *        request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this
      *        parameter is not used, then <code>DescribeRepositories</code> returns up to 100 results and a
      *        <code>nextToken</code> value, if applicable. This option cannot be used when you specify repositories with
      *        <code>repositoryNames</code>.
@@ -366,7 +366,8 @@ public class DescribeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -128,6 +128,39 @@ public class AmazonMQAsyncClient extends AmazonMQClient implements AmazonMQAsync
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
+
+        return createTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(final CreateTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTagsRequest, CreateTagsResult> asyncHandler) {
+        final CreateTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTagsResult>() {
+            @Override
+            public CreateTagsResult call() throws Exception {
+                CreateTagsResult result = null;
+
+                try {
+                    result = executeCreateTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request) {
 
         return createUserAsync(request, null);
@@ -178,6 +211,39 @@ public class AmazonMQAsyncClient extends AmazonMQClient implements AmazonMQAsync
 
                 try {
                     result = executeDeleteBroker(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request) {
+
+        return deleteTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(final DeleteTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
+        final DeleteTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTagsResult>() {
+            @Override
+            public DeleteTagsResult call() throws Exception {
+                DeleteTagsResult result = null;
+
+                try {
+                    result = executeDeleteTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -443,6 +509,39 @@ public class AmazonMQAsyncClient extends AmazonMQClient implements AmazonMQAsync
 
                 try {
                     result = executeListConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
+
+        return listTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsResult> listTagsAsync(final ListTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
+        final ListTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsResult>() {
+            @Override
+            public ListTagsResult call() throws Exception {
+                ListTagsResult result = null;
+
+                try {
+                    result = executeListTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

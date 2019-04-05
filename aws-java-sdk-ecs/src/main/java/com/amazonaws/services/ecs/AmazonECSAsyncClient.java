@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <fullname>Amazon Elastic Container Service</fullname>
  * <p>
  * Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it
  * easy to run, stop, and manage Docker containers on a cluster. You can host your cluster on a serverless
@@ -347,6 +348,72 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTaskSetResult> createTaskSetAsync(CreateTaskSetRequest request) {
+
+        return createTaskSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTaskSetResult> createTaskSetAsync(final CreateTaskSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTaskSetRequest, CreateTaskSetResult> asyncHandler) {
+        final CreateTaskSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTaskSetResult>() {
+            @Override
+            public CreateTaskSetResult call() throws Exception {
+                CreateTaskSetResult result = null;
+
+                try {
+                    result = executeCreateTaskSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccountSettingResult> deleteAccountSettingAsync(DeleteAccountSettingRequest request) {
+
+        return deleteAccountSettingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccountSettingResult> deleteAccountSettingAsync(final DeleteAccountSettingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccountSettingRequest, DeleteAccountSettingResult> asyncHandler) {
+        final DeleteAccountSettingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccountSettingResult>() {
+            @Override
+            public DeleteAccountSettingResult call() throws Exception {
+                DeleteAccountSettingResult result = null;
+
+                try {
+                    result = executeDeleteAccountSetting(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAttributesResult> deleteAttributesAsync(DeleteAttributesRequest request) {
 
         return deleteAttributesAsync(request, null);
@@ -430,6 +497,39 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
 
                 try {
                     result = executeDeleteService(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTaskSetResult> deleteTaskSetAsync(DeleteTaskSetRequest request) {
+
+        return deleteTaskSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTaskSetResult> deleteTaskSetAsync(final DeleteTaskSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTaskSetRequest, DeleteTaskSetResult> asyncHandler) {
+        final DeleteTaskSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTaskSetResult>() {
+            @Override
+            public DeleteTaskSetResult call() throws Exception {
+                DeleteTaskSetResult result = null;
+
+                try {
+                    result = executeDeleteTaskSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -667,6 +767,39 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTaskSetsResult> describeTaskSetsAsync(DescribeTaskSetsRequest request) {
+
+        return describeTaskSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTaskSetsResult> describeTaskSetsAsync(final DescribeTaskSetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTaskSetsRequest, DescribeTaskSetsResult> asyncHandler) {
+        final DescribeTaskSetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTaskSetsResult>() {
+            @Override
+            public DescribeTaskSetsResult call() throws Exception {
+                DescribeTaskSetsResult result = null;
+
+                try {
+                    result = executeDescribeTaskSets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTasksResult> describeTasksAsync(DescribeTasksRequest request) {
 
         return describeTasksAsync(request, null);
@@ -753,6 +886,39 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
             com.amazonaws.handlers.AsyncHandler<DiscoverPollEndpointRequest, DiscoverPollEndpointResult> asyncHandler) {
 
         return discoverPollEndpointAsync(new DiscoverPollEndpointRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccountSettingsResult> listAccountSettingsAsync(ListAccountSettingsRequest request) {
+
+        return listAccountSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccountSettingsResult> listAccountSettingsAsync(final ListAccountSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccountSettingsRequest, ListAccountSettingsResult> asyncHandler) {
+        final ListAccountSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccountSettingsResult>() {
+            @Override
+            public ListAccountSettingsResult call() throws Exception {
+                ListAccountSettingsResult result = null;
+
+                try {
+                    result = executeListAccountSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -957,6 +1123,39 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest request) {
 
         return listTaskDefinitionFamiliesAsync(request, null);
@@ -1121,6 +1320,72 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     public java.util.concurrent.Future<ListTasksResult> listTasksAsync(com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler) {
 
         return listTasksAsync(new ListTasksRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountSettingResult> putAccountSettingAsync(PutAccountSettingRequest request) {
+
+        return putAccountSettingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountSettingResult> putAccountSettingAsync(final PutAccountSettingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAccountSettingRequest, PutAccountSettingResult> asyncHandler) {
+        final PutAccountSettingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAccountSettingResult>() {
+            @Override
+            public PutAccountSettingResult call() throws Exception {
+                PutAccountSettingResult result = null;
+
+                try {
+                    result = executePutAccountSetting(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountSettingDefaultResult> putAccountSettingDefaultAsync(PutAccountSettingDefaultRequest request) {
+
+        return putAccountSettingDefaultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountSettingDefaultResult> putAccountSettingDefaultAsync(final PutAccountSettingDefaultRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAccountSettingDefaultRequest, PutAccountSettingDefaultResult> asyncHandler) {
+        final PutAccountSettingDefaultRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAccountSettingDefaultResult>() {
+            @Override
+            public PutAccountSettingDefaultResult call() throws Exception {
+                PutAccountSettingDefaultResult result = null;
+
+                try {
+                    result = executePutAccountSettingDefault(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -1411,6 +1676,72 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     }
 
     @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateContainerAgentResult> updateContainerAgentAsync(UpdateContainerAgentRequest request) {
 
         return updateContainerAgentAsync(request, null);
@@ -1495,6 +1826,72 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
 
                 try {
                     result = executeUpdateService(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServicePrimaryTaskSetResult> updateServicePrimaryTaskSetAsync(UpdateServicePrimaryTaskSetRequest request) {
+
+        return updateServicePrimaryTaskSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServicePrimaryTaskSetResult> updateServicePrimaryTaskSetAsync(final UpdateServicePrimaryTaskSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateServicePrimaryTaskSetRequest, UpdateServicePrimaryTaskSetResult> asyncHandler) {
+        final UpdateServicePrimaryTaskSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateServicePrimaryTaskSetResult>() {
+            @Override
+            public UpdateServicePrimaryTaskSetResult call() throws Exception {
+                UpdateServicePrimaryTaskSetResult result = null;
+
+                try {
+                    result = executeUpdateServicePrimaryTaskSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskSetResult> updateTaskSetAsync(UpdateTaskSetRequest request) {
+
+        return updateTaskSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskSetResult> updateTaskSetAsync(final UpdateTaskSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTaskSetRequest, UpdateTaskSetResult> asyncHandler) {
+        final UpdateTaskSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTaskSetResult>() {
+            @Override
+            public UpdateTaskSetResult call() throws Exception {
+                UpdateTaskSetResult result = null;
+
+                try {
+                    result = executeUpdateTaskSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

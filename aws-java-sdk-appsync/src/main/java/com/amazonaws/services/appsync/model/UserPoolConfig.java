@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes an Amazon Cognito User Pool configuration.
+ * Describes an Amazon Cognito user pool configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UserPoolConfig" target="_top">AWS API
@@ -36,20 +36,20 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
     private String userPoolId;
     /**
      * <p>
-     * The AWS region in which the user pool was created.
+     * The AWS Region in which the user pool was created.
      * </p>
      */
     private String awsRegion;
     /**
      * <p>
-     * The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool
-     * authentication doesn't match the Amazon Cognito User Pool configuration.
+     * The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
+     * authentication doesn't match the Amazon Cognito user pool configuration.
      * </p>
      */
     private String defaultAction;
     /**
      * <p>
-     * A regular expression for validating the incoming Amazon Cognito User Pool app client ID.
+     * A regular expression for validating the incoming Amazon Cognito user pool app client ID.
      * </p>
      */
     private String appIdClientRegex;
@@ -96,11 +96,11 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region in which the user pool was created.
+     * The AWS Region in which the user pool was created.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS region in which the user pool was created.
+     *        The AWS Region in which the user pool was created.
      */
 
     public void setAwsRegion(String awsRegion) {
@@ -109,10 +109,10 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region in which the user pool was created.
+     * The AWS Region in which the user pool was created.
      * </p>
      * 
-     * @return The AWS region in which the user pool was created.
+     * @return The AWS Region in which the user pool was created.
      */
 
     public String getAwsRegion() {
@@ -121,11 +121,11 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS region in which the user pool was created.
+     * The AWS Region in which the user pool was created.
      * </p>
      * 
      * @param awsRegion
-     *        The AWS region in which the user pool was created.
+     *        The AWS Region in which the user pool was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,13 +136,13 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool
-     * authentication doesn't match the Amazon Cognito User Pool configuration.
+     * The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
+     * authentication doesn't match the Amazon Cognito user pool configuration.
      * </p>
      * 
      * @param defaultAction
-     *        The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool
-     *        authentication doesn't match the Amazon Cognito User Pool configuration.
+     *        The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
+     *        authentication doesn't match the Amazon Cognito user pool configuration.
      * @see DefaultAction
      */
 
@@ -152,12 +152,12 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool
-     * authentication doesn't match the Amazon Cognito User Pool configuration.
+     * The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
+     * authentication doesn't match the Amazon Cognito user pool configuration.
      * </p>
      * 
-     * @return The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool
-     *         authentication doesn't match the Amazon Cognito User Pool configuration.
+     * @return The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
+     *         authentication doesn't match the Amazon Cognito user pool configuration.
      * @see DefaultAction
      */
 
@@ -167,13 +167,13 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool
-     * authentication doesn't match the Amazon Cognito User Pool configuration.
+     * The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
+     * authentication doesn't match the Amazon Cognito user pool configuration.
      * </p>
      * 
      * @param defaultAction
-     *        The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool
-     *        authentication doesn't match the Amazon Cognito User Pool configuration.
+     *        The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
+     *        authentication doesn't match the Amazon Cognito user pool configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DefaultAction
      */
@@ -185,13 +185,13 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool
-     * authentication doesn't match the Amazon Cognito User Pool configuration.
+     * The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
+     * authentication doesn't match the Amazon Cognito user pool configuration.
      * </p>
      * 
      * @param defaultAction
-     *        The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool
-     *        authentication doesn't match the Amazon Cognito User Pool configuration.
+     *        The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool
+     *        authentication doesn't match the Amazon Cognito user pool configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DefaultAction
      */
@@ -203,11 +203,11 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A regular expression for validating the incoming Amazon Cognito User Pool app client ID.
+     * A regular expression for validating the incoming Amazon Cognito user pool app client ID.
      * </p>
      * 
      * @param appIdClientRegex
-     *        A regular expression for validating the incoming Amazon Cognito User Pool app client ID.
+     *        A regular expression for validating the incoming Amazon Cognito user pool app client ID.
      */
 
     public void setAppIdClientRegex(String appIdClientRegex) {
@@ -216,10 +216,10 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A regular expression for validating the incoming Amazon Cognito User Pool app client ID.
+     * A regular expression for validating the incoming Amazon Cognito user pool app client ID.
      * </p>
      * 
-     * @return A regular expression for validating the incoming Amazon Cognito User Pool app client ID.
+     * @return A regular expression for validating the incoming Amazon Cognito user pool app client ID.
      */
 
     public String getAppIdClientRegex() {
@@ -228,11 +228,11 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A regular expression for validating the incoming Amazon Cognito User Pool app client ID.
+     * A regular expression for validating the incoming Amazon Cognito user pool app client ID.
      * </p>
      * 
      * @param appIdClientRegex
-     *        A regular expression for validating the incoming Amazon Cognito User Pool app client ID.
+     *        A regular expression for validating the incoming Amazon Cognito user pool app client ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,7 +242,8 @@ public class UserPoolConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

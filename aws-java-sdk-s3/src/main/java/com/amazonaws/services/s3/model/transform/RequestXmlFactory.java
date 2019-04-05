@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -177,6 +177,7 @@ public class RequestXmlFactory {
                 addIfNotNull(xml, "RecordDelimiter", csvInput.getRecordDelimiterAsString());
                 addIfNotNull(xml, "FieldDelimiter", csvInput.getFieldDelimiterAsString());
                 addIfNotNull(xml, "QuoteCharacter", csvInput.getQuoteCharacterAsString());
+                addIfNotNull(xml, "AllowQuotedRecordDelimiter", csvInput.getAllowQuotedRecordDelimiter());
                 xml.end();
             }
 
@@ -184,6 +185,11 @@ public class RequestXmlFactory {
                 xml.start("JSON");
                 JSONInput jsonInput = inputSerialization.getJson();
                 addIfNotNull(xml, "Type", jsonInput.getType());
+                xml.end();
+            }
+
+            if (inputSerialization.getParquet() != null) {
+                xml.start("Parquet");
                 xml.end();
             }
 

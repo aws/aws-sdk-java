@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,20 @@ public class DatasetSummaryJsonUnmarshaller implements Unmarshaller<DatasetSumma
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    datasetSummary.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    datasetSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
                     context.nextToken();
-                    datasetSummary.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    datasetSummary.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("triggers", targetDepth)) {
+                    context.nextToken();
+                    datasetSummary.setTriggers(new ListUnmarshaller<DatasetTrigger>(DatasetTriggerJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("actions", targetDepth)) {
+                    context.nextToken();
+                    datasetSummary.setActions(new ListUnmarshaller<DatasetActionSummary>(DatasetActionSummaryJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

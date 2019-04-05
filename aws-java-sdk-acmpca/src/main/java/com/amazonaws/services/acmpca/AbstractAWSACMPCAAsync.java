@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,19 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest request) {
+
+        return createPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePermissionRequest, CreatePermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteCertificateAuthorityResult> deleteCertificateAuthorityAsync(DeleteCertificateAuthorityRequest request) {
 
         return deleteCertificateAuthorityAsync(request, null);
@@ -63,6 +76,19 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     @Override
     public java.util.concurrent.Future<DeleteCertificateAuthorityResult> deleteCertificateAuthorityAsync(DeleteCertificateAuthorityRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCertificateAuthorityRequest, DeleteCertificateAuthorityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest request) {
+
+        return deletePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionRequest, DeletePermissionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -178,6 +204,19 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     }
 
     @Override
+    public java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest request) {
+
+        return listPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPermissionsResult> listPermissionsAsync(ListPermissionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPermissionsRequest, ListPermissionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
 
         return listTagsAsync(request, null);
@@ -186,6 +225,19 @@ public class AbstractAWSACMPCAAsync extends AbstractAWSACMPCA implements AWSACMP
     @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreCertificateAuthorityResult> restoreCertificateAuthorityAsync(RestoreCertificateAuthorityRequest request) {
+
+        return restoreCertificateAuthorityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreCertificateAuthorityResult> restoreCertificateAuthorityAsync(RestoreCertificateAuthorityRequest request,
+            com.amazonaws.handlers.AsyncHandler<RestoreCertificateAuthorityRequest, RestoreCertificateAuthorityResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

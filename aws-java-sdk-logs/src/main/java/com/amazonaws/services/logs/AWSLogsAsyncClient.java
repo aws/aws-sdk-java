@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -884,6 +884,39 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeQueriesResult> describeQueriesAsync(DescribeQueriesRequest request) {
+
+        return describeQueriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQueriesResult> describeQueriesAsync(final DescribeQueriesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeQueriesRequest, DescribeQueriesResult> asyncHandler) {
+        final DescribeQueriesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeQueriesResult>() {
+            @Override
+            public DescribeQueriesResult call() throws Exception {
+                DescribeQueriesResult result = null;
+
+                try {
+                    result = executeDescribeQueries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeResourcePoliciesResult> describeResourcePoliciesAsync(DescribeResourcePoliciesRequest request) {
 
         return describeResourcePoliciesAsync(request, null);
@@ -1033,6 +1066,105 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = executeGetLogEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogGroupFieldsResult> getLogGroupFieldsAsync(GetLogGroupFieldsRequest request) {
+
+        return getLogGroupFieldsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogGroupFieldsResult> getLogGroupFieldsAsync(final GetLogGroupFieldsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLogGroupFieldsRequest, GetLogGroupFieldsResult> asyncHandler) {
+        final GetLogGroupFieldsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLogGroupFieldsResult>() {
+            @Override
+            public GetLogGroupFieldsResult call() throws Exception {
+                GetLogGroupFieldsResult result = null;
+
+                try {
+                    result = executeGetLogGroupFields(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogRecordResult> getLogRecordAsync(GetLogRecordRequest request) {
+
+        return getLogRecordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLogRecordResult> getLogRecordAsync(final GetLogRecordRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLogRecordRequest, GetLogRecordResult> asyncHandler) {
+        final GetLogRecordRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLogRecordResult>() {
+            @Override
+            public GetLogRecordResult call() throws Exception {
+                GetLogRecordResult result = null;
+
+                try {
+                    result = executeGetLogRecord(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQueryResultsResult> getQueryResultsAsync(GetQueryResultsRequest request) {
+
+        return getQueryResultsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQueryResultsResult> getQueryResultsAsync(final GetQueryResultsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetQueryResultsRequest, GetQueryResultsResult> asyncHandler) {
+        final GetQueryResultsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetQueryResultsResult>() {
+            @Override
+            public GetQueryResultsResult call() throws Exception {
+                GetQueryResultsResult result = null;
+
+                try {
+                    result = executeGetQueryResults(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1297,6 +1429,72 @@ public class AWSLogsAsyncClient extends AWSLogsClient implements AWSLogsAsync {
 
                 try {
                     result = executePutSubscriptionFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartQueryResult> startQueryAsync(StartQueryRequest request) {
+
+        return startQueryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartQueryResult> startQueryAsync(final StartQueryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartQueryRequest, StartQueryResult> asyncHandler) {
+        final StartQueryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartQueryResult>() {
+            @Override
+            public StartQueryResult call() throws Exception {
+                StartQueryResult result = null;
+
+                try {
+                    result = executeStartQuery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopQueryResult> stopQueryAsync(StopQueryRequest request) {
+
+        return stopQueryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopQueryResult> stopQueryAsync(final StopQueryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopQueryRequest, StopQueryResult> asyncHandler) {
+        final StopQueryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopQueryResult>() {
+            @Override
+            public StopQueryResult call() throws Exception {
+                StopQueryResult result = null;
+
+                try {
+                    result = executeStopQuery(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,7 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Information about the command(s) to execute.
+     * Information about the command(s) to run.
      * </p>
      */
     private String comment;
@@ -100,18 +100,18 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
     private String serviceRoleArn;
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn not execute.
+     * If this time is reached and the command has not already started running, it doesn't run.
      * </p>
      */
     private Integer timeoutSeconds;
 
     /**
      * <p>
-     * Information about the command(s) to execute.
+     * Information about the command(s) to run.
      * </p>
      * 
      * @param comment
-     *        Information about the command(s) to execute.
+     *        Information about the command(s) to run.
      */
 
     public void setComment(String comment) {
@@ -120,10 +120,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Information about the command(s) to execute.
+     * Information about the command(s) to run.
      * </p>
      * 
-     * @return Information about the command(s) to execute.
+     * @return Information about the command(s) to run.
      */
 
     public String getComment() {
@@ -132,11 +132,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Information about the command(s) to execute.
+     * Information about the command(s) to run.
      * </p>
      * 
      * @param comment
-     *        Information about the command(s) to execute.
+     *        Information about the command(s) to run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,11 +470,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn not execute.
+     * If this time is reached and the command has not already started running, it doesn't run.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started executing, it doesn not execute.
+     *        If this time is reached and the command has not already started running, it doesn't run.
      */
 
     public void setTimeoutSeconds(Integer timeoutSeconds) {
@@ -483,10 +483,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn not execute.
+     * If this time is reached and the command has not already started running, it doesn't run.
      * </p>
      * 
-     * @return If this time is reached and the command has not already started executing, it doesn not execute.
+     * @return If this time is reached and the command has not already started running, it doesn't run.
      */
 
     public Integer getTimeoutSeconds() {
@@ -495,11 +495,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it doesn not execute.
+     * If this time is reached and the command has not already started running, it doesn't run.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started executing, it doesn not execute.
+     *        If this time is reached and the command has not already started running, it doesn't run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,7 +509,8 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

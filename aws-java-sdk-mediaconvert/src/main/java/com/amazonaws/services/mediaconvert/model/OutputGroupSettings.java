@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,18 +26,67 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OutputGroupSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each output in a
+     * CMAF Output Group may only contain a single video, audio, or caption output.
+     */
+    private CmafGroupSettings cmafGroupSettings;
+    /** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS. */
     private DashIsoGroupSettings dashIsoGroupSettings;
-
+    /** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS. */
     private FileGroupSettings fileGroupSettings;
-
+    /** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS. */
     private HlsGroupSettings hlsGroupSettings;
-
+    /** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS. */
     private MsSmoothGroupSettings msSmoothGroupSettings;
-
+    /** Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF) */
     private String type;
 
     /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each output in a
+     * CMAF Output Group may only contain a single video, audio, or caption output.
+     * 
+     * @param cmafGroupSettings
+     *        Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each
+     *        output in a CMAF Output Group may only contain a single video, audio, or caption output.
+     */
+
+    public void setCmafGroupSettings(CmafGroupSettings cmafGroupSettings) {
+        this.cmafGroupSettings = cmafGroupSettings;
+    }
+
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each output in a
+     * CMAF Output Group may only contain a single video, audio, or caption output.
+     * 
+     * @return Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each
+     *         output in a CMAF Output Group may only contain a single video, audio, or caption output.
+     */
+
+    public CmafGroupSettings getCmafGroupSettings() {
+        return this.cmafGroupSettings;
+    }
+
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each output in a
+     * CMAF Output Group may only contain a single video, audio, or caption output.
+     * 
+     * @param cmafGroupSettings
+     *        Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each
+     *        output in a CMAF Output Group may only contain a single video, audio, or caption output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputGroupSettings withCmafGroupSettings(CmafGroupSettings cmafGroupSettings) {
+        setCmafGroupSettings(cmafGroupSettings);
+        return this;
+    }
+
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.
+     * 
      * @param dashIsoGroupSettings
+     *        Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.
      */
 
     public void setDashIsoGroupSettings(DashIsoGroupSettings dashIsoGroupSettings) {
@@ -45,7 +94,9 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.
+     * 
+     * @return Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.
      */
 
     public DashIsoGroupSettings getDashIsoGroupSettings() {
@@ -53,7 +104,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.
+     * 
      * @param dashIsoGroupSettings
+     *        Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,7 +117,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS.
+     * 
      * @param fileGroupSettings
+     *        Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS.
      */
 
     public void setFileGroupSettings(FileGroupSettings fileGroupSettings) {
@@ -71,7 +128,9 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS.
+     * 
+     * @return Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS.
      */
 
     public FileGroupSettings getFileGroupSettings() {
@@ -79,7 +138,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS.
+     * 
      * @param fileGroupSettings
+     *        Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,7 +151,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS.
+     * 
      * @param hlsGroupSettings
+     *        Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS.
      */
 
     public void setHlsGroupSettings(HlsGroupSettings hlsGroupSettings) {
@@ -97,7 +162,9 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS.
+     * 
+     * @return Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS.
      */
 
     public HlsGroupSettings getHlsGroupSettings() {
@@ -105,7 +172,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS.
+     * 
      * @param hlsGroupSettings
+     *        Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,7 +185,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS.
+     * 
      * @param msSmoothGroupSettings
+     *        Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS.
      */
 
     public void setMsSmoothGroupSettings(MsSmoothGroupSettings msSmoothGroupSettings) {
@@ -123,7 +196,9 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS.
+     * 
+     * @return Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS.
      */
 
     public MsSmoothGroupSettings getMsSmoothGroupSettings() {
@@ -131,7 +206,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS.
+     * 
      * @param msSmoothGroupSettings
+     *        Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,7 +219,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
+     * 
      * @param type
+     *        Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
      * @see OutputGroupType
      */
 
@@ -150,7 +231,9 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
+     * 
+     * @return Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
      * @see OutputGroupType
      */
 
@@ -159,7 +242,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
+     * 
      * @param type
+     *        Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputGroupType
      */
@@ -170,7 +256,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
+     * 
      * @param type
+     *        Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputGroupType
      */
@@ -181,7 +270,8 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -191,6 +281,8 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCmafGroupSettings() != null)
+            sb.append("CmafGroupSettings: ").append(getCmafGroupSettings()).append(",");
         if (getDashIsoGroupSettings() != null)
             sb.append("DashIsoGroupSettings: ").append(getDashIsoGroupSettings()).append(",");
         if (getFileGroupSettings() != null)
@@ -215,6 +307,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
         if (obj instanceof OutputGroupSettings == false)
             return false;
         OutputGroupSettings other = (OutputGroupSettings) obj;
+        if (other.getCmafGroupSettings() == null ^ this.getCmafGroupSettings() == null)
+            return false;
+        if (other.getCmafGroupSettings() != null && other.getCmafGroupSettings().equals(this.getCmafGroupSettings()) == false)
+            return false;
         if (other.getDashIsoGroupSettings() == null ^ this.getDashIsoGroupSettings() == null)
             return false;
         if (other.getDashIsoGroupSettings() != null && other.getDashIsoGroupSettings().equals(this.getDashIsoGroupSettings()) == false)
@@ -243,6 +339,7 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCmafGroupSettings() == null) ? 0 : getCmafGroupSettings().hashCode());
         hashCode = prime * hashCode + ((getDashIsoGroupSettings() == null) ? 0 : getDashIsoGroupSettings().hashCode());
         hashCode = prime * hashCode + ((getFileGroupSettings() == null) ? 0 : getFileGroupSettings().hashCode());
         hashCode = prime * hashCode + ((getHlsGroupSettings() == null) ? 0 : getHlsGroupSettings().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -254,6 +254,32 @@ public class PolicyReaderTest {
         assertEquals(1, statements.get(0).getPrincipals().size());
         assertEquals("*", statements.get(0).getPrincipals().get(0).getId());
         assertEquals("AWS", statements.get(0).getPrincipals().get(0).getProvider());
+
+    }
+
+    @Test
+    public void testNoStatementArray() {
+        String policy = "{\n" +
+                        "  \"Version\": \"2012-10-17\",\n" +
+                        "  \"Statement\": {\n" +
+                        "    \"Effect\": \"Allow\",\n" +
+                        "    \"Action\": [\n" +
+                        "      \"acm:DescribeCertificate\"" +
+                        "    ],\n" +
+                        "    \"Resource\": \"*\"\n" +
+                        "  }\n" +
+                        "}";
+
+        Policy p = Policy.fromJson(policy);
+        assertEquals(POLICY_VERSION, p.getVersion());
+
+        List<Statement> statements = new LinkedList<Statement>(p.getStatements());
+
+        assertEquals(1, statements.size());
+        assertEquals(Effect.Allow, statements.get(0).getEffect());
+        assertEquals(1, statements.get(0).getActions().size());
+        assertEquals("acm:DescribeCertificate", statements.get(0).getActions().get(0).getActionName());
+        assertEquals("*", statements.get(0).getResources().get(0).getId());
 
     }
 

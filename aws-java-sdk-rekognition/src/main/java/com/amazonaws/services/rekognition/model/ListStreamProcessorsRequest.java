@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,28 +22,29 @@ public class ListStreamProcessorsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If the previous response was incomplete (because there are more stream processors to retrieve), Rekognition Video
-     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream
-     * processors.
+     * If the previous response was incomplete (because there are more stream processors to retrieve), Amazon
+     * Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the
+     * next set of stream processors.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * Maximum number of stream processors you want Rekognition Video to return in the response. The default is 1000.
+     * Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is
+     * 1000.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * If the previous response was incomplete (because there are more stream processors to retrieve), Rekognition Video
-     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream
-     * processors.
+     * If the previous response was incomplete (because there are more stream processors to retrieve), Amazon
+     * Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the
+     * next set of stream processors.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was incomplete (because there are more stream processors to retrieve),
+     *        If the previous response was incomplete (because there are more stream processors to retrieve), Amazon
      *        Rekognition Video returns a pagination token in the response. You can use this pagination token to
      *        retrieve the next set of stream processors.
      */
@@ -54,12 +55,12 @@ public class ListStreamProcessorsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If the previous response was incomplete (because there are more stream processors to retrieve), Rekognition Video
-     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream
-     * processors.
+     * If the previous response was incomplete (because there are more stream processors to retrieve), Amazon
+     * Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the
+     * next set of stream processors.
      * </p>
      * 
-     * @return If the previous response was incomplete (because there are more stream processors to retrieve),
+     * @return If the previous response was incomplete (because there are more stream processors to retrieve), Amazon
      *         Rekognition Video returns a pagination token in the response. You can use this pagination token to
      *         retrieve the next set of stream processors.
      */
@@ -70,13 +71,13 @@ public class ListStreamProcessorsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If the previous response was incomplete (because there are more stream processors to retrieve), Rekognition Video
-     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream
-     * processors.
+     * If the previous response was incomplete (because there are more stream processors to retrieve), Amazon
+     * Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the
+     * next set of stream processors.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was incomplete (because there are more stream processors to retrieve),
+     *        If the previous response was incomplete (because there are more stream processors to retrieve), Amazon
      *        Rekognition Video returns a pagination token in the response. You can use this pagination token to
      *        retrieve the next set of stream processors.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -89,12 +90,13 @@ public class ListStreamProcessorsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of stream processors you want Rekognition Video to return in the response. The default is 1000.
+     * Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is
+     * 1000.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of stream processors you want Rekognition Video to return in the response. The default is
-     *        1000.
+     *        Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The
+     *        default is 1000.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -103,11 +105,12 @@ public class ListStreamProcessorsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of stream processors you want Rekognition Video to return in the response. The default is 1000.
+     * Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is
+     * 1000.
      * </p>
      * 
-     * @return Maximum number of stream processors you want Rekognition Video to return in the response. The default is
-     *         1000.
+     * @return Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The
+     *         default is 1000.
      */
 
     public Integer getMaxResults() {
@@ -116,12 +119,13 @@ public class ListStreamProcessorsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of stream processors you want Rekognition Video to return in the response. The default is 1000.
+     * Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is
+     * 1000.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of stream processors you want Rekognition Video to return in the response. The default is
-     *        1000.
+     *        Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The
+     *        default is 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +135,8 @@ public class ListStreamProcessorsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

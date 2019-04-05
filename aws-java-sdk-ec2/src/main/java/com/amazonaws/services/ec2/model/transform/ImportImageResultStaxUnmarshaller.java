@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,11 @@ public class ImportImageResultStaxUnmarshaller implements Unmarshaller<ImportIma
                     continue;
                 }
 
+                if (context.testExpression("encrypted", targetDepth)) {
+                    importImageResult.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("hypervisor", targetDepth)) {
                     importImageResult.setHypervisor(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -67,6 +72,11 @@ public class ImportImageResultStaxUnmarshaller implements Unmarshaller<ImportIma
 
                 if (context.testExpression("importTaskId", targetDepth)) {
                     importImageResult.setImportTaskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("kmsKeyId", targetDepth)) {
+                    importImageResult.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

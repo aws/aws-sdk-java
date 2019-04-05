@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,10 +21,10 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * If you attach a target group to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state
- * transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If ELB
- * health checks are enabled, the state transitions to <code>InService</code> after at least one Auto Scaling instance
- * passes the health check. If EC2 health checks are enabled instead, the target group remains in the <code>Added</code>
- * state.
+ * transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If Elastic
+ * Load Balancing health checks are enabled, the state transitions to <code>InService</code> after at least one Auto
+ * Scaling instance passes the health check. If EC2 health checks are enabled instead, the target group remains in the
+ * <code>Added</code> state.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LoadBalancerTargetGroupState"
@@ -327,7 +327,8 @@ public class LoadBalancerTargetGroupState implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

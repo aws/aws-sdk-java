@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class EmailChannelRequestMarshaller {
 
+    private static final MarshallingInfo<String> CONFIGURATIONSET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationSet").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<String> FROMADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,6 +54,7 @@ public class EmailChannelRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(emailChannelRequest.getConfigurationSet(), CONFIGURATIONSET_BINDING);
             protocolMarshaller.marshall(emailChannelRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(emailChannelRequest.getFromAddress(), FROMADDRESS_BINDING);
             protocolMarshaller.marshall(emailChannelRequest.getIdentity(), IDENTITY_BINDING);

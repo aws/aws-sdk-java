@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,14 +30,14 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
      * The Amazon Resource Name (ARN) of the private CA. This must be of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      */
     private String certificateAuthorityArn;
     /**
      * <p>
-     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> function.
+     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
      * </p>
      */
     private String auditReportId;
@@ -47,14 +47,14 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
      * The Amazon Resource Name (ARN) of the private CA. This must be of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      * 
      * @param certificateAuthorityArn
      *        The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>
      *        <p>
-     *        <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
+     *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      */
 
     public void setCertificateAuthorityArn(String certificateAuthorityArn) {
@@ -66,13 +66,13 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
      * The Amazon Resource Name (ARN) of the private CA. This must be of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>
      *         <p>
-     *         <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
+     *         <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      */
 
     public String getCertificateAuthorityArn() {
@@ -84,14 +84,14 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
      * The Amazon Resource Name (ARN) of the private CA. This must be of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      * 
      * @param certificateAuthorityArn
      *        The Amazon Resource Name (ARN) of the private CA. This must be of the form:</p>
      *        <p>
-     *        <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
+     *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
 
     /**
      * <p>
-     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> function.
+     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
      * </p>
      * 
      * @param auditReportId
-     *        The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> function.
+     *        The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
      */
 
     public void setAuditReportId(String auditReportId) {
@@ -115,10 +115,10 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
 
     /**
      * <p>
-     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> function.
+     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
      * </p>
      * 
-     * @return The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> function.
+     * @return The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
      */
 
     public String getAuditReportId() {
@@ -127,11 +127,11 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
 
     /**
      * <p>
-     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> function.
+     * The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
      * </p>
      * 
      * @param auditReportId
-     *        The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> function.
+     *        The report ID returned by calling the <a>CreateCertificateAuthorityAuditReport</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,7 +141,8 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,13 +36,13 @@ public class ExportInfoMarshaller {
     private static final MarshallingInfo<String> CONFIGURATIONSDOWNLOADURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationsDownloadUrl").build();
     private static final MarshallingInfo<java.util.Date> EXPORTREQUESTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exportRequestTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exportRequestTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Boolean> ISTRUNCATED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isTruncated").build();
     private static final MarshallingInfo<java.util.Date> REQUESTEDSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestedStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestedStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> REQUESTEDENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestedEndTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestedEndTime").timestampFormat("unixTimestamp").build();
 
     private static final ExportInfoMarshaller instance = new ExportInfoMarshaller();
 

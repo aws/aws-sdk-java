@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CaptionDescriptionPresetMarshaller {
 
+    private static final MarshallingInfo<String> CUSTOMLANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customLanguageCode").build();
     private static final MarshallingInfo<StructuredPojo> DESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationSettings").build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -50,6 +52,7 @@ public class CaptionDescriptionPresetMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(captionDescriptionPreset.getCustomLanguageCode(), CUSTOMLANGUAGECODE_BINDING);
             protocolMarshaller.marshall(captionDescriptionPreset.getDestinationSettings(), DESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDescriptionPreset.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(captionDescriptionPreset.getLanguageDescription(), LANGUAGEDESCRIPTION_BINDING);

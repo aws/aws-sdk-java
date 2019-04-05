@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,13 +33,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      */
     private String displayName;
@@ -62,6 +62,36 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String feedbackURL;
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     */
+    private java.util.List<UserSetting> userSettings;
+    /**
+     * <p>
+     * The persistent application settings for users of a stack. When these settings are enabled, changes that users
+     * make to applications and Windows settings are automatically saved after each session and applied to the next
+     * session.
+     * </p>
+     */
+    private ApplicationSettings applicationSettings;
+    /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, the value is set to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -105,11 +135,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -118,10 +148,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
-     * @return The description for display.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -130,11 +160,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +175,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        The stack name for display.
+     *        The stack name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -158,10 +188,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
-     * @return The stack name for display.
+     * @return The stack name to display.
      */
 
     public String getDisplayName() {
@@ -170,11 +200,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        The stack name for display.
+     *        The stack name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,7 +370,250 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * 
+     * @return The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *         actions are enabled.
+     */
+
+    public java.util.List<UserSetting> getUserSettings() {
+        return userSettings;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *        actions are enabled.
+     */
+
+    public void setUserSettings(java.util.Collection<UserSetting> userSettings) {
+        if (userSettings == null) {
+            this.userSettings = null;
+            return;
+        }
+
+        this.userSettings = new java.util.ArrayList<UserSetting>(userSettings);
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserSettings(java.util.Collection)} or {@link #withUserSettings(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *        actions are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withUserSettings(UserSetting... userSettings) {
+        if (this.userSettings == null) {
+            setUserSettings(new java.util.ArrayList<UserSetting>(userSettings.length));
+        }
+        for (UserSetting ele : userSettings) {
+            this.userSettings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *        actions are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withUserSettings(java.util.Collection<UserSetting> userSettings) {
+        setUserSettings(userSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The persistent application settings for users of a stack. When these settings are enabled, changes that users
+     * make to applications and Windows settings are automatically saved after each session and applied to the next
+     * session.
+     * </p>
+     * 
+     * @param applicationSettings
+     *        The persistent application settings for users of a stack. When these settings are enabled, changes that
+     *        users make to applications and Windows settings are automatically saved after each session and applied to
+     *        the next session.
+     */
+
+    public void setApplicationSettings(ApplicationSettings applicationSettings) {
+        this.applicationSettings = applicationSettings;
+    }
+
+    /**
+     * <p>
+     * The persistent application settings for users of a stack. When these settings are enabled, changes that users
+     * make to applications and Windows settings are automatically saved after each session and applied to the next
+     * session.
+     * </p>
+     * 
+     * @return The persistent application settings for users of a stack. When these settings are enabled, changes that
+     *         users make to applications and Windows settings are automatically saved after each session and applied to
+     *         the next session.
+     */
+
+    public ApplicationSettings getApplicationSettings() {
+        return this.applicationSettings;
+    }
+
+    /**
+     * <p>
+     * The persistent application settings for users of a stack. When these settings are enabled, changes that users
+     * make to applications and Windows settings are automatically saved after each session and applied to the next
+     * session.
+     * </p>
+     * 
+     * @param applicationSettings
+     *        The persistent application settings for users of a stack. When these settings are enabled, changes that
+     *        users make to applications and Windows settings are automatically saved after each session and applied to
+     *        the next session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withApplicationSettings(ApplicationSettings applicationSettings) {
+        setApplicationSettings(applicationSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, the value is set to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @return The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     *         Environment=Test. If you do not specify a value, Environment=. </p>
+     *         <p>
+     *         If you do not specify a value, the value is set to an empty string.
+     *         </p>
+     *         <p>
+     *         For more information about tags, see <a
+     *         href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *         Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, the value is set to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     *        Environment=Test. If you do not specify a value, Environment=. </p>
+     *        <p>
+     *        If you do not specify a value, the value is set to an empty string.
+     *        </p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, the value is set to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     *        Environment=Test. If you do not specify a value, Environment=. </p>
+     *        <p>
+     *        If you do not specify a value, the value is set to an empty string.
+     *        </p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateStackRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -361,7 +634,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getRedirectURL() != null)
             sb.append("RedirectURL: ").append(getRedirectURL()).append(",");
         if (getFeedbackURL() != null)
-            sb.append("FeedbackURL: ").append(getFeedbackURL());
+            sb.append("FeedbackURL: ").append(getFeedbackURL()).append(",");
+        if (getUserSettings() != null)
+            sb.append("UserSettings: ").append(getUserSettings()).append(",");
+        if (getApplicationSettings() != null)
+            sb.append("ApplicationSettings: ").append(getApplicationSettings()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -400,6 +679,18 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getFeedbackURL() != null && other.getFeedbackURL().equals(this.getFeedbackURL()) == false)
             return false;
+        if (other.getUserSettings() == null ^ this.getUserSettings() == null)
+            return false;
+        if (other.getUserSettings() != null && other.getUserSettings().equals(this.getUserSettings()) == false)
+            return false;
+        if (other.getApplicationSettings() == null ^ this.getApplicationSettings() == null)
+            return false;
+        if (other.getApplicationSettings() != null && other.getApplicationSettings().equals(this.getApplicationSettings()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -414,6 +705,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getStorageConnectors() == null) ? 0 : getStorageConnectors().hashCode());
         hashCode = prime * hashCode + ((getRedirectURL() == null) ? 0 : getRedirectURL().hashCode());
         hashCode = prime * hashCode + ((getFeedbackURL() == null) ? 0 : getFeedbackURL().hashCode());
+        hashCode = prime * hashCode + ((getUserSettings() == null) ? 0 : getUserSettings().hashCode());
+        hashCode = prime * hashCode + ((getApplicationSettings() == null) ? 0 : getApplicationSettings().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

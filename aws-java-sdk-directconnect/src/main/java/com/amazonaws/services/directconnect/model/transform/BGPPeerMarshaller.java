@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class BGPPeerMarshaller {
 
+    private static final MarshallingInfo<String> BGPPEERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("bgpPeerId").build();
     private static final MarshallingInfo<Integer> ASN_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("asn").build();
     private static final MarshallingInfo<String> AUTHKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -41,6 +43,8 @@ public class BGPPeerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bgpPeerState").build();
     private static final MarshallingInfo<String> BGPSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("bgpStatus").build();
+    private static final MarshallingInfo<String> AWSDEVICEV2_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsDeviceV2").build();
 
     private static final BGPPeerMarshaller instance = new BGPPeerMarshaller();
 
@@ -58,6 +62,7 @@ public class BGPPeerMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(bGPPeer.getBgpPeerId(), BGPPEERID_BINDING);
             protocolMarshaller.marshall(bGPPeer.getAsn(), ASN_BINDING);
             protocolMarshaller.marshall(bGPPeer.getAuthKey(), AUTHKEY_BINDING);
             protocolMarshaller.marshall(bGPPeer.getAddressFamily(), ADDRESSFAMILY_BINDING);
@@ -65,6 +70,7 @@ public class BGPPeerMarshaller {
             protocolMarshaller.marshall(bGPPeer.getCustomerAddress(), CUSTOMERADDRESS_BINDING);
             protocolMarshaller.marshall(bGPPeer.getBgpPeerState(), BGPPEERSTATE_BINDING);
             protocolMarshaller.marshall(bGPPeer.getBgpStatus(), BGPSTATUS_BINDING);
+            protocolMarshaller.marshall(bGPPeer.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

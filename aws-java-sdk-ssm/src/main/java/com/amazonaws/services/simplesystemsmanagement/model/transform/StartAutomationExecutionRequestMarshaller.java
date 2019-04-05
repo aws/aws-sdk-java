@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,10 +43,14 @@ public class StartAutomationExecutionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetParameterName").build();
     private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Targets").build();
+    private static final MarshallingInfo<List> TARGETMAPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TargetMaps").build();
     private static final MarshallingInfo<String> MAXCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrency").build();
     private static final MarshallingInfo<String> MAXERRORS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MaxErrors").build();
+    private static final MarshallingInfo<List> TARGETLOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocations").build();
 
     private static final StartAutomationExecutionRequestMarshaller instance = new StartAutomationExecutionRequestMarshaller();
 
@@ -71,8 +75,10 @@ public class StartAutomationExecutionRequestMarshaller {
             protocolMarshaller.marshall(startAutomationExecutionRequest.getMode(), MODE_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getTargetParameterName(), TARGETPARAMETERNAME_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getTargets(), TARGETS_BINDING);
+            protocolMarshaller.marshall(startAutomationExecutionRequest.getTargetMaps(), TARGETMAPS_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getMaxErrors(), MAXERRORS_BINDING);
+            protocolMarshaller.marshall(startAutomationExecutionRequest.getTargetLocations(), TARGETLOCATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

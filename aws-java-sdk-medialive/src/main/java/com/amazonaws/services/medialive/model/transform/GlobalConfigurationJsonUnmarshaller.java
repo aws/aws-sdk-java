@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,10 @@ public class GlobalConfigurationJsonUnmarshaller implements Unmarshaller<GlobalC
                 if (context.testExpression("inputLossBehavior", targetDepth)) {
                     context.nextToken();
                     globalConfiguration.setInputLossBehavior(InputLossBehaviorJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("outputLockingMode", targetDepth)) {
+                    context.nextToken();
+                    globalConfiguration.setOutputLockingMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("outputTimingSource", targetDepth)) {
                     context.nextToken();

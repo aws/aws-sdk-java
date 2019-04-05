@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String cluster;
     /**
      * <p>
-     * The task ID or full ARN entry of the task to stop.
+     * The task ID or full Amazon Resource Name (ARN) of the task to stop.
      * </p>
      */
     private String task;
@@ -94,11 +94,11 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The task ID or full ARN entry of the task to stop.
+     * The task ID or full Amazon Resource Name (ARN) of the task to stop.
      * </p>
      * 
      * @param task
-     *        The task ID or full ARN entry of the task to stop.
+     *        The task ID or full Amazon Resource Name (ARN) of the task to stop.
      */
 
     public void setTask(String task) {
@@ -107,10 +107,10 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The task ID or full ARN entry of the task to stop.
+     * The task ID or full Amazon Resource Name (ARN) of the task to stop.
      * </p>
      * 
-     * @return The task ID or full ARN entry of the task to stop.
+     * @return The task ID or full Amazon Resource Name (ARN) of the task to stop.
      */
 
     public String getTask() {
@@ -119,11 +119,11 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The task ID or full ARN entry of the task to stop.
+     * The task ID or full Amazon Resource Name (ARN) of the task to stop.
      * </p>
      * 
      * @param task
-     *        The task ID or full ARN entry of the task to stop.
+     *        The task ID or full Amazon Resource Name (ARN) of the task to stop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,7 +188,8 @@ public class StopTaskRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

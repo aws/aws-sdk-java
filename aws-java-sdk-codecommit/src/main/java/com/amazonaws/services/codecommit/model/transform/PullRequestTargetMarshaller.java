@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class PullRequestTargetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationCommit").build();
     private static final MarshallingInfo<String> SOURCECOMMIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceCommit").build();
+    private static final MarshallingInfo<String> MERGEBASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("mergeBase").build();
     private static final MarshallingInfo<StructuredPojo> MERGEMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mergeMetadata").build();
 
@@ -61,6 +63,7 @@ public class PullRequestTargetMarshaller {
             protocolMarshaller.marshall(pullRequestTarget.getDestinationReference(), DESTINATIONREFERENCE_BINDING);
             protocolMarshaller.marshall(pullRequestTarget.getDestinationCommit(), DESTINATIONCOMMIT_BINDING);
             protocolMarshaller.marshall(pullRequestTarget.getSourceCommit(), SOURCECOMMIT_BINDING);
+            protocolMarshaller.marshall(pullRequestTarget.getMergeBase(), MERGEBASE_BINDING);
             protocolMarshaller.marshall(pullRequestTarget.getMergeMetadata(), MERGEMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

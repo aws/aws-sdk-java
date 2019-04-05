@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -115,6 +115,20 @@ public class ContainerDetailJsonUnmarshaller implements Unmarshaller<ContainerDe
                 if (context.testExpression("logStreamName", targetDepth)) {
                     context.nextToken();
                     containerDetail.setLogStreamName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("instanceType", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("networkInterfaces", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
+                if (context.testExpression("resourceRequirements", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setResourceRequirements(new ListUnmarshaller<ResourceRequirement>(ResourceRequirementJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

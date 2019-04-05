@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -173,7 +173,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -185,7 +185,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      */
@@ -1185,7 +1185,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1218,7 +1218,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>
@@ -1258,7 +1258,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1290,7 +1290,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      *         <p>
      *         <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *         checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *         <code>RestartEnvironement</code> request.
+     *         <code>RestartEnvironment</code> request.
      *         </p>
      *         </li>
      *         </ul>
@@ -1330,7 +1330,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1363,7 +1363,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>
@@ -1405,7 +1405,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1438,7 +1438,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>
@@ -1478,7 +1478,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1511,7 +1511,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>
@@ -1529,14 +1529,14 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @see EnvironmentHealthStatus
      */
 
@@ -1547,12 +1547,12 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @return Returns the health status of the application running in your environment. For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *         href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
      *         and Statuses</a>.
      * @see EnvironmentHealthStatus
      */
@@ -1564,14 +1564,14 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentHealthStatus
      */
@@ -1584,14 +1584,14 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @see EnvironmentHealthStatus
      */
 
@@ -1602,14 +1602,14 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * Returns the health status of the application running in your environment. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
      * Statuses</a>.
      * </p>
      * 
      * @param healthStatus
      *        Returns the health status of the application running in your environment. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
-     *        Statuses</a>.
+     *        href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors
+     *        and Statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentHealthStatus
      */
@@ -1814,7 +1814,8 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

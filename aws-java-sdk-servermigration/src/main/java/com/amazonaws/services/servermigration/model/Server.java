@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,25 +18,53 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Object representing a server
+ * <p>
+ * Represents a server.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/Server" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Server implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The identifier of the server.
+     * </p>
+     */
     private String serverId;
-
+    /**
+     * <p>
+     * The type of server.
+     * </p>
+     */
     private String serverType;
-
+    /**
+     * <p>
+     * Information about the VM server.
+     * </p>
+     */
     private VmServer vmServer;
-
+    /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     */
     private String replicationJobId;
-
+    /**
+     * <p>
+     * Indicates whether the replication job is deleted or failed.
+     * </p>
+     */
     private Boolean replicationJobTerminated;
 
     /**
+     * <p>
+     * The identifier of the server.
+     * </p>
+     * 
      * @param serverId
+     *        The identifier of the server.
      */
 
     public void setServerId(String serverId) {
@@ -44,7 +72,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the server.
+     * </p>
+     * 
+     * @return The identifier of the server.
      */
 
     public String getServerId() {
@@ -52,7 +84,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier of the server.
+     * </p>
+     * 
      * @param serverId
+     *        The identifier of the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,7 +99,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of server.
+     * </p>
+     * 
      * @param serverType
+     *        The type of server.
      * @see ServerType
      */
 
@@ -71,7 +113,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The type of server.
+     * </p>
+     * 
+     * @return The type of server.
      * @see ServerType
      */
 
@@ -80,7 +126,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of server.
+     * </p>
+     * 
      * @param serverType
+     *        The type of server.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServerType
      */
@@ -91,7 +142,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of server.
+     * </p>
+     * 
      * @param serverType
+     *        The type of server.
      * @see ServerType
      */
 
@@ -100,7 +156,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of server.
+     * </p>
+     * 
      * @param serverType
+     *        The type of server.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServerType
      */
@@ -111,7 +172,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the VM server.
+     * </p>
+     * 
      * @param vmServer
+     *        Information about the VM server.
      */
 
     public void setVmServer(VmServer vmServer) {
@@ -119,7 +185,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the VM server.
+     * </p>
+     * 
+     * @return Information about the VM server.
      */
 
     public VmServer getVmServer() {
@@ -127,7 +197,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the VM server.
+     * </p>
+     * 
      * @param vmServer
+     *        Information about the VM server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,7 +212,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The identifier of the replication job.
      */
 
     public void setReplicationJobId(String replicationJobId) {
@@ -145,7 +225,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
+     * @return The identifier of the replication job.
      */
 
     public String getReplicationJobId() {
@@ -153,7 +237,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The identifier of the replication job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,7 +252,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether the replication job is deleted or failed.
+     * </p>
+     * 
      * @param replicationJobTerminated
+     *        Indicates whether the replication job is deleted or failed.
      */
 
     public void setReplicationJobTerminated(Boolean replicationJobTerminated) {
@@ -171,7 +265,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether the replication job is deleted or failed.
+     * </p>
+     * 
+     * @return Indicates whether the replication job is deleted or failed.
      */
 
     public Boolean getReplicationJobTerminated() {
@@ -179,7 +277,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether the replication job is deleted or failed.
+     * </p>
+     * 
      * @param replicationJobTerminated
+     *        Indicates whether the replication job is deleted or failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,7 +292,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether the replication job is deleted or failed.
+     * </p>
+     * 
+     * @return Indicates whether the replication job is deleted or failed.
      */
 
     public Boolean isReplicationJobTerminated() {
@@ -197,7 +304,8 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ExtendedS3DestinationUpdateMarshaller {
             .marshallLocationName("BucketARN").build();
     private static final MarshallingInfo<String> PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Prefix").build();
+    private static final MarshallingInfo<String> ERROROUTPUTPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorOutputPrefix").build();
     private static final MarshallingInfo<StructuredPojo> BUFFERINGHINTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BufferingHints").build();
     private static final MarshallingInfo<String> COMPRESSIONFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +71,7 @@ public class ExtendedS3DestinationUpdateMarshaller {
             protocolMarshaller.marshall(extendedS3DestinationUpdate.getRoleARN(), ROLEARN_BINDING);
             protocolMarshaller.marshall(extendedS3DestinationUpdate.getBucketARN(), BUCKETARN_BINDING);
             protocolMarshaller.marshall(extendedS3DestinationUpdate.getPrefix(), PREFIX_BINDING);
+            protocolMarshaller.marshall(extendedS3DestinationUpdate.getErrorOutputPrefix(), ERROROUTPUTPREFIX_BINDING);
             protocolMarshaller.marshall(extendedS3DestinationUpdate.getBufferingHints(), BUFFERINGHINTS_BINDING);
             protocolMarshaller.marshall(extendedS3DestinationUpdate.getCompressionFormat(), COMPRESSIONFORMAT_BINDING);
             protocolMarshaller.marshall(extendedS3DestinationUpdate.getEncryptionConfiguration(), ENCRYPTIONCONFIGURATION_BINDING);

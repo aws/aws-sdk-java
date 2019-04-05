@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of permissions for creating volumes from the snapshot.
+     * The users and groups that have the permissions for creating volumes from the snapshot.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CreateVolumePermission> createVolumePermissions;
     /**
      * <p>
-     * A list of product codes.
+     * The product codes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ProductCode> productCodes;
@@ -46,10 +46,10 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of permissions for creating volumes from the snapshot.
+     * The users and groups that have the permissions for creating volumes from the snapshot.
      * </p>
      * 
-     * @return A list of permissions for creating volumes from the snapshot.
+     * @return The users and groups that have the permissions for creating volumes from the snapshot.
      */
 
     public java.util.List<CreateVolumePermission> getCreateVolumePermissions() {
@@ -61,11 +61,11 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of permissions for creating volumes from the snapshot.
+     * The users and groups that have the permissions for creating volumes from the snapshot.
      * </p>
      * 
      * @param createVolumePermissions
-     *        A list of permissions for creating volumes from the snapshot.
+     *        The users and groups that have the permissions for creating volumes from the snapshot.
      */
 
     public void setCreateVolumePermissions(java.util.Collection<CreateVolumePermission> createVolumePermissions) {
@@ -79,7 +79,7 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of permissions for creating volumes from the snapshot.
+     * The users and groups that have the permissions for creating volumes from the snapshot.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +88,7 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param createVolumePermissions
-     *        A list of permissions for creating volumes from the snapshot.
+     *        The users and groups that have the permissions for creating volumes from the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of permissions for creating volumes from the snapshot.
+     * The users and groups that have the permissions for creating volumes from the snapshot.
      * </p>
      * 
      * @param createVolumePermissions
-     *        A list of permissions for creating volumes from the snapshot.
+     *        The users and groups that have the permissions for creating volumes from the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,10 +119,10 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of product codes.
+     * The product codes.
      * </p>
      * 
-     * @return A list of product codes.
+     * @return The product codes.
      */
 
     public java.util.List<ProductCode> getProductCodes() {
@@ -134,11 +134,11 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of product codes.
+     * The product codes.
      * </p>
      * 
      * @param productCodes
-     *        A list of product codes.
+     *        The product codes.
      */
 
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
@@ -152,7 +152,7 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of product codes.
+     * The product codes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -161,7 +161,7 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param productCodes
-     *        A list of product codes.
+     *        The product codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,11 +177,11 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of product codes.
+     * The product codes.
      * </p>
      * 
      * @param productCodes
-     *        A list of product codes.
+     *        The product codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,7 +231,8 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

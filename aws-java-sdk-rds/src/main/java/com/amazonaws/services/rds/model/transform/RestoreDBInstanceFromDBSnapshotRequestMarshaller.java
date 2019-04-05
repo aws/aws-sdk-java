@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -129,6 +129,21 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
             request.addParameter("TdeCredentialPassword", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getTdeCredentialPassword()));
         }
 
+        if (!restoreDBInstanceFromDBSnapshotRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceFromDBSnapshotRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceFromDBSnapshotRequest
+                    .getVpcSecurityGroupIds();
+            int vpcSecurityGroupIdsListIndex = 1;
+
+            for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
+                if (vpcSecurityGroupIdsListValue != null) {
+                    request.addParameter("VpcSecurityGroupIds.VpcSecurityGroupId." + vpcSecurityGroupIdsListIndex,
+                            StringUtils.fromString(vpcSecurityGroupIdsListValue));
+                }
+                vpcSecurityGroupIdsListIndex++;
+            }
+        }
+
         if (restoreDBInstanceFromDBSnapshotRequest.getDomain() != null) {
             request.addParameter("Domain", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDomain()));
         }
@@ -160,6 +175,41 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
                 }
                 enableCloudwatchLogsExportsListIndex++;
             }
+        }
+
+        if (!restoreDBInstanceFromDBSnapshotRequest.getProcessorFeatures().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceFromDBSnapshotRequest.getProcessorFeatures())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeaturesList = (com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceFromDBSnapshotRequest
+                    .getProcessorFeatures();
+            int processorFeaturesListIndex = 1;
+
+            for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+
+                if (processorFeaturesListValue.getName() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                            StringUtils.fromString(processorFeaturesListValue.getName()));
+                }
+
+                if (processorFeaturesListValue.getValue() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                }
+                processorFeaturesListIndex++;
+            }
+        }
+
+        if (restoreDBInstanceFromDBSnapshotRequest.getUseDefaultProcessorFeatures() != null) {
+            request.addParameter("UseDefaultProcessorFeatures",
+                    StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.getUseDefaultProcessorFeatures()));
+        }
+
+        if (restoreDBInstanceFromDBSnapshotRequest.getDBParameterGroupName() != null) {
+            request.addParameter("DBParameterGroupName", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDBParameterGroupName()));
+        }
+
+        if (restoreDBInstanceFromDBSnapshotRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.getDeletionProtection()));
         }
 
         return request;

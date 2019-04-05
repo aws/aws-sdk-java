@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,14 @@ public class DescribeNetworkInterfacesRequestMarshaller implements Marshaller<Re
                 }
                 networkInterfaceIdsListIndex++;
             }
+        }
+
+        if (describeNetworkInterfacesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeNetworkInterfacesRequest.getNextToken()));
+        }
+
+        if (describeNetworkInterfacesRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeNetworkInterfacesRequest.getMaxResults()));
         }
 
         return request;

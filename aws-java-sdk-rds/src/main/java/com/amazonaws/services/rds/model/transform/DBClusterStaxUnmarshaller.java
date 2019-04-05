@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,7 +101,7 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                 }
 
                 if (context.testExpression("EarliestRestorableTime", targetDepth)) {
-                    dBCluster.setEarliestRestorableTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBCluster.setEarliestRestorableTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -112,6 +112,16 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
 
                 if (context.testExpression("ReaderEndpoint", targetDepth)) {
                     dBCluster.setReaderEndpoint(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CustomEndpoints", targetDepth)) {
+                    dBCluster.withCustomEndpoints(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("CustomEndpoints/member", targetDepth)) {
+                    dBCluster.withCustomEndpoints(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -131,7 +141,7 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                 }
 
                 if (context.testExpression("LatestRestorableTime", targetDepth)) {
-                    dBCluster.setLatestRestorableTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBCluster.setLatestRestorableTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -246,12 +256,12 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                 }
 
                 if (context.testExpression("ClusterCreateTime", targetDepth)) {
-                    dBCluster.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBCluster.setClusterCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("EarliestBacktrackTime", targetDepth)) {
-                    dBCluster.setEarliestBacktrackTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBCluster.setEarliestBacktrackTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -262,6 +272,46 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
 
                 if (context.testExpression("BacktrackConsumedChangeRecords", targetDepth)) {
                     dBCluster.setBacktrackConsumedChangeRecords(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("EnabledCloudwatchLogsExports", targetDepth)) {
+                    dBCluster.withEnabledCloudwatchLogsExports(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("EnabledCloudwatchLogsExports/member", targetDepth)) {
+                    dBCluster.withEnabledCloudwatchLogsExports(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Capacity", targetDepth)) {
+                    dBCluster.setCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("EngineMode", targetDepth)) {
+                    dBCluster.setEngineMode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ScalingConfigurationInfo", targetDepth)) {
+                    dBCluster.setScalingConfigurationInfo(ScalingConfigurationInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DeletionProtection", targetDepth)) {
+                    dBCluster.setDeletionProtection(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("HttpEndpointEnabled", targetDepth)) {
+                    dBCluster.setHttpEndpointEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CopyTagsToSnapshot", targetDepth)) {
+                    dBCluster.setCopyTagsToSnapshot(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

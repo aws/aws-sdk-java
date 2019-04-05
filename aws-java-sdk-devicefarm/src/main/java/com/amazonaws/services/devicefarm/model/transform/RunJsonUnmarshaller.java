@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,7 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    run.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    run.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -78,11 +78,11 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
                 }
                 if (context.testExpression("started", targetDepth)) {
                     context.nextToken();
-                    run.setStarted(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    run.setStarted(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("stopped", targetDepth)) {
                     context.nextToken();
-                    run.setStopped(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    run.setStopped(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("counters", targetDepth)) {
                     context.nextToken();
@@ -163,6 +163,14 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
                 if (context.testExpression("skipAppResign", targetDepth)) {
                     context.nextToken();
                     run.setSkipAppResign(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("testSpecArn", targetDepth)) {
+                    context.nextToken();
+                    run.setTestSpecArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("deviceSelectionResult", targetDepth)) {
+                    context.nextToken();
+                    run.setDeviceSelectionResult(DeviceSelectionResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

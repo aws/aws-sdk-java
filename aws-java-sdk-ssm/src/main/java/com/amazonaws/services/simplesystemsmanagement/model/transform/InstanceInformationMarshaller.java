@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class InstanceInformationMarshaller {
     private static final MarshallingInfo<String> PINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PingStatus").build();
     private static final MarshallingInfo<java.util.Date> LASTPINGDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastPingDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastPingDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> AGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AgentVersion").build();
     private static final MarshallingInfo<Boolean> ISLATESTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -48,7 +48,7 @@ public class InstanceInformationMarshaller {
     private static final MarshallingInfo<String> IAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("IamRole").build();
     private static final MarshallingInfo<java.util.Date> REGISTRATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegistrationDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegistrationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,9 +60,9 @@ public class InstanceInformationMarshaller {
     private static final MarshallingInfo<String> ASSOCIATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationStatus").build();
     private static final MarshallingInfo<java.util.Date> LASTASSOCIATIONEXECUTIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastAssociationExecutionDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastAssociationExecutionDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTSUCCESSFULASSOCIATIONEXECUTIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulAssociationExecutionDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulAssociationExecutionDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> ASSOCIATIONOVERVIEW_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationOverview").build();
 

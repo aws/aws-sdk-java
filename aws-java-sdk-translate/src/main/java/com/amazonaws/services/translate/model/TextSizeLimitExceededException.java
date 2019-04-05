@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The size of the input text exceeds the length constraint for the <code>Text</code> field. Try again with a shorter
- * text.
+ * The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller document and
+ * then retry your request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

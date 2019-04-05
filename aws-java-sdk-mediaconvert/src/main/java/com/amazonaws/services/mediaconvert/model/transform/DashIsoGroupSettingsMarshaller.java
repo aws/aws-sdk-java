@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class DashIsoGroupSettingsMarshaller {
             .marshallLocationName("baseUrl").build();
     private static final MarshallingInfo<String> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination").build();
+    private static final MarshallingInfo<StructuredPojo> DESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<Integer> FRAGMENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -43,6 +45,8 @@ public class DashIsoGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentControl").build();
     private static final MarshallingInfo<Integer> SEGMENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentLength").build();
+    private static final MarshallingInfo<String> WRITESEGMENTTIMELINEINREPRESENTATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("writeSegmentTimelineInRepresentation").build();
 
     private static final DashIsoGroupSettingsMarshaller instance = new DashIsoGroupSettingsMarshaller();
 
@@ -62,12 +66,14 @@ public class DashIsoGroupSettingsMarshaller {
         try {
             protocolMarshaller.marshall(dashIsoGroupSettings.getBaseUrl(), BASEURL_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getDestination(), DESTINATION_BINDING);
+            protocolMarshaller.marshall(dashIsoGroupSettings.getDestinationSettings(), DESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getFragmentLength(), FRAGMENTLENGTH_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getHbbtvCompliance(), HBBTVCOMPLIANCE_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getMinBufferTime(), MINBUFFERTIME_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getSegmentControl(), SEGMENTCONTROL_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getSegmentLength(), SEGMENTLENGTH_BINDING);
+            protocolMarshaller.marshall(dashIsoGroupSettings.getWriteSegmentTimelineInRepresentation(), WRITESEGMENTTIMELINEINREPRESENTATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

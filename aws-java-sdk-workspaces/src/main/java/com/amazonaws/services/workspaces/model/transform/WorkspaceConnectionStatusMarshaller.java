@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,9 +32,9 @@ public class WorkspaceConnectionStatusMarshaller {
     private static final MarshallingInfo<String> CONNECTIONSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionState").build();
     private static final MarshallingInfo<java.util.Date> CONNECTIONSTATECHECKTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStateCheckTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStateCheckTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTKNOWNUSERCONNECTIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastKnownUserConnectionTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastKnownUserConnectionTimestamp").timestampFormat("unixTimestamp").build();
 
     private static final WorkspaceConnectionStatusMarshaller instance = new WorkspaceConnectionStatusMarshaller();
 

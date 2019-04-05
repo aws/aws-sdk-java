@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -42,14 +42,14 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -102,7 +102,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -110,9 +110,9 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param policyName
      *        The friendly name of the policy.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setPolicyName(String policyName) {
@@ -124,16 +124,16 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
      * 
      * @return The friendly name of the policy.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: _+=,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getPolicyName() {
@@ -145,7 +145,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The friendly name of the policy.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -153,9 +153,9 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param policyName
      *        The friendly name of the policy.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,14 +170,14 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -187,15 +187,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        The path for the policy.</p>
      *        <p>
      *        For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.
      *        </p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
@@ -210,14 +210,14 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -226,15 +226,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @return The path for the policy.</p>
      *         <p>
      *         For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>IAM User Guide</i>.
      *         </p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
      *         </p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *         forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *         character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
@@ -249,14 +249,14 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -266,15 +266,15 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        The path for the policy.</p>
      *        <p>
      *        For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.
      *        </p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -531,7 +531,8 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

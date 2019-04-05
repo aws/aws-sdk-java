@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeNatGatewaysRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeNatGateways.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeNatGatewaysRequest> {
@@ -50,24 +48,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -80,11 +70,8 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
     private com.amazonaws.internal.SdkInternalList<Filter> filter;
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
-     * </p>
-     * <p>
-     * Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      */
     private Integer maxResults;
@@ -96,7 +83,7 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
     private com.amazonaws.internal.SdkInternalList<String> natGatewayIds;
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token for the next page of results.
      * </p>
      */
     private String nextToken;
@@ -124,24 +111,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -171,25 +150,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *         Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *         for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *         filter value.
+     *         <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *         key in the filter name and the tag value as the filter value. For example, to find all resources that
+     *         have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     *         <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *         <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *         "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's
-     *         value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources
-     *         where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *         <code>tag-key</code> filter.
+     *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *         assigned a tag with a specific key, regardless of the tag value.
      *         </p>
      *         </li>
      *         <li>
@@ -229,24 +199,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -277,25 +239,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
-     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
-     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-key</code> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -337,24 +290,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -390,25 +335,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
-     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
-     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-key</code> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -452,24 +388,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -500,25 +428,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
-     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
-     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-key</code> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -536,18 +455,13 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
-     * </p>
-     * <p>
-     * Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this request. The request returns a token that you can specify
-     *        in a subsequent call to get the next set of results.</p>
-     *        <p>
-     *        Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -556,17 +470,12 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
-     * </p>
-     * <p>
-     * Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of items to return for this request. The request returns a token that you can specify
-     *         in a subsequent call to get the next set of results.</p>
-     *         <p>
-     *         Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *         another call with the returned <code>nextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -575,18 +484,13 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
-     * </p>
-     * <p>
-     * Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this request. The request returns a token that you can specify
-     *        in a subsequent call to get the next set of results.</p>
-     *        <p>
-     *        Constraint: If the value specified is greater than 1000, we return only 1000 items.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -670,11 +574,11 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token for the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -683,10 +587,10 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token for the next page of results.
      * </p>
      * 
-     * @return The token to retrieve the next page of results.
+     * @return The token for the next page of results.
      */
 
     public String getNextToken() {
@@ -695,11 +599,11 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token for the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -720,7 +624,8 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

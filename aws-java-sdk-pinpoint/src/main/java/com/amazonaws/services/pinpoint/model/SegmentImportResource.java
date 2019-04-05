@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentImportResource implements Serializable, Cloneable, StructuredPojo {
 
-    /** Channel type counts */
+    /** The number of channel types in the imported segment. */
     private java.util.Map<String, Integer> channelCounts;
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
      * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
      */
@@ -40,15 +40,15 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     private String format;
     /** The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the endpoints in Amazon S3. */
     private String roleArn;
-    /** A URL that points to the Amazon S3 location from which the endpoints for this segment were imported. */
+    /** The URL of the S3 bucket that the segment was imported from. */
     private String s3Url;
     /** The number of endpoints that were successfully imported to create this segment. */
     private Integer size;
 
     /**
-     * Channel type counts
+     * The number of channel types in the imported segment.
      * 
-     * @return Channel type counts
+     * @return The number of channel types in the imported segment.
      */
 
     public java.util.Map<String, Integer> getChannelCounts() {
@@ -56,10 +56,10 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Channel type counts
+     * The number of channel types in the imported segment.
      * 
      * @param channelCounts
-     *        Channel type counts
+     *        The number of channel types in the imported segment.
      */
 
     public void setChannelCounts(java.util.Map<String, Integer> channelCounts) {
@@ -67,10 +67,10 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Channel type counts
+     * The number of channel types in the imported segment.
      * 
      * @param channelCounts
-     *        Channel type counts
+     *        The number of channel types in the imported segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,12 +101,12 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
      * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
      * 
      * @param externalId
-     *        DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
+     *        (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
      *        Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
      *        for IAM roles assumed by Amazon Pinpoint.
      */
@@ -116,13 +116,13 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
      * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
      * 
-     * @return DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
-     *         Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
-     *         for IAM roles assumed by Amazon Pinpoint.
+     * @return (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used
+     *         by Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not
+     *         recommended for IAM roles assumed by Amazon Pinpoint.
      */
 
     public String getExternalId() {
@@ -130,12 +130,12 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
      * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
      * 
      * @param externalId
-     *        DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
+     *        (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
      *        Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
      *        for IAM roles assumed by Amazon Pinpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -247,10 +247,10 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * A URL that points to the Amazon S3 location from which the endpoints for this segment were imported.
+     * The URL of the S3 bucket that the segment was imported from.
      * 
      * @param s3Url
-     *        A URL that points to the Amazon S3 location from which the endpoints for this segment were imported.
+     *        The URL of the S3 bucket that the segment was imported from.
      */
 
     public void setS3Url(String s3Url) {
@@ -258,9 +258,9 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * A URL that points to the Amazon S3 location from which the endpoints for this segment were imported.
+     * The URL of the S3 bucket that the segment was imported from.
      * 
-     * @return A URL that points to the Amazon S3 location from which the endpoints for this segment were imported.
+     * @return The URL of the S3 bucket that the segment was imported from.
      */
 
     public String getS3Url() {
@@ -268,10 +268,10 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * A URL that points to the Amazon S3 location from which the endpoints for this segment were imported.
+     * The URL of the S3 bucket that the segment was imported from.
      * 
      * @param s3Url
-     *        A URL that points to the Amazon S3 location from which the endpoints for this segment were imported.
+     *        The URL of the S3 bucket that the segment was imported from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,7 +315,8 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

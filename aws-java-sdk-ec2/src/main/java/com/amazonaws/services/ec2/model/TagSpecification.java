@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,8 @@ public class TagSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+     * <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>, <code>snapshot</code>, and
+     * <code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.
      * </p>
      */
     private String resourceType;
@@ -43,12 +44,14 @@ public class TagSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+     * <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>, <code>snapshot</code>, and
+     * <code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource to tag. Currently, the resource types that support tagging on creation are
-     *        <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+     *        <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>, <code>snapshot</code>, and
+     *        <code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.
      * @see ResourceType
      */
 
@@ -59,11 +62,13 @@ public class TagSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+     * <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>, <code>snapshot</code>, and
+     * <code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.
      * </p>
      * 
      * @return The type of resource to tag. Currently, the resource types that support tagging on creation are
-     *         <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+     *         <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>, <code>snapshot</code>, and
+     *         <code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.
      * @see ResourceType
      */
 
@@ -74,12 +79,14 @@ public class TagSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+     * <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>, <code>snapshot</code>, and
+     * <code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource to tag. Currently, the resource types that support tagging on creation are
-     *        <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+     *        <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>, <code>snapshot</code>, and
+     *        <code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -92,12 +99,14 @@ public class TagSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+     * <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>, <code>snapshot</code>, and
+     * <code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource to tag. Currently, the resource types that support tagging on creation are
-     *        <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+     *        <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>, <code>snapshot</code>, and
+     *        <code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.
      * @see ResourceType
      */
 
@@ -108,12 +117,14 @@ public class TagSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are
-     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+     * <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>, <code>snapshot</code>, and
+     * <code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource to tag. Currently, the resource types that support tagging on creation are
-     *        <code>instance</code>, <code>snapshot</code>, and <code>volume</code>.
+     *        <code>fleet</code>, <code>dedicated-host</code>, <code>instance</code>, <code>snapshot</code>, and
+     *        <code>volume</code>. To tag a resource after it has been created, see <a>CreateTags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -197,7 +208,8 @@ public class TagSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

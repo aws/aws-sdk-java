@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,13 +50,13 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
     private String statusDetails;
     /**
      * <p>
-     * The time the Maintenance Window started executing.
+     * The time the Maintenance Window started running.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The time the Maintenance Window finished executing.
+     * The time the Maintenance Window finished running.
      * </p>
      */
     private java.util.Date endTime;
@@ -289,11 +289,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window started executing.
+     * The time the Maintenance Window started running.
      * </p>
      * 
      * @param startTime
-     *        The time the Maintenance Window started executing.
+     *        The time the Maintenance Window started running.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -302,10 +302,10 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window started executing.
+     * The time the Maintenance Window started running.
      * </p>
      * 
-     * @return The time the Maintenance Window started executing.
+     * @return The time the Maintenance Window started running.
      */
 
     public java.util.Date getStartTime() {
@@ -314,11 +314,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window started executing.
+     * The time the Maintenance Window started running.
      * </p>
      * 
      * @param startTime
-     *        The time the Maintenance Window started executing.
+     *        The time the Maintenance Window started running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,11 +329,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window finished executing.
+     * The time the Maintenance Window finished running.
      * </p>
      * 
      * @param endTime
-     *        The time the Maintenance Window finished executing.
+     *        The time the Maintenance Window finished running.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -342,10 +342,10 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window finished executing.
+     * The time the Maintenance Window finished running.
      * </p>
      * 
-     * @return The time the Maintenance Window finished executing.
+     * @return The time the Maintenance Window finished running.
      */
 
     public java.util.Date getEndTime() {
@@ -354,11 +354,11 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The time the Maintenance Window finished executing.
+     * The time the Maintenance Window finished running.
      * </p>
      * 
      * @param endTime
-     *        The time the Maintenance Window finished executing.
+     *        The time the Maintenance Window finished running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,7 +368,8 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder;
 import com.amazonaws.services.simpleemail.waiters.AmazonSimpleEmailServiceWaiters;
 
@@ -66,6 +68,7 @@ import com.amazonaws.services.simpleemail.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient implements AmazonSimpleEmailService {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -78,6 +81,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     /**
      * List of exception unmarshallers for all modeled exceptions
@@ -168,6 +173,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     public AmazonSimpleEmailServiceClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -233,6 +239,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -251,8 +258,23 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Object providing client parameters.
      */
     AmazonSimpleEmailServiceClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon SES using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonSimpleEmailServiceClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -356,6 +378,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CloneReceiptRuleSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -425,6 +450,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -512,6 +540,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSetEventDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -589,6 +620,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSetTrackingOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -660,6 +694,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomVerificationEmailTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -727,6 +764,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReceiptFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -814,6 +854,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReceiptRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -881,6 +924,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReceiptRuleSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -948,6 +994,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1009,6 +1058,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1075,6 +1127,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSetEventDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1144,6 +1199,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSetTrackingOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1204,6 +1262,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomVerificationEmailTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1257,6 +1318,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1325,6 +1389,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIdentityPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1386,6 +1453,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReceiptFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1449,6 +1519,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReceiptRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1517,6 +1590,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReceiptRuleSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1572,6 +1648,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1623,6 +1702,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVerifiedEmailAddress");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1684,6 +1766,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeActiveReceiptRuleSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1744,6 +1829,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1809,6 +1897,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReceiptRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1872,6 +1963,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReceiptRuleSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1924,6 +2018,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSendingEnabled");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1986,6 +2083,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCustomVerificationEmailTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2073,6 +2173,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityDkimAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2131,6 +2234,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityMailFromDomainAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2194,6 +2300,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityNotificationAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2264,6 +2373,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2338,6 +2450,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityVerificationAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2390,6 +2505,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSendQuota");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2448,6 +2566,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSendStatistics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2508,6 +2629,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2570,6 +2694,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurationSets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2634,6 +2761,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCustomVerificationEmailTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2689,6 +2819,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentities");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2764,6 +2897,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentityPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2825,6 +2961,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReceiptFilters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2888,6 +3027,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReceiptRuleSets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2940,6 +3082,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2989,6 +3134,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVerifiedEmailAddresses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3065,6 +3213,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutIdentityPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3136,6 +3287,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReorderReceiptRuleSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3202,6 +3356,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendBounce");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3247,7 +3404,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </li>
      * <li>
      * <p>
-     * The total size of the message, including attachments, must be less than 10 MB.
+     * The maximum message size is 10 MB.
      * </p>
      * </li>
      * <li>
@@ -3256,6 +3413,19 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * can be a To: address, a CC: address, or a BCC: address. If a recipient email address is invalid (that is, it is
      * not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the entire message will be rejected, even
      * if the message contains other recipients that are valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The message may not include more than 50 recipients, across the To:, CC: and BCC: fields. If you need to send an
+     * email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call
+     * the <code>SendBulkTemplatedEmail</code> operation several times to send the message to each group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of destinations you can contact in a single call to the API may be limited by your account's maximum
+     * sending rate.
      * </p>
      * </li>
      * </ul>
@@ -3316,6 +3486,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendBulkTemplatedEmail");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3389,6 +3562,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendCustomVerificationEmail");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3427,7 +3603,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </li>
      * <li>
      * <p>
-     * The total size of the message, including attachments, must be smaller than 10 MB.
+     * The maximum message size is 10 MB.
      * </p>
      * </li>
      * <li>
@@ -3509,6 +3685,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendEmail");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3526,59 +3705,71 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Composes an email message and immediately queues it for sending. When calling this operation, you may specify the
-     * message headers as well as the content. The <code>SendRawEmail</code> operation is particularly useful for
-     * sending multipart MIME emails (such as those that contain both a plain-text and an HTML version).
+     * Composes an email message and immediately queues it for sending.
      * </p>
      * <p>
-     * In order to send email using the <code>SendRawEmail</code> operation, your message must meet the following
-     * requirements:
+     * This operation is more flexible than the <code>SendEmail</code> API operation. When you use the
+     * <code>SendRawEmail</code> operation, you can specify the headers of the message as well as its content. This
+     * flexibility is useful, for example, when you want to send a multipart MIME email (such a message that contains
+     * both a text and an HTML version). You can also use this operation to send messages that include attachments.
+     * </p>
+     * <p>
+     * The <code>SendRawEmail</code> operation has the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The message must be sent from a verified email address or domain. If you attempt to send email using a
-     * non-verified address or domain, the operation will result in an "Email address not verified" error.
+     * You can only send email from <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">verified email
+     * addresses or domains</a>. If you try to send email from an address that isn't verified, the operation results in
+     * an "Email address not verified" error.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If your account is still in the Amazon SES sandbox, you may only send to verified addresses or domains, or to
-     * email addresses associated with the Amazon SES Mailbox Simulator. For more information, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
-     * Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i>
+     * If your account is still in the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html">Amazon SES
+     * sandbox</a>, you can only send email to other verified addresses in your account, or to addresses that are
+     * associated with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mailbox-simulator.html">Amazon
+     * SES mailbox simulator</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The total size of the message, including attachments, must be smaller than 10 MB.
+     * The maximum message size, including attachments, is 10 MB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The message must include at least one recipient email address. The recipient address can be a To: address, a CC:
-     * address, or a BCC: address. If a recipient email address is invalid (that is, it is not in the format
-     * <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), the entire message will be rejected, even if the message
-     * contains other recipients that are valid.
+     * Each message has to include at least one recipient address. A recipient address includes any address on the To:,
+     * CC:, or BCC: lines.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The message may not include more than 50 recipients, across the To:, CC: and BCC: fields. If you need to send an
-     * email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call
-     * the <code>SendRawEmail</code> operation several times to send the message to each group.
+     * If you send a single message to more than one recipient address, and one of the recipient addresses isn't in a
+     * valid format (that is, it's not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>), Amazon SES
+     * rejects the entire message, even if the other addresses are valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each message can include up to 50 recipient addresses across the To:, CC:, or BCC: lines. If you need to send a
+     * single message to more than 50 recipients, you have to split the list of recipient addresses into groups of less
+     * than 50 recipients, and send separate messages to each group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SES allows you to specify 8-bit Content-Transfer-Encoding for MIME message parts. However, if Amazon SES
+     * has to modify the contents of your message (for example, if you use open and click tracking), 8-bit content isn't
+     * preserved. For this reason, we highly recommend that you encode all content that isn't 7-bit ASCII. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-mime-encoding">MIME
+     * Encoding</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
-     * <important>
-     * <p>
-     * For every message that you send, the total number of recipients (including each recipient in the To:, CC: and
-     * BCC: fields) is counted against the maximum number of emails you can send in a 24-hour period (your <i>sending
-     * quota</i>). For more information about sending quotas in Amazon SES, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing Your Amazon SES
-     * Sending Limits</a> in the <i>Amazon SES Developer Guide.</i>
-     * </p>
-     * </important>
      * <p>
      * Additionally, keep the following considerations in mind when using the <code>SendRawEmail</code> operation:
      * </p>
@@ -3627,6 +3818,15 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization, see
      * the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using Sending
      * Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For every message that you send, the total number of recipients (including each recipient in the To:, CC: and
+     * BCC: fields) is counted against the maximum number of emails you can send in a 24-hour period (your <i>sending
+     * quota</i>). For more information about sending quotas in Amazon SES, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Managing Your Amazon SES
+     * Sending Limits</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -3684,6 +3884,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendRawEmail");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3729,7 +3932,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </li>
      * <li>
      * <p>
-     * The total size of the message, including attachments, must be less than 10 MB.
+     * The maximum message size is 10 MB.
      * </p>
      * </li>
      * <li>
@@ -3818,6 +4021,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendTemplatedEmail");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3887,6 +4093,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetActiveReceiptRuleSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3965,6 +4174,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityDkimEnabled");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4035,6 +4247,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityFeedbackForwardingEnabled");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4098,6 +4313,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityHeadersInNotificationsEnabled");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4161,6 +4379,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityMailFromDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4179,16 +4400,12 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Given an identity (an email address or a domain), sets the Amazon Simple Notification Service (Amazon SNS) topic
-     * to which Amazon SES will publish bounce, complaint, and/or delivery notifications for emails sent with that
-     * identity as the <code>Source</code>.
+     * Sets an Amazon Simple Notification Service (Amazon SNS) topic to use when delivering notifications. When you use
+     * this operation, you specify a verified identity, such as an email address or domain. When you send an email that
+     * uses the chosen identity in the Source field, Amazon SES sends notifications to the topic you specified. You can
+     * send bounce, complaint, or delivery notifications (or any combination of the three) to the Amazon SNS topic that
+     * you specify.
      * </p>
-     * <note>
-     * <p>
-     * Unless feedback forwarding is enabled, you must specify Amazon SNS topics for bounce and complaint notifications.
-     * For more information, see <code>SetIdentityFeedbackForwardingEnabled</code>.
-     * </p>
-     * </note>
      * <p>
      * You can execute this operation no more than once per second.
      * </p>
@@ -4230,6 +4447,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityNotificationTopic");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4295,6 +4515,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetReceiptRulePosition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4356,6 +4579,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestRenderTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4413,6 +4639,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountSendingEnabled");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4492,6 +4721,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetEventDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4553,6 +4785,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetReputationMetricsEnabled");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4613,6 +4848,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetSendingEnabled");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4690,6 +4928,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetTrackingOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4757,6 +4998,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCustomVerificationEmailTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4842,6 +5086,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateReceiptRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4902,6 +5149,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4969,6 +5219,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyDomainDkim");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5029,6 +5282,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyDomainIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5082,6 +5338,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyEmailAddress");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5140,6 +5399,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyEmailIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5180,9 +5442,18 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -5192,7 +5463,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -5200,8 +5471,17 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

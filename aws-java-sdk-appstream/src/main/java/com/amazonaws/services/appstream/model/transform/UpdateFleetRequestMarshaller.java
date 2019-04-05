@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class UpdateFleetRequestMarshaller {
 
     private static final MarshallingInfo<String> IMAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageName").build();
+    private static final MarshallingInfo<String> IMAGEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ImageArn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -72,6 +74,7 @@ public class UpdateFleetRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateFleetRequest.getImageName(), IMAGENAME_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getImageArn(), IMAGEARN_BINDING);
             protocolMarshaller.marshall(updateFleetRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateFleetRequest.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(updateFleetRequest.getComputeCapacity(), COMPUTECAPACITY_BINDING);

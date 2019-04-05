@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * calling. The general form is:
      * </p>
      * <p>
-     * <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code> https://s3-&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      * </p>
      * <p>
      * For example:
@@ -59,7 +59,7 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * calling. The general form is:
      * </p>
      * <p>
-     * <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code> https://s3-&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      * </p>
      * <p>
      * For example:
@@ -80,7 +80,7 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      *        The S3 location of the input media file. The URI must be in the same region as the API endpoint that you
      *        are calling. The general form is:</p>
      *        <p>
-     *        <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     *        <code> https://s3-&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      *        </p>
      *        <p>
      *        For example:
@@ -107,7 +107,7 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * calling. The general form is:
      * </p>
      * <p>
-     * <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code> https://s3-&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      * </p>
      * <p>
      * For example:
@@ -127,7 +127,7 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * @return The S3 location of the input media file. The URI must be in the same region as the API endpoint that you
      *         are calling. The general form is:</p>
      *         <p>
-     *         <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     *         <code> https://s3-&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      *         </p>
      *         <p>
      *         For example:
@@ -154,7 +154,7 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * calling. The general form is:
      * </p>
      * <p>
-     * <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     * <code> https://s3-&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      * </p>
      * <p>
      * For example:
@@ -175,7 +175,7 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      *        The S3 location of the input media file. The URI must be in the same region as the API endpoint that you
      *        are calling. The general form is:</p>
      *        <p>
-     *        <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
+     *        <code> https://s3-&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
      *        </p>
      *        <p>
      *        For example:
@@ -199,7 +199,8 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("timestamp", targetDepth)) {
                     context.nextToken();
-                    historyEvent.setTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    historyEvent.setTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
@@ -87,6 +87,38 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
                 if (context.testExpression("activityTimedOutEventDetails", targetDepth)) {
                     context.nextToken();
                     historyEvent.setActivityTimedOutEventDetails(ActivityTimedOutEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskFailedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskFailedEventDetails(TaskFailedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskScheduledEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskScheduledEventDetails(TaskScheduledEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskStartFailedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskStartFailedEventDetails(TaskStartFailedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskStartedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskStartedEventDetails(TaskStartedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskSubmitFailedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskSubmitFailedEventDetails(TaskSubmitFailedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskSubmittedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskSubmittedEventDetails(TaskSubmittedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskSucceededEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskSucceededEventDetails(TaskSucceededEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("taskTimedOutEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setTaskTimedOutEventDetails(TaskTimedOutEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("executionFailedEventDetails", targetDepth)) {
                     context.nextToken();

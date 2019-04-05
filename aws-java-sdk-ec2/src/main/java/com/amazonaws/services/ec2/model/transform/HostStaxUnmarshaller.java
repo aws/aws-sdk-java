@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,14 +96,25 @@ public class HostStaxUnmarshaller implements Unmarshaller<Host, StaxUnmarshaller
                 }
 
                 if (context.testExpression("allocationTime", targetDepth)) {
-                    host.setAllocationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    host.setAllocationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("releaseTime", targetDepth)) {
-                    host.setReleaseTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    host.setReleaseTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    host.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    host.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return host;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetTypedLinkFacetInformation"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -30,9 +30,9 @@ public class GetTypedLinkFacetInformationResult extends com.amazonaws.AmazonWebS
      * typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
      * specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the
      * typed link facet, not the order in which they are supplied to any API calls. For more information about identity
-     * attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * attributes, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      */
     private java.util.List<String> identityAttributeOrder;
@@ -44,9 +44,9 @@ public class GetTypedLinkFacetInformationResult extends com.amazonaws.AmazonWebS
      * typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
      * specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the
      * typed link facet, not the order in which they are supplied to any API calls. For more information about identity
-     * attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * attributes, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @return The order of identity attributes for the facet, from most significant to least significant. The ability
@@ -54,9 +54,9 @@ public class GetTypedLinkFacetInformationResult extends com.amazonaws.AmazonWebS
      *         providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes
      *         that do not have a range specified are presumed to match the entire range. Filters are interpreted in the
      *         order of the attributes on the typed link facet, not the order in which they are supplied to any API
-     *         calls. For more information about identity attributes, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink"
-     *         >Typed link</a>.
+     *         calls. For more information about identity attributes, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *         >Typed Links</a>.
      */
 
     public java.util.List<String> getIdentityAttributeOrder() {
@@ -70,9 +70,9 @@ public class GetTypedLinkFacetInformationResult extends com.amazonaws.AmazonWebS
      * typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
      * specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the
      * typed link facet, not the order in which they are supplied to any API calls. For more information about identity
-     * attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * attributes, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param identityAttributeOrder
@@ -81,9 +81,9 @@ public class GetTypedLinkFacetInformationResult extends com.amazonaws.AmazonWebS
      *        providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes
      *        that do not have a range specified are presumed to match the entire range. Filters are interpreted in the
      *        order of the attributes on the typed link facet, not the order in which they are supplied to any API
-     *        calls. For more information about identity attributes, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        calls. For more information about identity attributes, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      */
 
     public void setIdentityAttributeOrder(java.util.Collection<String> identityAttributeOrder) {
@@ -102,9 +102,9 @@ public class GetTypedLinkFacetInformationResult extends com.amazonaws.AmazonWebS
      * typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
      * specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the
      * typed link facet, not the order in which they are supplied to any API calls. For more information about identity
-     * attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * attributes, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -118,9 +118,9 @@ public class GetTypedLinkFacetInformationResult extends com.amazonaws.AmazonWebS
      *        providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes
      *        that do not have a range specified are presumed to match the entire range. Filters are interpreted in the
      *        order of the attributes on the typed link facet, not the order in which they are supplied to any API
-     *        calls. For more information about identity attributes, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        calls. For more information about identity attributes, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,9 +141,9 @@ public class GetTypedLinkFacetInformationResult extends com.amazonaws.AmazonWebS
      * typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
      * specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the
      * typed link facet, not the order in which they are supplied to any API calls. For more information about identity
-     * attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * attributes, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param identityAttributeOrder
@@ -152,9 +152,9 @@ public class GetTypedLinkFacetInformationResult extends com.amazonaws.AmazonWebS
      *        providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes
      *        that do not have a range specified are presumed to match the entire range. Filters are interpreted in the
      *        order of the attributes on the typed link facet, not the order in which they are supplied to any API
-     *        calls. For more information about identity attributes, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        calls. For more information about identity attributes, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,7 +164,8 @@ public class GetTypedLinkFacetInformationResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

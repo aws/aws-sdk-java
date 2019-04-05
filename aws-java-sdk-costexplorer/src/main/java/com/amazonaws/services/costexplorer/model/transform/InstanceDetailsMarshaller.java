@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class InstanceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EC2InstanceDetails").build();
     private static final MarshallingInfo<StructuredPojo> RDSINSTANCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RDSInstanceDetails").build();
+    private static final MarshallingInfo<StructuredPojo> REDSHIFTINSTANCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedshiftInstanceDetails").build();
+    private static final MarshallingInfo<StructuredPojo> ELASTICACHEINSTANCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElastiCacheInstanceDetails").build();
+    private static final MarshallingInfo<StructuredPojo> ESINSTANCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ESInstanceDetails").build();
 
     private static final InstanceDetailsMarshaller instance = new InstanceDetailsMarshaller();
 
@@ -50,6 +56,9 @@ public class InstanceDetailsMarshaller {
         try {
             protocolMarshaller.marshall(instanceDetails.getEC2InstanceDetails(), EC2INSTANCEDETAILS_BINDING);
             protocolMarshaller.marshall(instanceDetails.getRDSInstanceDetails(), RDSINSTANCEDETAILS_BINDING);
+            protocolMarshaller.marshall(instanceDetails.getRedshiftInstanceDetails(), REDSHIFTINSTANCEDETAILS_BINDING);
+            protocolMarshaller.marshall(instanceDetails.getElastiCacheInstanceDetails(), ELASTICACHEINSTANCEDETAILS_BINDING);
+            protocolMarshaller.marshall(instanceDetails.getESInstanceDetails(), ESINSTANCEDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

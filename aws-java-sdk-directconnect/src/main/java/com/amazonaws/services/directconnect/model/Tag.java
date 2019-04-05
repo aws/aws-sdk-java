@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,24 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key of the tag.
+     * The key.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The value of the tag.
+     * The value.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The key of the tag.
+     * The key.
      * </p>
      * 
      * @param key
-     *        The key of the tag.
+     *        The key.
      */
 
     public void setKey(String key) {
@@ -56,10 +56,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key of the tag.
+     * The key.
      * </p>
      * 
-     * @return The key of the tag.
+     * @return The key.
      */
 
     public String getKey() {
@@ -68,11 +68,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key of the tag.
+     * The key.
      * </p>
      * 
      * @param key
-     *        The key of the tag.
+     *        The key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the tag.
+     * The value.
      * </p>
      * 
      * @param value
-     *        The value of the tag.
+     *        The value.
      */
 
     public void setValue(String value) {
@@ -96,10 +96,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the tag.
+     * The value.
      * </p>
      * 
-     * @return The value of the tag.
+     * @return The value.
      */
 
     public String getValue() {
@@ -108,11 +108,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the tag.
+     * The value.
      * </p>
      * 
      * @param value
-     *        The value of the tag.
+     *        The value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,7 +122,8 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

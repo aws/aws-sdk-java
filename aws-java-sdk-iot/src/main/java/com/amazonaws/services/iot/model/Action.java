@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,6 +110,18 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private IotAnalyticsAction iotAnalytics;
+    /**
+     * <p>
+     * Sends an input to an AWS IoT Events detector.
+     * </p>
+     */
+    private IotEventsAction iotEvents;
+    /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     */
+    private StepFunctionsAction stepFunctions;
 
     /**
      * <p>
@@ -678,7 +690,88 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Sends an input to an AWS IoT Events detector.
+     * </p>
+     * 
+     * @param iotEvents
+     *        Sends an input to an AWS IoT Events detector.
+     */
+
+    public void setIotEvents(IotEventsAction iotEvents) {
+        this.iotEvents = iotEvents;
+    }
+
+    /**
+     * <p>
+     * Sends an input to an AWS IoT Events detector.
+     * </p>
+     * 
+     * @return Sends an input to an AWS IoT Events detector.
+     */
+
+    public IotEventsAction getIotEvents() {
+        return this.iotEvents;
+    }
+
+    /**
+     * <p>
+     * Sends an input to an AWS IoT Events detector.
+     * </p>
+     * 
+     * @param iotEvents
+     *        Sends an input to an AWS IoT Events detector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withIotEvents(IotEventsAction iotEvents) {
+        setIotEvents(iotEvents);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     * 
+     * @param stepFunctions
+     *        Starts execution of a Step Functions state machine.
+     */
+
+    public void setStepFunctions(StepFunctionsAction stepFunctions) {
+        this.stepFunctions = stepFunctions;
+    }
+
+    /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     * 
+     * @return Starts execution of a Step Functions state machine.
+     */
+
+    public StepFunctionsAction getStepFunctions() {
+        return this.stepFunctions;
+    }
+
+    /**
+     * <p>
+     * Starts execution of a Step Functions state machine.
+     * </p>
+     * 
+     * @param stepFunctions
+     *        Starts execution of a Step Functions state machine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withStepFunctions(StepFunctionsAction stepFunctions) {
+        setStepFunctions(stepFunctions);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -715,7 +808,11 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getSalesforce() != null)
             sb.append("Salesforce: ").append(getSalesforce()).append(",");
         if (getIotAnalytics() != null)
-            sb.append("IotAnalytics: ").append(getIotAnalytics());
+            sb.append("IotAnalytics: ").append(getIotAnalytics()).append(",");
+        if (getIotEvents() != null)
+            sb.append("IotEvents: ").append(getIotEvents()).append(",");
+        if (getStepFunctions() != null)
+            sb.append("StepFunctions: ").append(getStepFunctions());
         sb.append("}");
         return sb.toString();
     }
@@ -786,6 +883,14 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIotAnalytics() != null && other.getIotAnalytics().equals(this.getIotAnalytics()) == false)
             return false;
+        if (other.getIotEvents() == null ^ this.getIotEvents() == null)
+            return false;
+        if (other.getIotEvents() != null && other.getIotEvents().equals(this.getIotEvents()) == false)
+            return false;
+        if (other.getStepFunctions() == null ^ this.getStepFunctions() == null)
+            return false;
+        if (other.getStepFunctions() != null && other.getStepFunctions().equals(this.getStepFunctions()) == false)
+            return false;
         return true;
     }
 
@@ -808,6 +913,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getElasticsearch() == null) ? 0 : getElasticsearch().hashCode());
         hashCode = prime * hashCode + ((getSalesforce() == null) ? 0 : getSalesforce().hashCode());
         hashCode = prime * hashCode + ((getIotAnalytics() == null) ? 0 : getIotAnalytics().hashCode());
+        hashCode = prime * hashCode + ((getIotEvents() == null) ? 0 : getIotEvents().hashCode());
+        hashCode = prime * hashCode + ((getStepFunctions() == null) ? 0 : getStepFunctions().hashCode());
         return hashCode;
     }
 

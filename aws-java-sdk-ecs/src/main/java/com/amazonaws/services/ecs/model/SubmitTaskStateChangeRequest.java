@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,19 +63,19 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
     private com.amazonaws.internal.SdkInternalList<AttachmentStateChange> attachments;
     /**
      * <p>
-     * The Unix time stamp for when the container image pull began.
+     * The Unix timestamp for when the container image pull began.
      * </p>
      */
     private java.util.Date pullStartedAt;
     /**
      * <p>
-     * The Unix time stamp for when the container image pull completed.
+     * The Unix timestamp for when the container image pull completed.
      * </p>
      */
     private java.util.Date pullStoppedAt;
     /**
      * <p>
-     * The Unix time stamp for when the task execution stopped.
+     * The Unix timestamp for when the task execution stopped.
      * </p>
      */
     private java.util.Date executionStoppedAt;
@@ -388,11 +388,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull began.
+     * The Unix timestamp for when the container image pull began.
      * </p>
      * 
      * @param pullStartedAt
-     *        The Unix time stamp for when the container image pull began.
+     *        The Unix timestamp for when the container image pull began.
      */
 
     public void setPullStartedAt(java.util.Date pullStartedAt) {
@@ -401,10 +401,10 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull began.
+     * The Unix timestamp for when the container image pull began.
      * </p>
      * 
-     * @return The Unix time stamp for when the container image pull began.
+     * @return The Unix timestamp for when the container image pull began.
      */
 
     public java.util.Date getPullStartedAt() {
@@ -413,11 +413,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull began.
+     * The Unix timestamp for when the container image pull began.
      * </p>
      * 
      * @param pullStartedAt
-     *        The Unix time stamp for when the container image pull began.
+     *        The Unix timestamp for when the container image pull began.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,11 +428,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull completed.
+     * The Unix timestamp for when the container image pull completed.
      * </p>
      * 
      * @param pullStoppedAt
-     *        The Unix time stamp for when the container image pull completed.
+     *        The Unix timestamp for when the container image pull completed.
      */
 
     public void setPullStoppedAt(java.util.Date pullStoppedAt) {
@@ -441,10 +441,10 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull completed.
+     * The Unix timestamp for when the container image pull completed.
      * </p>
      * 
-     * @return The Unix time stamp for when the container image pull completed.
+     * @return The Unix timestamp for when the container image pull completed.
      */
 
     public java.util.Date getPullStoppedAt() {
@@ -453,11 +453,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull completed.
+     * The Unix timestamp for when the container image pull completed.
      * </p>
      * 
      * @param pullStoppedAt
-     *        The Unix time stamp for when the container image pull completed.
+     *        The Unix timestamp for when the container image pull completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -468,11 +468,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix time stamp for when the task execution stopped.
+     * The Unix timestamp for when the task execution stopped.
      * </p>
      * 
      * @param executionStoppedAt
-     *        The Unix time stamp for when the task execution stopped.
+     *        The Unix timestamp for when the task execution stopped.
      */
 
     public void setExecutionStoppedAt(java.util.Date executionStoppedAt) {
@@ -481,10 +481,10 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix time stamp for when the task execution stopped.
+     * The Unix timestamp for when the task execution stopped.
      * </p>
      * 
-     * @return The Unix time stamp for when the task execution stopped.
+     * @return The Unix timestamp for when the task execution stopped.
      */
 
     public java.util.Date getExecutionStoppedAt() {
@@ -493,11 +493,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix time stamp for when the task execution stopped.
+     * The Unix timestamp for when the task execution stopped.
      * </p>
      * 
      * @param executionStoppedAt
-     *        The Unix time stamp for when the task execution stopped.
+     *        The Unix timestamp for when the task execution stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,7 +507,8 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

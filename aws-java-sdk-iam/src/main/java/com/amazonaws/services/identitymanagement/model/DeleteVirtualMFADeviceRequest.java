@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DeleteVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * as the ARN.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: =,.@:/-
      * </p>
@@ -44,7 +44,7 @@ public class DeleteVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * as the ARN.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: =,.@:/-
      * </p>
@@ -53,9 +53,9 @@ public class DeleteVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      *        The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is
      *        the same as the ARN.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@:/-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@:/-
      */
 
     public void setSerialNumber(String serialNumber) {
@@ -68,7 +68,7 @@ public class DeleteVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * as the ARN.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: =,.@:/-
      * </p>
@@ -76,9 +76,9 @@ public class DeleteVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * @return The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is
      *         the same as the ARN.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@:/-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: =,.@:/-
      */
 
     public String getSerialNumber() {
@@ -91,7 +91,7 @@ public class DeleteVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * as the ARN.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: =,.@:/-
      * </p>
@@ -100,9 +100,9 @@ public class DeleteVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      *        The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is
      *        the same as the ARN.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@:/-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: =,.@:/-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +112,8 @@ public class DeleteVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

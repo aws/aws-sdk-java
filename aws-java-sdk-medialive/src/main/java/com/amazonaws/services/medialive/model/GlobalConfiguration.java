@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Placeholder documentation for GlobalConfiguration
+ * Global Configuration
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/GlobalConfiguration" target="_top">AWS API
  *      Documentation</a>
@@ -29,15 +29,21 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     /** Value to set the initial audio gain for the Live Event. */
     private Integer initialAudioGain;
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately switching to
-     * the next sequential input (via "switchInput"), switching to the next input and looping back to the first input
-     * when last input ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding black / color /
-     * slate images per the "Input Loss Behavior" configuration until an activateInput REST command is received (via
-     * "none").
+     * Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is
+     * configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder
+     * will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior"
+     * configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
      */
     private String inputEndAction;
     /** Settings for system actions when input is lost. */
     private InputLossBehavior inputLossBehavior;
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+     * 
+     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     */
+    private String outputLockingMode;
     /**
      * Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which
      * optionally may be locked to another source via NTP) or should be locked to the clock of the source that is
@@ -85,18 +91,17 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately switching to
-     * the next sequential input (via "switchInput"), switching to the next input and looping back to the first input
-     * when last input ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding black / color /
-     * slate images per the "Input Loss Behavior" configuration until an activateInput REST command is received (via
-     * "none").
+     * Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is
+     * configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder
+     * will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior"
+     * configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
      * 
      * @param inputEndAction
-     *        Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately
-     *        switching to the next sequential input (via "switchInput"), switching to the next input and looping back
-     *        to the first input when last input ends (via "switchAndLoopInputs") or not switching inputs and instead
-     *        transcoding black / color / slate images per the "Input Loss Behavior" configuration until an
-     *        activateInput REST command is received (via "none").
+     *        Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs
+     *        is configured the encoder will restart at the beginning of the first input. When "none" is configured the
+     *        encoder will transcode either black, a solid color, or a user specified slate images per the
+     *        "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the
+     *        Channel Schedule API).
      * @see GlobalConfigurationInputEndAction
      */
 
@@ -105,17 +110,16 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately switching to
-     * the next sequential input (via "switchInput"), switching to the next input and looping back to the first input
-     * when last input ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding black / color /
-     * slate images per the "Input Loss Behavior" configuration until an activateInput REST command is received (via
-     * "none").
+     * Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is
+     * configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder
+     * will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior"
+     * configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
      * 
-     * @return Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately
-     *         switching to the next sequential input (via "switchInput"), switching to the next input and looping back
-     *         to the first input when last input ends (via "switchAndLoopInputs") or not switching inputs and instead
-     *         transcoding black / color / slate images per the "Input Loss Behavior" configuration until an
-     *         activateInput REST command is received (via "none").
+     * @return Indicates the action to take when the current input completes (e.g. end-of-file). When
+     *         switchAndLoopInputs is configured the encoder will restart at the beginning of the first input. When
+     *         "none" is configured the encoder will transcode either black, a solid color, or a user specified slate
+     *         images per the "Input Loss Behavior" configuration until the next input switch occurs (which is
+     *         controlled through the Channel Schedule API).
      * @see GlobalConfigurationInputEndAction
      */
 
@@ -124,18 +128,17 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately switching to
-     * the next sequential input (via "switchInput"), switching to the next input and looping back to the first input
-     * when last input ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding black / color /
-     * slate images per the "Input Loss Behavior" configuration until an activateInput REST command is received (via
-     * "none").
+     * Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is
+     * configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder
+     * will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior"
+     * configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
      * 
      * @param inputEndAction
-     *        Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately
-     *        switching to the next sequential input (via "switchInput"), switching to the next input and looping back
-     *        to the first input when last input ends (via "switchAndLoopInputs") or not switching inputs and instead
-     *        transcoding black / color / slate images per the "Input Loss Behavior" configuration until an
-     *        activateInput REST command is received (via "none").
+     *        Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs
+     *        is configured the encoder will restart at the beginning of the first input. When "none" is configured the
+     *        encoder will transcode either black, a solid color, or a user specified slate images per the
+     *        "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the
+     *        Channel Schedule API).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GlobalConfigurationInputEndAction
      */
@@ -146,18 +149,17 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately switching to
-     * the next sequential input (via "switchInput"), switching to the next input and looping back to the first input
-     * when last input ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding black / color /
-     * slate images per the "Input Loss Behavior" configuration until an activateInput REST command is received (via
-     * "none").
+     * Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs is
+     * configured the encoder will restart at the beginning of the first input. When "none" is configured the encoder
+     * will transcode either black, a solid color, or a user specified slate images per the "Input Loss Behavior"
+     * configuration until the next input switch occurs (which is controlled through the Channel Schedule API).
      * 
      * @param inputEndAction
-     *        Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately
-     *        switching to the next sequential input (via "switchInput"), switching to the next input and looping back
-     *        to the first input when last input ends (via "switchAndLoopInputs") or not switching inputs and instead
-     *        transcoding black / color / slate images per the "Input Loss Behavior" configuration until an
-     *        activateInput REST command is received (via "none").
+     *        Indicates the action to take when the current input completes (e.g. end-of-file). When switchAndLoopInputs
+     *        is configured the encoder will restart at the beginning of the first input. When "none" is configured the
+     *        encoder will transcode either black, a solid color, or a user specified slate images per the
+     *        "Input Loss Behavior" configuration until the next input switch occurs (which is controlled through the
+     *        Channel Schedule API).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GlobalConfigurationInputEndAction
      */
@@ -198,6 +200,81 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
 
     public GlobalConfiguration withInputLossBehavior(InputLossBehavior inputLossBehavior) {
         setInputLossBehavior(inputLossBehavior);
+        return this;
+    }
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+     * 
+     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * 
+     * @param outputLockingMode
+     *        Indicates how MediaLive pipelines are synchronized.
+     * 
+     *        PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *        EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * @see GlobalConfigurationOutputLockingMode
+     */
+
+    public void setOutputLockingMode(String outputLockingMode) {
+        this.outputLockingMode = outputLockingMode;
+    }
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+     * 
+     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * 
+     * @return Indicates how MediaLive pipelines are synchronized.
+     * 
+     *         PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *         EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * @see GlobalConfigurationOutputLockingMode
+     */
+
+    public String getOutputLockingMode() {
+        return this.outputLockingMode;
+    }
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+     * 
+     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * 
+     * @param outputLockingMode
+     *        Indicates how MediaLive pipelines are synchronized.
+     * 
+     *        PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *        EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GlobalConfigurationOutputLockingMode
+     */
+
+    public GlobalConfiguration withOutputLockingMode(String outputLockingMode) {
+        setOutputLockingMode(outputLockingMode);
+        return this;
+    }
+
+    /**
+     * Indicates how MediaLive pipelines are synchronized.
+     * 
+     * PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCHLOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * 
+     * @param outputLockingMode
+     *        Indicates how MediaLive pipelines are synchronized.
+     * 
+     *        PIPELINELOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other.
+     *        EPOCHLOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GlobalConfigurationOutputLockingMode
+     */
+
+    public GlobalConfiguration withOutputLockingMode(GlobalConfigurationOutputLockingMode outputLockingMode) {
+        this.outputLockingMode = outputLockingMode.toString();
         return this;
     }
 
@@ -328,7 +405,8 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -344,6 +422,8 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
             sb.append("InputEndAction: ").append(getInputEndAction()).append(",");
         if (getInputLossBehavior() != null)
             sb.append("InputLossBehavior: ").append(getInputLossBehavior()).append(",");
+        if (getOutputLockingMode() != null)
+            sb.append("OutputLockingMode: ").append(getOutputLockingMode()).append(",");
         if (getOutputTimingSource() != null)
             sb.append("OutputTimingSource: ").append(getOutputTimingSource()).append(",");
         if (getSupportLowFramerateInputs() != null)
@@ -374,6 +454,10 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getInputLossBehavior() != null && other.getInputLossBehavior().equals(this.getInputLossBehavior()) == false)
             return false;
+        if (other.getOutputLockingMode() == null ^ this.getOutputLockingMode() == null)
+            return false;
+        if (other.getOutputLockingMode() != null && other.getOutputLockingMode().equals(this.getOutputLockingMode()) == false)
+            return false;
         if (other.getOutputTimingSource() == null ^ this.getOutputTimingSource() == null)
             return false;
         if (other.getOutputTimingSource() != null && other.getOutputTimingSource().equals(this.getOutputTimingSource()) == false)
@@ -393,6 +477,7 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getInitialAudioGain() == null) ? 0 : getInitialAudioGain().hashCode());
         hashCode = prime * hashCode + ((getInputEndAction() == null) ? 0 : getInputEndAction().hashCode());
         hashCode = prime * hashCode + ((getInputLossBehavior() == null) ? 0 : getInputLossBehavior().hashCode());
+        hashCode = prime * hashCode + ((getOutputLockingMode() == null) ? 0 : getOutputLockingMode().hashCode());
         hashCode = prime * hashCode + ((getOutputTimingSource() == null) ? 0 : getOutputTimingSource().hashCode());
         hashCode = prime * hashCode + ((getSupportLowFramerateInputs() == null) ? 0 : getSupportLowFramerateInputs().hashCode());
         return hashCode;

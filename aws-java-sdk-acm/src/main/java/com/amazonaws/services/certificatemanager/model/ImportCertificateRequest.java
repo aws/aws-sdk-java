@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      * </p>
      */
@@ -53,12 +53,12 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      * </p>
      * 
      * @param certificateArn
-     *        The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      */
 
@@ -68,11 +68,11 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      * </p>
      * 
-     * @return The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      */
 
@@ -82,12 +82,12 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      * </p>
      * 
      * @param certificateArn
-     *        The <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -299,7 +299,8 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -314,7 +315,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: ").append(getPrivateKey()).append(",");
+            sb.append("PrivateKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getCertificateChain() != null)
             sb.append("CertificateChain: ").append(getCertificateChain());
         sb.append("}");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -352,6 +352,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateServiceActionWithProvisioningArtifactResult> associateServiceActionWithProvisioningArtifactAsync(
+            AssociateServiceActionWithProvisioningArtifactRequest request) {
+
+        return associateServiceActionWithProvisioningArtifactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateServiceActionWithProvisioningArtifactResult> associateServiceActionWithProvisioningArtifactAsync(
+            final AssociateServiceActionWithProvisioningArtifactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateServiceActionWithProvisioningArtifactRequest, AssociateServiceActionWithProvisioningArtifactResult> asyncHandler) {
+        final AssociateServiceActionWithProvisioningArtifactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateServiceActionWithProvisioningArtifactResult>() {
+            @Override
+            public AssociateServiceActionWithProvisioningArtifactResult call() throws Exception {
+                AssociateServiceActionWithProvisioningArtifactResult result = null;
+
+                try {
+                    result = executeAssociateServiceActionWithProvisioningArtifact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateTagOptionWithResourceResult> associateTagOptionWithResourceAsync(AssociateTagOptionWithResourceRequest request) {
 
         return associateTagOptionWithResourceAsync(request, null);
@@ -370,6 +405,76 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeAssociateTagOptionWithResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchAssociateServiceActionWithProvisioningArtifactResult> batchAssociateServiceActionWithProvisioningArtifactAsync(
+            BatchAssociateServiceActionWithProvisioningArtifactRequest request) {
+
+        return batchAssociateServiceActionWithProvisioningArtifactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchAssociateServiceActionWithProvisioningArtifactResult> batchAssociateServiceActionWithProvisioningArtifactAsync(
+            final BatchAssociateServiceActionWithProvisioningArtifactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchAssociateServiceActionWithProvisioningArtifactRequest, BatchAssociateServiceActionWithProvisioningArtifactResult> asyncHandler) {
+        final BatchAssociateServiceActionWithProvisioningArtifactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchAssociateServiceActionWithProvisioningArtifactResult>() {
+            @Override
+            public BatchAssociateServiceActionWithProvisioningArtifactResult call() throws Exception {
+                BatchAssociateServiceActionWithProvisioningArtifactResult result = null;
+
+                try {
+                    result = executeBatchAssociateServiceActionWithProvisioningArtifact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateServiceActionFromProvisioningArtifactResult> batchDisassociateServiceActionFromProvisioningArtifactAsync(
+            BatchDisassociateServiceActionFromProvisioningArtifactRequest request) {
+
+        return batchDisassociateServiceActionFromProvisioningArtifactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateServiceActionFromProvisioningArtifactResult> batchDisassociateServiceActionFromProvisioningArtifactAsync(
+            final BatchDisassociateServiceActionFromProvisioningArtifactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDisassociateServiceActionFromProvisioningArtifactRequest, BatchDisassociateServiceActionFromProvisioningArtifactResult> asyncHandler) {
+        final BatchDisassociateServiceActionFromProvisioningArtifactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDisassociateServiceActionFromProvisioningArtifactResult>() {
+            @Override
+            public BatchDisassociateServiceActionFromProvisioningArtifactResult call() throws Exception {
+                BatchDisassociateServiceActionFromProvisioningArtifactResult result = null;
+
+                try {
+                    result = executeBatchDisassociateServiceActionFromProvisioningArtifact(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -617,6 +722,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateServiceActionResult> createServiceActionAsync(CreateServiceActionRequest request) {
+
+        return createServiceActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateServiceActionResult> createServiceActionAsync(final CreateServiceActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateServiceActionRequest, CreateServiceActionResult> asyncHandler) {
+        final CreateServiceActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateServiceActionResult>() {
+            @Override
+            public CreateServiceActionResult call() throws Exception {
+                CreateServiceActionResult result = null;
+
+                try {
+                    result = executeCreateServiceAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTagOptionResult> createTagOptionAsync(CreateTagOptionRequest request) {
 
         return createTagOptionAsync(request, null);
@@ -848,6 +986,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteServiceActionResult> deleteServiceActionAsync(DeleteServiceActionRequest request) {
+
+        return deleteServiceActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteServiceActionResult> deleteServiceActionAsync(final DeleteServiceActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteServiceActionRequest, DeleteServiceActionResult> asyncHandler) {
+        final DeleteServiceActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteServiceActionResult>() {
+            @Override
+            public DeleteServiceActionResult call() throws Exception {
+                DeleteServiceActionResult result = null;
+
+                try {
+                    result = executeDeleteServiceAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTagOptionResult> deleteTagOptionAsync(DeleteTagOptionRequest request) {
 
         return deleteTagOptionAsync(request, null);
@@ -964,6 +1135,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeDescribePortfolio(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePortfolioShareStatusResult> describePortfolioShareStatusAsync(DescribePortfolioShareStatusRequest request) {
+
+        return describePortfolioShareStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePortfolioShareStatusResult> describePortfolioShareStatusAsync(final DescribePortfolioShareStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePortfolioShareStatusRequest, DescribePortfolioShareStatusResult> asyncHandler) {
+        final DescribePortfolioShareStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePortfolioShareStatusResult>() {
+            @Override
+            public DescribePortfolioShareStatusResult call() throws Exception {
+                DescribePortfolioShareStatusResult result = null;
+
+                try {
+                    result = executeDescribePortfolioShareStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1246,6 +1450,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeServiceActionResult> describeServiceActionAsync(DescribeServiceActionRequest request) {
+
+        return describeServiceActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeServiceActionResult> describeServiceActionAsync(final DescribeServiceActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeServiceActionRequest, DescribeServiceActionResult> asyncHandler) {
+        final DescribeServiceActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeServiceActionResult>() {
+            @Override
+            public DescribeServiceActionResult call() throws Exception {
+                DescribeServiceActionResult result = null;
+
+                try {
+                    result = executeDescribeServiceAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTagOptionResult> describeTagOptionAsync(DescribeTagOptionRequest request) {
 
         return describeTagOptionAsync(request, null);
@@ -1263,6 +1500,40 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeDescribeTagOption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableAWSOrganizationsAccessResult> disableAWSOrganizationsAccessAsync(DisableAWSOrganizationsAccessRequest request) {
+
+        return disableAWSOrganizationsAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableAWSOrganizationsAccessResult> disableAWSOrganizationsAccessAsync(
+            final DisableAWSOrganizationsAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableAWSOrganizationsAccessRequest, DisableAWSOrganizationsAccessResult> asyncHandler) {
+        final DisableAWSOrganizationsAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableAWSOrganizationsAccessResult>() {
+            @Override
+            public DisableAWSOrganizationsAccessResult call() throws Exception {
+                DisableAWSOrganizationsAccessResult result = null;
+
+                try {
+                    result = executeDisableAWSOrganizationsAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1349,6 +1620,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateServiceActionFromProvisioningArtifactResult> disassociateServiceActionFromProvisioningArtifactAsync(
+            DisassociateServiceActionFromProvisioningArtifactRequest request) {
+
+        return disassociateServiceActionFromProvisioningArtifactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateServiceActionFromProvisioningArtifactResult> disassociateServiceActionFromProvisioningArtifactAsync(
+            final DisassociateServiceActionFromProvisioningArtifactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateServiceActionFromProvisioningArtifactRequest, DisassociateServiceActionFromProvisioningArtifactResult> asyncHandler) {
+        final DisassociateServiceActionFromProvisioningArtifactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateServiceActionFromProvisioningArtifactResult>() {
+            @Override
+            public DisassociateServiceActionFromProvisioningArtifactResult call() throws Exception {
+                DisassociateServiceActionFromProvisioningArtifactResult result = null;
+
+                try {
+                    result = executeDisassociateServiceActionFromProvisioningArtifact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateTagOptionFromResourceResult> disassociateTagOptionFromResourceAsync(
             DisassociateTagOptionFromResourceRequest request) {
 
@@ -1384,6 +1690,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<EnableAWSOrganizationsAccessResult> enableAWSOrganizationsAccessAsync(EnableAWSOrganizationsAccessRequest request) {
+
+        return enableAWSOrganizationsAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAWSOrganizationsAccessResult> enableAWSOrganizationsAccessAsync(final EnableAWSOrganizationsAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableAWSOrganizationsAccessRequest, EnableAWSOrganizationsAccessResult> asyncHandler) {
+        final EnableAWSOrganizationsAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableAWSOrganizationsAccessResult>() {
+            @Override
+            public EnableAWSOrganizationsAccessResult call() throws Exception {
+                EnableAWSOrganizationsAccessResult result = null;
+
+                try {
+                    result = executeEnableAWSOrganizationsAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ExecuteProvisionedProductPlanResult> executeProvisionedProductPlanAsync(ExecuteProvisionedProductPlanRequest request) {
 
         return executeProvisionedProductPlanAsync(request, null);
@@ -1402,6 +1741,76 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeExecuteProvisionedProductPlan(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteProvisionedProductServiceActionResult> executeProvisionedProductServiceActionAsync(
+            ExecuteProvisionedProductServiceActionRequest request) {
+
+        return executeProvisionedProductServiceActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteProvisionedProductServiceActionResult> executeProvisionedProductServiceActionAsync(
+            final ExecuteProvisionedProductServiceActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExecuteProvisionedProductServiceActionRequest, ExecuteProvisionedProductServiceActionResult> asyncHandler) {
+        final ExecuteProvisionedProductServiceActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExecuteProvisionedProductServiceActionResult>() {
+            @Override
+            public ExecuteProvisionedProductServiceActionResult call() throws Exception {
+                ExecuteProvisionedProductServiceActionResult result = null;
+
+                try {
+                    result = executeExecuteProvisionedProductServiceAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAWSOrganizationsAccessStatusResult> getAWSOrganizationsAccessStatusAsync(
+            GetAWSOrganizationsAccessStatusRequest request) {
+
+        return getAWSOrganizationsAccessStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAWSOrganizationsAccessStatusResult> getAWSOrganizationsAccessStatusAsync(
+            final GetAWSOrganizationsAccessStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAWSOrganizationsAccessStatusRequest, GetAWSOrganizationsAccessStatusResult> asyncHandler) {
+        final GetAWSOrganizationsAccessStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAWSOrganizationsAccessStatusResult>() {
+            @Override
+            public GetAWSOrganizationsAccessStatusResult call() throws Exception {
+                GetAWSOrganizationsAccessStatusResult result = null;
+
+                try {
+                    result = executeGetAWSOrganizationsAccessStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1501,6 +1910,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeListLaunchPaths(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationPortfolioAccessResult> listOrganizationPortfolioAccessAsync(
+            ListOrganizationPortfolioAccessRequest request) {
+
+        return listOrganizationPortfolioAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationPortfolioAccessResult> listOrganizationPortfolioAccessAsync(
+            final ListOrganizationPortfolioAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOrganizationPortfolioAccessRequest, ListOrganizationPortfolioAccessResult> asyncHandler) {
+        final ListOrganizationPortfolioAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOrganizationPortfolioAccessResult>() {
+            @Override
+            public ListOrganizationPortfolioAccessResult call() throws Exception {
+                ListOrganizationPortfolioAccessResult result = null;
+
+                try {
+                    result = executeListOrganizationPortfolioAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1715,6 +2159,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListProvisioningArtifactsForServiceActionResult> listProvisioningArtifactsForServiceActionAsync(
+            ListProvisioningArtifactsForServiceActionRequest request) {
+
+        return listProvisioningArtifactsForServiceActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProvisioningArtifactsForServiceActionResult> listProvisioningArtifactsForServiceActionAsync(
+            final ListProvisioningArtifactsForServiceActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListProvisioningArtifactsForServiceActionRequest, ListProvisioningArtifactsForServiceActionResult> asyncHandler) {
+        final ListProvisioningArtifactsForServiceActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListProvisioningArtifactsForServiceActionResult>() {
+            @Override
+            public ListProvisioningArtifactsForServiceActionResult call() throws Exception {
+                ListProvisioningArtifactsForServiceActionResult result = null;
+
+                try {
+                    result = executeListProvisioningArtifactsForServiceAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRecordHistoryResult> listRecordHistoryAsync(ListRecordHistoryRequest request) {
 
         return listRecordHistoryAsync(request, null);
@@ -1765,6 +2244,74 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeListResourcesForTagOption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServiceActionsResult> listServiceActionsAsync(ListServiceActionsRequest request) {
+
+        return listServiceActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServiceActionsResult> listServiceActionsAsync(final ListServiceActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListServiceActionsRequest, ListServiceActionsResult> asyncHandler) {
+        final ListServiceActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListServiceActionsResult>() {
+            @Override
+            public ListServiceActionsResult call() throws Exception {
+                ListServiceActionsResult result = null;
+
+                try {
+                    result = executeListServiceActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServiceActionsForProvisioningArtifactResult> listServiceActionsForProvisioningArtifactAsync(
+            ListServiceActionsForProvisioningArtifactRequest request) {
+
+        return listServiceActionsForProvisioningArtifactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServiceActionsForProvisioningArtifactResult> listServiceActionsForProvisioningArtifactAsync(
+            final ListServiceActionsForProvisioningArtifactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListServiceActionsForProvisioningArtifactRequest, ListServiceActionsForProvisioningArtifactResult> asyncHandler) {
+        final ListServiceActionsForProvisioningArtifactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListServiceActionsForProvisioningArtifactResult>() {
+            @Override
+            public ListServiceActionsForProvisioningArtifactResult call() throws Exception {
+                ListServiceActionsForProvisioningArtifactResult result = null;
+
+                try {
+                    result = executeListServiceActionsForProvisioningArtifact(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2194,6 +2741,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeUpdateProvisioningArtifact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceActionResult> updateServiceActionAsync(UpdateServiceActionRequest request) {
+
+        return updateServiceActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateServiceActionResult> updateServiceActionAsync(final UpdateServiceActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateServiceActionRequest, UpdateServiceActionResult> asyncHandler) {
+        final UpdateServiceActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateServiceActionResult>() {
+            @Override
+            public UpdateServiceActionResult call() throws Exception {
+                UpdateServiceActionResult result = null;
+
+                try {
+                    result = executeUpdateServiceAction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
      * "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of
      * "master", the MatchEquals value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a href=
-     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      * >Pipeline Structure Reference Action Requirements</a>.
      * </p>
      */
@@ -113,7 +113,7 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
      * "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of
      * "master", the MatchEquals value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a href=
-     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      * >Pipeline Structure Reference Action Requirements</a>.
      * </p>
      * 
@@ -125,7 +125,7 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
      *        property called "Branch" with a value of "master", the MatchEquals value will be evaluated as
      *        "refs/heads/master". A list of action configuration properties for built-in action types can be found
      *        here: <a href=
-     *        "http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
+     *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      *        >Pipeline Structure Reference Action Requirements</a>.
      */
 
@@ -141,7 +141,7 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
      * "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of
      * "master", the MatchEquals value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a href=
-     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      * >Pipeline Structure Reference Action Requirements</a>.
      * </p>
      * 
@@ -152,7 +152,7 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
      *         property called "Branch" with a value of "master", the MatchEquals value will be evaluated as
      *         "refs/heads/master". A list of action configuration properties for built-in action types can be found
      *         here: <a href=
-     *         "http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
+     *         "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      *         >Pipeline Structure Reference Action Requirements</a>.
      */
 
@@ -168,7 +168,7 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
      * "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of
      * "master", the MatchEquals value will be evaluated as "refs/heads/master". A list of action configuration
      * properties for built-in action types can be found here: <a href=
-     * "http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
+     * "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      * >Pipeline Structure Reference Action Requirements</a>.
      * </p>
      * 
@@ -180,7 +180,7 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
      *        property called "Branch" with a value of "master", the MatchEquals value will be evaluated as
      *        "refs/heads/master". A list of action configuration properties for built-in action types can be found
      *        here: <a href=
-     *        "http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
+     *        "https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements"
      *        >Pipeline Structure Reference Action Requirements</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -191,7 +191,8 @@ public class WebhookFilterRule implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

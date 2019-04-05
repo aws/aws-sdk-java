@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,20 +30,20 @@ public class OnPremisesTagSet implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list containing other lists of on-premises instance tag groups. In order for an instance to be included in the
-     * deployment group, it must be identified by all the tag groups in the list.
+     * A list that contains other lists of on-premises instance tag groups. For an instance to be included in the
+     * deployment group, it must be identified by all of the tag groups in the list.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<java.util.List<TagFilter>> onPremisesTagSetList;
 
     /**
      * <p>
-     * A list containing other lists of on-premises instance tag groups. In order for an instance to be included in the
-     * deployment group, it must be identified by all the tag groups in the list.
+     * A list that contains other lists of on-premises instance tag groups. For an instance to be included in the
+     * deployment group, it must be identified by all of the tag groups in the list.
      * </p>
      * 
-     * @return A list containing other lists of on-premises instance tag groups. In order for an instance to be included
-     *         in the deployment group, it must be identified by all the tag groups in the list.
+     * @return A list that contains other lists of on-premises instance tag groups. For an instance to be included in
+     *         the deployment group, it must be identified by all of the tag groups in the list.
      */
 
     public java.util.List<java.util.List<TagFilter>> getOnPremisesTagSetList() {
@@ -55,13 +55,13 @@ public class OnPremisesTagSet implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list containing other lists of on-premises instance tag groups. In order for an instance to be included in the
-     * deployment group, it must be identified by all the tag groups in the list.
+     * A list that contains other lists of on-premises instance tag groups. For an instance to be included in the
+     * deployment group, it must be identified by all of the tag groups in the list.
      * </p>
      * 
      * @param onPremisesTagSetList
-     *        A list containing other lists of on-premises instance tag groups. In order for an instance to be included
-     *        in the deployment group, it must be identified by all the tag groups in the list.
+     *        A list that contains other lists of on-premises instance tag groups. For an instance to be included in the
+     *        deployment group, it must be identified by all of the tag groups in the list.
      */
 
     public void setOnPremisesTagSetList(java.util.Collection<java.util.List<TagFilter>> onPremisesTagSetList) {
@@ -75,8 +75,8 @@ public class OnPremisesTagSet implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list containing other lists of on-premises instance tag groups. In order for an instance to be included in the
-     * deployment group, it must be identified by all the tag groups in the list.
+     * A list that contains other lists of on-premises instance tag groups. For an instance to be included in the
+     * deployment group, it must be identified by all of the tag groups in the list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,8 +85,8 @@ public class OnPremisesTagSet implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param onPremisesTagSetList
-     *        A list containing other lists of on-premises instance tag groups. In order for an instance to be included
-     *        in the deployment group, it must be identified by all the tag groups in the list.
+     *        A list that contains other lists of on-premises instance tag groups. For an instance to be included in the
+     *        deployment group, it must be identified by all of the tag groups in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,13 +102,13 @@ public class OnPremisesTagSet implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list containing other lists of on-premises instance tag groups. In order for an instance to be included in the
-     * deployment group, it must be identified by all the tag groups in the list.
+     * A list that contains other lists of on-premises instance tag groups. For an instance to be included in the
+     * deployment group, it must be identified by all of the tag groups in the list.
      * </p>
      * 
      * @param onPremisesTagSetList
-     *        A list containing other lists of on-premises instance tag groups. In order for an instance to be included
-     *        in the deployment group, it must be identified by all the tag groups in the list.
+     *        A list that contains other lists of on-premises instance tag groups. For an instance to be included in the
+     *        deployment group, it must be identified by all of the tag groups in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,7 +118,8 @@ public class OnPremisesTagSet implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,13 @@ public class SendRawEmailRequestMarshaller implements Marshaller<Request<SendRaw
             }
         }
 
-        RawMessage rawMessage = sendRawEmailRequest.getRawMessage();
-        if (rawMessage != null) {
+        {
+            RawMessage rawMessage = sendRawEmailRequest.getRawMessage();
+            if (rawMessage != null) {
 
-            if (rawMessage.getData() != null) {
-                request.addParameter("RawMessage.Data", StringUtils.fromByteBuffer(rawMessage.getData()));
+                if (rawMessage.getData() != null) {
+                    request.addParameter("RawMessage.Data", StringUtils.fromByteBuffer(rawMessage.getData()));
+                }
             }
         }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,10 +25,46 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The token for the next set of results, or ''null'' if there are no additional results. */
+    private String nextToken;
     /** The ID of the subscription definition. */
     private String subscriptionDefinitionId;
     /** The ID of the subscription definition version. */
     private String subscriptionDefinitionVersionId;
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional results.
+     * 
+     * @param nextToken
+     *        The token for the next set of results, or ''null'' if there are no additional results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional results.
+     * 
+     * @return The token for the next set of results, or ''null'' if there are no additional results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional results.
+     * 
+     * @param nextToken
+     *        The token for the next set of results, or ''null'' if there are no additional results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSubscriptionDefinitionVersionRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * The ID of the subscription definition.
@@ -99,7 +135,8 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -109,6 +146,8 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getSubscriptionDefinitionId() != null)
             sb.append("SubscriptionDefinitionId: ").append(getSubscriptionDefinitionId()).append(",");
         if (getSubscriptionDefinitionVersionId() != null)
@@ -127,6 +166,10 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
         if (obj instanceof GetSubscriptionDefinitionVersionRequest == false)
             return false;
         GetSubscriptionDefinitionVersionRequest other = (GetSubscriptionDefinitionVersionRequest) obj;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         if (other.getSubscriptionDefinitionId() == null ^ this.getSubscriptionDefinitionId() == null)
             return false;
         if (other.getSubscriptionDefinitionId() != null && other.getSubscriptionDefinitionId().equals(this.getSubscriptionDefinitionId()) == false)
@@ -144,6 +187,7 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getSubscriptionDefinitionId() == null) ? 0 : getSubscriptionDefinitionId().hashCode());
         hashCode = prime * hashCode + ((getSubscriptionDefinitionVersionId() == null) ? 0 : getSubscriptionDefinitionVersionId().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class Route implements Serializable, Cloneable {
     private String destinationPrefixListId;
     /**
      * <p>
-     * The ID of the egress-only Internet gateway.
+     * The ID of the egress-only internet gateway.
      * </p>
      */
     private String egressOnlyInternetGatewayId;
@@ -73,6 +73,12 @@ public class Route implements Serializable, Cloneable {
      * </p>
      */
     private String natGatewayId;
+    /**
+     * <p>
+     * The ID of a transit gateway.
+     * </p>
+     */
+    private String transitGatewayId;
     /**
      * <p>
      * The ID of the network interface.
@@ -111,7 +117,7 @@ public class Route implements Serializable, Cloneable {
     private String state;
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of a VPC peering connection.
      * </p>
      */
     private String vpcPeeringConnectionId;
@@ -238,11 +244,11 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the egress-only Internet gateway.
+     * The ID of the egress-only internet gateway.
      * </p>
      * 
      * @param egressOnlyInternetGatewayId
-     *        The ID of the egress-only Internet gateway.
+     *        The ID of the egress-only internet gateway.
      */
 
     public void setEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
@@ -251,10 +257,10 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the egress-only Internet gateway.
+     * The ID of the egress-only internet gateway.
      * </p>
      * 
-     * @return The ID of the egress-only Internet gateway.
+     * @return The ID of the egress-only internet gateway.
      */
 
     public String getEgressOnlyInternetGatewayId() {
@@ -263,11 +269,11 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the egress-only Internet gateway.
+     * The ID of the egress-only internet gateway.
      * </p>
      * 
      * @param egressOnlyInternetGatewayId
-     *        The ID of the egress-only Internet gateway.
+     *        The ID of the egress-only internet gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -433,6 +439,46 @@ public class Route implements Serializable, Cloneable {
 
     public Route withNatGatewayId(String natGatewayId) {
         setNatGatewayId(natGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of a transit gateway.
+     * </p>
+     * 
+     * @param transitGatewayId
+     *        The ID of a transit gateway.
+     */
+
+    public void setTransitGatewayId(String transitGatewayId) {
+        this.transitGatewayId = transitGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of a transit gateway.
+     * </p>
+     * 
+     * @return The ID of a transit gateway.
+     */
+
+    public String getTransitGatewayId() {
+        return this.transitGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of a transit gateway.
+     * </p>
+     * 
+     * @param transitGatewayId
+     *        The ID of a transit gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Route withTransitGatewayId(String transitGatewayId) {
+        setTransitGatewayId(transitGatewayId);
         return this;
     }
 
@@ -804,11 +850,11 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of a VPC peering connection.
      * </p>
      * 
      * @param vpcPeeringConnectionId
-     *        The ID of the VPC peering connection.
+     *        The ID of a VPC peering connection.
      */
 
     public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
@@ -817,10 +863,10 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of a VPC peering connection.
      * </p>
      * 
-     * @return The ID of the VPC peering connection.
+     * @return The ID of a VPC peering connection.
      */
 
     public String getVpcPeeringConnectionId() {
@@ -829,11 +875,11 @@ public class Route implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The ID of a VPC peering connection.
      * </p>
      * 
      * @param vpcPeeringConnectionId
-     *        The ID of the VPC peering connection.
+     *        The ID of a VPC peering connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -843,7 +889,8 @@ public class Route implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -869,6 +916,8 @@ public class Route implements Serializable, Cloneable {
             sb.append("InstanceOwnerId: ").append(getInstanceOwnerId()).append(",");
         if (getNatGatewayId() != null)
             sb.append("NatGatewayId: ").append(getNatGatewayId()).append(",");
+        if (getTransitGatewayId() != null)
+            sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getOrigin() != null)
@@ -923,6 +972,10 @@ public class Route implements Serializable, Cloneable {
             return false;
         if (other.getNatGatewayId() != null && other.getNatGatewayId().equals(this.getNatGatewayId()) == false)
             return false;
+        if (other.getTransitGatewayId() == null ^ this.getTransitGatewayId() == null)
+            return false;
+        if (other.getTransitGatewayId() != null && other.getTransitGatewayId().equals(this.getTransitGatewayId()) == false)
+            return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
@@ -955,6 +1008,7 @@ public class Route implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId().hashCode());
         hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());

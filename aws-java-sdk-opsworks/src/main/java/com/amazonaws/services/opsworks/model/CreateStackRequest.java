@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,25 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
-     * The stack's AWS region, such as "ap-south-1". For more information about Amazon regions, see <a
+     * The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
+     * <note>
+     * <p>
+     * In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code>
+     * parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a
+     * <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI
+     * <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the
+     * <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter
+     * is set to one of the following, then the stack uses a legacy or <i>classic</i> region:
+     * <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>
+     * . In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are
+     * supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose
+     * the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for
+     * new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it
+     * cannot be used to specify a classic AWS OpsWorks Stacks region.
+     * </p>
+     * </note>
      */
     private String region;
     /**
@@ -77,9 +93,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
-     * For more information on default VPC and EC2-Classic, see <a
+     * For more information about default VPC and EC2-Classic, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      */
@@ -153,7 +169,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * The default option is the current Amazon Linux version. For more information on the supported operating systems,
+     * The default option is the current Amazon Linux version. For more information about supported operating systems,
      * see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
@@ -256,7 +272,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>.
      * </p>
@@ -266,7 +282,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The configuration manager. When you create a stack we recommend that you use the configuration manager to specify
      * the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux
-     * stacks is currently 11.4.
+     * stacks is currently 12.
      * </p>
      */
     private StackConfigurationManager configurationManager;
@@ -415,13 +431,44 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack's AWS region, such as "ap-south-1". For more information about Amazon regions, see <a
+     * The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
+     * <note>
+     * <p>
+     * In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code>
+     * parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a
+     * <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI
+     * <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the
+     * <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter
+     * is set to one of the following, then the stack uses a legacy or <i>classic</i> region:
+     * <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>
+     * . In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are
+     * supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose
+     * the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for
+     * new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it
+     * cannot be used to specify a classic AWS OpsWorks Stacks region.
+     * </p>
+     * </note>
      * 
      * @param region
-     *        The stack's AWS region, such as "ap-south-1". For more information about Amazon regions, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>
+     *        <p>
+     *        In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
+     *        <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to
+     *        the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is
+     *        not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a
+     *        <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>
+     *        , and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a
+     *        legacy or <i>classic</i> region:
+     *        <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>
+     *        . In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding
+     *        regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best
+     *        practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you
+     *        use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies
+     *        a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.
+     *        </p>
      */
 
     public void setRegion(String region) {
@@ -430,12 +477,43 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack's AWS region, such as "ap-south-1". For more information about Amazon regions, see <a
+     * The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
+     * <note>
+     * <p>
+     * In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code>
+     * parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a
+     * <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI
+     * <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the
+     * <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter
+     * is set to one of the following, then the stack uses a legacy or <i>classic</i> region:
+     * <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>
+     * . In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are
+     * supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose
+     * the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for
+     * new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it
+     * cannot be used to specify a classic AWS OpsWorks Stacks region.
+     * </p>
+     * </note>
      * 
-     * @return The stack's AWS region, such as "ap-south-1". For more information about Amazon regions, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * @return The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see
+     *         <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>
+     *         <p>
+     *         In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
+     *         <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to
+     *         the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter
+     *         is not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a
+     *         <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to
+     *         <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set to one of the following,
+     *         then the stack uses a legacy or <i>classic</i> region:
+     *         <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>
+     *         . In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding
+     *         regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best
+     *         practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you
+     *         use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always
+     *         specifies a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.
+     *         </p>
      */
 
     public String getRegion() {
@@ -444,13 +522,44 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack's AWS region, such as "ap-south-1". For more information about Amazon regions, see <a
+     * The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * </p>
+     * <note>
+     * <p>
+     * In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the <code>--stack-region</code>
+     * parameter and the AWS CLI common parameter <code>--region</code> are set to the same value, the stack uses a
+     * <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is not set, but the AWS CLI
+     * <code>--region</code> parameter is, this also results in a stack with a <i>regional</i> endpoint. However, if the
+     * <code>--region</code> parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter
+     * is set to one of the following, then the stack uses a legacy or <i>classic</i> region:
+     * <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>
+     * . In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding regions are
+     * supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best practice to choose
+     * the regional endpoint that is closest to where you manage AWS, we recommend that you use regional endpoints for
+     * new stacks. The AWS CLI common <code>--region</code> parameter always specifies a regional API endpoint; it
+     * cannot be used to specify a classic AWS OpsWorks Stacks region.
+     * </p>
+     * </note>
      * 
      * @param region
-     *        The stack's AWS region, such as "ap-south-1". For more information about Amazon regions, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     *        The stack's AWS region, such as <code>ap-south-1</code>. For more information about Amazon regions, see <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p> <note>
+     *        <p>
+     *        In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
+     *        <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code> are set to
+     *        the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code> parameter is
+     *        not set, but the AWS CLI <code>--region</code> parameter is, this also results in a stack with a
+     *        <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set to <code>us-east-1</code>
+     *        , and the <code>--stack-region</code> parameter is set to one of the following, then the stack uses a
+     *        legacy or <i>classic</i> region:
+     *        <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</code>
+     *        . In this case, the actual API endpoint of the stack is in <code>us-east-1</code>. Only the preceding
+     *        regions are supported as classic regions in the <code>us-east-1</code> API endpoint. Because it is a best
+     *        practice to choose the regional endpoint that is closest to where you manage AWS, we recommend that you
+     *        use regional endpoints for new stacks. The AWS CLI common <code>--region</code> parameter always specifies
+     *        a regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -498,9 +607,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
-     * For more information on default VPC and EC2-Classic, see <a
+     * For more information about default VPC and EC2-Classic, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
@@ -543,9 +652,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     *        For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-     *        VPC</a>. For more information on default VPC and EC2-Classic, see <a
+     *        VPC</a>. For more information about default VPC and EC2-Classic, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        Platforms</a>.
      */
@@ -593,9 +702,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
-     * For more information on default VPC and EC2-Classic, see <a
+     * For more information about default VPC and EC2-Classic, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
@@ -637,9 +746,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     *         For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-     *         VPC</a>. For more information on default VPC and EC2-Classic, see <a
+     *         VPC</a>. For more information about default VPC and EC2-Classic, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *         Platforms</a>.
      */
@@ -687,9 +796,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
-     * For more information on default VPC and EC2-Classic, see <a
+     * For more information about default VPC and EC2-Classic, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
@@ -732,9 +841,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     *        For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-     *        VPC</a>. For more information on default VPC and EC2-Classic, see <a
+     *        VPC</a>. For more information about default VPC and EC2-Classic, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        Platforms</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -965,7 +1074,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * The default option is the current Amazon Linux version. For more information on the supported operating systems,
+     * The default option is the current Amazon Linux version. For more information about supported operating systems,
      * see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
@@ -1015,7 +1124,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        The default option is the current Amazon Linux version. For more information on the supported operating
+     *        The default option is the current Amazon Linux version. For more information about supported operating
      *        systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      *        OpsWorks Stacks Operating Systems</a>.
      */
@@ -1070,7 +1179,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * The default option is the current Amazon Linux version. For more information on the supported operating systems,
+     * The default option is the current Amazon Linux version. For more information about supported operating systems,
      * see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
@@ -1119,7 +1228,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         </ul>
      *         <p>
-     *         The default option is the current Amazon Linux version. For more information on the supported operating
+     *         The default option is the current Amazon Linux version. For more information about supported operating
      *         systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      *         OpsWorks Stacks Operating Systems</a>.
      */
@@ -1174,7 +1283,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * The default option is the current Amazon Linux version. For more information on the supported operating systems,
+     * The default option is the current Amazon Linux version. For more information about supported operating systems,
      * see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
@@ -1224,7 +1333,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        </ul>
      *        <p>
-     *        The default option is the current Amazon Linux version. For more information on the supported operating
+     *        The default option is the current Amazon Linux version. For more information about supported operating
      *        systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      *        OpsWorks Stacks Operating Systems</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1782,7 +1891,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>.
      * </p>
@@ -1795,7 +1904,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
      *        <p>
-     *        For more information on custom JSON, see <a
+     *        For more information about custom JSON, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *        Modify the Stack Configuration Attributes</a>.
      */
@@ -1813,7 +1922,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>.
      * </p>
@@ -1825,7 +1934,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *         </p>
      *         <p>
-     *         For more information on custom JSON, see <a
+     *         For more information about custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *         Modify the Stack Configuration Attributes</a>.
      */
@@ -1843,7 +1952,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>.
      * </p>
@@ -1856,7 +1965,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
      *        <p>
-     *        For more information on custom JSON, see <a
+     *        For more information about custom JSON, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *        Modify the Stack Configuration Attributes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1871,13 +1980,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The configuration manager. When you create a stack we recommend that you use the configuration manager to specify
      * the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux
-     * stacks is currently 11.4.
+     * stacks is currently 12.
      * </p>
      * 
      * @param configurationManager
      *        The configuration manager. When you create a stack we recommend that you use the configuration manager to
      *        specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default
-     *        value for Linux stacks is currently 11.4.
+     *        value for Linux stacks is currently 12.
      */
 
     public void setConfigurationManager(StackConfigurationManager configurationManager) {
@@ -1888,12 +1997,12 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The configuration manager. When you create a stack we recommend that you use the configuration manager to specify
      * the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux
-     * stacks is currently 11.4.
+     * stacks is currently 12.
      * </p>
      * 
      * @return The configuration manager. When you create a stack we recommend that you use the configuration manager to
      *         specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default
-     *         value for Linux stacks is currently 11.4.
+     *         value for Linux stacks is currently 12.
      */
 
     public StackConfigurationManager getConfigurationManager() {
@@ -1904,13 +2013,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The configuration manager. When you create a stack we recommend that you use the configuration manager to specify
      * the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux
-     * stacks is currently 11.4.
+     * stacks is currently 12.
      * </p>
      * 
      * @param configurationManager
      *        The configuration manager. When you create a stack we recommend that you use the configuration manager to
      *        specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default
-     *        value for Linux stacks is currently 11.4.
+     *        value for Linux stacks is currently 12.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2699,7 +2808,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

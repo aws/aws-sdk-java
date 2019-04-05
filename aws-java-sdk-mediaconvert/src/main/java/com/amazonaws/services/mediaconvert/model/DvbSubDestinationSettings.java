@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,15 +26,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DvbSubDestinationSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the
+     * bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the
+     * output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified
+     * (either left or centered) relative to those coordinates. This option is not valid for source captions that are
+     * STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in
+     * and DVB-Sub font settings must match.
+     */
     private String alignment;
-
+    /**
+     * Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+     */
     private String backgroundColor;
     /**
      * Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank
      * is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.
      */
     private Integer backgroundOpacity;
-
+    /**
+     * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     * 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and
+     * DVB-Sub font settings must match.
+     */
     private String fontColor;
     /**
      * Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font
@@ -46,11 +60,21 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
      */
     private Integer fontResolution;
     /**
+     * Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining
+     * the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. This is
+     * used to help determine the appropriate font for rendering DVB-Sub captions.
+     */
+    private String fontScript;
+    /**
      * A positive integer indicates the exact font size in points. Set to 0 for automatic font size selection. All
      * burn-in and DVB-Sub font settings must match.
      */
     private Integer fontSize;
-
+    /**
+     * Specifies font outline color. This option is not valid for source captions that are either 608/embedded or
+     * teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     */
     private String outlineColor;
     /**
      * Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded
@@ -58,7 +82,9 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
      * settings must match.
      */
     private Integer outlineSize;
-
+    /**
+     * Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+     */
     private String shadowColor;
     /**
      * Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent
@@ -75,7 +101,12 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
      * shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.
      */
     private Integer shadowYOffset;
-
+    /**
+     * Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters
+     * in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to
+     * the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if
+     * the captions are closed caption.
+     */
     private String teletextSpacing;
     /**
      * Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10
@@ -95,7 +126,20 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     private Integer yPosition;
 
     /**
+     * If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the
+     * bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the
+     * output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified
+     * (either left or centered) relative to those coordinates. This option is not valid for source captions that are
+     * STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in
+     * and DVB-Sub font settings must match.
+     * 
      * @param alignment
+     *        If no explicit x_position or y_position is provided, setting alignment to centered will place the captions
+     *        at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom
+     *        left of the output. If x and y positions are given in conjunction with the alignment parameter, the font
+     *        will be justified (either left or centered) relative to those coordinates. This option is not valid for
+     *        source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by
+     *        the caption stream. All burn-in and DVB-Sub font settings must match.
      * @see DvbSubtitleAlignment
      */
 
@@ -104,7 +148,19 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the
+     * bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the
+     * output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified
+     * (either left or centered) relative to those coordinates. This option is not valid for source captions that are
+     * STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in
+     * and DVB-Sub font settings must match.
+     * 
+     * @return If no explicit x_position or y_position is provided, setting alignment to centered will place the
+     *         captions at the bottom center of the output. Similarly, setting a left alignment will align captions to
+     *         the bottom left of the output. If x and y positions are given in conjunction with the alignment
+     *         parameter, the font will be justified (either left or centered) relative to those coordinates. This
+     *         option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are
+     *         already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
      * @see DvbSubtitleAlignment
      */
 
@@ -113,7 +169,20 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the
+     * bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the
+     * output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified
+     * (either left or centered) relative to those coordinates. This option is not valid for source captions that are
+     * STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in
+     * and DVB-Sub font settings must match.
+     * 
      * @param alignment
+     *        If no explicit x_position or y_position is provided, setting alignment to centered will place the captions
+     *        at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom
+     *        left of the output. If x and y positions are given in conjunction with the alignment parameter, the font
+     *        will be justified (either left or centered) relative to those coordinates. This option is not valid for
+     *        source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by
+     *        the caption stream. All burn-in and DVB-Sub font settings must match.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleAlignment
      */
@@ -124,7 +193,20 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the
+     * bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the
+     * output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified
+     * (either left or centered) relative to those coordinates. This option is not valid for source captions that are
+     * STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in
+     * and DVB-Sub font settings must match.
+     * 
      * @param alignment
+     *        If no explicit x_position or y_position is provided, setting alignment to centered will place the captions
+     *        at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom
+     *        left of the output. If x and y positions are given in conjunction with the alignment parameter, the font
+     *        will be justified (either left or centered) relative to those coordinates. This option is not valid for
+     *        source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by
+     *        the caption stream. All burn-in and DVB-Sub font settings must match.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleAlignment
      */
@@ -135,7 +217,11 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+     * 
      * @param backgroundColor
+     *        Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must
+     *        match.
      * @see DvbSubtitleBackgroundColor
      */
 
@@ -144,7 +230,10 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+     * 
+     * @return Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must
+     *         match.
      * @see DvbSubtitleBackgroundColor
      */
 
@@ -153,7 +242,11 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+     * 
      * @param backgroundColor
+     *        Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must
+     *        match.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleBackgroundColor
      */
@@ -164,7 +257,11 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+     * 
      * @param backgroundColor
+     *        Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must
+     *        match.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleBackgroundColor
      */
@@ -216,7 +313,14 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     * 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and
+     * DVB-Sub font settings must match.
+     * 
      * @param fontColor
+     *        Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     *        608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in
+     *        and DVB-Sub font settings must match.
      * @see DvbSubtitleFontColor
      */
 
@@ -225,7 +329,13 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     * 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and
+     * DVB-Sub font settings must match.
+     * 
+     * @return Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     *         608/embedded or teletext. These source settings are already pre-defined by the caption stream. All
+     *         burn-in and DVB-Sub font settings must match.
      * @see DvbSubtitleFontColor
      */
 
@@ -234,7 +344,14 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     * 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and
+     * DVB-Sub font settings must match.
+     * 
      * @param fontColor
+     *        Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     *        608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in
+     *        and DVB-Sub font settings must match.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleFontColor
      */
@@ -245,7 +362,14 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     * 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and
+     * DVB-Sub font settings must match.
+     * 
      * @param fontColor
+     *        Specifies the color of the burned-in captions. This option is not valid for source captions that are STL,
+     *        608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in
+     *        and DVB-Sub font settings must match.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleFontColor
      */
@@ -333,6 +457,73 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining
+     * the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. This is
+     * used to help determine the appropriate font for rendering DVB-Sub captions.
+     * 
+     * @param fontScript
+     *        Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for
+     *        determining the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or
+     *        leave unset. This is used to help determine the appropriate font for rendering DVB-Sub captions.
+     * @see FontScript
+     */
+
+    public void setFontScript(String fontScript) {
+        this.fontScript = fontScript;
+    }
+
+    /**
+     * Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining
+     * the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. This is
+     * used to help determine the appropriate font for rendering DVB-Sub captions.
+     * 
+     * @return Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for
+     *         determining the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or
+     *         leave unset. This is used to help determine the appropriate font for rendering DVB-Sub captions.
+     * @see FontScript
+     */
+
+    public String getFontScript() {
+        return this.fontScript;
+    }
+
+    /**
+     * Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining
+     * the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. This is
+     * used to help determine the appropriate font for rendering DVB-Sub captions.
+     * 
+     * @param fontScript
+     *        Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for
+     *        determining the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or
+     *        leave unset. This is used to help determine the appropriate font for rendering DVB-Sub captions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FontScript
+     */
+
+    public DvbSubDestinationSettings withFontScript(String fontScript) {
+        setFontScript(fontScript);
+        return this;
+    }
+
+    /**
+     * Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining
+     * the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. This is
+     * used to help determine the appropriate font for rendering DVB-Sub captions.
+     * 
+     * @param fontScript
+     *        Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for
+     *        determining the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or
+     *        leave unset. This is used to help determine the appropriate font for rendering DVB-Sub captions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FontScript
+     */
+
+    public DvbSubDestinationSettings withFontScript(FontScript fontScript) {
+        this.fontScript = fontScript.toString();
+        return this;
+    }
+
+    /**
      * A positive integer indicates the exact font size in points. Set to 0 for automatic font size selection. All
      * burn-in and DVB-Sub font settings must match.
      * 
@@ -373,7 +564,14 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies font outline color. This option is not valid for source captions that are either 608/embedded or
+     * teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     * 
      * @param outlineColor
+     *        Specifies font outline color. This option is not valid for source captions that are either 608/embedded or
+     *        teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub
+     *        font settings must match.
      * @see DvbSubtitleOutlineColor
      */
 
@@ -382,7 +580,13 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * Specifies font outline color. This option is not valid for source captions that are either 608/embedded or
+     * teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     * 
+     * @return Specifies font outline color. This option is not valid for source captions that are either 608/embedded
+     *         or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub
+     *         font settings must match.
      * @see DvbSubtitleOutlineColor
      */
 
@@ -391,7 +595,14 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies font outline color. This option is not valid for source captions that are either 608/embedded or
+     * teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     * 
      * @param outlineColor
+     *        Specifies font outline color. This option is not valid for source captions that are either 608/embedded or
+     *        teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub
+     *        font settings must match.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleOutlineColor
      */
@@ -402,7 +613,14 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies font outline color. This option is not valid for source captions that are either 608/embedded or
+     * teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font
+     * settings must match.
+     * 
      * @param outlineColor
+     *        Specifies font outline color. This option is not valid for source captions that are either 608/embedded or
+     *        teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub
+     *        font settings must match.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleOutlineColor
      */
@@ -459,7 +677,10 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+     * 
      * @param shadowColor
+     *        Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
      * @see DvbSubtitleShadowColor
      */
 
@@ -468,7 +689,9 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+     * 
+     * @return Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
      * @see DvbSubtitleShadowColor
      */
 
@@ -477,7 +700,10 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+     * 
      * @param shadowColor
+     *        Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleShadowColor
      */
@@ -488,7 +714,10 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+     * 
      * @param shadowColor
+     *        Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleShadowColor
      */
@@ -619,7 +848,16 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters
+     * in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to
+     * the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if
+     * the captions are closed caption.
+     * 
      * @param teletextSpacing
+     *        Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between
+     *        letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed
+     *        grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make
+     *        the text easier to read if the captions are closed caption.
      * @see DvbSubtitleTeletextSpacing
      */
 
@@ -628,7 +866,15 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters
+     * in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to
+     * the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if
+     * the captions are closed caption.
+     * 
+     * @return Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between
+     *         letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed
+     *         grid to conform to the spacing specified in the captions file more accurately. Choose proportional to
+     *         make the text easier to read if the captions are closed caption.
      * @see DvbSubtitleTeletextSpacing
      */
 
@@ -637,7 +883,16 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters
+     * in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to
+     * the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if
+     * the captions are closed caption.
+     * 
      * @param teletextSpacing
+     *        Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between
+     *        letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed
+     *        grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make
+     *        the text easier to read if the captions are closed caption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleTeletextSpacing
      */
@@ -648,7 +903,16 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters
+     * in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to
+     * the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if
+     * the captions are closed caption.
+     * 
      * @param teletextSpacing
+     *        Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between
+     *        letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed
+     *        grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make
+     *        the text easier to read if the captions are closed caption.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DvbSubtitleTeletextSpacing
      */
@@ -775,7 +1039,8 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -797,6 +1062,8 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
             sb.append("FontOpacity: ").append(getFontOpacity()).append(",");
         if (getFontResolution() != null)
             sb.append("FontResolution: ").append(getFontResolution()).append(",");
+        if (getFontScript() != null)
+            sb.append("FontScript: ").append(getFontScript()).append(",");
         if (getFontSize() != null)
             sb.append("FontSize: ").append(getFontSize()).append(",");
         if (getOutlineColor() != null)
@@ -855,6 +1122,10 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
             return false;
         if (other.getFontResolution() != null && other.getFontResolution().equals(this.getFontResolution()) == false)
             return false;
+        if (other.getFontScript() == null ^ this.getFontScript() == null)
+            return false;
+        if (other.getFontScript() != null && other.getFontScript().equals(this.getFontScript()) == false)
+            return false;
         if (other.getFontSize() == null ^ this.getFontSize() == null)
             return false;
         if (other.getFontSize() != null && other.getFontSize().equals(this.getFontSize()) == false)
@@ -909,6 +1180,7 @@ public class DvbSubDestinationSettings implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getFontColor() == null) ? 0 : getFontColor().hashCode());
         hashCode = prime * hashCode + ((getFontOpacity() == null) ? 0 : getFontOpacity().hashCode());
         hashCode = prime * hashCode + ((getFontResolution() == null) ? 0 : getFontResolution().hashCode());
+        hashCode = prime * hashCode + ((getFontScript() == null) ? 0 : getFontScript().hashCode());
         hashCode = prime * hashCode + ((getFontSize() == null) ? 0 : getFontSize().hashCode());
         hashCode = prime * hashCode + ((getOutlineColor() == null) ? 0 : getOutlineColor().hashCode());
         hashCode = prime * hashCode + ((getOutlineSize() == null) ? 0 : getOutlineSize().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,11 +26,34 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String gatewayARN;
-
+    /**
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     */
     private Long volumeSizeInBytes;
-
+    /**
+     * <p>
+     * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if
+     * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
+     * snapshots for your account use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
+     * </p>
+     */
     private String snapshotId;
-
+    /**
+     * <p>
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
+     * </p>
+     */
     private String targetName;
     /**
      * <p>
@@ -40,10 +63,37 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String sourceVolumeARN;
-
+    /**
+     * <p>
+     * The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use
+     * <a>DescribeGatewayInformation</a> to get a list of the network interfaces available on a gateway.
+     * </p>
+     * <p>
+     * Valid Values: A valid IP address.
+     * </p>
+     */
     private String networkInterfaceId;
-
+    /**
+     * <p>
+     * A unique identifier that you use to retry a request. If you retry a request, use the same
+     * <code>ClientToken</code> you specified in the initial request.
+     * </p>
+     */
     private String clientToken;
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     */
+    private Boolean kMSEncrypted;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
+     * </p>
+     */
+    private String kMSKey;
 
     /**
      * @param gatewayARN
@@ -72,7 +122,12 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     * 
      * @param volumeSizeInBytes
+     *        The size of the volume in bytes.
      */
 
     public void setVolumeSizeInBytes(Long volumeSizeInBytes) {
@@ -80,7 +135,11 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     * 
+     * @return The size of the volume in bytes.
      */
 
     public Long getVolumeSizeInBytes() {
@@ -88,7 +147,12 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     * 
      * @param volumeSizeInBytes
+     *        The size of the volume in bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +162,20 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if
+     * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
+     * snapshots for your account use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
+     * </p>
+     * 
      * @param snapshotId
+     *        The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this
+     *        field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
+     *        To list snapshots for your account use <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     *        >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      */
 
     public void setSnapshotId(String snapshotId) {
@@ -106,7 +183,19 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if
+     * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
+     * snapshots for your account use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
+     * </p>
+     * 
+     * @return The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this
+     *         field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
+     *         To list snapshots for your account use <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     *         >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      */
 
     public String getSnapshotId() {
@@ -114,7 +203,20 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this field if
+     * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
+     * snapshots for your account use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
+     * </p>
+     * 
      * @param snapshotId
+     *        The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new cached volume. Specify this
+     *        field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
+     *        To list snapshots for your account use <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     *        >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,7 +226,26 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
+     * </p>
+     * 
      * @param targetName
+     *        The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *        target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *        of
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *        . The target name must be unique across all volumes on a gateway.</p>
+     *        <p>
+     *        If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *        the new target name.
      */
 
     public void setTargetName(String targetName) {
@@ -132,7 +253,25 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
+     * </p>
+     * 
+     * @return The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *         target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *         of
+     *         <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *         . The target name must be unique across all volumes on a gateway.</p>
+     *         <p>
+     *         If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *         the new target name.
      */
 
     public String getTargetName() {
@@ -140,7 +279,26 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
+     * </p>
+     * 
      * @param targetName
+     *        The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *        target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *        of
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *        . The target name must be unique across all volumes on a gateway.</p>
+     *        <p>
+     *        If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *        the new target name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,7 +360,20 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use
+     * <a>DescribeGatewayInformation</a> to get a list of the network interfaces available on a gateway.
+     * </p>
+     * <p>
+     * Valid Values: A valid IP address.
+     * </p>
+     * 
      * @param networkInterfaceId
+     *        The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are
+     *        accepted. Use <a>DescribeGatewayInformation</a> to get a list of the network interfaces available on a
+     *        gateway.</p>
+     *        <p>
+     *        Valid Values: A valid IP address.
      */
 
     public void setNetworkInterfaceId(String networkInterfaceId) {
@@ -210,7 +381,19 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use
+     * <a>DescribeGatewayInformation</a> to get a list of the network interfaces available on a gateway.
+     * </p>
+     * <p>
+     * Valid Values: A valid IP address.
+     * </p>
+     * 
+     * @return The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are
+     *         accepted. Use <a>DescribeGatewayInformation</a> to get a list of the network interfaces available on a
+     *         gateway.</p>
+     *         <p>
+     *         Valid Values: A valid IP address.
      */
 
     public String getNetworkInterfaceId() {
@@ -218,7 +401,20 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use
+     * <a>DescribeGatewayInformation</a> to get a list of the network interfaces available on a gateway.
+     * </p>
+     * <p>
+     * Valid Values: A valid IP address.
+     * </p>
+     * 
      * @param networkInterfaceId
+     *        The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are
+     *        accepted. Use <a>DescribeGatewayInformation</a> to get a list of the network interfaces available on a
+     *        gateway.</p>
+     *        <p>
+     *        Valid Values: A valid IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,7 +424,14 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * A unique identifier that you use to retry a request. If you retry a request, use the same
+     * <code>ClientToken</code> you specified in the initial request.
+     * </p>
+     * 
      * @param clientToken
+     *        A unique identifier that you use to retry a request. If you retry a request, use the same
+     *        <code>ClientToken</code> you specified in the initial request.
      */
 
     public void setClientToken(String clientToken) {
@@ -236,7 +439,13 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * A unique identifier that you use to retry a request. If you retry a request, use the same
+     * <code>ClientToken</code> you specified in the initial request.
+     * </p>
+     * 
+     * @return A unique identifier that you use to retry a request. If you retry a request, use the same
+     *         <code>ClientToken</code> you specified in the initial request.
      */
 
     public String getClientToken() {
@@ -244,7 +453,14 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * A unique identifier that you use to retry a request. If you retry a request, use the same
+     * <code>ClientToken</code> you specified in the initial request.
+     * </p>
+     * 
      * @param clientToken
+     *        A unique identifier that you use to retry a request. If you retry a request, use the same
+     *        <code>ClientToken</code> you specified in the initial request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,7 +470,114 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @param kMSEncrypted
+     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        Amazon S3. Optional.
+     */
+
+    public void setKMSEncrypted(Boolean kMSEncrypted) {
+        this.kMSEncrypted = kMSEncrypted;
+    }
+
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *         Amazon S3. Optional.
+     */
+
+    public Boolean getKMSEncrypted() {
+        return this.kMSEncrypted;
+    }
+
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @param kMSEncrypted
+     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        Amazon S3. Optional.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCachediSCSIVolumeRequest withKMSEncrypted(Boolean kMSEncrypted) {
+        setKMSEncrypted(kMSEncrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *         Amazon S3. Optional.
+     */
+
+    public Boolean isKMSEncrypted() {
+        return this.kMSEncrypted;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
+     * </p>
+     * 
+     * @param kMSKey
+     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     *        can only be set when KMSEncrypted is true. Optional.
+     */
+
+    public void setKMSKey(String kMSKey) {
+        this.kMSKey = kMSKey;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     *         can only be set when KMSEncrypted is true. Optional.
+     */
+
+    public String getKMSKey() {
+        return this.kMSKey;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only
+     * be set when KMSEncrypted is true. Optional.
+     * </p>
+     * 
+     * @param kMSKey
+     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value
+     *        can only be set when KMSEncrypted is true. Optional.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCachediSCSIVolumeRequest withKMSKey(String kMSKey) {
+        setKMSKey(kMSKey);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -277,7 +600,11 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getKMSEncrypted() != null)
+            sb.append("KMSEncrypted: ").append(getKMSEncrypted()).append(",");
+        if (getKMSKey() != null)
+            sb.append("KMSKey: ").append(getKMSKey());
         sb.append("}");
         return sb.toString();
     }
@@ -320,6 +647,14 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getKMSEncrypted() == null ^ this.getKMSEncrypted() == null)
+            return false;
+        if (other.getKMSEncrypted() != null && other.getKMSEncrypted().equals(this.getKMSEncrypted()) == false)
+            return false;
+        if (other.getKMSKey() == null ^ this.getKMSKey() == null)
+            return false;
+        if (other.getKMSKey() != null && other.getKMSKey().equals(this.getKMSKey()) == false)
+            return false;
         return true;
     }
 
@@ -335,6 +670,8 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getSourceVolumeARN() == null) ? 0 : getSourceVolumeARN().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getKMSEncrypted() == null) ? 0 : getKMSEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
         return hashCode;
     }
 

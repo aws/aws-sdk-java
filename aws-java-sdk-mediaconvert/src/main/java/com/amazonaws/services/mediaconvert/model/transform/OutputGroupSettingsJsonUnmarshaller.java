@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class OutputGroupSettingsJsonUnmarshaller implements Unmarshaller<OutputG
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("cmafGroupSettings", targetDepth)) {
+                    context.nextToken();
+                    outputGroupSettings.setCmafGroupSettings(CmafGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("dashIsoGroupSettings", targetDepth)) {
                     context.nextToken();
                     outputGroupSettings.setDashIsoGroupSettings(DashIsoGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));

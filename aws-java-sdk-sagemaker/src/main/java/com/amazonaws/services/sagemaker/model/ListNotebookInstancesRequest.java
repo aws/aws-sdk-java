@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -102,6 +102,19 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String notebookInstanceLifecycleConfigNameContains;
+    /**
+     * <p>
+     * A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only
+     * notebook instances associated with a git repository with a name that contains the specified string.
+     * </p>
+     */
+    private String defaultCodeRepositoryContains;
+    /**
+     * <p>
+     * A filter that returns only notebook instances with associated with the specified git repository.
+     * </p>
+     */
+    private String additionalCodeRepositoryEquals;
 
     /**
      * <p>
@@ -661,7 +674,97 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only
+     * notebook instances associated with a git repository with a name that contains the specified string.
+     * </p>
+     * 
+     * @param defaultCodeRepositoryContains
+     *        A string in the name or URL of a Git repository associated with this notebook instance. This filter
+     *        returns only notebook instances associated with a git repository with a name that contains the specified
+     *        string.
+     */
+
+    public void setDefaultCodeRepositoryContains(String defaultCodeRepositoryContains) {
+        this.defaultCodeRepositoryContains = defaultCodeRepositoryContains;
+    }
+
+    /**
+     * <p>
+     * A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only
+     * notebook instances associated with a git repository with a name that contains the specified string.
+     * </p>
+     * 
+     * @return A string in the name or URL of a Git repository associated with this notebook instance. This filter
+     *         returns only notebook instances associated with a git repository with a name that contains the specified
+     *         string.
+     */
+
+    public String getDefaultCodeRepositoryContains() {
+        return this.defaultCodeRepositoryContains;
+    }
+
+    /**
+     * <p>
+     * A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only
+     * notebook instances associated with a git repository with a name that contains the specified string.
+     * </p>
+     * 
+     * @param defaultCodeRepositoryContains
+     *        A string in the name or URL of a Git repository associated with this notebook instance. This filter
+     *        returns only notebook instances associated with a git repository with a name that contains the specified
+     *        string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListNotebookInstancesRequest withDefaultCodeRepositoryContains(String defaultCodeRepositoryContains) {
+        setDefaultCodeRepositoryContains(defaultCodeRepositoryContains);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only notebook instances with associated with the specified git repository.
+     * </p>
+     * 
+     * @param additionalCodeRepositoryEquals
+     *        A filter that returns only notebook instances with associated with the specified git repository.
+     */
+
+    public void setAdditionalCodeRepositoryEquals(String additionalCodeRepositoryEquals) {
+        this.additionalCodeRepositoryEquals = additionalCodeRepositoryEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only notebook instances with associated with the specified git repository.
+     * </p>
+     * 
+     * @return A filter that returns only notebook instances with associated with the specified git repository.
+     */
+
+    public String getAdditionalCodeRepositoryEquals() {
+        return this.additionalCodeRepositoryEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only notebook instances with associated with the specified git repository.
+     * </p>
+     * 
+     * @param additionalCodeRepositoryEquals
+     *        A filter that returns only notebook instances with associated with the specified git repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListNotebookInstancesRequest withAdditionalCodeRepositoryEquals(String additionalCodeRepositoryEquals) {
+        setAdditionalCodeRepositoryEquals(additionalCodeRepositoryEquals);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -692,7 +795,11 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
         if (getStatusEquals() != null)
             sb.append("StatusEquals: ").append(getStatusEquals()).append(",");
         if (getNotebookInstanceLifecycleConfigNameContains() != null)
-            sb.append("NotebookInstanceLifecycleConfigNameContains: ").append(getNotebookInstanceLifecycleConfigNameContains());
+            sb.append("NotebookInstanceLifecycleConfigNameContains: ").append(getNotebookInstanceLifecycleConfigNameContains()).append(",");
+        if (getDefaultCodeRepositoryContains() != null)
+            sb.append("DefaultCodeRepositoryContains: ").append(getDefaultCodeRepositoryContains()).append(",");
+        if (getAdditionalCodeRepositoryEquals() != null)
+            sb.append("AdditionalCodeRepositoryEquals: ").append(getAdditionalCodeRepositoryEquals());
         sb.append("}");
         return sb.toString();
     }
@@ -752,6 +859,16 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
         if (other.getNotebookInstanceLifecycleConfigNameContains() != null
                 && other.getNotebookInstanceLifecycleConfigNameContains().equals(this.getNotebookInstanceLifecycleConfigNameContains()) == false)
             return false;
+        if (other.getDefaultCodeRepositoryContains() == null ^ this.getDefaultCodeRepositoryContains() == null)
+            return false;
+        if (other.getDefaultCodeRepositoryContains() != null
+                && other.getDefaultCodeRepositoryContains().equals(this.getDefaultCodeRepositoryContains()) == false)
+            return false;
+        if (other.getAdditionalCodeRepositoryEquals() == null ^ this.getAdditionalCodeRepositoryEquals() == null)
+            return false;
+        if (other.getAdditionalCodeRepositoryEquals() != null
+                && other.getAdditionalCodeRepositoryEquals().equals(this.getAdditionalCodeRepositoryEquals()) == false)
+            return false;
         return true;
     }
 
@@ -772,6 +889,8 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getStatusEquals() == null) ? 0 : getStatusEquals().hashCode());
         hashCode = prime * hashCode
                 + ((getNotebookInstanceLifecycleConfigNameContains() == null) ? 0 : getNotebookInstanceLifecycleConfigNameContains().hashCode());
+        hashCode = prime * hashCode + ((getDefaultCodeRepositoryContains() == null) ? 0 : getDefaultCodeRepositoryContains().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalCodeRepositoryEquals() == null) ? 0 : getAdditionalCodeRepositoryEquals().hashCode());
         return hashCode;
     }
 

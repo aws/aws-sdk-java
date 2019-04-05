@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class CreateWebhookResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      * </p>
      */
     private Webhook webhook;
 
     /**
      * <p>
-     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      * </p>
      * 
      * @param webhook
-     *        Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     *        Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      */
 
     public void setWebhook(Webhook webhook) {
@@ -45,11 +45,10 @@ public class CreateWebhookResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      * </p>
      * 
-     * @return Information about a webhook in GitHub that connects repository events to a build project in AWS
-     *         CodeBuild.
+     * @return Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      */
 
     public Webhook getWebhook() {
@@ -58,11 +57,11 @@ public class CreateWebhookResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     * Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      * </p>
      * 
      * @param webhook
-     *        Information about a webhook in GitHub that connects repository events to a build project in AWS CodeBuild.
+     *        Information about a webhook that connects repository events to a build project in AWS CodeBuild.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,7 +71,8 @@ public class CreateWebhookResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * <p>
      * A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      */
@@ -94,14 +94,14 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * <p>
      * A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      */
 
@@ -113,13 +113,13 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * <p>
      * A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @return A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *         Idempotency</a>.
      */
 
@@ -131,14 +131,14 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      * <p>
      * A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -641,7 +641,8 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

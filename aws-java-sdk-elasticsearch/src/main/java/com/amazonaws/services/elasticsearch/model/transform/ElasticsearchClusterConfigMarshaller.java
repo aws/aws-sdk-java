@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class ElasticsearchClusterConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DedicatedMasterEnabled").build();
     private static final MarshallingInfo<Boolean> ZONEAWARENESSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ZoneAwarenessEnabled").build();
+    private static final MarshallingInfo<StructuredPojo> ZONEAWARENESSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ZoneAwarenessConfig").build();
     private static final MarshallingInfo<String> DEDICATEDMASTERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DedicatedMasterType").build();
     private static final MarshallingInfo<Integer> DEDICATEDMASTERCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -60,6 +62,7 @@ public class ElasticsearchClusterConfigMarshaller {
             protocolMarshaller.marshall(elasticsearchClusterConfig.getInstanceCount(), INSTANCECOUNT_BINDING);
             protocolMarshaller.marshall(elasticsearchClusterConfig.getDedicatedMasterEnabled(), DEDICATEDMASTERENABLED_BINDING);
             protocolMarshaller.marshall(elasticsearchClusterConfig.getZoneAwarenessEnabled(), ZONEAWARENESSENABLED_BINDING);
+            protocolMarshaller.marshall(elasticsearchClusterConfig.getZoneAwarenessConfig(), ZONEAWARENESSCONFIG_BINDING);
             protocolMarshaller.marshall(elasticsearchClusterConfig.getDedicatedMasterType(), DEDICATEDMASTERTYPE_BINDING);
             protocolMarshaller.marshall(elasticsearchClusterConfig.getDedicatedMasterCount(), DEDICATEDMASTERCOUNT_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class PlacementGroup implements Serializable, Cloneable {
      * </p>
      */
     private String strategy;
+    /**
+     * <p>
+     * The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.
+     * </p>
+     */
+    private Integer partitionCount;
 
     /**
      * Default constructor for PlacementGroup object. Callers should use the setter or fluent setter (with...) methods
@@ -250,7 +256,48 @@ public class PlacementGroup implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.
+     * </p>
+     * 
+     * @param partitionCount
+     *        The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.
+     */
+
+    public void setPartitionCount(Integer partitionCount) {
+        this.partitionCount = partitionCount;
+    }
+
+    /**
+     * <p>
+     * The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.
+     * </p>
+     * 
+     * @return The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.
+     */
+
+    public Integer getPartitionCount() {
+        return this.partitionCount;
+    }
+
+    /**
+     * <p>
+     * The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.
+     * </p>
+     * 
+     * @param partitionCount
+     *        The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlacementGroup withPartitionCount(Integer partitionCount) {
+        setPartitionCount(partitionCount);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -265,7 +312,9 @@ public class PlacementGroup implements Serializable, Cloneable {
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getStrategy() != null)
-            sb.append("Strategy: ").append(getStrategy());
+            sb.append("Strategy: ").append(getStrategy()).append(",");
+        if (getPartitionCount() != null)
+            sb.append("PartitionCount: ").append(getPartitionCount());
         sb.append("}");
         return sb.toString();
     }
@@ -292,6 +341,10 @@ public class PlacementGroup implements Serializable, Cloneable {
             return false;
         if (other.getStrategy() != null && other.getStrategy().equals(this.getStrategy()) == false)
             return false;
+        if (other.getPartitionCount() == null ^ this.getPartitionCount() == null)
+            return false;
+        if (other.getPartitionCount() != null && other.getPartitionCount().equals(this.getPartitionCount()) == false)
+            return false;
         return true;
     }
 
@@ -303,6 +356,7 @@ public class PlacementGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStrategy() == null) ? 0 : getStrategy().hashCode());
+        hashCode = prime * hashCode + ((getPartitionCount() == null) ? 0 : getPartitionCount().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -19,6 +19,7 @@ package com.amazonaws.services.s3.internal;
 
 import com.amazonaws.Request;
 import com.amazonaws.SdkClientException;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
@@ -518,6 +519,25 @@ public class ServiceUtils {
                 .withPartNumber(1);
 
         return s3.getObjectMetadata(getObjectMetadataRequest).getPartCount();
+    }
+
+    /**
+     * Returns the part size of the part
+     *
+     * @param getObjectRequest the request to check
+     * @param s3 the s3 client
+     * @param partNumber the part number
+     * @return the part size
+     */
+    @SdkInternalApi
+    public static long getPartSize(GetObjectRequest getObjectRequest, AmazonS3 s3, int partNumber) {
+        ValidationUtils.assertNotNull(s3, "S3 client");
+        ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
+
+        GetObjectMetadataRequest getObjectMetadataRequest = RequestCopyUtils.createGetObjectMetadataRequestFrom(getObjectRequest)
+                                                                            .withPartNumber(partNumber);
+
+        return s3.getObjectMetadata(getObjectMetadataRequest).getContentLength();
     }
 
     /**

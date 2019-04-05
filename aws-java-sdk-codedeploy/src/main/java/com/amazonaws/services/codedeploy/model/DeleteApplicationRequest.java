@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class DeleteApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      */
     private String applicationName;
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -50,10 +50,10 @@ public class DeleteApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
-     * @return The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      */
 
     public String getApplicationName() {
@@ -62,11 +62,11 @@ public class DeleteApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,7 +76,8 @@ public class DeleteApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

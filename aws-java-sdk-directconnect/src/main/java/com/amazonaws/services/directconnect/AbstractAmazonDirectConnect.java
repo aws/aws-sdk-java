@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
 
     @Override
     public void setRegion(com.amazonaws.regions.Region region) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AcceptDirectConnectGatewayAssociationProposalResult acceptDirectConnectGatewayAssociationProposal(
+            AcceptDirectConnectGatewayAssociationProposalRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,6 +115,12 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public CreateDirectConnectGatewayAssociationProposalResult createDirectConnectGatewayAssociationProposal(
+            CreateDirectConnectGatewayAssociationProposalRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateInterconnectResult createInterconnect(CreateInterconnectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -149,6 +161,12 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public DeleteDirectConnectGatewayAssociationProposalResult deleteDirectConnectGatewayAssociationProposal(
+            DeleteDirectConnectGatewayAssociationProposalRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteInterconnectResult deleteInterconnect(DeleteInterconnectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -182,6 +200,12 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     @Override
     @Deprecated
     public DescribeConnectionsOnInterconnectResult describeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDirectConnectGatewayAssociationProposalsResult describeDirectConnectGatewayAssociationProposals(
+            DescribeDirectConnectGatewayAssociationProposalsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -282,7 +306,17 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public UpdateDirectConnectGatewayAssociationResult updateDirectConnectGatewayAssociation(UpdateDirectConnectGatewayAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateLagResult updateLag(UpdateLagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVirtualInterfaceAttributesResult updateVirtualInterfaceAttributes(UpdateVirtualInterfaceAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

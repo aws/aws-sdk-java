@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,12 +43,12 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned URL. For
      * information about creating a presigned URL for an Amazon S3 object, read the
      * "Query String Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
      * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      * </p>
      */
     private String importManifestUrl;
@@ -171,23 +171,23 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned URL. For
      * information about creating a presigned URL for an Amazon S3 object, read the
      * "Query String Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
      * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      * </p>
      * 
      * @param importManifestUrl
      *        A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned
      *        URL. For information about creating a presigned URL for an Amazon S3 object, read the
      *        "Query String Request Authentication Alternative" section of the <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
      *        Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      *        <p>
      *        For information about the import manifest referenced by this API action, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      */
 
     public void setImportManifestUrl(String importManifestUrl) {
@@ -199,22 +199,22 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned URL. For
      * information about creating a presigned URL for an Amazon S3 object, read the
      * "Query String Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
      * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      * </p>
      * 
      * @return A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned
      *         URL. For information about creating a presigned URL for an Amazon S3 object, read the
      *         "Query String Request Authentication Alternative" section of the <a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
      *         Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      *         <p>
      *         For information about the import manifest referenced by this API action, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      */
 
     public String getImportManifestUrl() {
@@ -226,23 +226,23 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned URL. For
      * information about creating a presigned URL for an Amazon S3 object, read the
      * "Query String Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a>
      * topic in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      * </p>
      * 
      * @param importManifestUrl
      *        A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned
      *        URL. For information about creating a presigned URL for an Amazon S3 object, read the
      *        "Query String Request Authentication Alternative" section of the <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST
      *        Requests</a> topic in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      *        <p>
      *        For information about the import manifest referenced by this API action, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,7 +252,8 @@ public class DiskImageDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

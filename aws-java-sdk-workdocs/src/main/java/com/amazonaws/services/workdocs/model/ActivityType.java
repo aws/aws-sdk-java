@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,8 @@ public enum ActivityType {
     DOCUMENT_RENAMED("DOCUMENT_RENAMED"),
     DOCUMENT_VERSION_UPLOADED("DOCUMENT_VERSION_UPLOADED"),
     DOCUMENT_VERSION_DELETED("DOCUMENT_VERSION_DELETED"),
+    DOCUMENT_VERSION_VIEWED("DOCUMENT_VERSION_VIEWED"),
+    DOCUMENT_VERSION_DOWNLOADED("DOCUMENT_VERSION_DOWNLOADED"),
     DOCUMENT_RECYCLED("DOCUMENT_RECYCLED"),
     DOCUMENT_RESTORED("DOCUMENT_RESTORED"),
     DOCUMENT_REVERTED("DOCUMENT_REVERTED"),

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
      * <p>
@@ -64,12 +64,18 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      */
     private String name;
+    /**
+     * <p>
+     * The list of tags to add to a resource.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
      * The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
      * <p>
@@ -106,8 +112,8 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param name
      *        The name of the activity to create. This name must be unique for your AWS account and region for 90 days.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     *        Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
+     *        > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
      *        <p>
      *        A name must <i>not</i> contain:
      *        </p>
@@ -147,7 +153,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
      * <p>
@@ -183,7 +189,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @return The name of the activity to create. This name must be unique for your AWS account and region for 90 days.
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
+     *         "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
      *         > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
      *         <p>
      *         A name must <i>not</i> contain:
@@ -224,7 +230,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
      * <p>
@@ -261,8 +267,8 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param name
      *        The name of the activity to create. This name must be unique for your AWS account and region for 90 days.
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     *        Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
+     *        > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
      *        <p>
      *        A name must <i>not</i> contain:
      *        </p>
@@ -301,7 +307,78 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The list of tags to add to a resource.
+     * </p>
+     * 
+     * @return The list of tags to add to a resource.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The list of tags to add to a resource.
+     * </p>
+     * 
+     * @param tags
+     *        The list of tags to add to a resource.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The list of tags to add to a resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The list of tags to add to a resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateActivityRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of tags to add to a resource.
+     * </p>
+     * 
+     * @param tags
+     *        The list of tags to add to a resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateActivityRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -312,7 +389,9 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -331,6 +410,10 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -340,6 +423,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

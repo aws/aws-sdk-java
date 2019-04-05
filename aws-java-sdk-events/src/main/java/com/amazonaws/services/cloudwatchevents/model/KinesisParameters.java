@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon
- * Kinesis stream, so that you can control the shard to which the event goes. If you do not include this parameter, the
- * default is to use the <code>eventId</code> as the partition key.
+ * Kinesis data stream, so that you can control the shard to which the event goes. If you do not include this parameter,
+ * the default is to use the <code>eventId</code> as the partition key.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/KinesisParameters" target="_top">AWS API
@@ -33,7 +33,7 @@ public class KinesisParameters implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The JSON path to be extracted from the event and used as the partition key. For more information, see <a
-     * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
+     * href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
      * Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      */
@@ -42,13 +42,13 @@ public class KinesisParameters implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The JSON path to be extracted from the event and used as the partition key. For more information, see <a
-     * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
+     * href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
      * Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * 
      * @param partitionKeyPath
      *        The JSON path to be extracted from the event and used as the partition key. For more information, see <a
-     *        href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis
+     *        href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis
      *        Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      */
 
@@ -59,12 +59,12 @@ public class KinesisParameters implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The JSON path to be extracted from the event and used as the partition key. For more information, see <a
-     * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
+     * href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
      * Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * 
      * @return The JSON path to be extracted from the event and used as the partition key. For more information, see <a
-     *         href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis
+     *         href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis
      *         Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      */
 
@@ -75,13 +75,13 @@ public class KinesisParameters implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The JSON path to be extracted from the event and used as the partition key. For more information, see <a
-     * href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
+     * href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis Streams Key
      * Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * 
      * @param partitionKeyPath
      *        The JSON path to be extracted from the event and used as the partition key. For more information, see <a
-     *        href="http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis
+     *        href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key">Amazon Kinesis
      *        Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -92,7 +92,8 @@ public class KinesisParameters implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

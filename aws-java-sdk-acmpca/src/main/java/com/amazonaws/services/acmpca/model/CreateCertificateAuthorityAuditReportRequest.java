@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,40 +27,40 @@ public class CreateCertificateAuthorityAuditReportRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the CA to be audited. This is of the form:
+     * The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      */
     private String certificateAuthorityArn;
     /**
      * <p>
-     * Name of the S3 bucket that will contain the audit report.
+     * The name of the S3 bucket that will contain the audit report.
      * </p>
      */
     private String s3BucketName;
     /**
      * <p>
-     * Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
+     * The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
      * </p>
      */
     private String auditReportResponseFormat;
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the CA to be audited. This is of the form:
+     * The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      * 
      * @param certificateAuthorityArn
-     *        Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
+     *        The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
      *        <p>
-     *        <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
+     *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      */
 
     public void setCertificateAuthorityArn(String certificateAuthorityArn) {
@@ -69,16 +69,16 @@ public class CreateCertificateAuthorityAuditReportRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the CA to be audited. This is of the form:
+     * The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
+     * @return The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
      *         <p>
-     *         <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
+     *         <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      */
 
     public String getCertificateAuthorityArn() {
@@ -87,17 +87,17 @@ public class CreateCertificateAuthorityAuditReportRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the CA to be audited. This is of the form:
+     * The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      * 
      * @param certificateAuthorityArn
-     *        Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
+     *        The Amazon Resource Name (ARN) of the CA to be audited. This is of the form:</p>
      *        <p>
-     *        <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
+     *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class CreateCertificateAuthorityAuditReportRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Name of the S3 bucket that will contain the audit report.
+     * The name of the S3 bucket that will contain the audit report.
      * </p>
      * 
      * @param s3BucketName
-     *        Name of the S3 bucket that will contain the audit report.
+     *        The name of the S3 bucket that will contain the audit report.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -121,10 +121,10 @@ public class CreateCertificateAuthorityAuditReportRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Name of the S3 bucket that will contain the audit report.
+     * The name of the S3 bucket that will contain the audit report.
      * </p>
      * 
-     * @return Name of the S3 bucket that will contain the audit report.
+     * @return The name of the S3 bucket that will contain the audit report.
      */
 
     public String getS3BucketName() {
@@ -133,11 +133,11 @@ public class CreateCertificateAuthorityAuditReportRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Name of the S3 bucket that will contain the audit report.
+     * The name of the S3 bucket that will contain the audit report.
      * </p>
      * 
      * @param s3BucketName
-     *        Name of the S3 bucket that will contain the audit report.
+     *        The name of the S3 bucket that will contain the audit report.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class CreateCertificateAuthorityAuditReportRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
+     * The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
      * </p>
      * 
      * @param auditReportResponseFormat
-     *        Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
+     *        The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
      * @see AuditReportResponseFormat
      */
 
@@ -162,10 +162,10 @@ public class CreateCertificateAuthorityAuditReportRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
+     * The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
      * </p>
      * 
-     * @return Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
+     * @return The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
      * @see AuditReportResponseFormat
      */
 
@@ -175,11 +175,11 @@ public class CreateCertificateAuthorityAuditReportRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
+     * The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
      * </p>
      * 
      * @param auditReportResponseFormat
-     *        Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
+     *        The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditReportResponseFormat
      */
@@ -191,11 +191,11 @@ public class CreateCertificateAuthorityAuditReportRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
+     * The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
      * </p>
      * 
      * @param auditReportResponseFormat
-     *        Format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
+     *        The format in which to create the report. This can be either <b>JSON</b> or <b>CSV</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuditReportResponseFormat
      */
@@ -206,7 +206,8 @@ public class CreateCertificateAuthorityAuditReportRequest extends com.amazonaws.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

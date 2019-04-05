@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,11 +70,19 @@ public class BackupSummaryJsonUnmarshaller implements Unmarshaller<BackupSummary
                 }
                 if (context.testExpression("BackupCreationDateTime", targetDepth)) {
                     context.nextToken();
-                    backupSummary.setBackupCreationDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    backupSummary.setBackupCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("BackupExpiryDateTime", targetDepth)) {
+                    context.nextToken();
+                    backupSummary.setBackupExpiryDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("BackupStatus", targetDepth)) {
                     context.nextToken();
                     backupSummary.setBackupStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("BackupType", targetDepth)) {
+                    context.nextToken();
+                    backupSummary.setBackupType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("BackupSizeBytes", targetDepth)) {
                     context.nextToken();

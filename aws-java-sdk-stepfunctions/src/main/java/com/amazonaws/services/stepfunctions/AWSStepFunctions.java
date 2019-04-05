@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ import com.amazonaws.services.stepfunctions.model.*;
  * Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale.
  * You can run tasks on AWS, your own servers, or any system that has access to AWS. You can access and use Step
  * Functions using the console, the AWS SDKs, or an HTTP API. For more information about Step Functions, see the <i> <a
- * href="http://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
+ * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -65,9 +65,10 @@ public interface AWSStepFunctions {
      * this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -108,12 +109,18 @@ public interface AWSStepFunctions {
 
     /**
      * <p>
-     * Creates an activity. An activity is a task which you write in any programming language and host on any machine
-     * which has access to AWS Step Functions. Activities must poll Step Functions using the
-     * <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets
-     * Step Functions know the existence of your activity and returns an identifier for use in a state machine and when
-     * polling from the activity.
+     * Creates an activity. An activity is a task that you write in any programming language and host on any machine
+     * that has access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code>
+     * API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the
+     * existence of your activity and returns an identifier for use in a state machine and when polling from the
+     * activity.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param createActivityRequest
      * @return Result of the CreateActivity operation returned by the service.
@@ -122,6 +129,10 @@ public interface AWSStepFunctions {
      *         activity can be created.
      * @throws InvalidNameException
      *         The provided name is invalid.
+     * @throws TooManyTagsException
+     *         You've exceeded the number of tags allowed for a resource. See the <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         Functions Developer Guide.
      * @sample AWSStepFunctions.CreateActivity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity" target="_top">AWS API
      *      Documentation</a>
@@ -135,6 +146,12 @@ public interface AWSStepFunctions {
      * error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured
      * language.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param createStateMachineRequest
      * @return Result of the CreateStateMachine operation returned by the service.
@@ -151,6 +168,10 @@ public interface AWSStepFunctions {
      * @throws StateMachineLimitExceededException
      *         The maximum number of state machines has been reached. Existing state machines must be deleted before a
      *         new state machine can be created.
+     * @throws TooManyTagsException
+     *         You've exceeded the number of tags allowed for a resource. See the <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         Functions Developer Guide.
      * @sample AWSStepFunctions.CreateStateMachine
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine" target="_top">AWS API
      *      Documentation</a>
@@ -198,6 +219,12 @@ public interface AWSStepFunctions {
      * <p>
      * Describes an activity.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeActivityRequest
      * @return Result of the DescribeActivity operation returned by the service.
@@ -215,6 +242,12 @@ public interface AWSStepFunctions {
      * <p>
      * Describes an execution.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeExecutionRequest
      * @return Result of the DescribeExecution operation returned by the service.
@@ -232,6 +265,12 @@ public interface AWSStepFunctions {
      * <p>
      * Describes a state machine.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeStateMachineRequest
      * @return Result of the DescribeStateMachine operation returned by the service.
@@ -249,6 +288,12 @@ public interface AWSStepFunctions {
      * <p>
      * Describes the state machine associated with a specific execution.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeStateMachineForExecutionRequest
      * @return Result of the DescribeStateMachineForExecution operation returned by the service.
@@ -275,6 +320,11 @@ public interface AWSStepFunctions {
      * Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than the maximum
      * time the service may hold the poll request).
      * </p>
+     * <p>
+     * Polling with <code>GetActivityTask</code> can cause latency in some implementations. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling
+     * for Activity Tasks</a> in the Step Functions Developer Guide.
+     * </p>
      * </important>
      * 
      * @param getActivityTaskRequest
@@ -298,9 +348,10 @@ public interface AWSStepFunctions {
      * the latest events first.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * 
      * @param getExecutionHistoryRequest
@@ -322,10 +373,17 @@ public interface AWSStepFunctions {
      * Lists the existing activities.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listActivitiesRequest
      * @return Result of the ListActivities operation returned by the service.
@@ -339,13 +397,21 @@ public interface AWSStepFunctions {
 
     /**
      * <p>
-     * Lists the executions of a state machine that meet the filtering criteria.
+     * Lists the executions of a state machine that meet the filtering criteria. Results are sorted by time, with the
+     * most recent execution first.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listExecutionsRequest
      * @return Result of the ListExecutions operation returned by the service.
@@ -366,10 +432,17 @@ public interface AWSStepFunctions {
      * Lists the existing state machines.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listStateMachinesRequest
      * @return Result of the ListStateMachines operation returned by the service.
@@ -380,6 +453,23 @@ public interface AWSStepFunctions {
      *      Documentation</a>
      */
     ListStateMachinesResult listStateMachines(ListStateMachinesRequest listStateMachinesRequest);
+
+    /**
+     * <p>
+     * List tags for a given resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @sample AWSStepFunctions.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -452,6 +542,14 @@ public interface AWSStepFunctions {
      * <p>
      * Starts a state machine execution.
      * </p>
+     * <note>
+     * <p>
+     * <code>StartExecution</code> is idempotent. If <code>StartExecution</code> is called with the same name and input
+     * as a running execution, the call will succeed and return the same response as the original request. If the
+     * execution is closed or if the input is different, it will return a 400 <code>ExecutionAlreadyExists</code> error.
+     * Names can be reused after 90 days.
+     * </p>
+     * </note>
      * 
      * @param startExecutionRequest
      * @return Result of the StartExecution operation returned by the service.
@@ -499,16 +597,54 @@ public interface AWSStepFunctions {
 
     /**
      * <p>
+     * Add a tag to a Step Functions resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @throws TooManyTagsException
+     *         You've exceeded the number of tags allowed for a resource. See the <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         Functions Developer Guide.
+     * @sample AWSStepFunctions.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Remove a tag from a Step Functions resource
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @sample AWSStepFunctions.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Updates an existing state machine by modifying its <code>definition</code> and/or <code>roleArn</code>. Running
-     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>.
+     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include
+     * at least one of <code>definition</code> or <code>roleArn</code> or you will receive a
+     * <code>MissingRequiredParameter</code> error.
      * </p>
      * <note>
      * <p>
      * All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and
      * <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the
-     * previous state machine <code>definition</code> and <code>roleArn</code>. You must include at least one of
-     * <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
-     * error.
+     * previous state machine <code>definition</code> and <code>roleArn</code>.
      * </p>
      * </note>
      * 

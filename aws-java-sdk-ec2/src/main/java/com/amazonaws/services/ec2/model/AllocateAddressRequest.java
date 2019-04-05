@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AllocateAddressRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for AllocateAddress.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AllocateAddressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<AllocateAddressRequest> {
@@ -38,10 +36,17 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
     private String domain;
     /**
      * <p>
-     * [EC2-VPC] The Elastic IP address to recover.
+     * [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
      * </p>
      */
     private String address;
+    /**
+     * <p>
+     * The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address
+     * pool. To specify a specific address from the address pool, use the <code>Address</code> parameter instead.
+     * </p>
+     */
+    private String publicIpv4Pool;
 
     /**
      * <p>
@@ -143,11 +148,11 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * [EC2-VPC] The Elastic IP address to recover.
+     * [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
      * </p>
      * 
      * @param address
-     *        [EC2-VPC] The Elastic IP address to recover.
+     *        [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
      */
 
     public void setAddress(String address) {
@@ -156,10 +161,10 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * [EC2-VPC] The Elastic IP address to recover.
+     * [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
      * </p>
      * 
-     * @return [EC2-VPC] The Elastic IP address to recover.
+     * @return [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
      */
 
     public String getAddress() {
@@ -168,16 +173,65 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * [EC2-VPC] The Elastic IP address to recover.
+     * [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
      * </p>
      * 
      * @param address
-     *        [EC2-VPC] The Elastic IP address to recover.
+     *        [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AllocateAddressRequest withAddress(String address) {
         setAddress(address);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address
+     * pool. To specify a specific address from the address pool, use the <code>Address</code> parameter instead.
+     * </p>
+     * 
+     * @param publicIpv4Pool
+     *        The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the
+     *        address pool. To specify a specific address from the address pool, use the <code>Address</code> parameter
+     *        instead.
+     */
+
+    public void setPublicIpv4Pool(String publicIpv4Pool) {
+        this.publicIpv4Pool = publicIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address
+     * pool. To specify a specific address from the address pool, use the <code>Address</code> parameter instead.
+     * </p>
+     * 
+     * @return The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the
+     *         address pool. To specify a specific address from the address pool, use the <code>Address</code> parameter
+     *         instead.
+     */
+
+    public String getPublicIpv4Pool() {
+        return this.publicIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address
+     * pool. To specify a specific address from the address pool, use the <code>Address</code> parameter instead.
+     * </p>
+     * 
+     * @param publicIpv4Pool
+     *        The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the
+     *        address pool. To specify a specific address from the address pool, use the <code>Address</code> parameter
+     *        instead.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateAddressRequest withPublicIpv4Pool(String publicIpv4Pool) {
+        setPublicIpv4Pool(publicIpv4Pool);
         return this;
     }
 
@@ -193,7 +247,8 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -206,7 +261,9 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getAddress() != null)
-            sb.append("Address: ").append(getAddress());
+            sb.append("Address: ").append(getAddress()).append(",");
+        if (getPublicIpv4Pool() != null)
+            sb.append("PublicIpv4Pool: ").append(getPublicIpv4Pool());
         sb.append("}");
         return sb.toString();
     }
@@ -229,6 +286,10 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
             return false;
         if (other.getAddress() != null && other.getAddress().equals(this.getAddress()) == false)
             return false;
+        if (other.getPublicIpv4Pool() == null ^ this.getPublicIpv4Pool() == null)
+            return false;
+        if (other.getPublicIpv4Pool() != null && other.getPublicIpv4Pool().equals(this.getPublicIpv4Pool()) == false)
+            return false;
         return true;
     }
 
@@ -239,6 +300,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getAddress() == null) ? 0 : getAddress().hashCode());
+        hashCode = prime * hashCode + ((getPublicIpv4Pool() == null) ? 0 : getPublicIpv4Pool().hashCode());
         return hashCode;
     }
 

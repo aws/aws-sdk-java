@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<CodeGenNodeArg> s3;
+    /**
+     * <p>
+     * A DynamoDB Table location.
+     * </p>
+     */
+    private java.util.List<CodeGenNodeArg> dynamoDB;
 
     /**
      * <p>
@@ -182,7 +188,78 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A DynamoDB Table location.
+     * </p>
+     * 
+     * @return A DynamoDB Table location.
+     */
+
+    public java.util.List<CodeGenNodeArg> getDynamoDB() {
+        return dynamoDB;
+    }
+
+    /**
+     * <p>
+     * A DynamoDB Table location.
+     * </p>
+     * 
+     * @param dynamoDB
+     *        A DynamoDB Table location.
+     */
+
+    public void setDynamoDB(java.util.Collection<CodeGenNodeArg> dynamoDB) {
+        if (dynamoDB == null) {
+            this.dynamoDB = null;
+            return;
+        }
+
+        this.dynamoDB = new java.util.ArrayList<CodeGenNodeArg>(dynamoDB);
+    }
+
+    /**
+     * <p>
+     * A DynamoDB Table location.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDynamoDB(java.util.Collection)} or {@link #withDynamoDB(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param dynamoDB
+     *        A DynamoDB Table location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Location withDynamoDB(CodeGenNodeArg... dynamoDB) {
+        if (this.dynamoDB == null) {
+            setDynamoDB(new java.util.ArrayList<CodeGenNodeArg>(dynamoDB.length));
+        }
+        for (CodeGenNodeArg ele : dynamoDB) {
+            this.dynamoDB.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A DynamoDB Table location.
+     * </p>
+     * 
+     * @param dynamoDB
+     *        A DynamoDB Table location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Location withDynamoDB(java.util.Collection<CodeGenNodeArg> dynamoDB) {
+        setDynamoDB(dynamoDB);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -195,7 +272,9 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
         if (getJdbc() != null)
             sb.append("Jdbc: ").append(getJdbc()).append(",");
         if (getS3() != null)
-            sb.append("S3: ").append(getS3());
+            sb.append("S3: ").append(getS3()).append(",");
+        if (getDynamoDB() != null)
+            sb.append("DynamoDB: ").append(getDynamoDB());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +297,10 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getS3() != null && other.getS3().equals(this.getS3()) == false)
             return false;
+        if (other.getDynamoDB() == null ^ this.getDynamoDB() == null)
+            return false;
+        if (other.getDynamoDB() != null && other.getDynamoDB().equals(this.getDynamoDB()) == false)
+            return false;
         return true;
     }
 
@@ -228,6 +311,7 @@ public class Location implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getJdbc() == null) ? 0 : getJdbc().hashCode());
         hashCode = prime * hashCode + ((getS3() == null) ? 0 : getS3().hashCode());
+        hashCode = prime * hashCode + ((getDynamoDB() == null) ? 0 : getDynamoDB().hashCode());
         return hashCode;
     }
 

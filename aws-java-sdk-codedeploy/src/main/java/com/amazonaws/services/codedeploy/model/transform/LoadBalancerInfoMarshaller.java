@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class LoadBalancerInfoMarshaller {
             .marshallLocationName("elbInfoList").build();
     private static final MarshallingInfo<List> TARGETGROUPINFOLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetGroupInfoList").build();
+    private static final MarshallingInfo<List> TARGETGROUPPAIRINFOLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetGroupPairInfoList").build();
 
     private static final LoadBalancerInfoMarshaller instance = new LoadBalancerInfoMarshaller();
 
@@ -51,6 +53,7 @@ public class LoadBalancerInfoMarshaller {
         try {
             protocolMarshaller.marshall(loadBalancerInfo.getElbInfoList(), ELBINFOLIST_BINDING);
             protocolMarshaller.marshall(loadBalancerInfo.getTargetGroupInfoList(), TARGETGROUPINFOLIST_BINDING);
+            protocolMarshaller.marshall(loadBalancerInfo.getTargetGroupPairInfoList(), TARGETGROUPPAIRINFOLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

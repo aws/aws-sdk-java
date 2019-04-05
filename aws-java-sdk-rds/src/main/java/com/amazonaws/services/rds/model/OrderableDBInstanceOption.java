@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -149,6 +149,18 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      */
     private Double maxIopsPerGib;
+    /**
+     * <p>
+     * A list of the available processor features for the DB instance class of a DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature> availableProcessorFeatures;
+    /**
+     * <p>
+     * A list of the supported DB engine modes.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
 
     /**
      * <p>
@@ -1080,7 +1092,154 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A list of the available processor features for the DB instance class of a DB instance.
+     * </p>
+     * 
+     * @return A list of the available processor features for the DB instance class of a DB instance.
+     */
+
+    public java.util.List<AvailableProcessorFeature> getAvailableProcessorFeatures() {
+        if (availableProcessorFeatures == null) {
+            availableProcessorFeatures = new com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature>();
+        }
+        return availableProcessorFeatures;
+    }
+
+    /**
+     * <p>
+     * A list of the available processor features for the DB instance class of a DB instance.
+     * </p>
+     * 
+     * @param availableProcessorFeatures
+     *        A list of the available processor features for the DB instance class of a DB instance.
+     */
+
+    public void setAvailableProcessorFeatures(java.util.Collection<AvailableProcessorFeature> availableProcessorFeatures) {
+        if (availableProcessorFeatures == null) {
+            this.availableProcessorFeatures = null;
+            return;
+        }
+
+        this.availableProcessorFeatures = new com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature>(availableProcessorFeatures);
+    }
+
+    /**
+     * <p>
+     * A list of the available processor features for the DB instance class of a DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailableProcessorFeatures(java.util.Collection)} or
+     * {@link #withAvailableProcessorFeatures(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param availableProcessorFeatures
+     *        A list of the available processor features for the DB instance class of a DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withAvailableProcessorFeatures(AvailableProcessorFeature... availableProcessorFeatures) {
+        if (this.availableProcessorFeatures == null) {
+            setAvailableProcessorFeatures(new com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature>(availableProcessorFeatures.length));
+        }
+        for (AvailableProcessorFeature ele : availableProcessorFeatures) {
+            this.availableProcessorFeatures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the available processor features for the DB instance class of a DB instance.
+     * </p>
+     * 
+     * @param availableProcessorFeatures
+     *        A list of the available processor features for the DB instance class of a DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withAvailableProcessorFeatures(java.util.Collection<AvailableProcessorFeature> availableProcessorFeatures) {
+        setAvailableProcessorFeatures(availableProcessorFeatures);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the supported DB engine modes.
+     * </p>
+     * 
+     * @return A list of the supported DB engine modes.
+     */
+
+    public java.util.List<String> getSupportedEngineModes() {
+        if (supportedEngineModes == null) {
+            supportedEngineModes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedEngineModes;
+    }
+
+    /**
+     * <p>
+     * A list of the supported DB engine modes.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        A list of the supported DB engine modes.
+     */
+
+    public void setSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
+        if (supportedEngineModes == null) {
+            this.supportedEngineModes = null;
+            return;
+        }
+
+        this.supportedEngineModes = new com.amazonaws.internal.SdkInternalList<String>(supportedEngineModes);
+    }
+
+    /**
+     * <p>
+     * A list of the supported DB engine modes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedEngineModes(java.util.Collection)} or {@link #withSupportedEngineModes(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        A list of the supported DB engine modes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withSupportedEngineModes(String... supportedEngineModes) {
+        if (this.supportedEngineModes == null) {
+            setSupportedEngineModes(new com.amazonaws.internal.SdkInternalList<String>(supportedEngineModes.length));
+        }
+        for (String ele : supportedEngineModes) {
+            this.supportedEngineModes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the supported DB engine modes.
+     * </p>
+     * 
+     * @param supportedEngineModes
+     *        A list of the supported DB engine modes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
+        setSupportedEngineModes(supportedEngineModes);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1129,7 +1288,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (getMinIopsPerGib() != null)
             sb.append("MinIopsPerGib: ").append(getMinIopsPerGib()).append(",");
         if (getMaxIopsPerGib() != null)
-            sb.append("MaxIopsPerGib: ").append(getMaxIopsPerGib());
+            sb.append("MaxIopsPerGib: ").append(getMaxIopsPerGib()).append(",");
+        if (getAvailableProcessorFeatures() != null)
+            sb.append("AvailableProcessorFeatures: ").append(getAvailableProcessorFeatures()).append(",");
+        if (getSupportedEngineModes() != null)
+            sb.append("SupportedEngineModes: ").append(getSupportedEngineModes());
         sb.append("}");
         return sb.toString();
     }
@@ -1225,6 +1388,14 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
             return false;
         if (other.getMaxIopsPerGib() != null && other.getMaxIopsPerGib().equals(this.getMaxIopsPerGib()) == false)
             return false;
+        if (other.getAvailableProcessorFeatures() == null ^ this.getAvailableProcessorFeatures() == null)
+            return false;
+        if (other.getAvailableProcessorFeatures() != null && other.getAvailableProcessorFeatures().equals(this.getAvailableProcessorFeatures()) == false)
+            return false;
+        if (other.getSupportedEngineModes() == null ^ this.getSupportedEngineModes() == null)
+            return false;
+        if (other.getSupportedEngineModes() != null && other.getSupportedEngineModes().equals(this.getSupportedEngineModes()) == false)
+            return false;
         return true;
     }
 
@@ -1253,6 +1424,8 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxIopsPerDbInstance() == null) ? 0 : getMaxIopsPerDbInstance().hashCode());
         hashCode = prime * hashCode + ((getMinIopsPerGib() == null) ? 0 : getMinIopsPerGib().hashCode());
         hashCode = prime * hashCode + ((getMaxIopsPerGib() == null) ? 0 : getMaxIopsPerGib().hashCode());
+        hashCode = prime * hashCode + ((getAvailableProcessorFeatures() == null) ? 0 : getAvailableProcessorFeatures().hashCode());
+        hashCode = prime * hashCode + ((getSupportedEngineModes() == null) ? 0 : getSupportedEngineModes().hashCode());
         return hashCode;
     }
 

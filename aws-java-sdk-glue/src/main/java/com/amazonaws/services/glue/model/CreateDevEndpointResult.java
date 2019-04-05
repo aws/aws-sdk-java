@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,10 +103,22 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
     private String failureReason;
     /**
      * <p>
+     * The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     * </p>
+     */
+    private String securityConfiguration;
+    /**
+     * <p>
      * The point in time at which this DevEndpoint was created.
      * </p>
      */
     private java.util.Date createdTimestamp;
+    /**
+     * <p>
+     * The map of arguments used to configure this DevEndpoint.
+     * </p>
+     */
+    private java.util.Map<String, String> arguments;
 
     /**
      * <p>
@@ -660,6 +672,46 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     */
+
+    public void setSecurityConfiguration(String securityConfiguration) {
+        this.securityConfiguration = securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     * </p>
+     * 
+     * @return The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     */
+
+    public String getSecurityConfiguration() {
+        return this.securityConfiguration;
+    }
+
+    /**
+     * <p>
+     * The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     * </p>
+     * 
+     * @param securityConfiguration
+     *        The name of the SecurityConfiguration structure being used with this DevEndpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDevEndpointResult withSecurityConfiguration(String securityConfiguration) {
+        setSecurityConfiguration(securityConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The point in time at which this DevEndpoint was created.
      * </p>
      * 
@@ -699,7 +751,69 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The map of arguments used to configure this DevEndpoint.
+     * </p>
+     * 
+     * @return The map of arguments used to configure this DevEndpoint.
+     */
+
+    public java.util.Map<String, String> getArguments() {
+        return arguments;
+    }
+
+    /**
+     * <p>
+     * The map of arguments used to configure this DevEndpoint.
+     * </p>
+     * 
+     * @param arguments
+     *        The map of arguments used to configure this DevEndpoint.
+     */
+
+    public void setArguments(java.util.Map<String, String> arguments) {
+        this.arguments = arguments;
+    }
+
+    /**
+     * <p>
+     * The map of arguments used to configure this DevEndpoint.
+     * </p>
+     * 
+     * @param arguments
+     *        The map of arguments used to configure this DevEndpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDevEndpointResult withArguments(java.util.Map<String, String> arguments) {
+        setArguments(arguments);
+        return this;
+    }
+
+    public CreateDevEndpointResult addArgumentsEntry(String key, String value) {
+        if (null == this.arguments) {
+            this.arguments = new java.util.HashMap<String, String>();
+        }
+        if (this.arguments.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.arguments.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Arguments.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDevEndpointResult clearArgumentsEntries() {
+        this.arguments = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -735,8 +849,12 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("ExtraJarsS3Path: ").append(getExtraJarsS3Path()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getSecurityConfiguration() != null)
+            sb.append("SecurityConfiguration: ").append(getSecurityConfiguration()).append(",");
         if (getCreatedTimestamp() != null)
-            sb.append("CreatedTimestamp: ").append(getCreatedTimestamp());
+            sb.append("CreatedTimestamp: ").append(getCreatedTimestamp()).append(",");
+        if (getArguments() != null)
+            sb.append("Arguments: ").append(getArguments());
         sb.append("}");
         return sb.toString();
     }
@@ -804,9 +922,17 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getSecurityConfiguration() == null ^ this.getSecurityConfiguration() == null)
+            return false;
+        if (other.getSecurityConfiguration() != null && other.getSecurityConfiguration().equals(this.getSecurityConfiguration()) == false)
+            return false;
         if (other.getCreatedTimestamp() == null ^ this.getCreatedTimestamp() == null)
             return false;
         if (other.getCreatedTimestamp() != null && other.getCreatedTimestamp().equals(this.getCreatedTimestamp()) == false)
+            return false;
+        if (other.getArguments() == null ^ this.getArguments() == null)
+            return false;
+        if (other.getArguments() != null && other.getArguments().equals(this.getArguments()) == false)
             return false;
         return true;
     }
@@ -829,7 +955,9 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getExtraPythonLibsS3Path() == null) ? 0 : getExtraPythonLibsS3Path().hashCode());
         hashCode = prime * hashCode + ((getExtraJarsS3Path() == null) ? 0 : getExtraJarsS3Path().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getArguments() == null) ? 0 : getArguments().hashCode());
         return hashCode;
     }
 

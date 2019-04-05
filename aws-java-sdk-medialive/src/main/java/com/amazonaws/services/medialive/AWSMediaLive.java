@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,15 +40,43 @@ public interface AWSMediaLive {
     String ENDPOINT_PREFIX = "medialive";
 
     /**
+     * Update a channel schedule
+     * 
+     * @param batchUpdateScheduleRequest
+     *        List of actions to create and list of actions to delete.
+     * @return Result of the BatchUpdateSchedule operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         The update schedule request failed validation.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to update the channel schedule.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The specified channel id does not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on update schedule calls.
+     * @sample AWSMediaLive.BatchUpdateSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchUpdateScheduleResult batchUpdateSchedule(BatchUpdateScheduleRequest batchUpdateScheduleRequest);
+
+    /**
      * Creates a new channel
      * 
      * @param createChannelRequest
      *        A request to create a channel
      * @return Result of the CreateChannel operation returned by the service.
-     * @throws UnprocessableEntityException
-     *         The Channel failed validation and could not be created.
      * @throws BadRequestException
      *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         The Channel failed validation and could not be created.
      * @throws InternalServerErrorException
      *         Unexpected internal service error.
      * @throws ForbiddenException
@@ -114,6 +142,26 @@ public interface AWSMediaLive {
      *      target="_top">AWS API Documentation</a>
      */
     CreateInputSecurityGroupResult createInputSecurityGroup(CreateInputSecurityGroupRequest createInputSecurityGroupRequest);
+
+    /**
+     * Create tags for a resource
+     * 
+     * @param createTagsRequest
+     *        Placeholder documentation for CreateTagsRequest
+     * @return Result of the CreateTags operation returned by the service.
+     * @throws NotFoundException
+     *         The arn was not found.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         Access was denied
+     * @sample AWSMediaLive.CreateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateTagsResult createTags(CreateTagsRequest createTagsRequest);
 
     /**
      * Starts deletion of channel. The associated outputs are also deleted.
@@ -198,6 +246,54 @@ public interface AWSMediaLive {
     DeleteInputSecurityGroupResult deleteInputSecurityGroup(DeleteInputSecurityGroupRequest deleteInputSecurityGroupRequest);
 
     /**
+     * Delete an expired reservation.
+     * 
+     * @param deleteReservationRequest
+     *        Placeholder documentation for DeleteReservationRequest
+     * @return Result of the DeleteReservation operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to delete reservation
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Reservation you're attempting to delete does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete reservation request
+     * @throws ConflictException
+     *         The reservation could not be deleted because it is currently active.
+     * @sample AWSMediaLive.DeleteReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteReservationResult deleteReservation(DeleteReservationRequest deleteReservationRequest);
+
+    /**
+     * Removes tags for a resource
+     * 
+     * @param deleteTagsRequest
+     *        Placeholder documentation for DeleteTagsRequest
+     * @return Result of the DeleteTags operation returned by the service.
+     * @throws NotFoundException
+     *         The arn was not found.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         Access was denied
+     * @sample AWSMediaLive.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
+
+    /**
      * Gets details about a channel
      * 
      * @param describeChannelRequest
@@ -276,6 +372,84 @@ public interface AWSMediaLive {
     DescribeInputSecurityGroupResult describeInputSecurityGroup(DescribeInputSecurityGroupRequest describeInputSecurityGroupRequest);
 
     /**
+     * Get details for an offering.
+     * 
+     * @param describeOfferingRequest
+     *        Placeholder documentation for DescribeOfferingRequest
+     * @return Result of the DescribeOffering operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to describe offering
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Offering you're attempting to describe does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe offering request
+     * @sample AWSMediaLive.DescribeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeOffering" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeOfferingResult describeOffering(DescribeOfferingRequest describeOfferingRequest);
+
+    /**
+     * Get details for a reservation.
+     * 
+     * @param describeReservationRequest
+     *        Placeholder documentation for DescribeReservationRequest
+     * @return Result of the DescribeReservation operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to describe reservation
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Reservation you're attempting to describe does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe reservation request
+     * @sample AWSMediaLive.DescribeReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeReservationResult describeReservation(DescribeReservationRequest describeReservationRequest);
+
+    /**
+     * Get a channel schedule
+     * 
+     * @param describeScheduleRequest
+     *        Placeholder documentation for DescribeScheduleRequest
+     * @return Result of the DescribeSchedule operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to describe the channel schedule.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The channel you're requesting a schedule describe for does not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe schedule calls.
+     * @sample AWSMediaLive.DescribeSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeScheduleResult describeSchedule(DescribeScheduleRequest describeScheduleRequest);
+
+    /**
      * Produces list of channels that have been created
      * 
      * @param listChannelsRequest
@@ -348,6 +522,102 @@ public interface AWSMediaLive {
     ListInputsResult listInputs(ListInputsRequest listInputsRequest);
 
     /**
+     * List offerings available for purchase.
+     * 
+     * @param listOfferingsRequest
+     *        Placeholder documentation for ListOfferingsRequest
+     * @return Result of the ListOfferings operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to list offerings
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list offerings request
+     * @sample AWSMediaLive.ListOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListOfferings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListOfferingsResult listOfferings(ListOfferingsRequest listOfferingsRequest);
+
+    /**
+     * List purchased reservations.
+     * 
+     * @param listReservationsRequest
+     *        Placeholder documentation for ListReservationsRequest
+     * @return Result of the ListReservations operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to list reservations
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list reservations request
+     * @sample AWSMediaLive.ListReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListReservations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListReservationsResult listReservations(ListReservationsRequest listReservationsRequest);
+
+    /**
+     * Produces list of tags that have been created for a resource
+     * 
+     * @param listTagsForResourceRequest
+     *        Placeholder documentation for ListTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws NotFoundException
+     *         The arn was not found
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         Access was denied
+     * @sample AWSMediaLive.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * Purchase an offering and create a reservation.
+     * 
+     * @param purchaseOfferingRequest
+     *        Placeholder documentation for PurchaseOfferingRequest
+     * @return Result of the PurchaseOffering operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to purchase the offering
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Offering you're attempting to purchase does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on purchase offering request
+     * @throws ConflictException
+     *         Offering purchase prevented by service resource issue
+     * @sample AWSMediaLive.PurchaseOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PurchaseOffering" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest);
+
+    /**
      * Starts an existing channel
      * 
      * @param startChannelRequest
@@ -409,10 +679,10 @@ public interface AWSMediaLive {
      * @param updateChannelRequest
      *        A request to update a channel.
      * @return Result of the UpdateChannel operation returned by the service.
-     * @throws UnprocessableEntityException
-     *         The channel configuration failed validation and could not be updated.
      * @throws BadRequestException
      *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         The channel configuration failed validation and could not be updated.
      * @throws InternalServerErrorException
      *         Unexpected internal service error.
      * @throws ForbiddenException

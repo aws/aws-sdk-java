@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,17 +38,21 @@ public class ListNotebookInstancesRequestMarshaller {
     private static final MarshallingInfo<String> NAMECONTAINS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NameContains").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIMEBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTimeBefore").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTimeBefore").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIMEAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTimeAfter").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTimeAfter").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIMEBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTimeBefore").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTimeBefore").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIMEAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTimeAfter").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTimeAfter").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUSEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusEquals").build();
     private static final MarshallingInfo<String> NOTEBOOKINSTANCELIFECYCLECONFIGNAMECONTAINS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotebookInstanceLifecycleConfigNameContains").build();
+    private static final MarshallingInfo<String> DEFAULTCODEREPOSITORYCONTAINS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultCodeRepositoryContains").build();
+    private static final MarshallingInfo<String> ADDITIONALCODEREPOSITORYEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalCodeRepositoryEquals").build();
 
     private static final ListNotebookInstancesRequestMarshaller instance = new ListNotebookInstancesRequestMarshaller();
 
@@ -78,6 +82,8 @@ public class ListNotebookInstancesRequestMarshaller {
             protocolMarshaller.marshall(listNotebookInstancesRequest.getStatusEquals(), STATUSEQUALS_BINDING);
             protocolMarshaller.marshall(listNotebookInstancesRequest.getNotebookInstanceLifecycleConfigNameContains(),
                     NOTEBOOKINSTANCELIFECYCLECONFIGNAMECONTAINS_BINDING);
+            protocolMarshaller.marshall(listNotebookInstancesRequest.getDefaultCodeRepositoryContains(), DEFAULTCODEREPOSITORYCONTAINS_BINDING);
+            protocolMarshaller.marshall(listNotebookInstancesRequest.getAdditionalCodeRepositoryEquals(), ADDITIONALCODEREPOSITORYEQUALS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

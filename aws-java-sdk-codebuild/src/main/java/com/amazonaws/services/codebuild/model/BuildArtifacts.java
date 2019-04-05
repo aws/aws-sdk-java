@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * The SHA-256 hash of the build artifact.
      * </p>
      * <p>
-     * You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     * You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      * </p>
      * <note>
      * <p>
@@ -53,7 +53,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * The MD5 hash of the build artifact.
      * </p>
      * <p>
-     * You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     * You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      * </p>
      * <note>
      * <p>
@@ -62,6 +62,26 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private String md5sum;
+    /**
+     * <p>
+     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
+     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * date and time to your artifact name so that it is always unique.
+     * </p>
+     */
+    private Boolean overrideArtifactName;
+    /**
+     * <p>
+     * Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     */
+    private Boolean encryptionDisabled;
+    /**
+     * <p>
+     * An identifier for this artifact definition.
+     * </p>
+     */
+    private String artifactIdentifier;
 
     /**
      * <p>
@@ -108,7 +128,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * The SHA-256 hash of the build artifact.
      * </p>
      * <p>
-     * You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     * You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      * </p>
      * <note>
      * <p>
@@ -119,7 +139,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * @param sha256sum
      *        The SHA-256 hash of the build artifact.</p>
      *        <p>
-     *        You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     *        You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      *        </p>
      *        <note>
      *        <p>
@@ -137,7 +157,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * The SHA-256 hash of the build artifact.
      * </p>
      * <p>
-     * You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     * You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      * </p>
      * <note>
      * <p>
@@ -147,7 +167,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The SHA-256 hash of the build artifact.</p>
      *         <p>
-     *         You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     *         You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      *         </p>
      *         <note>
      *         <p>
@@ -165,7 +185,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * The SHA-256 hash of the build artifact.
      * </p>
      * <p>
-     * You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     * You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      * </p>
      * <note>
      * <p>
@@ -176,7 +196,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * @param sha256sum
      *        The SHA-256 hash of the build artifact.</p>
      *        <p>
-     *        You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     *        You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      *        </p>
      *        <note>
      *        <p>
@@ -196,7 +216,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * The MD5 hash of the build artifact.
      * </p>
      * <p>
-     * You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     * You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      * </p>
      * <note>
      * <p>
@@ -207,7 +227,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * @param md5sum
      *        The MD5 hash of the build artifact.</p>
      *        <p>
-     *        You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     *        You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      *        </p>
      *        <note>
      *        <p>
@@ -225,7 +245,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * The MD5 hash of the build artifact.
      * </p>
      * <p>
-     * You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     * You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      * </p>
      * <note>
      * <p>
@@ -235,7 +255,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The MD5 hash of the build artifact.</p>
      *         <p>
-     *         You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     *         You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      *         </p>
      *         <note>
      *         <p>
@@ -253,7 +273,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * The MD5 hash of the build artifact.
      * </p>
      * <p>
-     * You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     * You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      * </p>
      * <note>
      * <p>
@@ -264,7 +284,7 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
      * @param md5sum
      *        The MD5 hash of the build artifact.</p>
      *        <p>
-     *        You can use this hash along with a checksum tool to confirm both file integrity and authenticity.
+     *        You can use this hash along with a checksum tool to confirm file integrity and authenticity.
      *        </p>
      *        <note>
      *        <p>
@@ -280,7 +300,168 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
+     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * date and time to your artifact name so that it is always unique.
+     * </p>
+     * 
+     * @param overrideArtifactName
+     *        If this flag is set, a name specified in the build spec file overrides the artifact name. The name
+     *        specified in a build spec file is calculated at build time and uses the Shell Command Language. For
+     *        example, you can append a date and time to your artifact name so that it is always unique.
+     */
+
+    public void setOverrideArtifactName(Boolean overrideArtifactName) {
+        this.overrideArtifactName = overrideArtifactName;
+    }
+
+    /**
+     * <p>
+     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
+     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * date and time to your artifact name so that it is always unique.
+     * </p>
+     * 
+     * @return If this flag is set, a name specified in the build spec file overrides the artifact name. The name
+     *         specified in a build spec file is calculated at build time and uses the Shell Command Language. For
+     *         example, you can append a date and time to your artifact name so that it is always unique.
+     */
+
+    public Boolean getOverrideArtifactName() {
+        return this.overrideArtifactName;
+    }
+
+    /**
+     * <p>
+     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
+     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * date and time to your artifact name so that it is always unique.
+     * </p>
+     * 
+     * @param overrideArtifactName
+     *        If this flag is set, a name specified in the build spec file overrides the artifact name. The name
+     *        specified in a build spec file is calculated at build time and uses the Shell Command Language. For
+     *        example, you can append a date and time to your artifact name so that it is always unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BuildArtifacts withOverrideArtifactName(Boolean overrideArtifactName) {
+        setOverrideArtifactName(overrideArtifactName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this flag is set, a name specified in the build spec file overrides the artifact name. The name specified in a
+     * build spec file is calculated at build time and uses the Shell Command Language. For example, you can append a
+     * date and time to your artifact name so that it is always unique.
+     * </p>
+     * 
+     * @return If this flag is set, a name specified in the build spec file overrides the artifact name. The name
+     *         specified in a build spec file is calculated at build time and uses the Shell Command Language. For
+     *         example, you can append a date and time to your artifact name so that it is always unique.
+     */
+
+    public Boolean isOverrideArtifactName() {
+        return this.overrideArtifactName;
+    }
+
+    /**
+     * <p>
+     * Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     * 
+     * @param encryptionDisabled
+     *        Information that tells you if encryption for build artifacts is disabled.
+     */
+
+    public void setEncryptionDisabled(Boolean encryptionDisabled) {
+        this.encryptionDisabled = encryptionDisabled;
+    }
+
+    /**
+     * <p>
+     * Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     * 
+     * @return Information that tells you if encryption for build artifacts is disabled.
+     */
+
+    public Boolean getEncryptionDisabled() {
+        return this.encryptionDisabled;
+    }
+
+    /**
+     * <p>
+     * Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     * 
+     * @param encryptionDisabled
+     *        Information that tells you if encryption for build artifacts is disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BuildArtifacts withEncryptionDisabled(Boolean encryptionDisabled) {
+        setEncryptionDisabled(encryptionDisabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     * 
+     * @return Information that tells you if encryption for build artifacts is disabled.
+     */
+
+    public Boolean isEncryptionDisabled() {
+        return this.encryptionDisabled;
+    }
+
+    /**
+     * <p>
+     * An identifier for this artifact definition.
+     * </p>
+     * 
+     * @param artifactIdentifier
+     *        An identifier for this artifact definition.
+     */
+
+    public void setArtifactIdentifier(String artifactIdentifier) {
+        this.artifactIdentifier = artifactIdentifier;
+    }
+
+    /**
+     * <p>
+     * An identifier for this artifact definition.
+     * </p>
+     * 
+     * @return An identifier for this artifact definition.
+     */
+
+    public String getArtifactIdentifier() {
+        return this.artifactIdentifier;
+    }
+
+    /**
+     * <p>
+     * An identifier for this artifact definition.
+     * </p>
+     * 
+     * @param artifactIdentifier
+     *        An identifier for this artifact definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BuildArtifacts withArtifactIdentifier(String artifactIdentifier) {
+        setArtifactIdentifier(artifactIdentifier);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -295,7 +476,13 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
         if (getSha256sum() != null)
             sb.append("Sha256sum: ").append(getSha256sum()).append(",");
         if (getMd5sum() != null)
-            sb.append("Md5sum: ").append(getMd5sum());
+            sb.append("Md5sum: ").append(getMd5sum()).append(",");
+        if (getOverrideArtifactName() != null)
+            sb.append("OverrideArtifactName: ").append(getOverrideArtifactName()).append(",");
+        if (getEncryptionDisabled() != null)
+            sb.append("EncryptionDisabled: ").append(getEncryptionDisabled()).append(",");
+        if (getArtifactIdentifier() != null)
+            sb.append("ArtifactIdentifier: ").append(getArtifactIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -322,6 +509,18 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMd5sum() != null && other.getMd5sum().equals(this.getMd5sum()) == false)
             return false;
+        if (other.getOverrideArtifactName() == null ^ this.getOverrideArtifactName() == null)
+            return false;
+        if (other.getOverrideArtifactName() != null && other.getOverrideArtifactName().equals(this.getOverrideArtifactName()) == false)
+            return false;
+        if (other.getEncryptionDisabled() == null ^ this.getEncryptionDisabled() == null)
+            return false;
+        if (other.getEncryptionDisabled() != null && other.getEncryptionDisabled().equals(this.getEncryptionDisabled()) == false)
+            return false;
+        if (other.getArtifactIdentifier() == null ^ this.getArtifactIdentifier() == null)
+            return false;
+        if (other.getArtifactIdentifier() != null && other.getArtifactIdentifier().equals(this.getArtifactIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -333,6 +532,9 @@ public class BuildArtifacts implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getSha256sum() == null) ? 0 : getSha256sum().hashCode());
         hashCode = prime * hashCode + ((getMd5sum() == null) ? 0 : getMd5sum().hashCode());
+        hashCode = prime * hashCode + ((getOverrideArtifactName() == null) ? 0 : getOverrideArtifactName().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionDisabled() == null) ? 0 : getEncryptionDisabled().hashCode());
+        hashCode = prime * hashCode + ((getArtifactIdentifier() == null) ? 0 : getArtifactIdentifier().hashCode());
         return hashCode;
     }
 

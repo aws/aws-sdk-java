@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,12 +28,22 @@ public class AbstractAWSCloudHSMV2 implements AWSCloudHSMV2 {
     }
 
     @Override
+    public CopyBackupToRegionResult copyBackupToRegion(CopyBackupToRegionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateClusterResult createCluster(CreateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateHsmResult createHsm(CreateHsmRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBackupResult deleteBackup(DeleteBackupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,6 +74,11 @@ public class AbstractAWSCloudHSMV2 implements AWSCloudHSMV2 {
 
     @Override
     public ListTagsResult listTags(ListTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RestoreBackupResult restoreBackup(RestoreBackupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

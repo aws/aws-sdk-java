@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,17 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
+    public ConnectCustomKeyStoreResult connectCustomKeyStore(ConnectCustomKeyStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAliasResult createAlias(CreateAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateCustomKeyStoreResult createCustomKeyStore(CreateCustomKeyStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,7 +83,17 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
+    public DeleteCustomKeyStoreResult deleteCustomKeyStore(DeleteCustomKeyStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteImportedKeyMaterialResult deleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCustomKeyStoresResult describeCustomKeyStores(DescribeCustomKeyStoresRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,6 +109,11 @@ public class AbstractAWSKMS implements AWSKMS {
 
     @Override
     public DisableKeyRotationResult disableKeyRotation(DisableKeyRotationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisconnectCustomKeyStoreResult disconnectCustomKeyStore(DisconnectCustomKeyStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -229,6 +254,11 @@ public class AbstractAWSKMS implements AWSKMS {
 
     @Override
     public UpdateAliasResult updateAlias(UpdateAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCustomKeyStoreResult updateCustomKeyStore(UpdateCustomKeyStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

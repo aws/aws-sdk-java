@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ package com.amazonaws.services.sns.util;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.internal.SdkThreadLocalsRegistry;
 import com.amazonaws.services.sns.message.SnsMessageManager;
 import com.amazonaws.util.Base64;
 import com.fasterxml.jackson.core.JsonFactory;
@@ -45,7 +46,7 @@ import java.util.TreeMap;
 @ThreadSafe
 public class SignatureChecker {
 
-    private static final ThreadLocal<Signature> SIG_CHECKER = new ThreadLocal<Signature>() {
+    private static final ThreadLocal<Signature> SIG_CHECKER = SdkThreadLocalsRegistry.register(new ThreadLocal<Signature>() {
         @Override
         protected Signature initialValue() {
             try {
@@ -54,7 +55,7 @@ public class SignatureChecker {
                 throw new SdkClientException("Could not create RSA Signature", e);
             }
         }
-    };
+    });
 
     private final String NOTIFICATION_TYPE = "Notification";
     private final String SUBSCRIBE_TYPE = "SubscriptionConfirmation";

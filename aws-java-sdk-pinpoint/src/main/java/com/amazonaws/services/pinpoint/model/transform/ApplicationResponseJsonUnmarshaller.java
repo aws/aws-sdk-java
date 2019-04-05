@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class ApplicationResponseJsonUnmarshaller implements Unmarshaller<Applica
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    applicationResponse.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     applicationResponse.setId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -55,6 +59,11 @@ public class ApplicationResponseJsonUnmarshaller implements Unmarshaller<Applica
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     applicationResponse.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    applicationResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

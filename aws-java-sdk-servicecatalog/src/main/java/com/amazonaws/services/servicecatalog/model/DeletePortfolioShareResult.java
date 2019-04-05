@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,58 @@ import javax.annotation.Generated;
 public class DeletePortfolioShareResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The portfolio share unique identifier. This will only be returned if delete is made to an organization node.
+     * </p>
+     */
+    private String portfolioShareToken;
+
+    /**
+     * <p>
+     * The portfolio share unique identifier. This will only be returned if delete is made to an organization node.
+     * </p>
+     * 
+     * @param portfolioShareToken
+     *        The portfolio share unique identifier. This will only be returned if delete is made to an organization
+     *        node.
+     */
+
+    public void setPortfolioShareToken(String portfolioShareToken) {
+        this.portfolioShareToken = portfolioShareToken;
+    }
+
+    /**
+     * <p>
+     * The portfolio share unique identifier. This will only be returned if delete is made to an organization node.
+     * </p>
+     * 
+     * @return The portfolio share unique identifier. This will only be returned if delete is made to an organization
+     *         node.
+     */
+
+    public String getPortfolioShareToken() {
+        return this.portfolioShareToken;
+    }
+
+    /**
+     * <p>
+     * The portfolio share unique identifier. This will only be returned if delete is made to an organization node.
+     * </p>
+     * 
+     * @param portfolioShareToken
+     *        The portfolio share unique identifier. This will only be returned if delete is made to an organization
+     *        node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeletePortfolioShareResult withPortfolioShareToken(String portfolioShareToken) {
+        setPortfolioShareToken(portfolioShareToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -34,6 +85,8 @@ public class DeletePortfolioShareResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPortfolioShareToken() != null)
+            sb.append("PortfolioShareToken: ").append(getPortfolioShareToken());
         sb.append("}");
         return sb.toString();
     }
@@ -48,6 +101,10 @@ public class DeletePortfolioShareResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof DeletePortfolioShareResult == false)
             return false;
         DeletePortfolioShareResult other = (DeletePortfolioShareResult) obj;
+        if (other.getPortfolioShareToken() == null ^ this.getPortfolioShareToken() == null)
+            return false;
+        if (other.getPortfolioShareToken() != null && other.getPortfolioShareToken().equals(this.getPortfolioShareToken()) == false)
+            return false;
         return true;
     }
 
@@ -56,6 +113,7 @@ public class DeletePortfolioShareResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPortfolioShareToken() == null) ? 0 : getPortfolioShareToken().hashCode());
         return hashCode;
     }
 

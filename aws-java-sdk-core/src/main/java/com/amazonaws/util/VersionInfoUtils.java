@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -153,7 +153,9 @@ public class VersionInfoUtils {
             .replace("{os.version}", replaceSpaces(System.getProperty("os.version")))
             .replace("{java.vm.name}", replaceSpaces(System.getProperty("java.vm.name")))
             .replace("{java.vm.version}", replaceSpaces(System.getProperty("java.vm.version")))
-            .replace("{java.version}", replaceSpaces(System.getProperty("java.version")));
+            .replace("{java.version}", replaceSpaces(System.getProperty("java.version")))
+            .replace("{java.vendor}", replaceSpaces(System.getProperty("java.vendor")))
+	    ;
 
         if (ua.contains("{additional.languages}")) {
             ua = ua.replace("{additional.languages}", getAdditionalJvmLanguages());

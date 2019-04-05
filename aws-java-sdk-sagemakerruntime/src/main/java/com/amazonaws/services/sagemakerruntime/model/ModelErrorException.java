@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class ModelErrorException extends com.amazonaws.services.sagemakerruntime
     private String originalMessage;
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the log stream.
+     * The Amazon Resource Name (ARN) of the log stream.
      * </p>
      */
     private String logStreamArn;
@@ -138,11 +138,11 @@ public class ModelErrorException extends com.amazonaws.services.sagemakerruntime
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the log stream.
+     * The Amazon Resource Name (ARN) of the log stream.
      * </p>
      * 
      * @param logStreamArn
-     *        Amazon Resource Name (ARN) of the log stream.
+     *        The Amazon Resource Name (ARN) of the log stream.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("LogStreamArn")
@@ -152,10 +152,10 @@ public class ModelErrorException extends com.amazonaws.services.sagemakerruntime
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the log stream.
+     * The Amazon Resource Name (ARN) of the log stream.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of the log stream.
+     * @return The Amazon Resource Name (ARN) of the log stream.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("LogStreamArn")
@@ -165,11 +165,11 @@ public class ModelErrorException extends com.amazonaws.services.sagemakerruntime
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the log stream.
+     * The Amazon Resource Name (ARN) of the log stream.
      * </p>
      * 
      * @param logStreamArn
-     *        Amazon Resource Name (ARN) of the log stream.
+     *        The Amazon Resource Name (ARN) of the log stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,25 +38,25 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
     private String taskExecutionId;
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      */
     private String serviceRole;
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The parameters passed to the task when it was executed.
+     * The parameters passed to the task when it was run.
      * </p>
      * <note>
      * <p>
@@ -203,11 +203,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the executed task.
+     *        The ARN of the task that ran.
      */
 
     public void setTaskArn(String taskArn) {
@@ -216,10 +216,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
-     * @return The ARN of the executed task.
+     * @return The ARN of the task that ran.
      */
 
     public String getTaskArn() {
@@ -228,11 +228,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ARN of the executed task.
+     * The ARN of the task that ran.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the executed task.
+     *        The ARN of the task that ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +243,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      * 
      * @param serviceRole
-     *        The role that was assumed when executing the task.
+     *        The role that was assumed when running the task.
      */
 
     public void setServiceRole(String serviceRole) {
@@ -256,10 +256,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      * 
-     * @return The role that was assumed when executing the task.
+     * @return The role that was assumed when running the task.
      */
 
     public String getServiceRole() {
@@ -268,11 +268,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The role that was assumed when executing the task.
+     * The role that was assumed when running the task.
      * </p>
      * 
      * @param serviceRole
-     *        The role that was assumed when executing the task.
+     *        The role that was assumed when running the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,11 +283,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @see MaintenanceWindowTaskType
      */
 
@@ -297,10 +297,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
-     * @return The type of task executed.
+     * @return The type of task that was run.
      * @see MaintenanceWindowTaskType
      */
 
@@ -310,11 +310,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -326,11 +326,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @see MaintenanceWindowTaskType
      */
 
@@ -340,11 +340,11 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The type of task executed.
+     * The type of task that was run.
      * </p>
      * 
      * @param type
-     *        The type of task executed.
+     *        The type of task that was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -356,7 +356,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed.
+     * The parameters passed to the task when it was run.
      * </p>
      * <note>
      * <p>
@@ -376,7 +376,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * 
-     * @return The parameters passed to the task when it was executed.</p> <note>
+     * @return The parameters passed to the task when it was run.</p> <note>
      *         <p>
      *         <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *         instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure.
@@ -403,7 +403,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed.
+     * The parameters passed to the task when it was run.
      * </p>
      * <note>
      * <p>
@@ -424,7 +424,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param taskParameters
-     *        The parameters passed to the task when it was executed.</p> <note>
+     *        The parameters passed to the task when it was run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
@@ -453,7 +453,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed.
+     * The parameters passed to the task when it was run.
      * </p>
      * <note>
      * <p>
@@ -479,7 +479,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param taskParameters
-     *        The parameters passed to the task when it was executed.</p> <note>
+     *        The parameters passed to the task when it was run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
@@ -511,7 +511,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The parameters passed to the task when it was executed.
+     * The parameters passed to the task when it was run.
      * </p>
      * <note>
      * <p>
@@ -532,7 +532,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param taskParameters
-     *        The parameters passed to the task when it was executed.</p> <note>
+     *        The parameters passed to the task when it was run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
@@ -877,7 +877,8 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -898,7 +899,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getTaskParameters() != null)
-            sb.append("TaskParameters: ").append(getTaskParameters()).append(",");
+            sb.append("TaskParameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getPriority() != null)
             sb.append("Priority: ").append(getPriority()).append(",");
         if (getMaxConcurrency() != null)

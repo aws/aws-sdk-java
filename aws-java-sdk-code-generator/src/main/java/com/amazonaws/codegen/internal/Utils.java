@@ -15,9 +15,9 @@
 
 package com.amazonaws.codegen.internal;
 
+import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 import com.amazonaws.codegen.model.intermediate.Metadata;
-import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ShapeMarshaller;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.service.Input;
@@ -32,6 +32,8 @@ import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 import static com.amazonaws.codegen.internal.Constants.LOGGER;
 
@@ -66,6 +68,17 @@ public class Utils {
         return interfaceNamePrefix + Constants.ASYNC_SUFFIX;
     }
 
+    public static String deriveServiceId(String interfaceName) {
+        String serviceId = interfaceName;
+
+        if (interfaceName.startsWith("AWS")) {
+            serviceId = interfaceName.substring(3);
+        } else if (interfaceName.startsWith("Amazon")) {
+            serviceId = interfaceName.substring(6);
+        }
+        return serviceId;
+    }
+
     public static String getClientName(String clientNamePrefix) {
         return clientNamePrefix + Constants.CLIENT_NAME_SUFFIX;
     }
@@ -78,6 +91,10 @@ public class Utils {
         return name.length() < 2 ? StringUtils.lowerCase(name) : StringUtils.lowerCase(name.substring(0, 1))
                  + name.substring(1);
 
+    }
+
+    public static Stream<String> sanitize(String toBeSanitized) {
+        return Arrays.stream(toBeSanitized.split("[.]|\\W")).filter(StringUtils::hasValue);
     }
 
     public static String capitialize(String name) {
@@ -93,7 +110,11 @@ public class Utils {
      * * @param serviceModel Service model to get prefix for.
      * * @return Prefix to use when writing model files (service and intermediate).
      */
-    public static String getFileNamePrefix(ServiceModel serviceModel) {
+    public static String getFileNamePrefix(ServiceModel serviceModel, CustomizationConfig customizationConfig) {
+        if (customizationConfig.isUseUidAsFilePrefix() && serviceModel.getMetadata().getUid() != null) {
+            return serviceModel.getMetadata().getUid();
+        }
+
         return String.format("%s-%s", serviceModel.getMetadata().getEndpointPrefix(), serviceModel.getMetadata().getApiVersion());
     }
 

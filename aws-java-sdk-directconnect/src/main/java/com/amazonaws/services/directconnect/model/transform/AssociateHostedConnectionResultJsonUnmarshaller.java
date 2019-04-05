@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,7 +86,7 @@ public class AssociateHostedConnectionResultJsonUnmarshaller implements Unmarsha
                 }
                 if (context.testExpression("loaIssueTime", targetDepth)) {
                     context.nextToken();
-                    associateHostedConnectionResult.setLoaIssueTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    associateHostedConnectionResult.setLoaIssueTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lagId", targetDepth)) {
                     context.nextToken();
@@ -95,6 +95,18 @@ public class AssociateHostedConnectionResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("awsDevice", targetDepth)) {
                     context.nextToken();
                     associateHostedConnectionResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    associateHostedConnectionResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    associateHostedConnectionResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
+                    context.nextToken();
+                    associateHostedConnectionResult.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

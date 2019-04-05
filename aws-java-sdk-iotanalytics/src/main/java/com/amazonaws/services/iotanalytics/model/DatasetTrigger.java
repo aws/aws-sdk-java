@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Schedule schedule;
+    /**
+     * <p>
+     * The data set whose content creation triggers the creation of this data set's contents.
+     * </p>
+     */
+    private TriggeringDataset dataset;
 
     /**
      * <p>
@@ -76,7 +82,48 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The data set whose content creation triggers the creation of this data set's contents.
+     * </p>
+     * 
+     * @param dataset
+     *        The data set whose content creation triggers the creation of this data set's contents.
+     */
+
+    public void setDataset(TriggeringDataset dataset) {
+        this.dataset = dataset;
+    }
+
+    /**
+     * <p>
+     * The data set whose content creation triggers the creation of this data set's contents.
+     * </p>
+     * 
+     * @return The data set whose content creation triggers the creation of this data set's contents.
+     */
+
+    public TriggeringDataset getDataset() {
+        return this.dataset;
+    }
+
+    /**
+     * <p>
+     * The data set whose content creation triggers the creation of this data set's contents.
+     * </p>
+     * 
+     * @param dataset
+     *        The data set whose content creation triggers the creation of this data set's contents.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatasetTrigger withDataset(TriggeringDataset dataset) {
+        setDataset(dataset);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -87,7 +134,9 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSchedule() != null)
-            sb.append("Schedule: ").append(getSchedule());
+            sb.append("Schedule: ").append(getSchedule()).append(",");
+        if (getDataset() != null)
+            sb.append("Dataset: ").append(getDataset());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +155,10 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSchedule() != null && other.getSchedule().equals(this.getSchedule()) == false)
             return false;
+        if (other.getDataset() == null ^ this.getDataset() == null)
+            return false;
+        if (other.getDataset() != null && other.getDataset().equals(this.getDataset()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +168,7 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
+        hashCode = prime * hashCode + ((getDataset() == null) ? 0 : getDataset().hashCode());
         return hashCode;
     }
 

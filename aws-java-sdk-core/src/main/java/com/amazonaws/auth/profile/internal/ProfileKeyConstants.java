@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 package com.amazonaws.auth.profile.internal;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.auth.ProcessCredentialsProvider;
 
 /**
  * Keys the Java SDK uses in the CLI credentials and config files.
@@ -61,4 +62,16 @@ public class ProfileKeyConstants {
      * AWS Region to use when creating clients.
      */
     public static final String REGION = "region";
+
+    /**
+     * Endpoint discovery setting when creating clients
+     */
+    public static final String ENDPOINT_DISCOVERY = "aws_enable_endpoint_discovery";
+
+    /**
+     * An external process that should be invoked to load credentials.
+     *
+     * @see ProcessCredentialsProvider
+     */
+    public static final String CREDENTIAL_PROCESS = "credential_process";
 }

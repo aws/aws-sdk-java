@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,8 @@ public class CreateReplicationInstanceRequestMarshaller {
             .marshallLocationName("KmsKeyId").build();
     private static final MarshallingInfo<Boolean> PUBLICLYACCESSIBLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PubliclyAccessible").build();
+    private static final MarshallingInfo<String> DNSNAMESERVERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsNameServers").build();
 
     private static final CreateReplicationInstanceRequestMarshaller instance = new CreateReplicationInstanceRequestMarshaller();
 
@@ -84,6 +86,7 @@ public class CreateReplicationInstanceRequestMarshaller {
             protocolMarshaller.marshall(createReplicationInstanceRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createReplicationInstanceRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createReplicationInstanceRequest.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
+            protocolMarshaller.marshall(createReplicationInstanceRequest.getDnsNameServers(), DNSNAMESERVERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

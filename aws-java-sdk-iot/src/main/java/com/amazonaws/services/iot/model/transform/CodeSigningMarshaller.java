@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class CodeSigningMarshaller {
 
     private static final MarshallingInfo<String> AWSSIGNERJOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsSignerJobId").build();
+    private static final MarshallingInfo<StructuredPojo> STARTSIGNINGJOBPARAMETER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startSigningJobParameter").build();
     private static final MarshallingInfo<StructuredPojo> CUSTOMCODESIGNING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customCodeSigning").build();
 
@@ -49,6 +51,7 @@ public class CodeSigningMarshaller {
 
         try {
             protocolMarshaller.marshall(codeSigning.getAwsSignerJobId(), AWSSIGNERJOBID_BINDING);
+            protocolMarshaller.marshall(codeSigning.getStartSigningJobParameter(), STARTSIGNINGJOBPARAMETER_BINDING);
             protocolMarshaller.marshall(codeSigning.getCustomCodeSigning(), CUSTOMCODESIGNING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

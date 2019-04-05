@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,22 +32,22 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
     private String statusMessage;
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      */
     private VideoMetadata videoMetadata;
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of persons.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of persons.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * An array of the persons detected in the video and the times they are tracked throughout the video. An array
-     * element will exist for each time the person is tracked.
+     * An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An
+     * array element will exist for each time a person's path is tracked.
      * </p>
      */
     private java.util.List<PersonDetection> persons;
@@ -153,13 +153,13 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
      * @param videoMetadata
-     *        Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every
-     *        page of paginated responses from a Rekognition Video operation.
+     *        Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *        in every page of paginated responses from a Amazon Rekognition Video operation.
      */
 
     public void setVideoMetadata(VideoMetadata videoMetadata) {
@@ -168,12 +168,12 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
-     * @return Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in
-     *         every page of paginated responses from a Rekognition Video operation.
+     * @return Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *         in every page of paginated responses from a Amazon Rekognition Video operation.
      */
 
     public VideoMetadata getVideoMetadata() {
@@ -182,13 +182,13 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
      * @param videoMetadata
-     *        Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every
-     *        page of paginated responses from a Rekognition Video operation.
+     *        Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *        in every page of paginated responses from a Amazon Rekognition Video operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,13 +199,13 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of persons.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of persons.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of persons.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of persons.
      */
 
     public void setNextToken(String nextToken) {
@@ -214,12 +214,12 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of persons.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of persons.
      * </p>
      * 
-     * @return If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *         request to retrieve the next set of persons.
+     * @return If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *         subsequent request to retrieve the next set of persons.
      */
 
     public String getNextToken() {
@@ -228,13 +228,13 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of persons.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of persons.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of persons.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of persons.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,12 +245,12 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of the persons detected in the video and the times they are tracked throughout the video. An array
-     * element will exist for each time the person is tracked.
+     * An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An
+     * array element will exist for each time a person's path is tracked.
      * </p>
      * 
-     * @return An array of the persons detected in the video and the times they are tracked throughout the video. An
-     *         array element will exist for each time the person is tracked.
+     * @return An array of the persons detected in the video and the time(s) their path was tracked throughout the
+     *         video. An array element will exist for each time a person's path is tracked.
      */
 
     public java.util.List<PersonDetection> getPersons() {
@@ -259,13 +259,13 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of the persons detected in the video and the times they are tracked throughout the video. An array
-     * element will exist for each time the person is tracked.
+     * An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An
+     * array element will exist for each time a person's path is tracked.
      * </p>
      * 
      * @param persons
-     *        An array of the persons detected in the video and the times they are tracked throughout the video. An
-     *        array element will exist for each time the person is tracked.
+     *        An array of the persons detected in the video and the time(s) their path was tracked throughout the video.
+     *        An array element will exist for each time a person's path is tracked.
      */
 
     public void setPersons(java.util.Collection<PersonDetection> persons) {
@@ -279,8 +279,8 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of the persons detected in the video and the times they are tracked throughout the video. An array
-     * element will exist for each time the person is tracked.
+     * An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An
+     * array element will exist for each time a person's path is tracked.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -289,8 +289,8 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param persons
-     *        An array of the persons detected in the video and the times they are tracked throughout the video. An
-     *        array element will exist for each time the person is tracked.
+     *        An array of the persons detected in the video and the time(s) their path was tracked throughout the video.
+     *        An array element will exist for each time a person's path is tracked.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,13 +306,13 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * An array of the persons detected in the video and the times they are tracked throughout the video. An array
-     * element will exist for each time the person is tracked.
+     * An array of the persons detected in the video and the time(s) their path was tracked throughout the video. An
+     * array element will exist for each time a person's path is tracked.
      * </p>
      * 
      * @param persons
-     *        An array of the persons detected in the video and the times they are tracked throughout the video. An
-     *        array element will exist for each time the person is tracked.
+     *        An array of the persons detected in the video and the time(s) their path was tracked throughout the video.
+     *        An array element will exist for each time a person's path is tracked.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,7 +322,8 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

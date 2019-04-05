@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
      * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      */
@@ -81,7 +81,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      */
@@ -183,14 +183,14 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
      * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @return Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
      *         a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
      *         href=
-     *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *         >Start a Game Session</a>).
      */
 
@@ -202,7 +202,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
      * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
@@ -210,7 +210,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
      *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
      *        href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      */
 
@@ -227,7 +227,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
      * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * <p>
@@ -240,7 +240,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
      *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
      *        href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -259,7 +259,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
      * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
@@ -267,7 +267,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
      *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
      *        href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -517,14 +517,14 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameSessionData
      *        Set of custom game session properties, formatted as a single string value. This data is passed to a game
      *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      */
 
@@ -536,13 +536,13 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @return Set of custom game session properties, formatted as a single string value. This data is passed to a game
      *         server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *         >Start a Game Session</a>).
      */
 
@@ -554,14 +554,14 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameSessionData
      *        Set of custom game session properties, formatted as a single string value. This data is passed to a game
      *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -572,7 +572,8 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

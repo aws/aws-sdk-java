@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,9 @@ public enum Dimension {
     DEPLOYMENT_OPTION("DEPLOYMENT_OPTION"),
     DATABASE_ENGINE("DATABASE_ENGINE"),
     CACHE_ENGINE("CACHE_ENGINE"),
-    INSTANCE_TYPE_FAMILY("INSTANCE_TYPE_FAMILY");
+    INSTANCE_TYPE_FAMILY("INSTANCE_TYPE_FAMILY"),
+    BILLING_ENTITY("BILLING_ENTITY"),
+    RESERVATION_ID("RESERVATION_ID");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The configuration for a resource isn't valid. A resource must either be able to auto-respond to requests or have at
- * least one delegate associated that can do it on its behalf.
+ * least one delegate associated that can do so on its behalf.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

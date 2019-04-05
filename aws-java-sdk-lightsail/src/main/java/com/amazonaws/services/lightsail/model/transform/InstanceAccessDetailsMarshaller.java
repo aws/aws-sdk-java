@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -30,7 +31,7 @@ public class InstanceAccessDetailsMarshaller {
     private static final MarshallingInfo<String> CERTKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("certKey").build();
     private static final MarshallingInfo<java.util.Date> EXPIRESAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("expiresAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("expiresAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> IPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ipAddress").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -45,6 +46,8 @@ public class InstanceAccessDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceName").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("username").build();
+    private static final MarshallingInfo<List> HOSTKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("hostKeys").build();
 
     private static final InstanceAccessDetailsMarshaller instance = new InstanceAccessDetailsMarshaller();
 
@@ -71,6 +74,7 @@ public class InstanceAccessDetailsMarshaller {
             protocolMarshaller.marshall(instanceAccessDetails.getProtocol(), PROTOCOL_BINDING);
             protocolMarshaller.marshall(instanceAccessDetails.getInstanceName(), INSTANCENAME_BINDING);
             protocolMarshaller.marshall(instanceAccessDetails.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(instanceAccessDetails.getHostKeys(), HOSTKEYS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

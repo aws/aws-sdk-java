@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,25 +16,30 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import static com.amazonaws.services.s3.internal.Constants.MAXIMUM_UPLOAD_PARTS;
 
-import java.io.File;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
-
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Encryption;
+import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.PauseStatus;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.TransferManagerConfiguration;
 import com.amazonaws.util.ValidationUtils;
+import java.io.File;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Internal utilities for multipart uploads with TransferManager.
  */
 public class TransferManagerUtils {
+
+    private static final Log log = LogFactory.getLog(TransferManagerUtils.class);
 
     /**
      * Returns a new thread pool configured with the default settings.
@@ -133,7 +138,8 @@ public class TransferManagerUtils {
      */
     public static boolean shouldUseMultipartUpload(PutObjectRequest putObjectRequest, TransferManagerConfiguration configuration) {
         long contentLength = TransferManagerUtils.getContentLength(putObjectRequest);
-        return (contentLength > configuration.getMultipartUploadThreshold());
+        return contentLength > configuration.getMultipartUploadThreshold();
+
     }
 
     /**
@@ -209,5 +215,36 @@ public class TransferManagerUtils {
             return false;
         }
         return true;
+    }
+
+    /**
+     * Returns the content length of the object if response contains the Content-Range header
+     * and is well formed.
+     *
+     * If the Content-Range header is missing or header is malformed or content length is missing in the header value,
+     * then a null value is returned.
+     * <b>Note: If there is exception parsing the value, the exception is logged and a null value is returned.</b>
+     *
+     * For example,
+     * Retuns 1234, if Content-Range value is bytes 42-1233/1234
+     * Retuns null, if Content-Range value is missing
+     * Retuns null, if Content-Range value is not well formed bytes 42-1233/*
+     */
+    public static Long getContentLengthFromContentRange(ObjectMetadata metadata) {
+        ValidationUtils.assertNotNull(metadata, "Object metadata");
+
+        String contentRange = (String) metadata.getRawMetadataValue(Headers.CONTENT_RANGE);
+
+        if (contentRange != null) {
+            try {
+                String[] tokens = contentRange.split("[ -/]+");
+                return Long.parseLong(tokens[3]);
+            } catch (Exception e) {
+                log.info(String.format("Error parsing 'Content-Range' header value: %s. So returning "
+                                       + "null value for content length", contentRange), e);
+            }
+        }
+
+        return null;
     }
 }

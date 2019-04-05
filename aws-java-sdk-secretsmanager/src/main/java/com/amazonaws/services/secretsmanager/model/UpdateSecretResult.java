@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The ARN of this secret.
+     * The ARN of the secret that was updated.
      * </p>
      * <note>
      * <p>
@@ -39,20 +39,21 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
     private String aRN;
     /**
      * <p>
-     * The friendly name of this secret.
+     * The friendly name of the secret that was updated.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * If a version of the secret was created or updated by this operation, then its unique identifier is returned.
+     * If a new version of the secret was created by this operation, then <code>VersionId</code> contains the unique
+     * identifier of the new version.
      * </p>
      */
     private String versionId;
 
     /**
      * <p>
-     * The ARN of this secret.
+     * The ARN of the secret that was updated.
      * </p>
      * <note>
      * <p>
@@ -64,7 +65,7 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
      * </note>
      * 
      * @param aRN
-     *        The ARN of this secret.</p> <note>
+     *        The ARN of the secret that was updated.</p> <note>
      *        <p>
      *        Secrets Manager automatically adds several random characters to the name at the end of the ARN when you
      *        initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that
@@ -80,7 +81,7 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The ARN of this secret.
+     * The ARN of the secret that was updated.
      * </p>
      * <note>
      * <p>
@@ -91,7 +92,7 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * </note>
      * 
-     * @return The ARN of this secret.</p> <note>
+     * @return The ARN of the secret that was updated.</p> <note>
      *         <p>
      *         Secrets Manager automatically adds several random characters to the name at the end of the ARN when you
      *         initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that
@@ -107,7 +108,7 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The ARN of this secret.
+     * The ARN of the secret that was updated.
      * </p>
      * <note>
      * <p>
@@ -119,7 +120,7 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
      * </note>
      * 
      * @param aRN
-     *        The ARN of this secret.</p> <note>
+     *        The ARN of the secret that was updated.</p> <note>
      *        <p>
      *        Secrets Manager automatically adds several random characters to the name at the end of the ARN when you
      *        initially create a secret. This affects only the ARN and not the actual friendly name. This ensures that
@@ -137,11 +138,11 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The friendly name of this secret.
+     * The friendly name of the secret that was updated.
      * </p>
      * 
      * @param name
-     *        The friendly name of this secret.
+     *        The friendly name of the secret that was updated.
      */
 
     public void setName(String name) {
@@ -150,10 +151,10 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The friendly name of this secret.
+     * The friendly name of the secret that was updated.
      * </p>
      * 
-     * @return The friendly name of this secret.
+     * @return The friendly name of the secret that was updated.
      */
 
     public String getName() {
@@ -162,11 +163,11 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The friendly name of this secret.
+     * The friendly name of the secret that was updated.
      * </p>
      * 
      * @param name
-     *        The friendly name of this secret.
+     *        The friendly name of the secret that was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,12 +178,13 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * If a version of the secret was created or updated by this operation, then its unique identifier is returned.
+     * If a new version of the secret was created by this operation, then <code>VersionId</code> contains the unique
+     * identifier of the new version.
      * </p>
      * 
      * @param versionId
-     *        If a version of the secret was created or updated by this operation, then its unique identifier is
-     *        returned.
+     *        If a new version of the secret was created by this operation, then <code>VersionId</code> contains the
+     *        unique identifier of the new version.
      */
 
     public void setVersionId(String versionId) {
@@ -191,11 +193,12 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * If a version of the secret was created or updated by this operation, then its unique identifier is returned.
+     * If a new version of the secret was created by this operation, then <code>VersionId</code> contains the unique
+     * identifier of the new version.
      * </p>
      * 
-     * @return If a version of the secret was created or updated by this operation, then its unique identifier is
-     *         returned.
+     * @return If a new version of the secret was created by this operation, then <code>VersionId</code> contains the
+     *         unique identifier of the new version.
      */
 
     public String getVersionId() {
@@ -204,12 +207,13 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * If a version of the secret was created or updated by this operation, then its unique identifier is returned.
+     * If a new version of the secret was created by this operation, then <code>VersionId</code> contains the unique
+     * identifier of the new version.
      * </p>
      * 
      * @param versionId
-     *        If a version of the secret was created or updated by this operation, then its unique identifier is
-     *        returned.
+     *        If a new version of the secret was created by this operation, then <code>VersionId</code> contains the
+     *        unique identifier of the new version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,7 +223,8 @@ public class UpdateSecretResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

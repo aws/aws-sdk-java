@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,7 @@ public enum CloudWatchRegion {
     ApNortheast1("ap-northeast-1"),
     ApNortheast2("ap-northeast-2"),
     ApNortheast3("ap-northeast-3"),
+    EuNorth1("eu-north-1"),
     SaEast1("sa-east-1");
 
     private String value;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class FileGroupSettings implements Serializable, Cloneable, StructuredPoj
      * input file. If your job has multiple inputs, the service uses the filename of the first input file.
      */
     private String destination;
+    /** Settings associated with the destination. Will vary based on the type of destination */
+    private DestinationSettings destinationSettings;
 
     /**
      * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
@@ -83,7 +85,42 @@ public class FileGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @param destinationSettings
+     *        Settings associated with the destination. Will vary based on the type of destination
+     */
+
+    public void setDestinationSettings(DestinationSettings destinationSettings) {
+        this.destinationSettings = destinationSettings;
+    }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @return Settings associated with the destination. Will vary based on the type of destination
+     */
+
+    public DestinationSettings getDestinationSettings() {
+        return this.destinationSettings;
+    }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @param destinationSettings
+     *        Settings associated with the destination. Will vary based on the type of destination
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileGroupSettings withDestinationSettings(DestinationSettings destinationSettings) {
+        setDestinationSettings(destinationSettings);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -94,7 +131,9 @@ public class FileGroupSettings implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestination() != null)
-            sb.append("Destination: ").append(getDestination());
+            sb.append("Destination: ").append(getDestination()).append(",");
+        if (getDestinationSettings() != null)
+            sb.append("DestinationSettings: ").append(getDestinationSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -113,6 +152,10 @@ public class FileGroupSettings implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
             return false;
+        if (other.getDestinationSettings() == null ^ this.getDestinationSettings() == null)
+            return false;
+        if (other.getDestinationSettings() != null && other.getDestinationSettings().equals(this.getDestinationSettings()) == false)
+            return false;
         return true;
     }
 
@@ -122,6 +165,7 @@ public class FileGroupSettings implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
+        hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());
         return hashCode;
     }
 

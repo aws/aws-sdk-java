@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ import javax.annotation.Generated;
  * >Cache Behaviors</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CacheBehavior" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CacheBehavior" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -81,7 +81,7 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior.
+     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
      * </p>
      */
     private String targetOriginId;
@@ -224,7 +224,12 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      */
     private LambdaFunctionAssociations lambdaFunctionAssociations;
-
+    /**
+     * <p>
+     * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
+     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * </p>
+     */
     private String fieldLevelEncryptionId;
 
     /**
@@ -372,12 +377,13 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior.
+     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
      * </p>
      * 
      * @param targetOriginId
      *        The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request
-     *        matches the path pattern either for a cache behavior or for the default cache behavior.
+     *        matches the path pattern either for a cache behavior or for the default cache behavior in your
+     *        distribution.
      */
 
     public void setTargetOriginId(String targetOriginId) {
@@ -387,11 +393,12 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior.
+     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
      * </p>
      * 
      * @return The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request
-     *         matches the path pattern either for a cache behavior or for the default cache behavior.
+     *         matches the path pattern either for a cache behavior or for the default cache behavior in your
+     *         distribution.
      */
 
     public String getTargetOriginId() {
@@ -401,12 +408,13 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request matches
-     * the path pattern either for a cache behavior or for the default cache behavior.
+     * the path pattern either for a cache behavior or for the default cache behavior in your distribution.
      * </p>
      * 
      * @param targetOriginId
      *        The value of <code>ID</code> for the origin that you want CloudFront to route requests to when a request
-     *        matches the path pattern either for a cache behavior or for the default cache behavior.
+     *        matches the path pattern either for a cache behavior or for the default cache behavior in your
+     *        distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1521,7 +1529,15 @@ public class CacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
+     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * </p>
+     * 
      * @param fieldLevelEncryptionId
+     *        The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use
+     *        for encrypting specific fields of data for a cache behavior or for the default cache behavior in your
+     *        distribution.
      */
 
     public void setFieldLevelEncryptionId(String fieldLevelEncryptionId) {
@@ -1529,7 +1545,14 @@ public class CacheBehavior implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
+     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * </p>
+     * 
+     * @return The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use
+     *         for encrypting specific fields of data for a cache behavior or for the default cache behavior in your
+     *         distribution.
      */
 
     public String getFieldLevelEncryptionId() {
@@ -1537,7 +1560,15 @@ public class CacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
+     * encrypting specific fields of data for a cache behavior or for the default cache behavior in your distribution.
+     * </p>
+     * 
      * @param fieldLevelEncryptionId
+     *        The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use
+     *        for encrypting specific fields of data for a cache behavior or for the default cache behavior in your
+     *        distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1547,7 +1578,8 @@ public class CacheBehavior implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class CreateGroupVersionRequestMarshaller {
 
     private static final MarshallingInfo<String> AMZNCLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-Client-Token").build();
+    private static final MarshallingInfo<String> CONNECTORDEFINITIONVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectorDefinitionVersionArn").build();
     private static final MarshallingInfo<String> COREDEFINITIONVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CoreDefinitionVersionArn").build();
     private static final MarshallingInfo<String> DEVICEDEFINITIONVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +63,7 @@ public class CreateGroupVersionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createGroupVersionRequest.getAmznClientToken(), AMZNCLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createGroupVersionRequest.getConnectorDefinitionVersionArn(), CONNECTORDEFINITIONVERSIONARN_BINDING);
             protocolMarshaller.marshall(createGroupVersionRequest.getCoreDefinitionVersionArn(), COREDEFINITIONVERSIONARN_BINDING);
             protocolMarshaller.marshall(createGroupVersionRequest.getDeviceDefinitionVersionArn(), DEVICEDEFINITIONVERSIONARN_BINDING);
             protocolMarshaller.marshall(createGroupVersionRequest.getFunctionDefinitionVersionArn(), FUNCTIONDEFINITIONVERSIONARN_BINDING);

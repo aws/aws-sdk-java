@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,11 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of
      * Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the
      * previous response to get information about another batch of Protections.
+     * </p>
+     * <p>
+     * AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
+     * MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
+     * <code>NextToken</code>.
      * </p>
      */
     private String nextToken;
@@ -116,12 +121,21 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the
      * previous response to get information about another batch of Protections.
      * </p>
+     * <p>
+     * AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
+     * MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
+     * <code>NextToken</code>.
+     * </p>
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> and you have more Protections than the value of
      *        MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another
      *        group of Protections. For the second and subsequent ListProtections requests, specify the value of
-     *        NextToken from the previous response to get information about another batch of Protections.
+     *        NextToken from the previous response to get information about another batch of Protections.</p>
+     *        <p>
+     *        AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
+     *        MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
+     *        <code>NextToken</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -135,11 +149,20 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the
      * previous response to get information about another batch of Protections.
      * </p>
+     * <p>
+     * AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
+     * MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
+     * <code>NextToken</code>.
+     * </p>
      * 
      * @return If you specify a value for <code>MaxResults</code> and you have more Protections than the value of
      *         MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another
      *         group of Protections. For the second and subsequent ListProtections requests, specify the value of
-     *         NextToken from the previous response to get information about another batch of Protections.
+     *         NextToken from the previous response to get information about another batch of Protections.</p>
+     *         <p>
+     *         AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified
+     *         by MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
+     *         <code>NextToken</code>.
      */
 
     public String getNextToken() {
@@ -153,12 +176,21 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the
      * previous response to get information about another batch of Protections.
      * </p>
+     * <p>
+     * AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
+     * MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
+     * <code>NextToken</code>.
+     * </p>
      * 
      * @param nextToken
      *        If you specify a value for <code>MaxResults</code> and you have more Protections than the value of
      *        MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another
      *        group of Protections. For the second and subsequent ListProtections requests, specify the value of
-     *        NextToken from the previous response to get information about another batch of Protections.
+     *        NextToken from the previous response to get information about another batch of Protections.</p>
+     *        <p>
+     *        AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
+     *        MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
+     *        <code>NextToken</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,7 +200,8 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,10 +54,6 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * for guidelines.
      * </p>
      * <p>
-     * To play video on the console, the media must be H.264 encoded, and you need to specify this video type in this
-     * parameter as <code>video/h264</code>.
-     * </p>
-     * <p>
      * This parameter is optional; the default value is <code>null</code> (or empty in JSON).
      * </p>
      */
@@ -72,7 +68,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      * >DescribeKey</a>.
      * </p>
      */
@@ -85,8 +81,19 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The default value is 0, indicating that the stream does not persist data.
      * </p>
+     * <p>
+     * When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in
+     * the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB.
+     * Fragments are removed from the buffer when either limit is reached.
+     * </p>
      */
     private Integer dataRetentionInHours;
+    /**
+     * <p>
+     * A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -216,10 +223,6 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * for guidelines.
      * </p>
      * <p>
-     * To play video on the console, the media must be H.264 encoded, and you need to specify this video type in this
-     * parameter as <code>video/h264</code>.
-     * </p>
-     * <p>
      * This parameter is optional; the default value is <code>null</code> (or empty in JSON).
      * </p>
      * 
@@ -229,10 +232,6 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to
      *        specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      *        Requirements</a> for guidelines.</p>
-     *        <p>
-     *        To play video on the console, the media must be H.264 encoded, and you need to specify this video type in
-     *        this parameter as <code>video/h264</code>.
-     *        </p>
      *        <p>
      *        This parameter is optional; the default value is <code>null</code> (or empty in JSON).
      */
@@ -250,10 +249,6 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * for guidelines.
      * </p>
      * <p>
-     * To play video on the console, the media must be H.264 encoded, and you need to specify this video type in this
-     * parameter as <code>video/h264</code>.
-     * </p>
-     * <p>
      * This parameter is optional; the default value is <code>null</code> (or empty in JSON).
      * </p>
      * 
@@ -262,10 +257,6 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to
      *         specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      *         Requirements</a> for guidelines.</p>
-     *         <p>
-     *         To play video on the console, the media must be H.264 encoded, and you need to specify this video type in
-     *         this parameter as <code>video/h264</code>.
-     *         </p>
      *         <p>
      *         This parameter is optional; the default value is <code>null</code> (or empty in JSON).
      */
@@ -283,10 +274,6 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * for guidelines.
      * </p>
      * <p>
-     * To play video on the console, the media must be H.264 encoded, and you need to specify this video type in this
-     * parameter as <code>video/h264</code>.
-     * </p>
-     * <p>
      * This parameter is optional; the default value is <code>null</code> (or empty in JSON).
      * </p>
      * 
@@ -296,10 +283,6 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media Types</a>. If you choose to
      *        specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      *        Requirements</a> for guidelines.</p>
-     *        <p>
-     *        To play video on the console, the media must be H.264 encoded, and you need to specify this video type in
-     *        this parameter as <code>video/h264</code>.
-     *        </p>
      *        <p>
      *        This parameter is optional; the default value is <code>null</code> (or empty in JSON).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -320,7 +303,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      * >DescribeKey</a>.
      * </p>
      * 
@@ -332,7 +315,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      *        >DescribeKey</a>.
      */
 
@@ -350,7 +333,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      * >DescribeKey</a>.
      * </p>
      * 
@@ -362,7 +345,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *         "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      *         >DescribeKey</a>.
      */
 
@@ -380,7 +363,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      * >DescribeKey</a>.
      * </p>
      * 
@@ -392,7 +375,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      *        >DescribeKey</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -410,12 +393,22 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The default value is 0, indicating that the stream does not persist data.
      * </p>
+     * <p>
+     * When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in
+     * the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB.
+     * Fragments are removed from the buffer when either limit is reached.
+     * </p>
      * 
      * @param dataRetentionInHours
      *        The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data
      *        in a data store that is associated with the stream.</p>
      *        <p>
      *        The default value is 0, indicating that the stream does not persist data.
+     *        </p>
+     *        <p>
+     *        When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that
+     *        remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory
+     *        limit of 200 MB. Fragments are removed from the buffer when either limit is reached.
      */
 
     public void setDataRetentionInHours(Integer dataRetentionInHours) {
@@ -430,11 +423,21 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The default value is 0, indicating that the stream does not persist data.
      * </p>
+     * <p>
+     * When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in
+     * the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB.
+     * Fragments are removed from the buffer when either limit is reached.
+     * </p>
      * 
      * @return The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the
      *         data in a data store that is associated with the stream.</p>
      *         <p>
      *         The default value is 0, indicating that the stream does not persist data.
+     *         </p>
+     *         <p>
+     *         When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that
+     *         remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory
+     *         limit of 200 MB. Fragments are removed from the buffer when either limit is reached.
      */
 
     public Integer getDataRetentionInHours() {
@@ -449,12 +452,22 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The default value is 0, indicating that the stream does not persist data.
      * </p>
+     * <p>
+     * When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in
+     * the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB.
+     * Fragments are removed from the buffer when either limit is reached.
+     * </p>
      * 
      * @param dataRetentionInHours
      *        The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data
      *        in a data store that is associated with the stream.</p>
      *        <p>
      *        The default value is 0, indicating that the stream does not persist data.
+     *        </p>
+     *        <p>
+     *        When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that
+     *        remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory
+     *        limit of 200 MB. Fragments are removed from the buffer when either limit is reached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,7 +477,72 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).
+     * </p>
+     * 
+     * @return A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is
+     *         optional).
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is
+     *        optional).
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is
+     *        optional).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateStreamRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -483,7 +561,9 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getDataRetentionInHours() != null)
-            sb.append("DataRetentionInHours: ").append(getDataRetentionInHours());
+            sb.append("DataRetentionInHours: ").append(getDataRetentionInHours()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -518,6 +598,10 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getDataRetentionInHours() != null && other.getDataRetentionInHours().equals(this.getDataRetentionInHours()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -531,6 +615,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getMediaType() == null) ? 0 : getMediaType().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getDataRetentionInHours() == null) ? 0 : getDataRetentionInHours().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

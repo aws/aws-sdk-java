@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,11 +34,11 @@ public class ConfigExportDeliveryInfoMarshaller {
     private static final MarshallingInfo<String> LASTERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastErrorMessage").build();
     private static final MarshallingInfo<java.util.Date> LASTATTEMPTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAttemptTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAttemptTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTSUCCESSFULTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastSuccessfulTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastSuccessfulTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> NEXTDELIVERYTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nextDeliveryTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nextDeliveryTime").timestampFormat("unixTimestamp").build();
 
     private static final ConfigExportDeliveryInfoMarshaller instance = new ConfigExportDeliveryInfoMarshaller();
 

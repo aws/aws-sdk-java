@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,18 +26,30 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MovSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** When enabled, include 'clap' atom if appropriate for the video output settings. */
     private String clapAtom;
-
+    /**
+     * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to
+     * sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included
+     * per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+     */
     private String cslgAtom;
-
+    /**
+     * When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases
+     * compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable
+     * when the video codec is MPEG2.
+     */
     private String mpeg2FourCCControl;
-
+    /** If set to OMNEON, inserts Omneon-compatible padding */
     private String paddingControl;
-
+    /** Always keep the default value (SELF_CONTAINED) for this setting. */
     private String reference;
 
     /**
+     * When enabled, include 'clap' atom if appropriate for the video output settings.
+     * 
      * @param clapAtom
+     *        When enabled, include 'clap' atom if appropriate for the video output settings.
      * @see MovClapAtom
      */
 
@@ -46,7 +58,9 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When enabled, include 'clap' atom if appropriate for the video output settings.
+     * 
+     * @return When enabled, include 'clap' atom if appropriate for the video output settings.
      * @see MovClapAtom
      */
 
@@ -55,7 +69,10 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When enabled, include 'clap' atom if appropriate for the video output settings.
+     * 
      * @param clapAtom
+     *        When enabled, include 'clap' atom if appropriate for the video output settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovClapAtom
      */
@@ -66,7 +83,10 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When enabled, include 'clap' atom if appropriate for the video output settings.
+     * 
      * @param clapAtom
+     *        When enabled, include 'clap' atom if appropriate for the video output settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovClapAtom
      */
@@ -77,7 +97,14 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to
+     * sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included
+     * per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+     * 
      * @param cslgAtom
+     *        When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time
+     *        to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be
+     *        included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
      * @see MovCslgAtom
      */
 
@@ -86,7 +113,13 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to
+     * sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included
+     * per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+     * 
+     * @return When enabled, file composition times will start at zero, composition times in the 'ctts' (composition
+     *         time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box
+     *         will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
      * @see MovCslgAtom
      */
 
@@ -95,7 +128,14 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to
+     * sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included
+     * per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+     * 
      * @param cslgAtom
+     *        When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time
+     *        to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be
+     *        included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovCslgAtom
      */
@@ -106,7 +146,14 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to
+     * sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included
+     * per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+     * 
      * @param cslgAtom
+     *        When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time
+     *        to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be
+     *        included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovCslgAtom
      */
@@ -117,7 +164,14 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases
+     * compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable
+     * when the video codec is MPEG2.
+     * 
      * @param mpeg2FourCCControl
+     *        When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This
+     *        increases compatibility with Apple editors and players, but may decrease compatibility with other players.
+     *        Only applicable when the video codec is MPEG2.
      * @see MovMpeg2FourCCControl
      */
 
@@ -126,7 +180,13 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases
+     * compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable
+     * when the video codec is MPEG2.
+     * 
+     * @return When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This
+     *         increases compatibility with Apple editors and players, but may decrease compatibility with other
+     *         players. Only applicable when the video codec is MPEG2.
      * @see MovMpeg2FourCCControl
      */
 
@@ -135,7 +195,14 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases
+     * compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable
+     * when the video codec is MPEG2.
+     * 
      * @param mpeg2FourCCControl
+     *        When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This
+     *        increases compatibility with Apple editors and players, but may decrease compatibility with other players.
+     *        Only applicable when the video codec is MPEG2.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovMpeg2FourCCControl
      */
@@ -146,7 +213,14 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases
+     * compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable
+     * when the video codec is MPEG2.
+     * 
      * @param mpeg2FourCCControl
+     *        When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This
+     *        increases compatibility with Apple editors and players, but may decrease compatibility with other players.
+     *        Only applicable when the video codec is MPEG2.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovMpeg2FourCCControl
      */
@@ -157,7 +231,10 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to OMNEON, inserts Omneon-compatible padding
+     * 
      * @param paddingControl
+     *        If set to OMNEON, inserts Omneon-compatible padding
      * @see MovPaddingControl
      */
 
@@ -166,7 +243,9 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * If set to OMNEON, inserts Omneon-compatible padding
+     * 
+     * @return If set to OMNEON, inserts Omneon-compatible padding
      * @see MovPaddingControl
      */
 
@@ -175,7 +254,10 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to OMNEON, inserts Omneon-compatible padding
+     * 
      * @param paddingControl
+     *        If set to OMNEON, inserts Omneon-compatible padding
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovPaddingControl
      */
@@ -186,7 +268,10 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to OMNEON, inserts Omneon-compatible padding
+     * 
      * @param paddingControl
+     *        If set to OMNEON, inserts Omneon-compatible padding
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovPaddingControl
      */
@@ -197,7 +282,10 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Always keep the default value (SELF_CONTAINED) for this setting.
+     * 
      * @param reference
+     *        Always keep the default value (SELF_CONTAINED) for this setting.
      * @see MovReference
      */
 
@@ -206,7 +294,9 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Always keep the default value (SELF_CONTAINED) for this setting.
+     * 
+     * @return Always keep the default value (SELF_CONTAINED) for this setting.
      * @see MovReference
      */
 
@@ -215,7 +305,10 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Always keep the default value (SELF_CONTAINED) for this setting.
+     * 
      * @param reference
+     *        Always keep the default value (SELF_CONTAINED) for this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovReference
      */
@@ -226,7 +319,10 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Always keep the default value (SELF_CONTAINED) for this setting.
+     * 
      * @param reference
+     *        Always keep the default value (SELF_CONTAINED) for this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MovReference
      */
@@ -237,7 +333,8 @@ public class MovSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

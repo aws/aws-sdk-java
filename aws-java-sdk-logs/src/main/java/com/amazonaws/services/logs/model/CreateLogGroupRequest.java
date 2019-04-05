@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
      * Names - AWS Key Management Service (AWS KMS)</a>.
      * </p>
      */
@@ -107,13 +107,13 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
      * Names - AWS Key Management Service (AWS KMS)</a>.
      * </p>
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
      *        Resource Names - AWS Key Management Service (AWS KMS)</a>.
      */
 
@@ -124,12 +124,12 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
      * Names - AWS Key Management Service (AWS KMS)</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
      *         Resource Names - AWS Key Management Service (AWS KMS)</a>.
      */
 
@@ -140,13 +140,13 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
      * Names - AWS Key Management Service (AWS KMS)</a>.
      * </p>
      * 
      * @param kmsKeyId
      *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
      *        Resource Names - AWS Key Management Service (AWS KMS)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -221,7 +221,8 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

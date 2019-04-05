@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,8 +35,13 @@ import com.amazonaws.services.athena.model.*;
  * the <i>Amazon Athena User Guide</i>.
  * </p>
  * <p>
+ * If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or later with the Amazon Athena API.
+ * Earlier version drivers do not support the API. For more information and to download the driver, see <a
+ * href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing Amazon Athena with JDBC</a>.
+ * </p>
+ * <p>
  * For code samples using the AWS SDK for Java, see <a
- * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon
+ * href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon
  * Athena User Guide</i>.
  * </p>
  */
@@ -54,11 +59,12 @@ public interface AmazonAthena {
     /**
      * <p>
      * Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query
-     * ID strings. Use <a>ListNamedQueries</a> to get the list of named query IDs. If information could not be retrieved
-     * for a submitted query ID, information about the query ID submitted is listed under
-     * <a>UnprocessedNamedQueryId</a>. Named queries are different from executed queries. Use
-     * <a>BatchGetQueryExecution</a> to get details about each unique query execution, and <a>ListQueryExecutions</a> to
-     * get a list of query execution IDs.
+     * ID strings. Requires you to have access to the workgroup in which the queries were saved. Use
+     * <a>ListNamedQueriesInput</a> to get the list of named query IDs in the specified workgroup. If information could
+     * not be retrieved for a submitted query ID, information about the query ID submitted is listed under
+     * <a>UnprocessedNamedQueryId</a>. Named queries differ from executed queries. Use
+     * <a>BatchGetQueryExecutionInput</a> to get details about each unique query execution, and
+     * <a>ListQueryExecutionsInput</a> to get a list of query execution IDs.
      * </p>
      * 
      * @param batchGetNamedQueryRequest
@@ -77,9 +83,9 @@ public interface AmazonAthena {
     /**
      * <p>
      * Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an
-     * array of query execution ID strings. To get a list of query execution IDs, use <a>ListQueryExecutions</a>. Query
-     * executions are different from named (saved) queries. Use <a>BatchGetNamedQuery</a> to get details about named
-     * queries.
+     * array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To
+     * get a list of query execution IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ from
+     * named (saved) queries. Use <a>BatchGetNamedQueryInput</a> to get details about named queries.
      * </p>
      * 
      * @param batchGetQueryExecutionRequest
@@ -97,7 +103,7 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Creates a named query.
+     * Creates a named query in the specified workgroup. Requires that you have access to the workgroup.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -120,7 +126,25 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Deletes a named query.
+     * Creates a workgroup with the specified name.
+     * </p>
+     * 
+     * @param createWorkGroupRequest
+     * @return Result of the CreateWorkGroup operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.CreateWorkGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateWorkGroupResult createWorkGroup(CreateWorkGroupRequest createWorkGroupRequest);
+
+    /**
+     * <p>
+     * Deletes the named query if you have access to the workgroup in which the query was saved.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -143,7 +167,26 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Returns information about a single query.
+     * Deletes the workgroup with the specified name. The primary workgroup cannot be deleted.
+     * </p>
+     * 
+     * @param deleteWorkGroupRequest
+     * @return Result of the DeleteWorkGroup operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.DeleteWorkGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteWorkGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteWorkGroupResult deleteWorkGroup(DeleteWorkGroupRequest deleteWorkGroupRequest);
+
+    /**
+     * <p>
+     * Returns information about a single query. Requires that you have access to the workgroup in which the query was
+     * saved.
      * </p>
      * 
      * @param getNamedQueryRequest
@@ -161,8 +204,8 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Returns information about a single execution of a query. Each time a query executes, information about the query
-     * execution is saved with a unique ID.
+     * Returns information about a single execution of a query if you have access to the workgroup in which the query
+     * ran. Each time a query executes, information about the query execution is saved with a unique ID.
      * </p>
      * 
      * @param getQueryExecutionRequest
@@ -180,8 +223,9 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Returns the results of a single query execution specified by <code>QueryExecutionId</code>. This request does not
-     * execute the query but returns results. Use <a>StartQueryExecution</a> to run a query.
+     * Returns the results of a single query execution specified by <code>QueryExecutionId</code> if you have access to
+     * the workgroup in which the query ran. This request does not execute the query but returns results. Use
+     * <a>StartQueryExecution</a> to run a query.
      * </p>
      * 
      * @param getQueryResultsRequest
@@ -199,7 +243,26 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Provides a list of all available query IDs.
+     * Returns information about the workgroup with the specified name.
+     * </p>
+     * 
+     * @param getWorkGroupRequest
+     * @return Result of the GetWorkGroup operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.GetWorkGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetWorkGroupResult getWorkGroup(GetWorkGroupRequest getWorkGroupRequest);
+
+    /**
+     * <p>
+     * Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have
+     * access to the workgroup.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -222,7 +285,8 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Provides a list of all available query execution IDs.
+     * Provides a list of available query execution IDs for the queries in the specified workgroup. Requires you to have
+     * access to the workgroup in which the queries ran.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -245,7 +309,46 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Runs (executes) the SQL query statements contained in the <code>Query</code> string.
+     * Lists the tags associated with this workgroup.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists available workgroups for the account.
+     * </p>
+     * 
+     * @param listWorkGroupsRequest
+     * @return Result of the ListWorkGroups operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.ListWorkGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListWorkGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListWorkGroupsResult listWorkGroups(ListWorkGroupsRequest listWorkGroupsRequest);
+
+    /**
+     * <p>
+     * Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup
+     * in which the query ran.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -270,7 +373,7 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Stops a query execution.
+     * Stops a query execution. Requires you to have access to the workgroup in which the query ran.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -290,6 +393,73 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     StopQueryExecutionResult stopQueryExecution(StopQueryExecutionRequest stopQueryExecutionRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to the resource, such as a workgroup. A tag is a label that you assign to an AWS Athena
+     * resource (a workgroup). Each tag consists of a key and an optional value, both of which you define. Tags enable
+     * you to categorize resources (workgroups) in Athena, for example, by purpose, owner, or environment. Use a
+     * consistent set of tag keys to make it easier to search and filter workgroups in your account. For best practices,
+     * see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     * Strategies</a>. The key length is from 1 (minimum) to 128 (maximum) Unicode characters in UTF-8. The tag value
+     * length is from 0 (minimum) to 256 (maximum) Unicode characters in UTF-8. You can use letters and numbers
+     * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive.
+     * Tag keys must be unique per resource. If you specify more than one, separate them by commas.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the workgroup resource. Takes as an input a list of TagKey Strings separated by
+     * commas, and removes their tags at the same time.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates the workgroup with the specified name. The workgroup's name cannot be changed.
+     * </p>
+     * 
+     * @param updateWorkGroupRequest
+     * @return Result of the UpdateWorkGroup operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.UpdateWorkGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateWorkGroupResult updateWorkGroup(UpdateWorkGroupRequest updateWorkGroupRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

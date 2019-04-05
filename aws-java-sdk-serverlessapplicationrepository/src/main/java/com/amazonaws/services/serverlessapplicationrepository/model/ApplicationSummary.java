@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The application ARN.
+     * The application Amazon Resource Name (ARN).
      * </p>
      */
     private String applicationId;
@@ -39,7 +39,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The name of the author publishing the app.
      * </p>
      * <p>
-     * Min Length=1. Max Length=127.
+     * Minimum length=1. Maximum length=127.
      * </p>
      * <p>
      * Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
@@ -48,7 +48,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private String author;
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      */
     private String creationTime;
@@ -57,7 +57,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The description of the application.
      * </p>
      * <p>
-     * Min Length=1. Max Length=256
+     * Minimum length=1. Maximum length=256
      * </p>
      */
     private String description;
@@ -73,7 +73,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * Labels to improve discovery of apps in search results.
      * </p>
      * <p>
-     * Min Length=1. Max Length=127. Maximum number of labels: 10
+     * Minimum length=1. Maximum length=127. Maximum number of labels: 10
      * </p>
      * <p>
      * Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
@@ -85,7 +85,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The name of the application.
      * </p>
      * <p>
-     * Min Length=1. Max Length=140
+     * Minimum length=1. Maximum length=140
      * </p>
      * <p>
      * Pattern: "[a-zA-Z0-9\\-]+";
@@ -101,11 +101,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The application ARN.
+     * The application Amazon Resource Name (ARN).
      * </p>
      * 
      * @param applicationId
-     *        The application ARN.
+     *        The application Amazon Resource Name (ARN).
      */
 
     public void setApplicationId(String applicationId) {
@@ -114,10 +114,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The application ARN.
+     * The application Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The application ARN.
+     * @return The application Amazon Resource Name (ARN).
      */
 
     public String getApplicationId() {
@@ -126,11 +126,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The application ARN.
+     * The application Amazon Resource Name (ARN).
      * </p>
      * 
      * @param applicationId
-     *        The application ARN.
+     *        The application Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,7 +144,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The name of the author publishing the app.
      * </p>
      * <p>
-     * Min Length=1. Max Length=127.
+     * Minimum length=1. Maximum length=127.
      * </p>
      * <p>
      * Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
@@ -153,7 +153,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * @param author
      *        The name of the author publishing the app.</p>
      *        <p>
-     *        Min Length=1. Max Length=127.
+     *        Minimum length=1. Maximum length=127.
      *        </p>
      *        <p>
      *        Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
@@ -168,7 +168,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The name of the author publishing the app.
      * </p>
      * <p>
-     * Min Length=1. Max Length=127.
+     * Minimum length=1. Maximum length=127.
      * </p>
      * <p>
      * Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
@@ -176,7 +176,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * 
      * @return The name of the author publishing the app.</p>
      *         <p>
-     *         Min Length=1. Max Length=127.
+     *         Minimum length=1. Maximum length=127.
      *         </p>
      *         <p>
      *         Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
@@ -191,7 +191,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The name of the author publishing the app.
      * </p>
      * <p>
-     * Min Length=1. Max Length=127.
+     * Minimum length=1. Maximum length=127.
      * </p>
      * <p>
      * Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
@@ -200,7 +200,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * @param author
      *        The name of the author publishing the app.</p>
      *        <p>
-     *        Min Length=1. Max Length=127.
+     *        Minimum length=1. Maximum length=127.
      *        </p>
      *        <p>
      *        Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
@@ -214,11 +214,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
      * @param creationTime
-     *        The date/time this resource was created.
+     *        The date and time this resource was created.
      */
 
     public void setCreationTime(String creationTime) {
@@ -227,10 +227,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
-     * @return The date/time this resource was created.
+     * @return The date and time this resource was created.
      */
 
     public String getCreationTime() {
@@ -239,11 +239,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
      * @param creationTime
-     *        The date/time this resource was created.
+     *        The date and time this resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,13 +257,13 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The description of the application.
      * </p>
      * <p>
-     * Min Length=1. Max Length=256
+     * Minimum length=1. Maximum length=256
      * </p>
      * 
      * @param description
      *        The description of the application.</p>
      *        <p>
-     *        Min Length=1. Max Length=256
+     *        Minimum length=1. Maximum length=256
      */
 
     public void setDescription(String description) {
@@ -275,12 +275,12 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The description of the application.
      * </p>
      * <p>
-     * Min Length=1. Max Length=256
+     * Minimum length=1. Maximum length=256
      * </p>
      * 
      * @return The description of the application.</p>
      *         <p>
-     *         Min Length=1. Max Length=256
+     *         Minimum length=1. Maximum length=256
      */
 
     public String getDescription() {
@@ -292,13 +292,13 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The description of the application.
      * </p>
      * <p>
-     * Min Length=1. Max Length=256
+     * Minimum length=1. Maximum length=256
      * </p>
      * 
      * @param description
      *        The description of the application.</p>
      *        <p>
-     *        Min Length=1. Max Length=256
+     *        Minimum length=1. Maximum length=256
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -358,7 +358,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * Labels to improve discovery of apps in search results.
      * </p>
      * <p>
-     * Min Length=1. Max Length=127. Maximum number of labels: 10
+     * Minimum length=1. Maximum length=127. Maximum number of labels: 10
      * </p>
      * <p>
      * Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
@@ -366,7 +366,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * 
      * @return Labels to improve discovery of apps in search results.</p>
      *         <p>
-     *         Min Length=1. Max Length=127. Maximum number of labels: 10
+     *         Minimum length=1. Maximum length=127. Maximum number of labels: 10
      *         </p>
      *         <p>
      *         Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
@@ -381,7 +381,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * Labels to improve discovery of apps in search results.
      * </p>
      * <p>
-     * Min Length=1. Max Length=127. Maximum number of labels: 10
+     * Minimum length=1. Maximum length=127. Maximum number of labels: 10
      * </p>
      * <p>
      * Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
@@ -390,7 +390,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * @param labels
      *        Labels to improve discovery of apps in search results.</p>
      *        <p>
-     *        Min Length=1. Max Length=127. Maximum number of labels: 10
+     *        Minimum length=1. Maximum length=127. Maximum number of labels: 10
      *        </p>
      *        <p>
      *        Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
@@ -410,7 +410,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * Labels to improve discovery of apps in search results.
      * </p>
      * <p>
-     * Min Length=1. Max Length=127. Maximum number of labels: 10
+     * Minimum length=1. Maximum length=127. Maximum number of labels: 10
      * </p>
      * <p>
      * Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
@@ -424,7 +424,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * @param labels
      *        Labels to improve discovery of apps in search results.</p>
      *        <p>
-     *        Min Length=1. Max Length=127. Maximum number of labels: 10
+     *        Minimum length=1. Maximum length=127. Maximum number of labels: 10
      *        </p>
      *        <p>
      *        Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
@@ -446,7 +446,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * Labels to improve discovery of apps in search results.
      * </p>
      * <p>
-     * Min Length=1. Max Length=127. Maximum number of labels: 10
+     * Minimum length=1. Maximum length=127. Maximum number of labels: 10
      * </p>
      * <p>
      * Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
@@ -455,7 +455,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * @param labels
      *        Labels to improve discovery of apps in search results.</p>
      *        <p>
-     *        Min Length=1. Max Length=127. Maximum number of labels: 10
+     *        Minimum length=1. Maximum length=127. Maximum number of labels: 10
      *        </p>
      *        <p>
      *        Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
@@ -472,7 +472,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The name of the application.
      * </p>
      * <p>
-     * Min Length=1. Max Length=140
+     * Minimum length=1. Maximum length=140
      * </p>
      * <p>
      * Pattern: "[a-zA-Z0-9\\-]+";
@@ -481,7 +481,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * @param name
      *        The name of the application.</p>
      *        <p>
-     *        Min Length=1. Max Length=140
+     *        Minimum length=1. Maximum length=140
      *        </p>
      *        <p>
      *        Pattern: "[a-zA-Z0-9\\-]+";
@@ -496,7 +496,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The name of the application.
      * </p>
      * <p>
-     * Min Length=1. Max Length=140
+     * Minimum length=1. Maximum length=140
      * </p>
      * <p>
      * Pattern: "[a-zA-Z0-9\\-]+";
@@ -504,7 +504,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * 
      * @return The name of the application.</p>
      *         <p>
-     *         Min Length=1. Max Length=140
+     *         Minimum length=1. Maximum length=140
      *         </p>
      *         <p>
      *         Pattern: "[a-zA-Z0-9\\-]+";
@@ -519,7 +519,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * The name of the application.
      * </p>
      * <p>
-     * Min Length=1. Max Length=140
+     * Minimum length=1. Maximum length=140
      * </p>
      * <p>
      * Pattern: "[a-zA-Z0-9\\-]+";
@@ -528,7 +528,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * @param name
      *        The name of the application.</p>
      *        <p>
-     *        Min Length=1. Max Length=140
+     *        Minimum length=1. Maximum length=140
      *        </p>
      *        <p>
      *        Pattern: "[a-zA-Z0-9\\-]+";
@@ -581,7 +581,8 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

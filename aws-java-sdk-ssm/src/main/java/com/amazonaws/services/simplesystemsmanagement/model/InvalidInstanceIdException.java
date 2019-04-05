@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,11 +22,11 @@ import javax.annotation.Generated;
  * You do not have permission to access the instance.
  * </p>
  * <p>
- * The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running. On EC2
+ * SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running. On EC2
  * Windows instances, verify that the EC2Config service is running.
  * </p>
  * <p>
- * The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent or EC2Config
+ * SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or EC2Config
  * service.
  * </p>
  * <p>

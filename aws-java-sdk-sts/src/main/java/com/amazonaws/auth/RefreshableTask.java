@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 package com.amazonaws.auth;
 
+import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.NotThreadSafe;
@@ -271,7 +272,7 @@ class RefreshableTask<T> implements Closeable {
      */
     private void handleInterruptedException(String message, InterruptedException cause) {
         Thread.currentThread().interrupt();
-        throw new AmazonClientException(message, cause);
+        throw new AbortedException(message, cause);
     }
 
 }

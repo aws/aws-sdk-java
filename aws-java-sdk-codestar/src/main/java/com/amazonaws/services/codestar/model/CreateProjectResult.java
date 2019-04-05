@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,19 +25,19 @@ public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Reserved for future use.
+     * The ID of the project.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the created project.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * Reserved for future use.
+     * A user- or system-generated token that identifies the entity that requested project creation.
      * </p>
      */
     private String clientRequestToken;
@@ -50,11 +50,11 @@ public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Reserved for future use.
+     * The ID of the project.
      * </p>
      * 
      * @param id
-     *        Reserved for future use.
+     *        The ID of the project.
      */
 
     public void setId(String id) {
@@ -63,10 +63,10 @@ public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Reserved for future use.
+     * The ID of the project.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The ID of the project.
      */
 
     public String getId() {
@@ -75,11 +75,11 @@ public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Reserved for future use.
+     * The ID of the project.
      * </p>
      * 
      * @param id
-     *        Reserved for future use.
+     *        The ID of the project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the created project.
      * </p>
      * 
      * @param arn
-     *        Reserved for future use.
+     *        The Amazon Resource Name (ARN) of the created project.
      */
 
     public void setArn(String arn) {
@@ -103,10 +103,10 @@ public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the created project.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The Amazon Resource Name (ARN) of the created project.
      */
 
     public String getArn() {
@@ -115,11 +115,11 @@ public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Amazon Resource Name (ARN) of the created project.
      * </p>
      * 
      * @param arn
-     *        Reserved for future use.
+     *        The Amazon Resource Name (ARN) of the created project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Reserved for future use.
+     * A user- or system-generated token that identifies the entity that requested project creation.
      * </p>
      * 
      * @param clientRequestToken
-     *        Reserved for future use.
+     *        A user- or system-generated token that identifies the entity that requested project creation.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -143,10 +143,10 @@ public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Reserved for future use.
+     * A user- or system-generated token that identifies the entity that requested project creation.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return A user- or system-generated token that identifies the entity that requested project creation.
      */
 
     public String getClientRequestToken() {
@@ -155,11 +155,11 @@ public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Reserved for future use.
+     * A user- or system-generated token that identifies the entity that requested project creation.
      * </p>
      * 
      * @param clientRequestToken
-     *        Reserved for future use.
+     *        A user- or system-generated token that identifies the entity that requested project creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,7 +209,8 @@ public class CreateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

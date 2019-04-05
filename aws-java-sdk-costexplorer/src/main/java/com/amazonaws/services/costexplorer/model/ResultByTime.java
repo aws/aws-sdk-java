@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time period covered by a result.
+     * The time period that the result covers.
      * </p>
      */
     private DateInterval timePeriod;
@@ -42,24 +42,24 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, MetricValue> total;
     /**
      * <p>
-     * The groups that are included in this time period.
+     * The groups that this time period includes.
      * </p>
      */
     private java.util.List<Group> groups;
     /**
      * <p>
-     * Whether this result is estimated.
+     * Whether the result is estimated.
      * </p>
      */
     private Boolean estimated;
 
     /**
      * <p>
-     * The time period covered by a result.
+     * The time period that the result covers.
      * </p>
      * 
      * @param timePeriod
-     *        The time period covered by a result.
+     *        The time period that the result covers.
      */
 
     public void setTimePeriod(DateInterval timePeriod) {
@@ -68,10 +68,10 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time period covered by a result.
+     * The time period that the result covers.
      * </p>
      * 
-     * @return The time period covered by a result.
+     * @return The time period that the result covers.
      */
 
     public DateInterval getTimePeriod() {
@@ -80,11 +80,11 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time period covered by a result.
+     * The time period that the result covers.
      * </p>
      * 
      * @param timePeriod
-     *        The time period covered by a result.
+     *        The time period that the result covers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,10 +156,10 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The groups that are included in this time period.
+     * The groups that this time period includes.
      * </p>
      * 
-     * @return The groups that are included in this time period.
+     * @return The groups that this time period includes.
      */
 
     public java.util.List<Group> getGroups() {
@@ -168,11 +168,11 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The groups that are included in this time period.
+     * The groups that this time period includes.
      * </p>
      * 
      * @param groups
-     *        The groups that are included in this time period.
+     *        The groups that this time period includes.
      */
 
     public void setGroups(java.util.Collection<Group> groups) {
@@ -186,7 +186,7 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The groups that are included in this time period.
+     * The groups that this time period includes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -195,7 +195,7 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param groups
-     *        The groups that are included in this time period.
+     *        The groups that this time period includes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,11 +211,11 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The groups that are included in this time period.
+     * The groups that this time period includes.
      * </p>
      * 
      * @param groups
-     *        The groups that are included in this time period.
+     *        The groups that this time period includes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,11 +226,11 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether this result is estimated.
+     * Whether the result is estimated.
      * </p>
      * 
      * @param estimated
-     *        Whether this result is estimated.
+     *        Whether the result is estimated.
      */
 
     public void setEstimated(Boolean estimated) {
@@ -239,10 +239,10 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether this result is estimated.
+     * Whether the result is estimated.
      * </p>
      * 
-     * @return Whether this result is estimated.
+     * @return Whether the result is estimated.
      */
 
     public Boolean getEstimated() {
@@ -251,11 +251,11 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether this result is estimated.
+     * Whether the result is estimated.
      * </p>
      * 
      * @param estimated
-     *        Whether this result is estimated.
+     *        Whether the result is estimated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,10 +266,10 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether this result is estimated.
+     * Whether the result is estimated.
      * </p>
      * 
-     * @return Whether this result is estimated.
+     * @return Whether the result is estimated.
      */
 
     public Boolean isEstimated() {
@@ -277,7 +277,8 @@ public class ResultByTime implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

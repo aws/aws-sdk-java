@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,28 +30,29 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     * matchmaking configuration.
+     * Unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this
+     * name value. (Note: The rule set name is different from the optional "name" field in the rule set body.)
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. (Note that comments are not allowed in JSON, but
-     * most elements support a description field.)
+     * Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON, but most
+     * elements support a description field.
      * </p>
      */
     private String ruleSetBody;
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     * matchmaking configuration.
+     * Unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this
+     * name value. (Note: The rule set name is different from the optional "name" field in the rule set body.)
      * </p>
      * 
      * @param name
-     *        Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     *        matchmaking configuration.
+     *        Unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses
+     *        by this name value. (Note: The rule set name is different from the optional "name" field in the rule set
+     *        body.)
      */
 
     public void setName(String name) {
@@ -60,12 +61,13 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     * matchmaking configuration.
+     * Unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this
+     * name value. (Note: The rule set name is different from the optional "name" field in the rule set body.)
      * </p>
      * 
-     * @return Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with
-     *         a matchmaking configuration.
+     * @return Unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses
+     *         by this name value. (Note: The rule set name is different from the optional "name" field in the rule set
+     *         body.)
      */
 
     public String getName() {
@@ -74,13 +76,14 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     * matchmaking configuration.
+     * Unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses by this
+     * name value. (Note: The rule set name is different from the optional "name" field in the rule set body.)
      * </p>
      * 
      * @param name
-     *        Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     *        matchmaking configuration.
+     *        Unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses
+     *        by this name value. (Note: The rule set name is different from the optional "name" field in the rule set
+     *        body.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,13 +94,13 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. (Note that comments are not allowed in JSON, but
-     * most elements support a description field.)
+     * Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON, but most
+     * elements support a description field.
      * </p>
      * 
      * @param ruleSetBody
-     *        Collection of matchmaking rules, formatted as a JSON string. (Note that comments are not allowed in JSON,
-     *        but most elements support a description field.)
+     *        Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON,
+     *        but most elements support a description field.
      */
 
     public void setRuleSetBody(String ruleSetBody) {
@@ -106,12 +109,12 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. (Note that comments are not allowed in JSON, but
-     * most elements support a description field.)
+     * Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON, but most
+     * elements support a description field.
      * </p>
      * 
-     * @return Collection of matchmaking rules, formatted as a JSON string. (Note that comments are not allowed in JSON,
-     *         but most elements support a description field.)
+     * @return Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON,
+     *         but most elements support a description field.
      */
 
     public String getRuleSetBody() {
@@ -120,13 +123,13 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Collection of matchmaking rules, formatted as a JSON string. (Note that comments are not allowed in JSON, but
-     * most elements support a description field.)
+     * Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON, but most
+     * elements support a description field.
      * </p>
      * 
      * @param ruleSetBody
-     *        Collection of matchmaking rules, formatted as a JSON string. (Note that comments are not allowed in JSON,
-     *        but most elements support a description field.)
+     *        Collection of matchmaking rules, formatted as a JSON string. Note that comments are not allowed in JSON,
+     *        but most elements support a description field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,7 +139,8 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

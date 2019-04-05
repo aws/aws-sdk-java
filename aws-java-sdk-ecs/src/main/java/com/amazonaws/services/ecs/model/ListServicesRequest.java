@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,17 +52,23 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListServices</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 10. If this parameter is not used, then <code>ListServices</code> returns up to 10 results and a
-     * <code>nextToken</code> value if applicable.
+     * be between 1 and 100. If this parameter is not used, then <code>ListServices</code> returns up to 10 results and
+     * a <code>nextToken</code> value if applicable.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for the services to list.
      * </p>
      */
     private String launchType;
+    /**
+     * <p>
+     * The scheduling strategy for services to list.
+     * </p>
+     */
+    private String schedulingStrategy;
 
     /**
      * <p>
@@ -198,8 +204,8 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListServices</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 10. If this parameter is not used, then <code>ListServices</code> returns up to 10 results and a
-     * <code>nextToken</code> value if applicable.
+     * be between 1 and 100. If this parameter is not used, then <code>ListServices</code> returns up to 10 results and
+     * a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
@@ -207,7 +213,7 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page
      *        along with a <code>nextToken</code> response element. The remaining results of the initial request can be
      *        seen by sending another <code>ListServices</code> request with the returned <code>nextToken</code> value.
-     *        This value can be between 1 and 10. If this parameter is not used, then <code>ListServices</code> returns
+     *        This value can be between 1 and 100. If this parameter is not used, then <code>ListServices</code> returns
      *        up to 10 results and a <code>nextToken</code> value if applicable.
      */
 
@@ -221,15 +227,15 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListServices</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 10. If this parameter is not used, then <code>ListServices</code> returns up to 10 results and a
-     * <code>nextToken</code> value if applicable.
+     * be between 1 and 100. If this parameter is not used, then <code>ListServices</code> returns up to 10 results and
+     * a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @return The maximum number of service results returned by <code>ListServices</code> in paginated output. When
      *         this parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a
      *         single page along with a <code>nextToken</code> response element. The remaining results of the initial
      *         request can be seen by sending another <code>ListServices</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and 10. If this parameter is not used, then
+     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
      *         <code>ListServices</code> returns up to 10 results and a <code>nextToken</code> value if applicable.
      */
 
@@ -243,8 +249,8 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page along
      * with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>ListServices</code> request with the returned <code>nextToken</code> value. This value can
-     * be between 1 and 10. If this parameter is not used, then <code>ListServices</code> returns up to 10 results and a
-     * <code>nextToken</code> value if applicable.
+     * be between 1 and 100. If this parameter is not used, then <code>ListServices</code> returns up to 10 results and
+     * a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
@@ -252,7 +258,7 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        parameter is used, <code>ListServices</code> only returns <code>maxResults</code> results in a single page
      *        along with a <code>nextToken</code> response element. The remaining results of the initial request can be
      *        seen by sending another <code>ListServices</code> request with the returned <code>nextToken</code> value.
-     *        This value can be between 1 and 10. If this parameter is not used, then <code>ListServices</code> returns
+     *        This value can be between 1 and 100. If this parameter is not used, then <code>ListServices</code> returns
      *        up to 10 results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -264,11 +270,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for the services to list.
      * </p>
      * 
      * @param launchType
-     *        The launch type for services you want to list.
+     *        The launch type for the services to list.
      * @see LaunchType
      */
 
@@ -278,10 +284,10 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for the services to list.
      * </p>
      * 
-     * @return The launch type for services you want to list.
+     * @return The launch type for the services to list.
      * @see LaunchType
      */
 
@@ -291,11 +297,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for the services to list.
      * </p>
      * 
      * @param launchType
-     *        The launch type for services you want to list.
+     *        The launch type for the services to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -307,11 +313,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for services you want to list.
+     * The launch type for the services to list.
      * </p>
      * 
      * @param launchType
-     *        The launch type for services you want to list.
+     *        The launch type for the services to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -322,7 +328,67 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The scheduling strategy for services to list.
+     * </p>
+     * 
+     * @param schedulingStrategy
+     *        The scheduling strategy for services to list.
+     * @see SchedulingStrategy
+     */
+
+    public void setSchedulingStrategy(String schedulingStrategy) {
+        this.schedulingStrategy = schedulingStrategy;
+    }
+
+    /**
+     * <p>
+     * The scheduling strategy for services to list.
+     * </p>
+     * 
+     * @return The scheduling strategy for services to list.
+     * @see SchedulingStrategy
+     */
+
+    public String getSchedulingStrategy() {
+        return this.schedulingStrategy;
+    }
+
+    /**
+     * <p>
+     * The scheduling strategy for services to list.
+     * </p>
+     * 
+     * @param schedulingStrategy
+     *        The scheduling strategy for services to list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SchedulingStrategy
+     */
+
+    public ListServicesRequest withSchedulingStrategy(String schedulingStrategy) {
+        setSchedulingStrategy(schedulingStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The scheduling strategy for services to list.
+     * </p>
+     * 
+     * @param schedulingStrategy
+     *        The scheduling strategy for services to list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SchedulingStrategy
+     */
+
+    public ListServicesRequest withSchedulingStrategy(SchedulingStrategy schedulingStrategy) {
+        this.schedulingStrategy = schedulingStrategy.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -339,7 +405,9 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getLaunchType() != null)
-            sb.append("LaunchType: ").append(getLaunchType());
+            sb.append("LaunchType: ").append(getLaunchType()).append(",");
+        if (getSchedulingStrategy() != null)
+            sb.append("SchedulingStrategy: ").append(getSchedulingStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -370,6 +438,10 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getLaunchType() != null && other.getLaunchType().equals(this.getLaunchType()) == false)
             return false;
+        if (other.getSchedulingStrategy() == null ^ this.getSchedulingStrategy() == null)
+            return false;
+        if (other.getSchedulingStrategy() != null && other.getSchedulingStrategy().equals(this.getSchedulingStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -382,6 +454,7 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getLaunchType() == null) ? 0 : getLaunchType().hashCode());
+        hashCode = prime * hashCode + ((getSchedulingStrategy() == null) ? 0 : getSchedulingStrategy().hashCode());
         return hashCode;
     }
 

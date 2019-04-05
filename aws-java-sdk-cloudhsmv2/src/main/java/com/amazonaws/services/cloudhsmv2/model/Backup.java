@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,20 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date createTimestamp;
+
+    private java.util.Date copyTimestamp;
+
+    private String sourceRegion;
+
+    private String sourceBackup;
+
+    private String sourceCluster;
+    /**
+     * <p>
+     * The date and time when the backup will be permanently deleted.
+     * </p>
+     */
+    private java.util.Date deleteTimestamp;
 
     /**
      * <p>
@@ -233,7 +247,152 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * @param copyTimestamp
+     */
+
+    public void setCopyTimestamp(java.util.Date copyTimestamp) {
+        this.copyTimestamp = copyTimestamp;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getCopyTimestamp() {
+        return this.copyTimestamp;
+    }
+
+    /**
+     * @param copyTimestamp
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withCopyTimestamp(java.util.Date copyTimestamp) {
+        setCopyTimestamp(copyTimestamp);
+        return this;
+    }
+
+    /**
+     * @param sourceRegion
+     */
+
+    public void setSourceRegion(String sourceRegion) {
+        this.sourceRegion = sourceRegion;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getSourceRegion() {
+        return this.sourceRegion;
+    }
+
+    /**
+     * @param sourceRegion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withSourceRegion(String sourceRegion) {
+        setSourceRegion(sourceRegion);
+        return this;
+    }
+
+    /**
+     * @param sourceBackup
+     */
+
+    public void setSourceBackup(String sourceBackup) {
+        this.sourceBackup = sourceBackup;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getSourceBackup() {
+        return this.sourceBackup;
+    }
+
+    /**
+     * @param sourceBackup
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withSourceBackup(String sourceBackup) {
+        setSourceBackup(sourceBackup);
+        return this;
+    }
+
+    /**
+     * @param sourceCluster
+     */
+
+    public void setSourceCluster(String sourceCluster) {
+        this.sourceCluster = sourceCluster;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getSourceCluster() {
+        return this.sourceCluster;
+    }
+
+    /**
+     * @param sourceCluster
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withSourceCluster(String sourceCluster) {
+        setSourceCluster(sourceCluster);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time when the backup will be permanently deleted.
+     * </p>
+     * 
+     * @param deleteTimestamp
+     *        The date and time when the backup will be permanently deleted.
+     */
+
+    public void setDeleteTimestamp(java.util.Date deleteTimestamp) {
+        this.deleteTimestamp = deleteTimestamp;
+    }
+
+    /**
+     * <p>
+     * The date and time when the backup will be permanently deleted.
+     * </p>
+     * 
+     * @return The date and time when the backup will be permanently deleted.
+     */
+
+    public java.util.Date getDeleteTimestamp() {
+        return this.deleteTimestamp;
+    }
+
+    /**
+     * <p>
+     * The date and time when the backup will be permanently deleted.
+     * </p>
+     * 
+     * @param deleteTimestamp
+     *        The date and time when the backup will be permanently deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withDeleteTimestamp(java.util.Date deleteTimestamp) {
+        setDeleteTimestamp(deleteTimestamp);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -250,7 +409,17 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
         if (getClusterId() != null)
             sb.append("ClusterId: ").append(getClusterId()).append(",");
         if (getCreateTimestamp() != null)
-            sb.append("CreateTimestamp: ").append(getCreateTimestamp());
+            sb.append("CreateTimestamp: ").append(getCreateTimestamp()).append(",");
+        if (getCopyTimestamp() != null)
+            sb.append("CopyTimestamp: ").append(getCopyTimestamp()).append(",");
+        if (getSourceRegion() != null)
+            sb.append("SourceRegion: ").append(getSourceRegion()).append(",");
+        if (getSourceBackup() != null)
+            sb.append("SourceBackup: ").append(getSourceBackup()).append(",");
+        if (getSourceCluster() != null)
+            sb.append("SourceCluster: ").append(getSourceCluster()).append(",");
+        if (getDeleteTimestamp() != null)
+            sb.append("DeleteTimestamp: ").append(getDeleteTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -281,6 +450,26 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreateTimestamp() != null && other.getCreateTimestamp().equals(this.getCreateTimestamp()) == false)
             return false;
+        if (other.getCopyTimestamp() == null ^ this.getCopyTimestamp() == null)
+            return false;
+        if (other.getCopyTimestamp() != null && other.getCopyTimestamp().equals(this.getCopyTimestamp()) == false)
+            return false;
+        if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
+            return false;
+        if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
+            return false;
+        if (other.getSourceBackup() == null ^ this.getSourceBackup() == null)
+            return false;
+        if (other.getSourceBackup() != null && other.getSourceBackup().equals(this.getSourceBackup()) == false)
+            return false;
+        if (other.getSourceCluster() == null ^ this.getSourceCluster() == null)
+            return false;
+        if (other.getSourceCluster() != null && other.getSourceCluster().equals(this.getSourceCluster()) == false)
+            return false;
+        if (other.getDeleteTimestamp() == null ^ this.getDeleteTimestamp() == null)
+            return false;
+        if (other.getDeleteTimestamp() != null && other.getDeleteTimestamp().equals(this.getDeleteTimestamp()) == false)
+            return false;
         return true;
     }
 
@@ -293,6 +482,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBackupState() == null) ? 0 : getBackupState().hashCode());
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
         hashCode = prime * hashCode + ((getCreateTimestamp() == null) ? 0 : getCreateTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getCopyTimestamp() == null) ? 0 : getCopyTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
+        hashCode = prime * hashCode + ((getSourceBackup() == null) ? 0 : getSourceBackup().hashCode());
+        hashCode = prime * hashCode + ((getSourceCluster() == null) ? 0 : getSourceCluster().hashCode());
+        hashCode = prime * hashCode + ((getDeleteTimestamp() == null) ? 0 : getDeleteTimestamp().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,12 +55,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      */
     private String cacheClusterId;
     /**
-     * <important>
-     * <p>
-     * Due to current limitations on Redis (cluster mode disabled), this operation or parameter is not supported on
-     * Redis (cluster mode enabled) replication groups.
-     * </p>
-     * </important>
      * <p>
      * The ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster
      * is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary
@@ -219,6 +213,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
+     * <p>
+     * <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -257,14 +255,29 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
+     * For a complete listing of node types and specifications, see:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Memcached</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Redis</a>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String cacheNodeType;
     /**
@@ -283,10 +296,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to
-     * use an earlier engine version, you must delete the existing cluster or replication group and create it anew with
-     * the earlier engine version.
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
+     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * earlier engine version, you must delete the existing cluster or replication group and create it anew with the
+     * earlier engine version.
      * </p>
      */
     private String engineVersion;
@@ -309,7 +322,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start
      * creating a cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet
      * Groups</a>.
      * </p>
      * </important>
@@ -457,7 +470,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </note>
      * <p>
-     * Default: 0 (i.e., automatic backups are disabled for this cluster).
+     * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
      */
     private Integer snapshotRetentionLimit;
@@ -482,21 +495,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
-     * <p>
-     * This parameter is valid only if:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The line <code>requirepass</code> was added to the database configuration file.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * Password constraints:
      * </p>
@@ -640,6 +638,11 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *        </p>
+     *        <p>
+     *        <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     *        <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+     *        <code>cache.r4.16xlarge</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -679,16 +682,30 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of node types and specifications, see <a
-     *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        either <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Redis</a>.
-     * @param engine
-     *        The name of the cache engine to be used for this cluster.
+     *        For a complete listing of node types and specifications, see:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     *        >Cache Node Type-Specific Parameters for Memcached</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     *        >Cache Node Type-Specific Parameters for Redis</a>
+     *        </p>
+     *        </li>
+     * @param engine
+     *        The name of the cache engine to be used for this cluster.</p>
      *        <p>
      *        Valid values for this parameter are: <code>memcached</code> | <code>redis</code>
      * @param cacheSecurityGroupNames
@@ -865,12 +882,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * <important>
-     * <p>
-     * Due to current limitations on Redis (cluster mode disabled), this operation or parameter is not supported on
-     * Redis (cluster mode enabled) replication groups.
-     * </p>
-     * </important>
      * <p>
      * The ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster
      * is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary
@@ -887,16 +898,9 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param replicationGroupId
-     *        <p>
-     *        Due to current limitations on Redis (cluster mode disabled), this operation or parameter is not supported
-     *        on Redis (cluster mode enabled) replication groups.
-     *        </p>
-     *        </important>
-     *        <p>
      *        The ID of the replication group to which this cluster should belong. If this parameter is specified, the
      *        cluster is added to the specified replication group as a read replica; otherwise, the cluster is a
-     *        standalone primary that is not part of any replication group.
-     *        </p>
+     *        standalone primary that is not part of any replication group.</p>
      *        <p>
      *        If the specified replication group is Multi-AZ enabled and the Availability Zone is not specified, the
      *        cluster is created in Availability Zones that provide the best spread of read replicas across Availability
@@ -913,12 +917,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * <important>
-     * <p>
-     * Due to current limitations on Redis (cluster mode disabled), this operation or parameter is not supported on
-     * Redis (cluster mode enabled) replication groups.
-     * </p>
-     * </important>
      * <p>
      * The ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster
      * is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary
@@ -934,16 +932,9 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </note>
      * 
-     * @return <p>
-     *         Due to current limitations on Redis (cluster mode disabled), this operation or parameter is not supported
-     *         on Redis (cluster mode enabled) replication groups.
-     *         </p>
-     *         </important>
-     *         <p>
-     *         The ID of the replication group to which this cluster should belong. If this parameter is specified, the
+     * @return The ID of the replication group to which this cluster should belong. If this parameter is specified, the
      *         cluster is added to the specified replication group as a read replica; otherwise, the cluster is a
-     *         standalone primary that is not part of any replication group.
-     *         </p>
+     *         standalone primary that is not part of any replication group.</p>
      *         <p>
      *         If the specified replication group is Multi-AZ enabled and the Availability Zone is not specified, the
      *         cluster is created in Availability Zones that provide the best spread of read replicas across
@@ -960,12 +951,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * <important>
-     * <p>
-     * Due to current limitations on Redis (cluster mode disabled), this operation or parameter is not supported on
-     * Redis (cluster mode enabled) replication groups.
-     * </p>
-     * </important>
      * <p>
      * The ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster
      * is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary
@@ -982,16 +967,9 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      * 
      * @param replicationGroupId
-     *        <p>
-     *        Due to current limitations on Redis (cluster mode disabled), this operation or parameter is not supported
-     *        on Redis (cluster mode enabled) replication groups.
-     *        </p>
-     *        </important>
-     *        <p>
      *        The ID of the replication group to which this cluster should belong. If this parameter is specified, the
      *        cluster is added to the specified replication group as a read replica; otherwise, the cluster is a
-     *        standalone primary that is not part of any replication group.
-     *        </p>
+     *        standalone primary that is not part of any replication group.</p>
      *        <p>
      *        If the specified replication group is Multi-AZ enabled and the Availability Zone is not specified, the
      *        cluster is created in Availability Zones that provide the best spread of read replicas across Availability
@@ -1635,6 +1613,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
+     * <p>
+     * <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -1673,14 +1655,29 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
+     * For a complete listing of node types and specifications, see:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Memcached</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Redis</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cacheNodeType
      *        The compute and memory capacity of the nodes in the node group (shard).</p>
@@ -1754,6 +1751,11 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *        </p>
+     *        <p>
+     *        <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     *        <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+     *        <code>cache.r4.16xlarge</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -1793,13 +1795,28 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of node types and specifications, see <a
-     *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        either <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Redis</a>.
+     *        For a complete listing of node types and specifications, see:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     *        >Cache Node Type-Specific Parameters for Memcached</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     *        >Cache Node Type-Specific Parameters for Redis</a>
+     *        </p>
+     *        </li>
      */
 
     public void setCacheNodeType(String cacheNodeType) {
@@ -1879,6 +1896,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
+     * <p>
+     * <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -1917,14 +1938,29 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
+     * For a complete listing of node types and specifications, see:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Memcached</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Redis</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The compute and memory capacity of the nodes in the node group (shard).</p>
      *         <p>
@@ -1997,6 +2033,11 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *         </p>
+     *         <p>
+     *         <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     *         <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+     *         <code>cache.r4.16xlarge</code>
+     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -2036,13 +2077,28 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         </ul>
      *         <p>
-     *         For a complete listing of node types and specifications, see <a
-     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *         either <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     *         >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     *         >Cache Node Type-Specific Parameters for Redis</a>.
+     *         For a complete listing of node types and specifications, see:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href=
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     *         >Cache Node Type-Specific Parameters for Memcached</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href=
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     *         >Cache Node Type-Specific Parameters for Redis</a>
+     *         </p>
+     *         </li>
      */
 
     public String getCacheNodeType() {
@@ -2122,6 +2178,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
+     * <p>
+     * <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -2160,14 +2220,29 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
+     * For a complete listing of node types and specifications, see:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Memcached</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Redis</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cacheNodeType
      *        The compute and memory capacity of the nodes in the node group (shard).</p>
@@ -2241,6 +2316,11 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *        </p>
+     *        <p>
+     *        <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     *        <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+     *        <code>cache.r4.16xlarge</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -2280,13 +2360,28 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of node types and specifications, see <a
-     *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        either <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Redis</a>.
+     *        For a complete listing of node types and specifications, see:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     *        >Cache Node Type-Specific Parameters for Memcached</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     *        >Cache Node Type-Specific Parameters for Redis</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2357,10 +2452,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to
-     * use an earlier engine version, you must delete the existing cluster or replication group and create it anew with
-     * the earlier engine version.
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
+     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * earlier engine version, you must delete the existing cluster or replication group and create it anew with the
+     * earlier engine version.
      * </p>
      * 
      * @param engineVersion
@@ -2368,7 +2463,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        versions, use the DescribeCacheEngineVersions operation.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
      *        >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you
      *        want to use an earlier engine version, you must delete the existing cluster or replication group and
      *        create it anew with the earlier engine version.
@@ -2385,17 +2480,17 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to
-     * use an earlier engine version, you must delete the existing cluster or replication group and create it anew with
-     * the earlier engine version.
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
+     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * earlier engine version, you must delete the existing cluster or replication group and create it anew with the
+     * earlier engine version.
      * </p>
      * 
      * @return The version number of the cache engine to be used for this cluster. To view the supported cache engine
      *         versions, use the DescribeCacheEngineVersions operation.</p>
      *         <p>
-     *         <b>Important:</b> You can upgrade to a newer engine version (see <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     *         <b>Important:</b> You can upgrade to a newer engine version (see <a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
      *         >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you
      *         want to use an earlier engine version, you must delete the existing cluster or replication group and
      *         create it anew with the earlier engine version.
@@ -2412,10 +2507,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * <b>Important:</b> You can upgrade to a newer engine version (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
-     * >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to
-     * use an earlier engine version, you must delete the existing cluster or replication group and create it anew with
-     * the earlier engine version.
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a
+     * Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an
+     * earlier engine version, you must delete the existing cluster or replication group and create it anew with the
+     * earlier engine version.
      * </p>
      * 
      * @param engineVersion
@@ -2423,7 +2518,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        versions, use the DescribeCacheEngineVersions operation.</p>
      *        <p>
      *        <b>Important:</b> You can upgrade to a newer engine version (see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement"
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement"
      *        >Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you
      *        want to use an earlier engine version, you must delete the existing cluster or replication group and
      *        create it anew with the earlier engine version.
@@ -2498,7 +2593,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start
      * creating a cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet
      * Groups</a>.
      * </p>
      * </important>
@@ -2512,7 +2607,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you
      *        start creating a cluster. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet
      *        Groups</a>.
      *        </p>
      */
@@ -2532,7 +2627,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start
      * creating a cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet
      * Groups</a>.
      * </p>
      * </important>
@@ -2545,7 +2640,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you
      *         start creating a cluster. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet
      *         Groups</a>.
      *         </p>
      */
@@ -2565,7 +2660,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you start
      * creating a cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet
      * Groups</a>.
      * </p>
      * </important>
@@ -2579,7 +2674,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        If you're going to launch your cluster in an Amazon VPC, you need to create a subnet group before you
      *        start creating a cluster. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets and Subnet
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet
      *        Groups</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3575,7 +3670,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </note>
      * <p>
-     * Default: 0 (i.e., automatic backups are disabled for this cluster).
+     * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
      * 
      * @param snapshotRetentionLimit
@@ -3587,7 +3682,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        </note>
      *        <p>
-     *        Default: 0 (i.e., automatic backups are disabled for this cluster).
+     *        Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      */
 
     public void setSnapshotRetentionLimit(Integer snapshotRetentionLimit) {
@@ -3605,7 +3700,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </note>
      * <p>
-     * Default: 0 (i.e., automatic backups are disabled for this cluster).
+     * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
      * 
      * @return The number of days for which ElastiCache retains automatic snapshots before deleting them. For example,
@@ -3616,7 +3711,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         </p>
      *         </note>
      *         <p>
-     *         Default: 0 (i.e., automatic backups are disabled for this cluster).
+     *         Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      */
 
     public Integer getSnapshotRetentionLimit() {
@@ -3634,7 +3729,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </note>
      * <p>
-     * Default: 0 (i.e., automatic backups are disabled for this cluster).
+     * Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * </p>
      * 
      * @param snapshotRetentionLimit
@@ -3646,7 +3741,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        </p>
      *        </note>
      *        <p>
-     *        Default: 0 (i.e., automatic backups are disabled for this cluster).
+     *        Default: 0 (i.e., automatic backups are disabled for this cache cluster).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3766,21 +3861,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
      * <p>
-     * This parameter is valid only if:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The line <code>requirepass</code> was added to the database configuration file.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * Password constraints:
      * </p>
      * <ul>
@@ -3807,22 +3887,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param authToken
      *        <b>Reserved parameter.</b> The password used to access a password protected server.</p>
-     *        <p>
-     *        This parameter is valid only if:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was
-     *        created.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The line <code>requirepass</code> was added to the database configuration file.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        Password constraints:
      *        </p>
@@ -3857,21 +3921,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
      * <p>
-     * This parameter is valid only if:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The line <code>requirepass</code> was added to the database configuration file.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * Password constraints:
      * </p>
      * <ul>
@@ -3897,22 +3946,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @return <b>Reserved parameter.</b> The password used to access a password protected server.</p>
-     *         <p>
-     *         This parameter is valid only if:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was
-     *         created.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         The line <code>requirepass</code> was added to the database configuration file.
-     *         </p>
-     *         </li>
-     *         </ul>
      *         <p>
      *         Password constraints:
      *         </p>
@@ -3947,21 +3980,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <b>Reserved parameter.</b> The password used to access a password protected server.
      * </p>
      * <p>
-     * This parameter is valid only if:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The line <code>requirepass</code> was added to the database configuration file.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * Password constraints:
      * </p>
      * <ul>
@@ -3988,22 +4006,6 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param authToken
      *        <b>Reserved parameter.</b> The password used to access a password protected server.</p>
-     *        <p>
-     *        This parameter is valid only if:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        The parameter <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the cluster was
-     *        created.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The line <code>requirepass</code> was added to the database configuration file.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        Password constraints:
      *        </p>
@@ -4036,7 +4038,8 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

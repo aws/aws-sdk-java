@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,19 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
      * </p>
      */
     private Boolean isModifiable;
+    /**
+     * <p>
+     * Boolean value where true indicates that a value must be specified for this option setting of the option group
+     * option.
+     * </p>
+     */
+    private Boolean isRequired;
+    /**
+     * <p>
+     * The minimum DB engine version required for the corresponding allowed value for this option setting.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<MinimumEngineVersionPerAllowedValue> minimumEngineVersionPerAllowedValue;
 
     /**
      * <p>
@@ -317,7 +330,145 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Boolean value where true indicates that a value must be specified for this option setting of the option group
+     * option.
+     * </p>
+     * 
+     * @param isRequired
+     *        Boolean value where true indicates that a value must be specified for this option setting of the option
+     *        group option.
+     */
+
+    public void setIsRequired(Boolean isRequired) {
+        this.isRequired = isRequired;
+    }
+
+    /**
+     * <p>
+     * Boolean value where true indicates that a value must be specified for this option setting of the option group
+     * option.
+     * </p>
+     * 
+     * @return Boolean value where true indicates that a value must be specified for this option setting of the option
+     *         group option.
+     */
+
+    public Boolean getIsRequired() {
+        return this.isRequired;
+    }
+
+    /**
+     * <p>
+     * Boolean value where true indicates that a value must be specified for this option setting of the option group
+     * option.
+     * </p>
+     * 
+     * @param isRequired
+     *        Boolean value where true indicates that a value must be specified for this option setting of the option
+     *        group option.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OptionGroupOptionSetting withIsRequired(Boolean isRequired) {
+        setIsRequired(isRequired);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Boolean value where true indicates that a value must be specified for this option setting of the option group
+     * option.
+     * </p>
+     * 
+     * @return Boolean value where true indicates that a value must be specified for this option setting of the option
+     *         group option.
+     */
+
+    public Boolean isRequired() {
+        return this.isRequired;
+    }
+
+    /**
+     * <p>
+     * The minimum DB engine version required for the corresponding allowed value for this option setting.
+     * </p>
+     * 
+     * @return The minimum DB engine version required for the corresponding allowed value for this option setting.
+     */
+
+    public java.util.List<MinimumEngineVersionPerAllowedValue> getMinimumEngineVersionPerAllowedValue() {
+        if (minimumEngineVersionPerAllowedValue == null) {
+            minimumEngineVersionPerAllowedValue = new com.amazonaws.internal.SdkInternalList<MinimumEngineVersionPerAllowedValue>();
+        }
+        return minimumEngineVersionPerAllowedValue;
+    }
+
+    /**
+     * <p>
+     * The minimum DB engine version required for the corresponding allowed value for this option setting.
+     * </p>
+     * 
+     * @param minimumEngineVersionPerAllowedValue
+     *        The minimum DB engine version required for the corresponding allowed value for this option setting.
+     */
+
+    public void setMinimumEngineVersionPerAllowedValue(java.util.Collection<MinimumEngineVersionPerAllowedValue> minimumEngineVersionPerAllowedValue) {
+        if (minimumEngineVersionPerAllowedValue == null) {
+            this.minimumEngineVersionPerAllowedValue = null;
+            return;
+        }
+
+        this.minimumEngineVersionPerAllowedValue = new com.amazonaws.internal.SdkInternalList<MinimumEngineVersionPerAllowedValue>(
+                minimumEngineVersionPerAllowedValue);
+    }
+
+    /**
+     * <p>
+     * The minimum DB engine version required for the corresponding allowed value for this option setting.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMinimumEngineVersionPerAllowedValue(java.util.Collection)} or
+     * {@link #withMinimumEngineVersionPerAllowedValue(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param minimumEngineVersionPerAllowedValue
+     *        The minimum DB engine version required for the corresponding allowed value for this option setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OptionGroupOptionSetting withMinimumEngineVersionPerAllowedValue(MinimumEngineVersionPerAllowedValue... minimumEngineVersionPerAllowedValue) {
+        if (this.minimumEngineVersionPerAllowedValue == null) {
+            setMinimumEngineVersionPerAllowedValue(new com.amazonaws.internal.SdkInternalList<MinimumEngineVersionPerAllowedValue>(
+                    minimumEngineVersionPerAllowedValue.length));
+        }
+        for (MinimumEngineVersionPerAllowedValue ele : minimumEngineVersionPerAllowedValue) {
+            this.minimumEngineVersionPerAllowedValue.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The minimum DB engine version required for the corresponding allowed value for this option setting.
+     * </p>
+     * 
+     * @param minimumEngineVersionPerAllowedValue
+     *        The minimum DB engine version required for the corresponding allowed value for this option setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OptionGroupOptionSetting withMinimumEngineVersionPerAllowedValue(
+            java.util.Collection<MinimumEngineVersionPerAllowedValue> minimumEngineVersionPerAllowedValue) {
+        setMinimumEngineVersionPerAllowedValue(minimumEngineVersionPerAllowedValue);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -338,7 +489,11 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
         if (getAllowedValues() != null)
             sb.append("AllowedValues: ").append(getAllowedValues()).append(",");
         if (getIsModifiable() != null)
-            sb.append("IsModifiable: ").append(getIsModifiable());
+            sb.append("IsModifiable: ").append(getIsModifiable()).append(",");
+        if (getIsRequired() != null)
+            sb.append("IsRequired: ").append(getIsRequired()).append(",");
+        if (getMinimumEngineVersionPerAllowedValue() != null)
+            sb.append("MinimumEngineVersionPerAllowedValue: ").append(getMinimumEngineVersionPerAllowedValue());
         sb.append("}");
         return sb.toString();
     }
@@ -377,6 +532,15 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
             return false;
         if (other.getIsModifiable() != null && other.getIsModifiable().equals(this.getIsModifiable()) == false)
             return false;
+        if (other.getIsRequired() == null ^ this.getIsRequired() == null)
+            return false;
+        if (other.getIsRequired() != null && other.getIsRequired().equals(this.getIsRequired()) == false)
+            return false;
+        if (other.getMinimumEngineVersionPerAllowedValue() == null ^ this.getMinimumEngineVersionPerAllowedValue() == null)
+            return false;
+        if (other.getMinimumEngineVersionPerAllowedValue() != null
+                && other.getMinimumEngineVersionPerAllowedValue().equals(this.getMinimumEngineVersionPerAllowedValue()) == false)
+            return false;
         return true;
     }
 
@@ -391,6 +555,8 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getApplyType() == null) ? 0 : getApplyType().hashCode());
         hashCode = prime * hashCode + ((getAllowedValues() == null) ? 0 : getAllowedValues().hashCode());
         hashCode = prime * hashCode + ((getIsModifiable() == null) ? 0 : getIsModifiable().hashCode());
+        hashCode = prime * hashCode + ((getIsRequired() == null) ? 0 : getIsRequired().hashCode());
+        hashCode = prime * hashCode + ((getMinimumEngineVersionPerAllowedValue() == null) ? 0 : getMinimumEngineVersionPerAllowedValue().hashCode());
         return hashCode;
     }
 

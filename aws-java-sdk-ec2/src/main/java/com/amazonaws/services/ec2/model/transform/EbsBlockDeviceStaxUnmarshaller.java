@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,11 +43,6 @@ public class EbsBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsBlockDevi
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("encrypted", targetDepth)) {
-                    ebsBlockDevice.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("deleteOnTermination", targetDepth)) {
                     ebsBlockDevice.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -55,11 +50,6 @@ public class EbsBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsBlockDevi
 
                 if (context.testExpression("iops", targetDepth)) {
                     ebsBlockDevice.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("KmsKeyId", targetDepth)) {
-                    ebsBlockDevice.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -75,6 +65,16 @@ public class EbsBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsBlockDevi
 
                 if (context.testExpression("volumeType", targetDepth)) {
                     ebsBlockDevice.setVolumeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("encrypted", targetDepth)) {
+                    ebsBlockDevice.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("KmsKeyId", targetDepth)) {
+                    ebsBlockDevice.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

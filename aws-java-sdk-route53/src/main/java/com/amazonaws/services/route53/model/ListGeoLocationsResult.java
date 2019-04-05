@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,15 +38,15 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * A value that indicates whether more locations remain to be listed after the last location in this response. If
      * so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and
      * include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     * <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
-     * <code>StartSubdivisionCode</code>, as applicable.
+     * <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and
+     * <code>startsubdivisioncode</code>, as applicable.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
+     * Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      */
@@ -54,7 +54,7 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
+     * Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      */
@@ -62,7 +62,7 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
+     * Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      */
@@ -160,16 +160,16 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * A value that indicates whether more locations remain to be listed after the last location in this response. If
      * so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and
      * include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     * <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
-     * <code>StartSubdivisionCode</code>, as applicable.
+     * <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and
+     * <code>startsubdivisioncode</code>, as applicable.
      * </p>
      * 
      * @param isTruncated
      *        A value that indicates whether more locations remain to be listed after the last location in this
      *        response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit
      *        another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>,
-     *        and <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>
-     *        , and <code>StartSubdivisionCode</code>, as applicable.
+     *        and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>
+     *        , and <code>startsubdivisioncode</code>, as applicable.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -181,15 +181,15 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * A value that indicates whether more locations remain to be listed after the last location in this response. If
      * so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and
      * include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     * <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
-     * <code>StartSubdivisionCode</code>, as applicable.
+     * <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and
+     * <code>startsubdivisioncode</code>, as applicable.
      * </p>
      * 
      * @return A value that indicates whether more locations remain to be listed after the last location in this
      *         response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit
      *         another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>,
-     *         and <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>,
-     *         <code>StartCountryCode</code>, and <code>StartSubdivisionCode</code>, as applicable.
+     *         and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>,
+     *         <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.
      */
 
     public Boolean getIsTruncated() {
@@ -201,16 +201,16 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * A value that indicates whether more locations remain to be listed after the last location in this response. If
      * so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and
      * include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     * <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
-     * <code>StartSubdivisionCode</code>, as applicable.
+     * <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and
+     * <code>startsubdivisioncode</code>, as applicable.
      * </p>
      * 
      * @param isTruncated
      *        A value that indicates whether more locations remain to be listed after the last location in this
      *        response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit
      *        another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>,
-     *        and <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>
-     *        , and <code>StartSubdivisionCode</code>, as applicable.
+     *        and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>
+     *        , and <code>startsubdivisioncode</code>, as applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,15 +224,15 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
      * A value that indicates whether more locations remain to be listed after the last location in this response. If
      * so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and
      * include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and
-     * <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>, <code>StartCountryCode</code>, and
-     * <code>StartSubdivisionCode</code>, as applicable.
+     * <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and
+     * <code>startsubdivisioncode</code>, as applicable.
      * </p>
      * 
      * @return A value that indicates whether more locations remain to be listed after the last location in this
      *         response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit
      *         another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>,
-     *         and <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>,
-     *         <code>StartCountryCode</code>, and <code>StartSubdivisionCode</code>, as applicable.
+     *         and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>,
+     *         <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.
      */
 
     public Boolean isTruncated() {
@@ -242,13 +242,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
+     * Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextContinentCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
-     *        locations. Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code>
+     *        locations. Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code>
      *        parameter in another <code>ListGeoLocations</code> request.
      */
 
@@ -259,12 +259,12 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
+     * Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
-     *         locations. Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code>
+     *         locations. Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code>
      *         parameter in another <code>ListGeoLocations</code> request.
      */
 
@@ -275,13 +275,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code> parameter in another
+     * Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextContinentCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
-     *        locations. Enter the value of <code>NextContinentCode</code> in the <code>StartContinentCode</code>
+     *        locations. Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code>
      *        parameter in another <code>ListGeoLocations</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -294,13 +294,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
+     * Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextCountryCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
-     *        locations. Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter
+     *        locations. Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter
      *        in another <code>ListGeoLocations</code> request.
      */
 
@@ -311,12 +311,12 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
+     * Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
-     *         locations. Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter
+     *         locations. Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter
      *         in another <code>ListGeoLocations</code> request.
      */
 
@@ -327,13 +327,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter in another
+     * Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextCountryCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
-     *        locations. Enter the value of <code>NextCountryCode</code> in the <code>StartCountryCode</code> parameter
+     *        locations. Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter
      *        in another <code>ListGeoLocations</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -346,13 +346,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
+     * Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextSubdivisionCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
-     *        locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
+     *        locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code>
      *        parameter in another <code>ListGeoLocations</code> request.
      */
 
@@ -363,12 +363,12 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
+     * Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
-     *         locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
+     *         locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code>
      *         parameter in another <code>ListGeoLocations</code> request.
      */
 
@@ -379,13 +379,13 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations.
-     * Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code> parameter in another
+     * Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another
      * <code>ListGeoLocations</code> request.
      * </p>
      * 
      * @param nextSubdivisionCode
      *        If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more
-     *        locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>StartSubdivisionCode</code>
+     *        locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code>
      *        parameter in another <code>ListGeoLocations</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -436,7 +436,8 @@ public class ListGeoLocationsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

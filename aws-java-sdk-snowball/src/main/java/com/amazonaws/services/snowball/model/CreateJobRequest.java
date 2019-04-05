@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,8 +130,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String clusterId;
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      */
     private String snowballType;
@@ -1008,13 +1008,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
@@ -1024,12 +1024,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
-     * @return The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *         cluster jobs is <code>EDGE</code>.
+     * @return The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     *         <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
@@ -1039,13 +1039,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -1057,13 +1057,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @see SnowballType
      */
 
@@ -1073,13 +1073,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball appliance to use for this job. Currently, the only supported appliance type for
-     *        cluster jobs is <code>EDGE</code>.
+     *        The type of AWS Snowball device to use for this job. The only supported device types for cluster jobs are
+     *        <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -1130,7 +1130,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

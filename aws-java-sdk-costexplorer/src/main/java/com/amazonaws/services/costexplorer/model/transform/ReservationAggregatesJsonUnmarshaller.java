@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,17 +52,57 @@ public class ReservationAggregatesJsonUnmarshaller implements Unmarshaller<Reser
                     context.nextToken();
                     reservationAggregates.setUtilizationPercentage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("UtilizationPercentageInUnits", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setUtilizationPercentageInUnits(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PurchasedHours", targetDepth)) {
                     context.nextToken();
                     reservationAggregates.setPurchasedHours(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PurchasedUnits", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setPurchasedUnits(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TotalActualHours", targetDepth)) {
                     context.nextToken();
                     reservationAggregates.setTotalActualHours(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TotalActualUnits", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setTotalActualUnits(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("UnusedHours", targetDepth)) {
                     context.nextToken();
                     reservationAggregates.setUnusedHours(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UnusedUnits", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setUnusedUnits(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OnDemandCostOfRIHoursUsed", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setOnDemandCostOfRIHoursUsed(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NetRISavings", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setNetRISavings(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TotalPotentialRISavings", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setTotalPotentialRISavings(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AmortizedUpfrontFee", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setAmortizedUpfrontFee(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AmortizedRecurringFee", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setAmortizedRecurringFee(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TotalAmortizedFee", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setTotalAmortizedFee(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

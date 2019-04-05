@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a target tracking scaling policy.
+ * Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and
+ * <a>ScalingPolicy</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/TargetTrackingConfiguration"
@@ -30,13 +31,13 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A predefined metric.
+     * A predefined metric. You can specify either a predefined metric or a customized metric.
      * </p>
      */
     private PredefinedScalingMetricSpecification predefinedScalingMetricSpecification;
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      */
     private CustomizedScalingMetricSpecification customizedScalingMetricSpecification;
@@ -49,20 +50,23 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
     private Double targetValue;
     /**
      * <p>
-     * Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>, scale in
-     * is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in
-     * is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is
-     * <code>false</code>.
+     * Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>,
+     * scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource.
+     * Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable
+     * resource.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
      * </p>
      */
     private Boolean disableScaleIn;
     /**
      * <p>
-     * The amount of time, in seconds, after a scale out activity completes before another scale out activity can start.
+     * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
      * This value is not used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale out event that
+     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
      * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
      * continuously (but not excessively) scale out.
      * </p>
@@ -75,7 +79,7 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
      * </p>
      * <p>
      * The cooldown period is used to block subsequent scale in requests until it has expired. The intention is to scale
-     * in conservatively to protect your application's availability. However, if another alarm triggers a scale out
+     * in conservatively to protect your application's availability. However, if another alarm triggers a scale-out
      * policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable target immediately.
      * </p>
      */
@@ -90,11 +94,11 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A predefined metric.
+     * A predefined metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
      * @param predefinedScalingMetricSpecification
-     *        A predefined metric.
+     *        A predefined metric. You can specify either a predefined metric or a customized metric.
      */
 
     public void setPredefinedScalingMetricSpecification(PredefinedScalingMetricSpecification predefinedScalingMetricSpecification) {
@@ -103,10 +107,10 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A predefined metric.
+     * A predefined metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
-     * @return A predefined metric.
+     * @return A predefined metric. You can specify either a predefined metric or a customized metric.
      */
 
     public PredefinedScalingMetricSpecification getPredefinedScalingMetricSpecification() {
@@ -115,11 +119,11 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A predefined metric.
+     * A predefined metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
      * @param predefinedScalingMetricSpecification
-     *        A predefined metric.
+     *        A predefined metric. You can specify either a predefined metric or a customized metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +134,11 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
      * @param customizedScalingMetricSpecification
-     *        A customized metric.
+     *        A customized metric. You can specify either a predefined metric or a customized metric.
      */
 
     public void setCustomizedScalingMetricSpecification(CustomizedScalingMetricSpecification customizedScalingMetricSpecification) {
@@ -143,10 +147,10 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
-     * @return A customized metric.
+     * @return A customized metric. You can specify either a predefined metric or a customized metric.
      */
 
     public CustomizedScalingMetricSpecification getCustomizedScalingMetricSpecification() {
@@ -155,11 +159,11 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A customized metric.
+     * A customized metric. You can specify either a predefined metric or a customized metric.
      * </p>
      * 
      * @param customizedScalingMetricSpecification
-     *        A customized metric.
+     *        A customized metric. You can specify either a predefined metric or a customized metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,17 +220,22 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>, scale in
-     * is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in
-     * is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is
-     * <code>false</code>.
+     * Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>,
+     * scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource.
+     * Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable
+     * resource.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
      * </p>
      * 
      * @param disableScaleIn
-     *        Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>,
-     *        scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-     *        Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable
-     *        resource. The default value is <code>false</code>.
+     *        Indicates whether scale in by the target tracking scaling policy is disabled. If the value is
+     *        <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity
+     *        from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can
+     *        remove capacity from the scalable resource. </p>
+     *        <p>
+     *        The default value is <code>false</code>.
      */
 
     public void setDisableScaleIn(Boolean disableScaleIn) {
@@ -235,16 +244,21 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>, scale in
-     * is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in
-     * is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is
-     * <code>false</code>.
+     * Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>,
+     * scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource.
+     * Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable
+     * resource.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
      * </p>
      * 
-     * @return Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>,
-     *         scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-     *         Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable
-     *         resource. The default value is <code>false</code>.
+     * @return Indicates whether scale in by the target tracking scaling policy is disabled. If the value is
+     *         <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity
+     *         from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can
+     *         remove capacity from the scalable resource. </p>
+     *         <p>
+     *         The default value is <code>false</code>.
      */
 
     public Boolean getDisableScaleIn() {
@@ -253,17 +267,22 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>, scale in
-     * is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in
-     * is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is
-     * <code>false</code>.
+     * Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>,
+     * scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource.
+     * Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable
+     * resource.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
      * </p>
      * 
      * @param disableScaleIn
-     *        Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>,
-     *        scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-     *        Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable
-     *        resource. The default value is <code>false</code>.
+     *        Indicates whether scale in by the target tracking scaling policy is disabled. If the value is
+     *        <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity
+     *        from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can
+     *        remove capacity from the scalable resource. </p>
+     *        <p>
+     *        The default value is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,16 +293,21 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>, scale in
-     * is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in
-     * is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is
-     * <code>false</code>.
+     * Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>,
+     * scale in is disabled and the target tracking scaling policy doesn't remove capacity from the scalable resource.
+     * Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable
+     * resource.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
      * </p>
      * 
-     * @return Indicates whether scale in by the target tracking policy is disabled. If the value is <code>true</code>,
-     *         scale in is disabled and the target tracking policy won't remove capacity from the scalable resource.
-     *         Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable
-     *         resource. The default value is <code>false</code>.
+     * @return Indicates whether scale in by the target tracking scaling policy is disabled. If the value is
+     *         <code>true</code>, scale in is disabled and the target tracking scaling policy doesn't remove capacity
+     *         from the scalable resource. Otherwise, scale in is enabled and the target tracking scaling policy can
+     *         remove capacity from the scalable resource. </p>
+     *         <p>
+     *         The default value is <code>false</code>.
      */
 
     public Boolean isDisableScaleIn() {
@@ -292,20 +316,20 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scale out activity completes before another scale out activity can start.
+     * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
      * This value is not used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale out event that
+     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
      * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
      * continuously (but not excessively) scale out.
      * </p>
      * 
      * @param scaleOutCooldown
-     *        The amount of time, in seconds, after a scale out activity completes before another scale out activity can
+     *        The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can
      *        start. This value is not used if the scalable resource is an Auto Scaling group.</p>
      *        <p>
-     *        While the cooldown period is in effect, the capacity that has been added by the previous scale out event
+     *        While the cooldown period is in effect, the capacity that has been added by the previous scale-out event
      *        that initiated the cooldown is calculated as part of the desired capacity for the next scale out. The
      *        intention is to continuously (but not excessively) scale out.
      */
@@ -316,19 +340,19 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scale out activity completes before another scale out activity can start.
+     * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
      * This value is not used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale out event that
+     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
      * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
      * continuously (but not excessively) scale out.
      * </p>
      * 
-     * @return The amount of time, in seconds, after a scale out activity completes before another scale out activity
+     * @return The amount of time, in seconds, after a scale-out activity completes before another scale-out activity
      *         can start. This value is not used if the scalable resource is an Auto Scaling group.</p>
      *         <p>
-     *         While the cooldown period is in effect, the capacity that has been added by the previous scale out event
+     *         While the cooldown period is in effect, the capacity that has been added by the previous scale-out event
      *         that initiated the cooldown is calculated as part of the desired capacity for the next scale out. The
      *         intention is to continuously (but not excessively) scale out.
      */
@@ -339,20 +363,20 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scale out activity completes before another scale out activity can start.
+     * The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start.
      * This value is not used if the scalable resource is an Auto Scaling group.
      * </p>
      * <p>
-     * While the cooldown period is in effect, the capacity that has been added by the previous scale out event that
+     * While the cooldown period is in effect, the capacity that has been added by the previous scale-out event that
      * initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to
      * continuously (but not excessively) scale out.
      * </p>
      * 
      * @param scaleOutCooldown
-     *        The amount of time, in seconds, after a scale out activity completes before another scale out activity can
+     *        The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can
      *        start. This value is not used if the scalable resource is an Auto Scaling group.</p>
      *        <p>
-     *        While the cooldown period is in effect, the capacity that has been added by the previous scale out event
+     *        While the cooldown period is in effect, the capacity that has been added by the previous scale-out event
      *        that initiated the cooldown is calculated as part of the desired capacity for the next scale out. The
      *        intention is to continuously (but not excessively) scale out.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -370,7 +394,7 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
      * </p>
      * <p>
      * The cooldown period is used to block subsequent scale in requests until it has expired. The intention is to scale
-     * in conservatively to protect your application's availability. However, if another alarm triggers a scale out
+     * in conservatively to protect your application's availability. However, if another alarm triggers a scale-out
      * policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable target immediately.
      * </p>
      * 
@@ -380,7 +404,7 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
      *        <p>
      *        The cooldown period is used to block subsequent scale in requests until it has expired. The intention is
      *        to scale in conservatively to protect your application's availability. However, if another alarm triggers
-     *        a scale out policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable
+     *        a scale-out policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable
      *        target immediately.
      */
 
@@ -395,7 +419,7 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
      * </p>
      * <p>
      * The cooldown period is used to block subsequent scale in requests until it has expired. The intention is to scale
-     * in conservatively to protect your application's availability. However, if another alarm triggers a scale out
+     * in conservatively to protect your application's availability. However, if another alarm triggers a scale-out
      * policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable target immediately.
      * </p>
      * 
@@ -404,7 +428,7 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
      *         <p>
      *         The cooldown period is used to block subsequent scale in requests until it has expired. The intention is
      *         to scale in conservatively to protect your application's availability. However, if another alarm triggers
-     *         a scale out policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable
+     *         a scale-out policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable
      *         target immediately.
      */
 
@@ -419,7 +443,7 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
      * </p>
      * <p>
      * The cooldown period is used to block subsequent scale in requests until it has expired. The intention is to scale
-     * in conservatively to protect your application's availability. However, if another alarm triggers a scale out
+     * in conservatively to protect your application's availability. However, if another alarm triggers a scale-out
      * policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable target immediately.
      * </p>
      * 
@@ -429,7 +453,7 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
      *        <p>
      *        The cooldown period is used to block subsequent scale in requests until it has expired. The intention is
      *        to scale in conservatively to protect your application's availability. However, if another alarm triggers
-     *        a scale out policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable
+     *        a scale-out policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable
      *        target immediately.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -486,7 +510,8 @@ public class TargetTrackingConfiguration implements Serializable, Cloneable, Str
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

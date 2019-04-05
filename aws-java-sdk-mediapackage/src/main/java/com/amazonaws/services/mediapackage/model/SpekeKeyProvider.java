@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate that MediaPackage will use for enforcing
+     * secure end-to-end data transfer with the key provider service.
+     */
+    private String certificateArn;
     /** The resource ID to include in key requests. */
     private String resourceId;
     /**
@@ -38,6 +43,46 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
     private java.util.List<String> systemIds;
     /** The URL of the external key provider service. */
     private String url;
+
+    /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate that MediaPackage will use for enforcing
+     * secure end-to-end data transfer with the key provider service.
+     * 
+     * @param certificateArn
+     *        An Amazon Resource Name (ARN) of a Certificate Manager certificate that MediaPackage will use for
+     *        enforcing secure end-to-end data transfer with the key provider service.
+     */
+
+    public void setCertificateArn(String certificateArn) {
+        this.certificateArn = certificateArn;
+    }
+
+    /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate that MediaPackage will use for enforcing
+     * secure end-to-end data transfer with the key provider service.
+     * 
+     * @return An Amazon Resource Name (ARN) of a Certificate Manager certificate that MediaPackage will use for
+     *         enforcing secure end-to-end data transfer with the key provider service.
+     */
+
+    public String getCertificateArn() {
+        return this.certificateArn;
+    }
+
+    /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate that MediaPackage will use for enforcing
+     * secure end-to-end data transfer with the key provider service.
+     * 
+     * @param certificateArn
+     *        An Amazon Resource Name (ARN) of a Certificate Manager certificate that MediaPackage will use for
+     *        enforcing secure end-to-end data transfer with the key provider service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpekeKeyProvider withCertificateArn(String certificateArn) {
+        setCertificateArn(certificateArn);
+        return this;
+    }
 
     /**
      * The resource ID to include in key requests.
@@ -210,7 +255,8 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -220,6 +266,8 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCertificateArn() != null)
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getRoleArn() != null)
@@ -242,6 +290,10 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof SpekeKeyProvider == false)
             return false;
         SpekeKeyProvider other = (SpekeKeyProvider) obj;
+        if (other.getCertificateArn() == null ^ this.getCertificateArn() == null)
+            return false;
+        if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+            return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
@@ -266,6 +318,7 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSystemIds() == null) ? 0 : getSystemIds().hashCode());

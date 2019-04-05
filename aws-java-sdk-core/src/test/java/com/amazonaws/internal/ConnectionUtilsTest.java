@@ -55,7 +55,7 @@ public class ConnectionUtilsTest {
 
         System.getProperties().put("http.proxyHost", "localhost");
         System.getProperties().put("http.proxyPort", String.valueOf(mockProxyServer.port()));
-        HttpURLConnection connection = sut.connectToEndpoint(URI.create("http://" + Inet4Address.getLocalHost().getHostAddress() + ":" + mockServer.port()), new HashMap<String, String>());
+        HttpURLConnection connection = sut.connectToEndpoint(URI.create("http://localhost:" + mockServer.port()), new HashMap<String, String>());
 
         assertThat(connection.usingProxy(), is(false));
     }

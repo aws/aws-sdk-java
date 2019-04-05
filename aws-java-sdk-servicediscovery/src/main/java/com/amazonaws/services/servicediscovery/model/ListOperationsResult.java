@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <note>
      * <p>
-     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
      * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
      * </p>
@@ -123,7 +123,7 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <note>
      * <p>
-     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
      * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
      * </p>
@@ -134,10 +134,10 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      *        the next group of results. Specify the value of <code>NextToken</code> from the previous response in the
      *        next request.</p> <note>
      *        <p>
-     *        Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria.
-     *        It's possible that no operations in the first <code>MaxResults</code> operations matched the specified
-     *        criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match
-     *        the criteria.
+     *        AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified
+     *        criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the
+     *        specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations
+     *        that match the criteria.
      *        </p>
      */
 
@@ -153,7 +153,7 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <note>
      * <p>
-     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
      * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
      * </p>
@@ -163,10 +163,10 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      *         get the next group of results. Specify the value of <code>NextToken</code> from the previous response in
      *         the next request.</p> <note>
      *         <p>
-     *         Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria.
-     *         It's possible that no operations in the first <code>MaxResults</code> operations matched the specified
-     *         criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that
-     *         match the criteria.
+     *         AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified
+     *         criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the
+     *         specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations
+     *         that match the criteria.
      *         </p>
      */
 
@@ -182,7 +182,7 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <note>
      * <p>
-     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
      * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
      * </p>
@@ -193,10 +193,10 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      *        the next group of results. Specify the value of <code>NextToken</code> from the previous response in the
      *        next request.</p> <note>
      *        <p>
-     *        Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria.
-     *        It's possible that no operations in the first <code>MaxResults</code> operations matched the specified
-     *        criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match
-     *        the criteria.
+     *        AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified
+     *        criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the
+     *        specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations
+     *        that match the criteria.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -207,7 +207,8 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

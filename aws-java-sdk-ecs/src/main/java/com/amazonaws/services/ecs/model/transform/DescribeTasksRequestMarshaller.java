@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class DescribeTasksRequestMarshaller {
             .marshallLocationName("cluster").build();
     private static final MarshallingInfo<List> TASKS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tasks").build();
+    private static final MarshallingInfo<List> INCLUDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("include").build();
 
     private static final DescribeTasksRequestMarshaller instance = new DescribeTasksRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class DescribeTasksRequestMarshaller {
         try {
             protocolMarshaller.marshall(describeTasksRequest.getCluster(), CLUSTER_BINDING);
             protocolMarshaller.marshall(describeTasksRequest.getTasks(), TASKS_BINDING);
+            protocolMarshaller.marshall(describeTasksRequest.getInclude(), INCLUDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

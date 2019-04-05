@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,11 +62,11 @@ public class TableInputJsonUnmarshaller implements Unmarshaller<TableInput, Json
                 }
                 if (context.testExpression("LastAccessTime", targetDepth)) {
                     context.nextToken();
-                    tableInput.setLastAccessTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tableInput.setLastAccessTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LastAnalyzedTime", targetDepth)) {
                     context.nextToken();
-                    tableInput.setLastAnalyzedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    tableInput.setLastAnalyzedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Retention", targetDepth)) {
                     context.nextToken();

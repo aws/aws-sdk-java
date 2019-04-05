@@ -69,7 +69,7 @@
         {"shape":"TooManyEnvironmentsException"},
         {"shape":"InsufficientPrivilegesException"}
       ],
-      "documentation":"<p>Create or update a group of environments that each run a separate component of a single application. Takes a list of version labels that specify application source bundles for each of the environments to create or update. The name of each environment and other required information must be included in the source bundles in an environment manifest named <code>env.yaml</code>. See <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html\">Compose Environments</a> for details.</p>"
+      "documentation":"<p>Create or update a group of environments that each run a separate component of a single application. Takes a list of version labels that specify application source bundles for each of the environments to create or update. The name of each environment and other required information must be included in the source bundles in an environment manifest named <code>env.yaml</code>. See <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html\">Compose Environments</a> for details.</p>"
     },
     "CreateApplication":{
       "name":"CreateApplication",
@@ -123,7 +123,7 @@
         {"shape":"TooManyBucketsException"},
         {"shape":"TooManyConfigurationTemplatesException"}
       ],
-      "documentation":"<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Related Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> <li> <p> <a>DescribeConfigurationSettings</a> </p> </li> <li> <p> <a>ListAvailableSolutionStacks</a> </p> </li> </ul>"
+      "documentation":"<p>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application with the same configuration settings.</p> <p>Templates aren't associated with any environment. The <code>EnvironmentName</code> response element is always <code>null</code>.</p> <p>Related Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> <li> <p> <a>DescribeConfigurationSettings</a> </p> </li> <li> <p> <a>ListAvailableSolutionStacks</a> </p> </li> </ul>"
     },
     "CreateEnvironment":{
       "name":"CreateEnvironment",
@@ -423,7 +423,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"ElasticBeanstalkServiceException"}
       ],
-      "documentation":"<p>Retrives detailed information about the health of instances in your AWS Elastic Beanstalk. This operation requires <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html\">enhanced health reporting</a>.</p>"
+      "documentation":"<p>Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk. This operation requires <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html\">enhanced health reporting</a>.</p>"
     },
     "DescribePlatformVersion":{
       "name":"DescribePlatformVersion",
@@ -487,7 +487,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ResourceTypeNotSupportedException"}
       ],
-      "documentation":"<p>Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains a list of tag key-value pairs.</p> <p>Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about environment tagging, see <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html\">Tagging Resources in Your Elastic Beanstalk Environment</a>.</p>"
+      "documentation":"<p>Returns the tags applied to an AWS Elastic Beanstalk resource. The response contains a list of tag key-value pairs.</p> <p>Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about environment tagging, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html\">Tagging Resources in Your Elastic Beanstalk Environment</a>.</p>"
     },
     "RebuildEnvironment":{
       "name":"RebuildEnvironment",
@@ -647,7 +647,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ResourceTypeNotSupportedException"}
       ],
-      "documentation":"<p>Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.</p> <p>Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about environment tagging, see <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html\">Tagging Resources in Your Elastic Beanstalk Environment</a>.</p> <p>If you create a custom IAM user policy to control permission to this operation, specify one of the following two virtual actions (or both) instead of the API operation name:</p> <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> <p>Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tags to add in the <code>TagsToAdd</code> parameter.</p> </dd> <dt>elasticbeanstalk:RemoveTags</dt> <dd> <p>Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tag keys to remove in the <code>TagsToRemove</code> parameter.</p> </dd> </dl> <p>For details about creating a custom user policy, see <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies\">Creating a Custom User Policy</a>.</p>"
+      "documentation":"<p>Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.</p> <p>Currently, Elastic Beanstalk only supports tagging of Elastic Beanstalk environments. For details about environment tagging, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html\">Tagging Resources in Your Elastic Beanstalk Environment</a>.</p> <p>If you create a custom IAM user policy to control permission to this operation, specify one of the following two virtual actions (or both) instead of the API operation name:</p> <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> <p>Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tags to add in the <code>TagsToAdd</code> parameter.</p> </dd> <dt>elasticbeanstalk:RemoveTags</dt> <dd> <p>Controls permission to call <code>UpdateTagsForResource</code> and pass a list of tag keys to remove in the <code>TagsToRemove</code> parameter.</p> </dd> </dl> <p>For details about creating a custom user policy, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies\">Creating a Custom User Policy</a>.</p>"
     },
     "ValidateConfigurationSettings":{
       "name":"ValidateConfigurationSettings",
@@ -808,7 +808,7 @@
       "members":{
         "ServiceRole":{
           "shape":"String",
-          "documentation":"<p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p>"
+          "documentation":"<p>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</p> <p>The <code>ServiceRole</code> property is required the first time that you provide a <code>VersionLifecycleConfig</code> for the application in one of the supporting calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in either one of the calls, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again in subsequent <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it in subsequent calls to change the Service Role to another value.</p>"
         },
         "VersionLifecycleConfig":{
           "shape":"ApplicationVersionLifecycleConfig",
@@ -872,7 +872,7 @@
         },
         "Status":{
           "shape":"ApplicationVersionStatus",
-          "documentation":"<p>The processing status of the application version.</p>"
+          "documentation":"<p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p> <ul> <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li> <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li> <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li> <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li> <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li> </ul>"
         }
       },
       "documentation":"<p>Describes the properties of an application version.</p>"
@@ -1045,11 +1045,11 @@
         },
         "Nice":{
           "shape":"NullableDouble",
-          "documentation":"<p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>"
+          "documentation":"<p>Available on Linux environments only.</p> <p>Percentage of time that the CPU has spent in the <code>Nice</code> state over the last 10 seconds.</p>"
         },
         "System":{
           "shape":"NullableDouble",
-          "documentation":"<p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>"
+          "documentation":"<p>Available on Linux environments only.</p> <p>Percentage of time that the CPU has spent in the <code>System</code> state over the last 10 seconds.</p>"
         },
         "Idle":{
           "shape":"NullableDouble",
@@ -1057,15 +1057,19 @@
         },
         "IOWait":{
           "shape":"NullableDouble",
-          "documentation":"<p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>"
+          "documentation":"<p>Available on Linux environments only.</p> <p>Percentage of time that the CPU has spent in the <code>I/O Wait</code> state over the last 10 seconds.</p>"
         },
         "IRQ":{
           "shape":"NullableDouble",
-          "documentation":"<p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>"
+          "documentation":"<p>Available on Linux environments only.</p> <p>Percentage of time that the CPU has spent in the <code>IRQ</code> state over the last 10 seconds.</p>"
         },
         "SoftIRQ":{
           "shape":"NullableDouble",
-          "documentation":"<p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>"
+          "documentation":"<p>Available on Linux environments only.</p> <p>Percentage of time that the CPU has spent in the <code>SoftIRQ</code> state over the last 10 seconds.</p>"
+        },
+        "Privileged":{
+          "shape":"NullableDouble",
+          "documentation":"<p>Available on Windows environments only.</p> <p>Percentage of time that the CPU has spent in the <code>Privileged</code> state over the last 10 seconds.</p>"
         }
       },
       "documentation":"<p>CPU utilization metrics for an instance.</p>"
@@ -1126,7 +1130,7 @@
         },
         "GroupName":{
           "shape":"GroupName",
-          "documentation":"<p>The name of the group to which the target environments belong. Specify a group name only if the environment name defined in each target environment's manifest ends with a + (plus) character. See <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html\">Environment Manifest (env.yaml)</a> for details.</p>"
+          "documentation":"<p>The name of the group to which the target environments belong. Specify a group name only if the environment name defined in each target environment's manifest ends with a + (plus) character. See <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html\">Environment Manifest (env.yaml)</a> for details.</p>"
         },
         "VersionLabels":{
           "shape":"VersionLabels",
@@ -1232,7 +1236,7 @@
           "documentation":"<p>The current value for the configuration option.</p>"
         }
       },
-      "documentation":"<p> A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html\">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </p>"
+      "documentation":"<p> A specification identifying an individual configuration option along with its current value. For a list of possible option values, go to <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html\">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </p>"
     },
     "ConfigurationOptionSettingsList":{
       "type":"list",
@@ -1359,6 +1363,10 @@
         "ResourceLifecycleConfig":{
           "shape":"ApplicationResourceLifecycleConfig",
           "documentation":"<p>Specify an application resource lifecycle configuration to prevent your application from accumulating too many versions.</p>"
+        },
+        "Tags":{
+          "shape":"Tags",
+          "documentation":"<p>Specifies the tags applied to the application.</p> <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>"
         }
       },
       "documentation":"<p>Request to create an application.</p>"
@@ -1400,7 +1408,11 @@
         },
         "Process":{
           "shape":"ApplicationVersionProccess",
-          "documentation":"<p>Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p> <note> <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p> </note>"
+          "documentation":"<p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p> <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p> <note> <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p> </note>"
+        },
+        "Tags":{
+          "shape":"Tags",
+          "documentation":"<p>Specifies the tags applied to the application version.</p> <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the application version don't inherit the tags.</p>"
         }
       },
       "documentation":"<p/>"
@@ -1443,6 +1455,10 @@
         "OptionSettings":{
           "shape":"ConfigurationOptionSettingsList",
           "documentation":"<p>If specified, AWS Elastic Beanstalk sets the specified configuration option to the requested value. The new value overrides the value obtained from the solution stack or the source configuration template.</p>"
+        },
+        "Tags":{
+          "shape":"Tags",
+          "documentation":"<p>Specifies the tags applied to the configuration template.</p>"
         }
       },
       "documentation":"<p>Request to create a configuration template.</p>"
@@ -1461,7 +1477,7 @@
         },
         "GroupName":{
           "shape":"GroupName",
-          "documentation":"<p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html\">Environment Manifest (env.yaml)</a> for details.</p>"
+          "documentation":"<p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html\">Environment Manifest (env.yaml)</a> for details.</p>"
         },
         "Description":{
           "shape":"Description",
@@ -1477,7 +1493,7 @@
         },
         "Tags":{
           "shape":"Tags",
-          "documentation":"<p>This specifies the tags applied to resources in the environment.</p>"
+          "documentation":"<p>Specifies the tags applied to resources in the environment.</p>"
         },
         "VersionLabel":{
           "shape":"VersionLabel",
@@ -1489,7 +1505,7 @@
         },
         "SolutionStackName":{
           "shape":"SolutionStackName",
-          "documentation":"<p>This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack.</p>"
+          "documentation":"<p>This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack.</p> <p>For a list of current solution stacks, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html\">Elastic Beanstalk Supported Platforms</a>.</p>"
         },
         "PlatformArn":{
           "shape":"PlatformArn",
@@ -1533,6 +1549,10 @@
         "OptionSettings":{
           "shape":"ConfigurationOptionSettingsList",
           "documentation":"<p>The configuration option settings to apply to the builder environment.</p>"
+        },
+        "Tags":{
+          "shape":"Tags",
+          "documentation":"<p>Specifies the tags applied to the new platform version.</p> <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>"
         }
       },
       "documentation":"<p>Request to create a new platform version.</p>"
@@ -1821,7 +1841,7 @@
         },
         "HealthStatus":{
           "shape":"String",
-          "documentation":"<p>The <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">health status</a> of the environment. For example, <code>Ok</code>.</p>"
+          "documentation":"<p>The <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">health status</a> of the environment. For example, <code>Ok</code>.</p>"
         },
         "Status":{
           "shape":"EnvironmentHealth",
@@ -1829,7 +1849,7 @@
         },
         "Color":{
           "shape":"String",
-          "documentation":"<p>The <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">health color</a> of the environment.</p>"
+          "documentation":"<p>The <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">health color</a> of the environment.</p>"
         },
         "Causes":{
           "shape":"Causes",
@@ -2047,7 +2067,7 @@
       "members":{
         "InstanceHealthList":{
           "shape":"InstanceHealthList",
-          "documentation":"<p>Detailed health information about each instance.</p>"
+          "documentation":"<p>Detailed health information about each instance.</p> <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>&lt;CPUUtilization&gt;</code> type.</p>"
         },
         "RefreshedAt":{
           "shape":"RefreshedAt",
@@ -2157,11 +2177,11 @@
         },
         "Health":{
           "shape":"EnvironmentHealth",
-          "documentation":"<p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p> <ul> <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li> <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li> <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code> request.</p> </li> </ul> <p> Default: <code>Grey</code> </p>"
+          "documentation":"<p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p> <ul> <li> <p> <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p> </li> <li> <p> <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</p> </li> <li> <p> <code>Green</code>: Indicates the environment is healthy and fully functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p> </li> </ul> <p> Default: <code>Grey</code> </p>"
         },
         "HealthStatus":{
           "shape":"EnvironmentHealthStatus",
-          "documentation":"<p>Returns the health status of the application running in your environment. For more information, see <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">Health Colors and Statuses</a>.</p>"
+          "documentation":"<p>Returns the health status of the application running in your environment. For more information, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">Health Colors and Statuses</a>.</p>"
         },
         "Resources":{
           "shape":"EnvironmentResourcesDescription",
@@ -2236,7 +2256,8 @@
         "Info",
         "Warning",
         "Degraded",
-        "Severe"
+        "Severe",
+        "Suspended"
       ]
     },
     "EnvironmentId":{"type":"string"},
@@ -2261,7 +2282,7 @@
         },
         "Message":{
           "shape":"Message",
-          "documentation":"<p>The retrieved information.</p>"
+          "documentation":"<p>The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.</p> <p>Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to trusted parties.</p>"
         }
       },
       "documentation":"<p>The information retrieved from the Amazon EC2 instances.</p>"
@@ -2289,7 +2310,7 @@
           "documentation":"<p>The name of the linked environment (the dependency).</p>"
         }
       },
-      "documentation":"<p>A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html\">Environment Manifest (env.yaml)</a> for details.</p>"
+      "documentation":"<p>A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html\">Environment Manifest (env.yaml)</a> for details.</p>"
     },
     "EnvironmentLinks":{
       "type":"list",
@@ -2322,6 +2343,10 @@
         "LaunchConfigurations":{
           "shape":"LaunchConfigurationList",
           "documentation":"<p>The Auto Scaling launch configurations in use by this environment.</p>"
+        },
+        "LaunchTemplates":{
+          "shape":"LaunchTemplateList",
+          "documentation":"<p>The Amazon EC2 launch templates in use by this environment.</p>"
         },
         "LoadBalancers":{
           "shape":"LoadBalancerList",
@@ -2373,15 +2398,15 @@
       "members":{
         "Name":{
           "shape":"String",
-          "documentation":"<p>The name of this environment tier.</p>"
+          "documentation":"<p>The name of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For <i>Web server tier</i> – <code>WebServer</code> </p> </li> <li> <p>For <i>Worker tier</i> – <code>Worker</code> </p> </li> </ul>"
         },
         "Type":{
           "shape":"String",
-          "documentation":"<p>The type of this environment tier.</p>"
+          "documentation":"<p>The type of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For <i>Web server tier</i> – <code>Standard</code> </p> </li> <li> <p>For <i>Worker tier</i> – <code>SQS/HTTP</code> </p> </li> </ul>"
         },
         "Version":{
           "shape":"String",
-          "documentation":"<p>The version of this environment tier.</p>"
+          "documentation":"<p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p> <note> <p>This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p> </note>"
         }
       },
       "documentation":"<p>Describes the properties of an environment tier</p>"
@@ -2536,7 +2561,7 @@
           "documentation":"<p> <b>Red.</b> The health agent is reporting a very high number of request failures or other issues for an instance or environment.</p>"
         }
       },
-      "documentation":"<p>Represents summary information about the health of an instance. For more information, see <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">Health Colors and Statuses</a>.</p>"
+      "documentation":"<p>Represents summary information about the health of an instance. For more information, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">Health Colors and Statuses</a>.</p>"
     },
     "InstanceId":{
       "type":"string",
@@ -2643,6 +2668,20 @@
     "LaunchConfigurationList":{
       "type":"list",
       "member":{"shape":"LaunchConfiguration"}
+    },
+    "LaunchTemplate":{
+      "type":"structure",
+      "members":{
+        "Id":{
+          "shape":"ResourceId",
+          "documentation":"<p>The ID of the launch template.</p>"
+        }
+      },
+      "documentation":"<p>Describes an Amazon EC2 launch template.</p>"
+    },
+    "LaunchTemplateList":{
+      "type":"list",
+      "member":{"shape":"LaunchTemplate"}
     },
     "LaunchedAt":{"type":"timestamp"},
     "ListAvailableSolutionStacksResultMessage":{
@@ -3404,11 +3443,11 @@
         },
         "HealthStatus":{
           "shape":"String",
-          "documentation":"<p>Returns the health status of the specified instance. For more information, see <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">Health Colors and Statuses</a>.</p>"
+          "documentation":"<p>Returns the health status of the specified instance. For more information, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">Health Colors and Statuses</a>.</p>"
         },
         "Color":{
           "shape":"String",
-          "documentation":"<p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">Health Colors and Statuses</a>.</p>"
+          "documentation":"<p>Represents the color indicator that gives you information about the health of the EC2 instance. For more information, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html\">Health Colors and Statuses</a>.</p>"
         },
         "Causes":{
           "shape":"Causes",
@@ -3593,7 +3632,7 @@
         },
         "LoadAverage":{
           "shape":"LoadAverage",
-          "documentation":"<p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os\">Operating System Metrics</a>.</p>"
+          "documentation":"<p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os\">Operating System Metrics</a>.</p>"
         }
       },
       "documentation":"<p>CPU utilization and load average metrics for an Amazon EC2 instance.</p>"
@@ -3648,7 +3687,7 @@
         },
         "TerminateResources":{
           "shape":"TerminateEnvironmentResources",
-          "documentation":"<p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p> <ul> <li> <p> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p> </li> <li> <p> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p> </li> </ul> <p> For more information, see the <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/\"> AWS Elastic Beanstalk User Guide. </a> </p> <p> Default: <code>true</code> </p> <p> Valid Values: <code>true</code> | <code>false</code> </p>"
+          "documentation":"<p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p> <ul> <li> <p> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p> </li> <li> <p> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p> </li> </ul> <p> For more information, see the <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/\"> AWS Elastic Beanstalk User Guide. </a> </p> <p> Default: <code>true</code> </p> <p> Valid Values: <code>true</code> | <code>false</code> </p>"
         },
         "ForceTerminate":{
           "shape":"ForceTerminate",
@@ -3857,7 +3896,7 @@
         },
         "GroupName":{
           "shape":"GroupName",
-          "documentation":"<p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href=\"http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html\">Environment Manifest (env.yaml)</a> for details.</p>"
+          "documentation":"<p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html\">Environment Manifest (env.yaml)</a> for details.</p>"
         },
         "Description":{
           "shape":"Description",
@@ -3988,5 +4027,5 @@
     },
     "VirtualizationType":{"type":"string"}
   },
-  "documentation":"<fullname>AWS Elastic Beanstalk</fullname> <p>AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on the Amazon Web Services cloud.</p> <p>For more information about this product, go to the <a href=\"http://aws.amazon.com/elasticbeanstalk/\">AWS Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a href=\"http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl\">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>.</p> <p> <b>Endpoints</b> </p> <p>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a href=\"http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region\">Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>"
+  "documentation":"<fullname>AWS Elastic Beanstalk</fullname> <p>AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on the Amazon Web Services cloud.</p> <p>For more information about this product, go to the <a href=\"http://aws.amazon.com/elasticbeanstalk/\">AWS Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a href=\"http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl\">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>.</p> <p> <b>Endpoints</b> </p> <p>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a href=\"https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region\">Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>"
 }

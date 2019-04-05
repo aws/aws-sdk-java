@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class BaseConfigurationItemMarshaller {
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("accountId").build();
     private static final MarshallingInfo<java.util.Date> CONFIGURATIONITEMCAPTURETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationItemCaptureTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationItemCaptureTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CONFIGURATIONITEMSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationItemStatus").build();
     private static final MarshallingInfo<String> CONFIGURATIONSTATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,7 +52,7 @@ public class BaseConfigurationItemMarshaller {
     private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availabilityZone").build();
     private static final MarshallingInfo<java.util.Date> RESOURCECREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceCreationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceCreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
     private static final MarshallingInfo<Map> SUPPLEMENTARYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.MAP)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,43 @@ public interface AWSAppSyncAsync extends AWSAppSync {
      */
     java.util.concurrent.Future<CreateDataSourceResult> createDataSourceAsync(CreateDataSourceRequest createDataSourceRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDataSourceRequest, CreateDataSourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a <code>Function</code> object.
+     * </p>
+     * <p>
+     * A function is a reusable entity. Multiple functions can be used to compose the resolver logic.
+     * </p>
+     * 
+     * @param createFunctionRequest
+     * @return A Java Future containing the result of the CreateFunction operation returned by the service.
+     * @sample AWSAppSyncAsync.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(CreateFunctionRequest createFunctionRequest);
+
+    /**
+     * <p>
+     * Creates a <code>Function</code> object.
+     * </p>
+     * <p>
+     * A function is a reusable entity. Multiple functions can be used to compose the resolver logic.
+     * </p>
+     * 
+     * @param createFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFunction operation returned by the service.
+     * @sample AWSAppSyncAsyncHandler.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(CreateFunctionRequest createFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFunctionRequest, CreateFunctionResult> asyncHandler);
 
     /**
      * <p>
@@ -259,6 +296,37 @@ public interface AWSAppSyncAsync extends AWSAppSync {
 
     /**
      * <p>
+     * Deletes a <code>Function</code>.
+     * </p>
+     * 
+     * @param deleteFunctionRequest
+     * @return A Java Future containing the result of the DeleteFunction operation returned by the service.
+     * @sample AWSAppSyncAsync.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest deleteFunctionRequest);
+
+    /**
+     * <p>
+     * Deletes a <code>Function</code>.
+     * </p>
+     * 
+     * @param deleteFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFunction operation returned by the service.
+     * @sample AWSAppSyncAsyncHandler.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest deleteFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a <code>GraphqlApi</code> object.
      * </p>
      * 
@@ -380,6 +448,37 @@ public interface AWSAppSyncAsync extends AWSAppSync {
      */
     java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(GetDataSourceRequest getDataSourceRequest,
             com.amazonaws.handlers.AsyncHandler<GetDataSourceRequest, GetDataSourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get a <code>Function</code>.
+     * </p>
+     * 
+     * @param getFunctionRequest
+     * @return A Java Future containing the result of the GetFunction operation returned by the service.
+     * @sample AWSAppSyncAsync.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest getFunctionRequest);
+
+    /**
+     * <p>
+     * Get a <code>Function</code>.
+     * </p>
+     * 
+     * @param getFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFunction operation returned by the service.
+     * @sample AWSAppSyncAsyncHandler.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest getFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFunctionRequest, GetFunctionResult> asyncHandler);
 
     /**
      * <p>
@@ -614,6 +713,37 @@ public interface AWSAppSyncAsync extends AWSAppSync {
 
     /**
      * <p>
+     * List multiple functions.
+     * </p>
+     * 
+     * @param listFunctionsRequest
+     * @return A Java Future containing the result of the ListFunctions operation returned by the service.
+     * @sample AWSAppSyncAsync.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(ListFunctionsRequest listFunctionsRequest);
+
+    /**
+     * <p>
+     * List multiple functions.
+     * </p>
+     * 
+     * @param listFunctionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFunctions operation returned by the service.
+     * @sample AWSAppSyncAsyncHandler.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(ListFunctionsRequest listFunctionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists your GraphQL APIs.
      * </p>
      * 
@@ -673,6 +803,37 @@ public interface AWSAppSyncAsync extends AWSAppSync {
      */
     java.util.concurrent.Future<ListResolversResult> listResolversAsync(ListResolversRequest listResolversRequest,
             com.amazonaws.handlers.AsyncHandler<ListResolversRequest, ListResolversResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the resolvers that are associated with a specific function.
+     * </p>
+     * 
+     * @param listResolversByFunctionRequest
+     * @return A Java Future containing the result of the ListResolversByFunction operation returned by the service.
+     * @sample AWSAppSyncAsync.ListResolversByFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResolversByFunctionResult> listResolversByFunctionAsync(ListResolversByFunctionRequest listResolversByFunctionRequest);
+
+    /**
+     * <p>
+     * List the resolvers that are associated with a specific function.
+     * </p>
+     * 
+     * @param listResolversByFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResolversByFunction operation returned by the service.
+     * @sample AWSAppSyncAsyncHandler.ListResolversByFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResolversByFunctionResult> listResolversByFunctionAsync(ListResolversByFunctionRequest listResolversByFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResolversByFunctionRequest, ListResolversByFunctionResult> asyncHandler);
 
     /**
      * <p>
@@ -803,6 +964,37 @@ public interface AWSAppSyncAsync extends AWSAppSync {
      */
     java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest updateDataSourceRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a <code>Function</code> object.
+     * </p>
+     * 
+     * @param updateFunctionRequest
+     * @return A Java Future containing the result of the UpdateFunction operation returned by the service.
+     * @sample AWSAppSyncAsync.UpdateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFunctionResult> updateFunctionAsync(UpdateFunctionRequest updateFunctionRequest);
+
+    /**
+     * <p>
+     * Updates a <code>Function</code> object.
+     * </p>
+     * 
+     * @param updateFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFunction operation returned by the service.
+     * @sample AWSAppSyncAsyncHandler.UpdateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFunctionResult> updateFunctionAsync(UpdateFunctionRequest updateFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFunctionRequest, UpdateFunctionResult> asyncHandler);
 
     /**
      * <p>

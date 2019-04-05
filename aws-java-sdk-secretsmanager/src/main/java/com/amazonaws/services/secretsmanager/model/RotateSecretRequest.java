@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,18 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Specifies the secret that you want to rotate. You can specify either the Amazon Resource Name (ARN) or the
      * friendly name of the secret.
      * </p>
+     * <note>
+     * <p>
+     * If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial ARN
+     * too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager adds at the
+     * end of the ARN when you created the secret. A partial ARN match can work as long as it uniquely matches only one
+     * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
+     * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
+     * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
+     * hyphen followed by six characters.
+     * </p>
+     * </note>
      */
     private String secretId;
     /**
@@ -50,32 +62,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures
-     * and retries during the function's processing.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new
-     * version of the secret is created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation is
-     * idempotent).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an
-     * existing secret value.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.
      * </p>
      */
     private String clientRequestToken;
@@ -97,10 +84,32 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Specifies the secret that you want to rotate. You can specify either the Amazon Resource Name (ARN) or the
      * friendly name of the secret.
      * </p>
+     * <note>
+     * <p>
+     * If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial ARN
+     * too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager adds at the
+     * end of the ARN when you created the secret. A partial ARN match can work as long as it uniquely matches only one
+     * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
+     * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
+     * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
+     * hyphen followed by six characters.
+     * </p>
+     * </note>
      * 
      * @param secretId
      *        Specifies the secret that you want to rotate. You can specify either the Amazon Resource Name (ARN) or the
-     *        friendly name of the secret.
+     *        friendly name of the secret.</p> <note>
+     *        <p>
+     *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
+     *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
+     *        adds at the end of the ARN when you created the secret. A partial ARN match can work as long as it
+     *        uniquely matches only one secret. However, if your secret has a name that ends in a hyphen followed by six
+     *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
+     *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
+     *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
+     *        create secret names that end with a hyphen followed by six characters.
+     *        </p>
      */
 
     public void setSecretId(String secretId) {
@@ -112,9 +121,31 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Specifies the secret that you want to rotate. You can specify either the Amazon Resource Name (ARN) or the
      * friendly name of the secret.
      * </p>
+     * <note>
+     * <p>
+     * If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial ARN
+     * too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager adds at the
+     * end of the ARN when you created the secret. A partial ARN match can work as long as it uniquely matches only one
+     * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
+     * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
+     * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
+     * hyphen followed by six characters.
+     * </p>
+     * </note>
      * 
      * @return Specifies the secret that you want to rotate. You can specify either the Amazon Resource Name (ARN) or
-     *         the friendly name of the secret.
+     *         the friendly name of the secret.</p> <note>
+     *         <p>
+     *         If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
+     *         ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
+     *         adds at the end of the ARN when you created the secret. A partial ARN match can work as long as it
+     *         uniquely matches only one secret. However, if your secret has a name that ends in a hyphen followed by
+     *         six characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use
+     *         that as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a
+     *         complete ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you
+     *         don’t create secret names that end with a hyphen followed by six characters.
+     *         </p>
      */
 
     public String getSecretId() {
@@ -126,10 +157,32 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Specifies the secret that you want to rotate. You can specify either the Amazon Resource Name (ARN) or the
      * friendly name of the secret.
      * </p>
+     * <note>
+     * <p>
+     * If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial ARN
+     * too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager adds at the
+     * end of the ARN when you created the secret. A partial ARN match can work as long as it uniquely matches only one
+     * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
+     * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
+     * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
+     * hyphen followed by six characters.
+     * </p>
+     * </note>
      * 
      * @param secretId
      *        Specifies the secret that you want to rotate. You can specify either the Amazon Resource Name (ARN) or the
-     *        friendly name of the secret.
+     *        friendly name of the secret.</p> <note>
+     *        <p>
+     *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
+     *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
+     *        adds at the end of the ARN when you created the secret. A partial ARN match can work as long as it
+     *        uniquely matches only one secret. However, if your secret has a name that ends in a hyphen followed by six
+     *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
+     *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
+     *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
+     *        create secret names that end with a hyphen followed by six characters.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,32 +209,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures
-     * and retries during the function's processing.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new
-     * version of the secret is created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation is
-     * idempotent).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an
-     * existing secret value.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @param clientRequestToken
@@ -202,32 +230,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are
-     *        failures and retries during the function's processing.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a
-     *        new version of the secret is created.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation
-     *        is idempotent).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are different from the request then an error occurs because you cannot
-     *        modify an existing secret value.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        This value becomes the <code>SecretVersionId</code> of the new version.
+     *        failures and retries during the function's processing. This value becomes the <code>VersionId</code> of
+     *        the new version.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -252,32 +256,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures
-     * and retries during the function's processing.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new
-     * version of the secret is created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation is
-     * idempotent).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an
-     * existing secret value.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @return (Optional) Specifies a unique identifier for the new version of the secret that helps ensure idempotency.
@@ -297,32 +276,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         <p>
      *         Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are
-     *         failures and retries during the function's processing.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a
-     *         new version of the secret is created.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If a version with this value already exists and that version's <code>SecretString</code> and
-     *         <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation
-     *         is idempotent).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If a version with this value already exists and that version's <code>SecretString</code> and
-     *         <code>SecretBinary</code> values are different from the request then an error occurs because you cannot
-     *         modify an existing secret value.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         This value becomes the <code>SecretVersionId</code> of the new version.
+     *         failures and retries during the function's processing. This value becomes the <code>VersionId</code> of
+     *         the new version.
      */
 
     public String getClientRequestToken() {
@@ -347,32 +302,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are failures
-     * and retries during the function's processing.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a new
-     * version of the secret is created.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation is
-     * idempotent).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a version with this value already exists and that version's <code>SecretString</code> and
-     * <code>SecretBinary</code> values are different from the request then an error occurs because you cannot modify an
-     * existing secret value.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * and retries during the function's processing. This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @param clientRequestToken
@@ -393,32 +323,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        Secrets Manager uses this value to prevent the accidental creation of duplicate versions if there are
-     *        failures and retries during the function's processing.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        If the <code>ClientRequestToken</code> value isn't already associated with a version of the secret then a
-     *        new version of the secret is created.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are the same as the request, then the request is ignored (the operation
-     *        is idempotent).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If a version with this value already exists and that version's <code>SecretString</code> and
-     *        <code>SecretBinary</code> values are different from the request then an error occurs because you cannot
-     *        modify an existing secret value.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        This value becomes the <code>SecretVersionId</code> of the new version.
+     *        failures and retries during the function's processing. This value becomes the <code>VersionId</code> of
+     *        the new version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,7 +414,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

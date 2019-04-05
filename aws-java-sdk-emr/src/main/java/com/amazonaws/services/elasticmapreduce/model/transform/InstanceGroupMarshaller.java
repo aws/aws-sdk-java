@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,12 @@ public class InstanceGroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Status").build();
     private static final MarshallingInfo<List> CONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Configurations").build();
+    private static final MarshallingInfo<Long> CONFIGURATIONSVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationsVersion").build();
+    private static final MarshallingInfo<List> LASTSUCCESSFULLYAPPLIEDCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfullyAppliedConfigurations").build();
+    private static final MarshallingInfo<Long> LASTSUCCESSFULLYAPPLIEDCONFIGURATIONSVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfullyAppliedConfigurationsVersion").build();
     private static final MarshallingInfo<List> EBSBLOCKDEVICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EbsBlockDevices").build();
     private static final MarshallingInfo<Boolean> EBSOPTIMIZED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -83,6 +89,9 @@ public class InstanceGroupMarshaller {
             protocolMarshaller.marshall(instanceGroup.getRunningInstanceCount(), RUNNINGINSTANCECOUNT_BINDING);
             protocolMarshaller.marshall(instanceGroup.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(instanceGroup.getConfigurations(), CONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(instanceGroup.getConfigurationsVersion(), CONFIGURATIONSVERSION_BINDING);
+            protocolMarshaller.marshall(instanceGroup.getLastSuccessfullyAppliedConfigurations(), LASTSUCCESSFULLYAPPLIEDCONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(instanceGroup.getLastSuccessfullyAppliedConfigurationsVersion(), LASTSUCCESSFULLYAPPLIEDCONFIGURATIONSVERSION_BINDING);
             protocolMarshaller.marshall(instanceGroup.getEbsBlockDevices(), EBSBLOCKDEVICES_BINDING);
             protocolMarshaller.marshall(instanceGroup.getEbsOptimized(), EBSOPTIMIZED_BINDING);
             protocolMarshaller.marshall(instanceGroup.getShrinkPolicy(), SHRINKPOLICY_BINDING);

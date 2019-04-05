@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,10 +66,42 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date backupCreationDateTime;
     /**
      * <p>
+     * Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand
+     * backup expires automatically 35 days after its creation.
+     * </p>
+     */
+    private java.util.Date backupExpiryDateTime;
+    /**
+     * <p>
      * Backup can be in one of the following states: CREATING, ACTIVE, DELETED.
      * </p>
      */
     private String backupStatus;
+    /**
+     * <p>
+     * BackupType:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - You create and manage these using the on-demand backup feature.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is
+     * automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore
+     * the deleted table to the state it was in just before the point of deletion.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String backupType;
     /**
      * <p>
      * Size of the backup in bytes.
@@ -319,6 +351,52 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand
+     * backup expires automatically 35 days after its creation.
+     * </p>
+     * 
+     * @param backupExpiryDateTime
+     *        Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
+     *        on-demand backup expires automatically 35 days after its creation.
+     */
+
+    public void setBackupExpiryDateTime(java.util.Date backupExpiryDateTime) {
+        this.backupExpiryDateTime = backupExpiryDateTime;
+    }
+
+    /**
+     * <p>
+     * Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand
+     * backup expires automatically 35 days after its creation.
+     * </p>
+     * 
+     * @return Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
+     *         on-demand backup expires automatically 35 days after its creation.
+     */
+
+    public java.util.Date getBackupExpiryDateTime() {
+        return this.backupExpiryDateTime;
+    }
+
+    /**
+     * <p>
+     * Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand
+     * backup expires automatically 35 days after its creation.
+     * </p>
+     * 
+     * @param backupExpiryDateTime
+     *        Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code>
+     *        on-demand backup expires automatically 35 days after its creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupSummary withBackupExpiryDateTime(java.util.Date backupExpiryDateTime) {
+        setBackupExpiryDateTime(backupExpiryDateTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * Backup can be in one of the following states: CREATING, ACTIVE, DELETED.
      * </p>
      * 
@@ -378,6 +456,213 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * BackupType:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - You create and manage these using the on-demand backup feature.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is
+     * automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore
+     * the deleted table to the state it was in just before the point of deletion.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backupType
+     *        BackupType:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>USER</code> - You create and manage these using the on-demand backup feature.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code>
+     *        backup is automatically created and is retained for 35 days (at no additional cost). System backups allow
+     *        you to restore the deleted table to the state it was in just before the point of deletion.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.
+     *        </p>
+     *        </li>
+     * @see BackupType
+     */
+
+    public void setBackupType(String backupType) {
+        this.backupType = backupType;
+    }
+
+    /**
+     * <p>
+     * BackupType:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - You create and manage these using the on-demand backup feature.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is
+     * automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore
+     * the deleted table to the state it was in just before the point of deletion.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return BackupType:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>USER</code> - You create and manage these using the on-demand backup feature.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code>
+     *         backup is automatically created and is retained for 35 days (at no additional cost). System backups allow
+     *         you to restore the deleted table to the state it was in just before the point of deletion.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.
+     *         </p>
+     *         </li>
+     * @see BackupType
+     */
+
+    public String getBackupType() {
+        return this.backupType;
+    }
+
+    /**
+     * <p>
+     * BackupType:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - You create and manage these using the on-demand backup feature.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is
+     * automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore
+     * the deleted table to the state it was in just before the point of deletion.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backupType
+     *        BackupType:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>USER</code> - You create and manage these using the on-demand backup feature.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code>
+     *        backup is automatically created and is retained for 35 days (at no additional cost). System backups allow
+     *        you to restore the deleted table to the state it was in just before the point of deletion.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BackupType
+     */
+
+    public BackupSummary withBackupType(String backupType) {
+        setBackupType(backupType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * BackupType:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>USER</code> - You create and manage these using the on-demand backup feature.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is
+     * automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore
+     * the deleted table to the state it was in just before the point of deletion.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backupType
+     *        BackupType:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>USER</code> - You create and manage these using the on-demand backup feature.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code>
+     *        backup is automatically created and is retained for 35 days (at no additional cost). System backups allow
+     *        you to restore the deleted table to the state it was in just before the point of deletion.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_BACKUP</code> - On-demand backup created by you from AWS Backup service.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BackupType
+     */
+
+    public BackupSummary withBackupType(BackupType backupType) {
+        this.backupType = backupType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Size of the backup in bytes.
      * </p>
      * 
@@ -417,7 +702,8 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -439,8 +725,12 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("BackupName: ").append(getBackupName()).append(",");
         if (getBackupCreationDateTime() != null)
             sb.append("BackupCreationDateTime: ").append(getBackupCreationDateTime()).append(",");
+        if (getBackupExpiryDateTime() != null)
+            sb.append("BackupExpiryDateTime: ").append(getBackupExpiryDateTime()).append(",");
         if (getBackupStatus() != null)
             sb.append("BackupStatus: ").append(getBackupStatus()).append(",");
+        if (getBackupType() != null)
+            sb.append("BackupType: ").append(getBackupType()).append(",");
         if (getBackupSizeBytes() != null)
             sb.append("BackupSizeBytes: ").append(getBackupSizeBytes());
         sb.append("}");
@@ -481,9 +771,17 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBackupCreationDateTime() != null && other.getBackupCreationDateTime().equals(this.getBackupCreationDateTime()) == false)
             return false;
+        if (other.getBackupExpiryDateTime() == null ^ this.getBackupExpiryDateTime() == null)
+            return false;
+        if (other.getBackupExpiryDateTime() != null && other.getBackupExpiryDateTime().equals(this.getBackupExpiryDateTime()) == false)
+            return false;
         if (other.getBackupStatus() == null ^ this.getBackupStatus() == null)
             return false;
         if (other.getBackupStatus() != null && other.getBackupStatus().equals(this.getBackupStatus()) == false)
+            return false;
+        if (other.getBackupType() == null ^ this.getBackupType() == null)
+            return false;
+        if (other.getBackupType() != null && other.getBackupType().equals(this.getBackupType()) == false)
             return false;
         if (other.getBackupSizeBytes() == null ^ this.getBackupSizeBytes() == null)
             return false;
@@ -503,7 +801,9 @@ public class BackupSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBackupArn() == null) ? 0 : getBackupArn().hashCode());
         hashCode = prime * hashCode + ((getBackupName() == null) ? 0 : getBackupName().hashCode());
         hashCode = prime * hashCode + ((getBackupCreationDateTime() == null) ? 0 : getBackupCreationDateTime().hashCode());
+        hashCode = prime * hashCode + ((getBackupExpiryDateTime() == null) ? 0 : getBackupExpiryDateTime().hashCode());
         hashCode = prime * hashCode + ((getBackupStatus() == null) ? 0 : getBackupStatus().hashCode());
+        hashCode = prime * hashCode + ((getBackupType() == null) ? 0 : getBackupType().hashCode());
         hashCode = prime * hashCode + ((getBackupSizeBytes() == null) ? 0 : getBackupSizeBytes().hashCode());
         return hashCode;
     }

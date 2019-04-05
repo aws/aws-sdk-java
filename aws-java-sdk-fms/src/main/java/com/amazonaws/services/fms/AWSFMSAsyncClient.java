@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * This is the <i>AWS Firewall Manager API Reference</i>. This guide is for developers who need detailed information
  * about the AWS Firewall Manager API actions, data types, and errors. For detailed information about AWS Firewall
- * Manager features, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
+ * Manager features, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
  * Firewall Manager Developer Guide</a>.
  * </p>
  */
@@ -330,6 +330,39 @@ public class AWSFMSAsyncClient extends AWSFMSClient implements AWSFMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetProtectionStatusResult> getProtectionStatusAsync(GetProtectionStatusRequest request) {
+
+        return getProtectionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProtectionStatusResult> getProtectionStatusAsync(final GetProtectionStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetProtectionStatusRequest, GetProtectionStatusResult> asyncHandler) {
+        final GetProtectionStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetProtectionStatusResult>() {
+            @Override
+            public GetProtectionStatusResult call() throws Exception {
+                GetProtectionStatusResult result = null;
+
+                try {
+                    result = executeGetProtectionStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListComplianceStatusResult> listComplianceStatusAsync(ListComplianceStatusRequest request) {
 
         return listComplianceStatusAsync(request, null);
@@ -347,6 +380,39 @@ public class AWSFMSAsyncClient extends AWSFMSClient implements AWSFMSAsync {
 
                 try {
                     result = executeListComplianceStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMemberAccountsResult> listMemberAccountsAsync(ListMemberAccountsRequest request) {
+
+        return listMemberAccountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMemberAccountsResult> listMemberAccountsAsync(final ListMemberAccountsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMemberAccountsRequest, ListMemberAccountsResult> asyncHandler) {
+        final ListMemberAccountsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMemberAccountsResult>() {
+            @Override
+            public ListMemberAccountsResult call() throws Exception {
+                ListMemberAccountsResult result = null;
+
+                try {
+                    result = executeListMemberAccounts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

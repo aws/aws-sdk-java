@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS
  * CodePipeline. Some functionality for your pipeline is only configurable through the API. For additional information,
- * see the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User
+ * see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User
  * Guide</a>.
  * </p>
  * <p>
@@ -106,7 +106,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire
  * structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages
  * and actions, also refer to the <a
- * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
+ * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
  * Structure Reference</a>.
  * </p>
  * <p>
@@ -935,6 +935,39 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
 
                 try {
                     result = executeGetThirdPartyJobDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListActionExecutionsResult> listActionExecutionsAsync(ListActionExecutionsRequest request) {
+
+        return listActionExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListActionExecutionsResult> listActionExecutionsAsync(final ListActionExecutionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListActionExecutionsRequest, ListActionExecutionsResult> asyncHandler) {
+        final ListActionExecutionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListActionExecutionsResult>() {
+            @Override
+            public ListActionExecutionsResult call() throws Exception {
+                ListActionExecutionsResult result = null;
+
+                try {
+                    result = executeListActionExecutions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

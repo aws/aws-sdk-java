@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,20 +99,19 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates the region where you want to store your data. The gateway region specified must be the
      * same region as the region in your <code>Host</code> header in the request. For more information about available
      * regions and endpoints for AWS Storage Gateway, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
-     * "eu-west-2", "eu-west-3", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1",
-     * "sa-east-1"
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
+     * Gateway Regions and Endpoints</a> in the AWS General Reference.
      * </p>
      */
     private String gatewayRegion;
     /**
      * <p>
      * A value that defines the type of gateway to activate. The type specified is critical to all later functions of
-     * the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
+     * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
      * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
@@ -137,6 +136,19 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String mediumChangerType;
+    /**
+     * <p>
+     * A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.
+     * </p>
+     * <note>
+     * <p>
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -330,25 +342,23 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates the region where you want to store your data. The gateway region specified must be the
      * same region as the region in your <code>Host</code> header in the request. For more information about available
      * regions and endpoints for AWS Storage Gateway, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
-     * "eu-west-2", "eu-west-3", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1",
-     * "sa-east-1"
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
+     * Gateway Regions and Endpoints</a> in the AWS General Reference.
      * </p>
      * 
      * @param gatewayRegion
      *        A value that indicates the region where you want to store your data. The gateway region specified must be
      *        the same region as the region in your <code>Host</code> header in the request. For more information about
      *        available regions and endpoints for AWS Storage Gateway, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      *        <i>Amazon Web Services Glossary</i>.</p>
      *        <p>
-     *        Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1",
-     *        "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
-     *        "ap-southeast-2", "ap-south-1", "sa-east-1"
+     *        Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
+     *        Gateway Regions and Endpoints</a> in the AWS General Reference.
      */
 
     public void setGatewayRegion(String gatewayRegion) {
@@ -360,24 +370,22 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates the region where you want to store your data. The gateway region specified must be the
      * same region as the region in your <code>Host</code> header in the request. For more information about available
      * regions and endpoints for AWS Storage Gateway, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
-     * "eu-west-2", "eu-west-3", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1",
-     * "sa-east-1"
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
+     * Gateway Regions and Endpoints</a> in the AWS General Reference.
      * </p>
      * 
      * @return A value that indicates the region where you want to store your data. The gateway region specified must be
      *         the same region as the region in your <code>Host</code> header in the request. For more information about
      *         available regions and endpoints for AWS Storage Gateway, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
-     *         <i>Amazon Web Services Glossary</i>.</p>
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in
+     *         the <i>Amazon Web Services Glossary</i>.</p>
      *         <p>
-     *         Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1",
-     *         "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
-     *         "ap-southeast-2", "ap-south-1", "sa-east-1"
+     *         Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
+     *         Storage Gateway Regions and Endpoints</a> in the AWS General Reference.
      */
 
     public String getGatewayRegion() {
@@ -389,25 +397,23 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates the region where you want to store your data. The gateway region specified must be the
      * same region as the region in your <code>Host</code> header in the request. For more information about available
      * regions and endpoints for AWS Storage Gateway, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
-     * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
-     * "eu-west-2", "eu-west-3", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1",
-     * "sa-east-1"
+     * Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
+     * Gateway Regions and Endpoints</a> in the AWS General Reference.
      * </p>
      * 
      * @param gatewayRegion
      *        A value that indicates the region where you want to store your data. The gateway region specified must be
      *        the same region as the region in your <code>Host</code> header in the request. For more information about
      *        available regions and endpoints for AWS Storage Gateway, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      *        <i>Amazon Web Services Glossary</i>.</p>
      *        <p>
-     *        Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1",
-     *        "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
-     *        "ap-southeast-2", "ap-south-1", "sa-east-1"
+     *        Valid Values: See <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage
+     *        Gateway Regions and Endpoints</a> in the AWS General Reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,7 +425,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that defines the type of gateway to activate. The type specified is critical to all later functions of
-     * the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
+     * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
      * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
@@ -427,7 +433,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param gatewayType
      *        A value that defines the type of gateway to activate. The type specified is critical to all later
-     *        functions of the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
+     *        functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      *        </p>
      *        <p>
      *        Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
@@ -440,14 +446,14 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that defines the type of gateway to activate. The type specified is critical to all later functions of
-     * the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
+     * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
      * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
      * </p>
      * 
      * @return A value that defines the type of gateway to activate. The type specified is critical to all later
-     *         functions of the gateway and cannot be changed after activation. The default value is <code>STORED</code>
+     *         functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>
      *         . </p>
      *         <p>
      *         Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
@@ -460,7 +466,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that defines the type of gateway to activate. The type specified is critical to all later functions of
-     * the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
+     * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
      * Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
@@ -468,7 +474,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param gatewayType
      *        A value that defines the type of gateway to activate. The type specified is critical to all later
-     *        functions of the gateway and cannot be changed after activation. The default value is <code>STORED</code>.
+     *        functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      *        </p>
      *        <p>
      *        Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
@@ -591,7 +597,129 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.
+     * </p>
+     * <note>
+     * <p>
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
+     * </p>
+     * </note>
+     * 
+     * @return A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
+     *         <p>
+     *         Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and
+     *         the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters,
+     *         and the maximum length for a tag's value is 256.
+     *         </p>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.
+     * </p>
+     * <note>
+     * <p>
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
+     *        <p>
+     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
+     *        the maximum length for a tag's value is 256.
+     *        </p>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.
+     * </p>
+     * <note>
+     * <p>
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
+     *        <p>
+     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
+     *        the maximum length for a tag's value is 256.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivateGatewayRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.
+     * </p>
+     * <note>
+     * <p>
+     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of up to 10 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
+     *        <p>
+     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
+     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
+     *        the maximum length for a tag's value is 256.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivateGatewayRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -614,7 +742,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
         if (getTapeDriveType() != null)
             sb.append("TapeDriveType: ").append(getTapeDriveType()).append(",");
         if (getMediumChangerType() != null)
-            sb.append("MediumChangerType: ").append(getMediumChangerType());
+            sb.append("MediumChangerType: ").append(getMediumChangerType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -657,6 +787,10 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getMediumChangerType() != null && other.getMediumChangerType().equals(this.getMediumChangerType()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -672,6 +806,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getGatewayType() == null) ? 0 : getGatewayType().hashCode());
         hashCode = prime * hashCode + ((getTapeDriveType() == null) ? 0 : getTapeDriveType().hashCode());
         hashCode = prime * hashCode + ((getMediumChangerType() == null) ? 0 : getMediumChangerType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

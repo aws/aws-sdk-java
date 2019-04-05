@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,26 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The role that should be assumed when executing the task.
+     * The role to assume when running the Maintenance Window task.
+     * </p>
+     * <p>
+     * If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for Systems
+     * Manager by default. If no service-linked role for Systems Manager exists in your account, it will be created when
+     * you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role ARN.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Service-Linked Role Permissions for Systems Manager</a> and <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the <i>AWS
+     * Systems Manager User Guide</i>.
      * </p>
      */
     private String serviceRoleArn;
@@ -69,7 +82,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     private String taskType;
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -347,11 +360,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task to execute
+     *        The ARN of the task to run.
      */
 
     public void setTaskArn(String taskArn) {
@@ -360,10 +373,10 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      * 
-     * @return The ARN of the task to execute
+     * @return The ARN of the task to run.
      */
 
     public String getTaskArn() {
@@ -372,11 +385,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The ARN of the task to execute
+     * The ARN of the task to run.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task to execute
+     *        The ARN of the task to run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -387,11 +400,37 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The role that should be assumed when executing the task.
+     * The role to assume when running the Maintenance Window task.
+     * </p>
+     * <p>
+     * If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for Systems
+     * Manager by default. If no service-linked role for Systems Manager exists in your account, it will be created when
+     * you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role ARN.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Service-Linked Role Permissions for Systems Manager</a> and <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the <i>AWS
+     * Systems Manager User Guide</i>.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The role that should be assumed when executing the task.
+     *        The role to assume when running the Maintenance Window task.</p>
+     *        <p>
+     *        If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for
+     *        Systems Manager by default. If no service-linked role for Systems Manager exists in your account, it will
+     *        be created when you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
+     *        ARN.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     *        >Service-Linked Role Permissions for Systems Manager</a> and <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     *        >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the
+     *        <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -400,10 +439,36 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The role that should be assumed when executing the task.
+     * The role to assume when running the Maintenance Window task.
+     * </p>
+     * <p>
+     * If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for Systems
+     * Manager by default. If no service-linked role for Systems Manager exists in your account, it will be created when
+     * you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role ARN.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Service-Linked Role Permissions for Systems Manager</a> and <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the <i>AWS
+     * Systems Manager User Guide</i>.
      * </p>
      * 
-     * @return The role that should be assumed when executing the task.
+     * @return The role to assume when running the Maintenance Window task.</p>
+     *         <p>
+     *         If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for
+     *         Systems Manager by default. If no service-linked role for Systems Manager exists in your account, it will
+     *         be created when you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
+     *         ARN.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     *         >Service-Linked Role Permissions for Systems Manager</a> and <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     *         >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the
+     *         <i>AWS Systems Manager User Guide</i>.
      */
 
     public String getServiceRoleArn() {
@@ -412,11 +477,37 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The role that should be assumed when executing the task.
+     * The role to assume when running the Maintenance Window task.
+     * </p>
+     * <p>
+     * If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for Systems
+     * Manager by default. If no service-linked role for Systems Manager exists in your account, it will be created when
+     * you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role ARN.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     * >Service-Linked Role Permissions for Systems Manager</a> and <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     * >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the <i>AWS
+     * Systems Manager User Guide</i>.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The role that should be assumed when executing the task.
+     *        The role to assume when running the Maintenance Window task.</p>
+     *        <p>
+     *        If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for
+     *        Systems Manager by default. If no service-linked role for Systems Manager exists in your account, it will
+     *        be created when you run <code>RegisterTaskWithMaintenanceWindow</code> without specifying a service role
+     *        ARN.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions"
+     *        >Service-Linked Role Permissions for Systems Manager</a> and <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role"
+     *        >Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? </a> in the
+     *        <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -500,7 +591,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -511,7 +602,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * </note>
      * 
-     * @return The parameters that should be passed to the task when it is executed.</p> <note>
+     * @return The parameters that should be passed to the task when it is run.</p> <note>
      *         <p>
      *         <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *         instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure.
@@ -526,7 +617,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -538,7 +629,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </note>
      * 
      * @param taskParameters
-     *        The parameters that should be passed to the task when it is executed.</p> <note>
+     *        The parameters that should be passed to the task when it is run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
@@ -553,7 +644,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The parameters that should be passed to the task when it is executed.
+     * The parameters that should be passed to the task when it is run.
      * </p>
      * <note>
      * <p>
@@ -565,7 +656,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </note>
      * 
      * @param taskParameters
-     *        The parameters that should be passed to the task when it is executed.</p> <note>
+     *        The parameters that should be passed to the task when it is run.</p> <note>
      *        <p>
      *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
      *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
@@ -982,7 +1073,8 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1003,7 +1095,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
         if (getTaskType() != null)
             sb.append("TaskType: ").append(getTaskType()).append(",");
         if (getTaskParameters() != null)
-            sb.append("TaskParameters: ").append(getTaskParameters()).append(",");
+            sb.append("TaskParameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getTaskInvocationParameters() != null)
             sb.append("TaskInvocationParameters: ").append(getTaskInvocationParameters()).append(",");
         if (getPriority() != null)
@@ -1017,7 +1109,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");

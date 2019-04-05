@@ -1,0 +1,64 @@
+/*
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.dynamodbv2.model.transform;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.dynamodbv2.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * TransactWriteItemMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class TransactWriteItemMarshaller {
+
+    private static final MarshallingInfo<StructuredPojo> CONDITIONCHECK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionCheck").build();
+    private static final MarshallingInfo<StructuredPojo> PUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Put").build();
+    private static final MarshallingInfo<StructuredPojo> DELETE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Delete").build();
+    private static final MarshallingInfo<StructuredPojo> UPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Update").build();
+
+    private static final TransactWriteItemMarshaller instance = new TransactWriteItemMarshaller();
+
+    public static TransactWriteItemMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(TransactWriteItem transactWriteItem, ProtocolMarshaller protocolMarshaller) {
+
+        if (transactWriteItem == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(transactWriteItem.getConditionCheck(), CONDITIONCHECK_BINDING);
+            protocolMarshaller.marshall(transactWriteItem.getPut(), PUT_BINDING);
+            protocolMarshaller.marshall(transactWriteItem.getDelete(), DELETE_BINDING);
+            protocolMarshaller.marshall(transactWriteItem.getUpdate(), UPDATE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

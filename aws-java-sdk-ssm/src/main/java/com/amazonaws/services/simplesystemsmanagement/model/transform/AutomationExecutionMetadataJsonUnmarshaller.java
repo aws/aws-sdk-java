@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
+import java.util.Map;
 import java.math.*;
 
 import javax.annotation.Generated;
@@ -66,11 +67,11 @@ public class AutomationExecutionMetadataJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("ExecutionStartTime", targetDepth)) {
                     context.nextToken();
-                    automationExecutionMetadata.setExecutionStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    automationExecutionMetadata.setExecutionStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutionEndTime", targetDepth)) {
                     context.nextToken();
-                    automationExecutionMetadata.setExecutionEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    automationExecutionMetadata.setExecutionEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ExecutedBy", targetDepth)) {
                     context.nextToken();
@@ -113,6 +114,12 @@ public class AutomationExecutionMetadataJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     automationExecutionMetadata.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("TargetMaps", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setTargetMaps(new ListUnmarshaller<java.util.Map<String, java.util.List<String>>>(
+                            new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class), new ListUnmarshaller<String>(context
+                                    .getUnmarshaller(String.class)))).unmarshall(context));
+                }
                 if (context.testExpression("ResolvedTargets", targetDepth)) {
                     context.nextToken();
                     automationExecutionMetadata.setResolvedTargets(ResolvedTargetsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -128,6 +135,10 @@ public class AutomationExecutionMetadataJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("Target", targetDepth)) {
                     context.nextToken();
                     automationExecutionMetadata.setTarget(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AutomationType", targetDepth)) {
+                    context.nextToken();
+                    automationExecutionMetadata.setAutomationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

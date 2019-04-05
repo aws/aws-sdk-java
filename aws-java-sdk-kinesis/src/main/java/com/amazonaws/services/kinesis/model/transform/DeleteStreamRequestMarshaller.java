@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class DeleteStreamRequestMarshaller {
 
     private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<Boolean> ENFORCECONSUMERDELETION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnforceConsumerDeletion").build();
 
     private static final DeleteStreamRequestMarshaller instance = new DeleteStreamRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteStreamRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteStreamRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(deleteStreamRequest.getEnforceConsumerDeletion(), ENFORCECONSUMERDELETION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

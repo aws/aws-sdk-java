@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,7 @@ public class UntagResourceRequestMarshaller implements Marshaller<Request<UntagR
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2017-10-30/tagging?Operation=Untag";
+        String uriResourcePath = "/2018-11-05/tagging?Operation=Untag";
 
         uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
@@ -59,7 +59,7 @@ public class UntagResourceRequestMarshaller implements Marshaller<Request<UntagR
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-10-30/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2018-11-05/");
 
             TagKeys tagKeys = untagResourceRequest.getTagKeys();
             if (tagKeys != null) {

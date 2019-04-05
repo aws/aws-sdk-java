@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A distribution configuration.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DistributionConfig" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DistributionConfig" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,14 +35,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <code>DistributionConfig</code> object), CloudFront creates a new distribution.
      * </p>
      * <p>
-     * If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution, and
-     * if the content of the <code>DistributionConfig</code> is identical to the original request (ignoring white
-     * space), CloudFront returns the same the response that it returned to the original request.
-     * </p>
-     * <p>
-     * If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution but
-     * the content of the <code>DistributionConfig</code> is different from the original request, CloudFront returns a
-     * <code>DistributionAlreadyExists</code> error.
+     * If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * </p>
      */
     private String callerReference;
@@ -87,6 +81,12 @@ public class DistributionConfig implements Serializable, Cloneable {
      * </p>
      */
     private Origins origins;
+    /**
+     * <p>
+     * A complex type that contains information about origin groups for this distribution.
+     * </p>
+     */
+    private OriginGroups originGroups;
     /**
      * <p>
      * A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
@@ -167,8 +167,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      */
     private String priceClass;
@@ -176,15 +177,11 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * From this field, you can enable or disable the selected distribution.
      * </p>
-     * <p>
-     * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
-     * <code>Prefix</code>, the values are automatically deleted.
-     * </p>
      */
     private Boolean enabled;
-
+    /** <p/> */
     private ViewerCertificate viewerCertificate;
-
+    /** <p/> */
     private Restrictions restrictions;
     /**
      * <p>
@@ -281,21 +278,10 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        <code>DistributionConfig</code> object), CloudFront creates a new distribution.
      *        </p>
      *        <p>
-     *        If <code>CallerReference</code> is a value you already sent in a previous request to create a
-     *        distribution, and if the content of the <code>DistributionConfig</code> is identical to the original
-     *        request (ignoring white space), CloudFront returns the same the response that it returned to the original
-     *        request.
-     *        </p>
-     *        <p>
-     *        If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution
-     *        but the content of the <code>DistributionConfig</code> is different from the original request, CloudFront
-     *        returns a <code>DistributionAlreadyExists</code> error.
+     *        If <code>CallerReference</code> is a value that you already sent in a previous request to create a
+     *        distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * @param enabled
      *        From this field, you can enable or disable the selected distribution.
-     *        </p>
-     *        <p>
-     *        If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
-     *        and <code>Prefix</code>, the values are automatically deleted.
      */
     public DistributionConfig(String callerReference, Boolean enabled) {
         setCallerReference(callerReference);
@@ -311,14 +297,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <code>DistributionConfig</code> object), CloudFront creates a new distribution.
      * </p>
      * <p>
-     * If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution, and
-     * if the content of the <code>DistributionConfig</code> is identical to the original request (ignoring white
-     * space), CloudFront returns the same the response that it returned to the original request.
-     * </p>
-     * <p>
-     * If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution but
-     * the content of the <code>DistributionConfig</code> is different from the original request, CloudFront returns a
-     * <code>DistributionAlreadyExists</code> error.
+     * If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * </p>
      * 
      * @param callerReference
@@ -328,15 +308,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        <code>DistributionConfig</code> object), CloudFront creates a new distribution.
      *        </p>
      *        <p>
-     *        If <code>CallerReference</code> is a value you already sent in a previous request to create a
-     *        distribution, and if the content of the <code>DistributionConfig</code> is identical to the original
-     *        request (ignoring white space), CloudFront returns the same the response that it returned to the original
-     *        request.
-     *        </p>
-     *        <p>
-     *        If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution
-     *        but the content of the <code>DistributionConfig</code> is different from the original request, CloudFront
-     *        returns a <code>DistributionAlreadyExists</code> error.
+     *        If <code>CallerReference</code> is a value that you already sent in a previous request to create a
+     *        distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.
      */
 
     public void setCallerReference(String callerReference) {
@@ -352,14 +325,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <code>DistributionConfig</code> object), CloudFront creates a new distribution.
      * </p>
      * <p>
-     * If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution, and
-     * if the content of the <code>DistributionConfig</code> is identical to the original request (ignoring white
-     * space), CloudFront returns the same the response that it returned to the original request.
-     * </p>
-     * <p>
-     * If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution but
-     * the content of the <code>DistributionConfig</code> is different from the original request, CloudFront returns a
-     * <code>DistributionAlreadyExists</code> error.
+     * If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * </p>
      * 
      * @return A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
@@ -368,15 +335,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         <code>DistributionConfig</code> object), CloudFront creates a new distribution.
      *         </p>
      *         <p>
-     *         If <code>CallerReference</code> is a value you already sent in a previous request to create a
-     *         distribution, and if the content of the <code>DistributionConfig</code> is identical to the original
-     *         request (ignoring white space), CloudFront returns the same the response that it returned to the original
-     *         request.
-     *         </p>
-     *         <p>
-     *         If <code>CallerReference</code> is a value you already sent in a previous request to create a
-     *         distribution but the content of the <code>DistributionConfig</code> is different from the original
-     *         request, CloudFront returns a <code>DistributionAlreadyExists</code> error.
+     *         If <code>CallerReference</code> is a value that you already sent in a previous request to create a
+     *         distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.
      */
 
     public String getCallerReference() {
@@ -392,14 +352,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <code>DistributionConfig</code> object), CloudFront creates a new distribution.
      * </p>
      * <p>
-     * If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution, and
-     * if the content of the <code>DistributionConfig</code> is identical to the original request (ignoring white
-     * space), CloudFront returns the same the response that it returned to the original request.
-     * </p>
-     * <p>
-     * If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution but
-     * the content of the <code>DistributionConfig</code> is different from the original request, CloudFront returns a
-     * <code>DistributionAlreadyExists</code> error.
+     * If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * </p>
      * 
      * @param callerReference
@@ -409,15 +363,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        <code>DistributionConfig</code> object), CloudFront creates a new distribution.
      *        </p>
      *        <p>
-     *        If <code>CallerReference</code> is a value you already sent in a previous request to create a
-     *        distribution, and if the content of the <code>DistributionConfig</code> is identical to the original
-     *        request (ignoring white space), CloudFront returns the same the response that it returned to the original
-     *        request.
-     *        </p>
-     *        <p>
-     *        If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution
-     *        but the content of the <code>DistributionConfig</code> is different from the original request, CloudFront
-     *        returns a <code>DistributionAlreadyExists</code> error.
+     *        If <code>CallerReference</code> is a value that you already sent in a previous request to create a
+     *        distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -681,6 +628,46 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     public DistributionConfig withOrigins(Origins origins) {
         setOrigins(origins);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains information about origin groups for this distribution.
+     * </p>
+     * 
+     * @param originGroups
+     *        A complex type that contains information about origin groups for this distribution.
+     */
+
+    public void setOriginGroups(OriginGroups originGroups) {
+        this.originGroups = originGroups;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains information about origin groups for this distribution.
+     * </p>
+     * 
+     * @return A complex type that contains information about origin groups for this distribution.
+     */
+
+    public OriginGroups getOriginGroups() {
+        return this.originGroups;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains information about origin groups for this distribution.
+     * </p>
+     * 
+     * @param originGroups
+     *        A complex type that contains information about origin groups for this distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DistributionConfig withOriginGroups(OriginGroups originGroups) {
+        setOriginGroups(originGroups);
         return this;
     }
 
@@ -1100,8 +1087,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      * 
      * @param priceClass
@@ -1118,8 +1106,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        For more information about price classes, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
-     *        information about CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     *        href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
+     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1142,8 +1131,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      * 
      * @return The price class that corresponds with the maximum price that you want to pay for CloudFront service. If
@@ -1159,8 +1149,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         For more information about price classes, see <a
      *         href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *         Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
-     *         information about CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     *         href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *         information about CloudFront pricing, including how price classes (such as Price Class 100) map to
+     *         CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     *         Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1183,8 +1174,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      * 
      * @param priceClass
@@ -1201,8 +1193,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        For more information about price classes, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
-     *        information about CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     *        href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
+     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */
@@ -1227,8 +1220,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      * 
      * @param priceClass
@@ -1245,8 +1239,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        For more information about price classes, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
-     *        information about CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     *        href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
+     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1269,8 +1264,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * For more information about price classes, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
      * for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
-     * CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
+     * scroll down to see the table at the bottom of the page.
      * </p>
      * 
      * @param priceClass
@@ -1287,8 +1283,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        For more information about price classes, see <a
      *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
-     *        information about CloudFront pricing, including how price classes map to CloudFront regions, see <a
-     *        href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
+     *        CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+     *        Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */
@@ -1302,16 +1299,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * From this field, you can enable or disable the selected distribution.
      * </p>
-     * <p>
-     * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
-     * <code>Prefix</code>, the values are automatically deleted.
-     * </p>
      * 
      * @param enabled
-     *        From this field, you can enable or disable the selected distribution.</p>
-     *        <p>
-     *        If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
-     *        and <code>Prefix</code>, the values are automatically deleted.
+     *        From this field, you can enable or disable the selected distribution.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -1322,15 +1312,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * From this field, you can enable or disable the selected distribution.
      * </p>
-     * <p>
-     * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
-     * <code>Prefix</code>, the values are automatically deleted.
-     * </p>
      * 
-     * @return From this field, you can enable or disable the selected distribution.</p>
-     *         <p>
-     *         If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
-     *         and <code>Prefix</code>, the values are automatically deleted.
+     * @return From this field, you can enable or disable the selected distribution.
      */
 
     public Boolean getEnabled() {
@@ -1341,16 +1324,9 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * From this field, you can enable or disable the selected distribution.
      * </p>
-     * <p>
-     * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
-     * <code>Prefix</code>, the values are automatically deleted.
-     * </p>
      * 
      * @param enabled
-     *        From this field, you can enable or disable the selected distribution.</p>
-     *        <p>
-     *        If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
-     *        and <code>Prefix</code>, the values are automatically deleted.
+     *        From this field, you can enable or disable the selected distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1363,15 +1339,8 @@ public class DistributionConfig implements Serializable, Cloneable {
      * <p>
      * From this field, you can enable or disable the selected distribution.
      * </p>
-     * <p>
-     * If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and
-     * <code>Prefix</code>, the values are automatically deleted.
-     * </p>
      * 
-     * @return From this field, you can enable or disable the selected distribution.</p>
-     *         <p>
-     *         If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code>
-     *         and <code>Prefix</code>, the values are automatically deleted.
+     * @return From this field, you can enable or disable the selected distribution.
      */
 
     public Boolean isEnabled() {
@@ -1379,6 +1348,8 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param viewerCertificate
      */
 
@@ -1387,6 +1358,8 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -1395,6 +1368,8 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param viewerCertificate
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1405,6 +1380,8 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param restrictions
      */
 
@@ -1413,6 +1390,8 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -1421,6 +1400,8 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param restrictions
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2061,7 +2042,8 @@ public class DistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -2079,6 +2061,8 @@ public class DistributionConfig implements Serializable, Cloneable {
             sb.append("DefaultRootObject: ").append(getDefaultRootObject()).append(",");
         if (getOrigins() != null)
             sb.append("Origins: ").append(getOrigins()).append(",");
+        if (getOriginGroups() != null)
+            sb.append("OriginGroups: ").append(getOriginGroups()).append(",");
         if (getDefaultCacheBehavior() != null)
             sb.append("DefaultCacheBehavior: ").append(getDefaultCacheBehavior()).append(",");
         if (getCacheBehaviors() != null)
@@ -2132,6 +2116,10 @@ public class DistributionConfig implements Serializable, Cloneable {
         if (other.getOrigins() == null ^ this.getOrigins() == null)
             return false;
         if (other.getOrigins() != null && other.getOrigins().equals(this.getOrigins()) == false)
+            return false;
+        if (other.getOriginGroups() == null ^ this.getOriginGroups() == null)
+            return false;
+        if (other.getOriginGroups() != null && other.getOriginGroups().equals(this.getOriginGroups()) == false)
             return false;
         if (other.getDefaultCacheBehavior() == null ^ this.getDefaultCacheBehavior() == null)
             return false;
@@ -2193,6 +2181,7 @@ public class DistributionConfig implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode());
         hashCode = prime * hashCode + ((getDefaultRootObject() == null) ? 0 : getDefaultRootObject().hashCode());
         hashCode = prime * hashCode + ((getOrigins() == null) ? 0 : getOrigins().hashCode());
+        hashCode = prime * hashCode + ((getOriginGroups() == null) ? 0 : getOriginGroups().hashCode());
         hashCode = prime * hashCode + ((getDefaultCacheBehavior() == null) ? 0 : getDefaultCacheBehavior().hashCode());
         hashCode = prime * hashCode + ((getCacheBehaviors() == null) ? 0 : getCacheBehaviors().hashCode());
         hashCode = prime * hashCode + ((getCustomErrorResponses() == null) ? 0 : getCustomErrorResponses().hashCode());

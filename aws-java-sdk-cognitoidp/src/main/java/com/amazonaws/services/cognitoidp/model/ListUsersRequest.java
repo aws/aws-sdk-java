@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -122,12 +122,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>cognito:user_status</code> (called <b>Enabled</b> in the Console) (case-sensitive)
+     * <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> (case-insensitive)
+     * <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code>
      * </p>
      * </li>
      * <li>
@@ -421,12 +421,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>cognito:user_status</code> (called <b>Enabled</b> in the Console) (case-sensitive)
+     * <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> (case-insensitive)
+     * <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code>
      * </p>
      * </li>
      * <li>
@@ -513,12 +513,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cognito:user_status</code> (called <b>Enabled</b> in the Console) (case-sensitive)
+     *        <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> (case-insensitive)
+     *        <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code>
      *        </p>
      *        </li>
      *        <li>
@@ -610,12 +610,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>cognito:user_status</code> (called <b>Enabled</b> in the Console) (case-sensitive)
+     * <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> (case-insensitive)
+     * <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code>
      * </p>
      * </li>
      * <li>
@@ -701,12 +701,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cognito:user_status</code> (called <b>Enabled</b> in the Console) (case-sensitive)
+     *         <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>status</code> (case-insensitive)
+     *         <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code>
      *         </p>
      *         </li>
      *         <li>
@@ -798,12 +798,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>cognito:user_status</code> (called <b>Enabled</b> in the Console) (case-sensitive)
+     * <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>status</code> (case-insensitive)
+     * <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code>
      * </p>
      * </li>
      * <li>
@@ -890,12 +890,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cognito:user_status</code> (called <b>Enabled</b> in the Console) (case-sensitive)
+     *        <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> (case-insensitive)
+     *        <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code>
      *        </p>
      *        </li>
      *        <li>
@@ -922,7 +922,8 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

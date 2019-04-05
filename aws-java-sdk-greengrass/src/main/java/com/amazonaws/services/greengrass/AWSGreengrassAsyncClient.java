@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,10 +25,10 @@ import java.util.concurrent.ExecutorService;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * AWS Greengrass seamlessly extends AWS onto physical devices so they can act locally on the data they generate, while
- * still using the cloud for management, analytics, and durable storage. AWS Greengrass ensures your devices can respond
- * quickly to local events and operate with intermittent connectivity. AWS Greengrass minimizes the cost of transmitting
- * data to the cloud by allowing you to author AWS Lambda functions that execute locally.
+ * AWS IoT Greengrass seamlessly extends AWS onto physical devices so they can act locally on the data they generate,
+ * while still using the cloud for management, analytics, and durable storage. AWS IoT Greengrass ensures your devices
+ * can respond quickly to local events and operate with intermittent connectivity. AWS IoT Greengrass minimizes the cost
+ * of transmitting data to the cloud by allowing you to author AWS Lambda functions that execute locally.
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -114,6 +114,74 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
 
                 try {
                     result = executeAssociateServiceRoleToAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectorDefinitionResult> createConnectorDefinitionAsync(CreateConnectorDefinitionRequest request) {
+
+        return createConnectorDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectorDefinitionResult> createConnectorDefinitionAsync(final CreateConnectorDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConnectorDefinitionRequest, CreateConnectorDefinitionResult> asyncHandler) {
+        final CreateConnectorDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConnectorDefinitionResult>() {
+            @Override
+            public CreateConnectorDefinitionResult call() throws Exception {
+                CreateConnectorDefinitionResult result = null;
+
+                try {
+                    result = executeCreateConnectorDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectorDefinitionVersionResult> createConnectorDefinitionVersionAsync(
+            CreateConnectorDefinitionVersionRequest request) {
+
+        return createConnectorDefinitionVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectorDefinitionVersionResult> createConnectorDefinitionVersionAsync(
+            final CreateConnectorDefinitionVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateConnectorDefinitionVersionRequest, CreateConnectorDefinitionVersionResult> asyncHandler) {
+        final CreateConnectorDefinitionVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateConnectorDefinitionVersionResult>() {
+            @Override
+            public CreateConnectorDefinitionVersionResult call() throws Exception {
+                CreateConnectorDefinitionVersionResult result = null;
+
+                try {
+                    result = executeCreateConnectorDefinitionVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -701,6 +769,39 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConnectorDefinitionResult> deleteConnectorDefinitionAsync(DeleteConnectorDefinitionRequest request) {
+
+        return deleteConnectorDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectorDefinitionResult> deleteConnectorDefinitionAsync(final DeleteConnectorDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConnectorDefinitionRequest, DeleteConnectorDefinitionResult> asyncHandler) {
+        final DeleteConnectorDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConnectorDefinitionResult>() {
+            @Override
+            public DeleteConnectorDefinitionResult call() throws Exception {
+                DeleteConnectorDefinitionResult result = null;
+
+                try {
+                    result = executeDeleteConnectorDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteCoreDefinitionResult> deleteCoreDefinitionAsync(DeleteCoreDefinitionRequest request) {
 
         return deleteCoreDefinitionAsync(request, null);
@@ -1033,6 +1134,39 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetBulkDeploymentStatusResult> getBulkDeploymentStatusAsync(GetBulkDeploymentStatusRequest request) {
+
+        return getBulkDeploymentStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBulkDeploymentStatusResult> getBulkDeploymentStatusAsync(final GetBulkDeploymentStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBulkDeploymentStatusRequest, GetBulkDeploymentStatusResult> asyncHandler) {
+        final GetBulkDeploymentStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBulkDeploymentStatusResult>() {
+            @Override
+            public GetBulkDeploymentStatusResult call() throws Exception {
+                GetBulkDeploymentStatusResult result = null;
+
+                try {
+                    result = executeGetBulkDeploymentStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConnectivityInfoResult> getConnectivityInfoAsync(GetConnectivityInfoRequest request) {
 
         return getConnectivityInfoAsync(request, null);
@@ -1050,6 +1184,73 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
 
                 try {
                     result = executeGetConnectivityInfo(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectorDefinitionResult> getConnectorDefinitionAsync(GetConnectorDefinitionRequest request) {
+
+        return getConnectorDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectorDefinitionResult> getConnectorDefinitionAsync(final GetConnectorDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConnectorDefinitionRequest, GetConnectorDefinitionResult> asyncHandler) {
+        final GetConnectorDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConnectorDefinitionResult>() {
+            @Override
+            public GetConnectorDefinitionResult call() throws Exception {
+                GetConnectorDefinitionResult result = null;
+
+                try {
+                    result = executeGetConnectorDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectorDefinitionVersionResult> getConnectorDefinitionVersionAsync(GetConnectorDefinitionVersionRequest request) {
+
+        return getConnectorDefinitionVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectorDefinitionVersionResult> getConnectorDefinitionVersionAsync(
+            final GetConnectorDefinitionVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetConnectorDefinitionVersionRequest, GetConnectorDefinitionVersionResult> asyncHandler) {
+        final GetConnectorDefinitionVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetConnectorDefinitionVersionResult>() {
+            @Override
+            public GetConnectorDefinitionVersionResult call() throws Exception {
+                GetConnectorDefinitionVersionResult result = null;
+
+                try {
+                    result = executeGetConnectorDefinitionVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1664,6 +1865,142 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListBulkDeploymentDetailedReportsResult> listBulkDeploymentDetailedReportsAsync(
+            ListBulkDeploymentDetailedReportsRequest request) {
+
+        return listBulkDeploymentDetailedReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBulkDeploymentDetailedReportsResult> listBulkDeploymentDetailedReportsAsync(
+            final ListBulkDeploymentDetailedReportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBulkDeploymentDetailedReportsRequest, ListBulkDeploymentDetailedReportsResult> asyncHandler) {
+        final ListBulkDeploymentDetailedReportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBulkDeploymentDetailedReportsResult>() {
+            @Override
+            public ListBulkDeploymentDetailedReportsResult call() throws Exception {
+                ListBulkDeploymentDetailedReportsResult result = null;
+
+                try {
+                    result = executeListBulkDeploymentDetailedReports(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBulkDeploymentsResult> listBulkDeploymentsAsync(ListBulkDeploymentsRequest request) {
+
+        return listBulkDeploymentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBulkDeploymentsResult> listBulkDeploymentsAsync(final ListBulkDeploymentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBulkDeploymentsRequest, ListBulkDeploymentsResult> asyncHandler) {
+        final ListBulkDeploymentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBulkDeploymentsResult>() {
+            @Override
+            public ListBulkDeploymentsResult call() throws Exception {
+                ListBulkDeploymentsResult result = null;
+
+                try {
+                    result = executeListBulkDeployments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectorDefinitionVersionsResult> listConnectorDefinitionVersionsAsync(
+            ListConnectorDefinitionVersionsRequest request) {
+
+        return listConnectorDefinitionVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectorDefinitionVersionsResult> listConnectorDefinitionVersionsAsync(
+            final ListConnectorDefinitionVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListConnectorDefinitionVersionsRequest, ListConnectorDefinitionVersionsResult> asyncHandler) {
+        final ListConnectorDefinitionVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListConnectorDefinitionVersionsResult>() {
+            @Override
+            public ListConnectorDefinitionVersionsResult call() throws Exception {
+                ListConnectorDefinitionVersionsResult result = null;
+
+                try {
+                    result = executeListConnectorDefinitionVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectorDefinitionsResult> listConnectorDefinitionsAsync(ListConnectorDefinitionsRequest request) {
+
+        return listConnectorDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectorDefinitionsResult> listConnectorDefinitionsAsync(final ListConnectorDefinitionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListConnectorDefinitionsRequest, ListConnectorDefinitionsResult> asyncHandler) {
+        final ListConnectorDefinitionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListConnectorDefinitionsResult>() {
+            @Override
+            public ListConnectorDefinitionsResult call() throws Exception {
+                ListConnectorDefinitionsResult result = null;
+
+                try {
+                    result = executeListConnectorDefinitions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCoreDefinitionVersionsResult> listCoreDefinitionVersionsAsync(ListCoreDefinitionVersionsRequest request) {
 
         return listCoreDefinitionVersionsAsync(request, null);
@@ -2198,6 +2535,39 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ResetDeploymentsResult> resetDeploymentsAsync(ResetDeploymentsRequest request) {
 
         return resetDeploymentsAsync(request, null);
@@ -2231,6 +2601,138 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<StartBulkDeploymentResult> startBulkDeploymentAsync(StartBulkDeploymentRequest request) {
+
+        return startBulkDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBulkDeploymentResult> startBulkDeploymentAsync(final StartBulkDeploymentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartBulkDeploymentRequest, StartBulkDeploymentResult> asyncHandler) {
+        final StartBulkDeploymentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartBulkDeploymentResult>() {
+            @Override
+            public StartBulkDeploymentResult call() throws Exception {
+                StartBulkDeploymentResult result = null;
+
+                try {
+                    result = executeStartBulkDeployment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBulkDeploymentResult> stopBulkDeploymentAsync(StopBulkDeploymentRequest request) {
+
+        return stopBulkDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBulkDeploymentResult> stopBulkDeploymentAsync(final StopBulkDeploymentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopBulkDeploymentRequest, StopBulkDeploymentResult> asyncHandler) {
+        final StopBulkDeploymentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopBulkDeploymentResult>() {
+            @Override
+            public StopBulkDeploymentResult call() throws Exception {
+                StopBulkDeploymentResult result = null;
+
+                try {
+                    result = executeStopBulkDeployment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateConnectivityInfoResult> updateConnectivityInfoAsync(UpdateConnectivityInfoRequest request) {
 
         return updateConnectivityInfoAsync(request, null);
@@ -2248,6 +2750,39 @@ public class AWSGreengrassAsyncClient extends AWSGreengrassClient implements AWS
 
                 try {
                     result = executeUpdateConnectivityInfo(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectorDefinitionResult> updateConnectorDefinitionAsync(UpdateConnectorDefinitionRequest request) {
+
+        return updateConnectorDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectorDefinitionResult> updateConnectorDefinitionAsync(final UpdateConnectorDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConnectorDefinitionRequest, UpdateConnectorDefinitionResult> asyncHandler) {
+        final UpdateConnectorDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateConnectorDefinitionResult>() {
+            @Override
+            public UpdateConnectorDefinitionResult call() throws Exception {
+                UpdateConnectorDefinitionResult result = null;
+
+                try {
+                    result = executeUpdateConnectorDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

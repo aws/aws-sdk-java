@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     private java.util.List<TreatmentResource> additionalTreatments;
     /** The ID of the application to which the campaign applies. */
     private String applicationId;
+    /** The arn for the campaign. */
+    private String arn;
     /** The date the campaign was created in ISO 8601 format. */
     private String creationDate;
     /** The status of the campaign's default treatment. Only present for A/B test campaigns. */
@@ -67,6 +69,8 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
      * An A/B test campaign will have a status of COMPLETED only when all treatments have a status of COMPLETED.
      */
     private CampaignState state;
+    /** The Tags for the campaign. */
+    private java.util.Map<String, String> tags;
     /** A custom description for the treatment. */
     private String treatmentDescription;
     /** The custom name of a variation of the campaign used for A/B testing. */
@@ -167,6 +171,40 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
     public CampaignResponse withApplicationId(String applicationId) {
         setApplicationId(applicationId);
+        return this;
+    }
+
+    /**
+     * The arn for the campaign.
+     * 
+     * @param arn
+     *        The arn for the campaign.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * The arn for the campaign.
+     * 
+     * @return The arn for the campaign.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * The arn for the campaign.
+     * 
+     * @param arn
+     *        The arn for the campaign.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignResponse withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -711,6 +749,61 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * The Tags for the campaign.
+     * 
+     * @return The Tags for the campaign.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * The Tags for the campaign.
+     * 
+     * @param tags
+     *        The Tags for the campaign.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * The Tags for the campaign.
+     * 
+     * @param tags
+     *        The Tags for the campaign.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignResponse withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CampaignResponse addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignResponse clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * A custom description for the treatment.
      * 
      * @param treatmentDescription
@@ -813,7 +906,8 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -827,6 +921,8 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
             sb.append("AdditionalTreatments: ").append(getAdditionalTreatments()).append(",");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getDefaultState() != null)
@@ -857,6 +953,8 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
             sb.append("SegmentVersion: ").append(getSegmentVersion()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getTreatmentDescription() != null)
             sb.append("TreatmentDescription: ").append(getTreatmentDescription()).append(",");
         if (getTreatmentName() != null)
@@ -884,6 +982,10 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
         if (other.getApplicationId() == null ^ this.getApplicationId() == null)
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
@@ -945,6 +1047,10 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getTreatmentDescription() == null ^ this.getTreatmentDescription() == null)
             return false;
         if (other.getTreatmentDescription() != null && other.getTreatmentDescription().equals(this.getTreatmentDescription()) == false)
@@ -967,6 +1073,7 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getAdditionalTreatments() == null) ? 0 : getAdditionalTreatments().hashCode());
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getDefaultState() == null) ? 0 : getDefaultState().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
@@ -982,6 +1089,7 @@ public class CampaignResponse implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getSegmentId() == null) ? 0 : getSegmentId().hashCode());
         hashCode = prime * hashCode + ((getSegmentVersion() == null) ? 0 : getSegmentVersion().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTreatmentDescription() == null) ? 0 : getTreatmentDescription().hashCode());
         hashCode = prime * hashCode + ((getTreatmentName() == null) ? 0 : getTreatmentName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());

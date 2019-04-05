@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,25 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("accelerationSettings", targetDepth)) {
+                    context.nextToken();
+                    job.setAccelerationSettings(AccelerationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     job.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("billingTagsSource", targetDepth)) {
+                    context.nextToken();
+                    job.setBillingTagsSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    job.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    job.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("currentPhase", targetDepth)) {
+                    context.nextToken();
+                    job.setCurrentPhase(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("errorCode", targetDepth)) {
                     context.nextToken();
@@ -68,6 +80,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("jobPercentComplete", targetDepth)) {
+                    context.nextToken();
+                    job.setJobPercentComplete(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("jobTemplate", targetDepth)) {
                     context.nextToken();
                     job.setJobTemplate(context.getUnmarshaller(String.class).unmarshall(context));
@@ -80,6 +96,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setQueue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("retryCount", targetDepth)) {
+                    context.nextToken();
+                    job.setRetryCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("role", targetDepth)) {
                     context.nextToken();
                     job.setRole(context.getUnmarshaller(String.class).unmarshall(context));
@@ -91,6 +111,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     job.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("statusUpdateInterval", targetDepth)) {
+                    context.nextToken();
+                    job.setStatusUpdateInterval(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("timing", targetDepth)) {
                     context.nextToken();

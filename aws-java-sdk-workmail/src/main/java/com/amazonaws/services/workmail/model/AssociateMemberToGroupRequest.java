@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,13 +33,13 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
     private String organizationId;
     /**
      * <p>
-     * The group for which the member is associated.
+     * The group to which the member (user or group) is associated.
      * </p>
      */
     private String groupId;
     /**
      * <p>
-     * The member to associate to the group.
+     * The member (user or group) to associate to the group.
      * </p>
      */
     private String memberId;
@@ -86,11 +86,11 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The group for which the member is associated.
+     * The group to which the member (user or group) is associated.
      * </p>
      * 
      * @param groupId
-     *        The group for which the member is associated.
+     *        The group to which the member (user or group) is associated.
      */
 
     public void setGroupId(String groupId) {
@@ -99,10 +99,10 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The group for which the member is associated.
+     * The group to which the member (user or group) is associated.
      * </p>
      * 
-     * @return The group for which the member is associated.
+     * @return The group to which the member (user or group) is associated.
      */
 
     public String getGroupId() {
@@ -111,11 +111,11 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The group for which the member is associated.
+     * The group to which the member (user or group) is associated.
      * </p>
      * 
      * @param groupId
-     *        The group for which the member is associated.
+     *        The group to which the member (user or group) is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The member to associate to the group.
+     * The member (user or group) to associate to the group.
      * </p>
      * 
      * @param memberId
-     *        The member to associate to the group.
+     *        The member (user or group) to associate to the group.
      */
 
     public void setMemberId(String memberId) {
@@ -139,10 +139,10 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The member to associate to the group.
+     * The member (user or group) to associate to the group.
      * </p>
      * 
-     * @return The member to associate to the group.
+     * @return The member (user or group) to associate to the group.
      */
 
     public String getMemberId() {
@@ -151,11 +151,11 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The member to associate to the group.
+     * The member (user or group) to associate to the group.
      * </p>
      * 
      * @param memberId
-     *        The member to associate to the group.
+     *        The member (user or group) to associate to the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +165,8 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

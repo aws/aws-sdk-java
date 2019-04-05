@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The event pattern. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      */
     private String eventPattern;
@@ -63,6 +63,12 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The list of key-value pairs to associate with the rule.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -147,13 +153,13 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The event pattern. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
      *        >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
@@ -164,12 +170,12 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The event pattern. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @return The event pattern. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
      *         >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
@@ -180,13 +186,13 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     /**
      * <p>
      * The event pattern. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
      *        >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -350,7 +356,78 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The list of key-value pairs to associate with the rule.
+     * </p>
+     * 
+     * @return The list of key-value pairs to associate with the rule.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The list of key-value pairs to associate with the rule.
+     * </p>
+     * 
+     * @param tags
+     *        The list of key-value pairs to associate with the rule.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The list of key-value pairs to associate with the rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The list of key-value pairs to associate with the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutRuleRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of key-value pairs to associate with the rule.
+     * </p>
+     * 
+     * @param tags
+     *        The list of key-value pairs to associate with the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutRuleRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -371,7 +448,9 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -410,6 +489,10 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -424,6 +507,7 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,27 +35,24 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     private String description;
     /**
      * <p>
-     * The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
-     * parameter is only valid for specifying the destination region in a <code>PresignedUrl</code> parameter, where it
+     * The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
+     * parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code> parameter, where it
      * is required.
      * </p>
-     * <note>
      * <p>
-     * <code>CopySnapshot</code> sends the snapshot copy to the regional endpoint that you send the HTTP request to,
-     * such as <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with the
-     * <code>--region</code> parameter or the default region in your AWS configuration file).
+     * The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the <code>--region</code>
+     * parameter or the default Region in your AWS configuration file.
      * </p>
-     * </note>
      */
     private String destinationRegion;
     /**
      * <p>
-     * Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted snapshot
-     * using this flag, but you cannot use it to create an unencrypted copy from an encrypted snapshot. Your default CMK
-     * for EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
-     * <code>KmsKeyId</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted
+     * snapshot, but you cannot use it to create an unencrypted copy of an encrypted snapshot. Your default CMK for EBS
+     * is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private Boolean encrypted;
@@ -105,14 +102,14 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed URL. This
      * parameter is optional for unencrypted snapshots. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
      * </p>
      * <p>
      * The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code> action, and
      * include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS Signature Version 4. Because EBS snapshots are
      * stored in Amazon S3, the signing algorithm for this parameter uses the same logic that is described in <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests by
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests by
      * Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple Storage Service API Reference</i>.
      * An invalid or improperly signed <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
      * and the snapshot will move to an <code>error</code> state.
@@ -121,7 +118,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     private String presignedUrl;
     /**
      * <p>
-     * The ID of the region that contains the snapshot to be copied.
+     * The ID of the Region that contains the snapshot to be copied.
      * </p>
      */
     private String sourceRegion;
@@ -174,27 +171,24 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
-     * parameter is only valid for specifying the destination region in a <code>PresignedUrl</code> parameter, where it
+     * The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
+     * parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code> parameter, where it
      * is required.
      * </p>
-     * <note>
      * <p>
-     * <code>CopySnapshot</code> sends the snapshot copy to the regional endpoint that you send the HTTP request to,
-     * such as <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with the
-     * <code>--region</code> parameter or the default region in your AWS configuration file).
+     * The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the <code>--region</code>
+     * parameter or the default Region in your AWS configuration file.
      * </p>
-     * </note>
      * 
      * @param destinationRegion
-     *        The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
-     *        This parameter is only valid for specifying the destination region in a <code>PresignedUrl</code>
-     *        parameter, where it is required.</p> <note>
+     *        The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
+     *        This parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code>
+     *        parameter, where it is required.</p>
      *        <p>
-     *        <code>CopySnapshot</code> sends the snapshot copy to the regional endpoint that you send the HTTP request
-     *        to, such as <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with the
-     *        <code>--region</code> parameter or the default region in your AWS configuration file).
-     *        </p>
+     *        The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
+     *        <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the
+     *        <code>--region</code> parameter or the default Region in your AWS configuration file.
      */
 
     public void setDestinationRegion(String destinationRegion) {
@@ -203,26 +197,23 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
-     * parameter is only valid for specifying the destination region in a <code>PresignedUrl</code> parameter, where it
+     * The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
+     * parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code> parameter, where it
      * is required.
      * </p>
-     * <note>
      * <p>
-     * <code>CopySnapshot</code> sends the snapshot copy to the regional endpoint that you send the HTTP request to,
-     * such as <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with the
-     * <code>--region</code> parameter or the default region in your AWS configuration file).
+     * The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the <code>--region</code>
+     * parameter or the default Region in your AWS configuration file.
      * </p>
-     * </note>
      * 
-     * @return The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
-     *         This parameter is only valid for specifying the destination region in a <code>PresignedUrl</code>
-     *         parameter, where it is required.</p> <note>
+     * @return The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
+     *         This parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code>
+     *         parameter, where it is required.</p>
      *         <p>
-     *         <code>CopySnapshot</code> sends the snapshot copy to the regional endpoint that you send the HTTP request
-     *         to, such as <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with the
-     *         <code>--region</code> parameter or the default region in your AWS configuration file).
-     *         </p>
+     *         The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
+     *         <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the
+     *         <code>--region</code> parameter or the default Region in your AWS configuration file.
      */
 
     public String getDestinationRegion() {
@@ -231,27 +222,24 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
-     * parameter is only valid for specifying the destination region in a <code>PresignedUrl</code> parameter, where it
+     * The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation. This
+     * parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code> parameter, where it
      * is required.
      * </p>
-     * <note>
      * <p>
-     * <code>CopySnapshot</code> sends the snapshot copy to the regional endpoint that you send the HTTP request to,
-     * such as <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with the
-     * <code>--region</code> parameter or the default region in your AWS configuration file).
+     * The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the <code>--region</code>
+     * parameter or the default Region in your AWS configuration file.
      * </p>
-     * </note>
      * 
      * @param destinationRegion
-     *        The destination region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
-     *        This parameter is only valid for specifying the destination region in a <code>PresignedUrl</code>
-     *        parameter, where it is required.</p> <note>
+     *        The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot copy operation.
+     *        This parameter is only valid for specifying the destination Region in a <code>PresignedUrl</code>
+     *        parameter, where it is required.</p>
      *        <p>
-     *        <code>CopySnapshot</code> sends the snapshot copy to the regional endpoint that you send the HTTP request
-     *        to, such as <code>ec2.us-east-1.amazonaws.com</code> (in the AWS CLI, this is specified with the
-     *        <code>--region</code> parameter or the default region in your AWS configuration file).
-     *        </p>
+     *        The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example,
+     *        <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified using the
+     *        <code>--region</code> parameter or the default Region in your AWS configuration file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,20 +250,19 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted snapshot
-     * using this flag, but you cannot use it to create an unencrypted copy from an encrypted snapshot. Your default CMK
-     * for EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
-     * <code>KmsKeyId</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted
+     * snapshot, but you cannot use it to create an unencrypted copy of an encrypted snapshot. Your default CMK for EBS
+     * is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param encrypted
      *        Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted
-     *        snapshot using this flag, but you cannot use it to create an unencrypted copy from an encrypted snapshot.
-     *        Your default CMK for EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is
-     *        specified with <code>KmsKeyId</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        snapshot, but you cannot use it to create an unencrypted copy of an encrypted snapshot. Your default CMK
+     *        for EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
+     *        <code>KmsKeyId</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -285,20 +272,19 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted snapshot
-     * using this flag, but you cannot use it to create an unencrypted copy from an encrypted snapshot. Your default CMK
-     * for EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
-     * <code>KmsKeyId</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted
+     * snapshot, but you cannot use it to create an unencrypted copy of an encrypted snapshot. Your default CMK for EBS
+     * is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted
-     *         snapshot using this flag, but you cannot use it to create an unencrypted copy from an encrypted snapshot.
-     *         Your default CMK for EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is
-     *         specified with <code>KmsKeyId</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         snapshot, but you cannot use it to create an unencrypted copy of an encrypted snapshot. Your default CMK
+     *         for EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean getEncrypted() {
@@ -307,20 +293,19 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted snapshot
-     * using this flag, but you cannot use it to create an unencrypted copy from an encrypted snapshot. Your default CMK
-     * for EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
-     * <code>KmsKeyId</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted
+     * snapshot, but you cannot use it to create an unencrypted copy of an encrypted snapshot. Your default CMK for EBS
+     * is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param encrypted
      *        Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted
-     *        snapshot using this flag, but you cannot use it to create an unencrypted copy from an encrypted snapshot.
-     *        Your default CMK for EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is
-     *        specified with <code>KmsKeyId</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        snapshot, but you cannot use it to create an unencrypted copy of an encrypted snapshot. Your default CMK
+     *        for EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
+     *        <code>KmsKeyId</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -332,20 +317,19 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted snapshot
-     * using this flag, but you cannot use it to create an unencrypted copy from an encrypted snapshot. Your default CMK
-     * for EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
-     * <code>KmsKeyId</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted
+     * snapshot, but you cannot use it to create an unencrypted copy of an encrypted snapshot. Your default CMK for EBS
+     * is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Specifies whether the destination snapshot should be encrypted. You can encrypt a copy of an unencrypted
-     *         snapshot using this flag, but you cannot use it to create an unencrypted copy from an encrypted snapshot.
-     *         Your default CMK for EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is
-     *         specified with <code>KmsKeyId</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         snapshot, but you cannot use it to create an unencrypted copy of an encrypted snapshot. Your default CMK
+     *         for EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
+     *         <code>KmsKeyId</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean isEncrypted() {
@@ -610,14 +594,14 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed URL. This
      * parameter is optional for unencrypted snapshots. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
      * </p>
      * <p>
      * The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code> action, and
      * include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS Signature Version 4. Because EBS snapshots are
      * stored in Amazon S3, the signing algorithm for this parameter uses the same logic that is described in <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests by
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests by
      * Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple Storage Service API Reference</i>.
      * An invalid or improperly signed <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
      * and the snapshot will move to an <code>error</code> state.
@@ -626,17 +610,17 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * @param presignedUrl
      *        When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed
      *        URL. This parameter is optional for unencrypted snapshots. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
      *        <p>
      *        The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code>
      *        action, and include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
      *        <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be signed using AWS
      *        Signature Version 4. Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
      *        parameter uses the same logic that is described in <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests
-     *        by Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple Storage Service API
-     *        Reference</i>. An invalid or improperly signed <code>PresignedUrl</code> will cause the copy operation to
-     *        fail asynchronously, and the snapshot will move to an <code>error</code> state.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     *        Requests by Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple Storage Service
+     *        API Reference</i>. An invalid or improperly signed <code>PresignedUrl</code> will cause the copy operation
+     *        to fail asynchronously, and the snapshot will move to an <code>error</code> state.
      */
 
     public void setPresignedUrl(String presignedUrl) {
@@ -647,14 +631,14 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed URL. This
      * parameter is optional for unencrypted snapshots. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
      * </p>
      * <p>
      * The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code> action, and
      * include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS Signature Version 4. Because EBS snapshots are
      * stored in Amazon S3, the signing algorithm for this parameter uses the same logic that is described in <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests by
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests by
      * Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple Storage Service API Reference</i>.
      * An invalid or improperly signed <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
      * and the snapshot will move to an <code>error</code> state.
@@ -662,14 +646,14 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @return When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed
      *         URL. This parameter is optional for unencrypted snapshots. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
      *         <p>
      *         The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code>
      *         action, and include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
      *         <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be signed using AWS
      *         Signature Version 4. Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
      *         parameter uses the same logic that is described in <a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      *         Requests by Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple Storage Service
      *         API Reference</i>. An invalid or improperly signed <code>PresignedUrl</code> will cause the copy
      *         operation to fail asynchronously, and the snapshot will move to an <code>error</code> state.
@@ -683,14 +667,14 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed URL. This
      * parameter is optional for unencrypted snapshots. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
      * </p>
      * <p>
      * The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code> action, and
      * include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and <code>DestinationRegion</code>
      * parameters. The <code>PresignedUrl</code> must be signed using AWS Signature Version 4. Because EBS snapshots are
      * stored in Amazon S3, the signing algorithm for this parameter uses the same logic that is described in <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests by
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests by
      * Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple Storage Service API Reference</i>.
      * An invalid or improperly signed <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
      * and the snapshot will move to an <code>error</code> state.
@@ -699,17 +683,17 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * @param presignedUrl
      *        When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed
      *        URL. This parameter is optional for unencrypted snapshots. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
      *        <p>
      *        The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code>
      *        action, and include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
      *        <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be signed using AWS
      *        Signature Version 4. Because EBS snapshots are stored in Amazon S3, the signing algorithm for this
      *        parameter uses the same logic that is described in <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests
-     *        by Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple Storage Service API
-     *        Reference</i>. An invalid or improperly signed <code>PresignedUrl</code> will cause the copy operation to
-     *        fail asynchronously, and the snapshot will move to an <code>error</code> state.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     *        Requests by Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple Storage Service
+     *        API Reference</i>. An invalid or improperly signed <code>PresignedUrl</code> will cause the copy operation
+     *        to fail asynchronously, and the snapshot will move to an <code>error</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -720,11 +704,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the region that contains the snapshot to be copied.
+     * The ID of the Region that contains the snapshot to be copied.
      * </p>
      * 
      * @param sourceRegion
-     *        The ID of the region that contains the snapshot to be copied.
+     *        The ID of the Region that contains the snapshot to be copied.
      */
 
     public void setSourceRegion(String sourceRegion) {
@@ -733,10 +717,10 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the region that contains the snapshot to be copied.
+     * The ID of the Region that contains the snapshot to be copied.
      * </p>
      * 
-     * @return The ID of the region that contains the snapshot to be copied.
+     * @return The ID of the Region that contains the snapshot to be copied.
      */
 
     public String getSourceRegion() {
@@ -745,11 +729,11 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the region that contains the snapshot to be copied.
+     * The ID of the Region that contains the snapshot to be copied.
      * </p>
      * 
      * @param sourceRegion
-     *        The ID of the region that contains the snapshot to be copied.
+     *        The ID of the Region that contains the snapshot to be copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -810,7 +794,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

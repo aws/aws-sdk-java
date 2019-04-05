@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVpcClassicLinkDnsSupportRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeVpcClassicLinkDnsSupport.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -30,14 +28,14 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      */
     private String nextToken;
@@ -50,13 +48,13 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this request. The request returns a token that you can specify
-     *        in a subsequent call to get the next set of results.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -65,12 +63,12 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of items to return for this request. The request returns a token that you can specify
-     *         in a subsequent call to get the next set of results.
+     * @return The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *         another call with the returned <code>nextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -79,13 +77,13 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of items to return for this request. The request returns a token that you can specify in a
-     * subsequent call to get the next set of results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, make another call
+     * with the returned <code>nextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items to return for this request. The request returns a token that you can specify
-     *        in a subsequent call to get the next set of results.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, make
+     *        another call with the returned <code>nextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +94,11 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this token from a prior call.)
+     *        The token for the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -109,10 +107,10 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      * 
-     * @return The token for the next set of items to return. (You received this token from a prior call.)
+     * @return The token for the next page of results.
      */
 
     public String getNextToken() {
@@ -121,11 +119,11 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a prior call.)
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this token from a prior call.)
+     *        The token for the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,7 +217,8 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

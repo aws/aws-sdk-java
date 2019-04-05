@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission" target="_top">AWS API
  *      Documentation</a>
@@ -26,21 +25,18 @@ public class AddPermissionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response returns the same as a string using a
-     * backslash ("\") as an escape character in the JSON.
+     * The permission statement that's added to the function policy.
      * </p>
      */
     private String statement;
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response returns the same as a string using a
-     * backslash ("\") as an escape character in the JSON.
+     * The permission statement that's added to the function policy.
      * </p>
      * 
      * @param statement
-     *        The permission statement you specified in the request. The response returns the same as a string using a
-     *        backslash ("\") as an escape character in the JSON.
+     *        The permission statement that's added to the function policy.
      */
 
     public void setStatement(String statement) {
@@ -49,12 +45,10 @@ public class AddPermissionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response returns the same as a string using a
-     * backslash ("\") as an escape character in the JSON.
+     * The permission statement that's added to the function policy.
      * </p>
      * 
-     * @return The permission statement you specified in the request. The response returns the same as a string using a
-     *         backslash ("\") as an escape character in the JSON.
+     * @return The permission statement that's added to the function policy.
      */
 
     public String getStatement() {
@@ -63,13 +57,11 @@ public class AddPermissionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The permission statement you specified in the request. The response returns the same as a string using a
-     * backslash ("\") as an escape character in the JSON.
+     * The permission statement that's added to the function policy.
      * </p>
      * 
      * @param statement
-     *        The permission statement you specified in the request. The response returns the same as a string using a
-     *        backslash ("\") as an escape character in the JSON.
+     *        The permission statement that's added to the function policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,7 +71,8 @@ public class AddPermissionResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

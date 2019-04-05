@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private String type;
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * <code>DISABLED</code>).
      * </p>
      */
     private Integer minvCpus;
@@ -103,9 +104,22 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     * instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot price must
-     * be below 20% of the current On-Demand price for that EC2 instance.
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     */
+    private String placementGroup;
+    /**
+     * <p>
+     * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
+     * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
+     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
+     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * On-Demand price.
      * </p>
      */
     private Integer bidPercentage;
@@ -116,6 +130,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String spotIamFleetRole;
+    /**
+     * <p>
+     * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
+     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request, but not both.
+     * </p>
+     */
+    private LaunchTemplateSpecification launchTemplate;
 
     /**
      * <p>
@@ -192,11 +214,13 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * <code>DISABLED</code>).
      * </p>
      * 
      * @param minvCpus
-     *        The minimum number of EC2 vCPUs that an environment should maintain.
+     *        The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     *        <code>DISABLED</code>).
      */
 
     public void setMinvCpus(Integer minvCpus) {
@@ -205,10 +229,12 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * <code>DISABLED</code>).
      * </p>
      * 
-     * @return The minimum number of EC2 vCPUs that an environment should maintain.
+     * @return The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     *         <code>DISABLED</code>).
      */
 
     public Integer getMinvCpus() {
@@ -217,11 +243,13 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum number of EC2 vCPUs that an environment should maintain.
+     * The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * <code>DISABLED</code>).
      * </p>
      * 
      * @param minvCpus
-     *        The minimum number of EC2 vCPUs that an environment should maintain.
+     *        The minimum number of EC2 vCPUs that an environment should maintain (even if the compute environment is
+     *        <code>DISABLED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -758,15 +786,92 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     * instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot price must
-     * be below 20% of the current On-Demand price for that EC2 instance.
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @param placementGroup
+     *        The Amazon EC2 placement group to associate with your compute resources. If you intend to submit
+     *        multi-node parallel jobs to your compute environment, you should consider creating a cluster placement
+     *        group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
+     *        grouping of instances within a single Availability Zone with high network flow potential. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     */
+
+    public void setPlacementGroup(String placementGroup) {
+        this.placementGroup = placementGroup;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @return The Amazon EC2 placement group to associate with your compute resources. If you intend to submit
+     *         multi-node parallel jobs to your compute environment, you should consider creating a cluster placement
+     *         group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
+     *         grouping of instances within a single Availability Zone with high network flow potential. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *         the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     */
+
+    public String getPlacementGroup() {
+        return this.placementGroup;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 placement group to associate with your compute resources. If you intend to submit multi-node
+     * parallel jobs to your compute environment, you should consider creating a cluster placement group and associate
+     * it with your compute resources. This keeps your multi-node parallel job on a logical grouping of instances within
+     * a single Availability Zone with high network flow potential. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @param placementGroup
+     *        The Amazon EC2 placement group to associate with your compute resources. If you intend to submit
+     *        multi-node parallel jobs to your compute environment, you should consider creating a cluster placement
+     *        group and associate it with your compute resources. This keeps your multi-node parallel job on a logical
+     *        grouping of instances within a single Availability Zone with high network flow potential. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResource withPlacementGroup(String placementGroup) {
+        setPlacementGroup(placementGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
+     * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
+     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
+     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * On-Demand price.
      * </p>
      * 
      * @param bidPercentage
-     *        The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     *        instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot
-     *        price must be below 20% of the current On-Demand price for that EC2 instance.
+     *        The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
+     *        instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot
+     *        price must be below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest
+     *        (market) price and never more than your maximum percentage. If you leave this field empty, the default
+     *        value is 100% of the On-Demand price.
      */
 
     public void setBidPercentage(Integer bidPercentage) {
@@ -775,14 +880,18 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     * instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot price must
-     * be below 20% of the current On-Demand price for that EC2 instance.
+     * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
+     * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
+     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
+     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * On-Demand price.
      * </p>
      * 
-     * @return The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     *         instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot
-     *         price must be below 20% of the current On-Demand price for that EC2 instance.
+     * @return The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
+     *         instance type before instances are launched. For example, if your maximum percentage is 20%, then the
+     *         Spot price must be below 20% of the current On-Demand price for that EC2 instance. You always pay the
+     *         lowest (market) price and never more than your maximum percentage. If you leave this field empty, the
+     *         default value is 100% of the On-Demand price.
      */
 
     public Integer getBidPercentage() {
@@ -791,15 +900,19 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     * instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot price must
-     * be below 20% of the current On-Demand price for that EC2 instance.
+     * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
+     * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
+     * below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest (market) price and
+     * never more than your maximum percentage. If you leave this field empty, the default value is 100% of the
+     * On-Demand price.
      * </p>
      * 
      * @param bidPercentage
-     *        The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that
-     *        instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot
-     *        price must be below 20% of the current On-Demand price for that EC2 instance.
+     *        The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
+     *        instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot
+     *        price must be below 20% of the current On-Demand price for that EC2 instance. You always pay the lowest
+     *        (market) price and never more than your maximum percentage. If you leave this field empty, the default
+     *        value is 100% of the On-Demand price.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -855,7 +968,63 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
+     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request, but not both.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use for your compute resources. Any other compute resource parameters that you
+     *        specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
+     *        template. You must specify either the launch template ID or launch template name in the request, but not
+     *        both.
+     */
+
+    public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        this.launchTemplate = launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
+     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request, but not both.
+     * </p>
+     * 
+     * @return The launch template to use for your compute resources. Any other compute resource parameters that you
+     *         specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
+     *         template. You must specify either the launch template ID or launch template name in the request, but not
+     *         both.
+     */
+
+    public LaunchTemplateSpecification getLaunchTemplate() {
+        return this.launchTemplate;
+    }
+
+    /**
+     * <p>
+     * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
+     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     * specify either the launch template ID or launch template name in the request, but not both.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        The launch template to use for your compute resources. Any other compute resource parameters that you
+     *        specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
+     *        template. You must specify either the launch template ID or launch template name in the request, but not
+     *        both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResource withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        setLaunchTemplate(launchTemplate);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -887,10 +1056,14 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
             sb.append("InstanceRole: ").append(getInstanceRole()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getPlacementGroup() != null)
+            sb.append("PlacementGroup: ").append(getPlacementGroup()).append(",");
         if (getBidPercentage() != null)
             sb.append("BidPercentage: ").append(getBidPercentage()).append(",");
         if (getSpotIamFleetRole() != null)
-            sb.append("SpotIamFleetRole: ").append(getSpotIamFleetRole());
+            sb.append("SpotIamFleetRole: ").append(getSpotIamFleetRole()).append(",");
+        if (getLaunchTemplate() != null)
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate());
         sb.append("}");
         return sb.toString();
     }
@@ -949,6 +1122,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPlacementGroup() == null ^ this.getPlacementGroup() == null)
+            return false;
+        if (other.getPlacementGroup() != null && other.getPlacementGroup().equals(this.getPlacementGroup()) == false)
+            return false;
         if (other.getBidPercentage() == null ^ this.getBidPercentage() == null)
             return false;
         if (other.getBidPercentage() != null && other.getBidPercentage().equals(this.getBidPercentage()) == false)
@@ -956,6 +1133,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
         if (other.getSpotIamFleetRole() == null ^ this.getSpotIamFleetRole() == null)
             return false;
         if (other.getSpotIamFleetRole() != null && other.getSpotIamFleetRole().equals(this.getSpotIamFleetRole()) == false)
+            return false;
+        if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
+            return false;
+        if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
             return false;
         return true;
     }
@@ -976,8 +1157,10 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getEc2KeyPair() == null) ? 0 : getEc2KeyPair().hashCode());
         hashCode = prime * hashCode + ((getInstanceRole() == null) ? 0 : getInstanceRole().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPlacementGroup() == null) ? 0 : getPlacementGroup().hashCode());
         hashCode = prime * hashCode + ((getBidPercentage() == null) ? 0 : getBidPercentage().hashCode());
         hashCode = prime * hashCode + ((getSpotIamFleetRole() == null) ? 0 : getSpotIamFleetRole().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         return hashCode;
     }
 

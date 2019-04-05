@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,13 +33,13 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <fullname>AWS CodeDeploy</fullname>
  * <p>
  * AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises
- * instances running in your own facility, or serverless AWS Lambda functions.
+ * instances running in your own facility, serverless AWS Lambda functions, or applications in an Amazon ECS service.
  * </p>
  * <p>
- * You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, code, web and
- * configuration files, executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy
- * application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to
- * make changes to your existing code before you can use AWS CodeDeploy.
+ * You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated
+ * applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia
+ * files, and so on. AWS CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or
+ * Bitbucket repositories. You do not need to make changes to your existing code before you can use AWS CodeDeploy.
  * </p>
  * <p>
  * AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application
@@ -62,9 +62,12 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <b>Deployment group</b>: A set of individual instances or CodeDeploy Lambda applications. A Lambda deployment group
- * contains a group of applications. An EC2/On-premises deployment group contains individually tagged instances, Amazon
- * EC2 instances in Auto Scaling groups, or both.
+ * <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an
+ * Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of
+ * a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load
+ * balancer, and a listener to reroute production traffic to an updated containerized application. An EC2/On-premises
+ * deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or
+ * both. All deployment groups can specify optional trigger, alarm, and rollback settings.
  * </p>
  * </li>
  * <li>
@@ -75,25 +78,26 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <b>Deployment</b>: The process and the components used in the process of updating a Lambda function or of installing
- * content on one or more instances.
+ * <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application
+ * in an Amazon ECS service, or of installing content on one or more instances.
  * </p>
  * </li>
  * <li>
  * <p>
  * <b>Application revisions</b>: For an AWS Lambda deployment, this is an AppSpec file that specifies the Lambda
- * function to update and one or more functions to validate deployment lifecycle events. For an EC2/On-premises
- * deployment, this is an archive file containing source content—source code, web pages, executable files, and
- * deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For
- * Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub,
- * a revision is uniquely identified by its commit ID.
+ * function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS
+ * deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where
+ * production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source
+ * content—source code, webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are
+ * stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3
+ * object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.
  * </p>
  * </li>
  * </ul>
  * <p>
  * This guide also contains information to help you get details about the instances in your deployments, to make
- * on-premises instances available for AWS CodeDeploy deployments, and to get details about a Lambda function
- * deployment.
+ * on-premises instances available for AWS CodeDeploy deployments, to get details about a Lambda function deployment,
+ * and to get details about Amazon ECS service deployments.
  * </p>
  * <p>
  * <b>AWS CodeDeploy Information Resources</b>
@@ -101,17 +105,17 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>
+ * <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy API Reference Guide</a>
+ * <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy API Reference Guide</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS CLI Reference for AWS CodeDeploy</a>
+ * <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS CLI Reference for AWS CodeDeploy</a>
  * </p>
  * </li>
  * <li>
@@ -486,12 +490,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(BatchGetDeploymentInstancesRequest request) {
 
         return batchGetDeploymentInstancesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<BatchGetDeploymentInstancesResult> batchGetDeploymentInstancesAsync(final BatchGetDeploymentInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentInstancesRequest, BatchGetDeploymentInstancesResult> asyncHandler) {
         final BatchGetDeploymentInstancesRequest finalRequest = beforeClientExecution(request);
@@ -503,6 +509,39 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
 
                 try {
                     result = executeBatchGetDeploymentInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentTargetsResult> batchGetDeploymentTargetsAsync(BatchGetDeploymentTargetsRequest request) {
+
+        return batchGetDeploymentTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDeploymentTargetsResult> batchGetDeploymentTargetsAsync(final BatchGetDeploymentTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetDeploymentTargetsRequest, BatchGetDeploymentTargetsResult> asyncHandler) {
+        final BatchGetDeploymentTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetDeploymentTargetsResult>() {
+            @Override
+            public BatchGetDeploymentTargetsResult call() throws Exception {
+                BatchGetDeploymentTargetsResult result = null;
+
+                try {
+                    result = executeBatchGetDeploymentTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1126,12 +1165,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(GetDeploymentInstanceRequest request) {
 
         return getDeploymentInstanceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDeploymentInstanceResult> getDeploymentInstanceAsync(final GetDeploymentInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDeploymentInstanceRequest, GetDeploymentInstanceResult> asyncHandler) {
         final GetDeploymentInstanceRequest finalRequest = beforeClientExecution(request);
@@ -1143,6 +1184,39 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
 
                 try {
                     result = executeGetDeploymentInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentTargetResult> getDeploymentTargetAsync(GetDeploymentTargetRequest request) {
+
+        return getDeploymentTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeploymentTargetResult> getDeploymentTargetAsync(final GetDeploymentTargetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDeploymentTargetRequest, GetDeploymentTargetResult> asyncHandler) {
+        final GetDeploymentTargetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDeploymentTargetResult>() {
+            @Override
+            public GetDeploymentTargetResult call() throws Exception {
+                GetDeploymentTargetResult result = null;
+
+                try {
+                    result = executeGetDeploymentTarget(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1370,12 +1444,14 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(ListDeploymentInstancesRequest request) {
 
         return listDeploymentInstancesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDeploymentInstancesResult> listDeploymentInstancesAsync(final ListDeploymentInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDeploymentInstancesRequest, ListDeploymentInstancesResult> asyncHandler) {
         final ListDeploymentInstancesRequest finalRequest = beforeClientExecution(request);
@@ -1387,6 +1463,39 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
 
                 try {
                     result = executeListDeploymentInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentTargetsResult> listDeploymentTargetsAsync(ListDeploymentTargetsRequest request) {
+
+        return listDeploymentTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentTargetsResult> listDeploymentTargetsAsync(final ListDeploymentTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDeploymentTargetsRequest, ListDeploymentTargetsResult> asyncHandler) {
+        final ListDeploymentTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDeploymentTargetsResult>() {
+            @Override
+            public ListDeploymentTargetsResult call() throws Exception {
+                ListDeploymentTargetsResult result = null;
+
+                try {
+                    result = executeListDeploymentTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1684,6 +1793,7 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
             SkipWaitTimeForInstanceTerminationRequest request) {
 
@@ -1691,6 +1801,7 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SkipWaitTimeForInstanceTerminationResult> skipWaitTimeForInstanceTerminationAsync(
             final SkipWaitTimeForInstanceTerminationRequest request,
             final com.amazonaws.handlers.AsyncHandler<SkipWaitTimeForInstanceTerminationRequest, SkipWaitTimeForInstanceTerminationResult> asyncHandler) {

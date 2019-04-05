@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,18 +23,45 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume that was specified in the request.
+     * </p>
+     */
     private String volumeARN;
-
+    /**
+     * <p>
+     * The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour
+     * (0 to 23). The hour of the day is in the time zone of the gateway.
+     * </p>
+     */
     private Integer startAt;
-
+    /**
+     * <p>
+     * The number of hours between snapshots.
+     * </p>
+     */
     private Integer recurrenceInHours;
-
+    /**
+     * <p>
+     * The snapshot description.
+     * </p>
+     */
     private String description;
-
+    /**
+     * <p>
+     * A value that indicates the time zone of the gateway.
+     * </p>
+     */
     private String timezone;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume that was specified in the request.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the volume that was specified in the request.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -42,7 +69,11 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume that was specified in the request.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the volume that was specified in the request.
      */
 
     public String getVolumeARN() {
@@ -50,7 +81,12 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume that was specified in the request.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the volume that was specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +96,14 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour
+     * (0 to 23). The hour of the day is in the time zone of the gateway.
+     * </p>
+     * 
      * @param startAt
+     *        The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the
+     *        hour (0 to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public void setStartAt(Integer startAt) {
@@ -68,7 +111,13 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour
+     * (0 to 23). The hour of the day is in the time zone of the gateway.
+     * </p>
+     * 
+     * @return The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is
+     *         the hour (0 to 23). The hour of the day is in the time zone of the gateway.
      */
 
     public Integer getStartAt() {
@@ -76,7 +125,14 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour
+     * (0 to 23). The hour of the day is in the time zone of the gateway.
+     * </p>
+     * 
      * @param startAt
+     *        The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the
+     *        hour (0 to 23). The hour of the day is in the time zone of the gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +142,12 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The number of hours between snapshots.
+     * </p>
+     * 
      * @param recurrenceInHours
+     *        The number of hours between snapshots.
      */
 
     public void setRecurrenceInHours(Integer recurrenceInHours) {
@@ -94,7 +155,11 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The number of hours between snapshots.
+     * </p>
+     * 
+     * @return The number of hours between snapshots.
      */
 
     public Integer getRecurrenceInHours() {
@@ -102,7 +167,12 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The number of hours between snapshots.
+     * </p>
+     * 
      * @param recurrenceInHours
+     *        The number of hours between snapshots.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +182,12 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The snapshot description.
+     * </p>
+     * 
      * @param description
+     *        The snapshot description.
      */
 
     public void setDescription(String description) {
@@ -120,7 +195,11 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The snapshot description.
+     * </p>
+     * 
+     * @return The snapshot description.
      */
 
     public String getDescription() {
@@ -128,7 +207,12 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The snapshot description.
+     * </p>
+     * 
      * @param description
+     *        The snapshot description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,7 +222,12 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * A value that indicates the time zone of the gateway.
+     * </p>
+     * 
      * @param timezone
+     *        A value that indicates the time zone of the gateway.
      */
 
     public void setTimezone(String timezone) {
@@ -146,7 +235,11 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * A value that indicates the time zone of the gateway.
+     * </p>
+     * 
+     * @return A value that indicates the time zone of the gateway.
      */
 
     public String getTimezone() {
@@ -154,7 +247,12 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * A value that indicates the time zone of the gateway.
+     * </p>
+     * 
      * @param timezone
+     *        A value that indicates the time zone of the gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,7 +262,8 @@ public class DescribeSnapshotScheduleResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

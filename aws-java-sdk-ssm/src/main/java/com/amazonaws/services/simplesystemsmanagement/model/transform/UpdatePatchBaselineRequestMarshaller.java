@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class UpdatePatchBaselineRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatchesEnableNonSecurity").build();
     private static final MarshallingInfo<List> REJECTEDPATCHES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectedPatches").build();
+    private static final MarshallingInfo<String> REJECTEDPATCHESACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectedPatchesAction").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,6 +77,7 @@ public class UpdatePatchBaselineRequestMarshaller {
             protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovedPatchesComplianceLevel(), APPROVEDPATCHESCOMPLIANCELEVEL_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovedPatchesEnableNonSecurity(), APPROVEDPATCHESENABLENONSECURITY_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getRejectedPatches(), REJECTEDPATCHES_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getRejectedPatchesAction(), REJECTEDPATCHESACTION_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getSources(), SOURCES_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getReplace(), REPLACE_BINDING);

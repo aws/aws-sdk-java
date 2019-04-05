@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,16 @@ public class CreateNotebookInstanceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LifecycleConfigName").build();
     private static final MarshallingInfo<String> DIRECTINTERNETACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectInternetAccess").build();
+    private static final MarshallingInfo<Integer> VOLUMESIZEINGB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeSizeInGB").build();
+    private static final MarshallingInfo<List> ACCELERATORTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceleratorTypes").build();
+    private static final MarshallingInfo<String> DEFAULTCODEREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultCodeRepository").build();
+    private static final MarshallingInfo<List> ADDITIONALCODEREPOSITORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalCodeRepositories").build();
+    private static final MarshallingInfo<String> ROOTACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RootAccess").build();
 
     private static final CreateNotebookInstanceRequestMarshaller instance = new CreateNotebookInstanceRequestMarshaller();
 
@@ -72,6 +82,11 @@ public class CreateNotebookInstanceRequestMarshaller {
             protocolMarshaller.marshall(createNotebookInstanceRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createNotebookInstanceRequest.getLifecycleConfigName(), LIFECYCLECONFIGNAME_BINDING);
             protocolMarshaller.marshall(createNotebookInstanceRequest.getDirectInternetAccess(), DIRECTINTERNETACCESS_BINDING);
+            protocolMarshaller.marshall(createNotebookInstanceRequest.getVolumeSizeInGB(), VOLUMESIZEINGB_BINDING);
+            protocolMarshaller.marshall(createNotebookInstanceRequest.getAcceleratorTypes(), ACCELERATORTYPES_BINDING);
+            protocolMarshaller.marshall(createNotebookInstanceRequest.getDefaultCodeRepository(), DEFAULTCODEREPOSITORY_BINDING);
+            protocolMarshaller.marshall(createNotebookInstanceRequest.getAdditionalCodeRepositories(), ADDITIONALCODEREPOSITORIES_BINDING);
+            protocolMarshaller.marshall(createNotebookInstanceRequest.getRootAccess(), ROOTACCESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

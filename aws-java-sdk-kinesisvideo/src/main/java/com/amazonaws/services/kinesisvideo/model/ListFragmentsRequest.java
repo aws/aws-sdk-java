@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class ListFragmentsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String nextToken;
     /**
      * <p>
-     * Describes the time stamp range and time stamp origin for the range of fragments to return.
+     * Describes the timestamp range and timestamp origin for the range of fragments to return.
      * </p>
      */
     private FragmentSelector fragmentSelector;
@@ -193,11 +193,11 @@ public class ListFragmentsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Describes the time stamp range and time stamp origin for the range of fragments to return.
+     * Describes the timestamp range and timestamp origin for the range of fragments to return.
      * </p>
      * 
      * @param fragmentSelector
-     *        Describes the time stamp range and time stamp origin for the range of fragments to return.
+     *        Describes the timestamp range and timestamp origin for the range of fragments to return.
      */
 
     public void setFragmentSelector(FragmentSelector fragmentSelector) {
@@ -206,10 +206,10 @@ public class ListFragmentsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Describes the time stamp range and time stamp origin for the range of fragments to return.
+     * Describes the timestamp range and timestamp origin for the range of fragments to return.
      * </p>
      * 
-     * @return Describes the time stamp range and time stamp origin for the range of fragments to return.
+     * @return Describes the timestamp range and timestamp origin for the range of fragments to return.
      */
 
     public FragmentSelector getFragmentSelector() {
@@ -218,11 +218,11 @@ public class ListFragmentsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Describes the time stamp range and time stamp origin for the range of fragments to return.
+     * Describes the timestamp range and timestamp origin for the range of fragments to return.
      * </p>
      * 
      * @param fragmentSelector
-     *        Describes the time stamp range and time stamp origin for the range of fragments to return.
+     *        Describes the timestamp range and timestamp origin for the range of fragments to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,7 +232,8 @@ public class ListFragmentsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     private String description;
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. These queues are
      * used when placing game sessions for matches that are created with this matchmaking configuration. Queues can be
@@ -103,7 +103,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
      * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
      * successful match.
      * </p>
@@ -113,7 +113,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
      * successful match.
      * </p>
@@ -208,7 +208,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. These queues are
      * used when placing game sessions for matches that are created with this matchmaking configuration. Queues can be
@@ -216,7 +216,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @return Amazon Resource Name (<a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
      *         game session queue and uniquely identifies it. Format is
      *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. These
      *         queues are used when placing game sessions for matches that are created with this matchmaking
@@ -229,7 +229,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. These queues are
      * used when placing game sessions for matches that are created with this matchmaking configuration. Queues can be
@@ -237,8 +237,9 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param gameSessionQueueArns
-     *        Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     *        that is assigned to a game session queue and uniquely identifies it. Format is
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        game session queue and uniquely identifies it. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. These
      *        queues are used when placing game sessions for matches that are created with this matchmaking
      *        configuration. Queues can be located in any region.
@@ -255,7 +256,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. These queues are
      * used when placing game sessions for matches that are created with this matchmaking configuration. Queues can be
@@ -268,8 +269,9 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param gameSessionQueueArns
-     *        Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     *        that is assigned to a game session queue and uniquely identifies it. Format is
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        game session queue and uniquely identifies it. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. These
      *        queues are used when placing game sessions for matches that are created with this matchmaking
      *        configuration. Queues can be located in any region.
@@ -288,7 +290,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. These queues are
      * used when placing game sessions for matches that are created with this matchmaking configuration. Queues can be
@@ -296,8 +298,9 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param gameSessionQueueArns
-     *        Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     *        that is assigned to a game session queue and uniquely identifies it. Format is
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        game session queue and uniquely identifies it. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>. These
      *        queues are used when placing game sessions for matches that are created with this matchmaking
      *        configuration. Queues can be located in any region.
@@ -643,7 +646,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
      * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
      * successful match.
      * </p>
@@ -651,7 +654,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * @return Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
      *         a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
      *         href=
-     *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *         >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is
      *         created for a successful match.
      */
@@ -664,7 +667,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
      * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
      * successful match.
      * </p>
@@ -673,7 +676,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
      *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
      *        href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created
      *        for a successful match.
      */
@@ -691,7 +694,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
      * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
      * successful match.
      * </p>
@@ -705,7 +708,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
      *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
      *        href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created
      *        for a successful match.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -725,7 +728,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
      * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
      * successful match.
      * </p>
@@ -734,7 +737,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
      *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
      *        href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created
      *        for a successful match.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -749,7 +752,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
      * successful match.
      * </p>
@@ -757,7 +760,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * @param gameSessionData
      *        Set of custom game session properties, formatted as a single string value. This data is passed to a game
      *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created
      *        for a successful match.
      */
@@ -770,14 +773,14 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
      * successful match.
      * </p>
      * 
      * @return Set of custom game session properties, formatted as a single string value. This data is passed to a game
      *         server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *         >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is
      *         created for a successful match.
      */
@@ -790,7 +793,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
      * successful match.
      * </p>
@@ -798,7 +801,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * @param gameSessionData
      *        Set of custom game session properties, formatted as a single string value. This data is passed to a game
      *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created
      *        for a successful match.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -810,7 +813,8 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

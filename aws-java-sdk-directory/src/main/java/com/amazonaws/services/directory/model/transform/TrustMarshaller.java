@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,13 +40,15 @@ public class TrustMarshaller {
     private static final MarshallingInfo<String> TRUSTSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrustState").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> STATELASTUPDATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StateLastUpdatedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StateLastUpdatedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> TRUSTSTATEREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrustStateReason").build();
+    private static final MarshallingInfo<String> SELECTIVEAUTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelectiveAuth").build();
 
     private static final TrustMarshaller instance = new TrustMarshaller();
 
@@ -74,6 +76,7 @@ public class TrustMarshaller {
             protocolMarshaller.marshall(trust.getLastUpdatedDateTime(), LASTUPDATEDDATETIME_BINDING);
             protocolMarshaller.marshall(trust.getStateLastUpdatedDateTime(), STATELASTUPDATEDDATETIME_BINDING);
             protocolMarshaller.marshall(trust.getTrustStateReason(), TRUSTSTATEREASON_BINDING);
+            protocolMarshaller.marshall(trust.getSelectiveAuth(), SELECTIVEAUTH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

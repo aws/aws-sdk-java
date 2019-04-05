@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for Insertable Image
+ * Settings that specify how your still graphic overlay appears.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/InsertableImage" target="_top">AWS API
  *      Documentation</a>
@@ -26,41 +26,44 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InsertableImage implements Serializable, Cloneable, StructuredPojo {
 
-    /** Use Duration (Duration) to set the time, in milliseconds, for the image to remain on the output video. */
+    /**
+     * Specify the time, in milliseconds, for the image to remain on the output video. This duration includes fade-in
+     * time but not fade-out time.
+     */
     private Integer duration;
     /**
-     * Use Fade in (FadeIut) to set the length, in milliseconds, of the inserted image fade in. If you don't specify a
-     * value for Fade in, the image will appear abruptly at the Start time.
+     * Specify the length of time, in milliseconds, between the Start time that you specify for the image insertion and
+     * the time that the image appears at full opacity. Full opacity is the level that you specify for the opacity
+     * setting. If you don't specify a value for Fade-in, the image will appear abruptly at the overlay start time.
      */
     private Integer fadeIn;
     /**
-     * Use Fade out (FadeOut) to set the length, in milliseconds, of the inserted image fade out. If you don't specify a
-     * value for Fade out, the image will disappear abruptly at the end of the inserted image duration.
+     * Specify the length of time, in milliseconds, between the end of the time that you have specified for the image
+     * overlay Duration and when the overlaid image has faded to total transparency. If you don't specify a value for
+     * Fade-out, the image will disappear abruptly at the end of the inserted image duration.
      */
     private Integer fadeOut;
     /**
-     * Specify the Height (Height) of the inserted image. Use a value that is less than or equal to the video resolution
-     * height. Leave this setting blank to use the native height of the image.
+     * Specify the height of the inserted image in pixels. If you specify a value that's larger than the video
+     * resolution height, the service will crop your overlaid image to fit. To use the native height of the image, keep
+     * this setting blank.
      */
     private Integer height;
-    /**
-     * Use Image location (imageInserterInput) to specify the Amazon S3 location of the image to be inserted into the
-     * output. Use a 32 bit BMP, PNG, or TGA file that fits inside the video frame.
-     */
+    /** Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file. */
     private String imageInserterInput;
     /**
-     * Use Left (ImageX) to set the distance, in pixels, between the inserted image and the left edge of the frame.
-     * Required for BMP, PNG and TGA input.
+     * Specify the distance, in pixels, between the inserted image and the left edge of the video frame. Required for
+     * any image overlay that you specify.
      */
     private Integer imageX;
     /**
-     * Use Top (ImageY) to set the distance, in pixels, between the inserted image and the top edge of the video frame.
-     * Required for BMP, PNG and TGA input.
+     * Specify the distance, in pixels, between the overlaid image and the top edge of the video frame. Required for any
+     * image overlay that you specify.
      */
     private Integer imageY;
     /**
-     * Use Layer (Layer) to specify how overlapping inserted images appear. Images with higher values of layer appear on
-     * top of images with lower values of layer.
+     * Specify how overlapping inserted images appear. Images with higher values for Layer appear on top of images with
+     * lower values for Layer.
      */
     private Integer layer;
     /**
@@ -69,21 +72,24 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
      */
     private Integer opacity;
     /**
-     * Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This must be
-     * in timecode format (HH:MM:SS:FF)
+     * Specify the timecode of the frame that you want the overlay to first appear on. This must be in timecode
+     * (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take into account your timecode source settings.
      */
     private String startTime;
     /**
-     * Specify the Width (Width) of the inserted image. Use a value that is less than or equal to the video resolution
-     * width. Leave this setting blank to use the native width of the image.
+     * Specify the width of the inserted image in pixels. If you specify a value that's larger than the video resolution
+     * width, the service will crop your overlaid image to fit. To use the native width of the image, keep this setting
+     * blank.
      */
     private Integer width;
 
     /**
-     * Use Duration (Duration) to set the time, in milliseconds, for the image to remain on the output video.
+     * Specify the time, in milliseconds, for the image to remain on the output video. This duration includes fade-in
+     * time but not fade-out time.
      * 
      * @param duration
-     *        Use Duration (Duration) to set the time, in milliseconds, for the image to remain on the output video.
+     *        Specify the time, in milliseconds, for the image to remain on the output video. This duration includes
+     *        fade-in time but not fade-out time.
      */
 
     public void setDuration(Integer duration) {
@@ -91,9 +97,11 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Duration (Duration) to set the time, in milliseconds, for the image to remain on the output video.
+     * Specify the time, in milliseconds, for the image to remain on the output video. This duration includes fade-in
+     * time but not fade-out time.
      * 
-     * @return Use Duration (Duration) to set the time, in milliseconds, for the image to remain on the output video.
+     * @return Specify the time, in milliseconds, for the image to remain on the output video. This duration includes
+     *         fade-in time but not fade-out time.
      */
 
     public Integer getDuration() {
@@ -101,10 +109,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Duration (Duration) to set the time, in milliseconds, for the image to remain on the output video.
+     * Specify the time, in milliseconds, for the image to remain on the output video. This duration includes fade-in
+     * time but not fade-out time.
      * 
      * @param duration
-     *        Use Duration (Duration) to set the time, in milliseconds, for the image to remain on the output video.
+     *        Specify the time, in milliseconds, for the image to remain on the output video. This duration includes
+     *        fade-in time but not fade-out time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,12 +124,15 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Fade in (FadeIut) to set the length, in milliseconds, of the inserted image fade in. If you don't specify a
-     * value for Fade in, the image will appear abruptly at the Start time.
+     * Specify the length of time, in milliseconds, between the Start time that you specify for the image insertion and
+     * the time that the image appears at full opacity. Full opacity is the level that you specify for the opacity
+     * setting. If you don't specify a value for Fade-in, the image will appear abruptly at the overlay start time.
      * 
      * @param fadeIn
-     *        Use Fade in (FadeIut) to set the length, in milliseconds, of the inserted image fade in. If you don't
-     *        specify a value for Fade in, the image will appear abruptly at the Start time.
+     *        Specify the length of time, in milliseconds, between the Start time that you specify for the image
+     *        insertion and the time that the image appears at full opacity. Full opacity is the level that you specify
+     *        for the opacity setting. If you don't specify a value for Fade-in, the image will appear abruptly at the
+     *        overlay start time.
      */
 
     public void setFadeIn(Integer fadeIn) {
@@ -127,11 +140,14 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Fade in (FadeIut) to set the length, in milliseconds, of the inserted image fade in. If you don't specify a
-     * value for Fade in, the image will appear abruptly at the Start time.
+     * Specify the length of time, in milliseconds, between the Start time that you specify for the image insertion and
+     * the time that the image appears at full opacity. Full opacity is the level that you specify for the opacity
+     * setting. If you don't specify a value for Fade-in, the image will appear abruptly at the overlay start time.
      * 
-     * @return Use Fade in (FadeIut) to set the length, in milliseconds, of the inserted image fade in. If you don't
-     *         specify a value for Fade in, the image will appear abruptly at the Start time.
+     * @return Specify the length of time, in milliseconds, between the Start time that you specify for the image
+     *         insertion and the time that the image appears at full opacity. Full opacity is the level that you specify
+     *         for the opacity setting. If you don't specify a value for Fade-in, the image will appear abruptly at the
+     *         overlay start time.
      */
 
     public Integer getFadeIn() {
@@ -139,12 +155,15 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Fade in (FadeIut) to set the length, in milliseconds, of the inserted image fade in. If you don't specify a
-     * value for Fade in, the image will appear abruptly at the Start time.
+     * Specify the length of time, in milliseconds, between the Start time that you specify for the image insertion and
+     * the time that the image appears at full opacity. Full opacity is the level that you specify for the opacity
+     * setting. If you don't specify a value for Fade-in, the image will appear abruptly at the overlay start time.
      * 
      * @param fadeIn
-     *        Use Fade in (FadeIut) to set the length, in milliseconds, of the inserted image fade in. If you don't
-     *        specify a value for Fade in, the image will appear abruptly at the Start time.
+     *        Specify the length of time, in milliseconds, between the Start time that you specify for the image
+     *        insertion and the time that the image appears at full opacity. Full opacity is the level that you specify
+     *        for the opacity setting. If you don't specify a value for Fade-in, the image will appear abruptly at the
+     *        overlay start time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,12 +173,14 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Fade out (FadeOut) to set the length, in milliseconds, of the inserted image fade out. If you don't specify a
-     * value for Fade out, the image will disappear abruptly at the end of the inserted image duration.
+     * Specify the length of time, in milliseconds, between the end of the time that you have specified for the image
+     * overlay Duration and when the overlaid image has faded to total transparency. If you don't specify a value for
+     * Fade-out, the image will disappear abruptly at the end of the inserted image duration.
      * 
      * @param fadeOut
-     *        Use Fade out (FadeOut) to set the length, in milliseconds, of the inserted image fade out. If you don't
-     *        specify a value for Fade out, the image will disappear abruptly at the end of the inserted image duration.
+     *        Specify the length of time, in milliseconds, between the end of the time that you have specified for the
+     *        image overlay Duration and when the overlaid image has faded to total transparency. If you don't specify a
+     *        value for Fade-out, the image will disappear abruptly at the end of the inserted image duration.
      */
 
     public void setFadeOut(Integer fadeOut) {
@@ -167,12 +188,13 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Fade out (FadeOut) to set the length, in milliseconds, of the inserted image fade out. If you don't specify a
-     * value for Fade out, the image will disappear abruptly at the end of the inserted image duration.
+     * Specify the length of time, in milliseconds, between the end of the time that you have specified for the image
+     * overlay Duration and when the overlaid image has faded to total transparency. If you don't specify a value for
+     * Fade-out, the image will disappear abruptly at the end of the inserted image duration.
      * 
-     * @return Use Fade out (FadeOut) to set the length, in milliseconds, of the inserted image fade out. If you don't
-     *         specify a value for Fade out, the image will disappear abruptly at the end of the inserted image
-     *         duration.
+     * @return Specify the length of time, in milliseconds, between the end of the time that you have specified for the
+     *         image overlay Duration and when the overlaid image has faded to total transparency. If you don't specify
+     *         a value for Fade-out, the image will disappear abruptly at the end of the inserted image duration.
      */
 
     public Integer getFadeOut() {
@@ -180,12 +202,14 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Fade out (FadeOut) to set the length, in milliseconds, of the inserted image fade out. If you don't specify a
-     * value for Fade out, the image will disappear abruptly at the end of the inserted image duration.
+     * Specify the length of time, in milliseconds, between the end of the time that you have specified for the image
+     * overlay Duration and when the overlaid image has faded to total transparency. If you don't specify a value for
+     * Fade-out, the image will disappear abruptly at the end of the inserted image duration.
      * 
      * @param fadeOut
-     *        Use Fade out (FadeOut) to set the length, in milliseconds, of the inserted image fade out. If you don't
-     *        specify a value for Fade out, the image will disappear abruptly at the end of the inserted image duration.
+     *        Specify the length of time, in milliseconds, between the end of the time that you have specified for the
+     *        image overlay Duration and when the overlaid image has faded to total transparency. If you don't specify a
+     *        value for Fade-out, the image will disappear abruptly at the end of the inserted image duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,12 +219,14 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specify the Height (Height) of the inserted image. Use a value that is less than or equal to the video resolution
-     * height. Leave this setting blank to use the native height of the image.
+     * Specify the height of the inserted image in pixels. If you specify a value that's larger than the video
+     * resolution height, the service will crop your overlaid image to fit. To use the native height of the image, keep
+     * this setting blank.
      * 
      * @param height
-     *        Specify the Height (Height) of the inserted image. Use a value that is less than or equal to the video
-     *        resolution height. Leave this setting blank to use the native height of the image.
+     *        Specify the height of the inserted image in pixels. If you specify a value that's larger than the video
+     *        resolution height, the service will crop your overlaid image to fit. To use the native height of the
+     *        image, keep this setting blank.
      */
 
     public void setHeight(Integer height) {
@@ -208,11 +234,13 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specify the Height (Height) of the inserted image. Use a value that is less than or equal to the video resolution
-     * height. Leave this setting blank to use the native height of the image.
+     * Specify the height of the inserted image in pixels. If you specify a value that's larger than the video
+     * resolution height, the service will crop your overlaid image to fit. To use the native height of the image, keep
+     * this setting blank.
      * 
-     * @return Specify the Height (Height) of the inserted image. Use a value that is less than or equal to the video
-     *         resolution height. Leave this setting blank to use the native height of the image.
+     * @return Specify the height of the inserted image in pixels. If you specify a value that's larger than the video
+     *         resolution height, the service will crop your overlaid image to fit. To use the native height of the
+     *         image, keep this setting blank.
      */
 
     public Integer getHeight() {
@@ -220,12 +248,14 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specify the Height (Height) of the inserted image. Use a value that is less than or equal to the video resolution
-     * height. Leave this setting blank to use the native height of the image.
+     * Specify the height of the inserted image in pixels. If you specify a value that's larger than the video
+     * resolution height, the service will crop your overlaid image to fit. To use the native height of the image, keep
+     * this setting blank.
      * 
      * @param height
-     *        Specify the Height (Height) of the inserted image. Use a value that is less than or equal to the video
-     *        resolution height. Leave this setting blank to use the native height of the image.
+     *        Specify the height of the inserted image in pixels. If you specify a value that's larger than the video
+     *        resolution height, the service will crop your overlaid image to fit. To use the native height of the
+     *        image, keep this setting blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,12 +265,10 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Image location (imageInserterInput) to specify the Amazon S3 location of the image to be inserted into the
-     * output. Use a 32 bit BMP, PNG, or TGA file that fits inside the video frame.
+     * Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
      * 
      * @param imageInserterInput
-     *        Use Image location (imageInserterInput) to specify the Amazon S3 location of the image to be inserted into
-     *        the output. Use a 32 bit BMP, PNG, or TGA file that fits inside the video frame.
+     *        Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
      */
 
     public void setImageInserterInput(String imageInserterInput) {
@@ -248,11 +276,9 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Image location (imageInserterInput) to specify the Amazon S3 location of the image to be inserted into the
-     * output. Use a 32 bit BMP, PNG, or TGA file that fits inside the video frame.
+     * Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
      * 
-     * @return Use Image location (imageInserterInput) to specify the Amazon S3 location of the image to be inserted
-     *         into the output. Use a 32 bit BMP, PNG, or TGA file that fits inside the video frame.
+     * @return Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
      */
 
     public String getImageInserterInput() {
@@ -260,12 +286,10 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Image location (imageInserterInput) to specify the Amazon S3 location of the image to be inserted into the
-     * output. Use a 32 bit BMP, PNG, or TGA file that fits inside the video frame.
+     * Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
      * 
      * @param imageInserterInput
-     *        Use Image location (imageInserterInput) to specify the Amazon S3 location of the image to be inserted into
-     *        the output. Use a 32 bit BMP, PNG, or TGA file that fits inside the video frame.
+     *        Specify the Amazon S3 location of the image that you want to overlay on the video. Use a PNG or TGA file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,12 +299,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Left (ImageX) to set the distance, in pixels, between the inserted image and the left edge of the frame.
-     * Required for BMP, PNG and TGA input.
+     * Specify the distance, in pixels, between the inserted image and the left edge of the video frame. Required for
+     * any image overlay that you specify.
      * 
      * @param imageX
-     *        Use Left (ImageX) to set the distance, in pixels, between the inserted image and the left edge of the
-     *        frame. Required for BMP, PNG and TGA input.
+     *        Specify the distance, in pixels, between the inserted image and the left edge of the video frame. Required
+     *        for any image overlay that you specify.
      */
 
     public void setImageX(Integer imageX) {
@@ -288,11 +312,11 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Left (ImageX) to set the distance, in pixels, between the inserted image and the left edge of the frame.
-     * Required for BMP, PNG and TGA input.
+     * Specify the distance, in pixels, between the inserted image and the left edge of the video frame. Required for
+     * any image overlay that you specify.
      * 
-     * @return Use Left (ImageX) to set the distance, in pixels, between the inserted image and the left edge of the
-     *         frame. Required for BMP, PNG and TGA input.
+     * @return Specify the distance, in pixels, between the inserted image and the left edge of the video frame.
+     *         Required for any image overlay that you specify.
      */
 
     public Integer getImageX() {
@@ -300,12 +324,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Left (ImageX) to set the distance, in pixels, between the inserted image and the left edge of the frame.
-     * Required for BMP, PNG and TGA input.
+     * Specify the distance, in pixels, between the inserted image and the left edge of the video frame. Required for
+     * any image overlay that you specify.
      * 
      * @param imageX
-     *        Use Left (ImageX) to set the distance, in pixels, between the inserted image and the left edge of the
-     *        frame. Required for BMP, PNG and TGA input.
+     *        Specify the distance, in pixels, between the inserted image and the left edge of the video frame. Required
+     *        for any image overlay that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,12 +339,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Top (ImageY) to set the distance, in pixels, between the inserted image and the top edge of the video frame.
-     * Required for BMP, PNG and TGA input.
+     * Specify the distance, in pixels, between the overlaid image and the top edge of the video frame. Required for any
+     * image overlay that you specify.
      * 
      * @param imageY
-     *        Use Top (ImageY) to set the distance, in pixels, between the inserted image and the top edge of the video
-     *        frame. Required for BMP, PNG and TGA input.
+     *        Specify the distance, in pixels, between the overlaid image and the top edge of the video frame. Required
+     *        for any image overlay that you specify.
      */
 
     public void setImageY(Integer imageY) {
@@ -328,11 +352,11 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Top (ImageY) to set the distance, in pixels, between the inserted image and the top edge of the video frame.
-     * Required for BMP, PNG and TGA input.
+     * Specify the distance, in pixels, between the overlaid image and the top edge of the video frame. Required for any
+     * image overlay that you specify.
      * 
-     * @return Use Top (ImageY) to set the distance, in pixels, between the inserted image and the top edge of the video
-     *         frame. Required for BMP, PNG and TGA input.
+     * @return Specify the distance, in pixels, between the overlaid image and the top edge of the video frame. Required
+     *         for any image overlay that you specify.
      */
 
     public Integer getImageY() {
@@ -340,12 +364,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Top (ImageY) to set the distance, in pixels, between the inserted image and the top edge of the video frame.
-     * Required for BMP, PNG and TGA input.
+     * Specify the distance, in pixels, between the overlaid image and the top edge of the video frame. Required for any
+     * image overlay that you specify.
      * 
      * @param imageY
-     *        Use Top (ImageY) to set the distance, in pixels, between the inserted image and the top edge of the video
-     *        frame. Required for BMP, PNG and TGA input.
+     *        Specify the distance, in pixels, between the overlaid image and the top edge of the video frame. Required
+     *        for any image overlay that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,12 +379,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Layer (Layer) to specify how overlapping inserted images appear. Images with higher values of layer appear on
-     * top of images with lower values of layer.
+     * Specify how overlapping inserted images appear. Images with higher values for Layer appear on top of images with
+     * lower values for Layer.
      * 
      * @param layer
-     *        Use Layer (Layer) to specify how overlapping inserted images appear. Images with higher values of layer
-     *        appear on top of images with lower values of layer.
+     *        Specify how overlapping inserted images appear. Images with higher values for Layer appear on top of
+     *        images with lower values for Layer.
      */
 
     public void setLayer(Integer layer) {
@@ -368,11 +392,11 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Layer (Layer) to specify how overlapping inserted images appear. Images with higher values of layer appear on
-     * top of images with lower values of layer.
+     * Specify how overlapping inserted images appear. Images with higher values for Layer appear on top of images with
+     * lower values for Layer.
      * 
-     * @return Use Layer (Layer) to specify how overlapping inserted images appear. Images with higher values of layer
-     *         appear on top of images with lower values of layer.
+     * @return Specify how overlapping inserted images appear. Images with higher values for Layer appear on top of
+     *         images with lower values for Layer.
      */
 
     public Integer getLayer() {
@@ -380,12 +404,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Layer (Layer) to specify how overlapping inserted images appear. Images with higher values of layer appear on
-     * top of images with lower values of layer.
+     * Specify how overlapping inserted images appear. Images with higher values for Layer appear on top of images with
+     * lower values for Layer.
      * 
      * @param layer
-     *        Use Layer (Layer) to specify how overlapping inserted images appear. Images with higher values of layer
-     *        appear on top of images with lower values of layer.
+     *        Specify how overlapping inserted images appear. Images with higher values for Layer appear on top of
+     *        images with lower values for Layer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,12 +459,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This must be
-     * in timecode format (HH:MM:SS:FF)
+     * Specify the timecode of the frame that you want the overlay to first appear on. This must be in timecode
+     * (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take into account your timecode source settings.
      * 
      * @param startTime
-     *        Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This
-     *        must be in timecode format (HH:MM:SS:FF)
+     *        Specify the timecode of the frame that you want the overlay to first appear on. This must be in timecode
+     *        (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take into account your timecode source settings.
      */
 
     public void setStartTime(String startTime) {
@@ -448,11 +472,11 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This must be
-     * in timecode format (HH:MM:SS:FF)
+     * Specify the timecode of the frame that you want the overlay to first appear on. This must be in timecode
+     * (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take into account your timecode source settings.
      * 
-     * @return Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This
-     *         must be in timecode format (HH:MM:SS:FF)
+     * @return Specify the timecode of the frame that you want the overlay to first appear on. This must be in timecode
+     *         (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take into account your timecode source settings.
      */
 
     public String getStartTime() {
@@ -460,12 +484,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This must be
-     * in timecode format (HH:MM:SS:FF)
+     * Specify the timecode of the frame that you want the overlay to first appear on. This must be in timecode
+     * (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take into account your timecode source settings.
      * 
      * @param startTime
-     *        Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This
-     *        must be in timecode format (HH:MM:SS:FF)
+     *        Specify the timecode of the frame that you want the overlay to first appear on. This must be in timecode
+     *        (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take into account your timecode source settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -475,12 +499,14 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specify the Width (Width) of the inserted image. Use a value that is less than or equal to the video resolution
-     * width. Leave this setting blank to use the native width of the image.
+     * Specify the width of the inserted image in pixels. If you specify a value that's larger than the video resolution
+     * width, the service will crop your overlaid image to fit. To use the native width of the image, keep this setting
+     * blank.
      * 
      * @param width
-     *        Specify the Width (Width) of the inserted image. Use a value that is less than or equal to the video
-     *        resolution width. Leave this setting blank to use the native width of the image.
+     *        Specify the width of the inserted image in pixels. If you specify a value that's larger than the video
+     *        resolution width, the service will crop your overlaid image to fit. To use the native width of the image,
+     *        keep this setting blank.
      */
 
     public void setWidth(Integer width) {
@@ -488,11 +514,13 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specify the Width (Width) of the inserted image. Use a value that is less than or equal to the video resolution
-     * width. Leave this setting blank to use the native width of the image.
+     * Specify the width of the inserted image in pixels. If you specify a value that's larger than the video resolution
+     * width, the service will crop your overlaid image to fit. To use the native width of the image, keep this setting
+     * blank.
      * 
-     * @return Specify the Width (Width) of the inserted image. Use a value that is less than or equal to the video
-     *         resolution width. Leave this setting blank to use the native width of the image.
+     * @return Specify the width of the inserted image in pixels. If you specify a value that's larger than the video
+     *         resolution width, the service will crop your overlaid image to fit. To use the native width of the image,
+     *         keep this setting blank.
      */
 
     public Integer getWidth() {
@@ -500,12 +528,14 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Specify the Width (Width) of the inserted image. Use a value that is less than or equal to the video resolution
-     * width. Leave this setting blank to use the native width of the image.
+     * Specify the width of the inserted image in pixels. If you specify a value that's larger than the video resolution
+     * width, the service will crop your overlaid image to fit. To use the native width of the image, keep this setting
+     * blank.
      * 
      * @param width
-     *        Specify the Width (Width) of the inserted image. Use a value that is less than or equal to the video
-     *        resolution width. Leave this setting blank to use the native width of the image.
+     *        Specify the width of the inserted image in pixels. If you specify a value that's larger than the video
+     *        resolution width, the service will crop your overlaid image to fit. To use the native width of the image,
+     *        keep this setting blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -515,7 +545,8 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

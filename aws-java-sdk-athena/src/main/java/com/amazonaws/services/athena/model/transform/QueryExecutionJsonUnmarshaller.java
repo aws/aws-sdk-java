@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class QueryExecutionJsonUnmarshaller implements Unmarshaller<QueryExecuti
                     context.nextToken();
                     queryExecution.setQuery(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StatementType", targetDepth)) {
+                    context.nextToken();
+                    queryExecution.setStatementType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ResultConfiguration", targetDepth)) {
                     context.nextToken();
                     queryExecution.setResultConfiguration(ResultConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
@@ -71,6 +75,10 @@ public class QueryExecutionJsonUnmarshaller implements Unmarshaller<QueryExecuti
                 if (context.testExpression("Statistics", targetDepth)) {
                     context.nextToken();
                     queryExecution.setStatistics(QueryExecutionStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("WorkGroup", targetDepth)) {
+                    context.nextToken();
+                    queryExecution.setWorkGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

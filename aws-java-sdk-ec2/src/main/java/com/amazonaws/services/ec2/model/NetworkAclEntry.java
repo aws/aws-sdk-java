@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
     private PortRange portRange;
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> means all protocols.
+     * The protocol number. A value of "-1" means all protocols.
      * </p>
      */
     private String protocol;
@@ -289,11 +289,11 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> means all protocols.
+     * The protocol number. A value of "-1" means all protocols.
      * </p>
      * 
      * @param protocol
-     *        The protocol. A value of <code>-1</code> means all protocols.
+     *        The protocol number. A value of "-1" means all protocols.
      */
 
     public void setProtocol(String protocol) {
@@ -302,10 +302,10 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> means all protocols.
+     * The protocol number. A value of "-1" means all protocols.
      * </p>
      * 
-     * @return The protocol. A value of <code>-1</code> means all protocols.
+     * @return The protocol number. A value of "-1" means all protocols.
      */
 
     public String getProtocol() {
@@ -314,11 +314,11 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> means all protocols.
+     * The protocol number. A value of "-1" means all protocols.
      * </p>
      * 
      * @param protocol
-     *        The protocol. A value of <code>-1</code> means all protocols.
+     *        The protocol number. A value of "-1" means all protocols.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,7 +441,8 @@ public class NetworkAclEntry implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

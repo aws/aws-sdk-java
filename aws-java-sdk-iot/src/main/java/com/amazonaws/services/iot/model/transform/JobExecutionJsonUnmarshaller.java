@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class JobExecutionJsonUnmarshaller implements Unmarshaller<JobExecution, 
                     context.nextToken();
                     jobExecution.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("forceCanceled", targetDepth)) {
+                    context.nextToken();
+                    jobExecution.setForceCanceled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("statusDetails", targetDepth)) {
                     context.nextToken();
                     jobExecution.setStatusDetails(JobExecutionStatusDetailsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -66,19 +70,27 @@ public class JobExecutionJsonUnmarshaller implements Unmarshaller<JobExecution, 
                 }
                 if (context.testExpression("queuedAt", targetDepth)) {
                     context.nextToken();
-                    jobExecution.setQueuedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobExecution.setQueuedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
                     context.nextToken();
-                    jobExecution.setStartedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobExecution.setStartedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedAt", targetDepth)) {
                     context.nextToken();
-                    jobExecution.setLastUpdatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    jobExecution.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("executionNumber", targetDepth)) {
                     context.nextToken();
                     jobExecution.setExecutionNumber(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("versionNumber", targetDepth)) {
+                    context.nextToken();
+                    jobExecution.setVersionNumber(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("approximateSecondsBeforeTimedOut", targetDepth)) {
+                    context.nextToken();
+                    jobExecution.setApproximateSecondsBeforeTimedOut(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

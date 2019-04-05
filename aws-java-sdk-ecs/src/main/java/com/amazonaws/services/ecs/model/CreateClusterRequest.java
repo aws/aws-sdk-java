@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String clusterName;
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -83,7 +91,97 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @return The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *         a key and an optional value, both of which you define. Tag keys can have a maximum character length of
+     *         128 characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -94,7 +192,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getClusterName() != null)
-            sb.append("ClusterName: ").append(getClusterName());
+            sb.append("ClusterName: ").append(getClusterName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -113,6 +213,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getClusterName() != null && other.getClusterName().equals(this.getClusterName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -122,6 +226,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getClusterName() == null) ? 0 : getClusterName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

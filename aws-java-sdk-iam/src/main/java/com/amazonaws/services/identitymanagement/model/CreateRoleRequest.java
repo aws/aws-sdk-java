@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,14 +28,14 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -47,7 +47,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -103,23 +103,44 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private Integer maxSessionDuration;
+    /**
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * </p>
+     */
+    private String permissionsBoundary;
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     * associated value. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
+     * fails and the role is not created.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -127,14 +148,14 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param path
      *        The path to the role. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
@@ -146,28 +167,28 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @return The path to the role. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>IAM User Guide</i>.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
      *         </p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *         forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *         character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
@@ -179,14 +200,14 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
      * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased letters.
@@ -194,14 +215,14 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param path
      *        The path to the role. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of either a forward slash (/) by itself or a string that must begin and end with
      *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
      *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -217,7 +238,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -229,9 +250,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param roleName
      *        The name of the role to create.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      *        </p>
      *        <p>
      *        Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
@@ -247,7 +268,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -258,9 +279,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @return The name of the role to create.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: _+=,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      *         </p>
      *         <p>
      *         Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
@@ -276,7 +297,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The name of the role to create.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -288,9 +309,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param roleName
      *        The name of the role to create.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      *        </p>
      *        <p>
      *        Role names are not distinguished by case. For example, you cannot create roles named both "PRODROLE" and
@@ -522,7 +543,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -538,8 +559,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in the
-     *        <i>IAM User Guide</i>.
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        the <i>IAM User Guide</i>.
      */
 
     public void setMaxSessionDuration(Integer maxSessionDuration) {
@@ -559,7 +580,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -574,7 +595,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default.
      *         This applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code>
      *         CLI operations but does not apply when you use those operations to create a console URL. For more
-     *         information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+     *         information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
      *         Roles</a> in the <i>IAM User Guide</i>.
      */
 
@@ -595,7 +616,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -611,8 +632,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in the
-     *        <i>IAM User Guide</i>.
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -622,7 +643,185 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy that is used to set the permissions boundary for the role.
+     */
+
+    public void setPermissionsBoundary(String permissionsBoundary) {
+        this.permissionsBoundary = permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * </p>
+     * 
+     * @return The ARN of the policy that is used to set the permissions boundary for the role.
+     */
+
+    public String getPermissionsBoundary() {
+        return this.permissionsBoundary;
+    }
+
+    /**
+     * <p>
+     * The ARN of the policy that is used to set the permissions boundary for the role.
+     * </p>
+     * 
+     * @param permissionsBoundary
+     *        The ARN of the policy that is used to set the permissions boundary for the role.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoleRequest withPermissionsBoundary(String permissionsBoundary) {
+        setPermissionsBoundary(permissionsBoundary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     * associated value. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
+     * fails and the role is not created.
+     * </p>
+     * </note>
+     * 
+     * @return A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     *         associated value. For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *         <i>IAM User Guide</i>.</p> <note>
+     *         <p>
+     *         If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
+     *         request fails and the role is not created.
+     *         </p>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     * associated value. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
+     * fails and the role is not created.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     *        associated value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
+     *        request fails and the role is not created.
+     *        </p>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     * associated value. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
+     * fails and the role is not created.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     *        associated value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
+     *        request fails and the role is not created.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoleRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     * associated value. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire request
+     * fails and the role is not created.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the newly created role. Each tag consists of a key name and an
+     *        associated value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        <i>IAM User Guide</i>.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags per role, then the entire
+     *        request fails and the role is not created.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoleRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -641,7 +840,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getMaxSessionDuration() != null)
-            sb.append("MaxSessionDuration: ").append(getMaxSessionDuration());
+            sb.append("MaxSessionDuration: ").append(getMaxSessionDuration()).append(",");
+        if (getPermissionsBoundary() != null)
+            sb.append("PermissionsBoundary: ").append(getPermissionsBoundary()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -676,6 +879,14 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getMaxSessionDuration() != null && other.getMaxSessionDuration().equals(this.getMaxSessionDuration()) == false)
             return false;
+        if (other.getPermissionsBoundary() == null ^ this.getPermissionsBoundary() == null)
+            return false;
+        if (other.getPermissionsBoundary() != null && other.getPermissionsBoundary().equals(this.getPermissionsBoundary()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -689,6 +900,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getAssumeRolePolicyDocument() == null) ? 0 : getAssumeRolePolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getMaxSessionDuration() == null) ? 0 : getMaxSessionDuration().hashCode());
+        hashCode = prime * hashCode + ((getPermissionsBoundary() == null) ? 0 : getPermissionsBoundary().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

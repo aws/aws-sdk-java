@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class VideoCodecSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> FRAMECAPTURESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("frameCaptureSettings").build();
     private static final MarshallingInfo<StructuredPojo> H264SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("h264Settings").build();
 
@@ -46,6 +48,7 @@ public class VideoCodecSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(videoCodecSettings.getFrameCaptureSettings(), FRAMECAPTURESETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getH264Settings(), H264SETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

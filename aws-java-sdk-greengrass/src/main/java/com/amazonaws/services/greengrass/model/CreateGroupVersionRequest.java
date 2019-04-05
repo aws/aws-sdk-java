@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,19 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /** A client token used to correlate requests and responses. */
     private String amznClientToken;
+    /** The ARN of the connector definition version for this group. */
+    private String connectorDefinitionVersionArn;
     /** The ARN of the core definition version for this group. */
     private String coreDefinitionVersionArn;
     /** The ARN of the device definition version for this group. */
     private String deviceDefinitionVersionArn;
     /** The ARN of the function definition version for this group. */
     private String functionDefinitionVersionArn;
-    /** The ID of the AWS Greengrass group. */
+    /** The ID of the Greengrass group. */
     private String groupId;
     /** The ARN of the logger definition version for this group. */
     private String loggerDefinitionVersionArn;
-    /** The resource definition version ARN for this group. */
+    /** The ARN of the resource definition version for this group. */
     private String resourceDefinitionVersionArn;
     /** The ARN of the subscription definition version for this group. */
     private String subscriptionDefinitionVersionArn;
@@ -73,6 +75,40 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     public CreateGroupVersionRequest withAmznClientToken(String amznClientToken) {
         setAmznClientToken(amznClientToken);
+        return this;
+    }
+
+    /**
+     * The ARN of the connector definition version for this group.
+     * 
+     * @param connectorDefinitionVersionArn
+     *        The ARN of the connector definition version for this group.
+     */
+
+    public void setConnectorDefinitionVersionArn(String connectorDefinitionVersionArn) {
+        this.connectorDefinitionVersionArn = connectorDefinitionVersionArn;
+    }
+
+    /**
+     * The ARN of the connector definition version for this group.
+     * 
+     * @return The ARN of the connector definition version for this group.
+     */
+
+    public String getConnectorDefinitionVersionArn() {
+        return this.connectorDefinitionVersionArn;
+    }
+
+    /**
+     * The ARN of the connector definition version for this group.
+     * 
+     * @param connectorDefinitionVersionArn
+     *        The ARN of the connector definition version for this group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGroupVersionRequest withConnectorDefinitionVersionArn(String connectorDefinitionVersionArn) {
+        setConnectorDefinitionVersionArn(connectorDefinitionVersionArn);
         return this;
     }
 
@@ -179,10 +215,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      */
 
     public void setGroupId(String groupId) {
@@ -190,9 +226,9 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
-     * @return The ID of the AWS Greengrass group.
+     * @return The ID of the Greengrass group.
      */
 
     public String getGroupId() {
@@ -200,10 +236,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      * 
      * @param groupId
-     *        The ID of the AWS Greengrass group.
+     *        The ID of the Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,10 +283,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The resource definition version ARN for this group.
+     * The ARN of the resource definition version for this group.
      * 
      * @param resourceDefinitionVersionArn
-     *        The resource definition version ARN for this group.
+     *        The ARN of the resource definition version for this group.
      */
 
     public void setResourceDefinitionVersionArn(String resourceDefinitionVersionArn) {
@@ -258,9 +294,9 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The resource definition version ARN for this group.
+     * The ARN of the resource definition version for this group.
      * 
-     * @return The resource definition version ARN for this group.
+     * @return The ARN of the resource definition version for this group.
      */
 
     public String getResourceDefinitionVersionArn() {
@@ -268,10 +304,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The resource definition version ARN for this group.
+     * The ARN of the resource definition version for this group.
      * 
      * @param resourceDefinitionVersionArn
-     *        The resource definition version ARN for this group.
+     *        The ARN of the resource definition version for this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,7 +351,8 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -327,6 +364,8 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
         sb.append("{");
         if (getAmznClientToken() != null)
             sb.append("AmznClientToken: ").append(getAmznClientToken()).append(",");
+        if (getConnectorDefinitionVersionArn() != null)
+            sb.append("ConnectorDefinitionVersionArn: ").append(getConnectorDefinitionVersionArn()).append(",");
         if (getCoreDefinitionVersionArn() != null)
             sb.append("CoreDefinitionVersionArn: ").append(getCoreDefinitionVersionArn()).append(",");
         if (getDeviceDefinitionVersionArn() != null)
@@ -358,6 +397,11 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
         if (other.getAmznClientToken() == null ^ this.getAmznClientToken() == null)
             return false;
         if (other.getAmznClientToken() != null && other.getAmznClientToken().equals(this.getAmznClientToken()) == false)
+            return false;
+        if (other.getConnectorDefinitionVersionArn() == null ^ this.getConnectorDefinitionVersionArn() == null)
+            return false;
+        if (other.getConnectorDefinitionVersionArn() != null
+                && other.getConnectorDefinitionVersionArn().equals(this.getConnectorDefinitionVersionArn()) == false)
             return false;
         if (other.getCoreDefinitionVersionArn() == null ^ this.getCoreDefinitionVersionArn() == null)
             return false;
@@ -397,6 +441,7 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAmznClientToken() == null) ? 0 : getAmznClientToken().hashCode());
+        hashCode = prime * hashCode + ((getConnectorDefinitionVersionArn() == null) ? 0 : getConnectorDefinitionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getCoreDefinitionVersionArn() == null) ? 0 : getCoreDefinitionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceDefinitionVersionArn() == null) ? 0 : getDeviceDefinitionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getFunctionDefinitionVersionArn() == null) ? 0 : getFunctionDefinitionVersionArn().hashCode());

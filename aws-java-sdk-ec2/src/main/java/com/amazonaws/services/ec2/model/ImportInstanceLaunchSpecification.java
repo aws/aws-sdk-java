@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,7 +60,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.
      * </p>
      */
@@ -441,13 +441,13 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
      *        The instance type. For more information about the instance types that you can import, see <a
-     *        href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
+     *        href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
      */
@@ -459,12 +459,12 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @return The instance type. For more information about the instance types that you can import, see <a
-     *         href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
+     *         href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
      *         >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
      */
@@ -476,13 +476,13 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
      *        The instance type. For more information about the instance types that you can import, see <a
-     *        href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
+     *        href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
@@ -496,13 +496,13 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
      *        The instance type. For more information about the instance types that you can import, see <a
-     *        href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
+     *        href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
      * @see InstanceType
      */
@@ -514,13 +514,13 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     /**
      * <p>
      * The instance type. For more information about the instance types that you can import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.
      * </p>
      * 
      * @param instanceType
      *        The instance type. For more information about the instance types that you can import, see <a
-     *        href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
+     *        href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types"
      *        >Instance Types</a> in the VM Import/Export User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
@@ -744,7 +744,8 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

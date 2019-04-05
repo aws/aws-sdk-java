@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,14 +47,14 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. Events with a time stamp earlier than this time are not exported.
+     * UTC. Events with a timestamp earlier than this time are not exported.
      * </p>
      */
     private Long from;
     /**
      * <p>
      * The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. Events with a time stamp later than this time are not exported.
+     * UTC. Events with a timestamp later than this time are not exported.
      * </p>
      */
     private Long to;
@@ -201,12 +201,12 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. Events with a time stamp earlier than this time are not exported.
+     * UTC. Events with a timestamp earlier than this time are not exported.
      * </p>
      * 
      * @param from
      *        The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
-     *        00:00:00 UTC. Events with a time stamp earlier than this time are not exported.
+     *        00:00:00 UTC. Events with a timestamp earlier than this time are not exported.
      */
 
     public void setFrom(Long from) {
@@ -216,11 +216,11 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. Events with a time stamp earlier than this time are not exported.
+     * UTC. Events with a timestamp earlier than this time are not exported.
      * </p>
      * 
      * @return The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
-     *         00:00:00 UTC. Events with a time stamp earlier than this time are not exported.
+     *         00:00:00 UTC. Events with a timestamp earlier than this time are not exported.
      */
 
     public Long getFrom() {
@@ -230,12 +230,12 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. Events with a time stamp earlier than this time are not exported.
+     * UTC. Events with a timestamp earlier than this time are not exported.
      * </p>
      * 
      * @param from
      *        The start time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
-     *        00:00:00 UTC. Events with a time stamp earlier than this time are not exported.
+     *        00:00:00 UTC. Events with a timestamp earlier than this time are not exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,12 +247,12 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. Events with a time stamp later than this time are not exported.
+     * UTC. Events with a timestamp later than this time are not exported.
      * </p>
      * 
      * @param to
      *        The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
-     *        00:00:00 UTC. Events with a time stamp later than this time are not exported.
+     *        00:00:00 UTC. Events with a timestamp later than this time are not exported.
      */
 
     public void setTo(Long to) {
@@ -262,11 +262,11 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. Events with a time stamp later than this time are not exported.
+     * UTC. Events with a timestamp later than this time are not exported.
      * </p>
      * 
      * @return The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
-     *         00:00:00 UTC. Events with a time stamp later than this time are not exported.
+     *         00:00:00 UTC. Events with a timestamp later than this time are not exported.
      */
 
     public Long getTo() {
@@ -276,12 +276,12 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC. Events with a time stamp later than this time are not exported.
+     * UTC. Events with a timestamp later than this time are not exported.
      * </p>
      * 
      * @param to
      *        The end time of the range for the request, expressed as the number of milliseconds after Jan 1, 1970
-     *        00:00:00 UTC. Events with a time stamp later than this time are not exported.
+     *        00:00:00 UTC. Events with a timestamp later than this time are not exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,7 +377,8 @@ public class CreateExportTaskRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

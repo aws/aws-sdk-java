@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,11 @@ import com.amazonaws.services.servicediscovery.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Route 53 auto naming lets you configure public or private namespaces that your microservice applications run
- * in. When instances of the service become available, you can call the auto naming API to register the instance, and
- * Route 53 automatically creates up to five DNS records and an optional health check. Clients that submit DNS queries
- * for the service receive an answer that contains up to eight healthy records.
+ * AWS Cloud Map lets you configure public DNS, private DNS, or HTTP namespaces that your microservice applications run
+ * in. When an instance of the service becomes available, you can call the AWS Cloud Map API to register the instance
+ * with AWS Cloud Map. For public or private DNS namespaces, AWS Cloud Map automatically creates DNS records and an
+ * optional health check. Clients that submit public or private DNS queries, or HTTP requests, for the service receive
+ * an answer that contains up to eight healthy records.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -46,20 +47,47 @@ public interface AWSServiceDiscovery {
 
     /**
      * <p>
+     * Creates an HTTP namespace. Service instances that you register using an HTTP namespace can be discovered using a
+     * <code>DiscoverInstances</code> request but can't be discovered using DNS.
+     * </p>
+     * <p>
+     * For the current limit on the number of namespaces that you can create using the same AWS account, see <a
+     * href="http://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
+     * <i>AWS Cloud Map Developer Guide</i>.
+     * </p>
+     * 
+     * @param createHttpNamespaceRequest
+     * @return Result of the CreateHttpNamespace operation returned by the service.
+     * @throws InvalidInputException
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
+     * @throws NamespaceAlreadyExistsException
+     *         The namespace that you're trying to create already exists.
+     * @throws ResourceLimitExceededException
+     *         The resource can't be created because you've reached the limit on the number of resources.
+     * @throws DuplicateRequestException
+     *         The operation is already in progress.
+     * @sample AWSServiceDiscovery.CreateHttpNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateHttpNamespaceResult createHttpNamespace(CreateHttpNamespaceRequest createHttpNamespaceRequest);
+
+    /**
+     * <p>
      * Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC. The namespace
      * defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name
      * your service <code>backend</code>, the resulting DNS name for the service will be
      * <code>backend.example.com</code>. For the current limit on the number of namespaces that you can create using the
-     * same AWS account, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
-     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+     * same AWS account, see <a href="http://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud
+     * Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param createPrivateDnsNamespaceRequest
      * @return Result of the CreatePrivateDnsNamespace operation returned by the service.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws NamespaceAlreadyExistsException
      *         The namespace that you're trying to create already exists.
      * @throws ResourceLimitExceededException
@@ -77,16 +105,16 @@ public interface AWSServiceDiscovery {
      * Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your
      * service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
      * <code>backend</code>, the resulting DNS name for the service will be <code>backend.example.com</code>. For the
-     * current limit on the number of namespaces that you can create using the same AWS account, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
-     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+     * current limit on the number of namespaces that you can create using the same AWS account, see <a
+     * href="http://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
+     * <i>AWS Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param createPublicDnsNamespaceRequest
      * @return Result of the CreatePublicDnsNamespace operation returned by the service.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws NamespaceAlreadyExistsException
      *         The namespace that you're trying to create already exists.
      * @throws ResourceLimitExceededException
@@ -106,8 +134,35 @@ public interface AWSServiceDiscovery {
      * <ul>
      * <li>
      * <p>
-     * Up to three records (A, AAAA, and SRV) or one CNAME record
+     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AAAA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A and AAAA
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SRV
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CNAME
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -116,21 +171,20 @@ public interface AWSServiceDiscovery {
      * </li>
      * </ul>
      * <p>
-     * After you create the service, you can submit a <a>RegisterInstance</a> request, and Amazon Route 53 uses the
-     * values in the configuration to create the specified entities.
+     * After you create the service, you can submit a <a>RegisterInstance</a> request, and AWS Cloud Map uses the values
+     * in the configuration to create the specified entities.
      * </p>
      * <p>
      * For the current limit on the number of instances that you can register using the same namespace and using the
-     * same service, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
-     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+     * same service, see <a href="http://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map
+     * Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param createServiceRequest
      * @return Result of the CreateService operation returned by the service.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws ResourceLimitExceededException
      *         The resource can't be created because you've reached the limit on the number of resources.
      * @throws NamespaceNotFoundException
@@ -152,8 +206,8 @@ public interface AWSServiceDiscovery {
      * @param deleteNamespaceRequest
      * @return Result of the DeleteNamespace operation returned by the service.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws NamespaceNotFoundException
      *         No namespace exists with the specified ID.
      * @throws ResourceInUseException
@@ -175,8 +229,8 @@ public interface AWSServiceDiscovery {
      * @param deleteServiceRequest
      * @return Result of the DeleteService operation returned by the service.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws ServiceNotFoundException
      *         No service exists with the specified ID.
      * @throws ResourceInUseException
@@ -190,7 +244,8 @@ public interface AWSServiceDiscovery {
 
     /**
      * <p>
-     * Deletes the records and the health check, if any, that Amazon Route 53 created for the specified instance.
+     * Deletes the Amazon Route 53 DNS records and health check, if any, that AWS Cloud Map created for the specified
+     * instance.
      * </p>
      * 
      * @param deregisterInstanceRequest
@@ -198,8 +253,8 @@ public interface AWSServiceDiscovery {
      * @throws DuplicateRequestException
      *         The operation is already in progress.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws InstanceNotFoundException
      *         No instance exists with the specified ID, or the instance was recently registered, and information about
      *         the instance hasn't propagated yet.
@@ -216,6 +271,26 @@ public interface AWSServiceDiscovery {
 
     /**
      * <p>
+     * Discovers registered instances for a specified namespace and service.
+     * </p>
+     * 
+     * @param discoverInstancesRequest
+     * @return Result of the DiscoverInstances operation returned by the service.
+     * @throws ServiceNotFoundException
+     *         No service exists with the specified ID.
+     * @throws NamespaceNotFoundException
+     *         No namespace exists with the specified ID.
+     * @throws InvalidInputException
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
+     * @sample AWSServiceDiscovery.DiscoverInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DiscoverInstancesResult discoverInstances(DiscoverInstancesRequest discoverInstancesRequest);
+
+    /**
+     * <p>
      * Gets information about a specified instance.
      * </p>
      * 
@@ -225,8 +300,8 @@ public interface AWSServiceDiscovery {
      *         No instance exists with the specified ID, or the instance was recently registered, and information about
      *         the instance hasn't propagated yet.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws ServiceNotFoundException
      *         No service exists with the specified ID.
      * @sample AWSServiceDiscovery.GetInstance
@@ -253,8 +328,8 @@ public interface AWSServiceDiscovery {
      *         No instance exists with the specified ID, or the instance was recently registered, and information about
      *         the instance hasn't propagated yet.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws ServiceNotFoundException
      *         No service exists with the specified ID.
      * @sample AWSServiceDiscovery.GetInstancesHealthStatus
@@ -271,8 +346,8 @@ public interface AWSServiceDiscovery {
      * @param getNamespaceRequest
      * @return Result of the GetNamespace operation returned by the service.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws NamespaceNotFoundException
      *         No namespace exists with the specified ID.
      * @sample AWSServiceDiscovery.GetNamespace
@@ -294,6 +369,9 @@ public interface AWSServiceDiscovery {
      * 
      * @param getOperationRequest
      * @return Result of the GetOperation operation returned by the service.
+     * @throws InvalidInputException
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws OperationNotFoundException
      *         No operation exists with the specified ID.
      * @sample AWSServiceDiscovery.GetOperation
@@ -310,8 +388,8 @@ public interface AWSServiceDiscovery {
      * @param getServiceRequest
      * @return Result of the GetService operation returned by the service.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws ServiceNotFoundException
      *         No service exists with the specified ID.
      * @sample AWSServiceDiscovery.GetService
@@ -330,8 +408,8 @@ public interface AWSServiceDiscovery {
      * @throws ServiceNotFoundException
      *         No service exists with the specified ID.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @sample AWSServiceDiscovery.ListInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListInstances" target="_top">AWS
      *      API Documentation</a>
@@ -346,8 +424,8 @@ public interface AWSServiceDiscovery {
      * @param listNamespacesRequest
      * @return Result of the ListNamespaces operation returned by the service.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @sample AWSServiceDiscovery.ListNamespaces
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces"
      *      target="_top">AWS API Documentation</a>
@@ -362,8 +440,8 @@ public interface AWSServiceDiscovery {
      * @param listOperationsRequest
      * @return Result of the ListOperations operation returned by the service.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @sample AWSServiceDiscovery.ListOperations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListOperations"
      *      target="_top">AWS API Documentation</a>
@@ -378,8 +456,8 @@ public interface AWSServiceDiscovery {
      * @param listServicesRequest
      * @return Result of the ListServices operation returned by the service.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @sample AWSServiceDiscovery.ListServices
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListServices" target="_top">AWS
      *      API Documentation</a>
@@ -388,25 +466,25 @@ public interface AWSServiceDiscovery {
 
     /**
      * <p>
-     * Creates or updates one or more records and optionally a health check based on the settings in a specified
-     * service. When you submit a <code>RegisterInstance</code> request, Amazon Route 53 does the following:
+     * Creates or updates one or more records and, optionally, creates a health check based on the settings in a
+     * specified service. When you submit a <code>RegisterInstance</code> request, the following occurs:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * For each DNS record that you define in the service specified by <code>ServiceId</code>, creates or updates a
-     * record in the hosted zone that is associated with the corresponding namespace
+     * For each DNS record that you define in the service that is specified by <code>ServiceId</code>, a record is
+     * created or updated in the hosted zone that is associated with the corresponding namespace.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the service includes <code>HealthCheckConfig</code>, creates or updates a health check based on the settings
-     * in the health check configuration
+     * If the service includes <code>HealthCheckConfig</code>, a health check is created based on the settings in the
+     * health check configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Associates the health check, if any, with each of the records
+     * The health check, if any, is associated with each of the new or updated records.
      * </p>
      * </li>
      * </ul>
@@ -420,7 +498,7 @@ public interface AWSServiceDiscovery {
      * For more information, see <a>CreateService</a>.
      * </p>
      * <p>
-     * When Route 53 receives a DNS query for the specified DNS name, it returns the applicable value:
+     * When AWS Cloud Map receives a DNS query for the specified DNS name, it returns the applicable value:
      * </p>
      * <ul>
      * <li>
@@ -441,9 +519,8 @@ public interface AWSServiceDiscovery {
      * </ul>
      * <p>
      * For the current limit on the number of instances that you can register using the same namespace and using the
-     * same service, see <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
-     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+     * same service, see <a href="http://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map
+     * Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param registerInstanceRequest
@@ -451,8 +528,8 @@ public interface AWSServiceDiscovery {
      * @throws DuplicateRequestException
      *         The operation is already in progress.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws ResourceInUseException
      *         The specified resource can't be deleted because it contains other resources. For example, you can't
      *         delete a service that contains any instances.
@@ -467,6 +544,18 @@ public interface AWSServiceDiscovery {
     RegisterInstanceResult registerInstance(RegisterInstanceRequest registerInstanceRequest);
 
     /**
+     * <p>
+     * Submits a request to change the health status of a custom health check to healthy or unhealthy.
+     * </p>
+     * <p>
+     * You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks,
+     * which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change
+     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
+     * </p>
+     * <p>
+     * For more information, see <a>HealthCheckCustomConfig</a>.
+     * </p>
+     * 
      * @param updateInstanceCustomHealthStatusRequest
      * @return Result of the UpdateInstanceCustomHealthStatus operation returned by the service.
      * @throws InstanceNotFoundException
@@ -475,9 +564,11 @@ public interface AWSServiceDiscovery {
      * @throws ServiceNotFoundException
      *         No service exists with the specified ID.
      * @throws CustomHealthNotFoundException
+     *         The health check for the instance that is specified by <code>ServiceId</code> and <code>InstanceId</code>
+     *         is not a custom health check.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @sample AWSServiceDiscovery.UpdateInstanceCustomHealthStatus
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateInstanceCustomHealthStatus"
@@ -507,12 +598,12 @@ public interface AWSServiceDiscovery {
      * </li>
      * </ul>
      * <p>
-     * You must specify all <code>DnsRecords</code> configurations (and, optionally, <code>HealthCheckConfig</code>)
-     * that you want to appear in the updated service. Any current configurations that don't appear in an
-     * <code>UpdateService</code> request are deleted.
+     * For public and private DNS namespaces, you must specify all <code>DnsRecords</code> configurations (and,
+     * optionally, <code>HealthCheckConfig</code>) that you want to appear in the updated service. Any current
+     * configurations that don't appear in an <code>UpdateService</code> request are deleted.
      * </p>
      * <p>
-     * When you update the TTL setting for a service, Amazon Route 53 also updates the corresponding settings in all the
+     * When you update the TTL setting for a service, AWS Cloud Map also updates the corresponding settings in all the
      * records and health checks that were created by using the specified service.
      * </p>
      * 
@@ -521,8 +612,8 @@ public interface AWSServiceDiscovery {
      * @throws DuplicateRequestException
      *         The operation is already in progress.
      * @throws InvalidInputException
-     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
-     *         <code>Name</code> might not be a valid DNS name.
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
      * @throws ServiceNotFoundException
      *         No service exists with the specified ID.
      * @sample AWSServiceDiscovery.UpdateService

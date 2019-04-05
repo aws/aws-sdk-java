@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,7 @@ public class HostedZone implements Serializable, Cloneable {
     /**
      * <p>
      * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
-     * is created by another service, you can't edit or delete it using Amazon Route 53.
+     * is created by another service, you can't edit or delete it using Route 53.
      * </p>
      */
     private LinkedService linkedService;
@@ -341,12 +341,12 @@ public class HostedZone implements Serializable, Cloneable {
     /**
      * <p>
      * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
-     * is created by another service, you can't edit or delete it using Amazon Route 53.
+     * is created by another service, you can't edit or delete it using Route 53.
      * </p>
      * 
      * @param linkedService
      *        If the hosted zone was created by another service, the service that created the hosted zone. When a hosted
-     *        zone is created by another service, you can't edit or delete it using Amazon Route 53.
+     *        zone is created by another service, you can't edit or delete it using Route 53.
      */
 
     public void setLinkedService(LinkedService linkedService) {
@@ -356,11 +356,11 @@ public class HostedZone implements Serializable, Cloneable {
     /**
      * <p>
      * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
-     * is created by another service, you can't edit or delete it using Amazon Route 53.
+     * is created by another service, you can't edit or delete it using Route 53.
      * </p>
      * 
      * @return If the hosted zone was created by another service, the service that created the hosted zone. When a
-     *         hosted zone is created by another service, you can't edit or delete it using Amazon Route 53.
+     *         hosted zone is created by another service, you can't edit or delete it using Route 53.
      */
 
     public LinkedService getLinkedService() {
@@ -370,12 +370,12 @@ public class HostedZone implements Serializable, Cloneable {
     /**
      * <p>
      * If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone
-     * is created by another service, you can't edit or delete it using Amazon Route 53.
+     * is created by another service, you can't edit or delete it using Route 53.
      * </p>
      * 
      * @param linkedService
      *        If the hosted zone was created by another service, the service that created the hosted zone. When a hosted
-     *        zone is created by another service, you can't edit or delete it using Amazon Route 53.
+     *        zone is created by another service, you can't edit or delete it using Route 53.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,7 +385,8 @@ public class HostedZone implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

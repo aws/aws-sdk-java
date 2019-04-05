@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,12 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String description;
     /**
      * <p>
+     * Indicates whether the AMI is encypted.
+     * </p>
+     */
+    private Boolean encrypted;
+    /**
+     * <p>
      * The target hypervisor of the import task.
      * </p>
      */
@@ -55,6 +61,13 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String importTaskId;
+    /**
+     * <p>
+     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
+     * encrypted AMI.
+     * </p>
+     */
+    private String kmsKeyId;
     /**
      * <p>
      * The license type of the virtual machine.
@@ -174,6 +187,58 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * Indicates whether the AMI is encypted.
+     * </p>
+     * 
+     * @param encrypted
+     *        Indicates whether the AMI is encypted.
+     */
+
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the AMI is encypted.
+     * </p>
+     * 
+     * @return Indicates whether the AMI is encypted.
+     */
+
+    public Boolean getEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the AMI is encypted.
+     * </p>
+     * 
+     * @param encrypted
+     *        Indicates whether the AMI is encypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageResult withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the AMI is encypted.
+     * </p>
+     * 
+     * @return Indicates whether the AMI is encypted.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
      * The target hypervisor of the import task.
      * </p>
      * 
@@ -289,6 +354,52 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public ImportImageResult withImportTaskId(String importTaskId) {
         setImportTaskId(importTaskId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
+     * encrypted AMI.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
+     *        create the encrypted AMI.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
+     * encrypted AMI.
+     * </p>
+     * 
+     * @return The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
+     *         create the encrypted AMI.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
+     * encrypted AMI.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
+     *        create the encrypted AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageResult withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
         return this;
     }
 
@@ -566,7 +677,8 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -580,12 +692,16 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getHypervisor() != null)
             sb.append("Hypervisor: ").append(getHypervisor()).append(",");
         if (getImageId() != null)
             sb.append("ImageId: ").append(getImageId()).append(",");
         if (getImportTaskId() != null)
             sb.append("ImportTaskId: ").append(getImportTaskId()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getLicenseType() != null)
             sb.append("LicenseType: ").append(getLicenseType()).append(",");
         if (getPlatform() != null)
@@ -620,6 +736,10 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
         if (other.getHypervisor() == null ^ this.getHypervisor() == null)
             return false;
         if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false)
@@ -631,6 +751,10 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (other.getImportTaskId() == null ^ this.getImportTaskId() == null)
             return false;
         if (other.getImportTaskId() != null && other.getImportTaskId().equals(this.getImportTaskId()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         if (other.getLicenseType() == null ^ this.getLicenseType() == null)
             return false;
@@ -666,9 +790,11 @@ public class ImportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
         hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getImportTaskId() == null) ? 0 : getImportTaskId().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * A container for resource data. The container takes only one of the following supported resource data types:
  * ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'',
- * ''S3MachineLearningModelResourceData''.
+ * ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResourceDataContainer" target="_top">AWS
  *      API Documentation</a>
@@ -32,10 +32,12 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     private LocalDeviceResourceData localDeviceResourceData;
     /** Attributes that define the local volume resource. */
     private LocalVolumeResourceData localVolumeResourceData;
-    /** Attributes that define an S3 machine learning resource. */
+    /** Attributes that define an Amazon S3 machine learning resource. */
     private S3MachineLearningModelResourceData s3MachineLearningModelResourceData;
-    /** Attributes that define an SageMaker machine learning resource. */
+    /** Attributes that define an Amazon SageMaker machine learning resource. */
     private SageMakerMachineLearningModelResourceData sageMakerMachineLearningModelResourceData;
+    /** Attributes that define a secret resource, which references a secret from AWS Secrets Manager. */
+    private SecretsManagerSecretResourceData secretsManagerSecretResourceData;
 
     /**
      * Attributes that define the local device resource.
@@ -106,10 +108,10 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Attributes that define an S3 machine learning resource.
+     * Attributes that define an Amazon S3 machine learning resource.
      * 
      * @param s3MachineLearningModelResourceData
-     *        Attributes that define an S3 machine learning resource.
+     *        Attributes that define an Amazon S3 machine learning resource.
      */
 
     public void setS3MachineLearningModelResourceData(S3MachineLearningModelResourceData s3MachineLearningModelResourceData) {
@@ -117,9 +119,9 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Attributes that define an S3 machine learning resource.
+     * Attributes that define an Amazon S3 machine learning resource.
      * 
-     * @return Attributes that define an S3 machine learning resource.
+     * @return Attributes that define an Amazon S3 machine learning resource.
      */
 
     public S3MachineLearningModelResourceData getS3MachineLearningModelResourceData() {
@@ -127,10 +129,10 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Attributes that define an S3 machine learning resource.
+     * Attributes that define an Amazon S3 machine learning resource.
      * 
      * @param s3MachineLearningModelResourceData
-     *        Attributes that define an S3 machine learning resource.
+     *        Attributes that define an Amazon S3 machine learning resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,10 +142,10 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Attributes that define an SageMaker machine learning resource.
+     * Attributes that define an Amazon SageMaker machine learning resource.
      * 
      * @param sageMakerMachineLearningModelResourceData
-     *        Attributes that define an SageMaker machine learning resource.
+     *        Attributes that define an Amazon SageMaker machine learning resource.
      */
 
     public void setSageMakerMachineLearningModelResourceData(SageMakerMachineLearningModelResourceData sageMakerMachineLearningModelResourceData) {
@@ -151,9 +153,9 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Attributes that define an SageMaker machine learning resource.
+     * Attributes that define an Amazon SageMaker machine learning resource.
      * 
-     * @return Attributes that define an SageMaker machine learning resource.
+     * @return Attributes that define an Amazon SageMaker machine learning resource.
      */
 
     public SageMakerMachineLearningModelResourceData getSageMakerMachineLearningModelResourceData() {
@@ -161,10 +163,10 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Attributes that define an SageMaker machine learning resource.
+     * Attributes that define an Amazon SageMaker machine learning resource.
      * 
      * @param sageMakerMachineLearningModelResourceData
-     *        Attributes that define an SageMaker machine learning resource.
+     *        Attributes that define an Amazon SageMaker machine learning resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,7 +177,42 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
+     * 
+     * @param secretsManagerSecretResourceData
+     *        Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
+     */
+
+    public void setSecretsManagerSecretResourceData(SecretsManagerSecretResourceData secretsManagerSecretResourceData) {
+        this.secretsManagerSecretResourceData = secretsManagerSecretResourceData;
+    }
+
+    /**
+     * Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
+     * 
+     * @return Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
+     */
+
+    public SecretsManagerSecretResourceData getSecretsManagerSecretResourceData() {
+        return this.secretsManagerSecretResourceData;
+    }
+
+    /**
+     * Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
+     * 
+     * @param secretsManagerSecretResourceData
+     *        Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDataContainer withSecretsManagerSecretResourceData(SecretsManagerSecretResourceData secretsManagerSecretResourceData) {
+        setSecretsManagerSecretResourceData(secretsManagerSecretResourceData);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -192,7 +229,9 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
         if (getS3MachineLearningModelResourceData() != null)
             sb.append("S3MachineLearningModelResourceData: ").append(getS3MachineLearningModelResourceData()).append(",");
         if (getSageMakerMachineLearningModelResourceData() != null)
-            sb.append("SageMakerMachineLearningModelResourceData: ").append(getSageMakerMachineLearningModelResourceData());
+            sb.append("SageMakerMachineLearningModelResourceData: ").append(getSageMakerMachineLearningModelResourceData()).append(",");
+        if (getSecretsManagerSecretResourceData() != null)
+            sb.append("SecretsManagerSecretResourceData: ").append(getSecretsManagerSecretResourceData());
         sb.append("}");
         return sb.toString();
     }
@@ -225,6 +264,11 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
         if (other.getSageMakerMachineLearningModelResourceData() != null
                 && other.getSageMakerMachineLearningModelResourceData().equals(this.getSageMakerMachineLearningModelResourceData()) == false)
             return false;
+        if (other.getSecretsManagerSecretResourceData() == null ^ this.getSecretsManagerSecretResourceData() == null)
+            return false;
+        if (other.getSecretsManagerSecretResourceData() != null
+                && other.getSecretsManagerSecretResourceData().equals(this.getSecretsManagerSecretResourceData()) == false)
+            return false;
         return true;
     }
 
@@ -238,6 +282,7 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getS3MachineLearningModelResourceData() == null) ? 0 : getS3MachineLearningModelResourceData().hashCode());
         hashCode = prime * hashCode
                 + ((getSageMakerMachineLearningModelResourceData() == null) ? 0 : getSageMakerMachineLearningModelResourceData().hashCode());
+        hashCode = prime * hashCode + ((getSecretsManagerSecretResourceData() == null) ? 0 : getSecretsManagerSecretResourceData().hashCode());
         return hashCode;
     }
 

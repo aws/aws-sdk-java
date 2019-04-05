@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a streaming instance used for editing an image. New images are created from a snapshot through an image
- * builder.
+ * Describes a virtual machine that is used to create an image.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageBuilder" target="_top">AWS API
@@ -49,13 +48,13 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     private String imageArn;
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The image builder name for display.
+     * The image builder name to display.
      * </p>
      */
     private String displayName;
@@ -103,7 +102,8 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     private Boolean enableDefaultInternetAccess;
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active
+     * Directory domain.
      * </p>
      */
     private DomainJoinInfo domainJoinInfo;
@@ -115,7 +115,7 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<ResourceError> imageBuilderErrors;
     /**
      * <p>
-     * The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     * The version of the AppStream 2.0 agent that is currently being used by the image builder.
      * </p>
      */
     private String appstreamAgentVersion;
@@ -242,11 +242,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -255,10 +255,10 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
-     * @return The description for display.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -267,11 +267,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,11 +282,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image builder name for display.
+     * The image builder name to display.
      * </p>
      * 
      * @param displayName
-     *        The image builder name for display.
+     *        The image builder name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -295,10 +295,10 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image builder name for display.
+     * The image builder name to display.
      * </p>
      * 
-     * @return The image builder name for display.
+     * @return The image builder name to display.
      */
 
     public String getDisplayName() {
@@ -307,11 +307,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image builder name for display.
+     * The image builder name to display.
      * </p>
      * 
      * @param displayName
-     *        The image builder name for display.
+     *        The image builder name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -652,11 +652,13 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active
+     * Directory domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The information needed to join a Microsoft Active Directory domain.
+     *        The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft
+     *        Active Directory domain.
      */
 
     public void setDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
@@ -665,10 +667,12 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active
+     * Directory domain.
      * </p>
      * 
-     * @return The information needed to join a Microsoft Active Directory domain.
+     * @return The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft
+     *         Active Directory domain.
      */
 
     public DomainJoinInfo getDomainJoinInfo() {
@@ -677,11 +681,13 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active
+     * Directory domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The information needed to join a Microsoft Active Directory domain.
+     *        The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft
+     *        Active Directory domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -762,11 +768,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     * The version of the AppStream 2.0 agent that is currently being used by the image builder.
      * </p>
      * 
      * @param appstreamAgentVersion
-     *        The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     *        The version of the AppStream 2.0 agent that is currently being used by the image builder.
      */
 
     public void setAppstreamAgentVersion(String appstreamAgentVersion) {
@@ -775,10 +781,10 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     * The version of the AppStream 2.0 agent that is currently being used by the image builder.
      * </p>
      * 
-     * @return The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     * @return The version of the AppStream 2.0 agent that is currently being used by the image builder.
      */
 
     public String getAppstreamAgentVersion() {
@@ -787,11 +793,11 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     * The version of the AppStream 2.0 agent that is currently being used by the image builder.
      * </p>
      * 
      * @param appstreamAgentVersion
-     *        The version of the AppStream 2.0 agent that is currently being used by this image builder.
+     *        The version of the AppStream 2.0 agent that is currently being used by the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -801,7 +807,8 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

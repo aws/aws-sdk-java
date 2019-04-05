@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource
-     * Name(ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
+     * Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
      * size of the tapes, status of the tapes, progress of the description and tape barcode.
      * </p>
      */
@@ -46,12 +46,12 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource
-     * Name(ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
+     * Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
      * size of the tapes, status of the tapes, progress of the description and tape barcode.
      * </p>
      * 
      * @return An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon
-     *         Resource Name(ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
+     *         Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
      *         (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description and tape
      *         barcode.
      */
@@ -66,13 +66,13 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource
-     * Name(ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
+     * Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
      * size of the tapes, status of the tapes, progress of the description and tape barcode.
      * </p>
      * 
      * @param tapeArchives
      *        An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon
-     *        Resource Name(ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
+     *        Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
      *        (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description and tape barcode.
      */
 
@@ -88,7 +88,7 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource
-     * Name(ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
+     * Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
      * size of the tapes, status of the tapes, progress of the description and tape barcode.
      * </p>
      * <p>
@@ -99,7 +99,7 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param tapeArchives
      *        An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon
-     *        Resource Name(ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
+     *        Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
      *        (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description and tape barcode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -117,13 +117,13 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource
-     * Name(ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
+     * Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
      * size of the tapes, status of the tapes, progress of the description and tape barcode.
      * </p>
      * 
      * @param tapeArchives
      *        An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon
-     *        Resource Name(ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
+     *        Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
      *        (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description and tape barcode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -186,7 +186,8 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

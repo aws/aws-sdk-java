@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,15 +28,15 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The path for the server certificate. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
-     * slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation characters,
-     * digits, and upper and lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (through its
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a
+     * forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * <note>
      * <p>
@@ -53,7 +53,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * contain any spaces.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -157,9 +157,9 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        The name for the server certificate. Do not include the path in this value. The name of the certificate
      *        cannot contain any spaces.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @param certificateBody
      *        The contents of the public key certificate in PEM-encoded format.
      *        </p>
@@ -217,15 +217,15 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The path for the server certificate. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
-     * slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation characters,
-     * digits, and upper and lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (through its
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a
+     * forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * <note>
      * <p>
@@ -237,14 +237,14 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param path
      *        The path for the server certificate. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per
-     *        its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
-     *        either a forward slash (/) by itself or a string that must begin and end with forward slashes. In
-     *        addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     *        including most punctuation characters, digits, and upper and lowercased letters.
+     *        This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows
+     *        (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     *        consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     *        slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character
+     *        (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      *        </p>
      *        <note>
      *        <p>
@@ -261,15 +261,15 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The path for the server certificate. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
-     * slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation characters,
-     * digits, and upper and lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (through its
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a
+     * forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * <note>
      * <p>
@@ -280,14 +280,14 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </note>
      * 
      * @return The path for the server certificate. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>IAM User Guide</i>.</p>
      *         <p>
-     *         This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per
-     *         its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
-     *         either a forward slash (/) by itself or a string that must begin and end with forward slashes. In
-     *         addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     *         including most punctuation characters, digits, and upper and lowercased letters.
+     *         This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows
+     *         (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     *         consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     *         slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character
+     *         (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      *         </p>
      *         <note>
      *         <p>
@@ -304,15 +304,15 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The path for the server certificate. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
-     * slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation characters,
-     * digits, and upper and lowercased letters.
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (through its
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a
+     * forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation
+     * characters, digits, and upper and lowercased letters.
      * </p>
      * <note>
      * <p>
@@ -324,14 +324,14 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param path
      *        The path for the server certificate. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per
-     *        its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
-     *        either a forward slash (/) by itself or a string that must begin and end with forward slashes. In
-     *        addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     *        including most punctuation characters, digits, and upper and lowercased letters.
+     *        This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows
+     *        (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     *        consisting of either a forward slash (/) by itself or a string that must begin and end with forward
+     *        slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character
+     *        (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      *        </p>
      *        <note>
      *        <p>
@@ -353,7 +353,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * contain any spaces.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -362,9 +362,9 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        The name for the server certificate. Do not include the path in this value. The name of the certificate
      *        cannot contain any spaces.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setServerCertificateName(String serverCertificateName) {
@@ -377,7 +377,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * contain any spaces.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -385,9 +385,9 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * @return The name for the server certificate. Do not include the path in this value. The name of the certificate
      *         cannot contain any spaces.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: _+=,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getServerCertificateName() {
@@ -400,7 +400,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * contain any spaces.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -409,9 +409,9 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        The name for the server certificate. Do not include the path in this value. The name of the certificate
      *        cannot contain any spaces.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -925,7 +925,8 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -942,7 +943,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
         if (getCertificateBody() != null)
             sb.append("CertificateBody: ").append(getCertificateBody()).append(",");
         if (getPrivateKey() != null)
-            sb.append("PrivateKey: ").append(getPrivateKey()).append(",");
+            sb.append("PrivateKey: ").append("***Sensitive Data Redacted***").append(",");
         if (getCertificateChain() != null)
             sb.append("CertificateChain: ").append(getCertificateChain());
         sb.append("}");

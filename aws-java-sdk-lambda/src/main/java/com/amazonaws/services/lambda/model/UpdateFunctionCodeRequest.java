@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode" target="_top">AWS API
  *      Documentation</a>
@@ -28,92 +27,133 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The existing Lambda function name whose code you want to replace.
+     * The name of the Lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a>.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS Region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      */
     private String s3Bucket;
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      */
     private String s3Key;
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      */
     private String s3ObjectVersion;
     /**
      * <p>
-     * This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a version as
-     * an atomic operation.
+     * Set to true to publish a new version of the function after updating the code. This has the same effect as calling
+     * <a>PublishVersion</a> separately.
      * </p>
      */
     private Boolean publish;
     /**
      * <p>
-     * This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and publish a
-     * version as an atomic operation. It will do all necessary computation and validation of your code but will not
-     * upload it or a publish a version. Each time this operation is invoked, the <code>CodeSha256</code> hash value of
-     * the provided code will also be computed and returned in the response.
+     * Set to true to validate the request parameters and access permissions without modifying the function code.
      * </p>
      */
     private Boolean dryRun;
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * function that has changed since you last read it.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * The existing Lambda function name whose code you want to replace.
+     * The name of the Lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The existing Lambda function name whose code you want to replace.</p>
+     *        The name of the Lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        <b>Function name</b> - <code>my-function</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -122,23 +162,57 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The existing Lambda function name whose code you want to replace.
+     * The name of the Lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
-     * @return The existing Lambda function name whose code you want to replace.</p>
+     * @return The name of the Lambda function.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *         Name (ARN) of the function (for example,
-     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *         specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *         <b>Function name</b> - <code>my-function</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *         to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -147,24 +221,58 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The existing Lambda function name whose code you want to replace.
+     * The name of the Lambda function.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The existing Lambda function name whose code you want to replace.</p>
+     *        The name of the Lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        <b>Function name</b> - <code>my-function</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +283,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a>.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -193,11 +297,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param zipFile
-     *        The contents of your zip file containing your deployment package. If you are using the web API directly,
-     *        the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
-     *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *        >Execution Permissions</a>.
+     *        The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
+     *        you.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -206,11 +307,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a>.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -220,11 +317,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * {@code position}.
      * </p>
      * 
-     * @return The contents of your zip file containing your deployment package. If you are using the web API directly,
-     *         the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *         SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
-     *         "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *         >Execution Permissions</a>.
+     * @return The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding
+     *         for you.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -233,11 +327,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contents of your zip file containing your deployment package. If you are using the web API directly, the
-     * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
-     * will do the encoding for you. For more information about creating a .zip file, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a>.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -251,11 +341,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param zipFile
-     *        The contents of your zip file containing your deployment package. If you are using the web API directly,
-     *        the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
-     *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
-     *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *        >Execution Permissions</a>.
+     *        The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
+     *        you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,13 +353,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS Region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
      * @param s3Bucket
-     *        Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must
-     *        reside in the same AWS Region where you are creating the Lambda function.
+     *        An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -281,12 +366,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS Region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
-     * @return Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must
-     *         reside in the same AWS Region where you are creating the Lambda function.
+     * @return An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS
+     *         account.
      */
 
     public String getS3Bucket() {
@@ -295,13 +379,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must reside
-     * in the same AWS Region where you are creating the Lambda function.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
      * @param s3Bucket
-     *        Amazon S3 bucket name where the .zip file containing your deployment package is stored. This bucket must
-     *        reside in the same AWS Region where you are creating the Lambda function.
+     *        An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,11 +394,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      * 
      * @param s3Key
-     *        The Amazon S3 object (the deployment package) key name you want to upload.
+     *        The Amazon S3 key of the deployment package.
      */
 
     public void setS3Key(String s3Key) {
@@ -325,10 +407,10 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      * 
-     * @return The Amazon S3 object (the deployment package) key name you want to upload.
+     * @return The Amazon S3 key of the deployment package.
      */
 
     public String getS3Key() {
@@ -337,11 +419,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) key name you want to upload.
+     * The Amazon S3 key of the deployment package.
      * </p>
      * 
      * @param s3Key
-     *        The Amazon S3 object (the deployment package) key name you want to upload.
+     *        The Amazon S3 key of the deployment package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,11 +434,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      * 
      * @param s3ObjectVersion
-     *        The Amazon S3 object (the deployment package) version you want to upload.
+     *        For versioned objects, the version of the deployment package object to use.
      */
 
     public void setS3ObjectVersion(String s3ObjectVersion) {
@@ -365,10 +447,10 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      * 
-     * @return The Amazon S3 object (the deployment package) version you want to upload.
+     * @return For versioned objects, the version of the deployment package object to use.
      */
 
     public String getS3ObjectVersion() {
@@ -377,11 +459,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon S3 object (the deployment package) version you want to upload.
+     * For versioned objects, the version of the deployment package object to use.
      * </p>
      * 
      * @param s3ObjectVersion
-     *        The Amazon S3 object (the deployment package) version you want to upload.
+     *        For versioned objects, the version of the deployment package object to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,13 +474,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a version as
-     * an atomic operation.
+     * Set to true to publish a new version of the function after updating the code. This has the same effect as calling
+     * <a>PublishVersion</a> separately.
      * </p>
      * 
      * @param publish
-     *        This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a
-     *        version as an atomic operation.
+     *        Set to true to publish a new version of the function after updating the code. This has the same effect as
+     *        calling <a>PublishVersion</a> separately.
      */
 
     public void setPublish(Boolean publish) {
@@ -407,12 +489,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a version as
-     * an atomic operation.
+     * Set to true to publish a new version of the function after updating the code. This has the same effect as calling
+     * <a>PublishVersion</a> separately.
      * </p>
      * 
-     * @return This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a
-     *         version as an atomic operation.
+     * @return Set to true to publish a new version of the function after updating the code. This has the same effect as
+     *         calling <a>PublishVersion</a> separately.
      */
 
     public Boolean getPublish() {
@@ -421,13 +503,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a version as
-     * an atomic operation.
+     * Set to true to publish a new version of the function after updating the code. This has the same effect as calling
+     * <a>PublishVersion</a> separately.
      * </p>
      * 
      * @param publish
-     *        This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a
-     *        version as an atomic operation.
+     *        Set to true to publish a new version of the function after updating the code. This has the same effect as
+     *        calling <a>PublishVersion</a> separately.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,12 +520,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a version as
-     * an atomic operation.
+     * Set to true to publish a new version of the function after updating the code. This has the same effect as calling
+     * <a>PublishVersion</a> separately.
      * </p>
      * 
-     * @return This boolean parameter can be used to request AWS Lambda to update the Lambda function and publish a
-     *         version as an atomic operation.
+     * @return Set to true to publish a new version of the function after updating the code. This has the same effect as
+     *         calling <a>PublishVersion</a> separately.
      */
 
     public Boolean isPublish() {
@@ -452,18 +534,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and publish a
-     * version as an atomic operation. It will do all necessary computation and validation of your code but will not
-     * upload it or a publish a version. Each time this operation is invoked, the <code>CodeSha256</code> hash value of
-     * the provided code will also be computed and returned in the response.
+     * Set to true to validate the request parameters and access permissions without modifying the function code.
      * </p>
      * 
      * @param dryRun
-     *        This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and
-     *        publish a version as an atomic operation. It will do all necessary computation and validation of your code
-     *        but will not upload it or a publish a version. Each time this operation is invoked, the
-     *        <code>CodeSha256</code> hash value of the provided code will also be computed and returned in the
-     *        response.
+     *        Set to true to validate the request parameters and access permissions without modifying the function code.
      */
 
     public void setDryRun(Boolean dryRun) {
@@ -472,17 +547,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and publish a
-     * version as an atomic operation. It will do all necessary computation and validation of your code but will not
-     * upload it or a publish a version. Each time this operation is invoked, the <code>CodeSha256</code> hash value of
-     * the provided code will also be computed and returned in the response.
+     * Set to true to validate the request parameters and access permissions without modifying the function code.
      * </p>
      * 
-     * @return This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and
-     *         publish a version as an atomic operation. It will do all necessary computation and validation of your
-     *         code but will not upload it or a publish a version. Each time this operation is invoked, the
-     *         <code>CodeSha256</code> hash value of the provided code will also be computed and returned in the
-     *         response.
+     * @return Set to true to validate the request parameters and access permissions without modifying the function
+     *         code.
      */
 
     public Boolean getDryRun() {
@@ -491,18 +560,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and publish a
-     * version as an atomic operation. It will do all necessary computation and validation of your code but will not
-     * upload it or a publish a version. Each time this operation is invoked, the <code>CodeSha256</code> hash value of
-     * the provided code will also be computed and returned in the response.
+     * Set to true to validate the request parameters and access permissions without modifying the function code.
      * </p>
      * 
      * @param dryRun
-     *        This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and
-     *        publish a version as an atomic operation. It will do all necessary computation and validation of your code
-     *        but will not upload it or a publish a version. Each time this operation is invoked, the
-     *        <code>CodeSha256</code> hash value of the provided code will also be computed and returned in the
-     *        response.
+     *        Set to true to validate the request parameters and access permissions without modifying the function code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,17 +575,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and publish a
-     * version as an atomic operation. It will do all necessary computation and validation of your code but will not
-     * upload it or a publish a version. Each time this operation is invoked, the <code>CodeSha256</code> hash value of
-     * the provided code will also be computed and returned in the response.
+     * Set to true to validate the request parameters and access permissions without modifying the function code.
      * </p>
      * 
-     * @return This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and
-     *         publish a version as an atomic operation. It will do all necessary computation and validation of your
-     *         code but will not upload it or a publish a version. Each time this operation is invoked, the
-     *         <code>CodeSha256</code> hash value of the provided code will also be computed and returned in the
-     *         response.
+     * @return Set to true to validate the request parameters and access permissions without modifying the function
+     *         code.
      */
 
     public Boolean isDryRun() {
@@ -532,17 +588,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * function that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        An optional value you can use to ensure you are updating the latest update of the function version or
-     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either or .
+     *        Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying a function that has changed since you last read it.
      */
 
     public void setRevisionId(String revisionId) {
@@ -551,16 +603,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * function that has changed since you last read it.
      * </p>
      * 
-     * @return An optional value you can use to ensure you are updating the latest update of the function version or
-     *         alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *         function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *         version or alias <code>RevisionID</code> using either or .
+     * @return Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     *         modifying a function that has changed since you last read it.
      */
 
     public String getRevisionId() {
@@ -569,17 +617,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * function that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        An optional value you can use to ensure you are updating the latest update of the function version or
-     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either or .
+     *        Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying a function that has changed since you last read it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -589,7 +633,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -602,7 +647,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
         if (getFunctionName() != null)
             sb.append("FunctionName: ").append(getFunctionName()).append(",");
         if (getZipFile() != null)
-            sb.append("ZipFile: ").append(getZipFile()).append(",");
+            sb.append("ZipFile: ").append("***Sensitive Data Redacted***").append(",");
         if (getS3Bucket() != null)
             sb.append("S3Bucket: ").append(getS3Bucket()).append(",");
         if (getS3Key() != null)

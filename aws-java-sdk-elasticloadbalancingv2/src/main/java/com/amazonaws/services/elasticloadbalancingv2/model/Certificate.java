@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,8 @@ public class Certificate implements Serializable, Cloneable {
     private String certificateArn;
     /**
      * <p>
-     * Indicates whether the certificate is the default certificate.
+     * Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when specifying a
+     * certificate as an input parameter.
      * </p>
      */
     private Boolean isDefault;
@@ -81,11 +82,13 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the certificate is the default certificate.
+     * Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when specifying a
+     * certificate as an input parameter.
      * </p>
      * 
      * @param isDefault
-     *        Indicates whether the certificate is the default certificate.
+     *        Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when
+     *        specifying a certificate as an input parameter.
      */
 
     public void setIsDefault(Boolean isDefault) {
@@ -94,10 +97,12 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the certificate is the default certificate.
+     * Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when specifying a
+     * certificate as an input parameter.
      * </p>
      * 
-     * @return Indicates whether the certificate is the default certificate.
+     * @return Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when
+     *         specifying a certificate as an input parameter.
      */
 
     public Boolean getIsDefault() {
@@ -106,11 +111,13 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the certificate is the default certificate.
+     * Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when specifying a
+     * certificate as an input parameter.
      * </p>
      * 
      * @param isDefault
-     *        Indicates whether the certificate is the default certificate.
+     *        Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when
+     *        specifying a certificate as an input parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,10 +128,12 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the certificate is the default certificate.
+     * Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when specifying a
+     * certificate as an input parameter.
      * </p>
      * 
-     * @return Indicates whether the certificate is the default certificate.
+     * @return Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code> when
+     *         specifying a certificate as an input parameter.
      */
 
     public Boolean isDefault() {
@@ -132,7 +141,8 @@ public class Certificate implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

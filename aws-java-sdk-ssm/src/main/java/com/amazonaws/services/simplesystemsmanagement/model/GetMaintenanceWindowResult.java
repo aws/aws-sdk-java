@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,10 +43,39 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     private String description;
     /**
      * <p>
+     * The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become active.
+     * The Maintenance Window will not run before this specified time.
+     * </p>
+     */
+    private String startDate;
+    /**
+     * <p>
+     * The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become inactive.
+     * The Maintenance Window will not run after this specified time.
+     * </p>
+     */
+    private String endDate;
+    /**
+     * <p>
      * The schedule of the Maintenance Window in the form of a cron or rate expression.
      * </p>
      */
     private String schedule;
+    /**
+     * <p>
+     * The time zone that the scheduled Maintenance Window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     */
+    private String scheduleTimezone;
+    /**
+     * <p>
+     * The next time the Maintenance Window will actually run, taking into account any specified times for the
+     * Maintenance Window to become active or inactive.
+     * </p>
+     */
+    private String nextExecutionTime;
     /**
      * <p>
      * The duration of the Maintenance Window in hours.
@@ -207,6 +236,98 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become active.
+     * The Maintenance Window will not run before this specified time.
+     * </p>
+     * 
+     * @param startDate
+     *        The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become
+     *        active. The Maintenance Window will not run before this specified time.
+     */
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    /**
+     * <p>
+     * The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become active.
+     * The Maintenance Window will not run before this specified time.
+     * </p>
+     * 
+     * @return The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become
+     *         active. The Maintenance Window will not run before this specified time.
+     */
+
+    public String getStartDate() {
+        return this.startDate;
+    }
+
+    /**
+     * <p>
+     * The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become active.
+     * The Maintenance Window will not run before this specified time.
+     * </p>
+     * 
+     * @param startDate
+     *        The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become
+     *        active. The Maintenance Window will not run before this specified time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowResult withStartDate(String startDate) {
+        setStartDate(startDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become inactive.
+     * The Maintenance Window will not run after this specified time.
+     * </p>
+     * 
+     * @param endDate
+     *        The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become
+     *        inactive. The Maintenance Window will not run after this specified time.
+     */
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    /**
+     * <p>
+     * The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become inactive.
+     * The Maintenance Window will not run after this specified time.
+     * </p>
+     * 
+     * @return The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become
+     *         inactive. The Maintenance Window will not run after this specified time.
+     */
+
+    public String getEndDate() {
+        return this.endDate;
+    }
+
+    /**
+     * <p>
+     * The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become inactive.
+     * The Maintenance Window will not run after this specified time.
+     * </p>
+     * 
+     * @param endDate
+     *        The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become
+     *        inactive. The Maintenance Window will not run after this specified time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowResult withEndDate(String endDate) {
+        setEndDate(endDate);
+        return this;
+    }
+
+    /**
+     * <p>
      * The schedule of the Maintenance Window in the form of a cron or rate expression.
      * </p>
      * 
@@ -242,6 +363,105 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
 
     public GetMaintenanceWindowResult withSchedule(String schedule) {
         setSchedule(schedule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time zone that the scheduled Maintenance Window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     * 
+     * @param scheduleTimezone
+     *        The time zone that the scheduled Maintenance Window executions are based on, in Internet Assigned Numbers
+     *        Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
+     *        information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     */
+
+    public void setScheduleTimezone(String scheduleTimezone) {
+        this.scheduleTimezone = scheduleTimezone;
+    }
+
+    /**
+     * <p>
+     * The time zone that the scheduled Maintenance Window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     * 
+     * @return The time zone that the scheduled Maintenance Window executions are based on, in Internet Assigned Numbers
+     *         Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
+     *         information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     *         website.
+     */
+
+    public String getScheduleTimezone() {
+        return this.scheduleTimezone;
+    }
+
+    /**
+     * <p>
+     * The time zone that the scheduled Maintenance Window executions are based on, in Internet Assigned Numbers
+     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
+     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * </p>
+     * 
+     * @param scheduleTimezone
+     *        The time zone that the scheduled Maintenance Window executions are based on, in Internet Assigned Numbers
+     *        Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
+     *        information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowResult withScheduleTimezone(String scheduleTimezone) {
+        setScheduleTimezone(scheduleTimezone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The next time the Maintenance Window will actually run, taking into account any specified times for the
+     * Maintenance Window to become active or inactive.
+     * </p>
+     * 
+     * @param nextExecutionTime
+     *        The next time the Maintenance Window will actually run, taking into account any specified times for the
+     *        Maintenance Window to become active or inactive.
+     */
+
+    public void setNextExecutionTime(String nextExecutionTime) {
+        this.nextExecutionTime = nextExecutionTime;
+    }
+
+    /**
+     * <p>
+     * The next time the Maintenance Window will actually run, taking into account any specified times for the
+     * Maintenance Window to become active or inactive.
+     * </p>
+     * 
+     * @return The next time the Maintenance Window will actually run, taking into account any specified times for the
+     *         Maintenance Window to become active or inactive.
+     */
+
+    public String getNextExecutionTime() {
+        return this.nextExecutionTime;
+    }
+
+    /**
+     * <p>
+     * The next time the Maintenance Window will actually run, taking into account any specified times for the
+     * Maintenance Window to become active or inactive.
+     * </p>
+     * 
+     * @param nextExecutionTime
+     *        The next time the Maintenance Window will actually run, taking into account any specified times for the
+     *        Maintenance Window to become active or inactive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowResult withNextExecutionTime(String nextExecutionTime) {
+        setNextExecutionTime(nextExecutionTime);
         return this;
     }
 
@@ -520,7 +740,8 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -535,9 +756,17 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
+        if (getStartDate() != null)
+            sb.append("StartDate: ").append(getStartDate()).append(",");
+        if (getEndDate() != null)
+            sb.append("EndDate: ").append(getEndDate()).append(",");
         if (getSchedule() != null)
             sb.append("Schedule: ").append(getSchedule()).append(",");
+        if (getScheduleTimezone() != null)
+            sb.append("ScheduleTimezone: ").append(getScheduleTimezone()).append(",");
+        if (getNextExecutionTime() != null)
+            sb.append("NextExecutionTime: ").append(getNextExecutionTime()).append(",");
         if (getDuration() != null)
             sb.append("Duration: ").append(getDuration()).append(",");
         if (getCutoff() != null)
@@ -576,9 +805,25 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getStartDate() == null ^ this.getStartDate() == null)
+            return false;
+        if (other.getStartDate() != null && other.getStartDate().equals(this.getStartDate()) == false)
+            return false;
+        if (other.getEndDate() == null ^ this.getEndDate() == null)
+            return false;
+        if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false)
+            return false;
         if (other.getSchedule() == null ^ this.getSchedule() == null)
             return false;
         if (other.getSchedule() != null && other.getSchedule().equals(this.getSchedule()) == false)
+            return false;
+        if (other.getScheduleTimezone() == null ^ this.getScheduleTimezone() == null)
+            return false;
+        if (other.getScheduleTimezone() != null && other.getScheduleTimezone().equals(this.getScheduleTimezone()) == false)
+            return false;
+        if (other.getNextExecutionTime() == null ^ this.getNextExecutionTime() == null)
+            return false;
+        if (other.getNextExecutionTime() != null && other.getNextExecutionTime().equals(this.getNextExecutionTime()) == false)
             return false;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
@@ -615,7 +860,11 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getWindowId() == null) ? 0 : getWindowId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
+        hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
+        hashCode = prime * hashCode + ((getScheduleTimezone() == null) ? 0 : getScheduleTimezone().hashCode());
+        hashCode = prime * hashCode + ((getNextExecutionTime() == null) ? 0 : getNextExecutionTime().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getCutoff() == null) ? 0 : getCutoff().hashCode());
         hashCode = prime * hashCode + ((getAllowUnassociatedTargets() == null) ? 0 : getAllowUnassociatedTargets().hashCode());

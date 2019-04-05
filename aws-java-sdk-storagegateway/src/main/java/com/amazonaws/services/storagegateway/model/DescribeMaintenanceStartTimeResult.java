@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,7 +70,12 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private Integer dayOfWeek;
-
+    /**
+     * <p>
+     * A value that indicates the time zone that is set for the gateway. The start time and day of week specified should
+     * be in the time zone of the gateway.
+     * </p>
+     */
     private String timezone;
 
     /**
@@ -238,7 +243,14 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * A value that indicates the time zone that is set for the gateway. The start time and day of week specified should
+     * be in the time zone of the gateway.
+     * </p>
+     * 
      * @param timezone
+     *        A value that indicates the time zone that is set for the gateway. The start time and day of week specified
+     *        should be in the time zone of the gateway.
      */
 
     public void setTimezone(String timezone) {
@@ -246,7 +258,13 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * A value that indicates the time zone that is set for the gateway. The start time and day of week specified should
+     * be in the time zone of the gateway.
+     * </p>
+     * 
+     * @return A value that indicates the time zone that is set for the gateway. The start time and day of week
+     *         specified should be in the time zone of the gateway.
      */
 
     public String getTimezone() {
@@ -254,7 +272,14 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * A value that indicates the time zone that is set for the gateway. The start time and day of week specified should
+     * be in the time zone of the gateway.
+     * </p>
+     * 
      * @param timezone
+     *        A value that indicates the time zone that is set for the gateway. The start time and day of week specified
+     *        should be in the time zone of the gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,7 +289,8 @@ public class DescribeMaintenanceStartTimeResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

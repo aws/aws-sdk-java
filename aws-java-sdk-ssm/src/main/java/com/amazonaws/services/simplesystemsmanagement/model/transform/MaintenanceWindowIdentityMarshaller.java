@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,16 @@ public class MaintenanceWindowIdentityMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Duration").build();
     private static final MarshallingInfo<Integer> CUTOFF_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Cutoff").build();
+    private static final MarshallingInfo<String> SCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Schedule").build();
+    private static final MarshallingInfo<String> SCHEDULETIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleTimezone").build();
+    private static final MarshallingInfo<String> ENDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EndDate").build();
+    private static final MarshallingInfo<String> STARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StartDate").build();
+    private static final MarshallingInfo<String> NEXTEXECUTIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NextExecutionTime").build();
 
     private static final MaintenanceWindowIdentityMarshaller instance = new MaintenanceWindowIdentityMarshaller();
 
@@ -62,6 +72,11 @@ public class MaintenanceWindowIdentityMarshaller {
             protocolMarshaller.marshall(maintenanceWindowIdentity.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(maintenanceWindowIdentity.getDuration(), DURATION_BINDING);
             protocolMarshaller.marshall(maintenanceWindowIdentity.getCutoff(), CUTOFF_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowIdentity.getSchedule(), SCHEDULE_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowIdentity.getScheduleTimezone(), SCHEDULETIMEZONE_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowIdentity.getEndDate(), ENDDATE_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowIdentity.getStartDate(), STARTDATE_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowIdentity.getNextExecutionTime(), NEXTEXECUTIONTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

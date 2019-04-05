@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,13 @@ public class DescribeTasksRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tasks;
+    /**
+     * <p>
+     * Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> include;
 
     /**
      * <p>
@@ -159,7 +166,119 @@ public class DescribeTasksRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     * 
+     * @return Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the
+     *         tags are included in the response. If this field is omitted, tags are not included in the response.
+     * @see TaskField
+     */
+
+    public java.util.List<String> getInclude() {
+        if (include == null) {
+            include = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return include;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     * 
+     * @param include
+     *        Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the
+     *        tags are included in the response. If this field is omitted, tags are not included in the response.
+     * @see TaskField
+     */
+
+    public void setInclude(java.util.Collection<String> include) {
+        if (include == null) {
+            this.include = null;
+            return;
+        }
+
+        this.include = new com.amazonaws.internal.SdkInternalList<String>(include);
+    }
+
+    /**
+     * <p>
+     * Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInclude(java.util.Collection)} or {@link #withInclude(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param include
+     *        Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the
+     *        tags are included in the response. If this field is omitted, tags are not included in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TaskField
+     */
+
+    public DescribeTasksRequest withInclude(String... include) {
+        if (this.include == null) {
+            setInclude(new com.amazonaws.internal.SdkInternalList<String>(include.length));
+        }
+        for (String ele : include) {
+            this.include.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     * 
+     * @param include
+     *        Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the
+     *        tags are included in the response. If this field is omitted, tags are not included in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TaskField
+     */
+
+    public DescribeTasksRequest withInclude(java.util.Collection<String> include) {
+        setInclude(include);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are
+     * included in the response. If this field is omitted, tags are not included in the response.
+     * </p>
+     * 
+     * @param include
+     *        Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the
+     *        tags are included in the response. If this field is omitted, tags are not included in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TaskField
+     */
+
+    public DescribeTasksRequest withInclude(TaskField... include) {
+        com.amazonaws.internal.SdkInternalList<String> includeCopy = new com.amazonaws.internal.SdkInternalList<String>(include.length);
+        for (TaskField value : include) {
+            includeCopy.add(value.toString());
+        }
+        if (getInclude() == null) {
+            setInclude(includeCopy);
+        } else {
+            getInclude().addAll(includeCopy);
+        }
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -172,7 +291,9 @@ public class DescribeTasksRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getCluster() != null)
             sb.append("Cluster: ").append(getCluster()).append(",");
         if (getTasks() != null)
-            sb.append("Tasks: ").append(getTasks());
+            sb.append("Tasks: ").append(getTasks()).append(",");
+        if (getInclude() != null)
+            sb.append("Include: ").append(getInclude());
         sb.append("}");
         return sb.toString();
     }
@@ -195,6 +316,10 @@ public class DescribeTasksRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTasks() != null && other.getTasks().equals(this.getTasks()) == false)
             return false;
+        if (other.getInclude() == null ^ this.getInclude() == null)
+            return false;
+        if (other.getInclude() != null && other.getInclude().equals(this.getInclude()) == false)
+            return false;
         return true;
     }
 
@@ -205,6 +330,7 @@ public class DescribeTasksRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getCluster() == null) ? 0 : getCluster().hashCode());
         hashCode = prime * hashCode + ((getTasks() == null) ? 0 : getTasks().hashCode());
+        hashCode = prime * hashCode + ((getInclude() == null) ? 0 : getInclude().hashCode());
         return hashCode;
     }
 

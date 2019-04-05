@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,17 +48,17 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
     private String policyName;
     /**
      * <p>
-     * The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     * distribution. This is in the format shown in <a
+     * The type of resource to protect with the policy. This is in the format shown in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
+     * either a WAF policy or Shield Advanced policy.
      * </p>
      */
     private String securityServiceType;
@@ -191,18 +191,16 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     * distribution. This is in the format shown in <a
+     * The type of resource to protect with the policy. This is in the format shown in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     *        distribution. This is in the format shown in <a href=
+     *        The type of resource to protect with the policy. This is in the format shown in <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     *        Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      *        <code>AWS::CloudFront::Distribution</code>.
      */
 
@@ -212,17 +210,15 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     * distribution. This is in the format shown in <a
+     * The type of resource to protect with the policy. This is in the format shown in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.
      * </p>
      * 
-     * @return The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     *         distribution. This is in the format shown in <a href=
-     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *         Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * @return The type of resource to protect with the policy. This is in the format shown in <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *         >AWS Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      *         <code>AWS::CloudFront::Distribution</code>.
      */
 
@@ -232,18 +228,16 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     * distribution. This is in the format shown in <a
+     * The type of resource to protect with the policy. This is in the format shown in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront
-     *        distribution. This is in the format shown in <a href=
+     *        The type of resource to protect with the policy. This is in the format shown in <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     *        Resource Types Reference</a>. Valid values are <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     *        Resource Types Reference</a>. For example: <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      *        <code>AWS::CloudFront::Distribution</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -255,11 +249,13 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
+     * either a WAF policy or Shield Advanced policy.
      * </p>
      * 
      * @param securityServiceType
-     *        The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     *        The service that the policy is using to protect the resources. This specifies the type of policy that is
+     *        created, either a WAF policy or Shield Advanced policy.
      * @see SecurityServiceType
      */
 
@@ -269,10 +265,12 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
+     * either a WAF policy or Shield Advanced policy.
      * </p>
      * 
-     * @return The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * @return The service that the policy is using to protect the resources. This specifies the type of policy that is
+     *         created, either a WAF policy or Shield Advanced policy.
      * @see SecurityServiceType
      */
 
@@ -282,11 +280,13 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
+     * either a WAF policy or Shield Advanced policy.
      * </p>
      * 
      * @param securityServiceType
-     *        The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     *        The service that the policy is using to protect the resources. This specifies the type of policy that is
+     *        created, either a WAF policy or Shield Advanced policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityServiceType
      */
@@ -298,11 +298,13 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     * The service that the policy is using to protect the resources. This specifies the type of policy that is created,
+     * either a WAF policy or Shield Advanced policy.
      * </p>
      * 
      * @param securityServiceType
-     *        The service that the policy is using to protect the resources. This value is <code>WAF</code>.
+     *        The service that the policy is using to protect the resources. This specifies the type of policy that is
+     *        created, either a WAF policy or Shield Advanced policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SecurityServiceType
      */
@@ -365,7 +367,8 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

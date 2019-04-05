@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,9 +53,10 @@ public interface AmazonKinesis {
      * protocol from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -97,7 +98,9 @@ public interface AmazonKinesis {
 
     /**
      * <p>
-     * Adds or updates tags for the specified Kinesis data stream. Each stream can have up to 10 tags.
+     * Adds or updates tags for the specified Kinesis data stream. Each time you invoke this operation, you can specify
+     * up to 10 tags. If you want to add more than 10 tags to your stream, you can invoke this operation multiple times.
+     * In total, each stream can have up to 50 tags.
      * </p>
      * <p>
      * If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites any existing tags that
@@ -270,6 +273,9 @@ public interface AmazonKinesis {
      * @throws LimitExceededException
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
+     * @throws ResourceInUseException
+     *         The resource is not available for this operation. For successful operation, the resource must be in the
+     *         <code>ACTIVE</code> state.
      * @sample AmazonKinesis.DeleteStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream" target="_top">AWS API
      *      Documentation</a>
@@ -282,6 +288,34 @@ public interface AmazonKinesis {
      * @see #deleteStream(DeleteStreamRequest)
      */
     DeleteStreamResult deleteStream(String streamName);
+
+    /**
+     * <p>
+     * To deregister a consumer, provide its ARN. Alternatively, you can provide the ARN of the data stream and the name
+     * you gave the consumer when you registered it. You may also provide all three parameters, as long as they don't
+     * conflict with each other. If you don't know the name or ARN of the consumer that you want to deregister, you can
+     * use the <a>ListStreamConsumers</a> operation to get a list of the descriptions of all the consumers that are
+     * currently registered with a given data stream. The description of a consumer contains its name and ARN.
+     * </p>
+     * <p>
+     * This operation has a limit of five transactions per second per account.
+     * </p>
+     * 
+     * @param deregisterStreamConsumerRequest
+     * @return Result of the DeregisterStreamConsumer operation returned by the service.
+     * @throws LimitExceededException
+     *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
+     *         exceeds the maximum number allowed.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found. The stream might not be specified correctly.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @sample AmazonKinesis.DeregisterStreamConsumer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeregisterStreamConsumer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeregisterStreamConsumerResult deregisterStreamConsumer(DeregisterStreamConsumerRequest deregisterStreamConsumerRequest);
 
     /**
      * <p>
@@ -363,6 +397,34 @@ public interface AmazonKinesis {
      * @see #describeStream(DescribeStreamRequest)
      */
     DescribeStreamResult describeStream(String streamName, Integer limit, String exclusiveStartShardId);
+
+    /**
+     * <p>
+     * To get the description of a registered consumer, provide the ARN of the consumer. Alternatively, you can provide
+     * the ARN of the data stream and the name you gave the consumer when you registered it. You may also provide all
+     * three parameters, as long as they don't conflict with each other. If you don't know the name or ARN of the
+     * consumer that you want to describe, you can use the <a>ListStreamConsumers</a> operation to get a list of the
+     * descriptions of all the consumers that are currently registered with a given data stream.
+     * </p>
+     * <p>
+     * This operation has a limit of 20 transactions per second per account.
+     * </p>
+     * 
+     * @param describeStreamConsumerRequest
+     * @return Result of the DescribeStreamConsumer operation returned by the service.
+     * @throws LimitExceededException
+     *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
+     *         exceeds the maximum number allowed.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found. The stream might not be specified correctly.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @sample AmazonKinesis.DescribeStreamConsumer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamConsumer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeStreamConsumerResult describeStreamConsumer(DescribeStreamConsumerRequest describeStreamConsumerRequest);
 
     /**
      * <p>
@@ -460,19 +522,19 @@ public interface AmazonKinesis {
      * process.
      * </p>
      * <p>
-     * Each data record can be up to 1 MB in size, and each shard can read up to 2 MB per second. You can ensure that
+     * Each data record can be up to 1 MiB in size, and each shard can read up to 2 MiB per second. You can ensure that
      * your calls don't exceed the maximum supported size or throughput by using the <code>Limit</code> parameter to
      * specify the maximum number of records that <a>GetRecords</a> can return. Consider your average record size when
-     * determining this limit.
+     * determining this limit. The maximum number of records that can be returned per call is 10,000.
      * </p>
      * <p>
      * The size of the data returned by <a>GetRecords</a> varies depending on the utilization of the shard. The maximum
-     * size of data that <a>GetRecords</a> can return is 10 MB. If a call returns this amount of data, subsequent calls
-     * made within the next five seconds throw <code>ProvisionedThroughputExceededException</code>. If there is
-     * insufficient provisioned throughput on the stream, subsequent calls made within the next one second throw
-     * <code>ProvisionedThroughputExceededException</code>. <a>GetRecords</a> won't return any data when it throws an
-     * exception. For this reason, we recommend that you wait one second between calls to <a>GetRecords</a>; however,
-     * it's possible that the application will get exceptions for longer than 1 second.
+     * size of data that <a>GetRecords</a> can return is 10 MiB. If a call returns this amount of data, subsequent calls
+     * made within the next 5 seconds throw <code>ProvisionedThroughputExceededException</code>. If there is
+     * insufficient provisioned throughput on the stream, subsequent calls made within the next 1 second throw
+     * <code>ProvisionedThroughputExceededException</code>. <a>GetRecords</a> doesn't return any data when it throws an
+     * exception. For this reason, we recommend that you wait 1 second between calls to <a>GetRecords</a>. However, it's
+     * possible that the application will get exceptions for longer than 1 second.
      * </p>
      * <p>
      * To detect whether the application is falling behind in processing, you can use the
@@ -487,6 +549,9 @@ public interface AmazonKinesis {
      * any data source putting data records into a stream, for example with <a>PutRecords</a>). The time stamp has
      * millisecond precision. There are no guarantees about the time stamp accuracy, or that the time stamp is always
      * increasing. For example, records in a shard or across a stream might have time stamps that are out of order.
+     * </p>
+     * <p>
+     * This operation has a limit of five transactions per second per account.
      * </p>
      * 
      * @param getRecordsRequest
@@ -531,8 +596,7 @@ public interface AmazonKinesis {
 
     /**
      * <p>
-     * Gets an Amazon Kinesis shard iterator. A shard iterator expires five minutes after it is returned to the
-     * requester.
+     * Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it is returned to the requester.
      * </p>
      * <p>
      * A shard iterator specifies the shard position from which to start reading data records sequentially. The position
@@ -643,7 +707,8 @@ public interface AmazonKinesis {
 
     /**
      * <p>
-     * Lists the shards in a stream and provides information about each shard.
+     * Lists the shards in a stream and provides information about each shard. This operation has a limit of 100
+     * transactions per second per data stream.
      * </p>
      * <important>
      * <p>
@@ -665,8 +730,7 @@ public interface AmazonKinesis {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
      * @throws ExpiredNextTokenException
-     *         The pagination token passed to the <code>ListShards</code> operation is expired. For more information,
-     *         see <a>ListShardsInput$NextToken</a>.
+     *         The pagination token passed to the operation is expired.
      * @throws ResourceInUseException
      *         The resource is not available for this operation. For successful operation, the resource must be in the
      *         <code>ACTIVE</code> state.
@@ -675,6 +739,36 @@ public interface AmazonKinesis {
      *      Documentation</a>
      */
     ListShardsResult listShards(ListShardsRequest listShardsRequest);
+
+    /**
+     * <p>
+     * Lists the consumers registered to receive data from a stream using enhanced fan-out, and provides information
+     * about each consumer.
+     * </p>
+     * <p>
+     * This operation has a limit of 10 transactions per second per account.
+     * </p>
+     * 
+     * @param listStreamConsumersRequest
+     * @return Result of the ListStreamConsumers operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found. The stream might not be specified correctly.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @throws LimitExceededException
+     *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
+     *         exceeds the maximum number allowed.
+     * @throws ExpiredNextTokenException
+     *         The pagination token passed to the operation is expired.
+     * @throws ResourceInUseException
+     *         The resource is not available for this operation. For successful operation, the resource must be in the
+     *         <code>ACTIVE</code> state.
+     * @sample AmazonKinesis.ListStreamConsumers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreamConsumers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListStreamConsumersResult listStreamConsumers(ListStreamConsumersRequest listStreamConsumersRequest);
 
     /**
      * <p>
@@ -1031,6 +1125,38 @@ public interface AmazonKinesis {
 
     /**
      * <p>
+     * Registers a consumer with a Kinesis data stream. When you use this operation, the consumer you register can read
+     * data from the stream at a rate of up to 2 MiB per second. This rate is unaffected by the total number of
+     * consumers that read from the same stream.
+     * </p>
+     * <p>
+     * You can register up to 5 consumers per stream. A given consumer can only be registered with one stream.
+     * </p>
+     * <p>
+     * This operation has a limit of five transactions per second per account.
+     * </p>
+     * 
+     * @param registerStreamConsumerRequest
+     * @return Result of the RegisterStreamConsumer operation returned by the service.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @throws LimitExceededException
+     *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
+     *         exceeds the maximum number allowed.
+     * @throws ResourceInUseException
+     *         The resource is not available for this operation. For successful operation, the resource must be in the
+     *         <code>ACTIVE</code> state.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found. The stream might not be specified correctly.
+     * @sample AmazonKinesis.RegisterStreamConsumer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RegisterStreamConsumer" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RegisterStreamConsumerResult registerStreamConsumer(RegisterStreamConsumerRequest registerStreamConsumerRequest);
+
+    /**
+     * <p>
      * Removes tags from the specified Kinesis data stream. Removed tags are deleted and cannot be recovered after this
      * operation successfully completes.
      * </p>
@@ -1103,8 +1229,8 @@ public interface AmazonKinesis {
      * </p>
      * <p>
      * For the default shard limit for an AWS account, see <a
-     * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
-     * <i>Amazon Kinesis Data Streams Developer Guide</i>. To increase this limit, <a
+     * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Kinesis Data Streams
+     * Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To increase this limit, <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact AWS Support</a>.
      * </p>
      * <p>
@@ -1159,9 +1285,9 @@ public interface AmazonKinesis {
      * period.
      * </p>
      * <p>
-     * Note: It can take up to five seconds after the stream is in an <code>ACTIVE</code> status before all records
-     * written to the stream are encrypted. After you enable encryption, you can verify that encryption is applied by
-     * inspecting the API response from <code>PutRecord</code> or <code>PutRecords</code>.
+     * Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written
+     * to the stream are encrypted. After you enable encryption, you can verify that encryption is applied by inspecting
+     * the API response from <code>PutRecord</code> or <code>PutRecords</code>.
      * </p>
      * 
      * @param startStreamEncryptionRequest
@@ -1216,9 +1342,9 @@ public interface AmazonKinesis {
      * API Limits: You can successfully disable server-side encryption 25 times in a rolling 24-hour period.
      * </p>
      * <p>
-     * Note: It can take up to five seconds after the stream is in an <code>ACTIVE</code> status before all records
-     * written to the stream are no longer subject to encryption. After you disabled encryption, you can verify that
-     * encryption is not applied by inspecting the API response from <code>PutRecord</code> or <code>PutRecords</code>.
+     * Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written
+     * to the stream are no longer subject to encryption. After you disabled encryption, you can verify that encryption
+     * is not applied by inspecting the API response from <code>PutRecord</code> or <code>PutRecords</code>.
      * </p>
      * 
      * @param stopStreamEncryptionRequest
@@ -1257,7 +1383,7 @@ public interface AmazonKinesis {
      * shard count, as this results in the fewest number of splits or merges.
      * </p>
      * <p>
-     * This operation has the following limits. You cannot do the following:
+     * This operation has the following default limits. By default, you cannot do the following:
      * </p>
      * <ul>
      * <li>

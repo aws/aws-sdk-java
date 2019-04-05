@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,10 +18,12 @@ import javax.annotation.Generated;
  * <p>
  * Type of Log File, it can be one of the following:
  * <ul>
- * <li>INDEX_SLOW_LOGS: Index slow logs contains insert requests that took more time than configured index query log
+ * <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log
  * threshold to execute.</li>
- * <li>SEARCH_SLOW_LOGS: Search slow logs contains search queries that took more time than configured search query log
+ * <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log
  * threshold to execute.</li>
+ * <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during
+ * the operation of the service and can be useful for troubleshooting.</li>
  * </ul>
  * </p>
  */
@@ -29,7 +31,8 @@ import javax.annotation.Generated;
 public enum LogType {
 
     INDEX_SLOW_LOGS("INDEX_SLOW_LOGS"),
-    SEARCH_SLOW_LOGS("SEARCH_SLOW_LOGS");
+    SEARCH_SLOW_LOGS("SEARCH_SLOW_LOGS"),
+    ES_APPLICATION_LOGS("ES_APPLICATION_LOGS");
 
     private String value;
 

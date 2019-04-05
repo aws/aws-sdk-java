@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the DescribeHostedConnections operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections"
  *      target="_top">AWS API Documentation</a>
@@ -30,35 +27,18 @@ public class DescribeHostedConnectionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the interconnect or LAG on which the hosted connections are provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-abc123 or dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect or LAG.
      * </p>
      */
     private String connectionId;
 
     /**
      * <p>
-     * The ID of the interconnect or LAG on which the hosted connections are provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-abc123 or dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect or LAG.
      * </p>
      * 
      * @param connectionId
-     *        The ID of the interconnect or LAG on which the hosted connections are provisioned.</p>
-     *        <p>
-     *        Example: dxcon-abc123 or dxlag-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the interconnect or LAG.
      */
 
     public void setConnectionId(String connectionId) {
@@ -67,21 +47,10 @@ public class DescribeHostedConnectionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the interconnect or LAG on which the hosted connections are provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-abc123 or dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect or LAG.
      * </p>
      * 
-     * @return The ID of the interconnect or LAG on which the hosted connections are provisioned.</p>
-     *         <p>
-     *         Example: dxcon-abc123 or dxlag-abc123
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the interconnect or LAG.
      */
 
     public String getConnectionId() {
@@ -90,22 +59,11 @@ public class DescribeHostedConnectionsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the interconnect or LAG on which the hosted connections are provisioned.
-     * </p>
-     * <p>
-     * Example: dxcon-abc123 or dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the interconnect or LAG.
      * </p>
      * 
      * @param connectionId
-     *        The ID of the interconnect or LAG on which the hosted connections are provisioned.</p>
-     *        <p>
-     *        Example: dxcon-abc123 or dxlag-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the interconnect or LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,7 +73,8 @@ public class DescribeHostedConnectionsRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

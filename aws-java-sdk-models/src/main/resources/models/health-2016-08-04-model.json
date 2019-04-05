@@ -7,6 +7,7 @@
     "protocol":"json",
     "serviceAbbreviation":"AWSHealth",
     "serviceFullName":"AWS Health APIs and Notifications",
+    "serviceId":"Health",
     "signatureVersion":"v4",
     "targetPrefix":"AWSHealth_20160804",
     "uid":"health-2016-08-04"
@@ -107,12 +108,13 @@
         },
         "eventArn":{
           "shape":"eventArn",
-          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>"
+          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>"
         },
         "entityValue":{
           "shape":"entityValue",
           "documentation":"<p>The ID of the affected entity.</p>"
         },
+        "entityUrl":{"shape":"entityUrl"},
         "awsAccountId":{
           "shape":"accountId",
           "documentation":"<p>The 12-digit AWS account number that contains the affected entity.</p>"
@@ -186,7 +188,7 @@
       "members":{
         "eventArns":{
           "shape":"EventArnsList",
-          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>"
+          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>"
         }
       }
     },
@@ -244,7 +246,7 @@
       "members":{
         "eventArns":{
           "shape":"eventArnList",
-          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>"
+          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>"
         },
         "locale":{
           "shape":"locale",
@@ -342,7 +344,7 @@
       "members":{
         "eventArn":{
           "shape":"eventArn",
-          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>"
+          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>"
         },
         "count":{
           "shape":"count",
@@ -361,7 +363,7 @@
       "members":{
         "eventArns":{
           "shape":"eventArnList",
-          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>"
+          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>"
         },
         "entityArns":{
           "shape":"entityArnList",
@@ -395,7 +397,7 @@
       "members":{
         "arn":{
           "shape":"eventArn",
-          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>"
+          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>"
         },
         "service":{
           "shape":"service",
@@ -407,7 +409,7 @@
         },
         "eventTypeCategory":{
           "shape":"eventTypeCategory",
-          "documentation":"<p>The </p>"
+          "documentation":"<p>The category of the event. Possible values are <code>issue</code>, <code>scheduledChange</code>, and <code>accountNotification</code>.</p>"
         },
         "region":{
           "shape":"region",
@@ -493,7 +495,7 @@
       "members":{
         "eventArn":{
           "shape":"eventArn",
-          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>"
+          "documentation":"<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>"
         },
         "errorName":{
           "shape":"string",
@@ -511,7 +513,7 @@
       "members":{
         "eventArns":{
           "shape":"eventArnList",
-          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>"
+          "documentation":"<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456\", \"arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101\"</code> </p>"
         },
         "eventTypeCodes":{
           "shape":"eventTypeList",
@@ -680,6 +682,10 @@
       "max":3,
       "min":1
     },
+    "entityUrl":{
+      "type":"string",
+      "pattern":"https?://.+\\.(amazon\\.com|amazonaws\\.com|amazonaws\\.cn|c2s\\.ic\\.gov|sc2s\\.sgov\\.gov|amazonaws-us-gov.com)/.*"
+    },
     "entityValue":{
       "type":"string",
       "max":256
@@ -697,7 +703,7 @@
     "eventArn":{
       "type":"string",
       "max":1600,
-      "pattern":"arn:aws:health:[^:]*:[^:]*:event/[\\w-]+"
+      "pattern":"arn:aws:health:[^:]*:[^:]*:event(?:/[\\w-]+){3}"
     },
     "eventArnList":{
       "type":"list",

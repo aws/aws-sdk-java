@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,16 +25,40 @@ import com.amazonaws.services.costandusagereport.model.*;
  * {@link com.amazonaws.services.costandusagereport.AbstractAWSCostAndUsageReportAsync} instead.
  * </p>
  * <p>
- * All public APIs for AWS Cost and Usage Report service
+ * <p>
+ * The AWS Cost and Usage Report API enables you to programmatically create, query, and delete AWS Cost and Usage report
+ * definitions.
+ * </p>
+ * <p>
+ * AWS Cost and Usage reports track the monthly AWS costs and usage associated with your AWS account. The report
+ * contains line items for each unique combination of AWS product, usage type, and operation that your AWS account uses.
+ * You can configure the AWS Cost and Usage report to show only the data that you want, using the AWS Cost and Usage
+ * API.
+ * </p>
+ * <p>
+ * Service Endpoint
+ * </p>
+ * <p>
+ * The AWS Cost and Usage Report API provides the following endpoint:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * cur.us-east-1.amazonaws.com
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
 
     /**
-     * Delete a specified report definition
+     * <p>
+     * Deletes the specified report.
+     * </p>
      * 
      * @param deleteReportDefinitionRequest
-     *        Request of DeleteReportDefinition
+     *        Deletes the specified report.
      * @return A Java Future containing the result of the DeleteReportDefinition operation returned by the service.
      * @sample AWSCostAndUsageReportAsync.DeleteReportDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition" target="_top">AWS API
@@ -43,10 +67,12 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
     java.util.concurrent.Future<DeleteReportDefinitionResult> deleteReportDefinitionAsync(DeleteReportDefinitionRequest deleteReportDefinitionRequest);
 
     /**
-     * Delete a specified report definition
+     * <p>
+     * Deletes the specified report.
+     * </p>
      * 
      * @param deleteReportDefinitionRequest
-     *        Request of DeleteReportDefinition
+     *        Deletes the specified report.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -60,10 +86,12 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
             com.amazonaws.handlers.AsyncHandler<DeleteReportDefinitionRequest, DeleteReportDefinitionResult> asyncHandler);
 
     /**
-     * Describe a list of report definitions owned by the account
+     * <p>
+     * Lists the AWS Cost and Usage reports available to this account.
+     * </p>
      * 
      * @param describeReportDefinitionsRequest
-     *        Request of DescribeReportDefinitions
+     *        Requests a list of AWS Cost and Usage reports owned by the account.
      * @return A Java Future containing the result of the DescribeReportDefinitions operation returned by the service.
      * @sample AWSCostAndUsageReportAsync.DescribeReportDefinitions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions" target="_top">AWS
@@ -73,10 +101,12 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
             DescribeReportDefinitionsRequest describeReportDefinitionsRequest);
 
     /**
-     * Describe a list of report definitions owned by the account
+     * <p>
+     * Lists the AWS Cost and Usage reports available to this account.
+     * </p>
      * 
      * @param describeReportDefinitionsRequest
-     *        Request of DescribeReportDefinitions
+     *        Requests a list of AWS Cost and Usage reports owned by the account.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -91,10 +121,12 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
             com.amazonaws.handlers.AsyncHandler<DescribeReportDefinitionsRequest, DescribeReportDefinitionsResult> asyncHandler);
 
     /**
-     * Create a new report definition
+     * <p>
+     * Creates a new report using the description that you provide.
+     * </p>
      * 
      * @param putReportDefinitionRequest
-     *        Request of PutReportDefinition
+     *        Creates a Cost and Usage Report.
      * @return A Java Future containing the result of the PutReportDefinition operation returned by the service.
      * @sample AWSCostAndUsageReportAsync.PutReportDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition" target="_top">AWS API
@@ -103,10 +135,12 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
     java.util.concurrent.Future<PutReportDefinitionResult> putReportDefinitionAsync(PutReportDefinitionRequest putReportDefinitionRequest);
 
     /**
-     * Create a new report definition
+     * <p>
+     * Creates a new report using the description that you provide.
+     * </p>
      * 
      * @param putReportDefinitionRequest
-     *        Request of PutReportDefinition
+     *        Creates a Cost and Usage Report.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

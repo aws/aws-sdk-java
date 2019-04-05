@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,17 +24,41 @@ import javax.annotation.Generated;
 public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String gatewayARN;
-
+    /**
+     * <p>
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> diskIds;
-
+    /**
+     * <p>
+     * The amount of cache in bytes allocated to the a gateway.
+     * </p>
+     */
     private Long cacheAllocatedInBytes;
-
+    /**
+     * <p>
+     * Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup. The
+     * sample is taken at the end of the reporting period.
+     * </p>
+     */
     private Double cacheUsedPercentage;
-
+    /**
+     * <p>
+     * The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to
+     * AWS. The sample is taken at the end of the reporting period.
+     * </p>
+     */
     private Double cacheDirtyPercentage;
-
+    /**
+     * <p>
+     * Percent of application read operations from the file shares that are served from cache. The sample is taken at
+     * the end of the reporting period.
+     * </p>
+     */
     private Double cacheHitPercentage;
-
+    /** <p/> */
     private Double cacheMissPercentage;
 
     /**
@@ -64,7 +88,14 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
+     * </p>
+     * 
+     * @return An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *         minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *         API.
      */
 
     public java.util.List<String> getDiskIds() {
@@ -75,7 +106,15 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
+     * </p>
+     * 
      * @param diskIds
+     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *        API.
      */
 
     public void setDiskIds(java.util.Collection<String> diskIds) {
@@ -89,12 +128,19 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDiskIds(java.util.Collection)} or {@link #withDiskIds(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param diskIds
+     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,7 +155,15 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * An array of strings that identify disks that are to be configured as working storage. Each string have a minimum
+     * length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a> API.
+     * </p>
+     * 
      * @param diskIds
+     *        An array of strings that identify disks that are to be configured as working storage. Each string have a
+     *        minimum length of 1 and maximum length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
+     *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +173,12 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The amount of cache in bytes allocated to the a gateway.
+     * </p>
+     * 
      * @param cacheAllocatedInBytes
+     *        The amount of cache in bytes allocated to the a gateway.
      */
 
     public void setCacheAllocatedInBytes(Long cacheAllocatedInBytes) {
@@ -127,7 +186,11 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * The amount of cache in bytes allocated to the a gateway.
+     * </p>
+     * 
+     * @return The amount of cache in bytes allocated to the a gateway.
      */
 
     public Long getCacheAllocatedInBytes() {
@@ -135,7 +198,12 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The amount of cache in bytes allocated to the a gateway.
+     * </p>
+     * 
      * @param cacheAllocatedInBytes
+     *        The amount of cache in bytes allocated to the a gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,7 +213,14 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup. The
+     * sample is taken at the end of the reporting period.
+     * </p>
+     * 
      * @param cacheUsedPercentage
+     *        Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup.
+     *        The sample is taken at the end of the reporting period.
      */
 
     public void setCacheUsedPercentage(Double cacheUsedPercentage) {
@@ -153,7 +228,13 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup. The
+     * sample is taken at the end of the reporting period.
+     * </p>
+     * 
+     * @return Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup.
+     *         The sample is taken at the end of the reporting period.
      */
 
     public Double getCacheUsedPercentage() {
@@ -161,7 +242,14 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup. The
+     * sample is taken at the end of the reporting period.
+     * </p>
+     * 
      * @param cacheUsedPercentage
+     *        Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup.
+     *        The sample is taken at the end of the reporting period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,7 +259,14 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to
+     * AWS. The sample is taken at the end of the reporting period.
+     * </p>
+     * 
      * @param cacheDirtyPercentage
+     *        The file share's contribution to the overall percentage of the gateway's cache that has not been persisted
+     *        to AWS. The sample is taken at the end of the reporting period.
      */
 
     public void setCacheDirtyPercentage(Double cacheDirtyPercentage) {
@@ -179,7 +274,13 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to
+     * AWS. The sample is taken at the end of the reporting period.
+     * </p>
+     * 
+     * @return The file share's contribution to the overall percentage of the gateway's cache that has not been
+     *         persisted to AWS. The sample is taken at the end of the reporting period.
      */
 
     public Double getCacheDirtyPercentage() {
@@ -187,7 +288,14 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to
+     * AWS. The sample is taken at the end of the reporting period.
+     * </p>
+     * 
      * @param cacheDirtyPercentage
+     *        The file share's contribution to the overall percentage of the gateway's cache that has not been persisted
+     *        to AWS. The sample is taken at the end of the reporting period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,7 +305,14 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Percent of application read operations from the file shares that are served from cache. The sample is taken at
+     * the end of the reporting period.
+     * </p>
+     * 
      * @param cacheHitPercentage
+     *        Percent of application read operations from the file shares that are served from cache. The sample is
+     *        taken at the end of the reporting period.
      */
 
     public void setCacheHitPercentage(Double cacheHitPercentage) {
@@ -205,7 +320,13 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * Percent of application read operations from the file shares that are served from cache. The sample is taken at
+     * the end of the reporting period.
+     * </p>
+     * 
+     * @return Percent of application read operations from the file shares that are served from cache. The sample is
+     *         taken at the end of the reporting period.
      */
 
     public Double getCacheHitPercentage() {
@@ -213,7 +334,14 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Percent of application read operations from the file shares that are served from cache. The sample is taken at
+     * the end of the reporting period.
+     * </p>
+     * 
      * @param cacheHitPercentage
+     *        Percent of application read operations from the file shares that are served from cache. The sample is
+     *        taken at the end of the reporting period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,6 +351,8 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p/>
+     * 
      * @param cacheMissPercentage
      */
 
@@ -231,6 +361,8 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -239,6 +371,8 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p/>
+     * 
      * @param cacheMissPercentage
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -249,7 +383,8 @@ public class DescribeCacheResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

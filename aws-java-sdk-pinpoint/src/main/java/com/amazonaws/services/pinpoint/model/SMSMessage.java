@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,8 +26,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
-    /** The message body of the notification, the email body or the text message. */
+    /** The body of the SMS message. */
     private String body;
+    /** The SMS program name that you provided to AWS Support when you requested your dedicated number. */
+    private String keyword;
     /** Is this a transaction priority message or lower priority. */
     private String messageType;
     /**
@@ -45,10 +47,10 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, java.util.List<String>> substitutions;
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The body of the SMS message.
      * 
      * @param body
-     *        The message body of the notification, the email body or the text message.
+     *        The body of the SMS message.
      */
 
     public void setBody(String body) {
@@ -56,9 +58,9 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The body of the SMS message.
      * 
-     * @return The message body of the notification, the email body or the text message.
+     * @return The body of the SMS message.
      */
 
     public String getBody() {
@@ -66,15 +68,49 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The body of the SMS message.
      * 
      * @param body
-     *        The message body of the notification, the email body or the text message.
+     *        The body of the SMS message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SMSMessage withBody(String body) {
         setBody(body);
+        return this;
+    }
+
+    /**
+     * The SMS program name that you provided to AWS Support when you requested your dedicated number.
+     * 
+     * @param keyword
+     *        The SMS program name that you provided to AWS Support when you requested your dedicated number.
+     */
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    /**
+     * The SMS program name that you provided to AWS Support when you requested your dedicated number.
+     * 
+     * @return The SMS program name that you provided to AWS Support when you requested your dedicated number.
+     */
+
+    public String getKeyword() {
+        return this.keyword;
+    }
+
+    /**
+     * The SMS program name that you provided to AWS Support when you requested your dedicated number.
+     * 
+     * @param keyword
+     *        The SMS program name that you provided to AWS Support when you requested your dedicated number.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SMSMessage withKeyword(String keyword) {
+        setKeyword(keyword);
         return this;
     }
 
@@ -283,7 +319,8 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -295,6 +332,8 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getBody() != null)
             sb.append("Body: ").append(getBody()).append(",");
+        if (getKeyword() != null)
+            sb.append("Keyword: ").append(getKeyword()).append(",");
         if (getMessageType() != null)
             sb.append("MessageType: ").append(getMessageType()).append(",");
         if (getOriginationNumber() != null)
@@ -321,6 +360,10 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBody() != null && other.getBody().equals(this.getBody()) == false)
             return false;
+        if (other.getKeyword() == null ^ this.getKeyword() == null)
+            return false;
+        if (other.getKeyword() != null && other.getKeyword().equals(this.getKeyword()) == false)
+            return false;
         if (other.getMessageType() == null ^ this.getMessageType() == null)
             return false;
         if (other.getMessageType() != null && other.getMessageType().equals(this.getMessageType()) == false)
@@ -346,6 +389,7 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
+        hashCode = prime * hashCode + ((getKeyword() == null) ? 0 : getKeyword().hashCode());
         hashCode = prime * hashCode + ((getMessageType() == null) ? 0 : getMessageType().hashCode());
         hashCode = prime * hashCode + ((getOriginationNumber() == null) ? 0 : getOriginationNumber().hashCode());
         hashCode = prime * hashCode + ((getSenderId() == null) ? 0 : getSenderId().hashCode());

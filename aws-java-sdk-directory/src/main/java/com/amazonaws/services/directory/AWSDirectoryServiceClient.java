@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.directory.AWSDirectoryServiceClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -69,6 +71,7 @@ import com.amazonaws.services.directory.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements AWSDirectoryService {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -80,17 +83,25 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
 
+    private final AdvancedConfig advancedConfig;
+
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryAlreadySharedException").withModeledClass(
+                                    com.amazonaws.services.directory.model.DirectoryAlreadySharedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DirectoryUnavailableException").withModeledClass(
                                     com.amazonaws.services.directory.model.DirectoryUnavailableException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
                                     com.amazonaws.services.directory.model.InvalidParameterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryNotSharedException").withModeledClass(
+                                    com.amazonaws.services.directory.model.DirectoryNotSharedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceException").withModeledClass(
                                     com.amazonaws.services.directory.model.ServiceException.class))
@@ -110,11 +121,23 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
                                     com.amazonaws.services.directory.model.InvalidNextTokenException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
+                                    com.amazonaws.services.directory.model.AccessDeniedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DomainControllerLimitExceededException").withModeledClass(
                                     com.amazonaws.services.directory.model.DomainControllerLimitExceededException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UserDoesNotExistException").withModeledClass(
+                                    com.amazonaws.services.directory.model.UserDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPasswordException").withModeledClass(
+                                    com.amazonaws.services.directory.model.InvalidPasswordException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
                                     com.amazonaws.services.directory.model.UnsupportedOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetException").withModeledClass(
+                                    com.amazonaws.services.directory.model.InvalidTargetException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ClientException").withModeledClass(
                                     com.amazonaws.services.directory.model.ClientException.class))
@@ -130,6 +153,12 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withModeledClass(
                                     com.amazonaws.services.directory.model.TagLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ShareLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.directory.model.ShareLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationsException").withModeledClass(
+                                    com.amazonaws.services.directory.model.OrganizationsException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.directory.model.AWSDirectoryServiceException.class));
 
     /**
@@ -216,6 +245,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     public AWSDirectoryServiceClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -281,6 +311,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -299,8 +330,23 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *        Object providing client parameters.
      */
     AWSDirectoryServiceClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Directory Service using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSDirectoryServiceClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -313,6 +359,69 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/directory/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/directory/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Accepts a directory sharing request that was sent from the directory owner account.
+     * </p>
+     * 
+     * @param acceptSharedDirectoryRequest
+     * @return Result of the AcceptSharedDirectory operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryAlreadySharedException
+     *         The specified directory has already been shared with this AWS account.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.AcceptSharedDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AcceptSharedDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AcceptSharedDirectoryResult acceptSharedDirectory(AcceptSharedDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptSharedDirectory(request);
+    }
+
+    @SdkInternalApi
+    final AcceptSharedDirectoryResult executeAcceptSharedDirectory(AcceptSharedDirectoryRequest acceptSharedDirectoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptSharedDirectoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptSharedDirectoryRequest> request = null;
+        Response<AcceptSharedDirectoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptSharedDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptSharedDirectoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptSharedDirectory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptSharedDirectoryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new AcceptSharedDirectoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -372,6 +481,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddIpRoutes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -432,6 +544,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -490,6 +605,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSchemaExtension");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -512,9 +630,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * Creates an AD Connector to connect to an on-premises directory.
      * </p>
      * <p>
-     * Before you call <i>ConnectDirectory</i>, ensure that all of the required permissions have been explicitly granted
-     * through a policy. For details about what permissions are required to run the <i>ConnectDirectory</i> operation,
-     * see <a
+     * Before you call <code>ConnectDirectory</code>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the
+     * <code>ConnectDirectory</code> operation, see <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
      * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
@@ -557,6 +675,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConnectDirectory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -624,6 +745,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -690,6 +814,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComputer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -758,6 +885,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConditionalForwarder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -780,9 +910,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * Creates a Simple AD directory.
      * </p>
      * <p>
-     * Before you call <i>CreateDirectory</i>, ensure that all of the required permissions have been explicitly granted
-     * through a policy. For details about what permissions are required to run the <i>CreateDirectory</i> operation,
-     * see <a
+     * Before you call <code>CreateDirectory</code>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the <code>CreateDirectory</code>
+     * operation, see <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
      * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
@@ -825,6 +955,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDirectory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -843,7 +976,73 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a Microsoft AD in the AWS cloud.
+     * Creates a subscription to forward real time Directory Service domain controller security logs to the specified
+     * CloudWatch log group in your AWS account.
+     * </p>
+     * 
+     * @param createLogSubscriptionRequest
+     * @return Result of the CreateLogSubscription operation returned by the service.
+     * @throws EntityAlreadyExistsException
+     *         The specified entity already exists.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InsufficientPermissionsException
+     *         The account does not have sufficient permission to perform the operation.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateLogSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateLogSubscriptionResult createLogSubscription(CreateLogSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLogSubscription(request);
+    }
+
+    @SdkInternalApi
+    final CreateLogSubscriptionResult executeCreateLogSubscription(CreateLogSubscriptionRequest createLogSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLogSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLogSubscriptionRequest> request = null;
+        Response<CreateLogSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLogSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLogSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLogSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLogSubscriptionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateLogSubscriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an AWS Managed Microsoft AD directory.
      * </p>
      * <p>
      * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
@@ -854,7 +1053,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param createMicrosoftADRequest
-     *        Creates a Microsoft AD in the AWS cloud.
+     *        Creates an AWS Managed Microsoft AD directory.
      * @return Result of the CreateMicrosoftAD operation returned by the service.
      * @throws DirectoryLimitExceededException
      *         The maximum number of directories in the region has been reached. You can use the
@@ -893,6 +1092,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMicrosoftAD");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -959,6 +1161,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -978,23 +1183,23 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example,
-     * you can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft
-     * Active Directory. This would allow you to provide users and groups access to resources in either domain, with a
-     * single set of credentials.
+     * you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises
+     * Microsoft Active Directory. This would allow you to provide users and groups access to resources in either
+     * domain, with a single set of credentials.
      * </p>
      * <p>
-     * This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS
-     * cloud and an external domain.
+     * This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD
+     * directory and an external domain. You can create either a forest trust or an external trust.
      * </p>
      * 
      * @param createTrustRequest
      *        AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For
-     *        example, you can establish a trust between your Microsoft AD in the AWS cloud, and your existing
+     *        example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing
      *        on-premises Microsoft Active Directory. This would allow you to provide users and groups access to
      *        resources in either domain, with a single set of credentials.</p>
      *        <p>
-     *        This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the
-     *        AWS cloud and an external domain.
+     *        This action initiates the creation of the AWS side of a trust relationship between an AWS Managed
+     *        Microsoft AD directory and an external domain.
      * @return Result of the CreateTrust operation returned by the service.
      * @throws EntityAlreadyExistsException
      *         The specified entity already exists.
@@ -1034,6 +1239,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrust");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1097,6 +1305,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConditionalForwarder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1119,9 +1330,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * Deletes an AWS Directory Service directory.
      * </p>
      * <p>
-     * Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions have been explicitly granted
-     * through a policy. For details about what permissions are required to run the <i>DeleteDirectory</i> operation,
-     * see <a
+     * Before you call <code>DeleteDirectory</code>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the <code>DeleteDirectory</code>
+     * operation, see <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
      * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
@@ -1161,12 +1372,76 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDirectory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDirectoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDirectoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified log subscription.
+     * </p>
+     * 
+     * @param deleteLogSubscriptionRequest
+     * @return Result of the DeleteLogSubscription operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeleteLogSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteLogSubscriptionResult deleteLogSubscription(DeleteLogSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLogSubscription(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLogSubscriptionResult executeDeleteLogSubscription(DeleteLogSubscriptionRequest deleteLogSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLogSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLogSubscriptionRequest> request = null;
+        Response<DeleteLogSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLogSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLogSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLogSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLogSubscriptionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteLogSubscriptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1219,6 +1494,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1237,12 +1515,12 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Deletes an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+     * Deletes an existing trust relationship between your AWS Managed Microsoft AD directory and an external domain.
      * </p>
      * 
      * @param deleteTrustRequest
-     *        Deletes the local side of an existing trust relationship between the Microsoft AD in the AWS cloud and the
-     *        external domain.
+     *        Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory
+     *        and the external domain.
      * @return Result of the DeleteTrust operation returned by the service.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
@@ -1280,6 +1558,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrust");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1338,6 +1619,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterEventTopic");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1405,6 +1689,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConditionalForwarders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1428,15 +1715,15 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * </p>
      * <p>
      * You can retrieve information about specific directories by passing the directory identifiers in the
-     * <i>DirectoryIds</i> parameter. Otherwise, all directories that belong to the current account are returned.
+     * <code>DirectoryIds</code> parameter. Otherwise, all directories that belong to the current account are returned.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> request and response parameters. If more
-     * results are available, the <i>DescribeDirectoriesResult.NextToken</i> member contains a token that you pass in
-     * the next call to <a>DescribeDirectories</a> to retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
+     * more results are available, the <code>DescribeDirectoriesResult.NextToken</code> member contains a token that you
+     * pass in the next call to <a>DescribeDirectories</a> to retrieve the next set of items.
      * </p>
      * <p>
-     * You can also specify a maximum number of return results with the <i>Limit</i> parameter.
+     * You can also specify a maximum number of return results with the <code>Limit</code> parameter.
      * </p>
      * 
      * @param describeDirectoriesRequest
@@ -1447,7 +1734,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -1478,6 +1765,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDirectories");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1509,7 +1799,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -1545,6 +1835,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDomainControllers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1608,12 +1901,81 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventTopics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEventTopicsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeEventTopicsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the shared directories in your account.
+     * </p>
+     * 
+     * @param describeSharedDirectoriesRequest
+     * @return Result of the DescribeSharedDirectories operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeSharedDirectories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSharedDirectories" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeSharedDirectoriesResult describeSharedDirectories(DescribeSharedDirectoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSharedDirectories(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSharedDirectoriesResult executeDescribeSharedDirectories(DescribeSharedDirectoriesRequest describeSharedDirectoriesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSharedDirectoriesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSharedDirectoriesRequest> request = null;
+        Response<DescribeSharedDirectoriesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSharedDirectoriesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeSharedDirectoriesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSharedDirectories");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSharedDirectoriesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeSharedDirectoriesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1645,7 +2007,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -1676,6 +2038,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSnapshots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1707,13 +2072,14 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * </p>
      * 
      * @param describeTrustsRequest
-     *        Describes the trust relationships for a particular Microsoft AD in the AWS cloud. If no input parameters
-     *        are are provided, such as directory ID or trust ID, this request describes all the trust relationships.
+     *        Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input
+     *        parameters are are provided, such as directory ID or trust ID, this request describes all the trust
+     *        relationships.
      * @return Result of the DescribeTrusts operation returned by the service.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -1748,6 +2114,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrusts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1767,7 +2136,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server
-     * for an AD Connector directory.
+     * for an AD Connector or Microsoft AD directory.
      * </p>
      * 
      * @param disableRadiusRequest
@@ -1805,6 +2174,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableRadius");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1865,6 +2237,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableSso");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1884,7 +2259,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     /**
      * <p>
      * Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for
-     * an AD Connector directory.
+     * an AD Connector or Microsoft AD directory.
      * </p>
      * 
      * @param enableRadiusRequest
@@ -1926,6 +2301,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableRadius");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1986,6 +2364,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableSso");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2042,6 +2423,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDirectoryLimits");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2103,6 +2487,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSnapshotLimits");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2129,7 +2516,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -2162,6 +2549,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIpRoutes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2180,13 +2570,73 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Lists the active log subscriptions for the AWS account.
+     * </p>
+     * 
+     * @param listLogSubscriptionsRequest
+     * @return Result of the ListLogSubscriptions operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ListLogSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListLogSubscriptionsResult listLogSubscriptions(ListLogSubscriptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLogSubscriptions(request);
+    }
+
+    @SdkInternalApi
+    final ListLogSubscriptionsResult executeListLogSubscriptions(ListLogSubscriptionsRequest listLogSubscriptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLogSubscriptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLogSubscriptionsRequest> request = null;
+        Response<ListLogSubscriptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLogSubscriptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLogSubscriptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLogSubscriptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLogSubscriptionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLogSubscriptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all schema extensions applied to a Microsoft AD Directory.
      * </p>
      * 
      * @param listSchemaExtensionsRequest
      * @return Result of the ListSchemaExtensions operation returned by the service.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws ClientException
@@ -2219,6 +2669,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSchemaExtensions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2245,7 +2698,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -2278,6 +2731,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2339,12 +2795,78 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterEventTopic");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<RegisterEventTopicResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterEventTopicResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Rejects a directory sharing request that was sent from the directory owner account.
+     * </p>
+     * 
+     * @param rejectSharedDirectoryRequest
+     * @return Result of the RejectSharedDirectory operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryAlreadySharedException
+     *         The specified directory has already been shared with this AWS account.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RejectSharedDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RejectSharedDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RejectSharedDirectoryResult rejectSharedDirectory(RejectSharedDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectSharedDirectory(request);
+    }
+
+    @SdkInternalApi
+    final RejectSharedDirectoryResult executeRejectSharedDirectory(RejectSharedDirectoryRequest rejectSharedDirectoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rejectSharedDirectoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectSharedDirectoryRequest> request = null;
+        Response<RejectSharedDirectoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectSharedDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectSharedDirectoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectSharedDirectory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RejectSharedDirectoryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new RejectSharedDirectoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2398,6 +2920,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveIpRoutes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2455,6 +2980,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2462,6 +2990,73 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsFromResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RemoveTagsFromResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
+     * </p>
+     * 
+     * @param resetUserPasswordRequest
+     * @return Result of the ResetUserPassword operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws UserDoesNotExistException
+     *         The user provided a username that does not exist in your directory.
+     * @throws InvalidPasswordException
+     *         The new password provided by the user does not meet the password complexity requirements defined in your
+     *         directory.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ResetUserPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ResetUserPasswordResult resetUserPassword(ResetUserPasswordRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetUserPassword(request);
+    }
+
+    @SdkInternalApi
+    final ResetUserPasswordResult executeResetUserPassword(ResetUserPasswordRequest resetUserPasswordRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resetUserPasswordRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResetUserPasswordRequest> request = null;
+        Response<ResetUserPasswordResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResetUserPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetUserPasswordRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetUserPassword");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResetUserPasswordResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResetUserPasswordResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2523,12 +3118,103 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreFromSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<RestoreFromSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RestoreFromSnapshotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Shares a specified directory (<code>DirectoryId</code>) in your AWS account (directory owner) with another AWS
+     * account (directory consumer). With this operation you can use your directory from any AWS account and from any
+     * Amazon VPC within an AWS Region.
+     * </p>
+     * <p>
+     * When you share your AWS Managed Microsoft AD directory, AWS Directory Service creates a shared directory in the
+     * directory consumer account. This shared directory contains the metadata to provide access to the directory within
+     * the directory owner account. The shared directory is visible in all VPCs in the directory consumer account.
+     * </p>
+     * <p>
+     * The <code>ShareMethod</code> parameter determines whether the specified directory can be shared between AWS
+     * accounts inside the same AWS organization (<code>ORGANIZATIONS</code>). It also determines whether you can share
+     * the directory with any other AWS account either inside or outside of the organization (<code>HANDSHAKE</code>).
+     * </p>
+     * <p>
+     * The <code>ShareNotes</code> parameter is only used when <code>HANDSHAKE</code> is called, which sends a directory
+     * sharing request to the directory consumer.
+     * </p>
+     * 
+     * @param shareDirectoryRequest
+     * @return Result of the ShareDirectory operation returned by the service.
+     * @throws DirectoryAlreadySharedException
+     *         The specified directory has already been shared with this AWS account.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidTargetException
+     *         The specified shared target is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ShareLimitExceededException
+     *         The maximum number of AWS accounts that you can share with this directory has been reached.
+     * @throws OrganizationsException
+     *         Exception encountered while trying to access your AWS organization.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ShareDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ShareDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ShareDirectoryResult shareDirectory(ShareDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeShareDirectory(request);
+    }
+
+    @SdkInternalApi
+    final ShareDirectoryResult executeShareDirectory(ShareDirectoryRequest shareDirectoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(shareDirectoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ShareDirectoryRequest> request = null;
+        Response<ShareDirectoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ShareDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(shareDirectoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ShareDirectory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ShareDirectoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ShareDirectoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2585,12 +3271,77 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSchemaExtension");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<StartSchemaExtensionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSchemaExtensionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops the directory sharing between the directory owner and consumer accounts.
+     * </p>
+     * 
+     * @param unshareDirectoryRequest
+     * @return Result of the UnshareDirectory operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidTargetException
+     *         The specified shared target is not valid.
+     * @throws DirectoryNotSharedException
+     *         The specified directory has not been shared with this AWS account.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UnshareDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UnshareDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UnshareDirectoryResult unshareDirectory(UnshareDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnshareDirectory(request);
+    }
+
+    @SdkInternalApi
+    final UnshareDirectoryResult executeUnshareDirectory(UnshareDirectoryRequest unshareDirectoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(unshareDirectoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UnshareDirectoryRequest> request = null;
+        Response<UnshareDirectoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UnshareDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unshareDirectoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnshareDirectory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UnshareDirectoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnshareDirectoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2648,6 +3399,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConditionalForwarder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2718,6 +3472,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNumberOfDomainControllers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2737,7 +3494,8 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector directory.
+     * Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector or
+     * Microsoft AD directory.
      * </p>
      * 
      * @param updateRadiusRequest
@@ -2777,6 +3535,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRadius");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2795,15 +3556,76 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Updates the trust that has been set up between your AWS Managed Microsoft AD directory and an on-premises Active
+     * Directory.
+     * </p>
+     * 
+     * @param updateTrustRequest
+     * @return Result of the UpdateTrust operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UpdateTrust
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateTrustResult updateTrust(UpdateTrustRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTrust(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTrustResult executeUpdateTrust(UpdateTrustRequest updateTrustRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTrustRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTrustRequest> request = null;
+        Response<UpdateTrustResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTrustRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTrustRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrust");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTrustResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTrustResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * AWS Directory Service for Microsoft Active Directory allows you to configure and verify trust relationships.
      * </p>
      * <p>
-     * This action verifies a trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+     * This action verifies a trust relationship between your AWS Managed Microsoft AD directory and an external domain.
      * </p>
      * 
      * @param verifyTrustRequest
-     *        Initiates the verification of an existing trust relationship between a Microsoft AD in the AWS cloud and
-     *        an external domain.
+     *        Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory
+     *        and an external domain.
      * @return Result of the VerifyTrust operation returned by the service.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
@@ -2841,6 +3663,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyTrust");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2881,9 +3706,18 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -2893,7 +3727,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -2901,8 +3735,17 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

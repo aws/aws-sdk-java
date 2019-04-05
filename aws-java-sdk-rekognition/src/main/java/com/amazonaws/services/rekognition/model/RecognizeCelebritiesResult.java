@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,9 +41,9 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>CelebrityFaces</code> and
-     * <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
+     * bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation.
+     * Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      */
@@ -207,9 +207,9 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>CelebrityFaces</code> and
-     * <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
+     * bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation.
+     * Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
@@ -221,7 +221,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes
      *        the image's orientation. If so, and the Exif metadata for the input image populates the orientation field,
-     *        the value of <code>OrientationCorrection</code> is null and the <code>CelebrityFaces</code> and
+     *        the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and
      *        <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is
      *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
@@ -242,9 +242,9 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>CelebrityFaces</code> and
-     * <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
+     * bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation.
+     * Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
@@ -255,7 +255,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      *         <p>
      *         If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes
      *         the image's orientation. If so, and the Exif metadata for the input image populates the orientation
-     *         field, the value of <code>OrientationCorrection</code> is null and the <code>CelebrityFaces</code> and
+     *         field, the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and
      *         <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is
      *         used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *         </p>
@@ -276,9 +276,9 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>CelebrityFaces</code> and
-     * <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
+     * bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation.
+     * Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
@@ -290,7 +290,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes
      *        the image's orientation. If so, and the Exif metadata for the input image populates the orientation field,
-     *        the value of <code>OrientationCorrection</code> is null and the <code>CelebrityFaces</code> and
+     *        the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and
      *        <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is
      *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
@@ -313,9 +313,9 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>CelebrityFaces</code> and
-     * <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
+     * bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation.
+     * Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
@@ -327,7 +327,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes
      *        the image's orientation. If so, and the Exif metadata for the input image populates the orientation field,
-     *        the value of <code>OrientationCorrection</code> is null and the <code>CelebrityFaces</code> and
+     *        the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and
      *        <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is
      *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
@@ -348,9 +348,9 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes the
      * image's orientation. If so, and the Exif metadata for the input image populates the orientation field, the value
-     * of <code>OrientationCorrection</code> is null and the <code>CelebrityFaces</code> and
-     * <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is used to
-     * correct the image orientation. Images in .png format don't contain Exif metadata.
+     * of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
+     * bounding box coordinates represent face locations after Exif metadata is used to correct the image orientation.
+     * Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
@@ -362,7 +362,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata that includes
      *        the image's orientation. If so, and the Exif metadata for the input image populates the orientation field,
-     *        the value of <code>OrientationCorrection</code> is null and the <code>CelebrityFaces</code> and
+     *        the value of <code>OrientationCorrection</code> is null. The <code>CelebrityFaces</code> and
      *        <code>UnrecognizedFaces</code> bounding box coordinates represent face locations after Exif metadata is
      *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
@@ -376,7 +376,8 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

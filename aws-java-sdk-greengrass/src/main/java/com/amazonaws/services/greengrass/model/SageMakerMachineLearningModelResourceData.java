@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Attributes that define an SageMaker machine learning resource.
+ * Attributes that define an Amazon SageMaker machine learning resource.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/SageMakerMachineLearningModelResourceData"
  *      target="_top">AWS API Documentation</a>
@@ -28,7 +28,7 @@ public class SageMakerMachineLearningModelResourceData implements Serializable, 
 
     /** The absolute local path of the resource inside the Lambda environment. */
     private String destinationPath;
-    /** The ARN of the SageMaker training job that represents the source model. */
+    /** The ARN of the Amazon SageMaker training job that represents the source model. */
     private String sageMakerJobArn;
 
     /**
@@ -66,10 +66,10 @@ public class SageMakerMachineLearningModelResourceData implements Serializable, 
     }
 
     /**
-     * The ARN of the SageMaker training job that represents the source model.
+     * The ARN of the Amazon SageMaker training job that represents the source model.
      * 
      * @param sageMakerJobArn
-     *        The ARN of the SageMaker training job that represents the source model.
+     *        The ARN of the Amazon SageMaker training job that represents the source model.
      */
 
     public void setSageMakerJobArn(String sageMakerJobArn) {
@@ -77,9 +77,9 @@ public class SageMakerMachineLearningModelResourceData implements Serializable, 
     }
 
     /**
-     * The ARN of the SageMaker training job that represents the source model.
+     * The ARN of the Amazon SageMaker training job that represents the source model.
      * 
-     * @return The ARN of the SageMaker training job that represents the source model.
+     * @return The ARN of the Amazon SageMaker training job that represents the source model.
      */
 
     public String getSageMakerJobArn() {
@@ -87,10 +87,10 @@ public class SageMakerMachineLearningModelResourceData implements Serializable, 
     }
 
     /**
-     * The ARN of the SageMaker training job that represents the source model.
+     * The ARN of the Amazon SageMaker training job that represents the source model.
      * 
      * @param sageMakerJobArn
-     *        The ARN of the SageMaker training job that represents the source model.
+     *        The ARN of the Amazon SageMaker training job that represents the source model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,7 +100,8 @@ public class SageMakerMachineLearningModelResourceData implements Serializable, 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

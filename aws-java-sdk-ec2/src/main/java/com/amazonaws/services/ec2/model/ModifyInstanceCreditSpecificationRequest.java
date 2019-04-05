@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ModifyInstanceCreditSpecificationRequest extends AmazonWebServiceRe
      * <p>
      * A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      */
@@ -46,14 +46,14 @@ public class ModifyInstanceCreditSpecificationRequest extends AmazonWebServiceRe
      * <p>
      * A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      */
 
@@ -65,13 +65,13 @@ public class ModifyInstanceCreditSpecificationRequest extends AmazonWebServiceRe
      * <p>
      * A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @return A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For
      *         more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *         Idempotency</a>.
      */
 
@@ -83,14 +83,14 @@ public class ModifyInstanceCreditSpecificationRequest extends AmazonWebServiceRe
      * <p>
      * A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -186,7 +186,8 @@ public class ModifyInstanceCreditSpecificationRequest extends AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

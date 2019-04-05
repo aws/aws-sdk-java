@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A tag is a key-value pair. Allowed characters: letters, whitespace, and numbers, representable in UTF-8, and the
- * following characters:<code> + - = . _ : /</code>
+ * A tag is a key-value pair. Allowed characters are letters, white space, and numbers that can be represented in UTF-8,
+ * and the following characters:<code> + - = . _ : /</code>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/Tag" target="_top">AWS API
@@ -31,24 +31,24 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tag key (String). The key can't start with <code>aws:</code>.
+     * The tag key (String). The key can't start with <code>aws:</code>.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * Value of the tag key.
+     * The value of the tag key.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * Tag key (String). The key can't start with <code>aws:</code>.
+     * The tag key (String). The key can't start with <code>aws:</code>.
      * </p>
      * 
      * @param key
-     *        Tag key (String). The key can't start with <code>aws:</code>.
+     *        The tag key (String). The key can't start with <code>aws:</code>.
      */
 
     public void setKey(String key) {
@@ -57,10 +57,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tag key (String). The key can't start with <code>aws:</code>.
+     * The tag key (String). The key can't start with <code>aws:</code>.
      * </p>
      * 
-     * @return Tag key (String). The key can't start with <code>aws:</code>.
+     * @return The tag key (String). The key can't start with <code>aws:</code>.
      */
 
     public String getKey() {
@@ -69,11 +69,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tag key (String). The key can't start with <code>aws:</code>.
+     * The tag key (String). The key can't start with <code>aws:</code>.
      * </p>
      * 
      * @param key
-     *        Tag key (String). The key can't start with <code>aws:</code>.
+     *        The tag key (String). The key can't start with <code>aws:</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value of the tag key.
+     * The value of the tag key.
      * </p>
      * 
      * @param value
-     *        Value of the tag key.
+     *        The value of the tag key.
      */
 
     public void setValue(String value) {
@@ -97,10 +97,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value of the tag key.
+     * The value of the tag key.
      * </p>
      * 
-     * @return Value of the tag key.
+     * @return The value of the tag key.
      */
 
     public String getValue() {
@@ -109,11 +109,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value of the tag key.
+     * The value of the tag key.
      * </p>
      * 
      * @param value
-     *        Value of the tag key.
+     *        The value of the tag key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,7 +123,8 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

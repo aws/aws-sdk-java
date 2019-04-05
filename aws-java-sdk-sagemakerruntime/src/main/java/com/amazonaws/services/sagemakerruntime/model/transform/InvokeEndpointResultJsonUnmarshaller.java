@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,10 @@ public class InvokeEndpointResultJsonUnmarshaller implements Unmarshaller<Invoke
             if (context.getHeader("x-Amzn-Invoked-Production-Variant") != null) {
                 context.setCurrentHeader("x-Amzn-Invoked-Production-Variant");
                 invokeEndpointResult.setInvokedProductionVariant(context.getUnmarshaller(String.class).unmarshall(context));
+            }
+            if (context.getHeader("X-Amzn-SageMaker-Custom-Attributes") != null) {
+                context.setCurrentHeader("X-Amzn-SageMaker-Custom-Attributes");
+                invokeEndpointResult.setCustomAttributes(context.getUnmarshaller(String.class).unmarshall(context));
             }
         }
 

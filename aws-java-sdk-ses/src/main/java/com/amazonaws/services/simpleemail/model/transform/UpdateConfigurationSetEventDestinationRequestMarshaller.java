@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,82 +47,93 @@ public class UpdateConfigurationSetEventDestinationRequestMarshaller implements
             request.addParameter("ConfigurationSetName", StringUtils.fromString(updateConfigurationSetEventDestinationRequest.getConfigurationSetName()));
         }
 
-        EventDestination eventDestination = updateConfigurationSetEventDestinationRequest.getEventDestination();
-        if (eventDestination != null) {
+        {
+            EventDestination eventDestination = updateConfigurationSetEventDestinationRequest.getEventDestination();
+            if (eventDestination != null) {
 
-            if (eventDestination.getName() != null) {
-                request.addParameter("EventDestination.Name", StringUtils.fromString(eventDestination.getName()));
-            }
-
-            if (eventDestination.getEnabled() != null) {
-                request.addParameter("EventDestination.Enabled", StringUtils.fromBoolean(eventDestination.getEnabled()));
-            }
-
-            if (!eventDestination.getMatchingEventTypes().isEmpty()
-                    || !((com.amazonaws.internal.SdkInternalList<String>) eventDestination.getMatchingEventTypes()).isAutoConstruct()) {
-                com.amazonaws.internal.SdkInternalList<String> matchingEventTypesList = (com.amazonaws.internal.SdkInternalList<String>) eventDestination
-                        .getMatchingEventTypes();
-                int matchingEventTypesListIndex = 1;
-
-                for (String matchingEventTypesListValue : matchingEventTypesList) {
-                    if (matchingEventTypesListValue != null) {
-                        request.addParameter("EventDestination.MatchingEventTypes.member." + matchingEventTypesListIndex,
-                                StringUtils.fromString(matchingEventTypesListValue));
-                    }
-                    matchingEventTypesListIndex++;
-                }
-            }
-
-            KinesisFirehoseDestination kinesisFirehoseDestination = eventDestination.getKinesisFirehoseDestination();
-            if (kinesisFirehoseDestination != null) {
-
-                if (kinesisFirehoseDestination.getIAMRoleARN() != null) {
-                    request.addParameter("EventDestination.KinesisFirehoseDestination.IAMRoleARN",
-                            StringUtils.fromString(kinesisFirehoseDestination.getIAMRoleARN()));
+                if (eventDestination.getName() != null) {
+                    request.addParameter("EventDestination.Name", StringUtils.fromString(eventDestination.getName()));
                 }
 
-                if (kinesisFirehoseDestination.getDeliveryStreamARN() != null) {
-                    request.addParameter("EventDestination.KinesisFirehoseDestination.DeliveryStreamARN",
-                            StringUtils.fromString(kinesisFirehoseDestination.getDeliveryStreamARN()));
+                if (eventDestination.getEnabled() != null) {
+                    request.addParameter("EventDestination.Enabled", StringUtils.fromBoolean(eventDestination.getEnabled()));
                 }
-            }
 
-            CloudWatchDestination cloudWatchDestination = eventDestination.getCloudWatchDestination();
-            if (cloudWatchDestination != null) {
+                if (!eventDestination.getMatchingEventTypes().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) eventDestination.getMatchingEventTypes()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> matchingEventTypesList = (com.amazonaws.internal.SdkInternalList<String>) eventDestination
+                            .getMatchingEventTypes();
+                    int matchingEventTypesListIndex = 1;
 
-                if (!cloudWatchDestination.getDimensionConfigurations().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<CloudWatchDimensionConfiguration>) cloudWatchDestination.getDimensionConfigurations())
-                                .isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<CloudWatchDimensionConfiguration> dimensionConfigurationsList = (com.amazonaws.internal.SdkInternalList<CloudWatchDimensionConfiguration>) cloudWatchDestination
-                            .getDimensionConfigurations();
-                    int dimensionConfigurationsListIndex = 1;
-
-                    for (CloudWatchDimensionConfiguration dimensionConfigurationsListValue : dimensionConfigurationsList) {
-
-                        if (dimensionConfigurationsListValue.getDimensionName() != null) {
-                            request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member." + dimensionConfigurationsListIndex
-                                    + ".DimensionName", StringUtils.fromString(dimensionConfigurationsListValue.getDimensionName()));
+                    for (String matchingEventTypesListValue : matchingEventTypesList) {
+                        if (matchingEventTypesListValue != null) {
+                            request.addParameter("EventDestination.MatchingEventTypes.member." + matchingEventTypesListIndex,
+                                    StringUtils.fromString(matchingEventTypesListValue));
                         }
-
-                        if (dimensionConfigurationsListValue.getDimensionValueSource() != null) {
-                            request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member." + dimensionConfigurationsListIndex
-                                    + ".DimensionValueSource", StringUtils.fromString(dimensionConfigurationsListValue.getDimensionValueSource()));
-                        }
-
-                        if (dimensionConfigurationsListValue.getDefaultDimensionValue() != null) {
-                            request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member." + dimensionConfigurationsListIndex
-                                    + ".DefaultDimensionValue", StringUtils.fromString(dimensionConfigurationsListValue.getDefaultDimensionValue()));
-                        }
-                        dimensionConfigurationsListIndex++;
+                        matchingEventTypesListIndex++;
                     }
                 }
-            }
 
-            SNSDestination sNSDestination = eventDestination.getSNSDestination();
-            if (sNSDestination != null) {
+                {
+                    KinesisFirehoseDestination kinesisFirehoseDestination = eventDestination.getKinesisFirehoseDestination();
+                    if (kinesisFirehoseDestination != null) {
 
-                if (sNSDestination.getTopicARN() != null) {
-                    request.addParameter("EventDestination.SNSDestination.TopicARN", StringUtils.fromString(sNSDestination.getTopicARN()));
+                        if (kinesisFirehoseDestination.getIAMRoleARN() != null) {
+                            request.addParameter("EventDestination.KinesisFirehoseDestination.IAMRoleARN",
+                                    StringUtils.fromString(kinesisFirehoseDestination.getIAMRoleARN()));
+                        }
+
+                        if (kinesisFirehoseDestination.getDeliveryStreamARN() != null) {
+                            request.addParameter("EventDestination.KinesisFirehoseDestination.DeliveryStreamARN",
+                                    StringUtils.fromString(kinesisFirehoseDestination.getDeliveryStreamARN()));
+                        }
+                    }
+                }
+
+                {
+                    CloudWatchDestination cloudWatchDestination = eventDestination.getCloudWatchDestination();
+                    if (cloudWatchDestination != null) {
+
+                        if (!cloudWatchDestination.getDimensionConfigurations().isEmpty()
+                                || !((com.amazonaws.internal.SdkInternalList<CloudWatchDimensionConfiguration>) cloudWatchDestination
+                                        .getDimensionConfigurations()).isAutoConstruct()) {
+                            com.amazonaws.internal.SdkInternalList<CloudWatchDimensionConfiguration> dimensionConfigurationsList = (com.amazonaws.internal.SdkInternalList<CloudWatchDimensionConfiguration>) cloudWatchDestination
+                                    .getDimensionConfigurations();
+                            int dimensionConfigurationsListIndex = 1;
+
+                            for (CloudWatchDimensionConfiguration dimensionConfigurationsListValue : dimensionConfigurationsList) {
+
+                                if (dimensionConfigurationsListValue.getDimensionName() != null) {
+                                    request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
+                                            + dimensionConfigurationsListIndex + ".DimensionName",
+                                            StringUtils.fromString(dimensionConfigurationsListValue.getDimensionName()));
+                                }
+
+                                if (dimensionConfigurationsListValue.getDimensionValueSource() != null) {
+                                    request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
+                                            + dimensionConfigurationsListIndex + ".DimensionValueSource",
+                                            StringUtils.fromString(dimensionConfigurationsListValue.getDimensionValueSource()));
+                                }
+
+                                if (dimensionConfigurationsListValue.getDefaultDimensionValue() != null) {
+                                    request.addParameter("EventDestination.CloudWatchDestination.DimensionConfigurations.member."
+                                            + dimensionConfigurationsListIndex + ".DefaultDimensionValue",
+                                            StringUtils.fromString(dimensionConfigurationsListValue.getDefaultDimensionValue()));
+                                }
+                                dimensionConfigurationsListIndex++;
+                            }
+                        }
+                    }
+                }
+
+                {
+                    SNSDestination sNSDestination = eventDestination.getSNSDestination();
+                    if (sNSDestination != null) {
+
+                        if (sNSDestination.getTopicARN() != null) {
+                            request.addParameter("EventDestination.SNSDestination.TopicARN", StringUtils.fromString(sNSDestination.getTopicARN()));
+                        }
+                    }
                 }
             }
         }

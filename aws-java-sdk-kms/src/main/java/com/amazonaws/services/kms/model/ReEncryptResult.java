@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,8 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not
-     * encoded.
+     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
+     * not encoded.
      * </p>
      */
     private java.nio.ByteBuffer ciphertextBlob;
@@ -45,8 +45,8 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not
-     * encoded.
+     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -60,8 +60,8 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param ciphertextBlob
-     *        The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it
-     *        is not encoded.
+     *        The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise,
+     *        it is not encoded.
      */
 
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
@@ -70,8 +70,8 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not
-     * encoded.
+     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -81,7 +81,7 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * {@code position}.
      * </p>
      * 
-     * @return The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
+     * @return The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise,
      *         it is not encoded.
      */
 
@@ -91,8 +91,8 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is not
-     * encoded.
+     * The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
+     * not encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -106,8 +106,8 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param ciphertextBlob
-     *        The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it
-     *        is not encoded.
+     *        The reencrypted data. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise,
+     *        it is not encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,7 +197,8 @@ public class ReEncryptResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

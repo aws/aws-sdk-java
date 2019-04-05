@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FileShareInfo implements Serializable, Cloneable, StructuredPojo {
 
+    private String fileShareType;
+
     private String fileShareARN;
 
     private String fileShareId;
@@ -35,6 +37,46 @@ public class FileShareInfo implements Serializable, Cloneable, StructuredPojo {
     private String fileShareStatus;
 
     private String gatewayARN;
+
+    /**
+     * @param fileShareType
+     * @see FileShareType
+     */
+
+    public void setFileShareType(String fileShareType) {
+        this.fileShareType = fileShareType;
+    }
+
+    /**
+     * @return
+     * @see FileShareType
+     */
+
+    public String getFileShareType() {
+        return this.fileShareType;
+    }
+
+    /**
+     * @param fileShareType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileShareType
+     */
+
+    public FileShareInfo withFileShareType(String fileShareType) {
+        setFileShareType(fileShareType);
+        return this;
+    }
+
+    /**
+     * @param fileShareType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileShareType
+     */
+
+    public FileShareInfo withFileShareType(FileShareType fileShareType) {
+        this.fileShareType = fileShareType.toString();
+        return this;
+    }
 
     /**
      * @param fileShareARN
@@ -141,7 +183,8 @@ public class FileShareInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -151,6 +194,8 @@ public class FileShareInfo implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFileShareType() != null)
+            sb.append("FileShareType: ").append(getFileShareType()).append(",");
         if (getFileShareARN() != null)
             sb.append("FileShareARN: ").append(getFileShareARN()).append(",");
         if (getFileShareId() != null)
@@ -173,6 +218,10 @@ public class FileShareInfo implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof FileShareInfo == false)
             return false;
         FileShareInfo other = (FileShareInfo) obj;
+        if (other.getFileShareType() == null ^ this.getFileShareType() == null)
+            return false;
+        if (other.getFileShareType() != null && other.getFileShareType().equals(this.getFileShareType()) == false)
+            return false;
         if (other.getFileShareARN() == null ^ this.getFileShareARN() == null)
             return false;
         if (other.getFileShareARN() != null && other.getFileShareARN().equals(this.getFileShareARN()) == false)
@@ -197,6 +246,7 @@ public class FileShareInfo implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFileShareType() == null) ? 0 : getFileShareType().hashCode());
         hashCode = prime * hashCode + ((getFileShareARN() == null) ? 0 : getFileShareARN().hashCode());
         hashCode = prime * hashCode + ((getFileShareId() == null) ? 0 : getFileShareId().hashCode());
         hashCode = prime * hashCode + ((getFileShareStatus() == null) ? 0 : getFileShareStatus().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,27 +15,14 @@ package com.amazonaws.services.directconnect.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The Up/Down state of the BGP peer.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>Up</b>: The BGP peer is established.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Down</b>: The BGP peer is down.
- * </p>
- * </li>
- * </ul>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BGPStatus {
 
     Up("up"),
-    Down("down");
+    Down("down"),
+    Unknown("unknown");
 
     private String value;
 

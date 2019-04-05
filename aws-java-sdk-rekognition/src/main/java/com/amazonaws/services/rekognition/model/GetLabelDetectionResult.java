@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,15 +32,15 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
     private String statusMessage;
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      */
     private VideoMetadata videoMetadata;
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of labels.
      * </p>
      */
     private String nextToken;
@@ -51,6 +51,12 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.List<LabelDetection> labels;
+    /**
+     * <p>
+     * Version number of the label detection model that was used to detect labels.
+     * </p>
+     */
+    private String labelModelVersion;
 
     /**
      * <p>
@@ -153,13 +159,13 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      * 
      * @param videoMetadata
-     *        Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every
-     *        page of paginated responses from a Amazon Rekognition video operation.
+     *        Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *        in every page of paginated responses from a Amazon Rekognition video operation.
      */
 
     public void setVideoMetadata(VideoMetadata videoMetadata) {
@@ -168,12 +174,12 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      * 
-     * @return Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in
-     *         every page of paginated responses from a Amazon Rekognition video operation.
+     * @return Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *         in every page of paginated responses from a Amazon Rekognition video operation.
      */
 
     public VideoMetadata getVideoMetadata() {
@@ -182,13 +188,13 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      * 
      * @param videoMetadata
-     *        Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every
-     *        page of paginated responses from a Amazon Rekognition video operation.
+     *        Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *        in every page of paginated responses from a Amazon Rekognition video operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,13 +205,13 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of labels.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of labels.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of labels.
      */
 
     public void setNextToken(String nextToken) {
@@ -214,12 +220,12 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of labels.
      * </p>
      * 
-     * @return If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *         request to retrieve the next set of labels.
+     * @return If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *         subsequent request to retrieve the next set of labels.
      */
 
     public String getNextToken() {
@@ -228,13 +234,13 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of labels.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of labels.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of labels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,7 +328,48 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Version number of the label detection model that was used to detect labels.
+     * </p>
+     * 
+     * @param labelModelVersion
+     *        Version number of the label detection model that was used to detect labels.
+     */
+
+    public void setLabelModelVersion(String labelModelVersion) {
+        this.labelModelVersion = labelModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the label detection model that was used to detect labels.
+     * </p>
+     * 
+     * @return Version number of the label detection model that was used to detect labels.
+     */
+
+    public String getLabelModelVersion() {
+        return this.labelModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the label detection model that was used to detect labels.
+     * </p>
+     * 
+     * @param labelModelVersion
+     *        Version number of the label detection model that was used to detect labels.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLabelDetectionResult withLabelModelVersion(String labelModelVersion) {
+        setLabelModelVersion(labelModelVersion);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -341,7 +388,9 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLabels() != null)
-            sb.append("Labels: ").append(getLabels());
+            sb.append("Labels: ").append(getLabels()).append(",");
+        if (getLabelModelVersion() != null)
+            sb.append("LabelModelVersion: ").append(getLabelModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -376,6 +425,10 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
             return false;
+        if (other.getLabelModelVersion() == null ^ this.getLabelModelVersion() == null)
+            return false;
+        if (other.getLabelModelVersion() != null && other.getLabelModelVersion().equals(this.getLabelModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -389,6 +442,7 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getVideoMetadata() == null) ? 0 : getVideoMetadata().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
+        hashCode = prime * hashCode + ((getLabelModelVersion() == null) ? 0 : getLabelModelVersion().hashCode());
         return hashCode;
     }
 

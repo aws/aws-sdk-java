@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a scaling policy.
+ * Represents a scaling policy to use with Application Auto Scaling.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalingPolicy"
@@ -42,8 +42,9 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private String policyName;
     /**
      * <p>
-     * The namespace of the AWS service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
+     * provided by your own application or service. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
@@ -102,6 +103,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code>
+     * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
+     * service provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -155,13 +164,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
      * endpoint variant.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided by
+     * your own application or service.
      * </p>
      * </li>
      * </ul>
@@ -181,7 +196,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private StepScalingPolicyConfiguration stepScalingPolicyConfiguration;
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      */
     private TargetTrackingScalingPolicyConfiguration targetTrackingScalingPolicyConfiguration;
@@ -280,14 +295,16 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the AWS service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
+     * provided by your own application or service. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
+     *        provided by your own application or service. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
@@ -298,13 +315,15 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the AWS service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
+     * provided by your own application or service. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return The namespace of the AWS service. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * @return The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a
+     *         resource provided by your own application or service. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *         >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
@@ -315,14 +334,16 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the AWS service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
+     * provided by your own application or service. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
+     *        provided by your own application or service. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
@@ -335,14 +356,16 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the AWS service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
+     * provided by your own application or service. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
+     *        provided by your own application or service. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @see ServiceNamespace
      */
@@ -353,14 +376,16 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The namespace of the AWS service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     * The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
+     * provided by your own application or service. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      * >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param serviceNamespace
-     *        The namespace of the AWS service. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
+     *        The namespace of the AWS service that provides the resource or <code>custom-resource</code> for a resource
+     *        provided by your own application or service. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces"
      *        >AWS Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
@@ -425,6 +450,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code>
+     * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
+     * service provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -477,6 +510,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier
      *        is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Custom resources are not supported with a resource type. This parameter must specify the
+     *        <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique
+     *        identifier is defined by the service provider. More information is available in our <a
+     *        href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
      *        </p>
      *        </li>
      */
@@ -539,6 +580,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code>
+     * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
+     * service provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
@@ -591,6 +640,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier
      *         is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Custom resources are not supported with a resource type. This parameter must specify the
+     *         <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique
+     *         identifier is defined by the service provider. More information is available in our <a
+     *         href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
      *         </p>
      *         </li>
      */
@@ -653,6 +710,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code>
+     * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
+     * service provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -705,6 +770,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier
      *        is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Custom resources are not supported with a resource type. This parameter must specify the
+     *        <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique
+     *        identifier is defined by the service provider. More information is available in our <a
+     *        href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -765,13 +838,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
      * endpoint variant.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided by
+     * your own application or service.
      * </p>
      * </li>
      * </ul>
@@ -825,13 +904,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *        Available for Aurora MySQL-compatible edition.
+     *        Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
      *        model endpoint variant.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided
+     *        by your own application or service.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -891,13 +976,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
      * endpoint variant.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided by
+     * your own application or service.
      * </p>
      * </li>
      * </ul>
@@ -950,13 +1041,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *         Available for Aurora MySQL-compatible edition.
+     *         Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
      *         model endpoint variant.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource
+     *         provided by your own application or service.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1016,13 +1113,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
      * endpoint variant.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided by
+     * your own application or service.
      * </p>
      * </li>
      * </ul>
@@ -1076,13 +1179,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *        Available for Aurora MySQL-compatible edition.
+     *        Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
      *        model endpoint variant.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided
+     *        by your own application or service.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1144,13 +1253,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
      * endpoint variant.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided by
+     * your own application or service.
      * </p>
      * </li>
      * </ul>
@@ -1204,13 +1319,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *        Available for Aurora MySQL-compatible edition.
+     *        Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
      *        model endpoint variant.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided
+     *        by your own application or service.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1270,13 +1391,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
      * endpoint variant.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided by
+     * your own application or service.
      * </p>
      * </li>
      * </ul>
@@ -1330,13 +1457,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *        Available for Aurora MySQL-compatible edition.
+     *        Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
      *        model endpoint variant.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided
+     *        by your own application or service.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1463,11 +1596,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      * 
      * @param targetTrackingScalingPolicyConfiguration
-     *        A target tracking policy.
+     *        A target tracking scaling policy.
      */
 
     public void setTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration targetTrackingScalingPolicyConfiguration) {
@@ -1476,10 +1609,10 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      * 
-     * @return A target tracking policy.
+     * @return A target tracking scaling policy.
      */
 
     public TargetTrackingScalingPolicyConfiguration getTargetTrackingScalingPolicyConfiguration() {
@@ -1488,11 +1621,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      * 
      * @param targetTrackingScalingPolicyConfiguration
-     *        A target tracking policy.
+     *        A target tracking scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1612,7 +1745,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,28 +42,29 @@ public interface AmazonECR {
      *
      * @see RegionUtils#getRegionsForService(String)
      */
-    String ENDPOINT_PREFIX = "ecr";
+    String ENDPOINT_PREFIX = "api.ecr";
 
     /**
-     * Overrides the default endpoint for this client ("ecr.us-east-1.amazonaws.com"). Callers can use this method to
-     * control which AWS region they want to work with.
+     * Overrides the default endpoint for this client ("api.ecr.us-east-1.amazonaws.com"). Callers can use this method
+     * to control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "ecr.us-east-1.amazonaws.com") or a full URL, including the protocol
-     * (ex: "ecr.us-east-1.amazonaws.com"). If the protocol is not specified here, the default protocol from this
-     * client's {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * Callers can pass in just the endpoint (ex: "api.ecr.us-east-1.amazonaws.com") or a full URL, including the
+     * protocol (ex: "api.ecr.us-east-1.amazonaws.com"). If the protocol is not specified here, the default protocol
+     * from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
      * transit or retrying.</b>
      *
      * @param endpoint
-     *        The endpoint (ex: "ecr.us-east-1.amazonaws.com") or a full URL, including the protocol (ex:
-     *        "ecr.us-east-1.amazonaws.com") of the region specific AWS endpoint this client will communicate with.
+     *        The endpoint (ex: "api.ecr.us-east-1.amazonaws.com") or a full URL, including the protocol (ex:
+     *        "api.ecr.us-east-1.amazonaws.com") of the region specific AWS endpoint this client will communicate with.
      * @deprecated use {@link AwsClientBuilder#setEndpointConfiguration(AwsClientBuilder.EndpointConfiguration)} for
      *             example:
      *             {@code builder.setEndpointConfiguration(new EndpointConfiguration(endpoint, signingRegion));}
@@ -221,6 +222,12 @@ public interface AmazonECR {
      *         These errors are usually caused by a server-side issue.
      * @throws InvalidParameterException
      *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidTagParameterException
+     *         An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters,
+     *         and tag values can have a maximum length of 256 characters.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
      * @throws RepositoryAlreadyExistsException
      *         The specified repository already exists in the specified registry.
      * @throws LimitExceededException
@@ -527,6 +534,26 @@ public interface AmazonECR {
 
     /**
      * <p>
+     * List the tags for an Amazon ECR resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonECR.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Creates or updates the image manifest and tags associated with an image.
      * </p>
      * <note>
@@ -627,6 +654,59 @@ public interface AmazonECR {
      *      target="_top">AWS API Documentation</a>
      */
     StartLifecyclePolicyPreviewResult startLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest startLifecyclePolicyPreviewRequest);
+
+    /**
+     * <p>
+     * Adds specified tags to a resource with the specified ARN. Existing tags on a resource are not changed if they are
+     * not specified in the request parameters.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidTagParameterException
+     *         An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters,
+     *         and tag values can have a maximum length of 256 characters.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonECR.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws InvalidTagParameterException
+     *         An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters,
+     *         and tag values can have a maximum length of 256 characters.
+     * @throws TooManyTagsException
+     *         The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a
+     *         repository is 50.
+     * @throws RepositoryNotFoundException
+     *         The specified repository could not be found. Check the spelling of the specified repository and ensure
+     *         that you are performing operations on the correct registry.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @sample AmazonECR.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

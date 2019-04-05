@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,10 +40,23 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
     private Double diskImageSize;
     /**
      * <p>
+     * Indicates whether the snapshot is encrypted.
+     * </p>
+     */
+    private Boolean encrypted;
+    /**
+     * <p>
      * The format of the disk image from which the snapshot is created.
      * </p>
      */
     private String format;
+    /**
+     * <p>
+     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
+     * encrypted snapshot.
+     * </p>
+     */
+    private String kmsKeyId;
     /**
      * <p>
      * The percentage of completion for the import snapshot task.
@@ -163,6 +176,58 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates whether the snapshot is encrypted.
+     * </p>
+     * 
+     * @param encrypted
+     *        Indicates whether the snapshot is encrypted.
+     */
+
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the snapshot is encrypted.
+     * </p>
+     * 
+     * @return Indicates whether the snapshot is encrypted.
+     */
+
+    public Boolean getEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the snapshot is encrypted.
+     * </p>
+     * 
+     * @param encrypted
+     *        Indicates whether the snapshot is encrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SnapshotTaskDetail withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the snapshot is encrypted.
+     * </p>
+     * 
+     * @return Indicates whether the snapshot is encrypted.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
      * The format of the disk image from which the snapshot is created.
      * </p>
      * 
@@ -198,6 +263,52 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
 
     public SnapshotTaskDetail withFormat(String format) {
         setFormat(format);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
+     * encrypted snapshot.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
+     *        create the encrypted snapshot.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
+     * encrypted snapshot.
+     * </p>
+     * 
+     * @return The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
+     *         create the encrypted snapshot.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to create the
+     * encrypted snapshot.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to
+     *        create the encrypted snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SnapshotTaskDetail withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
         return this;
     }
 
@@ -442,7 +553,8 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -456,8 +568,12 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDiskImageSize() != null)
             sb.append("DiskImageSize: ").append(getDiskImageSize()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getFormat() != null)
             sb.append("Format: ").append(getFormat()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getProgress() != null)
             sb.append("Progress: ").append(getProgress()).append(",");
         if (getSnapshotId() != null)
@@ -492,9 +608,17 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
             return false;
         if (other.getDiskImageSize() != null && other.getDiskImageSize().equals(this.getDiskImageSize()) == false)
             return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
         if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         if (other.getProgress() == null ^ this.getProgress() == null)
             return false;
@@ -530,7 +654,9 @@ public class SnapshotTaskDetail implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDiskImageSize() == null) ? 0 : getDiskImageSize().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

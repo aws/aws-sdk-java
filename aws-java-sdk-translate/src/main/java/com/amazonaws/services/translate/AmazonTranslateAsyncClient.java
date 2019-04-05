@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Provides translation between English and one of six languages, or between one of the six languages and English.
+ * Provides translation between one source language and another of the same set of languages.
  * </p>
  */
 @ThreadSafe
@@ -60,6 +60,138 @@ public class AmazonTranslateAsyncClient extends AmazonTranslateClient implements
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTerminologyResult> deleteTerminologyAsync(DeleteTerminologyRequest request) {
+
+        return deleteTerminologyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTerminologyResult> deleteTerminologyAsync(final DeleteTerminologyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTerminologyRequest, DeleteTerminologyResult> asyncHandler) {
+        final DeleteTerminologyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTerminologyResult>() {
+            @Override
+            public DeleteTerminologyResult call() throws Exception {
+                DeleteTerminologyResult result = null;
+
+                try {
+                    result = executeDeleteTerminology(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTerminologyResult> getTerminologyAsync(GetTerminologyRequest request) {
+
+        return getTerminologyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTerminologyResult> getTerminologyAsync(final GetTerminologyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTerminologyRequest, GetTerminologyResult> asyncHandler) {
+        final GetTerminologyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTerminologyResult>() {
+            @Override
+            public GetTerminologyResult call() throws Exception {
+                GetTerminologyResult result = null;
+
+                try {
+                    result = executeGetTerminology(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportTerminologyResult> importTerminologyAsync(ImportTerminologyRequest request) {
+
+        return importTerminologyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportTerminologyResult> importTerminologyAsync(final ImportTerminologyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportTerminologyRequest, ImportTerminologyResult> asyncHandler) {
+        final ImportTerminologyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportTerminologyResult>() {
+            @Override
+            public ImportTerminologyResult call() throws Exception {
+                ImportTerminologyResult result = null;
+
+                try {
+                    result = executeImportTerminology(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTerminologiesResult> listTerminologiesAsync(ListTerminologiesRequest request) {
+
+        return listTerminologiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTerminologiesResult> listTerminologiesAsync(final ListTerminologiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTerminologiesRequest, ListTerminologiesResult> asyncHandler) {
+        final ListTerminologiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTerminologiesResult>() {
+            @Override
+            public ListTerminologiesResult call() throws Exception {
+                ListTerminologiesResult result = null;
+
+                try {
+                    result = executeListTerminologies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

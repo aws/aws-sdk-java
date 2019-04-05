@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ public class JsonPolicyReader {
 
         JsonNode policyNode;
         JsonNode idNode;
-        JsonNode statementNodes;
+        JsonNode statementsNode;
         Policy policy = new Policy();
         List<Statement> statements = new LinkedList<Statement>();
 
@@ -89,10 +89,14 @@ public class JsonPolicyReader {
                 policy.setId(idNode.asText());
             }
 
-            statementNodes = policyNode.get(JsonDocumentFields.STATEMENT);
-            if (isNotNull(statementNodes)) {
-                for (JsonNode node : statementNodes) {
-                    statements.add(statementOf(node));
+            statementsNode = policyNode.get(JsonDocumentFields.STATEMENT);
+            if (isNotNull(statementsNode)) {
+                if (statementsNode.isObject()) {
+                    statements.add(statementOf(statementsNode));
+                } else if (statementsNode.isArray()) {
+                    for (JsonNode statementNode : statementsNode) {
+                        statements.add(statementOf(statementNode));
+                    }
                 }
             }
 

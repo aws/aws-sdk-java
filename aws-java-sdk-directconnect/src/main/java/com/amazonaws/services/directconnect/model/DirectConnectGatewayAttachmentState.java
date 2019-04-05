@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,34 +15,7 @@ package com.amazonaws.services.directconnect.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * State of the direct connect gateway attachment.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>Attaching</b>: The initial state after a virtual interface is created using the direct connect gateway.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Attached</b>: The direct connect gateway and virtual interface are successfully attached and ready to pass
- * traffic.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Detaching</b>: The initial state after calling <a>DeleteVirtualInterface</a> on a virtual interface that is
- * attached to a direct connect gateway.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Detached</b>: The virtual interface is successfully detached from the direct connect gateway. Traffic flow between
- * the direct connect gateway and virtual interface stops.
- * </p>
- * </li>
- * </ul>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DirectConnectGatewayAttachmentState {

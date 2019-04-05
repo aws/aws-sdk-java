@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch documentation.
+     * Rules</a> in the Amazon CloudWatch Events User Guide.
      * </p>
      */
     private String expression;
@@ -41,13 +41,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch documentation.
+     * Rules</a> in the Amazon CloudWatch Events User Guide.
      * </p>
      * 
      * @param expression
      *        The expression that defines when to trigger an update. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule
-     *        Expressions for Rules</a> in the Amazon CloudWatch documentation.
+     *        Expressions for Rules</a> in the Amazon CloudWatch Events User Guide.
      */
 
     public void setExpression(String expression) {
@@ -58,12 +58,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch documentation.
+     * Rules</a> in the Amazon CloudWatch Events User Guide.
      * </p>
      * 
      * @return The expression that defines when to trigger an update. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule
-     *         Expressions for Rules</a> in the Amazon CloudWatch documentation.
+     *         Expressions for Rules</a> in the Amazon CloudWatch Events User Guide.
      */
 
     public String getExpression() {
@@ -74,13 +74,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch documentation.
+     * Rules</a> in the Amazon CloudWatch Events User Guide.
      * </p>
      * 
      * @param expression
      *        The expression that defines when to trigger an update. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule
-     *        Expressions for Rules</a> in the Amazon CloudWatch documentation.
+     *        Expressions for Rules</a> in the Amazon CloudWatch Events User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +90,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

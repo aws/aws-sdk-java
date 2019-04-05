@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ public class CreateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     /** A boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet. */
     private Boolean activate;
+    /** The idempotency token for the create request. */
+    private String clientToken;
     /** The unique ID of the detector that you want to update. */
     private String detectorId;
     /** The format of the file that contains the ThreatIntelSet. */
@@ -85,6 +87,40 @@ public class CreateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
 
     public Boolean isActivate() {
         return this.activate;
+    }
+
+    /**
+     * The idempotency token for the create request.
+     * 
+     * @param clientToken
+     *        The idempotency token for the create request.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * The idempotency token for the create request.
+     * 
+     * @return The idempotency token for the create request.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * The idempotency token for the create request.
+     * 
+     * @param clientToken
+     *        The idempotency token for the create request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateThreatIntelSetRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
     }
 
     /**
@@ -253,7 +289,8 @@ public class CreateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -265,6 +302,8 @@ public class CreateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getActivate() != null)
             sb.append("Activate: ").append(getActivate()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
         if (getFormat() != null)
@@ -291,6 +330,10 @@ public class CreateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getActivate() != null && other.getActivate().equals(this.getActivate()) == false)
             return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         if (other.getDetectorId() == null ^ this.getDetectorId() == null)
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
@@ -316,6 +359,7 @@ public class CreateThreatIntelSetRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getActivate() == null) ? 0 : getActivate().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class CertificateAuthorityMarshaller {
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTSTATECHANGEAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastStateChangeAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastStateChangeAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> SERIAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -40,15 +40,17 @@ public class CertificateAuthorityMarshaller {
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<java.util.Date> NOTBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotBefore").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotBefore").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> NOTAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotAfter").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotAfter").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
     private static final MarshallingInfo<StructuredPojo> CERTIFICATEAUTHORITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateAuthorityConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> REVOCATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevocationConfiguration").build();
+    private static final MarshallingInfo<java.util.Date> RESTORABLEUNTIL_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RestorableUntil").timestampFormat("unixTimestamp").build();
 
     private static final CertificateAuthorityMarshaller instance = new CertificateAuthorityMarshaller();
 
@@ -77,6 +79,7 @@ public class CertificateAuthorityMarshaller {
             protocolMarshaller.marshall(certificateAuthority.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(certificateAuthority.getCertificateAuthorityConfiguration(), CERTIFICATEAUTHORITYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(certificateAuthority.getRevocationConfiguration(), REVOCATIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(certificateAuthority.getRestorableUntil(), RESTORABLEUNTIL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

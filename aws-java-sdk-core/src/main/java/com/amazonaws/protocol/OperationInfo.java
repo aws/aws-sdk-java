@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ public class OperationInfo {
     private final String serviceName;
     private final boolean hasExplicitPayloadMember;
     private final boolean hasPayloadMembers;
+    private final String serviceId;
 
     private OperationInfo(Builder builder) {
         this.protocol = builder.protocol;
@@ -41,6 +42,7 @@ public class OperationInfo {
         this.serviceName = builder.serviceName;
         this.hasExplicitPayloadMember = builder.hasExplicitPayloadMember;
         this.hasPayloadMembers = builder.hasPayloadMembers;
+        this.serviceId = builder.serviceId;
     }
 
     /**
@@ -98,6 +100,10 @@ public class OperationInfo {
         return hasPayloadMembers;
     }
 
+    public String serviceId() {
+        return serviceId;
+    }
+
     /**
      * @return Builder instance to construct a {@link OperationInfo}.
      */
@@ -117,6 +123,7 @@ public class OperationInfo {
         private String serviceName;
         private boolean hasExplicitPayloadMember;
         private boolean hasPayloadMembers;
+        private String serviceId;
 
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
@@ -150,6 +157,11 @@ public class OperationInfo {
 
         public Builder hasPayloadMembers(boolean hasPayloadMembers) {
             this.hasPayloadMembers = hasPayloadMembers;
+            return this;
+        }
+
+        public Builder serviceId(String serviceId) {
+            this.serviceId = serviceId;
             return this;
         }
 

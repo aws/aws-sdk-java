@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
-     * parameter defaults from the job definition.
+     * parameter defaults from the job definition. For more information about specifying parameters, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     * Parameters</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> parameters;
@@ -85,6 +87,12 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private JobTimeout timeout;
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     */
+    private NodeProperties nodeProperties;
 
     /**
      * <p>
@@ -290,12 +298,17 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
-     * parameter defaults from the job definition.
+     * parameter defaults from the job definition. For more information about specifying parameters, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     * Parameters</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return Default parameters or parameter substitution placeholders that are set in the job definition. Parameters
      *         are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any
-     *         corresponding parameter defaults from the job definition.
+     *         corresponding parameter defaults from the job definition. For more information about specifying
+     *         parameters, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     *         Parameters</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -306,13 +319,18 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
-     * parameter defaults from the job definition.
+     * parameter defaults from the job definition. For more information about specifying parameters, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     * Parameters</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param parameters
      *        Default parameters or parameter substitution placeholders that are set in the job definition. Parameters
      *        are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any
-     *        corresponding parameter defaults from the job definition.
+     *        corresponding parameter defaults from the job definition. For more information about specifying
+     *        parameters, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     *        Parameters</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -323,13 +341,18 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are
      * specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
-     * parameter defaults from the job definition.
+     * parameter defaults from the job definition. For more information about specifying parameters, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     * Parameters</a> in the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param parameters
      *        Default parameters or parameter substitution placeholders that are set in the job definition. Parameters
      *        are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any
-     *        corresponding parameter defaults from the job definition.
+     *        corresponding parameter defaults from the job definition. For more information about specifying
+     *        parameters, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job Definition
+     *        Parameters</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -486,7 +509,48 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object with various properties specific to multi-node parallel jobs.
+     */
+
+    public void setNodeProperties(NodeProperties nodeProperties) {
+        this.nodeProperties = nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     * 
+     * @return An object with various properties specific to multi-node parallel jobs.
+     */
+
+    public NodeProperties getNodeProperties() {
+        return this.nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object with various properties specific to multi-node parallel jobs.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object with various properties specific to multi-node parallel jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition withNodeProperties(NodeProperties nodeProperties) {
+        setNodeProperties(nodeProperties);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -513,7 +577,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         if (getContainerProperties() != null)
             sb.append("ContainerProperties: ").append(getContainerProperties()).append(",");
         if (getTimeout() != null)
-            sb.append("Timeout: ").append(getTimeout());
+            sb.append("Timeout: ").append(getTimeout()).append(",");
+        if (getNodeProperties() != null)
+            sb.append("NodeProperties: ").append(getNodeProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -564,6 +630,10 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
             return false;
+        if (other.getNodeProperties() == null ^ this.getNodeProperties() == null)
+            return false;
+        if (other.getNodeProperties() != null && other.getNodeProperties().equals(this.getNodeProperties()) == false)
+            return false;
         return true;
     }
 
@@ -581,6 +651,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getContainerProperties() == null) ? 0 : getContainerProperties().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
+        hashCode = prime * hashCode + ((getNodeProperties() == null) ? 0 : getNodeProperties().hashCode());
         return hashCode;
     }
 

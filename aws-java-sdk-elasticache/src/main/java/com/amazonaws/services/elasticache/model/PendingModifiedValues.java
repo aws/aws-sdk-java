@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private Integer numCacheNodes;
     /**
      * <p>
-     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).
+     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit
+     * numeric identifier (0001, 0002, etc.).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> cacheNodeIdsToRemove;
@@ -119,12 +119,12 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).
+     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit
+     * numeric identifier (0001, 0002, etc.).
      * </p>
      * 
      * @return A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a
-     *         numeric identifier (0001, 0002, etc.).
+     *         4-digit numeric identifier (0001, 0002, etc.).
      */
 
     public java.util.List<String> getCacheNodeIdsToRemove() {
@@ -136,13 +136,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).
+     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit
+     * numeric identifier (0001, 0002, etc.).
      * </p>
      * 
      * @param cacheNodeIdsToRemove
      *        A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a
-     *        numeric identifier (0001, 0002, etc.).
+     *        4-digit numeric identifier (0001, 0002, etc.).
      */
 
     public void setCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
@@ -156,8 +156,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).
+     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit
+     * numeric identifier (0001, 0002, etc.).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -167,7 +167,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
      * 
      * @param cacheNodeIdsToRemove
      *        A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a
-     *        numeric identifier (0001, 0002, etc.).
+     *        4-digit numeric identifier (0001, 0002, etc.).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,13 +183,13 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a numeric
-     * identifier (0001, 0002, etc.).
+     * A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a 4-digit
+     * numeric identifier (0001, 0002, etc.).
      * </p>
      * 
      * @param cacheNodeIdsToRemove
      *        A list of cache node IDs that are being removed (or will be removed) from the cluster. A node ID is a
-     *        numeric identifier (0001, 0002, etc.).
+     *        4-digit numeric identifier (0001, 0002, etc.).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,7 +279,8 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,30 @@ public interface AWSCloudHSMV2 {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "cloudhsmv2";
+
+    /**
+     * <p>
+     * Copy an AWS CloudHSM cluster backup to a different region.
+     * </p>
+     * 
+     * @param copyBackupToRegionRequest
+     * @return Result of the CopyBackupToRegion operation returned by the service.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @sample AWSCloudHSMV2.CopyBackupToRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CopyBackupToRegionResult copyBackupToRegion(CopyBackupToRegionRequest copyBackupToRegionRequest);
 
     /**
      * <p>
@@ -89,6 +113,31 @@ public interface AWSCloudHSMV2 {
      *      Documentation</a>
      */
     CreateHsmResult createHsm(CreateHsmRequest createHsmRequest);
+
+    /**
+     * <p>
+     * Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request.
+     * For more information on restoring a backup, see <a>RestoreBackup</a>
+     * </p>
+     * 
+     * @param deleteBackupRequest
+     * @return Result of the DeleteBackup operation returned by the service.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @sample AWSCloudHSMV2.DeleteBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteBackupResult deleteBackup(DeleteBackupRequest deleteBackupRequest);
 
     /**
      * <p>
@@ -255,6 +304,31 @@ public interface AWSCloudHSMV2 {
      *      Documentation</a>
      */
     ListTagsResult listTags(ListTagsRequest listTagsRequest);
+
+    /**
+     * <p>
+     * Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For more information
+     * on deleting a backup, see <a>DeleteBackup</a>.
+     * </p>
+     * 
+     * @param restoreBackupRequest
+     * @return Result of the RestoreBackup operation returned by the service.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @sample AWSCloudHSMV2.RestoreBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RestoreBackupResult restoreBackup(RestoreBackupRequest restoreBackupRequest);
 
     /**
      * <p>

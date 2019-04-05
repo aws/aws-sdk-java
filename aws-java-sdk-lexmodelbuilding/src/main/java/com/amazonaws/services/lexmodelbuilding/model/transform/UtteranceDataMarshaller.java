@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,9 +34,9 @@ public class UtteranceDataMarshaller {
     private static final MarshallingInfo<Integer> DISTINCTUSERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("distinctUsers").build();
     private static final MarshallingInfo<java.util.Date> FIRSTUTTEREDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firstUtteredDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("firstUtteredDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUTTEREDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUtteredDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUtteredDate").timestampFormat("unixTimestamp").build();
 
     private static final UtteranceDataMarshaller instance = new UtteranceDataMarshaller();
 

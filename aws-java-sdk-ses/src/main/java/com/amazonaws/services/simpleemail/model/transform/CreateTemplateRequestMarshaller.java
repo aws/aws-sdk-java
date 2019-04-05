@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,23 +40,25 @@ public class CreateTemplateRequestMarshaller implements Marshaller<Request<Creat
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        Template template = createTemplateRequest.getTemplate();
-        if (template != null) {
+        {
+            Template template = createTemplateRequest.getTemplate();
+            if (template != null) {
 
-            if (template.getTemplateName() != null) {
-                request.addParameter("Template.TemplateName", StringUtils.fromString(template.getTemplateName()));
-            }
+                if (template.getTemplateName() != null) {
+                    request.addParameter("Template.TemplateName", StringUtils.fromString(template.getTemplateName()));
+                }
 
-            if (template.getSubjectPart() != null) {
-                request.addParameter("Template.SubjectPart", StringUtils.fromString(template.getSubjectPart()));
-            }
+                if (template.getSubjectPart() != null) {
+                    request.addParameter("Template.SubjectPart", StringUtils.fromString(template.getSubjectPart()));
+                }
 
-            if (template.getTextPart() != null) {
-                request.addParameter("Template.TextPart", StringUtils.fromString(template.getTextPart()));
-            }
+                if (template.getTextPart() != null) {
+                    request.addParameter("Template.TextPart", StringUtils.fromString(template.getTextPart()));
+                }
 
-            if (template.getHtmlPart() != null) {
-                request.addParameter("Template.HtmlPart", StringUtils.fromString(template.getHtmlPart()));
+                if (template.getHtmlPart() != null) {
+                    request.addParameter("Template.HtmlPart", StringUtils.fromString(template.getHtmlPart()));
+                }
             }
         }
 

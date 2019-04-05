@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -118,6 +118,33 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
 
         if (restoreDBClusterToPointInTimeRequest.getBacktrackWindow() != null) {
             request.addParameter("BacktrackWindow", StringUtils.fromLong(restoreDBClusterToPointInTimeRequest.getBacktrackWindow()));
+        }
+
+        if (!restoreDBClusterToPointInTimeRequest.getEnableCloudwatchLogsExports().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterToPointInTimeRequest.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterToPointInTimeRequest
+                    .getEnableCloudwatchLogsExports();
+            int enableCloudwatchLogsExportsListIndex = 1;
+
+            for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                if (enableCloudwatchLogsExportsListValue != null) {
+                    request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                            StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                }
+                enableCloudwatchLogsExportsListIndex++;
+            }
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getDBClusterParameterGroupName() != null) {
+            request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getDBClusterParameterGroupName()));
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getDeletionProtection()));
+        }
+
+        if (restoreDBClusterToPointInTimeRequest.getCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getCopyTagsToSnapshot()));
         }
 
         return request;

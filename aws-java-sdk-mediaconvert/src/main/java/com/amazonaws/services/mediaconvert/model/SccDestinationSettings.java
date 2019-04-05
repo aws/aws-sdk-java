@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SccDestinationSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the
+     * output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is
+     * 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and
+     * drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     */
     private String framerate;
 
     /**
+     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the
+     * output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is
+     * 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and
+     * drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     * 
      * @param framerate
+     *        Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in
+     *        the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame
+     *        rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
+     *        video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe
+     *        (FRAMERATE_29_97_NON_DROPFRAME).
      * @see SccDestinationFramerate
      */
 
@@ -38,7 +54,16 @@ public class SccDestinationSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the
+     * output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is
+     * 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and
+     * drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     * 
+     * @return Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in
+     *         the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame
+     *         rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
+     *         video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe
+     *         (FRAMERATE_29_97_NON_DROPFRAME).
      * @see SccDestinationFramerate
      */
 
@@ -47,7 +72,17 @@ public class SccDestinationSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the
+     * output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is
+     * 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and
+     * drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     * 
      * @param framerate
+     *        Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in
+     *        the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame
+     *        rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
+     *        video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe
+     *        (FRAMERATE_29_97_NON_DROPFRAME).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SccDestinationFramerate
      */
@@ -58,7 +93,17 @@ public class SccDestinationSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the
+     * output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is
+     * 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and
+     * drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     * 
      * @param framerate
+     *        Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in
+     *        the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame
+     *        rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
+     *        video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe
+     *        (FRAMERATE_29_97_NON_DROPFRAME).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SccDestinationFramerate
      */
@@ -69,7 +114,8 @@ public class SccDestinationSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

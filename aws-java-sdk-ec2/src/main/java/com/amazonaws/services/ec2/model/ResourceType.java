@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,21 +20,33 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceType {
 
+    ClientVpnEndpoint("client-vpn-endpoint"),
     CustomerGateway("customer-gateway"),
+    DedicatedHost("dedicated-host"),
     DhcpOptions("dhcp-options"),
+    ElasticIp("elastic-ip"),
+    Fleet("fleet"),
+    FpgaImage("fpga-image"),
+    HostReservation("host-reservation"),
     Image("image"),
     Instance("instance"),
     InternetGateway("internet-gateway"),
+    LaunchTemplate("launch-template"),
+    Natgateway("natgateway"),
     NetworkAcl("network-acl"),
     NetworkInterface("network-interface"),
     ReservedInstances("reserved-instances"),
     RouteTable("route-table"),
+    SecurityGroup("security-group"),
     Snapshot("snapshot"),
     SpotInstancesRequest("spot-instances-request"),
     Subnet("subnet"),
-    SecurityGroup("security-group"),
+    TransitGateway("transit-gateway"),
+    TransitGatewayAttachment("transit-gateway-attachment"),
+    TransitGatewayRouteTable("transit-gateway-route-table"),
     Volume("volume"),
     Vpc("vpc"),
+    VpcPeeringConnection("vpc-peering-connection"),
     VpnConnection("vpn-connection"),
     VpnGateway("vpn-gateway");
 

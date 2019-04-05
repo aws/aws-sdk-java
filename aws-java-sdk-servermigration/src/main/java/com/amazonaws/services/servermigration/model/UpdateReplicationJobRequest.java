@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,20 +25,95 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     */
     private String replicationJobId;
-
+    /**
+     * <p>
+     * The time between consecutive replication runs, in hours.
+     * </p>
+     */
     private Integer frequency;
-
+    /**
+     * <p>
+     * The start time of the next replication run.
+     * </p>
+     */
     private java.util.Date nextReplicationRunStartTime;
-
+    /**
+     * <p>
+     * The license type to be used for the AMI created by a successful replication run.
+     * </p>
+     */
     private String licenseType;
-
+    /**
+     * <p>
+     * The name of the IAM role to be used by AWS SMS.
+     * </p>
+     */
     private String roleName;
-
+    /**
+     * <p>
+     * The description of the replication job.
+     * </p>
+     */
     private String description;
+    /**
+     * <p>
+     * The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is reached
+     * and a new AMI is created.
+     * </p>
+     */
+    private Integer numberOfRecentAmisToKeep;
+    /**
+     * <p>
+     * When true, the replication job produces encrypted AMIs . See also <code>KmsKeyId</code> below.
+     * </p>
+     */
+    private Boolean encrypted;
+    /**
+     * <p/>
+     * <p>
+     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KMS key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key alias
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The identifier of the replication job.
      */
 
     public void setReplicationJobId(String replicationJobId) {
@@ -46,7 +121,11 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
+     * @return The identifier of the replication job.
      */
 
     public String getReplicationJobId() {
@@ -54,7 +133,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The identifier of the replication job.
+     * </p>
+     * 
      * @param replicationJobId
+     *        The identifier of the replication job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,7 +148,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The time between consecutive replication runs, in hours.
+     * </p>
+     * 
      * @param frequency
+     *        The time between consecutive replication runs, in hours.
      */
 
     public void setFrequency(Integer frequency) {
@@ -72,7 +161,11 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The time between consecutive replication runs, in hours.
+     * </p>
+     * 
+     * @return The time between consecutive replication runs, in hours.
      */
 
     public Integer getFrequency() {
@@ -80,7 +173,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The time between consecutive replication runs, in hours.
+     * </p>
+     * 
      * @param frequency
+     *        The time between consecutive replication runs, in hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +188,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The start time of the next replication run.
+     * </p>
+     * 
      * @param nextReplicationRunStartTime
+     *        The start time of the next replication run.
      */
 
     public void setNextReplicationRunStartTime(java.util.Date nextReplicationRunStartTime) {
@@ -98,7 +201,11 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The start time of the next replication run.
+     * </p>
+     * 
+     * @return The start time of the next replication run.
      */
 
     public java.util.Date getNextReplicationRunStartTime() {
@@ -106,7 +213,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The start time of the next replication run.
+     * </p>
+     * 
      * @param nextReplicationRunStartTime
+     *        The start time of the next replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,7 +228,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The license type to be used for the AMI created by a successful replication run.
+     * </p>
+     * 
      * @param licenseType
+     *        The license type to be used for the AMI created by a successful replication run.
      * @see LicenseType
      */
 
@@ -125,7 +242,11 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The license type to be used for the AMI created by a successful replication run.
+     * </p>
+     * 
+     * @return The license type to be used for the AMI created by a successful replication run.
      * @see LicenseType
      */
 
@@ -134,7 +255,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The license type to be used for the AMI created by a successful replication run.
+     * </p>
+     * 
      * @param licenseType
+     *        The license type to be used for the AMI created by a successful replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LicenseType
      */
@@ -145,7 +271,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The license type to be used for the AMI created by a successful replication run.
+     * </p>
+     * 
      * @param licenseType
+     *        The license type to be used for the AMI created by a successful replication run.
      * @see LicenseType
      */
 
@@ -154,7 +285,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The license type to be used for the AMI created by a successful replication run.
+     * </p>
+     * 
      * @param licenseType
+     *        The license type to be used for the AMI created by a successful replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LicenseType
      */
@@ -165,7 +301,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The name of the IAM role to be used by AWS SMS.
+     * </p>
+     * 
      * @param roleName
+     *        The name of the IAM role to be used by AWS SMS.
      */
 
     public void setRoleName(String roleName) {
@@ -173,7 +314,11 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the IAM role to be used by AWS SMS.
+     * </p>
+     * 
+     * @return The name of the IAM role to be used by AWS SMS.
      */
 
     public String getRoleName() {
@@ -181,7 +326,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The name of the IAM role to be used by AWS SMS.
+     * </p>
+     * 
      * @param roleName
+     *        The name of the IAM role to be used by AWS SMS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,7 +341,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The description of the replication job.
+     * </p>
+     * 
      * @param description
+     *        The description of the replication job.
      */
 
     public void setDescription(String description) {
@@ -199,7 +354,11 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The description of the replication job.
+     * </p>
+     * 
+     * @return The description of the replication job.
      */
 
     public String getDescription() {
@@ -207,7 +366,12 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The description of the replication job.
+     * </p>
+     * 
      * @param description
+     *        The description of the replication job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,7 +381,305 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is reached
+     * and a new AMI is created.
+     * </p>
+     * 
+     * @param numberOfRecentAmisToKeep
+     *        The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is
+     *        reached and a new AMI is created.
+     */
+
+    public void setNumberOfRecentAmisToKeep(Integer numberOfRecentAmisToKeep) {
+        this.numberOfRecentAmisToKeep = numberOfRecentAmisToKeep;
+    }
+
+    /**
+     * <p>
+     * The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is reached
+     * and a new AMI is created.
+     * </p>
+     * 
+     * @return The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is
+     *         reached and a new AMI is created.
+     */
+
+    public Integer getNumberOfRecentAmisToKeep() {
+        return this.numberOfRecentAmisToKeep;
+    }
+
+    /**
+     * <p>
+     * The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is reached
+     * and a new AMI is created.
+     * </p>
+     * 
+     * @param numberOfRecentAmisToKeep
+     *        The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is
+     *        reached and a new AMI is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateReplicationJobRequest withNumberOfRecentAmisToKeep(Integer numberOfRecentAmisToKeep) {
+        setNumberOfRecentAmisToKeep(numberOfRecentAmisToKeep);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, the replication job produces encrypted AMIs . See also <code>KmsKeyId</code> below.
+     * </p>
+     * 
+     * @param encrypted
+     *        When true, the replication job produces encrypted AMIs . See also <code>KmsKeyId</code> below.
+     */
+
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    /**
+     * <p>
+     * When true, the replication job produces encrypted AMIs . See also <code>KmsKeyId</code> below.
+     * </p>
+     * 
+     * @return When true, the replication job produces encrypted AMIs . See also <code>KmsKeyId</code> below.
+     */
+
+    public Boolean getEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * When true, the replication job produces encrypted AMIs . See also <code>KmsKeyId</code> below.
+     * </p>
+     * 
+     * @param encrypted
+     *        When true, the replication job produces encrypted AMIs . See also <code>KmsKeyId</code> below.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateReplicationJobRequest withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, the replication job produces encrypted AMIs . See also <code>KmsKeyId</code> below.
+     * </p>
+     * 
+     * @return When true, the replication job produces encrypted AMIs . See also <code>KmsKeyId</code> below.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KMS key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key alias
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        <p>
+     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        KMS key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KMS key alias
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN referring to KMS key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN referring to KMS key alias
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
+     *        used.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KMS key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key alias
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * </p>
+     * 
+     * @return <p>
+     *         KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         KMS key ID
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         KMS key alias
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARN referring to KMS key ID
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARN referring to KMS key alias
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
+     *         used.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * KMS key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN referring to KMS key alias
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        <p>
+     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        KMS key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        KMS key alias
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN referring to KMS key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN referring to KMS key alias
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
+     *        used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateReplicationJobRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -238,7 +700,13 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
         if (getRoleName() != null)
             sb.append("RoleName: ").append(getRoleName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getNumberOfRecentAmisToKeep() != null)
+            sb.append("NumberOfRecentAmisToKeep: ").append(getNumberOfRecentAmisToKeep()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -277,6 +745,18 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getNumberOfRecentAmisToKeep() == null ^ this.getNumberOfRecentAmisToKeep() == null)
+            return false;
+        if (other.getNumberOfRecentAmisToKeep() != null && other.getNumberOfRecentAmisToKeep().equals(this.getNumberOfRecentAmisToKeep()) == false)
+            return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -291,6 +771,9 @@ public class UpdateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
         hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfRecentAmisToKeep() == null) ? 0 : getNumberOfRecentAmisToKeep().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

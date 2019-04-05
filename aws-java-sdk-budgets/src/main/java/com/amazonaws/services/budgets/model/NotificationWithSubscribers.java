@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A notification with subscribers. A notification can have one SNS subscriber and up to ten email subscribers, for a
+ * A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a
  * total of 11 subscribers.
  * </p>
  */
@@ -28,7 +28,7 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The notification associated with a budget.
+     * The notification that is associated with a budget.
      * </p>
      */
     private Notification notification;
@@ -41,11 +41,11 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The notification associated with a budget.
+     * The notification that is associated with a budget.
      * </p>
      * 
      * @param notification
-     *        The notification associated with a budget.
+     *        The notification that is associated with a budget.
      */
 
     public void setNotification(Notification notification) {
@@ -54,10 +54,10 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The notification associated with a budget.
+     * The notification that is associated with a budget.
      * </p>
      * 
-     * @return The notification associated with a budget.
+     * @return The notification that is associated with a budget.
      */
 
     public Notification getNotification() {
@@ -66,11 +66,11 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The notification associated with a budget.
+     * The notification that is associated with a budget.
      * </p>
      * 
      * @param notification
-     *        The notification associated with a budget.
+     *        The notification that is associated with a budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,7 +150,8 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

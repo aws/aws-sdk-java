@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,17 +36,17 @@ public class AssignmentMarshaller {
     private static final MarshallingInfo<String> ASSIGNMENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssignmentStatus").build();
     private static final MarshallingInfo<java.util.Date> AUTOAPPROVALTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoApprovalTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoApprovalTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> ACCEPTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> SUBMITTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmitTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubmitTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> APPROVALTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovalTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovalTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> REJECTIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectionTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectionTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> DEADLINE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Deadline").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Deadline").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ANSWER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Answer").build();
     private static final MarshallingInfo<String> REQUESTERFEEDBACK_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

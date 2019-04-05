@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class S3DataSourceMarshaller {
             .marshallLocationName("S3Uri").build();
     private static final MarshallingInfo<String> S3DATADISTRIBUTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3DataDistributionType").build();
+    private static final MarshallingInfo<List> ATTRIBUTENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributeNames").build();
 
     private static final S3DataSourceMarshaller instance = new S3DataSourceMarshaller();
 
@@ -53,6 +56,7 @@ public class S3DataSourceMarshaller {
             protocolMarshaller.marshall(s3DataSource.getS3DataType(), S3DATATYPE_BINDING);
             protocolMarshaller.marshall(s3DataSource.getS3Uri(), S3URI_BINDING);
             protocolMarshaller.marshall(s3DataSource.getS3DataDistributionType(), S3DATADISTRIBUTIONTYPE_BINDING);
+            protocolMarshaller.marshall(s3DataSource.getAttributeNames(), ATTRIBUTENAMES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

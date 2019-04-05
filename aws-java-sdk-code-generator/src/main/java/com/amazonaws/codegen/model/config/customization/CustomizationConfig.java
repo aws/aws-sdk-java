@@ -81,6 +81,12 @@ public class CustomizationConfig {
     private String customResponseMetadataClassName;
 
     /**
+     * Fully qualified class name of response handler implementation to use. Services with custom response metadata
+     * tends to use this like SimpleDB. This customization currently is only supported for XML based protocols.
+     */
+    private String customResponseHandlerFqcn;
+
+    /**
      * True if the generated interface should NOT include shutdown() and getCachedResponseData
      * methods. Currently it's only set true for SimpleDB.
      */
@@ -239,6 +245,11 @@ public class CustomizationConfig {
      */
     private String contentTypeOverride;
 
+    /**
+     * True if uid is used as file name prefix, false otherwise
+     */
+    private boolean useUidAsFilePrefix;
+
     private CustomizationConfig(){
     }
 
@@ -289,6 +300,14 @@ public class CustomizationConfig {
 
     public void setCustomResponseMetadataClassName(String customResponseMetadataClassName) {
         this.customResponseMetadataClassName = customResponseMetadataClassName;
+    }
+
+    public String getCustomResponseHandlerFqcn() {
+        return customResponseHandlerFqcn;
+    }
+
+    public void setCustomResponseHandlerFqcn(String customResponseHandlerFqcn) {
+        this.customResponseHandlerFqcn = customResponseHandlerFqcn;
     }
 
     public boolean isSkipInterfaceAdditions() {
@@ -572,5 +591,14 @@ public class CustomizationConfig {
     public void setContentTypeOverride(String contentTypeOverride) {
         this.contentTypeOverride = contentTypeOverride;
     }
+
+    public boolean isUseUidAsFilePrefix() {
+        return useUidAsFilePrefix;
+    }
+
+    public void setUseUidAsFilePrefix(boolean useUidAsFilePrefix) {
+        this.useUidAsFilePrefix = useUidAsFilePrefix;
+    }
+
 
 }

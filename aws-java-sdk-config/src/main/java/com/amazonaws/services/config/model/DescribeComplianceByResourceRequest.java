@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class DescribeComplianceByResourceRequest extends com.amazonaws.AmazonWeb
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> complianceTypes;
@@ -168,12 +168,13 @@ public class DescribeComplianceByResourceRequest extends com.amazonaws.AmazonWeb
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @return Filters the results by compliance.</p>
      *         <p>
-     *         The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *         The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *         <code>INSUFFICIENT_DATA</code>.
      * @see ComplianceType
      */
 
@@ -189,13 +190,14 @@ public class DescribeComplianceByResourceRequest extends com.amazonaws.AmazonWeb
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>INSUFFICIENT_DATA</code>.
      * @see ComplianceType
      */
 
@@ -213,7 +215,7 @@ public class DescribeComplianceByResourceRequest extends com.amazonaws.AmazonWeb
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -224,7 +226,8 @@ public class DescribeComplianceByResourceRequest extends com.amazonaws.AmazonWeb
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>INSUFFICIENT_DATA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
@@ -244,13 +247,14 @@ public class DescribeComplianceByResourceRequest extends com.amazonaws.AmazonWeb
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>INSUFFICIENT_DATA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
@@ -265,13 +269,14 @@ public class DescribeComplianceByResourceRequest extends com.amazonaws.AmazonWeb
      * Filters the results by compliance.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceTypes
      *        Filters the results by compliance.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>INSUFFICIENT_DATA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
@@ -382,7 +387,8 @@ public class DescribeComplianceByResourceRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

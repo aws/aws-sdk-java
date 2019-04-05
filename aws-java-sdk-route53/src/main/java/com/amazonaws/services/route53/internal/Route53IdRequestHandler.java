@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,7 +28,6 @@ import com.amazonaws.services.route53.model.GetHostedZoneResult;
 import com.amazonaws.services.route53.model.GetReusableDelegationSetResult;
 import com.amazonaws.services.route53.model.HostedZone;
 import com.amazonaws.services.route53.model.ListHostedZonesResult;
-import com.amazonaws.services.route53.model.ListHostedZonesByNameResult;
 import com.amazonaws.services.route53.model.ListResourceRecordSetsResult;
 import com.amazonaws.services.route53.model.ListReusableDelegationSetsResult;
 import com.amazonaws.services.route53.model.ResourceRecordSet;
@@ -68,9 +67,6 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
         } else if (obj instanceof ListHostedZonesResult) {
             ListHostedZonesResult result = (ListHostedZonesResult)obj;
             for (HostedZone zone : result.getHostedZones()) removePrefix(zone);
-        } else if (obj instanceof ListHostedZonesByNameResult) {
-            ListHostedZonesByNameResult result = (ListHostedZonesByNameResult)obj;
-            for (HostedZone zone : result.getHostedZones()) removePrefix(zone);
         } else if (obj instanceof ListResourceRecordSetsResult) {
             ListResourceRecordSetsResult result = (ListResourceRecordSetsResult)obj;
             for (ResourceRecordSet rrset : result.getResourceRecordSets()) removePrefix(rrset);
@@ -104,7 +100,6 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
 
         removePrefix(rrset.getAliasTarget());
         rrset.setHealthCheckId(removePrefix(rrset.getHealthCheckId()));
-        rrset.setSetIdentifier(removePrefix(rrset.getSetIdentifier()));
     }
 
     private void removePrefix(AliasTarget aliasTarget) {

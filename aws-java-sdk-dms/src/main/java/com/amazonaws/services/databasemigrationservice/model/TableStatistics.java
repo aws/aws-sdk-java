@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -167,6 +167,12 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      */
     private String validationState;
+    /**
+     * <p>
+     * Additional details about the state of validation.
+     * </p>
+     */
+    private String validationStateDetails;
 
     /**
      * <p>
@@ -1072,7 +1078,48 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Additional details about the state of validation.
+     * </p>
+     * 
+     * @param validationStateDetails
+     *        Additional details about the state of validation.
+     */
+
+    public void setValidationStateDetails(String validationStateDetails) {
+        this.validationStateDetails = validationStateDetails;
+    }
+
+    /**
+     * <p>
+     * Additional details about the state of validation.
+     * </p>
+     * 
+     * @return Additional details about the state of validation.
+     */
+
+    public String getValidationStateDetails() {
+        return this.validationStateDetails;
+    }
+
+    /**
+     * <p>
+     * Additional details about the state of validation.
+     * </p>
+     * 
+     * @param validationStateDetails
+     *        Additional details about the state of validation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withValidationStateDetails(String validationStateDetails) {
+        setValidationStateDetails(validationStateDetails);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1111,7 +1158,9 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
         if (getValidationSuspendedRecords() != null)
             sb.append("ValidationSuspendedRecords: ").append(getValidationSuspendedRecords()).append(",");
         if (getValidationState() != null)
-            sb.append("ValidationState: ").append(getValidationState());
+            sb.append("ValidationState: ").append(getValidationState()).append(",");
+        if (getValidationStateDetails() != null)
+            sb.append("ValidationStateDetails: ").append(getValidationStateDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1186,6 +1235,10 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getValidationState() != null && other.getValidationState().equals(this.getValidationState()) == false)
             return false;
+        if (other.getValidationStateDetails() == null ^ this.getValidationStateDetails() == null)
+            return false;
+        if (other.getValidationStateDetails() != null && other.getValidationStateDetails().equals(this.getValidationStateDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1209,6 +1262,7 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getValidationFailedRecords() == null) ? 0 : getValidationFailedRecords().hashCode());
         hashCode = prime * hashCode + ((getValidationSuspendedRecords() == null) ? 0 : getValidationSuspendedRecords().hashCode());
         hashCode = prime * hashCode + ((getValidationState() == null) ? 0 : getValidationState().hashCode());
+        hashCode = prime * hashCode + ((getValidationStateDetails() == null) ? 0 : getValidationStateDetails().hashCode());
         return hashCode;
     }
 

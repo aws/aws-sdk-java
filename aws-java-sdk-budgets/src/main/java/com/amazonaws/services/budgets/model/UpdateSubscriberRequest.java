@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,13 +45,13 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     private Notification notification;
     /**
      * <p>
-     * The previous subscriber associated with a budget notification.
+     * The previous subscriber that is associated with a budget notification.
      * </p>
      */
     private Subscriber oldSubscriber;
     /**
      * <p>
-     * The updated subscriber associated with a budget notification.
+     * The updated subscriber that is associated with a budget notification.
      * </p>
      */
     private Subscriber newSubscriber;
@@ -178,11 +178,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The previous subscriber associated with a budget notification.
+     * The previous subscriber that is associated with a budget notification.
      * </p>
      * 
      * @param oldSubscriber
-     *        The previous subscriber associated with a budget notification.
+     *        The previous subscriber that is associated with a budget notification.
      */
 
     public void setOldSubscriber(Subscriber oldSubscriber) {
@@ -191,10 +191,10 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The previous subscriber associated with a budget notification.
+     * The previous subscriber that is associated with a budget notification.
      * </p>
      * 
-     * @return The previous subscriber associated with a budget notification.
+     * @return The previous subscriber that is associated with a budget notification.
      */
 
     public Subscriber getOldSubscriber() {
@@ -203,11 +203,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The previous subscriber associated with a budget notification.
+     * The previous subscriber that is associated with a budget notification.
      * </p>
      * 
      * @param oldSubscriber
-     *        The previous subscriber associated with a budget notification.
+     *        The previous subscriber that is associated with a budget notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +218,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The updated subscriber associated with a budget notification.
+     * The updated subscriber that is associated with a budget notification.
      * </p>
      * 
      * @param newSubscriber
-     *        The updated subscriber associated with a budget notification.
+     *        The updated subscriber that is associated with a budget notification.
      */
 
     public void setNewSubscriber(Subscriber newSubscriber) {
@@ -231,10 +231,10 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The updated subscriber associated with a budget notification.
+     * The updated subscriber that is associated with a budget notification.
      * </p>
      * 
-     * @return The updated subscriber associated with a budget notification.
+     * @return The updated subscriber that is associated with a budget notification.
      */
 
     public Subscriber getNewSubscriber() {
@@ -243,11 +243,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The updated subscriber associated with a budget notification.
+     * The updated subscriber that is associated with a budget notification.
      * </p>
      * 
      * @param newSubscriber
-     *        The updated subscriber associated with a budget notification.
+     *        The updated subscriber that is associated with a budget notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,7 +257,8 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

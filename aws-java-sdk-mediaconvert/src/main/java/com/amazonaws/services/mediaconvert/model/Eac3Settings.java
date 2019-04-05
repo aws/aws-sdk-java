@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,27 +26,34 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
 
+    /** If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode. */
     private String attenuationControl;
     /** Average bitrate in bits/second. Valid bitrates depend on the coding mode. */
     private Integer bitrate;
-
+    /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background
+     * on these values.
+     */
     private String bitstreamMode;
-
+    /** Dolby Digital Plus coding mode. Determines number of channels. */
     private String codingMode;
-
+    /** Activates a DC highpass filter for all input channels. */
     private String dcFilter;
     /**
      * Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed
      * through.
      */
     private Integer dialnorm;
-
+    /** Enables Dynamic Range Compression that restricts the absolute peak level for a signal. */
     private String dynamicRangeCompressionLine;
-
+    /**
+     * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal peaks do not exceed specified
+     * levels.
+     */
     private String dynamicRangeCompressionRf;
-
+    /** When encoding 3/2 audio, controls whether the LFE channel is enabled */
     private String lfeControl;
-
+    /** Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode. */
     private String lfeFilter;
     /**
      * Left only/Right only center mix level. Only used for 3/2 coding mode. Valid values: 3.0, 1.5, 0.0, -1.5 -3.0 -4.5
@@ -66,23 +73,37 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
      * Left total/Right total surround mix level. Only used for 3/2 coding mode. Valid values: -1.5 -3.0 -4.5 -6.0 -60
      */
     private Double ltRtSurroundMixLevel;
-
+    /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this
+     * audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+     */
     private String metadataControl;
-
+    /**
+     * When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection
+     * is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a
+     * consistent DD+ output as the system alternates between passthrough and encoding.
+     */
     private String passthroughControl;
-
+    /** Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode. */
     private String phaseControl;
     /** Sample rate in hz. Sample rate is always 48000. */
     private Integer sampleRate;
-
+    /** Stereo downmix preference. Only used for 3/2 coding mode. */
     private String stereoDownmix;
-
+    /**
+     * When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and
+     * right surround channels.
+     */
     private String surroundExMode;
-
+    /** When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels. */
     private String surroundMode;
 
     /**
+     * If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
+     * 
      * @param attenuationControl
+     *        If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding
+     *        mode.
      * @see Eac3AttenuationControl
      */
 
@@ -91,7 +112,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
+     * 
+     * @return If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding
+     *         mode.
      * @see Eac3AttenuationControl
      */
 
@@ -100,7 +124,11 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
+     * 
      * @param attenuationControl
+     *        If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding
+     *        mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AttenuationControl
      */
@@ -111,7 +139,11 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
+     * 
      * @param attenuationControl
+     *        If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding
+     *        mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3AttenuationControl
      */
@@ -156,7 +188,12 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background
+     * on these values.
+     * 
      * @param bitstreamMode
+     *        Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for
+     *        background on these values.
      * @see Eac3BitstreamMode
      */
 
@@ -165,7 +202,11 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background
+     * on these values.
+     * 
+     * @return Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for
+     *         background on these values.
      * @see Eac3BitstreamMode
      */
 
@@ -174,7 +215,12 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background
+     * on these values.
+     * 
      * @param bitstreamMode
+     *        Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for
+     *        background on these values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3BitstreamMode
      */
@@ -185,7 +231,12 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background
+     * on these values.
+     * 
      * @param bitstreamMode
+     *        Specifies the "Bitstream Mode" (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for
+     *        background on these values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3BitstreamMode
      */
@@ -196,7 +247,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Dolby Digital Plus coding mode. Determines number of channels.
+     * 
      * @param codingMode
+     *        Dolby Digital Plus coding mode. Determines number of channels.
      * @see Eac3CodingMode
      */
 
@@ -205,7 +259,9 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Dolby Digital Plus coding mode. Determines number of channels.
+     * 
+     * @return Dolby Digital Plus coding mode. Determines number of channels.
      * @see Eac3CodingMode
      */
 
@@ -214,7 +270,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Dolby Digital Plus coding mode. Determines number of channels.
+     * 
      * @param codingMode
+     *        Dolby Digital Plus coding mode. Determines number of channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3CodingMode
      */
@@ -225,7 +284,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Dolby Digital Plus coding mode. Determines number of channels.
+     * 
      * @param codingMode
+     *        Dolby Digital Plus coding mode. Determines number of channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3CodingMode
      */
@@ -236,7 +298,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Activates a DC highpass filter for all input channels.
+     * 
      * @param dcFilter
+     *        Activates a DC highpass filter for all input channels.
      * @see Eac3DcFilter
      */
 
@@ -245,7 +310,9 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Activates a DC highpass filter for all input channels.
+     * 
+     * @return Activates a DC highpass filter for all input channels.
      * @see Eac3DcFilter
      */
 
@@ -254,7 +321,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Activates a DC highpass filter for all input channels.
+     * 
      * @param dcFilter
+     *        Activates a DC highpass filter for all input channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DcFilter
      */
@@ -265,7 +335,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Activates a DC highpass filter for all input channels.
+     * 
      * @param dcFilter
+     *        Activates a DC highpass filter for all input channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DcFilter
      */
@@ -316,7 +389,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables Dynamic Range Compression that restricts the absolute peak level for a signal.
+     * 
      * @param dynamicRangeCompressionLine
+     *        Enables Dynamic Range Compression that restricts the absolute peak level for a signal.
      * @see Eac3DynamicRangeCompressionLine
      */
 
@@ -325,7 +401,9 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Enables Dynamic Range Compression that restricts the absolute peak level for a signal.
+     * 
+     * @return Enables Dynamic Range Compression that restricts the absolute peak level for a signal.
      * @see Eac3DynamicRangeCompressionLine
      */
 
@@ -334,7 +412,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables Dynamic Range Compression that restricts the absolute peak level for a signal.
+     * 
      * @param dynamicRangeCompressionLine
+     *        Enables Dynamic Range Compression that restricts the absolute peak level for a signal.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionLine
      */
@@ -345,7 +426,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables Dynamic Range Compression that restricts the absolute peak level for a signal.
+     * 
      * @param dynamicRangeCompressionLine
+     *        Enables Dynamic Range Compression that restricts the absolute peak level for a signal.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionLine
      */
@@ -356,7 +440,12 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal peaks do not exceed specified
+     * levels.
+     * 
      * @param dynamicRangeCompressionRf
+     *        Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal peaks do not exceed
+     *        specified levels.
      * @see Eac3DynamicRangeCompressionRf
      */
 
@@ -365,7 +454,11 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal peaks do not exceed specified
+     * levels.
+     * 
+     * @return Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal peaks do not exceed
+     *         specified levels.
      * @see Eac3DynamicRangeCompressionRf
      */
 
@@ -374,7 +467,12 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal peaks do not exceed specified
+     * levels.
+     * 
      * @param dynamicRangeCompressionRf
+     *        Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal peaks do not exceed
+     *        specified levels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionRf
      */
@@ -385,7 +483,12 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal peaks do not exceed specified
+     * levels.
+     * 
      * @param dynamicRangeCompressionRf
+     *        Enables Heavy Dynamic Range Compression, ensures that the instantaneous signal peaks do not exceed
+     *        specified levels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionRf
      */
@@ -396,7 +499,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When encoding 3/2 audio, controls whether the LFE channel is enabled
+     * 
      * @param lfeControl
+     *        When encoding 3/2 audio, controls whether the LFE channel is enabled
      * @see Eac3LfeControl
      */
 
@@ -405,7 +511,9 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When encoding 3/2 audio, controls whether the LFE channel is enabled
+     * 
+     * @return When encoding 3/2 audio, controls whether the LFE channel is enabled
      * @see Eac3LfeControl
      */
 
@@ -414,7 +522,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When encoding 3/2 audio, controls whether the LFE channel is enabled
+     * 
      * @param lfeControl
+     *        When encoding 3/2 audio, controls whether the LFE channel is enabled
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3LfeControl
      */
@@ -425,7 +536,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When encoding 3/2 audio, controls whether the LFE channel is enabled
+     * 
      * @param lfeControl
+     *        When encoding 3/2 audio, controls whether the LFE channel is enabled
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3LfeControl
      */
@@ -436,7 +550,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+     * 
      * @param lfeFilter
+     *        Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
      * @see Eac3LfeFilter
      */
 
@@ -445,7 +562,9 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+     * 
+     * @return Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
      * @see Eac3LfeFilter
      */
 
@@ -454,7 +573,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+     * 
      * @param lfeFilter
+     *        Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3LfeFilter
      */
@@ -465,7 +587,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
+     * 
      * @param lfeFilter
+     *        Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3LfeFilter
      */
@@ -630,7 +755,13 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this
+     * audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+     * 
      * @param metadataControl
+     *        When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that
+     *        supplied this audio data. If audio was not supplied from one of these streams, then the static metadata
+     *        settings will be used.
      * @see Eac3MetadataControl
      */
 
@@ -639,7 +770,12 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this
+     * audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+     * 
+     * @return When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that
+     *         supplied this audio data. If audio was not supplied from one of these streams, then the static metadata
+     *         settings will be used.
      * @see Eac3MetadataControl
      */
 
@@ -648,7 +784,13 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this
+     * audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+     * 
      * @param metadataControl
+     *        When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that
+     *        supplied this audio data. If audio was not supplied from one of these streams, then the static metadata
+     *        settings will be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3MetadataControl
      */
@@ -659,7 +801,13 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this
+     * audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
+     * 
      * @param metadataControl
+     *        When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that
+     *        supplied this audio data. If audio was not supplied from one of these streams, then the static metadata
+     *        settings will be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3MetadataControl
      */
@@ -670,7 +818,14 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection
+     * is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a
+     * consistent DD+ output as the system alternates between passthrough and encoding.
+     * 
      * @param passthroughControl
+     *        When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this
+     *        detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content
+     *        will have a consistent DD+ output as the system alternates between passthrough and encoding.
      * @see Eac3PassthroughControl
      */
 
@@ -679,7 +834,13 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection
+     * is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a
+     * consistent DD+ output as the system alternates between passthrough and encoding.
+     * 
+     * @return When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this
+     *         detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+
+     *         content will have a consistent DD+ output as the system alternates between passthrough and encoding.
      * @see Eac3PassthroughControl
      */
 
@@ -688,7 +849,14 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection
+     * is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a
+     * consistent DD+ output as the system alternates between passthrough and encoding.
+     * 
      * @param passthroughControl
+     *        When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this
+     *        detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content
+     *        will have a consistent DD+ output as the system alternates between passthrough and encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3PassthroughControl
      */
@@ -699,7 +867,14 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection
+     * is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a
+     * consistent DD+ output as the system alternates between passthrough and encoding.
+     * 
      * @param passthroughControl
+     *        When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this
+     *        detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content
+     *        will have a consistent DD+ output as the system alternates between passthrough and encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3PassthroughControl
      */
@@ -710,7 +885,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
+     * 
      * @param phaseControl
+     *        Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
      * @see Eac3PhaseControl
      */
 
@@ -719,7 +897,9 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
+     * 
+     * @return Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
      * @see Eac3PhaseControl
      */
 
@@ -728,7 +908,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
+     * 
      * @param phaseControl
+     *        Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3PhaseControl
      */
@@ -739,7 +922,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
+     * 
      * @param phaseControl
+     *        Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3PhaseControl
      */
@@ -784,7 +970,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Stereo downmix preference. Only used for 3/2 coding mode.
+     * 
      * @param stereoDownmix
+     *        Stereo downmix preference. Only used for 3/2 coding mode.
      * @see Eac3StereoDownmix
      */
 
@@ -793,7 +982,9 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Stereo downmix preference. Only used for 3/2 coding mode.
+     * 
+     * @return Stereo downmix preference. Only used for 3/2 coding mode.
      * @see Eac3StereoDownmix
      */
 
@@ -802,7 +993,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Stereo downmix preference. Only used for 3/2 coding mode.
+     * 
      * @param stereoDownmix
+     *        Stereo downmix preference. Only used for 3/2 coding mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3StereoDownmix
      */
@@ -813,7 +1007,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Stereo downmix preference. Only used for 3/2 coding mode.
+     * 
      * @param stereoDownmix
+     *        Stereo downmix preference. Only used for 3/2 coding mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3StereoDownmix
      */
@@ -824,7 +1021,12 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and
+     * right surround channels.
+     * 
      * @param surroundExMode
+     *        When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the
+     *        left and right surround channels.
      * @see Eac3SurroundExMode
      */
 
@@ -833,7 +1035,11 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and
+     * right surround channels.
+     * 
+     * @return When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the
+     *         left and right surround channels.
      * @see Eac3SurroundExMode
      */
 
@@ -842,7 +1048,12 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and
+     * right surround channels.
+     * 
      * @param surroundExMode
+     *        When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the
+     *        left and right surround channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3SurroundExMode
      */
@@ -853,7 +1064,12 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and
+     * right surround channels.
+     * 
      * @param surroundExMode
+     *        When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the
+     *        left and right surround channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3SurroundExMode
      */
@@ -864,7 +1080,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
+     * 
      * @param surroundMode
+     *        When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
      * @see Eac3SurroundMode
      */
 
@@ -873,7 +1092,9 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
+     * 
+     * @return When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
      * @see Eac3SurroundMode
      */
 
@@ -882,7 +1103,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
+     * 
      * @param surroundMode
+     *        When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3SurroundMode
      */
@@ -893,7 +1117,10 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
+     * 
      * @param surroundMode
+     *        When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3SurroundMode
      */
@@ -904,7 +1131,8 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

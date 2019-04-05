@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -97,7 +97,19 @@ public class BasicProfile {
         return getPropertyValue(ProfileKeyConstants.REGION);
     }
 
+    public String getEndpointDiscovery() {
+        return getPropertyValue(ProfileKeyConstants.ENDPOINT_DISCOVERY);
+    }
+
+    public String getCredentialProcess() {
+        return getPropertyValue(ProfileKeyConstants.CREDENTIAL_PROCESS);
+    }
+
     public boolean isRoleBasedProfile() {
         return getRoleArn() != null;
+    }
+
+    public boolean isProcessBasedProfile() {
+        return getCredentialProcess() != null;
     }
 }

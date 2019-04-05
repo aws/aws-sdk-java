@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,38 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long version;
+    /**
+     * <p>
+     * Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of
+     * the following formats:
+     * </p>
+     * <p>
+     * parameter_name:version
+     * </p>
+     * <p>
+     * parameter_name:label
+     * </p>
+     */
+    private String selector;
+    /**
+     * <p>
+     * Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
+     * response from the source.
+     * </p>
+     */
+    private String sourceResult;
+    /**
+     * <p>
+     * Date the parameter was last changed or updated and the parameter version was created.
+     * </p>
+     */
+    private java.util.Date lastModifiedDate;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the parameter.
+     * </p>
+     */
+    private String aRN;
 
     /**
      * <p>
@@ -247,7 +279,213 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of
+     * the following formats:
+     * </p>
+     * <p>
+     * parameter_name:version
+     * </p>
+     * <p>
+     * parameter_name:label
+     * </p>
+     * 
+     * @param selector
+     *        Either the version number or the label used to retrieve the parameter value. Specify selectors by using
+     *        one of the following formats:</p>
+     *        <p>
+     *        parameter_name:version
+     *        </p>
+     *        <p>
+     *        parameter_name:label
+     */
+
+    public void setSelector(String selector) {
+        this.selector = selector;
+    }
+
+    /**
+     * <p>
+     * Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of
+     * the following formats:
+     * </p>
+     * <p>
+     * parameter_name:version
+     * </p>
+     * <p>
+     * parameter_name:label
+     * </p>
+     * 
+     * @return Either the version number or the label used to retrieve the parameter value. Specify selectors by using
+     *         one of the following formats:</p>
+     *         <p>
+     *         parameter_name:version
+     *         </p>
+     *         <p>
+     *         parameter_name:label
+     */
+
+    public String getSelector() {
+        return this.selector;
+    }
+
+    /**
+     * <p>
+     * Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of
+     * the following formats:
+     * </p>
+     * <p>
+     * parameter_name:version
+     * </p>
+     * <p>
+     * parameter_name:label
+     * </p>
+     * 
+     * @param selector
+     *        Either the version number or the label used to retrieve the parameter value. Specify selectors by using
+     *        one of the following formats:</p>
+     *        <p>
+     *        parameter_name:version
+     *        </p>
+     *        <p>
+     *        parameter_name:label
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withSelector(String selector) {
+        setSelector(selector);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
+     * response from the source.
+     * </p>
+     * 
+     * @param sourceResult
+     *        Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
+     *        response from the source.
+     */
+
+    public void setSourceResult(String sourceResult) {
+        this.sourceResult = sourceResult;
+    }
+
+    /**
+     * <p>
+     * Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
+     * response from the source.
+     * </p>
+     * 
+     * @return Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
+     *         response from the source.
+     */
+
+    public String getSourceResult() {
+        return this.sourceResult;
+    }
+
+    /**
+     * <p>
+     * Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
+     * response from the source.
+     * </p>
+     * 
+     * @param sourceResult
+     *        Applies to parameters that reference information in other AWS services. SourceResult is the raw result or
+     *        response from the source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withSourceResult(String sourceResult) {
+        setSourceResult(sourceResult);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Date the parameter was last changed or updated and the parameter version was created.
+     * </p>
+     * 
+     * @param lastModifiedDate
+     *        Date the parameter was last changed or updated and the parameter version was created.
+     */
+
+    public void setLastModifiedDate(java.util.Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    /**
+     * <p>
+     * Date the parameter was last changed or updated and the parameter version was created.
+     * </p>
+     * 
+     * @return Date the parameter was last changed or updated and the parameter version was created.
+     */
+
+    public java.util.Date getLastModifiedDate() {
+        return this.lastModifiedDate;
+    }
+
+    /**
+     * <p>
+     * Date the parameter was last changed or updated and the parameter version was created.
+     * </p>
+     * 
+     * @param lastModifiedDate
+     *        Date the parameter was last changed or updated and the parameter version was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withLastModifiedDate(java.util.Date lastModifiedDate) {
+        setLastModifiedDate(lastModifiedDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the parameter.
+     * </p>
+     * 
+     * @param aRN
+     *        The Amazon Resource Name (ARN) of the parameter.
+     */
+
+    public void setARN(String aRN) {
+        this.aRN = aRN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the parameter.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the parameter.
+     */
+
+    public String getARN() {
+        return this.aRN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the parameter.
+     * </p>
+     * 
+     * @param aRN
+     *        The Amazon Resource Name (ARN) of the parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Parameter withARN(String aRN) {
+        setARN(aRN);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -264,7 +502,15 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
         if (getValue() != null)
             sb.append("Value: ").append(getValue()).append(",");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getSelector() != null)
+            sb.append("Selector: ").append(getSelector()).append(",");
+        if (getSourceResult() != null)
+            sb.append("SourceResult: ").append(getSourceResult()).append(",");
+        if (getLastModifiedDate() != null)
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
+        if (getARN() != null)
+            sb.append("ARN: ").append(getARN());
         sb.append("}");
         return sb.toString();
     }
@@ -295,6 +541,22 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getSelector() == null ^ this.getSelector() == null)
+            return false;
+        if (other.getSelector() != null && other.getSelector().equals(this.getSelector()) == false)
+            return false;
+        if (other.getSourceResult() == null ^ this.getSourceResult() == null)
+            return false;
+        if (other.getSourceResult() != null && other.getSourceResult().equals(this.getSourceResult()) == false)
+            return false;
+        if (other.getLastModifiedDate() == null ^ this.getLastModifiedDate() == null)
+            return false;
+        if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
+            return false;
+        if (other.getARN() == null ^ this.getARN() == null)
+            return false;
+        if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
+            return false;
         return true;
     }
 
@@ -307,6 +569,10 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getSelector() == null) ? 0 : getSelector().hashCode());
+        hashCode = prime * hashCode + ((getSourceResult() == null) ? 0 : getSourceResult().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         return hashCode;
     }
 

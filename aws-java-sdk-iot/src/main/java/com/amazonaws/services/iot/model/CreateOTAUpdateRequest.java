@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,12 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
     private String targetSelection;
     /**
      * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     */
+    private AwsJobExecutionsRolloutConfig awsJobExecutionsRolloutConfig;
+    /**
+     * <p>
      * The files to be streamed by the OTA update.
      * </p>
      */
@@ -66,6 +72,12 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.Map<String, String> additionalParameters;
+    /**
+     * <p>
+     * Metadata which can be used to manage updates.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -310,6 +322,46 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     * 
+     * @param awsJobExecutionsRolloutConfig
+     *        Configuration for the rollout of OTA updates.
+     */
+
+    public void setAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig awsJobExecutionsRolloutConfig) {
+        this.awsJobExecutionsRolloutConfig = awsJobExecutionsRolloutConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     * 
+     * @return Configuration for the rollout of OTA updates.
+     */
+
+    public AwsJobExecutionsRolloutConfig getAwsJobExecutionsRolloutConfig() {
+        return this.awsJobExecutionsRolloutConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     * 
+     * @param awsJobExecutionsRolloutConfig
+     *        Configuration for the rollout of OTA updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOTAUpdateRequest withAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig awsJobExecutionsRolloutConfig) {
+        setAwsJobExecutionsRolloutConfig(awsJobExecutionsRolloutConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The files to be streamed by the OTA update.
      * </p>
      * 
@@ -480,7 +532,78 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Metadata which can be used to manage updates.
+     * </p>
+     * 
+     * @return Metadata which can be used to manage updates.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage updates.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage updates.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage updates.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOTAUpdateRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage updates.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOTAUpdateRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -498,12 +621,16 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("Targets: ").append(getTargets()).append(",");
         if (getTargetSelection() != null)
             sb.append("TargetSelection: ").append(getTargetSelection()).append(",");
+        if (getAwsJobExecutionsRolloutConfig() != null)
+            sb.append("AwsJobExecutionsRolloutConfig: ").append(getAwsJobExecutionsRolloutConfig()).append(",");
         if (getFiles() != null)
             sb.append("Files: ").append(getFiles()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getAdditionalParameters() != null)
-            sb.append("AdditionalParameters: ").append(getAdditionalParameters());
+            sb.append("AdditionalParameters: ").append(getAdditionalParameters()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -534,6 +661,11 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getTargetSelection() != null && other.getTargetSelection().equals(this.getTargetSelection()) == false)
             return false;
+        if (other.getAwsJobExecutionsRolloutConfig() == null ^ this.getAwsJobExecutionsRolloutConfig() == null)
+            return false;
+        if (other.getAwsJobExecutionsRolloutConfig() != null
+                && other.getAwsJobExecutionsRolloutConfig().equals(this.getAwsJobExecutionsRolloutConfig()) == false)
+            return false;
         if (other.getFiles() == null ^ this.getFiles() == null)
             return false;
         if (other.getFiles() != null && other.getFiles().equals(this.getFiles()) == false)
@@ -545,6 +677,10 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getAdditionalParameters() == null ^ this.getAdditionalParameters() == null)
             return false;
         if (other.getAdditionalParameters() != null && other.getAdditionalParameters().equals(this.getAdditionalParameters()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -558,9 +694,11 @@ public class CreateOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getTargetSelection() == null) ? 0 : getTargetSelection().hashCode());
+        hashCode = prime * hashCode + ((getAwsJobExecutionsRolloutConfig() == null) ? 0 : getAwsJobExecutionsRolloutConfig().hashCode());
         hashCode = prime * hashCode + ((getFiles() == null) ? 0 : getFiles().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getAdditionalParameters() == null) ? 0 : getAdditionalParameters().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

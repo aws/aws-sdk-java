@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,18 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.List<BackupSummary> backupSummaries;
     /**
      * <p>
-     * Last evaluated BackupARN.
+     * The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page
+     * of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new
+     * <code>ListBackups</code> operation in order to fetch the next page of results.
+     * </p>
+     * <p>
+     * If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are
+     * no more results to be retrieved.
+     * </p>
+     * <p>
+     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
+     * returned. All results are guaranteed to have been returned if and only if no value for
+     * <code>LastEvaluatedBackupArn</code> is returned.
      * </p>
      */
     private String lastEvaluatedBackupArn;
@@ -108,11 +119,32 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Last evaluated BackupARN.
+     * The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page
+     * of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new
+     * <code>ListBackups</code> operation in order to fetch the next page of results.
+     * </p>
+     * <p>
+     * If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are
+     * no more results to be retrieved.
+     * </p>
+     * <p>
+     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
+     * returned. All results are guaranteed to have been returned if and only if no value for
+     * <code>LastEvaluatedBackupArn</code> is returned.
      * </p>
      * 
      * @param lastEvaluatedBackupArn
-     *        Last evaluated BackupARN.
+     *        The ARN of the backup last evaluated when the current page of results was returned, inclusive of the
+     *        current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new
+     *        <code>ListBackups</code> operation in order to fetch the next page of results. </p>
+     *        <p>
+     *        If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and
+     *        there are no more results to be retrieved.
+     *        </p>
+     *        <p>
+     *        If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
+     *        returned. All results are guaranteed to have been returned if and only if no value for
+     *        <code>LastEvaluatedBackupArn</code> is returned.
      */
 
     public void setLastEvaluatedBackupArn(String lastEvaluatedBackupArn) {
@@ -121,10 +153,31 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Last evaluated BackupARN.
+     * The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page
+     * of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new
+     * <code>ListBackups</code> operation in order to fetch the next page of results.
+     * </p>
+     * <p>
+     * If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are
+     * no more results to be retrieved.
+     * </p>
+     * <p>
+     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
+     * returned. All results are guaranteed to have been returned if and only if no value for
+     * <code>LastEvaluatedBackupArn</code> is returned.
      * </p>
      * 
-     * @return Last evaluated BackupARN.
+     * @return The ARN of the backup last evaluated when the current page of results was returned, inclusive of the
+     *         current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new
+     *         <code>ListBackups</code> operation in order to fetch the next page of results. </p>
+     *         <p>
+     *         If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and
+     *         there are no more results to be retrieved.
+     *         </p>
+     *         <p>
+     *         If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to
+     *         be returned. All results are guaranteed to have been returned if and only if no value for
+     *         <code>LastEvaluatedBackupArn</code> is returned.
      */
 
     public String getLastEvaluatedBackupArn() {
@@ -133,11 +186,32 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Last evaluated BackupARN.
+     * The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page
+     * of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new
+     * <code>ListBackups</code> operation in order to fetch the next page of results.
+     * </p>
+     * <p>
+     * If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and there are
+     * no more results to be retrieved.
+     * </p>
+     * <p>
+     * If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
+     * returned. All results are guaranteed to have been returned if and only if no value for
+     * <code>LastEvaluatedBackupArn</code> is returned.
      * </p>
      * 
      * @param lastEvaluatedBackupArn
-     *        Last evaluated BackupARN.
+     *        The ARN of the backup last evaluated when the current page of results was returned, inclusive of the
+     *        current page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a new
+     *        <code>ListBackups</code> operation in order to fetch the next page of results. </p>
+     *        <p>
+     *        If <code>LastEvaluatedBackupArn</code> is empty, then the last page of results has been processed and
+     *        there are no more results to be retrieved.
+     *        </p>
+     *        <p>
+     *        If <code>LastEvaluatedBackupArn</code> is not empty, this may or may not indicate there is more data to be
+     *        returned. All results are guaranteed to have been returned if and only if no value for
+     *        <code>LastEvaluatedBackupArn</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,7 +221,8 @@ public class ListBackupsResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

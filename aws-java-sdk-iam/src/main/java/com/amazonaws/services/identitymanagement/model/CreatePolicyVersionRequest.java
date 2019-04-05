@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private String policyArn;
@@ -73,7 +73,7 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      */
@@ -85,15 +85,15 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
      *        The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
@@ -107,14 +107,14 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>
      *         <p>
      *         For more information about ARNs, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
@@ -128,15 +128,15 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
-     * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param policyArn
      *        The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new version.</p>
      *        <p>
      *        For more information about ARNs, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -322,7 +322,7 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -335,7 +335,7 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      *        </p>
      *        <p>
      *        For more information about managed policy versions, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
      *        Managed Policies</a> in the <i>IAM User Guide</i>.
      */
 
@@ -353,7 +353,7 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -365,7 +365,7 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      *         </p>
      *         <p>
      *         For more information about managed policy versions, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
      *         Managed Policies</a> in the <i>IAM User Guide</i>.
      */
 
@@ -383,7 +383,7 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -396,7 +396,7 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      *        </p>
      *        <p>
      *        For more information about managed policy versions, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
      *        Managed Policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -416,7 +416,7 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -428,7 +428,7 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      *         </p>
      *         <p>
      *         For more information about managed policy versions, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
      *         Managed Policies</a> in the <i>IAM User Guide</i>.
      */
 
@@ -437,7 +437,8 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

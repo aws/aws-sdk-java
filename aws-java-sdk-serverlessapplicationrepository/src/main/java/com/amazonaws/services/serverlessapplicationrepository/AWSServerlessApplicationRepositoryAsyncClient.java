@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -195,6 +195,39 @@ public class AWSServerlessApplicationRepositoryAsyncClient extends AWSServerless
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCloudFormationTemplateResult> createCloudFormationTemplateAsync(CreateCloudFormationTemplateRequest request) {
+
+        return createCloudFormationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudFormationTemplateResult> createCloudFormationTemplateAsync(final CreateCloudFormationTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCloudFormationTemplateRequest, CreateCloudFormationTemplateResult> asyncHandler) {
+        final CreateCloudFormationTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCloudFormationTemplateResult>() {
+            @Override
+            public CreateCloudFormationTemplateResult call() throws Exception {
+                CreateCloudFormationTemplateResult result = null;
+
+                try {
+                    result = executeCreateCloudFormationTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request) {
 
         return deleteApplicationAsync(request, null);
@@ -278,6 +311,72 @@ public class AWSServerlessApplicationRepositoryAsyncClient extends AWSServerless
 
                 try {
                     result = executeGetApplicationPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudFormationTemplateResult> getCloudFormationTemplateAsync(GetCloudFormationTemplateRequest request) {
+
+        return getCloudFormationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudFormationTemplateResult> getCloudFormationTemplateAsync(final GetCloudFormationTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCloudFormationTemplateRequest, GetCloudFormationTemplateResult> asyncHandler) {
+        final GetCloudFormationTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCloudFormationTemplateResult>() {
+            @Override
+            public GetCloudFormationTemplateResult call() throws Exception {
+                GetCloudFormationTemplateResult result = null;
+
+                try {
+                    result = executeGetCloudFormationTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationDependenciesResult> listApplicationDependenciesAsync(ListApplicationDependenciesRequest request) {
+
+        return listApplicationDependenciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationDependenciesResult> listApplicationDependenciesAsync(final ListApplicationDependenciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListApplicationDependenciesRequest, ListApplicationDependenciesResult> asyncHandler) {
+        final ListApplicationDependenciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListApplicationDependenciesResult>() {
+            @Override
+            public ListApplicationDependenciesResult call() throws Exception {
+                ListApplicationDependenciesResult result = null;
+
+                try {
+                    result = executeListApplicationDependencies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

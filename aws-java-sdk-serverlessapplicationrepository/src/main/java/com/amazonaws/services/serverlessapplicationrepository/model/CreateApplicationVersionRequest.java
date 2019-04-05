@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      */
     private String applicationId;
@@ -39,7 +39,17 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     private String semanticVersion;
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to the S3 object that contains the ZIP archive of the source code for this version of your application.
+     * </p>
+     * <p>
+     * Maximum size 50 MB
+     * </p>
+     */
+    private String sourceCodeArchiveUrl;
+    /**
+     * <p>
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      */
     private String sourceCodeUrl;
@@ -58,11 +68,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      * 
      * @param applicationId
-     *        The ID of the application to get.
+     *        The Amazon Resource Name (ARN) of the application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -71,10 +81,10 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      * 
-     * @return The ID of the application to get.
+     * @return The Amazon Resource Name (ARN) of the application.
      */
 
     public String getApplicationId() {
@@ -83,11 +93,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      * 
      * @param applicationId
-     *        The ID of the application to get.
+     *        The Amazon Resource Name (ARN) of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +148,71 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to the S3 object that contains the ZIP archive of the source code for this version of your application.
+     * </p>
+     * <p>
+     * Maximum size 50 MB
+     * </p>
+     * 
+     * @param sourceCodeArchiveUrl
+     *        A link to the S3 object that contains the ZIP archive of the source code for this version of your
+     *        application.</p>
+     *        <p>
+     *        Maximum size 50 MB
+     */
+
+    public void setSourceCodeArchiveUrl(String sourceCodeArchiveUrl) {
+        this.sourceCodeArchiveUrl = sourceCodeArchiveUrl;
+    }
+
+    /**
+     * <p>
+     * A link to the S3 object that contains the ZIP archive of the source code for this version of your application.
+     * </p>
+     * <p>
+     * Maximum size 50 MB
+     * </p>
+     * 
+     * @return A link to the S3 object that contains the ZIP archive of the source code for this version of your
+     *         application.</p>
+     *         <p>
+     *         Maximum size 50 MB
+     */
+
+    public String getSourceCodeArchiveUrl() {
+        return this.sourceCodeArchiveUrl;
+    }
+
+    /**
+     * <p>
+     * A link to the S3 object that contains the ZIP archive of the source code for this version of your application.
+     * </p>
+     * <p>
+     * Maximum size 50 MB
+     * </p>
+     * 
+     * @param sourceCodeArchiveUrl
+     *        A link to the S3 object that contains the ZIP archive of the source code for this version of your
+     *        application.</p>
+     *        <p>
+     *        Maximum size 50 MB
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationVersionRequest withSourceCodeArchiveUrl(String sourceCodeArchiveUrl) {
+        setSourceCodeArchiveUrl(sourceCodeArchiveUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
      * @param sourceCodeUrl
-     *        A link to a public repository for the source code of your application.
+     *        A link to a public repository for the source code of your application, for example the URL of a specific
+     *        GitHub commit.
      */
 
     public void setSourceCodeUrl(String sourceCodeUrl) {
@@ -151,10 +221,12 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
-     * @return A link to a public repository for the source code of your application.
+     * @return A link to a public repository for the source code of your application, for example the URL of a specific
+     *         GitHub commit.
      */
 
     public String getSourceCodeUrl() {
@@ -163,11 +235,13 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
      * @param sourceCodeUrl
-     *        A link to a public repository for the source code of your application.
+     *        A link to a public repository for the source code of your application, for example the URL of a specific
+     *        GitHub commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,7 +331,8 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -271,6 +346,8 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getSemanticVersion() != null)
             sb.append("SemanticVersion: ").append(getSemanticVersion()).append(",");
+        if (getSourceCodeArchiveUrl() != null)
+            sb.append("SourceCodeArchiveUrl: ").append(getSourceCodeArchiveUrl()).append(",");
         if (getSourceCodeUrl() != null)
             sb.append("SourceCodeUrl: ").append(getSourceCodeUrl()).append(",");
         if (getTemplateBody() != null)
@@ -299,6 +376,10 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getSemanticVersion() != null && other.getSemanticVersion().equals(this.getSemanticVersion()) == false)
             return false;
+        if (other.getSourceCodeArchiveUrl() == null ^ this.getSourceCodeArchiveUrl() == null)
+            return false;
+        if (other.getSourceCodeArchiveUrl() != null && other.getSourceCodeArchiveUrl().equals(this.getSourceCodeArchiveUrl()) == false)
+            return false;
         if (other.getSourceCodeUrl() == null ^ this.getSourceCodeUrl() == null)
             return false;
         if (other.getSourceCodeUrl() != null && other.getSourceCodeUrl().equals(this.getSourceCodeUrl()) == false)
@@ -321,6 +402,7 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getSemanticVersion() == null) ? 0 : getSemanticVersion().hashCode());
+        hashCode = prime * hashCode + ((getSourceCodeArchiveUrl() == null) ? 0 : getSourceCodeArchiveUrl().hashCode());
         hashCode = prime * hashCode + ((getSourceCodeUrl() == null) ? 0 : getSourceCodeUrl().hashCode());
         hashCode = prime * hashCode + ((getTemplateBody() == null) ? 0 : getTemplateBody().hashCode());
         hashCode = prime * hashCode + ((getTemplateUrl() == null) ? 0 : getTemplateUrl().hashCode());

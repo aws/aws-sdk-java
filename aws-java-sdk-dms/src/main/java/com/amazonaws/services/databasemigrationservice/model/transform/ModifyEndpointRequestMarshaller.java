@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,8 +59,16 @@ public class ModifyEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DynamoDbSettings").build();
     private static final MarshallingInfo<StructuredPojo> S3SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Settings").build();
+    private static final MarshallingInfo<StructuredPojo> DMSTRANSFERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DmsTransferSettings").build();
     private static final MarshallingInfo<StructuredPojo> MONGODBSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MongoDbSettings").build();
+    private static final MarshallingInfo<StructuredPojo> KINESISSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisSettings").build();
+    private static final MarshallingInfo<StructuredPojo> ELASTICSEARCHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchSettings").build();
+    private static final MarshallingInfo<StructuredPojo> REDSHIFTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedshiftSettings").build();
 
     private static final ModifyEndpointRequestMarshaller instance = new ModifyEndpointRequestMarshaller();
 
@@ -94,7 +102,11 @@ public class ModifyEndpointRequestMarshaller {
             protocolMarshaller.marshall(modifyEndpointRequest.getExternalTableDefinition(), EXTERNALTABLEDEFINITION_BINDING);
             protocolMarshaller.marshall(modifyEndpointRequest.getDynamoDbSettings(), DYNAMODBSETTINGS_BINDING);
             protocolMarshaller.marshall(modifyEndpointRequest.getS3Settings(), S3SETTINGS_BINDING);
+            protocolMarshaller.marshall(modifyEndpointRequest.getDmsTransferSettings(), DMSTRANSFERSETTINGS_BINDING);
             protocolMarshaller.marshall(modifyEndpointRequest.getMongoDbSettings(), MONGODBSETTINGS_BINDING);
+            protocolMarshaller.marshall(modifyEndpointRequest.getKinesisSettings(), KINESISSETTINGS_BINDING);
+            protocolMarshaller.marshall(modifyEndpointRequest.getElasticsearchSettings(), ELASTICSEARCHSETTINGS_BINDING);
+            protocolMarshaller.marshall(modifyEndpointRequest.getRedshiftSettings(), REDSHIFTSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

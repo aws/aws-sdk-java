@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,6 +103,27 @@ public class DescribeClusterSnapshotsRequestMarshaller implements Marshaller<Req
 
         if (describeClusterSnapshotsRequest.getClusterExists() != null) {
             request.addParameter("ClusterExists", StringUtils.fromBoolean(describeClusterSnapshotsRequest.getClusterExists()));
+        }
+
+        if (!describeClusterSnapshotsRequest.getSortingEntities().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity>) describeClusterSnapshotsRequest.getSortingEntities()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity> sortingEntitiesList = (com.amazonaws.internal.SdkInternalList<SnapshotSortingEntity>) describeClusterSnapshotsRequest
+                    .getSortingEntities();
+            int sortingEntitiesListIndex = 1;
+
+            for (SnapshotSortingEntity sortingEntitiesListValue : sortingEntitiesList) {
+
+                if (sortingEntitiesListValue.getAttribute() != null) {
+                    request.addParameter("SortingEntities.SnapshotSortingEntity." + sortingEntitiesListIndex + ".Attribute",
+                            StringUtils.fromString(sortingEntitiesListValue.getAttribute()));
+                }
+
+                if (sortingEntitiesListValue.getSortOrder() != null) {
+                    request.addParameter("SortingEntities.SnapshotSortingEntity." + sortingEntitiesListIndex + ".SortOrder",
+                            StringUtils.fromString(sortingEntitiesListValue.getSortOrder()));
+                }
+                sortingEntitiesListIndex++;
+            }
         }
 
         return request;

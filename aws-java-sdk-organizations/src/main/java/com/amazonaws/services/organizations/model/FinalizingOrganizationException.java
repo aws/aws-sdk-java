@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS Organizations could not perform the operation because your organization has not finished initializing. This can
+ * AWS Organizations couldn't perform the operation because your organization hasn't finished initializing. This can
  * take up to an hour. Try again later. If after one hour you continue to receive this error, contact <a
- * href="https://console.aws.amazon.com/support/home#/"> AWS Customer Support</a>.
+ * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,13 @@ public class UpdateGlobalTableSettingsRequestMarshaller {
 
     private static final MarshallingInfo<String> GLOBALTABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalTableName").build();
+    private static final MarshallingInfo<String> GLOBALTABLEBILLINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalTableBillingMode").build();
     private static final MarshallingInfo<Long> GLOBALTABLEPROVISIONEDWRITECAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalTableProvisionedWriteCapacityUnits").build();
+    private static final MarshallingInfo<StructuredPojo> GLOBALTABLEPROVISIONEDWRITECAPACITYAUTOSCALINGSETTINGSUPDATE_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate").build();
     private static final MarshallingInfo<List> GLOBALTABLEGLOBALSECONDARYINDEXSETTINGSUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalTableGlobalSecondaryIndexSettingsUpdate").build();
     private static final MarshallingInfo<List> REPLICASETTINGSUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -54,8 +59,11 @@ public class UpdateGlobalTableSettingsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableName(), GLOBALTABLENAME_BINDING);
+            protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableBillingMode(), GLOBALTABLEBILLINGMODE_BINDING);
             protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableProvisionedWriteCapacityUnits(),
                     GLOBALTABLEPROVISIONEDWRITECAPACITYUNITS_BINDING);
+            protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate(),
+                    GLOBALTABLEPROVISIONEDWRITECAPACITYAUTOSCALINGSETTINGSUPDATE_BINDING);
             protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getGlobalTableGlobalSecondaryIndexSettingsUpdate(),
                     GLOBALTABLEGLOBALSECONDARYINDEXSETTINGSUPDATE_BINDING);
             protocolMarshaller.marshall(updateGlobalTableSettingsRequest.getReplicaSettingsUpdate(), REPLICASETTINGSUPDATE_BINDING);

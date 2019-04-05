@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -195,6 +195,39 @@ public class AWSMediaStoreAsyncClient extends AWSMediaStoreClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request) {
+
+        return deleteLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(final DeleteLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler) {
+        final DeleteLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLifecyclePolicyResult>() {
+            @Override
+            public DeleteLifecyclePolicyResult call() throws Exception {
+                DeleteLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeDeleteLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeContainerResult> describeContainerAsync(DescribeContainerRequest request) {
 
         return describeContainerAsync(request, null);
@@ -294,6 +327,39 @@ public class AWSMediaStoreAsyncClient extends AWSMediaStoreClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest request) {
+
+        return getLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(final GetLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler) {
+        final GetLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLifecyclePolicyResult>() {
+            @Override
+            public GetLifecyclePolicyResult call() throws Exception {
+                GetLifecyclePolicyResult result = null;
+
+                try {
+                    result = executeGetLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListContainersResult> listContainersAsync(ListContainersRequest request) {
 
         return listContainersAsync(request, null);
@@ -377,6 +443,105 @@ public class AWSMediaStoreAsyncClient extends AWSMediaStoreClient implements AWS
 
                 try {
                     result = executePutCorsPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(PutLifecyclePolicyRequest request) {
+
+        return putLifecyclePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(final PutLifecyclePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutLifecyclePolicyRequest, PutLifecyclePolicyResult> asyncHandler) {
+        final PutLifecyclePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutLifecyclePolicyResult>() {
+            @Override
+            public PutLifecyclePolicyResult call() throws Exception {
+                PutLifecyclePolicyResult result = null;
+
+                try {
+                    result = executePutLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAccessLoggingResult> startAccessLoggingAsync(StartAccessLoggingRequest request) {
+
+        return startAccessLoggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAccessLoggingResult> startAccessLoggingAsync(final StartAccessLoggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartAccessLoggingRequest, StartAccessLoggingResult> asyncHandler) {
+        final StartAccessLoggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartAccessLoggingResult>() {
+            @Override
+            public StartAccessLoggingResult call() throws Exception {
+                StartAccessLoggingResult result = null;
+
+                try {
+                    result = executeStartAccessLogging(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopAccessLoggingResult> stopAccessLoggingAsync(StopAccessLoggingRequest request) {
+
+        return stopAccessLoggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopAccessLoggingResult> stopAccessLoggingAsync(final StopAccessLoggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopAccessLoggingRequest, StopAccessLoggingResult> asyncHandler) {
+        final StopAccessLoggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopAccessLoggingResult>() {
+            @Override
+            public StopAccessLoggingResult call() throws Exception {
+                StopAccessLoggingResult result = null;
+
+                try {
+                    result = executeStopAccessLogging(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

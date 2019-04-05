@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class DiskSnapshotJsonUnmarshaller implements Unmarshaller<DiskSnapshot, 
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    diskSnapshot.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    diskSnapshot.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
@@ -71,6 +71,10 @@ public class DiskSnapshotJsonUnmarshaller implements Unmarshaller<DiskSnapshot, 
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
                     diskSnapshot.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    diskSnapshot.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("sizeInGb", targetDepth)) {
                     context.nextToken();
@@ -91,6 +95,14 @@ public class DiskSnapshotJsonUnmarshaller implements Unmarshaller<DiskSnapshot, 
                 if (context.testExpression("fromDiskArn", targetDepth)) {
                     context.nextToken();
                     diskSnapshot.setFromDiskArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("fromInstanceName", targetDepth)) {
+                    context.nextToken();
+                    diskSnapshot.setFromInstanceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("fromInstanceArn", targetDepth)) {
+                    context.nextToken();
+                    diskSnapshot.setFromInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

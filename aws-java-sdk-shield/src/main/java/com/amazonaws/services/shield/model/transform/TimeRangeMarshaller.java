@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class TimeRangeMarshaller {
 
     private static final MarshallingInfo<java.util.Date> FROMINCLUSIVE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FromInclusive").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FromInclusive").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> TOEXCLUSIVE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ToExclusive").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ToExclusive").timestampFormat("unixTimestamp").build();
 
     private static final TimeRangeMarshaller instance = new TimeRangeMarshaller();
 

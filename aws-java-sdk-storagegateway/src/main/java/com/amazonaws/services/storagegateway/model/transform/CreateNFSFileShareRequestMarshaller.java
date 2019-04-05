@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,8 @@ public class CreateNFSFileShareRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GuessMIMETypeEnabled").build();
     private static final MarshallingInfo<Boolean> REQUESTERPAYS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequesterPays").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateNFSFileShareRequestMarshaller instance = new CreateNFSFileShareRequestMarshaller();
 
@@ -87,6 +89,7 @@ public class CreateNFSFileShareRequestMarshaller {
             protocolMarshaller.marshall(createNFSFileShareRequest.getReadOnly(), READONLY_BINDING);
             protocolMarshaller.marshall(createNFSFileShareRequest.getGuessMIMETypeEnabled(), GUESSMIMETYPEENABLED_BINDING);
             protocolMarshaller.marshall(createNFSFileShareRequest.getRequesterPays(), REQUESTERPAYS_BINDING);
+            protocolMarshaller.marshall(createNFSFileShareRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

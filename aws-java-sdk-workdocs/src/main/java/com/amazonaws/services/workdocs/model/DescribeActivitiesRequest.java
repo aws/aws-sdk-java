@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,11 +54,32 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
     private String organizationId;
     /**
      * <p>
+     * Specifies which activity types to include in the response. If this field is left empty, all activity types are
+     * returned.
+     * </p>
+     */
+    private String activityTypes;
+    /**
+     * <p>
+     * The document or folder ID for which to describe activity types.
+     * </p>
+     */
+    private String resourceId;
+    /**
+     * <p>
      * The ID of the user who performed the action. The response includes activities pertaining to this user. This is an
      * optional parameter and is only applicable for administrative API (SigV4) requests.
      * </p>
      */
     private String userId;
+    /**
+     * <p>
+     * Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource.
+     * For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the
+     * parent folder (the indirect activity).
+     * </p>
+     */
+    private Boolean includeIndirectActivities;
     /**
      * <p>
      * The maximum number of items to return.
@@ -252,6 +273,92 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * Specifies which activity types to include in the response. If this field is left empty, all activity types are
+     * returned.
+     * </p>
+     * 
+     * @param activityTypes
+     *        Specifies which activity types to include in the response. If this field is left empty, all activity types
+     *        are returned.
+     */
+
+    public void setActivityTypes(String activityTypes) {
+        this.activityTypes = activityTypes;
+    }
+
+    /**
+     * <p>
+     * Specifies which activity types to include in the response. If this field is left empty, all activity types are
+     * returned.
+     * </p>
+     * 
+     * @return Specifies which activity types to include in the response. If this field is left empty, all activity
+     *         types are returned.
+     */
+
+    public String getActivityTypes() {
+        return this.activityTypes;
+    }
+
+    /**
+     * <p>
+     * Specifies which activity types to include in the response. If this field is left empty, all activity types are
+     * returned.
+     * </p>
+     * 
+     * @param activityTypes
+     *        Specifies which activity types to include in the response. If this field is left empty, all activity types
+     *        are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeActivitiesRequest withActivityTypes(String activityTypes) {
+        setActivityTypes(activityTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The document or folder ID for which to describe activity types.
+     * </p>
+     * 
+     * @param resourceId
+     *        The document or folder ID for which to describe activity types.
+     */
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
+    /**
+     * <p>
+     * The document or folder ID for which to describe activity types.
+     * </p>
+     * 
+     * @return The document or folder ID for which to describe activity types.
+     */
+
+    public String getResourceId() {
+        return this.resourceId;
+    }
+
+    /**
+     * <p>
+     * The document or folder ID for which to describe activity types.
+     * </p>
+     * 
+     * @param resourceId
+     *        The document or folder ID for which to describe activity types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeActivitiesRequest withResourceId(String resourceId) {
+        setResourceId(resourceId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of the user who performed the action. The response includes activities pertaining to this user. This is an
      * optional parameter and is only applicable for administrative API (SigV4) requests.
      * </p>
@@ -294,6 +401,74 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
     public DescribeActivitiesRequest withUserId(String userId) {
         setUserId(userId);
         return this;
+    }
+
+    /**
+     * <p>
+     * Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource.
+     * For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the
+     * parent folder (the indirect activity).
+     * </p>
+     * 
+     * @param includeIndirectActivities
+     *        Includes indirect activities. An indirect activity results from a direct activity performed on a parent
+     *        resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and
+     *        documents within the parent folder (the indirect activity).
+     */
+
+    public void setIncludeIndirectActivities(Boolean includeIndirectActivities) {
+        this.includeIndirectActivities = includeIndirectActivities;
+    }
+
+    /**
+     * <p>
+     * Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource.
+     * For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the
+     * parent folder (the indirect activity).
+     * </p>
+     * 
+     * @return Includes indirect activities. An indirect activity results from a direct activity performed on a parent
+     *         resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and
+     *         documents within the parent folder (the indirect activity).
+     */
+
+    public Boolean getIncludeIndirectActivities() {
+        return this.includeIndirectActivities;
+    }
+
+    /**
+     * <p>
+     * Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource.
+     * For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the
+     * parent folder (the indirect activity).
+     * </p>
+     * 
+     * @param includeIndirectActivities
+     *        Includes indirect activities. An indirect activity results from a direct activity performed on a parent
+     *        resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and
+     *        documents within the parent folder (the indirect activity).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeActivitiesRequest withIncludeIndirectActivities(Boolean includeIndirectActivities) {
+        setIncludeIndirectActivities(includeIndirectActivities);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource.
+     * For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the
+     * parent folder (the indirect activity).
+     * </p>
+     * 
+     * @return Includes indirect activities. An indirect activity results from a direct activity performed on a parent
+     *         resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and
+     *         documents within the parent folder (the indirect activity).
+     */
+
+    public Boolean isIncludeIndirectActivities() {
+        return this.includeIndirectActivities;
     }
 
     /**
@@ -377,7 +552,8 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -388,15 +564,21 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAuthenticationToken() != null)
-            sb.append("AuthenticationToken: ").append(getAuthenticationToken()).append(",");
+            sb.append("AuthenticationToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getOrganizationId() != null)
             sb.append("OrganizationId: ").append(getOrganizationId()).append(",");
+        if (getActivityTypes() != null)
+            sb.append("ActivityTypes: ").append(getActivityTypes()).append(",");
+        if (getResourceId() != null)
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getUserId() != null)
             sb.append("UserId: ").append(getUserId()).append(",");
+        if (getIncludeIndirectActivities() != null)
+            sb.append("IncludeIndirectActivities: ").append(getIncludeIndirectActivities()).append(",");
         if (getLimit() != null)
             sb.append("Limit: ").append(getLimit()).append(",");
         if (getMarker() != null)
@@ -431,9 +613,21 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getOrganizationId() != null && other.getOrganizationId().equals(this.getOrganizationId()) == false)
             return false;
+        if (other.getActivityTypes() == null ^ this.getActivityTypes() == null)
+            return false;
+        if (other.getActivityTypes() != null && other.getActivityTypes().equals(this.getActivityTypes()) == false)
+            return false;
+        if (other.getResourceId() == null ^ this.getResourceId() == null)
+            return false;
+        if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
+            return false;
         if (other.getUserId() == null ^ this.getUserId() == null)
             return false;
         if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
+            return false;
+        if (other.getIncludeIndirectActivities() == null ^ this.getIncludeIndirectActivities() == null)
+            return false;
+        if (other.getIncludeIndirectActivities() != null && other.getIncludeIndirectActivities().equals(this.getIncludeIndirectActivities()) == false)
             return false;
         if (other.getLimit() == null ^ this.getLimit() == null)
             return false;
@@ -455,7 +649,10 @@ public class DescribeActivitiesRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getOrganizationId() == null) ? 0 : getOrganizationId().hashCode());
+        hashCode = prime * hashCode + ((getActivityTypes() == null) ? 0 : getActivityTypes().hashCode());
+        hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getIncludeIndirectActivities() == null) ? 0 : getIncludeIndirectActivities().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         return hashCode;

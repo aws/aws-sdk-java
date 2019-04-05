@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * The RTMP distribution's configuration information.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/StreamingDistributionConfig"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistributionConfig"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,14 +28,15 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique number that ensures that the request can't be replayed. If the <code>CallerReference</code> is new (no
-     * matter the content of the <code>StreamingDistributionConfig</code> object), a new streaming distribution is
-     * created. If the <code>CallerReference</code> is a value that you already sent in a previous request to create a
-     * streaming distribution, and the content of the <code>StreamingDistributionConfig</code> is identical to the
-     * original request (ignoring white space), the response includes the same information returned to the original
-     * request. If the <code>CallerReference</code> is a value that you already sent in a previous request to create a
-     * streaming distribution but the content of the <code>StreamingDistributionConfig</code> is different from the
-     * original request, CloudFront returns a <code>DistributionAlreadyExists</code> error.
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
+     * </p>
+     * <p>
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
+     * <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.
+     * </p>
+     * <p>
+     * If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * </p>
      */
     private String callerReference;
@@ -100,15 +101,14 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
      * methods to initialize any additional object members.
      * 
      * @param callerReference
-     *        A unique number that ensures that the request can't be replayed. If the <code>CallerReference</code> is
-     *        new (no matter the content of the <code>StreamingDistributionConfig</code> object), a new streaming
-     *        distribution is created. If the <code>CallerReference</code> is a value that you already sent in a
-     *        previous request to create a streaming distribution, and the content of the
-     *        <code>StreamingDistributionConfig</code> is identical to the original request (ignoring white space), the
-     *        response includes the same information returned to the original request. If the
-     *        <code>CallerReference</code> is a value that you already sent in a previous request to create a streaming
-     *        distribution but the content of the <code>StreamingDistributionConfig</code> is different from the
-     *        original request, CloudFront returns a <code>DistributionAlreadyExists</code> error.
+     *        A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
+     *        <p>
+     *        If the value of <code>CallerReference</code> is new (regardless of the content of the
+     *        <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.
+     *        </p>
+     *        <p>
+     *        If <code>CallerReference</code> is a value that you already sent in a previous request to create a
+     *        distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * @param s3Origin
      *        A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get
      *        your media files for distribution.
@@ -123,26 +123,26 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique number that ensures that the request can't be replayed. If the <code>CallerReference</code> is new (no
-     * matter the content of the <code>StreamingDistributionConfig</code> object), a new streaming distribution is
-     * created. If the <code>CallerReference</code> is a value that you already sent in a previous request to create a
-     * streaming distribution, and the content of the <code>StreamingDistributionConfig</code> is identical to the
-     * original request (ignoring white space), the response includes the same information returned to the original
-     * request. If the <code>CallerReference</code> is a value that you already sent in a previous request to create a
-     * streaming distribution but the content of the <code>StreamingDistributionConfig</code> is different from the
-     * original request, CloudFront returns a <code>DistributionAlreadyExists</code> error.
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
+     * </p>
+     * <p>
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
+     * <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.
+     * </p>
+     * <p>
+     * If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * </p>
      * 
      * @param callerReference
-     *        A unique number that ensures that the request can't be replayed. If the <code>CallerReference</code> is
-     *        new (no matter the content of the <code>StreamingDistributionConfig</code> object), a new streaming
-     *        distribution is created. If the <code>CallerReference</code> is a value that you already sent in a
-     *        previous request to create a streaming distribution, and the content of the
-     *        <code>StreamingDistributionConfig</code> is identical to the original request (ignoring white space), the
-     *        response includes the same information returned to the original request. If the
-     *        <code>CallerReference</code> is a value that you already sent in a previous request to create a streaming
-     *        distribution but the content of the <code>StreamingDistributionConfig</code> is different from the
-     *        original request, CloudFront returns a <code>DistributionAlreadyExists</code> error.
+     *        A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
+     *        <p>
+     *        If the value of <code>CallerReference</code> is new (regardless of the content of the
+     *        <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.
+     *        </p>
+     *        <p>
+     *        If <code>CallerReference</code> is a value that you already sent in a previous request to create a
+     *        distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.
      */
 
     public void setCallerReference(String callerReference) {
@@ -151,25 +151,25 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique number that ensures that the request can't be replayed. If the <code>CallerReference</code> is new (no
-     * matter the content of the <code>StreamingDistributionConfig</code> object), a new streaming distribution is
-     * created. If the <code>CallerReference</code> is a value that you already sent in a previous request to create a
-     * streaming distribution, and the content of the <code>StreamingDistributionConfig</code> is identical to the
-     * original request (ignoring white space), the response includes the same information returned to the original
-     * request. If the <code>CallerReference</code> is a value that you already sent in a previous request to create a
-     * streaming distribution but the content of the <code>StreamingDistributionConfig</code> is different from the
-     * original request, CloudFront returns a <code>DistributionAlreadyExists</code> error.
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
+     * </p>
+     * <p>
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
+     * <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.
+     * </p>
+     * <p>
+     * If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * </p>
      * 
-     * @return A unique number that ensures that the request can't be replayed. If the <code>CallerReference</code> is
-     *         new (no matter the content of the <code>StreamingDistributionConfig</code> object), a new streaming
-     *         distribution is created. If the <code>CallerReference</code> is a value that you already sent in a
-     *         previous request to create a streaming distribution, and the content of the
-     *         <code>StreamingDistributionConfig</code> is identical to the original request (ignoring white space), the
-     *         response includes the same information returned to the original request. If the
-     *         <code>CallerReference</code> is a value that you already sent in a previous request to create a streaming
-     *         distribution but the content of the <code>StreamingDistributionConfig</code> is different from the
-     *         original request, CloudFront returns a <code>DistributionAlreadyExists</code> error.
+     * @return A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
+     *         <p>
+     *         If the value of <code>CallerReference</code> is new (regardless of the content of the
+     *         <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.
+     *         </p>
+     *         <p>
+     *         If <code>CallerReference</code> is a value that you already sent in a previous request to create a
+     *         distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.
      */
 
     public String getCallerReference() {
@@ -178,26 +178,26 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A unique number that ensures that the request can't be replayed. If the <code>CallerReference</code> is new (no
-     * matter the content of the <code>StreamingDistributionConfig</code> object), a new streaming distribution is
-     * created. If the <code>CallerReference</code> is a value that you already sent in a previous request to create a
-     * streaming distribution, and the content of the <code>StreamingDistributionConfig</code> is identical to the
-     * original request (ignoring white space), the response includes the same information returned to the original
-     * request. If the <code>CallerReference</code> is a value that you already sent in a previous request to create a
-     * streaming distribution but the content of the <code>StreamingDistributionConfig</code> is different from the
-     * original request, CloudFront returns a <code>DistributionAlreadyExists</code> error.
+     * A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.
+     * </p>
+     * <p>
+     * If the value of <code>CallerReference</code> is new (regardless of the content of the
+     * <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.
+     * </p>
+     * <p>
+     * If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * </p>
      * 
      * @param callerReference
-     *        A unique number that ensures that the request can't be replayed. If the <code>CallerReference</code> is
-     *        new (no matter the content of the <code>StreamingDistributionConfig</code> object), a new streaming
-     *        distribution is created. If the <code>CallerReference</code> is a value that you already sent in a
-     *        previous request to create a streaming distribution, and the content of the
-     *        <code>StreamingDistributionConfig</code> is identical to the original request (ignoring white space), the
-     *        response includes the same information returned to the original request. If the
-     *        <code>CallerReference</code> is a value that you already sent in a previous request to create a streaming
-     *        distribution but the content of the <code>StreamingDistributionConfig</code> is different from the
-     *        original request, CloudFront returns a <code>DistributionAlreadyExists</code> error.
+     *        A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
+     *        <p>
+     *        If the value of <code>CallerReference</code> is new (regardless of the content of the
+     *        <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.
+     *        </p>
+     *        <p>
+     *        If <code>CallerReference</code> is a value that you already sent in a previous request to create a
+     *        distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -568,7 +568,8 @@ public class StreamingDistributionConfig implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

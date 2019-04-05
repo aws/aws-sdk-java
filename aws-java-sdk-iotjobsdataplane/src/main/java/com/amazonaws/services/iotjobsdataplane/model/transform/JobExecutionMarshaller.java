@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class JobExecutionMarshaller {
             .marshallLocationName("startedAt").build();
     private static final MarshallingInfo<Long> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("lastUpdatedAt").build();
+    private static final MarshallingInfo<Long> APPROXIMATESECONDSBEFORETIMEDOUT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("approximateSecondsBeforeTimedOut").build();
     private static final MarshallingInfo<Long> VERSIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("versionNumber").build();
     private static final MarshallingInfo<Long> EXECUTIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
@@ -73,6 +75,7 @@ public class JobExecutionMarshaller {
             protocolMarshaller.marshall(jobExecution.getQueuedAt(), QUEUEDAT_BINDING);
             protocolMarshaller.marshall(jobExecution.getStartedAt(), STARTEDAT_BINDING);
             protocolMarshaller.marshall(jobExecution.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
+            protocolMarshaller.marshall(jobExecution.getApproximateSecondsBeforeTimedOut(), APPROXIMATESECONDSBEFORETIMEDOUT_BINDING);
             protocolMarshaller.marshall(jobExecution.getVersionNumber(), VERSIONNUMBER_BINDING);
             protocolMarshaller.marshall(jobExecution.getExecutionNumber(), EXECUTIONNUMBER_BINDING);
             protocolMarshaller.marshall(jobExecution.getJobDocument(), JOBDOCUMENT_BINDING);

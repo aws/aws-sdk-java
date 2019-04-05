@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,9 +32,9 @@ public class AggregateEvaluationResultMarshaller {
     private static final MarshallingInfo<String> COMPLIANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceType").build();
     private static final MarshallingInfo<java.util.Date> RESULTRECORDEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResultRecordedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResultRecordedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CONFIGRULEINVOKEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigRuleInvokedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigRuleInvokedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ANNOTATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Annotation").build();
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)

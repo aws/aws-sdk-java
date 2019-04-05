@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      * </p>
      * </li>
@@ -70,8 +75,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code settings that are specified in the source action of a pipeline in AWS CodePipeline,
-     * <code>location</code> should not be specified. If it is specified, AWS CodePipeline will ignore it. This is
-     * because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
+     * <code>location</code> should not be specified. If it is specified, AWS CodePipeline ignores it. This is because
+     * AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
      * </p>
      * </li>
      * <li>
@@ -83,33 +88,44 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file that
-     * contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The path to the ZIP file that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
+     * The path to the folder that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS CodeBuild
-     * console to begin creating a build project. When you use the console to connect (or reconnect) with GitHub, on the
-     * GitHub <b>Authorize application</b> page that displays, for <b>Organization access</b>, choose <b>Request
-     * access</b> next to each repository you want to allow AWS CodeBuild to have access to. Then choose <b>Authorize
-     * application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build
-     * project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this
-     * connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
-     * <code>OAUTH</code>.
+     * build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub
+     * <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each
+     * repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize application</b>.
+     * (After you have connected to your GitHub account, you do not need to finish creating the build project. You can
+     * leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code>
+     * object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. Also, you must connect your AWS account to your Bitbucket account. To do this, use the AWS CodeBuild
-     * console to begin creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on
-     * the Bitbucket <b>Confirm access to your account</b> page that displays, choose <b>Grant access</b>. (After you
-     * have connected to your Bitbucket account, you do not need to finish creating the build project, and you may then
-     * leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the
-     * <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+     * build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your
+     * Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
+     * console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code> object, set the
+     * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -117,10 +133,16 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     private String location;
     /**
      * <p>
-     * Information about the git clone depth for the build project.
+     * Information about the Git clone depth for the build project.
      * </p>
      */
     private Integer gitCloneDepth;
+    /**
+     * <p>
+     * Information about the Git submodules configuration for the build project.
+     * </p>
+     */
+    private GitSubmodulesConfig gitSubmodulesConfig;
     /**
      * <p>
      * The build spec declaration to use for the builds in this build project.
@@ -136,17 +158,30 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
-     * directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code> or
-     * <code>GITHUB</code>).
+     * directly.
      * </p>
      */
     private SourceAuth auth;
+    /**
+     * <p>
+     * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
+     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
+     * source provider, an invalidInputException is thrown.
+     * </p>
+     */
+    private Boolean reportBuildStatus;
     /**
      * <p>
      * Enable this flag to ignore SSL warnings while connecting to the project source code.
      * </p>
      */
     private Boolean insecureSsl;
+    /**
+     * <p>
+     * An identifier for this project source.
+     * </p>
+     */
+    private String sourceIdentifier;
 
     /**
      * <p>
@@ -172,6 +207,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
      * </p>
      * </li>
      * <li>
@@ -203,6 +243,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NO_SOURCE</code>: The project does not have input source code.
      *        </p>
      *        </li>
      *        <li>
@@ -245,6 +290,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      * </p>
      * </li>
@@ -271,6 +321,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>GITHUB</code>: The source code is in a GitHub repository.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NO_SOURCE</code>: The project does not have input source code.
      *         </p>
      *         </li>
      *         <li>
@@ -313,6 +368,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      * </p>
      * </li>
@@ -340,6 +400,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NO_SOURCE</code>: The project does not have input source code.
      *        </p>
      *        </li>
      *        <li>
@@ -384,6 +449,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      * </p>
      * </li>
@@ -411,6 +481,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NO_SOURCE</code>: The project does not have input source code.
      *        </p>
      *        </li>
      *        <li>
@@ -453,6 +528,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      * </p>
      * </li>
@@ -484,6 +564,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        <code>NO_SOURCE</code>: The project does not have input source code.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
      *        </p>
      *        </li>
@@ -504,8 +589,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code settings that are specified in the source action of a pipeline in AWS CodePipeline,
-     * <code>location</code> should not be specified. If it is specified, AWS CodePipeline will ignore it. This is
-     * because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
+     * <code>location</code> should not be specified. If it is specified, AWS CodePipeline ignores it. This is because
+     * AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
      * </p>
      * </li>
      * <li>
@@ -517,33 +602,44 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file that
-     * contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The path to the ZIP file that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
+     * The path to the folder that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS CodeBuild
-     * console to begin creating a build project. When you use the console to connect (or reconnect) with GitHub, on the
-     * GitHub <b>Authorize application</b> page that displays, for <b>Organization access</b>, choose <b>Request
-     * access</b> next to each repository you want to allow AWS CodeBuild to have access to. Then choose <b>Authorize
-     * application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build
-     * project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this
-     * connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
-     * <code>OAUTH</code>.
+     * build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub
+     * <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each
+     * repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize application</b>.
+     * (After you have connected to your GitHub account, you do not need to finish creating the build project. You can
+     * leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code>
+     * object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. Also, you must connect your AWS account to your Bitbucket account. To do this, use the AWS CodeBuild
-     * console to begin creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on
-     * the Bitbucket <b>Confirm access to your account</b> page that displays, choose <b>Grant access</b>. (After you
-     * have connected to your Bitbucket account, you do not need to finish creating the build project, and you may then
-     * leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the
-     * <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+     * build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your
+     * Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
+     * console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code> object, set the
+     * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -554,8 +650,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        For source code settings that are specified in the source action of a pipeline in AWS CodePipeline,
-     *        <code>location</code> should not be specified. If it is specified, AWS CodePipeline will ignore it. This
-     *        is because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
+     *        <code>location</code> should not be specified. If it is specified, AWS CodePipeline ignores it. This is
+     *        because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
      *        </p>
      *        </li>
      *        <li>
@@ -567,34 +663,46 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file
-     *        that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The path to the ZIP file that contains the source code (for example,
+     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
+     *        The path to the folder that contains the source code (for example,
+     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
      *        For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and
-     *        the build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS
-     *        CodeBuild console to begin creating a build project. When you use the console to connect (or reconnect)
-     *        with GitHub, on the GitHub <b>Authorize application</b> page that displays, for <b>Organization
-     *        access</b>, choose <b>Request access</b> next to each repository you want to allow AWS CodeBuild to have
-     *        access to. Then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you
-     *        do not need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To
-     *        instruct AWS CodeBuild to then use this connection, in the <code>source</code> object, set the
-     *        <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+     *        the build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to
+     *        start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the
+     *        GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b>
+     *        next to each repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize
+     *        application</b>. (After you have connected to your GitHub account, you do not need to finish creating the
+     *        build project. You can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection,
+     *        in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
+     *        <code>OAUTH</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source
-     *        and the build spec. Also, you must connect your AWS account to your Bitbucket account. To do this, use the
-     *        AWS CodeBuild console to begin creating a build project. When you use the console to connect (or
-     *        reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page that displays,
-     *        choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish
-     *        creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild
-     *        to then use this connection, in the <code>source</code> object, set the <code>auth</code> object's
-     *        <code>type</code> value to <code>OAUTH</code>.
+     *        and the build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild
+     *        console to start creating a build project. When you use the console to connect (or reconnect) with
+     *        Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
+     *        you have connected to your Bitbucket account, you do not need to finish creating the build project. You
+     *        can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection, in the
+     *        <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
+     *        <code>OAUTH</code>.
      *        </p>
      *        </li>
      */
@@ -611,8 +719,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code settings that are specified in the source action of a pipeline in AWS CodePipeline,
-     * <code>location</code> should not be specified. If it is specified, AWS CodePipeline will ignore it. This is
-     * because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
+     * <code>location</code> should not be specified. If it is specified, AWS CodePipeline ignores it. This is because
+     * AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
      * </p>
      * </li>
      * <li>
@@ -624,33 +732,44 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file that
-     * contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The path to the ZIP file that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
+     * The path to the folder that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS CodeBuild
-     * console to begin creating a build project. When you use the console to connect (or reconnect) with GitHub, on the
-     * GitHub <b>Authorize application</b> page that displays, for <b>Organization access</b>, choose <b>Request
-     * access</b> next to each repository you want to allow AWS CodeBuild to have access to. Then choose <b>Authorize
-     * application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build
-     * project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this
-     * connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
-     * <code>OAUTH</code>.
+     * build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub
+     * <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each
+     * repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize application</b>.
+     * (After you have connected to your GitHub account, you do not need to finish creating the build project. You can
+     * leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code>
+     * object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. Also, you must connect your AWS account to your Bitbucket account. To do this, use the AWS CodeBuild
-     * console to begin creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on
-     * the Bitbucket <b>Confirm access to your account</b> page that displays, choose <b>Grant access</b>. (After you
-     * have connected to your Bitbucket account, you do not need to finish creating the build project, and you may then
-     * leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the
-     * <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+     * build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your
+     * Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
+     * console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code> object, set the
+     * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -660,8 +779,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         For source code settings that are specified in the source action of a pipeline in AWS CodePipeline,
-     *         <code>location</code> should not be specified. If it is specified, AWS CodePipeline will ignore it. This
-     *         is because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
+     *         <code>location</code> should not be specified. If it is specified, AWS CodePipeline ignores it. This is
+     *         because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
      *         </p>
      *         </li>
      *         <li>
@@ -673,34 +792,46 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file
-     *         that contains the source code (for example,
-     *         <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     *         For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The path to the ZIP file that contains the source code (for example,
+     *         <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
+     *         The path to the folder that contains the source code (for example,
+     *         <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
      *         For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source
-     *         and the build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the
-     *         AWS CodeBuild console to begin creating a build project. When you use the console to connect (or
-     *         reconnect) with GitHub, on the GitHub <b>Authorize application</b> page that displays, for
-     *         <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow AWS
-     *         CodeBuild to have access to. Then choose <b>Authorize application</b>. (After you have connected to your
-     *         GitHub account, you do not need to finish creating the build project, and you may then leave the AWS
-     *         CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the <code>source</code>
-     *         object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+     *         and the build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild
+     *         console to start creating a build project. When you use the console to connect (or reconnect) with
+     *         GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose
+     *         <b>Request access</b> next to each repository you want to allow AWS CodeBuild to have access to, and then
+     *         choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to
+     *         finish creating the build project. You can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to
+     *         use this connection, in the <code>source</code> object, set the <code>auth</code> object's
+     *         <code>type</code> value to <code>OAUTH</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source
-     *         and the build spec. Also, you must connect your AWS account to your Bitbucket account. To do this, use
-     *         the AWS CodeBuild console to begin creating a build project. When you use the console to connect (or
-     *         reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page that displays,
-     *         choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to
-     *         finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS
-     *         CodeBuild to then use this connection, in the <code>source</code> object, set the <code>auth</code>
-     *         object's <code>type</code> value to <code>OAUTH</code>.
+     *         and the build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild
+     *         console to start creating a build project. When you use the console to connect (or reconnect) with
+     *         Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>.
+     *         (After you have connected to your Bitbucket account, you do not need to finish creating the build
+     *         project. You can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection, in
+     *         the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
+     *         <code>OAUTH</code>.
      *         </p>
      *         </li>
      */
@@ -717,8 +848,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For source code settings that are specified in the source action of a pipeline in AWS CodePipeline,
-     * <code>location</code> should not be specified. If it is specified, AWS CodePipeline will ignore it. This is
-     * because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
+     * <code>location</code> should not be specified. If it is specified, AWS CodePipeline ignores it. This is because
+     * AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
      * </p>
      * </li>
      * <li>
@@ -730,33 +861,44 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file that
-     * contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The path to the ZIP file that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
+     * The path to the folder that contains the source code (for example,
+     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS CodeBuild
-     * console to begin creating a build project. When you use the console to connect (or reconnect) with GitHub, on the
-     * GitHub <b>Authorize application</b> page that displays, for <b>Organization access</b>, choose <b>Request
-     * access</b> next to each repository you want to allow AWS CodeBuild to have access to. Then choose <b>Authorize
-     * application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build
-     * project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this
-     * connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
-     * <code>OAUTH</code>.
+     * build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub
+     * <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each
+     * repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize application</b>.
+     * (After you have connected to your GitHub account, you do not need to finish creating the build project. You can
+     * leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code>
+     * object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
-     * build spec. Also, you must connect your AWS account to your Bitbucket account. To do this, use the AWS CodeBuild
-     * console to begin creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on
-     * the Bitbucket <b>Confirm access to your account</b> page that displays, choose <b>Grant access</b>. (After you
-     * have connected to your Bitbucket account, you do not need to finish creating the build project, and you may then
-     * leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the
-     * <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+     * build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your
+     * Bitbucket account, you do not need to finish creating the build project. You can leave the AWS CodeBuild
+     * console.) To instruct AWS CodeBuild to use this connection, in the <code>source</code> object, set the
+     * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
      * </p>
      * </li>
      * </ul>
@@ -767,8 +909,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        For source code settings that are specified in the source action of a pipeline in AWS CodePipeline,
-     *        <code>location</code> should not be specified. If it is specified, AWS CodePipeline will ignore it. This
-     *        is because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
+     *        <code>location</code> should not be specified. If it is specified, AWS CodePipeline ignores it. This is
+     *        because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.
      *        </p>
      *        </li>
      *        <li>
@@ -780,34 +922,46 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file
-     *        that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>)
+     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The path to the ZIP file that contains the source code (for example,
+     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
+     *        The path to the folder that contains the source code (for example,
+     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
      *        For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and
-     *        the build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS
-     *        CodeBuild console to begin creating a build project. When you use the console to connect (or reconnect)
-     *        with GitHub, on the GitHub <b>Authorize application</b> page that displays, for <b>Organization
-     *        access</b>, choose <b>Request access</b> next to each repository you want to allow AWS CodeBuild to have
-     *        access to. Then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you
-     *        do not need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To
-     *        instruct AWS CodeBuild to then use this connection, in the <code>source</code> object, set the
-     *        <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
+     *        the build spec. You must connect your AWS account to your GitHub account. Use the AWS CodeBuild console to
+     *        start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the
+     *        GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b>
+     *        next to each repository you want to allow AWS CodeBuild to have access to, and then choose <b>Authorize
+     *        application</b>. (After you have connected to your GitHub account, you do not need to finish creating the
+     *        build project. You can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection,
+     *        in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
+     *        <code>OAUTH</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source
-     *        and the build spec. Also, you must connect your AWS account to your Bitbucket account. To do this, use the
-     *        AWS CodeBuild console to begin creating a build project. When you use the console to connect (or
-     *        reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page that displays,
-     *        choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish
-     *        creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild
-     *        to then use this connection, in the <code>source</code> object, set the <code>auth</code> object's
-     *        <code>type</code> value to <code>OAUTH</code>.
+     *        and the build spec. You must connect your AWS account to your Bitbucket account. Use the AWS CodeBuild
+     *        console to start creating a build project. When you use the console to connect (or reconnect) with
+     *        Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
+     *        you have connected to your Bitbucket account, you do not need to finish creating the build project. You
+     *        can leave the AWS CodeBuild console.) To instruct AWS CodeBuild to use this connection, in the
+     *        <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to
+     *        <code>OAUTH</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -820,11 +974,11 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the git clone depth for the build project.
+     * Information about the Git clone depth for the build project.
      * </p>
      * 
      * @param gitCloneDepth
-     *        Information about the git clone depth for the build project.
+     *        Information about the Git clone depth for the build project.
      */
 
     public void setGitCloneDepth(Integer gitCloneDepth) {
@@ -833,10 +987,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the git clone depth for the build project.
+     * Information about the Git clone depth for the build project.
      * </p>
      * 
-     * @return Information about the git clone depth for the build project.
+     * @return Information about the Git clone depth for the build project.
      */
 
     public Integer getGitCloneDepth() {
@@ -845,16 +999,56 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the git clone depth for the build project.
+     * Information about the Git clone depth for the build project.
      * </p>
      * 
      * @param gitCloneDepth
-     *        Information about the git clone depth for the build project.
+     *        Information about the Git clone depth for the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProjectSource withGitCloneDepth(Integer gitCloneDepth) {
         setGitCloneDepth(gitCloneDepth);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the Git submodules configuration for the build project.
+     * </p>
+     * 
+     * @param gitSubmodulesConfig
+     *        Information about the Git submodules configuration for the build project.
+     */
+
+    public void setGitSubmodulesConfig(GitSubmodulesConfig gitSubmodulesConfig) {
+        this.gitSubmodulesConfig = gitSubmodulesConfig;
+    }
+
+    /**
+     * <p>
+     * Information about the Git submodules configuration for the build project.
+     * </p>
+     * 
+     * @return Information about the Git submodules configuration for the build project.
+     */
+
+    public GitSubmodulesConfig getGitSubmodulesConfig() {
+        return this.gitSubmodulesConfig;
+    }
+
+    /**
+     * <p>
+     * Information about the Git submodules configuration for the build project.
+     * </p>
+     * 
+     * @param gitSubmodulesConfig
+     *        Information about the Git submodules configuration for the build project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectSource withGitSubmodulesConfig(GitSubmodulesConfig gitSubmodulesConfig) {
+        setGitSubmodulesConfig(gitSubmodulesConfig);
         return this;
     }
 
@@ -919,16 +1113,14 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
-     * directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code> or
-     * <code>GITHUB</code>).
+     * directly.
      * </p>
      * 
      * @param auth
      *        Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
      *        <p>
      *        This information is for the AWS CodeBuild console's use only. Your code should not get or set this
-     *        information directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code>
-     *        or <code>GITHUB</code>).
+     *        information directly.
      */
 
     public void setAuth(SourceAuth auth) {
@@ -941,15 +1133,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
-     * directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code> or
-     * <code>GITHUB</code>).
+     * directly.
      * </p>
      * 
      * @return Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
      *         <p>
      *         This information is for the AWS CodeBuild console's use only. Your code should not get or set this
-     *         information directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code>
-     *         or <code>GITHUB</code>).
+     *         information directly.
      */
 
     public SourceAuth getAuth() {
@@ -962,22 +1152,88 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This information is for the AWS CodeBuild console's use only. Your code should not get or set this information
-     * directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code> or
-     * <code>GITHUB</code>).
+     * directly.
      * </p>
      * 
      * @param auth
      *        Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
      *        <p>
      *        This information is for the AWS CodeBuild console's use only. Your code should not get or set this
-     *        information directly (unless the build project's source <code>type</code> value is <code>BITBUCKET</code>
-     *        or <code>GITHUB</code>).
+     *        information directly.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ProjectSource withAuth(SourceAuth auth) {
         setAuth(auth);
         return this;
+    }
+
+    /**
+     * <p>
+     * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
+     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
+     * source provider, an invalidInputException is thrown.
+     * </p>
+     * 
+     * @param reportBuildStatus
+     *        Set to true to report the status of a build's start and finish to your source provider. This option is
+     *        valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
+     *        use a different source provider, an invalidInputException is thrown.
+     */
+
+    public void setReportBuildStatus(Boolean reportBuildStatus) {
+        this.reportBuildStatus = reportBuildStatus;
+    }
+
+    /**
+     * <p>
+     * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
+     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
+     * source provider, an invalidInputException is thrown.
+     * </p>
+     * 
+     * @return Set to true to report the status of a build's start and finish to your source provider. This option is
+     *         valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
+     *         use a different source provider, an invalidInputException is thrown.
+     */
+
+    public Boolean getReportBuildStatus() {
+        return this.reportBuildStatus;
+    }
+
+    /**
+     * <p>
+     * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
+     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
+     * source provider, an invalidInputException is thrown.
+     * </p>
+     * 
+     * @param reportBuildStatus
+     *        Set to true to report the status of a build's start and finish to your source provider. This option is
+     *        valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
+     *        use a different source provider, an invalidInputException is thrown.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectSource withReportBuildStatus(Boolean reportBuildStatus) {
+        setReportBuildStatus(reportBuildStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
+     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
+     * source provider, an invalidInputException is thrown.
+     * </p>
+     * 
+     * @return Set to true to report the status of a build's start and finish to your source provider. This option is
+     *         valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
+     *         use a different source provider, an invalidInputException is thrown.
+     */
+
+    public Boolean isReportBuildStatus() {
+        return this.reportBuildStatus;
     }
 
     /**
@@ -1033,7 +1289,48 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * An identifier for this project source.
+     * </p>
+     * 
+     * @param sourceIdentifier
+     *        An identifier for this project source.
+     */
+
+    public void setSourceIdentifier(String sourceIdentifier) {
+        this.sourceIdentifier = sourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * An identifier for this project source.
+     * </p>
+     * 
+     * @return An identifier for this project source.
+     */
+
+    public String getSourceIdentifier() {
+        return this.sourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * An identifier for this project source.
+     * </p>
+     * 
+     * @param sourceIdentifier
+     *        An identifier for this project source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectSource withSourceIdentifier(String sourceIdentifier) {
+        setSourceIdentifier(sourceIdentifier);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1049,12 +1346,18 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             sb.append("Location: ").append(getLocation()).append(",");
         if (getGitCloneDepth() != null)
             sb.append("GitCloneDepth: ").append(getGitCloneDepth()).append(",");
+        if (getGitSubmodulesConfig() != null)
+            sb.append("GitSubmodulesConfig: ").append(getGitSubmodulesConfig()).append(",");
         if (getBuildspec() != null)
             sb.append("Buildspec: ").append(getBuildspec()).append(",");
         if (getAuth() != null)
             sb.append("Auth: ").append(getAuth()).append(",");
+        if (getReportBuildStatus() != null)
+            sb.append("ReportBuildStatus: ").append(getReportBuildStatus()).append(",");
         if (getInsecureSsl() != null)
-            sb.append("InsecureSsl: ").append(getInsecureSsl());
+            sb.append("InsecureSsl: ").append(getInsecureSsl()).append(",");
+        if (getSourceIdentifier() != null)
+            sb.append("SourceIdentifier: ").append(getSourceIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -1081,6 +1384,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGitCloneDepth() != null && other.getGitCloneDepth().equals(this.getGitCloneDepth()) == false)
             return false;
+        if (other.getGitSubmodulesConfig() == null ^ this.getGitSubmodulesConfig() == null)
+            return false;
+        if (other.getGitSubmodulesConfig() != null && other.getGitSubmodulesConfig().equals(this.getGitSubmodulesConfig()) == false)
+            return false;
         if (other.getBuildspec() == null ^ this.getBuildspec() == null)
             return false;
         if (other.getBuildspec() != null && other.getBuildspec().equals(this.getBuildspec()) == false)
@@ -1089,9 +1396,17 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAuth() != null && other.getAuth().equals(this.getAuth()) == false)
             return false;
+        if (other.getReportBuildStatus() == null ^ this.getReportBuildStatus() == null)
+            return false;
+        if (other.getReportBuildStatus() != null && other.getReportBuildStatus().equals(this.getReportBuildStatus()) == false)
+            return false;
         if (other.getInsecureSsl() == null ^ this.getInsecureSsl() == null)
             return false;
         if (other.getInsecureSsl() != null && other.getInsecureSsl().equals(this.getInsecureSsl()) == false)
+            return false;
+        if (other.getSourceIdentifier() == null ^ this.getSourceIdentifier() == null)
+            return false;
+        if (other.getSourceIdentifier() != null && other.getSourceIdentifier().equals(this.getSourceIdentifier()) == false)
             return false;
         return true;
     }
@@ -1104,9 +1419,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getGitCloneDepth() == null) ? 0 : getGitCloneDepth().hashCode());
+        hashCode = prime * hashCode + ((getGitSubmodulesConfig() == null) ? 0 : getGitSubmodulesConfig().hashCode());
         hashCode = prime * hashCode + ((getBuildspec() == null) ? 0 : getBuildspec().hashCode());
         hashCode = prime * hashCode + ((getAuth() == null) ? 0 : getAuth().hashCode());
+        hashCode = prime * hashCode + ((getReportBuildStatus() == null) ? 0 : getReportBuildStatus().hashCode());
         hashCode = prime * hashCode + ((getInsecureSsl() == null) ? 0 : getInsecureSsl().hashCode());
+        hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode());
         return hashCode;
     }
 

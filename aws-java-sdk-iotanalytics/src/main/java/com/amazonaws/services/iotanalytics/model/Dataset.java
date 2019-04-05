@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The "DatasetAction" objects that create the data set.
+     * The "DatasetAction" objects that automatically create the data set contents.
      * </p>
      */
     private java.util.List<DatasetAction> actions;
@@ -52,6 +52,12 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<DatasetTrigger> triggers;
+    /**
+     * <p>
+     * When data set contents are created they are delivered to destinations specified here.
+     * </p>
+     */
+    private java.util.List<DatasetContentDeliveryRule> contentDeliveryRules;
     /**
      * <p>
      * The status of the data set.
@@ -70,6 +76,22 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastUpdateTime;
+    /**
+     * <p>
+     * [Optional] How long, in days, message data is kept for the data set.
+     * </p>
+     */
+    private RetentionPeriod retentionPeriod;
+    /**
+     * <p>
+     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
+     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * </p>
+     */
+    private VersioningConfiguration versioningConfiguration;
 
     /**
      * <p>
@@ -153,10 +175,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that create the data set.
+     * The "DatasetAction" objects that automatically create the data set contents.
      * </p>
      * 
-     * @return The "DatasetAction" objects that create the data set.
+     * @return The "DatasetAction" objects that automatically create the data set contents.
      */
 
     public java.util.List<DatasetAction> getActions() {
@@ -165,11 +187,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that create the data set.
+     * The "DatasetAction" objects that automatically create the data set contents.
      * </p>
      * 
      * @param actions
-     *        The "DatasetAction" objects that create the data set.
+     *        The "DatasetAction" objects that automatically create the data set contents.
      */
 
     public void setActions(java.util.Collection<DatasetAction> actions) {
@@ -183,7 +205,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that create the data set.
+     * The "DatasetAction" objects that automatically create the data set contents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -192,7 +214,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param actions
-     *        The "DatasetAction" objects that create the data set.
+     *        The "DatasetAction" objects that automatically create the data set contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +230,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that create the data set.
+     * The "DatasetAction" objects that automatically create the data set contents.
      * </p>
      * 
      * @param actions
-     *        The "DatasetAction" objects that create the data set.
+     *        The "DatasetAction" objects that automatically create the data set contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,6 +310,76 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     public Dataset withTriggers(java.util.Collection<DatasetTrigger> triggers) {
         setTriggers(triggers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When data set contents are created they are delivered to destinations specified here.
+     * </p>
+     * 
+     * @return When data set contents are created they are delivered to destinations specified here.
+     */
+
+    public java.util.List<DatasetContentDeliveryRule> getContentDeliveryRules() {
+        return contentDeliveryRules;
+    }
+
+    /**
+     * <p>
+     * When data set contents are created they are delivered to destinations specified here.
+     * </p>
+     * 
+     * @param contentDeliveryRules
+     *        When data set contents are created they are delivered to destinations specified here.
+     */
+
+    public void setContentDeliveryRules(java.util.Collection<DatasetContentDeliveryRule> contentDeliveryRules) {
+        if (contentDeliveryRules == null) {
+            this.contentDeliveryRules = null;
+            return;
+        }
+
+        this.contentDeliveryRules = new java.util.ArrayList<DatasetContentDeliveryRule>(contentDeliveryRules);
+    }
+
+    /**
+     * <p>
+     * When data set contents are created they are delivered to destinations specified here.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setContentDeliveryRules(java.util.Collection)} or {@link #withContentDeliveryRules(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param contentDeliveryRules
+     *        When data set contents are created they are delivered to destinations specified here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dataset withContentDeliveryRules(DatasetContentDeliveryRule... contentDeliveryRules) {
+        if (this.contentDeliveryRules == null) {
+            setContentDeliveryRules(new java.util.ArrayList<DatasetContentDeliveryRule>(contentDeliveryRules.length));
+        }
+        for (DatasetContentDeliveryRule ele : contentDeliveryRules) {
+            this.contentDeliveryRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * When data set contents are created they are delivered to destinations specified here.
+     * </p>
+     * 
+     * @param contentDeliveryRules
+     *        When data set contents are created they are delivered to destinations specified here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dataset withContentDeliveryRules(java.util.Collection<DatasetContentDeliveryRule> contentDeliveryRules) {
+        setContentDeliveryRules(contentDeliveryRules);
         return this;
     }
 
@@ -431,7 +523,112 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * [Optional] How long, in days, message data is kept for the data set.
+     * </p>
+     * 
+     * @param retentionPeriod
+     *        [Optional] How long, in days, message data is kept for the data set.
+     */
+
+    public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
+        this.retentionPeriod = retentionPeriod;
+    }
+
+    /**
+     * <p>
+     * [Optional] How long, in days, message data is kept for the data set.
+     * </p>
+     * 
+     * @return [Optional] How long, in days, message data is kept for the data set.
+     */
+
+    public RetentionPeriod getRetentionPeriod() {
+        return this.retentionPeriod;
+    }
+
+    /**
+     * <p>
+     * [Optional] How long, in days, message data is kept for the data set.
+     * </p>
+     * 
+     * @param retentionPeriod
+     *        [Optional] How long, in days, message data is kept for the data set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dataset withRetentionPeriod(RetentionPeriod retentionPeriod) {
+        setRetentionPeriod(retentionPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
+     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * </p>
+     * 
+     * @param versioningConfiguration
+     *        [Optional] How many versions of data set contents are kept. If not specified or set to null, only the
+     *        latest version plus the latest succeeded version (if they are different) are kept for the time period
+     *        specified by the "retentionPeriod" parameter. (For more information, see
+     *        https://docs.aws.amazon.com/iotanalytics
+     *        /latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     */
+
+    public void setVersioningConfiguration(VersioningConfiguration versioningConfiguration) {
+        this.versioningConfiguration = versioningConfiguration;
+    }
+
+    /**
+     * <p>
+     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
+     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * </p>
+     * 
+     * @return [Optional] How many versions of data set contents are kept. If not specified or set to null, only the
+     *         latest version plus the latest succeeded version (if they are different) are kept for the time period
+     *         specified by the "retentionPeriod" parameter. (For more information, see
+     *         https://docs.aws.amazon.com/iotanalytics
+     *         /latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     */
+
+    public VersioningConfiguration getVersioningConfiguration() {
+        return this.versioningConfiguration;
+    }
+
+    /**
+     * <p>
+     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
+     * "retentionPeriod" parameter. (For more information, see
+     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
+     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * </p>
+     * 
+     * @param versioningConfiguration
+     *        [Optional] How many versions of data set contents are kept. If not specified or set to null, only the
+     *        latest version plus the latest succeeded version (if they are different) are kept for the time period
+     *        specified by the "retentionPeriod" parameter. (For more information, see
+     *        https://docs.aws.amazon.com/iotanalytics
+     *        /latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dataset withVersioningConfiguration(VersioningConfiguration versioningConfiguration) {
+        setVersioningConfiguration(versioningConfiguration);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -449,12 +646,18 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
             sb.append("Actions: ").append(getActions()).append(",");
         if (getTriggers() != null)
             sb.append("Triggers: ").append(getTriggers()).append(",");
+        if (getContentDeliveryRules() != null)
+            sb.append("ContentDeliveryRules: ").append(getContentDeliveryRules()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdateTime() != null)
-            sb.append("LastUpdateTime: ").append(getLastUpdateTime());
+            sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
+        if (getRetentionPeriod() != null)
+            sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
+        if (getVersioningConfiguration() != null)
+            sb.append("VersioningConfiguration: ").append(getVersioningConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -485,6 +688,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTriggers() != null && other.getTriggers().equals(this.getTriggers()) == false)
             return false;
+        if (other.getContentDeliveryRules() == null ^ this.getContentDeliveryRules() == null)
+            return false;
+        if (other.getContentDeliveryRules() != null && other.getContentDeliveryRules().equals(this.getContentDeliveryRules()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -496,6 +703,14 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
         if (other.getLastUpdateTime() == null ^ this.getLastUpdateTime() == null)
             return false;
         if (other.getLastUpdateTime() != null && other.getLastUpdateTime().equals(this.getLastUpdateTime()) == false)
+            return false;
+        if (other.getRetentionPeriod() == null ^ this.getRetentionPeriod() == null)
+            return false;
+        if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false)
+            return false;
+        if (other.getVersioningConfiguration() == null ^ this.getVersioningConfiguration() == null)
+            return false;
+        if (other.getVersioningConfiguration() != null && other.getVersioningConfiguration().equals(this.getVersioningConfiguration()) == false)
             return false;
         return true;
     }
@@ -509,9 +724,12 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         hashCode = prime * hashCode + ((getTriggers() == null) ? 0 : getTriggers().hashCode());
+        hashCode = prime * hashCode + ((getContentDeliveryRules() == null) ? 0 : getContentDeliveryRules().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getVersioningConfiguration() == null) ? 0 : getVersioningConfiguration().hashCode());
         return hashCode;
     }
 

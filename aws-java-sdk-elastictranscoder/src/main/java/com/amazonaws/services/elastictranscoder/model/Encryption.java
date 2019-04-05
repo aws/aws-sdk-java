@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,29 +35,29 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>S3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
+     * <b>s3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>S3-AWS-KMS:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys that are
-     * used for encrypting your files. If you specify <code>S3-AWS-KMS</code> and you don't want to use the default key,
+     * <b>s3-aws-kms:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys that are
+     * used for encrypting your files. If you specify <code>s3-aws-kms</code> and you don't want to use the default key,
      * you must add the AWS-KMS key that you want to use to your pipeline.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-CBC-PKCS7:</b> A padded cipher-block mode of operation originally used for HLS files.
+     * <b>aes-cbc-pkcs7:</b> A padded cipher-block mode of operation originally used for HLS files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-CTR:</b> AES Counter Mode.
+     * <b>aes-ctr:</b> AES Counter Mode.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
+     * <b>aes-gcm:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
      * that a file, key, or initialization vector that has been tampered with fails the decryption process.
      * </p>
      * </li>
@@ -131,29 +131,29 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>S3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
+     * <b>s3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>S3-AWS-KMS:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys that are
-     * used for encrypting your files. If you specify <code>S3-AWS-KMS</code> and you don't want to use the default key,
+     * <b>s3-aws-kms:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys that are
+     * used for encrypting your files. If you specify <code>s3-aws-kms</code> and you don't want to use the default key,
      * you must add the AWS-KMS key that you want to use to your pipeline.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-CBC-PKCS7:</b> A padded cipher-block mode of operation originally used for HLS files.
+     * <b>aes-cbc-pkcs7:</b> A padded cipher-block mode of operation originally used for HLS files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-CTR:</b> AES Counter Mode.
+     * <b>aes-ctr:</b> AES Counter Mode.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
+     * <b>aes-gcm:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
      * that a file, key, or initialization vector that has been tampered with fails the decryption process.
      * </p>
      * </li>
@@ -192,29 +192,29 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>S3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
+     *        <b>s3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>S3-AWS-KMS:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys
-     *        that are used for encrypting your files. If you specify <code>S3-AWS-KMS</code> and you don't want to use
+     *        <b>s3-aws-kms:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys
+     *        that are used for encrypting your files. If you specify <code>s3-aws-kms</code> and you don't want to use
      *        the default key, you must add the AWS-KMS key that you want to use to your pipeline.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AES-CBC-PKCS7:</b> A padded cipher-block mode of operation originally used for HLS files.
+     *        <b>aes-cbc-pkcs7:</b> A padded cipher-block mode of operation originally used for HLS files.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AES-CTR:</b> AES Counter Mode.
+     *        <b>aes-ctr:</b> AES Counter Mode.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format,
+     *        <b>aes-gcm:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format,
      *        meaning that a file, key, or initialization vector that has been tampered with fails the decryption
      *        process.
      *        </p>
@@ -260,29 +260,29 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>S3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
+     * <b>s3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>S3-AWS-KMS:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys that are
-     * used for encrypting your files. If you specify <code>S3-AWS-KMS</code> and you don't want to use the default key,
+     * <b>s3-aws-kms:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys that are
+     * used for encrypting your files. If you specify <code>s3-aws-kms</code> and you don't want to use the default key,
      * you must add the AWS-KMS key that you want to use to your pipeline.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-CBC-PKCS7:</b> A padded cipher-block mode of operation originally used for HLS files.
+     * <b>aes-cbc-pkcs7:</b> A padded cipher-block mode of operation originally used for HLS files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-CTR:</b> AES Counter Mode.
+     * <b>aes-ctr:</b> AES Counter Mode.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
+     * <b>aes-gcm:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
      * that a file, key, or initialization vector that has been tampered with fails the decryption process.
      * </p>
      * </li>
@@ -320,29 +320,29 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>S3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
+     *         <b>s3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>S3-AWS-KMS:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys
-     *         that are used for encrypting your files. If you specify <code>S3-AWS-KMS</code> and you don't want to use
+     *         <b>s3-aws-kms:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys
+     *         that are used for encrypting your files. If you specify <code>s3-aws-kms</code> and you don't want to use
      *         the default key, you must add the AWS-KMS key that you want to use to your pipeline.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AES-CBC-PKCS7:</b> A padded cipher-block mode of operation originally used for HLS files.
+     *         <b>aes-cbc-pkcs7:</b> A padded cipher-block mode of operation originally used for HLS files.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AES-CTR:</b> AES Counter Mode.
+     *         <b>aes-ctr:</b> AES Counter Mode.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format,
+     *         <b>aes-gcm:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format,
      *         meaning that a file, key, or initialization vector that has been tampered with fails the decryption
      *         process.
      *         </p>
@@ -388,29 +388,29 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>S3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
+     * <b>s3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>S3-AWS-KMS:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys that are
-     * used for encrypting your files. If you specify <code>S3-AWS-KMS</code> and you don't want to use the default key,
+     * <b>s3-aws-kms:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys that are
+     * used for encrypting your files. If you specify <code>s3-aws-kms</code> and you don't want to use the default key,
      * you must add the AWS-KMS key that you want to use to your pipeline.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-CBC-PKCS7:</b> A padded cipher-block mode of operation originally used for HLS files.
+     * <b>aes-cbc-pkcs7:</b> A padded cipher-block mode of operation originally used for HLS files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-CTR:</b> AES Counter Mode.
+     * <b>aes-ctr:</b> AES Counter Mode.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
+     * <b>aes-gcm:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format, meaning
      * that a file, key, or initialization vector that has been tampered with fails the decryption process.
      * </p>
      * </li>
@@ -449,29 +449,29 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>S3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
+     *        <b>s3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>S3-AWS-KMS:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys
-     *        that are used for encrypting your files. If you specify <code>S3-AWS-KMS</code> and you don't want to use
+     *        <b>s3-aws-kms:</b> Amazon S3 calls the Amazon Key Management Service, which creates and manages the keys
+     *        that are used for encrypting your files. If you specify <code>s3-aws-kms</code> and you don't want to use
      *        the default key, you must add the AWS-KMS key that you want to use to your pipeline.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AES-CBC-PKCS7:</b> A padded cipher-block mode of operation originally used for HLS files.
+     *        <b>aes-cbc-pkcs7:</b> A padded cipher-block mode of operation originally used for HLS files.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AES-CTR:</b> AES Counter Mode.
+     *        <b>aes-ctr:</b> AES Counter Mode.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format,
+     *        <b>aes-gcm:</b> AES Galois Counter Mode, a mode of operation that is an authenticated encryption format,
      *        meaning that a file, key, or initialization vector that has been tampered with fails the decryption
      *        process.
      *        </p>
@@ -710,7 +710,8 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,8 @@ public class BaiduMessageMarshaller {
             .marshallLocationName("Sound").build();
     private static final MarshallingInfo<Map> SUBSTITUTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Substitutions").build();
+    private static final MarshallingInfo<Integer> TIMETOLIVE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeToLive").build();
     private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Title").build();
     private static final MarshallingInfo<String> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -83,6 +85,7 @@ public class BaiduMessageMarshaller {
             protocolMarshaller.marshall(baiduMessage.getSmallImageIconUrl(), SMALLIMAGEICONURL_BINDING);
             protocolMarshaller.marshall(baiduMessage.getSound(), SOUND_BINDING);
             protocolMarshaller.marshall(baiduMessage.getSubstitutions(), SUBSTITUTIONS_BINDING);
+            protocolMarshaller.marshall(baiduMessage.getTimeToLive(), TIMETOLIVE_BINDING);
             protocolMarshaller.marshall(baiduMessage.getTitle(), TITLE_BINDING);
             protocolMarshaller.marshall(baiduMessage.getUrl(), URL_BINDING);
         } catch (Exception e) {

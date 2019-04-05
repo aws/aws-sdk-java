@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,19 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     @Override
     public java.util.concurrent.Future<CreateAssessmentTemplateResult> createAssessmentTemplateAsync(CreateAssessmentTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateAssessmentTemplateRequest, CreateAssessmentTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExclusionsPreviewResult> createExclusionsPreviewAsync(CreateExclusionsPreviewRequest request) {
+
+        return createExclusionsPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExclusionsPreviewResult> createExclusionsPreviewAsync(CreateExclusionsPreviewRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateExclusionsPreviewRequest, CreateExclusionsPreviewResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -171,6 +184,19 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeExclusionsResult> describeExclusionsAsync(DescribeExclusionsRequest request) {
+
+        return describeExclusionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeExclusionsResult> describeExclusionsAsync(DescribeExclusionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeExclusionsRequest, DescribeExclusionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFindingsResult> describeFindingsAsync(DescribeFindingsRequest request) {
 
         return describeFindingsAsync(request, null);
@@ -218,6 +244,19 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     @Override
     public java.util.concurrent.Future<GetAssessmentReportResult> getAssessmentReportAsync(GetAssessmentReportRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAssessmentReportRequest, GetAssessmentReportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExclusionsPreviewResult> getExclusionsPreviewAsync(GetExclusionsPreviewRequest request) {
+
+        return getExclusionsPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExclusionsPreviewResult> getExclusionsPreviewAsync(GetExclusionsPreviewRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetExclusionsPreviewRequest, GetExclusionsPreviewResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -296,6 +335,19 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     @Override
     public java.util.concurrent.Future<ListEventSubscriptionsResult> listEventSubscriptionsAsync(ListEventSubscriptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEventSubscriptionsRequest, ListEventSubscriptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExclusionsResult> listExclusionsAsync(ListExclusionsRequest request) {
+
+        return listExclusionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExclusionsResult> listExclusionsAsync(ListExclusionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListExclusionsRequest, ListExclusionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

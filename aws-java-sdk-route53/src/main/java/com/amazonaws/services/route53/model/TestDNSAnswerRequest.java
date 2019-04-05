@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,21 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
      * value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
      * </p>
+     * <p>
+     * The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4</b>: Specify a value between 0 and 32
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IPv6</b>: Specify a value between 0 and 128
+     * </p>
+     * </li>
+     * </ul>
      */
     private String eDNS0ClientSubnetMask;
 
@@ -335,13 +350,43 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
      * value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
      * </p>
+     * <p>
+     * The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4</b>: Specify a value between 0 and 32
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IPv6</b>: Specify a value between 0 and 128
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param eDNS0ClientSubnetMask
      *        If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number
      *        of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you
      *        specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
      *        <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The
-     *        default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
+     *        default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>
+     *        <p>
+     *        The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6
+     *        address:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>IPv4</b>: Specify a value between 0 and 32
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>IPv6</b>: Specify a value between 0 and 128
+     *        </p>
+     *        </li>
      */
 
     public void setEDNS0ClientSubnetMask(String eDNS0ClientSubnetMask) {
@@ -356,12 +401,42 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
      * value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
      * </p>
+     * <p>
+     * The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4</b>: Specify a value between 0 and 32
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IPv6</b>: Specify a value between 0 and 128
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number
      *         of bits of the IP address that you want the checking tool to include in the DNS query. For example, if
      *         you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
      *         <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The
-     *         default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
+     *         default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>
+     *         <p>
+     *         The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6
+     *         address:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>IPv4</b>: Specify a value between 0 and 32
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>IPv6</b>: Specify a value between 0 and 128
+     *         </p>
+     *         </li>
      */
 
     public String getEDNS0ClientSubnetMask() {
@@ -376,13 +451,43 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
      * value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
      * </p>
+     * <p>
+     * The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4</b>: Specify a value between 0 and 32
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IPv6</b>: Specify a value between 0 and 128
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param eDNS0ClientSubnetMask
      *        If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number
      *        of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you
      *        specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
      *        <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The
-     *        default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
+     *        default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p>
+     *        <p>
+     *        The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6
+     *        address:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>IPv4</b>: Specify a value between 0 and 32
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>IPv6</b>: Specify a value between 0 and 128
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,7 +497,8 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

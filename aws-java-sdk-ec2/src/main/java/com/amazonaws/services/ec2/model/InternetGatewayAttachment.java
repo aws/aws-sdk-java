@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the attachment of a VPC to an Internet gateway or an egress-only Internet gateway.
+ * Describes the attachment of a VPC to an internet gateway or an egress-only internet gateway.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InternetGatewayAttachment" target="_top">AWS API
@@ -28,7 +28,7 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the attachment. For an Internet gateway, the state is <code>available</code> when attached
+     * The current state of the attachment. For an internet gateway, the state is <code>available</code> when attached
      * to a VPC; otherwise, this value is not returned.
      * </p>
      */
@@ -42,12 +42,12 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the attachment. For an Internet gateway, the state is <code>available</code> when attached
+     * The current state of the attachment. For an internet gateway, the state is <code>available</code> when attached
      * to a VPC; otherwise, this value is not returned.
      * </p>
      * 
      * @param state
-     *        The current state of the attachment. For an Internet gateway, the state is <code>available</code> when
+     *        The current state of the attachment. For an internet gateway, the state is <code>available</code> when
      *        attached to a VPC; otherwise, this value is not returned.
      * @see AttachmentStatus
      */
@@ -58,11 +58,11 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the attachment. For an Internet gateway, the state is <code>available</code> when attached
+     * The current state of the attachment. For an internet gateway, the state is <code>available</code> when attached
      * to a VPC; otherwise, this value is not returned.
      * </p>
      * 
-     * @return The current state of the attachment. For an Internet gateway, the state is <code>available</code> when
+     * @return The current state of the attachment. For an internet gateway, the state is <code>available</code> when
      *         attached to a VPC; otherwise, this value is not returned.
      * @see AttachmentStatus
      */
@@ -73,12 +73,12 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the attachment. For an Internet gateway, the state is <code>available</code> when attached
+     * The current state of the attachment. For an internet gateway, the state is <code>available</code> when attached
      * to a VPC; otherwise, this value is not returned.
      * </p>
      * 
      * @param state
-     *        The current state of the attachment. For an Internet gateway, the state is <code>available</code> when
+     *        The current state of the attachment. For an internet gateway, the state is <code>available</code> when
      *        attached to a VPC; otherwise, this value is not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttachmentStatus
@@ -91,12 +91,12 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the attachment. For an Internet gateway, the state is <code>available</code> when attached
+     * The current state of the attachment. For an internet gateway, the state is <code>available</code> when attached
      * to a VPC; otherwise, this value is not returned.
      * </p>
      * 
      * @param state
-     *        The current state of the attachment. For an Internet gateway, the state is <code>available</code> when
+     *        The current state of the attachment. For an internet gateway, the state is <code>available</code> when
      *        attached to a VPC; otherwise, this value is not returned.
      * @see AttachmentStatus
      */
@@ -107,12 +107,12 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current state of the attachment. For an Internet gateway, the state is <code>available</code> when attached
+     * The current state of the attachment. For an internet gateway, the state is <code>available</code> when attached
      * to a VPC; otherwise, this value is not returned.
      * </p>
      * 
      * @param state
-     *        The current state of the attachment. For an Internet gateway, the state is <code>available</code> when
+     *        The current state of the attachment. For an internet gateway, the state is <code>available</code> when
      *        attached to a VPC; otherwise, this value is not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttachmentStatus
@@ -164,7 +164,8 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

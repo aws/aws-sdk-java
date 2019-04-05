@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,12 @@ public enum LandmarkType {
     MouthUp("mouthUp"),
     MouthDown("mouthDown"),
     LeftPupil("leftPupil"),
-    RightPupil("rightPupil");
+    RightPupil("rightPupil"),
+    UpperJawlineLeft("upperJawlineLeft"),
+    MidJawlineLeft("midJawlineLeft"),
+    ChinBottom("chinBottom"),
+    MidJawlineRight("midJawlineRight"),
+    UpperJawlineRight("upperJawlineRight");
 
     private String value;
 

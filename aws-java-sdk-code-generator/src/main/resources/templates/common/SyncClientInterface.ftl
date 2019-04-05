@@ -46,8 +46,8 @@ public interface ${metadata.syncInterface} {
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
      * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * <a href="https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint">
+     * https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the
      * client is created and before any service requests are made. Changing it

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The maximum length of time, in seconds, that the training job can run. If model training does not complete during
-     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 5
+     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 28
      * days.
      * </p>
      */
@@ -51,14 +51,14 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The maximum length of time, in seconds, that the training job can run. If model training does not complete during
-     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 5
+     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 28
      * days.
      * </p>
      * 
      * @param maxRuntimeInSeconds
      *        The maximum length of time, in seconds, that the training job can run. If model training does not complete
      *        during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day.
-     *        Maximum value is 5 days.
+     *        Maximum value is 28 days.
      */
 
     public void setMaxRuntimeInSeconds(Integer maxRuntimeInSeconds) {
@@ -68,13 +68,13 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The maximum length of time, in seconds, that the training job can run. If model training does not complete during
-     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 5
+     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 28
      * days.
      * </p>
      * 
      * @return The maximum length of time, in seconds, that the training job can run. If model training does not
      *         complete during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1
-     *         day. Maximum value is 5 days.
+     *         day. Maximum value is 28 days.
      */
 
     public Integer getMaxRuntimeInSeconds() {
@@ -84,14 +84,14 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The maximum length of time, in seconds, that the training job can run. If model training does not complete during
-     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 5
+     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 28
      * days.
      * </p>
      * 
      * @param maxRuntimeInSeconds
      *        The maximum length of time, in seconds, that the training job can run. If model training does not complete
      *        during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day.
-     *        Maximum value is 5 days.
+     *        Maximum value is 28 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,7 +101,8 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

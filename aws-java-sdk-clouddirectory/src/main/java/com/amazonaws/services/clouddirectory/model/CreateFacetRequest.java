@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateFacet" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -64,8 +64,9 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Policy: Allows you to store a policy document and policy type. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * Policy: Allows you to store a policy document and policy type. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * </li>
      * </ul>
@@ -78,6 +79,14 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      */
     private String objectType;
+    /**
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     */
+    private String facetStyle;
 
     /**
      * <p>
@@ -250,8 +259,9 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Policy: Allows you to store a policy document and policy type. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * Policy: Allows you to store a policy document and policy type. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * </li>
      * </ul>
@@ -282,8 +292,8 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        Policy: Allows you to store a policy document and policy type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        Policy: Allows you to store a policy document and policy type. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      *        </p>
      *        </li>
@@ -322,8 +332,9 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Policy: Allows you to store a policy document and policy type. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * Policy: Allows you to store a policy document and policy type. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * </li>
      * </ul>
@@ -353,8 +364,8 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         Policy: Allows you to store a policy document and policy type. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *         Policy: Allows you to store a policy document and policy type. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *         >Policies</a>.
      *         </p>
      *         </li>
@@ -393,8 +404,9 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Policy: Allows you to store a policy document and policy type. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * Policy: Allows you to store a policy document and policy type. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * </li>
      * </ul>
@@ -425,8 +437,8 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        Policy: Allows you to store a policy document and policy type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        Policy: Allows you to store a policy document and policy type. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      *        </p>
      *        </li>
@@ -467,8 +479,9 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Policy: Allows you to store a policy document and policy type. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * Policy: Allows you to store a policy document and policy type. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * </li>
      * </ul>
@@ -499,8 +512,8 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        Policy: Allows you to store a policy document and policy type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        Policy: Allows you to store a policy document and policy type. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      *        </p>
      *        </li>
@@ -539,8 +552,9 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Policy: Allows you to store a policy document and policy type. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * Policy: Allows you to store a policy document and policy type. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * </li>
      * </ul>
@@ -571,8 +585,8 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        Policy: Allows you to store a policy document and policy type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies"
+     *        Policy: Allows you to store a policy document and policy type. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
      *        >Policies</a>.
      *        </p>
      *        </li>
@@ -593,7 +607,101 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     * 
+     * @param facetStyle
+     *        There are two different styles that you can define on any given facet, <code>Static</code> and
+     *        <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     *        attributes can be defined during data plane operations.
+     * @see FacetStyle
+     */
+
+    public void setFacetStyle(String facetStyle) {
+        this.facetStyle = facetStyle;
+    }
+
+    /**
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     * 
+     * @return There are two different styles that you can define on any given facet, <code>Static</code> and
+     *         <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic
+     *         facets, attributes can be defined during data plane operations.
+     * @see FacetStyle
+     */
+
+    public String getFacetStyle() {
+        return this.facetStyle;
+    }
+
+    /**
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     * 
+     * @param facetStyle
+     *        There are two different styles that you can define on any given facet, <code>Static</code> and
+     *        <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     *        attributes can be defined during data plane operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FacetStyle
+     */
+
+    public CreateFacetRequest withFacetStyle(String facetStyle) {
+        setFacetStyle(facetStyle);
+        return this;
+    }
+
+    /**
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     * 
+     * @param facetStyle
+     *        There are two different styles that you can define on any given facet, <code>Static</code> and
+     *        <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     *        attributes can be defined during data plane operations.
+     * @see FacetStyle
+     */
+
+    public void setFacetStyle(FacetStyle facetStyle) {
+        withFacetStyle(facetStyle);
+    }
+
+    /**
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     * 
+     * @param facetStyle
+     *        There are two different styles that you can define on any given facet, <code>Static</code> and
+     *        <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     *        attributes can be defined during data plane operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FacetStyle
+     */
+
+    public CreateFacetRequest withFacetStyle(FacetStyle facetStyle) {
+        this.facetStyle = facetStyle.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -610,7 +718,9 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getObjectType() != null)
-            sb.append("ObjectType: ").append(getObjectType());
+            sb.append("ObjectType: ").append(getObjectType()).append(",");
+        if (getFacetStyle() != null)
+            sb.append("FacetStyle: ").append(getFacetStyle());
         sb.append("}");
         return sb.toString();
     }
@@ -641,6 +751,10 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getObjectType() != null && other.getObjectType().equals(this.getObjectType()) == false)
             return false;
+        if (other.getFacetStyle() == null ^ this.getFacetStyle() == null)
+            return false;
+        if (other.getFacetStyle() != null && other.getFacetStyle().equals(this.getFacetStyle()) == false)
+            return false;
         return true;
     }
 
@@ -653,6 +767,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getObjectType() == null) ? 0 : getObjectType().hashCode());
+        hashCode = prime * hashCode + ((getFacetStyle() == null) ? 0 : getFacetStyle().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ import com.amazonaws.services.translate.model.*;
  * </p>
  * <p>
  * <p>
- * Provides translation between English and one of six languages, or between one of the six languages and English.
+ * Provides translation between one source language and another of the same set of languages.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -43,8 +43,108 @@ public interface AmazonTranslate {
 
     /**
      * <p>
-     * Translates input text from the source language to the target language. You can translate between English (en) and
-     * one of the following languages, or between one of the following languages and English.
+     * A synchronous action that deletes a custom terminology.
+     * </p>
+     * 
+     * @param deleteTerminologyRequest
+     * @return Result of the DeleteTerminology operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
+     *         different resource will accomplish your needs before retrying the revised request. .
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.DeleteTerminology
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteTerminology" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteTerminologyResult deleteTerminology(DeleteTerminologyRequest deleteTerminologyRequest);
+
+    /**
+     * <p>
+     * Retrieves a custom terminology.
+     * </p>
+     * 
+     * @param getTerminologyRequest
+     * @return Result of the GetTerminology operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
+     *         different resource will accomplish your needs before retrying the revised request. .
+     * @throws InvalidParameterValueException
+     *         The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and
+     *         then retry your operation.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.GetTerminology
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetTerminology" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetTerminologyResult getTerminology(GetTerminologyRequest getTerminologyRequest);
+
+    /**
+     * <p>
+     * Creates or updates a custom terminology, depending on whether or not one already exists for the given terminology
+     * name. Importing a terminology with the same name as an existing one will merge the terminologies based on the
+     * chosen merge strategy. Currently, the only supported merge strategy is OVERWRITE, and so the imported terminology
+     * will overwrite an existing terminology of the same name.
+     * </p>
+     * <p>
+     * If you import a terminology that overwrites an existing one, the new terminology take up to 10 minutes to fully
+     * propagate and be available for use in a translation due to cache policies with the DataPlane service that
+     * performs the translations.
+     * </p>
+     * 
+     * @param importTerminologyRequest
+     * @return Result of the ImportTerminology operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and
+     *         then retry your operation.
+     * @throws LimitExceededException
+     *         The specified limit has been exceeded. Review your request and retry it with a quantity below the stated
+     *         limit.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.ImportTerminology
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ImportTerminologyResult importTerminology(ImportTerminologyRequest importTerminologyRequest);
+
+    /**
+     * <p>
+     * Provides a list of custom terminologies associated with your account.
+     * </p>
+     * 
+     * @param listTerminologiesRequest
+     * @return Result of the ListTerminologies operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and
+     *         then retry your operation.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.ListTerminologies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTerminologiesResult listTerminologies(ListTerminologiesRequest listTerminologiesRequest);
+
+    /**
+     * <p>
+     * Translates input text from the source language to the target language. It is not necessary to use English (en) as
+     * either the source or the target language but not all language combinations are supported by Amazon Translate. For
+     * more information, see <a href="http://docs.aws.amazon.com/translate/latest/dg/pairs.html">Supported Language
+     * Pairs</a>.
      * </p>
      * <ul>
      * <li>
@@ -59,6 +159,36 @@ public interface AmazonTranslate {
      * </li>
      * <li>
      * <p>
+     * Chinese (Traditional) (zh-TW)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Czech (cs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Danish (da)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Dutch (nl)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * English (en)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Finnish (fi)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * French (fr)
      * </p>
      * </li>
@@ -69,12 +199,57 @@ public interface AmazonTranslate {
      * </li>
      * <li>
      * <p>
+     * Hebrew (he)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Indonesian (id)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Italian (it)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Japanese (ja)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Korean (ko)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Polish (pl)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Portuguese (pt)
      * </p>
      * </li>
      * <li>
      * <p>
+     * Russian (ru)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Spanish (es)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Swedish (sv)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Turkish (tr)
      * </p>
      * </li>
      * </ul>
@@ -87,25 +262,30 @@ public interface AmazonTranslate {
      * @param translateTextRequest
      * @return Result of the TranslateText operation returned by the service.
      * @throws InvalidRequestException
-     *         The request is invalid.
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
      * @throws TextSizeLimitExceededException
-     *         The size of the input text exceeds the length constraint for the <code>Text</code> field. Try again with
-     *         a shorter text.
+     *         The size of the text you submitted exceeds the size limit. Reduce the size of the text or use a smaller
+     *         document and then retry your request.
      * @throws TooManyRequestsException
-     *         The number of requests exceeds the limit. Resubmit your request later.
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
      * @throws UnsupportedLanguagePairException
-     *         Amazon Translate cannot translate input text in the source language into this target language. For more
-     *         information, see <a>how-to-error-msg</a>.
+     *         Amazon Translate does not support translation from the language of the source text into the requested
+     *         target language. For more information, see <a>how-to-error-msg</a>.
      * @throws DetectedLanguageLowConfidenceException
      *         The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence
      *         level is acceptable for your application, you can use the language in the exception to call Amazon
      *         Translate again. For more information, see the <a
      *         href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html"
      *         >DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer Guide</i>.
+     * @throws ResourceNotFoundException
+     *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
+     *         different resource will accomplish your needs before retrying the revised request. .
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @throws ServiceUnavailableException
-     *         Amazon Translate is unavailable. Retry your request later.
+     *         The Amazon Translate service is temporarily unavailable. Please wait a bit and then retry your request.
      * @sample AmazonTranslate.TranslateText
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText" target="_top">AWS API
      *      Documentation</a>

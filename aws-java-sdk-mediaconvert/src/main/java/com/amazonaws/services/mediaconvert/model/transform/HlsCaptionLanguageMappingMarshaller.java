@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class HlsCaptionLanguageMappingMarshaller {
 
     private static final MarshallingInfo<Integer> CAPTIONCHANNEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("captionChannel").build();
+    private static final MarshallingInfo<String> CUSTOMLANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customLanguageCode").build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("languageCode").build();
     private static final MarshallingInfo<String> LANGUAGEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,7 @@ public class HlsCaptionLanguageMappingMarshaller {
 
         try {
             protocolMarshaller.marshall(hlsCaptionLanguageMapping.getCaptionChannel(), CAPTIONCHANNEL_BINDING);
+            protocolMarshaller.marshall(hlsCaptionLanguageMapping.getCustomLanguageCode(), CUSTOMLANGUAGECODE_BINDING);
             protocolMarshaller.marshall(hlsCaptionLanguageMapping.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(hlsCaptionLanguageMapping.getLanguageDescription(), LANGUAGEDESCRIPTION_BINDING);
         } catch (Exception e) {

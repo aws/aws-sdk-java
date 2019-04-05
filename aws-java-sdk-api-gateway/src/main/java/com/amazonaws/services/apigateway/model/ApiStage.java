@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class ApiStage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String stage;
+    /**
+     * <p>
+     * Map containing method level throttling information for API stage in a usage plan.
+     * </p>
+     */
+    private java.util.Map<String, ThrottleSettings> throttle;
 
     /**
      * <p>
@@ -119,7 +125,69 @@ public class ApiStage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Map containing method level throttling information for API stage in a usage plan.
+     * </p>
+     * 
+     * @return Map containing method level throttling information for API stage in a usage plan.
+     */
+
+    public java.util.Map<String, ThrottleSettings> getThrottle() {
+        return throttle;
+    }
+
+    /**
+     * <p>
+     * Map containing method level throttling information for API stage in a usage plan.
+     * </p>
+     * 
+     * @param throttle
+     *        Map containing method level throttling information for API stage in a usage plan.
+     */
+
+    public void setThrottle(java.util.Map<String, ThrottleSettings> throttle) {
+        this.throttle = throttle;
+    }
+
+    /**
+     * <p>
+     * Map containing method level throttling information for API stage in a usage plan.
+     * </p>
+     * 
+     * @param throttle
+     *        Map containing method level throttling information for API stage in a usage plan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApiStage withThrottle(java.util.Map<String, ThrottleSettings> throttle) {
+        setThrottle(throttle);
+        return this;
+    }
+
+    public ApiStage addThrottleEntry(String key, ThrottleSettings value) {
+        if (null == this.throttle) {
+            this.throttle = new java.util.HashMap<String, ThrottleSettings>();
+        }
+        if (this.throttle.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.throttle.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Throttle.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApiStage clearThrottleEntries() {
+        this.throttle = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -132,7 +200,9 @@ public class ApiStage implements Serializable, Cloneable, StructuredPojo {
         if (getApiId() != null)
             sb.append("ApiId: ").append(getApiId()).append(",");
         if (getStage() != null)
-            sb.append("Stage: ").append(getStage());
+            sb.append("Stage: ").append(getStage()).append(",");
+        if (getThrottle() != null)
+            sb.append("Throttle: ").append(getThrottle());
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +225,10 @@ public class ApiStage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStage() != null && other.getStage().equals(this.getStage()) == false)
             return false;
+        if (other.getThrottle() == null ^ this.getThrottle() == null)
+            return false;
+        if (other.getThrottle() != null && other.getThrottle().equals(this.getThrottle()) == false)
+            return false;
         return true;
     }
 
@@ -165,6 +239,7 @@ public class ApiStage implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getApiId() == null) ? 0 : getApiId().hashCode());
         hashCode = prime * hashCode + ((getStage() == null) ? 0 : getStage().hashCode());
+        hashCode = prime * hashCode + ((getThrottle() == null) ? 0 : getThrottle().hashCode());
         return hashCode;
     }
 

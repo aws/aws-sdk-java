@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,17 @@ public class StartNextPendingJobExecutionRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private java.util.Map<String, String> statusDetails;
+    /**
+     * <p>
+     * Specifies the amount of time this device has to finish execution of this job. If the job execution status is not
+     * set to a terminal state before this timer expires, or before the timer is reset (by calling
+     * <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout
+     * value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to
+     * <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have
+     * been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).
+     * </p>
+     */
+    private Long stepTimeoutInMinutes;
 
     /**
      * <p>
@@ -147,7 +158,81 @@ public class StartNextPendingJobExecutionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Specifies the amount of time this device has to finish execution of this job. If the job execution status is not
+     * set to a terminal state before this timer expires, or before the timer is reset (by calling
+     * <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout
+     * value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to
+     * <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have
+     * been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).
+     * </p>
+     * 
+     * @param stepTimeoutInMinutes
+     *        Specifies the amount of time this device has to finish execution of this job. If the job execution status
+     *        is not set to a terminal state before this timer expires, or before the timer is reset (by calling
+     *        <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new
+     *        timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically
+     *        set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout
+     *        which may have been specified when the job was created (<code>CreateJob</code> using field
+     *        <code>timeoutConfig</code>).
+     */
+
+    public void setStepTimeoutInMinutes(Long stepTimeoutInMinutes) {
+        this.stepTimeoutInMinutes = stepTimeoutInMinutes;
+    }
+
+    /**
+     * <p>
+     * Specifies the amount of time this device has to finish execution of this job. If the job execution status is not
+     * set to a terminal state before this timer expires, or before the timer is reset (by calling
+     * <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout
+     * value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to
+     * <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have
+     * been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).
+     * </p>
+     * 
+     * @return Specifies the amount of time this device has to finish execution of this job. If the job execution status
+     *         is not set to a terminal state before this timer expires, or before the timer is reset (by calling
+     *         <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new
+     *         timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically
+     *         set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout
+     *         which may have been specified when the job was created (<code>CreateJob</code> using field
+     *         <code>timeoutConfig</code>).
+     */
+
+    public Long getStepTimeoutInMinutes() {
+        return this.stepTimeoutInMinutes;
+    }
+
+    /**
+     * <p>
+     * Specifies the amount of time this device has to finish execution of this job. If the job execution status is not
+     * set to a terminal state before this timer expires, or before the timer is reset (by calling
+     * <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout
+     * value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to
+     * <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have
+     * been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).
+     * </p>
+     * 
+     * @param stepTimeoutInMinutes
+     *        Specifies the amount of time this device has to finish execution of this job. If the job execution status
+     *        is not set to a terminal state before this timer expires, or before the timer is reset (by calling
+     *        <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new
+     *        timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically
+     *        set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout
+     *        which may have been specified when the job was created (<code>CreateJob</code> using field
+     *        <code>timeoutConfig</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartNextPendingJobExecutionRequest withStepTimeoutInMinutes(Long stepTimeoutInMinutes) {
+        setStepTimeoutInMinutes(stepTimeoutInMinutes);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -160,7 +245,9 @@ public class StartNextPendingJobExecutionRequest extends com.amazonaws.AmazonWeb
         if (getThingName() != null)
             sb.append("ThingName: ").append(getThingName()).append(",");
         if (getStatusDetails() != null)
-            sb.append("StatusDetails: ").append(getStatusDetails());
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
+        if (getStepTimeoutInMinutes() != null)
+            sb.append("StepTimeoutInMinutes: ").append(getStepTimeoutInMinutes());
         sb.append("}");
         return sb.toString();
     }
@@ -183,6 +270,10 @@ public class StartNextPendingJobExecutionRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getStatusDetails() != null && other.getStatusDetails().equals(this.getStatusDetails()) == false)
             return false;
+        if (other.getStepTimeoutInMinutes() == null ^ this.getStepTimeoutInMinutes() == null)
+            return false;
+        if (other.getStepTimeoutInMinutes() != null && other.getStepTimeoutInMinutes().equals(this.getStepTimeoutInMinutes()) == false)
+            return false;
         return true;
     }
 
@@ -193,6 +284,7 @@ public class StartNextPendingJobExecutionRequest extends com.amazonaws.AmazonWeb
 
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
         hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode());
+        hashCode = prime * hashCode + ((getStepTimeoutInMinutes() == null) ? 0 : getStepTimeoutInMinutes().hashCode());
         return hashCode;
     }
 

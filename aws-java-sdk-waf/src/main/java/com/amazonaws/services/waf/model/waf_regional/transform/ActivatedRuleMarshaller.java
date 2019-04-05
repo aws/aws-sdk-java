@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.waf.model.waf_regional.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class ActivatedRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverrideAction").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
+    private static final MarshallingInfo<List> EXCLUDEDRULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ExcludedRules").build();
 
     private static final ActivatedRuleMarshaller instance = new ActivatedRuleMarshaller();
 
@@ -59,6 +62,7 @@ public class ActivatedRuleMarshaller {
             protocolMarshaller.marshall(activatedRule.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(activatedRule.getOverrideAction(), OVERRIDEACTION_BINDING);
             protocolMarshaller.marshall(activatedRule.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(activatedRule.getExcludedRules(), EXCLUDEDRULES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

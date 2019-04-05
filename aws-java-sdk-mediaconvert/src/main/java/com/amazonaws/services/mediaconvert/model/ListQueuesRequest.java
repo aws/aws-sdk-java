@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,16 +25,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
+     */
     private String listBy;
     /** Optional. Number of queues, up to twenty, that will be returned at one time. */
     private Integer maxResults;
     /** Use this string, provided with the response to a previous request, to request the next batch of queues. */
     private String nextToken;
-
+    /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     */
     private String order;
 
     /**
+     * Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
+     * 
      * @param listBy
+     *        Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or
+     *        chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
      * @see QueueListBy
      */
 
@@ -43,7 +55,11 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
+     * 
+     * @return Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or
+     *         chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
      * @see QueueListBy
      */
 
@@ -52,7 +68,12 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
+     * 
      * @param listBy
+     *        Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or
+     *        chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueueListBy
      */
@@ -63,7 +84,12 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
+     * 
      * @param listBy
+     *        Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or
+     *        chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueueListBy
      */
@@ -142,7 +168,12 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @see Order
      */
 
@@ -151,7 +182,11 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
+     * @return When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *         DESCENDING order. Default varies by resource.
      * @see Order
      */
 
@@ -160,7 +195,12 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */
@@ -171,7 +211,12 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */
@@ -182,7 +227,8 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

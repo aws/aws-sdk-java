@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Application version summary.
+ * An application version summary.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/VersionSummary" target="_top">AWS API
@@ -36,7 +36,7 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     private String applicationId;
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      */
     private String creationTime;
@@ -51,7 +51,8 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     private String semanticVersion;
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      */
     private String sourceCodeUrl;
@@ -98,11 +99,11 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
      * @param creationTime
-     *        The date/time this resource was created.
+     *        The date and time this resource was created.
      */
 
     public void setCreationTime(String creationTime) {
@@ -111,10 +112,10 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
-     * @return The date/time this resource was created.
+     * @return The date and time this resource was created.
      */
 
     public String getCreationTime() {
@@ -123,11 +124,11 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
      * @param creationTime
-     *        The date/time this resource was created.
+     *        The date and time this resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +194,13 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
      * @param sourceCodeUrl
-     *        A link to a public repository for the source code of your application.
+     *        A link to a public repository for the source code of your application, for example the URL of a specific
+     *        GitHub commit.
      */
 
     public void setSourceCodeUrl(String sourceCodeUrl) {
@@ -206,10 +209,12 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
-     * @return A link to a public repository for the source code of your application.
+     * @return A link to a public repository for the source code of your application, for example the URL of a specific
+     *         GitHub commit.
      */
 
     public String getSourceCodeUrl() {
@@ -218,11 +223,13 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A link to a public repository for the source code of your application.
+     * A link to a public repository for the source code of your application, for example the URL of a specific GitHub
+     * commit.
      * </p>
      * 
      * @param sourceCodeUrl
-     *        A link to a public repository for the source code of your application.
+     *        A link to a public repository for the source code of your application, for example the URL of a specific
+     *        GitHub commit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,7 +239,8 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

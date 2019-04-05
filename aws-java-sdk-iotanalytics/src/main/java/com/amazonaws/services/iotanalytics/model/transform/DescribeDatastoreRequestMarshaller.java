@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class DescribeDatastoreRequestMarshaller {
 
     private static final MarshallingInfo<String> DATASTORENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("datastoreName").build();
+    private static final MarshallingInfo<Boolean> INCLUDESTATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("includeStatistics").build();
 
     private static final DescribeDatastoreRequestMarshaller instance = new DescribeDatastoreRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeDatastoreRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeDatastoreRequest.getDatastoreName(), DATASTORENAME_BINDING);
+            protocolMarshaller.marshall(describeDatastoreRequest.getIncludeStatistics(), INCLUDESTATISTICS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

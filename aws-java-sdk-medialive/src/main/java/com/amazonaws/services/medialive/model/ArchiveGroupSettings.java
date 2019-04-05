@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Placeholder documentation for ArchiveGroupSettings
+ * Archive Group Settings
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ArchiveGroupSettings" target="_top">AWS API
  *      Documentation</a>
@@ -26,21 +26,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ArchiveGroupSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * A directory and base filename where archive files should be written. If the base filename portion of the URI is
-     * left blank, the base filename of the first input will be automatically inserted.
-     */
+    /** A directory and base filename where archive files should be written. */
     private OutputLocationRef destination;
     /** Number of seconds to write to archive file before closing and starting a new one. */
     private Integer rolloverInterval;
 
     /**
-     * A directory and base filename where archive files should be written. If the base filename portion of the URI is
-     * left blank, the base filename of the first input will be automatically inserted.
+     * A directory and base filename where archive files should be written.
      * 
      * @param destination
-     *        A directory and base filename where archive files should be written. If the base filename portion of the
-     *        URI is left blank, the base filename of the first input will be automatically inserted.
+     *        A directory and base filename where archive files should be written.
      */
 
     public void setDestination(OutputLocationRef destination) {
@@ -48,11 +43,9 @@ public class ArchiveGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * A directory and base filename where archive files should be written. If the base filename portion of the URI is
-     * left blank, the base filename of the first input will be automatically inserted.
+     * A directory and base filename where archive files should be written.
      * 
-     * @return A directory and base filename where archive files should be written. If the base filename portion of the
-     *         URI is left blank, the base filename of the first input will be automatically inserted.
+     * @return A directory and base filename where archive files should be written.
      */
 
     public OutputLocationRef getDestination() {
@@ -60,12 +53,10 @@ public class ArchiveGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * A directory and base filename where archive files should be written. If the base filename portion of the URI is
-     * left blank, the base filename of the first input will be automatically inserted.
+     * A directory and base filename where archive files should be written.
      * 
      * @param destination
-     *        A directory and base filename where archive files should be written. If the base filename portion of the
-     *        URI is left blank, the base filename of the first input will be automatically inserted.
+     *        A directory and base filename where archive files should be written.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,7 +100,8 @@ public class ArchiveGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

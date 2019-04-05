@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Upon success, returns an empty response. Otherwise, throws an exception.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke" target="_top">AWS API
  *      Documentation</a>
@@ -28,61 +25,63 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
-     * invocation type this status code will be 200. For the <code>Event</code> invocation type this status code will be
-     * 202. For the <code>DryRun</code> invocation type the status code will be 204.
+     * The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
+     * invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202.
+     * For the <code>DryRun</code> invocation type, the status code is 204.
      * </p>
      */
     private Integer statusCode;
     /**
      * <p>
-     * Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will
-     * have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors are errors
-     * that are reported by the function while the <code>Unhandled</code> errors are those detected and reported by AWS
-     * Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report
-     * an <code>Handled</code> error, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>.
+     * If present, indicates that an error occurred during function execution. Details about the error are included in
+     * the response payload.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Handled</code> - The runtime caught an error thrown by the function and formatted it into a JSON document.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Unhandled</code> - The runtime didn't handle the error. For example, the function ran out of memory or
+     * timed out.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String functionError;
     /**
      * <p>
-     * It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is
-     * <code>RequestResponse</code> and the logs were requested.
+     * The last 4 KB of the execution log, which is base64 encoded.
      * </p>
      */
     private String logResult;
     /**
      * <p>
-     * It is the JSON representation of the object returned by the Lambda function. This is present only if the
-     * invocation type is <code>RequestResponse</code>.
-     * </p>
-     * <p>
-     * In the event of a function error this field contains a message describing the error. For the <code>Handled</code>
-     * errors the Lambda function will report this message. For <code>Unhandled</code> errors AWS Lambda reports the
-     * message.
+     * The response from the function, or an error object.
      * </p>
      */
     private java.nio.ByteBuffer payload;
     /**
      * <p>
-     * The function version that has been executed. This value is returned only if the invocation type is
-     * <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * The version of the function that executed. When you invoke a function with an alias, this indicates which version
+     * the alias resolved to.
      * </p>
      */
     private String executedVersion;
 
     /**
      * <p>
-     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
-     * invocation type this status code will be 200. For the <code>Event</code> invocation type this status code will be
-     * 202. For the <code>DryRun</code> invocation type the status code will be 204.
+     * The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
+     * invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202.
+     * For the <code>DryRun</code> invocation type, the status code is 204.
      * </p>
      * 
      * @param statusCode
-     *        The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
-     *        invocation type this status code will be 200. For the <code>Event</code> invocation type this status code
-     *        will be 202. For the <code>DryRun</code> invocation type the status code will be 204.
+     *        The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
+     *        invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is
+     *        202. For the <code>DryRun</code> invocation type, the status code is 204.
      */
 
     public void setStatusCode(Integer statusCode) {
@@ -91,15 +90,14 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
-     * invocation type this status code will be 200. For the <code>Event</code> invocation type this status code will be
-     * 202. For the <code>DryRun</code> invocation type the status code will be 204.
+     * The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
+     * invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202.
+     * For the <code>DryRun</code> invocation type, the status code is 204.
      * </p>
      * 
-     * @return The HTTP status code will be in the 200 range for successful request. For the
-     *         <code>RequestResponse</code> invocation type this status code will be 200. For the <code>Event</code>
-     *         invocation type this status code will be 202. For the <code>DryRun</code> invocation type the status code
-     *         will be 204.
+     * @return The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
+     *         invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is
+     *         202. For the <code>DryRun</code> invocation type, the status code is 204.
      */
 
     public Integer getStatusCode() {
@@ -108,15 +106,15 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
-     * invocation type this status code will be 200. For the <code>Event</code> invocation type this status code will be
-     * 202. For the <code>DryRun</code> invocation type the status code will be 204.
+     * The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
+     * invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is 202.
+     * For the <code>DryRun</code> invocation type, the status code is 204.
      * </p>
      * 
      * @param statusCode
-     *        The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
-     *        invocation type this status code will be 200. For the <code>Event</code> invocation type this status code
-     *        will be 202. For the <code>DryRun</code> invocation type the status code will be 204.
+     *        The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
+     *        invocation type, this status code is 200. For the <code>Event</code> invocation type, this status code is
+     *        202. For the <code>DryRun</code> invocation type, the status code is 204.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,21 +125,39 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will
-     * have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors are errors
-     * that are reported by the function while the <code>Unhandled</code> errors are those detected and reported by AWS
-     * Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report
-     * an <code>Handled</code> error, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>.
+     * If present, indicates that an error occurred during function execution. Details about the error are included in
+     * the response payload.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Handled</code> - The runtime caught an error thrown by the function and formatted it into a JSON document.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Unhandled</code> - The runtime didn't handle the error. For example, the function ran out of memory or
+     * timed out.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param functionError
-     *        Indicates whether an error occurred while executing the Lambda function. If an error occurred this field
-     *        will have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors
-     *        are errors that are reported by the function while the <code>Unhandled</code> errors are those detected
-     *        and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For
-     *        information about how to report an <code>Handled</code> error, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>.
+     *        If present, indicates that an error occurred during function execution. Details about the error are
+     *        included in the response payload.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Handled</code> - The runtime caught an error thrown by the function and formatted it into a JSON
+     *        document.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Unhandled</code> - The runtime didn't handle the error. For example, the function ran out of memory
+     *        or timed out.
+     *        </p>
+     *        </li>
      */
 
     public void setFunctionError(String functionError) {
@@ -150,20 +166,38 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will
-     * have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors are errors
-     * that are reported by the function while the <code>Unhandled</code> errors are those detected and reported by AWS
-     * Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report
-     * an <code>Handled</code> error, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>.
+     * If present, indicates that an error occurred during function execution. Details about the error are included in
+     * the response payload.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Handled</code> - The runtime caught an error thrown by the function and formatted it into a JSON document.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Unhandled</code> - The runtime didn't handle the error. For example, the function ran out of memory or
+     * timed out.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Indicates whether an error occurred while executing the Lambda function. If an error occurred this field
-     *         will have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors
-     *         are errors that are reported by the function while the <code>Unhandled</code> errors are those detected
-     *         and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For
-     *         information about how to report an <code>Handled</code> error, see <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>.
+     * @return If present, indicates that an error occurred during function execution. Details about the error are
+     *         included in the response payload.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Handled</code> - The runtime caught an error thrown by the function and formatted it into a JSON
+     *         document.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Unhandled</code> - The runtime didn't handle the error. For example, the function ran out of memory
+     *         or timed out.
+     *         </p>
+     *         </li>
      */
 
     public String getFunctionError() {
@@ -172,21 +206,39 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will
-     * have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors are errors
-     * that are reported by the function while the <code>Unhandled</code> errors are those detected and reported by AWS
-     * Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report
-     * an <code>Handled</code> error, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>.
+     * If present, indicates that an error occurred during function execution. Details about the error are included in
+     * the response payload.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Handled</code> - The runtime caught an error thrown by the function and formatted it into a JSON document.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Unhandled</code> - The runtime didn't handle the error. For example, the function ran out of memory or
+     * timed out.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param functionError
-     *        Indicates whether an error occurred while executing the Lambda function. If an error occurred this field
-     *        will have one of two values; <code>Handled</code> or <code>Unhandled</code>. <code>Handled</code> errors
-     *        are errors that are reported by the function while the <code>Unhandled</code> errors are those detected
-     *        and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For
-     *        information about how to report an <code>Handled</code> error, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a>.
+     *        If present, indicates that an error occurred during function execution. Details about the error are
+     *        included in the response payload.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Handled</code> - The runtime caught an error thrown by the function and formatted it into a JSON
+     *        document.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Unhandled</code> - The runtime didn't handle the error. For example, the function ran out of memory
+     *        or timed out.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,13 +249,11 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is
-     * <code>RequestResponse</code> and the logs were requested.
+     * The last 4 KB of the execution log, which is base64 encoded.
      * </p>
      * 
      * @param logResult
-     *        It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation
-     *        type is <code>RequestResponse</code> and the logs were requested.
+     *        The last 4 KB of the execution log, which is base64 encoded.
      */
 
     public void setLogResult(String logResult) {
@@ -212,12 +262,10 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is
-     * <code>RequestResponse</code> and the logs were requested.
+     * The last 4 KB of the execution log, which is base64 encoded.
      * </p>
      * 
-     * @return It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation
-     *         type is <code>RequestResponse</code> and the logs were requested.
+     * @return The last 4 KB of the execution log, which is base64 encoded.
      */
 
     public String getLogResult() {
@@ -226,13 +274,11 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is
-     * <code>RequestResponse</code> and the logs were requested.
+     * The last 4 KB of the execution log, which is base64 encoded.
      * </p>
      * 
      * @param logResult
-     *        It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation
-     *        type is <code>RequestResponse</code> and the logs were requested.
+     *        The last 4 KB of the execution log, which is base64 encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,13 +289,7 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * It is the JSON representation of the object returned by the Lambda function. This is present only if the
-     * invocation type is <code>RequestResponse</code>.
-     * </p>
-     * <p>
-     * In the event of a function error this field contains a message describing the error. For the <code>Handled</code>
-     * errors the Lambda function will report this message. For <code>Unhandled</code> errors AWS Lambda reports the
-     * message.
+     * The response from the function, or an error object.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -263,12 +303,7 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      * 
      * @param payload
-     *        It is the JSON representation of the object returned by the Lambda function. This is present only if the
-     *        invocation type is <code>RequestResponse</code>. </p>
-     *        <p>
-     *        In the event of a function error this field contains a message describing the error. For the
-     *        <code>Handled</code> errors the Lambda function will report this message. For <code>Unhandled</code>
-     *        errors AWS Lambda reports the message.
+     *        The response from the function, or an error object.
      */
 
     public void setPayload(java.nio.ByteBuffer payload) {
@@ -277,13 +312,7 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * It is the JSON representation of the object returned by the Lambda function. This is present only if the
-     * invocation type is <code>RequestResponse</code>.
-     * </p>
-     * <p>
-     * In the event of a function error this field contains a message describing the error. For the <code>Handled</code>
-     * errors the Lambda function will report this message. For <code>Unhandled</code> errors AWS Lambda reports the
-     * message.
+     * The response from the function, or an error object.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -293,12 +322,7 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * {@code position}.
      * </p>
      * 
-     * @return It is the JSON representation of the object returned by the Lambda function. This is present only if the
-     *         invocation type is <code>RequestResponse</code>. </p>
-     *         <p>
-     *         In the event of a function error this field contains a message describing the error. For the
-     *         <code>Handled</code> errors the Lambda function will report this message. For <code>Unhandled</code>
-     *         errors AWS Lambda reports the message.
+     * @return The response from the function, or an error object.
      */
 
     public java.nio.ByteBuffer getPayload() {
@@ -307,13 +331,7 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * It is the JSON representation of the object returned by the Lambda function. This is present only if the
-     * invocation type is <code>RequestResponse</code>.
-     * </p>
-     * <p>
-     * In the event of a function error this field contains a message describing the error. For the <code>Handled</code>
-     * errors the Lambda function will report this message. For <code>Unhandled</code> errors AWS Lambda reports the
-     * message.
+     * The response from the function, or an error object.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -327,12 +345,7 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      * 
      * @param payload
-     *        It is the JSON representation of the object returned by the Lambda function. This is present only if the
-     *        invocation type is <code>RequestResponse</code>. </p>
-     *        <p>
-     *        In the event of a function error this field contains a message describing the error. For the
-     *        <code>Handled</code> errors the Lambda function will report this message. For <code>Unhandled</code>
-     *        errors AWS Lambda reports the message.
+     *        The response from the function, or an error object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,13 +356,13 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The function version that has been executed. This value is returned only if the invocation type is
-     * <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * The version of the function that executed. When you invoke a function with an alias, this indicates which version
+     * the alias resolved to.
      * </p>
      * 
      * @param executedVersion
-     *        The function version that has been executed. This value is returned only if the invocation type is
-     *        <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     *        The version of the function that executed. When you invoke a function with an alias, this indicates which
+     *        version the alias resolved to.
      */
 
     public void setExecutedVersion(String executedVersion) {
@@ -358,12 +371,12 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The function version that has been executed. This value is returned only if the invocation type is
-     * <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * The version of the function that executed. When you invoke a function with an alias, this indicates which version
+     * the alias resolved to.
      * </p>
      * 
-     * @return The function version that has been executed. This value is returned only if the invocation type is
-     *         <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * @return The version of the function that executed. When you invoke a function with an alias, this indicates which
+     *         version the alias resolved to.
      */
 
     public String getExecutedVersion() {
@@ -372,13 +385,13 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The function version that has been executed. This value is returned only if the invocation type is
-     * <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * The version of the function that executed. When you invoke a function with an alias, this indicates which version
+     * the alias resolved to.
      * </p>
      * 
      * @param executedVersion
-     *        The function version that has been executed. This value is returned only if the invocation type is
-     *        <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     *        The version of the function that executed. When you invoke a function with an alias, this indicates which
+     *        version the alias resolved to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,7 +401,8 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -405,7 +419,7 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         if (getLogResult() != null)
             sb.append("LogResult: ").append(getLogResult()).append(",");
         if (getPayload() != null)
-            sb.append("Payload: ").append(getPayload()).append(",");
+            sb.append("Payload: ").append("***Sensitive Data Redacted***").append(",");
         if (getExecutedVersion() != null)
             sb.append("ExecutedVersion: ").append(getExecutedVersion());
         sb.append("}");

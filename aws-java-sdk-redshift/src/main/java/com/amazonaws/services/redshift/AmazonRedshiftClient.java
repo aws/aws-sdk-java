@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.redshift.AmazonRedshiftClientBuilder;
 import com.amazonaws.services.redshift.waiters.AmazonRedshiftWaiters;
 
@@ -81,6 +83,7 @@ import com.amazonaws.services.redshift.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonRedshiftClient extends AmazonWebServiceClient implements AmazonRedshift {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -93,6 +96,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     /**
      * List of exception unmarshallers for all modeled exceptions
@@ -182,6 +187,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     public AmazonRedshiftClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -247,6 +253,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -265,21 +272,41 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *        Object providing client parameters.
      */
     AmazonRedshiftClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon Redshift using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonRedshiftClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
     private void init() {
         exceptionUnmarshallers.add(new InvalidHsmConfigurationStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotScheduleAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotScheduleQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionEventIdNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubscriptionStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidClusterSnapshotScheduleStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidClusterTrackExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionSeverityNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CopyToRegionDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSubnetGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidScheduleExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DependentServiceRequestThrottlingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BucketNotFoundExceptionUnmarshaller());
@@ -295,16 +322,18 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new HsmConfigurationQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnsupportedOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyGrantNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ReservedNodeAlreadyMigratedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmClientCertificateNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyAlreadyEnabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmConfigurationAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidReservedNodeStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubnetAlreadyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSubnetQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterParameterGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterSubnetGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DependentServiceUnavailableExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterSubnetGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyAlreadyDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSecurityGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSnapshotQuotaExceededExceptionUnmarshaller());
@@ -315,17 +344,23 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new NumberOfNodesPerClusterLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NumberOfNodesQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSnapshotAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidRetentionPeriodExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSecurityGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedNodeOfferingNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InProgressTableRestoreQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AccessToSnapshotDeniedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidElasticIpExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TableLimitExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotScheduleUpdateInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSnapshotCopyGrantStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResizeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHsmClientCertificateStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSubnetGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterOnLatestRevisionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSnapshotNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ScheduleDefinitionTypeUnsupportedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BatchModifyClusterSnapshotsLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTagExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmClientCertificateAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmClientCertificateQuotaExceededExceptionUnmarshaller());
@@ -336,6 +371,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new ClusterParameterGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnauthorizedOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSubnetStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SnapshotScheduleNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionAlreadyExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedNodeAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedNodeNotFoundExceptionUnmarshaller());
@@ -353,6 +389,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new InvalidClusterSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterParameterGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientS3BucketPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BatchDeleteRequestSizeExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidS3KeyPrefixExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.redshift.model.AmazonRedshiftException.class));
@@ -369,6 +406,73 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type,
+     * or number of nodes) and no additional costs.
+     * </p>
+     * 
+     * @param acceptReservedNodeExchangeRequest
+     * @return Result of the AcceptReservedNodeExchange operation returned by the service.
+     * @throws ReservedNodeNotFoundException
+     *         The specified reserved compute node not found.
+     * @throws InvalidReservedNodeStateException
+     *         Indicates that the Reserved Node being exchanged is not in an active state.
+     * @throws ReservedNodeAlreadyMigratedException
+     *         Indicates that the reserved node has already been exchanged.
+     * @throws ReservedNodeOfferingNotFoundException
+     *         Specified offering does not exist.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @throws DependentServiceUnavailableException
+     *         Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30
+     *         to 60 seconds and try again.
+     * @throws ReservedNodeAlreadyExistsException
+     *         User already has a reservation with the given identifier.
+     * @sample AmazonRedshift.AcceptReservedNodeExchange
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ReservedNode acceptReservedNodeExchange(AcceptReservedNodeExchangeRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptReservedNodeExchange(request);
+    }
+
+    @SdkInternalApi
+    final ReservedNode executeAcceptReservedNodeExchange(AcceptReservedNodeExchangeRequest acceptReservedNodeExchangeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptReservedNodeExchangeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptReservedNodeExchangeRequest> request = null;
+        Response<ReservedNode> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptReservedNodeExchangeRequestMarshaller().marshall(super.beforeMarshalling(acceptReservedNodeExchangeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptReservedNodeExchange");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ReservedNode> responseHandler = new StaxResponseHandler<ReservedNode>(new ReservedNodeStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application
      * accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to
      * either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group.
@@ -377,7 +481,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i> and
      * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same AWS
-     * region.
+     * Region.
      * </p>
      * <p>
      * If you authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks, see
@@ -430,6 +534,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeClusterSecurityGroupIngress");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -499,11 +606,185 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeSnapshotAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a set of cluster snapshots.
+     * </p>
+     * 
+     * @param batchDeleteClusterSnapshotsRequest
+     * @return Result of the BatchDeleteClusterSnapshots operation returned by the service.
+     * @throws BatchDeleteRequestSizeExceededException
+     *         The maximum number for a batch delete of snapshots has been reached. The limit is 100.
+     * @sample AmazonRedshift.BatchDeleteClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchDeleteClusterSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchDeleteClusterSnapshotsResult batchDeleteClusterSnapshots(BatchDeleteClusterSnapshotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDeleteClusterSnapshots(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteClusterSnapshotsResult executeBatchDeleteClusterSnapshots(BatchDeleteClusterSnapshotsRequest batchDeleteClusterSnapshotsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDeleteClusterSnapshotsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDeleteClusterSnapshotsRequest> request = null;
+        Response<BatchDeleteClusterSnapshotsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDeleteClusterSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(batchDeleteClusterSnapshotsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteClusterSnapshots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<BatchDeleteClusterSnapshotsResult> responseHandler = new StaxResponseHandler<BatchDeleteClusterSnapshotsResult>(
+                    new BatchDeleteClusterSnapshotsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the settings for a list of snapshots.
+     * </p>
+     * 
+     * @param batchModifyClusterSnapshotsRequest
+     * @return Result of the BatchModifyClusterSnapshots operation returned by the service.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valid value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     * @throws BatchModifyClusterSnapshotsLimitExceededException
+     *         The maximum number for snapshot identifiers has been reached. The limit is 100.
+     * @sample AmazonRedshift.BatchModifyClusterSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/BatchModifyClusterSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchModifyClusterSnapshotsResult batchModifyClusterSnapshots(BatchModifyClusterSnapshotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchModifyClusterSnapshots(request);
+    }
+
+    @SdkInternalApi
+    final BatchModifyClusterSnapshotsResult executeBatchModifyClusterSnapshots(BatchModifyClusterSnapshotsRequest batchModifyClusterSnapshotsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchModifyClusterSnapshotsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchModifyClusterSnapshotsRequest> request = null;
+        Response<BatchModifyClusterSnapshotsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchModifyClusterSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(batchModifyClusterSnapshotsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchModifyClusterSnapshots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<BatchModifyClusterSnapshotsResult> responseHandler = new StaxResponseHandler<BatchModifyClusterSnapshotsResult>(
+                    new BatchModifyClusterSnapshotsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels a resize operation.
+     * </p>
+     * 
+     * @param cancelResizeRequest
+     * @return Result of the CancelResize operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws ResizeNotFoundException
+     *         A resize operation for the specified cluster is not found.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.CancelResize
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CancelResize" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CancelResizeResult cancelResize(CancelResizeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelResize(request);
+    }
+
+    @SdkInternalApi
+    final CancelResizeResult executeCancelResize(CancelResizeRequest cancelResizeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelResizeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelResizeRequest> request = null;
+        Response<CancelResizeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelResizeRequestMarshaller().marshall(super.beforeMarshalling(cancelResizeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelResize");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CancelResizeResult> responseHandler = new StaxResponseHandler<CancelResizeResult>(new CancelResizeResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -542,6 +823,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         authorized to access the snapshot.
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valid value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CopyClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot" target="_top">AWS
      *      API Documentation</a>
@@ -568,6 +853,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyClusterSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -588,7 +876,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * Creates a new cluster.
      * </p>
      * <p>
-     * To create the cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
+     * To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
      * subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster. For more
      * information about managing clusters, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
@@ -634,7 +922,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidElasticIpException
      *         The Elastic IP (EIP) is invalid or cannot be found.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws LimitExceededException
@@ -642,6 +930,14 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valid value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -668,6 +964,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -709,7 +1008,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterParameterGroupAlreadyExistsException
      *         A cluster parameter group with the same name already exists.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterParameterGroup
@@ -738,6 +1037,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateClusterParameterGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -774,7 +1076,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterSecurityGroup
@@ -803,6 +1105,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateClusterSecurityGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -840,9 +1145,13 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valid value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.CreateClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot" target="_top">AWS
      *      API Documentation</a>
@@ -869,6 +1178,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateClusterSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -914,7 +1226,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedOperationException
      *         Your account is not authorized to perform the requested operation.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws DependentServiceRequestThrottlingException
@@ -946,6 +1258,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateClusterSubnetGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1011,7 +1326,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws SourceNotFoundException
      *         The specified Amazon Redshift event source could not be found.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateEventSubscription
@@ -1040,6 +1355,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1077,7 +1395,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmClientCertificate
@@ -1106,6 +1424,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHsmClientCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1143,7 +1464,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmConfiguration
@@ -1172,6 +1493,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHsmConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1208,7 +1532,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws LimitExceededException
      *         The encryption key has exceeded its grant limit in AWS KMS.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         You have exceeded the number of tags allowed.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws DependentServiceRequestThrottlingException
@@ -1240,6 +1564,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSnapshotCopyGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1257,10 +1584,72 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Creates a new snapshot schedule.
+     * </p>
+     * 
+     * @param createSnapshotScheduleRequest
+     * @return Result of the CreateSnapshotSchedule operation returned by the service.
+     * @throws SnapshotScheduleAlreadyExistsException
+     *         The specified snapshot schedule already exists.
+     * @throws InvalidScheduleException
+     *         The schedule you submitted isn't valid.
+     * @throws SnapshotScheduleQuotaExceededException
+     *         You have exceeded the quota of snapshot schedules.
+     * @throws TagLimitExceededException
+     *         You have exceeded the number of tags allowed.
+     * @throws ScheduleDefinitionTypeUnsupportedException
+     *         The definition you submitted is not supported.
+     * @sample AmazonRedshift.CreateSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSnapshotScheduleResult createSnapshotSchedule(CreateSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final CreateSnapshotScheduleResult executeCreateSnapshotSchedule(CreateSnapshotScheduleRequest createSnapshotScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSnapshotScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSnapshotScheduleRequest> request = null;
+        Response<CreateSnapshotScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSnapshotScheduleRequestMarshaller().marshall(super.beforeMarshalling(createSnapshotScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSnapshotSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateSnapshotScheduleResult> responseHandler = new StaxResponseHandler<CreateSnapshotScheduleResult>(
+                    new CreateSnapshotScheduleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds one or more tags to a specified resource.
      * </p>
      * <p>
-     * A resource can have up to 10 tags. If you try to create more than 10 tags for a resource, you will receive an
+     * A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, you will receive an
      * error and the attempt will fail.
      * </p>
      * <p>
@@ -1272,7 +1661,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *        Contains the output from the <code>CreateTags</code> action.
      * @return Result of the CreateTags operation returned by the service.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         You have exceeded the number of tags allowed.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws InvalidTagException
@@ -1303,6 +1692,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1349,6 +1741,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         The value specified as a snapshot identifier is already used by an existing snapshot.
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valid value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.DeleteCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster" target="_top">AWS API
      *      Documentation</a>
@@ -1375,6 +1771,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1433,6 +1832,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteClusterParameterGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1497,6 +1899,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteClusterSecurityGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1558,6 +1963,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteClusterSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1612,6 +2020,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteClusterSubnetGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1666,6 +2077,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1720,6 +2134,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHsmClientCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1774,6 +2191,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHsmConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1829,12 +2249,71 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSnapshotCopyGrant");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<DeleteSnapshotCopyGrantResult> responseHandler = new StaxResponseHandler<DeleteSnapshotCopyGrantResult>(
                     new DeleteSnapshotCopyGrantResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a snapshot schedule.
+     * </p>
+     * 
+     * @param deleteSnapshotScheduleRequest
+     * @return Result of the DeleteSnapshotSchedule operation returned by the service.
+     * @throws InvalidClusterSnapshotScheduleStateException
+     *         The cluster snapshot schedule state is not valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @sample AmazonRedshift.DeleteSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteSnapshotScheduleResult deleteSnapshotSchedule(DeleteSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSnapshotScheduleResult executeDeleteSnapshotSchedule(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSnapshotScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSnapshotScheduleRequest> request = null;
+        Response<DeleteSnapshotScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSnapshotScheduleRequestMarshaller().marshall(super.beforeMarshalling(deleteSnapshotScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSnapshotSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteSnapshotScheduleResult> responseHandler = new StaxResponseHandler<DeleteSnapshotScheduleResult>(
+                    new DeleteSnapshotScheduleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1884,11 +2363,122 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(new DeleteTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of attributes attached to an account
+     * </p>
+     * 
+     * @param describeAccountAttributesRequest
+     * @return Result of the DescribeAccountAttributes operation returned by the service.
+     * @sample AmazonRedshift.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAccountAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountAttributesResult executeDescribeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAccountAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAccountAttributesRequest> request = null;
+        Response<DescribeAccountAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAccountAttributesRequestMarshaller().marshall(super.beforeMarshalling(describeAccountAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountAttributes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeAccountAttributesResult> responseHandler = new StaxResponseHandler<DescribeAccountAttributesResult>(
+                    new DescribeAccountAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of <code>ClusterDbRevision</code> objects.
+     * </p>
+     * 
+     * @param describeClusterDbRevisionsRequest
+     * @return Result of the DescribeClusterDbRevisions operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @sample AmazonRedshift.DescribeClusterDbRevisions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeClusterDbRevisionsResult describeClusterDbRevisions(DescribeClusterDbRevisionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClusterDbRevisions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClusterDbRevisionsResult executeDescribeClusterDbRevisions(DescribeClusterDbRevisionsRequest describeClusterDbRevisionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeClusterDbRevisionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClusterDbRevisionsRequest> request = null;
+        Response<DescribeClusterDbRevisionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClusterDbRevisionsRequestMarshaller().marshall(super.beforeMarshalling(describeClusterDbRevisionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusterDbRevisions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeClusterDbRevisionsResult> responseHandler = new StaxResponseHandler<DescribeClusterDbRevisionsResult>(
+                    new DescribeClusterDbRevisionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1954,6 +2544,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusterParameterGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2022,6 +2615,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusterParameters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2091,6 +2687,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusterSecurityGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2164,6 +2763,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusterSnapshots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2233,6 +2835,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusterSubnetGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2252,6 +2857,62 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     @Override
     public DescribeClusterSubnetGroupsResult describeClusterSubnetGroups() {
         return describeClusterSubnetGroups(new DescribeClusterSubnetGroupsRequest());
+    }
+
+    /**
+     * <p>
+     * Returns a list of all the available maintenance tracks.
+     * </p>
+     * 
+     * @param describeClusterTracksRequest
+     * @return Result of the DescribeClusterTracks operation returned by the service.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @sample AmazonRedshift.DescribeClusterTracks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeClusterTracksResult describeClusterTracks(DescribeClusterTracksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClusterTracks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClusterTracksResult executeDescribeClusterTracks(DescribeClusterTracksRequest describeClusterTracksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeClusterTracksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClusterTracksRequest> request = null;
+        Response<DescribeClusterTracksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClusterTracksRequestMarshaller().marshall(super.beforeMarshalling(describeClusterTracksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusterTracks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeClusterTracksResult> responseHandler = new StaxResponseHandler<DescribeClusterTracksResult>(
+                    new DescribeClusterTracksResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2290,6 +2951,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusterVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2362,6 +3026,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2421,6 +3088,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDefaultClusterParameters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2473,6 +3143,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventCategories");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2542,6 +3215,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventSubscriptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2598,6 +3274,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2667,6 +3346,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHsmClientCertificates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2736,6 +3418,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHsmConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2793,6 +3478,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLoggingStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2812,7 +3500,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find
-     * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS region that you can
+     * what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS Region that you can
      * specify, and the node types you can request. The node types differ by available storage, memory, CPU and price.
      * With the cost involved you might want to obtain a list of cluster options in the specific region and specify
      * values when creating a cluster. For more information about managing clusters, go to <a
@@ -2849,6 +3537,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrderableClusterOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2919,6 +3610,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedNodeOfferings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2978,6 +3672,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedNodes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3042,6 +3739,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResize");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3102,6 +3802,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSnapshotCopyGrants");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3121,6 +3824,110 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     @Override
     public DescribeSnapshotCopyGrantsResult describeSnapshotCopyGrants() {
         return describeSnapshotCopyGrants(new DescribeSnapshotCopyGrantsRequest());
+    }
+
+    /**
+     * <p>
+     * Returns a list of snapshot schedules.
+     * </p>
+     * 
+     * @param describeSnapshotSchedulesRequest
+     * @return Result of the DescribeSnapshotSchedules operation returned by the service.
+     * @sample AmazonRedshift.DescribeSnapshotSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeSnapshotSchedulesResult describeSnapshotSchedules(DescribeSnapshotSchedulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSnapshotSchedules(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSnapshotSchedulesResult executeDescribeSnapshotSchedules(DescribeSnapshotSchedulesRequest describeSnapshotSchedulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSnapshotSchedulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSnapshotSchedulesRequest> request = null;
+        Response<DescribeSnapshotSchedulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSnapshotSchedulesRequestMarshaller().marshall(super.beforeMarshalling(describeSnapshotSchedulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSnapshotSchedules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeSnapshotSchedulesResult> responseHandler = new StaxResponseHandler<DescribeSnapshotSchedulesResult>(
+                    new DescribeSnapshotSchedulesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the total amount of snapshot usage and provisioned storage for a user in megabytes.
+     * </p>
+     * 
+     * @param describeStorageRequest
+     * @return Result of the DescribeStorage operation returned by the service.
+     * @sample AmazonRedshift.DescribeStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeStorage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeStorageResult describeStorage(DescribeStorageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStorage(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStorageResult executeDescribeStorage(DescribeStorageRequest describeStorageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeStorageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStorageRequest> request = null;
+        Response<DescribeStorageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStorageRequestMarshaller().marshall(super.beforeMarshalling(describeStorageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStorage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeStorageResult> responseHandler = new StaxResponseHandler<DescribeStorageResult>(
+                    new DescribeStorageResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -3164,6 +3971,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTableRestoreStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3253,6 +4063,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3308,6 +4121,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableLogging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3370,6 +4186,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableSnapshotCopy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3431,6 +4250,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableLogging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3475,6 +4297,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valid value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.EnableSnapshotCopy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy" target="_top">AWS
      *      API Documentation</a>
@@ -3501,6 +4327,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableSnapshotCopy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3580,12 +4409,82 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetClusterCredentials");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<GetClusterCredentialsResult> responseHandler = new StaxResponseHandler<GetClusterCredentialsResult>(
                     new GetClusterCredentialsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given
+     * DC1 reserved node.
+     * </p>
+     * 
+     * @param getReservedNodeExchangeOfferingsRequest
+     * @return Result of the GetReservedNodeExchangeOfferings operation returned by the service.
+     * @throws ReservedNodeNotFoundException
+     *         The specified reserved compute node not found.
+     * @throws InvalidReservedNodeStateException
+     *         Indicates that the Reserved Node being exchanged is not in an active state.
+     * @throws ReservedNodeAlreadyMigratedException
+     *         Indicates that the reserved node has already been exchanged.
+     * @throws ReservedNodeOfferingNotFoundException
+     *         Specified offering does not exist.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @throws DependentServiceUnavailableException
+     *         Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30
+     *         to 60 seconds and try again.
+     * @sample AmazonRedshift.GetReservedNodeExchangeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetReservedNodeExchangeOfferingsResult getReservedNodeExchangeOfferings(GetReservedNodeExchangeOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetReservedNodeExchangeOfferings(request);
+    }
+
+    @SdkInternalApi
+    final GetReservedNodeExchangeOfferingsResult executeGetReservedNodeExchangeOfferings(
+            GetReservedNodeExchangeOfferingsRequest getReservedNodeExchangeOfferingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getReservedNodeExchangeOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetReservedNodeExchangeOfferingsRequest> request = null;
+        Response<GetReservedNodeExchangeOfferingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetReservedNodeExchangeOfferingsRequestMarshaller().marshall(super.beforeMarshalling(getReservedNodeExchangeOfferingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReservedNodeExchangeOfferings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetReservedNodeExchangeOfferingsResult> responseHandler = new StaxResponseHandler<GetReservedNodeExchangeOfferingsResult>(
+                    new GetReservedNodeExchangeOfferingsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3648,6 +4547,14 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         Redshift on your behalf. Wait and retry the request.
      * @throws InvalidElasticIpException
      *         The Elastic IP (EIP) is invalid or cannot be found.
+     * @throws TableLimitExceededException
+     *         The number of tables in the cluster exceeds the limit for the requested new cluster node type.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valid value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.ModifyCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster" target="_top">AWS API
      *      Documentation</a>
@@ -3674,6 +4581,67 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the database revision of a cluster. The database revision is a unique revision of the database running
+     * in a cluster.
+     * </p>
+     * 
+     * @param modifyClusterDbRevisionRequest
+     * @return Result of the ModifyClusterDbRevision operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws ClusterOnLatestRevisionException
+     *         Cluster is already on the latest database revision.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @sample AmazonRedshift.ModifyClusterDbRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public Cluster modifyClusterDbRevision(ModifyClusterDbRevisionRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyClusterDbRevision(request);
+    }
+
+    @SdkInternalApi
+    final Cluster executeModifyClusterDbRevision(ModifyClusterDbRevisionRequest modifyClusterDbRevisionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyClusterDbRevisionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyClusterDbRevisionRequest> request = null;
+        Response<Cluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyClusterDbRevisionRequestMarshaller().marshall(super.beforeMarshalling(modifyClusterDbRevisionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClusterDbRevision");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3730,6 +4698,63 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClusterIamRoles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the maintenance settings of a cluster. For example, you can defer a maintenance window. You can also
+     * update or cancel a deferment.
+     * </p>
+     * 
+     * @param modifyClusterMaintenanceRequest
+     * @return Result of the ModifyClusterMaintenance operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @sample AmazonRedshift.ModifyClusterMaintenance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterMaintenance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public Cluster modifyClusterMaintenance(ModifyClusterMaintenanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyClusterMaintenance(request);
+    }
+
+    @SdkInternalApi
+    final Cluster executeModifyClusterMaintenance(ModifyClusterMaintenanceRequest modifyClusterMaintenanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyClusterMaintenanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyClusterMaintenanceRequest> request = null;
+        Response<Cluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyClusterMaintenanceRequestMarshaller().marshall(super.beforeMarshalling(modifyClusterMaintenanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClusterMaintenance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3788,12 +4813,133 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClusterParameterGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<ModifyClusterParameterGroupResult> responseHandler = new StaxResponseHandler<ModifyClusterParameterGroupResult>(
                     new ModifyClusterParameterGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the settings for a snapshot.
+     * </p>
+     * 
+     * @param modifyClusterSnapshotRequest
+     * @return Result of the ModifyClusterSnapshot operation returned by the service.
+     * @throws InvalidClusterSnapshotStateException
+     *         The specified cluster snapshot is not in the <code>available</code> state, or other accounts are
+     *         authorized to access the snapshot.
+     * @throws ClusterSnapshotNotFoundException
+     *         The snapshot identifier does not refer to an existing cluster snapshot.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valid value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
+     * @sample AmazonRedshift.ModifyClusterSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshot" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public Snapshot modifyClusterSnapshot(ModifyClusterSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyClusterSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final Snapshot executeModifyClusterSnapshot(ModifyClusterSnapshotRequest modifyClusterSnapshotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyClusterSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyClusterSnapshotRequest> request = null;
+        Response<Snapshot> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(modifyClusterSnapshotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClusterSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<Snapshot> responseHandler = new StaxResponseHandler<Snapshot>(new SnapshotStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies a snapshot schedule for a cluster.
+     * </p>
+     * 
+     * @param modifyClusterSnapshotScheduleRequest
+     * @return Result of the ModifyClusterSnapshotSchedule operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @throws InvalidClusterSnapshotScheduleStateException
+     *         The cluster snapshot schedule state is not valid.
+     * @sample AmazonRedshift.ModifyClusterSnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyClusterSnapshotScheduleResult modifyClusterSnapshotSchedule(ModifyClusterSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyClusterSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final ModifyClusterSnapshotScheduleResult executeModifyClusterSnapshotSchedule(ModifyClusterSnapshotScheduleRequest modifyClusterSnapshotScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyClusterSnapshotScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyClusterSnapshotScheduleRequest> request = null;
+        Response<ModifyClusterSnapshotScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyClusterSnapshotScheduleRequestMarshaller().marshall(super.beforeMarshalling(modifyClusterSnapshotScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClusterSnapshotSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyClusterSnapshotScheduleResult> responseHandler = new StaxResponseHandler<ModifyClusterSnapshotScheduleResult>(
+                    new ModifyClusterSnapshotScheduleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3854,6 +5000,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClusterSubnetGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3924,6 +5073,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyEventSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3941,8 +5093,11 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Modifies the number of days to retain automated snapshots in the destination region after they are copied from
-     * the source region.
+     * Modifies the number of days to retain snapshots in the destination AWS Region after they are copied from the
+     * source AWS Region. By default, this operation only changes the retention period of copied automated snapshots.
+     * The retention periods for both new and existing copied automated snapshots are updated with the new retention
+     * period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set
+     * this option, only newly copied manual snapshots have the new retention period.
      * </p>
      * 
      * @param modifySnapshotCopyRetentionPeriodRequest
@@ -3955,6 +5110,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         Your account is not authorized to perform the requested operation.
      * @throws InvalidClusterStateException
      *         The specified cluster is not in the <code>available</code> state.
+     * @throws InvalidRetentionPeriodException
+     *         The retention period specified is either in the past or is not a valid value.</p>
+     *         <p>
+     *         The value must be either -1 or an integer between 1 and 3,653.
      * @sample AmazonRedshift.ModifySnapshotCopyRetentionPeriod
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod"
      *      target="_top">AWS API Documentation</a>
@@ -3981,11 +5140,72 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifySnapshotCopyRetentionPeriod");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies a snapshot schedule. Any schedule associated with a cluster is modified asynchronously.
+     * </p>
+     * 
+     * @param modifySnapshotScheduleRequest
+     * @return Result of the ModifySnapshotSchedule operation returned by the service.
+     * @throws InvalidScheduleException
+     *         The schedule you submitted isn't valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
+     * @throws SnapshotScheduleUpdateInProgressException
+     *         The specified snapshot schedule is already being updated.
+     * @sample AmazonRedshift.ModifySnapshotSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifySnapshotScheduleResult modifySnapshotSchedule(ModifySnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifySnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final ModifySnapshotScheduleResult executeModifySnapshotSchedule(ModifySnapshotScheduleRequest modifySnapshotScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifySnapshotScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifySnapshotScheduleRequest> request = null;
+        Response<ModifySnapshotScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifySnapshotScheduleRequestMarshaller().marshall(super.beforeMarshalling(modifySnapshotScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifySnapshotSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifySnapshotScheduleResult> responseHandler = new StaxResponseHandler<ModifySnapshotScheduleResult>(
+                    new ModifySnapshotScheduleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4047,6 +5267,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseReservedNodeOffering");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4104,6 +5327,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4159,12 +5385,126 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetClusterParameterGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<ResetClusterParameterGroupResult> responseHandler = new StaxResponseHandler<ResetClusterParameterGroupResult>(
                     new ResetClusterParameterGroupResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The
+     * default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read
+     * and write operations more quickly than with the classic resize method.
+     * </p>
+     * <p>
+     * Elastic resize operations have the following restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can only resize clusters of the following types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * dc2.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * dc2.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ds2.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ds2.8xlarge
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * The type of nodes that you add must match the node type for the cluster.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resizeClusterRequest
+     * @return Result of the ResizeCluster operation returned by the service.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws NumberOfNodesQuotaExceededException
+     *         The operation would exceed the number of nodes allotted to the account. For information about increasing
+     *         your quota, go to <a
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
+     *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+     * @throws NumberOfNodesPerClusterLimitExceededException
+     *         The operation would exceed the number of nodes allowed for a cluster.
+     * @throws InsufficientClusterCapacityException
+     *         The number of nodes specified exceeds the allotted capacity of the cluster.
+     * @throws UnsupportedOptionException
+     *         A request option was specified that is not supported.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @throws LimitExceededException
+     *         The encryption key has exceeded its grant limit in AWS KMS.
+     * @sample AmazonRedshift.ResizeCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public Cluster resizeCluster(ResizeClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeResizeCluster(request);
+    }
+
+    @SdkInternalApi
+    final Cluster executeResizeCluster(ResizeClusterRequest resizeClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resizeClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResizeClusterRequest> request = null;
+        Response<Cluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResizeClusterRequestMarshaller().marshall(super.beforeMarshalling(resizeClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResizeCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4245,6 +5585,10 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws DependentServiceRequestThrottlingException
      *         The request cannot be completed because a dependent service is throttling requests made by Amazon
      *         Redshift on your behalf. Wait and retry the request.
+     * @throws InvalidClusterTrackException
+     *         The provided cluster track name is not valid.
+     * @throws SnapshotScheduleNotFoundException
+     *         We could not find the specified snapshot schedule.
      * @sample AmazonRedshift.RestoreFromClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -4271,6 +5615,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreFromClusterSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4346,6 +5693,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreTableFromClusterSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4405,6 +5755,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeClusterSecurityGroupIngress");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4467,6 +5820,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeSnapshotAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4522,6 +5878,9 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RotateEncryptionKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4561,9 +5920,18 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -4573,7 +5941,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -4581,8 +5949,17 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

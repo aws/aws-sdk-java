@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,12 +14,11 @@
  */
 package com.amazonaws.auth;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.internal.config.InternalConfig;
 import com.amazonaws.internal.config.SignerConfig;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /** Signer factory. */
 public final class SignerFactory {
@@ -29,6 +28,7 @@ public final class SignerFactory {
     public static final String VERSION_FOUR_SIGNER = "AWS4SignerType";
     public static final String VERSION_FOUR_UNSIGNED_PAYLOAD_SIGNER = "AWS4UnsignedPayloadSignerType";
     public static final String NO_OP_SIGNER = "NoOpSignerType";
+    private static final String S3_V4_SIGNER = "AWSS3V4SignerType";
 
     private static final Map<String, Class<? extends Signer>> SIGNERS
         = new ConcurrentHashMap<String, Class<? extends Signer>>();
@@ -40,6 +40,12 @@ public final class SignerFactory {
         SIGNERS.put(VERSION_FOUR_SIGNER, AWS4Signer.class);
         SIGNERS.put(VERSION_FOUR_UNSIGNED_PAYLOAD_SIGNER, AWS4UnsignedPayloadSigner.class);
         SIGNERS.put(NO_OP_SIGNER, NoOpSigner.class);
+        try {
+            SIGNERS.put(S3_V4_SIGNER,
+                        (Class<? extends Signer>) Class.forName("com.amazonaws.services.s3.internal.AWSS3V4Signer"));
+        } catch (ClassNotFoundException ignored) {
+            // If S3 client is not on the classpath then we don't register it
+        }
     }
 
     /**

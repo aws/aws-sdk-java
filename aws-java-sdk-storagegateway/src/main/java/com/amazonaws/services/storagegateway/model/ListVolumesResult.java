@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,6 +16,21 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * A JSON object containing the following fields:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ListVolumesOutput$Marker</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListVolumesOutput$VolumeInfos</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes" target="_top">AWS API
  *      Documentation</a>
@@ -24,9 +39,19 @@ import javax.annotation.Generated;
 public class ListVolumesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     private String gatewayARN;
-
+    /**
+     * <p>
+     * Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to
+     * list, this field does not appear in the response body.
+     * </p>
+     */
     private String marker;
-
+    /**
+     * <p>
+     * An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are defined for
+     * the gateway, then <code>VolumeInfos</code> is an empty array "[]".
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<VolumeInfo> volumeInfos;
 
     /**
@@ -56,7 +81,14 @@ public class ListVolumesResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to
+     * list, this field does not appear in the response body.
+     * </p>
+     * 
      * @param marker
+     *        Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes
+     *        to list, this field does not appear in the response body.
      */
 
     public void setMarker(String marker) {
@@ -64,7 +96,13 @@ public class ListVolumesResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to
+     * list, this field does not appear in the response body.
+     * </p>
+     * 
+     * @return Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes
+     *         to list, this field does not appear in the response body.
      */
 
     public String getMarker() {
@@ -72,7 +110,14 @@ public class ListVolumesResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to
+     * list, this field does not appear in the response body.
+     * </p>
+     * 
      * @param marker
+     *        Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes
+     *        to list, this field does not appear in the response body.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +127,13 @@ public class ListVolumesResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are defined for
+     * the gateway, then <code>VolumeInfos</code> is an empty array "[]".
+     * </p>
+     * 
+     * @return An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are
+     *         defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".
      */
 
     public java.util.List<VolumeInfo> getVolumeInfos() {
@@ -93,7 +144,14 @@ public class ListVolumesResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are defined for
+     * the gateway, then <code>VolumeInfos</code> is an empty array "[]".
+     * </p>
+     * 
      * @param volumeInfos
+     *        An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are
+     *        defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".
      */
 
     public void setVolumeInfos(java.util.Collection<VolumeInfo> volumeInfos) {
@@ -107,12 +165,18 @@ public class ListVolumesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are defined for
+     * the gateway, then <code>VolumeInfos</code> is an empty array "[]".
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setVolumeInfos(java.util.Collection)} or {@link #withVolumeInfos(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param volumeInfos
+     *        An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are
+     *        defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,7 +191,14 @@ public class ListVolumesResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are defined for
+     * the gateway, then <code>VolumeInfos</code> is an empty array "[]".
+     * </p>
+     * 
      * @param volumeInfos
+     *        An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are
+     *        defined for the gateway, then <code>VolumeInfos</code> is an empty array "[]".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,7 +208,8 @@ public class ListVolumesResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

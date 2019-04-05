@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class EventFeedbackTypeMarshaller {
     private static final MarshallingInfo<String> PROVIDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Provider").build();
     private static final MarshallingInfo<java.util.Date> FEEDBACKDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeedbackDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeedbackDate").timestampFormat("unixTimestamp").build();
 
     private static final EventFeedbackTypeMarshaller instance = new EventFeedbackTypeMarshaller();
 

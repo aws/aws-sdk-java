@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetSubscriptionDefinitionVersionRequestMarshaller {
 
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
     private static final MarshallingInfo<String> SUBSCRIPTIONDEFINITIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("SubscriptionDefinitionId").build();
     private static final MarshallingInfo<String> SUBSCRIPTIONDEFINITIONVERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class GetSubscriptionDefinitionVersionRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getSubscriptionDefinitionVersionRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getSubscriptionDefinitionVersionRequest.getSubscriptionDefinitionId(), SUBSCRIPTIONDEFINITIONID_BINDING);
             protocolMarshaller.marshall(getSubscriptionDefinitionVersionRequest.getSubscriptionDefinitionVersionId(), SUBSCRIPTIONDEFINITIONVERSIONID_BINDING);
         } catch (Exception e) {

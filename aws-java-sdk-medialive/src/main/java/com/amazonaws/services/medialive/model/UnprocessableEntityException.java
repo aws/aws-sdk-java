@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import javax.annotation.Generated;
 public class UnprocessableEntityException extends com.amazonaws.services.medialive.model.AWSMediaLiveException {
     private static final long serialVersionUID = 1L;
 
-    /** A collection of validation error responses from attempting to create a channel with a bouquet of settings. */
+    /** A collection of validation error responses. */
     private java.util.List<ValidationError> validationErrors;
 
     /**
@@ -35,10 +35,9 @@ public class UnprocessableEntityException extends com.amazonaws.services.mediali
     }
 
     /**
-     * A collection of validation error responses from attempting to create a channel with a bouquet of settings.
+     * A collection of validation error responses.
      * 
-     * @return A collection of validation error responses from attempting to create a channel with a bouquet of
-     *         settings.
+     * @return A collection of validation error responses.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("validationErrors")
@@ -47,10 +46,10 @@ public class UnprocessableEntityException extends com.amazonaws.services.mediali
     }
 
     /**
-     * A collection of validation error responses from attempting to create a channel with a bouquet of settings.
+     * A collection of validation error responses.
      * 
      * @param validationErrors
-     *        A collection of validation error responses from attempting to create a channel with a bouquet of settings.
+     *        A collection of validation error responses.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("validationErrors")
@@ -64,7 +63,7 @@ public class UnprocessableEntityException extends com.amazonaws.services.mediali
     }
 
     /**
-     * A collection of validation error responses from attempting to create a channel with a bouquet of settings.
+     * A collection of validation error responses.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValidationErrors(java.util.Collection)} or {@link #withValidationErrors(java.util.Collection)} if you
@@ -72,7 +71,7 @@ public class UnprocessableEntityException extends com.amazonaws.services.mediali
      * </p>
      * 
      * @param validationErrors
-     *        A collection of validation error responses from attempting to create a channel with a bouquet of settings.
+     *        A collection of validation error responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,10 +86,10 @@ public class UnprocessableEntityException extends com.amazonaws.services.mediali
     }
 
     /**
-     * A collection of validation error responses from attempting to create a channel with a bouquet of settings.
+     * A collection of validation error responses.
      * 
      * @param validationErrors
-     *        A collection of validation error responses from attempting to create a channel with a bouquet of settings.
+     *        A collection of validation error responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

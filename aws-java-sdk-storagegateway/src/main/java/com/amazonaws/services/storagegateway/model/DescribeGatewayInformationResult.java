@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,14 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String lastSoftwareUpdate;
+    /**
+     * <p>
+     * A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * @param gatewayARN
@@ -477,7 +485,97 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
+     * </p>
+     * 
+     * @return A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *         key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *         <code>ListTagsForResource</code> API operation.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
+     * </p>
+     * 
+     * @param tags
+     *        A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a key-value pair.
+     * For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code>
+     * API operation.
+     * </p>
+     * 
+     * @param tags
+     *        A list of up to 10 tags assigned to the gateway, sorted alphabetically by key name. Each tag is a
+     *        key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the
+     *        <code>ListTagsForResource</code> API operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -504,7 +602,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getNextUpdateAvailabilityDate() != null)
             sb.append("NextUpdateAvailabilityDate: ").append(getNextUpdateAvailabilityDate()).append(",");
         if (getLastSoftwareUpdate() != null)
-            sb.append("LastSoftwareUpdate: ").append(getLastSoftwareUpdate());
+            sb.append("LastSoftwareUpdate: ").append(getLastSoftwareUpdate()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -555,6 +655,10 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getLastSoftwareUpdate() != null && other.getLastSoftwareUpdate().equals(this.getLastSoftwareUpdate()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -572,6 +676,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getGatewayType() == null) ? 0 : getGatewayType().hashCode());
         hashCode = prime * hashCode + ((getNextUpdateAvailabilityDate() == null) ? 0 : getNextUpdateAvailabilityDate().hashCode());
         hashCode = prime * hashCode + ((getLastSoftwareUpdate() == null) ? 0 : getLastSoftwareUpdate().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Describes a storage volume recovery point object.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VolumeRecoveryPointInfo"
  *      target="_top">AWS API Documentation</a>
@@ -25,16 +28,43 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VolumeRecoveryPointInfo implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume target.
+     * </p>
+     */
     private String volumeARN;
-
+    /**
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     */
     private Long volumeSizeInBytes;
-
+    /**
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     */
     private Long volumeUsageInBytes;
-
+    /**
+     * <p>
+     * The time the recovery point was taken.
+     * </p>
+     */
     private String volumeRecoveryPointTime;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume target.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the volume target.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -42,7 +72,11 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume target.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the volume target.
      */
 
     public String getVolumeARN() {
@@ -50,7 +84,12 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the volume target.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the volume target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +99,12 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     * 
      * @param volumeSizeInBytes
+     *        The size of the volume in bytes.
      */
 
     public void setVolumeSizeInBytes(Long volumeSizeInBytes) {
@@ -68,7 +112,11 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @return
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     * 
+     * @return The size of the volume in bytes.
      */
 
     public Long getVolumeSizeInBytes() {
@@ -76,7 +124,12 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The size of the volume in bytes.
+     * </p>
+     * 
      * @param volumeSizeInBytes
+     *        The size of the volume in bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +139,20 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     * 
      * @param volumeUsageInBytes
+     *        The size of the data stored on the volume in bytes.</p> <note>
+     *        <p>
+     *        This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     *        </p>
      */
 
     public void setVolumeUsageInBytes(Long volumeUsageInBytes) {
@@ -94,7 +160,20 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @return
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     * 
+     * @return The size of the data stored on the volume in bytes.</p> <note>
+     *         <p>
+     *         This value is not available for volumes created prior to May 13, 2015, until you store data on the
+     *         volume.
+     *         </p>
      */
 
     public Long getVolumeUsageInBytes() {
@@ -102,7 +181,20 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The size of the data stored on the volume in bytes.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     * </p>
+     * </note>
+     * 
      * @param volumeUsageInBytes
+     *        The size of the data stored on the volume in bytes.</p> <note>
+     *        <p>
+     *        This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +204,12 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The time the recovery point was taken.
+     * </p>
+     * 
      * @param volumeRecoveryPointTime
+     *        The time the recovery point was taken.
      */
 
     public void setVolumeRecoveryPointTime(String volumeRecoveryPointTime) {
@@ -120,7 +217,11 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @return
+     * <p>
+     * The time the recovery point was taken.
+     * </p>
+     * 
+     * @return The time the recovery point was taken.
      */
 
     public String getVolumeRecoveryPointTime() {
@@ -128,7 +229,12 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The time the recovery point was taken.
+     * </p>
+     * 
      * @param volumeRecoveryPointTime
+     *        The time the recovery point was taken.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,7 +244,8 @@ public class VolumeRecoveryPointInfo implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

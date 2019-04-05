@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the AssociateConnectionWithLag operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag"
  *      target="_top">AWS API Documentation</a>
@@ -32,23 +29,11 @@ public class AssociateConnectionWithLagRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The ID of the connection.
      * </p>
-     * <p>
-     * Example: dxcon-abc123
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      */
     private String connectionId;
     /**
      * <p>
      * The ID of the LAG with which to associate the connection.
-     * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
      * </p>
      */
     private String lagId;
@@ -57,20 +42,9 @@ public class AssociateConnectionWithLagRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The ID of the connection.
      * </p>
-     * <p>
-     * Example: dxcon-abc123
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param connectionId
-     *        The ID of the connection.</p>
-     *        <p>
-     *        Example: dxcon-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the connection.
      */
 
     public void setConnectionId(String connectionId) {
@@ -81,19 +55,8 @@ public class AssociateConnectionWithLagRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The ID of the connection.
      * </p>
-     * <p>
-     * Example: dxcon-abc123
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The ID of the connection.</p>
-     *         <p>
-     *         Example: dxcon-abc123
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the connection.
      */
 
     public String getConnectionId() {
@@ -104,20 +67,9 @@ public class AssociateConnectionWithLagRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The ID of the connection.
      * </p>
-     * <p>
-     * Example: dxcon-abc123
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param connectionId
-     *        The ID of the connection.</p>
-     *        <p>
-     *        Example: dxcon-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,20 +82,9 @@ public class AssociateConnectionWithLagRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The ID of the LAG with which to associate the connection.
      * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param lagId
-     *        The ID of the LAG with which to associate the connection.</p>
-     *        <p>
-     *        Example: dxlag-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the LAG with which to associate the connection.
      */
 
     public void setLagId(String lagId) {
@@ -154,19 +95,8 @@ public class AssociateConnectionWithLagRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The ID of the LAG with which to associate the connection.
      * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The ID of the LAG with which to associate the connection.</p>
-     *         <p>
-     *         Example: dxlag-abc123
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the LAG with which to associate the connection.
      */
 
     public String getLagId() {
@@ -177,20 +107,9 @@ public class AssociateConnectionWithLagRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The ID of the LAG with which to associate the connection.
      * </p>
-     * <p>
-     * Example: dxlag-abc123
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param lagId
-     *        The ID of the LAG with which to associate the connection.</p>
-     *        <p>
-     *        Example: dxlag-abc123
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the LAG with which to associate the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,7 +119,8 @@ public class AssociateConnectionWithLagRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these
- * structures includes the data points for that metric, along with the time stamps of those data points and other
+ * structures includes the data points for that metric, along with the timestamps of those data points and other
  * identifying information.
  * </p>
  * 
@@ -42,7 +42,7 @@ public class MetricDataResult implements Serializable, Cloneable {
     private String label;
     /**
      * <p>
-     * The time stamps for the data points, formatted in Unix timestamp format. The number of time stamps always matches
+     * The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches
      * the number of values and the value for Timestamps[x] is Values[x].
      * </p>
      */
@@ -50,7 +50,7 @@ public class MetricDataResult implements Serializable, Cloneable {
     /**
      * <p>
      * The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the
-     * number of time stamps and the time stamp for Values[x] is Timestamps[x].
+     * number of timestamps and the timestamp for Values[x] is Timestamps[x].
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Double> values;
@@ -153,11 +153,11 @@ public class MetricDataResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamps for the data points, formatted in Unix timestamp format. The number of time stamps always matches
+     * The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches
      * the number of values and the value for Timestamps[x] is Values[x].
      * </p>
      * 
-     * @return The time stamps for the data points, formatted in Unix timestamp format. The number of time stamps always
+     * @return The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always
      *         matches the number of values and the value for Timestamps[x] is Values[x].
      */
 
@@ -170,12 +170,12 @@ public class MetricDataResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamps for the data points, formatted in Unix timestamp format. The number of time stamps always matches
+     * The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches
      * the number of values and the value for Timestamps[x] is Values[x].
      * </p>
      * 
      * @param timestamps
-     *        The time stamps for the data points, formatted in Unix timestamp format. The number of time stamps always
+     *        The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always
      *        matches the number of values and the value for Timestamps[x] is Values[x].
      */
 
@@ -190,7 +190,7 @@ public class MetricDataResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamps for the data points, formatted in Unix timestamp format. The number of time stamps always matches
+     * The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches
      * the number of values and the value for Timestamps[x] is Values[x].
      * </p>
      * <p>
@@ -200,7 +200,7 @@ public class MetricDataResult implements Serializable, Cloneable {
      * </p>
      * 
      * @param timestamps
-     *        The time stamps for the data points, formatted in Unix timestamp format. The number of time stamps always
+     *        The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always
      *        matches the number of values and the value for Timestamps[x] is Values[x].
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -217,12 +217,12 @@ public class MetricDataResult implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time stamps for the data points, formatted in Unix timestamp format. The number of time stamps always matches
+     * The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always matches
      * the number of values and the value for Timestamps[x] is Values[x].
      * </p>
      * 
      * @param timestamps
-     *        The time stamps for the data points, formatted in Unix timestamp format. The number of time stamps always
+     *        The timestamps for the data points, formatted in Unix timestamp format. The number of timestamps always
      *        matches the number of values and the value for Timestamps[x] is Values[x].
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -235,11 +235,11 @@ public class MetricDataResult implements Serializable, Cloneable {
     /**
      * <p>
      * The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the
-     * number of time stamps and the time stamp for Values[x] is Timestamps[x].
+     * number of timestamps and the timestamp for Values[x] is Timestamps[x].
      * </p>
      * 
      * @return The data points for the metric corresponding to <code>Timestamps</code>. The number of values always
-     *         matches the number of time stamps and the time stamp for Values[x] is Timestamps[x].
+     *         matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].
      */
 
     public java.util.List<Double> getValues() {
@@ -252,12 +252,12 @@ public class MetricDataResult implements Serializable, Cloneable {
     /**
      * <p>
      * The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the
-     * number of time stamps and the time stamp for Values[x] is Timestamps[x].
+     * number of timestamps and the timestamp for Values[x] is Timestamps[x].
      * </p>
      * 
      * @param values
      *        The data points for the metric corresponding to <code>Timestamps</code>. The number of values always
-     *        matches the number of time stamps and the time stamp for Values[x] is Timestamps[x].
+     *        matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].
      */
 
     public void setValues(java.util.Collection<Double> values) {
@@ -272,7 +272,7 @@ public class MetricDataResult implements Serializable, Cloneable {
     /**
      * <p>
      * The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the
-     * number of time stamps and the time stamp for Values[x] is Timestamps[x].
+     * number of timestamps and the timestamp for Values[x] is Timestamps[x].
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -282,7 +282,7 @@ public class MetricDataResult implements Serializable, Cloneable {
      * 
      * @param values
      *        The data points for the metric corresponding to <code>Timestamps</code>. The number of values always
-     *        matches the number of time stamps and the time stamp for Values[x] is Timestamps[x].
+     *        matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,12 +299,12 @@ public class MetricDataResult implements Serializable, Cloneable {
     /**
      * <p>
      * The data points for the metric corresponding to <code>Timestamps</code>. The number of values always matches the
-     * number of time stamps and the time stamp for Values[x] is Timestamps[x].
+     * number of timestamps and the timestamp for Values[x] is Timestamps[x].
      * </p>
      * 
      * @param values
      *        The data points for the metric corresponding to <code>Timestamps</code>. The number of values always
-     *        matches the number of time stamps and the time stamp for Values[x] is Timestamps[x].
+     *        matches the number of timestamps and the timestamp for Values[x] is Timestamps[x].
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,7 +482,8 @@ public class MetricDataResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

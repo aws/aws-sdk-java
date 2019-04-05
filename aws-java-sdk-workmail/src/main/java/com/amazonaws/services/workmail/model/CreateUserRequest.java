@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,19 +33,20 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String organizationId;
     /**
      * <p>
-     * The name for the user to be created.
+     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
+     * maximum length of 64.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The display name for the user to be created.
+     * The display name for the new user.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The password for the user to be created.
+     * The password for the new user.
      * </p>
      */
     private String password;
@@ -92,11 +93,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name for the user to be created.
+     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
+     * maximum length of 64.
      * </p>
      * 
      * @param name
-     *        The name for the user to be created.
+     *        The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others
+     *        have a maximum length of 64.
      */
 
     public void setName(String name) {
@@ -105,10 +108,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name for the user to be created.
+     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
+     * maximum length of 64.
      * </p>
      * 
-     * @return The name for the user to be created.
+     * @return The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others
+     *         have a maximum length of 64.
      */
 
     public String getName() {
@@ -117,11 +122,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name for the user to be created.
+     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
+     * maximum length of 64.
      * </p>
      * 
      * @param name
-     *        The name for the user to be created.
+     *        The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others
+     *        have a maximum length of 64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +139,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The display name for the user to be created.
+     * The display name for the new user.
      * </p>
      * 
      * @param displayName
-     *        The display name for the user to be created.
+     *        The display name for the new user.
      */
 
     public void setDisplayName(String displayName) {
@@ -145,10 +152,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The display name for the user to be created.
+     * The display name for the new user.
      * </p>
      * 
-     * @return The display name for the user to be created.
+     * @return The display name for the new user.
      */
 
     public String getDisplayName() {
@@ -157,11 +164,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The display name for the user to be created.
+     * The display name for the new user.
      * </p>
      * 
      * @param displayName
-     *        The display name for the user to be created.
+     *        The display name for the new user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +179,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The password for the user to be created.
+     * The password for the new user.
      * </p>
      * 
      * @param password
-     *        The password for the user to be created.
+     *        The password for the new user.
      */
 
     public void setPassword(String password) {
@@ -185,10 +192,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The password for the user to be created.
+     * The password for the new user.
      * </p>
      * 
-     * @return The password for the user to be created.
+     * @return The password for the new user.
      */
 
     public String getPassword() {
@@ -197,11 +204,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The password for the user to be created.
+     * The password for the new user.
      * </p>
      * 
      * @param password
-     *        The password for the user to be created.
+     *        The password for the new user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,7 +218,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -228,7 +236,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword());
+            sb.append("Password: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -182,6 +182,41 @@ public interface AmazonPollyAsync extends AmazonPolly {
 
     /**
      * <p>
+     * Retrieves a specific SpeechSynthesisTask object based on its TaskID. This object contains information about the
+     * given speech synthesis task, including the status of the task, and a link to the S3 bucket containing the output
+     * of the task.
+     * </p>
+     * 
+     * @param getSpeechSynthesisTaskRequest
+     * @return A Java Future containing the result of the GetSpeechSynthesisTask operation returned by the service.
+     * @sample AmazonPollyAsync.GetSpeechSynthesisTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSpeechSynthesisTaskResult> getSpeechSynthesisTaskAsync(GetSpeechSynthesisTaskRequest getSpeechSynthesisTaskRequest);
+
+    /**
+     * <p>
+     * Retrieves a specific SpeechSynthesisTask object based on its TaskID. This object contains information about the
+     * given speech synthesis task, including the status of the task, and a link to the S3 bucket containing the output
+     * of the task.
+     * </p>
+     * 
+     * @param getSpeechSynthesisTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSpeechSynthesisTask operation returned by the service.
+     * @sample AmazonPollyAsyncHandler.GetSpeechSynthesisTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSpeechSynthesisTaskResult> getSpeechSynthesisTaskAsync(GetSpeechSynthesisTaskRequest getSpeechSynthesisTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSpeechSynthesisTaskRequest, GetSpeechSynthesisTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of pronunciation lexicons stored in an AWS Region. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
      * </p>
@@ -212,6 +247,39 @@ public interface AmazonPollyAsync extends AmazonPolly {
      */
     java.util.concurrent.Future<ListLexiconsResult> listLexiconsAsync(ListLexiconsRequest listLexiconsRequest,
             com.amazonaws.handlers.AsyncHandler<ListLexiconsRequest, ListLexiconsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of SpeechSynthesisTask objects ordered by their creation date. This operation can filter the tasks
+     * by their status, for example, allowing users to list only tasks that are completed.
+     * </p>
+     * 
+     * @param listSpeechSynthesisTasksRequest
+     * @return A Java Future containing the result of the ListSpeechSynthesisTasks operation returned by the service.
+     * @sample AmazonPollyAsync.ListSpeechSynthesisTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSpeechSynthesisTasksResult> listSpeechSynthesisTasksAsync(ListSpeechSynthesisTasksRequest listSpeechSynthesisTasksRequest);
+
+    /**
+     * <p>
+     * Returns a list of SpeechSynthesisTask objects ordered by their creation date. This operation can filter the tasks
+     * by their status, for example, allowing users to list only tasks that are completed.
+     * </p>
+     * 
+     * @param listSpeechSynthesisTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSpeechSynthesisTasks operation returned by the service.
+     * @sample AmazonPollyAsyncHandler.ListSpeechSynthesisTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSpeechSynthesisTasksResult> listSpeechSynthesisTasksAsync(ListSpeechSynthesisTasksRequest listSpeechSynthesisTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSpeechSynthesisTasksRequest, ListSpeechSynthesisTasksResult> asyncHandler);
 
     /**
      * <p>
@@ -255,6 +323,45 @@ public interface AmazonPollyAsync extends AmazonPolly {
      */
     java.util.concurrent.Future<PutLexiconResult> putLexiconAsync(PutLexiconRequest putLexiconRequest,
             com.amazonaws.handlers.AsyncHandler<PutLexiconRequest, PutLexiconResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows the creation of an asynchronous synthesis task, by starting a new <code>SpeechSynthesisTask</code>. This
+     * operation requires all the standard information needed for speech synthesis, plus the name of an Amazon S3 bucket
+     * for the service to store the output of the synthesis task and two optional parameters (OutputS3KeyPrefix and
+     * SnsTopicArn). Once the synthesis task is created, this operation will return a SpeechSynthesisTask object, which
+     * will include an identifier of this task as well as the current status.
+     * </p>
+     * 
+     * @param startSpeechSynthesisTaskRequest
+     * @return A Java Future containing the result of the StartSpeechSynthesisTask operation returned by the service.
+     * @sample AmazonPollyAsync.StartSpeechSynthesisTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSpeechSynthesisTaskResult> startSpeechSynthesisTaskAsync(StartSpeechSynthesisTaskRequest startSpeechSynthesisTaskRequest);
+
+    /**
+     * <p>
+     * Allows the creation of an asynchronous synthesis task, by starting a new <code>SpeechSynthesisTask</code>. This
+     * operation requires all the standard information needed for speech synthesis, plus the name of an Amazon S3 bucket
+     * for the service to store the output of the synthesis task and two optional parameters (OutputS3KeyPrefix and
+     * SnsTopicArn). Once the synthesis task is created, this operation will return a SpeechSynthesisTask object, which
+     * will include an identifier of this task as well as the current status.
+     * </p>
+     * 
+     * @param startSpeechSynthesisTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSpeechSynthesisTask operation returned by the service.
+     * @sample AmazonPollyAsyncHandler.StartSpeechSynthesisTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSpeechSynthesisTaskResult> startSpeechSynthesisTaskAsync(StartSpeechSynthesisTaskRequest startSpeechSynthesisTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSpeechSynthesisTaskRequest, StartSpeechSynthesisTaskResult> asyncHandler);
 
     /**
      * <p>

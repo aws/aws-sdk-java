@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,30 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the organization under which the entity (user or group) exists.
+     * The identifier of the organization under which the member (user or group) exists.
      * </p>
      */
     private String organizationId;
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to delete mailbox permissions.
+     * The identifier of the member (user or group)that owns the mailbox.
      * </p>
      */
     private String entityId;
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to delete granted permissions.
+     * The identifier of the member (user or group) for which to delete granted permissions.
      * </p>
      */
     private String granteeId;
 
     /**
      * <p>
-     * The identifier of the organization under which the entity (user or group) exists.
+     * The identifier of the organization under which the member (user or group) exists.
      * </p>
      * 
      * @param organizationId
-     *        The identifier of the organization under which the entity (user or group) exists.
+     *        The identifier of the organization under which the member (user or group) exists.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -59,10 +59,10 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the organization under which the entity (user or group) exists.
+     * The identifier of the organization under which the member (user or group) exists.
      * </p>
      * 
-     * @return The identifier of the organization under which the entity (user or group) exists.
+     * @return The identifier of the organization under which the member (user or group) exists.
      */
 
     public String getOrganizationId() {
@@ -71,11 +71,11 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the organization under which the entity (user or group) exists.
+     * The identifier of the organization under which the member (user or group) exists.
      * </p>
      * 
      * @param organizationId
-     *        The identifier of the organization under which the entity (user or group) exists.
+     *        The identifier of the organization under which the member (user or group) exists.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to delete mailbox permissions.
+     * The identifier of the member (user or group)that owns the mailbox.
      * </p>
      * 
      * @param entityId
-     *        The identifier of the entity (user or group) for which to delete mailbox permissions.
+     *        The identifier of the member (user or group)that owns the mailbox.
      */
 
     public void setEntityId(String entityId) {
@@ -99,10 +99,10 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to delete mailbox permissions.
+     * The identifier of the member (user or group)that owns the mailbox.
      * </p>
      * 
-     * @return The identifier of the entity (user or group) for which to delete mailbox permissions.
+     * @return The identifier of the member (user or group)that owns the mailbox.
      */
 
     public String getEntityId() {
@@ -111,11 +111,11 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to delete mailbox permissions.
+     * The identifier of the member (user or group)that owns the mailbox.
      * </p>
      * 
      * @param entityId
-     *        The identifier of the entity (user or group) for which to delete mailbox permissions.
+     *        The identifier of the member (user or group)that owns the mailbox.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to delete granted permissions.
+     * The identifier of the member (user or group) for which to delete granted permissions.
      * </p>
      * 
      * @param granteeId
-     *        The identifier of the entity (user or group) for which to delete granted permissions.
+     *        The identifier of the member (user or group) for which to delete granted permissions.
      */
 
     public void setGranteeId(String granteeId) {
@@ -139,10 +139,10 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to delete granted permissions.
+     * The identifier of the member (user or group) for which to delete granted permissions.
      * </p>
      * 
-     * @return The identifier of the entity (user or group) for which to delete granted permissions.
+     * @return The identifier of the member (user or group) for which to delete granted permissions.
      */
 
     public String getGranteeId() {
@@ -151,11 +151,11 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to delete granted permissions.
+     * The identifier of the member (user or group) for which to delete granted permissions.
      * </p>
      * 
      * @param granteeId
-     *        The identifier of the entity (user or group) for which to delete granted permissions.
+     *        The identifier of the member (user or group) for which to delete granted permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +165,8 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

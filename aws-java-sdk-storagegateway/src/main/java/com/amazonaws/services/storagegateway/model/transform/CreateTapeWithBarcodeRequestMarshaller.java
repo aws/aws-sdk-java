@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,12 @@ public class CreateTapeWithBarcodeRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TapeSizeInBytes").build();
     private static final MarshallingInfo<String> TAPEBARCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TapeBarcode").build();
+    private static final MarshallingInfo<Boolean> KMSENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSEncrypted").build();
+    private static final MarshallingInfo<String> KMSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KMSKey").build();
+    private static final MarshallingInfo<String> POOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PoolId").build();
 
     private static final CreateTapeWithBarcodeRequestMarshaller instance = new CreateTapeWithBarcodeRequestMarshaller();
 
@@ -53,6 +59,9 @@ public class CreateTapeWithBarcodeRequestMarshaller {
             protocolMarshaller.marshall(createTapeWithBarcodeRequest.getGatewayARN(), GATEWAYARN_BINDING);
             protocolMarshaller.marshall(createTapeWithBarcodeRequest.getTapeSizeInBytes(), TAPESIZEINBYTES_BINDING);
             protocolMarshaller.marshall(createTapeWithBarcodeRequest.getTapeBarcode(), TAPEBARCODE_BINDING);
+            protocolMarshaller.marshall(createTapeWithBarcodeRequest.getKMSEncrypted(), KMSENCRYPTED_BINDING);
+            protocolMarshaller.marshall(createTapeWithBarcodeRequest.getKMSKey(), KMSKEY_BINDING);
+            protocolMarshaller.marshall(createTapeWithBarcodeRequest.getPoolId(), POOLID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

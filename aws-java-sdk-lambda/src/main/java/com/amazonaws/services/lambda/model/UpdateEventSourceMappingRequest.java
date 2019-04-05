@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping" target="_top">AWS
  *      API Documentation</a>
@@ -28,54 +27,82 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The event source mapping identifier.
+     * The identifier of the event source mapping.
      * </p>
      */
     private String uUID;
     /**
      * <p>
-     * The Lambda function to which you want the stream records sent.
+     * The name of the Lambda function.
      * </p>
-     * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <p class="title">
+     * <b>Name formats</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function
-     * version or alias name as suffix). For more information about versioning, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and
-     * Aliases</a>
+     * <b>Function name</b> - <code>MyFunction</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
+     * characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the
-     * stream.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The maximum number of stream records that can be sent to your Lambda function for a single invocation.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer batchSize;
 
     /**
      * <p>
-     * The event source mapping identifier.
+     * The identifier of the event source mapping.
      * </p>
      * 
      * @param uUID
-     *        The event source mapping identifier.
+     *        The identifier of the event source mapping.
      */
 
     public void setUUID(String uUID) {
@@ -84,10 +111,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The event source mapping identifier.
+     * The identifier of the event source mapping.
      * </p>
      * 
-     * @return The event source mapping identifier.
+     * @return The identifier of the event source mapping.
      */
 
     public String getUUID() {
@@ -96,11 +123,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The event source mapping identifier.
+     * The identifier of the event source mapping.
      * </p>
      * 
      * @param uUID
-     *        The event source mapping identifier.
+     *        The identifier of the event source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,44 +138,68 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Lambda function to which you want the stream records sent.
+     * The name of the Lambda function.
      * </p>
-     * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <p class="title">
+     * <b>Name formats</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function
-     * version or alias name as suffix). For more information about versioning, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and
-     * Aliases</a>
+     * <b>Function name</b> - <code>MyFunction</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The Lambda function to which you want the stream records sent.</p>
-     *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        The name of the Lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with
-     *        function version or alias name as suffix). For more information about versioning, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning
-     *        and Aliases</a>
+     *        <b>Function name</b> - <code>MyFunction</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Note that the length constraint applies only to the ARN. If you specify only the function name, it is
-     *        limited to 64 character in length.
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it's limited to
+     *        64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -157,43 +208,68 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Lambda function to which you want the stream records sent.
+     * The name of the Lambda function.
      * </p>
-     * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <p class="title">
+     * <b>Name formats</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function
-     * version or alias name as suffix). For more information about versioning, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and
-     * Aliases</a>
+     * <b>Function name</b> - <code>MyFunction</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
+     * characters in length.
      * </p>
      * 
-     * @return The Lambda function to which you want the stream records sent.</p>
-     *         <p>
-     *         You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *         Name (ARN) of the function (for example,
-     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *         specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * @return The name of the Lambda function.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with
-     *         function version or alias name as suffix). For more information about versioning, see <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning
-     *         and Aliases</a>
+     *         <b>Function name</b> - <code>MyFunction</code>.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         Note that the length constraint applies only to the ARN. If you specify only the function name, it is
-     *         limited to 64 character in length.
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>
+     *         .
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it's limited
+     *         to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -202,44 +278,68 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Lambda function to which you want the stream records sent.
+     * The name of the Lambda function.
      * </p>
-     * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <p class="title">
+     * <b>Name formats</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function
-     * version or alias name as suffix). For more information about versioning, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and
-     * Aliases</a>
+     * <b>Function name</b> - <code>MyFunction</code>.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        The Lambda function to which you want the stream records sent.</p>
-     *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        The name of the Lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with
-     *        function version or alias name as suffix). For more information about versioning, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning
-     *        and Aliases</a>
+     *        <b>Function name</b> - <code>MyFunction</code>.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Note that the length constraint applies only to the ARN. If you specify only the function name, it is
-     *        limited to 64 character in length.
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it's limited to
+     *        64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,13 +350,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the
-     * stream.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll
-     *        the stream.
+     *        Disables the event source mapping to pause polling and invocation.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -265,12 +363,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the
-     * stream.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
-     * @return Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not
-     *         poll the stream.
+     * @return Disables the event source mapping to pause polling and invocation.
      */
 
     public Boolean getEnabled() {
@@ -279,13 +375,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the
-     * stream.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll
-     *        the stream.
+     *        Disables the event source mapping to pause polling and invocation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,12 +390,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the
-     * stream.
+     * Disables the event source mapping to pause polling and invocation.
      * </p>
      * 
-     * @return Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not
-     *         poll the stream.
+     * @return Disables the event source mapping to pause polling and invocation.
      */
 
     public Boolean isEnabled() {
@@ -310,11 +402,44 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of stream records that can be sent to your Lambda function for a single invocation.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param batchSize
-     *        The maximum number of stream records that can be sent to your Lambda function for a single invocation.
+     *        The maximum number of items to retrieve in a single batch.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *        </p>
+     *        </li>
      */
 
     public void setBatchSize(Integer batchSize) {
@@ -323,10 +448,43 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of stream records that can be sent to your Lambda function for a single invocation.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The maximum number of stream records that can be sent to your Lambda function for a single invocation.
+     * @return The maximum number of items to retrieve in a single batch.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *         </p>
+     *         </li>
      */
 
     public Integer getBatchSize() {
@@ -335,11 +493,44 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of stream records that can be sent to your Lambda function for a single invocation.
+     * The maximum number of items to retrieve in a single batch.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param batchSize
-     *        The maximum number of stream records that can be sent to your Lambda function for a single invocation.
+     *        The maximum number of items to retrieve in a single batch.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,7 +540,8 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,12 @@ public enum CodebuildActions implements Action {
     CreateWebhook("codebuild:CreateWebhook"),
     /** Action for the DeleteProject operation. */
     DeleteProject("codebuild:DeleteProject"),
+    /** Action for the DeleteSourceCredentials operation. */
+    DeleteSourceCredentials("codebuild:DeleteSourceCredentials"),
     /** Action for the DeleteWebhook operation. */
     DeleteWebhook("codebuild:DeleteWebhook"),
+    /** Action for the ImportSourceCredentials operation. */
+    ImportSourceCredentials("codebuild:ImportSourceCredentials"),
     /** Action for the InvalidateProjectCache operation. */
     InvalidateProjectCache("codebuild:InvalidateProjectCache"),
     /** Action for the ListBuilds operation. */
@@ -49,6 +53,8 @@ public enum CodebuildActions implements Action {
     ListCuratedEnvironmentImages("codebuild:ListCuratedEnvironmentImages"),
     /** Action for the ListProjects operation. */
     ListProjects("codebuild:ListProjects"),
+    /** Action for the ListSourceCredentials operation. */
+    ListSourceCredentials("codebuild:ListSourceCredentials"),
     /** Action for the StartBuild operation. */
     StartBuild("codebuild:StartBuild"),
     /** Action for the StopBuild operation. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateSubnetRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for CreateSubnet.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateSubnetRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateSubnetRequest> {
@@ -37,6 +35,12 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private String availabilityZone;
+    /**
+     * <p>
+     * The AZ ID of the subnet.
+     * </p>
+     */
+    private String availabilityZoneId;
     /**
      * <p>
      * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
@@ -135,6 +139,46 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     public CreateSubnetRequest withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AZ ID of the subnet.
+     * </p>
+     * 
+     * @param availabilityZoneId
+     *        The AZ ID of the subnet.
+     */
+
+    public void setAvailabilityZoneId(String availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
+    }
+
+    /**
+     * <p>
+     * The AZ ID of the subnet.
+     * </p>
+     * 
+     * @return The AZ ID of the subnet.
+     */
+
+    public String getAvailabilityZoneId() {
+        return this.availabilityZoneId;
+    }
+
+    /**
+     * <p>
+     * The AZ ID of the subnet.
+     * </p>
+     * 
+     * @param availabilityZoneId
+     *        The AZ ID of the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetRequest withAvailabilityZoneId(String availabilityZoneId) {
+        setAvailabilityZoneId(availabilityZoneId);
         return this;
     }
 
@@ -270,7 +314,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -282,6 +327,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         sb.append("{");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getAvailabilityZoneId() != null)
+            sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId()).append(",");
         if (getCidrBlock() != null)
             sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getIpv6CidrBlock() != null)
@@ -306,6 +353,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
+        if (other.getAvailabilityZoneId() == null ^ this.getAvailabilityZoneId() == null)
+            return false;
+        if (other.getAvailabilityZoneId() != null && other.getAvailabilityZoneId().equals(this.getAvailabilityZoneId()) == false)
+            return false;
         if (other.getCidrBlock() == null ^ this.getCidrBlock() == null)
             return false;
         if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
@@ -327,6 +378,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());

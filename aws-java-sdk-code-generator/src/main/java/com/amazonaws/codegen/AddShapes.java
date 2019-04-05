@@ -15,6 +15,21 @@
 
 package com.amazonaws.codegen;
 
+import static com.amazonaws.codegen.internal.DocumentationUtils.generateGetterDocumentation;
+import static com.amazonaws.codegen.internal.DocumentationUtils.generateSetterDocumentation;
+import static com.amazonaws.codegen.internal.TypeUtils.LIST_AUTO_CONSTRUCT_IMPL;
+import static com.amazonaws.codegen.internal.TypeUtils.LIST_DEFAULT_IMPL;
+import static com.amazonaws.codegen.internal.TypeUtils.LIST_INTERFACE;
+import static com.amazonaws.codegen.internal.TypeUtils.MAP_AUTO_CONSTRUCT_IMPL;
+import static com.amazonaws.codegen.internal.TypeUtils.MAP_DEFAULT_IMPL;
+import static com.amazonaws.codegen.internal.TypeUtils.MAP_INTERFACE;
+import static com.amazonaws.codegen.internal.TypeUtils.getDataTypeMapping;
+import static com.amazonaws.codegen.internal.Utils.capitialize;
+import static com.amazonaws.codegen.internal.Utils.isEnumShape;
+import static com.amazonaws.codegen.internal.Utils.isListShape;
+import static com.amazonaws.codegen.internal.Utils.isMapShape;
+import static com.amazonaws.codegen.internal.Utils.isScalar;
+
 import com.amazonaws.codegen.internal.TypeUtils;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.EnumModel;
@@ -32,24 +47,10 @@ import com.amazonaws.codegen.model.service.ServiceModel;
 import com.amazonaws.codegen.model.service.Shape;
 import com.amazonaws.codegen.naming.NamingStrategy;
 import com.amazonaws.util.StringUtils;
-
+import com.amazonaws.util.TimestampFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
-
-import static com.amazonaws.codegen.internal.DocumentationUtils.generateGetterDocumentation;
-import static com.amazonaws.codegen.internal.DocumentationUtils.generateSetterDocumentation;
-import static com.amazonaws.codegen.internal.TypeUtils.LIST_AUTO_CONSTRUCT_IMPL;
-import static com.amazonaws.codegen.internal.TypeUtils.LIST_DEFAULT_IMPL;
-import static com.amazonaws.codegen.internal.TypeUtils.LIST_INTERFACE;
-import static com.amazonaws.codegen.internal.TypeUtils.MAP_AUTO_CONSTRUCT_IMPL;
-import static com.amazonaws.codegen.internal.TypeUtils.MAP_DEFAULT_IMPL;
-import static com.amazonaws.codegen.internal.TypeUtils.MAP_INTERFACE;
-import static com.amazonaws.codegen.internal.TypeUtils.getDataTypeMapping;
-import static com.amazonaws.codegen.internal.Utils.capitialize;
-import static com.amazonaws.codegen.internal.Utils.isEnumShape;
-import static com.amazonaws.codegen.internal.Utils.isListShape;
-import static com.amazonaws.codegen.internal.Utils.isMapShape;
-import static com.amazonaws.codegen.internal.Utils.isScalar;
 
 abstract class AddShapes {
 
@@ -133,8 +134,6 @@ abstract class AddShapes {
         final List<String> enumValues = shape.getEnumValues();
         if (enumValues != null && !enumValues.isEmpty()) {
             for (String enumValue : enumValues) {
-                // TODO handle useRealName from Coral if explicitly mentioned in
-                // the customization.
                 shapeModel.addEnum(
                         new EnumModel(getNamingStrategy().getEnumValueName(enumValue), enumValue));
             }
@@ -147,6 +146,7 @@ abstract class AddShapes {
                                             String protocol, Shape parentShape,
                                             Map<String, Shape> allC2jShapes) {
         final String c2jShapeName = c2jMemberDefinition.getShape();
+        final Shape c2jShape = allC2jShapes.get(c2jMemberDefinition.getShape());
         final String variableName = getNamingStrategy().getVariableName(c2jMemberName);
         final String variableType = getTypeUtils().getJavaDataType(allC2jShapes, c2jShapeName);
         final String variableDeclarationType = getTypeUtils()
@@ -161,13 +161,17 @@ abstract class AddShapes {
                                                variableType + " type.");
         }
 
+        String timestampFormat = null;
+        if (variableType.equals(Date.class.getName())) {
+            timestampFormat = getDefaultTimeFormatIfNull(c2jMemberDefinition, allC2jShapes, protocol, parentShape);
+        }
 
         final MemberModel memberModel = new MemberModel();
 
         memberModel.withC2jName(c2jMemberName)
                    .withC2jShape(c2jShapeName)
                    .withName(capitialize(c2jMemberName))
-                   .withVariable(new VariableModel(variableName, variableType, variableDeclarationType)
+                   .withVariable(new VariableModel(variableName, variableType, variableDeclarationType, timestampFormat)
                                          .withDocumentation(c2jMemberDefinition.getDocumentation()))
                    .withSetterModel(new VariableModel(variableName, variableType, variableDeclarationType)
                                             .withDocumentation(generateSetterDocumentation()))
@@ -175,6 +179,7 @@ abstract class AddShapes {
 
         memberModel.setDocumentation(c2jMemberDefinition.getDocumentation());
         memberModel.setDeprecated(c2jMemberDefinition.isDeprecated());
+        memberModel.setSensitive(isSensitiveShapeOrContainer(c2jMemberDefinition, allC2jShapes));
         memberModel.withGetterMethodName(namingStrategy.getGetterMethodName(c2jMemberName))
                    .withSetterMethodName(namingStrategy.getSetterMethodName(c2jMemberName))
                    .withFluentSetterMethodName(namingStrategy.getFluentSetterMethodName(c2jMemberName));
@@ -198,12 +203,104 @@ abstract class AddShapes {
 
         final String payload = parentShape.getPayload();
         httpMapping.withPayload(payload != null && payload.equals(c2jMemberName))
-                   .withStreaming(allC2jShapes.get(c2jMemberDefinition.getShape()).isStreaming());
+                   .withStreaming(c2jShape.isStreaming());
 
         memberModel.setHttp(httpMapping);
         memberModel.setJsonValue(c2jMemberDefinition.isJsonvalue());
 
         return memberModel;
+    }
+
+    private boolean isSensitiveShapeOrContainer(Member member, Map<String, Shape> allC2jShapes) {
+        if (member == null) {
+            return false;
+        }
+
+        return member.isSensitive() ||
+               isSensitiveShapeOrContainer(allC2jShapes.get(member.getShape()), allC2jShapes);
+    }
+
+    private boolean isSensitiveShapeOrContainer(Shape c2jShape, Map<String, Shape> allC2jShapes) {
+        if (c2jShape == null) {
+            return false;
+        }
+
+        return c2jShape.isSensitive() ||
+               isSensitiveShapeOrContainer(c2jShape.getListMember(), allC2jShapes) ||
+               isSensitiveShapeOrContainer(c2jShape.getMapKeyType(), allC2jShapes) ||
+               isSensitiveShapeOrContainer(c2jShape.getMapValueType(), allC2jShapes);
+    }
+
+    /**
+     * Get default timestamp format if the provided timestamp format is null or empty.
+     *
+     * - All timestamp values serialized in HTTP headers are formatted using rfc822 by default.
+     * - All timestamp values serialized in query strings are formatted using iso8601 by default.
+     * - The default timestamp formats per protocol for structured payload shapes are as follows:
+     *
+     * rest-json: unixTimestamp
+     * jsonrpc: unixTimestamp
+     * rest-xml: iso8601
+     * query: iso8601
+     * ec2: iso8601
+     */
+    protected String getDefaultTimeFormatIfNull(Member c2jMemberDefinition, Map<String, Shape> allC2jShapes, String protocolString, Shape parentShape) {
+        String timestampFormat = c2jMemberDefinition.getTimestampFormat();
+
+        if (!StringUtils.isNullOrEmpty(timestampFormat)) {
+            failIfInCollection(c2jMemberDefinition, parentShape);
+            return TimestampFormat.fromValue(timestampFormat).getFormat();
+        }
+
+        String shapeName = c2jMemberDefinition.getShape();
+        Shape shape = allC2jShapes.get(shapeName);
+
+        if (!StringUtils.isNullOrEmpty(shape.getTimestampFormat())) {
+            failIfInCollection(c2jMemberDefinition, parentShape);
+            return TimestampFormat.fromValue(shape.getTimestampFormat()).getFormat();
+        }
+
+        String location = c2jMemberDefinition.getLocation();
+        if (Location.HEADER.toString().equals(location)) {
+            return defaultHeaderTimestamp();
+        }
+
+        if (Location.QUERY_STRING.toString().equals(location)) {
+            return TimestampFormat.ISO_8601.getFormat();
+        }
+
+        Protocol protocol = Protocol.fromValue(protocolString);
+
+        switch (protocol) {
+            case REST_XML:
+            case QUERY:
+            case EC2:
+            case API_GATEWAY:
+                return TimestampFormat.ISO_8601.getFormat();
+            case ION:
+            case REST_JSON:
+            case AWS_JSON:
+                return TimestampFormat.UNIX_TIMESTAMP.getFormat();
+            case CBOR:
+                return TimestampFormat.UNIX_TIMESTAMP_IN_MILLIS.getFormat();
+        }
+
+        throw new RuntimeException("Cannot determine timestamp format for protocol " + protocol);
+    }
+
+    /**
+     * Throw Exception if the member is in a Map/List
+     */
+    private void failIfInCollection(Member c2jMemberDefinition, Shape parentShape) {
+        if (isMapShape(parentShape) || isListShape(parentShape)) {
+            throw new IllegalArgumentException(String.format(
+                "Member (%s) has timestamp format provided. Timestamp format is not supported for Date in List/Map",
+                c2jMemberDefinition.getShape()));
+        }
+    }
+
+    protected String defaultHeaderTimestamp() {
+        return TimestampFormat.RFC_822.getFormat();
     }
 
     private ParameterHttpMapping generateParameterHttpMapping(Shape parentShape,

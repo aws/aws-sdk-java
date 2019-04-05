@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,27 @@ public class CreateRoleRequestMarshaller implements Marshaller<Request<CreateRol
 
         if (createRoleRequest.getMaxSessionDuration() != null) {
             request.addParameter("MaxSessionDuration", StringUtils.fromInteger(createRoleRequest.getMaxSessionDuration()));
+        }
+
+        if (createRoleRequest.getPermissionsBoundary() != null) {
+            request.addParameter("PermissionsBoundary", StringUtils.fromString(createRoleRequest.getPermissionsBoundary()));
+        }
+
+        if (!createRoleRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createRoleRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createRoleRequest.getTags();
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+
+                if (tagsListValue.getKey() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                }
+
+                if (tagsListValue.getValue() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                }
+                tagsListIndex++;
+            }
         }
 
         return request;

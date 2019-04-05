@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ProjectDescription implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The ARN of the project.
+     * </p>
+     */
+    private String arn;
     /**
      * <p>
      * The name of the project for which to obtain information from.
@@ -59,6 +65,52 @@ public class ProjectDescription implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private PlacementTemplate placementTemplate;
+    /**
+     * <p>
+     * The tags (metadata key/value pairs) associated with the project.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * The ARN of the project.
+     * </p>
+     * 
+     * @param arn
+     *        The ARN of the project.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the project.
+     * </p>
+     * 
+     * @return The ARN of the project.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the project.
+     * </p>
+     * 
+     * @param arn
+     *        The ARN of the project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectDescription withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
 
     /**
      * <p>
@@ -267,7 +319,69 @@ public class ProjectDescription implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tags (metadata key/value pairs) associated with the project.
+     * </p>
+     * 
+     * @return The tags (metadata key/value pairs) associated with the project.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags (metadata key/value pairs) associated with the project.
+     * </p>
+     * 
+     * @param tags
+     *        The tags (metadata key/value pairs) associated with the project.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags (metadata key/value pairs) associated with the project.
+     * </p>
+     * 
+     * @param tags
+     *        The tags (metadata key/value pairs) associated with the project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectDescription withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public ProjectDescription addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectDescription clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -277,6 +391,8 @@ public class ProjectDescription implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getProjectName() != null)
             sb.append("ProjectName: ").append(getProjectName()).append(",");
         if (getDescription() != null)
@@ -286,7 +402,9 @@ public class ProjectDescription implements Serializable, Cloneable, StructuredPo
         if (getUpdatedDate() != null)
             sb.append("UpdatedDate: ").append(getUpdatedDate()).append(",");
         if (getPlacementTemplate() != null)
-            sb.append("PlacementTemplate: ").append(getPlacementTemplate());
+            sb.append("PlacementTemplate: ").append(getPlacementTemplate()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -301,6 +419,10 @@ public class ProjectDescription implements Serializable, Cloneable, StructuredPo
         if (obj instanceof ProjectDescription == false)
             return false;
         ProjectDescription other = (ProjectDescription) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getProjectName() == null ^ this.getProjectName() == null)
             return false;
         if (other.getProjectName() != null && other.getProjectName().equals(this.getProjectName()) == false)
@@ -321,6 +443,10 @@ public class ProjectDescription implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getPlacementTemplate() != null && other.getPlacementTemplate().equals(this.getPlacementTemplate()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -329,11 +455,13 @@ public class ProjectDescription implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getUpdatedDate() == null) ? 0 : getUpdatedDate().hashCode());
         hashCode = prime * hashCode + ((getPlacementTemplate() == null) ? 0 : getPlacementTemplate().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

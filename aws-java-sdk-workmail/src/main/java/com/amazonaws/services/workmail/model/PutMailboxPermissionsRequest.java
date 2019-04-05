@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,19 +27,19 @@ public class PutMailboxPermissionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the organization under which the entity (user or group) exists.
+     * The identifier of the organization under which the user, group, or resource exists.
      * </p>
      */
     private String organizationId;
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to update mailbox permissions.
+     * The identifier of the user, group, or resource for which to update mailbox permissions.
      * </p>
      */
     private String entityId;
     /**
      * <p>
-     * The identifier of the entity (user or group) to which to grant the permissions.
+     * The identifier of the user, group, or resource to which to grant the permissions.
      * </p>
      */
     private String granteeId;
@@ -55,11 +55,11 @@ public class PutMailboxPermissionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the organization under which the entity (user or group) exists.
+     * The identifier of the organization under which the user, group, or resource exists.
      * </p>
      * 
      * @param organizationId
-     *        The identifier of the organization under which the entity (user or group) exists.
+     *        The identifier of the organization under which the user, group, or resource exists.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -68,10 +68,10 @@ public class PutMailboxPermissionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the organization under which the entity (user or group) exists.
+     * The identifier of the organization under which the user, group, or resource exists.
      * </p>
      * 
-     * @return The identifier of the organization under which the entity (user or group) exists.
+     * @return The identifier of the organization under which the user, group, or resource exists.
      */
 
     public String getOrganizationId() {
@@ -80,11 +80,11 @@ public class PutMailboxPermissionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the organization under which the entity (user or group) exists.
+     * The identifier of the organization under which the user, group, or resource exists.
      * </p>
      * 
      * @param organizationId
-     *        The identifier of the organization under which the entity (user or group) exists.
+     *        The identifier of the organization under which the user, group, or resource exists.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class PutMailboxPermissionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to update mailbox permissions.
+     * The identifier of the user, group, or resource for which to update mailbox permissions.
      * </p>
      * 
      * @param entityId
-     *        The identifier of the entity (user or group) for which to update mailbox permissions.
+     *        The identifier of the user, group, or resource for which to update mailbox permissions.
      */
 
     public void setEntityId(String entityId) {
@@ -108,10 +108,10 @@ public class PutMailboxPermissionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to update mailbox permissions.
+     * The identifier of the user, group, or resource for which to update mailbox permissions.
      * </p>
      * 
-     * @return The identifier of the entity (user or group) for which to update mailbox permissions.
+     * @return The identifier of the user, group, or resource for which to update mailbox permissions.
      */
 
     public String getEntityId() {
@@ -120,11 +120,11 @@ public class PutMailboxPermissionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the entity (user or group) for which to update mailbox permissions.
+     * The identifier of the user, group, or resource for which to update mailbox permissions.
      * </p>
      * 
      * @param entityId
-     *        The identifier of the entity (user or group) for which to update mailbox permissions.
+     *        The identifier of the user, group, or resource for which to update mailbox permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class PutMailboxPermissionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the entity (user or group) to which to grant the permissions.
+     * The identifier of the user, group, or resource to which to grant the permissions.
      * </p>
      * 
      * @param granteeId
-     *        The identifier of the entity (user or group) to which to grant the permissions.
+     *        The identifier of the user, group, or resource to which to grant the permissions.
      */
 
     public void setGranteeId(String granteeId) {
@@ -148,10 +148,10 @@ public class PutMailboxPermissionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the entity (user or group) to which to grant the permissions.
+     * The identifier of the user, group, or resource to which to grant the permissions.
      * </p>
      * 
-     * @return The identifier of the entity (user or group) to which to grant the permissions.
+     * @return The identifier of the user, group, or resource to which to grant the permissions.
      */
 
     public String getGranteeId() {
@@ -160,11 +160,11 @@ public class PutMailboxPermissionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the entity (user or group) to which to grant the permissions.
+     * The identifier of the user, group, or resource to which to grant the permissions.
      * </p>
      * 
      * @param granteeId
-     *        The identifier of the entity (user or group) to which to grant the permissions.
+     *        The identifier of the user, group, or resource to which to grant the permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,7 +307,8 @@ public class PutMailboxPermissionsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Represents the output of a <a>CreateObject</a> operation.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchCreateObject" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchCreateObject" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -55,8 +55,8 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a> for
-     * more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.
      * </p>
      */
     private String batchReferenceName;
@@ -288,14 +288,14 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a> for
-     * more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.
      * </p>
      * 
      * @param batchReferenceName
      *        The batch reference name. See <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-     *        for more information.
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html"
+     *        >Transaction Support</a> for more information.
      */
 
     public void setBatchReferenceName(String batchReferenceName) {
@@ -305,13 +305,13 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a> for
-     * more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.
      * </p>
      * 
      * @return The batch reference name. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches"
-     *         >Batches</a> for more information.
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html"
+     *         >Transaction Support</a> for more information.
      */
 
     public String getBatchReferenceName() {
@@ -321,14 +321,14 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a> for
-     * more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.
      * </p>
      * 
      * @param batchReferenceName
      *        The batch reference name. See <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-     *        for more information.
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html"
+     *        >Transaction Support</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,7 +338,8 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

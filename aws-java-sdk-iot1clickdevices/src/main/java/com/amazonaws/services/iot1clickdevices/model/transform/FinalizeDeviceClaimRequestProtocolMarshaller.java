@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,7 @@ import com.amazonaws.services.iot1clickdevices.model.*;
 import com.amazonaws.transform.Marshaller;
 
 import com.amazonaws.protocol.*;
+import com.amazonaws.protocol.Protocol;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
@@ -32,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class FinalizeDeviceClaimRequestProtocolMarshaller implements Marshaller<Request<FinalizeDeviceClaimRequest>, FinalizeDeviceClaimRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/devices/{deviceId}/finalize-claim").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .requestUri("/devices/{deviceId}/finalize-claim").httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true)
             .serviceName("AWSIoT1ClickDevices").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

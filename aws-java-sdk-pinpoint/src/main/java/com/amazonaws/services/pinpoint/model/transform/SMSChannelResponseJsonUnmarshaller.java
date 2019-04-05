@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,10 @@ public class SMSChannelResponseJsonUnmarshaller implements Unmarshaller<SMSChann
                     context.nextToken();
                     sMSChannelResponse.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PromotionalMessagesPerSecond", targetDepth)) {
+                    context.nextToken();
+                    sMSChannelResponse.setPromotionalMessagesPerSecond(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("SenderId", targetDepth)) {
                     context.nextToken();
                     sMSChannelResponse.setSenderId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -91,6 +95,10 @@ public class SMSChannelResponseJsonUnmarshaller implements Unmarshaller<SMSChann
                 if (context.testExpression("ShortCode", targetDepth)) {
                     context.nextToken();
                     sMSChannelResponse.setShortCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TransactionalMessagesPerSecond", targetDepth)) {
+                    context.nextToken();
+                    sMSChannelResponse.setTransactionalMessagesPerSecond(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();

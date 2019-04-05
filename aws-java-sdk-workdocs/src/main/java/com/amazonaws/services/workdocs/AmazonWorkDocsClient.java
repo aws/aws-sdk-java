@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.workdocs.AmazonWorkDocsClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -88,6 +90,7 @@ import com.amazonaws.services.workdocs.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonWorkDocsClient extends AmazonWebServiceClient implements AmazonWorkDocs {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -98,6 +101,8 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -151,6 +156,12 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withModeledClass(
                                     com.amazonaws.services.workdocs.model.InvalidArgumentException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictingOperationException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.ConflictingOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCommentOperationException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.InvalidCommentOperationException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidPasswordException").withModeledClass(
                                     com.amazonaws.services.workdocs.model.InvalidPasswordException.class))
                     .addErrorMetadata(
@@ -165,6 +176,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyCheckedOutException").withModeledClass(
                                     com.amazonaws.services.workdocs.model.ResourceAlreadyCheckedOutException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RequestedEntityTooLargeException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.RequestedEntityTooLargeException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
                                     com.amazonaws.services.workdocs.model.ServiceUnavailableException.class))
@@ -188,8 +202,23 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *        Object providing client parameters.
      */
     AmazonWorkDocsClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon WorkDocs using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonWorkDocsClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -253,6 +282,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AbortDocumentVersionUpload");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -314,6 +346,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ActivateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -373,6 +408,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddResourcePermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -413,6 +451,8 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      * @throws DocumentLockedForCommentsException
      *         This exception is thrown when the document is locked for comments and user tries to create or delete a
      *         comment on that document.
+     * @throws InvalidCommentOperationException
+     *         The requested operation is not allowed on the specified comment object.
      * @sample AmazonWorkDocs.CreateComment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment" target="_top">AWS API
      *      Documentation</a>
@@ -439,6 +479,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -503,6 +546,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -532,6 +578,8 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *         The resource already exists.
      * @throws ProhibitedStateException
      *         The specified document version is not in the INITIALIZED state.
+     * @throws ConflictingOperationException
+     *         Another operation is in progress on the resource that conflicts with the current operation.
      * @throws LimitExceededException
      *         The maximum of 100,000 folders under the parent folder has been exceeded.
      * @throws UnauthorizedOperationException
@@ -569,6 +617,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFolder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -631,6 +682,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLabels");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -649,12 +703,13 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Configure WorkDocs to use Amazon SNS notifications.
+     * Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must
+     * confirm the subscription.
      * </p>
      * <p>
-     * The endpoint receives a confirmation message, and must confirm the subscription. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm">Confirm the
-     * Subscription</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe to
+     * Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
      * </p>
      * 
      * @param createNotificationSubscriptionRequest
@@ -692,6 +747,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotificationSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -754,6 +812,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -814,6 +875,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeactivateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -879,6 +943,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteComment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -941,6 +1008,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -968,6 +1038,8 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *         The resource does not exist.
      * @throws ProhibitedStateException
      *         The specified document version is not in the INITIALIZED state.
+     * @throws ConflictingOperationException
+     *         Another operation is in progress on the resource that conflicts with the current operation.
      * @throws ConcurrentModificationException
      *         The resource hierarchy is changing.
      * @throws UnauthorizedOperationException
@@ -1005,6 +1077,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDocument");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1032,6 +1107,8 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *         The resource does not exist.
      * @throws ProhibitedStateException
      *         The specified document version is not in the INITIALIZED state.
+     * @throws ConflictingOperationException
+     *         Another operation is in progress on the resource that conflicts with the current operation.
      * @throws ConcurrentModificationException
      *         The resource hierarchy is changing.
      * @throws UnauthorizedOperationException
@@ -1069,6 +1146,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFolder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1094,6 +1174,10 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      * @return Result of the DeleteFolderContents operation returned by the service.
      * @throws EntityNotExistsException
      *         The resource does not exist.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws ConflictingOperationException
+     *         Another operation is in progress on the resource that conflicts with the current operation.
      * @throws UnauthorizedOperationException
      *         The operation is not permitted.
      * @throws UnauthorizedResourceAccessException
@@ -1129,6 +1213,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFolderContents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1189,6 +1276,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLabels");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1247,6 +1337,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotificationSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1308,6 +1401,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1368,6 +1464,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeActivities");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1430,6 +1529,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1498,6 +1600,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDocumentVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1566,6 +1671,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFolderContents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1585,7 +1693,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Describes the groups specified by query.
+     * Describes the groups specified by the query. Groups are defined by the underlying Active Directory.
      * </p>
      * 
      * @param describeGroupsRequest
@@ -1625,6 +1733,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1682,6 +1793,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotificationSubscriptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1742,6 +1856,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResourcePermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1764,6 +1881,12 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      * Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>.
      * <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of
      * recycled items. This is not a valid action for SigV4 (administrative API) clients.
+     * </p>
+     * <p>
+     * This action requires an authentication token. To get an authentication token, register an application with Amazon
+     * WorkDocs. For more information, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access
+     * Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
      * </p>
      * 
      * @param describeRootFoldersRequest
@@ -1805,6 +1928,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRootFolders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1833,6 +1959,8 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      * 
      * @param describeUsersRequest
      * @return Result of the DescribeUsers operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
      * @throws UnauthorizedOperationException
      *         The operation is not permitted.
      * @throws UnauthorizedResourceAccessException
@@ -1844,6 +1972,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *         One or more of the dependencies is unavailable.
      * @throws InvalidArgumentException
      *         The pagination marker or limit fields are not valid.
+     * @throws RequestedEntityTooLargeException
+     *         The response is too large to return. The request must include a filter to reduce the size of the
+     *         response.
      * @sample AmazonWorkDocs.DescribeUsers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeUsers" target="_top">AWS API
      *      Documentation</a>
@@ -1870,6 +2001,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUsers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1931,6 +2065,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCurrentUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1995,6 +2132,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocument");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2060,6 +2200,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentPath");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2124,6 +2267,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2188,6 +2334,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFolder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2253,12 +2402,79 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFolderPath");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<GetFolderPathResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFolderPathResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a collection of resources, including folders and documents. The only <code>CollectionType</code>
+     * supported is <code>SHARED_WITH_ME</code>.
+     * </p>
+     * 
+     * @param getResourcesRequest
+     * @return Result of the GetResources operation returned by the service.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws InvalidArgumentException
+     *         The pagination marker or limit fields are not valid.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected Active Directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.GetResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetResources" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetResourcesResult getResources(GetResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResources(request);
+    }
+
+    @SdkInternalApi
+    final GetResourcesResult executeGetResources(GetResourcesRequest getResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourcesRequest> request = null;
+        Response<GetResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourcesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2335,6 +2551,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateDocumentVersionUpload");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2395,6 +2614,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveAllResourcePermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2455,6 +2677,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveResourcePermission");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2488,6 +2713,8 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *         The maximum of 100,000 folders under the parent folder has been exceeded.
      * @throws ProhibitedStateException
      *         The specified document version is not in the INITIALIZED state.
+     * @throws ConflictingOperationException
+     *         Another operation is in progress on the resource that conflicts with the current operation.
      * @throws ConcurrentModificationException
      *         The resource hierarchy is changing.
      * @throws UnauthorizedOperationException
@@ -2525,6 +2752,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDocument");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2595,6 +2825,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDocumentVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2626,6 +2859,8 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *         The resource already exists.
      * @throws ProhibitedStateException
      *         The specified document version is not in the INITIALIZED state.
+     * @throws ConflictingOperationException
+     *         Another operation is in progress on the resource that conflicts with the current operation.
      * @throws ConcurrentModificationException
      *         The resource hierarchy is changing.
      * @throws LimitExceededException
@@ -2665,6 +2900,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFolder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2732,6 +2970,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2772,9 +3013,18 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -2784,7 +3034,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -2792,8 +3042,17 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

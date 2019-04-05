@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class Preset implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastUpdated;
     /** A name you create for each preset. Each name must be unique within your account. */
     private String name;
-
+    /** Settings for preset */
     private PresetSettings settings;
     /**
      * A preset can be of two types: system or custom. System or built-in preset can't be modified or deleted by the
@@ -252,7 +252,10 @@ public class Preset implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Settings for preset
+     * 
      * @param settings
+     *        Settings for preset
      */
 
     public void setSettings(PresetSettings settings) {
@@ -260,7 +263,9 @@ public class Preset implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Settings for preset
+     * 
+     * @return Settings for preset
      */
 
     public PresetSettings getSettings() {
@@ -268,7 +273,10 @@ public class Preset implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Settings for preset
+     * 
      * @param settings
+     *        Settings for preset
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,7 +345,8 @@ public class Preset implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * authority (CA) or it can be your private CA certificate. The <b>Subject</b> field in the certificate identifies the
  * entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or
  * service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is a sequence of relative
- * distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each for
- * each entity, but your private CA can issue more than one certificate with the same DN to the same entity.
+ * distinguished names (RDNs). The RDNs are separated by commas in the certificate. The DN must be unique for each
+ * entity, but your private CA can issue more than one certificate with the same DN to the same entity.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ASN1Subject" target="_top">AWS API
@@ -35,7 +35,7 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Two digit code that specifies the country in which the certificate subject located.
+     * Two-digit code that specifies the country in which the certificate subject located.
      * </p>
      */
     private String country;
@@ -84,13 +84,13 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
     private String locality;
     /**
      * <p>
-     * A title such as Mr. or Ms. which is pre-pended to the name to refer formally to the certificate subject.
+     * A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.
      * </p>
      */
     private String title;
     /**
      * <p>
-     * Family name. In the US and the UK for example, the surname of an individual is ordered last. In Asian cultures
+     * Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures
      * the surname is typically ordered first.
      * </p>
      */
@@ -125,11 +125,11 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Two digit code that specifies the country in which the certificate subject located.
+     * Two-digit code that specifies the country in which the certificate subject located.
      * </p>
      * 
      * @param country
-     *        Two digit code that specifies the country in which the certificate subject located.
+     *        Two-digit code that specifies the country in which the certificate subject located.
      */
 
     public void setCountry(String country) {
@@ -138,10 +138,10 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Two digit code that specifies the country in which the certificate subject located.
+     * Two-digit code that specifies the country in which the certificate subject located.
      * </p>
      * 
-     * @return Two digit code that specifies the country in which the certificate subject located.
+     * @return Two-digit code that specifies the country in which the certificate subject located.
      */
 
     public String getCountry() {
@@ -150,11 +150,11 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Two digit code that specifies the country in which the certificate subject located.
+     * Two-digit code that specifies the country in which the certificate subject located.
      * </p>
      * 
      * @param country
-     *        Two digit code that specifies the country in which the certificate subject located.
+     *        Two-digit code that specifies the country in which the certificate subject located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -451,11 +451,11 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A title such as Mr. or Ms. which is pre-pended to the name to refer formally to the certificate subject.
+     * A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.
      * </p>
      * 
      * @param title
-     *        A title such as Mr. or Ms. which is pre-pended to the name to refer formally to the certificate subject.
+     *        A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.
      */
 
     public void setTitle(String title) {
@@ -464,10 +464,10 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A title such as Mr. or Ms. which is pre-pended to the name to refer formally to the certificate subject.
+     * A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.
      * </p>
      * 
-     * @return A title such as Mr. or Ms. which is pre-pended to the name to refer formally to the certificate subject.
+     * @return A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.
      */
 
     public String getTitle() {
@@ -476,11 +476,11 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A title such as Mr. or Ms. which is pre-pended to the name to refer formally to the certificate subject.
+     * A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.
      * </p>
      * 
      * @param title
-     *        A title such as Mr. or Ms. which is pre-pended to the name to refer formally to the certificate subject.
+     *        A title such as Mr. or Ms., which is pre-pended to the name to refer formally to the certificate subject.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -491,12 +491,12 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Family name. In the US and the UK for example, the surname of an individual is ordered last. In Asian cultures
+     * Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures
      * the surname is typically ordered first.
      * </p>
      * 
      * @param surname
-     *        Family name. In the US and the UK for example, the surname of an individual is ordered last. In Asian
+     *        Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian
      *        cultures the surname is typically ordered first.
      */
 
@@ -506,11 +506,11 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Family name. In the US and the UK for example, the surname of an individual is ordered last. In Asian cultures
+     * Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures
      * the surname is typically ordered first.
      * </p>
      * 
-     * @return Family name. In the US and the UK for example, the surname of an individual is ordered last. In Asian
+     * @return Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian
      *         cultures the surname is typically ordered first.
      */
 
@@ -520,12 +520,12 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Family name. In the US and the UK for example, the surname of an individual is ordered last. In Asian cultures
+     * Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian cultures
      * the surname is typically ordered first.
      * </p>
      * 
      * @param surname
-     *        Family name. In the US and the UK for example, the surname of an individual is ordered last. In Asian
+     *        Family name. In the US and the UK, for example, the surname of an individual is ordered last. In Asian
      *        cultures the surname is typically ordered first.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -714,7 +714,8 @@ public class ASN1Subject implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

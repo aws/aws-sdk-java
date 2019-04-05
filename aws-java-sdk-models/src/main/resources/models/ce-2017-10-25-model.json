@@ -29,7 +29,21 @@
         {"shape":"InvalidNextTokenException"},
         {"shape":"RequestChangedException"}
       ],
-      "documentation":"<p>Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list of valid dimensions, see the <code> <a href=\"http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html\">GetDimensionValues</a> </code> operation. Master accounts in an organization in AWS Organizations have access to all member accounts.</p>"
+      "documentation":"<p>Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list of valid dimensions, see the <a href=\"http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html\">GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all member accounts.</p>"
+    },
+    "GetCostForecast":{
+      "name":"GetCostForecast",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetCostForecastRequest"},
+      "output":{"shape":"GetCostForecastResponse"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"DataUnavailableException"}
+      ],
+      "documentation":"<p>Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period that you select, based on your past costs. </p>"
     },
     "GetDimensionValues":{
       "name":"GetDimensionValues",
@@ -61,7 +75,7 @@
         {"shape":"DataUnavailableException"},
         {"shape":"InvalidNextTokenException"}
       ],
-      "documentation":"<p>Retrieves the reservation coverage for your account. This allows you to see how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a reservation. An organization's master account can see the coverage of the associated member accounts. For any time period, you can filter data about reservation usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation. </p>"
+      "documentation":"<p>Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a reservation. An organization's master account can see the coverage of the associated member accounts. For any time period, you can filter data about reservation usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation. </p>"
     },
     "GetReservationPurchaseRecommendation":{
       "name":"GetReservationPurchaseRecommendation",
@@ -76,7 +90,7 @@
         {"shape":"DataUnavailableException"},
         {"shape":"InvalidNextTokenException"}
       ],
-      "documentation":"<p>Gets recommendations for which reservations to purchase. These recommendations could help you reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.</p> <p>AWS generates your recommendations by identifying your On-Demand usage during a specific time period and collecting your usage into categories that are eligible for a reservation. After AWS has these categories, it simulates every combination of reservations in each category of usage to identify the best number of each type of RI to purchase to maximize your estimated savings. </p> <p>For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family usage. AWS recommends the smallest size instance in an instance family. This makes it easier to purchase a size-flexible RI. AWS also shows the equal number of normalized units so that you can purchase any instance size that you want. For this example, your RI recommendation would be for <code>c4.large</code>, because that is the smallest size instance in the c4 instance family.</p>"
+      "documentation":"<p>Gets recommendations for which reservations to purchase. These recommendations could help you reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.</p> <p>AWS generates your recommendations by identifying your On-Demand usage during a specific time period and collecting your usage into categories that are eligible for a reservation. After AWS has these categories, it simulates every combination of reservations in each category of usage to identify the best number of each type of RI to purchase to maximize your estimated savings. </p> <p>For example, AWS automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family usage. AWS recommends the smallest size instance in an instance family. This makes it easier to purchase a size-flexible RI. AWS also shows the equal number of normalized units so that you can purchase any instance size that you want. For this example, your RI recommendation would be for <code>c4.large</code> because that is the smallest size instance in the c4 instance family.</p>"
     },
     "GetReservationUtilization":{
       "name":"GetReservationUtilization",
@@ -114,8 +128,13 @@
   "shapes":{
     "AccountScope":{
       "type":"string",
-      "enum":["PAYER"]
+      "enum":[
+        "PAYER",
+        "LINKED"
+      ]
     },
+    "AmortizedRecurringFee":{"type":"string"},
+    "AmortizedUpfrontFee":{"type":"string"},
     "AttributeType":{"type":"string"},
     "AttributeValue":{"type":"string"},
     "Attributes":{
@@ -143,7 +162,15 @@
       "members":{
         "CoverageHours":{
           "shape":"CoverageHours",
-          "documentation":"<p>The amount of instance usage that a reservation covered, in hours.</p>"
+          "documentation":"<p>The amount of instance usage that the reservation covered, in hours.</p>"
+        },
+        "CoverageNormalizedUnits":{
+          "shape":"CoverageNormalizedUnits",
+          "documentation":"<p>The amount of instance usage that the reservation covered, in normalized units.</p>"
+        },
+        "CoverageCost":{
+          "shape":"CoverageCost",
+          "documentation":"<p>The amount of cost that the reservation covered.</p>"
         }
       },
       "documentation":"<p>The amount of instance usage that a reservation covered.</p>"
@@ -153,11 +180,11 @@
       "members":{
         "TimePeriod":{
           "shape":"DateInterval",
-          "documentation":"<p>The period over which this coverage was used.</p>"
+          "documentation":"<p>The period that this coverage was used over.</p>"
         },
         "Groups":{
           "shape":"ReservationCoverageGroups",
-          "documentation":"<p>The groups of instances that are covered by a reservation.</p>"
+          "documentation":"<p>The groups of instances that the reservation covered.</p>"
         },
         "Total":{
           "shape":"Coverage",
@@ -166,16 +193,26 @@
       },
       "documentation":"<p>Reservation coverage for a specified period, in hours.</p>"
     },
+    "CoverageCost":{
+      "type":"structure",
+      "members":{
+        "OnDemandCost":{
+          "shape":"OnDemandCost",
+          "documentation":"<p>How much an On-Demand instance cost.</p>"
+        }
+      },
+      "documentation":"<p>How much it cost to run an instance.</p>"
+    },
     "CoverageHours":{
       "type":"structure",
       "members":{
         "OnDemandHours":{
           "shape":"OnDemandHours",
-          "documentation":"<p>The number of instance running hours that are covered by On-Demand Instances.</p>"
+          "documentation":"<p>The number of instance running hours that On-Demand Instances covered.</p>"
         },
         "ReservedHours":{
           "shape":"ReservedHours",
-          "documentation":"<p>The number of instance running hours that are covered by reservations.</p>"
+          "documentation":"<p>The number of instance running hours that reservations covered.</p>"
         },
         "TotalRunningHours":{
           "shape":"TotalRunningHours",
@@ -183,12 +220,35 @@
         },
         "CoverageHoursPercentage":{
           "shape":"CoverageHoursPercentage",
-          "documentation":"<p>The percentage of instance hours that are covered by a reservation.</p>"
+          "documentation":"<p>The percentage of instance hours that a reservation covered.</p>"
         }
       },
       "documentation":"<p>How long a running instance either used a reservation or was On-Demand.</p>"
     },
     "CoverageHoursPercentage":{"type":"string"},
+    "CoverageNormalizedUnits":{
+      "type":"structure",
+      "members":{
+        "OnDemandNormalizedUnits":{
+          "shape":"OnDemandNormalizedUnits",
+          "documentation":"<p>The number of normalized units that are covered by On-Demand Instances instead of a reservation.</p>"
+        },
+        "ReservedNormalizedUnits":{
+          "shape":"ReservedNormalizedUnits",
+          "documentation":"<p>The number of normalized units that a reservation covers.</p>"
+        },
+        "TotalRunningNormalizedUnits":{
+          "shape":"TotalRunningNormalizedUnits",
+          "documentation":"<p>The total number of normalized units that you used.</p>"
+        },
+        "CoverageNormalizedUnitsPercentage":{
+          "shape":"CoverageNormalizedUnitsPercentage",
+          "documentation":"<p>The percentage of your used instance normalized units that a reservation covers.</p>"
+        }
+      },
+      "documentation":"<p>The amount of instance usage, in normalized units. Normalized units enable you to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. Using normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html\">Modifying Reserved Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>"
+    },
+    "CoverageNormalizedUnitsPercentage":{"type":"string"},
     "CoveragesByTime":{
       "type":"list",
       "member":{"shape":"CoverageByTime"}
@@ -241,7 +301,9 @@
         "DEPLOYMENT_OPTION",
         "DATABASE_ENGINE",
         "CACHE_ENGINE",
-        "INSTANCE_TYPE_FAMILY"
+        "INSTANCE_TYPE_FAMILY",
+        "BILLING_ENTITY",
+        "RESERVATION_ID"
       ]
     },
     "DimensionValues":{
@@ -253,7 +315,7 @@
         },
         "Values":{
           "shape":"Values",
-          "documentation":"<p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>"
+          "documentation":"<p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p> <p>Valid values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon ElastiCache</code>, <code>Amazon Redshift</code>, and <code>Amazon Relational Database Service</code>.</p>"
         }
       },
       "documentation":"<p>The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>"
@@ -305,14 +367,14 @@
         },
         "CurrentGeneration":{
           "shape":"GenericBoolean",
-          "documentation":"<p>Whether the recommendation is for a current generation instance. </p>"
+          "documentation":"<p>Whether the recommendation is for a current-generation instance. </p>"
         },
         "SizeFlexEligible":{
           "shape":"GenericBoolean",
           "documentation":"<p>Whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the EC2 instances that AWS recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon EC2 instances that AWS recommends that you purchase.</p>"
     },
     "EC2Specification":{
       "type":"structure",
@@ -322,7 +384,63 @@
           "documentation":"<p>Whether you want a recommendation for standard or convertible reservations.</p>"
         }
       },
-      "documentation":"<p>The EC2 hardware specifications that you want AWS to provide recommendations for.</p>"
+      "documentation":"<p>The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.</p>"
+    },
+    "ESInstanceDetails":{
+      "type":"structure",
+      "members":{
+        "InstanceClass":{
+          "shape":"GenericString",
+          "documentation":"<p>The class of instance that AWS recommends.</p>"
+        },
+        "InstanceSize":{
+          "shape":"GenericString",
+          "documentation":"<p>The size of instance that AWS recommends.</p>"
+        },
+        "Region":{
+          "shape":"GenericString",
+          "documentation":"<p>The AWS Region of the recommended reservation.</p>"
+        },
+        "CurrentGeneration":{
+          "shape":"GenericBoolean",
+          "documentation":"<p>Whether the recommendation is for a current-generation instance.</p>"
+        },
+        "SizeFlexEligible":{
+          "shape":"GenericBoolean",
+          "documentation":"<p>Whether the recommended reservation is size flexible.</p>"
+        }
+      },
+      "documentation":"<p>Details about the Amazon ES instances that AWS recommends that you purchase.</p>"
+    },
+    "ElastiCacheInstanceDetails":{
+      "type":"structure",
+      "members":{
+        "Family":{
+          "shape":"GenericString",
+          "documentation":"<p>The instance family of the recommended reservation.</p>"
+        },
+        "NodeType":{
+          "shape":"GenericString",
+          "documentation":"<p>The type of node that AWS recommends.</p>"
+        },
+        "Region":{
+          "shape":"GenericString",
+          "documentation":"<p>The AWS Region of the recommended reservation.</p>"
+        },
+        "ProductDescription":{
+          "shape":"GenericString",
+          "documentation":"<p>The description of the recommended reservation.</p>"
+        },
+        "CurrentGeneration":{
+          "shape":"GenericBoolean",
+          "documentation":"<p>Whether the recommendation is for a current generation instance.</p>"
+        },
+        "SizeFlexEligible":{
+          "shape":"GenericBoolean",
+          "documentation":"<p>Whether the recommended reservation is size flexible.</p>"
+        }
+      },
+      "documentation":"<p>Details about the Amazon ElastiCache instances that AWS recommends that you purchase.</p>"
     },
     "Entity":{"type":"string"},
     "ErrorMessage":{"type":"string"},
@@ -351,16 +469,43 @@
           "documentation":"<p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>"
         }
       },
-      "documentation":"<p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>INSTANCE_TYPE==m4.xlarge OR INSTANCE_TYPE==c4.large</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ \"Dimensions\": { \"Key\": \"INSTANCE_TYPE\", \"Values\": [ \"m4.xlarge\", “c4.large” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((INSTANCE_TYPE == m4.large OR INSTANCE_TYPE == m3.large) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ \"And\": [ {\"Or\": [ {\"Dimensions\": { \"Key\": \"INSTANCE_TYPE\", \"Values\": [ \"m4.x.large\", \"c4.large\" ] }}, {\"Tag\": { \"Key\": \"TagName\", \"Values\": [\"Value1\"] } } ]}, {\"Not\": {\"dimensions\": { \"Key\": \"USAGE_TYPE\", \"Values\": [\"DataTransfer\"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { \"And\": [ ... ], \"DimensionValues\": { \"Dimension\": \"USAGE_TYPE\", \"Values\": [ \"DataTransfer\" ] } } </code> </p> </li> </ul>"
+      "documentation":"<p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>INSTANCE_TYPE==m4.xlarge OR INSTANCE_TYPE==c4.large</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ \"Dimensions\": { \"Key\": \"INSTANCE_TYPE\", \"Values\": [ \"m4.xlarge\", “c4.large” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((INSTANCE_TYPE == m4.large OR INSTANCE_TYPE == m3.large) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ \"And\": [ {\"Or\": [ {\"Dimensions\": { \"Key\": \"INSTANCE_TYPE\", \"Values\": [ \"m4.x.large\", \"c4.large\" ] }}, {\"Tags\": { \"Key\": \"TagName\", \"Values\": [\"Value1\"] } } ]}, {\"Not\": {\"Dimensions\": { \"Key\": \"USAGE_TYPE\", \"Values\": [\"DataTransfer\"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { \"And\": [ ... ], \"DimensionValues\": { \"Dimension\": \"USAGE_TYPE\", \"Values\": [ \"DataTransfer\" ] } } </code> </p> </li> </ul>"
     },
     "Expressions":{
       "type":"list",
       "member":{"shape":"Expression"}
     },
+    "ForecastResult":{
+      "type":"structure",
+      "members":{
+        "TimePeriod":{
+          "shape":"DateInterval",
+          "documentation":"<p>The period of time that the forecast covers.</p>"
+        },
+        "MeanValue":{
+          "shape":"GenericString",
+          "documentation":"<p>The mean value of the forecast.</p>"
+        },
+        "PredictionIntervalLowerBound":{
+          "shape":"GenericString",
+          "documentation":"<p>The lower limit for the prediction interval. </p>"
+        },
+        "PredictionIntervalUpperBound":{
+          "shape":"GenericString",
+          "documentation":"<p>The upper limit for the prediction interval. </p>"
+        }
+      },
+      "documentation":"<p>The forecast created for your query.</p>"
+    },
+    "ForecastResultsByTime":{
+      "type":"list",
+      "member":{"shape":"ForecastResult"}
+    },
     "GenericBoolean":{"type":"boolean"},
     "GenericString":{"type":"string"},
     "GetCostAndUsageRequest":{
       "type":"structure",
+      "required":["TimePeriod"],
       "members":{
         "TimePeriod":{
           "shape":"DateInterval",
@@ -368,7 +513,7 @@
         },
         "Granularity":{
           "shape":"Granularity",
-          "documentation":"<p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. </p>"
+          "documentation":"<p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If <code>Granularity</code> isn't set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. </p> <p>The <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>"
         },
         "Filter":{
           "shape":"Expression",
@@ -376,7 +521,7 @@
         },
         "Metrics":{
           "shape":"MetricNames",
-          "documentation":"<p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href=\"https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/\">Why does the \"blended\" annotation appear on some line items in my bill?</a>. </p> <p>Valid values are <code>BlendedCost</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p> <note> <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of EC2, the results aren't meaningful because EC2 compute hours and data transfer are measured in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p> </note> <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>"
+          "documentation":"<p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href=\"https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/\">Why does the \"blended\" annotation appear on some line items in my bill?</a>. </p> <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p> <note> <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>. </p> </note> <p> <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>"
         },
         "GroupBy":{
           "shape":"GroupDefinitions",
@@ -405,6 +550,49 @@
         }
       }
     },
+    "GetCostForecastRequest":{
+      "type":"structure",
+      "required":[
+        "TimePeriod",
+        "Metric",
+        "Granularity"
+      ],
+      "members":{
+        "TimePeriod":{
+          "shape":"DateInterval",
+          "documentation":"<p>The period of time that you want the forecast to cover.</p>"
+        },
+        "Metric":{
+          "shape":"Metric",
+          "documentation":"<p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see <a href=\"https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/\">Why does the \"blended\" annotation appear on some line items in my bill?</a>. </p> <p>Valid values for a <code>GetCostForecast</code> call are the following:</p> <ul> <li> <p>AmortizedCost</p> </li> <li> <p>BlendedCost</p> </li> <li> <p>NetAmortizedCost</p> </li> <li> <p>NetUnblendedCost</p> </li> <li> <p>UnblendedCost</p> </li> </ul>"
+        },
+        "Granularity":{
+          "shape":"Granularity",
+          "documentation":"<p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p> <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>"
+        },
+        "Filter":{
+          "shape":"Expression",
+          "documentation":"<p>The filters that you want to use to filter your forecast. Cost Explorer API supports all of the Cost Explorer filters.</p>"
+        },
+        "PredictionIntervalLevel":{
+          "shape":"PredictionIntervalLevel",
+          "documentation":"<p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>"
+        }
+      }
+    },
+    "GetCostForecastResponse":{
+      "type":"structure",
+      "members":{
+        "Total":{
+          "shape":"MetricValue",
+          "documentation":"<p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>"
+        },
+        "ForecastResultsByTime":{
+          "shape":"ForecastResultsByTime",
+          "documentation":"<p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>"
+        }
+      }
+    },
     "GetDimensionValuesRequest":{
       "type":"structure",
       "required":[
@@ -422,11 +610,11 @@
         },
         "Dimension":{
           "shape":"Dimension",
-          "documentation":"<p>The name of the dimension. Each <code>Dimension</code> is available for different a <code>Context</code>. For more information, see <code>Context</code>.</p>"
+          "documentation":"<p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>.</p>"
         },
         "Context":{
           "shape":"Context",
-          "documentation":"<p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code> the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account.</p> </li> <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li> <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li> <p>PLATFORM - The EC2 operating system. Examples are Windows or Linux.</p> </li> <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li> <li> <p>SERVICE - The AWS service such as Amazon DynamoDB.</p> </li> <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li> <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account.</p> </li> <li> <p>PLATFORM - The EC2 operating system. Examples are Windows or Linux.</p> </li> <li> <p>REGION - The AWS Region.</p> </li> <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li> <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li> <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>"
+          "documentation":"<p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p> <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account.</p> </li> <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li> <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li> <li> <p>SERVICE - The AWS service such as Amazon DynamoDB.</p> </li> <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li> <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account.</p> </li> <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> <li> <p>REGION - The AWS Region.</p> </li> <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li> <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li> <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>"
         },
         "NextPageToken":{
           "shape":"NextPageToken",
@@ -444,7 +632,7 @@
       "members":{
         "DimensionValues":{
           "shape":"DimensionValuesWithAttributesList",
-          "documentation":"<p>The filters that you used to filter your request. Some dimensions are available only for a specific context:</p> <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account.</p> </li> <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li> <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li> <p>PLATFORM - The EC2 operating system. Examples are Windows or Linux.</p> </li> <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li> <li> <p>SERVICE - The AWS service such as Amazon DynamoDB.</p> </li> <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li> <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account.</p> </li> <li> <p>PLATFORM - The EC2 operating system. Examples are Windows or Linux.</p> </li> <li> <p>REGION - The AWS Region.</p> </li> <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li> <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li> <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>"
+          "documentation":"<p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p> <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account.</p> </li> <li> <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p> </li> <li> <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> <li> <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances.</p> </li> <li> <p>SERVICE - The AWS service such as Amazon DynamoDB.</p> </li> <li> <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p> </li> <li> <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p> </li> <li> <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p> </li> </ul> <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p> <ul> <li> <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p> </li> <li> <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p> </li> <li> <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p> </li> <li> <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p> </li> <li> <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account.</p> </li> <li> <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p> </li> <li> <p>REGION - The AWS Region.</p> </li> <li> <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p> </li> <li> <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p> </li> <li> <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p> </li> </ul>"
         },
         "ReturnSize":{
           "shape":"PageSize",
@@ -466,26 +654,30 @@
       "members":{
         "TimePeriod":{
           "shape":"DateInterval",
-          "documentation":"<p>The start and end dates of the period for which you want to retrieve data about reservation coverage. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>"
+          "documentation":"<p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>"
         },
         "GroupBy":{
           "shape":"GroupDefinitions",
-          "documentation":"<p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li> </ul>"
+          "documentation":"<p>You can group the data by the following attributes:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>TENANCY</p> </li> </ul>"
         },
         "Granularity":{
           "shape":"Granularity",
-          "documentation":"<p>The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>"
+          "documentation":"<p>The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p> <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p> <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>"
         },
         "Filter":{
           "shape":"Expression",
-          "documentation":"<p>Filters utilization data by dimensions. You can filter by the following dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li> </ul> <p> <code>GetReservationCoverage</code> uses the same <code> <a href=\"http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html\">Expression</a> </code> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>"
+          "documentation":"<p>Filters utilization data by dimensions. You can filter by the following dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li> <p>TAG</p> </li> <li> <p>TENANCY</p> </li> </ul> <p> <code>GetReservationCoverage</code> uses the same <a href=\"http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html\">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p> <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>"
+        },
+        "Metrics":{
+          "shape":"MetricNames",
+          "documentation":"<p>The measurement that you want your reservation coverage reported in.</p> <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>"
         },
         "NextPageToken":{
           "shape":"NextPageToken",
           "documentation":"<p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>"
         }
       },
-      "documentation":"<p>You can use the following request parameters to query for how much of your instance usage is covered by a reservation.</p>"
+      "documentation":"<p>You can use the following request parameters to query for how much of your instance usage a reservation covered.</p>"
     },
     "GetReservationCoverageResponse":{
       "type":"structure",
@@ -497,7 +689,7 @@
         },
         "Total":{
           "shape":"Coverage",
-          "documentation":"<p>The total amount of instance usage that is covered by a reservation.</p>"
+          "documentation":"<p>The total amount of instance usage that a reservation covered.</p>"
         },
         "NextPageToken":{
           "shape":"NextPageToken",
@@ -519,7 +711,7 @@
         },
         "AccountScope":{
           "shape":"AccountScope",
-          "documentation":"<p>The account scope that you want recommendations for. The only valid value is <code>Payer</code>. This means that AWS includes the master account and any member accounts when it calculates its recommendations.</p>"
+          "documentation":"<p>The account scope that you want recommendations for. <code>PAYER</code> means that AWS includes the master account and any member accounts when it calculates its recommendations. <code>LINKED</code> means that AWS includes only member accounts when it calculates its recommendations.</p> <p>Valid values are <code>PAYER</code> and <code>LINKED</code>.</p>"
         },
         "LookbackPeriodInDays":{
           "shape":"LookbackPeriodInDays",
@@ -535,7 +727,7 @@
         },
         "ServiceSpecification":{
           "shape":"ServiceSpecification",
-          "documentation":"<p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible EC2 instances.</p>"
+          "documentation":"<p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>"
         },
         "PageSize":{
           "shape":"NonNegativeInteger",
@@ -570,7 +762,7 @@
       "members":{
         "TimePeriod":{
           "shape":"DateInterval",
-          "documentation":"<p>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>"
+          "documentation":"<p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>"
         },
         "GroupBy":{
           "shape":"GroupDefinitions",
@@ -578,11 +770,11 @@
         },
         "Granularity":{
           "shape":"Granularity",
-          "documentation":"<p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>"
+          "documentation":"<p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p> <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>"
         },
         "Filter":{
           "shape":"Expression",
-          "documentation":"<p>Filters utilization data by dimensions. You can filter by the following dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li> <p>SCOPE</p> </li> <li> <p>TENANCY</p> </li> </ul> <p> <code>GetReservationUtilization</code> uses the same <code> <a href=\"http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html\">Expression</a> </code> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>"
+          "documentation":"<p>Filters utilization data by dimensions. You can filter by the following dimensions:</p> <ul> <li> <p>AZ</p> </li> <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li> <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li> <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li> <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li> <p>SCOPE</p> </li> <li> <p>TENANCY</p> </li> </ul> <p> <code>GetReservationUtilization</code> uses the same <a href=\"http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html\">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>"
         },
         "NextPageToken":{
           "shape":"NextPageToken",
@@ -596,11 +788,11 @@
       "members":{
         "UtilizationsByTime":{
           "shape":"UtilizationsByTime",
-          "documentation":"<p>The amount of time that you utilized your RIs.</p>"
+          "documentation":"<p>The amount of time that you used your RIs.</p>"
         },
         "Total":{
           "shape":"ReservationAggregates",
-          "documentation":"<p>The total amount of time that you utilized your RIs.</p>"
+          "documentation":"<p>The total amount of time that you used your RIs.</p>"
         },
         "NextPageToken":{
           "shape":"NextPageToken",
@@ -660,7 +852,8 @@
       "type":"string",
       "enum":[
         "DAILY",
-        "MONTHLY"
+        "MONTHLY",
+        "HOURLY"
       ]
     },
     "Group":{
@@ -675,7 +868,7 @@
           "documentation":"<p>The metrics that are included in this group.</p>"
         }
       },
-      "documentation":"<p>One level of grouped data within the results.</p>"
+      "documentation":"<p>One level of grouped data in the results.</p>"
     },
     "GroupDefinition":{
       "type":"structure",
@@ -689,7 +882,7 @@
           "documentation":"<p>The string that represents a key for a specified group.</p>"
         }
       },
-      "documentation":"<p>Represents a group when you specify a group by criteria, or in the response to a query with a specific grouping.</p>"
+      "documentation":"<p>Represents a group when you specify a group by criteria or in the response to a query with a specific grouping.</p>"
     },
     "GroupDefinitionKey":{"type":"string"},
     "GroupDefinitionType":{
@@ -712,11 +905,23 @@
       "members":{
         "EC2InstanceDetails":{
           "shape":"EC2InstanceDetails",
-          "documentation":"<p>The EC2 instances that AWS recommends that you purchase.</p>"
+          "documentation":"<p>The Amazon EC2 instances that AWS recommends that you purchase.</p>"
         },
         "RDSInstanceDetails":{
           "shape":"RDSInstanceDetails",
-          "documentation":"<p>The RDS instances that AWS recommends that you purchase.</p>"
+          "documentation":"<p>The Amazon RDS instances that AWS recommends that you purchase.</p>"
+        },
+        "RedshiftInstanceDetails":{
+          "shape":"RedshiftInstanceDetails",
+          "documentation":"<p>The Amazon Redshift instances that AWS recommends that you purchase.</p>"
+        },
+        "ElastiCacheInstanceDetails":{
+          "shape":"ElastiCacheInstanceDetails",
+          "documentation":"<p>The ElastiCache instances that AWS recommends that you purchase.</p>"
+        },
+        "ESInstanceDetails":{
+          "shape":"ESInstanceDetails",
+          "documentation":"<p>The Amazon ES instances that AWS recommends that you purchase.</p>"
         }
       },
       "documentation":"<p>Details about the instances that AWS recommends that you purchase.</p>"
@@ -750,6 +955,18 @@
         "SIXTY_DAYS"
       ]
     },
+    "Metric":{
+      "type":"string",
+      "enum":[
+        "BLENDED_COST",
+        "UNBLENDED_COST",
+        "AMORTIZED_COST",
+        "NET_UNBLENDED_COST",
+        "NET_AMORTIZED_COST",
+        "USAGE_QUANTITY",
+        "NORMALIZED_USAGE_AMOUNT"
+      ]
+    },
     "MetricAmount":{"type":"string"},
     "MetricName":{"type":"string"},
     "MetricNames":{
@@ -776,6 +993,7 @@
       "key":{"shape":"MetricName"},
       "value":{"shape":"MetricValue"}
     },
+    "NetRISavings":{"type":"string"},
     "NextPageToken":{"type":"string"},
     "NonNegativeInteger":{
       "type":"integer",
@@ -788,17 +1006,29 @@
         "CONVERTIBLE"
       ]
     },
+    "OnDemandCost":{"type":"string"},
+    "OnDemandCostOfRIHoursUsed":{"type":"string"},
     "OnDemandHours":{"type":"string"},
+    "OnDemandNormalizedUnits":{"type":"string"},
     "PageSize":{"type":"integer"},
     "PaymentOption":{
       "type":"string",
       "enum":[
         "NO_UPFRONT",
         "PARTIAL_UPFRONT",
-        "ALL_UPFRONT"
+        "ALL_UPFRONT",
+        "LIGHT_UTILIZATION",
+        "MEDIUM_UTILIZATION",
+        "HEAVY_UTILIZATION"
       ]
     },
+    "PredictionIntervalLevel":{
+      "type":"integer",
+      "max":99,
+      "min":51
+    },
     "PurchasedHours":{"type":"string"},
+    "PurchasedUnits":{"type":"string"},
     "RDSInstanceDetails":{
       "type":"structure",
       "members":{
@@ -818,9 +1048,13 @@
           "shape":"GenericString",
           "documentation":"<p>The database engine that the recommended reservation supports.</p>"
         },
+        "DatabaseEdition":{
+          "shape":"GenericString",
+          "documentation":"<p>The database edition that the recommended reservation supports.</p>"
+        },
         "DeploymentOption":{
           "shape":"GenericString",
-          "documentation":"<p>Whether the recommendation is for a reservation in a single availability zone or a reservation with a backup in a second availability zone.</p>"
+          "documentation":"<p>Whether the recommendation is for a reservation in a single Availability Zone or a reservation with a backup in a second Availability Zone.</p>"
         },
         "LicenseModel":{
           "shape":"GenericString",
@@ -828,14 +1062,40 @@
         },
         "CurrentGeneration":{
           "shape":"GenericBoolean",
-          "documentation":"<p>Whether the recommendation is for a current generation instance. </p>"
+          "documentation":"<p>Whether the recommendation is for a current-generation instance. </p>"
         },
         "SizeFlexEligible":{
           "shape":"GenericBoolean",
           "documentation":"<p>Whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the RDS instances that AWS recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon RDS instances that AWS recommends that you purchase.</p>"
+    },
+    "RedshiftInstanceDetails":{
+      "type":"structure",
+      "members":{
+        "Family":{
+          "shape":"GenericString",
+          "documentation":"<p>The instance family of the recommended reservation.</p>"
+        },
+        "NodeType":{
+          "shape":"GenericString",
+          "documentation":"<p>The type of node that AWS recommends.</p>"
+        },
+        "Region":{
+          "shape":"GenericString",
+          "documentation":"<p>The AWS Region of the recommended reservation.</p>"
+        },
+        "CurrentGeneration":{
+          "shape":"GenericBoolean",
+          "documentation":"<p>Whether the recommendation is for a current-generation instance.</p>"
+        },
+        "SizeFlexEligible":{
+          "shape":"GenericBoolean",
+          "documentation":"<p>Whether the recommended reservation is size flexible.</p>"
+        }
+      },
+      "documentation":"<p>Details about the Amazon Redshift instances that AWS recommends that you purchase.</p>"
     },
     "RequestChangedException":{
       "type":"structure",
@@ -850,22 +1110,62 @@
       "members":{
         "UtilizationPercentage":{
           "shape":"UtilizationPercentage",
-          "documentation":"<p>The percentage of RI time that you used.</p>"
+          "documentation":"<p>The percentage of reservation time that you used.</p>"
+        },
+        "UtilizationPercentageInUnits":{
+          "shape":"UtilizationPercentageInUnits",
+          "documentation":"<p>The percentage of Amazon EC2 reservation time that you used, converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>"
         },
         "PurchasedHours":{
           "shape":"PurchasedHours",
-          "documentation":"<p>How many RI hours that you purchased.</p>"
+          "documentation":"<p>How many reservation hours that you purchased.</p>"
+        },
+        "PurchasedUnits":{
+          "shape":"PurchasedUnits",
+          "documentation":"<p>How many Amazon EC2 reservation hours that you purchased, converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>"
         },
         "TotalActualHours":{
           "shape":"TotalActualHours",
-          "documentation":"<p>The total number of RI hours that you used.</p>"
+          "documentation":"<p>The total number of reservation hours that you used.</p>"
+        },
+        "TotalActualUnits":{
+          "shape":"TotalActualUnits",
+          "documentation":"<p>The total number of Amazon EC2 reservation hours that you used, converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>"
         },
         "UnusedHours":{
           "shape":"UnusedHours",
-          "documentation":"<p>The number of RI hours that you didn't use.</p>"
+          "documentation":"<p>The number of reservation hours that you didn't use.</p>"
+        },
+        "UnusedUnits":{
+          "shape":"UnusedUnits",
+          "documentation":"<p>The number of Amazon EC2 reservation hours that you didn't use, converted to normalized units. Normalized units are available only for Amazon EC2 usage after November 11, 2017.</p>"
+        },
+        "OnDemandCostOfRIHoursUsed":{
+          "shape":"OnDemandCostOfRIHoursUsed",
+          "documentation":"<p>How much your reservation would cost if charged On-Demand rates.</p>"
+        },
+        "NetRISavings":{
+          "shape":"NetRISavings",
+          "documentation":"<p>How much you saved due to purchasing and utilizing reservation. AWS calculates this by subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.</p>"
+        },
+        "TotalPotentialRISavings":{
+          "shape":"TotalPotentialRISavings",
+          "documentation":"<p>How much you could save if you use your entire reservation.</p>"
+        },
+        "AmortizedUpfrontFee":{
+          "shape":"AmortizedUpfrontFee",
+          "documentation":"<p>The upfront cost of your reservation, amortized over the reservation period.</p>"
+        },
+        "AmortizedRecurringFee":{
+          "shape":"AmortizedRecurringFee",
+          "documentation":"<p>The monthly cost of your reservation, amortized over the reservation period.</p>"
+        },
+        "TotalAmortizedFee":{
+          "shape":"TotalAmortizedFee",
+          "documentation":"<p>The total cost of your reservation, amortized over the reservation period.</p>"
         }
       },
-      "documentation":"<p>The aggregated numbers for your RI usage.</p>"
+      "documentation":"<p>The aggregated numbers for your reservation usage.</p>"
     },
     "ReservationCoverageGroup":{
       "type":"structure",
@@ -896,7 +1196,7 @@
         },
         "LookbackPeriodInDays":{
           "shape":"LookbackPeriodInDays",
-          "documentation":"<p>How many days of previous usage that AWS takes into consideration when making this recommendation.</p>"
+          "documentation":"<p>How many days of previous usage that AWS considers when making this recommendation.</p>"
         },
         "TermInYears":{
           "shape":"TermInYears",
@@ -924,6 +1224,10 @@
     "ReservationPurchaseRecommendationDetail":{
       "type":"structure",
       "members":{
+        "AccountId":{
+          "shape":"GenericString",
+          "documentation":"<p>The account that this RI recommendation is for.</p>"
+        },
         "InstanceDetails":{
           "shape":"InstanceDetails",
           "documentation":"<p>Details about the instances that AWS recommends that you purchase.</p>"
@@ -942,7 +1246,7 @@
         },
         "MinimumNormalizedUnitsUsedPerHour":{
           "shape":"GenericString",
-          "documentation":"<p>The minimum number of hours that you used in an hour during the historical period. AWS uses this to calculate your recommended reservation purchases.</p>"
+          "documentation":"<p>The minimum number of normalized units that you used in an hour during the historical period. AWS uses this to calculate your recommended reservation purchases.</p>"
         },
         "MaximumNumberOfInstancesUsedPerHour":{
           "shape":"GenericString",
@@ -1033,7 +1337,7 @@
           "documentation":"<p>The currency code used for this recommendation.</p>"
         }
       },
-      "documentation":"<p>A summary about this recommendation, such as the currency code, the amount that AWS estimates you could save, and the total amount of reservation to purchase.</p>"
+      "documentation":"<p>A summary about this recommendation, such as the currency code, the amount that AWS estimates that you could save, and the total amount of reservation to purchase.</p>"
     },
     "ReservationPurchaseRecommendations":{
       "type":"list",
@@ -1044,34 +1348,35 @@
       "members":{
         "Key":{
           "shape":"ReservationGroupKey",
-          "documentation":"<p>The key for a specific RI attribute.</p>"
+          "documentation":"<p>The key for a specific reservation attribute.</p>"
         },
         "Value":{
           "shape":"ReservationGroupValue",
-          "documentation":"<p>The value of a specific RI attribute.</p>"
+          "documentation":"<p>The value of a specific reservation attribute.</p>"
         },
         "Attributes":{
           "shape":"Attributes",
-          "documentation":"<p>The attributes for this group of RIs.</p>"
+          "documentation":"<p>The attributes for this group of reservations.</p>"
         },
         "Utilization":{
           "shape":"ReservationAggregates",
-          "documentation":"<p>How much you used this group of RIs.</p>"
+          "documentation":"<p>How much you used this group of reservations.</p>"
         }
       },
-      "documentation":"<p>A group of RIs that share a set of attributes.</p>"
+      "documentation":"<p>A group of reservations that share a set of attributes.</p>"
     },
     "ReservationUtilizationGroups":{
       "type":"list",
       "member":{"shape":"ReservationUtilizationGroup"}
     },
     "ReservedHours":{"type":"string"},
+    "ReservedNormalizedUnits":{"type":"string"},
     "ResultByTime":{
       "type":"structure",
       "members":{
         "TimePeriod":{
           "shape":"DateInterval",
-          "documentation":"<p>The time period covered by a result.</p>"
+          "documentation":"<p>The time period that the result covers.</p>"
         },
         "Total":{
           "shape":"Metrics",
@@ -1079,11 +1384,11 @@
         },
         "Groups":{
           "shape":"Groups",
-          "documentation":"<p>The groups that are included in this time period.</p>"
+          "documentation":"<p>The groups that this time period includes.</p>"
         },
         "Estimated":{
           "shape":"Estimated",
-          "documentation":"<p>Whether this result is estimated.</p>"
+          "documentation":"<p>Whether the result is estimated.</p>"
         }
       },
       "documentation":"<p>The result that is associated with a time period.</p>"
@@ -1098,7 +1403,7 @@
       "members":{
         "EC2Specification":{
           "shape":"EC2Specification",
-          "documentation":"<p>The EC2 hardware specifications that you want AWS to provide recommendations for.</p>"
+          "documentation":"<p>The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.</p>"
         }
       },
       "documentation":"<p>Hardware specifications for the service that you want recommendations for.</p>"
@@ -1113,11 +1418,11 @@
       "members":{
         "Key":{
           "shape":"TagKey",
-          "documentation":"<p>The key for a tag.</p>"
+          "documentation":"<p>The key for the tag.</p>"
         },
         "Values":{
           "shape":"Values",
-          "documentation":"<p>The specific value of a tag.</p>"
+          "documentation":"<p>The specific value of the tag.</p>"
         }
       },
       "documentation":"<p>The values that are available for a tag.</p>"
@@ -1130,27 +1435,33 @@
       ]
     },
     "TotalActualHours":{"type":"string"},
+    "TotalActualUnits":{"type":"string"},
+    "TotalAmortizedFee":{"type":"string"},
+    "TotalPotentialRISavings":{"type":"string"},
     "TotalRunningHours":{"type":"string"},
+    "TotalRunningNormalizedUnits":{"type":"string"},
     "UnusedHours":{"type":"string"},
+    "UnusedUnits":{"type":"string"},
     "UtilizationByTime":{
       "type":"structure",
       "members":{
         "TimePeriod":{
           "shape":"DateInterval",
-          "documentation":"<p>The period of time over which this utilization was used.</p>"
+          "documentation":"<p>The period of time that this utilization was used for.</p>"
         },
         "Groups":{
           "shape":"ReservationUtilizationGroups",
-          "documentation":"<p>The groups that are included in this utilization result.</p>"
+          "documentation":"<p>The groups that this utilization result uses.</p>"
         },
         "Total":{
           "shape":"ReservationAggregates",
-          "documentation":"<p>The total number of RI hours that were used.</p>"
+          "documentation":"<p>The total number of reservation hours that were used.</p>"
         }
       },
       "documentation":"<p>The amount of utilization, in hours.</p>"
     },
     "UtilizationPercentage":{"type":"string"},
+    "UtilizationPercentageInUnits":{"type":"string"},
     "UtilizationsByTime":{
       "type":"list",
       "member":{"shape":"UtilizationByTime"}
@@ -1162,8 +1473,8 @@
     },
     "YearMonthDay":{
       "type":"string",
-      "pattern":"\\d{4}-\\d{2}-\\d{2}"
+      "pattern":"(\\d{4}-\\d{2}-\\d{2})(T\\d{2}:\\d{2}:\\d{2}Z)?"
     }
   },
-  "documentation":"<p>The Cost Explorer API allows you to programmatically query your cost and usage data. You can query for aggregated data such as total monthly costs or total daily usage. You can also query for granular data, such as the number of daily write operations for Amazon DynamoDB database tables in your production environment. </p> <p>Service Endpoint</p> <p>The Cost Explorer API provides the following endpoint:</p> <ul> <li> <p>https://ce.us-east-1.amazonaws.com</p> </li> </ul> <p>For information about costs associated with the Cost Explorer API, see <a href=\"https://aws.amazon.com/aws-cost-management/pricing/\">AWS Cost Management Pricing</a>.</p>"
+  "documentation":"<p>The Cost Explorer API enables you to programmatically query your cost and usage data. You can query for aggregated data such as total monthly costs or total daily usage. You can also query for granular data, such as the number of daily write operations for Amazon DynamoDB database tables in your production environment. </p> <p>Service Endpoint</p> <p>The Cost Explorer API provides the following endpoint:</p> <ul> <li> <p> <code>https://ce.us-east-1.amazonaws.com</code> </p> </li> </ul> <p>For information about costs associated with the Cost Explorer API, see <a href=\"https://aws.amazon.com/aws-cost-management/pricing/\">AWS Cost Management Pricing</a>.</p>"
 }

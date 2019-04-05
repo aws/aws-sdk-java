@@ -6,6 +6,7 @@
       "InputPath": "$.input",
       "OutputPath": "$.output",
       "ResultPath": "$.result",
+      "Parameters": [42, "foo", {}],
       "End": true,
       "Branches": [
         {

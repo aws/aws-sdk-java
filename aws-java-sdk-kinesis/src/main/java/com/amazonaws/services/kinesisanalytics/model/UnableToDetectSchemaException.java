@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Data format is not valid, Amazon Kinesis Analytics is not able to detect schema for the given streaming source.
+ * Data format is not valid. Amazon Kinesis Analytics is not able to detect schema for the given streaming source.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

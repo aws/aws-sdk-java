@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The list of tags requested for the specific resource.
+     * The tags requested for the specified resource.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -38,10 +38,10 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The list of tags requested for the specific resource.
+     * The tags requested for the specified resource.
      * </p>
      * 
-     * @return The list of tags requested for the specific resource.
+     * @return The tags requested for the specified resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -50,11 +50,11 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The list of tags requested for the specific resource.
+     * The tags requested for the specified resource.
      * </p>
      * 
      * @param tags
-     *        The list of tags requested for the specific resource.
+     *        The tags requested for the specified resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -68,7 +68,7 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The list of tags requested for the specific resource.
+     * The tags requested for the specified resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      * 
      * @param tags
-     *        The list of tags requested for the specific resource.
+     *        The tags requested for the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The list of tags requested for the specific resource.
+     * The tags requested for the specified resource.
      * </p>
      * 
      * @param tags
-     *        The list of tags requested for the specific resource.
+     *        The tags requested for the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,7 +147,8 @@ public class ListTagsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

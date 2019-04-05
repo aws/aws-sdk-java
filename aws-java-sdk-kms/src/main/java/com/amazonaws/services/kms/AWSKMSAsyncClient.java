@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,15 +34,15 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * AWS Key Management Service (AWS KMS) is an encryption and key management web service. This guide describes the AWS
  * KMS operations that you can call programmatically. For general information about AWS KMS, see the <a
- * href="http://docs.aws.amazon.com/kms/latest/developerguide/">AWS Key Management Service Developer Guide</a>.
+ * href="http://docs.aws.amazon.com/kms/latest/developerguide/"> <i>AWS Key Management Service Developer Guide</i> </a>.
  * </p>
  * <note>
  * <p>
  * AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java,
- * Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS KMS and other
- * AWS services. For example, the SDKs take care of tasks such as signing requests (see below), managing errors, and
- * retrying requests automatically. For more information about the AWS SDKs, including how to download and install them,
- * see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+ * Ruby, .Net, macOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS KMS and
+ * other AWS services. For example, the SDKs take care of tasks such as signing requests (see below), managing errors,
+ * and retrying requests automatically. For more information about the AWS SDKs, including how to download and install
+ * them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  * </note>
  * <p>
@@ -86,7 +86,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a> -
- * This topic provides general information about the types of credentials used for accessing AWS.
+ * This topic provides general information about the of credentials used for accessing AWS.
  * </p>
  * </li>
  * <li>
@@ -376,6 +376,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ConnectCustomKeyStoreResult> connectCustomKeyStoreAsync(ConnectCustomKeyStoreRequest request) {
+
+        return connectCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConnectCustomKeyStoreResult> connectCustomKeyStoreAsync(final ConnectCustomKeyStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ConnectCustomKeyStoreRequest, ConnectCustomKeyStoreResult> asyncHandler) {
+        final ConnectCustomKeyStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ConnectCustomKeyStoreResult>() {
+            @Override
+            public ConnectCustomKeyStoreResult call() throws Exception {
+                ConnectCustomKeyStoreResult result = null;
+
+                try {
+                    result = executeConnectCustomKeyStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest request) {
 
         return createAliasAsync(request, null);
@@ -393,6 +426,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
 
                 try {
                     result = executeCreateAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomKeyStoreResult> createCustomKeyStoreAsync(CreateCustomKeyStoreRequest request) {
+
+        return createCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomKeyStoreResult> createCustomKeyStoreAsync(final CreateCustomKeyStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCustomKeyStoreRequest, CreateCustomKeyStoreResult> asyncHandler) {
+        final CreateCustomKeyStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCustomKeyStoreResult>() {
+            @Override
+            public CreateCustomKeyStoreResult call() throws Exception {
+                CreateCustomKeyStoreResult result = null;
+
+                try {
+                    result = executeCreateCustomKeyStore(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -563,6 +629,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCustomKeyStoreResult> deleteCustomKeyStoreAsync(DeleteCustomKeyStoreRequest request) {
+
+        return deleteCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomKeyStoreResult> deleteCustomKeyStoreAsync(final DeleteCustomKeyStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCustomKeyStoreRequest, DeleteCustomKeyStoreResult> asyncHandler) {
+        final DeleteCustomKeyStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCustomKeyStoreResult>() {
+            @Override
+            public DeleteCustomKeyStoreResult call() throws Exception {
+                DeleteCustomKeyStoreResult result = null;
+
+                try {
+                    result = executeDeleteCustomKeyStore(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteImportedKeyMaterialResult> deleteImportedKeyMaterialAsync(DeleteImportedKeyMaterialRequest request) {
 
         return deleteImportedKeyMaterialAsync(request, null);
@@ -580,6 +679,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
 
                 try {
                     result = executeDeleteImportedKeyMaterial(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCustomKeyStoresResult> describeCustomKeyStoresAsync(DescribeCustomKeyStoresRequest request) {
+
+        return describeCustomKeyStoresAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCustomKeyStoresResult> describeCustomKeyStoresAsync(final DescribeCustomKeyStoresRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCustomKeyStoresRequest, DescribeCustomKeyStoresResult> asyncHandler) {
+        final DescribeCustomKeyStoresRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCustomKeyStoresResult>() {
+            @Override
+            public DescribeCustomKeyStoresResult call() throws Exception {
+                DescribeCustomKeyStoresResult result = null;
+
+                try {
+                    result = executeDescribeCustomKeyStores(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -679,6 +811,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
 
                 try {
                     result = executeDisableKeyRotation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisconnectCustomKeyStoreResult> disconnectCustomKeyStoreAsync(DisconnectCustomKeyStoreRequest request) {
+
+        return disconnectCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisconnectCustomKeyStoreResult> disconnectCustomKeyStoreAsync(final DisconnectCustomKeyStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisconnectCustomKeyStoreRequest, DisconnectCustomKeyStoreResult> asyncHandler) {
+        final DisconnectCustomKeyStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisconnectCustomKeyStoreResult>() {
+            @Override
+            public DisconnectCustomKeyStoreResult call() throws Exception {
+                DisconnectCustomKeyStoreResult result = null;
+
+                try {
+                    result = executeDisconnectCustomKeyStore(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1564,6 +1729,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
 
                 try {
                     result = executeUpdateAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomKeyStoreResult> updateCustomKeyStoreAsync(UpdateCustomKeyStoreRequest request) {
+
+        return updateCustomKeyStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomKeyStoreResult> updateCustomKeyStoreAsync(final UpdateCustomKeyStoreRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCustomKeyStoreRequest, UpdateCustomKeyStoreResult> asyncHandler) {
+        final UpdateCustomKeyStoreRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCustomKeyStoreResult>() {
+            @Override
+            public UpdateCustomKeyStoreResult call() throws Exception {
+                UpdateCustomKeyStoreResult result = null;
+
+                try {
+                    result = executeUpdateCustomKeyStore(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

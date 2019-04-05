@@ -1,5 +1,5 @@
 /*
- * Copyright 2018-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,7 +17,8 @@ package com.amazonaws.services.s3.model;
 
 public enum CompressionType {
     NONE("NONE"),
-    GZIP("GZIP");
+    GZIP("GZIP"),
+    BZIP2("BZIP2");
 
     private final String compressionType;
 

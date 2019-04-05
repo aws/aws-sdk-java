@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the metric after you
+     * characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change the name of the metric after you
      * create the <code>Rule</code>.
      * </p>
      */
@@ -96,13 +96,13 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the metric after you
+     * characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change the name of the metric after you
      * create the <code>Rule</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of
+     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change the name of
      *        the metric after you create the <code>Rule</code>.
      */
 
@@ -113,12 +113,12 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the metric after you
+     * characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change the name of the metric after you
      * create the <code>Rule</code>.
      * </p>
      * 
      * @return A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
-     *         alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of
+     *         alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change the name of
      *         the metric after you create the <code>Rule</code>.
      */
 
@@ -129,13 +129,13 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric
-     * characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the metric after you
+     * characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change the name of the metric after you
      * create the <code>Rule</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of
+     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change the name of
      *        the metric after you create the <code>Rule</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -186,7 +186,8 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

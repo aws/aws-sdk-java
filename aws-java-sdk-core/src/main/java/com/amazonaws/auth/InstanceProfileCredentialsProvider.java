@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import java.net.URISyntaxException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ThreadFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -108,7 +109,14 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
 
         if (!SDKGlobalConfiguration.isEc2MetadataDisabled()) {
             if (refreshCredentialsAsync) {
-                executor = Executors.newScheduledThreadPool(1);
+                executor = Executors.newScheduledThreadPool(1, new ThreadFactory() {
+                    public Thread newThread(Runnable r) {
+                        Thread t = Executors.defaultThreadFactory().newThread(r);
+                        t.setName("instance-profile-credentials-refresh");
+                        t.setDaemon(true);
+                        return t;
+                    }
+                });
                 executor.scheduleWithFixedDelay(new Runnable() {
                     @Override
                     public void run() {

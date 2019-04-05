@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -131,37 +131,39 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("RoleARN", StringUtils.fromString(createChangeSetRequest.getRoleARN()));
         }
 
-        RollbackConfiguration rollbackConfiguration = createChangeSetRequest.getRollbackConfiguration();
-        if (rollbackConfiguration != null) {
+        {
+            RollbackConfiguration rollbackConfiguration = createChangeSetRequest.getRollbackConfiguration();
+            if (rollbackConfiguration != null) {
 
-            if (rollbackConfiguration.getRollbackTriggers().isEmpty()
-                    && !((com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration.getRollbackTriggers()).isAutoConstruct()) {
-                request.addParameter("RollbackConfiguration.RollbackTriggers", "");
-            }
-            if (!rollbackConfiguration.getRollbackTriggers().isEmpty()
-                    || !((com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration.getRollbackTriggers()).isAutoConstruct()) {
-                com.amazonaws.internal.SdkInternalList<RollbackTrigger> rollbackTriggersList = (com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration
-                        .getRollbackTriggers();
-                int rollbackTriggersListIndex = 1;
-
-                for (RollbackTrigger rollbackTriggersListValue : rollbackTriggersList) {
-
-                    if (rollbackTriggersListValue.getArn() != null) {
-                        request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Arn",
-                                StringUtils.fromString(rollbackTriggersListValue.getArn()));
-                    }
-
-                    if (rollbackTriggersListValue.getType() != null) {
-                        request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Type",
-                                StringUtils.fromString(rollbackTriggersListValue.getType()));
-                    }
-                    rollbackTriggersListIndex++;
+                if (rollbackConfiguration.getRollbackTriggers().isEmpty()
+                        && !((com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration.getRollbackTriggers()).isAutoConstruct()) {
+                    request.addParameter("RollbackConfiguration.RollbackTriggers", "");
                 }
-            }
+                if (!rollbackConfiguration.getRollbackTriggers().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration.getRollbackTriggers()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<RollbackTrigger> rollbackTriggersList = (com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration
+                            .getRollbackTriggers();
+                    int rollbackTriggersListIndex = 1;
 
-            if (rollbackConfiguration.getMonitoringTimeInMinutes() != null) {
-                request.addParameter("RollbackConfiguration.MonitoringTimeInMinutes",
-                        StringUtils.fromInteger(rollbackConfiguration.getMonitoringTimeInMinutes()));
+                    for (RollbackTrigger rollbackTriggersListValue : rollbackTriggersList) {
+
+                        if (rollbackTriggersListValue.getArn() != null) {
+                            request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Arn",
+                                    StringUtils.fromString(rollbackTriggersListValue.getArn()));
+                        }
+
+                        if (rollbackTriggersListValue.getType() != null) {
+                            request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Type",
+                                    StringUtils.fromString(rollbackTriggersListValue.getType()));
+                        }
+                        rollbackTriggersListIndex++;
+                    }
+                }
+
+                if (rollbackConfiguration.getMonitoringTimeInMinutes() != null) {
+                    request.addParameter("RollbackConfiguration.MonitoringTimeInMinutes",
+                            StringUtils.fromInteger(rollbackConfiguration.getMonitoringTimeInMinutes()));
+                }
             }
         }
 

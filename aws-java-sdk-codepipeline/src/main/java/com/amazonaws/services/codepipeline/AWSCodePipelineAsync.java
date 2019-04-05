@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * <p>
  * This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS
  * CodePipeline. Some functionality for your pipeline is only configurable through the API. For additional information,
- * see the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User
+ * see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User
  * Guide</a>.
  * </p>
  * <p>
@@ -101,7 +101,7 @@ import com.amazonaws.services.codepipeline.model.*;
  * of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire
  * structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages
  * and actions, also refer to the <a
- * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
+ * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
  * Structure Reference</a>.
  * </p>
  * <p>
@@ -725,6 +725,12 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * <p>
      * Returns information about the state of a pipeline, including the stages and actions.
      * </p>
+     * <note>
+     * <p>
+     * Values returned in the revisionId and revisionUrl fields indicate the source revision information, such as the
+     * commit ID, for the current state.
+     * </p>
+     * </note>
      * 
      * @param getPipelineStateRequest
      *        Represents the input of a GetPipelineState action.
@@ -739,6 +745,12 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * <p>
      * Returns information about the state of a pipeline, including the stages and actions.
      * </p>
+     * <note>
+     * <p>
+     * Values returned in the revisionId and revisionUrl fields indicate the source revision information, such as the
+     * commit ID, for the current state.
+     * </p>
+     * </note>
      * 
      * @param getPipelineStateRequest
      *        Represents the input of a GetPipelineState action.
@@ -800,6 +812,37 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      */
     java.util.concurrent.Future<GetThirdPartyJobDetailsResult> getThirdPartyJobDetailsAsync(GetThirdPartyJobDetailsRequest getThirdPartyJobDetailsRequest,
             com.amazonaws.handlers.AsyncHandler<GetThirdPartyJobDetailsRequest, GetThirdPartyJobDetailsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the action executions that have occurred in a pipeline.
+     * </p>
+     * 
+     * @param listActionExecutionsRequest
+     * @return A Java Future containing the result of the ListActionExecutions operation returned by the service.
+     * @sample AWSCodePipelineAsync.ListActionExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListActionExecutionsResult> listActionExecutionsAsync(ListActionExecutionsRequest listActionExecutionsRequest);
+
+    /**
+     * <p>
+     * Lists the action executions that have occurred in a pipeline.
+     * </p>
+     * 
+     * @param listActionExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListActionExecutions operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.ListActionExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListActionExecutionsResult> listActionExecutionsAsync(ListActionExecutionsRequest listActionExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListActionExecutionsRequest, ListActionExecutionsResult> asyncHandler);
 
     /**
      * <p>

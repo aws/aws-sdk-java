@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     * namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
      * </p>
@@ -54,7 +54,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      */
     private Integer registeredContainerInstancesCount;
@@ -125,18 +126,26 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<KeyValuePair> statistics;
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     * namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
      * </p>
      * 
      * @param clusterArn
      *        The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     *        namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      *        <code>cluster</code> namespace, and then the cluster name. For example,
      *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
      */
@@ -148,13 +157,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     * namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     *         namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     *         namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      *         <code>cluster</code> namespace, and then the cluster name. For example,
      *         <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
      */
@@ -166,14 +175,14 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     * namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     * namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      * <code>cluster</code> namespace, and then the cluster name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
      * </p>
      * 
      * @param clusterArn
      *        The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code>
-     *        namespace, followed by the region of the cluster, the AWS account ID of the cluster owner, the
+     *        namespace, followed by the Region of the cluster, the AWS account ID of the cluster owner, the
      *        <code>cluster</code> namespace, and then the cluster name. For example,
      *        <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i> </code>..
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -278,11 +287,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      * 
      * @param registeredContainerInstancesCount
-     *        The number of container instances registered into the cluster.
+     *        The number of container instances registered into the cluster. This includes container instances in both
+     *        <code>ACTIVE</code> and <code>DRAINING</code> status.
      */
 
     public void setRegisteredContainerInstancesCount(Integer registeredContainerInstancesCount) {
@@ -291,10 +302,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      * 
-     * @return The number of container instances registered into the cluster.
+     * @return The number of container instances registered into the cluster. This includes container instances in both
+     *         <code>ACTIVE</code> and <code>DRAINING</code> status.
      */
 
     public Integer getRegisteredContainerInstancesCount() {
@@ -303,11 +316,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of container instances registered into the cluster.
+     * The number of container instances registered into the cluster. This includes container instances in both
+     * <code>ACTIVE</code> and <code>DRAINING</code> status.
      * </p>
      * 
      * @param registeredContainerInstancesCount
-     *        The number of container instances registered into the cluster.
+     *        The number of container instances registered into the cluster. This includes container instances in both
+     *        <code>ACTIVE</code> and <code>DRAINING</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -848,7 +863,97 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @return The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *         a key and an optional value, both of which you define. Tag keys can have a maximum character length of
+     *         128 characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key
+     * and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of
+     *        a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -873,7 +978,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getActiveServicesCount() != null)
             sb.append("ActiveServicesCount: ").append(getActiveServicesCount()).append(",");
         if (getStatistics() != null)
-            sb.append("Statistics: ").append(getStatistics());
+            sb.append("Statistics: ").append(getStatistics()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -921,6 +1028,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatistics() != null && other.getStatistics().equals(this.getStatistics()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -937,6 +1048,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPendingTasksCount() == null) ? 0 : getPendingTasksCount().hashCode());
         hashCode = prime * hashCode + ((getActiveServicesCount() == null) ? 0 : getActiveServicesCount().hashCode());
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

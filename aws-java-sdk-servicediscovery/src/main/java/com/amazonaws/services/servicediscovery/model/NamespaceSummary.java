@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,14 +36,14 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when you create it.
+     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The name of the namespace. When you create a namespace, Route 53 automatically creates a hosted zone that has the
-     * same name as the namespace.
+     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
+     * zone that has the same name as the namespace.
      * </p>
      */
     private String name;
@@ -53,6 +53,26 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * A description for the namespace.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * The number of services that were created using the namespace.
+     * </p>
+     */
+    private Integer serviceCount;
+
+    private NamespaceProperties properties;
+    /**
+     * <p>
+     * The date and time that the namespace was created.
+     * </p>
+     */
+    private java.util.Date createDate;
 
     /**
      * <p>
@@ -96,11 +116,11 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when you create it.
+     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when you create it.
+     *        The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
      */
 
     public void setArn(String arn) {
@@ -109,10 +129,10 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when you create it.
+     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when you create it.
+     * @return The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
      */
 
     public String getArn() {
@@ -121,11 +141,11 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when you create it.
+     * The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when you create it.
+     *        The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,13 +156,13 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the namespace. When you create a namespace, Route 53 automatically creates a hosted zone that has the
-     * same name as the namespace.
+     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
+     * zone that has the same name as the namespace.
      * </p>
      * 
      * @param name
-     *        The name of the namespace. When you create a namespace, Route 53 automatically creates a hosted zone that
-     *        has the same name as the namespace.
+     *        The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53
+     *        hosted zone that has the same name as the namespace.
      */
 
     public void setName(String name) {
@@ -151,12 +171,12 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the namespace. When you create a namespace, Route 53 automatically creates a hosted zone that has the
-     * same name as the namespace.
+     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
+     * zone that has the same name as the namespace.
      * </p>
      * 
-     * @return The name of the namespace. When you create a namespace, Route 53 automatically creates a hosted zone that
-     *         has the same name as the namespace.
+     * @return The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53
+     *         hosted zone that has the same name as the namespace.
      */
 
     public String getName() {
@@ -165,13 +185,13 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the namespace. When you create a namespace, Route 53 automatically creates a hosted zone that has the
-     * same name as the namespace.
+     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
+     * zone that has the same name as the namespace.
      * </p>
      * 
      * @param name
-     *        The name of the namespace. When you create a namespace, Route 53 automatically creates a hosted zone that
-     *        has the same name as the namespace.
+     *        The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53
+     *        hosted zone that has the same name as the namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,7 +260,154 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A description for the namespace.
+     * </p>
+     * 
+     * @param description
+     *        A description for the namespace.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the namespace.
+     * </p>
+     * 
+     * @return A description for the namespace.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the namespace.
+     * </p>
+     * 
+     * @param description
+     *        A description for the namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NamespaceSummary withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of services that were created using the namespace.
+     * </p>
+     * 
+     * @param serviceCount
+     *        The number of services that were created using the namespace.
+     */
+
+    public void setServiceCount(Integer serviceCount) {
+        this.serviceCount = serviceCount;
+    }
+
+    /**
+     * <p>
+     * The number of services that were created using the namespace.
+     * </p>
+     * 
+     * @return The number of services that were created using the namespace.
+     */
+
+    public Integer getServiceCount() {
+        return this.serviceCount;
+    }
+
+    /**
+     * <p>
+     * The number of services that were created using the namespace.
+     * </p>
+     * 
+     * @param serviceCount
+     *        The number of services that were created using the namespace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NamespaceSummary withServiceCount(Integer serviceCount) {
+        setServiceCount(serviceCount);
+        return this;
+    }
+
+    /**
+     * @param properties
+     */
+
+    public void setProperties(NamespaceProperties properties) {
+        this.properties = properties;
+    }
+
+    /**
+     * @return
+     */
+
+    public NamespaceProperties getProperties() {
+        return this.properties;
+    }
+
+    /**
+     * @param properties
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NamespaceSummary withProperties(NamespaceProperties properties) {
+        setProperties(properties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time that the namespace was created.
+     * </p>
+     * 
+     * @param createDate
+     *        The date and time that the namespace was created.
+     */
+
+    public void setCreateDate(java.util.Date createDate) {
+        this.createDate = createDate;
+    }
+
+    /**
+     * <p>
+     * The date and time that the namespace was created.
+     * </p>
+     * 
+     * @return The date and time that the namespace was created.
+     */
+
+    public java.util.Date getCreateDate() {
+        return this.createDate;
+    }
+
+    /**
+     * <p>
+     * The date and time that the namespace was created.
+     * </p>
+     * 
+     * @param createDate
+     *        The date and time that the namespace was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NamespaceSummary withCreateDate(java.util.Date createDate) {
+        setCreateDate(createDate);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -257,7 +424,15 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getServiceCount() != null)
+            sb.append("ServiceCount: ").append(getServiceCount()).append(",");
+        if (getProperties() != null)
+            sb.append("Properties: ").append(getProperties()).append(",");
+        if (getCreateDate() != null)
+            sb.append("CreateDate: ").append(getCreateDate());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +463,22 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getServiceCount() == null ^ this.getServiceCount() == null)
+            return false;
+        if (other.getServiceCount() != null && other.getServiceCount().equals(this.getServiceCount()) == false)
+            return false;
+        if (other.getProperties() == null ^ this.getProperties() == null)
+            return false;
+        if (other.getProperties() != null && other.getProperties().equals(this.getProperties()) == false)
+            return false;
+        if (other.getCreateDate() == null ^ this.getCreateDate() == null)
+            return false;
+        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false)
+            return false;
         return true;
     }
 
@@ -300,6 +491,10 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getServiceCount() == null) ? 0 : getServiceCount().hashCode());
+        hashCode = prime * hashCode + ((getProperties() == null) ? 0 : getProperties().hashCode());
+        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         return hashCode;
     }
 

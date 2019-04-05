@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,46 +27,114 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias. Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the Lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      */
     private String functionVersion;
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      */
     private AliasRoutingConfiguration routingConfig;
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias. Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the Lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        Name of the Lambda function for which you want to create an alias. Note that the length constraint applies
-     *        only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        The name of the Lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -75,12 +143,57 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias. Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the Lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
-     * @return Name of the Lambda function for which you want to create an alias. Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * @return The name of the Lambda function.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *         to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -89,13 +202,58 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the Lambda function for which you want to create an alias. Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     * The name of the Lambda function.
+     * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Function name</b> - <code>MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
+     * characters in length.
      * </p>
      * 
      * @param functionName
-     *        Name of the Lambda function for which you want to create an alias. Note that the length constraint applies
-     *        only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        The name of the Lambda function.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
+     *        to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,11 +264,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Name for the alias you are creating.
+     *        The name of the alias.
      */
 
     public void setName(String name) {
@@ -119,10 +277,10 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      * 
-     * @return Name for the alias you are creating.
+     * @return The name of the alias.
      */
 
     public String getName() {
@@ -131,11 +289,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Name for the alias you are creating.
+     *        The name of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +304,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Lambda function version for which you are creating the alias.
+     *        The function version that the alias invokes.
      */
 
     public void setFunctionVersion(String functionVersion) {
@@ -159,10 +317,10 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      * 
-     * @return Lambda function version for which you are creating the alias.
+     * @return The function version that the alias invokes.
      */
 
     public String getFunctionVersion() {
@@ -171,11 +329,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Lambda function version for which you are creating the alias.
+     *        The function version that the alias invokes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,11 +344,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        Description of the alias.
+     *        A description of the alias.
      */
 
     public void setDescription(String description) {
@@ -199,10 +357,10 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      * 
-     * @return Description of the alias.
+     * @return A description of the alias.
      */
 
     public String getDescription() {
@@ -211,11 +369,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        Description of the alias.
+     *        A description of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,13 +384,14 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      * 
      * @param routingConfig
-     *        Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *        traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
      */
 
     public void setRoutingConfig(AliasRoutingConfiguration routingConfig) {
@@ -241,12 +400,13 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      * 
-     * @return Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *         traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *         configuration</a> of the alias.
      */
 
     public AliasRoutingConfiguration getRoutingConfig() {
@@ -255,13 +415,14 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      * 
      * @param routingConfig
-     *        Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *        traffic will invoke each version. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
+     *        The <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,7 +432,8 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

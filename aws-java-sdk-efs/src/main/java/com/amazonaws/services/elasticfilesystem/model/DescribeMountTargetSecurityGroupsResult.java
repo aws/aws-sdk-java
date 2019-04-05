@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,17 +26,17 @@ public class DescribeMountTargetSecurityGroupsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Array of security groups.
+     * An array of security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
 
     /**
      * <p>
-     * Array of security groups.
+     * An array of security groups.
      * </p>
      * 
-     * @return Array of security groups.
+     * @return An array of security groups.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -48,11 +48,11 @@ public class DescribeMountTargetSecurityGroupsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Array of security groups.
+     * An array of security groups.
      * </p>
      * 
      * @param securityGroups
-     *        Array of security groups.
+     *        An array of security groups.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -66,7 +66,7 @@ public class DescribeMountTargetSecurityGroupsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Array of security groups.
+     * An array of security groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -75,7 +75,7 @@ public class DescribeMountTargetSecurityGroupsResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param securityGroups
-     *        Array of security groups.
+     *        An array of security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +91,11 @@ public class DescribeMountTargetSecurityGroupsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Array of security groups.
+     * An array of security groups.
      * </p>
      * 
      * @param securityGroups
-     *        Array of security groups.
+     *        An array of security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +105,8 @@ public class DescribeMountTargetSecurityGroupsResult extends com.amazonaws.Amazo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

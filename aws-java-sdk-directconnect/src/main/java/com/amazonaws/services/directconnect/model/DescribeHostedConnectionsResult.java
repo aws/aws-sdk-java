@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * A structure containing a list of connections.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnections"
  *      target="_top">AWS API Documentation</a>
@@ -28,17 +25,17 @@ public class DescribeHostedConnectionsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of connections.
+     * The connections.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Connection> connections;
 
     /**
      * <p>
-     * A list of connections.
+     * The connections.
      * </p>
      * 
-     * @return A list of connections.
+     * @return The connections.
      */
 
     public java.util.List<Connection> getConnections() {
@@ -50,11 +47,11 @@ public class DescribeHostedConnectionsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of connections.
+     * The connections.
      * </p>
      * 
      * @param connections
-     *        A list of connections.
+     *        The connections.
      */
 
     public void setConnections(java.util.Collection<Connection> connections) {
@@ -68,7 +65,7 @@ public class DescribeHostedConnectionsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of connections.
+     * The connections.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +74,7 @@ public class DescribeHostedConnectionsResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param connections
-     *        A list of connections.
+     *        The connections.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +90,11 @@ public class DescribeHostedConnectionsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A list of connections.
+     * The connections.
      * </p>
      * 
      * @param connections
-     *        A list of connections.
+     *        The connections.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,7 +104,8 @@ public class DescribeHostedConnectionsResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -175,21 +175,20 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * </p>
      * <p>
      * If you want Amazon Kinesis Analytics to deliver data from an in-application stream within your application to an
-     * external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an Amazon
+     * external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS
      * Lambda function), you add the relevant configuration to your application using this operation. You can configure
      * one or more outputs for your application. Each output configuration maps an in-application stream and an external
      * destination.
      * </p>
      * <p>
      * You can use one of the output configurations to deliver data from your in-application error stream to an external
-     * destination so that you can analyze the errors. For conceptual information, see <a
+     * destination so that you can analyze the errors. For more information, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding Application
      * Output (Destination)</a>.
      * </p>
      * <p>
-     * Note that any configuration update, including adding a streaming source using this operation, results in a new
-     * version of the application. You can use the <a>DescribeApplication</a> operation to find the current application
-     * version.
+     * Any configuration update, including adding a streaming source using this operation, results in a new version of
+     * the application. You can use the <a>DescribeApplication</a> operation to find the current application version.
      * </p>
      * <p>
      * For the limits on the number of application inputs and outputs you can configure, see <a
@@ -213,21 +212,20 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * </p>
      * <p>
      * If you want Amazon Kinesis Analytics to deliver data from an in-application stream within your application to an
-     * external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an Amazon
+     * external destination (such as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS
      * Lambda function), you add the relevant configuration to your application using this operation. You can configure
      * one or more outputs for your application. Each output configuration maps an in-application stream and an external
      * destination.
      * </p>
      * <p>
      * You can use one of the output configurations to deliver data from your in-application error stream to an external
-     * destination so that you can analyze the errors. For conceptual information, see <a
+     * destination so that you can analyze the errors. For more information, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding Application
      * Output (Destination)</a>.
      * </p>
      * <p>
-     * Note that any configuration update, including adding a streaming source using this operation, results in a new
-     * version of the application. You can use the <a>DescribeApplication</a> operation to find the current application
-     * version.
+     * Any configuration update, including adding a streaming source using this operation, results in a new version of
+     * the application. You can use the <a>DescribeApplication</a> operation to find the current application version.
      * </p>
      * <p>
      * For the limits on the number of application inputs and outputs you can configure, see <a

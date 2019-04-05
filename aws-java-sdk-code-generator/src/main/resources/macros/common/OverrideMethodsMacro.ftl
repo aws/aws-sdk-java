@@ -1,7 +1,8 @@
 <#macro content shape>
     /**
-     * Returns a string representation of this object; useful for testing and
-     * debugging.
+     * Returns a string representation of this object. This is useful for testing and
+     * debugging. Sensitive data will be redacted from this string using a placeholder
+     * value.
      *
      * @return A string representation of this object.
      *
@@ -12,10 +13,16 @@
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         <#if shape.members?has_content>
-        <#list shape.members as member>
-        <#local memberName = member.name>
-        if (${member.getterMethodName}() != null) sb.append("${memberName}: ").append(${member.getterMethodName}())<#if member_has_next>.append(",")</#if>;
-        </#list>
+            <#list shape.members as member>
+                <#local memberName = member.name>
+                if (${member.getterMethodName}() != null) sb.append("${memberName}: ").append(
+                <#if member.sensitive>
+                    "***Sensitive Data Redacted***"
+                <#else>
+                    ${member.getterMethodName}()
+                </#if>
+                )<#if member_has_next>.append(",")</#if>;
+            </#list>
         </#if>
         sb.append("}");
         return sb.toString();

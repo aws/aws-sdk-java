@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,7 @@ public enum SnowballCapacity {
     T50("T50"),
     T80("T80"),
     T100("T100"),
+    T42("T42"),
     NoPreference("NoPreference");
 
     private String value;

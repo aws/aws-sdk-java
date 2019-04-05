@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,19 +74,19 @@ public class DocumentVersionMetadataJsonUnmarshaller implements Unmarshaller<Doc
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
-                    documentVersionMetadata.setCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentVersionMetadata.setCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    documentVersionMetadata.setModifiedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentVersionMetadata.setModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ContentCreatedTimestamp", targetDepth)) {
                     context.nextToken();
-                    documentVersionMetadata.setContentCreatedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentVersionMetadata.setContentCreatedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ContentModifiedTimestamp", targetDepth)) {
                     context.nextToken();
-                    documentVersionMetadata.setContentModifiedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    documentVersionMetadata.setContentModifiedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CreatorId", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -365,6 +365,22 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
                 }
             }
 
+            com.amazonaws.internal.SdkInternalList<LaunchTemplateElasticInferenceAccelerator> requestLaunchTemplateDataElasticInferenceAcceleratorsList = (com.amazonaws.internal.SdkInternalList<LaunchTemplateElasticInferenceAccelerator>) launchTemplateData
+                    .getElasticInferenceAccelerators();
+            if (!requestLaunchTemplateDataElasticInferenceAcceleratorsList.isEmpty()
+                    || !requestLaunchTemplateDataElasticInferenceAcceleratorsList.isAutoConstruct()) {
+                int elasticInferenceAcceleratorsListIndex = 1;
+
+                for (LaunchTemplateElasticInferenceAccelerator requestLaunchTemplateDataElasticInferenceAcceleratorsListValue : requestLaunchTemplateDataElasticInferenceAcceleratorsList) {
+
+                    if (requestLaunchTemplateDataElasticInferenceAcceleratorsListValue.getType() != null) {
+                        request.addParameter("LaunchTemplateData.ElasticInferenceAccelerator." + elasticInferenceAcceleratorsListIndex + ".Type",
+                                StringUtils.fromString(requestLaunchTemplateDataElasticInferenceAcceleratorsListValue.getType()));
+                    }
+                    elasticInferenceAcceleratorsListIndex++;
+                }
+            }
+
             com.amazonaws.internal.SdkInternalList<String> requestLaunchTemplateDataSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) launchTemplateData
                     .getSecurityGroupIds();
             if (!requestLaunchTemplateDataSecurityGroupIdsList.isEmpty() || !requestLaunchTemplateDataSecurityGroupIdsList.isAutoConstruct()) {
@@ -434,6 +450,59 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
 
                 if (creditSpecification.getCpuCredits() != null) {
                     request.addParameter("LaunchTemplateData.CreditSpecification.CpuCredits", StringUtils.fromString(creditSpecification.getCpuCredits()));
+                }
+            }
+
+            LaunchTemplateCpuOptionsRequest cpuOptions = launchTemplateData.getCpuOptions();
+            if (cpuOptions != null) {
+
+                if (cpuOptions.getCoreCount() != null) {
+                    request.addParameter("LaunchTemplateData.CpuOptions.CoreCount", StringUtils.fromInteger(cpuOptions.getCoreCount()));
+                }
+
+                if (cpuOptions.getThreadsPerCore() != null) {
+                    request.addParameter("LaunchTemplateData.CpuOptions.ThreadsPerCore", StringUtils.fromInteger(cpuOptions.getThreadsPerCore()));
+                }
+            }
+
+            LaunchTemplateCapacityReservationSpecificationRequest capacityReservationSpecification = launchTemplateData.getCapacityReservationSpecification();
+            if (capacityReservationSpecification != null) {
+
+                if (capacityReservationSpecification.getCapacityReservationPreference() != null) {
+                    request.addParameter("LaunchTemplateData.CapacityReservationSpecification.CapacityReservationPreference",
+                            StringUtils.fromString(capacityReservationSpecification.getCapacityReservationPreference()));
+                }
+
+                CapacityReservationTarget capacityReservationTarget = capacityReservationSpecification.getCapacityReservationTarget();
+                if (capacityReservationTarget != null) {
+
+                    if (capacityReservationTarget.getCapacityReservationId() != null) {
+                        request.addParameter("LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId",
+                                StringUtils.fromString(capacityReservationTarget.getCapacityReservationId()));
+                    }
+                }
+            }
+
+            LaunchTemplateHibernationOptionsRequest hibernationOptions = launchTemplateData.getHibernationOptions();
+            if (hibernationOptions != null) {
+
+                if (hibernationOptions.getConfigured() != null) {
+                    request.addParameter("LaunchTemplateData.HibernationOptions.Configured", StringUtils.fromBoolean(hibernationOptions.getConfigured()));
+                }
+            }
+
+            com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfigurationRequest> requestLaunchTemplateDataLicenseSpecificationsList = (com.amazonaws.internal.SdkInternalList<LaunchTemplateLicenseConfigurationRequest>) launchTemplateData
+                    .getLicenseSpecifications();
+            if (!requestLaunchTemplateDataLicenseSpecificationsList.isEmpty() || !requestLaunchTemplateDataLicenseSpecificationsList.isAutoConstruct()) {
+                int licenseSpecificationsListIndex = 1;
+
+                for (LaunchTemplateLicenseConfigurationRequest requestLaunchTemplateDataLicenseSpecificationsListValue : requestLaunchTemplateDataLicenseSpecificationsList) {
+
+                    if (requestLaunchTemplateDataLicenseSpecificationsListValue.getLicenseConfigurationArn() != null) {
+                        request.addParameter("LaunchTemplateData.LicenseSpecification." + licenseSpecificationsListIndex + ".LicenseConfigurationArn",
+                                StringUtils.fromString(requestLaunchTemplateDataLicenseSpecificationsListValue.getLicenseConfigurationArn()));
+                    }
+                    licenseSpecificationsListIndex++;
                 }
             }
         }

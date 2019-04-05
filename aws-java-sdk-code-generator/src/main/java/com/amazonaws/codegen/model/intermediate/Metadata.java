@@ -72,6 +72,8 @@ public class Metadata {
 
     private String uid;
 
+    private String serviceId;
+
     public String getApiVersion() {
         return apiVersion;
     }
@@ -477,6 +479,19 @@ public class Metadata {
 
     public Metadata withUid(String uid) {
         setUid(uid);
+        return this;
+    }
+
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
+    }
+
+    public Metadata withServiceId(String serviceId) {
+        setServiceId(serviceId);
         return this;
     }
 }

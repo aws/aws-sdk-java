@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,10 +22,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509
  * digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns
  * or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the
- * <a>CreateCertificateAuthority</a> function to create your private CA. You must then call the
- * <a>GetCertificateAuthorityCertificate</a> function to retrieve a private CA certificate signing request (CSR). Take
+ * <a>CreateCertificateAuthority</a> operation to create your private CA. You must then call the
+ * <a>GetCertificateAuthorityCertificate</a> operation to retrieve a private CA certificate signing request (CSR). Take
  * the CSR to your on-premises CA and sign it with the root CA certificate or a subordinate certificate. Call the
- * <a>ImportCertificateAuthorityCertificate</a> function to import the signed certificate into AWS Certificate Manager
+ * <a>ImportCertificateAuthorityCertificate</a> operation to import the signed certificate into AWS Certificate Manager
  * (ACM).
  * </p>
  * 
@@ -102,6 +102,13 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
      * </p>
      */
     private RevocationConfiguration revocationConfiguration;
+    /**
+     * <p>
+     * The period during which a deleted CA can be restored. For more information, see the
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation.
+     * </p>
+     */
+    private java.util.Date restorableUntil;
 
     /**
      * <p>
@@ -607,7 +614,57 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The period during which a deleted CA can be restored. For more information, see the
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation.
+     * </p>
+     * 
+     * @param restorableUntil
+     *        The period during which a deleted CA can be restored. For more information, see the
+     *        <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a>
+     *        operation.
+     */
+
+    public void setRestorableUntil(java.util.Date restorableUntil) {
+        this.restorableUntil = restorableUntil;
+    }
+
+    /**
+     * <p>
+     * The period during which a deleted CA can be restored. For more information, see the
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation.
+     * </p>
+     * 
+     * @return The period during which a deleted CA can be restored. For more information, see the
+     *         <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a>
+     *         operation.
+     */
+
+    public java.util.Date getRestorableUntil() {
+        return this.restorableUntil;
+    }
+
+    /**
+     * <p>
+     * The period during which a deleted CA can be restored. For more information, see the
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> operation.
+     * </p>
+     * 
+     * @param restorableUntil
+     *        The period during which a deleted CA can be restored. For more information, see the
+     *        <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a>
+     *        operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateAuthority withRestorableUntil(java.util.Date restorableUntil) {
+        setRestorableUntil(restorableUntil);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -638,7 +695,9 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
         if (getCertificateAuthorityConfiguration() != null)
             sb.append("CertificateAuthorityConfiguration: ").append(getCertificateAuthorityConfiguration()).append(",");
         if (getRevocationConfiguration() != null)
-            sb.append("RevocationConfiguration: ").append(getRevocationConfiguration());
+            sb.append("RevocationConfiguration: ").append(getRevocationConfiguration()).append(",");
+        if (getRestorableUntil() != null)
+            sb.append("RestorableUntil: ").append(getRestorableUntil());
         sb.append("}");
         return sb.toString();
     }
@@ -698,6 +757,10 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
             return false;
         if (other.getRevocationConfiguration() != null && other.getRevocationConfiguration().equals(this.getRevocationConfiguration()) == false)
             return false;
+        if (other.getRestorableUntil() == null ^ this.getRestorableUntil() == null)
+            return false;
+        if (other.getRestorableUntil() != null && other.getRestorableUntil().equals(this.getRestorableUntil()) == false)
+            return false;
         return true;
     }
 
@@ -717,6 +780,7 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getCertificateAuthorityConfiguration() == null) ? 0 : getCertificateAuthorityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRevocationConfiguration() == null) ? 0 : getRevocationConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRestorableUntil() == null) ? 0 : getRestorableUntil().hashCode());
         return hashCode;
     }
 

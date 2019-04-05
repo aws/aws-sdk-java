@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,12 +81,12 @@ public class FpgaImageStaxUnmarshaller implements Unmarshaller<FpgaImage, StaxUn
                 }
 
                 if (context.testExpression("createTime", targetDepth)) {
-                    fpgaImage.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    fpgaImage.setCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("updateTime", targetDepth)) {
-                    fpgaImage.setUpdateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    fpgaImage.setUpdateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -122,6 +122,11 @@ public class FpgaImageStaxUnmarshaller implements Unmarshaller<FpgaImage, StaxUn
 
                 if (context.testExpression("public", targetDepth)) {
                     fpgaImage.setPublic(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("dataRetentionSupport", targetDepth)) {
+                    fpgaImage.setDataRetentionSupport(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

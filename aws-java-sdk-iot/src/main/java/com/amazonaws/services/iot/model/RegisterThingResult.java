@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * .
+     * </p>
+     */
     private String certificatePem;
     /**
      * <p>
@@ -27,7 +32,12 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.Map<String, String> resourceArns;
 
     /**
+     * <p>
+     * .
+     * </p>
+     * 
      * @param certificatePem
+     *        .
      */
 
     public void setCertificatePem(String certificatePem) {
@@ -35,7 +45,11 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * .
+     * </p>
+     * 
+     * @return .
      */
 
     public String getCertificatePem() {
@@ -43,7 +57,12 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * .
+     * </p>
+     * 
      * @param certificatePem
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,7 +133,8 @@ public class RegisterThingResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class CreateIdentityPoolRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CognitoIdentityProviders").build();
     private static final MarshallingInfo<List> SAMLPROVIDERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SamlProviderARNs").build();
+    private static final MarshallingInfo<Map> IDENTITYPOOLTAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityPoolTags").build();
 
     private static final CreateIdentityPoolRequestMarshaller instance = new CreateIdentityPoolRequestMarshaller();
 
@@ -67,6 +69,7 @@ public class CreateIdentityPoolRequestMarshaller {
             protocolMarshaller.marshall(createIdentityPoolRequest.getOpenIdConnectProviderARNs(), OPENIDCONNECTPROVIDERARNS_BINDING);
             protocolMarshaller.marshall(createIdentityPoolRequest.getCognitoIdentityProviders(), COGNITOIDENTITYPROVIDERS_BINDING);
             protocolMarshaller.marshall(createIdentityPoolRequest.getSamlProviderARNs(), SAMLPROVIDERARNS_BINDING);
+            protocolMarshaller.marshall(createIdentityPoolRequest.getIdentityPoolTags(), IDENTITYPOOLTAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

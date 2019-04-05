@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,14 +28,30 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions.
+     * To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise
+     * reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are convolution filters. * Conserve
+     * is a min/max noise reduction filter. * Spatial is a frequency-domain filter based on JND principles.
+     */
     private String filter;
-
+    /** Settings for a noise reducer filter */
     private NoiseReducerFilterSettings filterSettings;
-
+    /** Noise reducer filter settings for spatial filter. */
     private NoiseReducerSpatialFilterSettings spatialFilterSettings;
 
     /**
+     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions.
+     * To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise
+     * reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are convolution filters. * Conserve
+     * is a min/max noise reduction filter. * Spatial is a frequency-domain filter based on JND principles.
+     * 
      * @param filter
+     *        Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering
+     *        functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge
+     *        preserving noise reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are
+     *        convolution filters. * Conserve is a min/max noise reduction filter. * Spatial is a frequency-domain
+     *        filter based on JND principles.
      * @see NoiseReducerFilter
      */
 
@@ -44,7 +60,16 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions.
+     * To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise
+     * reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are convolution filters. * Conserve
+     * is a min/max noise reduction filter. * Spatial is a frequency-domain filter based on JND principles.
+     * 
+     * @return Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering
+     *         functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge
+     *         preserving noise reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are
+     *         convolution filters. * Conserve is a min/max noise reduction filter. * Spatial is a frequency-domain
+     *         filter based on JND principles.
      * @see NoiseReducerFilter
      */
 
@@ -53,7 +78,17 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions.
+     * To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise
+     * reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are convolution filters. * Conserve
+     * is a min/max noise reduction filter. * Spatial is a frequency-domain filter based on JND principles.
+     * 
      * @param filter
+     *        Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering
+     *        functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge
+     *        preserving noise reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are
+     *        convolution filters. * Conserve is a min/max noise reduction filter. * Spatial is a frequency-domain
+     *        filter based on JND principles.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoiseReducerFilter
      */
@@ -64,7 +99,17 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions.
+     * To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise
+     * reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are convolution filters. * Conserve
+     * is a min/max noise reduction filter. * Spatial is a frequency-domain filter based on JND principles.
+     * 
      * @param filter
+     *        Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering
+     *        functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge
+     *        preserving noise reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are
+     *        convolution filters. * Conserve is a min/max noise reduction filter. * Spatial is a frequency-domain
+     *        filter based on JND principles.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoiseReducerFilter
      */
@@ -75,7 +120,10 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Settings for a noise reducer filter
+     * 
      * @param filterSettings
+     *        Settings for a noise reducer filter
      */
 
     public void setFilterSettings(NoiseReducerFilterSettings filterSettings) {
@@ -83,7 +131,9 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Settings for a noise reducer filter
+     * 
+     * @return Settings for a noise reducer filter
      */
 
     public NoiseReducerFilterSettings getFilterSettings() {
@@ -91,7 +141,10 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Settings for a noise reducer filter
+     * 
      * @param filterSettings
+     *        Settings for a noise reducer filter
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,7 +154,10 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Noise reducer filter settings for spatial filter.
+     * 
      * @param spatialFilterSettings
+     *        Noise reducer filter settings for spatial filter.
      */
 
     public void setSpatialFilterSettings(NoiseReducerSpatialFilterSettings spatialFilterSettings) {
@@ -109,7 +165,9 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Noise reducer filter settings for spatial filter.
+     * 
+     * @return Noise reducer filter settings for spatial filter.
      */
 
     public NoiseReducerSpatialFilterSettings getSpatialFilterSettings() {
@@ -117,7 +175,10 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Noise reducer filter settings for spatial filter.
+     * 
      * @param spatialFilterSettings
+     *        Noise reducer filter settings for spatial filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,7 +188,8 @@ public class NoiseReducer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

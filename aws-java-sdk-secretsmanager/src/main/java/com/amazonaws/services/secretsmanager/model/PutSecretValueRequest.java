@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,18 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name
      * (ARN) or the friendly name of the secret. The secret must already exist.
      * </p>
+     * <note>
+     * <p>
+     * If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial ARN
+     * too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager adds at the
+     * end of the ARN when you created the secret. A partial ARN match can work as long as it uniquely matches only one
+     * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
+     * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
+     * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
+     * hyphen followed by six characters.
+     * </p>
+     * </note>
      */
     private String secretId;
     /**
@@ -73,7 +85,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      */
     private String clientRequestToken;
@@ -105,7 +117,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * <p>
@@ -142,10 +154,32 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name
      * (ARN) or the friendly name of the secret. The secret must already exist.
      * </p>
+     * <note>
+     * <p>
+     * If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial ARN
+     * too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager adds at the
+     * end of the ARN when you created the secret. A partial ARN match can work as long as it uniquely matches only one
+     * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
+     * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
+     * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
+     * hyphen followed by six characters.
+     * </p>
+     * </note>
      * 
      * @param secretId
      *        Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource
-     *        Name (ARN) or the friendly name of the secret. The secret must already exist.
+     *        Name (ARN) or the friendly name of the secret. The secret must already exist.</p> <note>
+     *        <p>
+     *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
+     *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
+     *        adds at the end of the ARN when you created the secret. A partial ARN match can work as long as it
+     *        uniquely matches only one secret. However, if your secret has a name that ends in a hyphen followed by six
+     *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
+     *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
+     *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
+     *        create secret names that end with a hyphen followed by six characters.
+     *        </p>
      */
 
     public void setSecretId(String secretId) {
@@ -157,9 +191,31 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name
      * (ARN) or the friendly name of the secret. The secret must already exist.
      * </p>
+     * <note>
+     * <p>
+     * If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial ARN
+     * too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager adds at the
+     * end of the ARN when you created the secret. A partial ARN match can work as long as it uniquely matches only one
+     * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
+     * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
+     * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
+     * hyphen followed by six characters.
+     * </p>
+     * </note>
      * 
      * @return Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource
-     *         Name (ARN) or the friendly name of the secret. The secret must already exist.
+     *         Name (ARN) or the friendly name of the secret. The secret must already exist.</p> <note>
+     *         <p>
+     *         If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
+     *         ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
+     *         adds at the end of the ARN when you created the secret. A partial ARN match can work as long as it
+     *         uniquely matches only one secret. However, if your secret has a name that ends in a hyphen followed by
+     *         six characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use
+     *         that as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a
+     *         complete ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you
+     *         don’t create secret names that end with a hyphen followed by six characters.
+     *         </p>
      */
 
     public String getSecretId() {
@@ -171,10 +227,32 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name
      * (ARN) or the friendly name of the secret. The secret must already exist.
      * </p>
+     * <note>
+     * <p>
+     * If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial ARN
+     * too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager adds at the
+     * end of the ARN when you created the secret. A partial ARN match can work as long as it uniquely matches only one
+     * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
+     * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
+     * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
+     * hyphen followed by six characters.
+     * </p>
+     * </note>
      * 
      * @param secretId
      *        Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource
-     *        Name (ARN) or the friendly name of the secret. The secret must already exist.
+     *        Name (ARN) or the friendly name of the secret. The secret must already exist.</p> <note>
+     *        <p>
+     *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
+     *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
+     *        adds at the end of the ARN when you created the secret. A partial ARN match can work as long as it
+     *        uniquely matches only one secret. However, if your secret has a name that ends in a hyphen followed by six
+     *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
+     *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
+     *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
+     *        create secret names that end with a hyphen followed by six characters.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,7 +302,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @param clientRequestToken
@@ -267,7 +345,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        This value becomes the <code>SecretVersionId</code> of the new version.
+     *        This value becomes the <code>VersionId</code> of the new version.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -315,7 +393,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @return (Optional) Specifies a unique identifier for the new version of the secret. </p> <note>
@@ -358,7 +436,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         </ul>
      *         <p>
-     *         This value becomes the <code>SecretVersionId</code> of the new version.
+     *         This value becomes the <code>VersionId</code> of the new version.
      */
 
     public String getClientRequestToken() {
@@ -406,7 +484,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @param clientRequestToken
@@ -449,7 +527,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        This value becomes the <code>SecretVersionId</code> of the new version.
+     *        This value becomes the <code>VersionId</code> of the new version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -584,7 +662,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * <p>
@@ -612,7 +690,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        For storing multiple values, we recommend that you use a JSON text string argument and specify key/value
      *        pairs. For information on how to format a JSON parameter for the various command line tool environments,
      *        see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      *        </p>
      *        <p>
@@ -644,7 +722,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * <p>
@@ -671,7 +749,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         For storing multiple values, we recommend that you use a JSON text string argument and specify key/value
      *         pairs. For information on how to format a JSON parameter for the various command line tool environments,
      *         see <a
-     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *         href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      *         </p>
      *         <p>
@@ -703,7 +781,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * <p>
@@ -731,7 +809,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        For storing multiple values, we recommend that you use a JSON text string argument and specify key/value
      *        pairs. For information on how to format a JSON parameter for the various command line tool environments,
      *        see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      *        </p>
      *        <p>
@@ -902,7 +980,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -917,9 +996,9 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getSecretBinary() != null)
-            sb.append("SecretBinary: ").append(getSecretBinary()).append(",");
+            sb.append("SecretBinary: ").append("***Sensitive Data Redacted***").append(",");
         if (getSecretString() != null)
-            sb.append("SecretString: ").append(getSecretString()).append(",");
+            sb.append("SecretString: ").append("***Sensitive Data Redacted***").append(",");
         if (getVersionStages() != null)
             sb.append("VersionStages: ").append(getVersionStages());
         sb.append("}");

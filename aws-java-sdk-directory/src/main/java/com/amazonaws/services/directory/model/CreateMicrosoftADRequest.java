@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Creates a Microsoft AD in the AWS cloud.
+ * Creates an AWS Managed Microsoft AD directory.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateMicrosoftAD" target="_top">AWS API
@@ -64,10 +64,16 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
     private DirectoryVpcSettings vpcSettings;
     /**
      * <p>
-     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * </p>
      */
     private String edition;
+    /**
+     * <p>
+     * The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -295,11 +301,11 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * </p>
      * 
      * @param edition
-     *        AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     *        AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * @see DirectoryEdition
      */
 
@@ -309,10 +315,11 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * </p>
      * 
-     * @return AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * @return AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the
+     *         default.
      * @see DirectoryEdition
      */
 
@@ -322,11 +329,11 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * </p>
      * 
      * @param edition
-     *        AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     *        AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectoryEdition
      */
@@ -338,11 +345,11 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     * AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * </p>
      * 
      * @param edition
-     *        AWS Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+     *        AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectoryEdition
      */
@@ -353,7 +360,81 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * </p>
+     * 
+     * @return The tags to be assigned to the AWS Managed Microsoft AD directory.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to the AWS Managed Microsoft AD directory.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMicrosoftADRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMicrosoftADRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -368,13 +449,15 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getShortName() != null)
             sb.append("ShortName: ").append(getShortName()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword()).append(",");
+            sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getVpcSettings() != null)
             sb.append("VpcSettings: ").append(getVpcSettings()).append(",");
         if (getEdition() != null)
-            sb.append("Edition: ").append(getEdition());
+            sb.append("Edition: ").append(getEdition()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -413,6 +496,10 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getEdition() != null && other.getEdition().equals(this.getEdition()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -427,6 +514,7 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getVpcSettings() == null) ? 0 : getVpcSettings().hashCode());
         hashCode = prime * hashCode + ((getEdition() == null) ? 0 : getEdition().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,10 +28,28 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String jobId;
     /**
      * <p>
+     * (Optional)A reason code string that explains why the job was canceled.
+     * </p>
+     */
+    private String reasonCode;
+    /**
+     * <p>
      * An optional comment string describing why the job was canceled.
      * </p>
      */
     private String comment;
+    /**
+     * <p>
+     * (Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise
+     * only job executions with status "QUEUED" are canceled. The default is <code>false</code>.
+     * </p>
+     * <p>
+     * Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the
+     * job execution status. Use caution and ensure that each device executing a job which is canceled is able to
+     * recover to a valid state.
+     * </p>
+     */
+    private Boolean force;
 
     /**
      * <p>
@@ -70,6 +88,46 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public CancelJobRequest withJobId(String jobId) {
         setJobId(jobId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional)A reason code string that explains why the job was canceled.
+     * </p>
+     * 
+     * @param reasonCode
+     *        (Optional)A reason code string that explains why the job was canceled.
+     */
+
+    public void setReasonCode(String reasonCode) {
+        this.reasonCode = reasonCode;
+    }
+
+    /**
+     * <p>
+     * (Optional)A reason code string that explains why the job was canceled.
+     * </p>
+     * 
+     * @return (Optional)A reason code string that explains why the job was canceled.
+     */
+
+    public String getReasonCode() {
+        return this.reasonCode;
+    }
+
+    /**
+     * <p>
+     * (Optional)A reason code string that explains why the job was canceled.
+     * </p>
+     * 
+     * @param reasonCode
+     *        (Optional)A reason code string that explains why the job was canceled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CancelJobRequest withReasonCode(String reasonCode) {
+        setReasonCode(reasonCode);
         return this;
     }
 
@@ -114,7 +172,104 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * (Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise
+     * only job executions with status "QUEUED" are canceled. The default is <code>false</code>.
+     * </p>
+     * <p>
+     * Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the
+     * job execution status. Use caution and ensure that each device executing a job which is canceled is able to
+     * recover to a valid state.
+     * </p>
+     * 
+     * @param force
+     *        (Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled,
+     *        otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+     *        <p>
+     *        Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to
+     *        update the job execution status. Use caution and ensure that each device executing a job which is canceled
+     *        is able to recover to a valid state.
+     */
+
+    public void setForce(Boolean force) {
+        this.force = force;
+    }
+
+    /**
+     * <p>
+     * (Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise
+     * only job executions with status "QUEUED" are canceled. The default is <code>false</code>.
+     * </p>
+     * <p>
+     * Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the
+     * job execution status. Use caution and ensure that each device executing a job which is canceled is able to
+     * recover to a valid state.
+     * </p>
+     * 
+     * @return (Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled,
+     *         otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+     *         <p>
+     *         Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to
+     *         update the job execution status. Use caution and ensure that each device executing a job which is
+     *         canceled is able to recover to a valid state.
+     */
+
+    public Boolean getForce() {
+        return this.force;
+    }
+
+    /**
+     * <p>
+     * (Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise
+     * only job executions with status "QUEUED" are canceled. The default is <code>false</code>.
+     * </p>
+     * <p>
+     * Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the
+     * job execution status. Use caution and ensure that each device executing a job which is canceled is able to
+     * recover to a valid state.
+     * </p>
+     * 
+     * @param force
+     *        (Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled,
+     *        otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+     *        <p>
+     *        Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to
+     *        update the job execution status. Use caution and ensure that each device executing a job which is canceled
+     *        is able to recover to a valid state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CancelJobRequest withForce(Boolean force) {
+        setForce(force);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise
+     * only job executions with status "QUEUED" are canceled. The default is <code>false</code>.
+     * </p>
+     * <p>
+     * Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the
+     * job execution status. Use caution and ensure that each device executing a job which is canceled is able to
+     * recover to a valid state.
+     * </p>
+     * 
+     * @return (Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled,
+     *         otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
+     *         <p>
+     *         Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to
+     *         update the job execution status. Use caution and ensure that each device executing a job which is
+     *         canceled is able to recover to a valid state.
+     */
+
+    public Boolean isForce() {
+        return this.force;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -126,8 +281,12 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         sb.append("{");
         if (getJobId() != null)
             sb.append("JobId: ").append(getJobId()).append(",");
+        if (getReasonCode() != null)
+            sb.append("ReasonCode: ").append(getReasonCode()).append(",");
         if (getComment() != null)
-            sb.append("Comment: ").append(getComment());
+            sb.append("Comment: ").append(getComment()).append(",");
+        if (getForce() != null)
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }
@@ -146,9 +305,17 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
+        if (other.getReasonCode() == null ^ this.getReasonCode() == null)
+            return false;
+        if (other.getReasonCode() != null && other.getReasonCode().equals(this.getReasonCode()) == false)
+            return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
         if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
+            return false;
+        if (other.getForce() == null ^ this.getForce() == null)
+            return false;
+        if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
             return false;
         return true;
     }
@@ -159,7 +326,9 @@ public class CancelJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getReasonCode() == null) ? 0 : getReasonCode().hashCode());
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }
 

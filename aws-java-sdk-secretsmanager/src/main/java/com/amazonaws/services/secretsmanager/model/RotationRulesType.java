@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,12 @@ public class RotationRulesType implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Specifies the number of days between automatic scheduled rotations of the secret.
      * </p>
+     * <p>
+     * Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date
+     * by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the
+     * hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards
+     * the top of the hour and influenced by a variety of factors that help distribute load.
+     * </p>
      */
     private Long automaticallyAfterDays;
 
@@ -39,9 +45,21 @@ public class RotationRulesType implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Specifies the number of days between automatic scheduled rotations of the secret.
      * </p>
+     * <p>
+     * Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date
+     * by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the
+     * hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards
+     * the top of the hour and influenced by a variety of factors that help distribute load.
+     * </p>
      * 
      * @param automaticallyAfterDays
-     *        Specifies the number of days between automatic scheduled rotations of the secret.
+     *        Specifies the number of days between automatic scheduled rotations of the secret.</p>
+     *        <p>
+     *        Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules
+     *        the date by adding the rotation interval (number of days) to the actual date of the last rotation. The
+     *        service chooses the hour within that 24-hour date window randomly. The minute is also chosen somewhat
+     *        randomly, but weighted towards the top of the hour and influenced by a variety of factors that help
+     *        distribute load.
      */
 
     public void setAutomaticallyAfterDays(Long automaticallyAfterDays) {
@@ -52,8 +70,20 @@ public class RotationRulesType implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Specifies the number of days between automatic scheduled rotations of the secret.
      * </p>
+     * <p>
+     * Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date
+     * by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the
+     * hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards
+     * the top of the hour and influenced by a variety of factors that help distribute load.
+     * </p>
      * 
-     * @return Specifies the number of days between automatic scheduled rotations of the secret.
+     * @return Specifies the number of days between automatic scheduled rotations of the secret.</p>
+     *         <p>
+     *         Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules
+     *         the date by adding the rotation interval (number of days) to the actual date of the last rotation. The
+     *         service chooses the hour within that 24-hour date window randomly. The minute is also chosen somewhat
+     *         randomly, but weighted towards the top of the hour and influenced by a variety of factors that help
+     *         distribute load.
      */
 
     public Long getAutomaticallyAfterDays() {
@@ -64,9 +94,21 @@ public class RotationRulesType implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Specifies the number of days between automatic scheduled rotations of the secret.
      * </p>
+     * <p>
+     * Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules the date
+     * by adding the rotation interval (number of days) to the actual date of the last rotation. The service chooses the
+     * hour within that 24-hour date window randomly. The minute is also chosen somewhat randomly, but weighted towards
+     * the top of the hour and influenced by a variety of factors that help distribute load.
+     * </p>
      * 
      * @param automaticallyAfterDays
-     *        Specifies the number of days between automatic scheduled rotations of the secret.
+     *        Specifies the number of days between automatic scheduled rotations of the secret.</p>
+     *        <p>
+     *        Secrets Manager schedules the next rotation when the previous one is complete. Secrets Manager schedules
+     *        the date by adding the rotation interval (number of days) to the actual date of the last rotation. The
+     *        service chooses the hour within that 24-hour date window randomly. The minute is also chosen somewhat
+     *        randomly, but weighted towards the top of the hour and influenced by a variety of factors that help
+     *        distribute load.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,7 +118,8 @@ public class RotationRulesType implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

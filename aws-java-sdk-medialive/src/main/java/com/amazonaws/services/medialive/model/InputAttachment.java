@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,55 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InputAttachment implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * User-specified name for the attachment. This is required if the user wants to use this input in an input switch
+     * action.
+     */
+    private String inputAttachmentName;
     /** The ID of the input */
     private String inputId;
     /** Settings of an input (caption selector, etc.) */
     private InputSettings inputSettings;
+
+    /**
+     * User-specified name for the attachment. This is required if the user wants to use this input in an input switch
+     * action.
+     * 
+     * @param inputAttachmentName
+     *        User-specified name for the attachment. This is required if the user wants to use this input in an input
+     *        switch action.
+     */
+
+    public void setInputAttachmentName(String inputAttachmentName) {
+        this.inputAttachmentName = inputAttachmentName;
+    }
+
+    /**
+     * User-specified name for the attachment. This is required if the user wants to use this input in an input switch
+     * action.
+     * 
+     * @return User-specified name for the attachment. This is required if the user wants to use this input in an input
+     *         switch action.
+     */
+
+    public String getInputAttachmentName() {
+        return this.inputAttachmentName;
+    }
+
+    /**
+     * User-specified name for the attachment. This is required if the user wants to use this input in an input switch
+     * action.
+     * 
+     * @param inputAttachmentName
+     *        User-specified name for the attachment. This is required if the user wants to use this input in an input
+     *        switch action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputAttachment withInputAttachmentName(String inputAttachmentName) {
+        setInputAttachmentName(inputAttachmentName);
+        return this;
+    }
 
     /**
      * The ID of the input
@@ -100,7 +145,8 @@ public class InputAttachment implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -110,6 +156,8 @@ public class InputAttachment implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getInputAttachmentName() != null)
+            sb.append("InputAttachmentName: ").append(getInputAttachmentName()).append(",");
         if (getInputId() != null)
             sb.append("InputId: ").append(getInputId()).append(",");
         if (getInputSettings() != null)
@@ -128,6 +176,10 @@ public class InputAttachment implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof InputAttachment == false)
             return false;
         InputAttachment other = (InputAttachment) obj;
+        if (other.getInputAttachmentName() == null ^ this.getInputAttachmentName() == null)
+            return false;
+        if (other.getInputAttachmentName() != null && other.getInputAttachmentName().equals(this.getInputAttachmentName()) == false)
+            return false;
         if (other.getInputId() == null ^ this.getInputId() == null)
             return false;
         if (other.getInputId() != null && other.getInputId().equals(this.getInputId()) == false)
@@ -144,6 +196,7 @@ public class InputAttachment implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getInputAttachmentName() == null) ? 0 : getInputAttachmentName().hashCode());
         hashCode = prime * hashCode + ((getInputId() == null) ? 0 : getInputId().hashCode());
         hashCode = prime * hashCode + ((getInputSettings() == null) ? 0 : getInputSettings().hashCode());
         return hashCode;

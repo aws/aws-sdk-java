@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,34 @@ import com.amazonaws.services.mediaconvert.model.*;
 public interface AWSMediaConvertAsync extends AWSMediaConvert {
 
     /**
-     * Permanently remove a job from a queue. Once you have canceled a job, you can't start it again. You can't delete a
-     * running job.
+     * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert.
+     * 
+     * @param associateCertificateRequest
+     * @return A Java Future containing the result of the AssociateCertificate operation returned by the service.
+     * @sample AWSMediaConvertAsync.AssociateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AssociateCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateCertificateResult> associateCertificateAsync(AssociateCertificateRequest associateCertificateRequest);
+
+    /**
+     * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert.
+     * 
+     * @param associateCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateCertificate operation returned by the service.
+     * @sample AWSMediaConvertAsyncHandler.AssociateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AssociateCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateCertificateResult> associateCertificateAsync(AssociateCertificateRequest associateCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateCertificateRequest, AssociateCertificateResult> asyncHandler);
+
+    /**
+     * Permanently cancel a job. Once you have canceled a job, you can't start it again.
      * 
      * @param cancelJobRequest
      * @return A Java Future containing the result of the CancelJob operation returned by the service.
@@ -43,8 +69,7 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
     java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest);
 
     /**
-     * Permanently remove a job from a queue. Once you have canceled a job, you can't start it again. You can't delete a
-     * running job.
+     * Permanently cancel a job. Once you have canceled a job, you can't start it again.
      * 
      * @param cancelJobRequest
      * @param asyncHandler
@@ -147,8 +172,8 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
             com.amazonaws.handlers.AsyncHandler<CreatePresetRequest, CreatePresetResult> asyncHandler);
 
     /**
-     * Create a new transcoding queue. For information about job templates see the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * Create a new transcoding queue. For information about queues, see Working With Queues in the User Guide at
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html
      * 
      * @param createQueueRequest
      * @return A Java Future containing the result of the CreateQueue operation returned by the service.
@@ -159,8 +184,8 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
     java.util.concurrent.Future<CreateQueueResult> createQueueAsync(CreateQueueRequest createQueueRequest);
 
     /**
-     * Create a new transcoding queue. For information about job templates see the User Guide at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * Create a new transcoding queue. For information about queues, see Working With Queues in the User Guide at
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html
      * 
      * @param createQueueRequest
      * @param asyncHandler
@@ -284,6 +309,35 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
      */
     java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest describeEndpointsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult> asyncHandler);
+
+    /**
+     * Removes an association between the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate and
+     * an AWS Elemental MediaConvert resource.
+     * 
+     * @param disassociateCertificateRequest
+     * @return A Java Future containing the result of the DisassociateCertificate operation returned by the service.
+     * @sample AWSMediaConvertAsync.DisassociateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DisassociateCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateCertificateResult> disassociateCertificateAsync(DisassociateCertificateRequest disassociateCertificateRequest);
+
+    /**
+     * Removes an association between the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate and
+     * an AWS Elemental MediaConvert resource.
+     * 
+     * @param disassociateCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateCertificate operation returned by the service.
+     * @sample AWSMediaConvertAsyncHandler.DisassociateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DisassociateCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateCertificateResult> disassociateCertificateAsync(DisassociateCertificateRequest disassociateCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateCertificateRequest, DisassociateCertificateResult> asyncHandler);
 
     /**
      * Retrieve the JSON for a specific completed transcoding job.
@@ -510,6 +564,91 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
      */
     java.util.concurrent.Future<ListQueuesResult> listQueuesAsync(ListQueuesRequest listQueuesRequest,
             com.amazonaws.handlers.AsyncHandler<ListQueuesRequest, ListQueuesResult> asyncHandler);
+
+    /**
+     * Retrieve the tags for a MediaConvert resource.
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSMediaConvertAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * Retrieve the tags for a MediaConvert resource.
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSMediaConvertAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * Add tags to a MediaConvert queue, preset, or job template. For information about tagging, see the User Guide at
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSMediaConvertAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * Add tags to a MediaConvert queue, preset, or job template. For information about tagging, see the User Guide at
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSMediaConvertAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * Remove tags from a MediaConvert queue, preset, or job template. For information about tagging, see the User Guide
+     * at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSMediaConvertAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * Remove tags from a MediaConvert queue, preset, or job template. For information about tagging, see the User Guide
+     * at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSMediaConvertAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * Modify one of your existing job templates.

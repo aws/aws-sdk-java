@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,11 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The metadata values that you can use to filter and group your results. You can use
      * <code>GetDimensionValues</code> to find specific values.
+     * </p>
+     * <p>
+     * Valid values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute Cloud - Compute</code>,
+     * <code>Amazon Elasticsearch Service</code>, <code>Amazon ElastiCache</code>, <code>Amazon Redshift</code>, and
+     * <code>Amazon Relational Database Service</code>.
      * </p>
      */
     private java.util.List<String> values;
@@ -116,9 +121,19 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
      * The metadata values that you can use to filter and group your results. You can use
      * <code>GetDimensionValues</code> to find specific values.
      * </p>
+     * <p>
+     * Valid values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute Cloud - Compute</code>,
+     * <code>Amazon Elasticsearch Service</code>, <code>Amazon ElastiCache</code>, <code>Amazon Redshift</code>, and
+     * <code>Amazon Relational Database Service</code>.
+     * </p>
      * 
      * @return The metadata values that you can use to filter and group your results. You can use
-     *         <code>GetDimensionValues</code> to find specific values.
+     *         <code>GetDimensionValues</code> to find specific values.</p>
+     *         <p>
+     *         Valid values for the <code>SERVICE</code> dimension are
+     *         <code>Amazon Elastic Compute Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>,
+     *         <code>Amazon ElastiCache</code>, <code>Amazon Redshift</code>, and
+     *         <code>Amazon Relational Database Service</code>.
      */
 
     public java.util.List<String> getValues() {
@@ -130,10 +145,20 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
      * The metadata values that you can use to filter and group your results. You can use
      * <code>GetDimensionValues</code> to find specific values.
      * </p>
+     * <p>
+     * Valid values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute Cloud - Compute</code>,
+     * <code>Amazon Elasticsearch Service</code>, <code>Amazon ElastiCache</code>, <code>Amazon Redshift</code>, and
+     * <code>Amazon Relational Database Service</code>.
+     * </p>
      * 
      * @param values
      *        The metadata values that you can use to filter and group your results. You can use
-     *        <code>GetDimensionValues</code> to find specific values.
+     *        <code>GetDimensionValues</code> to find specific values.</p>
+     *        <p>
+     *        Valid values for the <code>SERVICE</code> dimension are
+     *        <code>Amazon Elastic Compute Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>,
+     *        <code>Amazon ElastiCache</code>, <code>Amazon Redshift</code>, and
+     *        <code>Amazon Relational Database Service</code>.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -151,6 +176,11 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
      * <code>GetDimensionValues</code> to find specific values.
      * </p>
      * <p>
+     * Valid values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute Cloud - Compute</code>,
+     * <code>Amazon Elasticsearch Service</code>, <code>Amazon ElastiCache</code>, <code>Amazon Redshift</code>, and
+     * <code>Amazon Relational Database Service</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
@@ -158,7 +188,12 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param values
      *        The metadata values that you can use to filter and group your results. You can use
-     *        <code>GetDimensionValues</code> to find specific values.
+     *        <code>GetDimensionValues</code> to find specific values.</p>
+     *        <p>
+     *        Valid values for the <code>SERVICE</code> dimension are
+     *        <code>Amazon Elastic Compute Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>,
+     *        <code>Amazon ElastiCache</code>, <code>Amazon Redshift</code>, and
+     *        <code>Amazon Relational Database Service</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,10 +212,20 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
      * The metadata values that you can use to filter and group your results. You can use
      * <code>GetDimensionValues</code> to find specific values.
      * </p>
+     * <p>
+     * Valid values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute Cloud - Compute</code>,
+     * <code>Amazon Elasticsearch Service</code>, <code>Amazon ElastiCache</code>, <code>Amazon Redshift</code>, and
+     * <code>Amazon Relational Database Service</code>.
+     * </p>
      * 
      * @param values
      *        The metadata values that you can use to filter and group your results. You can use
-     *        <code>GetDimensionValues</code> to find specific values.
+     *        <code>GetDimensionValues</code> to find specific values.</p>
+     *        <p>
+     *        Valid values for the <code>SERVICE</code> dimension are
+     *        <code>Amazon Elastic Compute Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>,
+     *        <code>Amazon ElastiCache</code>, <code>Amazon Redshift</code>, and
+     *        <code>Amazon Relational Database Service</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,7 +235,8 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

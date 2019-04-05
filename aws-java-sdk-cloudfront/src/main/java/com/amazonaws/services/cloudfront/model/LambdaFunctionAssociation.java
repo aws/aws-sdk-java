@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A complex type that contains a Lambda function association.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/LambdaFunctionAssociation"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/LambdaFunctionAssociation"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -56,9 +56,6 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
      * execute.
      * </p>
-     * <p>
-     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
-     * </p>
      * </li>
      * <li>
      * <p>
@@ -72,6 +69,14 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </ul>
      */
     private String eventType;
+    /**
+     * <p>
+     * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
+     * </p>
+     */
+    private Boolean includeBody;
 
     /**
      * <p>
@@ -142,9 +147,6 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
      * execute.
      * </p>
-     * <p>
-     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
-     * </p>
      * </li>
      * <li>
      * <p>
@@ -178,9 +180,6 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      *        <code>origin-response</code>: The function executes after CloudFront receives a response from the origin
      *        and before it caches the object in the response. When the requested object is in the edge cache, the
      *        function doesn't execute.
-     *        </p>
-     *        <p>
-     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *        </p>
      *        </li>
      *        <li>
@@ -222,9 +221,6 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
      * execute.
      * </p>
-     * <p>
-     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
-     * </p>
      * </li>
      * <li>
      * <p>
@@ -257,9 +253,6 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      *         <code>origin-response</code>: The function executes after CloudFront receives a response from the origin
      *         and before it caches the object in the response. When the requested object is in the edge cache, the
      *         function doesn't execute.
-     *         </p>
-     *         <p>
-     *         If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *         </p>
      *         </li>
      *         <li>
@@ -301,9 +294,6 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
      * execute.
      * </p>
-     * <p>
-     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
-     * </p>
      * </li>
      * <li>
      * <p>
@@ -337,9 +327,6 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      *        <code>origin-response</code>: The function executes after CloudFront receives a response from the origin
      *        and before it caches the object in the response. When the requested object is in the edge cache, the
      *        function doesn't execute.
-     *        </p>
-     *        <p>
-     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *        </p>
      *        </li>
      *        <li>
@@ -383,9 +370,6 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
      * execute.
      * </p>
-     * <p>
-     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
-     * </p>
      * </li>
      * <li>
      * <p>
@@ -419,9 +403,6 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      *        <code>origin-response</code>: The function executes after CloudFront receives a response from the origin
      *        and before it caches the object in the response. When the requested object is in the edge cache, the
      *        function doesn't execute.
-     *        </p>
-     *        <p>
-     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
      *        </p>
      *        </li>
      *        <li>
@@ -463,9 +444,6 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * before it caches the object in the response. When the requested object is in the edge cache, the function doesn't
      * execute.
      * </p>
-     * <p>
-     * If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
-     * </p>
      * </li>
      * <li>
      * <p>
@@ -500,9 +478,6 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      *        and before it caches the object in the response. When the requested object is in the edge cache, the
      *        function doesn't execute.
      *        </p>
-     *        <p>
-     *        If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.
-     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -523,7 +498,82 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
+     * </p>
+     * 
+     * @param includeBody
+     *        A flag that allows a Lambda function to have read access to the body content. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">
+     *        Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
+     *        Guide.
+     */
+
+    public void setIncludeBody(Boolean includeBody) {
+        this.includeBody = includeBody;
+    }
+
+    /**
+     * <p>
+     * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
+     * </p>
+     * 
+     * @return A flag that allows a Lambda function to have read access to the body content. For more information, see
+     *         <a href=
+     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     *         >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
+     *         Guide.
+     */
+
+    public Boolean getIncludeBody() {
+        return this.includeBody;
+    }
+
+    /**
+     * <p>
+     * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
+     * </p>
+     * 
+     * @param includeBody
+     *        A flag that allows a Lambda function to have read access to the body content. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">
+     *        Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
+     *        Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LambdaFunctionAssociation withIncludeBody(Boolean includeBody) {
+        setIncludeBody(includeBody);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag that allows a Lambda function to have read access to the body content. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     * >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer Guide.
+     * </p>
+     * 
+     * @return A flag that allows a Lambda function to have read access to the body content. For more information, see
+     *         <a href=
+     *         "http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html"
+     *         >Accessing the Request Body by Choosing the Include Body Option</a> in the Amazon CloudFront Developer
+     *         Guide.
+     */
+
+    public Boolean isIncludeBody() {
+        return this.includeBody;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -536,7 +586,9 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
         if (getLambdaFunctionARN() != null)
             sb.append("LambdaFunctionARN: ").append(getLambdaFunctionARN()).append(",");
         if (getEventType() != null)
-            sb.append("EventType: ").append(getEventType());
+            sb.append("EventType: ").append(getEventType()).append(",");
+        if (getIncludeBody() != null)
+            sb.append("IncludeBody: ").append(getIncludeBody());
         sb.append("}");
         return sb.toString();
     }
@@ -559,6 +611,10 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
             return false;
         if (other.getEventType() != null && other.getEventType().equals(this.getEventType()) == false)
             return false;
+        if (other.getIncludeBody() == null ^ this.getIncludeBody() == null)
+            return false;
+        if (other.getIncludeBody() != null && other.getIncludeBody().equals(this.getIncludeBody()) == false)
+            return false;
         return true;
     }
 
@@ -569,6 +625,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getLambdaFunctionARN() == null) ? 0 : getLambdaFunctionARN().hashCode());
         hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
+        hashCode = prime * hashCode + ((getIncludeBody() == null) ? 0 : getIncludeBody().hashCode());
         return hashCode;
     }
 

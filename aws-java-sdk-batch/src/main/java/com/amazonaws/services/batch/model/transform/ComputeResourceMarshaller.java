@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,10 +51,14 @@ public class ComputeResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceRole").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> PLACEMENTGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("placementGroup").build();
     private static final MarshallingInfo<Integer> BIDPERCENTAGE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bidPercentage").build();
     private static final MarshallingInfo<String> SPOTIAMFLEETROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("spotIamFleetRole").build();
+    private static final MarshallingInfo<StructuredPojo> LAUNCHTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchTemplate").build();
 
     private static final ComputeResourceMarshaller instance = new ComputeResourceMarshaller();
 
@@ -83,8 +87,10 @@ public class ComputeResourceMarshaller {
             protocolMarshaller.marshall(computeResource.getEc2KeyPair(), EC2KEYPAIR_BINDING);
             protocolMarshaller.marshall(computeResource.getInstanceRole(), INSTANCEROLE_BINDING);
             protocolMarshaller.marshall(computeResource.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(computeResource.getPlacementGroup(), PLACEMENTGROUP_BINDING);
             protocolMarshaller.marshall(computeResource.getBidPercentage(), BIDPERCENTAGE_BINDING);
             protocolMarshaller.marshall(computeResource.getSpotIamFleetRole(), SPOTIAMFLEETROLE_BINDING);
+            protocolMarshaller.marshall(computeResource.getLaunchTemplate(), LAUNCHTEMPLATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

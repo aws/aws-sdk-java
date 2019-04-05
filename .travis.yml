@@ -7,7 +7,6 @@ addons:
 jdk:
   - openjdk7
   - oraclejdk7
-  - openjdk6
   - oraclejdk8
 env:
   - MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS=-XX:MaxPermSize=256m
@@ -15,8 +14,6 @@ env:
 # Exclude certain items in the matrix as some modules only build with Java8
 matrix:
   exclude:
-    - jdk: openjdk6
-      env: MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS=-XX:MaxPermSize=256m
     - jdk: openjdk7
       env: MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS=-XX:MaxPermSize=256m
     - jdk: oraclejdk7
@@ -30,4 +27,4 @@ notifications:
 install: /bin/true
 sudo: required
 dist: precise
-script: mvn install -pl ${MODULES_TO_SKIP}
+script: mvn install -Dhttps.protocols=TLSv1.2 -pl ${MODULES_TO_SKIP}

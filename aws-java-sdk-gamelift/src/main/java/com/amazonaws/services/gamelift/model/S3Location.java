@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Location in Amazon Simple Storage Service (Amazon S3) where build files can be stored for access by Amazon GameLift.
  * This location is specified in a <a>CreateBuild</a> request. For more details, see the <a href=
- * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
+ * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
  * >Create a Build with Files in Amazon S3</a>.
  * </p>
  * 
@@ -45,7 +45,7 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     private String key;
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for
      * the access role that allows Amazon GameLift to access your S3 bucket.
      * </p>
      */
@@ -133,13 +133,14 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for
      * the access role that allows Amazon GameLift to access your S3 bucket.
      * </p>
      * 
      * @param roleArn
-     *        Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     *        for the access role that allows Amazon GameLift to access your S3 bucket.
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for the access role
+     *        that allows Amazon GameLift to access your S3 bucket.
      */
 
     public void setRoleArn(String roleArn) {
@@ -148,12 +149,12 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for
      * the access role that allows Amazon GameLift to access your S3 bucket.
      * </p>
      * 
      * @return Amazon Resource Name (<a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for the access role
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for the access role
      *         that allows Amazon GameLift to access your S3 bucket.
      */
 
@@ -163,13 +164,14 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for
      * the access role that allows Amazon GameLift to access your S3 bucket.
      * </p>
      * 
      * @param roleArn
-     *        Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     *        for the access role that allows Amazon GameLift to access your S3 bucket.
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for the access role
+     *        that allows Amazon GameLift to access your S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,7 +181,8 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

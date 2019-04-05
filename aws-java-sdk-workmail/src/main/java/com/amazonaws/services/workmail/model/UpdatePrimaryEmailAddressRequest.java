@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class UpdatePrimaryEmailAddressRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The organization that contains the entity to update.
+     * The organization that contains the user, group, or resource to update.
      * </p>
      */
     private String organizationId;
     /**
      * <p>
-     * The entity to update (user, group, or resource).
+     * The user, group, or resource to update.
      * </p>
      */
     private String entityId;
@@ -46,11 +46,11 @@ public class UpdatePrimaryEmailAddressRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The organization that contains the entity to update.
+     * The organization that contains the user, group, or resource to update.
      * </p>
      * 
      * @param organizationId
-     *        The organization that contains the entity to update.
+     *        The organization that contains the user, group, or resource to update.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -59,10 +59,10 @@ public class UpdatePrimaryEmailAddressRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The organization that contains the entity to update.
+     * The organization that contains the user, group, or resource to update.
      * </p>
      * 
-     * @return The organization that contains the entity to update.
+     * @return The organization that contains the user, group, or resource to update.
      */
 
     public String getOrganizationId() {
@@ -71,11 +71,11 @@ public class UpdatePrimaryEmailAddressRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The organization that contains the entity to update.
+     * The organization that contains the user, group, or resource to update.
      * </p>
      * 
      * @param organizationId
-     *        The organization that contains the entity to update.
+     *        The organization that contains the user, group, or resource to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdatePrimaryEmailAddressRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The entity to update (user, group, or resource).
+     * The user, group, or resource to update.
      * </p>
      * 
      * @param entityId
-     *        The entity to update (user, group, or resource).
+     *        The user, group, or resource to update.
      */
 
     public void setEntityId(String entityId) {
@@ -99,10 +99,10 @@ public class UpdatePrimaryEmailAddressRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The entity to update (user, group, or resource).
+     * The user, group, or resource to update.
      * </p>
      * 
-     * @return The entity to update (user, group, or resource).
+     * @return The user, group, or resource to update.
      */
 
     public String getEntityId() {
@@ -111,11 +111,11 @@ public class UpdatePrimaryEmailAddressRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The entity to update (user, group, or resource).
+     * The user, group, or resource to update.
      * </p>
      * 
      * @param entityId
-     *        The entity to update (user, group, or resource).
+     *        The user, group, or resource to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +165,8 @@ public class UpdatePrimaryEmailAddressRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaptionDestinationSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Burn-In Destination Settings. */
     private BurninDestinationSettings burninDestinationSettings;
-
+    /**
+     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other
+     * options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using
+     * SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43
+     * spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20
+     * (EMBEDDED_PLUS_SCTE20).
+     */
     private String destinationType;
-
+    /** DVB-Sub Destination Settings */
     private DvbSubDestinationSettings dvbSubDestinationSettings;
-
+    /** Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number. */
+    private EmbeddedDestinationSettings embeddedDestinationSettings;
+    /** Settings for SCC caption output. */
     private SccDestinationSettings sccDestinationSettings;
-
+    /** Settings for Teletext caption output */
     private TeletextDestinationSettings teletextDestinationSettings;
-
+    /** Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough). */
     private TtmlDestinationSettings ttmlDestinationSettings;
 
     /**
+     * Burn-In Destination Settings.
+     * 
      * @param burninDestinationSettings
+     *        Burn-In Destination Settings.
      */
 
     public void setBurninDestinationSettings(BurninDestinationSettings burninDestinationSettings) {
@@ -48,7 +60,9 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * Burn-In Destination Settings.
+     * 
+     * @return Burn-In Destination Settings.
      */
 
     public BurninDestinationSettings getBurninDestinationSettings() {
@@ -56,7 +70,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Burn-In Destination Settings.
+     * 
      * @param burninDestinationSettings
+     *        Burn-In Destination Settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,7 +83,18 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other
+     * options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using
+     * SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43
+     * spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20
+     * (EMBEDDED_PLUS_SCTE20).
+     * 
      * @param destinationType
+     *        Specify the format for this set of captions on this output. The default format is embedded without
+     *        SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT.
+     *        If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that
+     *        complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first,
+     *        choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * @see CaptionDestinationType
      */
 
@@ -75,7 +103,17 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other
+     * options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using
+     * SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43
+     * spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20
+     * (EMBEDDED_PLUS_SCTE20).
+     * 
+     * @return Specify the format for this set of captions on this output. The default format is embedded without
+     *         SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and
+     *         web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an
+     *         output that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions
+     *         come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * @see CaptionDestinationType
      */
 
@@ -84,7 +122,18 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other
+     * options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using
+     * SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43
+     * spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20
+     * (EMBEDDED_PLUS_SCTE20).
+     * 
      * @param destinationType
+     *        Specify the format for this set of captions on this output. The default format is embedded without
+     *        SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT.
+     *        If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that
+     *        complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first,
+     *        choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptionDestinationType
      */
@@ -95,7 +144,18 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other
+     * options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using
+     * SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43
+     * spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20
+     * (EMBEDDED_PLUS_SCTE20).
+     * 
      * @param destinationType
+     *        Specify the format for this set of captions on this output. The default format is embedded without
+     *        SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT.
+     *        If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that
+     *        complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first,
+     *        choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptionDestinationType
      */
@@ -106,7 +166,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * DVB-Sub Destination Settings
+     * 
      * @param dvbSubDestinationSettings
+     *        DVB-Sub Destination Settings
      */
 
     public void setDvbSubDestinationSettings(DvbSubDestinationSettings dvbSubDestinationSettings) {
@@ -114,7 +177,9 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * DVB-Sub Destination Settings
+     * 
+     * @return DVB-Sub Destination Settings
      */
 
     public DvbSubDestinationSettings getDvbSubDestinationSettings() {
@@ -122,7 +187,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * DVB-Sub Destination Settings
+     * 
      * @param dvbSubDestinationSettings
+     *        DVB-Sub Destination Settings
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,7 +200,44 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     * 
+     * @param embeddedDestinationSettings
+     *        Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     */
+
+    public void setEmbeddedDestinationSettings(EmbeddedDestinationSettings embeddedDestinationSettings) {
+        this.embeddedDestinationSettings = embeddedDestinationSettings;
+    }
+
+    /**
+     * Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     * 
+     * @return Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     */
+
+    public EmbeddedDestinationSettings getEmbeddedDestinationSettings() {
+        return this.embeddedDestinationSettings;
+    }
+
+    /**
+     * Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     * 
+     * @param embeddedDestinationSettings
+     *        Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CaptionDestinationSettings withEmbeddedDestinationSettings(EmbeddedDestinationSettings embeddedDestinationSettings) {
+        setEmbeddedDestinationSettings(embeddedDestinationSettings);
+        return this;
+    }
+
+    /**
+     * Settings for SCC caption output.
+     * 
      * @param sccDestinationSettings
+     *        Settings for SCC caption output.
      */
 
     public void setSccDestinationSettings(SccDestinationSettings sccDestinationSettings) {
@@ -140,7 +245,9 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * Settings for SCC caption output.
+     * 
+     * @return Settings for SCC caption output.
      */
 
     public SccDestinationSettings getSccDestinationSettings() {
@@ -148,7 +255,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Settings for SCC caption output.
+     * 
      * @param sccDestinationSettings
+     *        Settings for SCC caption output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,7 +268,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Settings for Teletext caption output
+     * 
      * @param teletextDestinationSettings
+     *        Settings for Teletext caption output
      */
 
     public void setTeletextDestinationSettings(TeletextDestinationSettings teletextDestinationSettings) {
@@ -166,7 +279,9 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * Settings for Teletext caption output
+     * 
+     * @return Settings for Teletext caption output
      */
 
     public TeletextDestinationSettings getTeletextDestinationSettings() {
@@ -174,7 +289,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Settings for Teletext caption output
+     * 
      * @param teletextDestinationSettings
+     *        Settings for Teletext caption output
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,7 +302,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+     * 
      * @param ttmlDestinationSettings
+     *        Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
      */
 
     public void setTtmlDestinationSettings(TtmlDestinationSettings ttmlDestinationSettings) {
@@ -192,7 +313,9 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+     * 
+     * @return Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
      */
 
     public TtmlDestinationSettings getTtmlDestinationSettings() {
@@ -200,7 +323,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+     * 
      * @param ttmlDestinationSettings
+     *        Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,7 +336,8 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -226,6 +353,8 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
             sb.append("DestinationType: ").append(getDestinationType()).append(",");
         if (getDvbSubDestinationSettings() != null)
             sb.append("DvbSubDestinationSettings: ").append(getDvbSubDestinationSettings()).append(",");
+        if (getEmbeddedDestinationSettings() != null)
+            sb.append("EmbeddedDestinationSettings: ").append(getEmbeddedDestinationSettings()).append(",");
         if (getSccDestinationSettings() != null)
             sb.append("SccDestinationSettings: ").append(getSccDestinationSettings()).append(",");
         if (getTeletextDestinationSettings() != null)
@@ -258,6 +387,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
             return false;
         if (other.getDvbSubDestinationSettings() != null && other.getDvbSubDestinationSettings().equals(this.getDvbSubDestinationSettings()) == false)
             return false;
+        if (other.getEmbeddedDestinationSettings() == null ^ this.getEmbeddedDestinationSettings() == null)
+            return false;
+        if (other.getEmbeddedDestinationSettings() != null && other.getEmbeddedDestinationSettings().equals(this.getEmbeddedDestinationSettings()) == false)
+            return false;
         if (other.getSccDestinationSettings() == null ^ this.getSccDestinationSettings() == null)
             return false;
         if (other.getSccDestinationSettings() != null && other.getSccDestinationSettings().equals(this.getSccDestinationSettings()) == false)
@@ -281,6 +414,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getBurninDestinationSettings() == null) ? 0 : getBurninDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getDestinationType() == null) ? 0 : getDestinationType().hashCode());
         hashCode = prime * hashCode + ((getDvbSubDestinationSettings() == null) ? 0 : getDvbSubDestinationSettings().hashCode());
+        hashCode = prime * hashCode + ((getEmbeddedDestinationSettings() == null) ? 0 : getEmbeddedDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getSccDestinationSettings() == null) ? 0 : getSccDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getTeletextDestinationSettings() == null) ? 0 : getTeletextDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getTtmlDestinationSettings() == null) ? 0 : getTtmlDestinationSettings().hashCode());

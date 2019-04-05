@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,13 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
      * </p>
      */
     private String variantName;
+    /**
+     * <p>
+     * An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the
+     * inference images deployed on instances of this <code>ProductionVariant</code>.
+     * </p>
+     */
+    private java.util.List<DeployedImage> deployedImages;
     /**
      * <p>
      * The weight associated with the variant.
@@ -98,6 +105,84 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
 
     public ProductionVariantSummary withVariantName(String variantName) {
         setVariantName(variantName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the
+     * inference images deployed on instances of this <code>ProductionVariant</code>.
+     * </p>
+     * 
+     * @return An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of
+     *         the inference images deployed on instances of this <code>ProductionVariant</code>.
+     */
+
+    public java.util.List<DeployedImage> getDeployedImages() {
+        return deployedImages;
+    }
+
+    /**
+     * <p>
+     * An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the
+     * inference images deployed on instances of this <code>ProductionVariant</code>.
+     * </p>
+     * 
+     * @param deployedImages
+     *        An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the
+     *        inference images deployed on instances of this <code>ProductionVariant</code>.
+     */
+
+    public void setDeployedImages(java.util.Collection<DeployedImage> deployedImages) {
+        if (deployedImages == null) {
+            this.deployedImages = null;
+            return;
+        }
+
+        this.deployedImages = new java.util.ArrayList<DeployedImage>(deployedImages);
+    }
+
+    /**
+     * <p>
+     * An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the
+     * inference images deployed on instances of this <code>ProductionVariant</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeployedImages(java.util.Collection)} or {@link #withDeployedImages(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param deployedImages
+     *        An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the
+     *        inference images deployed on instances of this <code>ProductionVariant</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariantSummary withDeployedImages(DeployedImage... deployedImages) {
+        if (this.deployedImages == null) {
+            setDeployedImages(new java.util.ArrayList<DeployedImage>(deployedImages.length));
+        }
+        for (DeployedImage ele : deployedImages) {
+            this.deployedImages.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the
+     * inference images deployed on instances of this <code>ProductionVariant</code>.
+     * </p>
+     * 
+     * @param deployedImages
+     *        An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container Registry paths of the
+     *        inference images deployed on instances of this <code>ProductionVariant</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariantSummary withDeployedImages(java.util.Collection<DeployedImage> deployedImages) {
+        setDeployedImages(deployedImages);
         return this;
     }
 
@@ -262,7 +347,8 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -274,6 +360,8 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
         sb.append("{");
         if (getVariantName() != null)
             sb.append("VariantName: ").append(getVariantName()).append(",");
+        if (getDeployedImages() != null)
+            sb.append("DeployedImages: ").append(getDeployedImages()).append(",");
         if (getCurrentWeight() != null)
             sb.append("CurrentWeight: ").append(getCurrentWeight()).append(",");
         if (getDesiredWeight() != null)
@@ -300,6 +388,10 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
             return false;
         if (other.getVariantName() != null && other.getVariantName().equals(this.getVariantName()) == false)
             return false;
+        if (other.getDeployedImages() == null ^ this.getDeployedImages() == null)
+            return false;
+        if (other.getDeployedImages() != null && other.getDeployedImages().equals(this.getDeployedImages()) == false)
+            return false;
         if (other.getCurrentWeight() == null ^ this.getCurrentWeight() == null)
             return false;
         if (other.getCurrentWeight() != null && other.getCurrentWeight().equals(this.getCurrentWeight()) == false)
@@ -325,6 +417,7 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getVariantName() == null) ? 0 : getVariantName().hashCode());
+        hashCode = prime * hashCode + ((getDeployedImages() == null) ? 0 : getDeployedImages().hashCode());
         hashCode = prime * hashCode + ((getCurrentWeight() == null) ? 0 : getCurrentWeight().hashCode());
         hashCode = prime * hashCode + ((getDesiredWeight() == null) ? 0 : getDesiredWeight().hashCode());
         hashCode = prime * hashCode + ((getCurrentInstanceCount() == null) ? 0 : getCurrentInstanceCount().hashCode());

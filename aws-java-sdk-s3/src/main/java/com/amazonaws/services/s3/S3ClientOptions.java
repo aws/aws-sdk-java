@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3;
+
+import com.amazonaws.SdkClientException;
 
 /**
  * S3 client configuration options such as the request access style.
@@ -62,6 +64,12 @@ public class S3ClientOptions {
         private Builder() {}
 
         public S3ClientOptions build() {
+            if (pathStyleAccess && accelerateModeEnabled) {
+                throw new SdkClientException("Both accelerate mode and path style access are being enabled either through "
+                                             + "S3ClientOptions or AmazonS3ClientBuilder. These options are mutually exclusive "
+                                             + "and cannot be enabled together. Please disable one of them");
+            }
+
             return new S3ClientOptions(pathStyleAccess, chunkedEncodingDisabled, accelerateModeEnabled,
                                        payloadSigningEnabled, dualstackEnabled, forceGlobalBucketAccessEnabled);
         }

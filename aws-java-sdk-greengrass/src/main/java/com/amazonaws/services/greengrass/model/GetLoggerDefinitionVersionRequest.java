@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class GetLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     private String loggerDefinitionId;
     /** The ID of the logger definition version. */
     private String loggerDefinitionVersionId;
+    /** The token for the next set of results, or ''null'' if there are no additional results. */
+    private String nextToken;
 
     /**
      * The ID of the logger definition.
@@ -99,7 +101,42 @@ public class GetLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * The token for the next set of results, or ''null'' if there are no additional results.
+     * 
+     * @param nextToken
+     *        The token for the next set of results, or ''null'' if there are no additional results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional results.
+     * 
+     * @return The token for the next set of results, or ''null'' if there are no additional results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional results.
+     * 
+     * @param nextToken
+     *        The token for the next set of results, or ''null'' if there are no additional results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLoggerDefinitionVersionRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -112,7 +149,9 @@ public class GetLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
         if (getLoggerDefinitionId() != null)
             sb.append("LoggerDefinitionId: ").append(getLoggerDefinitionId()).append(",");
         if (getLoggerDefinitionVersionId() != null)
-            sb.append("LoggerDefinitionVersionId: ").append(getLoggerDefinitionVersionId());
+            sb.append("LoggerDefinitionVersionId: ").append(getLoggerDefinitionVersionId()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -135,6 +174,10 @@ public class GetLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getLoggerDefinitionVersionId() != null && other.getLoggerDefinitionVersionId().equals(this.getLoggerDefinitionVersionId()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -145,6 +188,7 @@ public class GetLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
 
         hashCode = prime * hashCode + ((getLoggerDefinitionId() == null) ? 0 : getLoggerDefinitionId().hashCode());
         hashCode = prime * hashCode + ((getLoggerDefinitionVersionId() == null) ? 0 : getLoggerDefinitionVersionId().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

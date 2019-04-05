@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,11 +32,11 @@ public class TransferDataMarshaller {
     private static final MarshallingInfo<String> REJECTREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rejectReason").build();
     private static final MarshallingInfo<java.util.Date> TRANSFERDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transferDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transferDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> ACCEPTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("acceptDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("acceptDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> REJECTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rejectDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rejectDate").timestampFormat("unixTimestamp").build();
 
     private static final TransferDataMarshaller instance = new TransferDataMarshaller();
 

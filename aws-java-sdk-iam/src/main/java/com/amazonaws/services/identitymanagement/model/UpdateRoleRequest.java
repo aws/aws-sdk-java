@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      */
@@ -149,7 +149,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -165,8 +165,8 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in the
-     *        <i>IAM User Guide</i>.
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        the <i>IAM User Guide</i>.
      */
 
     public void setMaxSessionDuration(Integer maxSessionDuration) {
@@ -186,7 +186,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -201,7 +201,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default.
      *         This applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code>
      *         CLI operations but does not apply when you use those operations to create a console URL. For more
-     *         information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+     *         information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
      *         Roles</a> in the <i>IAM User Guide</i>.
      */
 
@@ -222,7 +222,7 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
      * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
      * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
-     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -238,8 +238,8 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
      *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
      *        operations but does not apply when you use those operations to create a console URL. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in the
-     *        <i>IAM User Guide</i>.
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in
+     *        the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,7 +249,8 @@ public class UpdateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,6 +99,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public DescribeStackDriftDetectionStatusResult describeStackDriftDetectionStatus(DescribeStackDriftDetectionStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeStackEventsResult describeStackEvents(DescribeStackEventsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,6 +115,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
 
     @Override
     public DescribeStackResourceResult describeStackResource(DescribeStackResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeStackResourceDriftsResult describeStackResourceDrifts(DescribeStackResourceDriftsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -136,6 +146,16 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     @Override
     public DescribeStacksResult describeStacks() {
         return describeStacks(new DescribeStacksRequest());
+    }
+
+    @Override
+    public DetectStackDriftResult detectStackDrift(DetectStackDriftRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DetectStackResourceDriftResult detectStackResourceDrift(DetectStackResourceDriftRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

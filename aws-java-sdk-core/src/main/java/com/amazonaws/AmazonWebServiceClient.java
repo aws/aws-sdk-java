@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkProtectedApi;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.EndpointPrefixAwareSigner;
 import com.amazonaws.auth.RegionAwareSigner;
 import com.amazonaws.auth.Signer;
@@ -35,6 +36,12 @@ import com.amazonaws.internal.auth.SignerProviderContext;
 import com.amazonaws.log.CommonsLogFactory;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.monitoring.CsmConfiguration;
+import com.amazonaws.monitoring.CsmConfigurationProvider;
+import com.amazonaws.monitoring.DefaultCsmConfigurationProviderChain;
+import com.amazonaws.monitoring.MonitoringListener;
+import com.amazonaws.monitoring.internal.AgentMonitoringListener;
+import com.amazonaws.monitoring.internal.ClientSideMonitoringRequestHandler;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.util.AWSRequestMetrics;
@@ -44,6 +51,8 @@ import com.amazonaws.util.Classes;
 import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.StringUtils;
 import java.net.URI;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.apache.commons.logging.Log;
@@ -65,6 +74,7 @@ public abstract class AmazonWebServiceClient {
 
     private static final String AMAZON = "Amazon";
     private static final String AWS = "AWS";
+    private static final String DEFAULT_CLIENT_ID = "";
 
     private static final Log log =
         LogFactory.getLog(AmazonWebServiceClient.class);
@@ -115,6 +125,8 @@ public abstract class AmazonWebServiceClient {
 
     private volatile SignerProvider signerProvider;
 
+    private final CsmConfiguration csmConfiguration;
+
     /**
      * The cached service abbreviation for this service, used for identifying
      * service endpoints by region, identifying the necessary signer, etc.
@@ -131,6 +143,10 @@ public abstract class AmazonWebServiceClient {
      * Region used to sign requests.
      */
     private volatile String signingRegion;
+
+    private Collection<MonitoringListener> monitoringListeners;
+
+    private AgentMonitoringListener agentMonitoringListener;
 
     /**
      * Constructs a new AmazonWebServiceClient object using the specified
@@ -159,22 +175,72 @@ public abstract class AmazonWebServiceClient {
     }
 
     @SdkProtectedApi
-    protected AmazonWebServiceClient(ClientConfiguration clientConfiguration,
-                                     RequestMetricCollector requestMetricCollector,
+    protected AmazonWebServiceClient(final ClientConfiguration clientConfiguration,
+                                     final RequestMetricCollector requestMetricCollector,
                                      boolean disableStrictHostNameVerification) {
-        this.clientConfiguration = clientConfiguration;
-        requestHandler2s = new CopyOnWriteArrayList<RequestHandler2>();
-        client = new AmazonHttpClient(clientConfiguration,
-                requestMetricCollector, disableStrictHostNameVerification,
-                calculateCRC32FromCompressedData());
+        this(new AwsSyncClientParams() {
+            @Override
+            public AWSCredentialsProvider getCredentialsProvider() {
+                return null;
+            }
+
+            @Override
+            public ClientConfiguration getClientConfiguration() {
+                return clientConfiguration;
+            }
+
+            @Override
+            public RequestMetricCollector getRequestMetricCollector() {
+                return requestMetricCollector;
+            }
+
+            @Override
+            public List<RequestHandler2> getRequestHandlers() {
+                return new CopyOnWriteArrayList<RequestHandler2>();
+            }
+
+            @Override
+            public CsmConfigurationProvider getClientSideMonitoringConfigurationProvider() {
+                return DefaultCsmConfigurationProviderChain.getInstance();
+            }
+
+            @Override
+            public MonitoringListener getMonitoringListener() {
+                return null;
+            }
+        }, !disableStrictHostNameVerification);
     }
 
     protected AmazonWebServiceClient(AwsSyncClientParams clientParams) {
+        this(clientParams, null);
+    }
+
+    private AmazonWebServiceClient(AwsSyncClientParams clientParams, Boolean useStrictHostNameVerification) {
         this.clientConfiguration = clientParams.getClientConfiguration();
-        requestHandler2s = clientParams.getRequestHandlers();
-        client = new AmazonHttpClient(clientConfiguration, clientParams.getRequestMetricCollector(),
-                                      !useStrictHostNameVerification(),
-                                      calculateCRC32FromCompressedData());
+        this.requestHandler2s = clientParams.getRequestHandlers();
+        this.monitoringListeners = new CopyOnWriteArrayList<MonitoringListener>();
+
+        useStrictHostNameVerification = useStrictHostNameVerification != null ? useStrictHostNameVerification
+                                                                              : useStrictHostNameVerification();
+
+        this.client = new AmazonHttpClient(clientConfiguration,
+                                           clientParams.getRequestMetricCollector(),
+                                           !useStrictHostNameVerification,
+                                           calculateCRC32FromCompressedData());
+        this.csmConfiguration = getCsmConfiguration(clientParams.getClientSideMonitoringConfigurationProvider());
+
+        if (isCsmEnabled()) {
+            agentMonitoringListener = new AgentMonitoringListener(csmConfiguration.getPort());
+            monitoringListeners.add(agentMonitoringListener);
+        }
+
+        if (clientParams.getMonitoringListener() != null) {
+            monitoringListeners.add(clientParams.getMonitoringListener());
+        }
+
+        if (shouldGenerateClientSideMonitoringEvents()) {
+            requestHandler2s.add(new ClientSideMonitoringRequestHandler(getClientId(), monitoringListeners));
+        }
     }
 
     /**
@@ -212,8 +278,8 @@ public abstract class AmazonWebServiceClient {
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
      * a complete list of all available endpoints for all AWS services, see:
-     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * <a href="https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint">
+     * https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint</a>
      *
      * @param endpoint
      *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
@@ -453,12 +519,13 @@ public abstract class AmazonWebServiceClient {
 
     /**
      * Shuts down this client object, releasing any resources that might be held
-     * open. This is an optional method, and callers are not expected to call
-     * it, but can if they want to explicitly release any open resources. Once a
-     * client has been shutdown, it should not be used to make any more
-     * requests.
+     * open. If this method is not invoked, resources may be leaked. Once a client
+     * has been shutdown, it should not be used to make any more requests.
      */
     public void shutdown() {
+        if (agentMonitoringListener != null) {
+            agentMonitoringListener.shutdown();
+        }
         client.shutdown();
     }
 
@@ -541,12 +608,13 @@ public abstract class AmazonWebServiceClient {
 
     protected ExecutionContext createExecutionContext(AmazonWebServiceRequest req,
                                                       SignerProvider signerProvider) {
-        boolean isMetricsEnabled = isRequestMetricsEnabled(req) || isProfilingEnabled();
+        boolean isMetricsEnabled = isRequestMetricsEnabled(req) || isProfilingEnabled() ||
+                                   shouldGenerateClientSideMonitoringEvents();
         return ExecutionContext.builder()
-                .withRequestHandler2s(requestHandler2s)
-                .withUseRequestMetrics(isMetricsEnabled)
-                .withAwsClient(this)
-                .withSignerProvider(signerProvider).build();
+                               .withRequestHandler2s(requestHandler2s)
+                               .withUseRequestMetrics(isMetricsEnabled)
+                               .withAwsClient(this)
+                               .withSignerProvider(signerProvider).build();
     }
 
     protected final ExecutionContext createExecutionContext(Request<?> req) {
@@ -560,6 +628,16 @@ public abstract class AmazonWebServiceClient {
     /* Check the profiling system property and return true if set */
     protected static boolean isProfilingEnabled() {
         return System.getProperty(PROFILING_SYSTEM_PROPERTY) != null;
+    }
+
+    /*
+     * Whether to generate client side monitoring events. Only generating
+     * client side monitoring events when there are monitoring listeners attached.
+     *
+     * @see ClientSideMonitoringRequestMetricCollector
+     */
+    protected boolean shouldGenerateClientSideMonitoringEvents() {
+        return !monitoringListeners.isEmpty();
     }
 
     /**
@@ -635,6 +713,13 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
+     * Returns {@link MonitoringListener}; or null if there is none.
+     */
+    public Collection<MonitoringListener> getMonitoringListeners() {
+        return Collections.unmodifiableCollection(monitoringListeners);
+    }
+
+    /**
      * Returns the client specific request metric collector if there is one; or
      * the one at the AWS SDK level otherwise.
      */
@@ -649,13 +734,17 @@ public abstract class AmazonWebServiceClient {
      */
     private final RequestMetricCollector findRequestMetricCollector(
             RequestMetricCollector reqLevelMetricsCollector) {
+
+        RequestMetricCollector requestMetricCollector;
+
         if (reqLevelMetricsCollector != null) {
-            return reqLevelMetricsCollector;
+            requestMetricCollector = reqLevelMetricsCollector;
         } else if (getRequestMetricsCollector() != null) {
-            return getRequestMetricsCollector();
+            requestMetricCollector =  getRequestMetricsCollector();
         } else {
-            return AwsSdkMetrics.getRequestMetricCollector();
+            requestMetricCollector = AwsSdkMetrics.getRequestMetricCollector();
         }
+        return requestMetricCollector;
     }
 
     /**
@@ -960,5 +1049,38 @@ public abstract class AmazonWebServiceClient {
 
     public String getSignerOverride() {
         return clientConfiguration.getSignerOverride();
+    }
+
+    public ClientConfiguration getClientConfiguration() {
+        return new ClientConfiguration(clientConfiguration);
+    }
+
+    /**
+     * @return {@code true} if Client Side Monitoring is enabled, {@code false}
+     * otherwise.
+     */
+    protected final boolean isCsmEnabled() {
+        return csmConfiguration != null && csmConfiguration.isEnabled();
+    }
+
+    protected String getClientId() {
+        if (csmConfiguration == null) {
+            return DEFAULT_CLIENT_ID;
+        }
+        return csmConfiguration.getClientId();
+    }
+
+
+    /**
+     * Convenience method to return {@code null} if the provider throws {@code
+     * SdkClientException}.
+     */
+    private CsmConfiguration getCsmConfiguration(
+            CsmConfigurationProvider csmConfigurationProvider) {
+        try {
+            return csmConfigurationProvider.getConfiguration();
+        } catch (SdkClientException e) {
+            return null;
+        }
     }
 }

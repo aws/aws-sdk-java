@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,10 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Detailed health information about each instance.
      * </p>
+     * <p>
+     * The output differs slightly between Linux and Windows environments. There is a difference in the members that are
+     * supported under the <code>&lt;CPUUtilization&gt;</code> type.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SingleInstanceHealth> instanceHealthList;
     /**
@@ -49,8 +53,15 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Detailed health information about each instance.
      * </p>
+     * <p>
+     * The output differs slightly between Linux and Windows environments. There is a difference in the members that are
+     * supported under the <code>&lt;CPUUtilization&gt;</code> type.
+     * </p>
      * 
-     * @return Detailed health information about each instance.
+     * @return Detailed health information about each instance.</p>
+     *         <p>
+     *         The output differs slightly between Linux and Windows environments. There is a difference in the members
+     *         that are supported under the <code>&lt;CPUUtilization&gt;</code> type.
      */
 
     public java.util.List<SingleInstanceHealth> getInstanceHealthList() {
@@ -64,9 +75,16 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Detailed health information about each instance.
      * </p>
+     * <p>
+     * The output differs slightly between Linux and Windows environments. There is a difference in the members that are
+     * supported under the <code>&lt;CPUUtilization&gt;</code> type.
+     * </p>
      * 
      * @param instanceHealthList
-     *        Detailed health information about each instance.
+     *        Detailed health information about each instance.</p>
+     *        <p>
+     *        The output differs slightly between Linux and Windows environments. There is a difference in the members
+     *        that are supported under the <code>&lt;CPUUtilization&gt;</code> type.
      */
 
     public void setInstanceHealthList(java.util.Collection<SingleInstanceHealth> instanceHealthList) {
@@ -83,13 +101,20 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
      * Detailed health information about each instance.
      * </p>
      * <p>
+     * The output differs slightly between Linux and Windows environments. There is a difference in the members that are
+     * supported under the <code>&lt;CPUUtilization&gt;</code> type.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInstanceHealthList(java.util.Collection)} or {@link #withInstanceHealthList(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param instanceHealthList
-     *        Detailed health information about each instance.
+     *        Detailed health information about each instance.</p>
+     *        <p>
+     *        The output differs slightly between Linux and Windows environments. There is a difference in the members
+     *        that are supported under the <code>&lt;CPUUtilization&gt;</code> type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,9 +132,16 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
      * <p>
      * Detailed health information about each instance.
      * </p>
+     * <p>
+     * The output differs slightly between Linux and Windows environments. There is a difference in the members that are
+     * supported under the <code>&lt;CPUUtilization&gt;</code> type.
+     * </p>
      * 
      * @param instanceHealthList
-     *        Detailed health information about each instance.
+     *        Detailed health information about each instance.</p>
+     *        <p>
+     *        The output differs slightly between Linux and Windows environments. There is a difference in the members
+     *        that are supported under the <code>&lt;CPUUtilization&gt;</code> type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,7 +231,8 @@ public class DescribeInstancesHealthResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

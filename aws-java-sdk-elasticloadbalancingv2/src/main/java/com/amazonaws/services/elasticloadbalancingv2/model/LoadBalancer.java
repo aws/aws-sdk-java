@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,7 +60,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -311,7 +311,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -322,7 +322,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
      *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
-     *        load balancers can route requests from clients over the Internet.</p>
+     *        load balancers can route requests from clients over the internet.</p>
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
@@ -338,7 +338,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -348,7 +348,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * 
      * @return The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an
      *         Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore,
-     *         Internet-facing load balancers can route requests from clients over the Internet.</p>
+     *         Internet-facing load balancers can route requests from clients over the internet.</p>
      *         <p>
      *         The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *         balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
@@ -364,7 +364,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -375,7 +375,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
      *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
-     *        load balancers can route requests from clients over the Internet.</p>
+     *        load balancers can route requests from clients over the internet.</p>
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
@@ -393,7 +393,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -404,7 +404,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
      *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
-     *        load balancers can route requests from clients over the Internet.</p>
+     *        load balancers can route requests from clients over the internet.</p>
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
@@ -420,7 +420,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * <p>
      * The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load
      * balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load
-     * balancers can route requests from clients over the Internet.
+     * balancers can route requests from clients over the internet.
      * </p>
      * <p>
      * The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer
@@ -431,7 +431,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * @param scheme
      *        The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing
      *        load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing
-     *        load balancers can route requests from clients over the Internet.</p>
+     *        load balancers can route requests from clients over the internet.</p>
      *        <p>
      *        The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load
      *        balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load
@@ -822,7 +822,8 @@ public class LoadBalancer implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,20 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<GroupFilter> filters;
+    /**
+     * <p>
      * The maximum number of resource group results that are returned by ListGroups in paginated output. By default,
      * this number is 50.
      * </p>
@@ -39,6 +53,136 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
+     *         format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<GroupFilter> getFilters() {
+        return filters;
+    }
+
+    /**
+     * <p>
+     * Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param filters
+     *        Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
+     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        </p>
+     *        </li>
+     */
+
+    public void setFilters(java.util.Collection<GroupFilter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new java.util.ArrayList<GroupFilter>(filters);
+    }
+
+    /**
+     * <p>
+     * Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
+     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListGroupsRequest withFilters(GroupFilter... filters) {
+        if (this.filters == null) {
+            setFilters(new java.util.ArrayList<GroupFilter>(filters.length));
+        }
+        for (GroupFilter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param filters
+     *        Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
+     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListGroupsRequest withFilters(java.util.Collection<GroupFilter> filters) {
+        setFilters(filters);
+        return this;
+    }
 
     /**
      * <p>
@@ -133,7 +277,8 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -143,6 +288,8 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -161,6 +308,10 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (obj instanceof ListGroupsRequest == false)
             return false;
         ListGroupsRequest other = (ListGroupsRequest) obj;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -177,6 +328,7 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

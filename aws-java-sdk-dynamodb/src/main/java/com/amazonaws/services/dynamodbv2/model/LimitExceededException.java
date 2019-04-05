@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to the number of
- * daily on-demand backups that can be taken.
+ * There is no limit to the number of daily on-demand backups that can be taken.
  * </p>
  * <p>
  * Up to 10 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>,

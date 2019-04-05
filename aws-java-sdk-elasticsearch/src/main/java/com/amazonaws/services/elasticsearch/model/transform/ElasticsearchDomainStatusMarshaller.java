@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,8 @@ public class ElasticsearchDomainStatusMarshaller {
             .marshallLocationName("Endpoints").build();
     private static final MarshallingInfo<Boolean> PROCESSING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Processing").build();
+    private static final MarshallingInfo<Boolean> UPGRADEPROCESSING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpgradeProcessing").build();
     private static final MarshallingInfo<String> ELASTICSEARCHVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchVersion").build();
     private static final MarshallingInfo<StructuredPojo> ELASTICSEARCHCLUSTERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -61,10 +63,14 @@ public class ElasticsearchDomainStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CognitoOptions").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTIONATRESTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionAtRestOptions").build();
+    private static final MarshallingInfo<StructuredPojo> NODETONODEENCRYPTIONOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NodeToNodeEncryptionOptions").build();
     private static final MarshallingInfo<Map> ADVANCEDOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AdvancedOptions").build();
     private static final MarshallingInfo<Map> LOGPUBLISHINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SERVICESOFTWAREOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceSoftwareOptions").build();
 
     private static final ElasticsearchDomainStatusMarshaller instance = new ElasticsearchDomainStatusMarshaller();
 
@@ -90,6 +96,7 @@ public class ElasticsearchDomainStatusMarshaller {
             protocolMarshaller.marshall(elasticsearchDomainStatus.getEndpoint(), ENDPOINT_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getEndpoints(), ENDPOINTS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getProcessing(), PROCESSING_BINDING);
+            protocolMarshaller.marshall(elasticsearchDomainStatus.getUpgradeProcessing(), UPGRADEPROCESSING_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getElasticsearchVersion(), ELASTICSEARCHVERSION_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getElasticsearchClusterConfig(), ELASTICSEARCHCLUSTERCONFIG_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getEBSOptions(), EBSOPTIONS_BINDING);
@@ -98,8 +105,10 @@ public class ElasticsearchDomainStatusMarshaller {
             protocolMarshaller.marshall(elasticsearchDomainStatus.getVPCOptions(), VPCOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getCognitoOptions(), COGNITOOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getEncryptionAtRestOptions(), ENCRYPTIONATRESTOPTIONS_BINDING);
+            protocolMarshaller.marshall(elasticsearchDomainStatus.getNodeToNodeEncryptionOptions(), NODETONODEENCRYPTIONOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getAdvancedOptions(), ADVANCEDOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainStatus.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);
+            protocolMarshaller.marshall(elasticsearchDomainStatus.getServiceSoftwareOptions(), SERVICESOFTWAREOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

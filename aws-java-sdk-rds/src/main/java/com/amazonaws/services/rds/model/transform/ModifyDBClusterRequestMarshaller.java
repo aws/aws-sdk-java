@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,8 +103,78 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
             request.addParameter("BacktrackWindow", StringUtils.fromLong(modifyDBClusterRequest.getBacktrackWindow()));
         }
 
+        {
+            CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration = modifyDBClusterRequest.getCloudwatchLogsExportConfiguration();
+            if (cloudwatchLogsExportConfiguration != null) {
+
+                if (!cloudwatchLogsExportConfiguration.getEnableLogTypes().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration.getEnableLogTypes()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> enableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
+                            .getEnableLogTypes();
+                    int enableLogTypesListIndex = 1;
+
+                    for (String enableLogTypesListValue : enableLogTypesList) {
+                        if (enableLogTypesListValue != null) {
+                            request.addParameter("CloudwatchLogsExportConfiguration.EnableLogTypes.member." + enableLogTypesListIndex,
+                                    StringUtils.fromString(enableLogTypesListValue));
+                        }
+                        enableLogTypesListIndex++;
+                    }
+                }
+
+                if (!cloudwatchLogsExportConfiguration.getDisableLogTypes().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration.getDisableLogTypes()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> disableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
+                            .getDisableLogTypes();
+                    int disableLogTypesListIndex = 1;
+
+                    for (String disableLogTypesListValue : disableLogTypesList) {
+                        if (disableLogTypesListValue != null) {
+                            request.addParameter("CloudwatchLogsExportConfiguration.DisableLogTypes.member." + disableLogTypesListIndex,
+                                    StringUtils.fromString(disableLogTypesListValue));
+                        }
+                        disableLogTypesListIndex++;
+                    }
+                }
+            }
+        }
+
         if (modifyDBClusterRequest.getEngineVersion() != null) {
             request.addParameter("EngineVersion", StringUtils.fromString(modifyDBClusterRequest.getEngineVersion()));
+        }
+
+        {
+            ScalingConfiguration scalingConfiguration = modifyDBClusterRequest.getScalingConfiguration();
+            if (scalingConfiguration != null) {
+
+                if (scalingConfiguration.getMinCapacity() != null) {
+                    request.addParameter("ScalingConfiguration.MinCapacity", StringUtils.fromInteger(scalingConfiguration.getMinCapacity()));
+                }
+
+                if (scalingConfiguration.getMaxCapacity() != null) {
+                    request.addParameter("ScalingConfiguration.MaxCapacity", StringUtils.fromInteger(scalingConfiguration.getMaxCapacity()));
+                }
+
+                if (scalingConfiguration.getAutoPause() != null) {
+                    request.addParameter("ScalingConfiguration.AutoPause", StringUtils.fromBoolean(scalingConfiguration.getAutoPause()));
+                }
+
+                if (scalingConfiguration.getSecondsUntilAutoPause() != null) {
+                    request.addParameter("ScalingConfiguration.SecondsUntilAutoPause", StringUtils.fromInteger(scalingConfiguration.getSecondsUntilAutoPause()));
+                }
+            }
+        }
+
+        if (modifyDBClusterRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(modifyDBClusterRequest.getDeletionProtection()));
+        }
+
+        if (modifyDBClusterRequest.getEnableHttpEndpoint() != null) {
+            request.addParameter("EnableHttpEndpoint", StringUtils.fromBoolean(modifyDBClusterRequest.getEnableHttpEndpoint()));
+        }
+
+        if (modifyDBClusterRequest.getCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(modifyDBClusterRequest.getCopyTagsToSnapshot()));
         }
 
         return request;

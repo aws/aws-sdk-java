@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      */
     private String status;
     /**
@@ -66,7 +73,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     private String statusReason;
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
      * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
      * called). For array child jobs, this is when the child job was spawned by its parent and entered the
      * <code>PENDING</code> state.
@@ -81,15 +88,15 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     private RetryStrategy retryStrategy;
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned from
-     * the <code>STARTING</code> state to the <code>RUNNING</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      */
     private Long startedAt;
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from
-     * the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      */
     private Long stoppedAt;
@@ -118,6 +125,18 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ContainerDetail container;
+    /**
+     * <p>
+     * An object representing the details of a node that is associated with a multi-node parallel job.
+     * </p>
+     */
+    private NodeDetails nodeDetails;
+    /**
+     * <p>
+     * An object representing the node properties of a multi-node parallel job.
+     * </p>
+     */
+    private NodeProperties nodeProperties;
     /**
      * <p>
      * The array properties of the job, if it is an array job.
@@ -255,9 +274,22 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User
+     *        Guide</i>.
+     *        </p>
      * @see JobStatus
      */
 
@@ -269,8 +301,21 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
-     * @return The current status for the job.
+     * @return The current status for the job. </p> <note>
+     *         <p>
+     *         If your jobs do not progress to <code>STARTING</code>, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *         Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User
+     *         Guide</i>.
+     *         </p>
      * @see JobStatus
      */
 
@@ -282,9 +327,22 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User
+     *        Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -298,9 +356,22 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User
+     *        Guide</i>.
+     *        </p>
      * @see JobStatus
      */
 
@@ -312,9 +383,22 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status for the job.
      * </p>
+     * <note>
+     * <p>
+     * If your jobs do not progress to <code>STARTING</code>, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs Stuck
+     * in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The current status for the job.
+     *        The current status for the job. </p> <note>
+     *        <p>
+     *        If your jobs do not progress to <code>STARTING</code>, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+     *        Stuck in <code>RUNNABLE</code> Status</a> in the troubleshooting section of the <i>AWS Batch User
+     *        Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobStatus
      */
@@ -436,14 +520,14 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
      * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
      * called). For array child jobs, this is when the child job was spawned by its parent and entered the
      * <code>PENDING</code> state.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
      *        parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time
      *        <a>SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent
      *        and entered the <code>PENDING</code> state.
@@ -455,13 +539,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
      * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
      * called). For array child jobs, this is when the child job was spawned by its parent and entered the
      * <code>PENDING</code> state.
      * </p>
      * 
-     * @return The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
+     * @return The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
      *         parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time
      *         <a>SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent
      *         and entered the <code>PENDING</code> state.
@@ -473,14 +557,14 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
      * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
      * called). For array child jobs, this is when the child job was spawned by its parent and entered the
      * <code>PENDING</code> state.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
      *        parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time
      *        <a>SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent
      *        and entered the <code>PENDING</code> state.
@@ -534,12 +618,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned from
-     * the <code>STARTING</code> state to the <code>RUNNING</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned
      *        from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      */
 
@@ -549,11 +633,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned from
-     * the <code>STARTING</code> state to the <code>RUNNING</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
-     * @return The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned
+     * @return The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned
      *         from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      */
 
@@ -563,12 +647,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned from
-     * the <code>STARTING</code> state to the <code>RUNNING</code> state).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned from the
+     * <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was started (when the job transitioned
      *        from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -580,12 +664,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from
-     * the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
      *        from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
      *        <code>FAILED</code>).
      */
@@ -596,11 +680,11 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from
-     * the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
-     * @return The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
+     * @return The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
      *         from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
      *         <code>FAILED</code>).
      */
@@ -611,12 +695,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from
-     * the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from the
+     * <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
+     *        The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
      *        from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
      *        <code>FAILED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -846,6 +930,86 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * An object representing the details of a node that is associated with a multi-node parallel job.
+     * </p>
+     * 
+     * @param nodeDetails
+     *        An object representing the details of a node that is associated with a multi-node parallel job.
+     */
+
+    public void setNodeDetails(NodeDetails nodeDetails) {
+        this.nodeDetails = nodeDetails;
+    }
+
+    /**
+     * <p>
+     * An object representing the details of a node that is associated with a multi-node parallel job.
+     * </p>
+     * 
+     * @return An object representing the details of a node that is associated with a multi-node parallel job.
+     */
+
+    public NodeDetails getNodeDetails() {
+        return this.nodeDetails;
+    }
+
+    /**
+     * <p>
+     * An object representing the details of a node that is associated with a multi-node parallel job.
+     * </p>
+     * 
+     * @param nodeDetails
+     *        An object representing the details of a node that is associated with a multi-node parallel job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withNodeDetails(NodeDetails nodeDetails) {
+        setNodeDetails(nodeDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object representing the node properties of a multi-node parallel job.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object representing the node properties of a multi-node parallel job.
+     */
+
+    public void setNodeProperties(NodeProperties nodeProperties) {
+        this.nodeProperties = nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object representing the node properties of a multi-node parallel job.
+     * </p>
+     * 
+     * @return An object representing the node properties of a multi-node parallel job.
+     */
+
+    public NodeProperties getNodeProperties() {
+        return this.nodeProperties;
+    }
+
+    /**
+     * <p>
+     * An object representing the node properties of a multi-node parallel job.
+     * </p>
+     * 
+     * @param nodeProperties
+     *        An object representing the node properties of a multi-node parallel job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withNodeProperties(NodeProperties nodeProperties) {
+        setNodeProperties(nodeProperties);
+        return this;
+    }
+
+    /**
+     * <p>
      * The array properties of the job, if it is an array job.
      * </p>
      * 
@@ -925,7 +1089,8 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -963,6 +1128,10 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getContainer() != null)
             sb.append("Container: ").append(getContainer()).append(",");
+        if (getNodeDetails() != null)
+            sb.append("NodeDetails: ").append(getNodeDetails()).append(",");
+        if (getNodeProperties() != null)
+            sb.append("NodeProperties: ").append(getNodeProperties()).append(",");
         if (getArrayProperties() != null)
             sb.append("ArrayProperties: ").append(getArrayProperties()).append(",");
         if (getTimeout() != null)
@@ -1037,6 +1206,14 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContainer() != null && other.getContainer().equals(this.getContainer()) == false)
             return false;
+        if (other.getNodeDetails() == null ^ this.getNodeDetails() == null)
+            return false;
+        if (other.getNodeDetails() != null && other.getNodeDetails().equals(this.getNodeDetails()) == false)
+            return false;
+        if (other.getNodeProperties() == null ^ this.getNodeProperties() == null)
+            return false;
+        if (other.getNodeProperties() != null && other.getNodeProperties().equals(this.getNodeProperties()) == false)
+            return false;
         if (other.getArrayProperties() == null ^ this.getArrayProperties() == null)
             return false;
         if (other.getArrayProperties() != null && other.getArrayProperties().equals(this.getArrayProperties()) == false)
@@ -1067,6 +1244,8 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJobDefinition() == null) ? 0 : getJobDefinition().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
+        hashCode = prime * hashCode + ((getNodeDetails() == null) ? 0 : getNodeDetails().hashCode());
+        hashCode = prime * hashCode + ((getNodeProperties() == null) ? 0 : getNodeProperties().hashCode());
         hashCode = prime * hashCode + ((getArrayProperties() == null) ? 0 : getArrayProperties().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,10 +36,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been added to the default configuration provided by Docker.
      * This parameter maps to <code>CapAdd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cap-add</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -56,10 +55,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been removed from the default configuration provided by
      * Docker. This parameter maps to <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cap-drop</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
      * Valid values:
@@ -72,10 +70,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been added to the default configuration provided by Docker.
      * This parameter maps to <code>CapAdd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cap-add</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -89,10 +86,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * 
      * @return The Linux capabilities for the container that have been added to the default configuration provided by
      *         Docker. This parameter maps to <code>CapAdd</code> in the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *         container</a> section of the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
-     *         the <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     *         <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p> <note>
      *         <p>
      *         If you are using tasks that use the Fargate launch type, the <code>add</code> parameter is not supported.
@@ -114,10 +110,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been added to the default configuration provided by Docker.
      * This parameter maps to <code>CapAdd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cap-add</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -132,9 +127,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * @param add
      *        The Linux capabilities for the container that have been added to the default configuration provided by
      *        Docker. This parameter maps to <code>CapAdd</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
@@ -159,10 +153,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been added to the default configuration provided by Docker.
      * This parameter maps to <code>CapAdd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cap-add</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -182,9 +175,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * @param add
      *        The Linux capabilities for the container that have been added to the default configuration provided by
      *        Docker. This parameter maps to <code>CapAdd</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
@@ -211,10 +203,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been added to the default configuration provided by Docker.
      * This parameter maps to <code>CapAdd</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cap-add</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -229,9 +220,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * @param add
      *        The Linux capabilities for the container that have been added to the default configuration provided by
      *        Docker. This parameter maps to <code>CapAdd</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p> <note>
      *        <p>
@@ -253,10 +243,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been removed from the default configuration provided by
      * Docker. This parameter maps to <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cap-drop</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
      * Valid values:
@@ -265,10 +254,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * 
      * @return The Linux capabilities for the container that have been removed from the default configuration provided
      *         by Docker. This parameter maps to <code>CapDrop</code> in the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *         container</a> section of the <a
-     *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
-     *         the <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     *         <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p>
      *         <p>
      *         Valid values:
@@ -286,10 +274,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been removed from the default configuration provided by
      * Docker. This parameter maps to <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cap-drop</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
      * Valid values:
@@ -299,9 +286,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * @param drop
      *        The Linux capabilities for the container that have been removed from the default configuration provided by
      *        Docker. This parameter maps to <code>CapDrop</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p>
      *        <p>
@@ -322,10 +308,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been removed from the default configuration provided by
      * Docker. This parameter maps to <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cap-drop</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
      * Valid values:
@@ -340,9 +325,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * @param drop
      *        The Linux capabilities for the container that have been removed from the default configuration provided by
      *        Docker. This parameter maps to <code>CapDrop</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p>
      *        <p>
@@ -365,10 +349,9 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Linux capabilities for the container that have been removed from the default configuration provided by
      * Docker. This parameter maps to <code>CapDrop</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     * container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     * <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--cap-drop</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
      * <p>
      * Valid values:
@@ -378,9 +361,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
      * @param drop
      *        The Linux capabilities for the container that have been removed from the default configuration provided by
      *        Docker. This parameter maps to <code>CapDrop</code> in the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
-     *        container</a> section of the <a
-     *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
+     *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
+     *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p>
      *        <p>
@@ -395,7 +377,8 @@ public class KernelCapabilities implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

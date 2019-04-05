@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,9 +56,9 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
-     * for a given source type by calling the <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and
-     * Notifications</a> in the AWS Database Migration Service User Guide.
+     * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private java.util.List<String> eventCategories;
@@ -72,8 +72,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     private java.util.List<String> sourceIds;
     /**
      * <p>
-     * A Boolean value; set to <b>true</b> to activate the subscription, or set to <b>false</b> to create the
-     * subscription but not activate it.
+     * A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create
+     * the subscription but not activate it.
      * </p>
      */
     private Boolean enabled;
@@ -255,15 +255,15 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
-     * for a given source type by calling the <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and
-     * Notifications</a> in the AWS Database Migration Service User Guide.
+     * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return A list of event categories for a source type that you want to subscribe to. You can see a list of the
-     *         categories for a given source type by calling the <b>DescribeEventCategories</b> action or in the topic
-     *         <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and
-     *         Notifications</a> in the AWS Database Migration Service User Guide.
+     *         categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
+     *         topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     *         Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public java.util.List<String> getEventCategories() {
@@ -273,16 +273,16 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
-     * for a given source type by calling the <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and
-     * Notifications</a> in the AWS Database Migration Service User Guide.
+     * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param eventCategories
      *        A list of event categories for a source type that you want to subscribe to. You can see a list of the
-     *        categories for a given source type by calling the <b>DescribeEventCategories</b> action or in the topic <a
-     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and
-     *        Notifications</a> in the AWS Database Migration Service User Guide.
+     *        categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
+     *        topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     *        Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public void setEventCategories(java.util.Collection<String> eventCategories) {
@@ -297,9 +297,9 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
-     * for a given source type by calling the <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and
-     * Notifications</a> in the AWS Database Migration Service User Guide.
+     * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -309,9 +309,9 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param eventCategories
      *        A list of event categories for a source type that you want to subscribe to. You can see a list of the
-     *        categories for a given source type by calling the <b>DescribeEventCategories</b> action or in the topic <a
-     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and
-     *        Notifications</a> in the AWS Database Migration Service User Guide.
+     *        categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
+     *        topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     *        Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,16 +328,16 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of event categories for a source type that you want to subscribe to. You can see a list of the categories
-     * for a given source type by calling the <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and
-     * Notifications</a> in the AWS Database Migration Service User Guide.
+     * for a given source type by calling the <code>DescribeEventCategories</code> action or in the topic <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     * Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param eventCategories
      *        A list of event categories for a source type that you want to subscribe to. You can see a list of the
-     *        categories for a given source type by calling the <b>DescribeEventCategories</b> action or in the topic <a
-     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and
-     *        Notifications</a> in the AWS Database Migration Service User Guide.
+     *        categories for a given source type by calling the <code>DescribeEventCategories</code> action or in the
+     *        topic <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
+     *        Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -434,13 +434,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A Boolean value; set to <b>true</b> to activate the subscription, or set to <b>false</b> to create the
-     * subscription but not activate it.
+     * A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create
+     * the subscription but not activate it.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value; set to <b>true</b> to activate the subscription, or set to <b>false</b> to create the
-     *        subscription but not activate it.
+     *        A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to
+     *        create the subscription but not activate it.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -449,12 +449,12 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A Boolean value; set to <b>true</b> to activate the subscription, or set to <b>false</b> to create the
-     * subscription but not activate it.
+     * A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create
+     * the subscription but not activate it.
      * </p>
      * 
-     * @return A Boolean value; set to <b>true</b> to activate the subscription, or set to <b>false</b> to create the
-     *         subscription but not activate it.
+     * @return A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to
+     *         create the subscription but not activate it.
      */
 
     public Boolean getEnabled() {
@@ -463,13 +463,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A Boolean value; set to <b>true</b> to activate the subscription, or set to <b>false</b> to create the
-     * subscription but not activate it.
+     * A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create
+     * the subscription but not activate it.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value; set to <b>true</b> to activate the subscription, or set to <b>false</b> to create the
-     *        subscription but not activate it.
+     *        A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to
+     *        create the subscription but not activate it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -480,12 +480,12 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A Boolean value; set to <b>true</b> to activate the subscription, or set to <b>false</b> to create the
-     * subscription but not activate it.
+     * A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to create
+     * the subscription but not activate it.
      * </p>
      * 
-     * @return A Boolean value; set to <b>true</b> to activate the subscription, or set to <b>false</b> to create the
-     *         subscription but not activate it.
+     * @return A Boolean value; set to <code>true</code> to activate the subscription, or set to <code>false</code> to
+     *         create the subscription but not activate it.
      */
 
     public Boolean isEnabled() {
@@ -563,7 +563,8 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

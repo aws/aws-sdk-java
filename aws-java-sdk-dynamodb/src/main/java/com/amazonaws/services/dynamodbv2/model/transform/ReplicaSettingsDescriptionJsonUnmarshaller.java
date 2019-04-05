@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,13 +56,27 @@ public class ReplicaSettingsDescriptionJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     replicaSettingsDescription.setReplicaStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ReplicaBillingModeSummary", targetDepth)) {
+                    context.nextToken();
+                    replicaSettingsDescription.setReplicaBillingModeSummary(BillingModeSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ReplicaProvisionedReadCapacityUnits", targetDepth)) {
                     context.nextToken();
                     replicaSettingsDescription.setReplicaProvisionedReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ReplicaProvisionedReadCapacityAutoScalingSettings", targetDepth)) {
+                    context.nextToken();
+                    replicaSettingsDescription.setReplicaProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ReplicaProvisionedWriteCapacityUnits", targetDepth)) {
                     context.nextToken();
                     replicaSettingsDescription.setReplicaProvisionedWriteCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ReplicaProvisionedWriteCapacityAutoScalingSettings", targetDepth)) {
+                    context.nextToken();
+                    replicaSettingsDescription.setReplicaProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ReplicaGlobalSecondaryIndexSettings", targetDepth)) {
                     context.nextToken();

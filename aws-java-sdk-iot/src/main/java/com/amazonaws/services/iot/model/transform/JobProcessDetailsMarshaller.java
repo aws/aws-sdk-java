@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class JobProcessDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfInProgressThings").build();
     private static final MarshallingInfo<Integer> NUMBEROFREMOVEDTHINGS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfRemovedThings").build();
+    private static final MarshallingInfo<Integer> NUMBEROFTIMEDOUTTHINGS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("numberOfTimedOutThings").build();
 
     private static final JobProcessDetailsMarshaller instance = new JobProcessDetailsMarshaller();
 
@@ -69,6 +71,7 @@ public class JobProcessDetailsMarshaller {
             protocolMarshaller.marshall(jobProcessDetails.getNumberOfQueuedThings(), NUMBEROFQUEUEDTHINGS_BINDING);
             protocolMarshaller.marshall(jobProcessDetails.getNumberOfInProgressThings(), NUMBEROFINPROGRESSTHINGS_BINDING);
             protocolMarshaller.marshall(jobProcessDetails.getNumberOfRemovedThings(), NUMBEROFREMOVEDTHINGS_BINDING);
+            protocolMarshaller.marshall(jobProcessDetails.getNumberOfTimedOutThings(), NUMBEROFTIMEDOUTTHINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

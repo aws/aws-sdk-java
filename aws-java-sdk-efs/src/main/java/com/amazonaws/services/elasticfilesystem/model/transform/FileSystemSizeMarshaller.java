@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,11 @@ public class FileSystemSizeMarshaller {
     private static final MarshallingInfo<Long> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Value").build();
     private static final MarshallingInfo<java.util.Date> TIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Long> VALUEINIA_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ValueInIA").build();
+    private static final MarshallingInfo<Long> VALUEINSTANDARD_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValueInStandard").build();
 
     private static final FileSystemSizeMarshaller instance = new FileSystemSizeMarshaller();
 
@@ -50,6 +54,8 @@ public class FileSystemSizeMarshaller {
         try {
             protocolMarshaller.marshall(fileSystemSize.getValue(), VALUE_BINDING);
             protocolMarshaller.marshall(fileSystemSize.getTimestamp(), TIMESTAMP_BINDING);
+            protocolMarshaller.marshall(fileSystemSize.getValueInIA(), VALUEINIA_BINDING);
+            protocolMarshaller.marshall(fileSystemSize.getValueInStandard(), VALUEINSTANDARD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

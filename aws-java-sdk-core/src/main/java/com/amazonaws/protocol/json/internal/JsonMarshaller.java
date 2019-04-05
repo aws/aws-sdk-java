@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 package com.amazonaws.protocol.json.internal;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.protocol.MarshallingInfo;
 
 /**
  * Interface to marshall data according to the JSON protocol specification.
@@ -26,7 +27,7 @@ public interface JsonMarshaller<T> {
 
     JsonMarshaller<Void> NULL = new JsonMarshaller<Void>() {
         @Override
-        public void marshall(Void val, JsonMarshallerContext context, String paramName) {
+        public void marshall(Void val, JsonMarshallerContext context, MarshallingInfo marshallingInfo) {
         }
     };
 
@@ -35,8 +36,8 @@ public interface JsonMarshaller<T> {
      *
      * @param val       Data to marshall (may be null).
      * @param context   Dependencies needed for marshalling.
-     * @param paramName Optional param/field name. May be null in certain situations.
+     * @param marshallingInfo marshallingInfo. May be null in certain situations.
      */
-    void marshall(T val, JsonMarshallerContext context, String paramName);
+    void marshall(T val, JsonMarshallerContext context, MarshallingInfo<T> marshallingInfo);
 
 }

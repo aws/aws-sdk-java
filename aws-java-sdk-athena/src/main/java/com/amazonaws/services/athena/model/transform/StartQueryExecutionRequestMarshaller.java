@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class StartQueryExecutionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryExecutionContext").build();
     private static final MarshallingInfo<StructuredPojo> RESULTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResultConfiguration").build();
+    private static final MarshallingInfo<String> WORKGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("WorkGroup").build();
 
     private static final StartQueryExecutionRequestMarshaller instance = new StartQueryExecutionRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class StartQueryExecutionRequestMarshaller {
             protocolMarshaller.marshall(startQueryExecutionRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(startQueryExecutionRequest.getQueryExecutionContext(), QUERYEXECUTIONCONTEXT_BINDING);
             protocolMarshaller.marshall(startQueryExecutionRequest.getResultConfiguration(), RESULTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(startQueryExecutionRequest.getWorkGroup(), WORKGROUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

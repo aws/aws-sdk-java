@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the output.
- * Specify a framerate that matches the framerate of the associated video. If the video framerate is 29.97, choose 29.97
- * dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and drop_frame_timecode=true;
+ * Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose
+ * 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and drop_frame_timecode=true;
  * otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

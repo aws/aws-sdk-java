@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,11 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public CreateFunctionResult createFunction(CreateFunctionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateGraphqlApiResult createGraphqlApi(CreateGraphqlApiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,6 +68,11 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public DeleteFunctionResult deleteFunction(DeleteFunctionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteGraphqlApiResult deleteGraphqlApi(DeleteGraphqlApiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +89,11 @@ public class AbstractAWSAppSync implements AWSAppSync {
 
     @Override
     public GetDataSourceResult getDataSource(GetDataSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFunctionResult getFunction(GetFunctionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,12 +133,22 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public ListFunctionsResult listFunctions(ListFunctionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListGraphqlApisResult listGraphqlApis(ListGraphqlApisRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListResolversResult listResolvers(ListResolversRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResolversByFunctionResult listResolversByFunction(ListResolversByFunctionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,6 +169,11 @@ public class AbstractAWSAppSync implements AWSAppSync {
 
     @Override
     public UpdateDataSourceResult updateDataSource(UpdateDataSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFunctionResult updateFunction(UpdateFunctionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

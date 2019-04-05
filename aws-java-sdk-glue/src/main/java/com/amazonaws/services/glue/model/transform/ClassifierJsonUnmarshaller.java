@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,10 @@ public class ClassifierJsonUnmarshaller implements Unmarshaller<Classifier, Json
                 if (context.testExpression("JsonClassifier", targetDepth)) {
                     context.nextToken();
                     classifier.setJsonClassifier(JsonClassifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CsvClassifier", targetDepth)) {
+                    context.nextToken();
+                    classifier.setCsvClassifier(CsvClassifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

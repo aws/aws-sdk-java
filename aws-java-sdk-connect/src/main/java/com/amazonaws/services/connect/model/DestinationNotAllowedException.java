@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,10 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Outbound calls to the destination number are not allowed for your instance. You can request that the country be
- * included in the allowed countries for your instance by submitting a <a
- * href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase">Service Limit
- * Increase</a>.
+ * Outbound calls to the destination number are not allowed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

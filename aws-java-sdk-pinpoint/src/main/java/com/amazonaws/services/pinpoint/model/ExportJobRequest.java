@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * Export job request.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ExportJobRequest" target="_top">AWS API
  *      Documentation</a>
@@ -32,13 +33,20 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     private String roleArn;
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     * typically a folder with multiple files. The URL should follow this format: s3://bucket-name/folder-name/
+     * typically a folder with multiple files.
+     * 
+     * The URL should follow this format: s3://bucket-name/folder-name/
      * 
      * Amazon Pinpoint will export endpoints to this location.
      */
     private String s3UrlPrefix;
-    /** The ID of the segment to export endpoints from. If not present all endpoints will be exported. */
+    /**
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the endpoints that
+     * belong to the application.
+     */
     private String segmentId;
+    /** The version of the segment to export if specified. */
+    private Integer segmentVersion;
 
     /**
      * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the Amazon S3 location that
@@ -82,13 +90,17 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     * typically a folder with multiple files. The URL should follow this format: s3://bucket-name/folder-name/
+     * typically a folder with multiple files.
+     * 
+     * The URL should follow this format: s3://bucket-name/folder-name/
      * 
      * Amazon Pinpoint will export endpoints to this location.
      * 
      * @param s3UrlPrefix
      *        A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     *        typically a folder with multiple files. The URL should follow this format: s3://bucket-name/folder-name/
+     *        typically a folder with multiple files.
+     * 
+     *        The URL should follow this format: s3://bucket-name/folder-name/
      * 
      *        Amazon Pinpoint will export endpoints to this location.
      */
@@ -99,13 +111,16 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     * typically a folder with multiple files. The URL should follow this format: s3://bucket-name/folder-name/
+     * typically a folder with multiple files.
+     * 
+     * The URL should follow this format: s3://bucket-name/folder-name/
      * 
      * Amazon Pinpoint will export endpoints to this location.
      * 
      * @return A URL that points to the location within an Amazon S3 bucket that will receive the export. The location
-     *         is typically a folder with multiple files. The URL should follow this format:
-     *         s3://bucket-name/folder-name/
+     *         is typically a folder with multiple files.
+     * 
+     *         The URL should follow this format: s3://bucket-name/folder-name/
      * 
      *         Amazon Pinpoint will export endpoints to this location.
      */
@@ -116,13 +131,17 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     * typically a folder with multiple files. The URL should follow this format: s3://bucket-name/folder-name/
+     * typically a folder with multiple files.
+     * 
+     * The URL should follow this format: s3://bucket-name/folder-name/
      * 
      * Amazon Pinpoint will export endpoints to this location.
      * 
      * @param s3UrlPrefix
      *        A URL that points to the location within an Amazon S3 bucket that will receive the export. The location is
-     *        typically a folder with multiple files. The URL should follow this format: s3://bucket-name/folder-name/
+     *        typically a folder with multiple files.
+     * 
+     *        The URL should follow this format: s3://bucket-name/folder-name/
      * 
      *        Amazon Pinpoint will export endpoints to this location.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -134,10 +153,12 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the segment to export endpoints from. If not present all endpoints will be exported.
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the endpoints that
+     * belong to the application.
      * 
      * @param segmentId
-     *        The ID of the segment to export endpoints from. If not present all endpoints will be exported.
+     *        The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the
+     *        endpoints that belong to the application.
      */
 
     public void setSegmentId(String segmentId) {
@@ -145,9 +166,11 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the segment to export endpoints from. If not present all endpoints will be exported.
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the endpoints that
+     * belong to the application.
      * 
-     * @return The ID of the segment to export endpoints from. If not present all endpoints will be exported.
+     * @return The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the
+     *         endpoints that belong to the application.
      */
 
     public String getSegmentId() {
@@ -155,10 +178,12 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The ID of the segment to export endpoints from. If not present all endpoints will be exported.
+     * The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the endpoints that
+     * belong to the application.
      * 
      * @param segmentId
-     *        The ID of the segment to export endpoints from. If not present all endpoints will be exported.
+     *        The ID of the segment to export endpoints from. If not present, Amazon Pinpoint exports all of the
+     *        endpoints that belong to the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,7 +193,42 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * The version of the segment to export if specified.
+     * 
+     * @param segmentVersion
+     *        The version of the segment to export if specified.
+     */
+
+    public void setSegmentVersion(Integer segmentVersion) {
+        this.segmentVersion = segmentVersion;
+    }
+
+    /**
+     * The version of the segment to export if specified.
+     * 
+     * @return The version of the segment to export if specified.
+     */
+
+    public Integer getSegmentVersion() {
+        return this.segmentVersion;
+    }
+
+    /**
+     * The version of the segment to export if specified.
+     * 
+     * @param segmentVersion
+     *        The version of the segment to export if specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportJobRequest withSegmentVersion(Integer segmentVersion) {
+        setSegmentVersion(segmentVersion);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -183,7 +243,9 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
         if (getS3UrlPrefix() != null)
             sb.append("S3UrlPrefix: ").append(getS3UrlPrefix()).append(",");
         if (getSegmentId() != null)
-            sb.append("SegmentId: ").append(getSegmentId());
+            sb.append("SegmentId: ").append(getSegmentId()).append(",");
+        if (getSegmentVersion() != null)
+            sb.append("SegmentVersion: ").append(getSegmentVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -210,6 +272,10 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSegmentId() != null && other.getSegmentId().equals(this.getSegmentId()) == false)
             return false;
+        if (other.getSegmentVersion() == null ^ this.getSegmentVersion() == null)
+            return false;
+        if (other.getSegmentVersion() != null && other.getSegmentVersion().equals(this.getSegmentVersion()) == false)
+            return false;
         return true;
     }
 
@@ -221,6 +287,7 @@ public class ExportJobRequest implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getS3UrlPrefix() == null) ? 0 : getS3UrlPrefix().hashCode());
         hashCode = prime * hashCode + ((getSegmentId() == null) ? 0 : getSegmentId().hashCode());
+        hashCode = prime * hashCode + ((getSegmentVersion() == null) ? 0 : getSegmentVersion().hashCode());
         return hashCode;
     }
 

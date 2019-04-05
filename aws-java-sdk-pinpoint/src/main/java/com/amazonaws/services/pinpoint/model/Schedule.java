@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,15 +28,41 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /** The scheduled time that the campaign ends in ISO 8601 format. */
     private String endTime;
+    /** Defines the type of events that can trigger the campaign. Used when the Frequency is set to EVENT. */
+    private CampaignEventFilter eventFilter;
     /**
      * How often the campaign delivers messages.
      * 
-     * Valid values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+     * Valid values:
+     * 
+     * ONCE
+     * 
+     * HOURLY
+     * 
+     * DAILY
+     * 
+     * WEEKLY
+     * 
+     * MONTHLY
+     * 
+     * EVENT
      */
     private String frequency;
     /** Indicates whether the campaign schedule takes effect according to each user's local time. */
     private Boolean isLocalTime;
-    /** The time during which the campaign sends no messages. */
+    /**
+     * The default quiet time for the campaign. The campaign doesn't send messages to endpoints during the quiet time.
+     * 
+     * Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a quiet
+     * time for your campaign. If your endpoints don't include this attribute, they'll receive the messages that you
+     * send them, even if quiet time is enabled.
+     * 
+     * When you set up a campaign to use quiet time, the campaign doesn't send messages during the time range you
+     * specified, as long as all of the following are true: - The endpoint includes a valid Demographic.Timezone
+     * attribute. - The current time in the endpoint's time zone is later than or equal to the time specified in the
+     * QuietTime.Start attribute for the campaign. - The current time in the endpoint's time zone is earlier than or
+     * equal to the time specified in the QuietTime.End attribute for the campaign.
+     */
     private QuietTime quietTime;
     /** The scheduled time that the campaign begins in ISO 8601 format. */
     private String startTime;
@@ -84,14 +110,72 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Defines the type of events that can trigger the campaign. Used when the Frequency is set to EVENT.
+     * 
+     * @param eventFilter
+     *        Defines the type of events that can trigger the campaign. Used when the Frequency is set to EVENT.
+     */
+
+    public void setEventFilter(CampaignEventFilter eventFilter) {
+        this.eventFilter = eventFilter;
+    }
+
+    /**
+     * Defines the type of events that can trigger the campaign. Used when the Frequency is set to EVENT.
+     * 
+     * @return Defines the type of events that can trigger the campaign. Used when the Frequency is set to EVENT.
+     */
+
+    public CampaignEventFilter getEventFilter() {
+        return this.eventFilter;
+    }
+
+    /**
+     * Defines the type of events that can trigger the campaign. Used when the Frequency is set to EVENT.
+     * 
+     * @param eventFilter
+     *        Defines the type of events that can trigger the campaign. Used when the Frequency is set to EVENT.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Schedule withEventFilter(CampaignEventFilter eventFilter) {
+        setEventFilter(eventFilter);
+        return this;
+    }
+
+    /**
      * How often the campaign delivers messages.
      * 
-     * Valid values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+     * Valid values:
+     * 
+     * ONCE
+     * 
+     * HOURLY
+     * 
+     * DAILY
+     * 
+     * WEEKLY
+     * 
+     * MONTHLY
+     * 
+     * EVENT
      * 
      * @param frequency
      *        How often the campaign delivers messages.
      * 
-     *        Valid values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+     *        Valid values:
+     * 
+     *        ONCE
+     * 
+     *        HOURLY
+     * 
+     *        DAILY
+     * 
+     *        WEEKLY
+     * 
+     *        MONTHLY
+     * 
+     *        EVENT
      * @see Frequency
      */
 
@@ -102,11 +186,35 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * How often the campaign delivers messages.
      * 
-     * Valid values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+     * Valid values:
+     * 
+     * ONCE
+     * 
+     * HOURLY
+     * 
+     * DAILY
+     * 
+     * WEEKLY
+     * 
+     * MONTHLY
+     * 
+     * EVENT
      * 
      * @return How often the campaign delivers messages.
      * 
-     *         Valid values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+     *         Valid values:
+     * 
+     *         ONCE
+     * 
+     *         HOURLY
+     * 
+     *         DAILY
+     * 
+     *         WEEKLY
+     * 
+     *         MONTHLY
+     * 
+     *         EVENT
      * @see Frequency
      */
 
@@ -117,12 +225,36 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * How often the campaign delivers messages.
      * 
-     * Valid values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+     * Valid values:
+     * 
+     * ONCE
+     * 
+     * HOURLY
+     * 
+     * DAILY
+     * 
+     * WEEKLY
+     * 
+     * MONTHLY
+     * 
+     * EVENT
      * 
      * @param frequency
      *        How often the campaign delivers messages.
      * 
-     *        Valid values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+     *        Valid values:
+     * 
+     *        ONCE
+     * 
+     *        HOURLY
+     * 
+     *        DAILY
+     * 
+     *        WEEKLY
+     * 
+     *        MONTHLY
+     * 
+     *        EVENT
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Frequency
      */
@@ -135,12 +267,36 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * How often the campaign delivers messages.
      * 
-     * Valid values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+     * Valid values:
+     * 
+     * ONCE
+     * 
+     * HOURLY
+     * 
+     * DAILY
+     * 
+     * WEEKLY
+     * 
+     * MONTHLY
+     * 
+     * EVENT
      * 
      * @param frequency
      *        How often the campaign delivers messages.
      * 
-     *        Valid values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+     *        Valid values:
+     * 
+     *        ONCE
+     * 
+     *        HOURLY
+     * 
+     *        DAILY
+     * 
+     *        WEEKLY
+     * 
+     *        MONTHLY
+     * 
+     *        EVENT
      * @see Frequency
      */
 
@@ -151,12 +307,36 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * How often the campaign delivers messages.
      * 
-     * Valid values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+     * Valid values:
+     * 
+     * ONCE
+     * 
+     * HOURLY
+     * 
+     * DAILY
+     * 
+     * WEEKLY
+     * 
+     * MONTHLY
+     * 
+     * EVENT
      * 
      * @param frequency
      *        How often the campaign delivers messages.
      * 
-     *        Valid values: ONCE, HOURLY, DAILY, WEEKLY, MONTHLY
+     *        Valid values:
+     * 
+     *        ONCE
+     * 
+     *        HOURLY
+     * 
+     *        DAILY
+     * 
+     *        WEEKLY
+     * 
+     *        MONTHLY
+     * 
+     *        EVENT
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Frequency
      */
@@ -211,10 +391,31 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time during which the campaign sends no messages.
+     * The default quiet time for the campaign. The campaign doesn't send messages to endpoints during the quiet time.
+     * 
+     * Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a quiet
+     * time for your campaign. If your endpoints don't include this attribute, they'll receive the messages that you
+     * send them, even if quiet time is enabled.
+     * 
+     * When you set up a campaign to use quiet time, the campaign doesn't send messages during the time range you
+     * specified, as long as all of the following are true: - The endpoint includes a valid Demographic.Timezone
+     * attribute. - The current time in the endpoint's time zone is later than or equal to the time specified in the
+     * QuietTime.Start attribute for the campaign. - The current time in the endpoint's time zone is earlier than or
+     * equal to the time specified in the QuietTime.End attribute for the campaign.
      * 
      * @param quietTime
-     *        The time during which the campaign sends no messages.
+     *        The default quiet time for the campaign. The campaign doesn't send messages to endpoints during the quiet
+     *        time.
+     * 
+     *        Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a
+     *        quiet time for your campaign. If your endpoints don't include this attribute, they'll receive the messages
+     *        that you send them, even if quiet time is enabled.
+     * 
+     *        When you set up a campaign to use quiet time, the campaign doesn't send messages during the time range you
+     *        specified, as long as all of the following are true: - The endpoint includes a valid Demographic.Timezone
+     *        attribute. - The current time in the endpoint's time zone is later than or equal to the time specified in
+     *        the QuietTime.Start attribute for the campaign. - The current time in the endpoint's time zone is earlier
+     *        than or equal to the time specified in the QuietTime.End attribute for the campaign.
      */
 
     public void setQuietTime(QuietTime quietTime) {
@@ -222,9 +423,31 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time during which the campaign sends no messages.
+     * The default quiet time for the campaign. The campaign doesn't send messages to endpoints during the quiet time.
      * 
-     * @return The time during which the campaign sends no messages.
+     * Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a quiet
+     * time for your campaign. If your endpoints don't include this attribute, they'll receive the messages that you
+     * send them, even if quiet time is enabled.
+     * 
+     * When you set up a campaign to use quiet time, the campaign doesn't send messages during the time range you
+     * specified, as long as all of the following are true: - The endpoint includes a valid Demographic.Timezone
+     * attribute. - The current time in the endpoint's time zone is later than or equal to the time specified in the
+     * QuietTime.Start attribute for the campaign. - The current time in the endpoint's time zone is earlier than or
+     * equal to the time specified in the QuietTime.End attribute for the campaign.
+     * 
+     * @return The default quiet time for the campaign. The campaign doesn't send messages to endpoints during the quiet
+     *         time.
+     * 
+     *         Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a
+     *         quiet time for your campaign. If your endpoints don't include this attribute, they'll receive the
+     *         messages that you send them, even if quiet time is enabled.
+     * 
+     *         When you set up a campaign to use quiet time, the campaign doesn't send messages during the time range
+     *         you specified, as long as all of the following are true: - The endpoint includes a valid
+     *         Demographic.Timezone attribute. - The current time in the endpoint's time zone is later than or equal to
+     *         the time specified in the QuietTime.Start attribute for the campaign. - The current time in the
+     *         endpoint's time zone is earlier than or equal to the time specified in the QuietTime.End attribute for
+     *         the campaign.
      */
 
     public QuietTime getQuietTime() {
@@ -232,10 +455,31 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The time during which the campaign sends no messages.
+     * The default quiet time for the campaign. The campaign doesn't send messages to endpoints during the quiet time.
+     * 
+     * Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a quiet
+     * time for your campaign. If your endpoints don't include this attribute, they'll receive the messages that you
+     * send them, even if quiet time is enabled.
+     * 
+     * When you set up a campaign to use quiet time, the campaign doesn't send messages during the time range you
+     * specified, as long as all of the following are true: - The endpoint includes a valid Demographic.Timezone
+     * attribute. - The current time in the endpoint's time zone is later than or equal to the time specified in the
+     * QuietTime.Start attribute for the campaign. - The current time in the endpoint's time zone is earlier than or
+     * equal to the time specified in the QuietTime.End attribute for the campaign.
      * 
      * @param quietTime
-     *        The time during which the campaign sends no messages.
+     *        The default quiet time for the campaign. The campaign doesn't send messages to endpoints during the quiet
+     *        time.
+     * 
+     *        Note: Make sure that your endpoints include the Demographics.Timezone attribute if you plan to enable a
+     *        quiet time for your campaign. If your endpoints don't include this attribute, they'll receive the messages
+     *        that you send them, even if quiet time is enabled.
+     * 
+     *        When you set up a campaign to use quiet time, the campaign doesn't send messages during the time range you
+     *        specified, as long as all of the following are true: - The endpoint includes a valid Demographic.Timezone
+     *        attribute. - The current time in the endpoint's time zone is later than or equal to the time specified in
+     *        the QuietTime.Start attribute for the campaign. - The current time in the endpoint's time zone is earlier
+     *        than or equal to the time specified in the QuietTime.End attribute for the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,7 +581,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -349,6 +594,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getEventFilter() != null)
+            sb.append("EventFilter: ").append(getEventFilter()).append(",");
         if (getFrequency() != null)
             sb.append("Frequency: ").append(getFrequency()).append(",");
         if (getIsLocalTime() != null)
@@ -376,6 +623,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
+            return false;
+        if (other.getEventFilter() == null ^ this.getEventFilter() == null)
+            return false;
+        if (other.getEventFilter() != null && other.getEventFilter().equals(this.getEventFilter()) == false)
             return false;
         if (other.getFrequency() == null ^ this.getFrequency() == null)
             return false;
@@ -406,6 +657,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getEventFilter() == null) ? 0 : getEventFilter().hashCode());
         hashCode = prime * hashCode + ((getFrequency() == null) ? 0 : getFrequency().hashCode());
         hashCode = prime * hashCode + ((getIsLocalTime() == null) ? 0 : getIsLocalTime().hashCode());
         hashCode = prime * hashCode + ((getQuietTime() == null) ? 0 : getQuietTime().hashCode());

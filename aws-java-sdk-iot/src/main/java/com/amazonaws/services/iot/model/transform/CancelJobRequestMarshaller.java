@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,12 @@ public class CancelJobRequestMarshaller {
 
     private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("jobId").build();
+    private static final MarshallingInfo<String> REASONCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reasonCode").build();
     private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("comment").build();
+    private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("force").build();
 
     private static final CancelJobRequestMarshaller instance = new CancelJobRequestMarshaller();
 
@@ -49,7 +53,9 @@ public class CancelJobRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(cancelJobRequest.getJobId(), JOBID_BINDING);
+            protocolMarshaller.marshall(cancelJobRequest.getReasonCode(), REASONCODE_BINDING);
             protocolMarshaller.marshall(cancelJobRequest.getComment(), COMMENT_BINDING);
+            protocolMarshaller.marshall(cancelJobRequest.getForce(), FORCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

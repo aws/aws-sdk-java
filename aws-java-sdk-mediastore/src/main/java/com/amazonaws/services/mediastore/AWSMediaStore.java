@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public interface AWSMediaStore {
      * @param createContainerRequest
      * @return Result of the CreateContainer operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws LimitExceededException
      *         A service limit has been exceeded.
      * @throws InternalServerErrorException
@@ -70,9 +70,9 @@ public interface AWSMediaStore {
      * @param deleteContainerRequest
      * @return Result of the DeleteContainer operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.DeleteContainer
@@ -89,11 +89,11 @@ public interface AWSMediaStore {
      * @param deleteContainerPolicyRequest
      * @return Result of the DeleteContainerPolicy operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws PolicyNotFoundException
-     *         Could not perform an operation on a policy that does not exist.
+     *         The policy that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.DeleteContainerPolicy
@@ -114,11 +114,11 @@ public interface AWSMediaStore {
      * @param deleteCorsPolicyRequest
      * @return Result of the DeleteCorsPolicy operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws CorsPolicyNotFoundException
-     *         Could not perform an operation on a policy that does not exist.
+     *         The CORS policy that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.DeleteCorsPolicy
@@ -126,6 +126,27 @@ public interface AWSMediaStore {
      *      API Documentation</a>
      */
     DeleteCorsPolicyResult deleteCorsPolicy(DeleteCorsPolicyRequest deleteCorsPolicyRequest);
+
+    /**
+     * <p>
+     * Removes an object lifecycle policy from a container. It takes up to 20 minutes for the change to take effect.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return Result of the DeleteLifecyclePolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws PolicyNotFoundException
+     *         The policy that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest);
 
     /**
      * <p>
@@ -139,7 +160,7 @@ public interface AWSMediaStore {
      * @param describeContainerRequest
      * @return Result of the DescribeContainer operation returned by the service.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.DescribeContainer
@@ -158,11 +179,11 @@ public interface AWSMediaStore {
      * @param getContainerPolicyRequest
      * @return Result of the GetContainerPolicy operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws PolicyNotFoundException
-     *         Could not perform an operation on a policy that does not exist.
+     *         The policy that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.GetContainerPolicy
@@ -183,11 +204,11 @@ public interface AWSMediaStore {
      * @param getCorsPolicyRequest
      * @return Result of the GetCorsPolicy operation returned by the service.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws CorsPolicyNotFoundException
-     *         Could not perform an operation on a policy that does not exist.
+     *         The CORS policy that you specified in the request does not exist.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.GetCorsPolicy
@@ -195,6 +216,27 @@ public interface AWSMediaStore {
      *      Documentation</a>
      */
     GetCorsPolicyResult getCorsPolicy(GetCorsPolicyRequest getCorsPolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves the object lifecycle policy that is assigned to a container.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @return Result of the GetLifecyclePolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws PolicyNotFoundException
+     *         The policy that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest getLifecyclePolicyRequest);
 
     /**
      * <p>
@@ -235,9 +277,9 @@ public interface AWSMediaStore {
      * @param putContainerPolicyRequest
      * @return Result of the PutContainerPolicy operation returned by the service.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.PutContainerPolicy
@@ -259,13 +301,18 @@ public interface AWSMediaStore {
      * 398,000 characters. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
      * the first applicable rule listed.
      * </p>
+     * <p>
+     * To learn more about CORS, see <a
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin Resource Sharing (CORS) in
+     * AWS Elemental MediaStore</a>.
+     * </p>
      * 
      * @param putCorsPolicyRequest
      * @return Result of the PutCorsPolicy operation returned by the service.
      * @throws ContainerNotFoundException
-     *         Could not perform an operation on a container that does not exist.
+     *         The container that you specified in the request does not exist.
      * @throws ContainerInUseException
-     *         Resource already exists or is being updated.
+     *         The container that you specified in the request already exists or is being updated.
      * @throws InternalServerErrorException
      *         The service is temporarily unavailable.
      * @sample AWSMediaStore.PutCorsPolicy
@@ -273,6 +320,72 @@ public interface AWSMediaStore {
      *      Documentation</a>
      */
     PutCorsPolicyResult putCorsPolicy(PutCorsPolicyRequest putCorsPolicyRequest);
+
+    /**
+     * <p>
+     * Writes an object lifecycle policy to a container. If the container already has an object lifecycle policy, the
+     * service replaces the existing policy with the new policy. It takes up to 20 minutes for the change to take
+     * effect.
+     * </p>
+     * <p>
+     * For information about how to construct an object lifecycle policy, see <a
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components of
+     * an Object Lifecycle Policy</a>.
+     * </p>
+     * 
+     * @param putLifecyclePolicyRequest
+     * @return Result of the PutLifecyclePolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.PutLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest putLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Starts access logging on the specified container. When you enable access logging on a container, MediaStore
+     * delivers access logs for objects stored in that container to Amazon CloudWatch Logs.
+     * </p>
+     * 
+     * @param startAccessLoggingRequest
+     * @return Result of the StartAccessLogging operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.StartAccessLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartAccessLoggingResult startAccessLogging(StartAccessLoggingRequest startAccessLoggingRequest);
+
+    /**
+     * <p>
+     * Stops access logging on the specified container. When you stop access logging on a container, MediaStore stops
+     * sending access logs to Amazon CloudWatch Logs. These access logs are not saved and are not retrievable.
+     * </p>
+     * 
+     * @param stopAccessLoggingRequest
+     * @return Result of the StopAccessLogging operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.StopAccessLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StopAccessLoggingResult stopAccessLogging(StopAccessLoggingRequest stopAccessLoggingRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

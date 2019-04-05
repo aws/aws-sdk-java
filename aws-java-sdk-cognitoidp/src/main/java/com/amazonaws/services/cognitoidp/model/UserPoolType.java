@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -174,9 +174,8 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private SmsConfigurationType smsConfiguration;
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      */
     private java.util.Map<String, String> userPoolTags;
@@ -198,6 +197,18 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String domain;
+    /**
+     * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     */
+    private String customDomain;
     /**
      * <p>
      * The configuration for <code>AdminCreateUser</code> requests.
@@ -1504,14 +1515,12 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
-     * @return The cost allocation tags for the user pool. For more information, see <a
-     *         href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *         >Adding Cost Allocation Tags to Your User Pool</a>
+     * @return The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to
+     *         categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
      */
 
     public java.util.Map<String, String> getUserPoolTags() {
@@ -1520,15 +1529,13 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
      * @param userPoolTags
-     *        The cost allocation tags for the user pool. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     *        The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to
+     *        categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
      */
 
     public void setUserPoolTags(java.util.Map<String, String> userPoolTags) {
@@ -1537,15 +1544,13 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     * >Adding Cost Allocation Tags to Your User Pool</a>
+     * The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to categorize and
+     * manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * </p>
      * 
      * @param userPoolTags
-     *        The cost allocation tags for the user pool. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html"
-     *        >Adding Cost Allocation Tags to Your User Pool</a>
+     *        The tags that are assigned to the user pool. A tag is a label that you can apply to user pools to
+     *        categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1697,6 +1702,82 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     * 
+     * @param customDomain
+     *        A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom
+     *        domain to host the sign-up and sign-in pages for your application. For example:
+     *        <code>auth.example.com</code>.</p>
+     *        <p>
+     *        For more information about adding a custom domain to your user pool, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html"
+     *        >Using Your Own Domain for the Hosted UI</a>.
+     */
+
+    public void setCustomDomain(String customDomain) {
+        this.customDomain = customDomain;
+    }
+
+    /**
+     * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     * 
+     * @return A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom
+     *         domain to host the sign-up and sign-in pages for your application. For example:
+     *         <code>auth.example.com</code>.</p>
+     *         <p>
+     *         For more information about adding a custom domain to your user pool, see <a href=
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html"
+     *         >Using Your Own Domain for the Hosted UI</a>.
+     */
+
+    public String getCustomDomain() {
+        return this.customDomain;
+    }
+
+    /**
+     * <p>
+     * A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom domain
+     * to host the sign-up and sign-in pages for your application. For example: <code>auth.example.com</code>.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     * 
+     * @param customDomain
+     *        A custom domain name that you provide to Amazon Cognito. This parameter applies only if you use a custom
+     *        domain to host the sign-up and sign-in pages for your application. For example:
+     *        <code>auth.example.com</code>.</p>
+     *        <p>
+     *        For more information about adding a custom domain to your user pool, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html"
+     *        >Using Your Own Domain for the Hosted UI</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withCustomDomain(String customDomain) {
+        setCustomDomain(customDomain);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
@@ -1816,7 +1897,8 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1876,6 +1958,8 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             sb.append("EmailConfigurationFailure: ").append(getEmailConfigurationFailure()).append(",");
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain()).append(",");
+        if (getCustomDomain() != null)
+            sb.append("CustomDomain: ").append(getCustomDomain()).append(",");
         if (getAdminCreateUserConfig() != null)
             sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig()).append(",");
         if (getUserPoolAddOns() != null)
@@ -1996,6 +2080,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
+        if (other.getCustomDomain() == null ^ this.getCustomDomain() == null)
+            return false;
+        if (other.getCustomDomain() != null && other.getCustomDomain().equals(this.getCustomDomain()) == false)
+            return false;
         if (other.getAdminCreateUserConfig() == null ^ this.getAdminCreateUserConfig() == null)
             return false;
         if (other.getAdminCreateUserConfig() != null && other.getAdminCreateUserConfig().equals(this.getAdminCreateUserConfig()) == false)
@@ -2041,6 +2129,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSmsConfigurationFailure() == null) ? 0 : getSmsConfigurationFailure().hashCode());
         hashCode = prime * hashCode + ((getEmailConfigurationFailure() == null) ? 0 : getEmailConfigurationFailure().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getCustomDomain() == null) ? 0 : getCustomDomain().hashCode());
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
         hashCode = prime * hashCode + ((getUserPoolAddOns() == null) ? 0 : getUserPoolAddOns().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());

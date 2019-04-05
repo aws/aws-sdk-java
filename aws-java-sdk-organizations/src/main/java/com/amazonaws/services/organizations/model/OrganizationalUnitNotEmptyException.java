@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified organizational unit (OU) is not empty. Move all accounts to another root or to other OUs, remove all
- * child OUs, and then try the operation again.
+ * The specified OU is not empty. Move all accounts to another root or to other OUs, remove all child OUs, and try the
+ * operation again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

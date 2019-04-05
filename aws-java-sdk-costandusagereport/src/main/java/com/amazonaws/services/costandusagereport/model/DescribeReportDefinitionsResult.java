@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * Response of DescribeReportDefinitions
+ * <p>
+ * If the action is successful, the service sends back an HTTP 200 response.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions" target="_top">AWS API
  *      Documentation</a>
@@ -24,12 +26,21 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeReportDefinitionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of AWS Cost and Usage reports owned by the account.
+     * </p>
+     */
     private java.util.List<ReportDefinition> reportDefinitions;
 
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of AWS Cost and Usage reports owned by the account.
+     * </p>
+     * 
+     * @return A list of AWS Cost and Usage reports owned by the account.
      */
 
     public java.util.List<ReportDefinition> getReportDefinitions() {
@@ -37,7 +48,12 @@ public class DescribeReportDefinitionsResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * A list of AWS Cost and Usage reports owned by the account.
+     * </p>
+     * 
      * @param reportDefinitions
+     *        A list of AWS Cost and Usage reports owned by the account.
      */
 
     public void setReportDefinitions(java.util.Collection<ReportDefinition> reportDefinitions) {
@@ -51,12 +67,16 @@ public class DescribeReportDefinitionsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
+     * A list of AWS Cost and Usage reports owned by the account.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setReportDefinitions(java.util.Collection)} or {@link #withReportDefinitions(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param reportDefinitions
+     *        A list of AWS Cost and Usage reports owned by the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +91,12 @@ public class DescribeReportDefinitionsResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * A list of AWS Cost and Usage reports owned by the account.
+     * </p>
+     * 
      * @param reportDefinitions
+     *        A list of AWS Cost and Usage reports owned by the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,7 +132,8 @@ public class DescribeReportDefinitionsResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

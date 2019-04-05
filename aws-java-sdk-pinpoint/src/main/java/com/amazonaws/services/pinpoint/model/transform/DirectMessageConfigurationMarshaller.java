@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,10 +37,14 @@ public class DirectMessageConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultMessage").build();
     private static final MarshallingInfo<StructuredPojo> DEFAULTPUSHNOTIFICATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultPushNotificationMessage").build();
+    private static final MarshallingInfo<StructuredPojo> EMAILMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailMessage").build();
     private static final MarshallingInfo<StructuredPojo> GCMMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GCMMessage").build();
     private static final MarshallingInfo<StructuredPojo> SMSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SMSMessage").build();
+    private static final MarshallingInfo<StructuredPojo> VOICEMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VoiceMessage").build();
 
     private static final DirectMessageConfigurationMarshaller instance = new DirectMessageConfigurationMarshaller();
 
@@ -63,8 +67,10 @@ public class DirectMessageConfigurationMarshaller {
             protocolMarshaller.marshall(directMessageConfiguration.getBaiduMessage(), BAIDUMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getDefaultMessage(), DEFAULTMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getDefaultPushNotificationMessage(), DEFAULTPUSHNOTIFICATIONMESSAGE_BINDING);
+            protocolMarshaller.marshall(directMessageConfiguration.getEmailMessage(), EMAILMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getGCMMessage(), GCMMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getSMSMessage(), SMSMESSAGE_BINDING);
+            protocolMarshaller.marshall(directMessageConfiguration.getVoiceMessage(), VOICEMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

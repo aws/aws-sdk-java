@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -226,7 +226,17 @@ public interface AWSMediaPackage {
     ListOriginEndpointsResult listOriginEndpoints(ListOriginEndpointsRequest listOriginEndpointsRequest);
 
     /**
-     * Changes the Channel ingest username and password.
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @sample AWSMediaPackage.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * Changes the Channel's first IngestEndpoint's username and password. WARNING - This API is deprecated. Please use
+     * RotateIngestEndpointCredentials instead
      * 
      * @param rotateChannelCredentialsRequest
      * @return Result of the RotateChannelCredentials operation returned by the service.
@@ -246,7 +256,49 @@ public interface AWSMediaPackage {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     RotateChannelCredentialsResult rotateChannelCredentials(RotateChannelCredentialsRequest rotateChannelCredentialsRequest);
+
+    /**
+     * Rotate the IngestEndpoint's username and password, as specified by the IngestEndpoint's id.
+     * 
+     * @param rotateIngestEndpointCredentialsRequest
+     * @return Result of the RotateIngestEndpointCredentials operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The parameters sent in the request are not valid.
+     * @throws InternalServerErrorException
+     *         An unexpected error occurred.
+     * @throws ForbiddenException
+     *         The client is not authorized to access the requested resource.
+     * @throws NotFoundException
+     *         The requested resource does not exist.
+     * @throws ServiceUnavailableException
+     *         An unexpected error occurred.
+     * @throws TooManyRequestsException
+     *         The client has exceeded their resource or throttling limits.
+     * @sample AWSMediaPackage.RotateIngestEndpointCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateIngestEndpointCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RotateIngestEndpointCredentialsResult rotateIngestEndpointCredentials(RotateIngestEndpointCredentialsRequest rotateIngestEndpointCredentialsRequest);
+
+    /**
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @sample AWSMediaPackage.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @sample AWSMediaPackage.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Updates an existing Channel.

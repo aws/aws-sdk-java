@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.AuthorizeSecurityGroupIngressRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for AuthorizeSecurityGroupIngress.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -86,7 +84,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     private String sourceSecurityGroupName;
     /**
      * <p>
-     * [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a different
+     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
      * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
      * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
@@ -525,7 +523,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a different
+     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
      * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
      * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
@@ -533,7 +531,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * </p>
      * 
      * @param sourceSecurityGroupOwnerId
-     *        [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a
+     *        [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a
      *        different account. You can't specify this parameter in combination with the following parameters: the CIDR
      *        IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates
      *        rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port
@@ -546,14 +544,14 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a different
+     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
      * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
      * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
      * permissions instead.
      * </p>
      * 
-     * @return [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a
+     * @return [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a
      *         different account. You can't specify this parameter in combination with the following parameters: the
      *         CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range.
      *         Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and
@@ -566,7 +564,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a different
+     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
      * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
      * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
@@ -574,7 +572,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * </p>
      * 
      * @param sourceSecurityGroupOwnerId
-     *        [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a
+     *        [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a
      *        different account. You can't specify this parameter in combination with the following parameters: the CIDR
      *        IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates
      *        rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port
@@ -651,7 +649,8 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

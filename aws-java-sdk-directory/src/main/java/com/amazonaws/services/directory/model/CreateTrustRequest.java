@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,13 +20,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you
- * can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active
+ * can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active
  * Directory. This would allow you to provide users and groups access to resources in either domain, with a single set
  * of credentials.
  * </p>
  * <p>
- * This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud
- * and an external domain.
+ * This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD
+ * directory and an external domain.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust" target="_top">AWS API
@@ -37,7 +37,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Directory ID of the Microsoft AD in the AWS cloud for which to establish the trust relationship.
+     * The Directory ID of the AWS Managed Microsoft AD directory for which to establish the trust relationship.
      * </p>
      */
     private String directoryId;
@@ -62,7 +62,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String trustDirection;
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      */
     private String trustType;
@@ -72,14 +72,20 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> conditionalForwarderIpAddrs;
+    /**
+     * <p>
+     * Optional parameter to enable selective authentication for the trust.
+     * </p>
+     */
+    private String selectiveAuth;
 
     /**
      * <p>
-     * The Directory ID of the Microsoft AD in the AWS cloud for which to establish the trust relationship.
+     * The Directory ID of the AWS Managed Microsoft AD directory for which to establish the trust relationship.
      * </p>
      * 
      * @param directoryId
-     *        The Directory ID of the Microsoft AD in the AWS cloud for which to establish the trust relationship.
+     *        The Directory ID of the AWS Managed Microsoft AD directory for which to establish the trust relationship.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -88,10 +94,10 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Directory ID of the Microsoft AD in the AWS cloud for which to establish the trust relationship.
+     * The Directory ID of the AWS Managed Microsoft AD directory for which to establish the trust relationship.
      * </p>
      * 
-     * @return The Directory ID of the Microsoft AD in the AWS cloud for which to establish the trust relationship.
+     * @return The Directory ID of the AWS Managed Microsoft AD directory for which to establish the trust relationship.
      */
 
     public String getDirectoryId() {
@@ -100,11 +106,11 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Directory ID of the Microsoft AD in the AWS cloud for which to establish the trust relationship.
+     * The Directory ID of the AWS Managed Microsoft AD directory for which to establish the trust relationship.
      * </p>
      * 
      * @param directoryId
-     *        The Directory ID of the Microsoft AD in the AWS cloud for which to establish the trust relationship.
+     *        The Directory ID of the AWS Managed Microsoft AD directory for which to establish the trust relationship.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,11 +280,11 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
+     *        The trust relationship type. <code>Forest</code> is the default.
      * @see TrustType
      */
 
@@ -288,10 +294,10 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      * 
-     * @return The trust relationship type.
+     * @return The trust relationship type. <code>Forest</code> is the default.
      * @see TrustType
      */
 
@@ -301,11 +307,11 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
+     *        The trust relationship type. <code>Forest</code> is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustType
      */
@@ -317,11 +323,11 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
+     *        The trust relationship type. <code>Forest</code> is the default.
      * @see TrustType
      */
 
@@ -331,11 +337,11 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The trust relationship type.
+     * The trust relationship type. <code>Forest</code> is the default.
      * </p>
      * 
      * @param trustType
-     *        The trust relationship type.
+     *        The trust relationship type. <code>Forest</code> is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustType
      */
@@ -419,7 +425,81 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Optional parameter to enable selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Optional parameter to enable selective authentication for the trust.
+     * @see SelectiveAuth
+     */
+
+    public void setSelectiveAuth(String selectiveAuth) {
+        this.selectiveAuth = selectiveAuth;
+    }
+
+    /**
+     * <p>
+     * Optional parameter to enable selective authentication for the trust.
+     * </p>
+     * 
+     * @return Optional parameter to enable selective authentication for the trust.
+     * @see SelectiveAuth
+     */
+
+    public String getSelectiveAuth() {
+        return this.selectiveAuth;
+    }
+
+    /**
+     * <p>
+     * Optional parameter to enable selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Optional parameter to enable selective authentication for the trust.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SelectiveAuth
+     */
+
+    public CreateTrustRequest withSelectiveAuth(String selectiveAuth) {
+        setSelectiveAuth(selectiveAuth);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional parameter to enable selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Optional parameter to enable selective authentication for the trust.
+     * @see SelectiveAuth
+     */
+
+    public void setSelectiveAuth(SelectiveAuth selectiveAuth) {
+        withSelectiveAuth(selectiveAuth);
+    }
+
+    /**
+     * <p>
+     * Optional parameter to enable selective authentication for the trust.
+     * </p>
+     * 
+     * @param selectiveAuth
+     *        Optional parameter to enable selective authentication for the trust.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SelectiveAuth
+     */
+
+    public CreateTrustRequest withSelectiveAuth(SelectiveAuth selectiveAuth) {
+        this.selectiveAuth = selectiveAuth.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -434,13 +514,15 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getRemoteDomainName() != null)
             sb.append("RemoteDomainName: ").append(getRemoteDomainName()).append(",");
         if (getTrustPassword() != null)
-            sb.append("TrustPassword: ").append(getTrustPassword()).append(",");
+            sb.append("TrustPassword: ").append("***Sensitive Data Redacted***").append(",");
         if (getTrustDirection() != null)
             sb.append("TrustDirection: ").append(getTrustDirection()).append(",");
         if (getTrustType() != null)
             sb.append("TrustType: ").append(getTrustType()).append(",");
         if (getConditionalForwarderIpAddrs() != null)
-            sb.append("ConditionalForwarderIpAddrs: ").append(getConditionalForwarderIpAddrs());
+            sb.append("ConditionalForwarderIpAddrs: ").append(getConditionalForwarderIpAddrs()).append(",");
+        if (getSelectiveAuth() != null)
+            sb.append("SelectiveAuth: ").append(getSelectiveAuth());
         sb.append("}");
         return sb.toString();
     }
@@ -479,6 +561,10 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getConditionalForwarderIpAddrs() != null && other.getConditionalForwarderIpAddrs().equals(this.getConditionalForwarderIpAddrs()) == false)
             return false;
+        if (other.getSelectiveAuth() == null ^ this.getSelectiveAuth() == null)
+            return false;
+        if (other.getSelectiveAuth() != null && other.getSelectiveAuth().equals(this.getSelectiveAuth()) == false)
+            return false;
         return true;
     }
 
@@ -493,6 +579,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getTrustDirection() == null) ? 0 : getTrustDirection().hashCode());
         hashCode = prime * hashCode + ((getTrustType() == null) ? 0 : getTrustType().hashCode());
         hashCode = prime * hashCode + ((getConditionalForwarderIpAddrs() == null) ? 0 : getConditionalForwarderIpAddrs().hashCode());
+        hashCode = prime * hashCode + ((getSelectiveAuth() == null) ? 0 : getSelectiveAuth().hashCode());
         return hashCode;
     }
 

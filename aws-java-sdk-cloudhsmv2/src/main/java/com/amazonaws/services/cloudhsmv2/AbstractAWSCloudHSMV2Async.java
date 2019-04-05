@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,19 @@ public class AbstractAWSCloudHSMV2Async extends AbstractAWSCloudHSMV2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<CopyBackupToRegionResult> copyBackupToRegionAsync(CopyBackupToRegionRequest request) {
+
+        return copyBackupToRegionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyBackupToRegionResult> copyBackupToRegionAsync(CopyBackupToRegionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CopyBackupToRegionRequest, CopyBackupToRegionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request) {
 
         return createClusterAsync(request, null);
@@ -49,6 +62,19 @@ public class AbstractAWSCloudHSMV2Async extends AbstractAWSCloudHSMV2 implements
     @Override
     public java.util.concurrent.Future<CreateHsmResult> createHsmAsync(CreateHsmRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHsmRequest, CreateHsmResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBackupResult> deleteBackupAsync(DeleteBackupRequest request) {
+
+        return deleteBackupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBackupResult> deleteBackupAsync(DeleteBackupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteBackupRequest, DeleteBackupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -127,6 +153,19 @@ public class AbstractAWSCloudHSMV2Async extends AbstractAWSCloudHSMV2 implements
     @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreBackupResult> restoreBackupAsync(RestoreBackupRequest request) {
+
+        return restoreBackupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreBackupResult> restoreBackupAsync(RestoreBackupRequest request,
+            com.amazonaws.handlers.AsyncHandler<RestoreBackupRequest, RestoreBackupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

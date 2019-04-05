@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,32 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String name;
     /**
      * <p>
+     * The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is
+     * unique across all versions of a document, and cannot be changed.
+     * </p>
+     */
+    private String versionName;
+    /**
+     * <p>
      * The document version.
      * </p>
      */
     private String documentVersion;
+    /**
+     * <p>
+     * The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+     * <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * </p>
+     */
+    private String statusInformation;
     /**
      * <p>
      * The contents of the Systems Manager document.
@@ -53,6 +75,12 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String documentFormat;
+    /**
+     * <p>
+     * A description of the document attachments, including names, locations, sizes, etc.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AttachmentContent> attachmentsContent;
 
     /**
      * <p>
@@ -96,6 +124,52 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is
+     * unique across all versions of a document, and cannot be changed.
+     * </p>
+     * 
+     * @param versionName
+     *        The version of the artifact associated with the document. For example, "Release 12, Update 6". This value
+     *        is unique across all versions of a document, and cannot be changed.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is
+     * unique across all versions of a document, and cannot be changed.
+     * </p>
+     * 
+     * @return The version of the artifact associated with the document. For example, "Release 12, Update 6". This value
+     *         is unique across all versions of a document, and cannot be changed.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is
+     * unique across all versions of a document, and cannot be changed.
+     * </p>
+     * 
+     * @param versionName
+     *        The version of the artifact associated with the document. For example, "Release 12, Update 6". This value
+     *        is unique across all versions of a document, and cannot be changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult withVersionName(String versionName) {
+        setVersionName(versionName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The document version.
      * </p>
      * 
@@ -131,6 +205,141 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public GetDocumentResult withDocumentVersion(String documentVersion) {
         setDocumentVersion(documentVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+     * <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
+     * </p>
+     * 
+     * @param status
+     *        The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+     *        <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
+     * @see DocumentStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+     * <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
+     * </p>
+     * 
+     * @return The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+     *         <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
+     * @see DocumentStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+     * <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
+     * </p>
+     * 
+     * @param status
+     *        The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+     *        <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentStatus
+     */
+
+    public GetDocumentResult withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+     * <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
+     * </p>
+     * 
+     * @param status
+     *        The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+     *        <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
+     * @see DocumentStatus
+     */
+
+    public void setStatus(DocumentStatus status) {
+        withStatus(status);
+    }
+
+    /**
+     * <p>
+     * The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+     * <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
+     * </p>
+     * 
+     * @param status
+     *        The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+     *        <code>Updating</code>, <code>Failed</code>, and <code>Deleting</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentStatus
+     */
+
+    public GetDocumentResult withStatus(DocumentStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * </p>
+     * 
+     * @param statusInformation
+     *        A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     *        <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     *        "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     */
+
+    public void setStatusInformation(String statusInformation) {
+        this.statusInformation = statusInformation;
+    }
+
+    /**
+     * <p>
+     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * </p>
+     * 
+     * @return A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     *         <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     *         "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     */
+
+    public String getStatusInformation() {
+        return this.statusInformation;
+    }
+
+    /**
+     * <p>
+     * A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     * <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     * "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * </p>
+     * 
+     * @param statusInformation
+     *        A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+     *        <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
+     *        "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult withStatusInformation(String statusInformation) {
+        setStatusInformation(statusInformation);
         return this;
     }
 
@@ -321,7 +530,81 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A description of the document attachments, including names, locations, sizes, etc.
+     * </p>
+     * 
+     * @return A description of the document attachments, including names, locations, sizes, etc.
+     */
+
+    public java.util.List<AttachmentContent> getAttachmentsContent() {
+        if (attachmentsContent == null) {
+            attachmentsContent = new com.amazonaws.internal.SdkInternalList<AttachmentContent>();
+        }
+        return attachmentsContent;
+    }
+
+    /**
+     * <p>
+     * A description of the document attachments, including names, locations, sizes, etc.
+     * </p>
+     * 
+     * @param attachmentsContent
+     *        A description of the document attachments, including names, locations, sizes, etc.
+     */
+
+    public void setAttachmentsContent(java.util.Collection<AttachmentContent> attachmentsContent) {
+        if (attachmentsContent == null) {
+            this.attachmentsContent = null;
+            return;
+        }
+
+        this.attachmentsContent = new com.amazonaws.internal.SdkInternalList<AttachmentContent>(attachmentsContent);
+    }
+
+    /**
+     * <p>
+     * A description of the document attachments, including names, locations, sizes, etc.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachmentsContent(java.util.Collection)} or {@link #withAttachmentsContent(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param attachmentsContent
+     *        A description of the document attachments, including names, locations, sizes, etc.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult withAttachmentsContent(AttachmentContent... attachmentsContent) {
+        if (this.attachmentsContent == null) {
+            setAttachmentsContent(new com.amazonaws.internal.SdkInternalList<AttachmentContent>(attachmentsContent.length));
+        }
+        for (AttachmentContent ele : attachmentsContent) {
+            this.attachmentsContent.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description of the document attachments, including names, locations, sizes, etc.
+     * </p>
+     * 
+     * @param attachmentsContent
+     *        A description of the document attachments, including names, locations, sizes, etc.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult withAttachmentsContent(java.util.Collection<AttachmentContent> attachmentsContent) {
+        setAttachmentsContent(attachmentsContent);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -333,14 +616,22 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusInformation() != null)
+            sb.append("StatusInformation: ").append(getStatusInformation()).append(",");
         if (getContent() != null)
             sb.append("Content: ").append(getContent()).append(",");
         if (getDocumentType() != null)
             sb.append("DocumentType: ").append(getDocumentType()).append(",");
         if (getDocumentFormat() != null)
-            sb.append("DocumentFormat: ").append(getDocumentFormat());
+            sb.append("DocumentFormat: ").append(getDocumentFormat()).append(",");
+        if (getAttachmentsContent() != null)
+            sb.append("AttachmentsContent: ").append(getAttachmentsContent());
         sb.append("}");
         return sb.toString();
     }
@@ -359,9 +650,21 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
+            return false;
         if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
             return false;
         if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getStatusInformation() == null ^ this.getStatusInformation() == null)
+            return false;
+        if (other.getStatusInformation() != null && other.getStatusInformation().equals(this.getStatusInformation()) == false)
             return false;
         if (other.getContent() == null ^ this.getContent() == null)
             return false;
@@ -375,6 +678,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getDocumentFormat() != null && other.getDocumentFormat().equals(this.getDocumentFormat()) == false)
             return false;
+        if (other.getAttachmentsContent() == null ^ this.getAttachmentsContent() == null)
+            return false;
+        if (other.getAttachmentsContent() != null && other.getAttachmentsContent().equals(this.getAttachmentsContent()) == false)
+            return false;
         return true;
     }
 
@@ -384,10 +691,14 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusInformation() == null) ? 0 : getStatusInformation().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
         hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentsContent() == null) ? 0 : getAttachmentsContent().hashCode());
         return hashCode;
     }
 

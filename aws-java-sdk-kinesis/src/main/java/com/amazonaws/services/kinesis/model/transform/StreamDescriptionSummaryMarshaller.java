@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class StreamDescriptionSummaryMarshaller {
     private static final MarshallingInfo<Integer> RETENTIONPERIODHOURS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetentionPeriodHours").build();
     private static final MarshallingInfo<java.util.Date> STREAMCREATIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamCreationTimestamp").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamCreationTimestamp").timestampFormat("unixTimestampInMillis").build();
     private static final MarshallingInfo<List> ENHANCEDMONITORING_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnhancedMonitoring").build();
     private static final MarshallingInfo<String> ENCRYPTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -46,6 +46,8 @@ public class StreamDescriptionSummaryMarshaller {
             .marshallLocationName("KeyId").build();
     private static final MarshallingInfo<Integer> OPENSHARDCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OpenShardCount").build();
+    private static final MarshallingInfo<Integer> CONSUMERCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConsumerCount").build();
 
     private static final StreamDescriptionSummaryMarshaller instance = new StreamDescriptionSummaryMarshaller();
 
@@ -72,6 +74,7 @@ public class StreamDescriptionSummaryMarshaller {
             protocolMarshaller.marshall(streamDescriptionSummary.getEncryptionType(), ENCRYPTIONTYPE_BINDING);
             protocolMarshaller.marshall(streamDescriptionSummary.getKeyId(), KEYID_BINDING);
             protocolMarshaller.marshall(streamDescriptionSummary.getOpenShardCount(), OPENSHARDCOUNT_BINDING);
+            protocolMarshaller.marshall(streamDescriptionSummary.getConsumerCount(), CONSUMERCOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

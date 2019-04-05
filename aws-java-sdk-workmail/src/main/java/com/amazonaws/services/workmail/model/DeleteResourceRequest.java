@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier associated with the organization for which the resource is deleted.
+     * The identifier associated with the organization from which the resource is deleted.
      * </p>
      */
     private String organizationId;
@@ -40,11 +40,11 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier associated with the organization for which the resource is deleted.
+     * The identifier associated with the organization from which the resource is deleted.
      * </p>
      * 
      * @param organizationId
-     *        The identifier associated with the organization for which the resource is deleted.
+     *        The identifier associated with the organization from which the resource is deleted.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -53,10 +53,10 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier associated with the organization for which the resource is deleted.
+     * The identifier associated with the organization from which the resource is deleted.
      * </p>
      * 
-     * @return The identifier associated with the organization for which the resource is deleted.
+     * @return The identifier associated with the organization from which the resource is deleted.
      */
 
     public String getOrganizationId() {
@@ -65,11 +65,11 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier associated with the organization for which the resource is deleted.
+     * The identifier associated with the organization from which the resource is deleted.
      * </p>
      * 
      * @param organizationId
-     *        The identifier associated with the organization for which the resource is deleted.
+     *        The identifier associated with the organization from which the resource is deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +119,8 @@ public class DeleteResourceRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

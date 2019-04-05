@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,10 +16,24 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You provided a parameter value that is not valid for the current state of the resource. For example, if you try to
- * enable rotation on a secret, you must already have a Lambda function ARN configured or included as a parameter in
- * this call.
+ * You provided a parameter value that is not valid for the current state of the resource.
  * </p>
+ * <p>
+ * Possible causes:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * You tried to perform the operation on a secret that's currently marked deleted.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and you didn't
+ * include such an ARN as a parameter in this call.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidRequestException extends com.amazonaws.services.secretsmanager.model.AWSSecretsManagerException {

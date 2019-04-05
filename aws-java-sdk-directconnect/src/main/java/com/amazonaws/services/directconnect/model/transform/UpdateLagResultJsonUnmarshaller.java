@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,6 +88,10 @@ public class UpdateLagResultJsonUnmarshaller implements Unmarshaller<UpdateLagRe
                     context.nextToken();
                     updateLagResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("awsDeviceV2", targetDepth)) {
+                    context.nextToken();
+                    updateLagResult.setAwsDeviceV2(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("connections", targetDepth)) {
                     context.nextToken();
                     updateLagResult.setConnections(new ListUnmarshaller<Connection>(ConnectionJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -95,6 +99,14 @@ public class UpdateLagResultJsonUnmarshaller implements Unmarshaller<UpdateLagRe
                 if (context.testExpression("allowsHostedConnections", targetDepth)) {
                     context.nextToken();
                     updateLagResult.setAllowsHostedConnections(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("jumboFrameCapable", targetDepth)) {
+                    context.nextToken();
+                    updateLagResult.setJumboFrameCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("hasLogicalRedundancy", targetDepth)) {
+                    context.nextToken();
+                    updateLagResult.setHasLogicalRedundancy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,10 +35,12 @@ public class AffectedEntityMarshaller {
             .marshallLocationName("eventArn").build();
     private static final MarshallingInfo<String> ENTITYVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entityValue").build();
+    private static final MarshallingInfo<String> ENTITYURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("entityUrl").build();
     private static final MarshallingInfo<String> AWSACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsAccountId").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUSCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusCode").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +65,7 @@ public class AffectedEntityMarshaller {
             protocolMarshaller.marshall(affectedEntity.getEntityArn(), ENTITYARN_BINDING);
             protocolMarshaller.marshall(affectedEntity.getEventArn(), EVENTARN_BINDING);
             protocolMarshaller.marshall(affectedEntity.getEntityValue(), ENTITYVALUE_BINDING);
+            protocolMarshaller.marshall(affectedEntity.getEntityUrl(), ENTITYURL_BINDING);
             protocolMarshaller.marshall(affectedEntity.getAwsAccountId(), AWSACCOUNTID_BINDING);
             protocolMarshaller.marshall(affectedEntity.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(affectedEntity.getStatusCode(), STATUSCODE_BINDING);

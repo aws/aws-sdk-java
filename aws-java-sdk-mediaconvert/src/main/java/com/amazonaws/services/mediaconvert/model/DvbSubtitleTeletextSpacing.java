@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Controls whether a fixed grid size or proportional font spacing will be used to generate the output subtitles bitmap.
- * Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.
+ * Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in
+ * your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the
+ * spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the
+ * captions are closed caption.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DvbSubtitleTeletextSpacing {

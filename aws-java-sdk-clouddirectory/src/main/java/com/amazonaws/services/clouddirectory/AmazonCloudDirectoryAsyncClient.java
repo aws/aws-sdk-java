@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,10 +34,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of
  * cloud-scale web, mobile, and IoT applications. This guide describes the Cloud Directory operations that you can call
- * programmatically and includes detailed information on data types and errors. For information about AWS Directory
- * Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a
- * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS Directory Service
- * Administration Guide</a>.
+ * programmatically and includes detailed information on data types and errors. For information about Cloud Directory
+ * features, see <a href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a
+ * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html">Amazon Cloud
+ * Directory Developer Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -1176,6 +1176,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     }
 
     @Override
+    public java.util.concurrent.Future<GetLinkAttributesResult> getLinkAttributesAsync(GetLinkAttributesRequest request) {
+
+        return getLinkAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLinkAttributesResult> getLinkAttributesAsync(final GetLinkAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLinkAttributesRequest, GetLinkAttributesResult> asyncHandler) {
+        final GetLinkAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLinkAttributesResult>() {
+            @Override
+            public GetLinkAttributesResult call() throws Exception {
+                GetLinkAttributesResult result = null;
+
+                try {
+                    result = executeGetLinkAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetObjectAttributesResult> getObjectAttributesAsync(GetObjectAttributesRequest request) {
 
         return getObjectAttributesAsync(request, null);
@@ -1556,6 +1589,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
 
                 try {
                     result = executeListIndex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedSchemaArnsResult> listManagedSchemaArnsAsync(ListManagedSchemaArnsRequest request) {
+
+        return listManagedSchemaArnsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedSchemaArnsResult> listManagedSchemaArnsAsync(final ListManagedSchemaArnsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListManagedSchemaArnsRequest, ListManagedSchemaArnsResult> asyncHandler) {
+        final ListManagedSchemaArnsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListManagedSchemaArnsResult>() {
+            @Override
+            public ListManagedSchemaArnsResult call() throws Exception {
+                ListManagedSchemaArnsResult result = null;
+
+                try {
+                    result = executeListManagedSchemaArns(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2150,6 +2216,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
 
                 try {
                     result = executeUpdateFacet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLinkAttributesResult> updateLinkAttributesAsync(UpdateLinkAttributesRequest request) {
+
+        return updateLinkAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLinkAttributesResult> updateLinkAttributesAsync(final UpdateLinkAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLinkAttributesRequest, UpdateLinkAttributesResult> asyncHandler) {
+        final UpdateLinkAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLinkAttributesResult>() {
+            @Override
+            public UpdateLinkAttributesResult call() throws Exception {
+                UpdateLinkAttributesResult result = null;
+
+                try {
+                    result = executeUpdateLinkAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

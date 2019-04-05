@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,13 @@ public class JobExecutionsRolloutConfig implements Serializable, Cloneable, Stru
      * </p>
      */
     private Integer maximumPerMinute;
+    /**
+     * <p>
+     * The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job
+     * rollout.
+     * </p>
+     */
+    private ExponentialRolloutRate exponentialRate;
 
     /**
      * <p>
@@ -80,7 +87,54 @@ public class JobExecutionsRolloutConfig implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job
+     * rollout.
+     * </p>
+     * 
+     * @param exponentialRate
+     *        The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job
+     *        rollout.
+     */
+
+    public void setExponentialRate(ExponentialRolloutRate exponentialRate) {
+        this.exponentialRate = exponentialRate;
+    }
+
+    /**
+     * <p>
+     * The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job
+     * rollout.
+     * </p>
+     * 
+     * @return The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job
+     *         rollout.
+     */
+
+    public ExponentialRolloutRate getExponentialRate() {
+        return this.exponentialRate;
+    }
+
+    /**
+     * <p>
+     * The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job
+     * rollout.
+     * </p>
+     * 
+     * @param exponentialRate
+     *        The rate of increase for a job rollout. This parameter allows you to define an exponential rate for a job
+     *        rollout.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobExecutionsRolloutConfig withExponentialRate(ExponentialRolloutRate exponentialRate) {
+        setExponentialRate(exponentialRate);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -91,7 +145,9 @@ public class JobExecutionsRolloutConfig implements Serializable, Cloneable, Stru
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMaximumPerMinute() != null)
-            sb.append("MaximumPerMinute: ").append(getMaximumPerMinute());
+            sb.append("MaximumPerMinute: ").append(getMaximumPerMinute()).append(",");
+        if (getExponentialRate() != null)
+            sb.append("ExponentialRate: ").append(getExponentialRate());
         sb.append("}");
         return sb.toString();
     }
@@ -110,6 +166,10 @@ public class JobExecutionsRolloutConfig implements Serializable, Cloneable, Stru
             return false;
         if (other.getMaximumPerMinute() != null && other.getMaximumPerMinute().equals(this.getMaximumPerMinute()) == false)
             return false;
+        if (other.getExponentialRate() == null ^ this.getExponentialRate() == null)
+            return false;
+        if (other.getExponentialRate() != null && other.getExponentialRate().equals(this.getExponentialRate()) == false)
+            return false;
         return true;
     }
 
@@ -119,6 +179,7 @@ public class JobExecutionsRolloutConfig implements Serializable, Cloneable, Stru
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getMaximumPerMinute() == null) ? 0 : getMaximumPerMinute().hashCode());
+        hashCode = prime * hashCode + ((getExponentialRate() == null) ? 0 : getExponentialRate().hashCode());
         return hashCode;
     }
 

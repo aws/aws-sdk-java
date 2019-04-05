@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -152,6 +152,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                     context.nextToken();
                     h264Settings.setProfile(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("qvbrQualityLevel", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setQvbrQualityLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("rateControlMode", targetDepth)) {
                     context.nextToken();
                     h264Settings.setRateControlMode(context.getUnmarshaller(String.class).unmarshall(context));
@@ -175,6 +179,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                 if (context.testExpression("spatialAq", targetDepth)) {
                     context.nextToken();
                     h264Settings.setSpatialAq(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("subgopLength", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setSubgopLength(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("syntax", targetDepth)) {
                     context.nextToken();

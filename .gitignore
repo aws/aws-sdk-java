@@ -2,3 +2,8 @@ target/
 *settings.xml
 *.iml
 *.idea
+
+# Eclipse metadata
+.classpath
+.settings
+.project

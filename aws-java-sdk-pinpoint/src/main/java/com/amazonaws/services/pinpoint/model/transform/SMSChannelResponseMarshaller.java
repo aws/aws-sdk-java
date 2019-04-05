@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,10 +45,14 @@ public class SMSChannelResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Platform").build();
+    private static final MarshallingInfo<Integer> PROMOTIONALMESSAGESPERSECOND_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PromotionalMessagesPerSecond").build();
     private static final MarshallingInfo<String> SENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SenderId").build();
     private static final MarshallingInfo<String> SHORTCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ShortCode").build();
+    private static final MarshallingInfo<Integer> TRANSACTIONALMESSAGESPERSECOND_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransactionalMessagesPerSecond").build();
     private static final MarshallingInfo<Integer> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Version").build();
 
@@ -77,8 +81,10 @@ public class SMSChannelResponseMarshaller {
             protocolMarshaller.marshall(sMSChannelResponse.getLastModifiedBy(), LASTMODIFIEDBY_BINDING);
             protocolMarshaller.marshall(sMSChannelResponse.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(sMSChannelResponse.getPlatform(), PLATFORM_BINDING);
+            protocolMarshaller.marshall(sMSChannelResponse.getPromotionalMessagesPerSecond(), PROMOTIONALMESSAGESPERSECOND_BINDING);
             protocolMarshaller.marshall(sMSChannelResponse.getSenderId(), SENDERID_BINDING);
             protocolMarshaller.marshall(sMSChannelResponse.getShortCode(), SHORTCODE_BINDING);
+            protocolMarshaller.marshall(sMSChannelResponse.getTransactionalMessagesPerSecond(), TRANSACTIONALMESSAGESPERSECOND_BINDING);
             protocolMarshaller.marshall(sMSChannelResponse.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

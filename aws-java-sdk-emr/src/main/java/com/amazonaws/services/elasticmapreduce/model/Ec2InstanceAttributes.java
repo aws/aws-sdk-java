@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,7 +92,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
     private String emrManagedMasterSecurityGroup;
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group for the slave nodes.
+     * The identifier of the Amazon EC2 security group for the core and task nodes.
      * </p>
      */
     private String emrManagedSlaveSecurityGroup;
@@ -111,7 +111,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
     private com.amazonaws.internal.SdkInternalList<String> additionalMasterSecurityGroups;
     /**
      * <p>
-     * A list of additional Amazon EC2 security group IDs for the slave nodes.
+     * A list of additional Amazon EC2 security group IDs for the core and task nodes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> additionalSlaveSecurityGroups;
@@ -610,11 +610,11 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group for the slave nodes.
+     * The identifier of the Amazon EC2 security group for the core and task nodes.
      * </p>
      * 
      * @param emrManagedSlaveSecurityGroup
-     *        The identifier of the Amazon EC2 security group for the slave nodes.
+     *        The identifier of the Amazon EC2 security group for the core and task nodes.
      */
 
     public void setEmrManagedSlaveSecurityGroup(String emrManagedSlaveSecurityGroup) {
@@ -623,10 +623,10 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group for the slave nodes.
+     * The identifier of the Amazon EC2 security group for the core and task nodes.
      * </p>
      * 
-     * @return The identifier of the Amazon EC2 security group for the slave nodes.
+     * @return The identifier of the Amazon EC2 security group for the core and task nodes.
      */
 
     public String getEmrManagedSlaveSecurityGroup() {
@@ -635,11 +635,11 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The identifier of the Amazon EC2 security group for the slave nodes.
+     * The identifier of the Amazon EC2 security group for the core and task nodes.
      * </p>
      * 
      * @param emrManagedSlaveSecurityGroup
-     *        The identifier of the Amazon EC2 security group for the slave nodes.
+     *        The identifier of the Amazon EC2 security group for the core and task nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -769,10 +769,10 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of additional Amazon EC2 security group IDs for the slave nodes.
+     * A list of additional Amazon EC2 security group IDs for the core and task nodes.
      * </p>
      * 
-     * @return A list of additional Amazon EC2 security group IDs for the slave nodes.
+     * @return A list of additional Amazon EC2 security group IDs for the core and task nodes.
      */
 
     public java.util.List<String> getAdditionalSlaveSecurityGroups() {
@@ -784,11 +784,11 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of additional Amazon EC2 security group IDs for the slave nodes.
+     * A list of additional Amazon EC2 security group IDs for the core and task nodes.
      * </p>
      * 
      * @param additionalSlaveSecurityGroups
-     *        A list of additional Amazon EC2 security group IDs for the slave nodes.
+     *        A list of additional Amazon EC2 security group IDs for the core and task nodes.
      */
 
     public void setAdditionalSlaveSecurityGroups(java.util.Collection<String> additionalSlaveSecurityGroups) {
@@ -802,7 +802,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of additional Amazon EC2 security group IDs for the slave nodes.
+     * A list of additional Amazon EC2 security group IDs for the core and task nodes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -811,7 +811,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param additionalSlaveSecurityGroups
-     *        A list of additional Amazon EC2 security group IDs for the slave nodes.
+     *        A list of additional Amazon EC2 security group IDs for the core and task nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -827,11 +827,11 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of additional Amazon EC2 security group IDs for the slave nodes.
+     * A list of additional Amazon EC2 security group IDs for the core and task nodes.
      * </p>
      * 
      * @param additionalSlaveSecurityGroups
-     *        A list of additional Amazon EC2 security group IDs for the slave nodes.
+     *        A list of additional Amazon EC2 security group IDs for the core and task nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -841,7 +841,8 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

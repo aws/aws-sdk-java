@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,9 +61,19 @@ public class ReplicaGlobalSecondaryIndexSettingsDescriptionJsonUnmarshaller impl
                     context.nextToken();
                     replicaGlobalSecondaryIndexSettingsDescription.setProvisionedReadCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ProvisionedReadCapacityAutoScalingSettings", targetDepth)) {
+                    context.nextToken();
+                    replicaGlobalSecondaryIndexSettingsDescription.setProvisionedReadCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ProvisionedWriteCapacityUnits", targetDepth)) {
                     context.nextToken();
                     replicaGlobalSecondaryIndexSettingsDescription.setProvisionedWriteCapacityUnits(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ProvisionedWriteCapacityAutoScalingSettings", targetDepth)) {
+                    context.nextToken();
+                    replicaGlobalSecondaryIndexSettingsDescription
+                            .setProvisionedWriteCapacityAutoScalingSettings(AutoScalingSettingsDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

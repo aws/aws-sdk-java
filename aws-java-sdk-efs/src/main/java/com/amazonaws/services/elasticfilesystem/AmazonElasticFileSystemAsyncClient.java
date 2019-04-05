@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2 instances in
  * the AWS Cloud. With Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you add and
  * remove files, so your applications have the storage they need, when they need it. For more information, see the <a
- * href="http://docs.aws.amazon.com/efs/latest/ug/api-reference.html">User Guide</a>.
+ * href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -503,6 +503,40 @@ public class AmazonElasticFileSystemAsyncClient extends AmazonElasticFileSystemC
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeLifecycleConfigurationResult> describeLifecycleConfigurationAsync(DescribeLifecycleConfigurationRequest request) {
+
+        return describeLifecycleConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLifecycleConfigurationResult> describeLifecycleConfigurationAsync(
+            final DescribeLifecycleConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLifecycleConfigurationRequest, DescribeLifecycleConfigurationResult> asyncHandler) {
+        final DescribeLifecycleConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLifecycleConfigurationResult>() {
+            @Override
+            public DescribeLifecycleConfigurationResult call() throws Exception {
+                DescribeLifecycleConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeLifecycleConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeMountTargetSecurityGroupsResult> describeMountTargetSecurityGroupsAsync(
             DescribeMountTargetSecurityGroupsRequest request) {
 
@@ -623,6 +657,72 @@ public class AmazonElasticFileSystemAsyncClient extends AmazonElasticFileSystemC
 
                 try {
                     result = executeModifyMountTargetSecurityGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecycleConfigurationResult> putLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request) {
+
+        return putLifecycleConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecycleConfigurationResult> putLifecycleConfigurationAsync(final PutLifecycleConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutLifecycleConfigurationRequest, PutLifecycleConfigurationResult> asyncHandler) {
+        final PutLifecycleConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutLifecycleConfigurationResult>() {
+            @Override
+            public PutLifecycleConfigurationResult call() throws Exception {
+                PutLifecycleConfigurationResult result = null;
+
+                try {
+                    result = executePutLifecycleConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileSystemResult> updateFileSystemAsync(UpdateFileSystemRequest request) {
+
+        return updateFileSystemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileSystemResult> updateFileSystemAsync(final UpdateFileSystemRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFileSystemRequest, UpdateFileSystemResult> asyncHandler) {
+        final UpdateFileSystemRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFileSystemResult>() {
+            @Override
+            public UpdateFileSystemResult call() throws Exception {
+                UpdateFileSystemResult result = null;
+
+                try {
+                    result = executeUpdateFileSystem(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

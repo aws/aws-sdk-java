@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,9 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * You can't use the specified policy type with the feature set currently enabled for this organization. For example,
- * you can enable service control policies (SCPs) only after you enable all features in the organization. For more
- * information, see <a
- * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root"
+ * you can enable SCPs only after you enable all features in the organization. For more information, see <a
+ * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root"
  * >Enabling and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide</i>.
  * </p>
  */

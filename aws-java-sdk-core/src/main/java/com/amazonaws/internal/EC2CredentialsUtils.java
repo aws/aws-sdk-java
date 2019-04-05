@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public final class EC2CredentialsUtils {
 
     private final ConnectionUtils connectionUtils;
 
-    private static final String USER_AGENT = String.format("aws-sdk-java/%s", VersionInfoUtils.getVersion());
+    private static final String USER_AGENT = VersionInfoUtils.getUserAgent();
 
     private EC2CredentialsUtils() {
         this(ConnectionUtils.getInstance());
@@ -79,12 +79,7 @@ public final class EC2CredentialsUtils {
      *             If the requested service is not found.
      */
     public String readResource(URI endpoint) throws IOException {
-        Map<String, String> headers = new HashMap<String, String>();
-        headers.put("User-Agent", USER_AGENT);
-        headers.put("Accept", "*/*");
-        headers.put("Connection", "keep-alive");
-
-        return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY, headers);
+        return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY, null);
     }
 
     /**
@@ -110,6 +105,8 @@ public final class EC2CredentialsUtils {
     public String readResource(URI endpoint, CredentialsEndpointRetryPolicy retryPolicy, Map<String, String> headers) throws IOException {
         int retriesAttempted = 0;
         InputStream inputStream = null;
+
+        headers = addDefaultHeaders(headers);
 
         while (true) {
             try {
@@ -139,6 +136,24 @@ public final class EC2CredentialsUtils {
             }
         }
 
+    }
+
+    private Map<String,String> addDefaultHeaders(Map<String,String> headers) {
+        HashMap<String, String> map = new HashMap<String, String>();
+        if (headers != null) {
+            map.putAll(headers);
+        }
+
+        putIfAbsent(map,"User-Agent", USER_AGENT);
+        putIfAbsent(map,"Accept", "*/*");
+        putIfAbsent(map,"Connection", "keep-alive");
+        return map;
+    }
+
+    private <K,V> void putIfAbsent(Map<K,V> map, K key, V value) {
+        if (map.get(key) == null) {
+            map.put(key, value);
+        }
     }
 
     private void handleErrorResponse(InputStream errorStream, int statusCode, String responseMessage) throws IOException {

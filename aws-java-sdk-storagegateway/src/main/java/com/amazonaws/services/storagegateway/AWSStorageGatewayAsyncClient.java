@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <a href=
- * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
+ * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
  * >AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
  * request to AWS Storage Gateway.
  * </p>
@@ -52,29 +52,28 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <a href=
- * "http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
+ * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
  * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
  * describes how sign such a request.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a
- * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
- * Responses</a>: Provides reference information about AWS Storage Gateway errors.
+ * <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">
+ * Error Responses</a>: Provides reference information about AWS Storage Gateway errors.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS Storage
- * Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response
- * elements, possible errors, and examples of requests and responses.
+ * <a href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations in AWS
+ * Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters,
+ * response elements, possible errors, and examples of requests and responses.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage Gateway Regions and
- * Endpoints:</a> Provides a list of each region and endpoints available for use with AWS Storage Gateway.
+ * Endpoints:</a> Provides a list of each AWS region and endpoints available for use with AWS Storage Gateway.
  * </p>
  * </li>
  * </ul>
@@ -484,6 +483,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<AttachVolumeResult> attachVolumeAsync(AttachVolumeRequest request) {
+
+        return attachVolumeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachVolumeResult> attachVolumeAsync(final AttachVolumeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AttachVolumeRequest, AttachVolumeResult> asyncHandler) {
+        final AttachVolumeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AttachVolumeResult>() {
+            @Override
+            public AttachVolumeResult call() throws Exception {
+                AttachVolumeResult result = null;
+
+                try {
+                    result = executeAttachVolume(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelArchivalResult> cancelArchivalAsync(CancelArchivalRequest request) {
 
         return cancelArchivalAsync(request, null);
@@ -600,6 +632,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = executeCreateNFSFileShare(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSMBFileShareResult> createSMBFileShareAsync(CreateSMBFileShareRequest request) {
+
+        return createSMBFileShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSMBFileShareResult> createSMBFileShareAsync(final CreateSMBFileShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSMBFileShareRequest, CreateSMBFileShareResult> asyncHandler) {
+        final CreateSMBFileShareRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSMBFileShareResult>() {
+            @Override
+            public CreateSMBFileShareResult call() throws Exception {
+                CreateSMBFileShareResult result = null;
+
+                try {
+                    result = executeCreateSMBFileShare(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1278,6 +1343,72 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSMBFileSharesResult> describeSMBFileSharesAsync(DescribeSMBFileSharesRequest request) {
+
+        return describeSMBFileSharesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSMBFileSharesResult> describeSMBFileSharesAsync(final DescribeSMBFileSharesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSMBFileSharesRequest, DescribeSMBFileSharesResult> asyncHandler) {
+        final DescribeSMBFileSharesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSMBFileSharesResult>() {
+            @Override
+            public DescribeSMBFileSharesResult call() throws Exception {
+                DescribeSMBFileSharesResult result = null;
+
+                try {
+                    result = executeDescribeSMBFileShares(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSMBSettingsResult> describeSMBSettingsAsync(DescribeSMBSettingsRequest request) {
+
+        return describeSMBSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSMBSettingsResult> describeSMBSettingsAsync(final DescribeSMBSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSMBSettingsRequest, DescribeSMBSettingsResult> asyncHandler) {
+        final DescribeSMBSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSMBSettingsResult>() {
+            @Override
+            public DescribeSMBSettingsResult call() throws Exception {
+                DescribeSMBSettingsResult result = null;
+
+                try {
+                    result = executeDescribeSMBSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotScheduleResult> describeSnapshotScheduleAsync(DescribeSnapshotScheduleRequest request) {
 
         return describeSnapshotScheduleAsync(request, null);
@@ -1565,6 +1696,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DetachVolumeResult> detachVolumeAsync(DetachVolumeRequest request) {
+
+        return detachVolumeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachVolumeResult> detachVolumeAsync(final DetachVolumeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetachVolumeRequest, DetachVolumeResult> asyncHandler) {
+        final DetachVolumeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetachVolumeResult>() {
+            @Override
+            public DetachVolumeResult call() throws Exception {
+                DetachVolumeResult result = null;
+
+                try {
+                    result = executeDetachVolume(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableGatewayResult> disableGatewayAsync(DisableGatewayRequest request) {
 
         return disableGatewayAsync(request, null);
@@ -1582,6 +1746,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = executeDisableGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<JoinDomainResult> joinDomainAsync(JoinDomainRequest request) {
+
+        return joinDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<JoinDomainResult> joinDomainAsync(final JoinDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<JoinDomainRequest, JoinDomainResult> asyncHandler) {
+        final JoinDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<JoinDomainResult>() {
+            @Override
+            public JoinDomainResult call() throws Exception {
+                JoinDomainResult result = null;
+
+                try {
+                    result = executeJoinDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2162,6 +2359,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<SetSMBGuestPasswordResult> setSMBGuestPasswordAsync(SetSMBGuestPasswordRequest request) {
+
+        return setSMBGuestPasswordAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSMBGuestPasswordResult> setSMBGuestPasswordAsync(final SetSMBGuestPasswordRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetSMBGuestPasswordRequest, SetSMBGuestPasswordResult> asyncHandler) {
+        final SetSMBGuestPasswordRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetSMBGuestPasswordResult>() {
+            @Override
+            public SetSMBGuestPasswordResult call() throws Exception {
+                SetSMBGuestPasswordResult result = null;
+
+                try {
+                    result = executeSetSMBGuestPassword(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ShutdownGatewayResult> shutdownGatewayAsync(ShutdownGatewayRequest request) {
 
         return shutdownGatewayAsync(request, null);
@@ -2410,6 +2640,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = executeUpdateNFSFileShare(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSMBFileShareResult> updateSMBFileShareAsync(UpdateSMBFileShareRequest request) {
+
+        return updateSMBFileShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSMBFileShareResult> updateSMBFileShareAsync(final UpdateSMBFileShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSMBFileShareRequest, UpdateSMBFileShareResult> asyncHandler) {
+        final UpdateSMBFileShareRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSMBFileShareResult>() {
+            @Override
+            public UpdateSMBFileShareResult call() throws Exception {
+                UpdateSMBFileShareResult result = null;
+
+                try {
+                    result = executeUpdateSMBFileShare(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

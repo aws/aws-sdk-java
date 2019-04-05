@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.rds.model.transform;
+
+import java.util.ArrayList;
 
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
@@ -54,7 +56,7 @@ public class DBSnapshotStaxUnmarshaller implements Unmarshaller<DBSnapshot, Stax
                 }
 
                 if (context.testExpression("SnapshotCreateTime", targetDepth)) {
-                    dBSnapshot.setSnapshotCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBSnapshot.setSnapshotCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -89,7 +91,7 @@ public class DBSnapshotStaxUnmarshaller implements Unmarshaller<DBSnapshot, Stax
                 }
 
                 if (context.testExpression("InstanceCreateTime", targetDepth)) {
-                    dBSnapshot.setInstanceCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBSnapshot.setInstanceCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -170,6 +172,21 @@ public class DBSnapshotStaxUnmarshaller implements Unmarshaller<DBSnapshot, Stax
 
                 if (context.testExpression("IAMDatabaseAuthenticationEnabled", targetDepth)) {
                     dBSnapshot.setIAMDatabaseAuthenticationEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ProcessorFeatures", targetDepth)) {
+                    dBSnapshot.withProcessorFeatures(new ArrayList<ProcessorFeature>());
+                    continue;
+                }
+
+                if (context.testExpression("ProcessorFeatures/ProcessorFeature", targetDepth)) {
+                    dBSnapshot.withProcessorFeatures(ProcessorFeatureStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DbiResourceId", targetDepth)) {
+                    dBSnapshot.setDbiResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

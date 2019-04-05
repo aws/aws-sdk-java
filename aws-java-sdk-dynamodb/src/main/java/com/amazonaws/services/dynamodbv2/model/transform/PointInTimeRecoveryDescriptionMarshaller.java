@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class PointInTimeRecoveryDescriptionMarshaller {
     private static final MarshallingInfo<String> POINTINTIMERECOVERYSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PointInTimeRecoveryStatus").build();
     private static final MarshallingInfo<java.util.Date> EARLIESTRESTORABLEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EarliestRestorableDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EarliestRestorableDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LATESTRESTORABLEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestRestorableDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestRestorableDateTime").timestampFormat("unixTimestamp").build();
 
     private static final PointInTimeRecoveryDescriptionMarshaller instance = new PointInTimeRecoveryDescriptionMarshaller();
 

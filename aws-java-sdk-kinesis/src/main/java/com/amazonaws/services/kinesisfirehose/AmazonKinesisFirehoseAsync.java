@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,15 +57,15 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * <p>
      * A delivery stream is configured with a single destination: Amazon S3, Amazon ES, Amazon Redshift, or Splunk. You
      * must specify only one of the following destination configuration parameters:
-     * <b>ExtendedS3DestinationConfiguration</b>, <b>S3DestinationConfiguration</b>,
-     * <b>ElasticsearchDestinationConfiguration</b>, <b>RedshiftDestinationConfiguration</b>, or
-     * <b>SplunkDestinationConfiguration</b>.
+     * <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>,
+     * <code>ElasticsearchDestinationConfiguration</code>, <code>RedshiftDestinationConfiguration</code>, or
+     * <code>SplunkDestinationConfiguration</code>.
      * </p>
      * <p>
-     * When you specify <b>S3DestinationConfiguration</b>, you can also provide the following optional values:
-     * <b>BufferingHints</b>, <b>EncryptionConfiguration</b>, and <b>CompressionFormat</b>. By default, if no
-     * <b>BufferingHints</b> value is provided, Kinesis Data Firehose buffers data up to 5 MB or for 5 minutes,
-     * whichever condition is satisfied first. <b>BufferingHints</b> is a hint, so there are some cases where the
+     * When you specify <code>S3DestinationConfiguration</code>, you can also provide the following optional values:
+     * BufferingHints, <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code>. By default, if no
+     * <code>BufferingHints</code> value is provided, Kinesis Data Firehose buffers data up to 5 MB or for 5 minutes,
+     * whichever condition is satisfied first. <code>BufferingHints</code> is a hint, so there are some cases where the
      * service cannot adhere to these conditions strictly. For example, record boundaries might be such that the size is
      * a little over or under the configured buffering size. By default, no encryption is performed. We strongly
      * recommend that you enable encryption to ensure secure data storage in Amazon S3.
@@ -78,7 +78,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * <p>
      * An Amazon Redshift destination requires an S3 bucket as intermediate location. Kinesis Data Firehose first
      * delivers data to Amazon S3 and then uses <code>COPY</code> syntax to load data into an Amazon Redshift table.
-     * This is specified in the <b>RedshiftDestinationConfiguration.S3Configuration</b> parameter.
+     * This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter.
      * </p>
      * </li>
      * <li>
@@ -134,15 +134,15 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * <p>
      * A delivery stream is configured with a single destination: Amazon S3, Amazon ES, Amazon Redshift, or Splunk. You
      * must specify only one of the following destination configuration parameters:
-     * <b>ExtendedS3DestinationConfiguration</b>, <b>S3DestinationConfiguration</b>,
-     * <b>ElasticsearchDestinationConfiguration</b>, <b>RedshiftDestinationConfiguration</b>, or
-     * <b>SplunkDestinationConfiguration</b>.
+     * <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>,
+     * <code>ElasticsearchDestinationConfiguration</code>, <code>RedshiftDestinationConfiguration</code>, or
+     * <code>SplunkDestinationConfiguration</code>.
      * </p>
      * <p>
-     * When you specify <b>S3DestinationConfiguration</b>, you can also provide the following optional values:
-     * <b>BufferingHints</b>, <b>EncryptionConfiguration</b>, and <b>CompressionFormat</b>. By default, if no
-     * <b>BufferingHints</b> value is provided, Kinesis Data Firehose buffers data up to 5 MB or for 5 minutes,
-     * whichever condition is satisfied first. <b>BufferingHints</b> is a hint, so there are some cases where the
+     * When you specify <code>S3DestinationConfiguration</code>, you can also provide the following optional values:
+     * BufferingHints, <code>EncryptionConfiguration</code>, and <code>CompressionFormat</code>. By default, if no
+     * <code>BufferingHints</code> value is provided, Kinesis Data Firehose buffers data up to 5 MB or for 5 minutes,
+     * whichever condition is satisfied first. <code>BufferingHints</code> is a hint, so there are some cases where the
      * service cannot adhere to these conditions strictly. For example, record boundaries might be such that the size is
      * a little over or under the configured buffering size. By default, no encryption is performed. We strongly
      * recommend that you enable encryption to ensure secure data storage in Amazon S3.
@@ -155,7 +155,7 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * <p>
      * An Amazon Redshift destination requires an S3 bucket as intermediate location. Kinesis Data Firehose first
      * delivers data to Amazon S3 and then uses <code>COPY</code> syntax to load data into an Amazon Redshift table.
-     * This is specified in the <b>RedshiftDestinationConfiguration.S3Configuration</b> parameter.
+     * This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code> parameter.
      * </p>
      * </li>
      * <li>
@@ -287,15 +287,15 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
 
     /**
      * <p>
-     * Lists your delivery streams.
+     * Lists your delivery streams in alphabetical order of their names.
      * </p>
      * <p>
      * The number of delivery streams might be too large to return using a single call to
-     * <code>ListDeliveryStreams</code>. You can limit the number of delivery streams returned, using the <b>Limit</b>
-     * parameter. To determine whether there are more delivery streams to list, check the value of
+     * <code>ListDeliveryStreams</code>. You can limit the number of delivery streams returned, using the
+     * <code>Limit</code> parameter. To determine whether there are more delivery streams to list, check the value of
      * <code>HasMoreDeliveryStreams</code> in the output. If there are more delivery streams to list, you can request
-     * them by specifying the name of the last delivery stream returned in the call in the
-     * <code>ExclusiveStartDeliveryStreamName</code> parameter of a subsequent call.
+     * them by calling this operation again and setting the <code>ExclusiveStartDeliveryStreamName</code> parameter to
+     * the name of the last delivery stream returned in the last call.
      * </p>
      * 
      * @param listDeliveryStreamsRequest
@@ -308,15 +308,15 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
 
     /**
      * <p>
-     * Lists your delivery streams.
+     * Lists your delivery streams in alphabetical order of their names.
      * </p>
      * <p>
      * The number of delivery streams might be too large to return using a single call to
-     * <code>ListDeliveryStreams</code>. You can limit the number of delivery streams returned, using the <b>Limit</b>
-     * parameter. To determine whether there are more delivery streams to list, check the value of
+     * <code>ListDeliveryStreams</code>. You can limit the number of delivery streams returned, using the
+     * <code>Limit</code> parameter. To determine whether there are more delivery streams to list, check the value of
      * <code>HasMoreDeliveryStreams</code> in the output. If there are more delivery streams to list, you can request
-     * them by specifying the name of the last delivery stream returned in the call in the
-     * <code>ExclusiveStartDeliveryStreamName</code> parameter of a subsequent call.
+     * them by calling this operation again and setting the <code>ExclusiveStartDeliveryStreamName</code> parameter to
+     * the name of the last delivery stream returned in the last call.
      * </p>
      * 
      * @param listDeliveryStreamsRequest
@@ -403,6 +403,12 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * stream as it tries to send the records to the destination. If the destination is unreachable for more than 24
      * hours, the data is no longer available.
      * </p>
+     * <important>
+     * <p>
+     * Don't concatenate two or more base64 strings to form the data fields of your records. Instead, concatenate the
+     * raw data, then perform base64 encoding.
+     * </p>
+     * </important>
      * 
      * @param putRecordRequest
      * @return A Java Future containing the result of the PutRecord operation returned by the service.
@@ -448,6 +454,12 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * stream as it tries to send the records to the destination. If the destination is unreachable for more than 24
      * hours, the data is no longer available.
      * </p>
+     * <important>
+     * <p>
+     * Don't concatenate two or more base64 strings to form the data fields of your records. Instead, concatenate the
+     * raw data, then perform base64 encoding.
+     * </p>
+     * </important>
      * 
      * @param putRecordRequest
      * @param asyncHandler
@@ -490,28 +502,31 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * when reading the data from the destination.
      * </p>
      * <p>
-     * The <a>PutRecordBatch</a> response includes a count of failed records, <b>FailedPutCount</b>, and an array of
-     * responses, <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b> array provides additional
-     * information about the processed record. It directly correlates with a record in the request array using the same
-     * ordering, from the top to the bottom. The response array always includes the same number of records as the
-     * request array. <b>RequestResponses</b> includes both successfully and unsuccessfully processed records. Kinesis
-     * Data Firehose tries to process all records in each <a>PutRecordBatch</a> request. A single record failure does
-     * not stop the processing of subsequent records.
+     * The <a>PutRecordBatch</a> response includes a count of failed records, <code>FailedPutCount</code>, and an array
+     * of responses, <code>RequestResponses</code>. Even if the <a>PutRecordBatch</a> call succeeds, the value of
+     * <code>FailedPutCount</code> may be greater than 0, indicating that there are records for which the operation
+     * didn't succeed. Each entry in the <code>RequestResponses</code> array provides additional information about the
+     * processed record. It directly correlates with a record in the request array using the same ordering, from the top
+     * to the bottom. The response array always includes the same number of records as the request array.
+     * <code>RequestResponses</code> includes both successfully and unsuccessfully processed records. Kinesis Data
+     * Firehose tries to process all records in each <a>PutRecordBatch</a> request. A single record failure does not
+     * stop the processing of subsequent records.
      * </p>
      * <p>
-     * A successfully processed record includes a <b>RecordId</b> value, which is unique for the record. An
-     * unsuccessfully processed record includes <b>ErrorCode</b> and <b>ErrorMessage</b> values. <b>ErrorCode</b>
-     * reflects the type of error, and is one of the following values: <code>ServiceUnavailable</code> or
-     * <code>InternalFailure</code>. <b>ErrorMessage</b> provides more detailed information about the error.
+     * A successfully processed record includes a <code>RecordId</code> value, which is unique for the record. An
+     * unsuccessfully processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code> values.
+     * <code>ErrorCode</code> reflects the type of error, and is one of the following values:
+     * <code>ServiceUnavailableException</code> or <code>InternalFailure</code>. <code>ErrorMessage</code> provides more
+     * detailed information about the error.
      * </p>
      * <p>
      * If there is an internal server error or a timeout, the write might have completed or it might have failed. If
-     * <b>FailedPutCount</b> is greater than 0, retry the request, resending only those records that might have failed
-     * processing. This minimizes the possible duplicate records and also reduces the total bytes sent (and
+     * <code>FailedPutCount</code> is greater than 0, retry the request, resending only those records that might have
+     * failed processing. This minimizes the possible duplicate records and also reduces the total bytes sent (and
      * corresponding charges). We recommend that you handle any duplicates at the destination.
      * </p>
      * <p>
-     * If <a>PutRecordBatch</a> throws <b>ServiceUnavailableException</b>, back off and retry. If the exception
+     * If <a>PutRecordBatch</a> throws <code>ServiceUnavailableException</code>, back off and retry. If the exception
      * persists, it is possible that the throughput limits have been exceeded for the delivery stream.
      * </p>
      * <p>
@@ -519,6 +534,12 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24
      * hours, the data is no longer available.
      * </p>
+     * <important>
+     * <p>
+     * Don't concatenate two or more base64 strings to form the data fields of your records. Instead, concatenate the
+     * raw data, then perform base64 encoding.
+     * </p>
+     * </important>
      * 
      * @param putRecordBatchRequest
      * @return A Java Future containing the result of the PutRecordBatch operation returned by the service.
@@ -556,28 +577,31 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * when reading the data from the destination.
      * </p>
      * <p>
-     * The <a>PutRecordBatch</a> response includes a count of failed records, <b>FailedPutCount</b>, and an array of
-     * responses, <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b> array provides additional
-     * information about the processed record. It directly correlates with a record in the request array using the same
-     * ordering, from the top to the bottom. The response array always includes the same number of records as the
-     * request array. <b>RequestResponses</b> includes both successfully and unsuccessfully processed records. Kinesis
-     * Data Firehose tries to process all records in each <a>PutRecordBatch</a> request. A single record failure does
-     * not stop the processing of subsequent records.
+     * The <a>PutRecordBatch</a> response includes a count of failed records, <code>FailedPutCount</code>, and an array
+     * of responses, <code>RequestResponses</code>. Even if the <a>PutRecordBatch</a> call succeeds, the value of
+     * <code>FailedPutCount</code> may be greater than 0, indicating that there are records for which the operation
+     * didn't succeed. Each entry in the <code>RequestResponses</code> array provides additional information about the
+     * processed record. It directly correlates with a record in the request array using the same ordering, from the top
+     * to the bottom. The response array always includes the same number of records as the request array.
+     * <code>RequestResponses</code> includes both successfully and unsuccessfully processed records. Kinesis Data
+     * Firehose tries to process all records in each <a>PutRecordBatch</a> request. A single record failure does not
+     * stop the processing of subsequent records.
      * </p>
      * <p>
-     * A successfully processed record includes a <b>RecordId</b> value, which is unique for the record. An
-     * unsuccessfully processed record includes <b>ErrorCode</b> and <b>ErrorMessage</b> values. <b>ErrorCode</b>
-     * reflects the type of error, and is one of the following values: <code>ServiceUnavailable</code> or
-     * <code>InternalFailure</code>. <b>ErrorMessage</b> provides more detailed information about the error.
+     * A successfully processed record includes a <code>RecordId</code> value, which is unique for the record. An
+     * unsuccessfully processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code> values.
+     * <code>ErrorCode</code> reflects the type of error, and is one of the following values:
+     * <code>ServiceUnavailableException</code> or <code>InternalFailure</code>. <code>ErrorMessage</code> provides more
+     * detailed information about the error.
      * </p>
      * <p>
      * If there is an internal server error or a timeout, the write might have completed or it might have failed. If
-     * <b>FailedPutCount</b> is greater than 0, retry the request, resending only those records that might have failed
-     * processing. This minimizes the possible duplicate records and also reduces the total bytes sent (and
+     * <code>FailedPutCount</code> is greater than 0, retry the request, resending only those records that might have
+     * failed processing. This minimizes the possible duplicate records and also reduces the total bytes sent (and
      * corresponding charges). We recommend that you handle any duplicates at the destination.
      * </p>
      * <p>
-     * If <a>PutRecordBatch</a> throws <b>ServiceUnavailableException</b>, back off and retry. If the exception
+     * If <a>PutRecordBatch</a> throws <code>ServiceUnavailableException</code>, back off and retry. If the exception
      * persists, it is possible that the throughput limits have been exceeded for the delivery stream.
      * </p>
      * <p>
@@ -585,6 +609,12 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * stream as it attempts to send the records to the destination. If the destination is unreachable for more than 24
      * hours, the data is no longer available.
      * </p>
+     * <important>
+     * <p>
+     * Don't concatenate two or more base64 strings to form the data fields of your records. Instead, concatenate the
+     * raw data, then perform base64 encoding.
+     * </p>
+     * </important>
      * 
      * @param putRecordBatchRequest
      * @param asyncHandler
@@ -601,11 +631,154 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
 
     /**
      * <p>
-     * Adds or updates tags for the specified delivery stream. A tag is a key-value pair (the value is optional) that
-     * you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced
-     * with the value that you specify in the request. Tags are metadata. For example, you can add friendly names and
-     * descriptions or other types of information that can help you distinguish the delivery stream. For more
-     * information about tags, see <a
+     * Enables server-side encryption (SSE) for the delivery stream.
+     * </p>
+     * <p>
+     * This operation is asynchronous. It returns immediately. When you invoke it, Kinesis Data Firehose first sets the
+     * status of the stream to <code>ENABLING</code>, and then to <code>ENABLED</code>. You can continue to read and
+     * write data to your stream while its status is <code>ENABLING</code>, but the data is not encrypted. It can take
+     * up to 5 seconds after the encryption status changes to <code>ENABLED</code> before all records written to the
+     * delivery stream are encrypted. To find out whether a record or a batch of records was encrypted, check the
+     * response elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>, respectively.
+     * </p>
+     * <p>
+     * To check the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+     * </p>
+     * <p>
+     * You can only enable SSE for a delivery stream that uses <code>DirectPut</code> as its source.
+     * </p>
+     * <p>
+     * The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a
+     * combined limit of 25 calls per delivery stream per 24 hours. For example, you reach the limit if you call
+     * <code>StartDeliveryStreamEncryption</code> 13 times and <code>StopDeliveryStreamEncryption</code> 12 times for
+     * the same delivery stream in a 24-hour period.
+     * </p>
+     * 
+     * @param startDeliveryStreamEncryptionRequest
+     * @return A Java Future containing the result of the StartDeliveryStreamEncryption operation returned by the
+     *         service.
+     * @sample AmazonKinesisFirehoseAsync.StartDeliveryStreamEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StartDeliveryStreamEncryption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDeliveryStreamEncryptionResult> startDeliveryStreamEncryptionAsync(
+            StartDeliveryStreamEncryptionRequest startDeliveryStreamEncryptionRequest);
+
+    /**
+     * <p>
+     * Enables server-side encryption (SSE) for the delivery stream.
+     * </p>
+     * <p>
+     * This operation is asynchronous. It returns immediately. When you invoke it, Kinesis Data Firehose first sets the
+     * status of the stream to <code>ENABLING</code>, and then to <code>ENABLED</code>. You can continue to read and
+     * write data to your stream while its status is <code>ENABLING</code>, but the data is not encrypted. It can take
+     * up to 5 seconds after the encryption status changes to <code>ENABLED</code> before all records written to the
+     * delivery stream are encrypted. To find out whether a record or a batch of records was encrypted, check the
+     * response elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>, respectively.
+     * </p>
+     * <p>
+     * To check the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+     * </p>
+     * <p>
+     * You can only enable SSE for a delivery stream that uses <code>DirectPut</code> as its source.
+     * </p>
+     * <p>
+     * The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a
+     * combined limit of 25 calls per delivery stream per 24 hours. For example, you reach the limit if you call
+     * <code>StartDeliveryStreamEncryption</code> 13 times and <code>StopDeliveryStreamEncryption</code> 12 times for
+     * the same delivery stream in a 24-hour period.
+     * </p>
+     * 
+     * @param startDeliveryStreamEncryptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartDeliveryStreamEncryption operation returned by the
+     *         service.
+     * @sample AmazonKinesisFirehoseAsyncHandler.StartDeliveryStreamEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StartDeliveryStreamEncryption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDeliveryStreamEncryptionResult> startDeliveryStreamEncryptionAsync(
+            StartDeliveryStreamEncryptionRequest startDeliveryStreamEncryptionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartDeliveryStreamEncryptionRequest, StartDeliveryStreamEncryptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables server-side encryption (SSE) for the delivery stream.
+     * </p>
+     * <p>
+     * This operation is asynchronous. It returns immediately. When you invoke it, Kinesis Data Firehose first sets the
+     * status of the stream to <code>DISABLING</code>, and then to <code>DISABLED</code>. You can continue to read and
+     * write data to your stream while its status is <code>DISABLING</code>. It can take up to 5 seconds after the
+     * encryption status changes to <code>DISABLED</code> before all records written to the delivery stream are no
+     * longer subject to encryption. To find out whether a record or a batch of records was encrypted, check the
+     * response elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>, respectively.
+     * </p>
+     * <p>
+     * To check the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+     * </p>
+     * <p>
+     * The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a
+     * combined limit of 25 calls per delivery stream per 24 hours. For example, you reach the limit if you call
+     * <code>StartDeliveryStreamEncryption</code> 13 times and <code>StopDeliveryStreamEncryption</code> 12 times for
+     * the same delivery stream in a 24-hour period.
+     * </p>
+     * 
+     * @param stopDeliveryStreamEncryptionRequest
+     * @return A Java Future containing the result of the StopDeliveryStreamEncryption operation returned by the
+     *         service.
+     * @sample AmazonKinesisFirehoseAsync.StopDeliveryStreamEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StopDeliveryStreamEncryption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopDeliveryStreamEncryptionResult> stopDeliveryStreamEncryptionAsync(
+            StopDeliveryStreamEncryptionRequest stopDeliveryStreamEncryptionRequest);
+
+    /**
+     * <p>
+     * Disables server-side encryption (SSE) for the delivery stream.
+     * </p>
+     * <p>
+     * This operation is asynchronous. It returns immediately. When you invoke it, Kinesis Data Firehose first sets the
+     * status of the stream to <code>DISABLING</code>, and then to <code>DISABLED</code>. You can continue to read and
+     * write data to your stream while its status is <code>DISABLING</code>. It can take up to 5 seconds after the
+     * encryption status changes to <code>DISABLED</code> before all records written to the delivery stream are no
+     * longer subject to encryption. To find out whether a record or a batch of records was encrypted, check the
+     * response elements <a>PutRecordOutput$Encrypted</a> and <a>PutRecordBatchOutput$Encrypted</a>, respectively.
+     * </p>
+     * <p>
+     * To check the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+     * </p>
+     * <p>
+     * The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a
+     * combined limit of 25 calls per delivery stream per 24 hours. For example, you reach the limit if you call
+     * <code>StartDeliveryStreamEncryption</code> 13 times and <code>StopDeliveryStreamEncryption</code> 12 times for
+     * the same delivery stream in a 24-hour period.
+     * </p>
+     * 
+     * @param stopDeliveryStreamEncryptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopDeliveryStreamEncryption operation returned by the
+     *         service.
+     * @sample AmazonKinesisFirehoseAsyncHandler.StopDeliveryStreamEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StopDeliveryStreamEncryption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopDeliveryStreamEncryptionResult> stopDeliveryStreamEncryptionAsync(
+            StopDeliveryStreamEncryptionRequest stopDeliveryStreamEncryptionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopDeliveryStreamEncryptionRequest, StopDeliveryStreamEncryptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or updates tags for the specified delivery stream. A tag is a key-value pair that you can define and assign
+     * to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you
+     * specify in the request. Tags are metadata. For example, you can add friendly names and descriptions or other
+     * types of information that can help you distinguish the delivery stream. For more information about tags, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
      * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
@@ -626,11 +799,10 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
 
     /**
      * <p>
-     * Adds or updates tags for the specified delivery stream. A tag is a key-value pair (the value is optional) that
-     * you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced
-     * with the value that you specify in the request. Tags are metadata. For example, you can add friendly names and
-     * descriptions or other types of information that can help you distinguish the delivery stream. For more
-     * information about tags, see <a
+     * Adds or updates tags for the specified delivery stream. A tag is a key-value pair that you can define and assign
+     * to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you
+     * specify in the request. Tags are metadata. For example, you can add friendly names and descriptions or other
+     * types of information that can help you distinguish the delivery stream. For more information about tags, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
      * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
@@ -726,11 +898,11 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * Kinesis Data Firehose does not merge any parameters. In this case, all parameters must be specified.
      * </p>
      * <p>
-     * Kinesis Data Firehose uses <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions and conflicting merges.
-     * This is a required field, and the service updates the configuration only if the existing configuration has a
-     * version ID that matches. After the update is applied successfully, the version ID is updated, and can be
+     * Kinesis Data Firehose uses <code>CurrentDeliveryStreamVersionId</code> to avoid race conditions and conflicting
+     * merges. This is a required field, and the service updates the configuration only if the existing configuration
+     * has a version ID that matches. After the update is applied successfully, the version ID is updated, and can be
      * retrieved using <a>DescribeDeliveryStream</a>. Use the new version ID to set
-     * <b>CurrentDeliveryStreamVersionId</b> in the next call.
+     * <code>CurrentDeliveryStreamVersionId</code> in the next call.
      * </p>
      * 
      * @param updateDestinationRequest
@@ -768,11 +940,11 @@ public interface AmazonKinesisFirehoseAsync extends AmazonKinesisFirehose {
      * Kinesis Data Firehose does not merge any parameters. In this case, all parameters must be specified.
      * </p>
      * <p>
-     * Kinesis Data Firehose uses <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions and conflicting merges.
-     * This is a required field, and the service updates the configuration only if the existing configuration has a
-     * version ID that matches. After the update is applied successfully, the version ID is updated, and can be
+     * Kinesis Data Firehose uses <code>CurrentDeliveryStreamVersionId</code> to avoid race conditions and conflicting
+     * merges. This is a required field, and the service updates the configuration only if the existing configuration
+     * has a version ID that matches. After the update is applied successfully, the version ID is updated, and can be
      * retrieved using <a>DescribeDeliveryStream</a>. Use the new version ID to set
-     * <b>CurrentDeliveryStreamVersionId</b> in the next call.
+     * <code>CurrentDeliveryStreamVersionId</code> in the next call.
      * </p>
      * 
      * @param updateDestinationRequest

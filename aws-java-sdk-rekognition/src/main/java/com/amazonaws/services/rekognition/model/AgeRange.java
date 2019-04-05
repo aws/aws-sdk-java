@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,8 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Structure containing the estimated age range, in years, for a face.
  * </p>
  * <p>
- * Rekognition estimates an age-range for faces detected in the input image. Estimated age ranges can overlap; a face of
- * a 5 year old may have an estimated range of 4-6 whilst the face of a 6 year old may have an estimated range of 4-8.
+ * Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A
+ * face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated
+ * range of 4-8.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -123,7 +124,8 @@ public class AgeRange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

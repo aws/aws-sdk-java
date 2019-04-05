@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,10 @@ public class H265SettingsJsonUnmarshaller implements Unmarshaller<H265Settings, 
                 if (context.testExpression("codecProfile", targetDepth)) {
                     context.nextToken();
                     h265Settings.setCodecProfile(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("dynamicSubGop", targetDepth)) {
+                    context.nextToken();
+                    h265Settings.setDynamicSubGop(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("flickerAdaptiveQuantization", targetDepth)) {
                     context.nextToken();
@@ -148,6 +152,10 @@ public class H265SettingsJsonUnmarshaller implements Unmarshaller<H265Settings, 
                     context.nextToken();
                     h265Settings.setQualityTuningLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("qvbrSettings", targetDepth)) {
+                    context.nextToken();
+                    h265Settings.setQvbrSettings(H265QvbrSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("rateControlMode", targetDepth)) {
                     context.nextToken();
                     h265Settings.setRateControlMode(context.getUnmarshaller(String.class).unmarshall(context));
@@ -191,6 +199,10 @@ public class H265SettingsJsonUnmarshaller implements Unmarshaller<H265Settings, 
                 if (context.testExpression("unregisteredSeiTimecode", targetDepth)) {
                     context.nextToken();
                     h265Settings.setUnregisteredSeiTimecode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("writeMp4PackagingType", targetDepth)) {
+                    context.nextToken();
+                    h265Settings.setWriteMp4PackagingType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class EmailChannelResponseMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
+    private static final MarshallingInfo<String> CONFIGURATIONSET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationSet").build();
     private static final MarshallingInfo<String> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
@@ -47,6 +49,8 @@ public class EmailChannelResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedBy").build();
     private static final MarshallingInfo<String> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
+    private static final MarshallingInfo<Integer> MESSAGESPERSECOND_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessagesPerSecond").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Platform").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,6 +75,7 @@ public class EmailChannelResponseMarshaller {
 
         try {
             protocolMarshaller.marshall(emailChannelResponse.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(emailChannelResponse.getConfigurationSet(), CONFIGURATIONSET_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getFromAddress(), FROMADDRESS_BINDING);
@@ -80,6 +85,7 @@ public class EmailChannelResponseMarshaller {
             protocolMarshaller.marshall(emailChannelResponse.getIsArchived(), ISARCHIVED_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getLastModifiedBy(), LASTMODIFIEDBY_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
+            protocolMarshaller.marshall(emailChannelResponse.getMessagesPerSecond(), MESSAGESPERSECOND_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getPlatform(), PLATFORM_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getVersion(), VERSION_BINDING);

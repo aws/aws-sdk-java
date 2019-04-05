@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,6 +63,8 @@ import com.amazonaws.services.s3.model.DeleteObjectTaggingRequest;
 import com.amazonaws.services.s3.model.DeleteObjectTaggingResult;
 import com.amazonaws.services.s3.model.DeleteObjectsRequest;
 import com.amazonaws.services.s3.model.DeleteObjectsResult;
+import com.amazonaws.services.s3.model.DeletePublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GetBucketAccelerateConfigurationRequest;
@@ -81,15 +83,25 @@ import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
+import com.amazonaws.services.s3.model.GetBucketPolicyStatusRequest;
+import com.amazonaws.services.s3.model.GetBucketPolicyStatusResult;
 import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.GetObjectAclRequest;
+import com.amazonaws.services.s3.model.GetObjectLegalHoldRequest;
+import com.amazonaws.services.s3.model.GetObjectLegalHoldResult;
+import com.amazonaws.services.s3.model.GetObjectLockConfigurationRequest;
+import com.amazonaws.services.s3.model.GetObjectLockConfigurationResult;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
+import com.amazonaws.services.s3.model.GetObjectRetentionRequest;
+import com.amazonaws.services.s3.model.GetObjectRetentionResult;
 import com.amazonaws.services.s3.model.GetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.GetObjectTaggingResult;
+import com.amazonaws.services.s3.model.GetPublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.GetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.HeadBucketRequest;
@@ -118,6 +130,10 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.Owner;
 import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.Permission;
+import com.amazonaws.services.s3.model.PresignedUrlDownloadRequest;
+import com.amazonaws.services.s3.model.PresignedUrlDownloadResult;
+import com.amazonaws.services.s3.model.PresignedUrlUploadRequest;
+import com.amazonaws.services.s3.model.PresignedUrlUploadResult;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
@@ -146,8 +162,16 @@ import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.SetObjectAclRequest;
+import com.amazonaws.services.s3.model.SetObjectLegalHoldRequest;
+import com.amazonaws.services.s3.model.SetObjectLegalHoldResult;
+import com.amazonaws.services.s3.model.SetObjectLockConfigurationRequest;
+import com.amazonaws.services.s3.model.SetObjectLockConfigurationResult;
+import com.amazonaws.services.s3.model.SetObjectRetentionRequest;
+import com.amazonaws.services.s3.model.SetObjectRetentionResult;
 import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.SetObjectTaggingResult;
+import com.amazonaws.services.s3.model.SetPublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
@@ -3481,8 +3505,7 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * Gets the tagging configuration for the specified bucket, or null if
-     * the specified bucket does not exist, or an empty list if no
-     * configuration has been established.
+     * the specified bucket does not exist, or if no configuration has been established.
      *
      * @param bucketName
      *            The name of the bucket for which to retrieve tagging
@@ -3495,8 +3518,7 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * Gets the tagging configuration for the specified bucket, or null if
-     * the specified bucket does not exist, or an empty list if no
-     * configuration has been established.
+     * the specified bucket does not exist, or if no configuration has been established.
      *
      * @param getBucketTaggingConfigurationRequest
      *            The request object for retrieving the bucket tagging
@@ -5224,6 +5246,50 @@ public interface AmazonS3 extends S3DirectSpi {
         throws AmazonServiceException, SdkClientException;
 
     /**
+     * Creates or modifies the Public Access Block configuration for an Amazon S3 bucket.
+     *
+     * @param request The request object for setting the buckets Public Access Block configuration.
+     * @return A {@link SetPublicAccessBlockResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SetPublicAccessBlock">AWS API Documentation</a>
+     */
+    SetPublicAccessBlockResult setPublicAccessBlock(SetPublicAccessBlockRequest request);
+
+    /**
+     * Retrieves the Public Access Block configuration for an Amazon S3 bucket.
+     *
+     * @param request The request object for getting the buckets Public Access Block configuration.
+     * @return A {@link GetPublicAccessBlockResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">AWS API Documentation</a>
+     */
+    GetPublicAccessBlockResult getPublicAccessBlock(GetPublicAccessBlockRequest request);
+
+    /**
+     * Removes the Public Access Block configuration for an Amazon S3 bucket.
+     *
+     * @param request The request object for deleting the buckets Public Access Block configuration.
+     * @return A {@link DeletePublicAccessBlockResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">AWS API Documentation</a>
+     */
+    DeletePublicAccessBlockResult deletePublicAccessBlock(DeletePublicAccessBlockRequest request);
+
+    /**
+     * Retrieves the policy status for an Amazon S3 bucket, indicating whether the bucket is public
+     *
+     * @param request The request object for getting the current policy status of the bucket.
+     * @return A {@link DeletePublicAccessBlockResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">AWS API Documentation</a>
+     */
+    GetBucketPolicyStatusResult getBucketPolicyStatus(GetBucketPolicyStatusRequest request);
+
+    /**
      * This operation filters the contents of an Amazon S3 object based on a simple Structured Query Language (SQL) statement.
      * In the request, along with the SQL expression, you must also specify a data serialization format (JSON or CSV) of the
      * object. Amazon S3 uses this to parse object data into records, and returns only records that match the specified SQL
@@ -5238,6 +5304,213 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     SelectObjectContentResult selectObjectContent(SelectObjectContentRequest selectRequest)
             throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Applies a Legal Hold configuration to the specified object.
+     *
+     * @param setObjectLegalHoldRequest The request object for setting the object legal hold.
+
+     * @return A {@link SetObjectLegalHoldResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS API Documentation</a>
+     */
+    SetObjectLegalHoldResult setObjectLegalHold(SetObjectLegalHoldRequest setObjectLegalHoldRequest);
+
+    /**
+     * Gets an object's current Legal Hold status.
+     *
+     * @param getObjectLegalHoldRequest The request object for getting an object legal hold status.
+
+     * @return A {@link GetObjectLegalHoldResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">AWS API Documentation</a>
+     */
+    GetObjectLegalHoldResult getObjectLegalHold(GetObjectLegalHoldRequest getObjectLegalHoldRequest);
+
+    /**
+     * Places an Object Lock configuration on the specified bucket. The rule specified in the Object Lock configuration will
+     * be applied by default to every new object placed in the specified bucket.
+     *
+     * @param setObjectLockConfigurationRequest The request object for setting the object lock configuration.
+
+     * @return A {@link SetObjectLockConfigurationResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS API Documentation</a>
+     */
+    SetObjectLockConfigurationResult setObjectLockConfiguration(SetObjectLockConfigurationRequest setObjectLockConfigurationRequest);
+
+    /**
+     * Gets the Object Lock configuration for a bucket. The rule specified in the Object Lock configuration will be applied
+     * by default to every new object placed in the specified bucket.
+     *
+     * @param getObjectLockConfigurationRequest The request object for getting the object lock configuration.
+
+     * @return A {@link GetObjectLockConfigurationResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">AWS API Documentation</a>
+     */
+    GetObjectLockConfigurationResult getObjectLockConfiguration(GetObjectLockConfigurationRequest getObjectLockConfigurationRequest);
+
+    /**
+     * Places an Object Retention configuration on an object.
+     *
+     * @param setObjectRetentionRequest The request object for setting the object retention.
+
+     * @return A {@link SetObjectRetentionResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS API Documentation</a>
+     */
+    SetObjectRetentionResult setObjectRetention(SetObjectRetentionRequest setObjectRetentionRequest);
+
+    /**
+     * Retrieves an object's retention settings.
+     *
+     * @param getObjectRetentionRequest The request object for getting the object retention.
+
+     * @return A {@link GetObjectRetentionResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS API Documentation</a>
+     */
+    GetObjectRetentionResult getObjectRetention(GetObjectRetentionRequest getObjectRetentionRequest);
+
+    /**
+     * <p>
+     * Gets the object stored in Amazon S3 using a presigned url.
+     * <p>
+     * The result contains {@link S3Object} representing the downloaded object.
+     * Be extremely careful when using this method; the returned Amazon S3
+     * object contains a direct stream of data from the HTTP connection. The
+     * underlying HTTP connection cannot be reused until the user finishes
+     * reading the data and closes the stream. Also note that if not all data
+     * is read from the stream then the SDK will abort the underlying connection,
+     * this may have a negative impact on performance. Therefore:
+     * </p>
+     * <ul>
+     * <li>Use the data from the input stream in Amazon S3 object as soon as possible</li>
+     * <li>Read all data from the stream
+     *      (use {@link PresignedUrlDownloadRequest#setRange(long, long)} to request only the bytes you need)</li>
+     * <li>Close the input stream in Amazon S3 object as soon as possible</li>
+     * </ul>
+     * If these rules are not followed, the client can run out of resources by
+     * allocating too many open, but unused, HTTP connections. </p>
+     * <p>
+     *
+     * @param presignedUrlDownloadRequest The request object to download the object.
+     * @return result shape containing the downloaded stream
+     *
+     * @throws SdkClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+     PresignedUrlDownloadResult download(PresignedUrlDownloadRequest presignedUrlDownloadRequest);
+
+    /**
+     * <p>
+     * Gets the object stored in Amazon S3 using a presigned url.
+     * <p>
+     * The result contains {@link S3Object} representing the downloaded object.
+     * Be extremely careful when using this method; the returned Amazon S3
+     * object contains a direct stream of data from the HTTP connection. The
+     * underlying HTTP connection cannot be reused until the user finishes
+     * reading the data and closes the stream. Also note that if not all data
+     * is read from the stream then the SDK will abort the underlying connection,
+     * this may have a negative impact on performance. Therefore:
+     * </p>
+     * <ul>
+     * <li>Use the data from the input stream in Amazon S3 object as soon as possible</li>
+     * <li>Read all data from the stream
+     *      (use {@link PresignedUrlDownloadRequest#setRange(long, long)} to request only the bytes you need)</li>
+     * <li>Close the input stream in Amazon S3 object as soon as possible</li>
+     * </ul>
+     * If these rules are not followed, the client can run out of resources by
+     * allocating too many open, but unused, HTTP connections. </p>
+     * <p>
+     *
+     * @param presignedUrlDownloadRequest The request object to download the object.
+     * @param destinationFile Indicates the file (which might already exist) where
+     *                        to save the object content being downloading from Amazon S3.
+     *
+     * @throws SdkClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+     void download(PresignedUrlDownloadRequest presignedUrlDownloadRequest, File destinationFile);
+
+    /**
+     * <p>
+     * Uploads a new object into S3 using the given presigned url.
+     *
+     * <p></p>
+     * Depending on whether a file or input stream is being uploaded,
+     * this request has slightly different behavior.
+     * </p>
+     * <p>
+     * When uploading a file:
+     * </p>
+     * <ul>
+     * <li>
+     * The client automatically computes a checksum of the file. Amazon S3 uses
+     * checksums to validate the data in each file.</li>
+     * <li>
+     * Using the file extension, Amazon S3 attempts to determine the correct content
+     * type and content disposition to use for the object with some exceptions. See below.
+     * </li>
+     * <li>
+     * If the given presigned url is created using <b>SigV2 signer</b> and content type is not provided,
+     * then SDK will not attempt to determine the content type and instead sends an empty string for content type.
+     * This is because content type is signed header in SigV2 and so the content type can only be sent
+     * if it is used in creating presigned url.
+     * </li>
+     * <li>
+     * If the given presigned url is created using <b>SigV4 signer</b>, then SDK attempts to determine
+     * the correct content type and sends it with the request if not provided. Note that this only works
+     * if you have not used content type while creating the presigned url. If you have used content type while
+     * creating the url, then you should set the same content type while making this API call through
+     * {@link PresignedUrlUploadRequest#setMetadata(ObjectMetadata)} or
+     * {@link PresignedUrlUploadRequest#putCustomRequestHeader(String, String)}
+     * </li>
+     * </ul>
+     * <p>
+     * When uploading directly from an input stream, content length <b>must</b> be
+     * specified before data can be uploaded to Amazon S3. If not provided, the
+     * library will <b>have to</b> buffer the contents of the input stream in order
+     * to calculate it. Amazon S3 explicitly requires that the content length be
+     * sent in the request headers before any of the data is sent.</li>
+     * <p>
+     * Amazon S3 is a distributed system. If Amazon S3 receives multiple write
+     * requests for the same object nearly simultaneously, all of the objects might
+     * be stored. However, only one object will obtain the key.
+     * </p>
+     *
+     *
+     * @param presignedUrlUploadRequest
+     *            The request object containing all the parameters to upload a
+     *            new object to Amazon S3.
+     *
+     * @return A {@link PresignedUrlUploadResult} object containing the information
+     *         returned by Amazon S3 for the newly created object.
+     *
+     * @throws SdkClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+     PresignedUrlUploadResult upload(PresignedUrlUploadRequest presignedUrlUploadRequest);
+
 
     /**
      * Shuts down this client object, releasing any resources that might be held

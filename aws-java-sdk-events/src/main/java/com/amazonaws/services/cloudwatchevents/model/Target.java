@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Targets are the resources to be invoked when a rule is triggered. Target types include EC2 instances, AWS Lambda
- * functions, Amazon Kinesis streams, Amazon ECS tasks, AWS Step Functions state machines, Run Command, and built-in
- * targets.
+ * Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that
+ * can be set as a target, see <a>PutTargets</a>.
+ * </p>
+ * <p>
+ * If you are setting the event bus of another account as the target, and that account granted permission to your
+ * account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code>
+ * with proper permissions in the <code>Target</code> structure. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html"
+ * >Sending and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target" target="_top">AWS API
@@ -74,8 +80,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     private InputTransformer inputTransformer;
     /**
      * <p>
-     * The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you
-     * do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If
+     * you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
      * </p>
      */
     private KinesisParameters kinesisParameters;
@@ -89,22 +95,25 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
      * more information about Amazon ECS tasks, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
      * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      */
     private EcsParameters ecsParameters;
     /**
      * <p>
-     * Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For more
-     * information about AWS Batch, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters. For
+     * more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the
+     * <i>AWS Batch User Guide</i>.
      * </p>
      */
     private BatchParameters batchParameters;
     /**
      * <p>
      * Contains the message group ID to use when the target is a FIFO queue.
+     * </p>
+     * <p>
+     * If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.
      * </p>
      */
     private SqsParameters sqsParameters;
@@ -387,13 +396,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you
-     * do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If
+     * you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
      * </p>
      * 
      * @param kinesisParameters
-     *        The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream.
-     *        If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     *        The custom parameter you can use to control the shard assignment, when the target is a Kinesis data
+     *        stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the
+     *        partition key.
      */
 
     public void setKinesisParameters(KinesisParameters kinesisParameters) {
@@ -402,11 +412,11 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you
-     * do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If
+     * you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
      * </p>
      * 
-     * @return The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis
+     * @return The custom parameter you can use to control the shard assignment, when the target is a Kinesis data
      *         stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the
      *         partition key.
      */
@@ -417,13 +427,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you
-     * do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If
+     * you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
      * </p>
      * 
      * @param kinesisParameters
-     *        The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream.
-     *        If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     *        The custom parameter you can use to control the shard assignment, when the target is a Kinesis data
+     *        stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the
+     *        partition key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -476,14 +487,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
      * more information about Amazon ECS tasks, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
      * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @param ecsParameters
      *        Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS
      *        task. For more information about Amazon ECS tasks, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
      *        </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      */
 
@@ -495,13 +506,13 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
      * more information about Amazon ECS tasks, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
      * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @return Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS
      *         task. For more information about Amazon ECS tasks, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
      *         </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      */
 
@@ -513,14 +524,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
      * more information about Amazon ECS tasks, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
      * the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @param ecsParameters
      *        Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS
      *        task. For more information about Amazon ECS tasks, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
      *        </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -532,16 +543,15 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For more
-     * information about AWS Batch, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters. For
+     * more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the
+     * <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param batchParameters
-     *        Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For
-     *        more information about AWS Batch, see <a
-     *        href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>AWS Batch User
-     *        Guide</i>.
+     *        If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters.
+     *        For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
+     *        in the <i>AWS Batch User Guide</i>.
      */
 
     public void setBatchParameters(BatchParameters batchParameters) {
@@ -550,14 +560,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For more
-     * information about AWS Batch, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters. For
+     * more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the
+     * <i>AWS Batch User Guide</i>.
      * </p>
      * 
-     * @return Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For
-     *         more information about AWS Batch, see <a
-     *         href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>AWS Batch User
+     * @return If the event target is an AWS Batch job, this contains the job definition, job name, and other
+     *         parameters. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>AWS Batch User
      *         Guide</i>.
      */
 
@@ -567,16 +577,15 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For more
-     * information about AWS Batch, see <a href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
-     * in the <i>AWS Batch User Guide</i>.
+     * If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters. For
+     * more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the
+     * <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param batchParameters
-     *        Contains the job definition, job name, and other parameters if the event target is an AWS Batch job. For
-     *        more information about AWS Batch, see <a
-     *        href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>AWS Batch User
-     *        Guide</i>.
+     *        If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters.
+     *        For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a>
+     *        in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -589,9 +598,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Contains the message group ID to use when the target is a FIFO queue.
      * </p>
+     * <p>
+     * If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.
+     * </p>
      * 
      * @param sqsParameters
-     *        Contains the message group ID to use when the target is a FIFO queue.
+     *        Contains the message group ID to use when the target is a FIFO queue.</p>
+     *        <p>
+     *        If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.
      */
 
     public void setSqsParameters(SqsParameters sqsParameters) {
@@ -602,8 +616,13 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Contains the message group ID to use when the target is a FIFO queue.
      * </p>
+     * <p>
+     * If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.
+     * </p>
      * 
-     * @return Contains the message group ID to use when the target is a FIFO queue.
+     * @return Contains the message group ID to use when the target is a FIFO queue.</p>
+     *         <p>
+     *         If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.
      */
 
     public SqsParameters getSqsParameters() {
@@ -614,9 +633,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Contains the message group ID to use when the target is a FIFO queue.
      * </p>
+     * <p>
+     * If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.
+     * </p>
      * 
      * @param sqsParameters
-     *        Contains the message group ID to use when the target is a FIFO queue.
+     *        Contains the message group ID to use when the target is a FIFO queue.</p>
+     *        <p>
+     *        If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -626,7 +650,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

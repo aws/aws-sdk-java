@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class ListInvalidationsRequestMarshaller implements Marshaller<Request<Li
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2017-10-30/distribution/{DistributionId}/invalidation";
+        String uriResourcePath = "/2018-11-05/distribution/{DistributionId}/invalidation";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "DistributionId",
                 listInvalidationsRequest.getDistributionId());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,30 @@ public class RegisterToWorkMailRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the organization under which the Amazon WorkMail entity exists.
+     * The identifier for the organization under which the user, group, or resource exists.
      * </p>
      */
     private String organizationId;
     /**
      * <p>
-     * The identifier for the entity to be updated.
+     * The identifier for the user, group, or resource to be updated.
      * </p>
      */
     private String entityId;
     /**
      * <p>
-     * The email for the entity to be updated.
+     * The email for the user, group, or resource to be updated.
      * </p>
      */
     private String email;
 
     /**
      * <p>
-     * The identifier for the organization under which the Amazon WorkMail entity exists.
+     * The identifier for the organization under which the user, group, or resource exists.
      * </p>
      * 
      * @param organizationId
-     *        The identifier for the organization under which the Amazon WorkMail entity exists.
+     *        The identifier for the organization under which the user, group, or resource exists.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -59,10 +59,10 @@ public class RegisterToWorkMailRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the organization under which the Amazon WorkMail entity exists.
+     * The identifier for the organization under which the user, group, or resource exists.
      * </p>
      * 
-     * @return The identifier for the organization under which the Amazon WorkMail entity exists.
+     * @return The identifier for the organization under which the user, group, or resource exists.
      */
 
     public String getOrganizationId() {
@@ -71,11 +71,11 @@ public class RegisterToWorkMailRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the organization under which the Amazon WorkMail entity exists.
+     * The identifier for the organization under which the user, group, or resource exists.
      * </p>
      * 
      * @param organizationId
-     *        The identifier for the organization under which the Amazon WorkMail entity exists.
+     *        The identifier for the organization under which the user, group, or resource exists.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class RegisterToWorkMailRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the entity to be updated.
+     * The identifier for the user, group, or resource to be updated.
      * </p>
      * 
      * @param entityId
-     *        The identifier for the entity to be updated.
+     *        The identifier for the user, group, or resource to be updated.
      */
 
     public void setEntityId(String entityId) {
@@ -99,10 +99,10 @@ public class RegisterToWorkMailRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the entity to be updated.
+     * The identifier for the user, group, or resource to be updated.
      * </p>
      * 
-     * @return The identifier for the entity to be updated.
+     * @return The identifier for the user, group, or resource to be updated.
      */
 
     public String getEntityId() {
@@ -111,11 +111,11 @@ public class RegisterToWorkMailRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the entity to be updated.
+     * The identifier for the user, group, or resource to be updated.
      * </p>
      * 
      * @param entityId
-     *        The identifier for the entity to be updated.
+     *        The identifier for the user, group, or resource to be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class RegisterToWorkMailRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The email for the entity to be updated.
+     * The email for the user, group, or resource to be updated.
      * </p>
      * 
      * @param email
-     *        The email for the entity to be updated.
+     *        The email for the user, group, or resource to be updated.
      */
 
     public void setEmail(String email) {
@@ -139,10 +139,10 @@ public class RegisterToWorkMailRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The email for the entity to be updated.
+     * The email for the user, group, or resource to be updated.
      * </p>
      * 
-     * @return The email for the entity to be updated.
+     * @return The email for the user, group, or resource to be updated.
      */
 
     public String getEmail() {
@@ -151,11 +151,11 @@ public class RegisterToWorkMailRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The email for the entity to be updated.
+     * The email for the user, group, or resource to be updated.
      * </p>
      * 
      * @param email
-     *        The email for the entity to be updated.
+     *        The email for the user, group, or resource to be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +165,8 @@ public class RegisterToWorkMailRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

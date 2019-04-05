@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
@@ -47,10 +46,15 @@ final class PathContainer {
     @JsonSerialize(using = PathSerializer.class)
     private final JsonNode resultPath;
 
+    @JsonProperty(PropertyNames.PARAMETERS)
+    @JsonSerialize(using = PathSerializer.class)
+    private final JsonNode parameters;
+
     private PathContainer(Builder builder) {
         this.inputPath = builder.inputPath;
         this.outputPath = builder.outputPath;
         this.resultPath = builder.resultPath;
+        this.parameters = builder.parameters;
     }
 
     @JsonIgnore
@@ -66,6 +70,11 @@ final class PathContainer {
     @JsonIgnore
     public String getResultPath() {
         return nodeToString(resultPath);
+    }
+
+    @JsonIgnore
+    public JsonNode getParameters() {
+        return parameters;
     }
 
     private String nodeToString(JsonNode jsonNode) {
@@ -93,21 +102,32 @@ final class PathContainer {
 
         private JsonNode resultPath;
 
+        private JsonNode parameters;
+
         protected Builder() {
         }
 
+        @JsonProperty(PropertyNames.INPUT_PATH)
         public Builder inputPath(String inputPath) {
             this.inputPath = resolvePath(inputPath);
             return this;
         }
 
+        @JsonProperty(PropertyNames.OUTPUT_PATH)
         public Builder outputPath(String outputPath) {
             this.outputPath = resolvePath(outputPath);
             return this;
         }
 
-        public Builder resultPath(String inputPath) {
-            this.resultPath = resolvePath(inputPath);
+        @JsonProperty(PropertyNames.RESULT_PATH)
+        public Builder resultPath(String resultPath) {
+            this.resultPath = resolvePath(resultPath);
+            return this;
+        }
+
+        @JsonProperty(PropertyNames.PARAMETERS)
+        public Builder parameters(JsonNode parameters) {
+            this.parameters = parameters == null ? NullNode.getInstance() : parameters;
             return this;
         }
 
@@ -135,15 +155,11 @@ final class PathContainer {
     private static final class PathSerializer extends JsonSerializer<JsonNode> {
 
         @Override
-        public void serialize(JsonNode value, JsonGenerator gen, SerializerProvider serializers) throws IOException,
-                                                                                                        JsonProcessingException {
+        public void serialize(JsonNode value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
             if (value instanceof NullNode) {
                 gen.writeNull();
-            } else if (value instanceof TextNode) {
-                gen.writeString(value.textValue());
-            } else {
-                // Can never happen
-                throw new IllegalArgumentException("Unexpected value type: " + value);
+            } else if (value != null) {
+                gen.writeTree(value);
             }
         }
     }

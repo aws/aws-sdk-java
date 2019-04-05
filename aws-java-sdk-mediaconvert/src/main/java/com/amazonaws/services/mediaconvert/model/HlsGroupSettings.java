@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,11 +35,21 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     private String baseUrl;
     /** Language to be used on Caption outputs */
     private java.util.List<HlsCaptionLanguageMapping> captionLanguageMappings;
-
+    /**
+     * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at
+     * least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you
+     * specify. Make sure to specify the languages in the order in which they appear in the original source (if the
+     * source is embedded format) or the order of the caption selectors (if the source is other than embedded).
+     * Otherwise, languages in the manifest will not match up properly with the output captions. None: Include
+     * CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
+     */
     private String captionLanguageSetting;
-
+    /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
+     * replay.
+     */
     private String clientCache;
-
+    /** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
     private String codecSpecification;
     /**
      * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
@@ -47,26 +57,46 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      * input file. If your job has multiple inputs, the service uses the filename of the first input file.
      */
     private String destination;
-
+    /** Settings associated with the destination. Will vary based on the type of destination */
+    private DestinationSettings destinationSettings;
+    /** Indicates whether segments should be placed in subdirectories. */
     private String directoryStructure;
     /** DRM settings. */
     private HlsEncryptionSettings encryption;
-
+    /** When set to GZIP, compresses HLS playlist. */
     private String manifestCompression;
-
+    /** Indicates whether the output manifest should use floating point values for segment duration. */
     private String manifestDurationFormat;
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     */
+    private Double minFinalSegmentLength;
     /**
      * When set, Minimum Segment Size is enforced by looking ahead and back within the specified range for a nearby
      * avail and extending the segment size if needed.
      */
     private Integer minSegmentLength;
-
+    /** Indicates whether the .m3u8 manifest file should be generated for this HLS output group. */
     private String outputSelection;
-
+    /**
+     * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows:
+     * either the program date and time are initialized using the input timecode source, or the time is initialized
+     * using the input timecode source and the date is initialized using the timestamp_offset.
+     */
     private String programDateTime;
     /** Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds. */
     private Integer programDateTimePeriod;
-
+    /**
+     * When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index
+     * segment for playback.
+     */
     private String segmentControl;
     /**
      * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next
@@ -78,9 +108,9 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      * SINGLE_DIRECTORY for this setting to have an effect.
      */
     private Integer segmentsPerSubdirectory;
-
+    /** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest. */
     private String streamInfResolution;
-
+    /** Indicates ID3 frame that has the timecode. */
     private String timedMetadataId3Frame;
     /** Timed Metadata interval in seconds. */
     private Integer timedMetadataId3Period;
@@ -278,7 +308,21 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at
+     * least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you
+     * specify. Make sure to specify the languages in the order in which they appear in the original source (if the
+     * source is embedded format) or the order of the caption selectors (if the source is other than embedded).
+     * Otherwise, languages in the manifest will not match up properly with the output captions. None: Include
+     * CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
+     * 
      * @param captionLanguageSetting
+     *        Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest.
+     *        Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each
+     *        Language Code you specify. Make sure to specify the languages in the order in which they appear in the
+     *        original source (if the source is embedded format) or the order of the caption selectors (if the source is
+     *        other than embedded). Otherwise, languages in the manifest will not match up properly with the output
+     *        captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line
+     *        from the manifest.
      * @see HlsCaptionLanguageSetting
      */
 
@@ -287,7 +331,20 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at
+     * least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you
+     * specify. Make sure to specify the languages in the order in which they appear in the original source (if the
+     * source is embedded format) or the order of the caption selectors (if the source is other than embedded).
+     * Otherwise, languages in the manifest will not match up properly with the output captions. None: Include
+     * CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
+     * 
+     * @return Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest.
+     *         Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each
+     *         Language Code you specify. Make sure to specify the languages in the order in which they appear in the
+     *         original source (if the source is embedded format) or the order of the caption selectors (if the source
+     *         is other than embedded). Otherwise, languages in the manifest will not match up properly with the output
+     *         captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line
+     *         from the manifest.
      * @see HlsCaptionLanguageSetting
      */
 
@@ -296,7 +353,21 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at
+     * least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you
+     * specify. Make sure to specify the languages in the order in which they appear in the original source (if the
+     * source is embedded format) or the order of the caption selectors (if the source is other than embedded).
+     * Otherwise, languages in the manifest will not match up properly with the output captions. None: Include
+     * CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
+     * 
      * @param captionLanguageSetting
+     *        Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest.
+     *        Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each
+     *        Language Code you specify. Make sure to specify the languages in the order in which they appear in the
+     *        original source (if the source is embedded format) or the order of the caption selectors (if the source is
+     *        other than embedded). Otherwise, languages in the manifest will not match up properly with the output
+     *        captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line
+     *        from the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsCaptionLanguageSetting
      */
@@ -307,7 +378,21 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at
+     * least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you
+     * specify. Make sure to specify the languages in the order in which they appear in the original source (if the
+     * source is embedded format) or the order of the caption selectors (if the source is other than embedded).
+     * Otherwise, languages in the manifest will not match up properly with the output captions. None: Include
+     * CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest.
+     * 
      * @param captionLanguageSetting
+     *        Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest.
+     *        Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each
+     *        Language Code you specify. Make sure to specify the languages in the order in which they appear in the
+     *        original source (if the source is embedded format) or the order of the caption selectors (if the source is
+     *        other than embedded). Otherwise, languages in the manifest will not match up properly with the output
+     *        captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line
+     *        from the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsCaptionLanguageSetting
      */
@@ -318,7 +403,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
+     * replay.
+     * 
      * @param clientCache
+     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
+     *        later replay.
      * @see HlsClientCache
      */
 
@@ -327,7 +417,11 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
+     * replay.
+     * 
+     * @return When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
+     *         later replay.
      * @see HlsClientCache
      */
 
@@ -336,7 +430,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
+     * replay.
+     * 
      * @param clientCache
+     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
+     *        later replay.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsClientCache
      */
@@ -347,7 +446,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later
+     * replay.
+     * 
      * @param clientCache
+     *        When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for
+     *        later replay.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsClientCache
      */
@@ -358,7 +462,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+     * 
      * @param codecSpecification
+     *        Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
      * @see HlsCodecSpecification
      */
 
@@ -367,7 +474,9 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+     * 
+     * @return Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
      * @see HlsCodecSpecification
      */
 
@@ -376,7 +485,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+     * 
      * @param codecSpecification
+     *        Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsCodecSpecification
      */
@@ -387,7 +499,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
+     * 
      * @param codecSpecification
+     *        Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsCodecSpecification
      */
@@ -447,7 +562,44 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @param destinationSettings
+     *        Settings associated with the destination. Will vary based on the type of destination
+     */
+
+    public void setDestinationSettings(DestinationSettings destinationSettings) {
+        this.destinationSettings = destinationSettings;
+    }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @return Settings associated with the destination. Will vary based on the type of destination
+     */
+
+    public DestinationSettings getDestinationSettings() {
+        return this.destinationSettings;
+    }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @param destinationSettings
+     *        Settings associated with the destination. Will vary based on the type of destination
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HlsGroupSettings withDestinationSettings(DestinationSettings destinationSettings) {
+        setDestinationSettings(destinationSettings);
+        return this;
+    }
+
+    /**
+     * Indicates whether segments should be placed in subdirectories.
+     * 
      * @param directoryStructure
+     *        Indicates whether segments should be placed in subdirectories.
      * @see HlsDirectoryStructure
      */
 
@@ -456,7 +608,9 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * Indicates whether segments should be placed in subdirectories.
+     * 
+     * @return Indicates whether segments should be placed in subdirectories.
      * @see HlsDirectoryStructure
      */
 
@@ -465,7 +619,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Indicates whether segments should be placed in subdirectories.
+     * 
      * @param directoryStructure
+     *        Indicates whether segments should be placed in subdirectories.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsDirectoryStructure
      */
@@ -476,7 +633,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Indicates whether segments should be placed in subdirectories.
+     * 
      * @param directoryStructure
+     *        Indicates whether segments should be placed in subdirectories.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsDirectoryStructure
      */
@@ -521,7 +681,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to GZIP, compresses HLS playlist.
+     * 
      * @param manifestCompression
+     *        When set to GZIP, compresses HLS playlist.
      * @see HlsManifestCompression
      */
 
@@ -530,7 +693,9 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * When set to GZIP, compresses HLS playlist.
+     * 
+     * @return When set to GZIP, compresses HLS playlist.
      * @see HlsManifestCompression
      */
 
@@ -539,7 +704,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to GZIP, compresses HLS playlist.
+     * 
      * @param manifestCompression
+     *        When set to GZIP, compresses HLS playlist.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsManifestCompression
      */
@@ -550,7 +718,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to GZIP, compresses HLS playlist.
+     * 
      * @param manifestCompression
+     *        When set to GZIP, compresses HLS playlist.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsManifestCompression
      */
@@ -561,7 +732,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Indicates whether the output manifest should use floating point values for segment duration.
+     * 
      * @param manifestDurationFormat
+     *        Indicates whether the output manifest should use floating point values for segment duration.
      * @see HlsManifestDurationFormat
      */
 
@@ -570,7 +744,9 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * Indicates whether the output manifest should use floating point values for segment duration.
+     * 
+     * @return Indicates whether the output manifest should use floating point values for segment duration.
      * @see HlsManifestDurationFormat
      */
 
@@ -579,7 +755,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Indicates whether the output manifest should use floating point values for segment duration.
+     * 
      * @param manifestDurationFormat
+     *        Indicates whether the output manifest should use floating point values for segment duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsManifestDurationFormat
      */
@@ -590,13 +769,92 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Indicates whether the output manifest should use floating point values for segment duration.
+     * 
      * @param manifestDurationFormat
+     *        Indicates whether the output manifest should use floating point values for segment duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsManifestDurationFormat
      */
 
     public HlsGroupSettings withManifestDurationFormat(HlsManifestDurationFormat manifestDurationFormat) {
         this.manifestDurationFormat = manifestDurationFormat.toString();
+        return this;
+    }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @param minFinalSegmentLength
+     *        Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *        play back the end of your video asset. If you know that player devices are hanging on the final segment of
+     *        your video because the length of your final segment is too short, use this setting to specify a minimum
+     *        final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your
+     *        segment length. When you specify a value for this setting, the encoder will combine any final segment that
+     *        is shorter than the length that you specify with the previous segment. For example, your segment length is
+     *        3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the
+     *        minimum final segment length to 1, your final segment is 3.5 seconds.
+     */
+
+    public void setMinFinalSegmentLength(Double minFinalSegmentLength) {
+        this.minFinalSegmentLength = minFinalSegmentLength;
+    }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @return Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *         play back the end of your video asset. If you know that player devices are hanging on the final segment
+     *         of your video because the length of your final segment is too short, use this setting to specify a
+     *         minimum final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than
+     *         your segment length. When you specify a value for this setting, the encoder will combine any final
+     *         segment that is shorter than the length that you specify with the previous segment. For example, your
+     *         segment length is 3 seconds and your final segment is .5 seconds without a minimum final segment length;
+     *         when you set the minimum final segment length to 1, your final segment is 3.5 seconds.
+     */
+
+    public Double getMinFinalSegmentLength() {
+        return this.minFinalSegmentLength;
+    }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices play back
+     * the end of your video asset. If you know that player devices are hanging on the final segment of your video
+     * because the length of your final segment is too short, use this setting to specify a minimum final segment length,
+     * in seconds. Choose a value that is greater than or equal to 1 and less than your segment length. When you specify
+     * a value for this setting, the encoder will combine any final segment that is shorter than the length that you
+     * specify with the previous segment. For example, your segment length is 3 seconds and your final segment is .5
+     * seconds without a minimum final segment length; when you set the minimum final segment length to 1, your final
+     * segment is 3.5 seconds.
+     * 
+     * @param minFinalSegmentLength
+     *        Keep this setting at the default value of 0, unless you are troubleshooting a problem with how devices
+     *        play back the end of your video asset. If you know that player devices are hanging on the final segment of
+     *        your video because the length of your final segment is too short, use this setting to specify a minimum
+     *        final segment length, in seconds. Choose a value that is greater than or equal to 1 and less than your
+     *        segment length. When you specify a value for this setting, the encoder will combine any final segment that
+     *        is shorter than the length that you specify with the previous segment. For example, your segment length is
+     *        3 seconds and your final segment is .5 seconds without a minimum final segment length; when you set the
+     *        minimum final segment length to 1, your final segment is 3.5 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HlsGroupSettings withMinFinalSegmentLength(Double minFinalSegmentLength) {
+        setMinFinalSegmentLength(minFinalSegmentLength);
         return this;
     }
 
@@ -641,7 +899,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
+     * 
      * @param outputSelection
+     *        Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
      * @see HlsOutputSelection
      */
 
@@ -650,7 +911,9 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
+     * 
+     * @return Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
      * @see HlsOutputSelection
      */
 
@@ -659,7 +922,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
+     * 
      * @param outputSelection
+     *        Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsOutputSelection
      */
@@ -670,7 +936,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
+     * 
      * @param outputSelection
+     *        Indicates whether the .m3u8 manifest file should be generated for this HLS output group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsOutputSelection
      */
@@ -681,7 +950,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows:
+     * either the program date and time are initialized using the input timecode source, or the time is initialized
+     * using the input timecode source and the date is initialized using the timestamp_offset.
+     * 
      * @param programDateTime
+     *        Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as
+     *        follows: either the program date and time are initialized using the input timecode source, or the time is
+     *        initialized using the input timecode source and the date is initialized using the timestamp_offset.
      * @see HlsProgramDateTime
      */
 
@@ -690,7 +966,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows:
+     * either the program date and time are initialized using the input timecode source, or the time is initialized
+     * using the input timecode source and the date is initialized using the timestamp_offset.
+     * 
+     * @return Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as
+     *         follows: either the program date and time are initialized using the input timecode source, or the time is
+     *         initialized using the input timecode source and the date is initialized using the timestamp_offset.
      * @see HlsProgramDateTime
      */
 
@@ -699,7 +981,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows:
+     * either the program date and time are initialized using the input timecode source, or the time is initialized
+     * using the input timecode source and the date is initialized using the timestamp_offset.
+     * 
      * @param programDateTime
+     *        Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as
+     *        follows: either the program date and time are initialized using the input timecode source, or the time is
+     *        initialized using the input timecode source and the date is initialized using the timestamp_offset.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsProgramDateTime
      */
@@ -710,7 +999,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows:
+     * either the program date and time are initialized using the input timecode source, or the time is initialized
+     * using the input timecode source and the date is initialized using the timestamp_offset.
+     * 
      * @param programDateTime
+     *        Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as
+     *        follows: either the program date and time are initialized using the input timecode source, or the time is
+     *        initialized using the input timecode source and the date is initialized using the timestamp_offset.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsProgramDateTime
      */
@@ -755,7 +1051,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index
+     * segment for playback.
+     * 
      * @param segmentControl
+     *        When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags
+     *        to index segment for playback.
      * @see HlsSegmentControl
      */
 
@@ -764,7 +1065,11 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index
+     * segment for playback.
+     * 
+     * @return When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags
+     *         to index segment for playback.
      * @see HlsSegmentControl
      */
 
@@ -773,7 +1078,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index
+     * segment for playback.
+     * 
      * @param segmentControl
+     *        When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags
+     *        to index segment for playback.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsSegmentControl
      */
@@ -784,7 +1094,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index
+     * segment for playback.
+     * 
      * @param segmentControl
+     *        When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags
+     *        to index segment for playback.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsSegmentControl
      */
@@ -875,7 +1190,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+     * 
      * @param streamInfResolution
+     *        Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
      * @see HlsStreamInfResolution
      */
 
@@ -884,7 +1202,9 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+     * 
+     * @return Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
      * @see HlsStreamInfResolution
      */
 
@@ -893,7 +1213,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+     * 
      * @param streamInfResolution
+     *        Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsStreamInfResolution
      */
@@ -904,7 +1227,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
+     * 
      * @param streamInfResolution
+     *        Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsStreamInfResolution
      */
@@ -915,7 +1241,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Indicates ID3 frame that has the timecode.
+     * 
      * @param timedMetadataId3Frame
+     *        Indicates ID3 frame that has the timecode.
      * @see HlsTimedMetadataId3Frame
      */
 
@@ -924,7 +1253,9 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * Indicates ID3 frame that has the timecode.
+     * 
+     * @return Indicates ID3 frame that has the timecode.
      * @see HlsTimedMetadataId3Frame
      */
 
@@ -933,7 +1264,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Indicates ID3 frame that has the timecode.
+     * 
      * @param timedMetadataId3Frame
+     *        Indicates ID3 frame that has the timecode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsTimedMetadataId3Frame
      */
@@ -944,7 +1278,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Indicates ID3 frame that has the timecode.
+     * 
      * @param timedMetadataId3Frame
+     *        Indicates ID3 frame that has the timecode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsTimedMetadataId3Frame
      */
@@ -1023,7 +1360,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1047,6 +1385,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("CodecSpecification: ").append(getCodecSpecification()).append(",");
         if (getDestination() != null)
             sb.append("Destination: ").append(getDestination()).append(",");
+        if (getDestinationSettings() != null)
+            sb.append("DestinationSettings: ").append(getDestinationSettings()).append(",");
         if (getDirectoryStructure() != null)
             sb.append("DirectoryStructure: ").append(getDirectoryStructure()).append(",");
         if (getEncryption() != null)
@@ -1055,6 +1395,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("ManifestCompression: ").append(getManifestCompression()).append(",");
         if (getManifestDurationFormat() != null)
             sb.append("ManifestDurationFormat: ").append(getManifestDurationFormat()).append(",");
+        if (getMinFinalSegmentLength() != null)
+            sb.append("MinFinalSegmentLength: ").append(getMinFinalSegmentLength()).append(",");
         if (getMinSegmentLength() != null)
             sb.append("MinSegmentLength: ").append(getMinSegmentLength()).append(",");
         if (getOutputSelection() != null)
@@ -1119,6 +1461,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
             return false;
+        if (other.getDestinationSettings() == null ^ this.getDestinationSettings() == null)
+            return false;
+        if (other.getDestinationSettings() != null && other.getDestinationSettings().equals(this.getDestinationSettings()) == false)
+            return false;
         if (other.getDirectoryStructure() == null ^ this.getDirectoryStructure() == null)
             return false;
         if (other.getDirectoryStructure() != null && other.getDirectoryStructure().equals(this.getDirectoryStructure()) == false)
@@ -1134,6 +1480,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getManifestDurationFormat() == null ^ this.getManifestDurationFormat() == null)
             return false;
         if (other.getManifestDurationFormat() != null && other.getManifestDurationFormat().equals(this.getManifestDurationFormat()) == false)
+            return false;
+        if (other.getMinFinalSegmentLength() == null ^ this.getMinFinalSegmentLength() == null)
+            return false;
+        if (other.getMinFinalSegmentLength() != null && other.getMinFinalSegmentLength().equals(this.getMinFinalSegmentLength()) == false)
             return false;
         if (other.getMinSegmentLength() == null ^ this.getMinSegmentLength() == null)
             return false;
@@ -1194,10 +1544,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getClientCache() == null) ? 0 : getClientCache().hashCode());
         hashCode = prime * hashCode + ((getCodecSpecification() == null) ? 0 : getCodecSpecification().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
+        hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getDirectoryStructure() == null) ? 0 : getDirectoryStructure().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getManifestCompression() == null) ? 0 : getManifestCompression().hashCode());
         hashCode = prime * hashCode + ((getManifestDurationFormat() == null) ? 0 : getManifestDurationFormat().hashCode());
+        hashCode = prime * hashCode + ((getMinFinalSegmentLength() == null) ? 0 : getMinFinalSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getMinSegmentLength() == null) ? 0 : getMinSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getOutputSelection() == null) ? 0 : getOutputSelection().hashCode());
         hashCode = prime * hashCode + ((getProgramDateTime() == null) ? 0 : getProgramDateTime().hashCode());

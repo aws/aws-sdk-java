@@ -1000,7 +1000,7 @@
         }
       },
       "documentation" : "AcceptInvitation request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "MasterId", "InvitationId" ]
     },
     "AcceptInvitationResponse" : {
       "type" : "structure",
@@ -1118,7 +1118,7 @@
         }
       },
       "documentation" : "ArchiveFindings request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "FindingIds" ]
     },
     "ArchiveFindingsResponse" : {
       "type" : "structure",
@@ -1249,13 +1249,25 @@
     "CreateDetectorRequest" : {
       "type" : "structure",
       "members" : {
+        "ClientToken" : {
+          "shape" : "__stringMin0Max64",
+          "locationName" : "clientToken",
+          "documentation" : "The idempotency token for the create request.",
+          "idempotencyToken" : true
+        },
         "Enable" : {
           "shape" : "Enable",
           "locationName" : "enable",
           "documentation" : "A boolean value that specifies whether the detector is to be enabled."
+        },
+        "FindingPublishingFrequency" : {
+          "shape" : "FindingPublishingFrequency",
+          "locationName" : "findingPublishingFrequency",
+          "documentation" : "A enum value that specifies how frequently customer got Finding updates published."
         }
       },
-      "documentation" : "CreateDetector request body."
+      "documentation" : "CreateDetector request body.",
+      "required" : [ "Enable" ]
     },
     "CreateDetectorResponse" : {
       "type" : "structure",
@@ -1309,7 +1321,7 @@
         }
       },
       "documentation" : "CreateFilterRequest request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "FindingCriteria", "Name" ]
     },
     "CreateFilterResponse" : {
       "type" : "structure",
@@ -1328,6 +1340,12 @@
           "shape" : "Activate",
           "locationName" : "activate",
           "documentation" : "A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet."
+        },
+        "ClientToken" : {
+          "shape" : "__stringMin0Max64",
+          "locationName" : "clientToken",
+          "documentation" : "The idempotency token for the create request.",
+          "idempotencyToken" : true
         },
         "DetectorId" : {
           "shape" : "__string",
@@ -1352,7 +1370,7 @@
         }
       },
       "documentation" : "CreateIPSet request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "Format", "Activate", "Location", "Name" ]
     },
     "CreateIPSetResponse" : {
       "type" : "structure",
@@ -1379,7 +1397,7 @@
         }
       },
       "documentation" : "CreateMembers request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "AccountDetails" ]
     },
     "CreateMembersResponse" : {
       "type" : "structure",
@@ -1421,6 +1439,12 @@
           "locationName" : "activate",
           "documentation" : "A boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet."
         },
+        "ClientToken" : {
+          "shape" : "__stringMin0Max64",
+          "locationName" : "clientToken",
+          "documentation" : "The idempotency token for the create request.",
+          "idempotencyToken" : true
+        },
         "DetectorId" : {
           "shape" : "__string",
           "location" : "uri",
@@ -1444,7 +1468,7 @@
         }
       },
       "documentation" : "CreateThreatIntelSet request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "Format", "Activate", "Location", "Name" ]
     },
     "CreateThreatIntelSetResponse" : {
       "type" : "structure",
@@ -1468,7 +1492,8 @@
           "documentation" : "A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to decline invitations from."
         }
       },
-      "documentation" : "DeclineInvitations request body."
+      "documentation" : "DeclineInvitations request body.",
+      "required" : [ "AccountIds" ]
     },
     "DeclineInvitationsResponse" : {
       "type" : "structure",
@@ -1549,7 +1574,8 @@
           "documentation" : "A list of account IDs of the AWS accounts that sent invitations to the current member account that you want to delete invitations from."
         }
       },
-      "documentation" : "DeleteInvitations request body."
+      "documentation" : "DeleteInvitations request body.",
+      "required" : [ "AccountIds" ]
     },
     "DeleteInvitationsResponse" : {
       "type" : "structure",
@@ -1577,7 +1603,7 @@
         }
       },
       "documentation" : "DeleteMembers request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "AccountIds" ]
     },
     "DeleteMembersResponse" : {
       "type" : "structure",
@@ -1659,7 +1685,7 @@
         }
       },
       "documentation" : "DisassociateMembers request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "AccountIds" ]
     },
     "DisassociateMembersResponse" : {
       "type" : "structure",
@@ -1855,6 +1881,11 @@
         "shape" : "FindingId"
       }
     },
+    "FindingPublishingFrequency" : {
+      "type" : "string",
+      "documentation" : "A enum value that specifies how frequently customer got Finding updates published.",
+      "enum" : [ "FIFTEEN_MINUTES", "ONE_HOUR", "SIX_HOURS" ]
+    },
     "FindingStatisticType" : {
       "type" : "string",
       "documentation" : "The types of finding statistics.",
@@ -1930,6 +1961,10 @@
         "CreatedAt" : {
           "shape" : "CreatedAt",
           "locationName" : "createdAt"
+        },
+        "FindingPublishingFrequency" : {
+          "shape" : "FindingPublishingFrequency",
+          "locationName" : "findingPublishingFrequency"
         },
         "ServiceRole" : {
           "shape" : "ServiceRole",
@@ -2014,7 +2049,7 @@
         }
       },
       "documentation" : "GetFindings request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "FindingIds" ]
     },
     "GetFindingsResponse" : {
       "type" : "structure",
@@ -2046,7 +2081,7 @@
         }
       },
       "documentation" : "GetFindingsStatistics request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "FindingStatisticTypes" ]
     },
     "GetFindingsStatisticsResponse" : {
       "type" : "structure",
@@ -2152,7 +2187,7 @@
         }
       },
       "documentation" : "GetMembers request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "AccountIds" ]
     },
     "GetMembersResponse" : {
       "type" : "structure",
@@ -2375,7 +2410,7 @@
         }
       },
       "documentation" : "InviteMembers request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "AccountIds" ]
     },
     "InviteMembersResponse" : {
       "type" : "structure",
@@ -3197,7 +3232,7 @@
         }
       },
       "documentation" : "StartMonitoringMembers request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "AccountIds" ]
     },
     "StartMonitoringMembersResponse" : {
       "type" : "structure",
@@ -3225,7 +3260,7 @@
         }
       },
       "documentation" : "StopMonitoringMembers request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "AccountIds" ]
     },
     "StopMonitoringMembersResponse" : {
       "type" : "structure",
@@ -3297,7 +3332,7 @@
         }
       },
       "documentation" : "UnarchiveFindings request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "FindingIds" ]
     },
     "UnarchiveFindingsResponse" : {
       "type" : "structure",
@@ -3340,6 +3375,11 @@
           "shape" : "Enable",
           "locationName" : "enable",
           "documentation" : "Updated boolean value for the detector that specifies whether the detector is enabled."
+        },
+        "FindingPublishingFrequency" : {
+          "shape" : "FindingPublishingFrequency",
+          "locationName" : "findingPublishingFrequency",
+          "documentation" : "A enum value that specifies how frequently customer got Finding updates published."
         }
       },
       "documentation" : "UpdateDetector request body.",
@@ -3424,7 +3464,7 @@
         }
       },
       "documentation" : "UpdateFindingsFeedback request body.",
-      "required" : [ "DetectorId" ]
+      "required" : [ "DetectorId", "Feedback", "FindingIds" ]
     },
     "UpdateFindingsFeedbackResponse" : {
       "type" : "structure",

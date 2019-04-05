@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,25 +32,25 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
     private String statusMessage;
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of search results.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of search results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
      * Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      */
     private VideoMetadata videoMetadata;
     /**
      * <p>
-     * An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also
-     * includes time information for when persons are matched in the video. You specify the input collection in an
-     * initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was
-     * matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person
-     * information (<code>Person</code>) for the matched person.
+     * An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon Rekognition
+     * collection. It also includes time information for when persons are matched in the video. You specify the input
+     * collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time
+     * the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and
+     * person information (<code>Person</code>) for the matched person.
      * </p>
      */
     private java.util.List<PersonMatch> persons;
@@ -156,13 +156,13 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of search results.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of search results.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of search results.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of search results.
      */
 
     public void setNextToken(String nextToken) {
@@ -171,12 +171,12 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of search results.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of search results.
      * </p>
      * 
-     * @return If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *         request to retrieve the next set of search results.
+     * @return If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *         subsequent request to retrieve the next set of search results.
      */
 
     public String getNextToken() {
@@ -185,13 +185,13 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of search results.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of search results.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of search results.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of search results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,12 +203,12 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
      * @param videoMetadata
      *        Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in
-     *        every page of paginated responses from a Rekognition Video operation.
+     *        every page of paginated responses from a Amazon Rekognition Video operation.
      */
 
     public void setVideoMetadata(VideoMetadata videoMetadata) {
@@ -218,11 +218,11 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
      * @return Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in
-     *         every page of paginated responses from a Rekognition Video operation.
+     *         every page of paginated responses from a Amazon Rekognition Video operation.
      */
 
     public VideoMetadata getVideoMetadata() {
@@ -232,12 +232,12 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
      * @param videoMetadata
      *        Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in
-     *        every page of paginated responses from a Rekognition Video operation.
+     *        every page of paginated responses from a Amazon Rekognition Video operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,18 +248,19 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also
-     * includes time information for when persons are matched in the video. You specify the input collection in an
-     * initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was
-     * matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person
-     * information (<code>Person</code>) for the matched person.
+     * An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon Rekognition
+     * collection. It also includes time information for when persons are matched in the video. You specify the input
+     * collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time
+     * the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and
+     * person information (<code>Person</code>) for the matched person.
      * </p>
      * 
-     * @return An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection.
-     *         It also includes time information for when persons are matched in the video. You specify the input
-     *         collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     *         a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the
-     *         collection, and person information (<code>Person</code>) for the matched person.
+     * @return An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon
+     *         Rekognition collection. It also includes time information for when persons are matched in the video. You
+     *         specify the input collection in an initial call to <code>StartFaceSearch</code>. Each
+     *         <code>Persons</code> element includes a time the person was matched, face match details (
+     *         <code>FaceMatches</code>) for matching faces in the collection, and person information (
+     *         <code>Person</code>) for the matched person.
      */
 
     public java.util.List<PersonMatch> getPersons() {
@@ -268,19 +269,19 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also
-     * includes time information for when persons are matched in the video. You specify the input collection in an
-     * initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was
-     * matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person
-     * information (<code>Person</code>) for the matched person.
+     * An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon Rekognition
+     * collection. It also includes time information for when persons are matched in the video. You specify the input
+     * collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time
+     * the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and
+     * person information (<code>Person</code>) for the matched person.
      * </p>
      * 
      * @param persons
-     *        An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection.
-     *        It also includes time information for when persons are matched in the video. You specify the input
-     *        collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     *        a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the
-     *        collection, and person information (<code>Person</code>) for the matched person.
+     *        An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon
+     *        Rekognition collection. It also includes time information for when persons are matched in the video. You
+     *        specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     *        element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching
+     *        faces in the collection, and person information (<code>Person</code>) for the matched person.
      */
 
     public void setPersons(java.util.Collection<PersonMatch> persons) {
@@ -294,11 +295,11 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also
-     * includes time information for when persons are matched in the video. You specify the input collection in an
-     * initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was
-     * matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person
-     * information (<code>Person</code>) for the matched person.
+     * An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon Rekognition
+     * collection. It also includes time information for when persons are matched in the video. You specify the input
+     * collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time
+     * the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and
+     * person information (<code>Person</code>) for the matched person.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -307,11 +308,11 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param persons
-     *        An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection.
-     *        It also includes time information for when persons are matched in the video. You specify the input
-     *        collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     *        a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the
-     *        collection, and person information (<code>Person</code>) for the matched person.
+     *        An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon
+     *        Rekognition collection. It also includes time information for when persons are matched in the video. You
+     *        specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     *        element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching
+     *        faces in the collection, and person information (<code>Person</code>) for the matched person.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,19 +328,19 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also
-     * includes time information for when persons are matched in the video. You specify the input collection in an
-     * initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was
-     * matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person
-     * information (<code>Person</code>) for the matched person.
+     * An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon Rekognition
+     * collection. It also includes time information for when persons are matched in the video. You specify the input
+     * collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time
+     * the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and
+     * person information (<code>Person</code>) for the matched person.
      * </p>
      * 
      * @param persons
-     *        An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection.
-     *        It also includes time information for when persons are matched in the video. You specify the input
-     *        collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     *        a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the
-     *        collection, and person information (<code>Person</code>) for the matched person.
+     *        An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon
+     *        Rekognition collection. It also includes time information for when persons are matched in the video. You
+     *        specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     *        element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching
+     *        faces in the collection, and person information (<code>Person</code>) for the matched person.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,7 +350,8 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

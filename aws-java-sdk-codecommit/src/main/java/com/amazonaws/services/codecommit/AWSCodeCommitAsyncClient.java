@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -116,6 +116,21 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
+ * <a>DeleteFile</a>, which deletes the content of a specified file from a specified branch.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetFile</a>, which returns the base-64 encoded content of a specified file.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetFolder</a>, which returns the contents of a specified folder or directory.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
  * </p>
  * </li>
@@ -124,6 +139,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Information about committed code in a repository, by calling the following:
  * </p>
  * <ul>
+ * <li>
+ * <p>
+ * <a>CreateCommit</a>, which creates a commit for changes to a repository.
+ * </p>
+ * </li>
  * <li>
  * <p>
  * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository.
@@ -544,6 +564,39 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCommitResult> createCommitAsync(CreateCommitRequest request) {
+
+        return createCommitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCommitResult> createCommitAsync(final CreateCommitRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCommitRequest, CreateCommitResult> asyncHandler) {
+        final CreateCommitRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCommitResult>() {
+            @Override
+            public CreateCommitResult call() throws Exception {
+                CreateCommitResult result = null;
+
+                try {
+                    result = executeCreateCommit(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePullRequestResult> createPullRequestAsync(CreatePullRequestRequest request) {
 
         return createPullRequestAsync(request, null);
@@ -660,6 +713,39 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
 
                 try {
                     result = executeDeleteCommentContent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFileResult> deleteFileAsync(DeleteFileRequest request) {
+
+        return deleteFileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFileResult> deleteFileAsync(final DeleteFileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFileRequest, DeleteFileResult> asyncHandler) {
+        final DeleteFileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFileResult>() {
+            @Override
+            public DeleteFileResult call() throws Exception {
+                DeleteFileResult result = null;
+
+                try {
+                    result = executeDeleteFile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -957,6 +1043,72 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
 
                 try {
                     result = executeGetDifferences(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFileResult> getFileAsync(GetFileRequest request) {
+
+        return getFileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFileResult> getFileAsync(final GetFileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFileRequest, GetFileResult> asyncHandler) {
+        final GetFileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFileResult>() {
+            @Override
+            public GetFileResult call() throws Exception {
+                GetFileResult result = null;
+
+                try {
+                    result = executeGetFile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFolderResult> getFolderAsync(GetFolderRequest request) {
+
+        return getFolderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFolderResult> getFolderAsync(final GetFolderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFolderRequest, GetFolderResult> asyncHandler) {
+        final GetFolderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFolderResult>() {
+            @Override
+            public GetFolderResult call() throws Exception {
+                GetFolderResult result = null;
+
+                try {
+                    result = executeGetFolder(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

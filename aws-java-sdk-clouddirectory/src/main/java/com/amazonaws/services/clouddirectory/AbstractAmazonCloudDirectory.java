@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -178,6 +178,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
     }
 
     @Override
+    public GetLinkAttributesResult getLinkAttributes(GetLinkAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetObjectAttributesResult getObjectAttributes(GetObjectAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -234,6 +239,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
 
     @Override
     public ListIndexResult listIndex(ListIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListManagedSchemaArnsResult listManagedSchemaArns(ListManagedSchemaArnsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -324,6 +334,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
 
     @Override
     public UpdateFacetResult updateFacet(UpdateFacetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLinkAttributesResult updateLinkAttributes(UpdateLinkAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

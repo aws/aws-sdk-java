@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -104,6 +104,16 @@ public class ReservedNode implements Serializable, Cloneable {
      * <li>
      * <p>
      * payment-failed-Payment failed for the purchase attempt.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * retired-The reserved node is no longer available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * exchanging-The owner is exchanging the reserved node for another reserved node.
      * </p>
      * </li>
      * </ul>
@@ -514,6 +524,16 @@ public class ReservedNode implements Serializable, Cloneable {
      * payment-failed-Payment failed for the purchase attempt.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * retired-The reserved node is no longer available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * exchanging-The owner is exchanging the reserved node for another reserved node.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param state
@@ -536,6 +556,16 @@ public class ReservedNode implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        payment-failed-Payment failed for the purchase attempt.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        retired-The reserved node is no longer available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        exchanging-The owner is exchanging the reserved node for another reserved node.
      *        </p>
      *        </li>
      */
@@ -568,6 +598,16 @@ public class ReservedNode implements Serializable, Cloneable {
      * payment-failed-Payment failed for the purchase attempt.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * retired-The reserved node is no longer available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * exchanging-The owner is exchanging the reserved node for another reserved node.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The state of the reserved compute node.</p>
@@ -589,6 +629,16 @@ public class ReservedNode implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         payment-failed-Payment failed for the purchase attempt.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         retired-The reserved node is no longer available.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         exchanging-The owner is exchanging the reserved node for another reserved node.
      *         </p>
      *         </li>
      */
@@ -621,6 +671,16 @@ public class ReservedNode implements Serializable, Cloneable {
      * payment-failed-Payment failed for the purchase attempt.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * retired-The reserved node is no longer available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * exchanging-The owner is exchanging the reserved node for another reserved node.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param state
@@ -643,6 +703,16 @@ public class ReservedNode implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        payment-failed-Payment failed for the purchase attempt.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        retired-The reserved node is no longer available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        exchanging-The owner is exchanging the reserved node for another reserved node.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -807,7 +877,8 @@ public class ReservedNode implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

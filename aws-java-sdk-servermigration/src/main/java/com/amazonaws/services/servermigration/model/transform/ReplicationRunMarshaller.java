@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,16 +33,22 @@ public class ReplicationRunMarshaller {
             .marshallLocationName("state").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<StructuredPojo> STAGEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stageDetails").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
     private static final MarshallingInfo<String> AMIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("amiId").build();
     private static final MarshallingInfo<java.util.Date> SCHEDULEDSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduledStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduledStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> COMPLETEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("completedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Boolean> ENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encrypted").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("kmsKeyId").build();
 
     private static final ReplicationRunMarshaller instance = new ReplicationRunMarshaller();
 
@@ -63,11 +69,14 @@ public class ReplicationRunMarshaller {
             protocolMarshaller.marshall(replicationRun.getReplicationRunId(), REPLICATIONRUNID_BINDING);
             protocolMarshaller.marshall(replicationRun.getState(), STATE_BINDING);
             protocolMarshaller.marshall(replicationRun.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(replicationRun.getStageDetails(), STAGEDETAILS_BINDING);
             protocolMarshaller.marshall(replicationRun.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(replicationRun.getAmiId(), AMIID_BINDING);
             protocolMarshaller.marshall(replicationRun.getScheduledStartTime(), SCHEDULEDSTARTTIME_BINDING);
             protocolMarshaller.marshall(replicationRun.getCompletedTime(), COMPLETEDTIME_BINDING);
             protocolMarshaller.marshall(replicationRun.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(replicationRun.getEncrypted(), ENCRYPTED_BINDING);
+            protocolMarshaller.marshall(replicationRun.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

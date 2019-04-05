@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,17 +64,30 @@ public class DatasetJsonUnmarshaller implements Unmarshaller<Dataset, JsonUnmars
                     context.nextToken();
                     dataset.setTriggers(new ListUnmarshaller<DatasetTrigger>(DatasetTriggerJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("contentDeliveryRules", targetDepth)) {
+                    context.nextToken();
+                    dataset.setContentDeliveryRules(new ListUnmarshaller<DatasetContentDeliveryRule>(DatasetContentDeliveryRuleJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     dataset.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
-                    dataset.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dataset.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
                     context.nextToken();
-                    dataset.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    dataset.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("retentionPeriod", targetDepth)) {
+                    context.nextToken();
+                    dataset.setRetentionPeriod(RetentionPeriodJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("versioningConfiguration", targetDepth)) {
+                    context.nextToken();
+                    dataset.setVersioningConfiguration(VersioningConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

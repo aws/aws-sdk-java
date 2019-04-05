@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.codebuild.AWSCodeBuildClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -54,9 +56,8 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * tests, and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the need to provision, manage, and
  * scale your own build servers. It provides prepackaged build environments for the most popular programming languages
  * and build tools, such as Apache Maven, Gradle, and more. You can also fully customize build environments in AWS
- * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests, and you pay
- * only for the build time you consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User
- * Guide</i>.
+ * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests. You pay only
+ * for the build time you consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User Guide</i>.
  * </p>
  * <p>
  * AWS CodeBuild supports these operations:
@@ -70,10 +71,10 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * <li>
  * <p>
  * <code>BatchGetProjects</code>: Gets information about one or more build projects. A <i>build project</i> defines how
- * AWS CodeBuild will run a build. This includes information such as where to get the source code to build, the build
- * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i>
- * represents a combination of operating system, programming language runtime, and tools that AWS CodeBuild will use to
- * run a build. Also, you can add tags to build projects to help manage your resources and costs.
+ * AWS CodeBuild runs a build. This includes information such as where to get the source code to build, the build
+ * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i> is a
+ * representation of operating system, programming language runtime, and tools that AWS CodeBuild uses to run a build.
+ * You can add tags to build projects to help manage your resources and costs.
  * </p>
  * </li>
  * <li>
@@ -84,8 +85,8 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * <li>
  * <p>
  * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * repository, enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is
- * pushed to the repository.
+ * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed
+ * to the repository.
  * </p>
  * </li>
  * <li>
@@ -101,7 +102,7 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * <li>
  * <p>
  * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * repository, stops AWS CodeBuild from automatically rebuilding the source code every time a code change is pushed to
+ * or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to
  * the repository.
  * </p>
  * </li>
@@ -147,11 +148,30 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that are managed by AWS CodeBuild.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ImportSourceCredentials</code>: Imports the source repository credentials for an AWS CodeBuild project that has
+ * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
+ * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
+ * for one set of credentials.
+ * </p>
+ * </li>
  * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCodeBuild {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -162,6 +182,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -268,6 +290,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
     public AWSCodeBuildClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -333,6 +356,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -351,8 +375,23 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      *        Object providing client parameters.
      */
     AWSCodeBuildClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS CodeBuild using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSCodeBuildClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -402,6 +441,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteBuilds");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -453,6 +495,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetBuilds");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -504,6 +549,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetProjects");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -560,6 +608,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -578,17 +629,17 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, enables AWS
-     * CodeBuild to begin automatically rebuilding the source code every time a code change is pushed to the repository.
+     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
+     * enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.
      * </p>
      * <important>
      * <p>
      * If you enable webhooks for an AWS CodeBuild project, and the project is used as a build step in AWS CodePipeline,
-     * then two identical builds will be created for each commit. One build is triggered through webhooks, and one
-     * through AWS CodePipeline. Because billing is on a per-build basis, you will be billed for both builds. Therefore,
-     * if you are using AWS CodePipeline, we recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild
-     * console, clear the Webhook box. For more information, see step 5 in <a
-     * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a
+     * then two identical builds are created for each commit. One build is triggered through webhooks, and one through
+     * AWS CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are
+     * using AWS CodePipeline, we recommend that you disable webhooks in AWS CodeBuild. In the AWS CodeBuild console,
+     * clear the Webhook box. For more information, see step 5 in <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a
      * Build Project's Settings</a>.
      * </p>
      * </important>
@@ -630,6 +681,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWebhook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -681,6 +735,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -699,8 +756,66 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, stops AWS
-     * CodeBuild from automatically rebuilding the source code every time a code change is pushed to the repository.
+     * Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+     * </p>
+     * 
+     * @param deleteSourceCredentialsRequest
+     * @return Result of the DeleteSourceCredentials operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.DeleteSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteSourceCredentialsResult deleteSourceCredentials(DeleteSourceCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSourceCredentials(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSourceCredentialsResult executeDeleteSourceCredentials(DeleteSourceCredentialsRequest deleteSourceCredentialsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSourceCredentialsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSourceCredentialsRequest> request = null;
+        Response<DeleteSourceCredentialsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSourceCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSourceCredentialsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSourceCredentials");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSourceCredentialsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteSourceCredentialsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * For an existing AWS CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository,
+     * stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to the repository.
      * </p>
      * 
      * @param deleteWebhookRequest
@@ -737,12 +852,74 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWebhook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteWebhookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWebhookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Imports the source repository credentials for an AWS CodeBuild project that has its source code stored in a
+     * GitHub, GitHub Enterprise, or Bitbucket repository.
+     * </p>
+     * 
+     * @param importSourceCredentialsRequest
+     * @return Result of the ImportSourceCredentials operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws AccountLimitExceededException
+     *         An AWS service limit was exceeded for the calling AWS account.
+     * @sample AWSCodeBuild.ImportSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ImportSourceCredentialsResult importSourceCredentials(ImportSourceCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportSourceCredentials(request);
+    }
+
+    @SdkInternalApi
+    final ImportSourceCredentialsResult executeImportSourceCredentials(ImportSourceCredentialsRequest importSourceCredentialsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importSourceCredentialsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportSourceCredentialsRequest> request = null;
+        Response<ImportSourceCredentialsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportSourceCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(importSourceCredentialsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportSourceCredentials");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportSourceCredentialsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ImportSourceCredentialsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -790,6 +967,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InvalidateProjectCache");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -842,6 +1022,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBuilds");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -895,6 +1078,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBuildsForProject");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -945,6 +1131,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCuratedEnvironmentImages");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -997,12 +1186,68 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListProjectsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProjectsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of <code>SourceCredentialsInfo</code> objects.
+     * </p>
+     * 
+     * @param listSourceCredentialsRequest
+     * @return Result of the ListSourceCredentials operation returned by the service.
+     * @sample AWSCodeBuild.ListSourceCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSourceCredentialsResult listSourceCredentials(ListSourceCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSourceCredentials(request);
+    }
+
+    @SdkInternalApi
+    final ListSourceCredentialsResult executeListSourceCredentials(ListSourceCredentialsRequest listSourceCredentialsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSourceCredentialsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSourceCredentialsRequest> request = null;
+        Response<ListSourceCredentialsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSourceCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSourceCredentialsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSourceCredentials");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSourceCredentialsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListSourceCredentialsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1052,6 +1297,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartBuild");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1105,6 +1353,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopBuild");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1158,6 +1409,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1178,6 +1432,11 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * <p>
      * Updates the webhook associated with an AWS CodeBuild build project.
      * </p>
+     * <note>
+     * <p>
+     * If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
+     * </p>
+     * </note>
      * 
      * @param updateWebhookRequest
      * @return Result of the UpdateWebhook operation returned by the service.
@@ -1213,6 +1472,9 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWebhook");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1253,9 +1515,18 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1265,7 +1536,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1273,8 +1544,17 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

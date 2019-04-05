@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ServiceMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> NAMESPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NamespaceId").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Integer> INSTANCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -44,7 +46,7 @@ public class ServiceMarshaller {
     private static final MarshallingInfo<StructuredPojo> HEALTHCHECKCUSTOMCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthCheckCustomConfig").build();
     private static final MarshallingInfo<java.util.Date> CREATEDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateDate").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CREATORREQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatorRequestId").build();
 
@@ -67,6 +69,7 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getId(), ID_BINDING);
             protocolMarshaller.marshall(service.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(service.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(service.getNamespaceId(), NAMESPACEID_BINDING);
             protocolMarshaller.marshall(service.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(service.getInstanceCount(), INSTANCECOUNT_BINDING);
             protocolMarshaller.marshall(service.getDnsConfig(), DNSCONFIG_BINDING);

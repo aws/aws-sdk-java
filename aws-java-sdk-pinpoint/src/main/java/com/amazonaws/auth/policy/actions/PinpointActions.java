@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,10 @@ public enum PinpointActions implements Action {
     DeleteSegment("pinpoint:DeleteSegment"),
     /** Action for the DeleteSmsChannel operation. */
     DeleteSmsChannel("pinpoint:DeleteSmsChannel"),
+    /** Action for the DeleteUserEndpoints operation. */
+    DeleteUserEndpoints("pinpoint:DeleteUserEndpoints"),
+    /** Action for the DeleteVoiceChannel operation. */
+    DeleteVoiceChannel("pinpoint:DeleteVoiceChannel"),
     /** Action for the GetAdmChannel operation. */
     GetAdmChannel("pinpoint:GetAdmChannel"),
     /** Action for the GetApnsChannel operation. */
@@ -91,6 +95,8 @@ public enum PinpointActions implements Action {
     GetCampaignVersions("pinpoint:GetCampaignVersions"),
     /** Action for the GetCampaigns operation. */
     GetCampaigns("pinpoint:GetCampaigns"),
+    /** Action for the GetChannels operation. */
+    GetChannels("pinpoint:GetChannels"),
     /** Action for the GetEmailChannel operation. */
     GetEmailChannel("pinpoint:GetEmailChannel"),
     /** Action for the GetEndpoint operation. */
@@ -121,12 +127,28 @@ public enum PinpointActions implements Action {
     GetSegments("pinpoint:GetSegments"),
     /** Action for the GetSmsChannel operation. */
     GetSmsChannel("pinpoint:GetSmsChannel"),
+    /** Action for the GetUserEndpoints operation. */
+    GetUserEndpoints("pinpoint:GetUserEndpoints"),
+    /** Action for the GetVoiceChannel operation. */
+    GetVoiceChannel("pinpoint:GetVoiceChannel"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("pinpoint:ListTagsForResource"),
+    /** Action for the PhoneNumberValidate operation. */
+    PhoneNumberValidate("pinpoint:PhoneNumberValidate"),
     /** Action for the PutEventStream operation. */
     PutEventStream("pinpoint:PutEventStream"),
+    /** Action for the PutEvents operation. */
+    PutEvents("pinpoint:PutEvents"),
+    /** Action for the RemoveAttributes operation. */
+    RemoveAttributes("pinpoint:RemoveAttributes"),
     /** Action for the SendMessages operation. */
     SendMessages("pinpoint:SendMessages"),
     /** Action for the SendUsersMessages operation. */
     SendUsersMessages("pinpoint:SendUsersMessages"),
+    /** Action for the TagResource operation. */
+    TagResource("pinpoint:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("pinpoint:UntagResource"),
     /** Action for the UpdateAdmChannel operation. */
     UpdateAdmChannel("pinpoint:UpdateAdmChannel"),
     /** Action for the UpdateApnsChannel operation. */
@@ -155,6 +177,8 @@ public enum PinpointActions implements Action {
     UpdateSegment("pinpoint:UpdateSegment"),
     /** Action for the UpdateSmsChannel operation. */
     UpdateSmsChannel("pinpoint:UpdateSmsChannel"),
+    /** Action for the UpdateVoiceChannel operation. */
+    UpdateVoiceChannel("pinpoint:UpdateVoiceChannel"),
 
     ;
 

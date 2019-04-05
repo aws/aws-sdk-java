@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,8 +46,8 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this part of the simulation.
      * Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement denies
-     * that operation, then the explicit deny overrides any allow, and the deny statement is the only entry included in
-     * the result.
+     * that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
+     * included in the result.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Statement> matchedStatements;
@@ -199,14 +199,14 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this part of the simulation.
      * Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement denies
-     * that operation, then the explicit deny overrides any allow, and the deny statement is the only entry included in
-     * the result.
+     * that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
+     * included in the result.
      * </p>
      * 
      * @return A list of the statements in the input policies that determine the result for this part of the simulation.
      *         Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement
-     *         denies that operation, then the explicit deny overrides any allow, and the deny statement is the only
-     *         entry included in the result.
+     *         denies that operation, then the explicit deny overrides any allow. In addition, the deny statement is the
+     *         only entry included in the result.
      */
 
     public java.util.List<Statement> getMatchedStatements() {
@@ -220,15 +220,15 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this part of the simulation.
      * Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement denies
-     * that operation, then the explicit deny overrides any allow, and the deny statement is the only entry included in
-     * the result.
+     * that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
+     * included in the result.
      * </p>
      * 
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this part of the simulation.
      *        Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement
-     *        denies that operation, then the explicit deny overrides any allow, and the deny statement is the only
-     *        entry included in the result.
+     *        denies that operation, then the explicit deny overrides any allow. In addition, the deny statement is the
+     *        only entry included in the result.
      */
 
     public void setMatchedStatements(java.util.Collection<Statement> matchedStatements) {
@@ -244,8 +244,8 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this part of the simulation.
      * Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement denies
-     * that operation, then the explicit deny overrides any allow, and the deny statement is the only entry included in
-     * the result.
+     * that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
+     * included in the result.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -256,8 +256,8 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this part of the simulation.
      *        Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement
-     *        denies that operation, then the explicit deny overrides any allow, and the deny statement is the only
-     *        entry included in the result.
+     *        denies that operation, then the explicit deny overrides any allow. In addition, the deny statement is the
+     *        only entry included in the result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,15 +275,15 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this part of the simulation.
      * Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement denies
-     * that operation, then the explicit deny overrides any allow, and the deny statement is the only entry included in
-     * the result.
+     * that operation, then the explicit deny overrides any allow. In addition, the deny statement is the only entry
+     * included in the result.
      * </p>
      * 
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this part of the simulation.
      *        Remember that even if multiple statements allow the operation on the resource, if <i>any</i> statement
-     *        denies that operation, then the explicit deny overrides any allow, and the deny statement is the only
-     *        entry included in the result.
+     *        denies that operation, then the explicit deny overrides any allow. In addition, the deny statement is the
+     *        only entry included in the result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -492,7 +492,8 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

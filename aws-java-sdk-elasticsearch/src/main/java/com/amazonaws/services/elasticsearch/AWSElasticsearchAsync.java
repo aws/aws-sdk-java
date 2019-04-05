@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,47 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest addTagsRequest,
             com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before
+     * the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>
+     * state.
+     * </p>
+     * 
+     * @param cancelElasticsearchServiceSoftwareUpdateRequest
+     *        Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code>
+     *        operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software
+     *        update on.
+     * @return A Java Future containing the result of the CancelElasticsearchServiceSoftwareUpdate operation returned by
+     *         the service.
+     * @sample AWSElasticsearchAsync.CancelElasticsearchServiceSoftwareUpdate
+     */
+    java.util.concurrent.Future<CancelElasticsearchServiceSoftwareUpdateResult> cancelElasticsearchServiceSoftwareUpdateAsync(
+            CancelElasticsearchServiceSoftwareUpdateRequest cancelElasticsearchServiceSoftwareUpdateRequest);
+
+    /**
+     * <p>
+     * Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before
+     * the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>
+     * state.
+     * </p>
+     * 
+     * @param cancelElasticsearchServiceSoftwareUpdateRequest
+     *        Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code>
+     *        operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software
+     *        update on.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelElasticsearchServiceSoftwareUpdate operation returned by
+     *         the service.
+     * @sample AWSElasticsearchAsyncHandler.CancelElasticsearchServiceSoftwareUpdate
+     */
+    java.util.concurrent.Future<CancelElasticsearchServiceSoftwareUpdateResult> cancelElasticsearchServiceSoftwareUpdateAsync(
+            CancelElasticsearchServiceSoftwareUpdateRequest cancelElasticsearchServiceSoftwareUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelElasticsearchServiceSoftwareUpdateRequest, CancelElasticsearchServiceSoftwareUpdateResult> asyncHandler);
 
     /**
      * <p>
@@ -395,6 +436,99 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
 
     /**
      * <p>
+     * Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a
+     * <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions for that specific domain.
+     * </p>
+     * 
+     * @param getCompatibleElasticsearchVersionsRequest
+     *        Container for request parameters to <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation.
+     * @return A Java Future containing the result of the GetCompatibleElasticsearchVersions operation returned by the
+     *         service.
+     * @sample AWSElasticsearchAsync.GetCompatibleElasticsearchVersions
+     */
+    java.util.concurrent.Future<GetCompatibleElasticsearchVersionsResult> getCompatibleElasticsearchVersionsAsync(
+            GetCompatibleElasticsearchVersionsRequest getCompatibleElasticsearchVersionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a
+     * <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions for that specific domain.
+     * </p>
+     * 
+     * @param getCompatibleElasticsearchVersionsRequest
+     *        Container for request parameters to <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCompatibleElasticsearchVersions operation returned by the
+     *         service.
+     * @sample AWSElasticsearchAsyncHandler.GetCompatibleElasticsearchVersions
+     */
+    java.util.concurrent.Future<GetCompatibleElasticsearchVersionsResult> getCompatibleElasticsearchVersionsAsync(
+            GetCompatibleElasticsearchVersionsRequest getCompatibleElasticsearchVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCompatibleElasticsearchVersionsRequest, GetCompatibleElasticsearchVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the complete history of the last 10 upgrades that were performed on the domain.
+     * </p>
+     * 
+     * @param getUpgradeHistoryRequest
+     *        Container for request parameters to <code> <a>GetUpgradeHistory</a> </code> operation.
+     * @return A Java Future containing the result of the GetUpgradeHistory operation returned by the service.
+     * @sample AWSElasticsearchAsync.GetUpgradeHistory
+     */
+    java.util.concurrent.Future<GetUpgradeHistoryResult> getUpgradeHistoryAsync(GetUpgradeHistoryRequest getUpgradeHistoryRequest);
+
+    /**
+     * <p>
+     * Retrieves the complete history of the last 10 upgrades that were performed on the domain.
+     * </p>
+     * 
+     * @param getUpgradeHistoryRequest
+     *        Container for request parameters to <code> <a>GetUpgradeHistory</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUpgradeHistory operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.GetUpgradeHistory
+     */
+    java.util.concurrent.Future<GetUpgradeHistoryResult> getUpgradeHistoryAsync(GetUpgradeHistoryRequest getUpgradeHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUpgradeHistoryRequest, GetUpgradeHistoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.
+     * </p>
+     * 
+     * @param getUpgradeStatusRequest
+     *        Container for request parameters to <code> <a>GetUpgradeStatus</a> </code> operation.
+     * @return A Java Future containing the result of the GetUpgradeStatus operation returned by the service.
+     * @sample AWSElasticsearchAsync.GetUpgradeStatus
+     */
+    java.util.concurrent.Future<GetUpgradeStatusResult> getUpgradeStatusAsync(GetUpgradeStatusRequest getUpgradeStatusRequest);
+
+    /**
+     * <p>
+     * Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.
+     * </p>
+     * 
+     * @param getUpgradeStatusRequest
+     *        Container for request parameters to <code> <a>GetUpgradeStatus</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUpgradeStatus operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.GetUpgradeStatus
+     */
+    java.util.concurrent.Future<GetUpgradeStatusResult> getUpgradeStatusAsync(GetUpgradeStatusRequest getUpgradeStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the name of all Elasticsearch domains owned by the current user's account.
      * </p>
      * 
@@ -597,6 +731,41 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
 
     /**
      * <p>
+     * Schedules a service software update for an Amazon ES domain.
+     * </p>
+     * 
+     * @param startElasticsearchServiceSoftwareUpdateRequest
+     *        Container for the parameters to the <code><a>StartElasticsearchServiceSoftwareUpdate</a></code> operation.
+     *        Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.
+     * @return A Java Future containing the result of the StartElasticsearchServiceSoftwareUpdate operation returned by
+     *         the service.
+     * @sample AWSElasticsearchAsync.StartElasticsearchServiceSoftwareUpdate
+     */
+    java.util.concurrent.Future<StartElasticsearchServiceSoftwareUpdateResult> startElasticsearchServiceSoftwareUpdateAsync(
+            StartElasticsearchServiceSoftwareUpdateRequest startElasticsearchServiceSoftwareUpdateRequest);
+
+    /**
+     * <p>
+     * Schedules a service software update for an Amazon ES domain.
+     * </p>
+     * 
+     * @param startElasticsearchServiceSoftwareUpdateRequest
+     *        Container for the parameters to the <code><a>StartElasticsearchServiceSoftwareUpdate</a></code> operation.
+     *        Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartElasticsearchServiceSoftwareUpdate operation returned by
+     *         the service.
+     * @sample AWSElasticsearchAsyncHandler.StartElasticsearchServiceSoftwareUpdate
+     */
+    java.util.concurrent.Future<StartElasticsearchServiceSoftwareUpdateResult> startElasticsearchServiceSoftwareUpdateAsync(
+            StartElasticsearchServiceSoftwareUpdateRequest startElasticsearchServiceSoftwareUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<StartElasticsearchServiceSoftwareUpdateRequest, StartElasticsearchServiceSoftwareUpdateResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type
      * and the number of instances.
      * </p>
@@ -631,5 +800,38 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
     java.util.concurrent.Future<UpdateElasticsearchDomainConfigResult> updateElasticsearchDomainConfigAsync(
             UpdateElasticsearchDomainConfigRequest updateElasticsearchDomainConfigRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateElasticsearchDomainConfigRequest, UpdateElasticsearchDomainConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows you to either upgrade your domain or perform an Upgrade eligibility check to a compatible Elasticsearch
+     * version.
+     * </p>
+     * 
+     * @param upgradeElasticsearchDomainRequest
+     *        Container for request parameters to <code> <a>UpgradeElasticsearchDomain</a> </code> operation.
+     * @return A Java Future containing the result of the UpgradeElasticsearchDomain operation returned by the service.
+     * @sample AWSElasticsearchAsync.UpgradeElasticsearchDomain
+     */
+    java.util.concurrent.Future<UpgradeElasticsearchDomainResult> upgradeElasticsearchDomainAsync(
+            UpgradeElasticsearchDomainRequest upgradeElasticsearchDomainRequest);
+
+    /**
+     * <p>
+     * Allows you to either upgrade your domain or perform an Upgrade eligibility check to a compatible Elasticsearch
+     * version.
+     * </p>
+     * 
+     * @param upgradeElasticsearchDomainRequest
+     *        Container for request parameters to <code> <a>UpgradeElasticsearchDomain</a> </code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpgradeElasticsearchDomain operation returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.UpgradeElasticsearchDomain
+     */
+    java.util.concurrent.Future<UpgradeElasticsearchDomainResult> upgradeElasticsearchDomainAsync(
+            UpgradeElasticsearchDomainRequest upgradeElasticsearchDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<UpgradeElasticsearchDomainRequest, UpgradeElasticsearchDomainResult> asyncHandler);
 
 }

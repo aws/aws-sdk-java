@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class StartCelebrityRecognitionRequest extends com.amazonaws.AmazonWebSer
     private String clientRequestToken;
     /**
      * <p>
-     * The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the celebrity
+     * The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity
      * recognition analysis to.
      * </p>
      */
@@ -143,13 +143,13 @@ public class StartCelebrityRecognitionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the celebrity
+     * The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity
      * recognition analysis to.
      * </p>
      * 
      * @param notificationChannel
-     *        The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the celebrity
-     *        recognition analysis to.
+     *        The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
+     *        celebrity recognition analysis to.
      */
 
     public void setNotificationChannel(NotificationChannel notificationChannel) {
@@ -158,11 +158,11 @@ public class StartCelebrityRecognitionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the celebrity
+     * The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity
      * recognition analysis to.
      * </p>
      * 
-     * @return The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the
+     * @return The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
      *         celebrity recognition analysis to.
      */
 
@@ -172,13 +172,13 @@ public class StartCelebrityRecognitionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the celebrity
+     * The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity
      * recognition analysis to.
      * </p>
      * 
      * @param notificationChannel
-     *        The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the celebrity
-     *        recognition analysis to.
+     *        The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
+     *        celebrity recognition analysis to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,7 +234,8 @@ public class StartCelebrityRecognitionRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * H.264 Level.
+ * Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify,
+ * choose Auto (AUTO).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264CodecLevel {

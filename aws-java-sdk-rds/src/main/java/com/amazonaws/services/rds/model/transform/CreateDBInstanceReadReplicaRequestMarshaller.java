@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -104,6 +104,21 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDBSubnetGroupName()));
         }
 
+        if (!createDBInstanceReadReplicaRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest
+                    .getVpcSecurityGroupIds();
+            int vpcSecurityGroupIdsListIndex = 1;
+
+            for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
+                if (vpcSecurityGroupIdsListValue != null) {
+                    request.addParameter("VpcSecurityGroupIds.VpcSecurityGroupId." + vpcSecurityGroupIdsListIndex,
+                            StringUtils.fromString(vpcSecurityGroupIdsListValue));
+                }
+                vpcSecurityGroupIdsListIndex++;
+            }
+        }
+
         if (createDBInstanceReadReplicaRequest.getStorageType() != null) {
             request.addParameter("StorageType", StringUtils.fromString(createDBInstanceReadReplicaRequest.getStorageType()));
         }
@@ -141,6 +156,11 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(createDBInstanceReadReplicaRequest.getPerformanceInsightsKMSKeyId()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getPerformanceInsightsRetentionPeriod() != null) {
+            request.addParameter("PerformanceInsightsRetentionPeriod",
+                    StringUtils.fromInteger(createDBInstanceReadReplicaRequest.getPerformanceInsightsRetentionPeriod()));
+        }
+
         if (!createDBInstanceReadReplicaRequest.getEnableCloudwatchLogsExports().isEmpty()
                 || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
             com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest
@@ -154,6 +174,35 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
                 }
                 enableCloudwatchLogsExportsListIndex++;
             }
+        }
+
+        if (!createDBInstanceReadReplicaRequest.getProcessorFeatures().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ProcessorFeature>) createDBInstanceReadReplicaRequest.getProcessorFeatures()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeaturesList = (com.amazonaws.internal.SdkInternalList<ProcessorFeature>) createDBInstanceReadReplicaRequest
+                    .getProcessorFeatures();
+            int processorFeaturesListIndex = 1;
+
+            for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+
+                if (processorFeaturesListValue.getName() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                            StringUtils.fromString(processorFeaturesListValue.getName()));
+                }
+
+                if (processorFeaturesListValue.getValue() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                }
+                processorFeaturesListIndex++;
+            }
+        }
+
+        if (createDBInstanceReadReplicaRequest.getUseDefaultProcessorFeatures() != null) {
+            request.addParameter("UseDefaultProcessorFeatures", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getUseDefaultProcessorFeatures()));
+        }
+
+        if (createDBInstanceReadReplicaRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getDeletionProtection()));
         }
 
         if (createDBInstanceReadReplicaRequest.getSourceRegion() != null) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,9 +14,6 @@
  */
 
 package com.amazonaws.services.stepfunctions.builder.states;
-
-import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Interface for all builders that expose 'ResultPath'.
@@ -34,7 +31,6 @@ public interface ResultPathBuilder<BuilderT> {
      * @param resultPath New path value.
      * @return This object for method chaining.
      */
-    @JsonProperty(PropertyNames.RESULT_PATH)
     BuilderT resultPath(String resultPath);
 
 }

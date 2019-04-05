@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,14 +26,40 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE).
+     * Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother
+     * motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling
+     * headline at the bottom of the frame.
+     */
     private String algorithm;
-
+    /**
+     * - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as
+     * progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the
+     * deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force
+     * mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not
+     * progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will
+     * probably result in lower quality video.
+     */
     private String control;
-
+    /**
+     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. -
+     * Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
+     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     */
     private String mode;
 
     /**
+     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE).
+     * Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother
+     * motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling
+     * headline at the bottom of the frame.
+     * 
      * @param algorithm
+     *        Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive
+     *        (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND)
+     *        produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a
+     *        ticker, such as a scrolling headline at the bottom of the frame.
      * @see DeinterlaceAlgorithm
      */
 
@@ -42,7 +68,15 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE).
+     * Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother
+     * motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling
+     * headline at the bottom of the frame.
+     * 
+     * @return Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive
+     *         (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND)
+     *         produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a
+     *         ticker, such as a scrolling headline at the bottom of the frame.
      * @see DeinterlaceAlgorithm
      */
 
@@ -51,7 +85,16 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE).
+     * Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother
+     * motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling
+     * headline at the bottom of the frame.
+     * 
      * @param algorithm
+     *        Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive
+     *        (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND)
+     *        produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a
+     *        ticker, such as a scrolling headline at the bottom of the frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeinterlaceAlgorithm
      */
@@ -62,7 +105,16 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE).
+     * Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother
+     * motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling
+     * headline at the bottom of the frame.
+     * 
      * @param algorithm
+     *        Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive
+     *        (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND)
+     *        produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a
+     *        ticker, such as a scrolling headline at the bottom of the frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeinterlaceAlgorithm
      */
@@ -73,7 +125,20 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as
+     * progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the
+     * deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force
+     * mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not
+     * progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will
+     * probably result in lower quality video.
+     * 
      * @param control
+     *        - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as
+     *        progressive. It will only convert those that are tagged as some other type. - When set to
+     *        FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already
+     *        tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged
+     *        frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are
+     *        already progressive into progressive will probably result in lower quality video.
      * @see DeinterlacerControl
      */
 
@@ -82,7 +147,19 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as
+     * progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the
+     * deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force
+     * mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not
+     * progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will
+     * probably result in lower quality video.
+     * 
+     * @return - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as
+     *         progressive. It will only convert those that are tagged as some other type. - When set to
+     *         FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already
+     *         tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged
+     *         frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are
+     *         already progressive into progressive will probably result in lower quality video.
      * @see DeinterlacerControl
      */
 
@@ -91,7 +168,20 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as
+     * progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the
+     * deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force
+     * mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not
+     * progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will
+     * probably result in lower quality video.
+     * 
      * @param control
+     *        - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as
+     *        progressive. It will only convert those that are tagged as some other type. - When set to
+     *        FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already
+     *        tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged
+     *        frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are
+     *        already progressive into progressive will probably result in lower quality video.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeinterlacerControl
      */
@@ -102,7 +192,20 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as
+     * progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the
+     * deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force
+     * mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not
+     * progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will
+     * probably result in lower quality video.
+     * 
      * @param control
+     *        - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as
+     *        progressive. It will only convert those that are tagged as some other type. - When set to
+     *        FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already
+     *        tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged
+     *        frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are
+     *        already progressive into progressive will probably result in lower quality video.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeinterlacerControl
      */
@@ -113,7 +216,14 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. -
+     * Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
+     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * 
      * @param mode
+     *        Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is
+     *        Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine
+     *        29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
      * @see DeinterlacerMode
      */
 
@@ -122,7 +232,13 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. -
+     * Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
+     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * 
+     * @return Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is
+     *         Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine
+     *         29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
      * @see DeinterlacerMode
      */
 
@@ -131,7 +247,14 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. -
+     * Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
+     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * 
      * @param mode
+     *        Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is
+     *        Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine
+     *        29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeinterlacerMode
      */
@@ -142,7 +265,14 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. -
+     * Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
+     * 23.976p. - Adaptive auto-detects and converts to progressive.
+     * 
      * @param mode
+     *        Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is
+     *        Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine
+     *        29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeinterlacerMode
      */
@@ -153,7 +283,8 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

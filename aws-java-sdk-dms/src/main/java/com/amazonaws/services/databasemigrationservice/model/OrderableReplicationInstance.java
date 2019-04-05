@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,12 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
      * </p>
      */
     private Integer includedAllocatedStorage;
+    /**
+     * <p>
+     * List of availability zones for this replication instance.
+     * </p>
+     */
+    private java.util.List<String> availabilityZones;
 
     /**
      * <p>
@@ -375,7 +381,78 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * List of availability zones for this replication instance.
+     * </p>
+     * 
+     * @return List of availability zones for this replication instance.
+     */
+
+    public java.util.List<String> getAvailabilityZones() {
+        return availabilityZones;
+    }
+
+    /**
+     * <p>
+     * List of availability zones for this replication instance.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        List of availability zones for this replication instance.
+     */
+
+    public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
+        if (availabilityZones == null) {
+            this.availabilityZones = null;
+            return;
+        }
+
+        this.availabilityZones = new java.util.ArrayList<String>(availabilityZones);
+    }
+
+    /**
+     * <p>
+     * List of availability zones for this replication instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        List of availability zones for this replication instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableReplicationInstance withAvailabilityZones(String... availabilityZones) {
+        if (this.availabilityZones == null) {
+            setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
+        }
+        for (String ele : availabilityZones) {
+            this.availabilityZones.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of availability zones for this replication instance.
+     * </p>
+     * 
+     * @param availabilityZones
+     *        List of availability zones for this replication instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableReplicationInstance withAvailabilityZones(java.util.Collection<String> availabilityZones) {
+        setAvailabilityZones(availabilityZones);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -398,7 +475,9 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
         if (getDefaultAllocatedStorage() != null)
             sb.append("DefaultAllocatedStorage: ").append(getDefaultAllocatedStorage()).append(",");
         if (getIncludedAllocatedStorage() != null)
-            sb.append("IncludedAllocatedStorage: ").append(getIncludedAllocatedStorage());
+            sb.append("IncludedAllocatedStorage: ").append(getIncludedAllocatedStorage()).append(",");
+        if (getAvailabilityZones() != null)
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones());
         sb.append("}");
         return sb.toString();
     }
@@ -441,6 +520,10 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
             return false;
         if (other.getIncludedAllocatedStorage() != null && other.getIncludedAllocatedStorage().equals(this.getIncludedAllocatedStorage()) == false)
             return false;
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null)
+            return false;
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
+            return false;
         return true;
     }
 
@@ -456,6 +539,7 @@ public class OrderableReplicationInstance implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getMaxAllocatedStorage() == null) ? 0 : getMaxAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getDefaultAllocatedStorage() == null) ? 0 : getDefaultAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getIncludedAllocatedStorage() == null) ? 0 : getIncludedAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,12 +51,12 @@ public class ReservedInstancesModificationStaxUnmarshaller implements Unmarshall
                 }
 
                 if (context.testExpression("createDate", targetDepth)) {
-                    reservedInstancesModification.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstancesModification.setCreateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("effectiveDate", targetDepth)) {
-                    reservedInstancesModification.setEffectiveDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstancesModification.setEffectiveDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -97,7 +97,7 @@ public class ReservedInstancesModificationStaxUnmarshaller implements Unmarshall
                 }
 
                 if (context.testExpression("updateDate", targetDepth)) {
-                    reservedInstancesModification.setUpdateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    reservedInstancesModification.setUpdateDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

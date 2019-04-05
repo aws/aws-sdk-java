@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,9 +69,10 @@ public interface AmazonCloudFormation {
      * default protocol from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -401,6 +402,30 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
+     * Returns information about a stack drift detection operation. A stack drift detection operation detects whether a
+     * stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration, as defined in the
+     * stack template and any values specified as template parameters. A stack is considered to have drifted if one or
+     * more of its resources have drifted. For more information on stack and resource drift, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * <p>
+     * Use <a>DetectStackDrift</a> to initiate a stack drift detection operation. <code>DetectStackDrift</code> returns
+     * a <code>StackDriftDetectionId</code> you can use to monitor the progress of the operation using
+     * <code>DescribeStackDriftDetectionStatus</code>. Once the drift detection operation has completed, use
+     * <a>DescribeStackResourceDrifts</a> to return drift information about the stack and its resources.
+     * </p>
+     * 
+     * @param describeStackDriftDetectionStatusRequest
+     * @return Result of the DescribeStackDriftDetectionStatus operation returned by the service.
+     * @sample AmazonCloudFormation.DescribeStackDriftDetectionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackDriftDetectionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeStackDriftDetectionStatusResult describeStackDriftDetectionStatus(DescribeStackDriftDetectionStatusRequest describeStackDriftDetectionStatusRequest);
+
+    /**
+     * <p>
      * Returns all stack related events for a specified stack in reverse chronological order. For more information about
      * a stack's event history, go to <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the AWS
@@ -459,6 +484,33 @@ public interface AmazonCloudFormation {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeStackResourceResult describeStackResource(DescribeStackResourceRequest describeStackResourceRequest);
+
+    /**
+     * <p>
+     * Returns drift information for the resources that have been checked for drift in the specified stack. This
+     * includes actual and expected configuration values for resources where AWS CloudFormation detects configuration
+     * drift.
+     * </p>
+     * <p>
+     * For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been
+     * checked for drift. Resources that have not yet been checked for drift are not included. Resources that do not
+     * currently support drift detection are not checked, and so not included. For a list of resources that support
+     * drift detection, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * >Resources that Support Drift Detection</a>.
+     * </p>
+     * <p>
+     * Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect
+     * drift on all supported resources for a given stack.
+     * </p>
+     * 
+     * @param describeStackResourceDriftsRequest
+     * @return Result of the DescribeStackResourceDrifts operation returned by the service.
+     * @sample AmazonCloudFormation.DescribeStackResourceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeStackResourceDriftsResult describeStackResourceDrifts(DescribeStackResourceDriftsRequest describeStackResourceDriftsRequest);
 
     /**
      * <p>
@@ -556,6 +608,74 @@ public interface AmazonCloudFormation {
      * @see #describeStacks(DescribeStacksRequest)
      */
     DescribeStacksResult describeStacks();
+
+    /**
+     * <p>
+     * Detects whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected configuration,
+     * as defined in the stack template and any values specified as template parameters. For each resource in the stack
+     * that supports drift detection, AWS CloudFormation compares the actual configuration of the resource with its
+     * expected template configuration. Only resource properties explicitly defined in the stack template are checked
+     * for drift. A stack is considered to have drifted if one or more of its resources differ from their expected
+     * template configurations. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * <p>
+     * Use <code>DetectStackDrift</code> to detect drift on all supported resources for a given stack, or
+     * <a>DetectStackResourceDrift</a> to detect drift on individual resources.
+     * </p>
+     * <p>
+     * For a list of stack resources that currently support drift detection, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * >Resources that Support Drift Detection</a>.
+     * </p>
+     * <p>
+     * <code>DetectStackDrift</code> can take up to several minutes, depending on the number of resources contained
+     * within the stack. Use <a>DescribeStackDriftDetectionStatus</a> to monitor the progress of a detect stack drift
+     * operation. Once the drift detection operation has completed, use <a>DescribeStackResourceDrifts</a> to return
+     * drift information about the stack and its resources.
+     * </p>
+     * <p>
+     * When detecting drift on a stack, AWS CloudFormation does not detect drift on any nested stacks belonging to that
+     * stack. Perform <code>DetectStackDrift</code> directly on the nested stack itself.
+     * </p>
+     * 
+     * @param detectStackDriftRequest
+     * @return Result of the DetectStackDrift operation returned by the service.
+     * @sample AmazonCloudFormation.DetectStackDrift
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackDrift"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DetectStackDriftResult detectStackDrift(DetectStackDriftRequest detectStackDriftRequest);
+
+    /**
+     * <p>
+     * Returns information about whether a resource's actual configuration differs, or has <i>drifted</i>, from it's
+     * expected configuration, as defined in the stack template and any values specified as template parameters. This
+     * information includes actual and expected property values for resources in which AWS CloudFormation detects drift.
+     * Only resource properties explicitly defined in the stack template are checked for drift. For more information
+     * about stack and resource drift, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
+     * </p>
+     * <p>
+     * Use <code>DetectStackResourceDrift</code> to detect drift on individual resources, or <a>DetectStackDrift</a> to
+     * detect drift on all resources in a given stack that support drift detection.
+     * </p>
+     * <p>
+     * Resources that do not currently support drift detection cannot be checked. For a list of resources that support
+     * drift detection, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * >Resources that Support Drift Detection</a>.
+     * </p>
+     * 
+     * @param detectStackResourceDriftRequest
+     * @return Result of the DetectStackResourceDrift operation returned by the service.
+     * @sample AmazonCloudFormation.DetectStackResourceDrift
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackResourceDrift"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DetectStackResourceDriftResult detectStackResourceDrift(DetectStackResourceDriftRequest detectStackResourceDriftRequest);
 
     /**
      * <p>
@@ -1006,12 +1126,12 @@ public interface AmazonCloudFormation {
      * <p>
      * Updates termination protection for the specified stack. If a user attempts to delete a stack with termination
      * protection enabled, the operation fails and the stack remains unchanged. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a
-     * Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.
+     * href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a>
+     * in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * <p>
-     * For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
-     * stacks</a>, termination protection is set on the root stack and cannot be changed directly on the nested stack.
+     * For <a href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>, termination
+     * protection is set on the root stack and cannot be changed directly on the nested stack.
      * </p>
      * 
      * @param updateTerminationProtectionRequest

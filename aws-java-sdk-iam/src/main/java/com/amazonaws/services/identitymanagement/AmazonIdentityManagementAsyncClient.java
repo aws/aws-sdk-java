@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * AWS Identity and Access Management (IAM) is a web service that you can use to manage users and user permissions under
  * your AWS account. This guide provides descriptions of IAM actions that you can call programmatically. For general
  * information about IAM, see <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a>. For the
- * user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>.
+ * user guide for IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>.
  * </p>
  * <note>
  * <p>
@@ -49,7 +49,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However, you can also use the IAM Query
  * API to make direct calls to the IAM web service. To learn more about the IAM Query API, see <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
  * <i>Using IAM</i> guide. IAM supports GET and POST requests for all actions. That is, the API does not require you to
  * use GET for some actions and POST for others. However, GET requests are subject to the limitation size of a URL.
  * Therefore, for operations that require larger sizes, use a POST request.
@@ -65,7 +65,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * To sign requests, we recommend that you use <a
- * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. If you have an
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. If you have an
  * existing application that uses Signature Version 2, you do not have to update it to use Signature Version 4. However,
  * some operations now require Signature Version 4. The documentation for operations that require version 4 indicate
  * this requirement.
@@ -79,19 +79,19 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a>.
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a>.
  * This topic provides general information about the types of credentials used for accessing AWS.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM Best Practices</a>. This topic
+ * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM Best Practices</a>. This topic
  * presents a list of suggestions for using the IAM service to help secure your AWS resources.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a>.
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a>.
  * This set of topics walk you through the process of signing a request using an access key ID and secret access key.
  * </p>
  * </li>
@@ -1447,6 +1447,40 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRolePermissionsBoundaryResult> deleteRolePermissionsBoundaryAsync(DeleteRolePermissionsBoundaryRequest request) {
+
+        return deleteRolePermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRolePermissionsBoundaryResult> deleteRolePermissionsBoundaryAsync(
+            final DeleteRolePermissionsBoundaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRolePermissionsBoundaryRequest, DeleteRolePermissionsBoundaryResult> asyncHandler) {
+        final DeleteRolePermissionsBoundaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRolePermissionsBoundaryResult>() {
+            @Override
+            public DeleteRolePermissionsBoundaryResult call() throws Exception {
+                DeleteRolePermissionsBoundaryResult result = null;
+
+                try {
+                    result = executeDeleteRolePermissionsBoundary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRolePolicyResult> deleteRolePolicyAsync(DeleteRolePolicyRequest request) {
 
         return deleteRolePolicyAsync(request, null);
@@ -1697,6 +1731,40 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeDeleteUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserPermissionsBoundaryResult> deleteUserPermissionsBoundaryAsync(DeleteUserPermissionsBoundaryRequest request) {
+
+        return deleteUserPermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserPermissionsBoundaryResult> deleteUserPermissionsBoundaryAsync(
+            final DeleteUserPermissionsBoundaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteUserPermissionsBoundaryRequest, DeleteUserPermissionsBoundaryResult> asyncHandler) {
+        final DeleteUserPermissionsBoundaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteUserPermissionsBoundaryResult>() {
+            @Override
+            public DeleteUserPermissionsBoundaryResult call() throws Exception {
+                DeleteUserPermissionsBoundaryResult result = null;
+
+                try {
+                    result = executeDeleteUserPermissionsBoundary(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1964,6 +2032,41 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             com.amazonaws.handlers.AsyncHandler<GenerateCredentialReportRequest, GenerateCredentialReportResult> asyncHandler) {
 
         return generateCredentialReportAsync(new GenerateCredentialReportRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateServiceLastAccessedDetailsResult> generateServiceLastAccessedDetailsAsync(
+            GenerateServiceLastAccessedDetailsRequest request) {
+
+        return generateServiceLastAccessedDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateServiceLastAccessedDetailsResult> generateServiceLastAccessedDetailsAsync(
+            final GenerateServiceLastAccessedDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GenerateServiceLastAccessedDetailsRequest, GenerateServiceLastAccessedDetailsResult> asyncHandler) {
+        final GenerateServiceLastAccessedDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GenerateServiceLastAccessedDetailsResult>() {
+            @Override
+            public GenerateServiceLastAccessedDetailsResult call() throws Exception {
+                GenerateServiceLastAccessedDetailsResult result = null;
+
+                try {
+                    result = executeGenerateServiceLastAccessedDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -2675,6 +2778,75 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeGetServerCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsResult> getServiceLastAccessedDetailsAsync(GetServiceLastAccessedDetailsRequest request) {
+
+        return getServiceLastAccessedDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsResult> getServiceLastAccessedDetailsAsync(
+            final GetServiceLastAccessedDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetServiceLastAccessedDetailsRequest, GetServiceLastAccessedDetailsResult> asyncHandler) {
+        final GetServiceLastAccessedDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetServiceLastAccessedDetailsResult>() {
+            @Override
+            public GetServiceLastAccessedDetailsResult call() throws Exception {
+                GetServiceLastAccessedDetailsResult result = null;
+
+                try {
+                    result = executeGetServiceLastAccessedDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsWithEntitiesResult> getServiceLastAccessedDetailsWithEntitiesAsync(
+            GetServiceLastAccessedDetailsWithEntitiesRequest request) {
+
+        return getServiceLastAccessedDetailsWithEntitiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetServiceLastAccessedDetailsWithEntitiesResult> getServiceLastAccessedDetailsWithEntitiesAsync(
+            final GetServiceLastAccessedDetailsWithEntitiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetServiceLastAccessedDetailsWithEntitiesRequest, GetServiceLastAccessedDetailsWithEntitiesResult> asyncHandler) {
+        final GetServiceLastAccessedDetailsWithEntitiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetServiceLastAccessedDetailsWithEntitiesResult>() {
+            @Override
+            public GetServiceLastAccessedDetailsWithEntitiesResult call() throws Exception {
+                GetServiceLastAccessedDetailsWithEntitiesResult result = null;
+
+                try {
+                    result = executeGetServiceLastAccessedDetailsWithEntities(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3436,6 +3608,41 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListPoliciesGrantingServiceAccessResult> listPoliciesGrantingServiceAccessAsync(
+            ListPoliciesGrantingServiceAccessRequest request) {
+
+        return listPoliciesGrantingServiceAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPoliciesGrantingServiceAccessResult> listPoliciesGrantingServiceAccessAsync(
+            final ListPoliciesGrantingServiceAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPoliciesGrantingServiceAccessRequest, ListPoliciesGrantingServiceAccessResult> asyncHandler) {
+        final ListPoliciesGrantingServiceAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPoliciesGrantingServiceAccessResult>() {
+            @Override
+            public ListPoliciesGrantingServiceAccessResult call() throws Exception {
+                ListPoliciesGrantingServiceAccessResult result = null;
+
+                try {
+                    result = executeListPoliciesGrantingServiceAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPolicyVersionsResult> listPolicyVersionsAsync(ListPolicyVersionsRequest request) {
 
         return listPolicyVersionsAsync(request, null);
@@ -3486,6 +3693,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeListRolePolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoleTagsResult> listRoleTagsAsync(ListRoleTagsRequest request) {
+
+        return listRoleTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoleTagsResult> listRoleTagsAsync(final ListRoleTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRoleTagsRequest, ListRoleTagsResult> asyncHandler) {
+        final ListRoleTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRoleTagsResult>() {
+            @Override
+            public ListRoleTagsResult call() throws Exception {
+                ListRoleTagsResult result = null;
+
+                try {
+                    result = executeListRoleTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3848,6 +4088,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListUserTagsResult> listUserTagsAsync(ListUserTagsRequest request) {
+
+        return listUserTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserTagsResult> listUserTagsAsync(final ListUserTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListUserTagsRequest, ListUserTagsResult> asyncHandler) {
+        final ListUserTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListUserTagsResult>() {
+            @Override
+            public ListUserTagsResult call() throws Exception {
+                ListUserTagsResult result = null;
+
+                try {
+                    result = executeListUserTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest request) {
 
         return listUsersAsync(request, null);
@@ -3992,6 +4265,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<PutRolePermissionsBoundaryResult> putRolePermissionsBoundaryAsync(PutRolePermissionsBoundaryRequest request) {
+
+        return putRolePermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRolePermissionsBoundaryResult> putRolePermissionsBoundaryAsync(final PutRolePermissionsBoundaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRolePermissionsBoundaryRequest, PutRolePermissionsBoundaryResult> asyncHandler) {
+        final PutRolePermissionsBoundaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutRolePermissionsBoundaryResult>() {
+            @Override
+            public PutRolePermissionsBoundaryResult call() throws Exception {
+                PutRolePermissionsBoundaryResult result = null;
+
+                try {
+                    result = executePutRolePermissionsBoundary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutRolePolicyResult> putRolePolicyAsync(PutRolePolicyRequest request) {
 
         return putRolePolicyAsync(request, null);
@@ -4009,6 +4315,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executePutRolePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutUserPermissionsBoundaryResult> putUserPermissionsBoundaryAsync(PutUserPermissionsBoundaryRequest request) {
+
+        return putUserPermissionsBoundaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutUserPermissionsBoundaryResult> putUserPermissionsBoundaryAsync(final PutUserPermissionsBoundaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutUserPermissionsBoundaryRequest, PutUserPermissionsBoundaryResult> asyncHandler) {
+        final PutUserPermissionsBoundaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutUserPermissionsBoundaryResult>() {
+            @Override
+            public PutUserPermissionsBoundaryResult call() throws Exception {
+                PutUserPermissionsBoundaryResult result = null;
+
+                try {
+                    result = executePutUserPermissionsBoundary(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4310,6 +4649,138 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
 
                 try {
                     result = executeSimulatePrincipalPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagRoleResult> tagRoleAsync(TagRoleRequest request) {
+
+        return tagRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagRoleResult> tagRoleAsync(final TagRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagRoleRequest, TagRoleResult> asyncHandler) {
+        final TagRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagRoleResult>() {
+            @Override
+            public TagRoleResult call() throws Exception {
+                TagRoleResult result = null;
+
+                try {
+                    result = executeTagRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagUserResult> tagUserAsync(TagUserRequest request) {
+
+        return tagUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagUserResult> tagUserAsync(final TagUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagUserRequest, TagUserResult> asyncHandler) {
+        final TagUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagUserResult>() {
+            @Override
+            public TagUserResult call() throws Exception {
+                TagUserResult result = null;
+
+                try {
+                    result = executeTagUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagRoleResult> untagRoleAsync(UntagRoleRequest request) {
+
+        return untagRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagRoleResult> untagRoleAsync(final UntagRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagRoleRequest, UntagRoleResult> asyncHandler) {
+        final UntagRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagRoleResult>() {
+            @Override
+            public UntagRoleResult call() throws Exception {
+                UntagRoleResult result = null;
+
+                try {
+                    result = executeUntagRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagUserResult> untagUserAsync(UntagUserRequest request) {
+
+        return untagUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagUserResult> untagUserAsync(final UntagUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagUserRequest, UntagUserResult> asyncHandler) {
+        final UntagUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagUserResult>() {
+            @Override
+            public UntagUserResult call() throws Exception {
+                UntagUserResult result = null;
+
+                try {
+                    result = executeUntagUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

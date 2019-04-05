@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,8 @@ public enum IdentityManagementActions implements Action {
     DeletePolicyVersion("iam:DeletePolicyVersion"),
     /** Action for the DeleteRole operation. */
     DeleteRole("iam:DeleteRole"),
+    /** Action for the DeleteRolePermissionsBoundary operation. */
+    DeleteRolePermissionsBoundary("iam:DeleteRolePermissionsBoundary"),
     /** Action for the DeleteRolePolicy operation. */
     DeleteRolePolicy("iam:DeleteRolePolicy"),
     /** Action for the DeleteSAMLProvider operation. */
@@ -107,6 +109,8 @@ public enum IdentityManagementActions implements Action {
     DeleteSigningCertificate("iam:DeleteSigningCertificate"),
     /** Action for the DeleteUser operation. */
     DeleteUser("iam:DeleteUser"),
+    /** Action for the DeleteUserPermissionsBoundary operation. */
+    DeleteUserPermissionsBoundary("iam:DeleteUserPermissionsBoundary"),
     /** Action for the DeleteUserPolicy operation. */
     DeleteUserPolicy("iam:DeleteUserPolicy"),
     /** Action for the DeleteVirtualMFADevice operation. */
@@ -121,6 +125,8 @@ public enum IdentityManagementActions implements Action {
     EnableMFADevice("iam:EnableMFADevice"),
     /** Action for the GenerateCredentialReport operation. */
     GenerateCredentialReport("iam:GenerateCredentialReport"),
+    /** Action for the GenerateServiceLastAccessedDetails operation. */
+    GenerateServiceLastAccessedDetails("iam:GenerateServiceLastAccessedDetails"),
     /** Action for the GetAccessKeyLastUsed operation. */
     GetAccessKeyLastUsed("iam:GetAccessKeyLastUsed"),
     /** Action for the GetAccountAuthorizationDetails operation. */
@@ -159,6 +165,10 @@ public enum IdentityManagementActions implements Action {
     GetSSHPublicKey("iam:GetSSHPublicKey"),
     /** Action for the GetServerCertificate operation. */
     GetServerCertificate("iam:GetServerCertificate"),
+    /** Action for the GetServiceLastAccessedDetails operation. */
+    GetServiceLastAccessedDetails("iam:GetServiceLastAccessedDetails"),
+    /** Action for the GetServiceLastAccessedDetailsWithEntities operation. */
+    GetServiceLastAccessedDetailsWithEntities("iam:GetServiceLastAccessedDetailsWithEntities"),
     /** Action for the GetServiceLinkedRoleDeletionStatus operation. */
     GetServiceLinkedRoleDeletionStatus("iam:GetServiceLinkedRoleDeletionStatus"),
     /** Action for the GetUser operation. */
@@ -193,10 +203,14 @@ public enum IdentityManagementActions implements Action {
     ListOpenIDConnectProviders("iam:ListOpenIDConnectProviders"),
     /** Action for the ListPolicies operation. */
     ListPolicies("iam:ListPolicies"),
+    /** Action for the ListPoliciesGrantingServiceAccess operation. */
+    ListPoliciesGrantingServiceAccess("iam:ListPoliciesGrantingServiceAccess"),
     /** Action for the ListPolicyVersions operation. */
     ListPolicyVersions("iam:ListPolicyVersions"),
     /** Action for the ListRolePolicies operation. */
     ListRolePolicies("iam:ListRolePolicies"),
+    /** Action for the ListRoleTags operation. */
+    ListRoleTags("iam:ListRoleTags"),
     /** Action for the ListRoles operation. */
     ListRoles("iam:ListRoles"),
     /** Action for the ListSAMLProviders operation. */
@@ -211,14 +225,20 @@ public enum IdentityManagementActions implements Action {
     ListSigningCertificates("iam:ListSigningCertificates"),
     /** Action for the ListUserPolicies operation. */
     ListUserPolicies("iam:ListUserPolicies"),
+    /** Action for the ListUserTags operation. */
+    ListUserTags("iam:ListUserTags"),
     /** Action for the ListUsers operation. */
     ListUsers("iam:ListUsers"),
     /** Action for the ListVirtualMFADevices operation. */
     ListVirtualMFADevices("iam:ListVirtualMFADevices"),
     /** Action for the PutGroupPolicy operation. */
     PutGroupPolicy("iam:PutGroupPolicy"),
+    /** Action for the PutRolePermissionsBoundary operation. */
+    PutRolePermissionsBoundary("iam:PutRolePermissionsBoundary"),
     /** Action for the PutRolePolicy operation. */
     PutRolePolicy("iam:PutRolePolicy"),
+    /** Action for the PutUserPermissionsBoundary operation. */
+    PutUserPermissionsBoundary("iam:PutUserPermissionsBoundary"),
     /** Action for the PutUserPolicy operation. */
     PutUserPolicy("iam:PutUserPolicy"),
     /** Action for the RemoveClientIDFromOpenIDConnectProvider operation. */
@@ -237,6 +257,14 @@ public enum IdentityManagementActions implements Action {
     SimulateCustomPolicy("iam:SimulateCustomPolicy"),
     /** Action for the SimulatePrincipalPolicy operation. */
     SimulatePrincipalPolicy("iam:SimulatePrincipalPolicy"),
+    /** Action for the TagRole operation. */
+    TagRole("iam:TagRole"),
+    /** Action for the TagUser operation. */
+    TagUser("iam:TagUser"),
+    /** Action for the UntagRole operation. */
+    UntagRole("iam:UntagRole"),
+    /** Action for the UntagUser operation. */
+    UntagUser("iam:UntagUser"),
     /** Action for the UpdateAccessKey operation. */
     UpdateAccessKey("iam:UpdateAccessKey"),
     /** Action for the UpdateAccountPasswordPolicy operation. */

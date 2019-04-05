@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,14 +34,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The name of an endpoint configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
      * </p>
      */
     private String endpointConfigName;
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      */
@@ -90,12 +90,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The name of an endpoint configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
      * </p>
      * 
      * @param endpointConfigName
      *        The name of an endpoint configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html"
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html"
      *        >CreateEndpointConfig</a>.
      */
 
@@ -106,11 +106,11 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The name of an endpoint configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
      * </p>
      * 
      * @return The name of an endpoint configuration. For more information, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html"
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html"
      *         >CreateEndpointConfig</a>.
      */
 
@@ -121,12 +121,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The name of an endpoint configuration. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
      * </p>
      * 
      * @param endpointConfigName
      *        The name of an endpoint configuration. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html"
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html"
      *        >CreateEndpointConfig</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -139,12 +139,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @return An array of key-value pairs. For more information, see <a
-     *         href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *         >Using Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User Guide</i>.
      */
 
@@ -155,13 +155,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An array of key-value pairs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *        >Using Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User Guide</i>.
      */
 
@@ -177,7 +177,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * <p>
@@ -188,7 +188,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param tags
      *        An array of key-value pairs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *        >Using Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -206,13 +206,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * 
      * @param tags
      *        An array of key-value pairs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
      *        >Using Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -223,7 +223,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

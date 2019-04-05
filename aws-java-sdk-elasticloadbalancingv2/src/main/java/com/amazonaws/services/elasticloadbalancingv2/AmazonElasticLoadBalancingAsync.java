@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,14 +41,14 @@ import com.amazonaws.services.elasticloadbalancingv2.model.*;
  * </p>
  * <p>
  * An Application Load Balancer makes routing and load balancing decisions at the application layer (HTTP/HTTPS). A
- * Network Load Balancer makes routing and load balancing decisions at the transport layer (TCP). Both Application Load
- * Balancers and Network Load Balancers can route requests to one or more ports on each EC2 instance or container
+ * Network Load Balancer makes routing and load balancing decisions at the transport layer (TCP/TLS). Both Application
+ * Load Balancers and Network Load Balancers can route requests to one or more ports on each EC2 instance or container
  * instance in your virtual private cloud (VPC).
  * </p>
  * <p>
  * A Classic Load Balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or the
  * application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. For more information, see the <a
- * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User Guide</a>.
+ * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User Guide</a>.
  * </p>
  * <p>
  * This reference covers the 2015-12-01 API, which supports Application Load Balancers and Network Load Balancers. The
@@ -104,14 +104,15 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Adds the specified certificate to the specified secure listener.
+     * Adds the specified certificate to the specified HTTPS listener.
      * </p>
      * <p>
      * If the certificate was already added, the call is successful but the certificate is not added again.
      * </p>
      * <p>
      * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
-     * your listener, use <a>RemoveListenerCertificates</a>.
+     * your listener, use <a>RemoveListenerCertificates</a>. To specify the default SSL server certificate, use
+     * <a>ModifyListener</a>.
      * </p>
      * 
      * @param addListenerCertificatesRequest
@@ -124,14 +125,15 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Adds the specified certificate to the specified secure listener.
+     * Adds the specified certificate to the specified HTTPS listener.
      * </p>
      * <p>
      * If the certificate was already added, the call is successful but the certificate is not added again.
      * </p>
      * <p>
      * To list the certificates for your listener, use <a>DescribeListenerCertificates</a>. To remove certificates from
-     * your listener, use <a>RemoveListenerCertificates</a>.
+     * your listener, use <a>RemoveListenerCertificates</a>. To specify the default SSL server certificate, use
+     * <a>ModifyListener</a>.
      * </p>
      * 
      * @param addListenerCertificatesRequest
@@ -211,9 +213,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
      * for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners for
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners for
      * Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
@@ -240,9 +242,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
      * for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners for
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners for
      * Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
@@ -275,9 +277,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For limit information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
      * Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
      * Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * <p>
@@ -286,9 +288,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html"
      * >Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network Load
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network Load
      * Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
@@ -316,9 +318,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For limit information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
      * Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
      * Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * <p>
@@ -327,9 +329,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html"
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html"
      * >Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network Load
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network Load
      * Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
@@ -351,10 +353,10 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.
      * </p>
      * <p>
-     * Rules are evaluated in priority order, from the lowest value to the highest value. When the condition for a rule
-     * is met, the specified action is taken. If no conditions are met, the action for the default rule is taken. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules"
+     * Rules are evaluated in priority order, from the lowest value to the highest value. When the conditions for a rule
+     * are met, its actions are performed. If the conditions for no rules are met, the actions for the default rule are
+     * performed. For more information, see <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules"
      * >Listener Rules</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * <p>
@@ -375,10 +377,10 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.
      * </p>
      * <p>
-     * Rules are evaluated in priority order, from the lowest value to the highest value. When the condition for a rule
-     * is met, the specified action is taken. If no conditions are met, the action for the default rule is taken. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules"
+     * Rules are evaluated in priority order, from the lowest value to the highest value. When the conditions for a rule
+     * are met, its actions are performed. If the conditions for no rules are met, the actions for the default rule are
+     * performed. For more information, see <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules"
      * >Listener Rules</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * <p>
@@ -421,9 +423,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
-     * Groups for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> or <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html"
+     * >Target Groups for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> or <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
      * Groups for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
@@ -457,9 +459,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
-     * Groups for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> or <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html"
+     * >Target Groups for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i> or <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
      * Groups for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
@@ -481,7 +483,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Deletes the specified listener.
      * </p>
      * <p>
-     * Alternatively, your listener is deleted when you delete the load balancer it is attached to using
+     * Alternatively, your listener is deleted when you delete the load balancer to which it is attached, using
      * <a>DeleteLoadBalancer</a>.
      * </p>
      * 
@@ -498,7 +500,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Deletes the specified listener.
      * </p>
      * <p>
-     * Alternatively, your listener is deleted when you delete the load balancer it is attached to using
+     * Alternatively, your listener is deleted when you delete the load balancer to which it is attached, using
      * <a>DeleteLoadBalancer</a>.
      * </p>
      * 
@@ -673,9 +675,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
      * Your Application Load Balancers</a> in the <i>Application Load Balancer Guide</i> or <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
      * Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
@@ -693,9 +695,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
      * Your Application Load Balancers</a> in the <i>Application Load Balancer Guide</i> or <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
      * Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
@@ -714,7 +716,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Describes the certificates for the specified secure listener.
+     * Describes the certificates for the specified HTTPS listener.
      * </p>
      * 
      * @param describeListenerCertificatesRequest
@@ -730,7 +732,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Describes the certificates for the specified secure listener.
+     * Describes the certificates for the specified HTTPS listener.
      * </p>
      * 
      * @param describeListenerCertificatesRequest
@@ -786,6 +788,13 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * <p>
      * Describes the attributes for the specified Application Load Balancer or Network Load Balancer.
      * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes"
+     * >Load Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes"
+     * >Load Balancer Attributes</a> in the <i>Network Load Balancers Guide</i>.
+     * </p>
      * 
      * @param describeLoadBalancerAttributesRequest
      * @return A Java Future containing the result of the DescribeLoadBalancerAttributes operation returned by the
@@ -801,6 +810,13 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
     /**
      * <p>
      * Describes the attributes for the specified Application Load Balancer or Network Load Balancer.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes"
+     * >Load Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes"
+     * >Load Balancer Attributes</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeLoadBalancerAttributesRequest
@@ -897,7 +913,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
      * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
@@ -915,7 +931,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
      * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
@@ -969,6 +985,13 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * <p>
      * Describes the attributes for the specified target group.
      * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes"
+     * >Target Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes"
+     * >Target Group Attributes</a> in the <i>Network Load Balancers Guide</i>.
+     * </p>
      * 
      * @param describeTargetGroupAttributesRequest
      * @return A Java Future containing the result of the DescribeTargetGroupAttributes operation returned by the
@@ -984,6 +1007,13 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
     /**
      * <p>
      * Describes the attributes for the specified target group.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes"
+     * >Target Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes"
+     * >Target Group Attributes</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeTargetGroupAttributesRequest
@@ -1082,8 +1112,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * Any properties that you do not specify retain their current values. However, changing the protocol from HTTPS to
-     * HTTP removes the security policy and SSL certificate properties. If you change the protocol from HTTP to HTTPS,
-     * you must add the security policy and server certificate.
+     * HTTP, or from TLS to TCP, removes the security policy and server certificate properties. If you change the
+     * protocol from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and server certificate
+     * properties.
      * </p>
      * 
      * @param modifyListenerRequest
@@ -1100,8 +1131,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * </p>
      * <p>
      * Any properties that you do not specify retain their current values. However, changing the protocol from HTTPS to
-     * HTTP removes the security policy and SSL certificate properties. If you change the protocol from HTTP to HTTPS,
-     * you must add the security policy and server certificate.
+     * HTTP, or from TLS to TCP, removes the security policy and server certificate properties. If you change the
+     * protocol from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and server certificate
+     * properties.
      * </p>
      * 
      * @param modifyListenerRequest
@@ -1170,7 +1202,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Any existing properties that you do not modify retain their current values.
      * </p>
      * <p>
-     * To modify the default action, use <a>ModifyListener</a>.
+     * To modify the actions for the default rule, use <a>ModifyListener</a>.
      * </p>
      * 
      * @param modifyRuleRequest
@@ -1189,7 +1221,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Any existing properties that you do not modify retain their current values.
      * </p>
      * <p>
-     * To modify the default action, use <a>ModifyListener</a>.
+     * To modify the actions for the default rule, use <a>ModifyListener</a>.
      * </p>
      * 
      * @param modifyRuleRequest
@@ -1282,8 +1314,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Registers the specified targets with the specified target group.
      * </p>
      * <p>
-     * You can register targets by instance ID or by IP address. If the target is an EC2 instance, it must be in the
-     * <code>running</code> state when you register it.
+     * If the target is an EC2 instance, it must be in the <code>running</code> state when you register it.
      * </p>
      * <p>
      * By default, the load balancer routes requests to registered targets using the protocol and port for the target
@@ -1312,8 +1343,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Registers the specified targets with the specified target group.
      * </p>
      * <p>
-     * You can register targets by instance ID or by IP address. If the target is an EC2 instance, it must be in the
-     * <code>running</code> state when you register it.
+     * If the target is an EC2 instance, it must be in the <code>running</code> state when you register it.
      * </p>
      * <p>
      * By default, the load balancer routes requests to registered targets using the protocol and port for the target
@@ -1344,7 +1374,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Removes the specified certificate from the specified secure listener.
+     * Removes the specified certificate from the specified HTTPS listener.
      * </p>
      * <p>
      * You can't remove the default certificate for a listener. To replace the default certificate, call
@@ -1366,7 +1396,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Removes the specified certificate from the specified secure listener.
+     * Removes the specified certificate from the specified HTTPS listener.
      * </p>
      * <p>
      * You can't remove the default certificate for a listener. To replace the default certificate, call
@@ -1434,7 +1464,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Balancer.
      * </p>
      * <p>
-     * Note that Network Load Balancers must use <code>ipv4</code>.
+     * Network Load Balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param setIpAddressTypeRequest
@@ -1451,7 +1481,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Balancer.
      * </p>
      * <p>
-     * Note that Network Load Balancers must use <code>ipv4</code>.
+     * Network Load Balancers must use <code>ipv4</code>.
      * </p>
      * 
      * @param setIpAddressTypeRequest
@@ -1512,7 +1542,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * groups override the previously associated security groups.
      * </p>
      * <p>
-     * Note that you can't specify a security group for a Network Load Balancer.
+     * You can't specify a security group for a Network Load Balancer.
      * </p>
      * 
      * @param setSecurityGroupsRequest
@@ -1529,7 +1559,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * groups override the previously associated security groups.
      * </p>
      * <p>
-     * Note that you can't specify a security group for a Network Load Balancer.
+     * You can't specify a security group for a Network Load Balancer.
      * </p>
      * 
      * @param setSecurityGroupsRequest
@@ -1551,7 +1581,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * specified subnets replace the previously enabled subnets.
      * </p>
      * <p>
-     * Note that you can't change the subnets for a Network Load Balancer.
+     * You can't change the subnets for a Network Load Balancer.
      * </p>
      * 
      * @param setSubnetsRequest
@@ -1568,7 +1598,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * specified subnets replace the previously enabled subnets.
      * </p>
      * <p>
-     * Note that you can't change the subnets for a Network Load Balancer.
+     * You can't change the subnets for a Network Load Balancer.
      * </p>
      * 
      * @param setSubnetsRequest

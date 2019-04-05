@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,13 +36,29 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     private String type;
     /**
      * <p>
-     * The ID of the Docker image to use for this build project.
+     * The image tag or image digest that identifies the Docker image to use for this build project. Use the following
+     * formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
+     * use <code>registry/repository:latest</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String image;
     /**
      * <p>
-     * Information about the compute resources the build project will use. Available values include:
+     * Information about the compute resources the build project uses. Available values include:
      * </p>
      * <ul>
      * <li>
@@ -73,14 +89,22 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <p>
      * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be used to
      * build Docker images, and the specified build environment image is not provided by AWS CodeBuild with Docker
-     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon will fail. Note that
-     * you must also start the Docker daemon so that builds can interact with it. One way to do this is to initialize
-     * the Docker daemon during the install phase of your build spec by running the following build commands. (Do not
-     * run the following build commands if the specified build environment image is provided by AWS CodeBuild with
-     * Docker support.)
+     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon fail. You must also
+     * start the Docker daemon so that builds can interact with it. One way to do this is to initialize the Docker
+     * daemon during the install phase of your build spec by running the following build commands. (Do not run these
+     * commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * If the operating system's base image is Ubuntu Linux:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * </p>
+     * <p>
+     * If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to <code>timeout</code>:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      */
     private Boolean privilegedMode;
@@ -90,6 +114,35 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String certificate;
+    /**
+     * <p>
+     * The credentials for access to a private registry.
+     * </p>
+     */
+    private RegistryCredential registryCredential;
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     */
+    private String imagePullCredentialsType;
 
     /**
      * <p>
@@ -166,11 +219,42 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the Docker image to use for this build project.
+     * The image tag or image digest that identifies the Docker image to use for this build project. Use the following
+     * formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
+     * use <code>registry/repository:latest</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param image
-     *        The ID of the Docker image to use for this build project.
+     *        The image tag or image digest that identifies the Docker image to use for this build project. Use the
+     *        following formats:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag
+     *        "latest," use <code>registry/repository:latest</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the
+     *        digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     *        <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setImage(String image) {
@@ -179,10 +263,41 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the Docker image to use for this build project.
+     * The image tag or image digest that identifies the Docker image to use for this build project. Use the following
+     * formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
+     * use <code>registry/repository:latest</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ID of the Docker image to use for this build project.
+     * @return The image tag or image digest that identifies the Docker image to use for this build project. Use the
+     *         following formats:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag
+     *         "latest," use <code>registry/repository:latest</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the
+     *         digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     *         <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getImage() {
@@ -191,11 +306,42 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the Docker image to use for this build project.
+     * The image tag or image digest that identifies the Docker image to use for this build project. Use the following
+     * formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
+     * use <code>registry/repository:latest</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param image
-     *        The ID of the Docker image to use for this build project.
+     *        The image tag or image digest that identifies the Docker image to use for this build project. Use the
+     *        following formats:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag
+     *        "latest," use <code>registry/repository:latest</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the
+     *        digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     *        <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,7 +352,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Information about the compute resources the build project will use. Available values include:
+     * Information about the compute resources the build project uses. Available values include:
      * </p>
      * <ul>
      * <li>
@@ -227,7 +373,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </ul>
      * 
      * @param computeType
-     *        Information about the compute resources the build project will use. Available values include:</p>
+     *        Information about the compute resources the build project uses. Available values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -253,7 +399,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Information about the compute resources the build project will use. Available values include:
+     * Information about the compute resources the build project uses. Available values include:
      * </p>
      * <ul>
      * <li>
@@ -273,7 +419,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </li>
      * </ul>
      * 
-     * @return Information about the compute resources the build project will use. Available values include:</p>
+     * @return Information about the compute resources the build project uses. Available values include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -299,7 +445,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Information about the compute resources the build project will use. Available values include:
+     * Information about the compute resources the build project uses. Available values include:
      * </p>
      * <ul>
      * <li>
@@ -320,7 +466,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </ul>
      * 
      * @param computeType
-     *        Information about the compute resources the build project will use. Available values include:</p>
+     *        Information about the compute resources the build project uses. Available values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -348,7 +494,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Information about the compute resources the build project will use. Available values include:
+     * Information about the compute resources the build project uses. Available values include:
      * </p>
      * <ul>
      * <li>
@@ -369,7 +515,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </ul>
      * 
      * @param computeType
-     *        Information about the compute resources the build project will use. Available values include:</p>
+     *        Information about the compute resources the build project uses. Available values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -395,7 +541,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Information about the compute resources the build project will use. Available values include:
+     * Information about the compute resources the build project uses. Available values include:
      * </p>
      * <ul>
      * <li>
@@ -416,7 +562,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </ul>
      * 
      * @param computeType
-     *        Information about the compute resources the build project will use. Available values include:</p>
+     *        Information about the compute resources the build project uses. Available values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -516,26 +662,44 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <p>
      * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be used to
      * build Docker images, and the specified build environment image is not provided by AWS CodeBuild with Docker
-     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon will fail. Note that
-     * you must also start the Docker daemon so that builds can interact with it. One way to do this is to initialize
-     * the Docker daemon during the install phase of your build spec by running the following build commands. (Do not
-     * run the following build commands if the specified build environment image is provided by AWS CodeBuild with
-     * Docker support.)
+     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon fail. You must also
+     * start the Docker daemon so that builds can interact with it. One way to do this is to initialize the Docker
+     * daemon during the install phase of your build spec by running the following build commands. (Do not run these
+     * commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * If the operating system's base image is Ubuntu Linux:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * </p>
+     * <p>
+     * If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to <code>timeout</code>:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @param privilegedMode
      *        Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be
      *        used to build Docker images, and the specified build environment image is not provided by AWS CodeBuild
-     *        with Docker support. Otherwise, all associated builds that attempt to interact with the Docker daemon will
-     *        fail. Note that you must also start the Docker daemon so that builds can interact with it. One way to do
-     *        this is to initialize the Docker daemon during the install phase of your build spec by running the
-     *        following build commands. (Do not run the following build commands if the specified build environment
-     *        image is provided by AWS CodeBuild with Docker support.)</p>
+     *        with Docker support. Otherwise, all associated builds that attempt to interact with the Docker daemon
+     *        fail. You must also start the Docker daemon so that builds can interact with it. One way to do this is to
+     *        initialize the Docker daemon during the install phase of your build spec by running the following build
+     *        commands. (Do not run these commands if the specified build environment image is provided by AWS CodeBuild
+     *        with Docker support.)</p>
      *        <p>
-     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *        If the operating system's base image is Ubuntu Linux:
+     *        </p>
+     *        <p>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *        </p>
+     *        <p>
+     *        If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to
+     *        <code>timeout</code>:
+     *        </p>
+     *        <p>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
      */
 
     public void setPrivilegedMode(Boolean privilegedMode) {
@@ -546,25 +710,43 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <p>
      * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be used to
      * build Docker images, and the specified build environment image is not provided by AWS CodeBuild with Docker
-     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon will fail. Note that
-     * you must also start the Docker daemon so that builds can interact with it. One way to do this is to initialize
-     * the Docker daemon during the install phase of your build spec by running the following build commands. (Do not
-     * run the following build commands if the specified build environment image is provided by AWS CodeBuild with
-     * Docker support.)
+     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon fail. You must also
+     * start the Docker daemon so that builds can interact with it. One way to do this is to initialize the Docker
+     * daemon during the install phase of your build spec by running the following build commands. (Do not run these
+     * commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * If the operating system's base image is Ubuntu Linux:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * </p>
+     * <p>
+     * If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to <code>timeout</code>:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @return Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be
      *         used to build Docker images, and the specified build environment image is not provided by AWS CodeBuild
      *         with Docker support. Otherwise, all associated builds that attempt to interact with the Docker daemon
-     *         will fail. Note that you must also start the Docker daemon so that builds can interact with it. One way
-     *         to do this is to initialize the Docker daemon during the install phase of your build spec by running the
-     *         following build commands. (Do not run the following build commands if the specified build environment
-     *         image is provided by AWS CodeBuild with Docker support.)</p>
+     *         fail. You must also start the Docker daemon so that builds can interact with it. One way to do this is to
+     *         initialize the Docker daemon during the install phase of your build spec by running the following build
+     *         commands. (Do not run these commands if the specified build environment image is provided by AWS
+     *         CodeBuild with Docker support.)</p>
      *         <p>
-     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *         If the operating system's base image is Ubuntu Linux:
+     *         </p>
+     *         <p>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *         </p>
+     *         <p>
+     *         If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to
+     *         <code>timeout</code>:
+     *         </p>
+     *         <p>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
      */
 
     public Boolean getPrivilegedMode() {
@@ -575,26 +757,44 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <p>
      * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be used to
      * build Docker images, and the specified build environment image is not provided by AWS CodeBuild with Docker
-     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon will fail. Note that
-     * you must also start the Docker daemon so that builds can interact with it. One way to do this is to initialize
-     * the Docker daemon during the install phase of your build spec by running the following build commands. (Do not
-     * run the following build commands if the specified build environment image is provided by AWS CodeBuild with
-     * Docker support.)
+     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon fail. You must also
+     * start the Docker daemon so that builds can interact with it. One way to do this is to initialize the Docker
+     * daemon during the install phase of your build spec by running the following build commands. (Do not run these
+     * commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * If the operating system's base image is Ubuntu Linux:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * </p>
+     * <p>
+     * If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to <code>timeout</code>:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @param privilegedMode
      *        Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be
      *        used to build Docker images, and the specified build environment image is not provided by AWS CodeBuild
-     *        with Docker support. Otherwise, all associated builds that attempt to interact with the Docker daemon will
-     *        fail. Note that you must also start the Docker daemon so that builds can interact with it. One way to do
-     *        this is to initialize the Docker daemon during the install phase of your build spec by running the
-     *        following build commands. (Do not run the following build commands if the specified build environment
-     *        image is provided by AWS CodeBuild with Docker support.)</p>
+     *        with Docker support. Otherwise, all associated builds that attempt to interact with the Docker daemon
+     *        fail. You must also start the Docker daemon so that builds can interact with it. One way to do this is to
+     *        initialize the Docker daemon during the install phase of your build spec by running the following build
+     *        commands. (Do not run these commands if the specified build environment image is provided by AWS CodeBuild
+     *        with Docker support.)</p>
      *        <p>
-     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *        If the operating system's base image is Ubuntu Linux:
+     *        </p>
+     *        <p>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *        </p>
+     *        <p>
+     *        If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to
+     *        <code>timeout</code>:
+     *        </p>
+     *        <p>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -607,25 +807,43 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <p>
      * Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be used to
      * build Docker images, and the specified build environment image is not provided by AWS CodeBuild with Docker
-     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon will fail. Note that
-     * you must also start the Docker daemon so that builds can interact with it. One way to do this is to initialize
-     * the Docker daemon during the install phase of your build spec by running the following build commands. (Do not
-     * run the following build commands if the specified build environment image is provided by AWS CodeBuild with
-     * Docker support.)
+     * support. Otherwise, all associated builds that attempt to interact with the Docker daemon fail. You must also
+     * start the Docker daemon so that builds can interact with it. One way to do this is to initialize the Docker
+     * daemon during the install phase of your build spec by running the following build commands. (Do not run these
+     * commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * If the operating system's base image is Ubuntu Linux:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * </p>
+     * <p>
+     * If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to <code>timeout</code>:
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @return Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be
      *         used to build Docker images, and the specified build environment image is not provided by AWS CodeBuild
      *         with Docker support. Otherwise, all associated builds that attempt to interact with the Docker daemon
-     *         will fail. Note that you must also start the Docker daemon so that builds can interact with it. One way
-     *         to do this is to initialize the Docker daemon during the install phase of your build spec by running the
-     *         following build commands. (Do not run the following build commands if the specified build environment
-     *         image is provided by AWS CodeBuild with Docker support.)</p>
+     *         fail. You must also start the Docker daemon so that builds can interact with it. One way to do this is to
+     *         initialize the Docker daemon during the install phase of your build spec by running the following build
+     *         commands. (Do not run these commands if the specified build environment image is provided by AWS
+     *         CodeBuild with Docker support.)</p>
      *         <p>
-     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *         If the operating system's base image is Ubuntu Linux:
+     *         </p>
+     *         <p>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *         </p>
+     *         <p>
+     *         If the operating system's base image is Alpine Linux, add the <code>-t</code> argument to
+     *         <code>timeout</code>:
+     *         </p>
+     *         <p>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo .; sleep 1; done"</code>
      */
 
     public Boolean isPrivilegedMode() {
@@ -673,7 +891,286 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The credentials for access to a private registry.
+     * </p>
+     * 
+     * @param registryCredential
+     *        The credentials for access to a private registry.
+     */
+
+    public void setRegistryCredential(RegistryCredential registryCredential) {
+        this.registryCredential = registryCredential;
+    }
+
+    /**
+     * <p>
+     * The credentials for access to a private registry.
+     * </p>
+     * 
+     * @return The credentials for access to a private registry.
+     */
+
+    public RegistryCredential getRegistryCredential() {
+        return this.registryCredential;
+    }
+
+    /**
+     * <p>
+     * The credentials for access to a private registry.
+     * </p>
+     * 
+     * @param registryCredential
+     *        The credentials for access to a private registry.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectEnvironment withRegistryCredential(RegistryCredential registryCredential) {
+        setRegistryCredential(registryCredential);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     * 
+     * @param imagePullCredentialsType
+     *        The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you
+     *        modify your ECR repository policy to trust AWS CodeBuild's service principal.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you
+     *        use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * @see ImagePullCredentialsType
+     */
+
+    public void setImagePullCredentialsType(String imagePullCredentialsType) {
+        this.imagePullCredentialsType = imagePullCredentialsType;
+    }
+
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     * 
+     * @return The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you
+     *         modify your ECR repository policy to trust AWS CodeBuild's service principal.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you
+     *         use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * @see ImagePullCredentialsType
+     */
+
+    public String getImagePullCredentialsType() {
+        return this.imagePullCredentialsType;
+    }
+
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     * 
+     * @param imagePullCredentialsType
+     *        The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you
+     *        modify your ECR repository policy to trust AWS CodeBuild's service principal.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you
+     *        use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImagePullCredentialsType
+     */
+
+    public ProjectEnvironment withImagePullCredentialsType(String imagePullCredentialsType) {
+        setImagePullCredentialsType(imagePullCredentialsType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     * 
+     * @param imagePullCredentialsType
+     *        The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you
+     *        modify your ECR repository policy to trust AWS CodeBuild's service principal.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you
+     *        use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * @see ImagePullCredentialsType
+     */
+
+    public void setImagePullCredentialsType(ImagePullCredentialsType imagePullCredentialsType) {
+        withImagePullCredentialsType(imagePullCredentialsType);
+    }
+
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     * 
+     * @param imagePullCredentialsType
+     *        The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you
+     *        modify your ECR repository policy to trust AWS CodeBuild's service principal.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you
+     *        use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImagePullCredentialsType
+     */
+
+    public ProjectEnvironment withImagePullCredentialsType(ImagePullCredentialsType imagePullCredentialsType) {
+        this.imagePullCredentialsType = imagePullCredentialsType.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -694,7 +1191,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
         if (getPrivilegedMode() != null)
             sb.append("PrivilegedMode: ").append(getPrivilegedMode()).append(",");
         if (getCertificate() != null)
-            sb.append("Certificate: ").append(getCertificate());
+            sb.append("Certificate: ").append(getCertificate()).append(",");
+        if (getRegistryCredential() != null)
+            sb.append("RegistryCredential: ").append(getRegistryCredential()).append(",");
+        if (getImagePullCredentialsType() != null)
+            sb.append("ImagePullCredentialsType: ").append(getImagePullCredentialsType());
         sb.append("}");
         return sb.toString();
     }
@@ -733,6 +1234,14 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
             return false;
+        if (other.getRegistryCredential() == null ^ this.getRegistryCredential() == null)
+            return false;
+        if (other.getRegistryCredential() != null && other.getRegistryCredential().equals(this.getRegistryCredential()) == false)
+            return false;
+        if (other.getImagePullCredentialsType() == null ^ this.getImagePullCredentialsType() == null)
+            return false;
+        if (other.getImagePullCredentialsType() != null && other.getImagePullCredentialsType().equals(this.getImagePullCredentialsType()) == false)
+            return false;
         return true;
     }
 
@@ -747,6 +1256,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
         hashCode = prime * hashCode + ((getPrivilegedMode() == null) ? 0 : getPrivilegedMode().hashCode());
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
+        hashCode = prime * hashCode + ((getRegistryCredential() == null) ? 0 : getRegistryCredential().hashCode());
+        hashCode = prime * hashCode + ((getImagePullCredentialsType() == null) ? 0 : getImagePullCredentialsType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -132,6 +132,59 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements
 
         if (restoreDBClusterFromSnapshotRequest.getBacktrackWindow() != null) {
             request.addParameter("BacktrackWindow", StringUtils.fromLong(restoreDBClusterFromSnapshotRequest.getBacktrackWindow()));
+        }
+
+        if (!restoreDBClusterFromSnapshotRequest.getEnableCloudwatchLogsExports().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterFromSnapshotRequest.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBClusterFromSnapshotRequest
+                    .getEnableCloudwatchLogsExports();
+            int enableCloudwatchLogsExportsListIndex = 1;
+
+            for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                if (enableCloudwatchLogsExportsListValue != null) {
+                    request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                            StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                }
+                enableCloudwatchLogsExportsListIndex++;
+            }
+        }
+
+        if (restoreDBClusterFromSnapshotRequest.getEngineMode() != null) {
+            request.addParameter("EngineMode", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getEngineMode()));
+        }
+
+        {
+            ScalingConfiguration scalingConfiguration = restoreDBClusterFromSnapshotRequest.getScalingConfiguration();
+            if (scalingConfiguration != null) {
+
+                if (scalingConfiguration.getMinCapacity() != null) {
+                    request.addParameter("ScalingConfiguration.MinCapacity", StringUtils.fromInteger(scalingConfiguration.getMinCapacity()));
+                }
+
+                if (scalingConfiguration.getMaxCapacity() != null) {
+                    request.addParameter("ScalingConfiguration.MaxCapacity", StringUtils.fromInteger(scalingConfiguration.getMaxCapacity()));
+                }
+
+                if (scalingConfiguration.getAutoPause() != null) {
+                    request.addParameter("ScalingConfiguration.AutoPause", StringUtils.fromBoolean(scalingConfiguration.getAutoPause()));
+                }
+
+                if (scalingConfiguration.getSecondsUntilAutoPause() != null) {
+                    request.addParameter("ScalingConfiguration.SecondsUntilAutoPause", StringUtils.fromInteger(scalingConfiguration.getSecondsUntilAutoPause()));
+                }
+            }
+        }
+
+        if (restoreDBClusterFromSnapshotRequest.getDBClusterParameterGroupName() != null) {
+            request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(restoreDBClusterFromSnapshotRequest.getDBClusterParameterGroupName()));
+        }
+
+        if (restoreDBClusterFromSnapshotRequest.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBClusterFromSnapshotRequest.getDeletionProtection()));
+        }
+
+        if (restoreDBClusterFromSnapshotRequest.getCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(restoreDBClusterFromSnapshotRequest.getCopyTagsToSnapshot()));
         }
 
         return request;

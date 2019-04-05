@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,17 +62,17 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * The Amazon Web Services software development kit (<a href="http://aws.amazon.com/tools/#sdk">AWS SDK</a>) is
- * available in <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-supported.html#gamelift-supported-clients"
+ * available in <a href=
+ * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-supported.html#gamelift-supported-clients"
  * >multiple languages</a> including C++ and C#. Use the SDK to access the API programmatically from an application,
  * such as a game client.
  * </p>
  * </li>
  * <li>
  * <p>
- * The <a href="http://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool is primarily useful for handling
- * administrative actions, such as setting up and managing Amazon GameLift settings and resources. You can use the AWS
- * CLI to manage all of your AWS services.
+ * The <a href="https://docs.aws.amazon.com/cli/latest/userguide/">AWS command-line interface</a> (CLI) tool is
+ * primarily useful for handling administrative actions, such as setting up and managing Amazon GameLift settings and
+ * resources. You can use the AWS CLI to manage all of your AWS services.
  * </p>
  * </li>
  * <li>
@@ -88,7 +88,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Amazon GameLift Local is a tool for testing your game's integration with Amazon GameLift before deploying it on the
  * service. This tools supports a subset of key API actions, which can be called from either the AWS CLI or
  * programmatically. See <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing an
+ * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing an
  * Integration</a>.
  * </p>
  * </li>
@@ -99,7 +99,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer Guide</a> -- Read about Amazon
+ * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer Guide</a> -- Read about Amazon
  * GameLift features and how to use them.
  * </p>
  * </li>
@@ -111,7 +111,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to date with new features and techniques.
+ * <a href="https://gamedev.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to date with new features and
+ * techniques.
  * </p>
  * </li>
  * <li>
@@ -122,8 +123,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a> and <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document history</a> -- Stay
+ * <a href="https://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a> and <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document history</a> -- Stay
  * current with updates to the Amazon GameLift service, SDKs, and documentation.
  * </p>
  * </li>
@@ -282,7 +283,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * When setting up Amazon GameLift resources for your game, you first <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">create a game build</a>
+ * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">create a game build</a>
  * and upload it to Amazon GameLift. You can then use these actions to configure and manage a fleet of resources to run
  * your game servers, scale capacity to meet player demand, access performance and utilization metrics, and more.
  * </p>
@@ -420,39 +421,75 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <b>Manage VPC peering connections for fleets</b>
+ * <b>Manage game session queues</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>CreateVpcPeeringAuthorization</a> -- Authorize a peering connection to one of your VPCs.
+ * <a>CreateGameSessionQueue</a> -- Create a queue for processing requests for new game sessions.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeVpcPeeringAuthorizations</a> -- Retrieve valid peering connection authorizations.
+ * <a>DescribeGameSessionQueues</a> -- Retrieve game session queues defined in a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteVpcPeeringAuthorization</a> -- Delete a peering connection authorization.
+ * <a>UpdateGameSessionQueue</a> -- Change the configuration of a game session queue.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreateVpcPeeringConnection</a> -- Establish a peering connection between the VPC for a Amazon GameLift fleet and
- * one of your VPCs.
+ * <a>DeleteGameSessionQueue</a> -- Remove a game session queue from the region.
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Manage FlexMatch resources</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateMatchmakingConfiguration</a> -- Create a matchmaking configuration with instructions for building a player
+ * group and placing in a new game session.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeVpcPeeringConnections</a> -- Retrieve information on active or pending VPC peering connections with a
- * Amazon GameLift fleet.
+ * <a>DescribeMatchmakingConfigurations</a> -- Retrieve matchmaking configurations defined a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteVpcPeeringConnection</a> -- Delete a VPC peering connection with a Amazon GameLift fleet.
+ * <a>UpdateMatchmakingConfiguration</a> -- Change settings for matchmaking configuration. queue.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteMatchmakingConfiguration</a> -- Remove a matchmaking configuration from the region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateMatchmakingRuleSet</a> -- Create a set of rules to use when searching for player matches.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMatchmakingRuleSets</a> -- Retrieve matchmaking rule sets defined in a Amazon GameLift region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ValidateMatchmakingRuleSet</a> -- Verify syntax for a set of matchmaking rules.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteMatchmakingRuleSet</a> -- Remove a matchmaking rule set from the region.
  * </p>
  * </li>
  * </ul>
@@ -538,70 +575,39 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <b>Manage game session queues</b>
+ * <b>Manage VPC peering connections for fleets</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>CreateGameSessionQueue</a> -- Create a queue for processing requests for new game sessions.
+ * <a>CreateVpcPeeringAuthorization</a> -- Authorize a peering connection to one of your VPCs.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeGameSessionQueues</a> -- Retrieve game session queues defined in a Amazon GameLift region.
+ * <a>DescribeVpcPeeringAuthorizations</a> -- Retrieve valid peering connection authorizations.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateGameSessionQueue</a> -- Change the configuration of a game session queue.
+ * <a>DeleteVpcPeeringAuthorization</a> -- Delete a peering connection authorization.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteGameSessionQueue</a> -- Remove a game session queue from the region.
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * <b>Manage FlexMatch resources</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateMatchmakingConfiguration</a> -- Create a matchmaking configuration with instructions for building a player
- * group and placing in a new game session.
+ * <a>CreateVpcPeeringConnection</a> -- Establish a peering connection between the VPC for a Amazon GameLift fleet and
+ * one of your VPCs.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeMatchmakingConfigurations</a> -- Retrieve matchmaking configurations defined a Amazon GameLift region.
+ * <a>DescribeVpcPeeringConnections</a> -- Retrieve information on active or pending VPC peering connections with a
+ * Amazon GameLift fleet.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateMatchmakingConfiguration</a> -- Change settings for matchmaking configuration. queue.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteMatchmakingConfiguration</a> -- Remove a matchmaking configuration from the region.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>CreateMatchmakingRuleSet</a> -- Create a set of rules to use when searching for player matches.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeMatchmakingRuleSets</a> -- Retrieve matchmaking rule sets defined in a Amazon GameLift region.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ValidateMatchmakingRuleSet</a> -- Verify syntax for a set of matchmaking rules.
+ * <a>DeleteVpcPeeringConnection</a> -- Delete a VPC peering connection with a Amazon GameLift fleet.
  * </p>
  * </li>
  * </ul>
@@ -1366,6 +1372,39 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
 
                 try {
                     result = executeDeleteMatchmakingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMatchmakingRuleSetResult> deleteMatchmakingRuleSetAsync(DeleteMatchmakingRuleSetRequest request) {
+
+        return deleteMatchmakingRuleSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMatchmakingRuleSetResult> deleteMatchmakingRuleSetAsync(final DeleteMatchmakingRuleSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMatchmakingRuleSetRequest, DeleteMatchmakingRuleSetResult> asyncHandler) {
+        final DeleteMatchmakingRuleSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMatchmakingRuleSetResult>() {
+            @Override
+            public DeleteMatchmakingRuleSetResult call() throws Exception {
+                DeleteMatchmakingRuleSetResult result = null;
+
+                try {
+                    result = executeDeleteMatchmakingRuleSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object
      * map. The string identifies the identity provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
      * </p>
      */
     private java.util.Map<String, RoleMapping> roleMappings;
@@ -155,12 +155,12 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object
      * map. The string identifies the identity provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
      * </p>
      * 
      * @return How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a>
      *         object map. The string identifies the identity provider, for example, "graph.facebook.com" or
-     *         "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     *         "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
      */
 
     public java.util.Map<String, RoleMapping> getRoleMappings() {
@@ -171,13 +171,13 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object
      * map. The string identifies the identity provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
      * </p>
      * 
      * @param roleMappings
      *        How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a>
      *        object map. The string identifies the identity provider, for example, "graph.facebook.com" or
-     *        "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     *        "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
      */
 
     public void setRoleMappings(java.util.Map<String, RoleMapping> roleMappings) {
@@ -188,13 +188,13 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object
      * map. The string identifies the identity provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
      * </p>
      * 
      * @param roleMappings
      *        How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a>
      *        object map. The string identifies the identity provider, for example, "graph.facebook.com" or
-     *        "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+     *        "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,7 +225,8 @@ public class GetIdentityPoolRolesResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

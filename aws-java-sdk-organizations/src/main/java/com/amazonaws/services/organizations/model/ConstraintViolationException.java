@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,11 +16,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Performing this operation violates a minimum or maximum value limit. For example, attempting to removing the last SCP
- * from an OU or root, inviting or creating too many accounts to the organization, or attaching too many policies to an
- * account, OU, or root. This exception includes a reason that contains additional information about the violated limit:
+ * Performing this operation violates a minimum or maximum value limit. For example, attempting to removing the last
+ * service control policy (SCP) from an OU or root, inviting or creating too many accounts to the organization, or
+ * attaching too many policies to an account, OU, or root. This exception includes a reason that contains additional
+ * information about the violated limit.
  * </p>
- * <p/>
  * <p>
  * Some of the reasons in the following list might not be applicable to this specific API or operation:
  * </p>
@@ -28,41 +28,43 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you
- * need more accounts, contact AWS Support to request an increase in your limit.
+ * need more accounts, contact<a href="https://console.aws.amazon.com/support/home#/">AWS Support</a> to request an
+ * increase in your limit.
  * </p>
  * <p>
- * Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in your
- * organization. Send fewer invitations, or contact AWS Support to request an increase in the number of accounts.
+ * Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in your
+ * organization. Send fewer invitations or contact AWS Support to request an increase in the number of accounts.
  * </p>
+ * <note>
  * <p>
- * <b>Note</b>: deleted and closed accounts still count toward your limit.
+ * Deleted and closed accounts still count toward your limit.
  * </p>
- * <important>
+ * </note> <important>
  * <p>
  * If you get receive this exception when running a command immediately after creating the organization, wait one hour
  * and try again. If after an hour it continues to fail with this error, contact <a
- * href="https://console.aws.amazon.com/support/home#/">AWS Customer Support</a>.
+ * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
  * </p>
  * </important></li>
  * <li>
  * <p>
- * HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+ * HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one day.
  * </p>
  * </li>
  * <li>
  * <p>
- * OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an organization.
+ * OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have in an organization.
  * </p>
  * </li>
  * <li>
  * <p>
- * OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels deep.
+ * OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
  * </p>
  * </li>
  * <li>
  * <p>
  * ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the organization to be
- * configured to support all features. An organization that supports consolidated billing features only cannot perform
+ * configured to support all features. An organization that supports only consolidated billing features can't perform
  * this operation.
  * </p>
  * </li>
@@ -85,8 +87,8 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not yet have
- * enough information to exist as a stand-alone account. This account requires you to first agree to the AWS Customer
+ * ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't yet have
+ * enough information to exist as a standalone account. This account requires you to first agree to the AWS Customer
  * Agreement. Follow the steps at <a href=
  * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
  * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
@@ -95,9 +97,9 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that does
- * not yet have enough information to exist as a stand-alone account. This account requires you to first complete phone
- * verification. Follow the steps at <a href=
+ * ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that
+ * doesn't yet have enough information to exist as a standalone account. This account requires you to first complete
+ * phone verification. Follow the steps at <a href=
  * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
  * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
  * Organizations User Guide</i>.
@@ -105,8 +107,8 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must associate a
- * payment instrument, such as a credit card, with the account. Follow the steps at <a href=
+ * MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first must
+ * associate a payment instrument, such as a credit card, with the account. Follow the steps at <a href=
  * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
  * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
  * Organizations User Guide</i>.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -100,6 +100,10 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setDeploymentConfiguration(DeploymentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("taskSets", targetDepth)) {
+                    context.nextToken();
+                    service.setTaskSets(new ListUnmarshaller<TaskSet>(TaskSetJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("deployments", targetDepth)) {
                     context.nextToken();
                     service.setDeployments(new ListUnmarshaller<Deployment>(DeploymentJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -114,7 +118,7 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    service.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    service.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("placementConstraints", targetDepth)) {
                     context.nextToken();
@@ -132,6 +136,30 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                 if (context.testExpression("healthCheckGracePeriodSeconds", targetDepth)) {
                     context.nextToken();
                     service.setHealthCheckGracePeriodSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("schedulingStrategy", targetDepth)) {
+                    context.nextToken();
+                    service.setSchedulingStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("deploymentController", targetDepth)) {
+                    context.nextToken();
+                    service.setDeploymentController(DeploymentControllerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    service.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("createdBy", targetDepth)) {
+                    context.nextToken();
+                    service.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("enableECSManagedTags", targetDepth)) {
+                    context.nextToken();
+                    service.setEnableECSManagedTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("propagateTags", targetDepth)) {
+                    context.nextToken();
+                    service.setPropagateTags(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

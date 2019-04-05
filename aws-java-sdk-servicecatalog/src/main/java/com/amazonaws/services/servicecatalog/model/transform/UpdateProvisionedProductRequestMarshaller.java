@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,10 @@ public class UpdateProvisionedProductRequestMarshaller {
             .marshallLocationName("PathId").build();
     private static final MarshallingInfo<List> PROVISIONINGPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningParameters").build();
+    private static final MarshallingInfo<StructuredPojo> PROVISIONINGPREFERENCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningPreferences").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
     private static final MarshallingInfo<String> UPDATETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -71,6 +75,8 @@ public class UpdateProvisionedProductRequestMarshaller {
             protocolMarshaller.marshall(updateProvisionedProductRequest.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
             protocolMarshaller.marshall(updateProvisionedProductRequest.getPathId(), PATHID_BINDING);
             protocolMarshaller.marshall(updateProvisionedProductRequest.getProvisioningParameters(), PROVISIONINGPARAMETERS_BINDING);
+            protocolMarshaller.marshall(updateProvisionedProductRequest.getProvisioningPreferences(), PROVISIONINGPREFERENCES_BINDING);
+            protocolMarshaller.marshall(updateProvisionedProductRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(updateProvisionedProductRequest.getUpdateToken(), UPDATETOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

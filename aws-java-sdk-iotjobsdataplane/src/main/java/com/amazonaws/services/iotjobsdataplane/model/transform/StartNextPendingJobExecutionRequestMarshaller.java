@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class StartNextPendingJobExecutionRequestMarshaller {
             .marshallLocationName("thingName").build();
     private static final MarshallingInfo<Map> STATUSDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("statusDetails").build();
+    private static final MarshallingInfo<Long> STEPTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stepTimeoutInMinutes").build();
 
     private static final StartNextPendingJobExecutionRequestMarshaller instance = new StartNextPendingJobExecutionRequestMarshaller();
 
@@ -52,6 +54,7 @@ public class StartNextPendingJobExecutionRequestMarshaller {
         try {
             protocolMarshaller.marshall(startNextPendingJobExecutionRequest.getThingName(), THINGNAME_BINDING);
             protocolMarshaller.marshall(startNextPendingJobExecutionRequest.getStatusDetails(), STATUSDETAILS_BINDING);
+            protocolMarshaller.marshall(startNextPendingJobExecutionRequest.getStepTimeoutInMinutes(), STEPTIMEOUTINMINUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

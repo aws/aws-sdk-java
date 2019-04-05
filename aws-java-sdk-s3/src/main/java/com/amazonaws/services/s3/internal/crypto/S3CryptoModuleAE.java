@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -221,6 +221,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
                     matdesc,
                     kekMaterialsProvider,
                     cryptoConfig.getCryptoProvider(),
+                    cryptoConfig.getAlwaysUseCryptoProvider(),
                     cryptoRange,   // range is sometimes necessary to compute the adjusted IV
                     extraMatDesc,
                     keyWrapExpected,
@@ -249,6 +250,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             .fromObjectMetadata(retrieved.getObjectMetadata(),
                 kekMaterialsProvider,
                 cryptoConfig.getCryptoProvider(),
+                cryptoConfig.getAlwaysUseCryptoProvider(),
                 // range is sometimes necessary to compute the adjusted IV
                 cryptoRange,
                 extraMatDesc,

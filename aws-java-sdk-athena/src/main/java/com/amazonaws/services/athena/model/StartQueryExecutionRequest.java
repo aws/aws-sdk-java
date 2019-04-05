@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,10 +53,19 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
     private QueryExecutionContext queryExecutionContext;
     /**
      * <p>
-     * Specifies information about where and how to save the results of the query execution.
+     * Specifies information about where and how to save the results of the query execution. If the query runs in a
+     * workgroup, then workgroup's settings may override query settings. This affects the query results location. The
+     * workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the
+     * WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      */
     private ResultConfiguration resultConfiguration;
+    /**
+     * <p>
+     * The name of the workgroup in which the query is being started.
+     * </p>
+     */
+    private String workGroup;
 
     /**
      * <p>
@@ -228,11 +237,17 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Specifies information about where and how to save the results of the query execution.
+     * Specifies information about where and how to save the results of the query execution. If the query runs in a
+     * workgroup, then workgroup's settings may override query settings. This affects the query results location. The
+     * workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the
+     * WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      * 
      * @param resultConfiguration
-     *        Specifies information about where and how to save the results of the query execution.
+     *        Specifies information about where and how to save the results of the query execution. If the query runs in
+     *        a workgroup, then workgroup's settings may override query settings. This affects the query results
+     *        location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in
+     *        the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      */
 
     public void setResultConfiguration(ResultConfiguration resultConfiguration) {
@@ -241,10 +256,16 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Specifies information about where and how to save the results of the query execution.
+     * Specifies information about where and how to save the results of the query execution. If the query runs in a
+     * workgroup, then workgroup's settings may override query settings. This affects the query results location. The
+     * workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the
+     * WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      * 
-     * @return Specifies information about where and how to save the results of the query execution.
+     * @return Specifies information about where and how to save the results of the query execution. If the query runs
+     *         in a workgroup, then workgroup's settings may override query settings. This affects the query results
+     *         location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in
+     *         the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      */
 
     public ResultConfiguration getResultConfiguration() {
@@ -253,11 +274,17 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Specifies information about where and how to save the results of the query execution.
+     * Specifies information about where and how to save the results of the query execution. If the query runs in a
+     * workgroup, then workgroup's settings may override query settings. This affects the query results location. The
+     * workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the
+     * WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      * 
      * @param resultConfiguration
-     *        Specifies information about where and how to save the results of the query execution.
+     *        Specifies information about where and how to save the results of the query execution. If the query runs in
+     *        a workgroup, then workgroup's settings may override query settings. This affects the query results
+     *        location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in
+     *        the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,7 +294,48 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The name of the workgroup in which the query is being started.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup in which the query is being started.
+     */
+
+    public void setWorkGroup(String workGroup) {
+        this.workGroup = workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup in which the query is being started.
+     * </p>
+     * 
+     * @return The name of the workgroup in which the query is being started.
+     */
+
+    public String getWorkGroup() {
+        return this.workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup in which the query is being started.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup in which the query is being started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartQueryExecutionRequest withWorkGroup(String workGroup) {
+        setWorkGroup(workGroup);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -284,7 +352,9 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
         if (getQueryExecutionContext() != null)
             sb.append("QueryExecutionContext: ").append(getQueryExecutionContext()).append(",");
         if (getResultConfiguration() != null)
-            sb.append("ResultConfiguration: ").append(getResultConfiguration());
+            sb.append("ResultConfiguration: ").append(getResultConfiguration()).append(",");
+        if (getWorkGroup() != null)
+            sb.append("WorkGroup: ").append(getWorkGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +385,10 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getResultConfiguration() != null && other.getResultConfiguration().equals(this.getResultConfiguration()) == false)
             return false;
+        if (other.getWorkGroup() == null ^ this.getWorkGroup() == null)
+            return false;
+        if (other.getWorkGroup() != null && other.getWorkGroup().equals(this.getWorkGroup()) == false)
+            return false;
         return true;
     }
 
@@ -327,6 +401,7 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getQueryExecutionContext() == null) ? 0 : getQueryExecutionContext().hashCode());
         hashCode = prime * hashCode + ((getResultConfiguration() == null) ? 0 : getResultConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,7 @@ public class BaseConfigurationItemJsonUnmarshaller implements Unmarshaller<BaseC
                 }
                 if (context.testExpression("configurationItemCaptureTime", targetDepth)) {
                     context.nextToken();
-                    baseConfigurationItem.setConfigurationItemCaptureTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    baseConfigurationItem.setConfigurationItemCaptureTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("configurationItemStatus", targetDepth)) {
                     context.nextToken();
@@ -94,7 +94,7 @@ public class BaseConfigurationItemJsonUnmarshaller implements Unmarshaller<BaseC
                 }
                 if (context.testExpression("resourceCreationTime", targetDepth)) {
                     context.nextToken();
-                    baseConfigurationItem.setResourceCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    baseConfigurationItem.setResourceCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("configuration", targetDepth)) {
                     context.nextToken();

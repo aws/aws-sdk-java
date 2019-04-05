@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,8 +53,8 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
      * <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job
      * completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a
-     * job ID for array jobs so that each index child of this job must wait for the corresponding index child of each
-     * dependency to complete before it can begin.
+     * job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of
+     * each dependency to complete before it can begin.
      * </p>
      */
     private java.util.List<JobDependency> dependsOn;
@@ -85,6 +85,13 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private ContainerOverrides containerOverrides;
     /**
      * <p>
+     * A list of node overrides in JSON format that specify the node range to target and the container overrides for
+     * that node range.
+     * </p>
+     */
+    private NodeOverrides nodeOverrides;
+    /**
+     * <p>
      * The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy is
      * specified here, it overrides the retry strategy defined in the job definition.
      * </p>
@@ -96,7 +103,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -257,14 +264,14 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
      * <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job
      * completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a
-     * job ID for array jobs so that each index child of this job must wait for the corresponding index child of each
-     * dependency to complete before it can begin.
+     * job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of
+     * each dependency to complete before it can begin.
      * </p>
      * 
      * @return A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
      *         <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child
      *         array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type
-     *         dependency with a job ID for array jobs so that each index child of this job must wait for the
+     *         dependency with a job ID for array jobs. In that case, each index child of this job must wait for the
      *         corresponding index child of each dependency to complete before it can begin.
      */
 
@@ -277,15 +284,15 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
      * <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job
      * completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a
-     * job ID for array jobs so that each index child of this job must wait for the corresponding index child of each
-     * dependency to complete before it can begin.
+     * job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of
+     * each dependency to complete before it can begin.
      * </p>
      * 
      * @param dependsOn
      *        A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
      *        <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child
      *        array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type
-     *        dependency with a job ID for array jobs so that each index child of this job must wait for the
+     *        dependency with a job ID for array jobs. In that case, each index child of this job must wait for the
      *        corresponding index child of each dependency to complete before it can begin.
      */
 
@@ -303,8 +310,8 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
      * <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job
      * completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a
-     * job ID for array jobs so that each index child of this job must wait for the corresponding index child of each
-     * dependency to complete before it can begin.
+     * job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of
+     * each dependency to complete before it can begin.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -316,7 +323,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
      *        <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child
      *        array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type
-     *        dependency with a job ID for array jobs so that each index child of this job must wait for the
+     *        dependency with a job ID for array jobs. In that case, each index child of this job must wait for the
      *        corresponding index child of each dependency to complete before it can begin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -336,15 +343,15 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
      * <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job
      * completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a
-     * job ID for array jobs so that each index child of this job must wait for the corresponding index child of each
-     * dependency to complete before it can begin.
+     * job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of
+     * each dependency to complete before it can begin.
      * </p>
      * 
      * @param dependsOn
      *        A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
      *        <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child
      *        array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type
-     *        dependency with a job ID for array jobs so that each index child of this job must wait for the
+     *        dependency with a job ID for array jobs. In that case, each index child of this job must wait for the
      *        corresponding index child of each dependency to complete before it can begin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -539,6 +546,52 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * A list of node overrides in JSON format that specify the node range to target and the container overrides for
+     * that node range.
+     * </p>
+     * 
+     * @param nodeOverrides
+     *        A list of node overrides in JSON format that specify the node range to target and the container overrides
+     *        for that node range.
+     */
+
+    public void setNodeOverrides(NodeOverrides nodeOverrides) {
+        this.nodeOverrides = nodeOverrides;
+    }
+
+    /**
+     * <p>
+     * A list of node overrides in JSON format that specify the node range to target and the container overrides for
+     * that node range.
+     * </p>
+     * 
+     * @return A list of node overrides in JSON format that specify the node range to target and the container overrides
+     *         for that node range.
+     */
+
+    public NodeOverrides getNodeOverrides() {
+        return this.nodeOverrides;
+    }
+
+    /**
+     * <p>
+     * A list of node overrides in JSON format that specify the node range to target and the container overrides for
+     * that node range.
+     * </p>
+     * 
+     * @param nodeOverrides
+     *        A list of node overrides in JSON format that specify the node range to target and the container overrides
+     *        for that node range.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitJobRequest withNodeOverrides(NodeOverrides nodeOverrides) {
+        setNodeOverrides(nodeOverrides);
+        return this;
+    }
+
+    /**
+     * <p>
      * The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy is
      * specified here, it overrides the retry strategy defined in the job definition.
      * </p>
@@ -589,7 +642,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -599,7 +652,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
      *        timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
      *        configuration as the parent job. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
      *        the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -613,7 +666,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -622,7 +675,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
      *         timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
      *         configuration as the parent job. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
      *         the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -636,7 +689,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
      * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
      * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
-     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
      * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -646,7 +699,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
      *        timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
      *        configuration as the parent job. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
      *        the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -657,7 +710,8 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -681,6 +735,8 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getContainerOverrides() != null)
             sb.append("ContainerOverrides: ").append(getContainerOverrides()).append(",");
+        if (getNodeOverrides() != null)
+            sb.append("NodeOverrides: ").append(getNodeOverrides()).append(",");
         if (getRetryStrategy() != null)
             sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getTimeout() != null)
@@ -727,6 +783,10 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getContainerOverrides() != null && other.getContainerOverrides().equals(this.getContainerOverrides()) == false)
             return false;
+        if (other.getNodeOverrides() == null ^ this.getNodeOverrides() == null)
+            return false;
+        if (other.getNodeOverrides() != null && other.getNodeOverrides().equals(this.getNodeOverrides()) == false)
+            return false;
         if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
             return false;
         if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
@@ -750,6 +810,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getJobDefinition() == null) ? 0 : getJobDefinition().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getContainerOverrides() == null) ? 0 : getContainerOverrides().hashCode());
+        hashCode = prime * hashCode + ((getNodeOverrides() == null) ? 0 : getNodeOverrides().hashCode());
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;

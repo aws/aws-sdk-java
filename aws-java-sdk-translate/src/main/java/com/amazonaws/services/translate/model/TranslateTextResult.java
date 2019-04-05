@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,30 +25,37 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The text translated into the target language.
+     * The the translated text. The maximum length of this text is 5kb.
      * </p>
      */
     private String translatedText;
     /**
      * <p>
-     * The language code for the language of the input text.
+     * The language code for the language of the source text.
      * </p>
      */
     private String sourceLanguageCode;
     /**
      * <p>
-     * The language code for the language of the translated text.
+     * The language code for the language of the target text.
      * </p>
      */
     private String targetLanguageCode;
+    /**
+     * <p>
+     * The names of the custom terminologies applied to the input text by Amazon Translate for the translated text
+     * response.
+     * </p>
+     */
+    private java.util.List<AppliedTerminology> appliedTerminologies;
 
     /**
      * <p>
-     * The text translated into the target language.
+     * The the translated text. The maximum length of this text is 5kb.
      * </p>
      * 
      * @param translatedText
-     *        The text translated into the target language.
+     *        The the translated text. The maximum length of this text is 5kb.
      */
 
     public void setTranslatedText(String translatedText) {
@@ -57,10 +64,10 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The text translated into the target language.
+     * The the translated text. The maximum length of this text is 5kb.
      * </p>
      * 
-     * @return The text translated into the target language.
+     * @return The the translated text. The maximum length of this text is 5kb.
      */
 
     public String getTranslatedText() {
@@ -69,11 +76,11 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The text translated into the target language.
+     * The the translated text. The maximum length of this text is 5kb.
      * </p>
      * 
      * @param translatedText
-     *        The text translated into the target language.
+     *        The the translated text. The maximum length of this text is 5kb.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +91,11 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The language code for the language of the input text.
+     * The language code for the language of the source text.
      * </p>
      * 
      * @param sourceLanguageCode
-     *        The language code for the language of the input text.
+     *        The language code for the language of the source text.
      */
 
     public void setSourceLanguageCode(String sourceLanguageCode) {
@@ -97,10 +104,10 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The language code for the language of the input text.
+     * The language code for the language of the source text.
      * </p>
      * 
-     * @return The language code for the language of the input text.
+     * @return The language code for the language of the source text.
      */
 
     public String getSourceLanguageCode() {
@@ -109,11 +116,11 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The language code for the language of the input text.
+     * The language code for the language of the source text.
      * </p>
      * 
      * @param sourceLanguageCode
-     *        The language code for the language of the input text.
+     *        The language code for the language of the source text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +131,11 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The language code for the language of the translated text.
+     * The language code for the language of the target text.
      * </p>
      * 
      * @param targetLanguageCode
-     *        The language code for the language of the translated text.
+     *        The language code for the language of the target text.
      */
 
     public void setTargetLanguageCode(String targetLanguageCode) {
@@ -137,10 +144,10 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The language code for the language of the translated text.
+     * The language code for the language of the target text.
      * </p>
      * 
-     * @return The language code for the language of the translated text.
+     * @return The language code for the language of the target text.
      */
 
     public String getTargetLanguageCode() {
@@ -149,11 +156,11 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The language code for the language of the translated text.
+     * The language code for the language of the target text.
      * </p>
      * 
      * @param targetLanguageCode
-     *        The language code for the language of the translated text.
+     *        The language code for the language of the target text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,7 +170,86 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The names of the custom terminologies applied to the input text by Amazon Translate for the translated text
+     * response.
+     * </p>
+     * 
+     * @return The names of the custom terminologies applied to the input text by Amazon Translate for the translated
+     *         text response.
+     */
+
+    public java.util.List<AppliedTerminology> getAppliedTerminologies() {
+        return appliedTerminologies;
+    }
+
+    /**
+     * <p>
+     * The names of the custom terminologies applied to the input text by Amazon Translate for the translated text
+     * response.
+     * </p>
+     * 
+     * @param appliedTerminologies
+     *        The names of the custom terminologies applied to the input text by Amazon Translate for the translated
+     *        text response.
+     */
+
+    public void setAppliedTerminologies(java.util.Collection<AppliedTerminology> appliedTerminologies) {
+        if (appliedTerminologies == null) {
+            this.appliedTerminologies = null;
+            return;
+        }
+
+        this.appliedTerminologies = new java.util.ArrayList<AppliedTerminology>(appliedTerminologies);
+    }
+
+    /**
+     * <p>
+     * The names of the custom terminologies applied to the input text by Amazon Translate for the translated text
+     * response.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAppliedTerminologies(java.util.Collection)} or {@link #withAppliedTerminologies(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param appliedTerminologies
+     *        The names of the custom terminologies applied to the input text by Amazon Translate for the translated
+     *        text response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranslateTextResult withAppliedTerminologies(AppliedTerminology... appliedTerminologies) {
+        if (this.appliedTerminologies == null) {
+            setAppliedTerminologies(new java.util.ArrayList<AppliedTerminology>(appliedTerminologies.length));
+        }
+        for (AppliedTerminology ele : appliedTerminologies) {
+            this.appliedTerminologies.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of the custom terminologies applied to the input text by Amazon Translate for the translated text
+     * response.
+     * </p>
+     * 
+     * @param appliedTerminologies
+     *        The names of the custom terminologies applied to the input text by Amazon Translate for the translated
+     *        text response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranslateTextResult withAppliedTerminologies(java.util.Collection<AppliedTerminology> appliedTerminologies) {
+        setAppliedTerminologies(appliedTerminologies);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -178,7 +264,9 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getSourceLanguageCode() != null)
             sb.append("SourceLanguageCode: ").append(getSourceLanguageCode()).append(",");
         if (getTargetLanguageCode() != null)
-            sb.append("TargetLanguageCode: ").append(getTargetLanguageCode());
+            sb.append("TargetLanguageCode: ").append(getTargetLanguageCode()).append(",");
+        if (getAppliedTerminologies() != null)
+            sb.append("AppliedTerminologies: ").append(getAppliedTerminologies());
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +293,10 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getTargetLanguageCode() != null && other.getTargetLanguageCode().equals(this.getTargetLanguageCode()) == false)
             return false;
+        if (other.getAppliedTerminologies() == null ^ this.getAppliedTerminologies() == null)
+            return false;
+        if (other.getAppliedTerminologies() != null && other.getAppliedTerminologies().equals(this.getAppliedTerminologies()) == false)
+            return false;
         return true;
     }
 
@@ -216,6 +308,7 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getTranslatedText() == null) ? 0 : getTranslatedText().hashCode());
         hashCode = prime * hashCode + ((getSourceLanguageCode() == null) ? 0 : getSourceLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getTargetLanguageCode() == null) ? 0 : getTargetLanguageCode().hashCode());
+        hashCode = prime * hashCode + ((getAppliedTerminologies() == null) ? 0 : getAppliedTerminologies().hashCode());
         return hashCode;
     }
 

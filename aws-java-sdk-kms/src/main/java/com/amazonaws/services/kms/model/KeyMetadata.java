@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,7 +92,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>, otherwise this value is omitted.
+     * <code>PendingDeletion</code>.
      * </p>
      */
     private java.util.Date deletionDate;
@@ -109,10 +109,28 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      */
     private String origin;
+    /**
+     * <p>
+     * A unique identifier for the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that
+     * contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * </p>
+     */
+    private String customKeyStoreId;
+    /**
+     * <p>
+     * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
+     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, AWS
+     * KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is present only when
+     * the CMK is created in a custom key store.
+     * </p>
+     */
+    private String cloudHsmClusterId;
     /**
      * <p>
      * Specifies whether the CMK's key material expires. This value is present only when <code>Origin</code> is
@@ -615,12 +633,12 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>, otherwise this value is omitted.
+     * <code>PendingDeletion</code>.
      * </p>
      * 
      * @param deletionDate
      *        The date and time after which AWS KMS deletes the CMK. This value is present only when
-     *        <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this value is omitted.
+     *        <code>KeyState</code> is <code>PendingDeletion</code>.
      */
 
     public void setDeletionDate(java.util.Date deletionDate) {
@@ -630,11 +648,11 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>, otherwise this value is omitted.
+     * <code>PendingDeletion</code>.
      * </p>
      * 
      * @return The date and time after which AWS KMS deletes the CMK. This value is present only when
-     *         <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this value is omitted.
+     *         <code>KeyState</code> is <code>PendingDeletion</code>.
      */
 
     public java.util.Date getDeletionDate() {
@@ -644,12 +662,12 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time after which AWS KMS deletes the CMK. This value is present only when <code>KeyState</code> is
-     * <code>PendingDeletion</code>, otherwise this value is omitted.
+     * <code>PendingDeletion</code>.
      * </p>
      * 
      * @param deletionDate
      *        The date and time after which AWS KMS deletes the CMK. This value is present only when
-     *        <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this value is omitted.
+     *        <code>KeyState</code> is <code>PendingDeletion</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -720,13 +738,15 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      * 
      * @param origin
      *        The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key
      *        material. When this value is <code>EXTERNAL</code>, the key material was imported from your existing key
-     *        management infrastructure or the CMK lacks key material.
+     *        management infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the
+     *        key material was created in the AWS CloudHSM cluster associated with a custom key store.
      * @see OriginType
      */
 
@@ -738,12 +758,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      * 
      * @return The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key
      *         material. When this value is <code>EXTERNAL</code>, the key material was imported from your existing key
-     *         management infrastructure or the CMK lacks key material.
+     *         management infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>,
+     *         the key material was created in the AWS CloudHSM cluster associated with a custom key store.
      * @see OriginType
      */
 
@@ -755,13 +777,15 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      * 
      * @param origin
      *        The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key
      *        material. When this value is <code>EXTERNAL</code>, the key material was imported from your existing key
-     *        management infrastructure or the CMK lacks key material.
+     *        management infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the
+     *        key material was created in the AWS CloudHSM cluster associated with a custom key store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginType
      */
@@ -775,13 +799,15 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      * 
      * @param origin
      *        The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key
      *        material. When this value is <code>EXTERNAL</code>, the key material was imported from your existing key
-     *        management infrastructure or the CMK lacks key material.
+     *        management infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the
+     *        key material was created in the AWS CloudHSM cluster associated with a custom key store.
      * @see OriginType
      */
 
@@ -793,19 +819,131 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key material.
      * When this value is <code>EXTERNAL</code>, the key material was imported from your existing key management
-     * infrastructure or the CMK lacks key material.
+     * infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the key material was
+     * created in the AWS CloudHSM cluster associated with a custom key store.
      * </p>
      * 
      * @param origin
      *        The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS created the key
      *        material. When this value is <code>EXTERNAL</code>, the key material was imported from your existing key
-     *        management infrastructure or the CMK lacks key material.
+     *        management infrastructure or the CMK lacks key material. When this value is <code>AWS_CLOUDHSM</code>, the
+     *        key material was created in the AWS CloudHSM cluster associated with a custom key store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginType
      */
 
     public KeyMetadata withOrigin(OriginType origin) {
         this.origin = origin.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that
+     * contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @param customKeyStoreId
+     *        A unique identifier for the <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
+     *        that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     */
+
+    public void setCustomKeyStoreId(String customKeyStoreId) {
+        this.customKeyStoreId = customKeyStoreId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that
+     * contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @return A unique identifier for the <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
+     *         that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     */
+
+    public String getCustomKeyStoreId() {
+        return this.customKeyStoreId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a> that
+     * contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @param customKeyStoreId
+     *        A unique identifier for the <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>
+     *        that contains the CMK. This value is present only when the CMK is created in a custom key store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyMetadata withCustomKeyStoreId(String customKeyStoreId) {
+        setCustomKeyStoreId(customKeyStoreId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
+     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, AWS
+     * KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is present only when
+     * the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @param cloudHsmClusterId
+     *        The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a
+     *        CMK in a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key
+     *        store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value
+     *        is present only when the CMK is created in a custom key store.
+     */
+
+    public void setCloudHsmClusterId(String cloudHsmClusterId) {
+        this.cloudHsmClusterId = cloudHsmClusterId;
+    }
+
+    /**
+     * <p>
+     * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
+     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, AWS
+     * KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is present only when
+     * the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @return The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a
+     *         CMK in a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     *         key store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This
+     *         value is present only when the CMK is created in a custom key store.
+     */
+
+    public String getCloudHsmClusterId() {
+        return this.cloudHsmClusterId;
+    }
+
+    /**
+     * <p>
+     * The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a CMK in a
+     * <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key store</a>, AWS
+     * KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value is present only when
+     * the CMK is created in a custom key store.
+     * </p>
+     * 
+     * @param cloudHsmClusterId
+     *        The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you create a
+     *        CMK in a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom key
+     *        store</a>, AWS KMS creates the key material for the CMK in the associated AWS CloudHSM cluster. This value
+     *        is present only when the CMK is created in a custom key store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyMetadata withCloudHsmClusterId(String cloudHsmClusterId) {
+        setCloudHsmClusterId(cloudHsmClusterId);
         return this;
     }
 
@@ -991,7 +1129,8 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1023,6 +1162,10 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
             sb.append("ValidTo: ").append(getValidTo()).append(",");
         if (getOrigin() != null)
             sb.append("Origin: ").append(getOrigin()).append(",");
+        if (getCustomKeyStoreId() != null)
+            sb.append("CustomKeyStoreId: ").append(getCustomKeyStoreId()).append(",");
+        if (getCloudHsmClusterId() != null)
+            sb.append("CloudHsmClusterId: ").append(getCloudHsmClusterId()).append(",");
         if (getExpirationModel() != null)
             sb.append("ExpirationModel: ").append(getExpirationModel()).append(",");
         if (getKeyManager() != null)
@@ -1085,6 +1228,14 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOrigin() != null && other.getOrigin().equals(this.getOrigin()) == false)
             return false;
+        if (other.getCustomKeyStoreId() == null ^ this.getCustomKeyStoreId() == null)
+            return false;
+        if (other.getCustomKeyStoreId() != null && other.getCustomKeyStoreId().equals(this.getCustomKeyStoreId()) == false)
+            return false;
+        if (other.getCloudHsmClusterId() == null ^ this.getCloudHsmClusterId() == null)
+            return false;
+        if (other.getCloudHsmClusterId() != null && other.getCloudHsmClusterId().equals(this.getCloudHsmClusterId()) == false)
+            return false;
         if (other.getExpirationModel() == null ^ this.getExpirationModel() == null)
             return false;
         if (other.getExpirationModel() != null && other.getExpirationModel().equals(this.getExpirationModel()) == false)
@@ -1112,6 +1263,8 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDeletionDate() == null) ? 0 : getDeletionDate().hashCode());
         hashCode = prime * hashCode + ((getValidTo() == null) ? 0 : getValidTo().hashCode());
         hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
+        hashCode = prime * hashCode + ((getCustomKeyStoreId() == null) ? 0 : getCustomKeyStoreId().hashCode());
+        hashCode = prime * hashCode + ((getCloudHsmClusterId() == null) ? 0 : getCloudHsmClusterId().hashCode());
         hashCode = prime * hashCode + ((getExpirationModel() == null) ? 0 : getExpirationModel().hashCode());
         hashCode = prime * hashCode + ((getKeyManager() == null) ? 0 : getKeyManager().hashCode());
         return hashCode;

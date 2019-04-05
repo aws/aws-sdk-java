@@ -27,6 +27,7 @@ import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.IdempotentUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.protocol.*;
+import com.amazonaws.protocol.Protocol;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**

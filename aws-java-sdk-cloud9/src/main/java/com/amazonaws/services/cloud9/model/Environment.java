@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String ownerArn;
+    /**
+     * <p>
+     * The state of the environment in its creation or deletion lifecycle.
+     * </p>
+     */
+    private EnvironmentLifecycle lifecycle;
 
     /**
      * <p>
@@ -429,7 +435,48 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The state of the environment in its creation or deletion lifecycle.
+     * </p>
+     * 
+     * @param lifecycle
+     *        The state of the environment in its creation or deletion lifecycle.
+     */
+
+    public void setLifecycle(EnvironmentLifecycle lifecycle) {
+        this.lifecycle = lifecycle;
+    }
+
+    /**
+     * <p>
+     * The state of the environment in its creation or deletion lifecycle.
+     * </p>
+     * 
+     * @return The state of the environment in its creation or deletion lifecycle.
+     */
+
+    public EnvironmentLifecycle getLifecycle() {
+        return this.lifecycle;
+    }
+
+    /**
+     * <p>
+     * The state of the environment in its creation or deletion lifecycle.
+     * </p>
+     * 
+     * @param lifecycle
+     *        The state of the environment in its creation or deletion lifecycle.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Environment withLifecycle(EnvironmentLifecycle lifecycle) {
+        setLifecycle(lifecycle);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -444,13 +491,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getOwnerArn() != null)
-            sb.append("OwnerArn: ").append(getOwnerArn());
+            sb.append("OwnerArn: ").append(getOwnerArn()).append(",");
+        if (getLifecycle() != null)
+            sb.append("Lifecycle: ").append(getLifecycle());
         sb.append("}");
         return sb.toString();
     }
@@ -489,6 +538,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOwnerArn() != null && other.getOwnerArn().equals(this.getOwnerArn()) == false)
             return false;
+        if (other.getLifecycle() == null ^ this.getLifecycle() == null)
+            return false;
+        if (other.getLifecycle() != null && other.getLifecycle().equals(this.getLifecycle()) == false)
+            return false;
         return true;
     }
 
@@ -503,6 +556,7 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getOwnerArn() == null) ? 0 : getOwnerArn().hashCode());
+        hashCode = prime * hashCode + ((getLifecycle() == null) ? 0 : getLifecycle().hashCode());
         return hashCode;
     }
 

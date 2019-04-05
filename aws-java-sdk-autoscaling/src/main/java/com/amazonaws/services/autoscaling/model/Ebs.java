@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an Amazon EBS volume.
+ * Describes an Amazon EBS volume. Used in combination with <a>BlockDeviceMapping</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Ebs" target="_top">AWS API
@@ -28,70 +28,80 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the snapshot.
+     * The ID of the snapshot. This parameter is optional if you specify a volume size.
      * </p>
      */
     private String snapshotId;
     /**
      * <p>
-     * The volume size, in GiB. For <code>standard</code> volumes, specify a value from 1 to 1,024. For <code>io1</code>
-     * volumes, specify a value from 4 to 16,384. For <code>gp2</code> volumes, specify a value from 1 to 16,384. If you
-     * specify a snapshot, the volume size must be equal to or larger than the snapshot size.
+     * The volume size, in GiB.
+     * </p>
+     * <p>
+     * Constraints: 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for <code>gp2</code>, and
+     * 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the volume size must be equal to
+     * or larger than the snapshot size.
      * </p>
      * <p>
      * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
      * size.
      * </p>
+     * <note>
+     * <p>
+     * At least one of VolumeSize or SnapshotId is required.
+     * </p>
+     * </note>
      */
     private Integer volumeSize;
     /**
      * <p>
-     * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS SSD,
+     * <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for
+     * Cold HDD. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
      * </p>
      */
     private String volumeType;
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
+     * Indicates whether the volume is deleted on instance termination. The default value is <code>true</code>.
      * </p>
      */
     private Boolean deleteOnTermination;
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for the volume.
+     * The number of I/O operations per second (IOPS) to provision for the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Constraint: Required when the volume type is <code>io1</code>.
+     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
+     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      */
     private Integer iops;
     /**
      * <p>
-     * Indicates whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
+     * Specifies whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
      * support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically encrypted.
      * There is no way to create an encrypted volume from an unencrypted snapshot or an unencrypted volume from an
-     * encrypted snapshot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * encrypted snapshot. If your AMI uses encrypted volumes, you can only launch it on supported instance types. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
     private Boolean encrypted;
 
     /**
      * <p>
-     * The ID of the snapshot.
+     * The ID of the snapshot. This parameter is optional if you specify a volume size.
      * </p>
      * 
      * @param snapshotId
-     *        The ID of the snapshot.
+     *        The ID of the snapshot. This parameter is optional if you specify a volume size.
      */
 
     public void setSnapshotId(String snapshotId) {
@@ -100,10 +110,10 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the snapshot.
+     * The ID of the snapshot. This parameter is optional if you specify a volume size.
      * </p>
      * 
-     * @return The ID of the snapshot.
+     * @return The ID of the snapshot. This parameter is optional if you specify a volume size.
      */
 
     public String getSnapshotId() {
@@ -112,11 +122,11 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the snapshot.
+     * The ID of the snapshot. This parameter is optional if you specify a volume size.
      * </p>
      * 
      * @param snapshotId
-     *        The ID of the snapshot.
+     *        The ID of the snapshot. This parameter is optional if you specify a volume size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,23 +137,38 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in GiB. For <code>standard</code> volumes, specify a value from 1 to 1,024. For <code>io1</code>
-     * volumes, specify a value from 4 to 16,384. For <code>gp2</code> volumes, specify a value from 1 to 16,384. If you
-     * specify a snapshot, the volume size must be equal to or larger than the snapshot size.
+     * The volume size, in GiB.
+     * </p>
+     * <p>
+     * Constraints: 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for <code>gp2</code>, and
+     * 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the volume size must be equal to
+     * or larger than the snapshot size.
      * </p>
      * <p>
      * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
      * size.
      * </p>
+     * <note>
+     * <p>
+     * At least one of VolumeSize or SnapshotId is required.
+     * </p>
+     * </note>
      * 
      * @param volumeSize
-     *        The volume size, in GiB. For <code>standard</code> volumes, specify a value from 1 to 1,024. For
-     *        <code>io1</code> volumes, specify a value from 4 to 16,384. For <code>gp2</code> volumes, specify a value
-     *        from 1 to 16,384. If you specify a snapshot, the volume size must be equal to or larger than the snapshot
-     *        size.</p>
+     *        The volume size, in GiB. </p>
+     *        <p>
+     *        Constraints: 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
+     *        <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the
+     *        volume size must be equal to or larger than the snapshot size.
+     *        </p>
      *        <p>
      *        Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the
      *        snapshot size.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        At least one of VolumeSize or SnapshotId is required.
+     *        </p>
      */
 
     public void setVolumeSize(Integer volumeSize) {
@@ -152,22 +177,37 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in GiB. For <code>standard</code> volumes, specify a value from 1 to 1,024. For <code>io1</code>
-     * volumes, specify a value from 4 to 16,384. For <code>gp2</code> volumes, specify a value from 1 to 16,384. If you
-     * specify a snapshot, the volume size must be equal to or larger than the snapshot size.
+     * The volume size, in GiB.
+     * </p>
+     * <p>
+     * Constraints: 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for <code>gp2</code>, and
+     * 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the volume size must be equal to
+     * or larger than the snapshot size.
      * </p>
      * <p>
      * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
      * size.
      * </p>
+     * <note>
+     * <p>
+     * At least one of VolumeSize or SnapshotId is required.
+     * </p>
+     * </note>
      * 
-     * @return The volume size, in GiB. For <code>standard</code> volumes, specify a value from 1 to 1,024. For
-     *         <code>io1</code> volumes, specify a value from 4 to 16,384. For <code>gp2</code> volumes, specify a value
-     *         from 1 to 16,384. If you specify a snapshot, the volume size must be equal to or larger than the snapshot
-     *         size.</p>
+     * @return The volume size, in GiB. </p>
+     *         <p>
+     *         Constraints: 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
+     *         <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot,
+     *         the volume size must be equal to or larger than the snapshot size.
+     *         </p>
      *         <p>
      *         Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the
      *         snapshot size.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         At least one of VolumeSize or SnapshotId is required.
+     *         </p>
      */
 
     public Integer getVolumeSize() {
@@ -176,23 +216,38 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in GiB. For <code>standard</code> volumes, specify a value from 1 to 1,024. For <code>io1</code>
-     * volumes, specify a value from 4 to 16,384. For <code>gp2</code> volumes, specify a value from 1 to 16,384. If you
-     * specify a snapshot, the volume size must be equal to or larger than the snapshot size.
+     * The volume size, in GiB.
+     * </p>
+     * <p>
+     * Constraints: 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for <code>gp2</code>, and
+     * 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the volume size must be equal to
+     * or larger than the snapshot size.
      * </p>
      * <p>
      * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
      * size.
      * </p>
+     * <note>
+     * <p>
+     * At least one of VolumeSize or SnapshotId is required.
+     * </p>
+     * </note>
      * 
      * @param volumeSize
-     *        The volume size, in GiB. For <code>standard</code> volumes, specify a value from 1 to 1,024. For
-     *        <code>io1</code> volumes, specify a value from 4 to 16,384. For <code>gp2</code> volumes, specify a value
-     *        from 1 to 16,384. If you specify a snapshot, the volume size must be equal to or larger than the snapshot
-     *        size.</p>
+     *        The volume size, in GiB. </p>
+     *        <p>
+     *        Constraints: 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
+     *        <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the
+     *        volume size must be equal to or larger than the snapshot size.
+     *        </p>
      *        <p>
      *        Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the
      *        snapshot size.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        At least one of VolumeSize or SnapshotId is required.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,26 +258,25 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS SSD,
+     * <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for
+     * Cold HDD. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS
+     *        SSD, <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or
+     *        <code>sc1</code> for Cold HDD. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     *        </p>
-     *        <p>
-     *        Default: <code>standard</code>
+     *        Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
+     *        <code>sc1</code>
      */
 
     public void setVolumeType(String volumeType) {
@@ -231,25 +285,24 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS SSD,
+     * <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for
+     * Cold HDD. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
      * </p>
      * 
-     * @return The volume type. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
-     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * @return The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS
+     *         SSD, <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or
+     *         <code>sc1</code> for Cold HDD. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     *         Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *         <p>
-     *         Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     *         </p>
-     *         <p>
-     *         Default: <code>standard</code>
+     *         Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
+     *         <code>sc1</code>
      */
 
     public String getVolumeType() {
@@ -258,26 +311,25 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS SSD,
+     * <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for
+     * Cold HDD. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
+     * Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
-     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS
+     *        SSD, <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or
+     *        <code>sc1</code> for Cold HDD. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     *        </p>
-     *        <p>
-     *        Default: <code>standard</code>
+     *        Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
+     *        <code>sc1</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,11 +340,11 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
+     * Indicates whether the volume is deleted on instance termination. The default value is <code>true</code>.
      * </p>
      * 
      * @param deleteOnTermination
-     *        Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
+     *        Indicates whether the volume is deleted on instance termination. The default value is <code>true</code>.
      */
 
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
@@ -301,10 +353,10 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
+     * Indicates whether the volume is deleted on instance termination. The default value is <code>true</code>.
      * </p>
      * 
-     * @return Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
+     * @return Indicates whether the volume is deleted on instance termination. The default value is <code>true</code>.
      */
 
     public Boolean getDeleteOnTermination() {
@@ -313,11 +365,11 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
+     * Indicates whether the volume is deleted on instance termination. The default value is <code>true</code>.
      * </p>
      * 
      * @param deleteOnTermination
-     *        Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
+     *        Indicates whether the volume is deleted on instance termination. The default value is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,10 +380,10 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
+     * Indicates whether the volume is deleted on instance termination. The default value is <code>true</code>.
      * </p>
      * 
-     * @return Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
+     * @return Indicates whether the volume is deleted on instance termination. The default value is <code>true</code>.
      */
 
     public Boolean isDeleteOnTermination() {
@@ -340,16 +392,22 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for the volume.
+     * The number of I/O operations per second (IOPS) to provision for the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Constraint: Required when the volume type is <code>io1</code>.
+     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
+     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) to provision for the volume.</p>
+     *        The number of I/O operations per second (IOPS) to provision for the volume. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Constraint: Required when the volume type is <code>io1</code>.
+     *        Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
+     *        <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
      */
 
     public void setIops(Integer iops) {
@@ -358,15 +416,21 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for the volume.
+     * The number of I/O operations per second (IOPS) to provision for the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Constraint: Required when the volume type is <code>io1</code>.
+     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
+     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      * 
-     * @return The number of I/O operations per second (IOPS) to provision for the volume.</p>
+     * @return The number of I/O operations per second (IOPS) to provision for the volume. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     *         Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *         <p>
-     *         Constraint: Required when the volume type is <code>io1</code>.
+     *         Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
+     *         <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
      */
 
     public Integer getIops() {
@@ -375,16 +439,22 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for the volume.
+     * The number of I/O operations per second (IOPS) to provision for the volume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Constraint: Required when the volume type is <code>io1</code>.
+     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
+     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) to provision for the volume.</p>
+     *        The number of I/O operations per second (IOPS) to provision for the volume. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Constraint: Required when the volume type is <code>io1</code>.
+     *        Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
+     *        <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,21 +465,22 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
+     * Specifies whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
      * support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically encrypted.
      * There is no way to create an encrypted volume from an unencrypted snapshot or an unencrypted volume from an
-     * encrypted snapshot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * encrypted snapshot. If your AMI uses encrypted volumes, you can only launch it on supported instance types. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
+     *        Specifies whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
      *        support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically
      *        encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or an unencrypted
-     *        volume from an encrypted snapshot. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        volume from an encrypted snapshot. If your AMI uses encrypted volumes, you can only launch it on supported
+     *        instance types. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -418,20 +489,21 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
+     * Specifies whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
      * support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically encrypted.
      * There is no way to create an encrypted volume from an unencrypted snapshot or an unencrypted volume from an
-     * encrypted snapshot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * encrypted snapshot. If your AMI uses encrypted volumes, you can only launch it on supported instance types. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
-     * @return Indicates whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances
+     * @return Specifies whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances
      *         that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically
      *         encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or an unencrypted
-     *         volume from an encrypted snapshot. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         volume from an encrypted snapshot. If your AMI uses encrypted volumes, you can only launch it on
+     *         supported instance types. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public Boolean getEncrypted() {
@@ -440,21 +512,22 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
+     * Specifies whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
      * support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically encrypted.
      * There is no way to create an encrypted volume from an unencrypted snapshot or an unencrypted volume from an
-     * encrypted snapshot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * encrypted snapshot. If your AMI uses encrypted volumes, you can only launch it on supported instance types. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param encrypted
-     *        Indicates whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
+     *        Specifies whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
      *        support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically
      *        encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or an unencrypted
-     *        volume from an encrypted snapshot. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        volume from an encrypted snapshot. If your AMI uses encrypted volumes, you can only launch it on supported
+     *        instance types. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -465,20 +538,21 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
+     * Specifies whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances that
      * support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically encrypted.
      * There is no way to create an encrypted volume from an unencrypted snapshot or an unencrypted volume from an
-     * encrypted snapshot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * encrypted snapshot. If your AMI uses encrypted volumes, you can only launch it on supported instance types. For
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
-     * @return Indicates whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances
+     * @return Specifies whether the volume should be encrypted. Encrypted EBS volumes must be attached to instances
      *         that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically
      *         encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or an unencrypted
-     *         volume from an encrypted snapshot. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         volume from an encrypted snapshot. If your AMI uses encrypted volumes, you can only launch it on
+     *         supported instance types. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public Boolean isEncrypted() {
@@ -486,7 +560,8 @@ public class Ebs implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

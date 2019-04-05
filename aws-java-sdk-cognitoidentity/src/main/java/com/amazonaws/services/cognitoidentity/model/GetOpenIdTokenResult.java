@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
     private String identityId;
     /**
      * <p>
-     * An OpenID token, valid for 15 minutes.
+     * An OpenID token, valid for 10 minutes.
      * </p>
      */
     private String token;
@@ -88,11 +88,11 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An OpenID token, valid for 15 minutes.
+     * An OpenID token, valid for 10 minutes.
      * </p>
      * 
      * @param token
-     *        An OpenID token, valid for 15 minutes.
+     *        An OpenID token, valid for 10 minutes.
      */
 
     public void setToken(String token) {
@@ -101,10 +101,10 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An OpenID token, valid for 15 minutes.
+     * An OpenID token, valid for 10 minutes.
      * </p>
      * 
-     * @return An OpenID token, valid for 15 minutes.
+     * @return An OpenID token, valid for 10 minutes.
      */
 
     public String getToken() {
@@ -113,11 +113,11 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An OpenID token, valid for 15 minutes.
+     * An OpenID token, valid for 10 minutes.
      * </p>
      * 
      * @param token
-     *        An OpenID token, valid for 15 minutes.
+     *        An OpenID token, valid for 10 minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,7 +127,8 @@ public class GetOpenIdTokenResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,8 @@ public class CreateDeploymentGroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loadBalancerInfo").build();
     private static final MarshallingInfo<StructuredPojo> EC2TAGSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ec2TagSet").build();
+    private static final MarshallingInfo<List> ECSSERVICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ecsServices").build();
     private static final MarshallingInfo<StructuredPojo> ONPREMISESTAGSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("onPremisesTagSet").build();
 
@@ -89,6 +91,7 @@ public class CreateDeploymentGroupRequestMarshaller {
             protocolMarshaller.marshall(createDeploymentGroupRequest.getBlueGreenDeploymentConfiguration(), BLUEGREENDEPLOYMENTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getLoadBalancerInfo(), LOADBALANCERINFO_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getEc2TagSet(), EC2TAGSET_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getEcsServices(), ECSSERVICES_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getOnPremisesTagSet(), ONPREMISESTAGSET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

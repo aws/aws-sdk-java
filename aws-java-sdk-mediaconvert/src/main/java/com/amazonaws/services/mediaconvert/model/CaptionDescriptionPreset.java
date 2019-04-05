@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,8 +26,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaptionDescriptionPreset implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language code.
+     * For most captions output formats, the encoder puts this language information in the output captions metadata. If
+     * your output captions format is DVB-Sub or Burn in, the encoder uses this language information to choose the font
+     * language for rendering the captions text.
+     */
+    private String customLanguageCode;
+    /**
+     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
+     * source of the caption data is Embedded or Teletext.
+     */
     private CaptionDestinationSettings destinationSettings;
-    /** Indicates the language of the caption output track. */
+    /**
+     * Specify the language of this captions output track. For most captions output formats, the encoder puts this
+     * language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the
+     * encoder uses this language information to choose the font language for rendering the captions text.
+     */
     private String languageCode;
     /**
      * Human readable information to indicate captions available for players (eg. English, or Spanish). Alphanumeric
@@ -36,7 +51,64 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     private String languageDescription;
 
     /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language code.
+     * For most captions output formats, the encoder puts this language information in the output captions metadata. If
+     * your output captions format is DVB-Sub or Burn in, the encoder uses this language information to choose the font
+     * language for rendering the captions text.
+     * 
+     * @param customLanguageCode
+     *        Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language
+     *        code. For most captions output formats, the encoder puts this language information in the output captions
+     *        metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information
+     *        to choose the font language for rendering the captions text.
+     */
+
+    public void setCustomLanguageCode(String customLanguageCode) {
+        this.customLanguageCode = customLanguageCode;
+    }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language code.
+     * For most captions output formats, the encoder puts this language information in the output captions metadata. If
+     * your output captions format is DVB-Sub or Burn in, the encoder uses this language information to choose the font
+     * language for rendering the captions text.
+     * 
+     * @return Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter
+     *         language code. For most captions output formats, the encoder puts this language information in the output
+     *         captions metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language
+     *         information to choose the font language for rendering the captions text.
+     */
+
+    public String getCustomLanguageCode() {
+        return this.customLanguageCode;
+    }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language code.
+     * For most captions output formats, the encoder puts this language information in the output captions metadata. If
+     * your output captions format is DVB-Sub or Burn in, the encoder uses this language information to choose the font
+     * language for rendering the captions text.
+     * 
+     * @param customLanguageCode
+     *        Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language
+     *        code. For most captions output formats, the encoder puts this language information in the output captions
+     *        metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses this language information
+     *        to choose the font language for rendering the captions text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CaptionDescriptionPreset withCustomLanguageCode(String customLanguageCode) {
+        setCustomLanguageCode(customLanguageCode);
+        return this;
+    }
+
+    /**
+     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
+     * source of the caption data is Embedded or Teletext.
+     * 
      * @param destinationSettings
+     *        Specific settings required by destination type. Note that burnin_destination_settings are not available if
+     *        the source of the caption data is Embedded or Teletext.
      */
 
     public void setDestinationSettings(CaptionDestinationSettings destinationSettings) {
@@ -44,7 +116,11 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
+     * source of the caption data is Embedded or Teletext.
+     * 
+     * @return Specific settings required by destination type. Note that burnin_destination_settings are not available
+     *         if the source of the caption data is Embedded or Teletext.
      */
 
     public CaptionDestinationSettings getDestinationSettings() {
@@ -52,7 +128,12 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     }
 
     /**
+     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
+     * source of the caption data is Embedded or Teletext.
+     * 
      * @param destinationSettings
+     *        Specific settings required by destination type. Note that burnin_destination_settings are not available if
+     *        the source of the caption data is Embedded or Teletext.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,10 +143,15 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Indicates the language of the caption output track.
+     * Specify the language of this captions output track. For most captions output formats, the encoder puts this
+     * language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the
+     * encoder uses this language information to choose the font language for rendering the captions text.
      * 
      * @param languageCode
-     *        Indicates the language of the caption output track.
+     *        Specify the language of this captions output track. For most captions output formats, the encoder puts
+     *        this language information in the output captions metadata. If your output captions format is DVB-Sub or
+     *        Burn in, the encoder uses this language information to choose the font language for rendering the captions
+     *        text.
      * @see LanguageCode
      */
 
@@ -74,9 +160,14 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Indicates the language of the caption output track.
+     * Specify the language of this captions output track. For most captions output formats, the encoder puts this
+     * language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the
+     * encoder uses this language information to choose the font language for rendering the captions text.
      * 
-     * @return Indicates the language of the caption output track.
+     * @return Specify the language of this captions output track. For most captions output formats, the encoder puts
+     *         this language information in the output captions metadata. If your output captions format is DVB-Sub or
+     *         Burn in, the encoder uses this language information to choose the font language for rendering the
+     *         captions text.
      * @see LanguageCode
      */
 
@@ -85,10 +176,15 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Indicates the language of the caption output track.
+     * Specify the language of this captions output track. For most captions output formats, the encoder puts this
+     * language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the
+     * encoder uses this language information to choose the font language for rendering the captions text.
      * 
      * @param languageCode
-     *        Indicates the language of the caption output track.
+     *        Specify the language of this captions output track. For most captions output formats, the encoder puts
+     *        this language information in the output captions metadata. If your output captions format is DVB-Sub or
+     *        Burn in, the encoder uses this language information to choose the font language for rendering the captions
+     *        text.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -99,10 +195,15 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Indicates the language of the caption output track.
+     * Specify the language of this captions output track. For most captions output formats, the encoder puts this
+     * language information in the output captions metadata. If your output captions format is DVB-Sub or Burn in, the
+     * encoder uses this language information to choose the font language for rendering the captions text.
      * 
      * @param languageCode
-     *        Indicates the language of the caption output track.
+     *        Specify the language of this captions output track. For most captions output formats, the encoder puts
+     *        this language information in the output captions metadata. If your output captions format is DVB-Sub or
+     *        Burn in, the encoder uses this language information to choose the font language for rendering the captions
+     *        text.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -153,7 +254,8 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -163,6 +265,8 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCustomLanguageCode() != null)
+            sb.append("CustomLanguageCode: ").append(getCustomLanguageCode()).append(",");
         if (getDestinationSettings() != null)
             sb.append("DestinationSettings: ").append(getDestinationSettings()).append(",");
         if (getLanguageCode() != null)
@@ -183,6 +287,10 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
         if (obj instanceof CaptionDescriptionPreset == false)
             return false;
         CaptionDescriptionPreset other = (CaptionDescriptionPreset) obj;
+        if (other.getCustomLanguageCode() == null ^ this.getCustomLanguageCode() == null)
+            return false;
+        if (other.getCustomLanguageCode() != null && other.getCustomLanguageCode().equals(this.getCustomLanguageCode()) == false)
+            return false;
         if (other.getDestinationSettings() == null ^ this.getDestinationSettings() == null)
             return false;
         if (other.getDestinationSettings() != null && other.getDestinationSettings().equals(this.getDestinationSettings()) == false)
@@ -203,6 +311,7 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCustomLanguageCode() == null) ? 0 : getCustomLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getLanguageDescription() == null) ? 0 : getLanguageDescription().hashCode());

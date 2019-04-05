@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,39 +30,26 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <fullname>Amazon Cognito</fullname>
+ * <fullname>Amazon Cognito Federated Identities</fullname>
  * <p>
- * Amazon Cognito is a web service that delivers scoped temporary credentials to mobile devices and other untrusted
- * environments. Amazon Cognito uniquely identifies a device and supplies the user with a consistent identity over the
- * lifetime of an application.
+ * Amazon Cognito Federated Identities is a web service that delivers scoped temporary credentials to mobile devices and
+ * other untrusted environments. It uniquely identifies a device and supplies the user with a consistent identity over
+ * the lifetime of an application.
  * </p>
  * <p>
- * Using Amazon Cognito, you can enable authentication with one or more third-party identity providers (Facebook,
- * Google, or Login with Amazon), and you can also choose to support unauthenticated access from your app. Cognito
- * delivers a unique identifier for each user and acts as an OpenID token provider trusted by AWS Security Token Service
- * (STS) to access temporary, limited-privilege AWS credentials.
+ * Using Amazon Cognito Federated Identities, you can enable authentication with one or more third-party identity
+ * providers (Facebook, Google, or Login with Amazon) or an Amazon Cognito user pool, and you can also choose to support
+ * unauthenticated access from your app. Cognito delivers a unique identifier for each user and acts as an OpenID token
+ * provider trusted by AWS Security Token Service (STS) to access temporary, limited-privilege AWS credentials.
  * </p>
  * <p>
- * To provide end-user credentials, first make an unsigned call to <a>GetId</a>. If the end user is authenticated with
- * one of the supported identity providers, set the <code>Logins</code> map with the identity provider token.
- * <code>GetId</code> returns a unique identifier for the user.
+ * For a description of the authentication flow from the Amazon Cognito Developer Guide see <a
+ * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Authentication Flow</a>.
  * </p>
  * <p>
- * Next, make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects the same <code>Logins</code> map
- * as the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned by <code>GetId</code>.
- * Assuming your identity pool has been configured via the <a>SetIdentityPoolRoles</a> operation,
- * <code>GetCredentialsForIdentity</code> will return AWS credentials for your use. If your pool has not been configured
- * with <code>SetIdentityPoolRoles</code>, or if you want to follow legacy flow, make an unsigned call to
- * <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS and retrieve AWS credentials. This call
- * expects the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code>
- * originally returned by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code> can be passed to the STS
- * operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">
- * AssumeRoleWithWebIdentity</a> to retrieve AWS credentials.
- * </p>
- * <p>
- * If you want to use Amazon Cognito in an Android, iOS, or Unity application, you will probably want to make API calls
- * via the AWS Mobile SDK. To learn more, see the <a href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK
- * Developer Guide</a>.
+ * For more information see <a
+ * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon Cognito Federated
+ * Identities</a>.
  * </p>
  */
 @ThreadSafe
@@ -675,6 +662,39 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<LookupDeveloperIdentityResult> lookupDeveloperIdentityAsync(LookupDeveloperIdentityRequest request) {
 
         return lookupDeveloperIdentityAsync(request, null);
@@ -774,6 +794,39 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
     }
 
     @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UnlinkDeveloperIdentityResult> unlinkDeveloperIdentityAsync(UnlinkDeveloperIdentityRequest request) {
 
         return unlinkDeveloperIdentityAsync(request, null);
@@ -824,6 +877,39 @@ public class AmazonCognitoIdentityAsyncClient extends AmazonCognitoIdentityClien
 
                 try {
                     result = executeUnlinkIdentity(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

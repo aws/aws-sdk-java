@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
     private java.util.List<InputAttachment> inputAttachments;
 
     private InputSpecification inputSpecification;
+    /** The log level being written to CloudWatch Logs. */
+    private String logLevel;
     /** The name of the channel. (user-mutable) */
     private String name;
     /** The number of currently healthy pipelines. */
@@ -49,6 +51,8 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
     private String roleArn;
 
     private String state;
+    /** A collection of key-value pairs. */
+    private java.util.Map<String, String> tags;
 
     /**
      * The unique arn of the channel.
@@ -366,6 +370,57 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * The log level being written to CloudWatch Logs.
+     * 
+     * @param logLevel
+     *        The log level being written to CloudWatch Logs.
+     * @see LogLevel
+     */
+
+    public void setLogLevel(String logLevel) {
+        this.logLevel = logLevel;
+    }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     * 
+     * @return The log level being written to CloudWatch Logs.
+     * @see LogLevel
+     */
+
+    public String getLogLevel() {
+        return this.logLevel;
+    }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     * 
+     * @param logLevel
+     *        The log level being written to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogLevel
+     */
+
+    public StartChannelResult withLogLevel(String logLevel) {
+        setLogLevel(logLevel);
+        return this;
+    }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     * 
+     * @param logLevel
+     *        The log level being written to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogLevel
+     */
+
+    public StartChannelResult withLogLevel(LogLevel logLevel) {
+        this.logLevel = logLevel.toString();
+        return this;
+    }
+
+    /**
      * The name of the channel. (user-mutable)
      * 
      * @param name
@@ -508,7 +563,63 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * A collection of key-value pairs.
+     * 
+     * @return A collection of key-value pairs.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * A collection of key-value pairs.
+     * 
+     * @param tags
+     *        A collection of key-value pairs.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * A collection of key-value pairs.
+     * 
+     * @param tags
+     *        A collection of key-value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChannelResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public StartChannelResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChannelResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -532,6 +643,8 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
             sb.append("InputAttachments: ").append(getInputAttachments()).append(",");
         if (getInputSpecification() != null)
             sb.append("InputSpecification: ").append(getInputSpecification()).append(",");
+        if (getLogLevel() != null)
+            sb.append("LogLevel: ").append(getLogLevel()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPipelinesRunningCount() != null)
@@ -539,7 +652,9 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -582,6 +697,10 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getInputSpecification() != null && other.getInputSpecification().equals(this.getInputSpecification()) == false)
             return false;
+        if (other.getLogLevel() == null ^ this.getLogLevel() == null)
+            return false;
+        if (other.getLogLevel() != null && other.getLogLevel().equals(this.getLogLevel()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -598,6 +717,10 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -613,10 +736,12 @@ public class StartChannelResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getInputAttachments() == null) ? 0 : getInputAttachments().hashCode());
         hashCode = prime * hashCode + ((getInputSpecification() == null) ? 0 : getInputSpecification().hashCode());
+        hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPipelinesRunningCount() == null) ? 0 : getPipelinesRunningCount().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

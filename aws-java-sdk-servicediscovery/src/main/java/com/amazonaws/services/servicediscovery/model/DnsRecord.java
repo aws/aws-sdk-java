@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains information about the records that you want Route 53 to create when you register an
- * instance.
+ * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create when
+ * you register an instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DnsRecord" target="_top">AWS API
@@ -39,21 +39,21 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>A, AAAA, and SRV records: You can specify settings for a maximum of one A, one AAAA, and one SRV record. You
-     * can specify them in any combination.</b>
+     * <b>A, AAAA, and SRV records:</b> You can specify settings for a maximum of one A, one AAAA, and one SRV record.
+     * You can specify them in any combination.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>CNAME records:</b> If you specify <code>CNAME</code> for <code>Type</code>, you can't define any other
-     * records. This is a limitation of DNS—you can't create a CNAME record and any other type of record that has the
+     * records. This is a limitation of DNS: you can't create a CNAME record and any other type of record that has the
      * same name as a CNAME record.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Alias records:</b> If you want Route 53 to create an alias record when you register an instance, specify
-     * <code>A</code> or <code>AAAA</code> for <code>Type</code>.
+     * <b>Alias records:</b> If you want AWS Cloud Map to create a Route 53 alias record when you register an instance,
+     * specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      * </p>
      * </li>
      * <li>
@@ -160,7 +160,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * If you specify settings for an SRV record and if you specify values for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, Route 53 automatically
+     * <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, AWS Cloud Map automatically
      * creates <code>A</code> and/or <code>AAAA</code> records that have the same name as the value of
      * <code>service-hostname</code> in the SRV record. You can ignore these records.
      * </p>
@@ -191,21 +191,21 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>A, AAAA, and SRV records: You can specify settings for a maximum of one A, one AAAA, and one SRV record. You
-     * can specify them in any combination.</b>
+     * <b>A, AAAA, and SRV records:</b> You can specify settings for a maximum of one A, one AAAA, and one SRV record.
+     * You can specify them in any combination.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>CNAME records:</b> If you specify <code>CNAME</code> for <code>Type</code>, you can't define any other
-     * records. This is a limitation of DNS—you can't create a CNAME record and any other type of record that has the
+     * records. This is a limitation of DNS: you can't create a CNAME record and any other type of record that has the
      * same name as a CNAME record.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Alias records:</b> If you want Route 53 to create an alias record when you register an instance, specify
-     * <code>A</code> or <code>AAAA</code> for <code>Type</code>.
+     * <b>Alias records:</b> If you want AWS Cloud Map to create a Route 53 alias record when you register an instance,
+     * specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      * </p>
      * </li>
      * <li>
@@ -312,7 +312,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * If you specify settings for an SRV record and if you specify values for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, Route 53 automatically
+     * <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, AWS Cloud Map automatically
      * creates <code>A</code> and/or <code>AAAA</code> records that have the same name as the value of
      * <code>service-hostname</code> in the SRV record. You can ignore these records.
      * </p>
@@ -326,21 +326,21 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>A, AAAA, and SRV records: You can specify settings for a maximum of one A, one AAAA, and one SRV
-     *        record. You can specify them in any combination.</b>
+     *        <b>A, AAAA, and SRV records:</b> You can specify settings for a maximum of one A, one AAAA, and one SRV
+     *        record. You can specify them in any combination.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>CNAME records:</b> If you specify <code>CNAME</code> for <code>Type</code>, you can't define any other
-     *        records. This is a limitation of DNS—you can't create a CNAME record and any other type of record that has
-     *        the same name as a CNAME record.
+     *        records. This is a limitation of DNS: you can't create a CNAME record and any other type of record that
+     *        has the same name as a CNAME record.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Alias records:</b> If you want Route 53 to create an alias record when you register an instance,
-     *        specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
+     *        <b>Alias records:</b> If you want AWS Cloud Map to create a Route 53 alias record when you register an
+     *        instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -449,7 +449,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        If you specify settings for an SRV record and if you specify values for <code>AWS_INSTANCE_IPV4</code>,
-     *        <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, Route 53
+     *        <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, AWS Cloud Map
      *        automatically creates <code>A</code> and/or <code>AAAA</code> records that have the same name as the value
      *        of <code>service-hostname</code> in the SRV record. You can ignore these records.
      * @see RecordType
@@ -469,21 +469,21 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>A, AAAA, and SRV records: You can specify settings for a maximum of one A, one AAAA, and one SRV record. You
-     * can specify them in any combination.</b>
+     * <b>A, AAAA, and SRV records:</b> You can specify settings for a maximum of one A, one AAAA, and one SRV record.
+     * You can specify them in any combination.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>CNAME records:</b> If you specify <code>CNAME</code> for <code>Type</code>, you can't define any other
-     * records. This is a limitation of DNS—you can't create a CNAME record and any other type of record that has the
+     * records. This is a limitation of DNS: you can't create a CNAME record and any other type of record that has the
      * same name as a CNAME record.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Alias records:</b> If you want Route 53 to create an alias record when you register an instance, specify
-     * <code>A</code> or <code>AAAA</code> for <code>Type</code>.
+     * <b>Alias records:</b> If you want AWS Cloud Map to create a Route 53 alias record when you register an instance,
+     * specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      * </p>
      * </li>
      * <li>
@@ -590,7 +590,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * If you specify settings for an SRV record and if you specify values for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, Route 53 automatically
+     * <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, AWS Cloud Map automatically
      * creates <code>A</code> and/or <code>AAAA</code> records that have the same name as the value of
      * <code>service-hostname</code> in the SRV record. You can ignore these records.
      * </p>
@@ -603,21 +603,21 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>A, AAAA, and SRV records: You can specify settings for a maximum of one A, one AAAA, and one SRV
-     *         record. You can specify them in any combination.</b>
+     *         <b>A, AAAA, and SRV records:</b> You can specify settings for a maximum of one A, one AAAA, and one SRV
+     *         record. You can specify them in any combination.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <b>CNAME records:</b> If you specify <code>CNAME</code> for <code>Type</code>, you can't define any other
-     *         records. This is a limitation of DNS—you can't create a CNAME record and any other type of record that
+     *         records. This is a limitation of DNS: you can't create a CNAME record and any other type of record that
      *         has the same name as a CNAME record.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Alias records:</b> If you want Route 53 to create an alias record when you register an instance,
-     *         specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
+     *         <b>Alias records:</b> If you want AWS Cloud Map to create a Route 53 alias record when you register an
+     *         instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -726,7 +726,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *         </ul>
      *         <p>
      *         If you specify settings for an SRV record and if you specify values for <code>AWS_INSTANCE_IPV4</code>,
-     *         <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, Route 53
+     *         <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, AWS Cloud Map
      *         automatically creates <code>A</code> and/or <code>AAAA</code> records that have the same name as the
      *         value of <code>service-hostname</code> in the SRV record. You can ignore these records.
      * @see RecordType
@@ -746,21 +746,21 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>A, AAAA, and SRV records: You can specify settings for a maximum of one A, one AAAA, and one SRV record. You
-     * can specify them in any combination.</b>
+     * <b>A, AAAA, and SRV records:</b> You can specify settings for a maximum of one A, one AAAA, and one SRV record.
+     * You can specify them in any combination.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>CNAME records:</b> If you specify <code>CNAME</code> for <code>Type</code>, you can't define any other
-     * records. This is a limitation of DNS—you can't create a CNAME record and any other type of record that has the
+     * records. This is a limitation of DNS: you can't create a CNAME record and any other type of record that has the
      * same name as a CNAME record.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Alias records:</b> If you want Route 53 to create an alias record when you register an instance, specify
-     * <code>A</code> or <code>AAAA</code> for <code>Type</code>.
+     * <b>Alias records:</b> If you want AWS Cloud Map to create a Route 53 alias record when you register an instance,
+     * specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      * </p>
      * </li>
      * <li>
@@ -867,7 +867,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * If you specify settings for an SRV record and if you specify values for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, Route 53 automatically
+     * <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, AWS Cloud Map automatically
      * creates <code>A</code> and/or <code>AAAA</code> records that have the same name as the value of
      * <code>service-hostname</code> in the SRV record. You can ignore these records.
      * </p>
@@ -881,21 +881,21 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>A, AAAA, and SRV records: You can specify settings for a maximum of one A, one AAAA, and one SRV
-     *        record. You can specify them in any combination.</b>
+     *        <b>A, AAAA, and SRV records:</b> You can specify settings for a maximum of one A, one AAAA, and one SRV
+     *        record. You can specify them in any combination.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>CNAME records:</b> If you specify <code>CNAME</code> for <code>Type</code>, you can't define any other
-     *        records. This is a limitation of DNS—you can't create a CNAME record and any other type of record that has
-     *        the same name as a CNAME record.
+     *        records. This is a limitation of DNS: you can't create a CNAME record and any other type of record that
+     *        has the same name as a CNAME record.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Alias records:</b> If you want Route 53 to create an alias record when you register an instance,
-     *        specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
+     *        <b>Alias records:</b> If you want AWS Cloud Map to create a Route 53 alias record when you register an
+     *        instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1004,7 +1004,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        If you specify settings for an SRV record and if you specify values for <code>AWS_INSTANCE_IPV4</code>,
-     *        <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, Route 53
+     *        <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, AWS Cloud Map
      *        automatically creates <code>A</code> and/or <code>AAAA</code> records that have the same name as the value
      *        of <code>service-hostname</code> in the SRV record. You can ignore these records.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1026,21 +1026,21 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>A, AAAA, and SRV records: You can specify settings for a maximum of one A, one AAAA, and one SRV record. You
-     * can specify them in any combination.</b>
+     * <b>A, AAAA, and SRV records:</b> You can specify settings for a maximum of one A, one AAAA, and one SRV record.
+     * You can specify them in any combination.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>CNAME records:</b> If you specify <code>CNAME</code> for <code>Type</code>, you can't define any other
-     * records. This is a limitation of DNS—you can't create a CNAME record and any other type of record that has the
+     * records. This is a limitation of DNS: you can't create a CNAME record and any other type of record that has the
      * same name as a CNAME record.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Alias records:</b> If you want Route 53 to create an alias record when you register an instance, specify
-     * <code>A</code> or <code>AAAA</code> for <code>Type</code>.
+     * <b>Alias records:</b> If you want AWS Cloud Map to create a Route 53 alias record when you register an instance,
+     * specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      * </p>
      * </li>
      * <li>
@@ -1147,7 +1147,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * If you specify settings for an SRV record and if you specify values for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, Route 53 automatically
+     * <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, AWS Cloud Map automatically
      * creates <code>A</code> and/or <code>AAAA</code> records that have the same name as the value of
      * <code>service-hostname</code> in the SRV record. You can ignore these records.
      * </p>
@@ -1161,21 +1161,21 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>A, AAAA, and SRV records: You can specify settings for a maximum of one A, one AAAA, and one SRV
-     *        record. You can specify them in any combination.</b>
+     *        <b>A, AAAA, and SRV records:</b> You can specify settings for a maximum of one A, one AAAA, and one SRV
+     *        record. You can specify them in any combination.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>CNAME records:</b> If you specify <code>CNAME</code> for <code>Type</code>, you can't define any other
-     *        records. This is a limitation of DNS—you can't create a CNAME record and any other type of record that has
-     *        the same name as a CNAME record.
+     *        records. This is a limitation of DNS: you can't create a CNAME record and any other type of record that
+     *        has the same name as a CNAME record.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Alias records:</b> If you want Route 53 to create an alias record when you register an instance,
-     *        specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
+     *        <b>Alias records:</b> If you want AWS Cloud Map to create a Route 53 alias record when you register an
+     *        instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1284,7 +1284,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        If you specify settings for an SRV record and if you specify values for <code>AWS_INSTANCE_IPV4</code>,
-     *        <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, Route 53
+     *        <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request, AWS Cloud Map
      *        automatically creates <code>A</code> and/or <code>AAAA</code> records that have the same name as the value
      *        of <code>service-hostname</code> in the SRV record. You can ignore these records.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1382,7 +1382,8 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

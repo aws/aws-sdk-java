@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class DescribeTaskDefinitionRequestMarshaller {
 
     private static final MarshallingInfo<String> TASKDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskDefinition").build();
+    private static final MarshallingInfo<List> INCLUDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("include").build();
 
     private static final DescribeTaskDefinitionRequestMarshaller instance = new DescribeTaskDefinitionRequestMarshaller();
 
@@ -47,6 +50,7 @@ public class DescribeTaskDefinitionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeTaskDefinitionRequest.getTaskDefinition(), TASKDEFINITION_BINDING);
+            protocolMarshaller.marshall(describeTaskDefinitionRequest.getInclude(), INCLUDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,16 +27,29 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content in a document that you want to update.
+     * A valid JSON or YAML string.
      * </p>
      */
     private String content;
+    /**
+     * <p>
+     * A list of key and value pairs that describe attachments to a version of a document.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AttachmentsSource> attachments;
     /**
      * <p>
      * The name of the document that you want to update.
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * An optional field specifying the version of the artifact you are updating with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * </p>
+     */
+    private String versionName;
     /**
      * <p>
      * The version of the document that you want to update.
@@ -59,11 +72,11 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content in a document that you want to update.
+     * A valid JSON or YAML string.
      * </p>
      * 
      * @param content
-     *        The content in a document that you want to update.
+     *        A valid JSON or YAML string.
      */
 
     public void setContent(String content) {
@@ -72,10 +85,10 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content in a document that you want to update.
+     * A valid JSON or YAML string.
      * </p>
      * 
-     * @return The content in a document that you want to update.
+     * @return A valid JSON or YAML string.
      */
 
     public String getContent() {
@@ -84,16 +97,89 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content in a document that you want to update.
+     * A valid JSON or YAML string.
      * </p>
      * 
      * @param content
-     *        The content in a document that you want to update.
+     *        A valid JSON or YAML string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateDocumentRequest withContent(String content) {
         setContent(content);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of key and value pairs that describe attachments to a version of a document.
+     * </p>
+     * 
+     * @return A list of key and value pairs that describe attachments to a version of a document.
+     */
+
+    public java.util.List<AttachmentsSource> getAttachments() {
+        if (attachments == null) {
+            attachments = new com.amazonaws.internal.SdkInternalList<AttachmentsSource>();
+        }
+        return attachments;
+    }
+
+    /**
+     * <p>
+     * A list of key and value pairs that describe attachments to a version of a document.
+     * </p>
+     * 
+     * @param attachments
+     *        A list of key and value pairs that describe attachments to a version of a document.
+     */
+
+    public void setAttachments(java.util.Collection<AttachmentsSource> attachments) {
+        if (attachments == null) {
+            this.attachments = null;
+            return;
+        }
+
+        this.attachments = new com.amazonaws.internal.SdkInternalList<AttachmentsSource>(attachments);
+    }
+
+    /**
+     * <p>
+     * A list of key and value pairs that describe attachments to a version of a document.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachments(java.util.Collection)} or {@link #withAttachments(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param attachments
+     *        A list of key and value pairs that describe attachments to a version of a document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDocumentRequest withAttachments(AttachmentsSource... attachments) {
+        if (this.attachments == null) {
+            setAttachments(new com.amazonaws.internal.SdkInternalList<AttachmentsSource>(attachments.length));
+        }
+        for (AttachmentsSource ele : attachments) {
+            this.attachments.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of key and value pairs that describe attachments to a version of a document.
+     * </p>
+     * 
+     * @param attachments
+     *        A list of key and value pairs that describe attachments to a version of a document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDocumentRequest withAttachments(java.util.Collection<AttachmentsSource> attachments) {
+        setAttachments(attachments);
         return this;
     }
 
@@ -134,6 +220,52 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public UpdateDocumentRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional field specifying the version of the artifact you are updating with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * </p>
+     * 
+     * @param versionName
+     *        An optional field specifying the version of the artifact you are updating with the document. For example,
+     *        "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * An optional field specifying the version of the artifact you are updating with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * </p>
+     * 
+     * @return An optional field specifying the version of the artifact you are updating with the document. For example,
+     *         "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * An optional field specifying the version of the artifact you are updating with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * </p>
+     * 
+     * @param versionName
+     *        An optional field specifying the version of the artifact you are updating with the document. For example,
+     *        "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDocumentRequest withVersionName(String versionName) {
+        setVersionName(versionName);
         return this;
     }
 
@@ -285,7 +417,8 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -297,8 +430,12 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         sb.append("{");
         if (getContent() != null)
             sb.append("Content: ").append(getContent()).append(",");
+        if (getAttachments() != null)
+            sb.append("Attachments: ").append(getAttachments()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getDocumentFormat() != null)
@@ -323,9 +460,17 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getContent() != null && other.getContent().equals(this.getContent()) == false)
             return false;
+        if (other.getAttachments() == null ^ this.getAttachments() == null)
+            return false;
+        if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
             return false;
         if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
             return false;
@@ -348,7 +493,9 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
+        hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
         hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());

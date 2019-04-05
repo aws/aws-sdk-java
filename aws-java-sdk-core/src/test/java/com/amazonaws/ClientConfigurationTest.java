@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -271,8 +271,13 @@ public class ClientConfigurationTest {
             } else if (clzz.isAssignableFrom(InetAddress.class)) {
                 field.set(customConfig, InetAddress.getLocalHost());
             } else if (clzz.isAssignableFrom(Protocol.class)) {
-                // Default is HTTPS so switch to HTTP
-                field.set(customConfig, Protocol.HTTP);
+                if (field.getName().equals("protocol")) {
+                    // Default is HTTPS so switch to HTTP
+                    field.set(customConfig, Protocol.HTTP);
+                } else {
+                    // field proxyProtocol's default is HTTP
+                    field.set(customConfig, Protocol.HTTPS);
+                }
             } else if (clzz.isAssignableFrom(DnsResolver.class)) {
                 field.set(customConfig, new MyCustomDnsResolver());
             } else if (clzz.isAssignableFrom(SecureRandom.class)) {

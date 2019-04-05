@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
      * <note>
      * <p>
      * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
-     * and the API returns the <code>nextPageToken</code> parameter instead.
+     * and the API returns the <code>next page token</code> parameter instead.
      * </p>
      * </note>
      */
@@ -131,7 +131,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
      * <note>
      * <p>
      * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
-     * and the API returns the <code>nextPageToken</code> parameter instead.
+     * and the API returns the <code>next page token</code> parameter instead.
      * </p>
      * </note>
      * 
@@ -139,7 +139,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
      *        (Deprecated) Returns the number of pages of results that remain.</p> <note>
      *        <p>
      *        In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now
-     *        deprecated, and the API returns the <code>nextPageToken</code> parameter instead.
+     *        deprecated, and the API returns the <code>next page token</code> parameter instead.
      *        </p>
      */
     @Deprecated
@@ -154,14 +154,14 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
      * <note>
      * <p>
      * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
-     * and the API returns the <code>nextPageToken</code> parameter instead.
+     * and the API returns the <code>next page token</code> parameter instead.
      * </p>
      * </note>
      * 
      * @return (Deprecated) Returns the number of pages of results that remain.</p> <note>
      *         <p>
      *         In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now
-     *         deprecated, and the API returns the <code>nextPageToken</code> parameter instead.
+     *         deprecated, and the API returns the <code>next page token</code> parameter instead.
      *         </p>
      */
     @Deprecated
@@ -176,7 +176,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
      * <note>
      * <p>
      * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
-     * and the API returns the <code>nextPageToken</code> parameter instead.
+     * and the API returns the <code>next page token</code> parameter instead.
      * </p>
      * </note>
      * 
@@ -184,7 +184,7 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
      *        (Deprecated) Returns the number of pages of results that remain.</p> <note>
      *        <p>
      *        In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now
-     *        deprecated, and the API returns the <code>nextPageToken</code> parameter instead.
+     *        deprecated, and the API returns the <code>next page token</code> parameter instead.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -241,7 +241,8 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

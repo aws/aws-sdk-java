@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,9 +64,17 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                     context.nextToken();
                     project.setSource(ProjectSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("secondarySources", targetDepth)) {
+                    context.nextToken();
+                    project.setSecondarySources(new ListUnmarshaller<ProjectSource>(ProjectSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("artifacts", targetDepth)) {
                     context.nextToken();
                     project.setArtifacts(ProjectArtifactsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("secondaryArtifacts", targetDepth)) {
+                    context.nextToken();
+                    project.setSecondaryArtifacts(new ListUnmarshaller<ProjectArtifacts>(ProjectArtifactsJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("cache", targetDepth)) {
                     context.nextToken();
@@ -84,6 +92,10 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                     context.nextToken();
                     project.setTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("queuedTimeoutInMinutes", targetDepth)) {
+                    context.nextToken();
+                    project.setQueuedTimeoutInMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("encryptionKey", targetDepth)) {
                     context.nextToken();
                     project.setEncryptionKey(context.getUnmarshaller(String.class).unmarshall(context));
@@ -94,11 +106,11 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                 }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
-                    project.setCreated(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    project.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModified", targetDepth)) {
                     context.nextToken();
-                    project.setLastModified(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    project.setLastModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("webhook", targetDepth)) {
                     context.nextToken();
@@ -111,6 +123,10 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
                 if (context.testExpression("badge", targetDepth)) {
                     context.nextToken();
                     project.setBadge(ProjectBadgeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("logsConfig", targetDepth)) {
+                    context.nextToken();
+                    project.setLogsConfig(LogsConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

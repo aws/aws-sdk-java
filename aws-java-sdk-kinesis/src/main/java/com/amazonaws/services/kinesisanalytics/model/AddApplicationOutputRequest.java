@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An array of objects, each describing one output configuration. In the output configuration, you specify the name
      * of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose
-     * delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.
+     * delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.
      * </p>
      */
     private Output output;
@@ -145,14 +145,14 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An array of objects, each describing one output configuration. In the output configuration, you specify the name
      * of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose
-     * delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.
+     * delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.
      * </p>
      * 
      * @param output
      *        An array of objects, each describing one output configuration. In the output configuration, you specify
      *        the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis
-     *        Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to
-     *        the destination.
+     *        Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the
+     *        destination.
      */
 
     public void setOutput(Output output) {
@@ -163,13 +163,13 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An array of objects, each describing one output configuration. In the output configuration, you specify the name
      * of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose
-     * delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.
+     * delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.
      * </p>
      * 
      * @return An array of objects, each describing one output configuration. In the output configuration, you specify
      *         the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis
-     *         Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to
-     *         the destination.
+     *         Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the
+     *         destination.
      */
 
     public Output getOutput() {
@@ -180,14 +180,14 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An array of objects, each describing one output configuration. In the output configuration, you specify the name
      * of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose
-     * delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.
+     * delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.
      * </p>
      * 
      * @param output
      *        An array of objects, each describing one output configuration. In the output configuration, you specify
      *        the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis
-     *        Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to
-     *        the destination.
+     *        Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the
+     *        destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,7 +197,8 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

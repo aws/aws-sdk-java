@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A notification associated with a budget. A budget can have up to five notifications.
+ * A notification that is associated with a budget. A budget can have up to five notifications.
  * </p>
  * <p>
- * Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to ten email
+ * Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email
  * subscribers, for a total of 11 subscribers.
  * </p>
  * <p>
@@ -37,12 +37,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * A comparisonOperator of <code>GREATER_THAN</code>
+ * A <code>thresholdType</code> of <code>PERCENTAGE</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * A notification threshold of <code>80</code>
+ * A <code>comparisonOperator</code> of <code>GREATER_THAN</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * A notification <code>threshold</code> of <code>80</code>
  * </p>
  * </li>
  * </ul>
@@ -52,40 +57,49 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you are forecasted
+     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted
      * to spend (<code>FORECASTED</code>).
      * </p>
      */
     private String notificationType;
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      */
     private String comparisonOperator;
     /**
      * <p>
-     * The threshold associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage.
      * </p>
      */
     private Double threshold;
     /**
      * <p>
-     * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
-     * threshold.
+     * The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you
+     * go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS
+     * notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For
+     * example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS
+     * notifies you when you go over 160 dollars.
      * </p>
      */
     private String thresholdType;
+    /**
+     * <p>
+     * Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have
+     * passed the set threshold for the budget.
+     * </p>
+     */
+    private String notificationState;
 
     /**
      * <p>
-     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you are forecasted
+     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted
      * to spend (<code>FORECASTED</code>).
      * </p>
      * 
      * @param notificationType
-     *        Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you are
+     *        Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're
      *        forecasted to spend (<code>FORECASTED</code>).
      * @see NotificationType
      */
@@ -96,11 +110,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you are forecasted
+     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted
      * to spend (<code>FORECASTED</code>).
      * </p>
      * 
-     * @return Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you are
+     * @return Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're
      *         forecasted to spend (<code>FORECASTED</code>).
      * @see NotificationType
      */
@@ -111,12 +125,12 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you are forecasted
+     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted
      * to spend (<code>FORECASTED</code>).
      * </p>
      * 
      * @param notificationType
-     *        Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you are
+     *        Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're
      *        forecasted to spend (<code>FORECASTED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationType
@@ -129,12 +143,12 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you are forecasted
+     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted
      * to spend (<code>FORECASTED</code>).
      * </p>
      * 
      * @param notificationType
-     *        Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you are
+     *        Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're
      *        forecasted to spend (<code>FORECASTED</code>).
      * @see NotificationType
      */
@@ -145,12 +159,12 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you are forecasted
+     * Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're forecasted
      * to spend (<code>FORECASTED</code>).
      * </p>
      * 
      * @param notificationType
-     *        Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you are
+     *        Whether the notification is for how much you have spent (<code>ACTUAL</code>) or for how much you're
      *        forecasted to spend (<code>FORECASTED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationType
@@ -163,11 +177,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      * 
      * @param comparisonOperator
-     *        The comparison used for this notification.
+     *        The comparison that is used for this notification.
      * @see ComparisonOperator
      */
 
@@ -177,10 +191,10 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      * 
-     * @return The comparison used for this notification.
+     * @return The comparison that is used for this notification.
      * @see ComparisonOperator
      */
 
@@ -190,11 +204,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      * 
      * @param comparisonOperator
-     *        The comparison used for this notification.
+     *        The comparison that is used for this notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -206,11 +220,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      * 
      * @param comparisonOperator
-     *        The comparison used for this notification.
+     *        The comparison that is used for this notification.
      * @see ComparisonOperator
      */
 
@@ -220,11 +234,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      * 
      * @param comparisonOperator
-     *        The comparison used for this notification.
+     *        The comparison that is used for this notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -236,11 +250,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The threshold associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage.
      * </p>
      * 
      * @param threshold
-     *        The threshold associated with a notification. Thresholds are always a percentage.
+     *        The threshold that is associated with a notification. Thresholds are always a percentage.
      */
 
     public void setThreshold(Double threshold) {
@@ -249,10 +263,10 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The threshold associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage.
      * </p>
      * 
-     * @return The threshold associated with a notification. Thresholds are always a percentage.
+     * @return The threshold that is associated with a notification. Thresholds are always a percentage.
      */
 
     public Double getThreshold() {
@@ -261,11 +275,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The threshold associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage.
      * </p>
      * 
      * @param threshold
-     *        The threshold associated with a notification. Thresholds are always a percentage.
+     *        The threshold that is associated with a notification. Thresholds are always a percentage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,15 +290,19 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
-     * threshold.
+     * The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you
+     * go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS
+     * notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For
+     * example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS
+     * notifies you when you go over 160 dollars.
      * </p>
      * 
      * @param thresholdType
-     *        The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go
-     *        over the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to
-     *        go over the threshold.
+     *        The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you
+     *        when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code>
+     *        thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your
+     *        forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code>
+     *        threshold of 80%, AWS notifies you when you go over 160 dollars.
      * @see ThresholdType
      */
 
@@ -294,14 +312,18 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
-     * threshold.
+     * The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you
+     * go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS
+     * notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For
+     * example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS
+     * notifies you when you go over 160 dollars.
      * </p>
      * 
-     * @return The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you
-     *         go over the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are
-     *         forecasted to go over the threshold.
+     * @return The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you
+     *         when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code>
+     *         thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your
+     *         forecasted spend. For example, if you have a budget for 200 dollars and you have a
+     *         <code>PERCENTAGE</code> threshold of 80%, AWS notifies you when you go over 160 dollars.
      * @see ThresholdType
      */
 
@@ -311,15 +333,19 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
-     * threshold.
+     * The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you
+     * go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS
+     * notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For
+     * example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS
+     * notifies you when you go over 160 dollars.
      * </p>
      * 
      * @param thresholdType
-     *        The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go
-     *        over the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to
-     *        go over the threshold.
+     *        The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you
+     *        when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code>
+     *        thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your
+     *        forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code>
+     *        threshold of 80%, AWS notifies you when you go over 160 dollars.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThresholdType
      */
@@ -331,15 +357,19 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
-     * threshold.
+     * The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you
+     * go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS
+     * notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For
+     * example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS
+     * notifies you when you go over 160 dollars.
      * </p>
      * 
      * @param thresholdType
-     *        The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go
-     *        over the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to
-     *        go over the threshold.
+     *        The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you
+     *        when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code>
+     *        thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your
+     *        forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code>
+     *        threshold of 80%, AWS notifies you when you go over 160 dollars.
      * @see ThresholdType
      */
 
@@ -349,15 +379,19 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
-     * threshold.
+     * The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you when you
+     * go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS
+     * notifies you when you go over or are forecasted to go over a certain percentage of your forecasted spend. For
+     * example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code> threshold of 80%, AWS
+     * notifies you when you go over 160 dollars.
      * </p>
      * 
      * @param thresholdType
-     *        The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go
-     *        over the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to
-     *        go over the threshold.
+     *        The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds, AWS notifies you
+     *        when you go over or are forecasted to go over your total cost threshold. For <code>PERCENTAGE</code>
+     *        thresholds, AWS notifies you when you go over or are forecasted to go over a certain percentage of your
+     *        forecasted spend. For example, if you have a budget for 200 dollars and you have a <code>PERCENTAGE</code>
+     *        threshold of 80%, AWS notifies you when you go over 160 dollars.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThresholdType
      */
@@ -368,7 +402,91 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have
+     * passed the set threshold for the budget.
+     * </p>
+     * 
+     * @param notificationState
+     *        Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you
+     *        have passed the set threshold for the budget.
+     * @see NotificationState
+     */
+
+    public void setNotificationState(String notificationState) {
+        this.notificationState = notificationState;
+    }
+
+    /**
+     * <p>
+     * Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have
+     * passed the set threshold for the budget.
+     * </p>
+     * 
+     * @return Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you
+     *         have passed the set threshold for the budget.
+     * @see NotificationState
+     */
+
+    public String getNotificationState() {
+        return this.notificationState;
+    }
+
+    /**
+     * <p>
+     * Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have
+     * passed the set threshold for the budget.
+     * </p>
+     * 
+     * @param notificationState
+     *        Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you
+     *        have passed the set threshold for the budget.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NotificationState
+     */
+
+    public Notification withNotificationState(String notificationState) {
+        setNotificationState(notificationState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have
+     * passed the set threshold for the budget.
+     * </p>
+     * 
+     * @param notificationState
+     *        Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you
+     *        have passed the set threshold for the budget.
+     * @see NotificationState
+     */
+
+    public void setNotificationState(NotificationState notificationState) {
+        withNotificationState(notificationState);
+    }
+
+    /**
+     * <p>
+     * Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you have
+     * passed the set threshold for the budget.
+     * </p>
+     * 
+     * @param notificationState
+     *        Whether this notification is in alarm. If a budget notification is in the <code>ALARM</code> state, you
+     *        have passed the set threshold for the budget.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NotificationState
+     */
+
+    public Notification withNotificationState(NotificationState notificationState) {
+        this.notificationState = notificationState.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -385,7 +503,9 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
         if (getThreshold() != null)
             sb.append("Threshold: ").append(getThreshold()).append(",");
         if (getThresholdType() != null)
-            sb.append("ThresholdType: ").append(getThresholdType());
+            sb.append("ThresholdType: ").append(getThresholdType()).append(",");
+        if (getNotificationState() != null)
+            sb.append("NotificationState: ").append(getNotificationState());
         sb.append("}");
         return sb.toString();
     }
@@ -416,6 +536,10 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getThresholdType() != null && other.getThresholdType().equals(this.getThresholdType()) == false)
             return false;
+        if (other.getNotificationState() == null ^ this.getNotificationState() == null)
+            return false;
+        if (other.getNotificationState() != null && other.getNotificationState().equals(this.getNotificationState()) == false)
+            return false;
         return true;
     }
 
@@ -428,6 +552,7 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getComparisonOperator() == null) ? 0 : getComparisonOperator().hashCode());
         hashCode = prime * hashCode + ((getThreshold() == null) ? 0 : getThreshold().hashCode());
         hashCode = prime * hashCode + ((getThresholdType() == null) ? 0 : getThresholdType().hashCode());
+        hashCode = prime * hashCode + ((getNotificationState() == null) ? 0 : getNotificationState().hashCode());
         return hashCode;
     }
 

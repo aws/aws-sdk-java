@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,14 +50,14 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
      * of
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * .
      * </p>
      */
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
      * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      */
@@ -251,14 +251,14 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
      * of
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * .
      * </p>
      * 
      * @return Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from
      *         an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS
      *         CLI command of
-     *         <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     *         <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      *         .
      */
 
@@ -271,7 +271,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
      * of
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * .
      * </p>
      * 
@@ -279,7 +279,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      *        imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI
      *        command of
-     *        <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     *        <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      *        .
      */
 
@@ -292,7 +292,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
      * of
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * .
      * </p>
      * 
@@ -300,7 +300,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      *        imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI
      *        command of
-     *        <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     *        <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -333,7 +333,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
      * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
@@ -348,8 +348,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param body
-     *        [Required] The PUT request body containing external API definitions. Currently, only Swagger definition
-     *        JSON files are supported. The maximum size of the API definition file is 2MB.
+     *        [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition
+     *        JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -358,7 +358,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
      * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
@@ -369,8 +369,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * {@code position}.
      * </p>
      * 
-     * @return [Required] The PUT request body containing external API definitions. Currently, only Swagger definition
-     *         JSON files are supported. The maximum size of the API definition file is 2MB.
+     * @return [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition
+     *         JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -379,7 +379,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML
      * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
@@ -394,8 +394,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param body
-     *        [Required] The PUT request body containing external API definitions. Currently, only Swagger definition
-     *        JSON files are supported. The maximum size of the API definition file is 2MB.
+     *        [Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition
+     *        JSON/YAML files are supported. The maximum size of the API definition file is 2MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,7 +405,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

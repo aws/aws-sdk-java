@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,12 @@ public class UpdateInputRequestMarshaller {
             .marshallLocationName("inputId").build();
     private static final MarshallingInfo<List> INPUTSECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputSecurityGroups").build();
+    private static final MarshallingInfo<List> MEDIACONNECTFLOWS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaConnectFlows").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sources").build();
 
@@ -58,7 +62,9 @@ public class UpdateInputRequestMarshaller {
             protocolMarshaller.marshall(updateInputRequest.getDestinations(), DESTINATIONS_BINDING);
             protocolMarshaller.marshall(updateInputRequest.getInputId(), INPUTID_BINDING);
             protocolMarshaller.marshall(updateInputRequest.getInputSecurityGroups(), INPUTSECURITYGROUPS_BINDING);
+            protocolMarshaller.marshall(updateInputRequest.getMediaConnectFlows(), MEDIACONNECTFLOWS_BINDING);
             protocolMarshaller.marshall(updateInputRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateInputRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(updateInputRequest.getSources(), SOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

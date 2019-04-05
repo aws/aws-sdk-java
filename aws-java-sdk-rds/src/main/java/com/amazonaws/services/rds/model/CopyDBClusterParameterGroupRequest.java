@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,8 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     * > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -66,7 +66,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
@@ -81,7 +81,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -103,8 +103,8 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     * > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -132,8 +132,8 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * @param sourceDBClusterParameterGroupIdentifier
      *        The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
      *        about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -166,8 +166,8 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     * > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -194,8 +194,8 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
      *         about creating an ARN, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     *         > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *         > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>. </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -228,8 +228,8 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about
      * creating an ARN, see <a href=
-     * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
-     * Constructing an RDS Amazon Resource Name (ARN)</a>.
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     * > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -257,8 +257,8 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * @param sourceDBClusterParameterGroupIdentifier
      *        The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information
      *        about creating an ARN, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
-     *        > Constructing an RDS Amazon Resource Name (ARN)</a>. </p>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing"
+     *        > Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -299,7 +299,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
@@ -314,7 +314,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -330,7 +330,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Cannot be null, empty, or blank
+     *        Can't be null, empty, or blank
      *        </p>
      *        </li>
      *        <li>
@@ -345,7 +345,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -367,7 +367,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
@@ -382,7 +382,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -397,7 +397,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *         <ul>
      *         <li>
      *         <p>
-     *         Cannot be null, empty, or blank
+     *         Can't be null, empty, or blank
      *         </p>
      *         </li>
      *         <li>
@@ -412,7 +412,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens
+     *         Can't end with a hyphen or contain two consecutive hyphens
      *         </p>
      *         </li>
      *         </ul>
@@ -434,7 +434,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Cannot be null, empty, or blank
+     * Can't be null, empty, or blank
      * </p>
      * </li>
      * <li>
@@ -449,7 +449,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens
+     * Can't end with a hyphen or contain two consecutive hyphens
      * </p>
      * </li>
      * </ul>
@@ -465,7 +465,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Cannot be null, empty, or blank
+     *        Can't be null, empty, or blank
      *        </p>
      *        </li>
      *        <li>
@@ -480,7 +480,7 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens
+     *        Can't end with a hyphen or contain two consecutive hyphens
      *        </p>
      *        </li>
      *        </ul>
@@ -590,7 +590,8 @@ public class CopyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

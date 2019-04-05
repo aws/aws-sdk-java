@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,8 @@ public class ReplicationTaskAssessmentResultJsonUnmarshaller implements Unmarsha
                 }
                 if (context.testExpression("ReplicationTaskLastAssessmentDate", targetDepth)) {
                     context.nextToken();
-                    replicationTaskAssessmentResult.setReplicationTaskLastAssessmentDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    replicationTaskAssessmentResult.setReplicationTaskLastAssessmentDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(
+                            context));
                 }
                 if (context.testExpression("AssessmentStatus", targetDepth)) {
                     context.nextToken();

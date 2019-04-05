@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ClassifierMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("XMLClassifier").build();
     private static final MarshallingInfo<StructuredPojo> JSONCLASSIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JsonClassifier").build();
+    private static final MarshallingInfo<StructuredPojo> CSVCLASSIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CsvClassifier").build();
 
     private static final ClassifierMarshaller instance = new ClassifierMarshaller();
 
@@ -53,6 +55,7 @@ public class ClassifierMarshaller {
             protocolMarshaller.marshall(classifier.getGrokClassifier(), GROKCLASSIFIER_BINDING);
             protocolMarshaller.marshall(classifier.getXMLClassifier(), XMLCLASSIFIER_BINDING);
             protocolMarshaller.marshall(classifier.getJsonClassifier(), JSONCLASSIFIER_BINDING);
+            protocolMarshaller.marshall(classifier.getCsvClassifier(), CSVCLASSIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session and uniquely identifies it.
      * </p>
      */
@@ -61,13 +61,14 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session and uniquely identifies it.
      * </p>
      * 
      * @param gameSessionArn
-     *        Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     *        that is assigned to a game session and uniquely identifies it.
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        game session and uniquely identifies it.
      */
 
     public void setGameSessionArn(String gameSessionArn) {
@@ -76,12 +77,12 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session and uniquely identifies it.
      * </p>
      * 
      * @return Amazon Resource Name (<a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
      *         game session and uniquely identifies it.
      */
 
@@ -91,13 +92,14 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session and uniquely identifies it.
      * </p>
      * 
      * @param gameSessionArn
-     *        Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     *        that is assigned to a game session and uniquely identifies it.
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        game session and uniquely identifies it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,7 +275,8 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class RegionMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<List> AVAILABILITYZONES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availabilityZones").build();
+    private static final MarshallingInfo<List> RELATIONALDATABASEAVAILABILITYZONES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relationalDatabaseAvailabilityZones").build();
 
     private static final RegionMarshaller instance = new RegionMarshaller();
 
@@ -60,6 +62,7 @@ public class RegionMarshaller {
             protocolMarshaller.marshall(region.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(region.getName(), NAME_BINDING);
             protocolMarshaller.marshall(region.getAvailabilityZones(), AVAILABILITYZONES_BINDING);
+            protocolMarshaller.marshall(region.getRelationalDatabaseAvailabilityZones(), RELATIONALDATABASEAVAILABILITYZONES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

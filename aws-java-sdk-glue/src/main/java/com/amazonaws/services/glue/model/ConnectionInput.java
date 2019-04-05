@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure used to specify a connection to create or update.
+ * A structure that is used to specify a connection to create or update.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ConnectionInput" target="_top">AWS API
@@ -36,7 +36,7 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
     private String name;
     /**
      * <p>
-     * Description of the connection.
+     * The description of the connection.
      * </p>
      */
     private String description;
@@ -54,14 +54,14 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> matchCriteria;
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection.
      * </p>
      */
     private java.util.Map<String, String> connectionProperties;
     /**
      * <p>
-     * A map of physical connection requirements, such as VPC and SecurityGroup, needed for making this connection
-     * successfully.
+     * A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>,
+     * that are needed to successfully make this connection.
      * </p>
      */
     private PhysicalConnectionRequirements physicalConnectionRequirements;
@@ -108,11 +108,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Description of the connection.
+     * The description of the connection.
      * </p>
      * 
      * @param description
-     *        Description of the connection.
+     *        The description of the connection.
      */
 
     public void setDescription(String description) {
@@ -121,10 +121,10 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Description of the connection.
+     * The description of the connection.
      * </p>
      * 
-     * @return Description of the connection.
+     * @return The description of the connection.
      */
 
     public String getDescription() {
@@ -133,11 +133,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Description of the connection.
+     * The description of the connection.
      * </p>
      * 
      * @param description
-     *        Description of the connection.
+     *        The description of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,10 +277,10 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection.
      * </p>
      * 
-     * @return A list of key-value pairs used as parameters for this connection.
+     * @return These key-value pairs define parameters for the connection.
      */
 
     public java.util.Map<String, String> getConnectionProperties() {
@@ -289,11 +289,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection.
      * </p>
      * 
      * @param connectionProperties
-     *        A list of key-value pairs used as parameters for this connection.
+     *        These key-value pairs define parameters for the connection.
      */
 
     public void setConnectionProperties(java.util.Map<String, String> connectionProperties) {
@@ -302,11 +302,11 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of key-value pairs used as parameters for this connection.
+     * These key-value pairs define parameters for the connection.
      * </p>
      * 
      * @param connectionProperties
-     *        A list of key-value pairs used as parameters for this connection.
+     *        These key-value pairs define parameters for the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,13 +338,13 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A map of physical connection requirements, such as VPC and SecurityGroup, needed for making this connection
-     * successfully.
+     * A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>,
+     * that are needed to successfully make this connection.
      * </p>
      * 
      * @param physicalConnectionRequirements
-     *        A map of physical connection requirements, such as VPC and SecurityGroup, needed for making this
-     *        connection successfully.
+     *        A map of physical connection requirements, such as virtual private cloud (VPC) and
+     *        <code>SecurityGroup</code>, that are needed to successfully make this connection.
      */
 
     public void setPhysicalConnectionRequirements(PhysicalConnectionRequirements physicalConnectionRequirements) {
@@ -353,12 +353,12 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A map of physical connection requirements, such as VPC and SecurityGroup, needed for making this connection
-     * successfully.
+     * A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>,
+     * that are needed to successfully make this connection.
      * </p>
      * 
-     * @return A map of physical connection requirements, such as VPC and SecurityGroup, needed for making this
-     *         connection successfully.
+     * @return A map of physical connection requirements, such as virtual private cloud (VPC) and
+     *         <code>SecurityGroup</code>, that are needed to successfully make this connection.
      */
 
     public PhysicalConnectionRequirements getPhysicalConnectionRequirements() {
@@ -367,13 +367,13 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A map of physical connection requirements, such as VPC and SecurityGroup, needed for making this connection
-     * successfully.
+     * A map of physical connection requirements, such as virtual private cloud (VPC) and <code>SecurityGroup</code>,
+     * that are needed to successfully make this connection.
      * </p>
      * 
      * @param physicalConnectionRequirements
-     *        A map of physical connection requirements, such as VPC and SecurityGroup, needed for making this
-     *        connection successfully.
+     *        A map of physical connection requirements, such as virtual private cloud (VPC) and
+     *        <code>SecurityGroup</code>, that are needed to successfully make this connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,7 +383,8 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

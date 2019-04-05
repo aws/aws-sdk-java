@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,11 +46,17 @@ public class ConnectionMarshaller {
     private static final MarshallingInfo<String> PARTNERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("partnerName").build();
     private static final MarshallingInfo<java.util.Date> LOAISSUETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loaIssueTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loaIssueTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LAGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("lagId").build();
     private static final MarshallingInfo<String> AWSDEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("awsDevice").build();
+    private static final MarshallingInfo<Boolean> JUMBOFRAMECAPABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jumboFrameCapable").build();
+    private static final MarshallingInfo<String> AWSDEVICEV2_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsDeviceV2").build();
+    private static final MarshallingInfo<String> HASLOGICALREDUNDANCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hasLogicalRedundancy").build();
 
     private static final ConnectionMarshaller instance = new ConnectionMarshaller();
 
@@ -80,6 +86,9 @@ public class ConnectionMarshaller {
             protocolMarshaller.marshall(connection.getLoaIssueTime(), LOAISSUETIME_BINDING);
             protocolMarshaller.marshall(connection.getLagId(), LAGID_BINDING);
             protocolMarshaller.marshall(connection.getAwsDevice(), AWSDEVICE_BINDING);
+            protocolMarshaller.marshall(connection.getJumboFrameCapable(), JUMBOFRAMECAPABLE_BINDING);
+            protocolMarshaller.marshall(connection.getAwsDeviceV2(), AWSDEVICEV2_BINDING);
+            protocolMarshaller.marshall(connection.getHasLogicalRedundancy(), HASLOGICALREDUNDANCY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

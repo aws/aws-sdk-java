@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -43,10 +43,11 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     private String description;
     /**
      * <p>
-     * Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for EBS is
-     * used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
-     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a copy of an
+     * unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default CMK for EBS
+     * is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private Boolean encrypted;
@@ -117,13 +118,13 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
      *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -134,12 +135,12 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
      *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -150,13 +151,13 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
      *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -208,17 +209,19 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for EBS is
-     * used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
-     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a copy of an
+     * unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default CMK for EBS
+     * is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param encrypted
-     *        Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for
-     *        EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
-     *        <code>KmsKeyId</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a
+     *        copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The
+     *        default CMK for EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK
+     *        using <code>KmsKeyId</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -228,17 +231,19 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for EBS is
-     * used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
-     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a copy of an
+     * unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default CMK for EBS
+     * is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for
-     *         EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
-     *         <code>KmsKeyId</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a
+     *         copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The
+     *         default CMK for EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK
+     *         using <code>KmsKeyId</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean getEncrypted() {
@@ -247,17 +252,19 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for EBS is
-     * used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
-     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a copy of an
+     * unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default CMK for EBS
+     * is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param encrypted
-     *        Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for
-     *        EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
-     *        <code>KmsKeyId</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a
+     *        copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The
+     *        default CMK for EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK
+     *        using <code>KmsKeyId</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -269,17 +276,19 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for EBS is
-     * used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with <code>KmsKeyId</code>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
-     * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a copy of an
+     * unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The default CMK for EBS
+     * is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for
-     *         EBS is used unless a non-default AWS Key Management Service (AWS KMS) CMK is specified with
-     *         <code>KmsKeyId</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Specifies whether the destination snapshots of the copied image should be encrypted. You can encrypt a
+     *         copy of an unencrypted snapshot, but you cannot create an unencrypted copy of an encrypted snapshot. The
+     *         default CMK for EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK
+     *         using <code>KmsKeyId</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean isEncrypted() {
@@ -690,7 +699,8 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

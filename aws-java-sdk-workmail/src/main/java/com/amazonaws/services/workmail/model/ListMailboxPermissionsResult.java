@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListMailboxPermissionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One page of the entity's mailbox permissions.
+     * One page of the user, group, or resource mailbox permissions.
      * </p>
      */
     private java.util.List<Permission> permissions;
@@ -39,10 +39,10 @@ public class ListMailboxPermissionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One page of the entity's mailbox permissions.
+     * One page of the user, group, or resource mailbox permissions.
      * </p>
      * 
-     * @return One page of the entity's mailbox permissions.
+     * @return One page of the user, group, or resource mailbox permissions.
      */
 
     public java.util.List<Permission> getPermissions() {
@@ -51,11 +51,11 @@ public class ListMailboxPermissionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One page of the entity's mailbox permissions.
+     * One page of the user, group, or resource mailbox permissions.
      * </p>
      * 
      * @param permissions
-     *        One page of the entity's mailbox permissions.
+     *        One page of the user, group, or resource mailbox permissions.
      */
 
     public void setPermissions(java.util.Collection<Permission> permissions) {
@@ -69,7 +69,7 @@ public class ListMailboxPermissionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One page of the entity's mailbox permissions.
+     * One page of the user, group, or resource mailbox permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListMailboxPermissionsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param permissions
-     *        One page of the entity's mailbox permissions.
+     *        One page of the user, group, or resource mailbox permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListMailboxPermissionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * One page of the entity's mailbox permissions.
+     * One page of the user, group, or resource mailbox permissions.
      * </p>
      * 
      * @param permissions
-     *        One page of the entity's mailbox permissions.
+     *        One page of the user, group, or resource mailbox permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,7 +154,8 @@ public class ListMailboxPermissionsResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

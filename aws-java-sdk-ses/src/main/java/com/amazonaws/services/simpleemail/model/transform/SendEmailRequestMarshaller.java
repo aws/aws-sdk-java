@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,86 +44,103 @@ public class SendEmailRequestMarshaller implements Marshaller<Request<SendEmailR
             request.addParameter("Source", StringUtils.fromString(sendEmailRequest.getSource()));
         }
 
-        Destination destination = sendEmailRequest.getDestination();
-        if (destination != null) {
+        {
+            Destination destination = sendEmailRequest.getDestination();
+            if (destination != null) {
 
-            if (!destination.getToAddresses().isEmpty() || !((com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses()).isAutoConstruct()) {
-                com.amazonaws.internal.SdkInternalList<String> toAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses();
-                int toAddressesListIndex = 1;
+                if (!destination.getToAddresses().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> toAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                            .getToAddresses();
+                    int toAddressesListIndex = 1;
 
-                for (String toAddressesListValue : toAddressesList) {
-                    if (toAddressesListValue != null) {
-                        request.addParameter("Destination.ToAddresses.member." + toAddressesListIndex, StringUtils.fromString(toAddressesListValue));
+                    for (String toAddressesListValue : toAddressesList) {
+                        if (toAddressesListValue != null) {
+                            request.addParameter("Destination.ToAddresses.member." + toAddressesListIndex, StringUtils.fromString(toAddressesListValue));
+                        }
+                        toAddressesListIndex++;
                     }
-                    toAddressesListIndex++;
                 }
-            }
 
-            if (!destination.getCcAddresses().isEmpty() || !((com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses()).isAutoConstruct()) {
-                com.amazonaws.internal.SdkInternalList<String> ccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses();
-                int ccAddressesListIndex = 1;
+                if (!destination.getCcAddresses().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> ccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                            .getCcAddresses();
+                    int ccAddressesListIndex = 1;
 
-                for (String ccAddressesListValue : ccAddressesList) {
-                    if (ccAddressesListValue != null) {
-                        request.addParameter("Destination.CcAddresses.member." + ccAddressesListIndex, StringUtils.fromString(ccAddressesListValue));
+                    for (String ccAddressesListValue : ccAddressesList) {
+                        if (ccAddressesListValue != null) {
+                            request.addParameter("Destination.CcAddresses.member." + ccAddressesListIndex, StringUtils.fromString(ccAddressesListValue));
+                        }
+                        ccAddressesListIndex++;
                     }
-                    ccAddressesListIndex++;
                 }
-            }
 
-            if (!destination.getBccAddresses().isEmpty() || !((com.amazonaws.internal.SdkInternalList<String>) destination.getBccAddresses()).isAutoConstruct()) {
-                com.amazonaws.internal.SdkInternalList<String> bccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
-                        .getBccAddresses();
-                int bccAddressesListIndex = 1;
+                if (!destination.getBccAddresses().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) destination.getBccAddresses()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> bccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                            .getBccAddresses();
+                    int bccAddressesListIndex = 1;
 
-                for (String bccAddressesListValue : bccAddressesList) {
-                    if (bccAddressesListValue != null) {
-                        request.addParameter("Destination.BccAddresses.member." + bccAddressesListIndex, StringUtils.fromString(bccAddressesListValue));
+                    for (String bccAddressesListValue : bccAddressesList) {
+                        if (bccAddressesListValue != null) {
+                            request.addParameter("Destination.BccAddresses.member." + bccAddressesListIndex, StringUtils.fromString(bccAddressesListValue));
+                        }
+                        bccAddressesListIndex++;
                     }
-                    bccAddressesListIndex++;
                 }
             }
         }
 
-        Message message = sendEmailRequest.getMessage();
-        if (message != null) {
+        {
+            Message message = sendEmailRequest.getMessage();
+            if (message != null) {
 
-            Content subject = message.getSubject();
-            if (subject != null) {
+                {
+                    Content subject = message.getSubject();
+                    if (subject != null) {
 
-                if (subject.getData() != null) {
-                    request.addParameter("Message.Subject.Data", StringUtils.fromString(subject.getData()));
-                }
+                        if (subject.getData() != null) {
+                            request.addParameter("Message.Subject.Data", StringUtils.fromString(subject.getData()));
+                        }
 
-                if (subject.getCharset() != null) {
-                    request.addParameter("Message.Subject.Charset", StringUtils.fromString(subject.getCharset()));
-                }
-            }
-
-            Body body = message.getBody();
-            if (body != null) {
-
-                Content text = body.getText();
-                if (text != null) {
-
-                    if (text.getData() != null) {
-                        request.addParameter("Message.Body.Text.Data", StringUtils.fromString(text.getData()));
-                    }
-
-                    if (text.getCharset() != null) {
-                        request.addParameter("Message.Body.Text.Charset", StringUtils.fromString(text.getCharset()));
+                        if (subject.getCharset() != null) {
+                            request.addParameter("Message.Subject.Charset", StringUtils.fromString(subject.getCharset()));
+                        }
                     }
                 }
 
-                Content html = body.getHtml();
-                if (html != null) {
+                {
+                    Body body = message.getBody();
+                    if (body != null) {
 
-                    if (html.getData() != null) {
-                        request.addParameter("Message.Body.Html.Data", StringUtils.fromString(html.getData()));
-                    }
+                        {
+                            Content text = body.getText();
+                            if (text != null) {
 
-                    if (html.getCharset() != null) {
-                        request.addParameter("Message.Body.Html.Charset", StringUtils.fromString(html.getCharset()));
+                                if (text.getData() != null) {
+                                    request.addParameter("Message.Body.Text.Data", StringUtils.fromString(text.getData()));
+                                }
+
+                                if (text.getCharset() != null) {
+                                    request.addParameter("Message.Body.Text.Charset", StringUtils.fromString(text.getCharset()));
+                                }
+                            }
+                        }
+
+                        {
+                            Content html = body.getHtml();
+                            if (html != null) {
+
+                                if (html.getData() != null) {
+                                    request.addParameter("Message.Body.Html.Data", StringUtils.fromString(html.getData()));
+                                }
+
+                                if (html.getCharset() != null) {
+                                    request.addParameter("Message.Body.Html.Charset", StringUtils.fromString(html.getCharset()));
+                                }
+                            }
+                        }
                     }
                 }
             }

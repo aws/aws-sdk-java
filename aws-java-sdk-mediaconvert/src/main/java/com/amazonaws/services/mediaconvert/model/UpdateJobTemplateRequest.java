@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** This is a beta feature. If you are interested in using this feature, please contact AWS customer support. */
+    private AccelerationSettings accelerationSettings;
     /** The new category for the job template, if you are changing it. */
     private String category;
     /** The new description for the job template, if you are changing it. */
@@ -33,8 +35,51 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /** The new queue for the job template, if you are changing it. */
     private String queue;
-
+    /**
+     * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     * created from it.
+     */
     private JobTemplateSettings settings;
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     */
+    private String statusUpdateInterval;
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * 
+     * @param accelerationSettings
+     *        This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     */
+
+    public void setAccelerationSettings(AccelerationSettings accelerationSettings) {
+        this.accelerationSettings = accelerationSettings;
+    }
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * 
+     * @return This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     */
+
+    public AccelerationSettings getAccelerationSettings() {
+        return this.accelerationSettings;
+    }
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * 
+     * @param accelerationSettings
+     *        This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateJobTemplateRequest withAccelerationSettings(AccelerationSettings accelerationSettings) {
+        setAccelerationSettings(accelerationSettings);
+        return this;
+    }
 
     /**
      * The new category for the job template, if you are changing it.
@@ -173,7 +218,12 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     * created from it.
+     * 
      * @param settings
+     *        JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     *        created from it.
      */
 
     public void setSettings(JobTemplateSettings settings) {
@@ -181,7 +231,11 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     * created from it.
+     * 
+     * @return JobTemplateSettings contains all the transcode settings saved in the template that will be applied to
+     *         jobs created from it.
      */
 
     public JobTemplateSettings getSettings() {
@@ -189,7 +243,12 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     * created from it.
+     * 
      * @param settings
+     *        JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs
+     *        created from it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,7 +258,75 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateInterval
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @see StatusUpdateInterval
+     */
+
+    public void setStatusUpdateInterval(String statusUpdateInterval) {
+        this.statusUpdateInterval = statusUpdateInterval;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @return Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *         in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *         service begins processing your job to the time it completes the transcode or encounters an error.
+     * @see StatusUpdateInterval
+     */
+
+    public String getStatusUpdateInterval() {
+        return this.statusUpdateInterval;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateInterval
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusUpdateInterval
+     */
+
+    public UpdateJobTemplateRequest withStatusUpdateInterval(String statusUpdateInterval) {
+        setStatusUpdateInterval(statusUpdateInterval);
+        return this;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateInterval
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusUpdateInterval
+     */
+
+    public UpdateJobTemplateRequest withStatusUpdateInterval(StatusUpdateInterval statusUpdateInterval) {
+        this.statusUpdateInterval = statusUpdateInterval.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -209,6 +336,8 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccelerationSettings() != null)
+            sb.append("AccelerationSettings: ").append(getAccelerationSettings()).append(",");
         if (getCategory() != null)
             sb.append("Category: ").append(getCategory()).append(",");
         if (getDescription() != null)
@@ -218,7 +347,9 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getQueue() != null)
             sb.append("Queue: ").append(getQueue()).append(",");
         if (getSettings() != null)
-            sb.append("Settings: ").append(getSettings());
+            sb.append("Settings: ").append(getSettings()).append(",");
+        if (getStatusUpdateInterval() != null)
+            sb.append("StatusUpdateInterval: ").append(getStatusUpdateInterval());
         sb.append("}");
         return sb.toString();
     }
@@ -233,6 +364,10 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (obj instanceof UpdateJobTemplateRequest == false)
             return false;
         UpdateJobTemplateRequest other = (UpdateJobTemplateRequest) obj;
+        if (other.getAccelerationSettings() == null ^ this.getAccelerationSettings() == null)
+            return false;
+        if (other.getAccelerationSettings() != null && other.getAccelerationSettings().equals(this.getAccelerationSettings()) == false)
+            return false;
         if (other.getCategory() == null ^ this.getCategory() == null)
             return false;
         if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
@@ -253,6 +388,10 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getStatusUpdateInterval() == null ^ this.getStatusUpdateInterval() == null)
+            return false;
+        if (other.getStatusUpdateInterval() != null && other.getStatusUpdateInterval().equals(this.getStatusUpdateInterval()) == false)
+            return false;
         return true;
     }
 
@@ -261,11 +400,13 @@ public class UpdateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccelerationSettings() == null) ? 0 : getAccelerationSettings().hashCode());
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getStatusUpdateInterval() == null) ? 0 : getStatusUpdateInterval().hashCode());
         return hashCode;
     }
 

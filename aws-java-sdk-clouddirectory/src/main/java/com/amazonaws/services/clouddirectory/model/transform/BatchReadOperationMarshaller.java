@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class BatchReadOperationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GetObjectInformation").build();
     private static final MarshallingInfo<StructuredPojo> GETOBJECTATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GetObjectAttributes").build();
+    private static final MarshallingInfo<StructuredPojo> LISTOBJECTPARENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectParents").build();
     private static final MarshallingInfo<StructuredPojo> LISTOBJECTPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectPolicies").build();
     private static final MarshallingInfo<StructuredPojo> LISTPOLICYATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -51,6 +53,8 @@ public class BatchReadOperationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListOutgoingTypedLinks").build();
     private static final MarshallingInfo<StructuredPojo> LISTINCOMINGTYPEDLINKS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListIncomingTypedLinks").build();
+    private static final MarshallingInfo<StructuredPojo> GETLINKATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GetLinkAttributes").build();
 
     private static final BatchReadOperationMarshaller instance = new BatchReadOperationMarshaller();
 
@@ -74,12 +78,14 @@ public class BatchReadOperationMarshaller {
             protocolMarshaller.marshall(batchReadOperation.getListObjectParentPaths(), LISTOBJECTPARENTPATHS_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getGetObjectInformation(), GETOBJECTINFORMATION_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getGetObjectAttributes(), GETOBJECTATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getListObjectParents(), LISTOBJECTPARENTS_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getListObjectPolicies(), LISTOBJECTPOLICIES_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getListPolicyAttachments(), LISTPOLICYATTACHMENTS_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getLookupPolicy(), LOOKUPPOLICY_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getListIndex(), LISTINDEX_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getListOutgoingTypedLinks(), LISTOUTGOINGTYPEDLINKS_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getListIncomingTypedLinks(), LISTINCOMINGTYPEDLINKS_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getGetLinkAttributes(), GETLINKATTRIBUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

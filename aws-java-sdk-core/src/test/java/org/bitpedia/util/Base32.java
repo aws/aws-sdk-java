@@ -2,7 +2,6 @@
  * Copyright (PD) 2006 The Bitzi Corporation
  * Please see http://bitzi.com/publicdomain for more info.
  *
- * $Id: //brazil/src/appgroup/globalPaymentServices/tools/YaUtils/mainline/tst/org/bitpedia/util/Base32.java#1 $
  */
 
 package org.bitpedia.util;

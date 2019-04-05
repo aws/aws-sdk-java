@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,7 +61,7 @@ public class SpotInstanceRequestStaxUnmarshaller implements Unmarshaller<SpotIns
                 }
 
                 if (context.testExpression("createTime", targetDepth)) {
-                    spotInstanceRequest.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotInstanceRequest.setCreateTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -131,12 +131,12 @@ public class SpotInstanceRequestStaxUnmarshaller implements Unmarshaller<SpotIns
                 }
 
                 if (context.testExpression("validFrom", targetDepth)) {
-                    spotInstanceRequest.setValidFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotInstanceRequest.setValidFrom(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("validUntil", targetDepth)) {
-                    spotInstanceRequest.setValidUntil(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotInstanceRequest.setValidUntil(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,13 +46,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private String policyARN;
     /**
      * <p>
-     * The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      * </p>
      */
     private String policyType;
     /**
      * <p>
-     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
+     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. The valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      */
@@ -93,8 +93,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<StepAdjustment> stepAdjustments;
     /**
      * <p>
-     * The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and
-     * <code>Average</code>.
+     * The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>,
+     * and <code>Average</code>.
      * </p>
      */
     private String metricAggregationType;
@@ -112,7 +112,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Alarm> alarms;
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      */
     private TargetTrackingConfiguration targetTrackingConfiguration;
@@ -239,11 +239,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      * </p>
      * 
      * @param policyType
-     *        The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     *        The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      */
 
     public void setPolicyType(String policyType) {
@@ -252,10 +252,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      * </p>
      * 
-     * @return The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * @return The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      */
 
     public String getPolicyType() {
@@ -264,11 +264,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     * The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      * </p>
      * 
      * @param policyType
-     *        The policy type. Valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
+     *        The policy type. The valid values are <code>SimpleScaling</code> and <code>StepScaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,13 +279,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
+     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. The valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * 
      * @param adjustmentType
-     *        The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
-     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     *        The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. The valid values
+     *        are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      */
 
     public void setAdjustmentType(String adjustmentType) {
@@ -294,12 +294,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
+     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. The valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * 
-     * @return The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
-     *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * @return The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. The valid values
+     *         are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      */
 
     public String getAdjustmentType() {
@@ -308,13 +308,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
+     * The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. The valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * 
      * @param adjustmentType
-     *        The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. Valid values are
-     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     *        The adjustment type, which specifies how <code>ScalingAdjustment</code> is interpreted. The valid values
+     *        are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -582,12 +582,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and
-     * <code>Average</code>.
+     * The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>,
+     * and <code>Average</code>.
      * </p>
      * 
      * @param metricAggregationType
-     *        The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>,
+     *        The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
      *        <code>Maximum</code>, and <code>Average</code>.
      */
 
@@ -597,11 +597,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and
-     * <code>Average</code>.
+     * The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>,
+     * and <code>Average</code>.
      * </p>
      * 
-     * @return The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>,
+     * @return The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
      *         <code>Maximum</code>, and <code>Average</code>.
      */
 
@@ -611,12 +611,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>, <code>Maximum</code>, and
-     * <code>Average</code>.
+     * The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>,
+     * and <code>Average</code>.
      * </p>
      * 
      * @param metricAggregationType
-     *        The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>,
+     *        The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
      *        <code>Maximum</code>, and <code>Average</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -741,11 +741,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      * 
      * @param targetTrackingConfiguration
-     *        A target tracking policy.
+     *        A target tracking scaling policy.
      */
 
     public void setTargetTrackingConfiguration(TargetTrackingConfiguration targetTrackingConfiguration) {
@@ -754,10 +754,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      * 
-     * @return A target tracking policy.
+     * @return A target tracking scaling policy.
      */
 
     public TargetTrackingConfiguration getTargetTrackingConfiguration() {
@@ -766,11 +766,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      * 
      * @param targetTrackingConfiguration
-     *        A target tracking policy.
+     *        A target tracking scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -780,7 +780,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

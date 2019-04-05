@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission" target="_top">AWS API
  *      Documentation</a>
@@ -28,14 +27,31 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Lambda function whose resource policy you want to remove a permission from.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -47,42 +63,72 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     private String statementId;
     /**
      * <p>
-     * You can specify this optional parameter to remove permission associated with a specific function version or
-     * function alias. If you don't specify this parameter, the API removes permission associated with the unqualified
-     * function ARN.
+     * Specify a version or alias to remove permissions from a published version of the function.
      * </p>
      */
     private String qualifier;
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * Lambda function whose resource policy you want to remove a permission from.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        Lambda function whose resource policy you want to remove a permission from.</p>
+     *        The name of the Lambda function, version, or alias.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *        full ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -91,23 +137,57 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Lambda function whose resource policy you want to remove a permission from.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
-     * @return Lambda function whose resource policy you want to remove a permission from.</p>
+     * @return The name of the Lambda function, version, or alias.</p>
+     *         <p class="title">
+     *         <b>Name formats</b>
+     *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *         Name (ARN) of the function (for example,
-     *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *         specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *         <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *         full ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -116,24 +196,58 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Lambda function whose resource policy you want to remove a permission from.
+     * The name of the Lambda function, version, or alias.
      * </p>
+     * <p class="title">
+     * <b>Name formats</b>
+     * </p>
+     * <ul>
+     * <li>
      * <p>
-     * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
-     * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
-     * in length.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        Lambda function whose resource policy you want to remove a permission from.</p>
+     *        The name of the Lambda function, version, or alias.</p>
+     *        <p class="title">
+     *        <b>Name formats</b>
+     *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
-     *        Name (ARN) of the function (for example,
-     *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
+     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *        full ARN. If you specify only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,15 +298,11 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * You can specify this optional parameter to remove permission associated with a specific function version or
-     * function alias. If you don't specify this parameter, the API removes permission associated with the unqualified
-     * function ARN.
+     * Specify a version or alias to remove permissions from a published version of the function.
      * </p>
      * 
      * @param qualifier
-     *        You can specify this optional parameter to remove permission associated with a specific function version
-     *        or function alias. If you don't specify this parameter, the API removes permission associated with the
-     *        unqualified function ARN.
+     *        Specify a version or alias to remove permissions from a published version of the function.
      */
 
     public void setQualifier(String qualifier) {
@@ -201,14 +311,10 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * You can specify this optional parameter to remove permission associated with a specific function version or
-     * function alias. If you don't specify this parameter, the API removes permission associated with the unqualified
-     * function ARN.
+     * Specify a version or alias to remove permissions from a published version of the function.
      * </p>
      * 
-     * @return You can specify this optional parameter to remove permission associated with a specific function version
-     *         or function alias. If you don't specify this parameter, the API removes permission associated with the
-     *         unqualified function ARN.
+     * @return Specify a version or alias to remove permissions from a published version of the function.
      */
 
     public String getQualifier() {
@@ -217,15 +323,11 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * You can specify this optional parameter to remove permission associated with a specific function version or
-     * function alias. If you don't specify this parameter, the API removes permission associated with the unqualified
-     * function ARN.
+     * Specify a version or alias to remove permissions from a published version of the function.
      * </p>
      * 
      * @param qualifier
-     *        You can specify this optional parameter to remove permission associated with a specific function version
-     *        or function alias. If you don't specify this parameter, the API removes permission associated with the
-     *        unqualified function ARN.
+     *        Specify a version or alias to remove permissions from a published version of the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,17 +338,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        An optional value you can use to ensure you are updating the latest update of the function version or
-     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either or .
+     *        Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying a policy that has changed since you last read it.
      */
 
     public void setRevisionId(String revisionId) {
@@ -255,16 +353,12 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      * 
-     * @return An optional value you can use to ensure you are updating the latest update of the function version or
-     *         alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *         function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *         version or alias <code>RevisionID</code> using either or .
+     * @return Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     *         modifying a policy that has changed since you last read it.
      */
 
     public String getRevisionId() {
@@ -273,17 +367,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either or .
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        An optional value you can use to ensure you are updating the latest update of the function version or
-     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either or .
+     *        Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying a policy that has changed since you last read it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,7 +383,8 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

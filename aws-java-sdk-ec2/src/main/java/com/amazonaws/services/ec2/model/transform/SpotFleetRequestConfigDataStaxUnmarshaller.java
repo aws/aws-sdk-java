@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,11 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
 
                 if (context.testExpression("allocationStrategy", targetDepth)) {
                     spotFleetRequestConfigData.setAllocationStrategy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("onDemandAllocationStrategy", targetDepth)) {
+                    spotFleetRequestConfigData.setOnDemandAllocationStrategy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -121,12 +126,12 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                 }
 
                 if (context.testExpression("validFrom", targetDepth)) {
-                    spotFleetRequestConfigData.setValidFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotFleetRequestConfigData.setValidFrom(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("validUntil", targetDepth)) {
-                    spotFleetRequestConfigData.setValidUntil(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotFleetRequestConfigData.setValidUntil(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
@@ -142,6 +147,11 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
 
                 if (context.testExpression("loadBalancersConfig", targetDepth)) {
                     spotFleetRequestConfigData.setLoadBalancersConfig(LoadBalancersConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("instancePoolsToUseCount", targetDepth)) {
+                    spotFleetRequestConfigData.setInstancePoolsToUseCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

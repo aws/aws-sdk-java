@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,9 +31,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
-     * Amazon ECS container agent can communicate with by default. If using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
+     * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -48,7 +48,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      */
     private String logDriver;
@@ -57,7 +57,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
      * in to your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      */
     private java.util.Map<String, String> options;
@@ -65,9 +65,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
-     * Amazon ECS container agent can communicate with by default. If using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
+     * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -82,15 +82,16 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param logDriver
      *        The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *        the Amazon ECS container agent can communicate with by default. If using the Fargate launch type, the only
-     *        supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the
-     *        awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        the Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type,
+     *        the only supported value is <code>awslogs</code>. For more information about using the
+     *        <code>awslogs</code> driver, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a
@@ -102,7 +103,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
      *        check the Docker Remote API version on your container instance, log in to your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @see LogDriver
      */
 
@@ -113,9 +114,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
-     * Amazon ECS container agent can communicate with by default. If using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
+     * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -130,14 +131,15 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @return The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *         the Amazon ECS container agent can communicate with by default. If using the Fargate launch type, the
-     *         only supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code>
-     *         driver, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
-     *         the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *         the Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type,
+     *         the only supported value is <code>awslogs</code>. For more information about using the
+     *         <code>awslogs</code> driver, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *         Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *         <p>
      *         If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *         container agent, you can fork the Amazon ECS container agent project that is <a
@@ -149,7 +151,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
      *         check the Docker Remote API version on your container instance, log in to your container instance and run
-     *         the following command: <code>sudo docker version | grep "Server API version"</code>
+     *         the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @see LogDriver
      */
 
@@ -160,9 +162,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
-     * Amazon ECS container agent can communicate with by default. If using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
+     * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -177,15 +179,16 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param logDriver
      *        The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *        the Amazon ECS container agent can communicate with by default. If using the Fargate launch type, the only
-     *        supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the
-     *        awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        the Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type,
+     *        the only supported value is <code>awslogs</code>. For more information about using the
+     *        <code>awslogs</code> driver, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a
@@ -197,7 +200,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
      *        check the Docker Remote API version on your container instance, log in to your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogDriver
      */
@@ -210,9 +213,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
-     * Amazon ECS container agent can communicate with by default. If using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
+     * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -227,15 +230,16 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param logDriver
      *        The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *        the Amazon ECS container agent can communicate with by default. If using the Fargate launch type, the only
-     *        supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the
-     *        awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        the Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type,
+     *        the only supported value is <code>awslogs</code>. For more information about using the
+     *        <code>awslogs</code> driver, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a
@@ -247,7 +251,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
      *        check the Docker Remote API version on your container instance, log in to your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @see LogDriver
      */
 
@@ -258,9 +262,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
-     * Amazon ECS container agent can communicate with by default. If using the Fargate launch type, the only supported
-     * value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
+     * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -275,15 +279,16 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
      * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param logDriver
      *        The log driver to use for the container. The valid values listed for this parameter are log drivers that
-     *        the Amazon ECS container agent can communicate with by default. If using the Fargate launch type, the only
-     *        supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the
-     *        awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        the Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type,
+     *        the only supported value is <code>awslogs</code>. For more information about using the
+     *        <code>awslogs</code> driver, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a
@@ -295,7 +300,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
      *        check the Docker Remote API version on your container instance, log in to your container instance and run
-     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogDriver
      */
@@ -310,13 +315,13 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
      * in to your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @return The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker
      *         Remote API or greater on your container instance. To check the Docker Remote API version on your
      *         container instance, log in to your container instance and run the following command:
-     *         <code>sudo docker version | grep "Server API version"</code>
+     *         <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public java.util.Map<String, String> getOptions() {
@@ -328,14 +333,14 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
      * in to your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param options
      *        The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker
      *        Remote API or greater on your container instance. To check the Docker Remote API version on your container
      *        instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version | grep "Server API version"</code>
+     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public void setOptions(java.util.Map<String, String> options) {
@@ -347,14 +352,14 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote
      * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
      * in to your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code>
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param options
      *        The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker
      *        Remote API or greater on your container instance. To check the Docker Remote API version on your container
      *        instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version | grep "Server API version"</code>
+     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,7 +390,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

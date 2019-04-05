@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
 
     /** Required. The unique ID that Amazon MQ generates for the configuration. */
     private String id;
-    /** The Universally Unique Identifier (UUID) of the request. */
+    /** The revision number of the configuration. */
     private Integer revision;
 
     /**
@@ -66,10 +66,10 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The Universally Unique Identifier (UUID) of the request.
+     * The revision number of the configuration.
      * 
      * @param revision
-     *        The Universally Unique Identifier (UUID) of the request.
+     *        The revision number of the configuration.
      */
 
     public void setRevision(Integer revision) {
@@ -77,9 +77,9 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The Universally Unique Identifier (UUID) of the request.
+     * The revision number of the configuration.
      * 
-     * @return The Universally Unique Identifier (UUID) of the request.
+     * @return The revision number of the configuration.
      */
 
     public Integer getRevision() {
@@ -87,10 +87,10 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The Universally Unique Identifier (UUID) of the request.
+     * The revision number of the configuration.
      * 
      * @param revision
-     *        The Universally Unique Identifier (UUID) of the request.
+     *        The revision number of the configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,7 +100,8 @@ public class ConfigurationId implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

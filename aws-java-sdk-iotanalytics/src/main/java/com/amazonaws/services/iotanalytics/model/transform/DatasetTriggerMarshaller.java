@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class DatasetTriggerMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> SCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("schedule").build();
+    private static final MarshallingInfo<StructuredPojo> DATASET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataset").build();
 
     private static final DatasetTriggerMarshaller instance = new DatasetTriggerMarshaller();
 
@@ -47,6 +49,7 @@ public class DatasetTriggerMarshaller {
 
         try {
             protocolMarshaller.marshall(datasetTrigger.getSchedule(), SCHEDULE_BINDING);
+            protocolMarshaller.marshall(datasetTrigger.getDataset(), DATASET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

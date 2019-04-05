@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,13 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long lastUpdatedAt;
+    /**
+     * <p>
+     * The estimated number of seconds that remain before the job execution status will be changed to
+     * <code>TIMED_OUT</code>.
+     * </p>
+     */
+    private Long approximateSecondsBeforeTimedOut;
     /**
      * <p>
      * The version of the job execution. Job execution versions are incremented each time they are updated by a device.
@@ -421,6 +428,52 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The estimated number of seconds that remain before the job execution status will be changed to
+     * <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @param approximateSecondsBeforeTimedOut
+     *        The estimated number of seconds that remain before the job execution status will be changed to
+     *        <code>TIMED_OUT</code>.
+     */
+
+    public void setApproximateSecondsBeforeTimedOut(Long approximateSecondsBeforeTimedOut) {
+        this.approximateSecondsBeforeTimedOut = approximateSecondsBeforeTimedOut;
+    }
+
+    /**
+     * <p>
+     * The estimated number of seconds that remain before the job execution status will be changed to
+     * <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @return The estimated number of seconds that remain before the job execution status will be changed to
+     *         <code>TIMED_OUT</code>.
+     */
+
+    public Long getApproximateSecondsBeforeTimedOut() {
+        return this.approximateSecondsBeforeTimedOut;
+    }
+
+    /**
+     * <p>
+     * The estimated number of seconds that remain before the job execution status will be changed to
+     * <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @param approximateSecondsBeforeTimedOut
+     *        The estimated number of seconds that remain before the job execution status will be changed to
+     *        <code>TIMED_OUT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobExecution withApproximateSecondsBeforeTimedOut(Long approximateSecondsBeforeTimedOut) {
+        setApproximateSecondsBeforeTimedOut(approximateSecondsBeforeTimedOut);
+        return this;
+    }
+
+    /**
+     * <p>
      * The version of the job execution. Job execution versions are incremented each time they are updated by a device.
      * </p>
      * 
@@ -549,7 +602,8 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -573,6 +627,8 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
             sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
+        if (getApproximateSecondsBeforeTimedOut() != null)
+            sb.append("ApproximateSecondsBeforeTimedOut: ").append(getApproximateSecondsBeforeTimedOut()).append(",");
         if (getVersionNumber() != null)
             sb.append("VersionNumber: ").append(getVersionNumber()).append(",");
         if (getExecutionNumber() != null)
@@ -621,6 +677,11 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
             return false;
+        if (other.getApproximateSecondsBeforeTimedOut() == null ^ this.getApproximateSecondsBeforeTimedOut() == null)
+            return false;
+        if (other.getApproximateSecondsBeforeTimedOut() != null
+                && other.getApproximateSecondsBeforeTimedOut().equals(this.getApproximateSecondsBeforeTimedOut()) == false)
+            return false;
         if (other.getVersionNumber() == null ^ this.getVersionNumber() == null)
             return false;
         if (other.getVersionNumber() != null && other.getVersionNumber().equals(this.getVersionNumber()) == false)
@@ -648,6 +709,7 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getQueuedAt() == null) ? 0 : getQueuedAt().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getApproximateSecondsBeforeTimedOut() == null) ? 0 : getApproximateSecondsBeforeTimedOut().hashCode());
         hashCode = prime * hashCode + ((getVersionNumber() == null) ? 0 : getVersionNumber().hashCode());
         hashCode = prime * hashCode + ((getExecutionNumber() == null) ? 0 : getExecutionNumber().hashCode());
         hashCode = prime * hashCode + ((getJobDocument() == null) ? 0 : getJobDocument().hashCode());

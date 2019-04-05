@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@ package com.amazonaws.http;
 
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
+import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidStaxUnmarshaller;
@@ -29,6 +30,7 @@ import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLStreamException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.http.impl.io.EmptyInputStream;
 
 /**
  * Default implementation of HttpResponseHandler that handles a successful
@@ -79,7 +81,11 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         log.trace("Parsing service response XML");
         InputStream content = response.getContent();
+
         if (content == null) {
+            content = new ByteArrayInputStream("<eof/>".getBytes(StringUtils.UTF8));
+        } else if (content instanceof SdkFilterInputStream &&
+                   ((SdkFilterInputStream) content).getDelegateStream() instanceof EmptyInputStream) {
             content = new ByteArrayInputStream("<eof/>".getBytes(StringUtils.UTF8));
         }
 
@@ -106,6 +112,10 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
                 if (responseHeaders.get(X_AMZN_REQUEST_ID_HEADER) != null) {
                     metadata.put(ResponseMetadata.AWS_REQUEST_ID,
                                  responseHeaders.get(X_AMZN_REQUEST_ID_HEADER));
+                }
+                if (responseHeaders.get(X_AMZN_EXTENDED_REQUEST_ID_HEADER) != null) {
+                    metadata.put(ResponseMetadata.AWS_EXTENDED_REQUEST_ID,
+                                 responseHeaders.get(X_AMZN_EXTENDED_REQUEST_ID_HEADER));
                 }
             }
             awsResponse.setResponseMetadata(getResponseMetadata(metadata));

@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.336-SNAPSHOT</version>
+  <version>1.11.534-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -33,6 +33,40 @@
   </developers>
   <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
+    <module>aws-java-sdk-textract</module>
+    <module>aws-java-sdk-worklink</module>
+    <module>aws-java-sdk-backup</module>
+    <module>aws-java-sdk-docdb</module>
+    <module>aws-java-sdk-apigatewayv2</module>
+    <module>aws-java-sdk-apigatewaymanagementapi</module>
+    <module>aws-java-sdk-kafka</module>
+    <module>aws-java-sdk-appmesh</module>
+    <module>aws-java-sdk-licensemanager</module>
+    <module>aws-java-sdk-securityhub</module>
+    <module>aws-java-sdk-fsx</module>
+    <module>aws-java-sdk-mediaconnect</module>
+    <module>aws-java-sdk-kinesisanalyticsv2</module>
+    <module>aws-java-sdk-comprehendmedical</module>
+    <module>aws-java-sdk-globalaccelerator</module>
+    <module>aws-java-sdk-transfer</module>
+    <module>aws-java-sdk-datasync</module>
+    <module>aws-java-sdk-robomaker</module>
+    <module>aws-java-sdk-amplify</module>
+    <module>aws-java-sdk-quicksight</module>
+    <module>aws-java-sdk-rdsdata</module>
+    <module>aws-java-sdk-route53resolver</module>
+    <module>aws-java-sdk-ram</module>
+    <module>aws-java-sdk-s3control</module>
+    <module>aws-java-sdk-pinpointsmsvoice</module>
+    <module>aws-java-sdk-pinpointemail</module>
+    <module>aws-java-sdk-chime</module>
+    <module>aws-java-sdk-signer</module>
+    <module>aws-java-sdk-dlm</module>
+    <module>aws-java-sdk-macie</module>
+    <module>aws-java-sdk-eks</module>
+    <module>aws-java-sdk-mediatailor</module>
+    <module>aws-java-sdk-neptune</module>
+    <module>aws-java-sdk-pi</module>
     <module>aws-java-sdk-iot1clickprojects</module>
     <module>aws-java-sdk-iot1clickdevices</module>
     <module>aws-java-sdk-iotanalytics</module>
@@ -182,8 +216,9 @@
   </scm>
   <properties>
       <awsjavasdk.version>${project.version}</awsjavasdk.version>
+      <!-- The SDK requires Jackson 2.6 to support Java 6 customers. Feel free to override in your own application -->
       <jackson.version>2.6.7</jackson.version>
-      <jackson.databind.version>2.6.7.1</jackson.databind.version>
+      <jackson.databind.version>2.6.7.2</jackson.databind.version>
       <ion.java.version>1.0.2</ion.java.version>
       <junit.version>4.12</junit.version>
       <easymock.version>3.2</easymock.version>
@@ -195,6 +230,7 @@
       <commons.io.version>2.4</commons.io.version>
       <mockito.all.version>1.10.19</mockito.all.version>
       <equalsverifier.version>1.7.5</equalsverifier.version>
+      <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <!-- These properties are used by SWF for it's dependencies and also in the OSGI build to
         generate the aggregate ZIP artifact -->
@@ -255,7 +291,17 @@
           <configuration>
             <excludes>
               <exclude>**/*CucumberTest.java</exclude>
+              <exclude>**/*IntegrationTest.java</exclude>
+              <exclude>**/*IntegrationTests.java</exclude>
+              <exclude>**/*IntegTest.java</exclude>
+              <exclude>**/*IntegrationTestCase.java</exclude>
             </excludes>
+            <includes>
+              <include>**/Test*.java</include>
+              <include>**/*Tests.java</include>
+              <include>**/*Test.java</include>
+              <include>**/*TestCase.java</include>
+            </includes>
           </configuration>
         </plugin>
       </plugins>
@@ -319,6 +365,48 @@
           </plugins>
         </pluginManagement>
       </build>
+    </profile>
+    <profile>
+        <id>integration-tests</id>
+        <activation>
+            <property>
+                <name>doRelease</name>
+            </property>
+        </activation>
+        <properties>
+            <checkstyle.skip>true</checkstyle.skip>
+            <findbugs.skip>true</findbugs.skip>
+            <skip.unit.tests>true</skip.unit.tests>
+            <mdep.analyze.skip>true</mdep.analyze.skip>
+        </properties>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven-failsafe-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>integration-test</phase>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                            <configuration>
+                                <includes>
+                                    <include>**/*IntegrationTest.java</include>
+                                    <include>**/*IntegrationTests.java</include>
+                                    <include>**/*IntegTest.java</include>
+                                    <include>**/RunCucumberTest.java</include>
+                                </includes>
+                                <trimStackTrace>false</trimStackTrace>
+                                <rerunFailingTestsCount>2</rerunFailingTestsCount>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
     </profile>
   </profiles>
 </project>

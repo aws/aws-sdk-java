@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,10 @@ public class BatchReadOperationJsonUnmarshaller implements Unmarshaller<BatchRea
                     context.nextToken();
                     batchReadOperation.setGetObjectAttributes(BatchGetObjectAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ListObjectParents", targetDepth)) {
+                    context.nextToken();
+                    batchReadOperation.setListObjectParents(BatchListObjectParentsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ListObjectPolicies", targetDepth)) {
                     context.nextToken();
                     batchReadOperation.setListObjectPolicies(BatchListObjectPoliciesJsonUnmarshaller.getInstance().unmarshall(context));
@@ -95,6 +99,10 @@ public class BatchReadOperationJsonUnmarshaller implements Unmarshaller<BatchRea
                 if (context.testExpression("ListIncomingTypedLinks", targetDepth)) {
                     context.nextToken();
                     batchReadOperation.setListIncomingTypedLinks(BatchListIncomingTypedLinksJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("GetLinkAttributes", targetDepth)) {
+                    context.nextToken();
+                    batchReadOperation.setGetLinkAttributes(BatchGetLinkAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

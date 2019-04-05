@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,37 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the time stamp range and time stamp origin of a range of fragments.
+ * Describes the timestamp range and timestamp origin of a range of fragments.
+ * </p>
+ * <p>
+ * Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end
+ * time are returned. For example, if a stream contains fragments with the following start timestamps:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * 00:00:00
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * 00:00:02
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * 00:00:04
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * 00:00:06
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with
+ * start times of 00:00:02 and 00:00:04.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/FragmentSelector"
@@ -30,24 +60,24 @@ public class FragmentSelector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The origin of the time stamps to use (Server or Producer).
+     * The origin of the timestamps to use (Server or Producer).
      * </p>
      */
     private String fragmentSelectorType;
     /**
      * <p>
-     * The range of time stamps to return.
+     * The range of timestamps to return.
      * </p>
      */
     private TimestampRange timestampRange;
 
     /**
      * <p>
-     * The origin of the time stamps to use (Server or Producer).
+     * The origin of the timestamps to use (Server or Producer).
      * </p>
      * 
      * @param fragmentSelectorType
-     *        The origin of the time stamps to use (Server or Producer).
+     *        The origin of the timestamps to use (Server or Producer).
      * @see FragmentSelectorType
      */
 
@@ -57,10 +87,10 @@ public class FragmentSelector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The origin of the time stamps to use (Server or Producer).
+     * The origin of the timestamps to use (Server or Producer).
      * </p>
      * 
-     * @return The origin of the time stamps to use (Server or Producer).
+     * @return The origin of the timestamps to use (Server or Producer).
      * @see FragmentSelectorType
      */
 
@@ -70,11 +100,11 @@ public class FragmentSelector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The origin of the time stamps to use (Server or Producer).
+     * The origin of the timestamps to use (Server or Producer).
      * </p>
      * 
      * @param fragmentSelectorType
-     *        The origin of the time stamps to use (Server or Producer).
+     *        The origin of the timestamps to use (Server or Producer).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FragmentSelectorType
      */
@@ -86,11 +116,11 @@ public class FragmentSelector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The origin of the time stamps to use (Server or Producer).
+     * The origin of the timestamps to use (Server or Producer).
      * </p>
      * 
      * @param fragmentSelectorType
-     *        The origin of the time stamps to use (Server or Producer).
+     *        The origin of the timestamps to use (Server or Producer).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FragmentSelectorType
      */
@@ -102,11 +132,11 @@ public class FragmentSelector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The range of time stamps to return.
+     * The range of timestamps to return.
      * </p>
      * 
      * @param timestampRange
-     *        The range of time stamps to return.
+     *        The range of timestamps to return.
      */
 
     public void setTimestampRange(TimestampRange timestampRange) {
@@ -115,10 +145,10 @@ public class FragmentSelector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The range of time stamps to return.
+     * The range of timestamps to return.
      * </p>
      * 
-     * @return The range of time stamps to return.
+     * @return The range of timestamps to return.
      */
 
     public TimestampRange getTimestampRange() {
@@ -127,11 +157,11 @@ public class FragmentSelector implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The range of time stamps to return.
+     * The range of timestamps to return.
      * </p>
      * 
      * @param timestampRange
-     *        The range of time stamps to return.
+     *        The range of timestamps to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,7 +171,8 @@ public class FragmentSelector implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

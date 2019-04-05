@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class DetectedLanguageLowConfidenceException extends com.amazonaws.servic
 
     /**
      * <p>
-     * Auto detected language code from Comprehend.
+     * The language code of the auto-detected language from Amazon Comprehend.
      * </p>
      */
     private String detectedLanguageCode;
@@ -46,11 +46,11 @@ public class DetectedLanguageLowConfidenceException extends com.amazonaws.servic
 
     /**
      * <p>
-     * Auto detected language code from Comprehend.
+     * The language code of the auto-detected language from Amazon Comprehend.
      * </p>
      * 
      * @param detectedLanguageCode
-     *        Auto detected language code from Comprehend.
+     *        The language code of the auto-detected language from Amazon Comprehend.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("DetectedLanguageCode")
@@ -60,10 +60,10 @@ public class DetectedLanguageLowConfidenceException extends com.amazonaws.servic
 
     /**
      * <p>
-     * Auto detected language code from Comprehend.
+     * The language code of the auto-detected language from Amazon Comprehend.
      * </p>
      * 
-     * @return Auto detected language code from Comprehend.
+     * @return The language code of the auto-detected language from Amazon Comprehend.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("DetectedLanguageCode")
@@ -73,11 +73,11 @@ public class DetectedLanguageLowConfidenceException extends com.amazonaws.servic
 
     /**
      * <p>
-     * Auto detected language code from Comprehend.
+     * The language code of the auto-detected language from Amazon Comprehend.
      * </p>
      * 
      * @param detectedLanguageCode
-     *        Auto detected language code from Comprehend.
+     *        The language code of the auto-detected language from Amazon Comprehend.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

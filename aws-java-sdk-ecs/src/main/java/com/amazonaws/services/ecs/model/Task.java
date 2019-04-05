@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,29 +59,32 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     private TaskOverride overrides;
     /**
      * <p>
-     * The last known status of the task.
+     * The last known status of the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
      * </p>
      */
     private String lastStatus;
     /**
      * <p>
-     * The desired status of the task.
+     * The desired status of the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
      * </p>
      */
     private String desiredStatus;
     /**
      * <p>
-     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but is converted to an integer indicating the CPU units when the task definition is registered.
+     * The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer
+     * using CPU units, for example <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an integer indicating the CPU units
+     * when the task definition is registered.
      * </p>
      * <p>
-     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
-     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>memory</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -117,16 +120,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     private String cpu;
     /**
      * <p>
-     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but is converted to an integer indicating the MiB when the task definition is registered.
+     * The amount of memory (in MiB) used by the task as expressed in a task definition. It can be expressed as an
+     * integer using MiB, for example <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer indicating the MiB when the task
+     * definition is registered.
      * </p>
      * <p>
-     * If using the EC2 launch type, this field is optional.
+     * If you are using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -177,17 +181,24 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch Events for
-     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
+     * current.
      * </p>
      */
     private Long version;
     /**
      * <p>
-     * The reason the task was stopped.
+     * The reason that the task was stopped.
      * </p>
      */
     private String stoppedReason;
+    /**
+     * <p>
+     * The stop code indicating why a task was stopped. The <code>stoppedReason</code> may contain additional details.
+     * </p>
+     */
+    private String stopCode;
     /**
      * <p>
      * The connectivity status of a task.
@@ -196,51 +207,51 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     private String connectivity;
     /**
      * <p>
-     * The Unix time stamp for when the task last went into <code>CONNECTED</code> status.
+     * The Unix timestamp for when the task last went into <code>CONNECTED</code> status.
      * </p>
      */
     private java.util.Date connectivityAt;
     /**
      * <p>
-     * The Unix time stamp for when the container image pull began.
+     * The Unix timestamp for when the container image pull began.
      * </p>
      */
     private java.util.Date pullStartedAt;
     /**
      * <p>
-     * The Unix time stamp for when the container image pull completed.
+     * The Unix timestamp for when the container image pull completed.
      * </p>
      */
     private java.util.Date pullStoppedAt;
     /**
      * <p>
-     * The Unix time stamp for when the task execution stopped.
+     * The Unix timestamp for when the task execution stopped.
      * </p>
      */
     private java.util.Date executionStoppedAt;
     /**
      * <p>
-     * The Unix time stamp for when the task was created (the task entered the <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix time stamp for when the task started (the task transitioned from the <code>PENDING</code> state to the
+     * The Unix timestamp for when the task started (the task transitioned from the <code>PENDING</code> state to the
      * <code>RUNNING</code> state).
      * </p>
      */
     private java.util.Date startedAt;
     /**
      * <p>
-     * The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     * The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code> state to
      * <code>STOPPED</code>).
      * </p>
      */
     private java.util.Date stoppingAt;
     /**
      * <p>
-     * The Unix time stamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
+     * The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
      * the <code>STOPPED</code> state).
      * </p>
      */
@@ -253,14 +264,18 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     private String group;
     /**
      * <p>
-     * The launch type on which your task is running.
+     * The launch type on which your task is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String launchType;
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * The platform version on which your task is running. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -289,6 +304,14 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private String healthStatus;
+    /**
+     * <p>
+     * The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and
+     * an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -492,11 +515,14 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last known status of the task.
+     * The last known status of the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
      * </p>
      * 
      * @param lastStatus
-     *        The last known status of the task.
+     *        The last known status of the task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     *        Lifecycle</a>.
      */
 
     public void setLastStatus(String lastStatus) {
@@ -505,10 +531,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last known status of the task.
+     * The last known status of the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
      * </p>
      * 
-     * @return The last known status of the task.
+     * @return The last known status of the task. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     *         Lifecycle</a>.
      */
 
     public String getLastStatus() {
@@ -517,11 +546,14 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last known status of the task.
+     * The last known status of the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
      * </p>
      * 
      * @param lastStatus
-     *        The last known status of the task.
+     *        The last known status of the task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     *        Lifecycle</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -532,11 +564,14 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The desired status of the task.
+     * The desired status of the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
      * </p>
      * 
      * @param desiredStatus
-     *        The desired status of the task.
+     *        The desired status of the task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     *        Lifecycle</a>.
      */
 
     public void setDesiredStatus(String desiredStatus) {
@@ -545,10 +580,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The desired status of the task.
+     * The desired status of the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
      * </p>
      * 
-     * @return The desired status of the task.
+     * @return The desired status of the task. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     *         Lifecycle</a>.
      */
 
     public String getDesiredStatus() {
@@ -557,11 +595,14 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The desired status of the task.
+     * The desired status of the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task Lifecycle</a>.
      * </p>
      * 
      * @param desiredStatus
-     *        The desired status of the task.
+     *        The desired status of the task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_life_cycle.html">Task
+     *        Lifecycle</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -572,17 +613,18 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but is converted to an integer indicating the CPU units when the task definition is registered.
+     * The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer
+     * using CPU units, for example <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an integer indicating the CPU units
+     * when the task definition is registered.
      * </p>
      * <p>
-     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
-     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>memory</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -616,17 +658,18 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param cpu
-     *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
-     *        a task definition but is converted to an integer indicating the CPU units when the task definition is
-     *        registered.</p>
+     *        The number of CPU units used by the task as expressed in a task definition. It can be expressed as an
+     *        integer using CPU units, for example <code>1024</code>. It can also be expressed as a string using vCPUs,
+     *        for example <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an integer
+     *        indicating the CPU units when the task definition is registered.</p>
      *        <p>
-     *        If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
-     *        units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *        If you are using the EC2 launch type, this field is optional. Supported values are between
+     *        <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     *        vCPUs).
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of supported values for the <code>memory</code> parameter:
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of supported values for the <code>memory</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -665,17 +708,18 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but is converted to an integer indicating the CPU units when the task definition is registered.
+     * The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer
+     * using CPU units, for example <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an integer indicating the CPU units
+     * when the task definition is registered.
      * </p>
      * <p>
-     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
-     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>memory</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -708,17 +752,18 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     *         <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
-     *         a task definition but is converted to an integer indicating the CPU units when the task definition is
-     *         registered.</p>
+     * @return The number of CPU units used by the task as expressed in a task definition. It can be expressed as an
+     *         integer using CPU units, for example <code>1024</code>. It can also be expressed as a string using vCPUs,
+     *         for example <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an integer
+     *         indicating the CPU units when the task definition is registered.</p>
      *         <p>
-     *         If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
-     *         units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *         If you are using the EC2 launch type, this field is optional. Supported values are between
+     *         <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     *         vCPUs).
      *         </p>
      *         <p>
-     *         If using the Fargate launch type, this field is required and you must use one of the following values,
-     *         which determines your range of supported values for the <code>memory</code> parameter:
+     *         If you are using the Fargate launch type, this field is required and you must use one of the following
+     *         values, which determines your range of supported values for the <code>memory</code> parameter:
      *         </p>
      *         <ul>
      *         <li>
@@ -757,17 +802,18 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
-     * definition but is converted to an integer indicating the CPU units when the task definition is registered.
+     * The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer
+     * using CPU units, for example <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an integer indicating the CPU units
+     * when the task definition is registered.
      * </p>
      * <p>
-     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
-     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * If you are using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>memory</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -801,17 +847,18 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param cpu
-     *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
-     *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
-     *        a task definition but is converted to an integer indicating the CPU units when the task definition is
-     *        registered.</p>
+     *        The number of CPU units used by the task as expressed in a task definition. It can be expressed as an
+     *        integer using CPU units, for example <code>1024</code>. It can also be expressed as a string using vCPUs,
+     *        for example <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an integer
+     *        indicating the CPU units when the task definition is registered.</p>
      *        <p>
-     *        If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
-     *        units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *        If you are using the EC2 launch type, this field is optional. Supported values are between
+     *        <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
+     *        vCPUs).
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of supported values for the <code>memory</code> parameter:
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of supported values for the <code>memory</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -852,16 +899,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but is converted to an integer indicating the MiB when the task definition is registered.
+     * The amount of memory (in MiB) used by the task as expressed in a task definition. It can be expressed as an
+     * integer using MiB, for example <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer indicating the MiB when the task
+     * definition is registered.
      * </p>
      * <p>
-     * If using the EC2 launch type, this field is optional.
+     * If you are using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -895,15 +943,16 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param memory
-     *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     *        definition but is converted to an integer indicating the MiB when the task definition is registered.</p>
+     *        The amount of memory (in MiB) used by the task as expressed in a task definition. It can be expressed as
+     *        an integer using MiB, for example <code>1024</code>. It can also be expressed as a string using GB, for
+     *        example <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer indicating the
+     *        MiB when the task definition is registered.</p>
      *        <p>
-     *        If using the EC2 launch type, this field is optional.
+     *        If you are using the EC2 launch type, this field is optional.
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of supported values for the <code>cpu</code> parameter:
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of supported values for the <code>cpu</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -942,16 +991,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but is converted to an integer indicating the MiB when the task definition is registered.
+     * The amount of memory (in MiB) used by the task as expressed in a task definition. It can be expressed as an
+     * integer using MiB, for example <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer indicating the MiB when the task
+     * definition is registered.
      * </p>
      * <p>
-     * If using the EC2 launch type, this field is optional.
+     * If you are using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -984,15 +1034,16 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     *         <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     *         definition but is converted to an integer indicating the MiB when the task definition is registered.</p>
+     * @return The amount of memory (in MiB) used by the task as expressed in a task definition. It can be expressed as
+     *         an integer using MiB, for example <code>1024</code>. It can also be expressed as a string using GB, for
+     *         example <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer indicating the
+     *         MiB when the task definition is registered.</p>
      *         <p>
-     *         If using the EC2 launch type, this field is optional.
+     *         If you are using the EC2 launch type, this field is optional.
      *         </p>
      *         <p>
-     *         If using the Fargate launch type, this field is required and you must use one of the following values,
-     *         which determines your range of supported values for the <code>cpu</code> parameter:
+     *         If you are using the Fargate launch type, this field is required and you must use one of the following
+     *         values, which determines your range of supported values for the <code>cpu</code> parameter:
      *         </p>
      *         <ul>
      *         <li>
@@ -1031,16 +1082,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     * definition but is converted to an integer indicating the MiB when the task definition is registered.
+     * The amount of memory (in MiB) used by the task as expressed in a task definition. It can be expressed as an
+     * integer using MiB, for example <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer indicating the MiB when the task
+     * definition is registered.
      * </p>
      * <p>
-     * If using the EC2 launch type, this field is optional.
+     * If you are using the EC2 launch type, this field is optional.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of supported values for the <code>cpu</code> parameter:
+     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
+     * which determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -1074,15 +1126,16 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param memory
-     *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
-     *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
-     *        definition but is converted to an integer indicating the MiB when the task definition is registered.</p>
+     *        The amount of memory (in MiB) used by the task as expressed in a task definition. It can be expressed as
+     *        an integer using MiB, for example <code>1024</code>. It can also be expressed as a string using GB, for
+     *        example <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer indicating the
+     *        MiB when the task definition is registered.</p>
      *        <p>
-     *        If using the EC2 launch type, this field is optional.
+     *        If you are using the EC2 launch type, this field is optional.
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of supported values for the <code>cpu</code> parameter:
+     *        If you are using the Fargate launch type, this field is required and you must use one of the following
+     *        values, which determines your range of supported values for the <code>cpu</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -1244,16 +1297,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch Events for
-     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
+     * current.
      * </p>
      * 
      * @param version
      *        The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event,
      *        the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch
-     *        Events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in
-     *        CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the version in your
-     *        event stream is current.
+     *        Events, you can compare the version of a task reported by the Amazon ECS API actionss with the version
+     *        reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the
+     *        version in your event stream is current.
      */
 
     public void setVersion(Long version) {
@@ -1264,15 +1318,16 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch Events for
-     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
+     * current.
      * </p>
      * 
      * @return The version counter for the task. Every time a task experiences a change that triggers a CloudWatch
      *         event, the version counter is incremented. If you are replicating your Amazon ECS task state with
-     *         CloudWatch Events, you can compare the version of a task reported by the Amazon ECS APIs with the version
-     *         reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the
-     *         version in your event stream is current.
+     *         CloudWatch Events, you can compare the version of a task reported by the Amazon ECS API actionss with the
+     *         version reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that
+     *         the version in your event stream is current.
      */
 
     public Long getVersion() {
@@ -1283,16 +1338,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event, the
      * version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch Events, you can
-     * compare the version of a task reported by the Amazon ECS APIs with the version reported in CloudWatch Events for
-     * the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.
+     * compare the version of a task reported by the Amazon ECS API actionss with the version reported in CloudWatch
+     * Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is
+     * current.
      * </p>
      * 
      * @param version
      *        The version counter for the task. Every time a task experiences a change that triggers a CloudWatch event,
      *        the version counter is incremented. If you are replicating your Amazon ECS task state with CloudWatch
-     *        Events, you can compare the version of a task reported by the Amazon ECS APIs with the version reported in
-     *        CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the version in your
-     *        event stream is current.
+     *        Events, you can compare the version of a task reported by the Amazon ECS API actionss with the version
+     *        reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the
+     *        version in your event stream is current.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1303,11 +1359,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the task was stopped.
+     * The reason that the task was stopped.
      * </p>
      * 
      * @param stoppedReason
-     *        The reason the task was stopped.
+     *        The reason that the task was stopped.
      */
 
     public void setStoppedReason(String stoppedReason) {
@@ -1316,10 +1372,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the task was stopped.
+     * The reason that the task was stopped.
      * </p>
      * 
-     * @return The reason the task was stopped.
+     * @return The reason that the task was stopped.
      */
 
     public String getStoppedReason() {
@@ -1328,16 +1384,79 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason the task was stopped.
+     * The reason that the task was stopped.
      * </p>
      * 
      * @param stoppedReason
-     *        The reason the task was stopped.
+     *        The reason that the task was stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Task withStoppedReason(String stoppedReason) {
         setStoppedReason(stoppedReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stop code indicating why a task was stopped. The <code>stoppedReason</code> may contain additional details.
+     * </p>
+     * 
+     * @param stopCode
+     *        The stop code indicating why a task was stopped. The <code>stoppedReason</code> may contain additional
+     *        details.
+     * @see TaskStopCode
+     */
+
+    public void setStopCode(String stopCode) {
+        this.stopCode = stopCode;
+    }
+
+    /**
+     * <p>
+     * The stop code indicating why a task was stopped. The <code>stoppedReason</code> may contain additional details.
+     * </p>
+     * 
+     * @return The stop code indicating why a task was stopped. The <code>stoppedReason</code> may contain additional
+     *         details.
+     * @see TaskStopCode
+     */
+
+    public String getStopCode() {
+        return this.stopCode;
+    }
+
+    /**
+     * <p>
+     * The stop code indicating why a task was stopped. The <code>stoppedReason</code> may contain additional details.
+     * </p>
+     * 
+     * @param stopCode
+     *        The stop code indicating why a task was stopped. The <code>stoppedReason</code> may contain additional
+     *        details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TaskStopCode
+     */
+
+    public Task withStopCode(String stopCode) {
+        setStopCode(stopCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stop code indicating why a task was stopped. The <code>stoppedReason</code> may contain additional details.
+     * </p>
+     * 
+     * @param stopCode
+     *        The stop code indicating why a task was stopped. The <code>stoppedReason</code> may contain additional
+     *        details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TaskStopCode
+     */
+
+    public Task withStopCode(TaskStopCode stopCode) {
+        this.stopCode = stopCode.toString();
         return this;
     }
 
@@ -1402,11 +1521,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task last went into <code>CONNECTED</code> status.
+     * The Unix timestamp for when the task last went into <code>CONNECTED</code> status.
      * </p>
      * 
      * @param connectivityAt
-     *        The Unix time stamp for when the task last went into <code>CONNECTED</code> status.
+     *        The Unix timestamp for when the task last went into <code>CONNECTED</code> status.
      */
 
     public void setConnectivityAt(java.util.Date connectivityAt) {
@@ -1415,10 +1534,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task last went into <code>CONNECTED</code> status.
+     * The Unix timestamp for when the task last went into <code>CONNECTED</code> status.
      * </p>
      * 
-     * @return The Unix time stamp for when the task last went into <code>CONNECTED</code> status.
+     * @return The Unix timestamp for when the task last went into <code>CONNECTED</code> status.
      */
 
     public java.util.Date getConnectivityAt() {
@@ -1427,11 +1546,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task last went into <code>CONNECTED</code> status.
+     * The Unix timestamp for when the task last went into <code>CONNECTED</code> status.
      * </p>
      * 
      * @param connectivityAt
-     *        The Unix time stamp for when the task last went into <code>CONNECTED</code> status.
+     *        The Unix timestamp for when the task last went into <code>CONNECTED</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1442,11 +1561,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull began.
+     * The Unix timestamp for when the container image pull began.
      * </p>
      * 
      * @param pullStartedAt
-     *        The Unix time stamp for when the container image pull began.
+     *        The Unix timestamp for when the container image pull began.
      */
 
     public void setPullStartedAt(java.util.Date pullStartedAt) {
@@ -1455,10 +1574,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull began.
+     * The Unix timestamp for when the container image pull began.
      * </p>
      * 
-     * @return The Unix time stamp for when the container image pull began.
+     * @return The Unix timestamp for when the container image pull began.
      */
 
     public java.util.Date getPullStartedAt() {
@@ -1467,11 +1586,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull began.
+     * The Unix timestamp for when the container image pull began.
      * </p>
      * 
      * @param pullStartedAt
-     *        The Unix time stamp for when the container image pull began.
+     *        The Unix timestamp for when the container image pull began.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1482,11 +1601,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull completed.
+     * The Unix timestamp for when the container image pull completed.
      * </p>
      * 
      * @param pullStoppedAt
-     *        The Unix time stamp for when the container image pull completed.
+     *        The Unix timestamp for when the container image pull completed.
      */
 
     public void setPullStoppedAt(java.util.Date pullStoppedAt) {
@@ -1495,10 +1614,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull completed.
+     * The Unix timestamp for when the container image pull completed.
      * </p>
      * 
-     * @return The Unix time stamp for when the container image pull completed.
+     * @return The Unix timestamp for when the container image pull completed.
      */
 
     public java.util.Date getPullStoppedAt() {
@@ -1507,11 +1626,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the container image pull completed.
+     * The Unix timestamp for when the container image pull completed.
      * </p>
      * 
      * @param pullStoppedAt
-     *        The Unix time stamp for when the container image pull completed.
+     *        The Unix timestamp for when the container image pull completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1522,11 +1641,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task execution stopped.
+     * The Unix timestamp for when the task execution stopped.
      * </p>
      * 
      * @param executionStoppedAt
-     *        The Unix time stamp for when the task execution stopped.
+     *        The Unix timestamp for when the task execution stopped.
      */
 
     public void setExecutionStoppedAt(java.util.Date executionStoppedAt) {
@@ -1535,10 +1654,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task execution stopped.
+     * The Unix timestamp for when the task execution stopped.
      * </p>
      * 
-     * @return The Unix time stamp for when the task execution stopped.
+     * @return The Unix timestamp for when the task execution stopped.
      */
 
     public java.util.Date getExecutionStoppedAt() {
@@ -1547,11 +1666,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task execution stopped.
+     * The Unix timestamp for when the task execution stopped.
      * </p>
      * 
      * @param executionStoppedAt
-     *        The Unix time stamp for when the task execution stopped.
+     *        The Unix timestamp for when the task execution stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1562,11 +1681,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task was created (the task entered the <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp for when the task was created (the task entered the <code>PENDING</code> state).
+     *        The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -1575,10 +1694,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task was created (the task entered the <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      * </p>
      * 
-     * @return The Unix time stamp for when the task was created (the task entered the <code>PENDING</code> state).
+     * @return The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      */
 
     public java.util.Date getCreatedAt() {
@@ -1587,11 +1706,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task was created (the task entered the <code>PENDING</code> state).
+     * The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp for when the task was created (the task entered the <code>PENDING</code> state).
+     *        The Unix timestamp for when the task was created (the task entered the <code>PENDING</code> state).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1602,13 +1721,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task started (the task transitioned from the <code>PENDING</code> state to the
+     * The Unix timestamp for when the task started (the task transitioned from the <code>PENDING</code> state to the
      * <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix time stamp for when the task started (the task transitioned from the <code>PENDING</code> state
-     *        to the <code>RUNNING</code> state).
+     *        The Unix timestamp for when the task started (the task transitioned from the <code>PENDING</code> state to
+     *        the <code>RUNNING</code> state).
      */
 
     public void setStartedAt(java.util.Date startedAt) {
@@ -1617,11 +1736,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task started (the task transitioned from the <code>PENDING</code> state to the
+     * The Unix timestamp for when the task started (the task transitioned from the <code>PENDING</code> state to the
      * <code>RUNNING</code> state).
      * </p>
      * 
-     * @return The Unix time stamp for when the task started (the task transitioned from the <code>PENDING</code> state
+     * @return The Unix timestamp for when the task started (the task transitioned from the <code>PENDING</code> state
      *         to the <code>RUNNING</code> state).
      */
 
@@ -1631,13 +1750,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task started (the task transitioned from the <code>PENDING</code> state to the
+     * The Unix timestamp for when the task started (the task transitioned from the <code>PENDING</code> state to the
      * <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix time stamp for when the task started (the task transitioned from the <code>PENDING</code> state
-     *        to the <code>RUNNING</code> state).
+     *        The Unix timestamp for when the task started (the task transitioned from the <code>PENDING</code> state to
+     *        the <code>RUNNING</code> state).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1648,12 +1767,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     * The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code> state to
      * <code>STOPPED</code>).
      * </p>
      * 
      * @param stoppingAt
-     *        The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     *        The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code> state to
      *        <code>STOPPED</code>).
      */
 
@@ -1663,11 +1782,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     * The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code> state to
      * <code>STOPPED</code>).
      * </p>
      * 
-     * @return The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     * @return The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code> state to
      *         <code>STOPPED</code>).
      */
 
@@ -1677,12 +1796,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     * The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code> state to
      * <code>STOPPED</code>).
      * </p>
      * 
      * @param stoppingAt
-     *        The Unix time stamp for when the task will stop (transitions from the <code>RUNNING</code> state to
+     *        The Unix timestamp for when the task stops (transitions from the <code>RUNNING</code> state to
      *        <code>STOPPED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1694,12 +1813,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
+     * The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
      * the <code>STOPPED</code> state).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix time stamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
+     *        The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
      *        state to the <code>STOPPED</code> state).
      */
 
@@ -1709,11 +1828,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
+     * The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
      * the <code>STOPPED</code> state).
      * </p>
      * 
-     * @return The Unix time stamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
+     * @return The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
      *         state to the <code>STOPPED</code> state).
      */
 
@@ -1723,12 +1842,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
+     * The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code> state to
      * the <code>STOPPED</code> state).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix time stamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
+     *        The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
      *        state to the <code>STOPPED</code> state).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1780,11 +1899,15 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running.
+     * The launch type on which your task is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your task is running.
+     *        The launch type on which your task is running. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -1794,10 +1917,14 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running.
+     * The launch type on which your task is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The launch type on which your task is running.
+     * @return The launch type on which your task is running. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -1807,11 +1934,15 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running.
+     * The launch type on which your task is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your task is running.
+     *        The launch type on which your task is running. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -1823,11 +1954,15 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your task is running.
+     * The launch type on which your task is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your task is running.
+     *        The launch type on which your task is running. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -1839,14 +1974,18 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * The platform version on which your task is running. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your task is running. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        The platform version on which your task is running. A platform version is only specified for tasks using
+     *        the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     *        default. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -1856,13 +1995,17 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * The platform version on which your task is running. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version on which your task is running. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     * @return The platform version on which your task is running. A platform version is only specified for tasks using
+     *         the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     *         default. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -1872,14 +2015,18 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which your task is running. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * The platform version on which your task is running. A platform version is only specified for tasks using the
+     * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which your task is running. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        The platform version on which your task is running. A platform version is only specified for tasks using
+     *        the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
+     *        default. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2114,7 +2261,97 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and
+     * an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @return The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a
+     *         key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *         characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and
+     * an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a
+     *        key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and
+     * an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a
+     *        key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Task withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and
+     * an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a
+     *        key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
+     *        characters, and tag values can have a maximum length of 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Task withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -2150,6 +2387,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
             sb.append("Version: ").append(getVersion()).append(",");
         if (getStoppedReason() != null)
             sb.append("StoppedReason: ").append(getStoppedReason()).append(",");
+        if (getStopCode() != null)
+            sb.append("StopCode: ").append(getStopCode()).append(",");
         if (getConnectivity() != null)
             sb.append("Connectivity: ").append(getConnectivity()).append(",");
         if (getConnectivityAt() != null)
@@ -2177,7 +2416,9 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         if (getAttachments() != null)
             sb.append("Attachments: ").append(getAttachments()).append(",");
         if (getHealthStatus() != null)
-            sb.append("HealthStatus: ").append(getHealthStatus());
+            sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -2244,6 +2485,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStoppedReason() != null && other.getStoppedReason().equals(this.getStoppedReason()) == false)
             return false;
+        if (other.getStopCode() == null ^ this.getStopCode() == null)
+            return false;
+        if (other.getStopCode() != null && other.getStopCode().equals(this.getStopCode()) == false)
+            return false;
         if (other.getConnectivity() == null ^ this.getConnectivity() == null)
             return false;
         if (other.getConnectivity() != null && other.getConnectivity().equals(this.getConnectivity()) == false)
@@ -2300,6 +2545,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHealthStatus() != null && other.getHealthStatus().equals(this.getHealthStatus()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -2321,6 +2570,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getStoppedReason() == null) ? 0 : getStoppedReason().hashCode());
+        hashCode = prime * hashCode + ((getStopCode() == null) ? 0 : getStopCode().hashCode());
         hashCode = prime * hashCode + ((getConnectivity() == null) ? 0 : getConnectivity().hashCode());
         hashCode = prime * hashCode + ((getConnectivityAt() == null) ? 0 : getConnectivityAt().hashCode());
         hashCode = prime * hashCode + ((getPullStartedAt() == null) ? 0 : getPullStartedAt().hashCode());
@@ -2335,6 +2585,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

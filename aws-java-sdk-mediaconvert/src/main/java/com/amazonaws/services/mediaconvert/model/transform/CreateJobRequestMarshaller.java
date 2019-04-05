@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateJobRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> ACCELERATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accelerationSettings").build();
+    private static final MarshallingInfo<String> BILLINGTAGSSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("billingTagsSource").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -42,6 +46,8 @@ public class CreateJobRequestMarshaller {
             .marshallLocationName("role").build();
     private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("settings").build();
+    private static final MarshallingInfo<String> STATUSUPDATEINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusUpdateInterval").build();
     private static final MarshallingInfo<Map> USERMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("userMetadata").build();
 
@@ -61,11 +67,14 @@ public class CreateJobRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createJobRequest.getAccelerationSettings(), ACCELERATIONSETTINGS_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getBillingTagsSource(), BILLINGTAGSSOURCE_BINDING);
             protocolMarshaller.marshall(createJobRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createJobRequest.getJobTemplate(), JOBTEMPLATE_BINDING);
             protocolMarshaller.marshall(createJobRequest.getQueue(), QUEUE_BINDING);
             protocolMarshaller.marshall(createJobRequest.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(createJobRequest.getSettings(), SETTINGS_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getStatusUpdateInterval(), STATUSUPDATEINTERVAL_BINDING);
             protocolMarshaller.marshall(createJobRequest.getUserMetadata(), USERMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

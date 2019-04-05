@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,19 +44,19 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * Amazon WorkMail).
+     * WorkMail).
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The date and time when a user was registered to Amazon WorkMail, in UNIX epoch time format.
+     * The date and time when a user was registered to WorkMail, in UNIX epoch time format.
      * </p>
      */
     private java.util.Date enabledDate;
     /**
      * <p>
-     * The date and time when a user was deregistered from Amazon WorkMail, in UNIX epoch time format.
+     * The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.
      * </p>
      */
     private java.util.Date disabledDate;
@@ -184,12 +184,12 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * Amazon WorkMail).
+     * WorkMail).
      * </p>
      * 
      * @param state
      *        The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never
-     *        registered to Amazon WorkMail).
+     *        registered to WorkMail).
      * @see EntityState
      */
 
@@ -200,11 +200,11 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * Amazon WorkMail).
+     * WorkMail).
      * </p>
      * 
      * @return The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never
-     *         registered to Amazon WorkMail).
+     *         registered to WorkMail).
      * @see EntityState
      */
 
@@ -215,12 +215,12 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * Amazon WorkMail).
+     * WorkMail).
      * </p>
      * 
      * @param state
      *        The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never
-     *        registered to Amazon WorkMail).
+     *        registered to WorkMail).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityState
      */
@@ -233,12 +233,12 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never registered to
-     * Amazon WorkMail).
+     * WorkMail).
      * </p>
      * 
      * @param state
      *        The state of the user: enabled (registered to Amazon WorkMail) or disabled (deregistered or never
-     *        registered to Amazon WorkMail).
+     *        registered to WorkMail).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityState
      */
@@ -250,11 +250,11 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date and time when a user was registered to Amazon WorkMail, in UNIX epoch time format.
+     * The date and time when a user was registered to WorkMail, in UNIX epoch time format.
      * </p>
      * 
      * @param enabledDate
-     *        The date and time when a user was registered to Amazon WorkMail, in UNIX epoch time format.
+     *        The date and time when a user was registered to WorkMail, in UNIX epoch time format.
      */
 
     public void setEnabledDate(java.util.Date enabledDate) {
@@ -263,10 +263,10 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date and time when a user was registered to Amazon WorkMail, in UNIX epoch time format.
+     * The date and time when a user was registered to WorkMail, in UNIX epoch time format.
      * </p>
      * 
-     * @return The date and time when a user was registered to Amazon WorkMail, in UNIX epoch time format.
+     * @return The date and time when a user was registered to WorkMail, in UNIX epoch time format.
      */
 
     public java.util.Date getEnabledDate() {
@@ -275,11 +275,11 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date and time when a user was registered to Amazon WorkMail, in UNIX epoch time format.
+     * The date and time when a user was registered to WorkMail, in UNIX epoch time format.
      * </p>
      * 
      * @param enabledDate
-     *        The date and time when a user was registered to Amazon WorkMail, in UNIX epoch time format.
+     *        The date and time when a user was registered to WorkMail, in UNIX epoch time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,11 +290,11 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date and time when a user was deregistered from Amazon WorkMail, in UNIX epoch time format.
+     * The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.
      * </p>
      * 
      * @param disabledDate
-     *        The date and time when a user was deregistered from Amazon WorkMail, in UNIX epoch time format.
+     *        The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.
      */
 
     public void setDisabledDate(java.util.Date disabledDate) {
@@ -303,10 +303,10 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date and time when a user was deregistered from Amazon WorkMail, in UNIX epoch time format.
+     * The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.
      * </p>
      * 
-     * @return The date and time when a user was deregistered from Amazon WorkMail, in UNIX epoch time format.
+     * @return The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.
      */
 
     public java.util.Date getDisabledDate() {
@@ -315,11 +315,11 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date and time when a user was deregistered from Amazon WorkMail, in UNIX epoch time format.
+     * The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.
      * </p>
      * 
      * @param disabledDate
-     *        The date and time when a user was deregistered from Amazon WorkMail, in UNIX epoch time format.
+     *        The date and time when a user was deregistered from WorkMail, in UNIX epoch time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,7 +329,8 @@ public class DescribeGroupResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

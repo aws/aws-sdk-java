@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A gateway response of a given response type and status code, with optional response parameters and mapping templates.
  * </p>
  * <div class="remarks"> For more information about valid gateway response types, see <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/supported-gateway-response-types.html">Gateway
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/supported-gateway-response-types.html">Gateway
  * Response Types Supported by API Gateway</a> <div class="example"> <h4>Example: Get a Gateway Response of a given
  * response type</h4> <h5>Request</h5>
  * <p>
@@ -44,8 +44,8 @@ import javax.annotation.Generated;
  * <p>
  * </p>
  * </div> </div> <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize Gateway
- * Responses</a> </div>
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
+ * Gateway Responses</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutGatewayResponseResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
@@ -636,7 +636,8 @@ public class PutGatewayResponseResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,20 +26,37 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ContainerSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Container for this output. Some containers require a container settings object. If not specified, the default
+     * object will be created.
+     */
     private String container;
-
+    /** Settings for F4v container */
     private F4vSettings f4vSettings;
-
+    /**
+     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
+     * (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table
+     * (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these
+     * subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds
+     * to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems
+     * and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs
+     * to locate specific data within the asset.
+     */
     private M2tsSettings m2tsSettings;
-
+    /** Settings for TS segments in HLS */
     private M3u8Settings m3u8Settings;
-
+    /** Settings for MOV Container. */
     private MovSettings movSettings;
-
+    /** Settings for MP4 Container */
     private Mp4Settings mp4Settings;
 
     /**
+     * Container for this output. Some containers require a container settings object. If not specified, the default
+     * object will be created.
+     * 
      * @param container
+     *        Container for this output. Some containers require a container settings object. If not specified, the
+     *        default object will be created.
      * @see ContainerType
      */
 
@@ -48,7 +65,11 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * Container for this output. Some containers require a container settings object. If not specified, the default
+     * object will be created.
+     * 
+     * @return Container for this output. Some containers require a container settings object. If not specified, the
+     *         default object will be created.
      * @see ContainerType
      */
 
@@ -57,7 +78,12 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Container for this output. Some containers require a container settings object. If not specified, the default
+     * object will be created.
+     * 
      * @param container
+     *        Container for this output. Some containers require a container settings object. If not specified, the
+     *        default object will be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerType
      */
@@ -68,7 +94,12 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Container for this output. Some containers require a container settings object. If not specified, the default
+     * object will be created.
+     * 
      * @param container
+     *        Container for this output. Some containers require a container settings object. If not specified, the
+     *        default object will be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerType
      */
@@ -79,7 +110,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Settings for F4v container
+     * 
      * @param f4vSettings
+     *        Settings for F4v container
      */
 
     public void setF4vSettings(F4vSettings f4vSettings) {
@@ -87,7 +121,9 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * Settings for F4v container
+     * 
+     * @return Settings for F4v container
      */
 
     public F4vSettings getF4vSettings() {
@@ -95,7 +131,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Settings for F4v container
+     * 
      * @param f4vSettings
+     *        Settings for F4v container
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +144,22 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
+     * (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table
+     * (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these
+     * subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds
+     * to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems
+     * and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs
+     * to locate specific data within the asset.
+     * 
      * @param m2tsSettings
+     *        MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
+     *        (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map
+     *        table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata.
+     *        Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport
+     *        stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along
+     *        with their PID. Downstream systems and players use the program map table to look up the PID for each type
+     *        of data it accesses and then uses the PIDs to locate specific data within the asset.
      */
 
     public void setM2tsSettings(M2tsSettings m2tsSettings) {
@@ -113,7 +167,21 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
+     * (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table
+     * (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these
+     * subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds
+     * to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems
+     * and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs
+     * to locate specific data within the asset.
+     * 
+     * @return MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
+     *         (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map
+     *         table (PMT). Each transport stream program contains subsets of data, including audio, video, and
+     *         metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each
+     *         transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a
+     *         program along with their PID. Downstream systems and players use the program map table to look up the PID
+     *         for each type of data it accesses and then uses the PIDs to locate specific data within the asset.
      */
 
     public M2tsSettings getM2tsSettings() {
@@ -121,7 +189,22 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
+     * (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table
+     * (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these
+     * subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds
+     * to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems
+     * and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs
+     * to locate specific data within the asset.
+     * 
      * @param m2tsSettings
+     *        MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
+     *        (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map
+     *        table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata.
+     *        Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport
+     *        stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along
+     *        with their PID. Downstream systems and players use the program map table to look up the PID for each type
+     *        of data it accesses and then uses the PIDs to locate specific data within the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +214,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Settings for TS segments in HLS
+     * 
      * @param m3u8Settings
+     *        Settings for TS segments in HLS
      */
 
     public void setM3u8Settings(M3u8Settings m3u8Settings) {
@@ -139,7 +225,9 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * Settings for TS segments in HLS
+     * 
+     * @return Settings for TS segments in HLS
      */
 
     public M3u8Settings getM3u8Settings() {
@@ -147,7 +235,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Settings for TS segments in HLS
+     * 
      * @param m3u8Settings
+     *        Settings for TS segments in HLS
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,7 +248,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Settings for MOV Container.
+     * 
      * @param movSettings
+     *        Settings for MOV Container.
      */
 
     public void setMovSettings(MovSettings movSettings) {
@@ -165,7 +259,9 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * Settings for MOV Container.
+     * 
+     * @return Settings for MOV Container.
      */
 
     public MovSettings getMovSettings() {
@@ -173,7 +269,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Settings for MOV Container.
+     * 
      * @param movSettings
+     *        Settings for MOV Container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,7 +282,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Settings for MP4 Container
+     * 
      * @param mp4Settings
+     *        Settings for MP4 Container
      */
 
     public void setMp4Settings(Mp4Settings mp4Settings) {
@@ -191,7 +293,9 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * Settings for MP4 Container
+     * 
+     * @return Settings for MP4 Container
      */
 
     public Mp4Settings getMp4Settings() {
@@ -199,7 +303,10 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Settings for MP4 Container
+     * 
      * @param mp4Settings
+     *        Settings for MP4 Container
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,7 +316,8 @@ public class ContainerSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

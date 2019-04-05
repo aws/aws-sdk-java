@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,19 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastUpdateTime;
+    /**
+     * <p>
+     * A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
+     * another data set is populated. The list of triggers can be empty or contain up to five DataSetTrigger objects
+     * </p>
+     */
+    private java.util.List<DatasetTrigger> triggers;
+    /**
+     * <p>
+     * A list of "DataActionSummary" objects.
+     * </p>
+     */
+    private java.util.List<DatasetActionSummary> actions;
 
     /**
      * <p>
@@ -233,7 +246,160 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
+     * another data set is populated. The list of triggers can be empty or contain up to five DataSetTrigger objects
+     * </p>
+     * 
+     * @return A list of triggers. A trigger causes data set content to be populated at a specified time interval or
+     *         when another data set is populated. The list of triggers can be empty or contain up to five
+     *         DataSetTrigger objects
+     */
+
+    public java.util.List<DatasetTrigger> getTriggers() {
+        return triggers;
+    }
+
+    /**
+     * <p>
+     * A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
+     * another data set is populated. The list of triggers can be empty or contain up to five DataSetTrigger objects
+     * </p>
+     * 
+     * @param triggers
+     *        A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
+     *        another data set is populated. The list of triggers can be empty or contain up to five DataSetTrigger
+     *        objects
+     */
+
+    public void setTriggers(java.util.Collection<DatasetTrigger> triggers) {
+        if (triggers == null) {
+            this.triggers = null;
+            return;
+        }
+
+        this.triggers = new java.util.ArrayList<DatasetTrigger>(triggers);
+    }
+
+    /**
+     * <p>
+     * A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
+     * another data set is populated. The list of triggers can be empty or contain up to five DataSetTrigger objects
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTriggers(java.util.Collection)} or {@link #withTriggers(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param triggers
+     *        A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
+     *        another data set is populated. The list of triggers can be empty or contain up to five DataSetTrigger
+     *        objects
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatasetSummary withTriggers(DatasetTrigger... triggers) {
+        if (this.triggers == null) {
+            setTriggers(new java.util.ArrayList<DatasetTrigger>(triggers.length));
+        }
+        for (DatasetTrigger ele : triggers) {
+            this.triggers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
+     * another data set is populated. The list of triggers can be empty or contain up to five DataSetTrigger objects
+     * </p>
+     * 
+     * @param triggers
+     *        A list of triggers. A trigger causes data set content to be populated at a specified time interval or when
+     *        another data set is populated. The list of triggers can be empty or contain up to five DataSetTrigger
+     *        objects
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatasetSummary withTriggers(java.util.Collection<DatasetTrigger> triggers) {
+        setTriggers(triggers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of "DataActionSummary" objects.
+     * </p>
+     * 
+     * @return A list of "DataActionSummary" objects.
+     */
+
+    public java.util.List<DatasetActionSummary> getActions() {
+        return actions;
+    }
+
+    /**
+     * <p>
+     * A list of "DataActionSummary" objects.
+     * </p>
+     * 
+     * @param actions
+     *        A list of "DataActionSummary" objects.
+     */
+
+    public void setActions(java.util.Collection<DatasetActionSummary> actions) {
+        if (actions == null) {
+            this.actions = null;
+            return;
+        }
+
+        this.actions = new java.util.ArrayList<DatasetActionSummary>(actions);
+    }
+
+    /**
+     * <p>
+     * A list of "DataActionSummary" objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setActions(java.util.Collection)} or {@link #withActions(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param actions
+     *        A list of "DataActionSummary" objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatasetSummary withActions(DatasetActionSummary... actions) {
+        if (this.actions == null) {
+            setActions(new java.util.ArrayList<DatasetActionSummary>(actions.length));
+        }
+        for (DatasetActionSummary ele : actions) {
+            this.actions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of "DataActionSummary" objects.
+     * </p>
+     * 
+     * @param actions
+     *        A list of "DataActionSummary" objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatasetSummary withActions(java.util.Collection<DatasetActionSummary> actions) {
+        setActions(actions);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -250,7 +416,11 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdateTime() != null)
-            sb.append("LastUpdateTime: ").append(getLastUpdateTime());
+            sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
+        if (getTriggers() != null)
+            sb.append("Triggers: ").append(getTriggers()).append(",");
+        if (getActions() != null)
+            sb.append("Actions: ").append(getActions());
         sb.append("}");
         return sb.toString();
     }
@@ -281,6 +451,14 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdateTime() != null && other.getLastUpdateTime().equals(this.getLastUpdateTime()) == false)
             return false;
+        if (other.getTriggers() == null ^ this.getTriggers() == null)
+            return false;
+        if (other.getTriggers() != null && other.getTriggers().equals(this.getTriggers()) == false)
+            return false;
+        if (other.getActions() == null ^ this.getActions() == null)
+            return false;
+        if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
+            return false;
         return true;
     }
 
@@ -293,6 +471,8 @@ public class DatasetSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getTriggers() == null) ? 0 : getTriggers().hashCode());
+        hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         return hashCode;
     }
 

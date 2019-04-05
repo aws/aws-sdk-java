@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A structure containing the Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.
+ * Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa" target="_top">AWS API
@@ -26,11 +26,23 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The binary contents of the LOA-CFA document.
+     * </p>
+     */
     private java.nio.ByteBuffer loaContent;
-
+    /**
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     */
     private String loaContentType;
 
     /**
+     * <p>
+     * The binary contents of the LOA-CFA document.
+     * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -43,6 +55,7 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param loaContent
+     *        The binary contents of the LOA-CFA document.
      */
 
     public void setLoaContent(java.nio.ByteBuffer loaContent) {
@@ -51,14 +64,17 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * The binary contents of the LOA-CFA document.
+     * </p>
+     * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
-     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}
-     * . Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
      * {@code position}.
      * </p>
      * 
-     * @return
+     * @return The binary contents of the LOA-CFA document.
      */
 
     public java.nio.ByteBuffer getLoaContent() {
@@ -66,6 +82,9 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The binary contents of the LOA-CFA document.
+     * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
@@ -78,6 +97,7 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param loaContent
+     *        The binary contents of the LOA-CFA document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,7 +107,12 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     * 
      * @param loaContentType
+     *        The standard media type for the LOA-CFA document. The only supported value is application/pdf.
      * @see LoaContentType
      */
 
@@ -96,7 +121,11 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     * 
+     * @return The standard media type for the LOA-CFA document. The only supported value is application/pdf.
      * @see LoaContentType
      */
 
@@ -105,7 +134,12 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     * 
      * @param loaContentType
+     *        The standard media type for the LOA-CFA document. The only supported value is application/pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoaContentType
      */
@@ -116,7 +150,12 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     * 
      * @param loaContentType
+     *        The standard media type for the LOA-CFA document. The only supported value is application/pdf.
      * @see LoaContentType
      */
 
@@ -125,7 +164,12 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The standard media type for the LOA-CFA document. The only supported value is application/pdf.
+     * </p>
+     * 
      * @param loaContentType
+     *        The standard media type for the LOA-CFA document. The only supported value is application/pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoaContentType
      */
@@ -136,7 +180,8 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

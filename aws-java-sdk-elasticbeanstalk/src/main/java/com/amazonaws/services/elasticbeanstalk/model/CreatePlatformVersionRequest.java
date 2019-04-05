@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,16 @@ public class CreatePlatformVersionRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettings;
+    /**
+     * <p>
+     * Specifies the tags applied to the new platform version.
+     * </p>
+     * <p>
+     * Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the
+     * platform version don't inherit the tags.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -293,7 +303,109 @@ public class CreatePlatformVersionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Specifies the tags applied to the new platform version.
+     * </p>
+     * <p>
+     * Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the
+     * platform version don't inherit the tags.
+     * </p>
+     * 
+     * @return Specifies the tags applied to the new platform version.</p>
+     *         <p>
+     *         Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the
+     *         platform version don't inherit the tags.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the new platform version.
+     * </p>
+     * <p>
+     * Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the
+     * platform version don't inherit the tags.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the new platform version.</p>
+     *        <p>
+     *        Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the
+     *        platform version don't inherit the tags.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the new platform version.
+     * </p>
+     * <p>
+     * Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the
+     * platform version don't inherit the tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the new platform version.</p>
+     *        <p>
+     *        Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the
+     *        platform version don't inherit the tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePlatformVersionRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags applied to the new platform version.
+     * </p>
+     * <p>
+     * Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the
+     * platform version don't inherit the tags.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags applied to the new platform version.</p>
+     *        <p>
+     *        Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the
+     *        platform version don't inherit the tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePlatformVersionRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -312,7 +424,9 @@ public class CreatePlatformVersionRequest extends com.amazonaws.AmazonWebService
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getOptionSettings() != null)
-            sb.append("OptionSettings: ").append(getOptionSettings());
+            sb.append("OptionSettings: ").append(getOptionSettings()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -347,6 +461,10 @@ public class CreatePlatformVersionRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -360,6 +478,7 @@ public class CreatePlatformVersionRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getPlatformDefinitionBundle() == null) ? 0 : getPlatformDefinitionBundle().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

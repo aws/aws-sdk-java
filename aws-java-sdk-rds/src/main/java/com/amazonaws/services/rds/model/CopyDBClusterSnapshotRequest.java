@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,8 +50,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot ARN. For
-     * more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
+     * more information, go to <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     * > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -81,7 +82,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -154,9 +155,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
      * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      * Process</a>.
      * </p>
      */
@@ -197,8 +198,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot ARN. For
-     * more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
+     * more information, go to <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     * > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -228,9 +230,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot
-     *        ARN. For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB Snapshot
-     *        or DB Cluster Snapshot</a>.
+     *        ARN. For more information, go to <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     *        > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        </li>
      *        </ul>
@@ -266,8 +268,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot ARN. For
-     * more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
+     * more information, go to <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     * > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -296,9 +299,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *         <li>
      *         <p>
      *         If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot
-     *         ARN. For more information, go to <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB
-     *         Snapshot or DB Cluster Snapshot</a>.
+     *         ARN. For more information, go to <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     *         > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      *         </p>
      *         </li>
      *         </ul>
@@ -334,8 +337,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <li>
      * <p>
      * If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot ARN. For
-     * more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
+     * more information, go to <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     * > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -365,9 +369,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        If the source snapshot is in a different AWS Region than the copy, specify a valid DB cluster snapshot
-     *        ARN. For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB Snapshot
-     *        or DB Cluster Snapshot</a>.
+     *        ARN. For more information, go to <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions"
+     *        > Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        </li>
      *        </ul>
@@ -402,7 +406,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -429,7 +433,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        Can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      *        </ul>
@@ -462,7 +466,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -488,7 +492,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         Cannot end with a hyphen or contain two consecutive hyphens.
+     *         Can't end with a hyphen or contain two consecutive hyphens.
      *         </p>
      *         </li>
      *         </ul>
@@ -521,7 +525,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * Cannot end with a hyphen or contain two consecutive hyphens.
+     * Can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -548,7 +552,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        Cannot end with a hyphen or contain two consecutive hyphens.
+     *        Can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      *        </ul>
@@ -762,9 +766,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
      * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      * Process</a>.
      * </p>
      * 
@@ -805,9 +809,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        </ul>
      *        <p>
      *        To learn how to generate a Signature Version 4 signed request, see <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
      *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     *        href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      *        Process</a>.
      */
 
@@ -852,9 +856,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
      * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      * Process</a>.
      * </p>
      * 
@@ -894,10 +898,10 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *         </ul>
      *         <p>
      *         To learn how to generate a Signature Version 4 signed request, see <a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
      *         Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
-     *         Process</a>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4
+     *         Signing Process</a>.
      */
 
     public String getPreSignedUrl() {
@@ -941,9 +945,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
      * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      * Process</a>.
      * </p>
      * 
@@ -984,9 +988,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        </ul>
      *        <p>
      *        To learn how to generate a Signature Version 4 signed request, see <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
      *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     *        href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
      *        Process</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1146,7 +1150,8 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

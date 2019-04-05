@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,11 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon Route 53 auto naming lets you configure public or private namespaces that your microservice applications run
- * in. When instances of the service become available, you can call the auto naming API to register the instance, and
- * Route 53 automatically creates up to five DNS records and an optional health check. Clients that submit DNS queries
- * for the service receive an answer that contains up to eight healthy records.
+ * AWS Cloud Map lets you configure public DNS, private DNS, or HTTP namespaces that your microservice applications run
+ * in. When an instance of the service becomes available, you can call the AWS Cloud Map API to register the instance
+ * with AWS Cloud Map. For public or private DNS namespaces, AWS Cloud Map automatically creates DNS records and an
+ * optional health check. Clients that submit public or private DNS queries, or HTTP requests, for the service receive
+ * an answer that contains up to eight healthy records.
  * </p>
  */
 @ThreadSafe
@@ -63,6 +64,39 @@ public class AWSServiceDiscoveryAsyncClient extends AWSServiceDiscoveryClient im
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHttpNamespaceResult> createHttpNamespaceAsync(CreateHttpNamespaceRequest request) {
+
+        return createHttpNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHttpNamespaceResult> createHttpNamespaceAsync(final CreateHttpNamespaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateHttpNamespaceRequest, CreateHttpNamespaceResult> asyncHandler) {
+        final CreateHttpNamespaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateHttpNamespaceResult>() {
+            @Override
+            public CreateHttpNamespaceResult call() throws Exception {
+                CreateHttpNamespaceResult result = null;
+
+                try {
+                    result = executeCreateHttpNamespace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -248,6 +282,39 @@ public class AWSServiceDiscoveryAsyncClient extends AWSServiceDiscoveryClient im
 
                 try {
                     result = executeDeregisterInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DiscoverInstancesResult> discoverInstancesAsync(DiscoverInstancesRequest request) {
+
+        return discoverInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DiscoverInstancesResult> discoverInstancesAsync(final DiscoverInstancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DiscoverInstancesRequest, DiscoverInstancesResult> asyncHandler) {
+        final DiscoverInstancesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DiscoverInstancesResult>() {
+            @Override
+            public DiscoverInstancesResult call() throws Exception {
+                DiscoverInstancesResult result = null;
+
+                try {
+                    result = executeDiscoverInstances(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

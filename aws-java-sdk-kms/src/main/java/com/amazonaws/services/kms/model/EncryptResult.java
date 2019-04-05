@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded.
      * </p>
      */
@@ -38,7 +38,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded.
      * </p>
      * <p>
@@ -53,8 +53,8 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @param ciphertextBlob
-     *        The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-     *        it is not encoded.
+     *        The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     *        Otherwise, it is not encoded.
      */
 
     public void setCiphertextBlob(java.nio.ByteBuffer ciphertextBlob) {
@@ -63,7 +63,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded.
      * </p>
      * <p>
@@ -74,7 +74,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * {@code position}.
      * </p>
      * 
-     * @return The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded.
+     * @return The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
      *         Otherwise, it is not encoded.
      */
 
@@ -84,7 +84,7 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded.
      * </p>
      * <p>
@@ -99,8 +99,8 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @param ciphertextBlob
-     *        The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-     *        it is not encoded.
+     *        The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     *        Otherwise, it is not encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,7 +150,8 @@ public class EncryptResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

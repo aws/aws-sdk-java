@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class RDSInstanceDetailsMarshaller {
             .marshallLocationName("Region").build();
     private static final MarshallingInfo<String> DATABASEENGINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseEngine").build();
+    private static final MarshallingInfo<String> DATABASEEDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseEdition").build();
     private static final MarshallingInfo<String> DEPLOYMENTOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentOption").build();
     private static final MarshallingInfo<String> LICENSEMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class RDSInstanceDetailsMarshaller {
             protocolMarshaller.marshall(rDSInstanceDetails.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(rDSInstanceDetails.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(rDSInstanceDetails.getDatabaseEngine(), DATABASEENGINE_BINDING);
+            protocolMarshaller.marshall(rDSInstanceDetails.getDatabaseEdition(), DATABASEEDITION_BINDING);
             protocolMarshaller.marshall(rDSInstanceDetails.getDeploymentOption(), DEPLOYMENTOPTION_BINDING);
             protocolMarshaller.marshall(rDSInstanceDetails.getLicenseModel(), LICENSEMODEL_BINDING);
             protocolMarshaller.marshall(rDSInstanceDetails.getCurrentGeneration(), CURRENTGENERATION_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,20 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The job document.
      * </p>
+     * <note>
+     * <p>
+     * If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     * </p>
+     * <p>
+     * The placeholder link is of the following form:
+     * </p>
+     * <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p>
+     * <p>
+     * where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.
+     * </p>
+     * </note>
      */
     private String document;
     /**
@@ -74,10 +88,24 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private JobExecutionsRolloutConfig jobExecutionsRolloutConfig;
     /**
      * <p>
-     * Parameters for the job document.
+     * Allows you to create criteria to abort a job.
      * </p>
      */
-    private java.util.Map<String, String> documentParameters;
+    private AbortConfig abortConfig;
+    /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. The timer is started when the
+     * job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     */
+    private TimeoutConfig timeoutConfig;
+    /**
+     * <p>
+     * Metadata which can be used to manage the job.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -239,9 +267,36 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The job document.
      * </p>
+     * <note>
+     * <p>
+     * If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     * </p>
+     * <p>
+     * The placeholder link is of the following form:
+     * </p>
+     * <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p>
+     * <p>
+     * where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.
+     * </p>
+     * </note>
      * 
      * @param document
-     *        The job document.
+     *        The job document.</p> <note>
+     *        <p>
+     *        If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     *        </p>
+     *        <p>
+     *        The placeholder link is of the following form:
+     *        </p>
+     *        <p>
+     *        <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     *        </p>
+     *        <p>
+     *        where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are
+     *        linking.
+     *        </p>
      */
 
     public void setDocument(String document) {
@@ -252,8 +307,36 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The job document.
      * </p>
+     * <note>
+     * <p>
+     * If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     * </p>
+     * <p>
+     * The placeholder link is of the following form:
+     * </p>
+     * <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p>
+     * <p>
+     * where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.
+     * </p>
+     * </note>
      * 
-     * @return The job document.
+     * @return The job document.</p> <note>
+     *         <p>
+     *         If the job document resides in an S3 bucket, you must use a placeholder link when specifying the
+     *         document.
+     *         </p>
+     *         <p>
+     *         The placeholder link is of the following form:
+     *         </p>
+     *         <p>
+     *         <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     *         </p>
+     *         <p>
+     *         where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are
+     *         linking.
+     *         </p>
      */
 
     public String getDocument() {
@@ -264,9 +347,36 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The job document.
      * </p>
+     * <note>
+     * <p>
+     * If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     * </p>
+     * <p>
+     * The placeholder link is of the following form:
+     * </p>
+     * <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p>
+     * <p>
+     * where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.
+     * </p>
+     * </note>
      * 
      * @param document
-     *        The job document.
+     *        The job document.</p> <note>
+     *        <p>
+     *        If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     *        </p>
+     *        <p>
+     *        The placeholder link is of the following form:
+     *        </p>
+     *        <p>
+     *        <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     *        </p>
+     *        <p>
+     *        where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are
+     *        linking.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -480,67 +590,170 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Parameters for the job document.
+     * Allows you to create criteria to abort a job.
      * </p>
      * 
-     * @return Parameters for the job document.
+     * @param abortConfig
+     *        Allows you to create criteria to abort a job.
      */
 
-    public java.util.Map<String, String> getDocumentParameters() {
-        return documentParameters;
+    public void setAbortConfig(AbortConfig abortConfig) {
+        this.abortConfig = abortConfig;
     }
 
     /**
      * <p>
-     * Parameters for the job document.
+     * Allows you to create criteria to abort a job.
      * </p>
      * 
-     * @param documentParameters
-     *        Parameters for the job document.
+     * @return Allows you to create criteria to abort a job.
      */
 
-    public void setDocumentParameters(java.util.Map<String, String> documentParameters) {
-        this.documentParameters = documentParameters;
+    public AbortConfig getAbortConfig() {
+        return this.abortConfig;
     }
 
     /**
      * <p>
-     * Parameters for the job document.
+     * Allows you to create criteria to abort a job.
      * </p>
      * 
-     * @param documentParameters
-     *        Parameters for the job document.
+     * @param abortConfig
+     *        Allows you to create criteria to abort a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateJobRequest withDocumentParameters(java.util.Map<String, String> documentParameters) {
-        setDocumentParameters(documentParameters);
+    public CreateJobRequest withAbortConfig(AbortConfig abortConfig) {
+        setAbortConfig(abortConfig);
         return this;
     }
 
-    public CreateJobRequest addDocumentParametersEntry(String key, String value) {
-        if (null == this.documentParameters) {
-            this.documentParameters = new java.util.HashMap<String, String>();
+    /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. The timer is started when the
+     * job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @param timeoutConfig
+     *        Specifies the amount of time each device has to finish its execution of the job. The timer is started when
+     *        the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to
+     *        another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     */
+
+    public void setTimeoutConfig(TimeoutConfig timeoutConfig) {
+        this.timeoutConfig = timeoutConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. The timer is started when the
+     * job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @return Specifies the amount of time each device has to finish its execution of the job. The timer is started
+     *         when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set
+     *         to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>
+     *         .
+     */
+
+    public TimeoutConfig getTimeoutConfig() {
+        return this.timeoutConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the amount of time each device has to finish its execution of the job. The timer is started when the
+     * job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * </p>
+     * 
+     * @param timeoutConfig
+     *        Specifies the amount of time each device has to finish its execution of the job. The timer is started when
+     *        the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to
+     *        another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withTimeoutConfig(TimeoutConfig timeoutConfig) {
+        setTimeoutConfig(timeoutConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the job.
+     * </p>
+     * 
+     * @return Metadata which can be used to manage the job.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the job.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the job.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
-        if (this.documentParameters.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.documentParameters.put(key, value);
-        return this;
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
     }
 
     /**
-     * Removes all the entries added into DocumentParameters.
-     *
+     * <p>
+     * Metadata which can be used to manage the job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateJobRequest clearDocumentParametersEntries() {
-        this.documentParameters = null;
+    public CreateJobRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
         return this;
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Metadata which can be used to manage the job.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -566,8 +779,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("TargetSelection: ").append(getTargetSelection()).append(",");
         if (getJobExecutionsRolloutConfig() != null)
             sb.append("JobExecutionsRolloutConfig: ").append(getJobExecutionsRolloutConfig()).append(",");
-        if (getDocumentParameters() != null)
-            sb.append("DocumentParameters: ").append(getDocumentParameters());
+        if (getAbortConfig() != null)
+            sb.append("AbortConfig: ").append(getAbortConfig()).append(",");
+        if (getTimeoutConfig() != null)
+            sb.append("TimeoutConfig: ").append(getTimeoutConfig()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -614,9 +831,17 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getJobExecutionsRolloutConfig() != null && other.getJobExecutionsRolloutConfig().equals(this.getJobExecutionsRolloutConfig()) == false)
             return false;
-        if (other.getDocumentParameters() == null ^ this.getDocumentParameters() == null)
+        if (other.getAbortConfig() == null ^ this.getAbortConfig() == null)
             return false;
-        if (other.getDocumentParameters() != null && other.getDocumentParameters().equals(this.getDocumentParameters()) == false)
+        if (other.getAbortConfig() != null && other.getAbortConfig().equals(this.getAbortConfig()) == false)
+            return false;
+        if (other.getTimeoutConfig() == null ^ this.getTimeoutConfig() == null)
+            return false;
+        if (other.getTimeoutConfig() != null && other.getTimeoutConfig().equals(this.getTimeoutConfig()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -634,7 +859,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getPresignedUrlConfig() == null) ? 0 : getPresignedUrlConfig().hashCode());
         hashCode = prime * hashCode + ((getTargetSelection() == null) ? 0 : getTargetSelection().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionsRolloutConfig() == null) ? 0 : getJobExecutionsRolloutConfig().hashCode());
-        hashCode = prime * hashCode + ((getDocumentParameters() == null) ? 0 : getDocumentParameters().hashCode());
+        hashCode = prime * hashCode + ((getAbortConfig() == null) ? 0 : getAbortConfig().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutConfig() == null) ? 0 : getTimeoutConfig().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

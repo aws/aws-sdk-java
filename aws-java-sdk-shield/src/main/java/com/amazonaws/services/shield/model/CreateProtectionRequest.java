@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,13 +53,19 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For AWS CloudFront distribution:
+     * For an AWS CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For Amazon Route 53: <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i> </code>
+     * For an AWS Global Accelerator accelerator:
+     * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
      * </p>
      * </li>
      * <li>
@@ -134,13 +140,19 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For AWS CloudFront distribution:
+     * For an AWS CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For Amazon Route 53: <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i> </code>
+     * For an AWS Global Accelerator accelerator:
+     * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
      * </p>
      * </li>
      * <li>
@@ -171,13 +183,19 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        For AWS CloudFront distribution:
+     *        For an AWS CloudFront distribution:
      *        <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Route 53: <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i> </code>
+     *        For an AWS Global Accelerator accelerator:
+     *        <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
      *        </p>
      *        </li>
      *        <li>
@@ -214,13 +232,19 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For AWS CloudFront distribution:
+     * For an AWS CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For Amazon Route 53: <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i> </code>
+     * For an AWS Global Accelerator accelerator:
+     * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
      * </p>
      * </li>
      * <li>
@@ -250,13 +274,19 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         For AWS CloudFront distribution:
+     *         For an AWS CloudFront distribution:
      *         <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For Amazon Route 53: <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i> </code>
+     *         For an AWS Global Accelerator accelerator:
+     *         <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
      *         </p>
      *         </li>
      *         <li>
@@ -293,13 +323,19 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * For AWS CloudFront distribution:
+     * For an AWS CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * For Amazon Route 53: <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i> </code>
+     * For an AWS Global Accelerator accelerator:
+     * <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
      * </p>
      * </li>
      * <li>
@@ -330,13 +366,19 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        For AWS CloudFront distribution:
+     *        For an AWS CloudFront distribution:
      *        <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i> </code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Route 53: <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i> </code>
+     *        For an AWS Global Accelerator accelerator:
+     *        <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
      *        </p>
      *        </li>
      *        <li>
@@ -354,7 +396,8 @@ public class CreateProtectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

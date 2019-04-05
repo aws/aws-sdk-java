@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class ServiceEvent implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The Unix time stamp for when the event was triggered.
+     * The Unix timestamp for when the event was triggered.
      * </p>
      */
     private java.util.Date createdAt;
@@ -89,11 +89,11 @@ public class ServiceEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the event was triggered.
+     * The Unix timestamp for when the event was triggered.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp for when the event was triggered.
+     *        The Unix timestamp for when the event was triggered.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -102,10 +102,10 @@ public class ServiceEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the event was triggered.
+     * The Unix timestamp for when the event was triggered.
      * </p>
      * 
-     * @return The Unix time stamp for when the event was triggered.
+     * @return The Unix timestamp for when the event was triggered.
      */
 
     public java.util.Date getCreatedAt() {
@@ -114,11 +114,11 @@ public class ServiceEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the event was triggered.
+     * The Unix timestamp for when the event was triggered.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp for when the event was triggered.
+     *        The Unix timestamp for when the event was triggered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,7 +168,8 @@ public class ServiceEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

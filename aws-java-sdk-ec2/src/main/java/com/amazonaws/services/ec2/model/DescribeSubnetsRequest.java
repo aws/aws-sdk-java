@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeSubnetsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeSubnets.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeSubnetsRequest> {
@@ -34,8 +32,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * <ul>
      * <li>
      * <p>
-     * <code>availabilityZone</code> - The Availability Zone for the subnet. You can also use
-     * <code>availability-zone</code> as the filter name.
+     * <code>availability-zone</code> - The Availability Zone for the subnet. You can also use
+     * <code>availabilityZone</code> as the filter name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use
+     * <code>availabilityZoneId</code> as the filter name.
      * </p>
      * </li>
      * <li>
@@ -45,15 +49,15 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>cidrBlock</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * <code>cidr-block</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match the
      * subnet's CIDR block for information to be returned for the subnet. You can also use <code>cidr</code> or
-     * <code>cidr-block</code> as the filter names.
+     * <code>cidrBlock</code> as the filter names.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>defaultForAz</code> - Indicates whether this is the default subnet for the Availability Zone. You can also
-     * use <code>default-for-az</code> as the filter name.
+     * <code>default-for-az</code> - Indicates whether this is the default subnet for the Availability Zone. You can
+     * also use <code>defaultForAz</code> as the filter name.
      * </p>
      * </li>
      * <li>
@@ -74,7 +78,17 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the subnet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the subnet (<code>pending</code> | <code>available</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.
      * </p>
      * </li>
      * <li>
@@ -84,24 +98,16 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -129,8 +135,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * <ul>
      * <li>
      * <p>
-     * <code>availabilityZone</code> - The Availability Zone for the subnet. You can also use
-     * <code>availability-zone</code> as the filter name.
+     * <code>availability-zone</code> - The Availability Zone for the subnet. You can also use
+     * <code>availabilityZone</code> as the filter name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use
+     * <code>availabilityZoneId</code> as the filter name.
      * </p>
      * </li>
      * <li>
@@ -140,15 +152,15 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>cidrBlock</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * <code>cidr-block</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match the
      * subnet's CIDR block for information to be returned for the subnet. You can also use <code>cidr</code> or
-     * <code>cidr-block</code> as the filter names.
+     * <code>cidrBlock</code> as the filter names.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>defaultForAz</code> - Indicates whether this is the default subnet for the Availability Zone. You can also
-     * use <code>default-for-az</code> as the filter name.
+     * <code>default-for-az</code> - Indicates whether this is the default subnet for the Availability Zone. You can
+     * also use <code>defaultForAz</code> as the filter name.
      * </p>
      * </li>
      * <li>
@@ -169,7 +181,17 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the subnet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the subnet (<code>pending</code> | <code>available</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.
      * </p>
      * </li>
      * <li>
@@ -179,24 +201,16 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -210,8 +224,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>availabilityZone</code> - The Availability Zone for the subnet. You can also use
-     *         <code>availability-zone</code> as the filter name.
+     *         <code>availability-zone</code> - The Availability Zone for the subnet. You can also use
+     *         <code>availabilityZone</code> as the filter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use
+     *         <code>availabilityZoneId</code> as the filter name.
      *         </p>
      *         </li>
      *         <li>
@@ -221,15 +241,15 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cidrBlock</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match
-     *         the subnet's CIDR block for information to be returned for the subnet. You can also use <code>cidr</code>
-     *         or <code>cidr-block</code> as the filter names.
+     *         <code>cidr-block</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly
+     *         match the subnet's CIDR block for information to be returned for the subnet. You can also use
+     *         <code>cidr</code> or <code>cidrBlock</code> as the filter names.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>defaultForAz</code> - Indicates whether this is the default subnet for the Availability Zone. You
-     *         can also use <code>default-for-az</code> as the filter name.
+     *         <code>default-for-az</code> - Indicates whether this is the default subnet for the Availability Zone. You
+     *         can also use <code>defaultForAz</code> as the filter name.
      *         </p>
      *         </li>
      *         <li>
@@ -251,7 +271,17 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *         </li>
      *         <li>
      *         <p>
+     *         <code>owner-id</code> - The ID of the AWS account that owns the subnet.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>state</code> - The state of the subnet (<code>pending</code> | <code>available</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.
      *         </p>
      *         </li>
      *         <li>
@@ -261,25 +291,16 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *         Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *         for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *         filter value.
+     *         <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *         key in the filter name and the tag value as the filter value. For example, to find all resources that
+     *         have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify
+     *         <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *         <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *         "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's
-     *         value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources
-     *         where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *         <code>tag-key</code> filter.
+     *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *         assigned a tag with a specific key, regardless of the tag value.
      *         </p>
      *         </li>
      *         <li>
@@ -303,8 +324,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * <ul>
      * <li>
      * <p>
-     * <code>availabilityZone</code> - The Availability Zone for the subnet. You can also use
-     * <code>availability-zone</code> as the filter name.
+     * <code>availability-zone</code> - The Availability Zone for the subnet. You can also use
+     * <code>availabilityZone</code> as the filter name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use
+     * <code>availabilityZoneId</code> as the filter name.
      * </p>
      * </li>
      * <li>
@@ -314,15 +341,15 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>cidrBlock</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * <code>cidr-block</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match the
      * subnet's CIDR block for information to be returned for the subnet. You can also use <code>cidr</code> or
-     * <code>cidr-block</code> as the filter names.
+     * <code>cidrBlock</code> as the filter names.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>defaultForAz</code> - Indicates whether this is the default subnet for the Availability Zone. You can also
-     * use <code>default-for-az</code> as the filter name.
+     * <code>default-for-az</code> - Indicates whether this is the default subnet for the Availability Zone. You can
+     * also use <code>defaultForAz</code> as the filter name.
      * </p>
      * </li>
      * <li>
@@ -343,7 +370,17 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the subnet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the subnet (<code>pending</code> | <code>available</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.
      * </p>
      * </li>
      * <li>
@@ -353,24 +390,16 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -385,8 +414,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>availabilityZone</code> - The Availability Zone for the subnet. You can also use
-     *        <code>availability-zone</code> as the filter name.
+     *        <code>availability-zone</code> - The Availability Zone for the subnet. You can also use
+     *        <code>availabilityZone</code> as the filter name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use
+     *        <code>availabilityZoneId</code> as the filter name.
      *        </p>
      *        </li>
      *        <li>
@@ -396,15 +431,15 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cidrBlock</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match
+     *        <code>cidr-block</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match
      *        the subnet's CIDR block for information to be returned for the subnet. You can also use <code>cidr</code>
-     *        or <code>cidr-block</code> as the filter names.
+     *        or <code>cidrBlock</code> as the filter names.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>defaultForAz</code> - Indicates whether this is the default subnet for the Availability Zone. You
-     *        can also use <code>default-for-az</code> as the filter name.
+     *        <code>default-for-az</code> - Indicates whether this is the default subnet for the Availability Zone. You
+     *        can also use <code>defaultForAz</code> as the filter name.
      *        </p>
      *        </li>
      *        <li>
@@ -426,7 +461,17 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the subnet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>state</code> - The state of the subnet (<code>pending</code> | <code>available</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.
      *        </p>
      *        </li>
      *        <li>
@@ -436,25 +481,16 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
-     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
-     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-key</code> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -480,8 +516,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * <ul>
      * <li>
      * <p>
-     * <code>availabilityZone</code> - The Availability Zone for the subnet. You can also use
-     * <code>availability-zone</code> as the filter name.
+     * <code>availability-zone</code> - The Availability Zone for the subnet. You can also use
+     * <code>availabilityZone</code> as the filter name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use
+     * <code>availabilityZoneId</code> as the filter name.
      * </p>
      * </li>
      * <li>
@@ -491,15 +533,15 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>cidrBlock</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * <code>cidr-block</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match the
      * subnet's CIDR block for information to be returned for the subnet. You can also use <code>cidr</code> or
-     * <code>cidr-block</code> as the filter names.
+     * <code>cidrBlock</code> as the filter names.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>defaultForAz</code> - Indicates whether this is the default subnet for the Availability Zone. You can also
-     * use <code>default-for-az</code> as the filter name.
+     * <code>default-for-az</code> - Indicates whether this is the default subnet for the Availability Zone. You can
+     * also use <code>defaultForAz</code> as the filter name.
      * </p>
      * </li>
      * <li>
@@ -520,7 +562,17 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the subnet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the subnet (<code>pending</code> | <code>available</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.
      * </p>
      * </li>
      * <li>
@@ -530,24 +582,16 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -567,8 +611,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>availabilityZone</code> - The Availability Zone for the subnet. You can also use
-     *        <code>availability-zone</code> as the filter name.
+     *        <code>availability-zone</code> - The Availability Zone for the subnet. You can also use
+     *        <code>availabilityZone</code> as the filter name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use
+     *        <code>availabilityZoneId</code> as the filter name.
      *        </p>
      *        </li>
      *        <li>
@@ -578,15 +628,15 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cidrBlock</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match
+     *        <code>cidr-block</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match
      *        the subnet's CIDR block for information to be returned for the subnet. You can also use <code>cidr</code>
-     *        or <code>cidr-block</code> as the filter names.
+     *        or <code>cidrBlock</code> as the filter names.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>defaultForAz</code> - Indicates whether this is the default subnet for the Availability Zone. You
-     *        can also use <code>default-for-az</code> as the filter name.
+     *        <code>default-for-az</code> - Indicates whether this is the default subnet for the Availability Zone. You
+     *        can also use <code>defaultForAz</code> as the filter name.
      *        </p>
      *        </li>
      *        <li>
@@ -608,7 +658,17 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the subnet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>state</code> - The state of the subnet (<code>pending</code> | <code>available</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.
      *        </p>
      *        </li>
      *        <li>
@@ -618,25 +678,16 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
-     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
-     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-key</code> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -664,8 +715,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * <ul>
      * <li>
      * <p>
-     * <code>availabilityZone</code> - The Availability Zone for the subnet. You can also use
-     * <code>availability-zone</code> as the filter name.
+     * <code>availability-zone</code> - The Availability Zone for the subnet. You can also use
+     * <code>availabilityZone</code> as the filter name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use
+     * <code>availabilityZoneId</code> as the filter name.
      * </p>
      * </li>
      * <li>
@@ -675,15 +732,15 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>cidrBlock</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match the
+     * <code>cidr-block</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match the
      * subnet's CIDR block for information to be returned for the subnet. You can also use <code>cidr</code> or
-     * <code>cidr-block</code> as the filter names.
+     * <code>cidrBlock</code> as the filter names.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>defaultForAz</code> - Indicates whether this is the default subnet for the Availability Zone. You can also
-     * use <code>default-for-az</code> as the filter name.
+     * <code>default-for-az</code> - Indicates whether this is the default subnet for the Availability Zone. You can
+     * also use <code>defaultForAz</code> as the filter name.
      * </p>
      * </li>
      * <li>
@@ -704,7 +761,17 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>owner-id</code> - The ID of the AWS account that owns the subnet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The state of the subnet (<code>pending</code> | <code>available</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.
      * </p>
      * </li>
      * <li>
@@ -714,24 +781,16 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. Specify
-     * the key of the tag in the filter name and the value of the tag in the filter value. For example, for the tag
-     * Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the filter value.
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     * the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
+     * and <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     * "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is),
-     * and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-     * see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     * <code>tag-key</code> filter.
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
      * </p>
      * </li>
      * <li>
@@ -746,8 +805,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>availabilityZone</code> - The Availability Zone for the subnet. You can also use
-     *        <code>availability-zone</code> as the filter name.
+     *        <code>availability-zone</code> - The Availability Zone for the subnet. You can also use
+     *        <code>availabilityZone</code> as the filter name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet. You can also use
+     *        <code>availabilityZoneId</code> as the filter name.
      *        </p>
      *        </li>
      *        <li>
@@ -757,15 +822,15 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cidrBlock</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match
+     *        <code>cidr-block</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify must exactly match
      *        the subnet's CIDR block for information to be returned for the subnet. You can also use <code>cidr</code>
-     *        or <code>cidr-block</code> as the filter names.
+     *        or <code>cidrBlock</code> as the filter names.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>defaultForAz</code> - Indicates whether this is the default subnet for the Availability Zone. You
-     *        can also use <code>default-for-az</code> as the filter name.
+     *        <code>default-for-az</code> - Indicates whether this is the default subnet for the Availability Zone. You
+     *        can also use <code>defaultForAz</code> as the filter name.
      *        </p>
      *        </li>
      *        <li>
@@ -787,7 +852,17 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
+     *        <code>owner-id</code> - The ID of the AWS account that owns the subnet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>state</code> - The state of the subnet (<code>pending</code> | <code>available</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.
      *        </p>
      *        </li>
      *        <li>
@@ -797,25 +872,16 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource.
-     *        Specify the key of the tag in the filter name and the value of the tag in the filter value. For example,
-     *        for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     *        filter value.
+     *        <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag
+     *        key in the filter name and the tag value as the filter value. For example, to find all resources that have
+     *        a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for
+     *        the filter name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>tag-key</code> - The key of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-value</code> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
-     *        "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
-     *        is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where
-     *        Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i> filter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>tag-value</code> - The value of a tag assigned to the resource. This filter is independent of the
-     *        <code>tag-key</code> filter.
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      *        <li>
@@ -936,7 +1002,8 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

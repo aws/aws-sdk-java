@@ -76,6 +76,22 @@
       ],
       "documentation":"<p>Deletes the cross-origin resource sharing (CORS) configuration information that is set for the container.</p> <p>To use this operation, you must have permission to perform the <code>MediaStore:DeleteCorsPolicy</code> action. The container owner has this permission by default and can grant this permission to others.</p>"
     },
+    "DeleteLifecyclePolicy":{
+      "name":"DeleteLifecyclePolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteLifecyclePolicyInput"},
+      "output":{"shape":"DeleteLifecyclePolicyOutput"},
+      "errors":[
+        {"shape":"ContainerInUseException"},
+        {"shape":"ContainerNotFoundException"},
+        {"shape":"PolicyNotFoundException"},
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>Removes an object lifecycle policy from a container. It takes up to 20 minutes for the change to take effect.</p>"
+    },
     "DescribeContainer":{
       "name":"DescribeContainer",
       "http":{
@@ -122,6 +138,22 @@
       ],
       "documentation":"<p>Returns the cross-origin resource sharing (CORS) configuration information that is set for the container.</p> <p>To use this operation, you must have permission to perform the <code>MediaStore:GetCorsPolicy</code> action. By default, the container owner has this permission and can grant it to others.</p>"
     },
+    "GetLifecyclePolicy":{
+      "name":"GetLifecyclePolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetLifecyclePolicyInput"},
+      "output":{"shape":"GetLifecyclePolicyOutput"},
+      "errors":[
+        {"shape":"ContainerInUseException"},
+        {"shape":"ContainerNotFoundException"},
+        {"shape":"PolicyNotFoundException"},
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>Retrieves the object lifecycle policy that is assigned to a container.</p>"
+    },
     "ListContainers":{
       "name":"ListContainers",
       "http":{
@@ -163,7 +195,52 @@
         {"shape":"ContainerInUseException"},
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Sets the cross-origin resource sharing (CORS) configuration on a container so that the container can service cross-origin requests. For example, you might want to enable a request whose origin is http://www.example.com to access your AWS Elemental MediaStore container at my.example.container.com by using the browser's XMLHttpRequest capability.</p> <p>To enable CORS on a container, you attach a CORS policy to the container. In the CORS policy, you configure rules that identify origins and the HTTP methods that can be executed on your container. The policy can contain up to 398,000 characters. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.</p>"
+      "documentation":"<p>Sets the cross-origin resource sharing (CORS) configuration on a container so that the container can service cross-origin requests. For example, you might want to enable a request whose origin is http://www.example.com to access your AWS Elemental MediaStore container at my.example.container.com by using the browser's XMLHttpRequest capability.</p> <p>To enable CORS on a container, you attach a CORS policy to the container. In the CORS policy, you configure rules that identify origins and the HTTP methods that can be executed on your container. The policy can contain up to 398,000 characters. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.</p> <p>To learn more about CORS, see <a href=\"https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html\">Cross-Origin Resource Sharing (CORS) in AWS Elemental MediaStore</a>.</p>"
+    },
+    "PutLifecyclePolicy":{
+      "name":"PutLifecyclePolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutLifecyclePolicyInput"},
+      "output":{"shape":"PutLifecyclePolicyOutput"},
+      "errors":[
+        {"shape":"ContainerInUseException"},
+        {"shape":"ContainerNotFoundException"},
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>Writes an object lifecycle policy to a container. If the container already has an object lifecycle policy, the service replaces the existing policy with the new policy. It takes up to 20 minutes for the change to take effect.</p> <p>For information about how to construct an object lifecycle policy, see <a href=\"https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html\">Components of an Object Lifecycle Policy</a>.</p>"
+    },
+    "StartAccessLogging":{
+      "name":"StartAccessLogging",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartAccessLoggingInput"},
+      "output":{"shape":"StartAccessLoggingOutput"},
+      "errors":[
+        {"shape":"ContainerInUseException"},
+        {"shape":"ContainerNotFoundException"},
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>Starts access logging on the specified container. When you enable access logging on a container, MediaStore delivers access logs for objects stored in that container to Amazon CloudWatch Logs.</p>"
+    },
+    "StopAccessLogging":{
+      "name":"StopAccessLogging",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StopAccessLoggingInput"},
+      "output":{"shape":"StopAccessLoggingOutput"},
+      "errors":[
+        {"shape":"ContainerInUseException"},
+        {"shape":"ContainerNotFoundException"},
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>Stops access logging on the specified container. When you stop access logging on a container, MediaStore stops sending access logs to Amazon CloudWatch Logs. These access logs are not saved and are not retrievable.</p>"
     }
   },
   "shapes":{
@@ -175,11 +252,15 @@
     },
     "AllowedMethods":{
       "type":"list",
-      "member":{"shape":"MethodName"}
+      "member":{"shape":"MethodName"},
+      "max":4,
+      "min":1
     },
     "AllowedOrigins":{
       "type":"list",
-      "member":{"shape":"Origin"}
+      "member":{"shape":"Origin"},
+      "max":100,
+      "min":1
     },
     "Container":{
       "type":"structure",
@@ -203,6 +284,10 @@
         "Status":{
           "shape":"ContainerStatus",
           "documentation":"<p>The status of container creation or deletion. The status is one of the following: <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the container, the status is <code>CREATING</code>. When the endpoint is available, the status changes to <code>ACTIVE</code>.</p>"
+        },
+        "AccessLoggingEnabled":{
+          "shape":"ContainerAccessLoggingEnabled",
+          "documentation":"<p>The state of access logging on the container. This value is <code>false</code> by default, indicating that AWS Elemental MediaStore does not send access logs to Amazon CloudWatch Logs. When you enable access logging on the container, MediaStore changes this value to <code>true</code>, indicating that the service delivers access logs for objects stored in that container to CloudWatch Logs.</p>"
         }
       },
       "documentation":"<p>This section describes operations that you can perform on an AWS Elemental MediaStore container.</p>"
@@ -213,12 +298,13 @@
       "min":1,
       "pattern":"arn:aws:mediastore:[a-z]+-[a-z]+-\\d:\\d{12}:container/\\w{1,255}"
     },
+    "ContainerAccessLoggingEnabled":{"type":"boolean"},
     "ContainerInUseException":{
       "type":"structure",
       "members":{
         "Message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>Resource already exists or is being updated.</p>",
+      "documentation":"<p>The container that you specified in the request already exists or is being updated.</p>",
       "exception":true
     },
     "ContainerList":{
@@ -234,14 +320,14 @@
       "type":"string",
       "max":255,
       "min":1,
-      "pattern":"\\w+"
+      "pattern":"[\\w-]+"
     },
     "ContainerNotFoundException":{
       "type":"structure",
       "members":{
         "Message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>Could not perform an operation on a container that does not exist.</p>",
+      "documentation":"<p>The container that you specified in the request does not exist.</p>",
       "exception":true
     },
     "ContainerPolicy":{
@@ -272,19 +358,23 @@
       "members":{
         "Message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>Could not perform an operation on a policy that does not exist.</p>",
+      "documentation":"<p>The CORS policy that you specified in the request does not exist.</p>",
       "exception":true
     },
     "CorsRule":{
       "type":"structure",
+      "required":[
+        "AllowedOrigins",
+        "AllowedHeaders"
+      ],
       "members":{
         "AllowedOrigins":{
           "shape":"AllowedOrigins",
-          "documentation":"<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>"
+          "documentation":"<p>One or more response headers that you want users to be able to access from their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard character to allow cross-origin access for all origins.</p>"
         },
         "AllowedMethods":{
           "shape":"AllowedMethods",
-          "documentation":"<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>"
+          "documentation":"<p>Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p> <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>"
         },
         "AllowedHeaders":{
           "shape":"AllowedHeaders",
@@ -366,6 +456,21 @@
       "members":{
       }
     },
+    "DeleteLifecyclePolicyInput":{
+      "type":"structure",
+      "required":["ContainerName"],
+      "members":{
+        "ContainerName":{
+          "shape":"ContainerName",
+          "documentation":"<p>The name of the container that holds the object lifecycle policy.</p>"
+        }
+      }
+    },
+    "DeleteLifecyclePolicyOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DescribeContainerInput":{
       "type":"structure",
       "members":{
@@ -435,7 +540,30 @@
       "type":"structure",
       "required":["CorsPolicy"],
       "members":{
-        "CorsPolicy":{"shape":"CorsPolicy"}
+        "CorsPolicy":{
+          "shape":"CorsPolicy",
+          "documentation":"<p>The CORS policy assigned to the container.</p>"
+        }
+      }
+    },
+    "GetLifecyclePolicyInput":{
+      "type":"structure",
+      "required":["ContainerName"],
+      "members":{
+        "ContainerName":{
+          "shape":"ContainerName",
+          "documentation":"<p>The name of the container that the object lifecycle policy is assigned to.</p>"
+        }
+      }
+    },
+    "GetLifecyclePolicyOutput":{
+      "type":"structure",
+      "required":["LifecyclePolicy"],
+      "members":{
+        "LifecyclePolicy":{
+          "shape":"LifecyclePolicy",
+          "documentation":"<p>The object lifecycle policy that is assigned to the container.</p>"
+        }
       }
     },
     "Header":{
@@ -452,6 +580,12 @@
       "documentation":"<p>The service is temporarily unavailable.</p>",
       "exception":true,
       "fault":true
+    },
+    "LifecyclePolicy":{
+      "type":"string",
+      "max":8192,
+      "min":0,
+      "pattern":"[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+"
     },
     "LimitExceededException":{
       "type":"structure",
@@ -504,11 +638,13 @@
     },
     "Origin":{
       "type":"string",
+      "max":2048,
+      "min":1,
       "pattern":"[\\u0009\\u000A\\u000D\\u0020-\\u00FF]+"
     },
     "PaginationToken":{
       "type":"string",
-      "max":255,
+      "max":1024,
       "min":1,
       "pattern":"[0-9A-Za-z=/+]+"
     },
@@ -517,7 +653,7 @@
       "members":{
         "Message":{"shape":"ErrorMessage"}
       },
-      "documentation":"<p>Could not perform an operation on a policy that does not exist.</p>",
+      "documentation":"<p>The policy that you specified in the request does not exist.</p>",
       "exception":true
     },
     "PutContainerPolicyInput":{
@@ -560,6 +696,58 @@
       }
     },
     "PutCorsPolicyOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "PutLifecyclePolicyInput":{
+      "type":"structure",
+      "required":[
+        "ContainerName",
+        "LifecyclePolicy"
+      ],
+      "members":{
+        "ContainerName":{
+          "shape":"ContainerName",
+          "documentation":"<p>The name of the container that you want to assign the object lifecycle policy to.</p>"
+        },
+        "LifecyclePolicy":{
+          "shape":"LifecyclePolicy",
+          "documentation":"<p>The object lifecycle policy to apply to the container.</p>"
+        }
+      }
+    },
+    "PutLifecyclePolicyOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "StartAccessLoggingInput":{
+      "type":"structure",
+      "required":["ContainerName"],
+      "members":{
+        "ContainerName":{
+          "shape":"ContainerName",
+          "documentation":"<p>The name of the container that you want to start access logging on.</p>"
+        }
+      }
+    },
+    "StartAccessLoggingOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "StopAccessLoggingInput":{
+      "type":"structure",
+      "required":["ContainerName"],
+      "members":{
+        "ContainerName":{
+          "shape":"ContainerName",
+          "documentation":"<p>The name of the container that you want to stop access logging on.</p>"
+        }
+      }
+    },
+    "StopAccessLoggingOutput":{
       "type":"structure",
       "members":{
       }

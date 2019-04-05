@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -111,6 +111,12 @@ public class FpgaImage implements Serializable, Cloneable {
      * </p>
      */
     private Boolean publicValue;
+    /**
+     * <p>
+     * Indicates whether data retention support is enabled for the AFI.
+     * </p>
+     */
+    private Boolean dataRetentionSupport;
 
     /**
      * <p>
@@ -757,7 +763,60 @@ public class FpgaImage implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Indicates whether data retention support is enabled for the AFI.
+     * </p>
+     * 
+     * @param dataRetentionSupport
+     *        Indicates whether data retention support is enabled for the AFI.
+     */
+
+    public void setDataRetentionSupport(Boolean dataRetentionSupport) {
+        this.dataRetentionSupport = dataRetentionSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether data retention support is enabled for the AFI.
+     * </p>
+     * 
+     * @return Indicates whether data retention support is enabled for the AFI.
+     */
+
+    public Boolean getDataRetentionSupport() {
+        return this.dataRetentionSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether data retention support is enabled for the AFI.
+     * </p>
+     * 
+     * @param dataRetentionSupport
+     *        Indicates whether data retention support is enabled for the AFI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FpgaImage withDataRetentionSupport(Boolean dataRetentionSupport) {
+        setDataRetentionSupport(dataRetentionSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether data retention support is enabled for the AFI.
+     * </p>
+     * 
+     * @return Indicates whether data retention support is enabled for the AFI.
+     */
+
+    public Boolean isDataRetentionSupport() {
+        return this.dataRetentionSupport;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -794,7 +853,9 @@ public class FpgaImage implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getPublic() != null)
-            sb.append("Public: ").append(getPublic());
+            sb.append("Public: ").append(getPublic()).append(",");
+        if (getDataRetentionSupport() != null)
+            sb.append("DataRetentionSupport: ").append(getDataRetentionSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -865,6 +926,10 @@ public class FpgaImage implements Serializable, Cloneable {
             return false;
         if (other.getPublic() != null && other.getPublic().equals(this.getPublic()) == false)
             return false;
+        if (other.getDataRetentionSupport() == null ^ this.getDataRetentionSupport() == null)
+            return false;
+        if (other.getDataRetentionSupport() != null && other.getDataRetentionSupport().equals(this.getDataRetentionSupport()) == false)
+            return false;
         return true;
     }
 
@@ -887,6 +952,7 @@ public class FpgaImage implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPublic() == null) ? 0 : getPublic().hashCode());
+        hashCode = prime * hashCode + ((getDataRetentionSupport() == null) ? 0 : getDataRetentionSupport().hashCode());
         return hashCode;
     }
 

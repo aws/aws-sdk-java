@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iotanalytics.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CreateDatastoreRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("datastoreName").build();
     private static final MarshallingInfo<StructuredPojo> RETENTIONPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionPeriod").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateDatastoreRequestMarshaller instance = new CreateDatastoreRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class CreateDatastoreRequestMarshaller {
         try {
             protocolMarshaller.marshall(createDatastoreRequest.getDatastoreName(), DATASTORENAME_BINDING);
             protocolMarshaller.marshall(createDatastoreRequest.getRetentionPeriod(), RETENTIONPERIOD_BINDING);
+            protocolMarshaller.marshall(createDatastoreRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

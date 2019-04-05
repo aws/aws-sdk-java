@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
     private String documentVersion;
     /**
      * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     */
+    private String automationTargetParameterName;
+    /**
+     * <p>
      * A description of the parameters for a document.
      * </p>
      */
@@ -124,6 +131,41 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
      * </p>
      */
     private String associationName;
+    /**
+     * <p>
+     * The number of errors that are allowed before the system stops sending requests to run the association on
+     * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
+     * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
+     * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
+     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
+     * the sixth error is received.
+     * </p>
+     * <p>
+     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
+     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
+     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * </p>
+     */
+    private String maxErrors;
+    /**
+     * <p>
+     * The maximum number of targets allowed to run the association at the same time. You can specify a number, for
+     * example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all
+     * targets run the association at the same time.
+     * </p>
+     * <p>
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
+     * associations, the association is allowed to run. During the next association interval, the new instance will
+     * process its association within the limit specified for MaxConcurrency.
+     * </p>
+     */
+    private String maxConcurrency;
+    /**
+     * <p>
+     * The severity level that is assigned to the association.
+     * </p>
+     */
+    private String complianceSeverity;
 
     /**
      * <p>
@@ -442,6 +484,52 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     public AssociationDescription withDocumentVersion(String documentVersion) {
         setDocumentVersion(documentVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     * 
+     * @param automationTargetParameterName
+     *        Specify the target for the association. This target is required for associations that use an Automation
+     *        document and target resources by using rate controls.
+     */
+
+    public void setAutomationTargetParameterName(String automationTargetParameterName) {
+        this.automationTargetParameterName = automationTargetParameterName;
+    }
+
+    /**
+     * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     * 
+     * @return Specify the target for the association. This target is required for associations that use an Automation
+     *         document and target resources by using rate controls.
+     */
+
+    public String getAutomationTargetParameterName() {
+        return this.automationTargetParameterName;
+    }
+
+    /**
+     * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     * 
+     * @param automationTargetParameterName
+     *        Specify the target for the association. This target is required for associations that use an Automation
+     *        document and target resources by using rate controls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationDescription withAutomationTargetParameterName(String automationTargetParameterName) {
+        setAutomationTargetParameterName(automationTargetParameterName);
         return this;
     }
 
@@ -820,7 +908,243 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The number of errors that are allowed before the system stops sending requests to run the association on
+     * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
+     * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
+     * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
+     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
+     * the sixth error is received.
+     * </p>
+     * <p>
+     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
+     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
+     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * </p>
+     * 
+     * @param maxErrors
+     *        The number of errors that are allowed before the system stops sending requests to run the association on
+     *        additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
+     *        of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
+     *        the fourth error is received. If you specify 0, then the system stops sending requests after the first
+     *        error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
+     *        stops sending the request when the sixth error is received.</p>
+     *        <p>
+     *        Executions that are already running an association when MaxErrors is reached are allowed to complete, but
+     *        some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
+     *        failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     */
+
+    public void setMaxErrors(String maxErrors) {
+        this.maxErrors = maxErrors;
+    }
+
+    /**
+     * <p>
+     * The number of errors that are allowed before the system stops sending requests to run the association on
+     * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
+     * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
+     * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
+     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
+     * the sixth error is received.
+     * </p>
+     * <p>
+     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
+     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
+     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * </p>
+     * 
+     * @return The number of errors that are allowed before the system stops sending requests to run the association on
+     *         additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
+     *         of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
+     *         the fourth error is received. If you specify 0, then the system stops sending requests after the first
+     *         error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
+     *         stops sending the request when the sixth error is received.</p>
+     *         <p>
+     *         Executions that are already running an association when MaxErrors is reached are allowed to complete, but
+     *         some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
+     *         failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     */
+
+    public String getMaxErrors() {
+        return this.maxErrors;
+    }
+
+    /**
+     * <p>
+     * The number of errors that are allowed before the system stops sending requests to run the association on
+     * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
+     * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
+     * error is received. If you specify 0, then the system stops sending requests after the first error is returned. If
+     * you run an association on 50 instances and set MaxError to 10%, then the system stops sending the request when
+     * the sixth error is received.
+     * </p>
+     * <p>
+     * Executions that are already running an association when MaxErrors is reached are allowed to complete, but some of
+     * these executions may fail as well. If you need to ensure that there won't be more than max-errors failed
+     * executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * </p>
+     * 
+     * @param maxErrors
+     *        The number of errors that are allowed before the system stops sending requests to run the association on
+     *        additional targets. You can specify either an absolute number of errors, for example 10, or a percentage
+     *        of the target set, for example 10%. If you specify 3, for example, the system stops sending requests when
+     *        the fourth error is received. If you specify 0, then the system stops sending requests after the first
+     *        error is returned. If you run an association on 50 instances and set MaxError to 10%, then the system
+     *        stops sending the request when the sixth error is received.</p>
+     *        <p>
+     *        Executions that are already running an association when MaxErrors is reached are allowed to complete, but
+     *        some of these executions may fail as well. If you need to ensure that there won't be more than max-errors
+     *        failed executions, set MaxConcurrency to 1 so that executions proceed one at a time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationDescription withMaxErrors(String maxErrors) {
+        setMaxErrors(maxErrors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of targets allowed to run the association at the same time. You can specify a number, for
+     * example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all
+     * targets run the association at the same time.
+     * </p>
+     * <p>
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
+     * associations, the association is allowed to run. During the next association interval, the new instance will
+     * process its association within the limit specified for MaxConcurrency.
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        The maximum number of targets allowed to run the association at the same time. You can specify a number,
+     *        for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means
+     *        all targets run the association at the same time.</p>
+     *        <p>
+     *        If a new instance starts and attempts to run an association while Systems Manager is running
+     *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
+     *        new instance will process its association within the limit specified for MaxConcurrency.
+     */
+
+    public void setMaxConcurrency(String maxConcurrency) {
+        this.maxConcurrency = maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * The maximum number of targets allowed to run the association at the same time. You can specify a number, for
+     * example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all
+     * targets run the association at the same time.
+     * </p>
+     * <p>
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
+     * associations, the association is allowed to run. During the next association interval, the new instance will
+     * process its association within the limit specified for MaxConcurrency.
+     * </p>
+     * 
+     * @return The maximum number of targets allowed to run the association at the same time. You can specify a number,
+     *         for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which
+     *         means all targets run the association at the same time.</p>
+     *         <p>
+     *         If a new instance starts and attempts to run an association while Systems Manager is running
+     *         MaxConcurrency associations, the association is allowed to run. During the next association interval, the
+     *         new instance will process its association within the limit specified for MaxConcurrency.
+     */
+
+    public String getMaxConcurrency() {
+        return this.maxConcurrency;
+    }
+
+    /**
+     * <p>
+     * The maximum number of targets allowed to run the association at the same time. You can specify a number, for
+     * example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means all
+     * targets run the association at the same time.
+     * </p>
+     * <p>
+     * If a new instance starts and attempts to run an association while Systems Manager is running MaxConcurrency
+     * associations, the association is allowed to run. During the next association interval, the new instance will
+     * process its association within the limit specified for MaxConcurrency.
+     * </p>
+     * 
+     * @param maxConcurrency
+     *        The maximum number of targets allowed to run the association at the same time. You can specify a number,
+     *        for example 10, or a percentage of the target set, for example 10%. The default value is 100%, which means
+     *        all targets run the association at the same time.</p>
+     *        <p>
+     *        If a new instance starts and attempts to run an association while Systems Manager is running
+     *        MaxConcurrency associations, the association is allowed to run. During the next association interval, the
+     *        new instance will process its association within the limit specified for MaxConcurrency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationDescription withMaxConcurrency(String maxConcurrency) {
+        setMaxConcurrency(maxConcurrency);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity level that is assigned to the association.
+     * </p>
+     * 
+     * @param complianceSeverity
+     *        The severity level that is assigned to the association.
+     * @see AssociationComplianceSeverity
+     */
+
+    public void setComplianceSeverity(String complianceSeverity) {
+        this.complianceSeverity = complianceSeverity;
+    }
+
+    /**
+     * <p>
+     * The severity level that is assigned to the association.
+     * </p>
+     * 
+     * @return The severity level that is assigned to the association.
+     * @see AssociationComplianceSeverity
+     */
+
+    public String getComplianceSeverity() {
+        return this.complianceSeverity;
+    }
+
+    /**
+     * <p>
+     * The severity level that is assigned to the association.
+     * </p>
+     * 
+     * @param complianceSeverity
+     *        The severity level that is assigned to the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationComplianceSeverity
+     */
+
+    public AssociationDescription withComplianceSeverity(String complianceSeverity) {
+        setComplianceSeverity(complianceSeverity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The severity level that is assigned to the association.
+     * </p>
+     * 
+     * @param complianceSeverity
+     *        The severity level that is assigned to the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationComplianceSeverity
+     */
+
+    public AssociationDescription withComplianceSeverity(AssociationComplianceSeverity complianceSeverity) {
+        this.complianceSeverity = complianceSeverity.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -846,6 +1170,8 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
             sb.append("Overview: ").append(getOverview()).append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
+        if (getAutomationTargetParameterName() != null)
+            sb.append("AutomationTargetParameterName: ").append(getAutomationTargetParameterName()).append(",");
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getAssociationId() != null)
@@ -861,7 +1187,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
         if (getLastSuccessfulExecutionDate() != null)
             sb.append("LastSuccessfulExecutionDate: ").append(getLastSuccessfulExecutionDate()).append(",");
         if (getAssociationName() != null)
-            sb.append("AssociationName: ").append(getAssociationName());
+            sb.append("AssociationName: ").append(getAssociationName()).append(",");
+        if (getMaxErrors() != null)
+            sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
+        if (getMaxConcurrency() != null)
+            sb.append("MaxConcurrency: ").append(getMaxConcurrency()).append(",");
+        if (getComplianceSeverity() != null)
+            sb.append("ComplianceSeverity: ").append(getComplianceSeverity());
         sb.append("}");
         return sb.toString();
     }
@@ -908,6 +1240,11 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
             return false;
         if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
             return false;
+        if (other.getAutomationTargetParameterName() == null ^ this.getAutomationTargetParameterName() == null)
+            return false;
+        if (other.getAutomationTargetParameterName() != null
+                && other.getAutomationTargetParameterName().equals(this.getAutomationTargetParameterName()) == false)
+            return false;
         if (other.getParameters() == null ^ this.getParameters() == null)
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
@@ -940,6 +1277,18 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
             return false;
         if (other.getAssociationName() != null && other.getAssociationName().equals(this.getAssociationName()) == false)
             return false;
+        if (other.getMaxErrors() == null ^ this.getMaxErrors() == null)
+            return false;
+        if (other.getMaxErrors() != null && other.getMaxErrors().equals(this.getMaxErrors()) == false)
+            return false;
+        if (other.getMaxConcurrency() == null ^ this.getMaxConcurrency() == null)
+            return false;
+        if (other.getMaxConcurrency() != null && other.getMaxConcurrency().equals(this.getMaxConcurrency()) == false)
+            return false;
+        if (other.getComplianceSeverity() == null ^ this.getComplianceSeverity() == null)
+            return false;
+        if (other.getComplianceSeverity() != null && other.getComplianceSeverity().equals(this.getComplianceSeverity()) == false)
+            return false;
         return true;
     }
 
@@ -956,6 +1305,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getOverview() == null) ? 0 : getOverview().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
+        hashCode = prime * hashCode + ((getAutomationTargetParameterName() == null) ? 0 : getAutomationTargetParameterName().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
@@ -964,6 +1314,9 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getLastExecutionDate() == null) ? 0 : getLastExecutionDate().hashCode());
         hashCode = prime * hashCode + ((getLastSuccessfulExecutionDate() == null) ? 0 : getLastSuccessfulExecutionDate().hashCode());
         hashCode = prime * hashCode + ((getAssociationName() == null) ? 0 : getAssociationName().hashCode());
+        hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
+        hashCode = prime * hashCode + ((getComplianceSeverity() == null) ? 0 : getComplianceSeverity().hashCode());
         return hashCode;
     }
 

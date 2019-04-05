@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,14 +24,33 @@ import javax.annotation.Generated;
 public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     */
     private String snapshotId;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a> operation to
+     * return to retrieve the TargetARN for specified VolumeARN.
+     * </p>
+     */
     private String volumeARN;
-
+    /**
+     * <p>
+     * The time the volume was created from the recovery point.
+     * </p>
+     */
     private String volumeRecoveryPointTime;
 
     /**
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     * 
      * @param snapshotId
+     *        The ID of the snapshot.
      */
 
     public void setSnapshotId(String snapshotId) {
@@ -39,7 +58,11 @@ public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.A
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     * 
+     * @return The ID of the snapshot.
      */
 
     public String getSnapshotId() {
@@ -47,7 +70,12 @@ public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.A
     }
 
     /**
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     * 
      * @param snapshotId
+     *        The ID of the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -57,7 +85,14 @@ public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.A
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a> operation to
+     * return to retrieve the TargetARN for specified VolumeARN.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a>
+     *        operation to return to retrieve the TargetARN for specified VolumeARN.
      */
 
     public void setVolumeARN(String volumeARN) {
@@ -65,7 +100,13 @@ public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.A
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a> operation to
+     * return to retrieve the TargetARN for specified VolumeARN.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a>
+     *         operation to return to retrieve the TargetARN for specified VolumeARN.
      */
 
     public String getVolumeARN() {
@@ -73,7 +114,14 @@ public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.A
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a> operation to
+     * return to retrieve the TargetARN for specified VolumeARN.
+     * </p>
+     * 
      * @param volumeARN
+     *        The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <a>DescribeStorediSCSIVolumes</a>
+     *        operation to return to retrieve the TargetARN for specified VolumeARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,7 +131,12 @@ public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.A
     }
 
     /**
+     * <p>
+     * The time the volume was created from the recovery point.
+     * </p>
+     * 
      * @param volumeRecoveryPointTime
+     *        The time the volume was created from the recovery point.
      */
 
     public void setVolumeRecoveryPointTime(String volumeRecoveryPointTime) {
@@ -91,7 +144,11 @@ public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.A
     }
 
     /**
-     * @return
+     * <p>
+     * The time the volume was created from the recovery point.
+     * </p>
+     * 
+     * @return The time the volume was created from the recovery point.
      */
 
     public String getVolumeRecoveryPointTime() {
@@ -99,7 +156,12 @@ public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.A
     }
 
     /**
+     * <p>
+     * The time the volume was created from the recovery point.
+     * </p>
+     * 
      * @param volumeRecoveryPointTime
+     *        The time the volume was created from the recovery point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,7 +171,8 @@ public class CreateSnapshotFromVolumeRecoveryPointResult extends com.amazonaws.A
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,9 +23,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * mappings are specified as part of the container definition.
  * </p>
  * <p>
- * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports should be
- * specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value
- * as the <code>containerPort</code>.
+ * If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports
+ * should be specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the
+ * same value as the <code>containerPort</code>.
  * </p>
  * <p>
  * After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are
@@ -43,14 +43,14 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container that is bound to the user-specified or automatically assigned host port.
      * </p>
      * <p>
-     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports
-     * should be specified using <code>containerPort</code>.
+     * If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed
+     * ports should be specified using <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the <code>bridge</code> network mode and you specify a container port and not
-     * a host port, your container automatically receives a host port in the ephemeral port range (for more information,
-     * see <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
-     * reserved ports limit of a container instance.
+     * If you are using containers in a task with the <code>bridge</code> network mode and you specify a container port
+     * and not a host port, your container automatically receives a host port in the ephemeral port range. For more
+     * information, see <code>hostPort</code>. Port mappings that are automatically assigned in this way do not count
+     * toward the 100 reserved ports limit of a container instance.
      * </p>
      */
     private Integer containerPort;
@@ -59,21 +59,21 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
-     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     * If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
-     * for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while
-     * specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port
-     * range for your container instance operating system and Docker version.
+     * If you are using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
+     * host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>
+     * ) while specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral
+     * port range for your container instance operating system and Docker version.
      * </p>
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
-     * <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     * ephemeral port range from 49153 through 65535 is used. You should not attempt to specify a host port in the
-     * ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.
+     * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
+     * ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral
+     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
+     * ephemeral port range.
      * </p>
      * <note>
      * <p>
@@ -82,11 +82,11 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
-     * ports 51678 and 51679. Any host port that was previously specified in a running task is also reserved while the
-     * task is running (after a task stops, the host port is released). The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a>DescribeContainerInstances</a> output, and a container instance may have up
-     * to 100 reserved ports at a time, including the default reserved ports (automatically assigned ports do not count
-     * toward the 100 reserved ports limit).
+     * ports 51678-51680. Any host port that was previously specified in a running task is also reserved while the task
+     * is running (after a task stops, the host port is released). The current reserved ports are displayed in the
+     * <code>remainingResources</code> of <a>DescribeContainerInstances</a> output. A container instance can have up to
+     * 100 reserved ports at a time, including the default reserved ports. Automatically assigned ports don't count
+     * toward the 100 reserved ports limit.
      * </p>
      */
     private Integer hostPort;
@@ -103,28 +103,28 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container that is bound to the user-specified or automatically assigned host port.
      * </p>
      * <p>
-     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports
-     * should be specified using <code>containerPort</code>.
+     * If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed
+     * ports should be specified using <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the <code>bridge</code> network mode and you specify a container port and not
-     * a host port, your container automatically receives a host port in the ephemeral port range (for more information,
-     * see <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
-     * reserved ports limit of a container instance.
+     * If you are using containers in a task with the <code>bridge</code> network mode and you specify a container port
+     * and not a host port, your container automatically receives a host port in the ephemeral port range. For more
+     * information, see <code>hostPort</code>. Port mappings that are automatically assigned in this way do not count
+     * toward the 100 reserved ports limit of a container instance.
      * </p>
      * 
      * @param containerPort
      *        The port number on the container that is bound to the user-specified or automatically assigned host
      *        port.</p>
      *        <p>
-     *        If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed
-     *        ports should be specified using <code>containerPort</code>.
+     *        If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode,
+     *        exposed ports should be specified using <code>containerPort</code>.
      *        </p>
      *        <p>
-     *        If using containers in a task with the <code>bridge</code> network mode and you specify a container port
-     *        and not a host port, your container automatically receives a host port in the ephemeral port range (for
-     *        more information, see <code>hostPort</code>). Port mappings that are automatically assigned in this way do
-     *        not count toward the 100 reserved ports limit of a container instance.
+     *        If you are using containers in a task with the <code>bridge</code> network mode and you specify a
+     *        container port and not a host port, your container automatically receives a host port in the ephemeral
+     *        port range. For more information, see <code>hostPort</code>. Port mappings that are automatically assigned
+     *        in this way do not count toward the 100 reserved ports limit of a container instance.
      */
 
     public void setContainerPort(Integer containerPort) {
@@ -136,27 +136,27 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container that is bound to the user-specified or automatically assigned host port.
      * </p>
      * <p>
-     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports
-     * should be specified using <code>containerPort</code>.
+     * If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed
+     * ports should be specified using <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the <code>bridge</code> network mode and you specify a container port and not
-     * a host port, your container automatically receives a host port in the ephemeral port range (for more information,
-     * see <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
-     * reserved ports limit of a container instance.
+     * If you are using containers in a task with the <code>bridge</code> network mode and you specify a container port
+     * and not a host port, your container automatically receives a host port in the ephemeral port range. For more
+     * information, see <code>hostPort</code>. Port mappings that are automatically assigned in this way do not count
+     * toward the 100 reserved ports limit of a container instance.
      * </p>
      * 
      * @return The port number on the container that is bound to the user-specified or automatically assigned host
      *         port.</p>
      *         <p>
-     *         If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed
-     *         ports should be specified using <code>containerPort</code>.
+     *         If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode,
+     *         exposed ports should be specified using <code>containerPort</code>.
      *         </p>
      *         <p>
-     *         If using containers in a task with the <code>bridge</code> network mode and you specify a container port
-     *         and not a host port, your container automatically receives a host port in the ephemeral port range (for
-     *         more information, see <code>hostPort</code>). Port mappings that are automatically assigned in this way
-     *         do not count toward the 100 reserved ports limit of a container instance.
+     *         If you are using containers in a task with the <code>bridge</code> network mode and you specify a
+     *         container port and not a host port, your container automatically receives a host port in the ephemeral
+     *         port range. For more information, see <code>hostPort</code>. Port mappings that are automatically
+     *         assigned in this way do not count toward the 100 reserved ports limit of a container instance.
      */
 
     public Integer getContainerPort() {
@@ -168,28 +168,28 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container that is bound to the user-specified or automatically assigned host port.
      * </p>
      * <p>
-     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports
-     * should be specified using <code>containerPort</code>.
+     * If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed
+     * ports should be specified using <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the <code>bridge</code> network mode and you specify a container port and not
-     * a host port, your container automatically receives a host port in the ephemeral port range (for more information,
-     * see <code>hostPort</code>). Port mappings that are automatically assigned in this way do not count toward the 100
-     * reserved ports limit of a container instance.
+     * If you are using containers in a task with the <code>bridge</code> network mode and you specify a container port
+     * and not a host port, your container automatically receives a host port in the ephemeral port range. For more
+     * information, see <code>hostPort</code>. Port mappings that are automatically assigned in this way do not count
+     * toward the 100 reserved ports limit of a container instance.
      * </p>
      * 
      * @param containerPort
      *        The port number on the container that is bound to the user-specified or automatically assigned host
      *        port.</p>
      *        <p>
-     *        If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed
-     *        ports should be specified using <code>containerPort</code>.
+     *        If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode,
+     *        exposed ports should be specified using <code>containerPort</code>.
      *        </p>
      *        <p>
-     *        If using containers in a task with the <code>bridge</code> network mode and you specify a container port
-     *        and not a host port, your container automatically receives a host port in the ephemeral port range (for
-     *        more information, see <code>hostPort</code>). Port mappings that are automatically assigned in this way do
-     *        not count toward the 100 reserved ports limit of a container instance.
+     *        If you are using containers in a task with the <code>bridge</code> network mode and you specify a
+     *        container port and not a host port, your container automatically receives a host port in the ephemeral
+     *        port range. For more information, see <code>hostPort</code>. Port mappings that are automatically assigned
+     *        in this way do not count toward the 100 reserved ports limit of a container instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,21 +203,21 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
-     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     * If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
-     * for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while
-     * specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port
-     * range for your container instance operating system and Docker version.
+     * If you are using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
+     * host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>
+     * ) while specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral
+     * port range for your container instance operating system and Docker version.
      * </p>
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
-     * <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     * ephemeral port range from 49153 through 65535 is used. You should not attempt to specify a host port in the
-     * ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.
+     * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
+     * ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral
+     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
+     * ephemeral port range.
      * </p>
      * <note>
      * <p>
@@ -226,30 +226,31 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
-     * ports 51678 and 51679. Any host port that was previously specified in a running task is also reserved while the
-     * task is running (after a task stops, the host port is released). The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a>DescribeContainerInstances</a> output, and a container instance may have up
-     * to 100 reserved ports at a time, including the default reserved ports (automatically assigned ports do not count
-     * toward the 100 reserved ports limit).
+     * ports 51678-51680. Any host port that was previously specified in a running task is also reserved while the task
+     * is running (after a task stops, the host port is released). The current reserved ports are displayed in the
+     * <code>remainingResources</code> of <a>DescribeContainerInstances</a> output. A container instance can have up to
+     * 100 reserved ports at a time, including the default reserved ports. Automatically assigned ports don't count
+     * toward the 100 reserved ports limit.
      * </p>
      * 
      * @param hostPort
      *        The port number on the container instance to reserve for your container.</p>
      *        <p>
-     *        If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     *        If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      *        <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      *        </p>
      *        <p>
-     *        If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
-     *        host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to
-     *        <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a
-     *        port in the ephemeral port range for your container instance operating system and Docker version.
+     *        If you are using containers in a task with the <code>bridge</code> network mode, you can specify a
+     *        non-reserved host port for your container port mapping, or you can omit the <code>hostPort</code> (or set
+     *        it to <code>0</code>) while specifying a <code>containerPort</code> and your container automatically
+     *        receives a port in the ephemeral port range for your container instance operating system and Docker
+     *        version.
      *        </p>
      *        <p>
      *        The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
-     *        <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     *        ephemeral port range from 49153 through 65535 is used. You should not attempt to specify a host port in
-     *        the ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
+     *        <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
+     *        ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the
+     *        ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
      *        outside of the ephemeral port range.
      *        </p>
      *        <note>
@@ -259,11 +260,11 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        </note>
      *        <p>
      *        The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
-     *        agent ports 51678 and 51679. Any host port that was previously specified in a running task is also
-     *        reserved while the task is running (after a task stops, the host port is released). The current reserved
-     *        ports are displayed in the <code>remainingResources</code> of <a>DescribeContainerInstances</a> output,
-     *        and a container instance may have up to 100 reserved ports at a time, including the default reserved ports
-     *        (automatically assigned ports do not count toward the 100 reserved ports limit).
+     *        agent ports 51678-51680. Any host port that was previously specified in a running task is also reserved
+     *        while the task is running (after a task stops, the host port is released). The current reserved ports are
+     *        displayed in the <code>remainingResources</code> of <a>DescribeContainerInstances</a> output. A container
+     *        instance can have up to 100 reserved ports at a time, including the default reserved ports. Automatically
+     *        assigned ports don't count toward the 100 reserved ports limit.
      */
 
     public void setHostPort(Integer hostPort) {
@@ -275,21 +276,21 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
-     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     * If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
-     * for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while
-     * specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port
-     * range for your container instance operating system and Docker version.
+     * If you are using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
+     * host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>
+     * ) while specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral
+     * port range for your container instance operating system and Docker version.
      * </p>
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
-     * <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     * ephemeral port range from 49153 through 65535 is used. You should not attempt to specify a host port in the
-     * ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.
+     * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
+     * ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral
+     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
+     * ephemeral port range.
      * </p>
      * <note>
      * <p>
@@ -298,31 +299,32 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
-     * ports 51678 and 51679. Any host port that was previously specified in a running task is also reserved while the
-     * task is running (after a task stops, the host port is released). The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a>DescribeContainerInstances</a> output, and a container instance may have up
-     * to 100 reserved ports at a time, including the default reserved ports (automatically assigned ports do not count
-     * toward the 100 reserved ports limit).
+     * ports 51678-51680. Any host port that was previously specified in a running task is also reserved while the task
+     * is running (after a task stops, the host port is released). The current reserved ports are displayed in the
+     * <code>remainingResources</code> of <a>DescribeContainerInstances</a> output. A container instance can have up to
+     * 100 reserved ports at a time, including the default reserved ports. Automatically assigned ports don't count
+     * toward the 100 reserved ports limit.
      * </p>
      * 
      * @return The port number on the container instance to reserve for your container.</p>
      *         <p>
-     *         If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     *         If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      *         <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>
      *         .
      *         </p>
      *         <p>
-     *         If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
-     *         host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to
-     *         <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a
-     *         port in the ephemeral port range for your container instance operating system and Docker version.
+     *         If you are using containers in a task with the <code>bridge</code> network mode, you can specify a
+     *         non-reserved host port for your container port mapping, or you can omit the <code>hostPort</code> (or set
+     *         it to <code>0</code>) while specifying a <code>containerPort</code> and your container automatically
+     *         receives a port in the ephemeral port range for your container instance operating system and Docker
+     *         version.
      *         </p>
      *         <p>
      *         The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
-     *         <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     *         ephemeral port range from 49153 through 65535 is used. You should not attempt to specify a host port in
-     *         the ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768
-     *         are outside of the ephemeral port range.
+     *         <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
+     *         ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the
+     *         ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
+     *         outside of the ephemeral port range.
      *         </p>
      *         <note>
      *         <p>
@@ -332,11 +334,11 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *         </note>
      *         <p>
      *         The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
-     *         agent ports 51678 and 51679. Any host port that was previously specified in a running task is also
-     *         reserved while the task is running (after a task stops, the host port is released). The current reserved
-     *         ports are displayed in the <code>remainingResources</code> of <a>DescribeContainerInstances</a> output,
-     *         and a container instance may have up to 100 reserved ports at a time, including the default reserved
-     *         ports (automatically assigned ports do not count toward the 100 reserved ports limit).
+     *         agent ports 51678-51680. Any host port that was previously specified in a running task is also reserved
+     *         while the task is running (after a task stops, the host port is released). The current reserved ports are
+     *         displayed in the <code>remainingResources</code> of <a>DescribeContainerInstances</a> output. A container
+     *         instance can have up to 100 reserved ports at a time, including the default reserved ports. Automatically
+     *         assigned ports don't count toward the 100 reserved ports limit.
      */
 
     public Integer getHostPort() {
@@ -348,21 +350,21 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
-     * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     * If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
      * <p>
-     * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
-     * for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>) while
-     * specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral port
-     * range for your container instance operating system and Docker version.
+     * If you are using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
+     * host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to <code>0</code>
+     * ) while specifying a <code>containerPort</code> and your container automatically receives a port in the ephemeral
+     * port range for your container instance operating system and Docker version.
      * </p>
      * <p>
      * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
-     * <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     * ephemeral port range from 49153 through 65535 is used. You should not attempt to specify a host port in the
-     * ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of
-     * the ephemeral port range.
+     * <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
+     * ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the ephemeral
+     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
+     * ephemeral port range.
      * </p>
      * <note>
      * <p>
@@ -371,30 +373,31 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
-     * ports 51678 and 51679. Any host port that was previously specified in a running task is also reserved while the
-     * task is running (after a task stops, the host port is released). The current reserved ports are displayed in the
-     * <code>remainingResources</code> of <a>DescribeContainerInstances</a> output, and a container instance may have up
-     * to 100 reserved ports at a time, including the default reserved ports (automatically assigned ports do not count
-     * toward the 100 reserved ports limit).
+     * ports 51678-51680. Any host port that was previously specified in a running task is also reserved while the task
+     * is running (after a task stops, the host port is released). The current reserved ports are displayed in the
+     * <code>remainingResources</code> of <a>DescribeContainerInstances</a> output. A container instance can have up to
+     * 100 reserved ports at a time, including the default reserved ports. Automatically assigned ports don't count
+     * toward the 100 reserved ports limit.
      * </p>
      * 
      * @param hostPort
      *        The port number on the container instance to reserve for your container.</p>
      *        <p>
-     *        If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
+     *        If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      *        <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      *        </p>
      *        <p>
-     *        If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
-     *        host port for your container port mapping, or you can omit the <code>hostPort</code> (or set it to
-     *        <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a
-     *        port in the ephemeral port range for your container instance operating system and Docker version.
+     *        If you are using containers in a task with the <code>bridge</code> network mode, you can specify a
+     *        non-reserved host port for your container port mapping, or you can omit the <code>hostPort</code> (or set
+     *        it to <code>0</code>) while specifying a <code>containerPort</code> and your container automatically
+     *        receives a port in the ephemeral port range for your container instance operating system and Docker
+     *        version.
      *        </p>
      *        <p>
      *        The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
-     *        <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     *        ephemeral port range from 49153 through 65535 is used. You should not attempt to specify a host port in
-     *        the ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
+     *        <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default
+     *        ephemeral port range from 49153 through 65535 is used. Do not attempt to specify a host port in the
+     *        ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
      *        outside of the ephemeral port range.
      *        </p>
      *        <note>
@@ -404,11 +407,11 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        </note>
      *        <p>
      *        The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
-     *        agent ports 51678 and 51679. Any host port that was previously specified in a running task is also
-     *        reserved while the task is running (after a task stops, the host port is released). The current reserved
-     *        ports are displayed in the <code>remainingResources</code> of <a>DescribeContainerInstances</a> output,
-     *        and a container instance may have up to 100 reserved ports at a time, including the default reserved ports
-     *        (automatically assigned ports do not count toward the 100 reserved ports limit).
+     *        agent ports 51678-51680. Any host port that was previously specified in a running task is also reserved
+     *        while the task is running (after a task stops, the host port is released). The current reserved ports are
+     *        displayed in the <code>remainingResources</code> of <a>DescribeContainerInstances</a> output. A container
+     *        instance can have up to 100 reserved ports at a time, including the default reserved ports. Automatically
+     *        assigned ports don't count toward the 100 reserved ports limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,7 +504,8 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

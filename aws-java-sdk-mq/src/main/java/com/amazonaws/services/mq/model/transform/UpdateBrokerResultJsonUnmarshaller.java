@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class UpdateBrokerResultJsonUnmarshaller implements Unmarshaller<UpdateBr
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("autoMinorVersionUpgrade", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setAutoMinorVersionUpgrade(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("brokerId", targetDepth)) {
                     context.nextToken();
                     updateBrokerResult.setBrokerId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -55,6 +59,14 @@ public class UpdateBrokerResultJsonUnmarshaller implements Unmarshaller<UpdateBr
                 if (context.testExpression("configuration", targetDepth)) {
                     context.nextToken();
                     updateBrokerResult.setConfiguration(ConfigurationIdJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("engineVersion", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("logs", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setLogs(LogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

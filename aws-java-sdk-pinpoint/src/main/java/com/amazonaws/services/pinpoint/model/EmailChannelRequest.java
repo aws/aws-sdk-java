@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EmailChannelRequest implements Serializable, Cloneable, StructuredPojo {
 
+    /** The configuration set that you want to use when you send email using the Pinpoint Email API. */
+    private String configurationSet;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
     /** The email address used to send emails from. */
@@ -34,6 +36,40 @@ public class EmailChannelRequest implements Serializable, Cloneable, StructuredP
     private String identity;
     /** The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service */
     private String roleArn;
+
+    /**
+     * The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * 
+     * @param configurationSet
+     *        The configuration set that you want to use when you send email using the Pinpoint Email API.
+     */
+
+    public void setConfigurationSet(String configurationSet) {
+        this.configurationSet = configurationSet;
+    }
+
+    /**
+     * The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * 
+     * @return The configuration set that you want to use when you send email using the Pinpoint Email API.
+     */
+
+    public String getConfigurationSet() {
+        return this.configurationSet;
+    }
+
+    /**
+     * The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * 
+     * @param configurationSet
+     *        The configuration set that you want to use when you send email using the Pinpoint Email API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmailChannelRequest withConfigurationSet(String configurationSet) {
+        setConfigurationSet(configurationSet);
+        return this;
+    }
 
     /**
      * If the channel is enabled for sending messages.
@@ -182,7 +218,8 @@ public class EmailChannelRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -192,6 +229,8 @@ public class EmailChannelRequest implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getConfigurationSet() != null)
+            sb.append("ConfigurationSet: ").append(getConfigurationSet()).append(",");
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getFromAddress() != null)
@@ -214,6 +253,10 @@ public class EmailChannelRequest implements Serializable, Cloneable, StructuredP
         if (obj instanceof EmailChannelRequest == false)
             return false;
         EmailChannelRequest other = (EmailChannelRequest) obj;
+        if (other.getConfigurationSet() == null ^ this.getConfigurationSet() == null)
+            return false;
+        if (other.getConfigurationSet() != null && other.getConfigurationSet().equals(this.getConfigurationSet()) == false)
+            return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
@@ -238,6 +281,7 @@ public class EmailChannelRequest implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getConfigurationSet() == null) ? 0 : getConfigurationSet().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getFromAddress() == null) ? 0 : getFromAddress().hashCode());
         hashCode = prime * hashCode + ((getIdentity() == null) ? 0 : getIdentity().hashCode());

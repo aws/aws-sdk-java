@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,12 @@ public class Address implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     */
+    private String publicIpv4Pool;
 
     /**
      * <p>
@@ -518,7 +524,48 @@ public class Address implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     * 
+     * @param publicIpv4Pool
+     *        The ID of an address pool.
+     */
+
+    public void setPublicIpv4Pool(String publicIpv4Pool) {
+        this.publicIpv4Pool = publicIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     * 
+     * @return The ID of an address pool.
+     */
+
+    public String getPublicIpv4Pool() {
+        return this.publicIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The ID of an address pool.
+     * </p>
+     * 
+     * @param publicIpv4Pool
+     *        The ID of an address pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withPublicIpv4Pool(String publicIpv4Pool) {
+        setPublicIpv4Pool(publicIpv4Pool);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -545,7 +592,9 @@ public class Address implements Serializable, Cloneable {
         if (getPrivateIpAddress() != null)
             sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPublicIpv4Pool() != null)
+            sb.append("PublicIpv4Pool: ").append(getPublicIpv4Pool());
         sb.append("}");
         return sb.toString();
     }
@@ -596,6 +645,10 @@ public class Address implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPublicIpv4Pool() == null ^ this.getPublicIpv4Pool() == null)
+            return false;
+        if (other.getPublicIpv4Pool() != null && other.getPublicIpv4Pool().equals(this.getPublicIpv4Pool()) == false)
+            return false;
         return true;
     }
 
@@ -613,6 +666,7 @@ public class Address implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkInterfaceOwnerId() == null) ? 0 : getNetworkInterfaceOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPublicIpv4Pool() == null) ? 0 : getPublicIpv4Pool().hashCode());
         return hashCode;
     }
 

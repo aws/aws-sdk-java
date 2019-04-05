@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,10 @@ public class DeleteOTAUpdateRequestMarshaller {
 
     private static final MarshallingInfo<String> OTAUPDATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("otaUpdateId").build();
+    private static final MarshallingInfo<Boolean> DELETESTREAM_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("deleteStream").build();
+    private static final MarshallingInfo<Boolean> FORCEDELETEAWSJOB_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("forceDeleteAWSJob").build();
 
     private static final DeleteOTAUpdateRequestMarshaller instance = new DeleteOTAUpdateRequestMarshaller();
 
@@ -47,6 +51,8 @@ public class DeleteOTAUpdateRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteOTAUpdateRequest.getOtaUpdateId(), OTAUPDATEID_BINDING);
+            protocolMarshaller.marshall(deleteOTAUpdateRequest.getDeleteStream(), DELETESTREAM_BINDING);
+            protocolMarshaller.marshall(deleteOTAUpdateRequest.getForceDeleteAWSJob(), FORCEDELETEAWSJOB_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

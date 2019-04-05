@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,7 @@ import com.amazonaws.services.ecs.model.*;
  * {@link com.amazonaws.services.ecs.AbstractAmazonECSAsync} instead.
  * </p>
  * <p>
+ * <fullname>Amazon Elastic Container Service</fullname>
  * <p>
  * Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it
  * easy to run, stop, and manage Docker containers on a cluster. You can host your cluster on a serverless
@@ -119,42 +120,88 @@ public interface AmazonECSAsync extends AmazonECS {
     /**
      * <p>
      * Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in
-     * a service drops below <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the specified
+     * a service drops below the <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the specified
      * cluster. To update an existing service, see <a>UpdateService</a>.
      * </p>
      * <p>
      * In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind
      * a load balancer. The load balancer distributes traffic across the tasks that are associated with the service. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
      * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * You can optionally specify a deployment configuration for your service. During a deployment, the service
-     * scheduler uses the <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to determine the
-     * deployment strategy. The deployment is triggered by changing the task definition or the desired count of a
-     * service with an <a>UpdateService</a> operation.
+     * Tasks for services that <i>do not</i> use a load balancer are considered healthy if they're in the
+     * <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load balancer are considered healthy if
+     * they're in the <code>RUNNING</code> state and the container instance that they're hosted on is reported as
+     * healthy by the load balancer.
      * </p>
      * <p>
-     * The <code>minimumHealthyPercent</code> represents a lower limit on the number of your service's tasks that must
-     * remain in the <code>RUNNING</code> state during a deployment, as a percentage of the <code>desiredCount</code>
-     * (rounded up to the nearest integer). This parameter enables you to deploy without using additional cluster
-     * capacity. For example, if your service has a <code>desiredCount</code> of four tasks and a
-     * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing tasks to free up cluster capacity
-     * before starting two new tasks. Tasks for services that <i>do not</i> use a load balancer are considered healthy
-     * if they are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load balancer are
-     * considered healthy if they are in the <code>RUNNING</code> state and the container instance they are hosted on is
-     * reported as healthy by the load balancer. The default value for <code>minimumHealthyPercent</code> is 50% in the
-     * console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
+     * There are two service scheduler strategies available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>REPLICA</code> - The replica scheduling strategy places and maintains the desired number of tasks across
+     * your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task
+     * placement strategies and constraints to customize task placement decisions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler
+     * Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DAEMON</code> - The daemon scheduling strategy deploys exactly one task on each active container instance
+     * that meets all of the task placement constraints that you specify in your cluster. When using this strategy, you
+     * don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler
+     * Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can optionally specify a deployment configuration for your service. The deployment is triggered by changing
+     * properties, such as the task definition or the desired count of a service, with an <a>UpdateService</a>
+     * operation. The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     * value for a daemon service for <code>minimumHealthyPercent</code> is 0%.
      * </p>
      * <p>
-     * The <code>maximumPercent</code> parameter represents an upper limit on the number of your service's tasks that
-     * are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, as a percentage of the
-     * <code>desiredCount</code> (rounded down to the nearest integer). This parameter enables you to define the
-     * deployment batch size. For example, if your service has a <code>desiredCount</code> of four tasks and a
-     * <code>maximumPercent</code> value of 200%, the scheduler can start four new tasks before stopping the four older
-     * tasks (provided that the cluster resources required to do this are available). The default value for
-     * <code>maximumPercent</code> is 200%.
+     * If a service is using the <code>ECS</code> deployment controller, the minimum healthy percent represents a lower
+     * limit on the number of tasks in a service that must remain in the <code>RUNNING</code> state during a deployment,
+     * as a percentage of the desired number of tasks (rounded up to the nearest integer), and while any container
+     * instances are in the <code>DRAINING</code> state if the service contains tasks using the EC2 launch type. This
+     * parameter enables you to deploy without using additional cluster capacity. For example, if your service has a
+     * desired number of four tasks and a minimum healthy percent of 50%, the scheduler might stop two existing tasks to
+     * free up cluster capacity before starting two new tasks. Tasks for services that <i>do not</i> use a load balancer
+     * are considered healthy if they're in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load
+     * balancer are considered healthy if they're in the <code>RUNNING</code> state and they're reported as healthy by
+     * the load balancer. The default value for minimum healthy percent is 100%.
+     * </p>
+     * <p>
+     * If a service is using the <code>ECS</code> deployment controller, the <b>maximum percent</b> parameter represents
+     * an upper limit on the number of tasks in a service that are allowed in the <code>RUNNING</code> or
+     * <code>PENDING</code> state during a deployment, as a percentage of the desired number of tasks (rounded down to
+     * the nearest integer), and while any container instances are in the <code>DRAINING</code> state if the service
+     * contains tasks using the EC2 launch type. This parameter enables you to define the deployment batch size. For
+     * example, if your service has a desired number of four tasks and a maximum percent value of 200%, the scheduler
+     * may start four new tasks before stopping the four older tasks (provided that the cluster resources required to do
+     * this are available). The default value for maximum percent is 200%.
+     * </p>
+     * <p>
+     * If a service is using either the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
+     * and tasks that use the EC2 launch type, the <b>minimum healthy percent</b> and <b>maximum percent</b> values are
+     * used only to define the lower and upper limit on the number of the tasks in the service that remain in the
+     * <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If the tasks in
+     * the service use the Fargate launch type, the minimum healthy percent and maximum percent values aren't used,
+     * although they're currently visible when describing your service.
+     * </p>
+     * <p>
+     * When creating a service that uses the <code>EXTERNAL</code> deployment controller, you can specify only
+     * parameters that aren't controlled at the task set level. The only required parameter is the service name. You
+     * control your services using the <a>CreateTaskSet</a> operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * When the service scheduler launches new tasks, it determines task placement in your cluster using the following
@@ -201,42 +248,88 @@ public interface AmazonECSAsync extends AmazonECS {
     /**
      * <p>
      * Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in
-     * a service drops below <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the specified
+     * a service drops below the <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the specified
      * cluster. To update an existing service, see <a>UpdateService</a>.
      * </p>
      * <p>
      * In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind
      * a load balancer. The load balancer distributes traffic across the tasks that are associated with the service. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
      * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * You can optionally specify a deployment configuration for your service. During a deployment, the service
-     * scheduler uses the <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to determine the
-     * deployment strategy. The deployment is triggered by changing the task definition or the desired count of a
-     * service with an <a>UpdateService</a> operation.
+     * Tasks for services that <i>do not</i> use a load balancer are considered healthy if they're in the
+     * <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load balancer are considered healthy if
+     * they're in the <code>RUNNING</code> state and the container instance that they're hosted on is reported as
+     * healthy by the load balancer.
      * </p>
      * <p>
-     * The <code>minimumHealthyPercent</code> represents a lower limit on the number of your service's tasks that must
-     * remain in the <code>RUNNING</code> state during a deployment, as a percentage of the <code>desiredCount</code>
-     * (rounded up to the nearest integer). This parameter enables you to deploy without using additional cluster
-     * capacity. For example, if your service has a <code>desiredCount</code> of four tasks and a
-     * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing tasks to free up cluster capacity
-     * before starting two new tasks. Tasks for services that <i>do not</i> use a load balancer are considered healthy
-     * if they are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load balancer are
-     * considered healthy if they are in the <code>RUNNING</code> state and the container instance they are hosted on is
-     * reported as healthy by the load balancer. The default value for <code>minimumHealthyPercent</code> is 50% in the
-     * console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
+     * There are two service scheduler strategies available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>REPLICA</code> - The replica scheduling strategy places and maintains the desired number of tasks across
+     * your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task
+     * placement strategies and constraints to customize task placement decisions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler
+     * Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DAEMON</code> - The daemon scheduling strategy deploys exactly one task on each active container instance
+     * that meets all of the task placement constraints that you specify in your cluster. When using this strategy, you
+     * don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler
+     * Concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can optionally specify a deployment configuration for your service. The deployment is triggered by changing
+     * properties, such as the task definition or the desired count of a service, with an <a>UpdateService</a>
+     * operation. The default value for a replica service for <code>minimumHealthyPercent</code> is 100%. The default
+     * value for a daemon service for <code>minimumHealthyPercent</code> is 0%.
      * </p>
      * <p>
-     * The <code>maximumPercent</code> parameter represents an upper limit on the number of your service's tasks that
-     * are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, as a percentage of the
-     * <code>desiredCount</code> (rounded down to the nearest integer). This parameter enables you to define the
-     * deployment batch size. For example, if your service has a <code>desiredCount</code> of four tasks and a
-     * <code>maximumPercent</code> value of 200%, the scheduler can start four new tasks before stopping the four older
-     * tasks (provided that the cluster resources required to do this are available). The default value for
-     * <code>maximumPercent</code> is 200%.
+     * If a service is using the <code>ECS</code> deployment controller, the minimum healthy percent represents a lower
+     * limit on the number of tasks in a service that must remain in the <code>RUNNING</code> state during a deployment,
+     * as a percentage of the desired number of tasks (rounded up to the nearest integer), and while any container
+     * instances are in the <code>DRAINING</code> state if the service contains tasks using the EC2 launch type. This
+     * parameter enables you to deploy without using additional cluster capacity. For example, if your service has a
+     * desired number of four tasks and a minimum healthy percent of 50%, the scheduler might stop two existing tasks to
+     * free up cluster capacity before starting two new tasks. Tasks for services that <i>do not</i> use a load balancer
+     * are considered healthy if they're in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load
+     * balancer are considered healthy if they're in the <code>RUNNING</code> state and they're reported as healthy by
+     * the load balancer. The default value for minimum healthy percent is 100%.
+     * </p>
+     * <p>
+     * If a service is using the <code>ECS</code> deployment controller, the <b>maximum percent</b> parameter represents
+     * an upper limit on the number of tasks in a service that are allowed in the <code>RUNNING</code> or
+     * <code>PENDING</code> state during a deployment, as a percentage of the desired number of tasks (rounded down to
+     * the nearest integer), and while any container instances are in the <code>DRAINING</code> state if the service
+     * contains tasks using the EC2 launch type. This parameter enables you to define the deployment batch size. For
+     * example, if your service has a desired number of four tasks and a maximum percent value of 200%, the scheduler
+     * may start four new tasks before stopping the four older tasks (provided that the cluster resources required to do
+     * this are available). The default value for maximum percent is 200%.
+     * </p>
+     * <p>
+     * If a service is using either the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
+     * and tasks that use the EC2 launch type, the <b>minimum healthy percent</b> and <b>maximum percent</b> values are
+     * used only to define the lower and upper limit on the number of the tasks in the service that remain in the
+     * <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state. If the tasks in
+     * the service use the Fargate launch type, the minimum healthy percent and maximum percent values aren't used,
+     * although they're currently visible when describing your service.
+     * </p>
+     * <p>
+     * When creating a service that uses the <code>EXTERNAL</code> deployment controller, you can specify only
+     * parameters that aren't controlled at the task set level. The only required parameter is the service name. You
+     * control your services using the <a>CreateTaskSet</a> operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * When the service scheduler launches new tasks, it determines task placement in your cluster using the following
@@ -284,6 +377,78 @@ public interface AmazonECSAsync extends AmazonECS {
      */
     java.util.concurrent.Future<CreateServiceResult> createServiceAsync(CreateServiceRequest createServiceRequest,
             com.amazonaws.handlers.AsyncHandler<CreateServiceRequest, CreateServiceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a task set in the specified cluster and service. This is used when a service uses the
+     * <code>EXTERNAL</code> deployment controller type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param createTaskSetRequest
+     * @return A Java Future containing the result of the CreateTaskSet operation returned by the service.
+     * @sample AmazonECSAsync.CreateTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTaskSetResult> createTaskSetAsync(CreateTaskSetRequest createTaskSetRequest);
+
+    /**
+     * <p>
+     * Create a task set in the specified cluster and service. This is used when a service uses the
+     * <code>EXTERNAL</code> deployment controller type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param createTaskSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTaskSet operation returned by the service.
+     * @sample AmazonECSAsyncHandler.CreateTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTaskSetResult> createTaskSetAsync(CreateTaskSetRequest createTaskSetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTaskSetRequest, CreateTaskSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an
+     * account. You can specify whether the new ARN and resource ID format are disabled for new resources that are
+     * created.
+     * </p>
+     * 
+     * @param deleteAccountSettingRequest
+     * @return A Java Future containing the result of the DeleteAccountSetting operation returned by the service.
+     * @sample AmazonECSAsync.DeleteAccountSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccountSettingResult> deleteAccountSettingAsync(DeleteAccountSettingRequest deleteAccountSettingRequest);
+
+    /**
+     * <p>
+     * Modifies the ARN and resource ID format of a resource for a specified IAM user, IAM role, or the root user for an
+     * account. You can specify whether the new ARN and resource ID format are disabled for new resources that are
+     * created.
+     * </p>
+     * 
+     * @param deleteAccountSettingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccountSetting operation returned by the service.
+     * @sample AmazonECSAsyncHandler.DeleteAccountSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccountSettingResult> deleteAccountSettingAsync(DeleteAccountSettingRequest deleteAccountSettingRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountSettingRequest, DeleteAccountSettingResult> asyncHandler);
 
     /**
      * <p>
@@ -360,14 +525,19 @@ public interface AmazonECSAsync extends AmazonECS {
      * <note>
      * <p>
      * When you delete a service, if there are still running tasks that require cleanup, the service status moves from
-     * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in
-     * <a>ListServices</a> API operations. After the tasks have stopped, then the service status moves from
+     * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in the
+     * <a>ListServices</a> API operation. After the tasks have stopped, then the service status moves from
      * <code>DRAINING</code> to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code>
-     * status can still be viewed with <a>DescribeServices</a> API operations. However, in the future,
+     * status can still be viewed with the <a>DescribeServices</a> API operation. However, in the future,
      * <code>INACTIVE</code> services may be cleaned up and purged from Amazon ECS record keeping, and
-     * <a>DescribeServices</a> API operations on those services return a <code>ServiceNotFoundException</code> error.
+     * <a>DescribeServices</a> calls on those services return a <code>ServiceNotFoundException</code> error.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * If you attempt to create a new service with the same name as an existing service in either <code>ACTIVE</code> or
+     * <code>DRAINING</code> status, you receive an error.
+     * </p>
+     * </important>
      * 
      * @param deleteServiceRequest
      * @return A Java Future containing the result of the DeleteService operation returned by the service.
@@ -386,14 +556,19 @@ public interface AmazonECSAsync extends AmazonECS {
      * <note>
      * <p>
      * When you delete a service, if there are still running tasks that require cleanup, the service status moves from
-     * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in
-     * <a>ListServices</a> API operations. After the tasks have stopped, then the service status moves from
+     * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in the
+     * <a>ListServices</a> API operation. After the tasks have stopped, then the service status moves from
      * <code>DRAINING</code> to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code>
-     * status can still be viewed with <a>DescribeServices</a> API operations. However, in the future,
+     * status can still be viewed with the <a>DescribeServices</a> API operation. However, in the future,
      * <code>INACTIVE</code> services may be cleaned up and purged from Amazon ECS record keeping, and
-     * <a>DescribeServices</a> API operations on those services return a <code>ServiceNotFoundException</code> error.
+     * <a>DescribeServices</a> calls on those services return a <code>ServiceNotFoundException</code> error.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * If you attempt to create a new service with the same name as an existing service in either <code>ACTIVE</code> or
+     * <code>DRAINING</code> status, you receive an error.
+     * </p>
+     * </important>
      * 
      * @param deleteServiceRequest
      * @param asyncHandler
@@ -410,6 +585,43 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Deletes a specified task set within a service. This is used when a service uses the <code>EXTERNAL</code>
+     * deployment controller type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteTaskSetRequest
+     * @return A Java Future containing the result of the DeleteTaskSet operation returned by the service.
+     * @sample AmazonECSAsync.DeleteTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTaskSetResult> deleteTaskSetAsync(DeleteTaskSetRequest deleteTaskSetRequest);
+
+    /**
+     * <p>
+     * Deletes a specified task set within a service. This is used when a service uses the <code>EXTERNAL</code>
+     * deployment controller type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteTaskSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTaskSet operation returned by the service.
+     * @sample AmazonECSAsyncHandler.DeleteTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTaskSetResult> deleteTaskSetAsync(DeleteTaskSetRequest deleteTaskSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTaskSetRequest, DeleteTaskSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Deregisters an Amazon ECS container instance from the specified cluster. This instance is no longer available to
      * run tasks.
      * </p>
@@ -420,7 +632,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * Deregistering a container instance removes the instance from a cluster, but it does not terminate the EC2
-     * instance; if you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop
+     * instance. If you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop
      * billing.
      * </p>
      * <note>
@@ -452,7 +664,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * Deregistering a container instance removes the instance from a cluster, but it does not terminate the EC2
-     * instance; if you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop
+     * instance. If you are finished using the instance, be sure to terminate it in the Amazon EC2 console to stop
      * billing.
      * </p>
      * <note>
@@ -486,12 +698,12 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * You cannot use an <code>INACTIVE</code> task definition to run new tasks or create new services, and you cannot
-     * update an existing service to reference an <code>INACTIVE</code> task definition (although there may be up to a
-     * 10-minute window following deregistration where these restrictions have not yet taken effect).
+     * update an existing service to reference an <code>INACTIVE</code> task definition. However, there may be up to a
+     * 10-minute window following deregistration where these restrictions have not yet taken effect.
      * </p>
      * <note>
      * <p>
-     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely; however,
+     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely. However,
      * this behavior is subject to change in the future, so you should not rely on <code>INACTIVE</code> task
      * definitions persisting beyond the lifecycle of any associated tasks and services.
      * </p>
@@ -514,12 +726,12 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * You cannot use an <code>INACTIVE</code> task definition to run new tasks or create new services, and you cannot
-     * update an existing service to reference an <code>INACTIVE</code> task definition (although there may be up to a
-     * 10-minute window following deregistration where these restrictions have not yet taken effect).
+     * update an existing service to reference an <code>INACTIVE</code> task definition. However, there may be up to a
+     * 10-minute window following deregistration where these restrictions have not yet taken effect.
      * </p>
      * <note>
      * <p>
-     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely; however,
+     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely. However,
      * this behavior is subject to change in the future, so you should not rely on <code>INACTIVE</code> task
      * definitions persisting beyond the lifecycle of any associated tasks and services.
      * </p>
@@ -697,6 +909,43 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Describes the task sets in the specified cluster and service. This is used when a service uses the
+     * <code>EXTERNAL</code> deployment controller type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeTaskSetsRequest
+     * @return A Java Future containing the result of the DescribeTaskSets operation returned by the service.
+     * @sample AmazonECSAsync.DescribeTaskSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTaskSetsResult> describeTaskSetsAsync(DescribeTaskSetsRequest describeTaskSetsRequest);
+
+    /**
+     * <p>
+     * Describes the task sets in the specified cluster and service. This is used when a service uses the
+     * <code>EXTERNAL</code> deployment controller type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeTaskSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTaskSets operation returned by the service.
+     * @sample AmazonECSAsyncHandler.DescribeTaskSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTaskSetsResult> describeTaskSetsAsync(DescribeTaskSetsRequest describeTaskSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTaskSetsRequest, DescribeTaskSetsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes a specified task or tasks.
      * </p>
      * 
@@ -781,6 +1030,37 @@ public interface AmazonECSAsync extends AmazonECS {
      */
     java.util.concurrent.Future<DiscoverPollEndpointResult> discoverPollEndpointAsync(
             com.amazonaws.handlers.AsyncHandler<DiscoverPollEndpointRequest, DiscoverPollEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the account settings for an Amazon ECS resource for a specified principal.
+     * </p>
+     * 
+     * @param listAccountSettingsRequest
+     * @return A Java Future containing the result of the ListAccountSettings operation returned by the service.
+     * @sample AmazonECSAsync.ListAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccountSettingsResult> listAccountSettingsAsync(ListAccountSettingsRequest listAccountSettingsRequest);
+
+    /**
+     * <p>
+     * Lists the account settings for an Amazon ECS resource for a specified principal.
+     * </p>
+     * 
+     * @param listAccountSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccountSettings operation returned by the service.
+     * @sample AmazonECSAsyncHandler.ListAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccountSettingsResult> listAccountSettingsAsync(ListAccountSettingsRequest listAccountSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccountSettingsRequest, ListAccountSettingsResult> asyncHandler);
 
     /**
      * <p>
@@ -871,7 +1151,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * Returns a list of container instances in a specified cluster. You can filter the results of a
      * <code>ListContainerInstances</code> operation with cluster query language statements inside the
      * <code>filter</code> parameter. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -888,7 +1168,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * Returns a list of container instances in a specified cluster. You can filter the results of a
      * <code>ListContainerInstances</code> operation with cluster query language statements inside the
      * <code>filter</code> parameter. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -964,6 +1244,37 @@ public interface AmazonECSAsync extends AmazonECS {
      * @see #listServicesAsync(ListServicesRequest, com.amazonaws.handlers.AsyncHandler)
      */
     java.util.concurrent.Future<ListServicesResult> listServicesAsync(com.amazonaws.handlers.AsyncHandler<ListServicesRequest, ListServicesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the tags for an Amazon ECS resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonECSAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * List the tags for an Amazon ECS resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonECSAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -1132,10 +1443,90 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Modifies the ARN and resource ID format of a resource type for a specified IAM user, IAM role, or the root user
+     * for an account. If the account setting for the root user is changed, it sets the default setting for all of the
+     * IAM users and roles for which no individual account setting has been set. The opt-in and opt-out account setting
+     * can be set for each Amazon ECS resource separately. The ARN and resource ID format of a resource will be defined
+     * by the opt-in status of the IAM user or role that created the resource. Enabling this setting is required to use
+     * new Amazon ECS features such as resource tagging. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon Resource Names
+     * (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param putAccountSettingRequest
+     * @return A Java Future containing the result of the PutAccountSetting operation returned by the service.
+     * @sample AmazonECSAsync.PutAccountSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountSettingResult> putAccountSettingAsync(PutAccountSettingRequest putAccountSettingRequest);
+
+    /**
+     * <p>
+     * Modifies the ARN and resource ID format of a resource type for a specified IAM user, IAM role, or the root user
+     * for an account. If the account setting for the root user is changed, it sets the default setting for all of the
+     * IAM users and roles for which no individual account setting has been set. The opt-in and opt-out account setting
+     * can be set for each Amazon ECS resource separately. The ARN and resource ID format of a resource will be defined
+     * by the opt-in status of the IAM user or role that created the resource. Enabling this setting is required to use
+     * new Amazon ECS features such as resource tagging. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon Resource Names
+     * (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param putAccountSettingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccountSetting operation returned by the service.
+     * @sample AmazonECSAsyncHandler.PutAccountSetting
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountSettingResult> putAccountSettingAsync(PutAccountSettingRequest putAccountSettingRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccountSettingRequest, PutAccountSettingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the ARN and resource ID format of a resource type for all IAM users on an account for which no
+     * individual account setting has been set. Enabling this setting is required to use new Amazon ECS features such as
+     * resource tagging.
+     * </p>
+     * 
+     * @param putAccountSettingDefaultRequest
+     * @return A Java Future containing the result of the PutAccountSettingDefault operation returned by the service.
+     * @sample AmazonECSAsync.PutAccountSettingDefault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountSettingDefaultResult> putAccountSettingDefaultAsync(PutAccountSettingDefaultRequest putAccountSettingDefaultRequest);
+
+    /**
+     * <p>
+     * Modifies the ARN and resource ID format of a resource type for all IAM users on an account for which no
+     * individual account setting has been set. Enabling this setting is required to use new Amazon ECS features such as
+     * resource tagging.
+     * </p>
+     * 
+     * @param putAccountSettingDefaultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccountSettingDefault operation returned by the service.
+     * @sample AmazonECSAsyncHandler.PutAccountSettingDefault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountSettingDefaultResult> putAccountSettingDefaultAsync(PutAccountSettingDefaultRequest putAccountSettingDefaultRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccountSettingDefaultRequest, PutAccountSettingDefaultResult> asyncHandler);
+
+    /**
+     * <p>
      * Create or update an attribute on an Amazon ECS resource. If the attribute does not exist, it is created. If the
      * attribute exists, its value is replaced with the specified value. To delete an attribute, use
      * <a>DeleteAttributes</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
      * >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1152,7 +1543,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * Create or update an attribute on an Amazon ECS resource. If the attribute does not exist, it is created. If the
      * attribute exists, its value is replaced with the specified value. To delete an attribute, use
      * <a>DeleteAttributes</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
      * >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1217,22 +1608,22 @@ public interface AmazonECSAsync extends AmazonECS {
      * Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>.
      * Optionally, you can add data volumes to your containers with the <code>volumes</code> parameter. For more
      * information about task definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter. When you specify an IAM
      * role for a task, its containers can then use the latest versions of the AWS CLI or SDKs to make API requests to
      * the AWS services that are specified in the IAM policy associated with the role. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * You can specify a Docker networking mode for the containers in your task definition with the
      * <code>networkMode</code> parameter. The available network modes correspond to those described in <a
      * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network settings</a> in the Docker run
-     * reference. If you specify the <code>awsvpc</code> network mode, the task is allocated an Elastic Network
-     * Interface, and you must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the
+     * reference. If you specify the <code>awsvpc</code> network mode, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1251,22 +1642,22 @@ public interface AmazonECSAsync extends AmazonECS {
      * Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>.
      * Optionally, you can add data volumes to your containers with the <code>volumes</code> parameter. For more
      * information about task definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter. When you specify an IAM
      * role for a task, its containers can then use the latest versions of the AWS CLI or SDKs to make API requests to
      * the AWS services that are specified in the IAM policy associated with the role. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * You can specify a Docker networking mode for the containers in your task definition with the
      * <code>networkMode</code> parameter. The available network modes correspond to those described in <a
      * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network settings</a> in the Docker run
-     * reference. If you specify the <code>awsvpc</code> network mode, the task is allocated an Elastic Network
-     * Interface, and you must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the
+     * reference. If you specify the <code>awsvpc</code> network mode, the task is allocated an elastic network
+     * interface, and you must specify a <a>NetworkConfiguration</a> when you create a service or run a task with the
      * task definition. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -1292,7 +1683,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS places tasks using placement
      * constraints and placement strategies. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
@@ -1302,8 +1693,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * The Amazon ECS API follows an eventual consistency model, due to the distributed nature of the system supporting
      * the API. This means that the result of an API command you run that affects your Amazon ECS resources might not be
-     * immediately visible to all subsequent commands you run. You should keep this in mind when you carry out an API
-     * command that immediately follows a previous API command.
+     * immediately visible to all subsequent commands you run. Keep this in mind when you carry out an API command that
+     * immediately follows a previous API command.
      * </p>
      * <p>
      * To manage eventual consistency, you can do the following:
@@ -1313,7 +1704,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * Confirm the state of the resource before you run a command to modify it. Run the DescribeTasks command using an
      * exponential backoff algorithm to ensure that you allow enough time for the previous command to propagate through
-     * the system. To do this, run the DescribeTasks command repeatedly, starting with a couple of seconds of wait time,
+     * the system. To do this, run the DescribeTasks command repeatedly, starting with a couple of seconds of wait time
      * and increasing gradually up to five minutes of wait time.
      * </p>
      * </li>
@@ -1341,7 +1732,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS places tasks using placement
      * constraints and placement strategies. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
@@ -1351,8 +1742,8 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * The Amazon ECS API follows an eventual consistency model, due to the distributed nature of the system supporting
      * the API. This means that the result of an API command you run that affects your Amazon ECS resources might not be
-     * immediately visible to all subsequent commands you run. You should keep this in mind when you carry out an API
-     * command that immediately follows a previous API command.
+     * immediately visible to all subsequent commands you run. Keep this in mind when you carry out an API command that
+     * immediately follows a previous API command.
      * </p>
      * <p>
      * To manage eventual consistency, you can do the following:
@@ -1362,7 +1753,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * <p>
      * Confirm the state of the resource before you run a command to modify it. Run the DescribeTasks command using an
      * exponential backoff algorithm to ensure that you allow enough time for the previous command to propagate through
-     * the system. To do this, run the DescribeTasks command repeatedly, starting with a couple of seconds of wait time,
+     * the system. To do this, run the DescribeTasks command repeatedly, starting with a couple of seconds of wait time
      * and increasing gradually up to five minutes of wait time.
      * </p>
      * </li>
@@ -1394,7 +1785,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1412,7 +1803,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1431,19 +1822,20 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Stops a running task.
+     * Stops a running task. Any tags associated with the task will be deleted.
      * </p>
      * <p>
      * When <a>StopTask</a> is called on a task, the equivalent of <code>docker stop</code> is issued to the containers
-     * running in the task. This results in a <code>SIGTERM</code> and a default 30-second timeout, after which
-     * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the container handles the
-     * <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
+     * running in the task. This results in a <code>SIGTERM</code> value and a default 30-second timeout, after which
+     * the <code>SIGKILL</code> value is sent and the containers are forcibly stopped. If the container handles the
+     * <code>SIGTERM</code> value gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code>
+     * value is sent.
      * </p>
      * <note>
      * <p>
      * The default 30-second timeout can be configured on the Amazon ECS container agent with the
      * <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
      * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
@@ -1458,19 +1850,20 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Stops a running task.
+     * Stops a running task. Any tags associated with the task will be deleted.
      * </p>
      * <p>
      * When <a>StopTask</a> is called on a task, the equivalent of <code>docker stop</code> is issued to the containers
-     * running in the task. This results in a <code>SIGTERM</code> and a default 30-second timeout, after which
-     * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the container handles the
-     * <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
+     * running in the task. This results in a <code>SIGTERM</code> value and a default 30-second timeout, after which
+     * the <code>SIGKILL</code> value is sent and the containers are forcibly stopped. If the container handles the
+     * <code>SIGTERM</code> value gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code>
+     * value is sent.
      * </p>
      * <note>
      * <p>
      * The default 30-second timeout can be configured on the Amazon ECS container agent with the
      * <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
      * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * </note>
@@ -1589,6 +1982,72 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonECSAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are deleted as well.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonECSAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonECSAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonECSAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the Amazon ECS container agent on a specified container instance. Updating the Amazon ECS container agent
      * does not interrupt running tasks or services on the container instance. The process for updating the agent
      * differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another
@@ -1598,7 +2057,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon Linux with the
      * <code>ecs-init</code> service installed and running. For help updating the Amazon ECS container agent on other
      * operating systems, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"
      * >Manually Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
@@ -1622,7 +2081,7 @@ public interface AmazonECSAsync extends AmazonECS {
      * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon Linux with the
      * <code>ecs-init</code> service installed and running. For help updating the Amazon ECS container agent on other
      * operating systems, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"
      * >Manually Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
@@ -1675,15 +2134,15 @@ public interface AmazonECSAsync extends AmazonECS {
      * <li>
      * <p>
      * The <code>maximumPercent</code> parameter represents an upper limit on the number of running tasks during task
-     * replacement, which enables you to define the replacement batch size. For example, if <code>desiredCount</code> of
-     * four tasks, a maximum of 200% starts four new tasks before stopping the four tasks to be drained (provided that
-     * the cluster resources required to do this are available). If the maximum is 100%, then replacement tasks can't
+     * replacement, which enables you to define the replacement batch size. For example, if <code>desiredCount</code> is
+     * four tasks, a maximum of 200% starts four new tasks before stopping the four tasks to be drained, provided that
+     * the cluster resources required to do this are available. If the maximum is 100%, then replacement tasks can't
      * start until the draining tasks have stopped.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service are not affected; you must
+     * Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service are not affected. You must
      * wait for them to finish or stop them manually.
      * </p>
      * <p>
@@ -1740,15 +2199,15 @@ public interface AmazonECSAsync extends AmazonECS {
      * <li>
      * <p>
      * The <code>maximumPercent</code> parameter represents an upper limit on the number of running tasks during task
-     * replacement, which enables you to define the replacement batch size. For example, if <code>desiredCount</code> of
-     * four tasks, a maximum of 200% starts four new tasks before stopping the four tasks to be drained (provided that
-     * the cluster resources required to do this are available). If the maximum is 100%, then replacement tasks can't
+     * replacement, which enables you to define the replacement batch size. For example, if <code>desiredCount</code> is
+     * four tasks, a maximum of 200% starts four new tasks before stopping the four tasks to be drained, provided that
+     * the cluster resources required to do this are available. If the maximum is 100%, then replacement tasks can't
      * start until the draining tasks have stopped.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service are not affected; you must
+     * Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service are not affected. You must
      * wait for them to finish or stop them manually.
      * </p>
      * <p>
@@ -1777,8 +2236,24 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Modifies the desired count, deployment configuration, network configuration, or task definition used in a
-     * service.
+     * Modifies the parameters of a service.
+     * </p>
+     * <p>
+     * For services using the rolling update (<code>ECS</code>) deployment controller, the desired count, deployment
+     * configuration, network configuration, or task definition used can be updated.
+     * </p>
+     * <p>
+     * For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller, only the desired count,
+     * deployment configuration, and health check grace period can be updated using this API. If the network
+     * configuration, platform version, or task definition need to be updated, a new AWS CodeDeploy deployment should be
+     * created. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+     * in the <i>AWS CodeDeploy API Reference</i>.
+     * </p>
+     * <p>
+     * For services using an external deployment controller, you can update only the desired count and health check
+     * grace period using this API. If the launch type, load balancer, network configuration, platform version, or task
+     * definition need to be updated, you should create a new task set. For more information, see <a>CreateTaskSet</a>.
      * </p>
      * <p>
      * You can add to or subtract from the number of instantiations of a task definition in a service by specifying the
@@ -1891,8 +2366,24 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
-     * Modifies the desired count, deployment configuration, network configuration, or task definition used in a
-     * service.
+     * Modifies the parameters of a service.
+     * </p>
+     * <p>
+     * For services using the rolling update (<code>ECS</code>) deployment controller, the desired count, deployment
+     * configuration, network configuration, or task definition used can be updated.
+     * </p>
+     * <p>
+     * For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller, only the desired count,
+     * deployment configuration, and health check grace period can be updated using this API. If the network
+     * configuration, platform version, or task definition need to be updated, a new AWS CodeDeploy deployment should be
+     * created. For more information, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+     * in the <i>AWS CodeDeploy API Reference</i>.
+     * </p>
+     * <p>
+     * For services using an external deployment controller, you can update only the desired count and health check
+     * grace period using this API. If the launch type, load balancer, network configuration, platform version, or task
+     * definition need to be updated, you should create a new task set. For more information, see <a>CreateTaskSet</a>.
      * </p>
      * <p>
      * You can add to or subtract from the number of instantiations of a task definition in a service by specifying the
@@ -2007,5 +2498,83 @@ public interface AmazonECSAsync extends AmazonECS {
      */
     java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest updateServiceRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateServiceRequest, UpdateServiceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies which task set in a service is the primary task set. Any parameters that are updated on the primary task
+     * set in a service will transition to the service. This is used when a service uses the <code>EXTERNAL</code>
+     * deployment controller type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateServicePrimaryTaskSetRequest
+     * @return A Java Future containing the result of the UpdateServicePrimaryTaskSet operation returned by the service.
+     * @sample AmazonECSAsync.UpdateServicePrimaryTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateServicePrimaryTaskSetResult> updateServicePrimaryTaskSetAsync(
+            UpdateServicePrimaryTaskSetRequest updateServicePrimaryTaskSetRequest);
+
+    /**
+     * <p>
+     * Modifies which task set in a service is the primary task set. Any parameters that are updated on the primary task
+     * set in a service will transition to the service. This is used when a service uses the <code>EXTERNAL</code>
+     * deployment controller type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateServicePrimaryTaskSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateServicePrimaryTaskSet operation returned by the service.
+     * @sample AmazonECSAsyncHandler.UpdateServicePrimaryTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateServicePrimaryTaskSetResult> updateServicePrimaryTaskSetAsync(
+            UpdateServicePrimaryTaskSetRequest updateServicePrimaryTaskSetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateServicePrimaryTaskSetRequest, UpdateServicePrimaryTaskSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies a task set. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateTaskSetRequest
+     * @return A Java Future containing the result of the UpdateTaskSet operation returned by the service.
+     * @sample AmazonECSAsync.UpdateTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTaskSetResult> updateTaskSetAsync(UpdateTaskSetRequest updateTaskSetRequest);
+
+    /**
+     * <p>
+     * Modifies a task set. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment
+     * Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param updateTaskSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTaskSet operation returned by the service.
+     * @sample AmazonECSAsyncHandler.UpdateTaskSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTaskSetResult> updateTaskSetAsync(UpdateTaskSetRequest updateTaskSetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTaskSetRequest, UpdateTaskSetResult> asyncHandler);
 
 }

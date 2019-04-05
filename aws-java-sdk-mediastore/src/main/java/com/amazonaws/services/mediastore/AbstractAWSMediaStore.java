@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,11 @@ public class AbstractAWSMediaStore implements AWSMediaStore {
     }
 
     @Override
+    public DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeContainerResult describeContainer(DescribeContainerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,6 +68,11 @@ public class AbstractAWSMediaStore implements AWSMediaStore {
     }
 
     @Override
+    public GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListContainersResult listContainers(ListContainersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +84,21 @@ public class AbstractAWSMediaStore implements AWSMediaStore {
 
     @Override
     public PutCorsPolicyResult putCorsPolicy(PutCorsPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartAccessLoggingResult startAccessLogging(StartAccessLoggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopAccessLoggingResult stopAccessLogging(StopAccessLoggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,40 +19,69 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon S3 objects that you specify in your event selectors for your trail to log data events. Data events are
- * object-level API operations that access S3 objects, such as <code>GetObject</code>, <code>DeleteObject</code>, and
- * <code>PutObject</code>. You can specify up to 250 S3 buckets and object prefixes for a trail.
+ * The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data
+ * events. Data events provide insight into the resource operations performed on or within a resource itself. These are
+ * also known as data plane operations. You can specify up to 250 data resources for a trail.
  * </p>
+ * <note>
  * <p>
- * Example
+ * The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors,
+ * but the total cannot exceed 250 across all selectors.
+ * </p>
+ * </note>
+ * <p>
+ * The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket
+ * named <code>bucket-1</code>. In this example, the CloudTrail user spcified an empty prefix, and the option to log
+ * both <code>Read</code> and <code>Write</code> data events.
  * </p>
  * <ol>
  * <li>
  * <p>
- * You create an event selector for a trail and specify an S3 bucket and an empty prefix, such as
- * <code>arn:aws:s3:::bucket-1/</code>.
+ * A user uploads an image file to <code>bucket-1</code>.
  * </p>
  * </li>
  * <li>
  * <p>
- * You upload an image file to <code>bucket-1</code>.
+ * The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in
+ * CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object
+ * in that bucket are logged. The trail processes and logs the event.
  * </p>
  * </li>
  * <li>
  * <p>
- * The <code>PutObject</code> API operation occurs on an object in the S3 bucket that you specified in the event
- * selector. The trail processes and logs the event.
+ * A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.
  * </p>
  * </li>
  * <li>
  * <p>
- * You upload another image file to a different S3 bucket named <code>arn:aws:s3:::bucket-2</code>.
+ * The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't
+ * specify for the trail. The trail doesn’t log the event.
+ * </p>
+ * </li>
+ * </ol>
+ * <p>
+ * The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a
+ * Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions.
+ * </p>
+ * <ol>
+ * <li>
+ * <p>
+ * A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the
+ * <i>MyOtherLambdaFunction</i> function.
  * </p>
  * </li>
  * <li>
  * <p>
- * The event occurs on an object in an S3 bucket that you didn't specify in the event selector. The trail doesn’t log
- * the event.
+ * The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event
+ * in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations
+ * of that function are logged. The trail processes and logs the event.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API. Because the CloudTrail
+ * user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for
+ * <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event.
  * </p>
  * </li>
  * </ol>
@@ -65,36 +94,82 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type in which you want to log data events. You can specify only the following value:
-     * <code>AWS::S3::Object</code>.
+     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
+     * <code>AWS::Lambda::Function</code> resources.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * A list of ARN-like strings for the specified S3 objects.
+     * An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To log data events for all objects in all S3 buckets in your AWS account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This will also enable logging of data event activity performed by any user or role in your AWS account, even if
+     * that activity is performed on a bucket that belongs to another AWS account.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify the
+     * prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets whose name
+     * contains a match for <i>my-bucket</i>.
+     * </p>
+     * </li>
+     * <li>
      * <p>
      * To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * To log data events for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3 bucket that
      * match the prefix.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To log data events for all functions in your AWS account, specify the prefix as <code>arn:aws:lambda</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This will also enable logging of <code>Invoke</code> activity performed by any user or role in your AWS account,
+     * even if that activity is performed on a function that belongs to another AWS account.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * To log data eents for a specific Lambda function, specify the function ARN.
+     * </p>
+     * <note>
+     * <p>
+     * Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
+     * </p>
+     * </note></li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
 
     /**
      * <p>
-     * The resource type in which you want to log data events. You can specify only the following value:
-     * <code>AWS::S3::Object</code>.
+     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
+     * <code>AWS::Lambda::Function</code> resources.
      * </p>
      * 
      * @param type
-     *        The resource type in which you want to log data events. You can specify only the following value:
-     *        <code>AWS::S3::Object</code>.
+     *        The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
+     *        <code>AWS::Lambda::Function</code> resources.
      */
 
     public void setType(String type) {
@@ -103,12 +178,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type in which you want to log data events. You can specify only the following value:
-     * <code>AWS::S3::Object</code>.
+     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
+     * <code>AWS::Lambda::Function</code> resources.
      * </p>
      * 
-     * @return The resource type in which you want to log data events. You can specify only the following value:
-     *         <code>AWS::S3::Object</code>.
+     * @return The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
+     *         <code>AWS::Lambda::Function</code> resources.
      */
 
     public String getType() {
@@ -117,13 +192,13 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type in which you want to log data events. You can specify only the following value:
-     * <code>AWS::S3::Object</code>.
+     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
+     * <code>AWS::Lambda::Function</code> resources.
      * </p>
      * 
      * @param type
-     *        The resource type in which you want to log data events. You can specify only the following value:
-     *        <code>AWS::S3::Object</code>.
+     *        The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
+     *        <code>AWS::Lambda::Function</code> resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,27 +209,120 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of ARN-like strings for the specified S3 objects.
+     * An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To log data events for all objects in all S3 buckets in your AWS account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This will also enable logging of data event activity performed by any user or role in your AWS account, even if
+     * that activity is performed on a bucket that belongs to another AWS account.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify the
+     * prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets whose name
+     * contains a match for <i>my-bucket</i>.
+     * </p>
+     * </li>
+     * <li>
      * <p>
      * To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * To log data events for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3 bucket that
      * match the prefix.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To log data events for all functions in your AWS account, specify the prefix as <code>arn:aws:lambda</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This will also enable logging of <code>Invoke</code> activity performed by any user or role in your AWS account,
+     * even if that activity is performed on a function that belongs to another AWS account.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * To log data eents for a specific Lambda function, specify the function ARN.
+     * </p>
+     * <note>
+     * <p>
+     * Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
+     * </p>
+     * </note></li>
+     * </ul>
      * 
-     * @return A list of ARN-like strings for the specified S3 objects.</p>
+     * @return An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To log data events for all objects in all S3 buckets in your AWS account, specify the prefix as
+     *         <code>arn:aws:s3:::</code>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This will also enable logging of data event activity performed by any user or role in your AWS account,
+     *         even if that activity is performed on a bucket that belongs to another AWS account.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names,
+     *         specify the prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all
+     *         buckets whose name contains a match for <i>my-bucket</i>.
+     *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      *         <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
      *         To log data events for specific objects, specify the S3 bucket and object prefix such as
      *         <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3
      *         bucket that match the prefix.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To log data events for all functions in your AWS account, specify the prefix as
+     *         <code>arn:aws:lambda</code>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This will also enable logging of <code>Invoke</code> activity performed by any user or role in your AWS
+     *         account, even if that activity is performed on a function that belongs to another AWS account.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         To log data eents for a specific Lambda function, specify the function ARN.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a
+     *         function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be
+     *         logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
+     *         <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
+     *         </p>
+     *         </note></li>
      */
 
     public java.util.List<String> getValues() {
@@ -166,28 +334,121 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of ARN-like strings for the specified S3 objects.
+     * An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To log data events for all objects in all S3 buckets in your AWS account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This will also enable logging of data event activity performed by any user or role in your AWS account, even if
+     * that activity is performed on a bucket that belongs to another AWS account.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify the
+     * prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets whose name
+     * contains a match for <i>my-bucket</i>.
+     * </p>
+     * </li>
+     * <li>
      * <p>
      * To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * To log data events for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3 bucket that
      * match the prefix.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To log data events for all functions in your AWS account, specify the prefix as <code>arn:aws:lambda</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This will also enable logging of <code>Invoke</code> activity performed by any user or role in your AWS account,
+     * even if that activity is performed on a function that belongs to another AWS account.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * To log data eents for a specific Lambda function, specify the function ARN.
+     * </p>
+     * <note>
+     * <p>
+     * Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
+     * </p>
+     * </note></li>
+     * </ul>
      * 
      * @param values
-     *        A list of ARN-like strings for the specified S3 objects.</p>
+     *        An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To log data events for all objects in all S3 buckets in your AWS account, specify the prefix as
+     *        <code>arn:aws:s3:::</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This will also enable logging of data event activity performed by any user or role in your AWS account,
+     *        even if that activity is performed on a bucket that belongs to another AWS account.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify
+     *        the prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets
+     *        whose name contains a match for <i>my-bucket</i>.
+     *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      *        <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        To log data events for specific objects, specify the S3 bucket and object prefix such as
      *        <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3
      *        bucket that match the prefix.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To log data events for all functions in your AWS account, specify the prefix as
+     *        <code>arn:aws:lambda</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This will also enable logging of <code>Invoke</code> activity performed by any user or role in your AWS
+     *        account, even if that activity is performed on a function that belongs to another AWS account.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        To log data eents for a specific Lambda function, specify the function ARN.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function
+     *        ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
+     *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
+     *        </p>
+     *        </note></li>
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -201,17 +462,63 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of ARN-like strings for the specified S3 objects.
+     * An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To log data events for all objects in all S3 buckets in your AWS account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This will also enable logging of data event activity performed by any user or role in your AWS account, even if
+     * that activity is performed on a bucket that belongs to another AWS account.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify the
+     * prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets whose name
+     * contains a match for <i>my-bucket</i>.
+     * </p>
+     * </li>
+     * <li>
      * <p>
      * To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * To log data events for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3 bucket that
      * match the prefix.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To log data events for all functions in your AWS account, specify the prefix as <code>arn:aws:lambda</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This will also enable logging of <code>Invoke</code> activity performed by any user or role in your AWS account,
+     * even if that activity is performed on a function that belongs to another AWS account.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * To log data eents for a specific Lambda function, specify the function ARN.
+     * </p>
+     * <note>
+     * <p>
+     * Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
+     * </p>
+     * </note></li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
@@ -219,15 +526,62 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        A list of ARN-like strings for the specified S3 objects.</p>
+     *        An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To log data events for all objects in all S3 buckets in your AWS account, specify the prefix as
+     *        <code>arn:aws:s3:::</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This will also enable logging of data event activity performed by any user or role in your AWS account,
+     *        even if that activity is performed on a bucket that belongs to another AWS account.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify
+     *        the prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets
+     *        whose name contains a match for <i>my-bucket</i>.
+     *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      *        <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        To log data events for specific objects, specify the S3 bucket and object prefix such as
      *        <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3
      *        bucket that match the prefix.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To log data events for all functions in your AWS account, specify the prefix as
+     *        <code>arn:aws:lambda</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This will also enable logging of <code>Invoke</code> activity performed by any user or role in your AWS
+     *        account, even if that activity is performed on a function that belongs to another AWS account.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        To log data eents for a specific Lambda function, specify the function ARN.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function
+     *        ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
+     *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,28 +597,121 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of ARN-like strings for the specified S3 objects.
+     * An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To log data events for all objects in all S3 buckets in your AWS account, specify the prefix as
+     * <code>arn:aws:s3:::</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This will also enable logging of data event activity performed by any user or role in your AWS account, even if
+     * that activity is performed on a bucket that belongs to another AWS account.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify the
+     * prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets whose name
+     * contains a match for <i>my-bucket</i>.
+     * </p>
+     * </li>
+     * <li>
      * <p>
      * To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      * <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      * </p>
+     * </li>
+     * <li>
      * <p>
      * To log data events for specific objects, specify the S3 bucket and object prefix such as
      * <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3 bucket that
      * match the prefix.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To log data events for all functions in your AWS account, specify the prefix as <code>arn:aws:lambda</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This will also enable logging of <code>Invoke</code> activity performed by any user or role in your AWS account,
+     * even if that activity is performed on a function that belongs to another AWS account.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * To log data eents for a specific Lambda function, specify the function ARN.
+     * </p>
+     * <note>
+     * <p>
+     * Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function ARN
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
+     * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
+     * </p>
+     * </note></li>
+     * </ul>
      * 
      * @param values
-     *        A list of ARN-like strings for the specified S3 objects.</p>
+     *        An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To log data events for all objects in all S3 buckets in your AWS account, specify the prefix as
+     *        <code>arn:aws:s3:::</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This will also enable logging of data event activity performed by any user or role in your AWS account,
+     *        even if that activity is performed on a bucket that belongs to another AWS account.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        To log data events for all objects in all S3 buckets that include <i>my-bucket</i> in their names, specify
+     *        the prefix as <code>aws:s3:::my-bucket</code>. The trail logs data events for all objects in all buckets
+     *        whose name contains a match for <i>my-bucket</i>.
+     *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        To log data events for all objects in an S3 bucket, specify the bucket and an empty object prefix such as
      *        <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for all objects in this S3 bucket.
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
      *        To log data events for specific objects, specify the S3 bucket and object prefix such as
      *        <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for objects in this S3
      *        bucket that match the prefix.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To log data events for all functions in your AWS account, specify the prefix as
+     *        <code>arn:aws:lambda</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This will also enable logging of <code>Invoke</code> activity performed by any user or role in your AWS
+     *        account, even if that activity is performed on a function that belongs to another AWS account.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        To log data eents for a specific Lambda function, specify the function ARN.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Lambda function ARNs are exact. Unlike S3, you cannot use matching. For example, if you specify a function
+     *        ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will only be logged for
+     *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will not be logged for
+     *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,7 +721,8 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

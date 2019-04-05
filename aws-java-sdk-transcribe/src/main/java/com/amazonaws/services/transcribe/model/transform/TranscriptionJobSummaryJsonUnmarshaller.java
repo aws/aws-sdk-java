@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,11 +54,11 @@ public class TranscriptionJobSummaryJsonUnmarshaller implements Unmarshaller<Tra
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
-                    transcriptionJobSummary.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transcriptionJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletionTime", targetDepth)) {
                     context.nextToken();
-                    transcriptionJobSummary.setCompletionTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    transcriptionJobSummary.setCompletionTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("LanguageCode", targetDepth)) {
                     context.nextToken();
@@ -71,6 +71,10 @@ public class TranscriptionJobSummaryJsonUnmarshaller implements Unmarshaller<Tra
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     transcriptionJobSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OutputLocationType", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJobSummary.setOutputLocationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

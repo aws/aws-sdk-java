@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,14 +31,12 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS Direct Connect links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10
- * gigabit Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an AWS Direct
- * Connect router. With this connection in place, you can create virtual interfaces directly to the AWS cloud (for
- * example, to Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3)) and to Amazon
- * Virtual Private Cloud (Amazon VPC), bypassing Internet service providers in your network path. An AWS Direct Connect
- * location provides access to AWS in the region it is associated with, as well as access to other US regions. For
- * example, you can provision a single connection to any AWS Direct Connect location in the US and use it to access
- * public AWS services in all US Regions and AWS GovCloud (US).
+ * AWS Direct Connect links your internal network to an AWS Direct Connect location over a standard Ethernet fiber-optic
+ * cable. One end of the cable is connected to your router, the other to an AWS Direct Connect router. With this
+ * connection in place, you can create virtual interfaces directly to the AWS cloud (for example, to Amazon EC2 and
+ * Amazon S3) and to Amazon VPC, bypassing Internet service providers in your network path. A connection provides access
+ * to all AWS Regions except the China (Beijing) and (China) Ningxia Regions. AWS resources in the China Regions can
+ * only be accessed through locations associated with those Regions.
  * </p>
  */
 @ThreadSafe
@@ -250,6 +248,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptDirectConnectGatewayAssociationProposalResult> acceptDirectConnectGatewayAssociationProposalAsync(
+            AcceptDirectConnectGatewayAssociationProposalRequest request) {
+
+        return acceptDirectConnectGatewayAssociationProposalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptDirectConnectGatewayAssociationProposalResult> acceptDirectConnectGatewayAssociationProposalAsync(
+            final AcceptDirectConnectGatewayAssociationProposalRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptDirectConnectGatewayAssociationProposalRequest, AcceptDirectConnectGatewayAssociationProposalResult> asyncHandler) {
+        final AcceptDirectConnectGatewayAssociationProposalRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptDirectConnectGatewayAssociationProposalResult>() {
+            @Override
+            public AcceptDirectConnectGatewayAssociationProposalResult call() throws Exception {
+                AcceptDirectConnectGatewayAssociationProposalResult result = null;
+
+                try {
+                    result = executeAcceptDirectConnectGatewayAssociationProposal(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -726,6 +759,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDirectConnectGatewayAssociationProposalResult> createDirectConnectGatewayAssociationProposalAsync(
+            CreateDirectConnectGatewayAssociationProposalRequest request) {
+
+        return createDirectConnectGatewayAssociationProposalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDirectConnectGatewayAssociationProposalResult> createDirectConnectGatewayAssociationProposalAsync(
+            final CreateDirectConnectGatewayAssociationProposalRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDirectConnectGatewayAssociationProposalRequest, CreateDirectConnectGatewayAssociationProposalResult> asyncHandler) {
+        final CreateDirectConnectGatewayAssociationProposalRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDirectConnectGatewayAssociationProposalResult>() {
+            @Override
+            public CreateDirectConnectGatewayAssociationProposalResult call() throws Exception {
+                CreateDirectConnectGatewayAssociationProposalResult result = null;
+
+                try {
+                    result = executeCreateDirectConnectGatewayAssociationProposal(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInterconnectResult> createInterconnectAsync(CreateInterconnectRequest request) {
 
         return createInterconnectAsync(request, null);
@@ -993,6 +1061,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDirectConnectGatewayAssociationProposalResult> deleteDirectConnectGatewayAssociationProposalAsync(
+            DeleteDirectConnectGatewayAssociationProposalRequest request) {
+
+        return deleteDirectConnectGatewayAssociationProposalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDirectConnectGatewayAssociationProposalResult> deleteDirectConnectGatewayAssociationProposalAsync(
+            final DeleteDirectConnectGatewayAssociationProposalRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDirectConnectGatewayAssociationProposalRequest, DeleteDirectConnectGatewayAssociationProposalResult> asyncHandler) {
+        final DeleteDirectConnectGatewayAssociationProposalRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDirectConnectGatewayAssociationProposalResult>() {
+            @Override
+            public DeleteDirectConnectGatewayAssociationProposalResult call() throws Exception {
+                DeleteDirectConnectGatewayAssociationProposalResult result = null;
+
+                try {
+                    result = executeDeleteDirectConnectGatewayAssociationProposal(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteInterconnectResult> deleteInterconnectAsync(DeleteInterconnectRequest request) {
 
         return deleteInterconnectAsync(request, null);
@@ -1204,6 +1307,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
 
                 try {
                     result = executeDescribeConnectionsOnInterconnect(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewayAssociationProposalsResult> describeDirectConnectGatewayAssociationProposalsAsync(
+            DescribeDirectConnectGatewayAssociationProposalsRequest request) {
+
+        return describeDirectConnectGatewayAssociationProposalsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectConnectGatewayAssociationProposalsResult> describeDirectConnectGatewayAssociationProposalsAsync(
+            final DescribeDirectConnectGatewayAssociationProposalsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDirectConnectGatewayAssociationProposalsRequest, DescribeDirectConnectGatewayAssociationProposalsResult> asyncHandler) {
+        final DescribeDirectConnectGatewayAssociationProposalsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDirectConnectGatewayAssociationProposalsResult>() {
+            @Override
+            public DescribeDirectConnectGatewayAssociationProposalsResult call() throws Exception {
+                DescribeDirectConnectGatewayAssociationProposalsResult result = null;
+
+                try {
+                    result = executeDescribeDirectConnectGatewayAssociationProposals(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1815,6 +1953,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateDirectConnectGatewayAssociationResult> updateDirectConnectGatewayAssociationAsync(
+            UpdateDirectConnectGatewayAssociationRequest request) {
+
+        return updateDirectConnectGatewayAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectConnectGatewayAssociationResult> updateDirectConnectGatewayAssociationAsync(
+            final UpdateDirectConnectGatewayAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDirectConnectGatewayAssociationRequest, UpdateDirectConnectGatewayAssociationResult> asyncHandler) {
+        final UpdateDirectConnectGatewayAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDirectConnectGatewayAssociationResult>() {
+            @Override
+            public UpdateDirectConnectGatewayAssociationResult call() throws Exception {
+                UpdateDirectConnectGatewayAssociationResult result = null;
+
+                try {
+                    result = executeUpdateDirectConnectGatewayAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateLagResult> updateLagAsync(UpdateLagRequest request) {
 
         return updateLagAsync(request, null);
@@ -1832,6 +2005,41 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
 
                 try {
                     result = executeUpdateLag(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualInterfaceAttributesResult> updateVirtualInterfaceAttributesAsync(
+            UpdateVirtualInterfaceAttributesRequest request) {
+
+        return updateVirtualInterfaceAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualInterfaceAttributesResult> updateVirtualInterfaceAttributesAsync(
+            final UpdateVirtualInterfaceAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateVirtualInterfaceAttributesRequest, UpdateVirtualInterfaceAttributesResult> asyncHandler) {
+        final UpdateVirtualInterfaceAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateVirtualInterfaceAttributesResult>() {
+            @Override
+            public UpdateVirtualInterfaceAttributesResult call() throws Exception {
+                UpdateVirtualInterfaceAttributesResult result = null;
+
+                try {
+                    result = executeUpdateVirtualInterfaceAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

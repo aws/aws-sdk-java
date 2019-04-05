@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,13 +25,13 @@ public class GetReservationUtilizationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The amount of time that you utilized your RIs.
+     * The amount of time that you used your RIs.
      * </p>
      */
     private java.util.List<UtilizationByTime> utilizationsByTime;
     /**
      * <p>
-     * The total amount of time that you utilized your RIs.
+     * The total amount of time that you used your RIs.
      * </p>
      */
     private ReservationAggregates total;
@@ -45,10 +45,10 @@ public class GetReservationUtilizationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The amount of time that you utilized your RIs.
+     * The amount of time that you used your RIs.
      * </p>
      * 
-     * @return The amount of time that you utilized your RIs.
+     * @return The amount of time that you used your RIs.
      */
 
     public java.util.List<UtilizationByTime> getUtilizationsByTime() {
@@ -57,11 +57,11 @@ public class GetReservationUtilizationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The amount of time that you utilized your RIs.
+     * The amount of time that you used your RIs.
      * </p>
      * 
      * @param utilizationsByTime
-     *        The amount of time that you utilized your RIs.
+     *        The amount of time that you used your RIs.
      */
 
     public void setUtilizationsByTime(java.util.Collection<UtilizationByTime> utilizationsByTime) {
@@ -75,7 +75,7 @@ public class GetReservationUtilizationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The amount of time that you utilized your RIs.
+     * The amount of time that you used your RIs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class GetReservationUtilizationResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param utilizationsByTime
-     *        The amount of time that you utilized your RIs.
+     *        The amount of time that you used your RIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class GetReservationUtilizationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The amount of time that you utilized your RIs.
+     * The amount of time that you used your RIs.
      * </p>
      * 
      * @param utilizationsByTime
-     *        The amount of time that you utilized your RIs.
+     *        The amount of time that you used your RIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,11 +115,11 @@ public class GetReservationUtilizationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The total amount of time that you utilized your RIs.
+     * The total amount of time that you used your RIs.
      * </p>
      * 
      * @param total
-     *        The total amount of time that you utilized your RIs.
+     *        The total amount of time that you used your RIs.
      */
 
     public void setTotal(ReservationAggregates total) {
@@ -128,10 +128,10 @@ public class GetReservationUtilizationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The total amount of time that you utilized your RIs.
+     * The total amount of time that you used your RIs.
      * </p>
      * 
-     * @return The total amount of time that you utilized your RIs.
+     * @return The total amount of time that you used your RIs.
      */
 
     public ReservationAggregates getTotal() {
@@ -140,11 +140,11 @@ public class GetReservationUtilizationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The total amount of time that you utilized your RIs.
+     * The total amount of time that you used your RIs.
      * </p>
      * 
      * @param total
-     *        The total amount of time that you utilized your RIs.
+     *        The total amount of time that you used your RIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,7 +200,8 @@ public class GetReservationUtilizationResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

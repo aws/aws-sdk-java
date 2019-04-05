@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller implements
             request.addHeader("If-Match", StringUtils.fromString(updateCloudFrontOriginAccessIdentityRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2017-10-30/origin-access-identity/cloudfront/{Id}/config";
+        String uriResourcePath = "/2018-11-05/origin-access-identity/cloudfront/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id",
                 updateCloudFrontOriginAccessIdentityRequest.getId());
@@ -61,7 +61,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller implements
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-10-30/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2018-11-05/");
 
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig = updateCloudFrontOriginAccessIdentityRequest
                     .getCloudFrontOriginAccessIdentityConfig();

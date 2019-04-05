@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,15 +16,15 @@
  * <p>
  * AWS Key Management Service (AWS KMS) is an encryption and key management web service. This guide describes the AWS
  * KMS operations that you can call programmatically. For general information about AWS KMS, see the <a
- * href="http://docs.aws.amazon.com/kms/latest/developerguide/">AWS Key Management Service Developer Guide</a>.
+ * href="http://docs.aws.amazon.com/kms/latest/developerguide/"> <i>AWS Key Management Service Developer Guide</i> </a>.
  * </p>
  * <note>
  * <p>
  * AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java,
- * Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS KMS and other
- * AWS services. For example, the SDKs take care of tasks such as signing requests (see below), managing errors, and
- * retrying requests automatically. For more information about the AWS SDKs, including how to download and install them,
- * see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+ * Ruby, .Net, macOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS KMS and
+ * other AWS services. For example, the SDKs take care of tasks such as signing requests (see below), managing errors,
+ * and retrying requests automatically. For more information about the AWS SDKs, including how to download and install
+ * them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
  * </p>
  * </note>
  * <p>
@@ -68,7 +68,7 @@
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a> -
- * This topic provides general information about the types of credentials used for accessing AWS.
+ * This topic provides general information about the of credentials used for accessing AWS.
  * </p>
  * </li>
  * <li>

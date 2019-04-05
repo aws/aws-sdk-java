@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     private String consoleURL;
     /** The broker's wire-level protocol endpoints. */
     private java.util.List<String> endpoints;
+    /** The IP address of the Elastic Network Interface (ENI) attached to the broker. */
+    private String ipAddress;
 
     /**
      * The URL of the broker's ActiveMQ Web Console.
@@ -128,7 +130,42 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * 
+     * @param ipAddress
+     *        The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     */
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
+    /**
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * 
+     * @return The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     */
+
+    public String getIpAddress() {
+        return this.ipAddress;
+    }
+
+    /**
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * 
+     * @param ipAddress
+     *        The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BrokerInstance withIpAddress(String ipAddress) {
+        setIpAddress(ipAddress);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -141,7 +178,9 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
         if (getConsoleURL() != null)
             sb.append("ConsoleURL: ").append(getConsoleURL()).append(",");
         if (getEndpoints() != null)
-            sb.append("Endpoints: ").append(getEndpoints());
+            sb.append("Endpoints: ").append(getEndpoints()).append(",");
+        if (getIpAddress() != null)
+            sb.append("IpAddress: ").append(getIpAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -164,6 +203,10 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
             return false;
+        if (other.getIpAddress() == null ^ this.getIpAddress() == null)
+            return false;
+        if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
+            return false;
         return true;
     }
 
@@ -174,6 +217,7 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getConsoleURL() == null) ? 0 : getConsoleURL().hashCode());
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
+        hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         return hashCode;
     }
 

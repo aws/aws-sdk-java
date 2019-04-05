@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class InvokeEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Content-Type").build();
     private static final MarshallingInfo<String> ACCEPT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
             .marshallLocationName("Accept").build();
+    private static final MarshallingInfo<String> CUSTOMATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-Custom-Attributes").build();
 
     private static final InvokeEndpointRequestMarshaller instance = new InvokeEndpointRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class InvokeEndpointRequestMarshaller {
             protocolMarshaller.marshall(invokeEndpointRequest.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(invokeEndpointRequest.getContentType(), CONTENTTYPE_BINDING);
             protocolMarshaller.marshall(invokeEndpointRequest.getAccept(), ACCEPT_BINDING);
+            protocolMarshaller.marshall(invokeEndpointRequest.getCustomAttributes(), CUSTOMATTRIBUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

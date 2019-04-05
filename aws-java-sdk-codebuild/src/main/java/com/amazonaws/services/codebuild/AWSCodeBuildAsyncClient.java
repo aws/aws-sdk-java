@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,9 +36,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * tests, and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the need to provision, manage, and
  * scale your own build servers. It provides prepackaged build environments for the most popular programming languages
  * and build tools, such as Apache Maven, Gradle, and more. You can also fully customize build environments in AWS
- * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests, and you pay
- * only for the build time you consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User
- * Guide</i>.
+ * CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests. You pay only
+ * for the build time you consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User Guide</i>.
  * </p>
  * <p>
  * AWS CodeBuild supports these operations:
@@ -52,10 +51,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <code>BatchGetProjects</code>: Gets information about one or more build projects. A <i>build project</i> defines how
- * AWS CodeBuild will run a build. This includes information such as where to get the source code to build, the build
- * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i>
- * represents a combination of operating system, programming language runtime, and tools that AWS CodeBuild will use to
- * run a build. Also, you can add tags to build projects to help manage your resources and costs.
+ * AWS CodeBuild runs a build. This includes information such as where to get the source code to build, the build
+ * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i> is a
+ * representation of operating system, programming language runtime, and tools that AWS CodeBuild uses to run a build.
+ * You can add tags to build projects to help manage your resources and costs.
  * </p>
  * </li>
  * <li>
@@ -66,8 +65,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * repository, enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is
- * pushed to the repository.
+ * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed
+ * to the repository.
  * </p>
  * </li>
  * <li>
@@ -83,7 +82,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * repository, stops AWS CodeBuild from automatically rebuilding the source code every time a code change is pushed to
+ * or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to
  * the repository.
  * </p>
  * </li>
@@ -127,6 +126,24 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that are managed by AWS CodeBuild.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ImportSourceCredentials</code>: Imports the source repository credentials for an AWS CodeBuild project that has
+ * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
+ * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
+ * for one set of credentials.
  * </p>
  * </li>
  * </ul>
@@ -539,6 +556,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSourceCredentialsResult> deleteSourceCredentialsAsync(DeleteSourceCredentialsRequest request) {
+
+        return deleteSourceCredentialsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSourceCredentialsResult> deleteSourceCredentialsAsync(final DeleteSourceCredentialsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSourceCredentialsRequest, DeleteSourceCredentialsResult> asyncHandler) {
+        final DeleteSourceCredentialsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSourceCredentialsResult>() {
+            @Override
+            public DeleteSourceCredentialsResult call() throws Exception {
+                DeleteSourceCredentialsResult result = null;
+
+                try {
+                    result = executeDeleteSourceCredentials(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(DeleteWebhookRequest request) {
 
         return deleteWebhookAsync(request, null);
@@ -556,6 +606,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
 
                 try {
                     result = executeDeleteWebhook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportSourceCredentialsResult> importSourceCredentialsAsync(ImportSourceCredentialsRequest request) {
+
+        return importSourceCredentialsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportSourceCredentialsResult> importSourceCredentialsAsync(final ImportSourceCredentialsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportSourceCredentialsRequest, ImportSourceCredentialsResult> asyncHandler) {
+        final ImportSourceCredentialsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportSourceCredentialsResult>() {
+            @Override
+            public ImportSourceCredentialsResult call() throws Exception {
+                ImportSourceCredentialsResult result = null;
+
+                try {
+                    result = executeImportSourceCredentials(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -721,6 +804,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
 
                 try {
                     result = executeListProjects(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSourceCredentialsResult> listSourceCredentialsAsync(ListSourceCredentialsRequest request) {
+
+        return listSourceCredentialsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSourceCredentialsResult> listSourceCredentialsAsync(final ListSourceCredentialsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSourceCredentialsRequest, ListSourceCredentialsResult> asyncHandler) {
+        final ListSourceCredentialsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSourceCredentialsResult>() {
+            @Override
+            public ListSourceCredentialsResult call() throws Exception {
+                ListSourceCredentialsResult result = null;
+
+                try {
+                    result = executeListSourceCredentials(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

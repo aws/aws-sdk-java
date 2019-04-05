@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the CreateLag operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateLag" target="_top">AWS API
  *      Documentation</a>
@@ -32,32 +29,18 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The number of physical connections initially provisioned and bundled by the LAG.
      * </p>
-     * <p>
-     * Default: None
-     * </p>
      */
     private Integer numberOfConnections;
     /**
      * <p>
-     * The AWS Direct Connect location in which the LAG should be allocated.
-     * </p>
-     * <p>
-     * Example: EqSV5
-     * </p>
-     * <p>
-     * Default: None
+     * The location for the LAG.
      * </p>
      */
     private String location;
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG.
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Available values: 1Gbps, 10Gbps
+     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      * </p>
      */
     private String connectionsBandwidth;
@@ -65,20 +48,11 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The name of the LAG.
      * </p>
-     * <p>
-     * Example: "<code>3x10G LAG to AWS</code>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      */
     private String lagName;
     /**
      * <p>
      * The ID of an existing connection to migrate to the LAG.
-     * </p>
-     * <p>
-     * Default: None
      * </p>
      */
     private String connectionId;
@@ -87,14 +61,9 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The number of physical connections initially provisioned and bundled by the LAG.
      * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param numberOfConnections
-     *        The number of physical connections initially provisioned and bundled by the LAG.</p>
-     *        <p>
-     *        Default: None
+     *        The number of physical connections initially provisioned and bundled by the LAG.
      */
 
     public void setNumberOfConnections(Integer numberOfConnections) {
@@ -105,13 +74,8 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The number of physical connections initially provisioned and bundled by the LAG.
      * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The number of physical connections initially provisioned and bundled by the LAG.</p>
-     *         <p>
-     *         Default: None
+     * @return The number of physical connections initially provisioned and bundled by the LAG.
      */
 
     public Integer getNumberOfConnections() {
@@ -122,14 +86,9 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The number of physical connections initially provisioned and bundled by the LAG.
      * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param numberOfConnections
-     *        The number of physical connections initially provisioned and bundled by the LAG.</p>
-     *        <p>
-     *        Default: None
+     *        The number of physical connections initially provisioned and bundled by the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,22 +99,11 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The AWS Direct Connect location in which the LAG should be allocated.
-     * </p>
-     * <p>
-     * Example: EqSV5
-     * </p>
-     * <p>
-     * Default: None
+     * The location for the LAG.
      * </p>
      * 
      * @param location
-     *        The AWS Direct Connect location in which the LAG should be allocated.</p>
-     *        <p>
-     *        Example: EqSV5
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The location for the LAG.
      */
 
     public void setLocation(String location) {
@@ -164,21 +112,10 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The AWS Direct Connect location in which the LAG should be allocated.
-     * </p>
-     * <p>
-     * Example: EqSV5
-     * </p>
-     * <p>
-     * Default: None
+     * The location for the LAG.
      * </p>
      * 
-     * @return The AWS Direct Connect location in which the LAG should be allocated.</p>
-     *         <p>
-     *         Example: EqSV5
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The location for the LAG.
      */
 
     public String getLocation() {
@@ -187,22 +124,11 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The AWS Direct Connect location in which the LAG should be allocated.
-     * </p>
-     * <p>
-     * Example: EqSV5
-     * </p>
-     * <p>
-     * Default: None
+     * The location for the LAG.
      * </p>
      * 
      * @param location
-     *        The AWS Direct Connect location in which the LAG should be allocated.</p>
-     *        <p>
-     *        Example: EqSV5
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The location for the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,22 +139,13 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG.
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Available values: 1Gbps, 10Gbps
+     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      * </p>
      * 
      * @param connectionsBandwidth
-     *        The bandwidth of the individual physical connections bundled by the LAG.</p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Available values: 1Gbps, 10Gbps
+     *        The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps,
+     *        100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      */
 
     public void setConnectionsBandwidth(String connectionsBandwidth) {
@@ -237,21 +154,12 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG.
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Available values: 1Gbps, 10Gbps
+     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      * </p>
      * 
-     * @return The bandwidth of the individual physical connections bundled by the LAG.</p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Available values: 1Gbps, 10Gbps
+     * @return The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps,
+     *         100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      */
 
     public String getConnectionsBandwidth() {
@@ -260,22 +168,13 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The bandwidth of the individual physical connections bundled by the LAG.
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Available values: 1Gbps, 10Gbps
+     * The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps,
+     * 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      * </p>
      * 
      * @param connectionsBandwidth
-     *        The bandwidth of the individual physical connections bundled by the LAG.</p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Available values: 1Gbps, 10Gbps
+     *        The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps,
+     *        100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,20 +187,9 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The name of the LAG.
      * </p>
-     * <p>
-     * Example: "<code>3x10G LAG to AWS</code>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param lagName
-     *        The name of the LAG.</p>
-     *        <p>
-     *        Example: "<code>3x10G LAG to AWS</code>"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The name of the LAG.
      */
 
     public void setLagName(String lagName) {
@@ -312,19 +200,8 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The name of the LAG.
      * </p>
-     * <p>
-     * Example: "<code>3x10G LAG to AWS</code>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The name of the LAG.</p>
-     *         <p>
-     *         Example: "<code>3x10G LAG to AWS</code>"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The name of the LAG.
      */
 
     public String getLagName() {
@@ -335,20 +212,9 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The name of the LAG.
      * </p>
-     * <p>
-     * Example: "<code>3x10G LAG to AWS</code>"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param lagName
-     *        The name of the LAG.</p>
-     *        <p>
-     *        Example: "<code>3x10G LAG to AWS</code>"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The name of the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,14 +227,9 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The ID of an existing connection to migrate to the LAG.
      * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param connectionId
-     *        The ID of an existing connection to migrate to the LAG.</p>
-     *        <p>
-     *        Default: None
+     *        The ID of an existing connection to migrate to the LAG.
      */
 
     public void setConnectionId(String connectionId) {
@@ -379,13 +240,8 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The ID of an existing connection to migrate to the LAG.
      * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The ID of an existing connection to migrate to the LAG.</p>
-     *         <p>
-     *         Default: None
+     * @return The ID of an existing connection to migrate to the LAG.
      */
 
     public String getConnectionId() {
@@ -396,14 +252,9 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The ID of an existing connection to migrate to the LAG.
      * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param connectionId
-     *        The ID of an existing connection to migrate to the LAG.</p>
-     *        <p>
-     *        Default: None
+     *        The ID of an existing connection to migrate to the LAG.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,7 +264,8 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

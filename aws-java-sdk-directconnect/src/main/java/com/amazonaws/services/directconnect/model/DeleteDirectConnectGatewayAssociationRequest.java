@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the DeleteDirectConnectGatewayAssociation operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociation"
  *      target="_top">AWS API Documentation</a>
@@ -30,13 +27,13 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
+     * The ID of the Direct Connect gateway association.
      * </p>
+     */
+    private String associationId;
+    /**
      * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      */
     private String directConnectGatewayId;
@@ -44,33 +41,56 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      */
     private String virtualGatewayId;
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
+     * The ID of the Direct Connect gateway association.
      * </p>
+     * 
+     * @param associationId
+     *        The ID of the Direct Connect gateway association.
+     */
+
+    public void setAssociationId(String associationId) {
+        this.associationId = associationId;
+    }
+
+    /**
      * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
+     * The ID of the Direct Connect gateway association.
      * </p>
+     * 
+     * @return The ID of the Direct Connect gateway association.
+     */
+
+    public String getAssociationId() {
+        return this.associationId;
+    }
+
+    /**
      * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway association.
+     * </p>
+     * 
+     * @param associationId
+     *        The ID of the Direct Connect gateway association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteDirectConnectGatewayAssociationRequest withAssociationId(String associationId) {
+        setAssociationId(associationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayId
-     *        The ID of the direct connect gateway.</p>
-     *        <p>
-     *        Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the Direct Connect gateway.
      */
 
     public void setDirectConnectGatewayId(String directConnectGatewayId) {
@@ -79,21 +99,10 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
-     * @return The ID of the direct connect gateway.</p>
-     *         <p>
-     *         Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the Direct Connect gateway.
      */
 
     public String getDirectConnectGatewayId() {
@@ -102,22 +111,11 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The ID of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     * </p>
-     * <p>
-     * Default: None
+     * The ID of the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayId
-     *        The ID of the direct connect gateway.</p>
-     *        <p>
-     *        Example: "abcd1234-dcba-5678-be23-cdef9876ab45"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the Direct Connect gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,20 +128,9 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param virtualGatewayId
-     *        The ID of the virtual private gateway.</p>
-     *        <p>
-     *        Example: "vgw-abc123ef"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual private gateway.
      */
 
     public void setVirtualGatewayId(String virtualGatewayId) {
@@ -154,19 +141,8 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
-     * @return The ID of the virtual private gateway.</p>
-     *         <p>
-     *         Example: "vgw-abc123ef"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The ID of the virtual private gateway.
      */
 
     public String getVirtualGatewayId() {
@@ -177,20 +153,9 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
      * <p>
      * The ID of the virtual private gateway.
      * </p>
-     * <p>
-     * Example: "vgw-abc123ef"
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
      * 
      * @param virtualGatewayId
-     *        The ID of the virtual private gateway.</p>
-     *        <p>
-     *        Example: "vgw-abc123ef"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The ID of the virtual private gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,7 +165,8 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -210,6 +176,8 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssociationId() != null)
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getDirectConnectGatewayId() != null)
             sb.append("DirectConnectGatewayId: ").append(getDirectConnectGatewayId()).append(",");
         if (getVirtualGatewayId() != null)
@@ -228,6 +196,10 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
         if (obj instanceof DeleteDirectConnectGatewayAssociationRequest == false)
             return false;
         DeleteDirectConnectGatewayAssociationRequest other = (DeleteDirectConnectGatewayAssociationRequest) obj;
+        if (other.getAssociationId() == null ^ this.getAssociationId() == null)
+            return false;
+        if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
+            return false;
         if (other.getDirectConnectGatewayId() == null ^ this.getDirectConnectGatewayId() == null)
             return false;
         if (other.getDirectConnectGatewayId() != null && other.getDirectConnectGatewayId().equals(this.getDirectConnectGatewayId()) == false)
@@ -244,6 +216,7 @@ public class DeleteDirectConnectGatewayAssociationRequest extends com.amazonaws.
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
         hashCode = prime * hashCode + ((getDirectConnectGatewayId() == null) ? 0 : getDirectConnectGatewayId().hashCode());
         hashCode = prime * hashCode + ((getVirtualGatewayId() == null) ? 0 : getVirtualGatewayId().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,12 @@ public class OTAUpdateInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> targets;
+    /**
+     * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     */
+    private AwsJobExecutionsRolloutConfig awsJobExecutionsRolloutConfig;
     /**
      * <p>
      * Specifies whether the OTA update will continue to run (CONTINUOUS), or will be complete after all those things
@@ -374,6 +380,46 @@ public class OTAUpdateInfo implements Serializable, Cloneable, StructuredPojo {
 
     public OTAUpdateInfo withTargets(java.util.Collection<String> targets) {
         setTargets(targets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     * 
+     * @param awsJobExecutionsRolloutConfig
+     *        Configuration for the rollout of OTA updates.
+     */
+
+    public void setAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig awsJobExecutionsRolloutConfig) {
+        this.awsJobExecutionsRolloutConfig = awsJobExecutionsRolloutConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     * 
+     * @return Configuration for the rollout of OTA updates.
+     */
+
+    public AwsJobExecutionsRolloutConfig getAwsJobExecutionsRolloutConfig() {
+        return this.awsJobExecutionsRolloutConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for the rollout of OTA updates.
+     * </p>
+     * 
+     * @param awsJobExecutionsRolloutConfig
+     *        Configuration for the rollout of OTA updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OTAUpdateInfo withAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig awsJobExecutionsRolloutConfig) {
+        setAwsJobExecutionsRolloutConfig(awsJobExecutionsRolloutConfig);
         return this;
     }
 
@@ -775,7 +821,8 @@ public class OTAUpdateInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -797,6 +844,8 @@ public class OTAUpdateInfo implements Serializable, Cloneable, StructuredPojo {
             sb.append("Description: ").append(getDescription()).append(",");
         if (getTargets() != null)
             sb.append("Targets: ").append(getTargets()).append(",");
+        if (getAwsJobExecutionsRolloutConfig() != null)
+            sb.append("AwsJobExecutionsRolloutConfig: ").append(getAwsJobExecutionsRolloutConfig()).append(",");
         if (getTargetSelection() != null)
             sb.append("TargetSelection: ").append(getTargetSelection()).append(",");
         if (getOtaUpdateFiles() != null)
@@ -849,6 +898,11 @@ public class OTAUpdateInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
             return false;
+        if (other.getAwsJobExecutionsRolloutConfig() == null ^ this.getAwsJobExecutionsRolloutConfig() == null)
+            return false;
+        if (other.getAwsJobExecutionsRolloutConfig() != null
+                && other.getAwsJobExecutionsRolloutConfig().equals(this.getAwsJobExecutionsRolloutConfig()) == false)
+            return false;
         if (other.getTargetSelection() == null ^ this.getTargetSelection() == null)
             return false;
         if (other.getTargetSelection() != null && other.getTargetSelection().equals(this.getTargetSelection()) == false)
@@ -891,6 +945,7 @@ public class OTAUpdateInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
+        hashCode = prime * hashCode + ((getAwsJobExecutionsRolloutConfig() == null) ? 0 : getAwsJobExecutionsRolloutConfig().hashCode());
         hashCode = prime * hashCode + ((getTargetSelection() == null) ? 0 : getTargetSelection().hashCode());
         hashCode = prime * hashCode + ((getOtaUpdateFiles() == null) ? 0 : getOtaUpdateFiles().hashCode());
         hashCode = prime * hashCode + ((getOtaUpdateStatus() == null) ? 0 : getOtaUpdateStatus().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,11 +28,18 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
 
     /** Brightness level. */
     private Integer brightness;
-
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed. If
+     * _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing colorspaces. An
+     * input's colorspace can be specified explicitly in the "Video Selector":#inputs-video_selector if necessary.
+     */
     private String colorSpaceConversion;
     /** Contrast level. */
     private Integer contrast;
-
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. Note
+     * that these settings are not color correction.
+     */
     private Hdr10Metadata hdr10Metadata;
     /** Hue in degrees. */
     private Integer hue;
@@ -74,7 +81,15 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed. If
+     * _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing colorspaces. An
+     * input's colorspace can be specified explicitly in the "Video Selector":#inputs-video_selector if necessary.
+     * 
      * @param colorSpaceConversion
+     *        Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed.
+     *        If _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing
+     *        colorspaces. An input's colorspace can be specified explicitly in the
+     *        "Video Selector":#inputs-video_selector if necessary.
      * @see ColorSpaceConversion
      */
 
@@ -83,7 +98,14 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed. If
+     * _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing colorspaces. An
+     * input's colorspace can be specified explicitly in the "Video Selector":#inputs-video_selector if necessary.
+     * 
+     * @return Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed.
+     *         If _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing
+     *         colorspaces. An input's colorspace can be specified explicitly in the
+     *         "Video Selector":#inputs-video_selector if necessary.
      * @see ColorSpaceConversion
      */
 
@@ -92,7 +114,15 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed. If
+     * _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing colorspaces. An
+     * input's colorspace can be specified explicitly in the "Video Selector":#inputs-video_selector if necessary.
+     * 
      * @param colorSpaceConversion
+     *        Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed.
+     *        If _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing
+     *        colorspaces. An input's colorspace can be specified explicitly in the
+     *        "Video Selector":#inputs-video_selector if necessary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpaceConversion
      */
@@ -103,7 +133,15 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed. If
+     * _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing colorspaces. An
+     * input's colorspace can be specified explicitly in the "Video Selector":#inputs-video_selector if necessary.
+     * 
      * @param colorSpaceConversion
+     *        Determines if colorspace conversion will be performed. If set to _None_, no conversion will be performed.
+     *        If _Force 601_ or _Force 709_ are selected, conversion will be performed for inputs with differing
+     *        colorspaces. An input's colorspace can be specified explicitly in the
+     *        "Video Selector":#inputs-video_selector if necessary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpaceConversion
      */
@@ -148,7 +186,12 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. Note
+     * that these settings are not color correction.
+     * 
      * @param hdr10Metadata
+     *        Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing
+     *        metadata. Note that these settings are not color correction.
      */
 
     public void setHdr10Metadata(Hdr10Metadata hdr10Metadata) {
@@ -156,7 +199,11 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. Note
+     * that these settings are not color correction.
+     * 
+     * @return Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing
+     *         metadata. Note that these settings are not color correction.
      */
 
     public Hdr10Metadata getHdr10Metadata() {
@@ -164,7 +211,12 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. Note
+     * that these settings are not color correction.
+     * 
      * @param hdr10Metadata
+     *        Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing
+     *        metadata. Note that these settings are not color correction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,7 +294,8 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

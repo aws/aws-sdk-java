@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class InstanceStatusEventStaxUnmarshaller implements Unmarshaller<Instanc
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("instanceEventId", targetDepth)) {
+                    instanceStatusEvent.setInstanceEventId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("code", targetDepth)) {
                     instanceStatusEvent.setCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -54,12 +59,17 @@ public class InstanceStatusEventStaxUnmarshaller implements Unmarshaller<Instanc
                 }
 
                 if (context.testExpression("notAfter", targetDepth)) {
-                    instanceStatusEvent.setNotAfter(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    instanceStatusEvent.setNotAfter(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("notBefore", targetDepth)) {
-                    instanceStatusEvent.setNotBefore(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    instanceStatusEvent.setNotBefore(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("notBeforeDeadline", targetDepth)) {
+                    instanceStatusEvent.setNotBeforeDeadline(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,30 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The organization under which the member exists.
+     * The organization under which the member (user or group) exists.
      * </p>
      */
     private String organizationId;
     /**
      * <p>
-     * The alias is added to this Amazon WorkMail entity.
+     * The member (user or group) to which this alias is added.
      * </p>
      */
     private String entityId;
     /**
      * <p>
-     * The alias to add to the user.
+     * The alias to add to the member set.
      * </p>
      */
     private String alias;
 
     /**
      * <p>
-     * The organization under which the member exists.
+     * The organization under which the member (user or group) exists.
      * </p>
      * 
      * @param organizationId
-     *        The organization under which the member exists.
+     *        The organization under which the member (user or group) exists.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -59,10 +59,10 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The organization under which the member exists.
+     * The organization under which the member (user or group) exists.
      * </p>
      * 
-     * @return The organization under which the member exists.
+     * @return The organization under which the member (user or group) exists.
      */
 
     public String getOrganizationId() {
@@ -71,11 +71,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The organization under which the member exists.
+     * The organization under which the member (user or group) exists.
      * </p>
      * 
      * @param organizationId
-     *        The organization under which the member exists.
+     *        The organization under which the member (user or group) exists.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias is added to this Amazon WorkMail entity.
+     * The member (user or group) to which this alias is added.
      * </p>
      * 
      * @param entityId
-     *        The alias is added to this Amazon WorkMail entity.
+     *        The member (user or group) to which this alias is added.
      */
 
     public void setEntityId(String entityId) {
@@ -99,10 +99,10 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias is added to this Amazon WorkMail entity.
+     * The member (user or group) to which this alias is added.
      * </p>
      * 
-     * @return The alias is added to this Amazon WorkMail entity.
+     * @return The member (user or group) to which this alias is added.
      */
 
     public String getEntityId() {
@@ -111,11 +111,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias is added to this Amazon WorkMail entity.
+     * The member (user or group) to which this alias is added.
      * </p>
      * 
      * @param entityId
-     *        The alias is added to this Amazon WorkMail entity.
+     *        The member (user or group) to which this alias is added.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias to add to the user.
+     * The alias to add to the member set.
      * </p>
      * 
      * @param alias
-     *        The alias to add to the user.
+     *        The alias to add to the member set.
      */
 
     public void setAlias(String alias) {
@@ -139,10 +139,10 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias to add to the user.
+     * The alias to add to the member set.
      * </p>
      * 
-     * @return The alias to add to the user.
+     * @return The alias to add to the member set.
      */
 
     public String getAlias() {
@@ -151,11 +151,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias to add to the user.
+     * The alias to add to the member set.
      * </p>
      * 
      * @param alias
-     *        The alias to add to the user.
+     *        The alias to add to the member set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,7 +165,8 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

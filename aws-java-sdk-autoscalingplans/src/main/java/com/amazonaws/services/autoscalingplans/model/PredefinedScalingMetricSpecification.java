@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a predefined metric for a target tracking policy.
+ * Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy.
  * </p>
  * 
  * @see <a
@@ -31,7 +31,7 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
 
     /**
      * <p>
-     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Sport
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot
      * Fleet requests, and ECS services.
      * </p>
      */
@@ -50,7 +50,7 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
      * <ul>
      * <li>
      * <p>
-     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN.
      * </p>
      * </li>
      * <li>
@@ -64,13 +64,13 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
 
     /**
      * <p>
-     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Sport
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot
      * Fleet requests, and ECS services.
      * </p>
      * 
      * @param predefinedScalingMetricType
      *        The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling
-     *        groups, Sport Fleet requests, and ECS services.
+     *        groups, Spot Fleet requests, and ECS services.
      * @see ScalingMetricType
      */
 
@@ -80,12 +80,12 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
 
     /**
      * <p>
-     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Sport
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot
      * Fleet requests, and ECS services.
      * </p>
      * 
      * @return The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling
-     *         groups, Sport Fleet requests, and ECS services.
+     *         groups, Spot Fleet requests, and ECS services.
      * @see ScalingMetricType
      */
 
@@ -95,13 +95,13 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
 
     /**
      * <p>
-     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Sport
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot
      * Fleet requests, and ECS services.
      * </p>
      * 
      * @param predefinedScalingMetricType
      *        The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling
-     *        groups, Sport Fleet requests, and ECS services.
+     *        groups, Spot Fleet requests, and ECS services.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingMetricType
      */
@@ -113,13 +113,13 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
 
     /**
      * <p>
-     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Sport
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Spot
      * Fleet requests, and ECS services.
      * </p>
      * 
      * @param predefinedScalingMetricType
      *        The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling
-     *        groups, Sport Fleet requests, and ECS services.
+     *        groups, Spot Fleet requests, and ECS services.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingMetricType
      */
@@ -143,7 +143,7 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
      * <ul>
      * <li>
      * <p>
-     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN.
      * </p>
      * </li>
      * <li>
@@ -165,7 +165,7 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
      *        <ul>
      *        <li>
      *        <p>
-     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN.
      *        </p>
      *        </li>
      *        <li>
@@ -194,7 +194,7 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
      * <ul>
      * <li>
      * <p>
-     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN.
      * </p>
      * </li>
      * <li>
@@ -215,7 +215,7 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
      *         <ul>
      *         <li>
      *         <p>
-     *         app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     *         app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN.
      *         </p>
      *         </li>
      *         <li>
@@ -244,7 +244,7 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
      * <ul>
      * <li>
      * <p>
-     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN.
      * </p>
      * </li>
      * <li>
@@ -266,7 +266,7 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
      *        <ul>
      *        <li>
      *        <p>
-     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN.
      *        </p>
      *        </li>
      *        <li>
@@ -284,7 +284,8 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,8 +42,8 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      */
     private String eventPattern;
@@ -71,6 +71,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     */
+    private String managedBy;
 
     /**
      * <p>
@@ -155,13 +162,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern of the rule. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
      *        >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
@@ -172,12 +179,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @return The event pattern of the rule. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
      *         >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
@@ -188,13 +195,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The event pattern of the rule. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html">Events
+     * and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern of the rule. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html"
      *        >Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -398,7 +405,54 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     * 
+     * @param managedBy
+     *        If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *        name of the service that created the rule.
+     */
+
+    public void setManagedBy(String managedBy) {
+        this.managedBy = managedBy;
+    }
+
+    /**
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     * 
+     * @return If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *         name of the service that created the rule.
+     */
+
+    public String getManagedBy() {
+        return this.managedBy;
+    }
+
+    /**
+     * <p>
+     * If the rule was created on behalf of your account by an AWS service, this field displays the principal name of
+     * the service that created the rule.
+     * </p>
+     * 
+     * @param managedBy
+     *        If the rule was created on behalf of your account by an AWS service, this field displays the principal
+     *        name of the service that created the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Rule withManagedBy(String managedBy) {
+        setManagedBy(managedBy);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -421,7 +475,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
         if (getScheduleExpression() != null)
             sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getManagedBy() != null)
+            sb.append("ManagedBy: ").append(getManagedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -464,6 +520,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getManagedBy() == null ^ this.getManagedBy() == null)
+            return false;
+        if (other.getManagedBy() != null && other.getManagedBy().equals(this.getManagedBy()) == false)
+            return false;
         return true;
     }
 
@@ -479,6 +539,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getScheduleExpression() == null) ? 0 : getScheduleExpression().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getManagedBy() == null) ? 0 : getManagedBy().hashCode());
         return hashCode;
     }
 

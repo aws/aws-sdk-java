@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * the operation assumes the user whose credentials are used to call the operation.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -43,7 +43,7 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * <a>ListServiceSpecificCredentials</a>.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      */
@@ -55,7 +55,7 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * the operation assumes the user whose credentials are used to call the operation.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -64,9 +64,9 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      *        The name of the IAM user associated with the service-specific credential. If this value is not specified,
      *        then the operation assumes the user whose credentials are used to call the operation.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      */
 
     public void setUserName(String userName) {
@@ -79,7 +79,7 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * the operation assumes the user whose credentials are used to call the operation.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -87,9 +87,9 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * @return The name of the IAM user associated with the service-specific credential. If this value is not specified,
      *         then the operation assumes the user whose credentials are used to call the operation.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: _+=,.@-
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *         include any of the following characters: _+=,.@-
      */
 
     public String getUserName() {
@@ -102,7 +102,7 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * the operation assumes the user whose credentials are used to call the operation.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
      * the following characters: _+=,.@-
      * </p>
@@ -111,9 +111,9 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      *        The name of the IAM user associated with the service-specific credential. If this value is not specified,
      *        then the operation assumes the user whose credentials are used to call the operation.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: _+=,.@-
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
+     *        include any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,7 +128,7 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * <a>ListServiceSpecificCredentials</a>.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
@@ -136,8 +136,8 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      *        The unique identifier of the service-specific credential. You can get this value by calling
      *        <a>ListServiceSpecificCredentials</a>.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters that can consist of any upper or lowercased letter or digit.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters that can consist of any upper or lowercased letter or digit.
      */
 
     public void setServiceSpecificCredentialId(String serviceSpecificCredentialId) {
@@ -150,15 +150,15 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * <a>ListServiceSpecificCredentials</a>.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
      * @return The unique identifier of the service-specific credential. You can get this value by calling
      *         <a>ListServiceSpecificCredentials</a>.</p>
      *         <p>
-     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *         characters that can consist of any upper or lowercased letter or digit.
+     *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *         of characters that can consist of any upper or lowercased letter or digit.
      */
 
     public String getServiceSpecificCredentialId() {
@@ -171,7 +171,7 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      * <a>ListServiceSpecificCredentials</a>.
      * </p>
      * <p>
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters that can consist of any upper or lowercased letter or digit.
      * </p>
      * 
@@ -179,8 +179,8 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      *        The unique identifier of the service-specific credential. You can get this value by calling
      *        <a>ListServiceSpecificCredentials</a>.</p>
      *        <p>
-     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     *        characters that can consist of any upper or lowercased letter or digit.
+     *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
+     *        of characters that can consist of any upper or lowercased letter or digit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,7 +190,8 @@ public class DeleteServiceSpecificCredentialRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

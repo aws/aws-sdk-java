@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,68 +27,28 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A CloudFormation stack or set of tags.
-     * </p>
-     */
-    private ApplicationSource applicationSource;
-    /**
-     * <p>
      * The name of the scaling plan.
      * </p>
      */
     private String scalingPlanName;
     /**
      * <p>
+     * The version number of the scaling plan.
+     * </p>
+     */
+    private Long scalingPlanVersion;
+    /**
+     * <p>
+     * A CloudFormation stack or set of tags.
+     * </p>
+     */
+    private ApplicationSource applicationSource;
+    /**
+     * <p>
      * The scaling instructions.
      * </p>
      */
     private java.util.List<ScalingInstruction> scalingInstructions;
-    /**
-     * <p>
-     * The version number.
-     * </p>
-     */
-    private Long scalingPlanVersion;
-
-    /**
-     * <p>
-     * A CloudFormation stack or set of tags.
-     * </p>
-     * 
-     * @param applicationSource
-     *        A CloudFormation stack or set of tags.
-     */
-
-    public void setApplicationSource(ApplicationSource applicationSource) {
-        this.applicationSource = applicationSource;
-    }
-
-    /**
-     * <p>
-     * A CloudFormation stack or set of tags.
-     * </p>
-     * 
-     * @return A CloudFormation stack or set of tags.
-     */
-
-    public ApplicationSource getApplicationSource() {
-        return this.applicationSource;
-    }
-
-    /**
-     * <p>
-     * A CloudFormation stack or set of tags.
-     * </p>
-     * 
-     * @param applicationSource
-     *        A CloudFormation stack or set of tags.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateScalingPlanRequest withApplicationSource(ApplicationSource applicationSource) {
-        setApplicationSource(applicationSource);
-        return this;
-    }
 
     /**
      * <p>
@@ -127,6 +87,86 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public UpdateScalingPlanRequest withScalingPlanName(String scalingPlanName) {
         setScalingPlanName(scalingPlanName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version number of the scaling plan.
+     * </p>
+     * 
+     * @param scalingPlanVersion
+     *        The version number of the scaling plan.
+     */
+
+    public void setScalingPlanVersion(Long scalingPlanVersion) {
+        this.scalingPlanVersion = scalingPlanVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the scaling plan.
+     * </p>
+     * 
+     * @return The version number of the scaling plan.
+     */
+
+    public Long getScalingPlanVersion() {
+        return this.scalingPlanVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the scaling plan.
+     * </p>
+     * 
+     * @param scalingPlanVersion
+     *        The version number of the scaling plan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateScalingPlanRequest withScalingPlanVersion(Long scalingPlanVersion) {
+        setScalingPlanVersion(scalingPlanVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A CloudFormation stack or set of tags.
+     * </p>
+     * 
+     * @param applicationSource
+     *        A CloudFormation stack or set of tags.
+     */
+
+    public void setApplicationSource(ApplicationSource applicationSource) {
+        this.applicationSource = applicationSource;
+    }
+
+    /**
+     * <p>
+     * A CloudFormation stack or set of tags.
+     * </p>
+     * 
+     * @return A CloudFormation stack or set of tags.
+     */
+
+    public ApplicationSource getApplicationSource() {
+        return this.applicationSource;
+    }
+
+    /**
+     * <p>
+     * A CloudFormation stack or set of tags.
+     * </p>
+     * 
+     * @param applicationSource
+     *        A CloudFormation stack or set of tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateScalingPlanRequest withApplicationSource(ApplicationSource applicationSource) {
+        setApplicationSource(applicationSource);
         return this;
     }
 
@@ -201,47 +241,8 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * <p>
-     * The version number.
-     * </p>
-     * 
-     * @param scalingPlanVersion
-     *        The version number.
-     */
-
-    public void setScalingPlanVersion(Long scalingPlanVersion) {
-        this.scalingPlanVersion = scalingPlanVersion;
-    }
-
-    /**
-     * <p>
-     * The version number.
-     * </p>
-     * 
-     * @return The version number.
-     */
-
-    public Long getScalingPlanVersion() {
-        return this.scalingPlanVersion;
-    }
-
-    /**
-     * <p>
-     * The version number.
-     * </p>
-     * 
-     * @param scalingPlanVersion
-     *        The version number.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateScalingPlanRequest withScalingPlanVersion(Long scalingPlanVersion) {
-        setScalingPlanVersion(scalingPlanVersion);
-        return this;
-    }
-
-    /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -251,14 +252,14 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getApplicationSource() != null)
-            sb.append("ApplicationSource: ").append(getApplicationSource()).append(",");
         if (getScalingPlanName() != null)
             sb.append("ScalingPlanName: ").append(getScalingPlanName()).append(",");
-        if (getScalingInstructions() != null)
-            sb.append("ScalingInstructions: ").append(getScalingInstructions()).append(",");
         if (getScalingPlanVersion() != null)
-            sb.append("ScalingPlanVersion: ").append(getScalingPlanVersion());
+            sb.append("ScalingPlanVersion: ").append(getScalingPlanVersion()).append(",");
+        if (getApplicationSource() != null)
+            sb.append("ApplicationSource: ").append(getApplicationSource()).append(",");
+        if (getScalingInstructions() != null)
+            sb.append("ScalingInstructions: ").append(getScalingInstructions());
         sb.append("}");
         return sb.toString();
     }
@@ -273,21 +274,21 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
         if (obj instanceof UpdateScalingPlanRequest == false)
             return false;
         UpdateScalingPlanRequest other = (UpdateScalingPlanRequest) obj;
-        if (other.getApplicationSource() == null ^ this.getApplicationSource() == null)
-            return false;
-        if (other.getApplicationSource() != null && other.getApplicationSource().equals(this.getApplicationSource()) == false)
-            return false;
         if (other.getScalingPlanName() == null ^ this.getScalingPlanName() == null)
             return false;
         if (other.getScalingPlanName() != null && other.getScalingPlanName().equals(this.getScalingPlanName()) == false)
             return false;
-        if (other.getScalingInstructions() == null ^ this.getScalingInstructions() == null)
-            return false;
-        if (other.getScalingInstructions() != null && other.getScalingInstructions().equals(this.getScalingInstructions()) == false)
-            return false;
         if (other.getScalingPlanVersion() == null ^ this.getScalingPlanVersion() == null)
             return false;
         if (other.getScalingPlanVersion() != null && other.getScalingPlanVersion().equals(this.getScalingPlanVersion()) == false)
+            return false;
+        if (other.getApplicationSource() == null ^ this.getApplicationSource() == null)
+            return false;
+        if (other.getApplicationSource() != null && other.getApplicationSource().equals(this.getApplicationSource()) == false)
+            return false;
+        if (other.getScalingInstructions() == null ^ this.getScalingInstructions() == null)
+            return false;
+        if (other.getScalingInstructions() != null && other.getScalingInstructions().equals(this.getScalingInstructions()) == false)
             return false;
         return true;
     }
@@ -297,10 +298,10 @@ public class UpdateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getApplicationSource() == null) ? 0 : getApplicationSource().hashCode());
         hashCode = prime * hashCode + ((getScalingPlanName() == null) ? 0 : getScalingPlanName().hashCode());
-        hashCode = prime * hashCode + ((getScalingInstructions() == null) ? 0 : getScalingInstructions().hashCode());
         hashCode = prime * hashCode + ((getScalingPlanVersion() == null) ? 0 : getScalingPlanVersion().hashCode());
+        hashCode = prime * hashCode + ((getApplicationSource() == null) ? 0 : getApplicationSource().hashCode());
+        hashCode = prime * hashCode + ((getScalingInstructions() == null) ? 0 : getScalingInstructions().hashCode());
         return hashCode;
     }
 

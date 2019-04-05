@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name to identify the transcription job.
+     * The name of the transcription job.
      * </p>
      */
     private String transcriptionJobName;
@@ -60,7 +60,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     private String mediaFormat;
     /**
      * <p>
-     * An object that describes the input media for a transcription job.
+     * An object that describes the input media for the transcription job.
      * </p>
      */
     private Media media;
@@ -72,13 +72,13 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     private Transcript transcript;
     /**
      * <p>
-     * Timestamp of the date and time that the job was created.
+     * A timestamp that shows when the job was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * Timestamp of the date and time that the job completed.
+     * A timestamp that shows when the job was completed.
      * </p>
      */
     private java.util.Date completionTime;
@@ -87,22 +87,72 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information about
      * why the job failed.
      * </p>
+     * <p>
+     * The <code>FailureReason</code> field can contain one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Unsupported media format</code> - The media format specified in the <code>MediaFormat</code> field of the
+     * request isn't valid. See the description of the <code>MediaFormat</code> field for a list of valid values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>The media format provided does not match the detected media format</code> - The media format of the audio
+     * file doesn't match the format specified in the <code>MediaFormat</code> field in the request. Check the media
+     * format of your media file and make sure that the two values match.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid sample rate for audio file</code> - The sample rate specified in the
+     * <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be between 8000 and 48000
+     * Hertz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> - The sample rate in the audio file
+     * doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code> field in the request. Check the
+     * sample rate of your media file and make sure that the two values match.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio file is larger than Amazon
+     * Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a> in the <i>Amazon
+     * Transcribe Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your audio contains more channels than
+     * Amazon Transcribe is configured to process. To request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String failureReason;
     /**
      * <p>
-     * Optional settings for the transcription job.
+     * Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the
+     * maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing
+     * the transcription job.
      * </p>
      */
     private Settings settings;
 
     /**
      * <p>
-     * A name to identify the transcription job.
+     * The name of the transcription job.
      * </p>
      * 
      * @param transcriptionJobName
-     *        A name to identify the transcription job.
+     *        The name of the transcription job.
      */
 
     public void setTranscriptionJobName(String transcriptionJobName) {
@@ -111,10 +161,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name to identify the transcription job.
+     * The name of the transcription job.
      * </p>
      * 
-     * @return A name to identify the transcription job.
+     * @return The name of the transcription job.
      */
 
     public String getTranscriptionJobName() {
@@ -123,11 +173,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name to identify the transcription job.
+     * The name of the transcription job.
      * </p>
      * 
      * @param transcriptionJobName
-     *        A name to identify the transcription job.
+     *        The name of the transcription job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +405,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An object that describes the input media for a transcription job.
+     * An object that describes the input media for the transcription job.
      * </p>
      * 
      * @param media
-     *        An object that describes the input media for a transcription job.
+     *        An object that describes the input media for the transcription job.
      */
 
     public void setMedia(Media media) {
@@ -368,10 +418,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An object that describes the input media for a transcription job.
+     * An object that describes the input media for the transcription job.
      * </p>
      * 
-     * @return An object that describes the input media for a transcription job.
+     * @return An object that describes the input media for the transcription job.
      */
 
     public Media getMedia() {
@@ -380,11 +430,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An object that describes the input media for a transcription job.
+     * An object that describes the input media for the transcription job.
      * </p>
      * 
      * @param media
-     *        An object that describes the input media for a transcription job.
+     *        An object that describes the input media for the transcription job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,11 +485,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Timestamp of the date and time that the job was created.
+     * A timestamp that shows when the job was created.
      * </p>
      * 
      * @param creationTime
-     *        Timestamp of the date and time that the job was created.
+     *        A timestamp that shows when the job was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -448,10 +498,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Timestamp of the date and time that the job was created.
+     * A timestamp that shows when the job was created.
      * </p>
      * 
-     * @return Timestamp of the date and time that the job was created.
+     * @return A timestamp that shows when the job was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -460,11 +510,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Timestamp of the date and time that the job was created.
+     * A timestamp that shows when the job was created.
      * </p>
      * 
      * @param creationTime
-     *        Timestamp of the date and time that the job was created.
+     *        A timestamp that shows when the job was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -475,11 +525,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Timestamp of the date and time that the job completed.
+     * A timestamp that shows when the job was completed.
      * </p>
      * 
      * @param completionTime
-     *        Timestamp of the date and time that the job completed.
+     *        A timestamp that shows when the job was completed.
      */
 
     public void setCompletionTime(java.util.Date completionTime) {
@@ -488,10 +538,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Timestamp of the date and time that the job completed.
+     * A timestamp that shows when the job was completed.
      * </p>
      * 
-     * @return Timestamp of the date and time that the job completed.
+     * @return A timestamp that shows when the job was completed.
      */
 
     public java.util.Date getCompletionTime() {
@@ -500,11 +550,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Timestamp of the date and time that the job completed.
+     * A timestamp that shows when the job was completed.
      * </p>
      * 
      * @param completionTime
-     *        Timestamp of the date and time that the job completed.
+     *        A timestamp that shows when the job was completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -518,10 +568,106 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information about
      * why the job failed.
      * </p>
+     * <p>
+     * The <code>FailureReason</code> field can contain one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Unsupported media format</code> - The media format specified in the <code>MediaFormat</code> field of the
+     * request isn't valid. See the description of the <code>MediaFormat</code> field for a list of valid values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>The media format provided does not match the detected media format</code> - The media format of the audio
+     * file doesn't match the format specified in the <code>MediaFormat</code> field in the request. Check the media
+     * format of your media file and make sure that the two values match.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid sample rate for audio file</code> - The sample rate specified in the
+     * <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be between 8000 and 48000
+     * Hertz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> - The sample rate in the audio file
+     * doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code> field in the request. Check the
+     * sample rate of your media file and make sure that the two values match.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio file is larger than Amazon
+     * Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a> in the <i>Amazon
+     * Transcribe Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your audio contains more channels than
+     * Amazon Transcribe is configured to process. To request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failureReason
      *        If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information
-     *        about why the job failed.
+     *        about why the job failed.</p>
+     *        <p>
+     *        The <code>FailureReason</code> field can contain one of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Unsupported media format</code> - The media format specified in the <code>MediaFormat</code> field
+     *        of the request isn't valid. See the description of the <code>MediaFormat</code> field for a list of valid
+     *        values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>The media format provided does not match the detected media format</code> - The media format of the
+     *        audio file doesn't match the format specified in the <code>MediaFormat</code> field in the request. Check
+     *        the media format of your media file and make sure that the two values match.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Invalid sample rate for audio file</code> - The sample rate specified in the
+     *        <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be between 8000 and
+     *        48000 Hertz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>The sample rate provided does not match the detected sample rate</code> - The sample rate in the
+     *        audio file doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code> field in the
+     *        request. Check the sample rate of your media file and make sure that the two values match.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Invalid file size: file size too large</code> - The size of your audio file is larger than Amazon
+     *        Transcribe can process. For more information, see <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a> in the
+     *        <i>Amazon Transcribe Developer Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Invalid number of channels: number of channels too large</code> - Your audio contains more channels
+     *        than Amazon Transcribe is configured to process. To request additional channels, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe"
+     *        >Amazon Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.
+     *        </p>
+     *        </li>
      */
 
     public void setFailureReason(String failureReason) {
@@ -533,9 +679,105 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information about
      * why the job failed.
      * </p>
+     * <p>
+     * The <code>FailureReason</code> field can contain one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Unsupported media format</code> - The media format specified in the <code>MediaFormat</code> field of the
+     * request isn't valid. See the description of the <code>MediaFormat</code> field for a list of valid values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>The media format provided does not match the detected media format</code> - The media format of the audio
+     * file doesn't match the format specified in the <code>MediaFormat</code> field in the request. Check the media
+     * format of your media file and make sure that the two values match.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid sample rate for audio file</code> - The sample rate specified in the
+     * <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be between 8000 and 48000
+     * Hertz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> - The sample rate in the audio file
+     * doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code> field in the request. Check the
+     * sample rate of your media file and make sure that the two values match.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio file is larger than Amazon
+     * Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a> in the <i>Amazon
+     * Transcribe Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your audio contains more channels than
+     * Amazon Transcribe is configured to process. To request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information
-     *         about why the job failed.
+     *         about why the job failed.</p>
+     *         <p>
+     *         The <code>FailureReason</code> field can contain one of the following values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Unsupported media format</code> - The media format specified in the <code>MediaFormat</code> field
+     *         of the request isn't valid. See the description of the <code>MediaFormat</code> field for a list of valid
+     *         values.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>The media format provided does not match the detected media format</code> - The media format of the
+     *         audio file doesn't match the format specified in the <code>MediaFormat</code> field in the request. Check
+     *         the media format of your media file and make sure that the two values match.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Invalid sample rate for audio file</code> - The sample rate specified in the
+     *         <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be between 8000 and
+     *         48000 Hertz.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>The sample rate provided does not match the detected sample rate</code> - The sample rate in the
+     *         audio file doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code> field in the
+     *         request. Check the sample rate of your media file and make sure that the two values match.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Invalid file size: file size too large</code> - The size of your audio file is larger than Amazon
+     *         Transcribe can process. For more information, see <a
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a> in the
+     *         <i>Amazon Transcribe Developer Guide</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Invalid number of channels: number of channels too large</code> - Your audio contains more channels
+     *         than Amazon Transcribe is configured to process. To request additional channels, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe"
+     *         >Amazon Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.
+     *         </p>
+     *         </li>
      */
 
     public String getFailureReason() {
@@ -547,10 +789,106 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information about
      * why the job failed.
      * </p>
+     * <p>
+     * The <code>FailureReason</code> field can contain one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Unsupported media format</code> - The media format specified in the <code>MediaFormat</code> field of the
+     * request isn't valid. See the description of the <code>MediaFormat</code> field for a list of valid values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>The media format provided does not match the detected media format</code> - The media format of the audio
+     * file doesn't match the format specified in the <code>MediaFormat</code> field in the request. Check the media
+     * format of your media file and make sure that the two values match.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid sample rate for audio file</code> - The sample rate specified in the
+     * <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be between 8000 and 48000
+     * Hertz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> - The sample rate in the audio file
+     * doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code> field in the request. Check the
+     * sample rate of your media file and make sure that the two values match.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio file is larger than Amazon
+     * Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a> in the <i>Amazon
+     * Transcribe Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your audio contains more channels than
+     * Amazon Transcribe is configured to process. To request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failureReason
      *        If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains information
-     *        about why the job failed.
+     *        about why the job failed.</p>
+     *        <p>
+     *        The <code>FailureReason</code> field can contain one of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Unsupported media format</code> - The media format specified in the <code>MediaFormat</code> field
+     *        of the request isn't valid. See the description of the <code>MediaFormat</code> field for a list of valid
+     *        values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>The media format provided does not match the detected media format</code> - The media format of the
+     *        audio file doesn't match the format specified in the <code>MediaFormat</code> field in the request. Check
+     *        the media format of your media file and make sure that the two values match.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Invalid sample rate for audio file</code> - The sample rate specified in the
+     *        <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be between 8000 and
+     *        48000 Hertz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>The sample rate provided does not match the detected sample rate</code> - The sample rate in the
+     *        audio file doesn't match the sample rate specified in the <code>MediaSampleRateHertz</code> field in the
+     *        request. Check the sample rate of your media file and make sure that the two values match.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Invalid file size: file size too large</code> - The size of your audio file is larger than Amazon
+     *        Transcribe can process. For more information, see <a
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a> in the
+     *        <i>Amazon Transcribe Developer Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Invalid number of channels: number of channels too large</code> - Your audio contains more channels
+     *        than Amazon Transcribe is configured to process. To request additional channels, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe"
+     *        >Amazon Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -561,11 +899,15 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Optional settings for the transcription job.
+     * Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the
+     * maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing
+     * the transcription job.
      * </p>
      * 
      * @param settings
-     *        Optional settings for the transcription job.
+     *        Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the
+     *        maximum number of speakers that should be identified and to specify a custom vocabulary to use when
+     *        processing the transcription job.
      */
 
     public void setSettings(Settings settings) {
@@ -574,10 +916,14 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Optional settings for the transcription job.
+     * Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the
+     * maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing
+     * the transcription job.
      * </p>
      * 
-     * @return Optional settings for the transcription job.
+     * @return Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set
+     *         the maximum number of speakers that should be identified and to specify a custom vocabulary to use when
+     *         processing the transcription job.
      */
 
     public Settings getSettings() {
@@ -586,11 +932,15 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Optional settings for the transcription job.
+     * Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the
+     * maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing
+     * the transcription job.
      * </p>
      * 
      * @param settings
-     *        Optional settings for the transcription job.
+     *        Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the
+     *        maximum number of speakers that should be identified and to specify a custom vocabulary to use when
+     *        processing the transcription job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -600,7 +950,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

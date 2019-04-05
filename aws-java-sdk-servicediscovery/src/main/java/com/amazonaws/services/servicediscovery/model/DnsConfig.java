@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains information about the records that you want Amazon Route 53 to create when you register
- * an instance.
+ * A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create
+ * when you register an instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DnsConfig" target="_top">AWS API
@@ -34,11 +34,12 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * The ID of the namespace to use for DNS configuration.
      * </p>
      */
+    @Deprecated
     private String namespaceId;
     /**
      * <p>
-     * The routing policy that you want to apply to all records that Route 53 creates when you register an instance and
-     * specify this service.
+     * The routing policy that you want to apply to all Route 53 DNS records that AWS Cloud Map creates when you
+     * register an instance and specify this service.
      * </p>
      * <note>
      * <p>
@@ -98,8 +99,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
     private String routingPolicy;
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create when
-     * you register an instance.
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want AWS Cloud Map
+     * to create when you register an instance.
      * </p>
      */
     private java.util.List<DnsRecord> dnsRecords;
@@ -112,7 +113,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * @param namespaceId
      *        The ID of the namespace to use for DNS configuration.
      */
-
+    @Deprecated
     public void setNamespaceId(String namespaceId) {
         this.namespaceId = namespaceId;
     }
@@ -124,7 +125,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The ID of the namespace to use for DNS configuration.
      */
-
+    @Deprecated
     public String getNamespaceId() {
         return this.namespaceId;
     }
@@ -138,7 +139,7 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      *        The ID of the namespace to use for DNS configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DnsConfig withNamespaceId(String namespaceId) {
         setNamespaceId(namespaceId);
         return this;
@@ -146,8 +147,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The routing policy that you want to apply to all records that Route 53 creates when you register an instance and
-     * specify this service.
+     * The routing policy that you want to apply to all Route 53 DNS records that AWS Cloud Map creates when you
+     * register an instance and specify this service.
      * </p>
      * <note>
      * <p>
@@ -205,8 +206,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param routingPolicy
-     *        The routing policy that you want to apply to all records that Route 53 creates when you register an
-     *        instance and specify this service.</p> <note>
+     *        The routing policy that you want to apply to all Route 53 DNS records that AWS Cloud Map creates when you
+     *        register an instance and specify this service.</p> <note>
      *        <p>
      *        If you want to use this service to register instances that create alias records, specify
      *        <code>WEIGHTED</code> for the routing policy.
@@ -268,8 +269,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The routing policy that you want to apply to all records that Route 53 creates when you register an instance and
-     * specify this service.
+     * The routing policy that you want to apply to all Route 53 DNS records that AWS Cloud Map creates when you
+     * register an instance and specify this service.
      * </p>
      * <note>
      * <p>
@@ -326,8 +327,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * >Weighted Routing</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
-     * @return The routing policy that you want to apply to all records that Route 53 creates when you register an
-     *         instance and specify this service.</p> <note>
+     * @return The routing policy that you want to apply to all Route 53 DNS records that AWS Cloud Map creates when you
+     *         register an instance and specify this service.</p> <note>
      *         <p>
      *         If you want to use this service to register instances that create alias records, specify
      *         <code>WEIGHTED</code> for the routing policy.
@@ -389,8 +390,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The routing policy that you want to apply to all records that Route 53 creates when you register an instance and
-     * specify this service.
+     * The routing policy that you want to apply to all Route 53 DNS records that AWS Cloud Map creates when you
+     * register an instance and specify this service.
      * </p>
      * <note>
      * <p>
@@ -448,8 +449,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param routingPolicy
-     *        The routing policy that you want to apply to all records that Route 53 creates when you register an
-     *        instance and specify this service.</p> <note>
+     *        The routing policy that you want to apply to all Route 53 DNS records that AWS Cloud Map creates when you
+     *        register an instance and specify this service.</p> <note>
      *        <p>
      *        If you want to use this service to register instances that create alias records, specify
      *        <code>WEIGHTED</code> for the routing policy.
@@ -513,8 +514,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The routing policy that you want to apply to all records that Route 53 creates when you register an instance and
-     * specify this service.
+     * The routing policy that you want to apply to all Route 53 DNS records that AWS Cloud Map creates when you
+     * register an instance and specify this service.
      * </p>
      * <note>
      * <p>
@@ -572,8 +573,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param routingPolicy
-     *        The routing policy that you want to apply to all records that Route 53 creates when you register an
-     *        instance and specify this service.</p> <note>
+     *        The routing policy that you want to apply to all Route 53 DNS records that AWS Cloud Map creates when you
+     *        register an instance and specify this service.</p> <note>
      *        <p>
      *        If you want to use this service to register instances that create alias records, specify
      *        <code>WEIGHTED</code> for the routing policy.
@@ -637,12 +638,12 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create when
-     * you register an instance.
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want AWS Cloud Map
+     * to create when you register an instance.
      * </p>
      * 
-     * @return An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create
-     *         when you register an instance.
+     * @return An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want AWS
+     *         Cloud Map to create when you register an instance.
      */
 
     public java.util.List<DnsRecord> getDnsRecords() {
@@ -651,13 +652,13 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create when
-     * you register an instance.
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want AWS Cloud Map
+     * to create when you register an instance.
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create
-     *        when you register an instance.
+     *        An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want AWS
+     *        Cloud Map to create when you register an instance.
      */
 
     public void setDnsRecords(java.util.Collection<DnsRecord> dnsRecords) {
@@ -671,8 +672,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create when
-     * you register an instance.
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want AWS Cloud Map
+     * to create when you register an instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -681,8 +682,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create
-     *        when you register an instance.
+     *        An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want AWS
+     *        Cloud Map to create when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -698,13 +699,13 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create when
-     * you register an instance.
+     * An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want AWS Cloud Map
+     * to create when you register an instance.
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create
-     *        when you register an instance.
+     *        An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record that you want AWS
+     *        Cloud Map to create when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -714,7 +715,8 @@ public class DnsConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

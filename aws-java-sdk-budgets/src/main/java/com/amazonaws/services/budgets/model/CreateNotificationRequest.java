@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     private String accountId;
     /**
      * <p>
-     * The name of the budget that you want AWS to notified you about. Budget names must be unique within an account.
+     * The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.
      * </p>
      */
     private String budgetName;
@@ -46,7 +46,7 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of subscribers that you want to associate with the notification. Each notification can have one SNS
-     * subscriber and up to ten email subscribers.
+     * subscriber and up to 10 email subscribers.
      * </p>
      */
     private java.util.List<Subscriber> subscribers;
@@ -93,11 +93,11 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the budget that you want AWS to notified you about. Budget names must be unique within an account.
+     * The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.
      * </p>
      * 
      * @param budgetName
-     *        The name of the budget that you want AWS to notified you about. Budget names must be unique within an
+     *        The name of the budget that you want AWS to notify you about. Budget names must be unique within an
      *        account.
      */
 
@@ -107,10 +107,10 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the budget that you want AWS to notified you about. Budget names must be unique within an account.
+     * The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.
      * </p>
      * 
-     * @return The name of the budget that you want AWS to notified you about. Budget names must be unique within an
+     * @return The name of the budget that you want AWS to notify you about. Budget names must be unique within an
      *         account.
      */
 
@@ -120,11 +120,11 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the budget that you want AWS to notified you about. Budget names must be unique within an account.
+     * The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.
      * </p>
      * 
      * @param budgetName
-     *        The name of the budget that you want AWS to notified you about. Budget names must be unique within an
+     *        The name of the budget that you want AWS to notify you about. Budget names must be unique within an
      *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -177,11 +177,11 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of subscribers that you want to associate with the notification. Each notification can have one SNS
-     * subscriber and up to ten email subscribers.
+     * subscriber and up to 10 email subscribers.
      * </p>
      * 
      * @return A list of subscribers that you want to associate with the notification. Each notification can have one
-     *         SNS subscriber and up to ten email subscribers.
+     *         SNS subscriber and up to 10 email subscribers.
      */
 
     public java.util.List<Subscriber> getSubscribers() {
@@ -191,12 +191,12 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of subscribers that you want to associate with the notification. Each notification can have one SNS
-     * subscriber and up to ten email subscribers.
+     * subscriber and up to 10 email subscribers.
      * </p>
      * 
      * @param subscribers
      *        A list of subscribers that you want to associate with the notification. Each notification can have one SNS
-     *        subscriber and up to ten email subscribers.
+     *        subscriber and up to 10 email subscribers.
      */
 
     public void setSubscribers(java.util.Collection<Subscriber> subscribers) {
@@ -211,7 +211,7 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of subscribers that you want to associate with the notification. Each notification can have one SNS
-     * subscriber and up to ten email subscribers.
+     * subscriber and up to 10 email subscribers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -221,7 +221,7 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param subscribers
      *        A list of subscribers that you want to associate with the notification. Each notification can have one SNS
-     *        subscriber and up to ten email subscribers.
+     *        subscriber and up to 10 email subscribers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,12 +238,12 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A list of subscribers that you want to associate with the notification. Each notification can have one SNS
-     * subscriber and up to ten email subscribers.
+     * subscriber and up to 10 email subscribers.
      * </p>
      * 
      * @param subscribers
      *        A list of subscribers that you want to associate with the notification. Each notification can have one SNS
-     *        subscriber and up to ten email subscribers.
+     *        subscriber and up to 10 email subscribers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,7 +253,8 @@ public class CreateNotificationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

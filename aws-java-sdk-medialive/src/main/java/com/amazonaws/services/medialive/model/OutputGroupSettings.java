@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Placeholder documentation for OutputGroupSettings
+ * Output Group Settings
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/OutputGroupSettings" target="_top">AWS API
  *      Documentation</a>
@@ -28,7 +28,11 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     private ArchiveGroupSettings archiveGroupSettings;
 
+    private FrameCaptureGroupSettings frameCaptureGroupSettings;
+
     private HlsGroupSettings hlsGroupSettings;
+
+    private MediaPackageGroupSettings mediaPackageGroupSettings;
 
     private MsSmoothGroupSettings msSmoothGroupSettings;
 
@@ -63,6 +67,32 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * @param frameCaptureGroupSettings
+     */
+
+    public void setFrameCaptureGroupSettings(FrameCaptureGroupSettings frameCaptureGroupSettings) {
+        this.frameCaptureGroupSettings = frameCaptureGroupSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public FrameCaptureGroupSettings getFrameCaptureGroupSettings() {
+        return this.frameCaptureGroupSettings;
+    }
+
+    /**
+     * @param frameCaptureGroupSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputGroupSettings withFrameCaptureGroupSettings(FrameCaptureGroupSettings frameCaptureGroupSettings) {
+        setFrameCaptureGroupSettings(frameCaptureGroupSettings);
+        return this;
+    }
+
+    /**
      * @param hlsGroupSettings
      */
 
@@ -85,6 +115,32 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     public OutputGroupSettings withHlsGroupSettings(HlsGroupSettings hlsGroupSettings) {
         setHlsGroupSettings(hlsGroupSettings);
+        return this;
+    }
+
+    /**
+     * @param mediaPackageGroupSettings
+     */
+
+    public void setMediaPackageGroupSettings(MediaPackageGroupSettings mediaPackageGroupSettings) {
+        this.mediaPackageGroupSettings = mediaPackageGroupSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public MediaPackageGroupSettings getMediaPackageGroupSettings() {
+        return this.mediaPackageGroupSettings;
+    }
+
+    /**
+     * @param mediaPackageGroupSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputGroupSettings withMediaPackageGroupSettings(MediaPackageGroupSettings mediaPackageGroupSettings) {
+        setMediaPackageGroupSettings(mediaPackageGroupSettings);
         return this;
     }
 
@@ -167,7 +223,8 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -179,8 +236,12 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getArchiveGroupSettings() != null)
             sb.append("ArchiveGroupSettings: ").append(getArchiveGroupSettings()).append(",");
+        if (getFrameCaptureGroupSettings() != null)
+            sb.append("FrameCaptureGroupSettings: ").append(getFrameCaptureGroupSettings()).append(",");
         if (getHlsGroupSettings() != null)
             sb.append("HlsGroupSettings: ").append(getHlsGroupSettings()).append(",");
+        if (getMediaPackageGroupSettings() != null)
+            sb.append("MediaPackageGroupSettings: ").append(getMediaPackageGroupSettings()).append(",");
         if (getMsSmoothGroupSettings() != null)
             sb.append("MsSmoothGroupSettings: ").append(getMsSmoothGroupSettings()).append(",");
         if (getRtmpGroupSettings() != null)
@@ -205,9 +266,17 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getArchiveGroupSettings() != null && other.getArchiveGroupSettings().equals(this.getArchiveGroupSettings()) == false)
             return false;
+        if (other.getFrameCaptureGroupSettings() == null ^ this.getFrameCaptureGroupSettings() == null)
+            return false;
+        if (other.getFrameCaptureGroupSettings() != null && other.getFrameCaptureGroupSettings().equals(this.getFrameCaptureGroupSettings()) == false)
+            return false;
         if (other.getHlsGroupSettings() == null ^ this.getHlsGroupSettings() == null)
             return false;
         if (other.getHlsGroupSettings() != null && other.getHlsGroupSettings().equals(this.getHlsGroupSettings()) == false)
+            return false;
+        if (other.getMediaPackageGroupSettings() == null ^ this.getMediaPackageGroupSettings() == null)
+            return false;
+        if (other.getMediaPackageGroupSettings() != null && other.getMediaPackageGroupSettings().equals(this.getMediaPackageGroupSettings()) == false)
             return false;
         if (other.getMsSmoothGroupSettings() == null ^ this.getMsSmoothGroupSettings() == null)
             return false;
@@ -230,7 +299,9 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArchiveGroupSettings() == null) ? 0 : getArchiveGroupSettings().hashCode());
+        hashCode = prime * hashCode + ((getFrameCaptureGroupSettings() == null) ? 0 : getFrameCaptureGroupSettings().hashCode());
         hashCode = prime * hashCode + ((getHlsGroupSettings() == null) ? 0 : getHlsGroupSettings().hashCode());
+        hashCode = prime * hashCode + ((getMediaPackageGroupSettings() == null) ? 0 : getMediaPackageGroupSettings().hashCode());
         hashCode = prime * hashCode + ((getMsSmoothGroupSettings() == null) ? 0 : getMsSmoothGroupSettings().hashCode());
         hashCode = prime * hashCode + ((getRtmpGroupSettings() == null) ? 0 : getRtmpGroupSettings().hashCode());
         hashCode = prime * hashCode + ((getUdpGroupSettings() == null) ? 0 : getUdpGroupSettings().hashCode());

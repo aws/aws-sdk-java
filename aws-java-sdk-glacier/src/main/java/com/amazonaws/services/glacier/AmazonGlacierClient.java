@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.glacier.AmazonGlacierClientBuilder;
 import com.amazonaws.services.glacier.waiters.AmazonGlacierWaiters;
 
@@ -60,10 +62,9 @@ import com.amazonaws.services.glacier.model.transform.*;
  * failure and recovery, or time-consuming hardware migrations.
  * </p>
  * <p>
- * Amazon Glacier is a great storage choice when low storage cost is paramount, your data is rarely retrieved, and
- * retrieval latency of several hours is acceptable. If your application requires fast or frequent access to your data,
- * consider using Amazon S3. For more information, see <a href="http://aws.amazon.com/s3/">Amazon Simple Storage Service
- * (Amazon S3)</a>.
+ * Amazon Glacier is a great storage choice when low storage cost is paramount and your data is rarely retrieved. If
+ * your application requires fast or frequent access to your data, consider using Amazon S3. For more information, see
+ * <a href="http://aws.amazon.com/s3/">Amazon Simple Storage Service (Amazon S3)</a>.
  * </p>
  * <p>
  * You can store any kind of data in any format. There is no maximum limit on the total amount of data you can store in
@@ -93,6 +94,7 @@ import com.amazonaws.services.glacier.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonGlacierClient extends AmazonWebServiceClient implements AmazonGlacier {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -105,6 +107,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -221,6 +225,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     public AmazonGlacierClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -286,6 +291,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -304,8 +310,23 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      *        Object providing client parameters.
      */
     AmazonGlacierClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon Glacier using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonGlacierClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -389,6 +410,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AbortMultipartUpload");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -461,6 +485,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AbortVaultLock");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -523,6 +550,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToVault");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -624,6 +654,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CompleteMultipartUpload");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -696,6 +729,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CompleteVaultLock");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -785,6 +821,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVault");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -873,6 +912,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteArchive");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -953,6 +995,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVault");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1018,6 +1063,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVaultAccessPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1092,6 +1140,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVaultNotifications");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1173,6 +1224,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1250,6 +1304,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVault");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1307,6 +1364,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataRetrievalPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1408,6 +1468,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobOutput");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1479,6 +1542,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVaultAccessPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1570,6 +1636,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVaultLock");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1647,6 +1716,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVaultNotifications");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1712,6 +1784,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1807,6 +1882,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateMultipartUpload");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1907,6 +1985,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateVaultLock");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1947,8 +2028,8 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * You can set a maximum limit for the number of jobs returned in the response by specifying the <code>limit</code>
-     * parameter in the request. The default limit is 1000. The number of jobs returned might be fewer than the limit,
-     * but the number of returned jobs never exceeds the limit.
+     * parameter in the request. The default limit is 50. The number of jobs returned might be fewer than the limit, but
+     * the number of returned jobs never exceeds the limit.
      * </p>
      * <p>
      * Additionally, you can filter the jobs list returned by specifying the optional <code>statuscode</code> parameter
@@ -1997,6 +2078,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2020,12 +2104,12 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * completed or aborted. The list returned in the List Multipart Upload response has no guaranteed order.
      * </p>
      * <p>
-     * The List Multipart Uploads operation supports pagination. By default, this operation returns up to 1,000
-     * multipart uploads in the response. You should always check the response for a <code>marker</code> at which to
-     * continue the list; if there are no more items the <code>marker</code> is <code>null</code>. To return a list of
-     * multipart uploads that begins at a specific upload, set the <code>marker</code> request parameter to the value
-     * you obtained from a previous List Multipart Upload request. You can also limit the number of uploads returned in
-     * the response by specifying the <code>limit</code> parameter in the request.
+     * The List Multipart Uploads operation supports pagination. By default, this operation returns up to 50 multipart
+     * uploads in the response. You should always check the response for a <code>marker</code> at which to continue the
+     * list; if there are no more items the <code>marker</code> is <code>null</code>. To return a list of multipart
+     * uploads that begins at a specific upload, set the <code>marker</code> request parameter to the value you obtained
+     * from a previous List Multipart Upload request. You can also limit the number of uploads returned in the response
+     * by specifying the <code>limit</code> parameter in the request.
      * </p>
      * <p>
      * Note the difference between this operation and listing parts (<a>ListParts</a>). The List Multipart Uploads
@@ -2082,6 +2166,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMultipartUploads");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2106,9 +2193,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * Parts response is sorted by part range.
      * </p>
      * <p>
-     * The List Parts operation supports pagination. By default, this operation returns up to 1,000 uploaded parts in
-     * the response. You should always check the response for a <code>marker</code> at which to continue the list; if
-     * there are no more items the <code>marker</code> is <code>null</code>. To return a list of parts that begins at a
+     * The List Parts operation supports pagination. By default, this operation returns up to 50 uploaded parts in the
+     * response. You should always check the response for a <code>marker</code> at which to continue the list; if there
+     * are no more items the <code>marker</code> is <code>null</code>. To return a list of parts that begins at a
      * specific part, set the <code>marker</code> request parameter to the value you obtained from a previous List Parts
      * request. You can also limit the number of parts returned in the response by specifying the <code>limit</code>
      * parameter in the request.
@@ -2164,6 +2251,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListParts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2218,6 +2308,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisionedCapacity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2277,6 +2370,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForVault");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2299,7 +2395,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * ASCII-sorted by vault name.
      * </p>
      * <p>
-     * By default, this operation returns up to 1,000 items. If there are more vaults to list, the response
+     * By default, this operation returns up to 10 items. If there are more vaults to list, the response
      * <code>marker</code> field contains the vault Amazon Resource Name (ARN) at which to continue the list with a new
      * List Vaults request; otherwise, the <code>marker</code> field is <code>null</code>. To return a list of vaults
      * that begins at a specific vault, set the <code>marker</code> request parameter to the vault ARN you obtained from
@@ -2356,6 +2452,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVaults");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2412,6 +2511,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseProvisionedCapacity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2472,6 +2574,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromVault");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2534,6 +2639,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetDataRetrievalPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2596,6 +2704,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetVaultAccessPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2692,6 +2803,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetVaultNotifications");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2788,6 +2902,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadArchive");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2900,6 +3017,9 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glacier");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadMultipartPart");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2940,9 +3060,18 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -2952,7 +3081,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -2960,8 +3089,17 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata()

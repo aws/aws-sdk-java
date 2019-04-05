@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,8 @@ public class CompleteLifecycleActionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance.
-     * Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.
+     * Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle
+     * hook.
      * </p>
      */
     private String lifecycleActionToken;
@@ -140,13 +141,14 @@ public class CompleteLifecycleActionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance.
-     * Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.
+     * Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle
+     * hook.
      * </p>
      * 
      * @param lifecycleActionToken
      *        A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an
-     *        instance. Auto Scaling sends this token to the notification target you specified when you created the
-     *        lifecycle hook.
+     *        instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you
+     *        created the lifecycle hook.
      */
 
     public void setLifecycleActionToken(String lifecycleActionToken) {
@@ -156,12 +158,13 @@ public class CompleteLifecycleActionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance.
-     * Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.
+     * Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle
+     * hook.
      * </p>
      * 
      * @return A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an
-     *         instance. Auto Scaling sends this token to the notification target you specified when you created the
-     *         lifecycle hook.
+     *         instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you
+     *         created the lifecycle hook.
      */
 
     public String getLifecycleActionToken() {
@@ -171,13 +174,14 @@ public class CompleteLifecycleActionRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an instance.
-     * Auto Scaling sends this token to the notification target you specified when you created the lifecycle hook.
+     * Amazon EC2 Auto Scaling sends this token to the notification target you specified when you created the lifecycle
+     * hook.
      * </p>
      * 
      * @param lifecycleActionToken
      *        A universally unique identifier (UUID) that identifies a specific lifecycle action associated with an
-     *        instance. Auto Scaling sends this token to the notification target you specified when you created the
-     *        lifecycle hook.
+     *        instance. Amazon EC2 Auto Scaling sends this token to the notification target you specified when you
+     *        created the lifecycle hook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,7 +274,8 @@ public class CompleteLifecycleActionRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,10 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Applies only if your input aspect ratio is different from your output aspect ratio. Enable Stretch to output
- * (StretchToOutput) to have the service stretch your video image to fit. Leave this setting disabled to allow the
- * service to letterbox your video instead. This setting overrides any positioning value you specify elsewhere in the
- * job.
+ * Applies only if your input aspect ratio is different from your output aspect ratio. Choose "Stretch to output" to
+ * have the service stretch your video image to fit. Keep the setting "Default" to allow the service to letterbox your
+ * video instead. This setting overrides any positioning value you specify elsewhere in the job.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ScalingBehavior {

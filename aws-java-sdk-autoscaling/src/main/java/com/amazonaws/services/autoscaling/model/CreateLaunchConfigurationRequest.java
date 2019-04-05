@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,16 +40,16 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
     private String imageId;
     /**
      * <p>
      * The name of the key pair. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
     private String keyName;
@@ -59,13 +59,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * If your instances are launched in EC2-Classic, you can either specify security group names or the security group
-     * IDs. For more information about security groups for EC2-Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
      * If your instances are launched into a VPC, specify security group IDs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
      * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      */
@@ -74,32 +74,38 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter is supported only if
      * you are launching EC2-Classic instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private String classicLinkVPCId;
     /**
      * <p>
-     * The IDs of one or more security groups for the specified ClassicLink-enabled VPC. This parameter is required if
-     * you specify a ClassicLink-enabled VPC, and is not supported otherwise. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Conditional: This parameter is required if you specify a ClassicLink-enabled VPC, and is not supported otherwise.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> classicLinkVPCSecurityGroups;
     /**
      * <p>
      * The user data to make available to the launched EC2 instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
     private String userData;
     /**
      * <p>
      * The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes
-     * from the instance, with the exception of the block device mapping.
+     * from the instance, except for the block device mapping.
      * </p>
      * <p>
      * If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
@@ -111,8 +117,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create a Launch
-     * Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create a Launch
+     * Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private String instanceId;
@@ -125,8 +131,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
      * </p>
      */
     private String instanceType;
@@ -145,15 +151,15 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * One or more mappings that specify how block devices are exposed to the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
-     * Mapping</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     * Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
     /**
      * <p>
      * Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto Scaling
-     * instances. The default is <code>true</code>.
+     * instances. The default value is <code>true</code>.
      * </p>
      */
     private InstanceMonitoring instanceMonitoring;
@@ -161,8 +167,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are
      * launched when the price you specify exceeds the current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching Spot Instances in
-     * Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching Spot
+     * Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private String spotPrice;
@@ -171,11 +177,11 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.
      * </p>
      * <p>
-     * EC2 instances launched with an IAM role will automatically have AWS security credentials available. You can use
-     * IAM roles with Auto Scaling to automatically enable applications running on your EC2 instances to securely access
-     * other AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch Auto Scaling Instances
-     * with an IAM Role</a> in the <i>Auto Scaling User Guide</i>.
+     * EC2 instances launched with an IAM role automatically have AWS security credentials available. You can use IAM
+     * roles with Amazon EC2 Auto Scaling to automatically enable applications running on your EC2 instances to securely
+     * access other AWS resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use an IAM Role for Applications
+     * That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private String iamInstanceProfile;
@@ -185,8 +191,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * I/O. The optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide
      * optimal I/O performance. This optimization is not available with all instance types. Additional usage charges
      * apply. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
     private Boolean ebsOptimized;
@@ -194,8 +200,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to assign a public IP
      * address to each instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
-     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling Instances in
+     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
@@ -212,16 +218,16 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * and can only be launched into a VPC.
      * </p>
      * <p>
-     * You must set the value of this parameter to <code>dedicated</code> if want to launch Dedicated Instances into a
-     * shared tenancy VPC (VPC with instance placement tenancy attribute set to <code>default</code>).
+     * To launch Dedicated Instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set
+     * to <code>default</code>), you must set the value of this parameter to <code>dedicated</code>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
-     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling Instances in
+     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>default</code> | <code>dedicated</code>
@@ -278,8 +284,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param imageId
@@ -289,8 +295,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     *        <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public void setImageId(String imageId) {
@@ -306,8 +312,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.</p>
@@ -316,8 +322,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     *         <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public String getImageId() {
@@ -333,8 +339,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param imageId
@@ -344,8 +350,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+     *        <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,14 +363,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The name of the key pair. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param keyName
      *        The name of the key pair. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public void setKeyName(String keyName) {
@@ -374,13 +380,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The name of the key pair. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return The name of the key pair. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in
+     *         the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public String getKeyName() {
@@ -390,14 +396,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The name of the key pair. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param keyName
      *        The name of the key pair. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -412,26 +418,26 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * If your instances are launched in EC2-Classic, you can either specify security group names or the security group
-     * IDs. For more information about security groups for EC2-Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
      * If your instances are launched into a VPC, specify security group IDs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
      * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @return One or more security groups with which to associate the instances.</p>
      *         <p>
      *         If your instances are launched in EC2-Classic, you can either specify security group names or the
-     *         security group IDs. For more information about security groups for EC2-Classic, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-     *         Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         security group IDs. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2
+     *         Security Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      *         </p>
      *         <p>
      *         If your instances are launched into a VPC, specify security group IDs. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
+     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
      *         Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
 
@@ -448,13 +454,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * If your instances are launched in EC2-Classic, you can either specify security group names or the security group
-     * IDs. For more information about security groups for EC2-Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
      * If your instances are launched into a VPC, specify security group IDs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
      * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -462,13 +468,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        One or more security groups with which to associate the instances.</p>
      *        <p>
      *        If your instances are launched in EC2-Classic, you can either specify security group names or the security
-     *        group IDs. For more information about security groups for EC2-Classic, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-     *        Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        group IDs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
+     *        Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      *        </p>
      *        <p>
      *        If your instances are launched into a VPC, specify security group IDs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
      *        Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
 
@@ -487,13 +493,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * If your instances are launched in EC2-Classic, you can either specify security group names or the security group
-     * IDs. For more information about security groups for EC2-Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
      * If your instances are launched into a VPC, specify security group IDs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
      * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
@@ -506,13 +512,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        One or more security groups with which to associate the instances.</p>
      *        <p>
      *        If your instances are launched in EC2-Classic, you can either specify security group names or the security
-     *        group IDs. For more information about security groups for EC2-Classic, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-     *        Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        group IDs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
+     *        Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      *        </p>
      *        <p>
      *        If your instances are launched into a VPC, specify security group IDs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
      *        Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -533,13 +539,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * If your instances are launched in EC2-Classic, you can either specify security group names or the security group
-     * IDs. For more information about security groups for EC2-Classic, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * IDs. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
      * If your instances are launched into a VPC, specify security group IDs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
      * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -547,13 +553,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        One or more security groups with which to associate the instances.</p>
      *        <p>
      *        If your instances are launched in EC2-Classic, you can either specify security group names or the security
-     *        group IDs. For more information about security groups for EC2-Classic, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
-     *        Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        group IDs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
+     *        Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      *        </p>
      *        <p>
      *        If your instances are launched into a VPC, specify security group IDs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for
      *        Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -567,15 +573,19 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter is supported only if
      * you are launching EC2-Classic instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param classicLinkVPCId
      *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter is supported
      *        only if you are launching EC2-Classic instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+     *        <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *        EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setClassicLinkVPCId(String classicLinkVPCId) {
@@ -586,14 +596,18 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter is supported only if
      * you are launching EC2-Classic instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter is supported
      *         only if you are launching EC2-Classic instances. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+     *         <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *         EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public String getClassicLinkVPCId() {
@@ -604,15 +618,19 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter is supported only if
      * you are launching EC2-Classic instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param classicLinkVPCId
      *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. This parameter is supported
      *        only if you are launching EC2-Classic instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+     *        <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *        EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -623,16 +641,24 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The IDs of one or more security groups for the specified ClassicLink-enabled VPC. This parameter is required if
-     * you specify a ClassicLink-enabled VPC, and is not supported otherwise. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Conditional: This parameter is required if you specify a ClassicLink-enabled VPC, and is not supported otherwise.
      * </p>
      * 
-     * @return The IDs of one or more security groups for the specified ClassicLink-enabled VPC. This parameter is
-     *         required if you specify a ClassicLink-enabled VPC, and is not supported otherwise. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For more information,
+     *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in
+     *         the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *         EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     *         <p>
+     *         Conditional: This parameter is required if you specify a ClassicLink-enabled VPC, and is not supported
+     *         otherwise.
      */
 
     public java.util.List<String> getClassicLinkVPCSecurityGroups() {
@@ -644,17 +670,25 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The IDs of one or more security groups for the specified ClassicLink-enabled VPC. This parameter is required if
-     * you specify a ClassicLink-enabled VPC, and is not supported otherwise. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Conditional: This parameter is required if you specify a ClassicLink-enabled VPC, and is not supported otherwise.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the specified ClassicLink-enabled VPC. This parameter is
-     *        required if you specify a ClassicLink-enabled VPC, and is not supported otherwise. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *        EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     *        <p>
+     *        Conditional: This parameter is required if you specify a ClassicLink-enabled VPC, and is not supported
+     *        otherwise.
      */
 
     public void setClassicLinkVPCSecurityGroups(java.util.Collection<String> classicLinkVPCSecurityGroups) {
@@ -668,10 +702,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The IDs of one or more security groups for the specified ClassicLink-enabled VPC. This parameter is required if
-     * you specify a ClassicLink-enabled VPC, and is not supported otherwise. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Conditional: This parameter is required if you specify a ClassicLink-enabled VPC, and is not supported otherwise.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -680,10 +718,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the specified ClassicLink-enabled VPC. This parameter is
-     *        required if you specify a ClassicLink-enabled VPC, and is not supported otherwise. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *        EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     *        <p>
+     *        Conditional: This parameter is required if you specify a ClassicLink-enabled VPC, and is not supported
+     *        otherwise.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -699,17 +741,25 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The IDs of one or more security groups for the specified ClassicLink-enabled VPC. This parameter is required if
-     * you specify a ClassicLink-enabled VPC, and is not supported otherwise. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
+     * EC2 User Guide for Linux Instances</i> and <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+     * Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Conditional: This parameter is required if you specify a ClassicLink-enabled VPC, and is not supported otherwise.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        The IDs of one or more security groups for the specified ClassicLink-enabled VPC. This parameter is
-     *        required if you specify a ClassicLink-enabled VPC, and is not supported otherwise. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     *        EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     *        <p>
+     *        Conditional: This parameter is required if you specify a ClassicLink-enabled VPC, and is not supported
+     *        otherwise.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -721,14 +771,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The user data to make available to the launched EC2 instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param userData
      *        The user data to make available to the launched EC2 instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and
-     *        User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
+     *        and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public void setUserData(String userData) {
@@ -738,13 +788,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The user data to make available to the launched EC2 instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return The user data to make available to the launched EC2 instances. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
-     *         and User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
+     *         and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public String getUserData() {
@@ -754,14 +804,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The user data to make available to the launched EC2 instances. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
-     * Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param userData
      *        The user data to make available to the launched EC2 instances. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and
-     *        User Data</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
+     *        and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -773,7 +823,7 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes
-     * from the instance, with the exception of the block device mapping.
+     * from the instance, except for the block device mapping.
      * </p>
      * <p>
      * If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
@@ -785,13 +835,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create a Launch
-     * Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create a Launch
+     * Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param instanceId
      *        The ID of the instance to use to create the launch configuration. The new launch configuration derives
-     *        attributes from the instance, with the exception of the block device mapping.</p>
+     *        attributes from the instance, except for the block device mapping.</p>
      *        <p>
      *        If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
      *        <code>InstanceType</code>.
@@ -802,8 +852,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create a
-     *        Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create a
+     *        Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setInstanceId(String instanceId) {
@@ -813,7 +863,7 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes
-     * from the instance, with the exception of the block device mapping.
+     * from the instance, except for the block device mapping.
      * </p>
      * <p>
      * If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
@@ -825,12 +875,12 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create a Launch
-     * Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create a Launch
+     * Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The ID of the instance to use to create the launch configuration. The new launch configuration derives
-     *         attributes from the instance, with the exception of the block device mapping.</p>
+     *         attributes from the instance, except for the block device mapping.</p>
      *         <p>
      *         If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
      *         <code>InstanceType</code>.
@@ -841,8 +891,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create a
-     *         Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create a
+     *         Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public String getInstanceId() {
@@ -852,7 +902,7 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes
-     * from the instance, with the exception of the block device mapping.
+     * from the instance, except for the block device mapping.
      * </p>
      * <p>
      * If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
@@ -864,13 +914,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create a Launch
-     * Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create a Launch
+     * Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param instanceId
      *        The ID of the instance to use to create the launch configuration. The new launch configuration derives
-     *        attributes from the instance, with the exception of the block device mapping.</p>
+     *        attributes from the instance, except for the block device mapping.</p>
      *        <p>
      *        If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
      *        <code>InstanceType</code>.
@@ -881,8 +931,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create a
-     *        Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Create a
+     *        Launch Configuration Using an EC2 Instance</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -900,8 +950,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
      * </p>
      * 
      * @param instanceType
@@ -911,8 +961,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <p>
      *        For information about available instance types, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
+     *        >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
      */
 
     public void setInstanceType(String instanceType) {
@@ -928,8 +978,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
      * </p>
      * 
      * @return The instance type of the EC2 instance.</p>
@@ -938,8 +988,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *         </p>
      *         <p>
      *         For information about available instance types, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *         >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
+     *         >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
      */
 
     public String getInstanceType() {
@@ -955,8 +1005,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-     * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
      * </p>
      * 
      * @param instanceType
@@ -966,8 +1016,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <p>
      *        For information about available instance types, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
+     *        >Available Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1059,13 +1109,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * One or more mappings that specify how block devices are exposed to the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
-     * Mapping</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     * Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return One or more mappings that specify how block devices are exposed to the instance. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-     *         Device Mapping</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     *         Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -1078,14 +1129,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * One or more mappings that specify how block devices are exposed to the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
-     * Mapping</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     * Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param blockDeviceMappings
      *        One or more mappings that specify how block devices are exposed to the instance. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-     *        Device Mapping</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     *        Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -1100,8 +1151,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * One or more mappings that specify how block devices are exposed to the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
-     * Mapping</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     * Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1111,8 +1162,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param blockDeviceMappings
      *        One or more mappings that specify how block devices are exposed to the instance. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-     *        Device Mapping</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     *        Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1129,14 +1180,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * One or more mappings that specify how block devices are exposed to the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
-     * Mapping</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+     * Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param blockDeviceMappings
      *        One or more mappings that specify how block devices are exposed to the instance. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
-     *        Device Mapping</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
+     *        Device Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1148,12 +1199,12 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto Scaling
-     * instances. The default is <code>true</code>.
+     * instances. The default value is <code>true</code>.
      * </p>
      * 
      * @param instanceMonitoring
      *        Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto
-     *        Scaling instances. The default is <code>true</code>.
+     *        Scaling instances. The default value is <code>true</code>.
      */
 
     public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
@@ -1163,11 +1214,11 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto Scaling
-     * instances. The default is <code>true</code>.
+     * instances. The default value is <code>true</code>.
      * </p>
      * 
      * @return Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto
-     *         Scaling instances. The default is <code>true</code>.
+     *         Scaling instances. The default value is <code>true</code>.
      */
 
     public InstanceMonitoring getInstanceMonitoring() {
@@ -1177,12 +1228,12 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto Scaling
-     * instances. The default is <code>true</code>.
+     * instances. The default value is <code>true</code>.
      * </p>
      * 
      * @param instanceMonitoring
      *        Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto
-     *        Scaling instances. The default is <code>true</code>.
+     *        Scaling instances. The default value is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1195,15 +1246,15 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are
      * launched when the price you specify exceeds the current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching Spot Instances in
-     * Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching Spot
+     * Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param spotPrice
      *        The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances
      *        are launched when the price you specify exceeds the current Spot market price. For more information, see
-     *        <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching Spot
-     *        Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     *        <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
+     *        Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setSpotPrice(String spotPrice) {
@@ -1214,14 +1265,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are
      * launched when the price you specify exceeds the current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching Spot Instances in
-     * Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching Spot
+     * Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances
      *         are launched when the price you specify exceeds the current Spot market price. For more information, see
-     *         <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching Spot
-     *         Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     *         <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
+     *         Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public String getSpotPrice() {
@@ -1232,15 +1283,15 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are
      * launched when the price you specify exceeds the current Spot market price. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching Spot Instances in
-     * Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching Spot
+     * Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param spotPrice
      *        The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances
      *        are launched when the price you specify exceeds the current Spot market price. For more information, see
-     *        <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching Spot
-     *        Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     *        <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
+     *        Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1254,22 +1305,22 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.
      * </p>
      * <p>
-     * EC2 instances launched with an IAM role will automatically have AWS security credentials available. You can use
-     * IAM roles with Auto Scaling to automatically enable applications running on your EC2 instances to securely access
-     * other AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch Auto Scaling Instances
-     * with an IAM Role</a> in the <i>Auto Scaling User Guide</i>.
+     * EC2 instances launched with an IAM role automatically have AWS security credentials available. You can use IAM
+     * roles with Amazon EC2 Auto Scaling to automatically enable applications running on your EC2 instances to securely
+     * access other AWS resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use an IAM Role for Applications
+     * That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param iamInstanceProfile
      *        The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the
      *        instance.</p>
      *        <p>
-     *        EC2 instances launched with an IAM role will automatically have AWS security credentials available. You
-     *        can use IAM roles with Auto Scaling to automatically enable applications running on your EC2 instances to
-     *        securely access other AWS resources. For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch Auto Scaling
-     *        Instances with an IAM Role</a> in the <i>Auto Scaling User Guide</i>.
+     *        EC2 instances launched with an IAM role automatically have AWS security credentials available. You can use
+     *        IAM roles with Amazon EC2 Auto Scaling to automatically enable applications running on your EC2 instances
+     *        to securely access other AWS resources. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use an IAM Role for
+     *        Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setIamInstanceProfile(String iamInstanceProfile) {
@@ -1281,21 +1332,21 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.
      * </p>
      * <p>
-     * EC2 instances launched with an IAM role will automatically have AWS security credentials available. You can use
-     * IAM roles with Auto Scaling to automatically enable applications running on your EC2 instances to securely access
-     * other AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch Auto Scaling Instances
-     * with an IAM Role</a> in the <i>Auto Scaling User Guide</i>.
+     * EC2 instances launched with an IAM role automatically have AWS security credentials available. You can use IAM
+     * roles with Amazon EC2 Auto Scaling to automatically enable applications running on your EC2 instances to securely
+     * access other AWS resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use an IAM Role for Applications
+     * That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the
      *         instance.</p>
      *         <p>
-     *         EC2 instances launched with an IAM role will automatically have AWS security credentials available. You
-     *         can use IAM roles with Auto Scaling to automatically enable applications running on your EC2 instances to
-     *         securely access other AWS resources. For more information, see <a
-     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch Auto Scaling
-     *         Instances with an IAM Role</a> in the <i>Auto Scaling User Guide</i>.
+     *         EC2 instances launched with an IAM role automatically have AWS security credentials available. You can
+     *         use IAM roles with Amazon EC2 Auto Scaling to automatically enable applications running on your EC2
+     *         instances to securely access other AWS resources. For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use an IAM Role for
+     *         Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public String getIamInstanceProfile() {
@@ -1307,22 +1358,22 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instance.
      * </p>
      * <p>
-     * EC2 instances launched with an IAM role will automatically have AWS security credentials available. You can use
-     * IAM roles with Auto Scaling to automatically enable applications running on your EC2 instances to securely access
-     * other AWS resources. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch Auto Scaling Instances
-     * with an IAM Role</a> in the <i>Auto Scaling User Guide</i>.
+     * EC2 instances launched with an IAM role automatically have AWS security credentials available. You can use IAM
+     * roles with Amazon EC2 Auto Scaling to automatically enable applications running on your EC2 instances to securely
+     * access other AWS resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use an IAM Role for Applications
+     * That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param iamInstanceProfile
      *        The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the
      *        instance.</p>
      *        <p>
-     *        EC2 instances launched with an IAM role will automatically have AWS security credentials available. You
-     *        can use IAM roles with Auto Scaling to automatically enable applications running on your EC2 instances to
-     *        securely access other AWS resources. For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch Auto Scaling
-     *        Instances with an IAM Role</a> in the <i>Auto Scaling User Guide</i>.
+     *        EC2 instances launched with an IAM role automatically have AWS security credentials available. You can use
+     *        IAM roles with Amazon EC2 Auto Scaling to automatically enable applications running on your EC2 instances
+     *        to securely access other AWS resources. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">Use an IAM Role for
+     *        Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1337,8 +1388,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * I/O. The optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide
      * optimal I/O performance. This optimization is not available with all instance types. Additional usage charges
      * apply. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param ebsOptimized
@@ -1346,8 +1397,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        for EBS I/O. The optimization provides dedicated throughput to Amazon EBS and an optimized configuration
      *        stack to provide optimal I/O performance. This optimization is not available with all instance types.
      *        Additional usage charges apply. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
-     *        Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
+     *        Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public void setEbsOptimized(Boolean ebsOptimized) {
@@ -1360,16 +1411,16 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * I/O. The optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide
      * optimal I/O performance. This optimization is not available with all instance types. Additional usage charges
      * apply. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return Indicates whether the instance is optimized for Amazon EBS I/O. By default, the instance is not optimized
      *         for EBS I/O. The optimization provides dedicated throughput to Amazon EBS and an optimized configuration
      *         stack to provide optimal I/O performance. This optimization is not available with all instance types.
      *         Additional usage charges apply. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
-     *         Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
+     *         Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public Boolean getEbsOptimized() {
@@ -1382,8 +1433,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * I/O. The optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide
      * optimal I/O performance. This optimization is not available with all instance types. Additional usage charges
      * apply. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param ebsOptimized
@@ -1391,8 +1442,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        for EBS I/O. The optimization provides dedicated throughput to Amazon EBS and an optimized configuration
      *        stack to provide optimal I/O performance. This optimization is not available with all instance types.
      *        Additional usage charges apply. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
-     *        Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
+     *        Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1407,16 +1458,16 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * I/O. The optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide
      * optimal I/O performance. This optimization is not available with all instance types. Additional usage charges
      * apply. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances</a>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return Indicates whether the instance is optimized for Amazon EBS I/O. By default, the instance is not optimized
      *         for EBS I/O. The optimization provides dedicated throughput to Amazon EBS and an optimized configuration
      *         stack to provide optimal I/O performance. This optimization is not available with all instance types.
      *         Additional usage charges apply. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
-     *         Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized
+     *         Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public Boolean isEbsOptimized() {
@@ -1427,8 +1478,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to assign a public IP
      * address to each instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
-     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling Instances in
+     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
@@ -1441,8 +1492,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * @param associatePublicIpAddress
      *        Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to assign a
      *        public IP address to each instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling
-     *        Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
+     *        Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      *        <p>
      *        If you specify this parameter, be sure to specify at least one subnet when you create your group.
      *        </p>
@@ -1459,8 +1510,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to assign a public IP
      * address to each instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
-     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling Instances in
+     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
@@ -1472,8 +1523,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * 
      * @return Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to assign a
      *         public IP address to each instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling
-     *         Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
+     *         Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      *         <p>
      *         If you specify this parameter, be sure to specify at least one subnet when you create your group.
      *         </p>
@@ -1490,8 +1541,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to assign a public IP
      * address to each instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
-     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling Instances in
+     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
@@ -1504,8 +1555,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * @param associatePublicIpAddress
      *        Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to assign a
      *        public IP address to each instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling
-     *        Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
+     *        Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      *        <p>
      *        If you specify this parameter, be sure to specify at least one subnet when you create your group.
      *        </p>
@@ -1524,8 +1575,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to assign a public IP
      * address to each instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
-     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling Instances in
+     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
@@ -1537,8 +1588,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * 
      * @return Used for groups that launch instances into a virtual private cloud (VPC). Specifies whether to assign a
      *         public IP address to each instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling
-     *         Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.</p>
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
+     *         Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      *         <p>
      *         If you specify this parameter, be sure to specify at least one subnet when you create your group.
      *         </p>
@@ -1557,16 +1608,16 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * and can only be launched into a VPC.
      * </p>
      * <p>
-     * You must set the value of this parameter to <code>dedicated</code> if want to launch Dedicated Instances into a
-     * shared tenancy VPC (VPC with instance placement tenancy attribute set to <code>default</code>).
+     * To launch Dedicated Instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set
+     * to <code>default</code>), you must set the value of this parameter to <code>dedicated</code>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
-     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling Instances in
+     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>default</code> | <code>dedicated</code>
@@ -1576,16 +1627,17 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs on single-tenant
      *        hardware and can only be launched into a VPC.</p>
      *        <p>
-     *        You must set the value of this parameter to <code>dedicated</code> if want to launch Dedicated Instances
-     *        into a shared tenancy VPC (VPC with instance placement tenancy attribute set to <code>default</code>).
+     *        To launch Dedicated Instances into a shared tenancy VPC (a VPC with the instance placement tenancy
+     *        attribute set to <code>default</code>), you must set the value of this parameter to <code>dedicated</code>
+     *        .
      *        </p>
      *        <p>
      *        If you specify this parameter, be sure to specify at least one subnet when you create your group.
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling
-     *        Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
+     *        Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
      *        Valid values: <code>default</code> | <code>dedicated</code>
@@ -1601,16 +1653,16 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * and can only be launched into a VPC.
      * </p>
      * <p>
-     * You must set the value of this parameter to <code>dedicated</code> if want to launch Dedicated Instances into a
-     * shared tenancy VPC (VPC with instance placement tenancy attribute set to <code>default</code>).
+     * To launch Dedicated Instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set
+     * to <code>default</code>), you must set the value of this parameter to <code>dedicated</code>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
-     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling Instances in
+     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>default</code> | <code>dedicated</code>
@@ -1619,16 +1671,17 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * @return The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs on single-tenant
      *         hardware and can only be launched into a VPC.</p>
      *         <p>
-     *         You must set the value of this parameter to <code>dedicated</code> if want to launch Dedicated Instances
-     *         into a shared tenancy VPC (VPC with instance placement tenancy attribute set to <code>default</code>).
+     *         To launch Dedicated Instances into a shared tenancy VPC (a VPC with the instance placement tenancy
+     *         attribute set to <code>default</code>), you must set the value of this parameter to
+     *         <code>dedicated</code>.
      *         </p>
      *         <p>
      *         If you specify this parameter, be sure to specify at least one subnet when you create your group.
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling
-     *         Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
+     *         Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      *         </p>
      *         <p>
      *         Valid values: <code>default</code> | <code>dedicated</code>
@@ -1644,16 +1697,16 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * and can only be launched into a VPC.
      * </p>
      * <p>
-     * You must set the value of this parameter to <code>dedicated</code> if want to launch Dedicated Instances into a
-     * shared tenancy VPC (VPC with instance placement tenancy attribute set to <code>default</code>).
+     * To launch Dedicated Instances into a shared tenancy VPC (a VPC with the instance placement tenancy attribute set
+     * to <code>default</code>), you must set the value of this parameter to <code>dedicated</code>.
      * </p>
      * <p>
      * If you specify this parameter, be sure to specify at least one subnet when you create your group.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling Instances
-     * in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling Instances in
+     * a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Valid values: <code>default</code> | <code>dedicated</code>
@@ -1663,16 +1716,17 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      *        The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs on single-tenant
      *        hardware and can only be launched into a VPC.</p>
      *        <p>
-     *        You must set the value of this parameter to <code>dedicated</code> if want to launch Dedicated Instances
-     *        into a shared tenancy VPC (VPC with instance placement tenancy attribute set to <code>default</code>).
+     *        To launch Dedicated Instances into a shared tenancy VPC (a VPC with the instance placement tenancy
+     *        attribute set to <code>default</code>), you must set the value of this parameter to <code>dedicated</code>
+     *        .
      *        </p>
      *        <p>
      *        If you specify this parameter, be sure to specify at least one subnet when you create your group.
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching Auto Scaling
-     *        Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling
+     *        Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      *        </p>
      *        <p>
      *        Valid values: <code>default</code> | <code>dedicated</code>
@@ -1685,7 +1739,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

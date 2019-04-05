@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The filters that you used to filter your request. Some dimensions are available only for a specific context:
+     * The filters that you used to filter your request. Some dimensions are available only for a specific context.
      * </p>
      * <p>
      * If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:
@@ -43,7 +43,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     * INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      * </p>
      * </li>
      * <li>
@@ -69,7 +69,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     * PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      * </p>
      * </li>
      * <li>
@@ -91,8 +91,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The response for
-     * this operation includes a unit attribute.
+     * USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
+     * response for this operation includes a unit attribute.
      * </p>
      * </li>
      * <li>
@@ -123,7 +123,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     * INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      * </p>
      * </li>
      * <li>
@@ -134,7 +134,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     * PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      * </p>
      * </li>
      * <li>
@@ -183,7 +183,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The filters that you used to filter your request. Some dimensions are available only for a specific context:
+     * The filters that you used to filter your request. Some dimensions are available only for a specific context.
      * </p>
      * <p>
      * If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:
@@ -201,7 +201,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     * INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      * </p>
      * </li>
      * <li>
@@ -227,7 +227,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     * PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      * </p>
      * </li>
      * <li>
@@ -249,8 +249,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The response for
-     * this operation includes a unit attribute.
+     * USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
+     * response for this operation includes a unit attribute.
      * </p>
      * </li>
      * <li>
@@ -281,7 +281,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     * INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      * </p>
      * </li>
      * <li>
@@ -292,7 +292,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     * PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      * </p>
      * </li>
      * <li>
@@ -319,7 +319,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </ul>
      * 
      * @return The filters that you used to filter your request. Some dimensions are available only for a specific
-     *         context:</p>
+     *         context.</p>
      *         <p>
      *         If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for
      *         searching:
@@ -337,7 +337,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *         </li>
      *         <li>
      *         <p>
-     *         INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     *         INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -365,7 +365,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *         </li>
      *         <li>
      *         <p>
-     *         PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     *         PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      *         </p>
      *         </li>
      *         <li>
@@ -387,7 +387,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *         </li>
      *         <li>
      *         <p>
-     *         USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The
+     *         USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
      *         response for this operation includes a unit attribute.
      *         </p>
      *         </li>
@@ -419,7 +419,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *         </li>
      *         <li>
      *         <p>
-     *         INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     *         INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -430,7 +430,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *         </li>
      *         <li>
      *         <p>
-     *         PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     *         PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      *         </p>
      *         </li>
      *         <li>
@@ -462,7 +462,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The filters that you used to filter your request. Some dimensions are available only for a specific context:
+     * The filters that you used to filter your request. Some dimensions are available only for a specific context.
      * </p>
      * <p>
      * If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:
@@ -480,7 +480,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     * INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      * </p>
      * </li>
      * <li>
@@ -506,7 +506,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     * PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      * </p>
      * </li>
      * <li>
@@ -528,8 +528,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The response for
-     * this operation includes a unit attribute.
+     * USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
+     * response for this operation includes a unit attribute.
      * </p>
      * </li>
      * <li>
@@ -560,7 +560,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     * INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      * </p>
      * </li>
      * <li>
@@ -571,7 +571,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     * PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      * </p>
      * </li>
      * <li>
@@ -599,7 +599,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * 
      * @param dimensionValues
      *        The filters that you used to filter your request. Some dimensions are available only for a specific
-     *        context:</p>
+     *        context.</p>
      *        <p>
      *        If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:
      *        </p>
@@ -616,7 +616,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     *        INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -642,7 +642,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     *        PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      *        </p>
      *        </li>
      *        <li>
@@ -664,7 +664,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The
+     *        USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
      *        response for this operation includes a unit attribute.
      *        </p>
      *        </li>
@@ -696,7 +696,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     *        INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -707,7 +707,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     *        PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      *        </p>
      *        </li>
      *        <li>
@@ -744,7 +744,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The filters that you used to filter your request. Some dimensions are available only for a specific context:
+     * The filters that you used to filter your request. Some dimensions are available only for a specific context.
      * </p>
      * <p>
      * If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:
@@ -762,7 +762,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     * INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      * </p>
      * </li>
      * <li>
@@ -788,7 +788,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     * PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      * </p>
      * </li>
      * <li>
@@ -810,8 +810,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The response for
-     * this operation includes a unit attribute.
+     * USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
+     * response for this operation includes a unit attribute.
      * </p>
      * </li>
      * <li>
@@ -842,7 +842,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     * INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      * </p>
      * </li>
      * <li>
@@ -853,7 +853,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     * PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      * </p>
      * </li>
      * <li>
@@ -886,7 +886,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * 
      * @param dimensionValues
      *        The filters that you used to filter your request. Some dimensions are available only for a specific
-     *        context:</p>
+     *        context.</p>
      *        <p>
      *        If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:
      *        </p>
@@ -903,7 +903,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     *        INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -929,7 +929,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     *        PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      *        </p>
      *        </li>
      *        <li>
@@ -951,7 +951,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The
+     *        USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
      *        response for this operation includes a unit attribute.
      *        </p>
      *        </li>
@@ -983,7 +983,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     *        INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -994,7 +994,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     *        PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      *        </p>
      *        </li>
      *        <li>
@@ -1033,7 +1033,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The filters that you used to filter your request. Some dimensions are available only for a specific context:
+     * The filters that you used to filter your request. Some dimensions are available only for a specific context.
      * </p>
      * <p>
      * If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:
@@ -1051,7 +1051,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     * INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      * </p>
      * </li>
      * <li>
@@ -1077,7 +1077,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     * PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      * </p>
      * </li>
      * <li>
@@ -1099,8 +1099,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The response for
-     * this operation includes a unit attribute.
+     * USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
+     * response for this operation includes a unit attribute.
      * </p>
      * </li>
      * <li>
@@ -1131,7 +1131,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     * INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      * </p>
      * </li>
      * <li>
@@ -1142,7 +1142,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     * PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      * </p>
      * </li>
      * <li>
@@ -1170,7 +1170,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      * 
      * @param dimensionValues
      *        The filters that you used to filter your request. Some dimensions are available only for a specific
-     *        context:</p>
+     *        context.</p>
      *        <p>
      *        If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:
      *        </p>
@@ -1187,7 +1187,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     *        INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1213,7 +1213,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     *        PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      *        </p>
      *        </li>
      *        <li>
@@ -1235,7 +1235,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The
+     *        USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
      *        response for this operation includes a unit attribute.
      *        </p>
      *        </li>
@@ -1267,7 +1267,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+     *        INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1278,7 +1278,7 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+     *        PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
      *        </p>
      *        </li>
      *        <li>
@@ -1437,7 +1437,8 @@ public class GetDimensionValuesResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

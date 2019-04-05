@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the friendly name of the new secret.
      * </p>
+     * <p>
+     * The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
+     * </p>
+     * <note>
+     * <p>
+     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
+     * a hyphen and six random characters at the end of the ARN.
+     * </p>
+     * </note>
      */
     private String name;
     /**
@@ -39,7 +49,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
-     * CLI or SDK generates a random UUID for you and includes as the value for this parameter in the request. If you
+     * CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you
      * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
      * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
      * </p>
@@ -73,7 +83,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      */
     private String clientRequestToken;
@@ -85,12 +95,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /**
      * <p>
-     * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
+     * (Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
      * <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.
      * </p>
      * <p>
+     * You can specify any of the supported ways to identify a AWS KMS key ID. If you need to reference a CMK in a
+     * different account, you can use only the key ARN or the alias ARN.
+     * </p>
+     * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets Manager
+     * named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet exist, then Secrets Manager
      * creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or
      * <code>SecretBinary</code> fields.
      * </p>
@@ -135,7 +149,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
@@ -173,7 +187,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * This parameter requires a JSON text string argument. For information on how to format a JSON parameter for the
      * various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
@@ -229,9 +243,28 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the friendly name of the new secret.
      * </p>
+     * <p>
+     * The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
+     * </p>
+     * <note>
+     * <p>
+     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
+     * a hyphen and six random characters at the end of the ARN.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        Specifies the friendly name of the new secret.
+     *        Specifies the friendly name of the new secret.</p>
+     *        <p>
+     *        The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     *        unexpected results when searching for a secret by partial ARN. This is because Secrets Manager
+     *        automatically adds a hyphen and six random characters at the end of the ARN.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -242,8 +275,27 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the friendly name of the new secret.
      * </p>
+     * <p>
+     * The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
+     * </p>
+     * <note>
+     * <p>
+     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
+     * a hyphen and six random characters at the end of the ARN.
+     * </p>
+     * </note>
      * 
-     * @return Specifies the friendly name of the new secret.
+     * @return Specifies the friendly name of the new secret.</p>
+     *         <p>
+     *         The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     *         unexpected results when searching for a secret by partial ARN. This is because Secrets Manager
+     *         automatically adds a hyphen and six random characters at the end of the ARN.
+     *         </p>
      */
 
     public String getName() {
@@ -254,9 +306,28 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the friendly name of the new secret.
      * </p>
+     * <p>
+     * The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
+     * </p>
+     * <note>
+     * <p>
+     * Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     * unexpected results when searching for a secret by partial ARN. This is because Secrets Manager automatically adds
+     * a hyphen and six random characters at the end of the ARN.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        Specifies the friendly name of the new secret.
+     *        Specifies the friendly name of the new secret.</p>
+     *        <p>
+     *        The secret name must be ASCII letters, digits, or the following characters : /_+=.@-
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Don't end your secret name with a hyphen followed by six characters. If you do so, you risk confusion and
+     *        unexpected results when searching for a secret by partial ARN. This is because Secrets Manager
+     *        automatically adds a hyphen and six random characters at the end of the ARN.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,7 +344,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
-     * CLI or SDK generates a random UUID for you and includes as the value for this parameter in the request. If you
+     * CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you
      * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
      * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
      * </p>
@@ -307,7 +378,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @param clientRequestToken
@@ -316,10 +387,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p> <note>
      *        <p>
      *        If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
-     *        empty. The CLI or SDK generates a random UUID for you and includes as the value for this parameter in the
-     *        request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service
-     *        endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and
-     *        include that value in the request.
+     *        empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in
+     *        the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+     *        service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
+     *        and include that value in the request.
      *        </p>
      *        </note>
      *        <p>
@@ -351,7 +422,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        This value becomes the <code>SecretVersionId</code> of the new version.
+     *        This value becomes the <code>VersionId</code> of the new version.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -366,7 +437,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
-     * CLI or SDK generates a random UUID for you and includes as the value for this parameter in the request. If you
+     * CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you
      * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
      * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
      * </p>
@@ -400,7 +471,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @return (Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an initial version
@@ -408,10 +479,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p> <note>
      *         <p>
      *         If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
-     *         empty. The CLI or SDK generates a random UUID for you and includes as the value for this parameter in the
-     *         request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service
-     *         endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and
-     *         include that value in the request.
+     *         empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in
+     *         the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+     *         service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
+     *         and include that value in the request.
      *         </p>
      *         </note>
      *         <p>
@@ -443,7 +514,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         </ul>
      *         <p>
-     *         This value becomes the <code>SecretVersionId</code> of the new version.
+     *         This value becomes the <code>VersionId</code> of the new version.
      */
 
     public String getClientRequestToken() {
@@ -458,7 +529,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
-     * CLI or SDK generates a random UUID for you and includes as the value for this parameter in the request. If you
+     * CLI or SDK generates a random UUID for you and includes it as the value for this parameter in the request. If you
      * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
      * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
      * </p>
@@ -492,7 +563,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * This value becomes the <code>SecretVersionId</code> of the new version.
+     * This value becomes the <code>VersionId</code> of the new version.
      * </p>
      * 
      * @param clientRequestToken
@@ -501,10 +572,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p> <note>
      *        <p>
      *        If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
-     *        empty. The CLI or SDK generates a random UUID for you and includes as the value for this parameter in the
-     *        request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service
-     *        endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and
-     *        include that value in the request.
+     *        empty. The CLI or SDK generates a random UUID for you and includes it as the value for this parameter in
+     *        the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
+     *        service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
+     *        and include that value in the request.
      *        </p>
      *        </note>
      *        <p>
@@ -536,7 +607,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        This value becomes the <code>SecretVersionId</code> of the new version.
+     *        This value becomes the <code>VersionId</code> of the new version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -587,12 +658,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
+     * (Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
      * <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.
      * </p>
      * <p>
+     * You can specify any of the supported ways to identify a AWS KMS key ID. If you need to reference a CMK in a
+     * different account, you can use only the key ARN or the alias ARN.
+     * </p>
+     * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets Manager
+     * named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet exist, then Secrets Manager
      * creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or
      * <code>SecretBinary</code> fields.
      * </p>
@@ -605,12 +680,17 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </important>
      * 
      * @param kmsKeyId
-     *        (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
-     *        <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.</p>
+     *        (Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to be used to
+     *        encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this
+     *        secret.</p>
+     *        <p>
+     *        You can specify any of the supported ways to identify a AWS KMS key ID. If you need to reference a CMK in
+     *        a different account, you can use only the key ARN or the alias ARN.
+     *        </p>
      *        <p>
      *        If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the
-     *        one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets
-     *        Manager creates it for you automatically the first time it needs to encrypt a version's
+     *        one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet exist, then
+     *        Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
      *        <code>SecretString</code> or <code>SecretBinary</code> fields.
      *        </p>
      *        <important>
@@ -627,12 +707,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
+     * (Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
      * <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.
      * </p>
      * <p>
+     * You can specify any of the supported ways to identify a AWS KMS key ID. If you need to reference a CMK in a
+     * different account, you can use only the key ARN or the alias ARN.
+     * </p>
+     * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets Manager
+     * named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet exist, then Secrets Manager
      * creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or
      * <code>SecretBinary</code> fields.
      * </p>
@@ -644,11 +728,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </important>
      * 
-     * @return (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
-     *         <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.</p>
+     * @return (Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to be used to
+     *         encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this
+     *         secret.</p>
+     *         <p>
+     *         You can specify any of the supported ways to identify a AWS KMS key ID. If you need to reference a CMK in
+     *         a different account, you can use only the key ARN or the alias ARN.
+     *         </p>
      *         <p>
      *         If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK
-     *         (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then
+     *         (the one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet exist, then
      *         Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
      *         <code>SecretString</code> or <code>SecretBinary</code> fields.
      *         </p>
@@ -666,12 +755,16 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
+     * (Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
      * <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.
      * </p>
      * <p>
+     * You can specify any of the supported ways to identify a AWS KMS key ID. If you need to reference a CMK in a
+     * different account, you can use only the key ARN or the alias ARN.
+     * </p>
+     * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets Manager
+     * named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet exist, then Secrets Manager
      * creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or
      * <code>SecretBinary</code> fields.
      * </p>
@@ -684,12 +777,17 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </important>
      * 
      * @param kmsKeyId
-     *        (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
-     *        <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.</p>
+     *        (Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to be used to
+     *        encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this
+     *        secret.</p>
+     *        <p>
+     *        You can specify any of the supported ways to identify a AWS KMS key ID. If you need to reference a CMK in
+     *        a different account, you can use only the key ARN or the alias ARN.
+     *        </p>
      *        <p>
      *        If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the
-     *        one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets
-     *        Manager creates it for you automatically the first time it needs to encrypt a version's
+     *        one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet exist, then
+     *        Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
      *        <code>SecretString</code> or <code>SecretBinary</code> fields.
      *        </p>
      *        <important>
@@ -846,7 +944,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
@@ -872,7 +970,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        For storing multiple values, we recommend that you use a JSON text string argument and specify key/value
      *        pairs. For information on how to format a JSON parameter for the various command line tool environments,
      *        see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *        </p>
      *        <p>
@@ -903,7 +1001,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
@@ -928,7 +1026,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         For storing multiple values, we recommend that you use a JSON text string argument and specify key/value
      *         pairs. For information on how to format a JSON parameter for the various command line tool environments,
      *         see <a
-     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *         href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *         </p>
      *         <p>
@@ -959,7 +1057,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For storing multiple values, we recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
@@ -985,7 +1083,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        For storing multiple values, we recommend that you use a JSON text string argument and specify key/value
      *        pairs. For information on how to format a JSON parameter for the various command line tool environments,
      *        see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *        </p>
      *        <p>
@@ -1028,7 +1126,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * This parameter requires a JSON text string argument. For information on how to format a JSON parameter for the
      * various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
@@ -1101,7 +1199,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         This parameter requires a JSON text string argument. For information on how to format a JSON parameter
      *         for the various command line tool environments, see <a
-     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *         href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *         </p>
      *         <p>
@@ -1181,7 +1279,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * This parameter requires a JSON text string argument. For information on how to format a JSON parameter for the
      * various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
@@ -1255,7 +1353,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        This parameter requires a JSON text string argument. For information on how to format a JSON parameter for
      *        the various command line tool environments, see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *        </p>
      *        <p>
@@ -1340,7 +1438,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * This parameter requires a JSON text string argument. For information on how to format a JSON parameter for the
      * various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
@@ -1419,7 +1517,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        This parameter requires a JSON text string argument. For information on how to format a JSON parameter for
      *        the various command line tool environments, see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *        </p>
      *        <p>
@@ -1506,7 +1604,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * This parameter requires a JSON text string argument. For information on how to format a JSON parameter for the
      * various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
@@ -1580,7 +1678,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        This parameter requires a JSON text string argument. For information on how to format a JSON parameter for
      *        the various command line tool environments, see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *        </p>
      *        <p>
@@ -1637,7 +1735,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1656,9 +1755,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getSecretBinary() != null)
-            sb.append("SecretBinary: ").append(getSecretBinary()).append(",");
+            sb.append("SecretBinary: ").append("***Sensitive Data Redacted***").append(",");
         if (getSecretString() != null)
-            sb.append("SecretString: ").append(getSecretString()).append(",");
+            sb.append("SecretString: ").append("***Sensitive Data Redacted***").append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");

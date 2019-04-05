@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,7 +60,7 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * delivered. The format of a topic ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      * </p>
      */
     private String snsTopicARN;
@@ -81,7 +81,7 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * Specifies the ARN of the trail that was updated. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String trailARN;
@@ -109,10 +109,16 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * KMS key in the format:
      * </p>
      * <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * Specifies whether the trail is an organization trail.
+     * </p>
+     */
+    private Boolean isOrganizationTrail;
 
     /**
      * <p>
@@ -298,14 +304,14 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * delivered. The format of a topic ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      * </p>
      * 
      * @param snsTopicARN
      *        Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are
      *        delivered. The format of a topic ARN is:</p>
      *        <p>
-     *        <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     *        <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      */
 
     public void setSnsTopicARN(String snsTopicARN) {
@@ -318,13 +324,13 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * delivered. The format of a topic ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      * </p>
      * 
      * @return Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are
      *         delivered. The format of a topic ARN is:</p>
      *         <p>
-     *         <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     *         <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      */
 
     public String getSnsTopicARN() {
@@ -337,14 +343,14 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * delivered. The format of a topic ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     * <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      * </p>
      * 
      * @param snsTopicARN
      *        Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are
      *        delivered. The format of a topic ARN is:</p>
      *        <p>
-     *        <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code>
+     *        <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -462,13 +468,13 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * Specifies the ARN of the trail that was updated. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param trailARN
      *        Specifies the ARN of the trail that was updated. The format of a trail ARN is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public void setTrailARN(String trailARN) {
@@ -480,12 +486,12 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * Specifies the ARN of the trail that was updated. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies the ARN of the trail that was updated. The format of a trail ARN is:</p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public String getTrailARN() {
@@ -497,13 +503,13 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * Specifies the ARN of the trail that was updated. The format of a trail ARN is:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param trailARN
      *        Specifies the ARN of the trail that was updated. The format of a trail ARN is:</p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -650,14 +656,14 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * KMS key in the format:
      * </p>
      * <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
      * @param kmsKeyId
      *        Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified
      *        ARN to a KMS key in the format:</p>
      *        <p>
-     *        <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -670,13 +676,13 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * KMS key in the format:
      * </p>
      * <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
      * @return Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified
      *         ARN to a KMS key in the format:</p>
      *         <p>
-     *         <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *         <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      */
 
     public String getKmsKeyId() {
@@ -689,14 +695,14 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
      * KMS key in the format:
      * </p>
      * <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
      * @param kmsKeyId
      *        Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified
      *        ARN to a KMS key in the format:</p>
      *        <p>
-     *        <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -706,7 +712,60 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Specifies whether the trail is an organization trail.
+     * </p>
+     * 
+     * @param isOrganizationTrail
+     *        Specifies whether the trail is an organization trail.
+     */
+
+    public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
+        this.isOrganizationTrail = isOrganizationTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is an organization trail.
+     * </p>
+     * 
+     * @return Specifies whether the trail is an organization trail.
+     */
+
+    public Boolean getIsOrganizationTrail() {
+        return this.isOrganizationTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is an organization trail.
+     * </p>
+     * 
+     * @param isOrganizationTrail
+     *        Specifies whether the trail is an organization trail.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTrailResult withIsOrganizationTrail(Boolean isOrganizationTrail) {
+        setIsOrganizationTrail(isOrganizationTrail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is an organization trail.
+     * </p>
+     * 
+     * @return Specifies whether the trail is an organization trail.
+     */
+
+    public Boolean isOrganizationTrail() {
+        return this.isOrganizationTrail;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -739,7 +798,9 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getCloudWatchLogsRoleArn() != null)
             sb.append("CloudWatchLogsRoleArn: ").append(getCloudWatchLogsRoleArn()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getIsOrganizationTrail() != null)
+            sb.append("IsOrganizationTrail: ").append(getIsOrganizationTrail());
         sb.append("}");
         return sb.toString();
     }
@@ -802,6 +863,10 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getIsOrganizationTrail() == null ^ this.getIsOrganizationTrail() == null)
+            return false;
+        if (other.getIsOrganizationTrail() != null && other.getIsOrganizationTrail().equals(this.getIsOrganizationTrail()) == false)
+            return false;
         return true;
     }
 
@@ -822,6 +887,7 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getCloudWatchLogsLogGroupArn() == null) ? 0 : getCloudWatchLogsLogGroupArn().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getIsOrganizationTrail() == null) ? 0 : getIsOrganizationTrail().hashCode());
         return hashCode;
     }
 

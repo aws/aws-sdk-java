@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -292,12 +292,13 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Configure WorkDocs to use Amazon SNS notifications.
+     * Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must
+     * confirm the subscription.
      * </p>
      * <p>
-     * The endpoint receives a confirmation message, and must confirm the subscription. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm">Confirm the
-     * Subscription</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe to
+     * Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
      * </p>
      * 
      * @param createNotificationSubscriptionRequest
@@ -312,12 +313,13 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Configure WorkDocs to use Amazon SNS notifications.
+     * Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must
+     * confirm the subscription.
      * </p>
      * <p>
-     * The endpoint receives a confirmation message, and must confirm the subscription. For more information, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm">Confirm the
-     * Subscription</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe to
+     * Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
      * </p>
      * 
      * @param createNotificationSubscriptionRequest
@@ -793,7 +795,7 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Describes the groups specified by query.
+     * Describes the groups specified by the query. Groups are defined by the underlying Active Directory.
      * </p>
      * 
      * @param describeGroupsRequest
@@ -806,7 +808,7 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Describes the groups specified by query.
+     * Describes the groups specified by the query. Groups are defined by the underlying Active Directory.
      * </p>
      * 
      * @param describeGroupsRequest
@@ -896,6 +898,12 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
      * <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of
      * recycled items. This is not a valid action for SigV4 (administrative API) clients.
      * </p>
+     * <p>
+     * This action requires an authentication token. To get an authentication token, register an application with Amazon
+     * WorkDocs. For more information, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access
+     * Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
+     * </p>
      * 
      * @param describeRootFoldersRequest
      * @return A Java Future containing the result of the DescribeRootFolders operation returned by the service.
@@ -910,6 +918,12 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
      * Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>.
      * <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of
      * recycled items. This is not a valid action for SigV4 (administrative API) clients.
+     * </p>
+     * <p>
+     * This action requires an authentication token. To get an authentication token, register an application with Amazon
+     * WorkDocs. For more information, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access
+     * Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
      * </p>
      * 
      * @param describeRootFoldersRequest
@@ -1173,6 +1187,39 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
      */
     java.util.concurrent.Future<GetFolderPathResult> getFolderPathAsync(GetFolderPathRequest getFolderPathRequest,
             com.amazonaws.handlers.AsyncHandler<GetFolderPathRequest, GetFolderPathResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a collection of resources, including folders and documents. The only <code>CollectionType</code>
+     * supported is <code>SHARED_WITH_ME</code>.
+     * </p>
+     * 
+     * @param getResourcesRequest
+     * @return A Java Future containing the result of the GetResources operation returned by the service.
+     * @sample AmazonWorkDocsAsync.GetResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetResources" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(GetResourcesRequest getResourcesRequest);
+
+    /**
+     * <p>
+     * Retrieves a collection of resources, including folders and documents. The only <code>CollectionType</code>
+     * supported is <code>SHARED_WITH_ME</code>.
+     * </p>
+     * 
+     * @param getResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResources operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.GetResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetResources" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcesResult> getResourcesAsync(GetResourcesRequest getResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcesRequest, GetResourcesResult> asyncHandler);
 
     /**
      * <p>

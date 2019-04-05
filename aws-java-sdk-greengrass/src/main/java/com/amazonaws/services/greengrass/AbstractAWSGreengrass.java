@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,16 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
 
     @Override
     public AssociateServiceRoleToAccountResult associateServiceRoleToAccount(AssociateServiceRoleToAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateConnectorDefinitionResult createConnectorDefinition(CreateConnectorDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateConnectorDefinitionVersionResult createConnectorDefinitionVersion(CreateConnectorDefinitionVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,6 +133,11 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public DeleteConnectorDefinitionResult deleteConnectorDefinition(DeleteConnectorDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteCoreDefinitionResult deleteCoreDefinition(DeleteCoreDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -173,7 +188,22 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public GetBulkDeploymentStatusResult getBulkDeploymentStatus(GetBulkDeploymentStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetConnectivityInfoResult getConnectivityInfo(GetConnectivityInfoRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConnectorDefinitionResult getConnectorDefinition(GetConnectorDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConnectorDefinitionVersionResult getConnectorDefinitionVersion(GetConnectorDefinitionVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -268,6 +298,26 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public ListBulkDeploymentDetailedReportsResult listBulkDeploymentDetailedReports(ListBulkDeploymentDetailedReportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListBulkDeploymentsResult listBulkDeployments(ListBulkDeploymentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListConnectorDefinitionVersionsResult listConnectorDefinitionVersions(ListConnectorDefinitionVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListConnectorDefinitionsResult listConnectorDefinitions(ListConnectorDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListCoreDefinitionVersionsResult listCoreDefinitionVersions(ListCoreDefinitionVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -348,12 +398,42 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ResetDeploymentsResult resetDeployments(ResetDeploymentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public StartBulkDeploymentResult startBulkDeployment(StartBulkDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopBulkDeploymentResult stopBulkDeployment(StopBulkDeploymentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateConnectivityInfoResult updateConnectivityInfo(UpdateConnectivityInfoRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConnectorDefinitionResult updateConnectorDefinition(UpdateConnectorDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,7 @@ public class Listener implements Serializable, Cloneable {
     private String protocol;
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS or TLS.
      * </p>
      */
     private java.util.List<Certificate> certificates;
@@ -265,10 +265,10 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS or TLS.
      * </p>
      * 
-     * @return The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * @return The SSL server certificate. You must provide a certificate if the protocol is HTTPS or TLS.
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -277,11 +277,11 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS or TLS.
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS or TLS.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -295,7 +295,7 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS or TLS.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -304,7 +304,7 @@ public class Listener implements Serializable, Cloneable {
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS or TLS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,11 +320,11 @@ public class Listener implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     * The SSL server certificate. You must provide a certificate if the protocol is HTTPS or TLS.
      * </p>
      * 
      * @param certificates
-     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS.
+     *        The SSL server certificate. You must provide a certificate if the protocol is HTTPS or TLS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,7 +450,8 @@ public class Listener implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -147,6 +147,17 @@ public class ResponseLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("elasticInferenceAcceleratorSet", targetDepth)) {
+                    responseLaunchTemplateData.withElasticInferenceAccelerators(new ArrayList<LaunchTemplateElasticInferenceAcceleratorResponse>());
+                    continue;
+                }
+
+                if (context.testExpression("elasticInferenceAcceleratorSet/item", targetDepth)) {
+                    responseLaunchTemplateData.withElasticInferenceAccelerators(LaunchTemplateElasticInferenceAcceleratorResponseStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("securityGroupIdSet", targetDepth)) {
                     responseLaunchTemplateData.withSecurityGroupIds(new ArrayList<String>());
                     continue;
@@ -176,6 +187,33 @@ public class ResponseLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<
                     responseLaunchTemplateData.setCreditSpecification(CreditSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("cpuOptions", targetDepth)) {
+                    responseLaunchTemplateData.setCpuOptions(LaunchTemplateCpuOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("capacityReservationSpecification", targetDepth)) {
+                    responseLaunchTemplateData.setCapacityReservationSpecification(LaunchTemplateCapacityReservationSpecificationResponseStaxUnmarshaller
+                            .getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("hibernationOptions", targetDepth)) {
+                    responseLaunchTemplateData.setHibernationOptions(LaunchTemplateHibernationOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("licenseSet", targetDepth)) {
+                    responseLaunchTemplateData.withLicenseSpecifications(new ArrayList<LaunchTemplateLicenseConfiguration>());
+                    continue;
+                }
+
+                if (context.testExpression("licenseSet/item", targetDepth)) {
+                    responseLaunchTemplateData.withLicenseSpecifications(LaunchTemplateLicenseConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return responseLaunchTemplateData;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,9 +51,10 @@ public interface AWSDeviceFarm {
      * protocol from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -1099,7 +1100,7 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about samples, given an AWS Device Farm project ARN
+     * Gets information about samples, given an AWS Device Farm job ARN.
      * </p>
      * 
      * @param listSamplesRequest
@@ -1306,6 +1307,30 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Initiates a stop request for the current job. AWS Device Farm will immediately stop the job on the device where
+     * tests have not started executing, and you will not be billed for this device. On the device where tests have
+     * started executing, Setup Suite and Teardown Suite tests will run to completion before stopping execution on the
+     * device. You will be billed for Setup, Teardown, and any tests that were in progress or already completed.
+     * </p>
+     * 
+     * @param stopJobRequest
+     * @return Result of the StopJob operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.StopJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopJobResult stopJob(StopJobRequest stopJobRequest);
+
+    /**
+     * <p>
      * Ends a specified remote access session.
      * </p>
      * 
@@ -1458,6 +1483,27 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest);
+
+    /**
+     * <p>
+     * Update an uploaded test specification (test spec).
+     * </p>
+     * 
+     * @param updateUploadRequest
+     * @return Result of the UpdateUpload operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateUploadResult updateUpload(UpdateUploadRequest updateUploadRequest);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,24 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the secret with the staging labels that were modified.
+     * The ARN of the secret with the staging label that was modified.
      * </p>
      */
     private String aRN;
     /**
      * <p>
-     * The friendly name of the secret with the staging labels that were modified.
+     * The friendly name of the secret with the staging label that was modified.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The ARN of the secret with the staging labels that were modified.
+     * The ARN of the secret with the staging label that was modified.
      * </p>
      * 
      * @param aRN
-     *        The ARN of the secret with the staging labels that were modified.
+     *        The ARN of the secret with the staging label that was modified.
      */
 
     public void setARN(String aRN) {
@@ -51,10 +51,10 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the secret with the staging labels that were modified.
+     * The ARN of the secret with the staging label that was modified.
      * </p>
      * 
-     * @return The ARN of the secret with the staging labels that were modified.
+     * @return The ARN of the secret with the staging label that was modified.
      */
 
     public String getARN() {
@@ -63,11 +63,11 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the secret with the staging labels that were modified.
+     * The ARN of the secret with the staging label that was modified.
      * </p>
      * 
      * @param aRN
-     *        The ARN of the secret with the staging labels that were modified.
+     *        The ARN of the secret with the staging label that was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The friendly name of the secret with the staging labels that were modified.
+     * The friendly name of the secret with the staging label that was modified.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret with the staging labels that were modified.
+     *        The friendly name of the secret with the staging label that was modified.
      */
 
     public void setName(String name) {
@@ -91,10 +91,10 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The friendly name of the secret with the staging labels that were modified.
+     * The friendly name of the secret with the staging label that was modified.
      * </p>
      * 
-     * @return The friendly name of the secret with the staging labels that were modified.
+     * @return The friendly name of the secret with the staging label that was modified.
      */
 
     public String getName() {
@@ -103,11 +103,11 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The friendly name of the secret with the staging labels that were modified.
+     * The friendly name of the secret with the staging label that was modified.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret with the staging labels that were modified.
+     *        The friendly name of the secret with the staging label that was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,7 +117,8 @@ public class UpdateSecretVersionStageResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class MsSmoothGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioDeduplication").build();
     private static final MarshallingInfo<String> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination").build();
+    private static final MarshallingInfo<StructuredPojo> DESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<Integer> FRAGMENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -56,6 +58,7 @@ public class MsSmoothGroupSettingsMarshaller {
         try {
             protocolMarshaller.marshall(msSmoothGroupSettings.getAudioDeduplication(), AUDIODEDUPLICATION_BINDING);
             protocolMarshaller.marshall(msSmoothGroupSettings.getDestination(), DESTINATION_BINDING);
+            protocolMarshaller.marshall(msSmoothGroupSettings.getDestinationSettings(), DESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(msSmoothGroupSettings.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(msSmoothGroupSettings.getFragmentLength(), FRAGMENTLENGTH_BINDING);
             protocolMarshaller.marshall(msSmoothGroupSettings.getManifestEncoding(), MANIFESTENCODING_BINDING);

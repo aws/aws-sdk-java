@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,22 @@ public class TraceSummaryMarshaller {
             .marshallLocationName("Users").build();
     private static final MarshallingInfo<List> SERVICEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ServiceIds").build();
+    private static final MarshallingInfo<List> RESOURCEARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ResourceARNs").build();
+    private static final MarshallingInfo<List> INSTANCEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("InstanceIds").build();
+    private static final MarshallingInfo<List> AVAILABILITYZONES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZones").build();
+    private static final MarshallingInfo<StructuredPojo> ENTRYPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EntryPoint").build();
+    private static final MarshallingInfo<List> FAULTROOTCAUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FaultRootCauses").build();
+    private static final MarshallingInfo<List> ERRORROOTCAUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorRootCauses").build();
+    private static final MarshallingInfo<List> RESPONSETIMEROOTCAUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseTimeRootCauses").build();
+    private static final MarshallingInfo<Integer> REVISION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Revision").build();
 
     private static final TraceSummaryMarshaller instance = new TraceSummaryMarshaller();
 
@@ -79,6 +95,14 @@ public class TraceSummaryMarshaller {
             protocolMarshaller.marshall(traceSummary.getAnnotations(), ANNOTATIONS_BINDING);
             protocolMarshaller.marshall(traceSummary.getUsers(), USERS_BINDING);
             protocolMarshaller.marshall(traceSummary.getServiceIds(), SERVICEIDS_BINDING);
+            protocolMarshaller.marshall(traceSummary.getResourceARNs(), RESOURCEARNS_BINDING);
+            protocolMarshaller.marshall(traceSummary.getInstanceIds(), INSTANCEIDS_BINDING);
+            protocolMarshaller.marshall(traceSummary.getAvailabilityZones(), AVAILABILITYZONES_BINDING);
+            protocolMarshaller.marshall(traceSummary.getEntryPoint(), ENTRYPOINT_BINDING);
+            protocolMarshaller.marshall(traceSummary.getFaultRootCauses(), FAULTROOTCAUSES_BINDING);
+            protocolMarshaller.marshall(traceSummary.getErrorRootCauses(), ERRORROOTCAUSES_BINDING);
+            protocolMarshaller.marshall(traceSummary.getResponseTimeRootCauses(), RESPONSETIMEROOTCAUSES_BINDING);
+            protocolMarshaller.marshall(traceSummary.getRevision(), REVISION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

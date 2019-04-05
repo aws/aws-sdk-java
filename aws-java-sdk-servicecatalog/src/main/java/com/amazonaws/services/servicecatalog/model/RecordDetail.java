@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,7 +89,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date updatedTime;
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      */
     private String provisionedProductType;
@@ -673,11 +673,12 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
      * @param provisionedProductType
-     *        The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *        <code>CFN_STACKSET</code>.
      */
 
     public void setProvisionedProductType(String provisionedProductType) {
@@ -686,10 +687,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
-     * @return The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * @return The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *         <code>CFN_STACKSET</code>.
      */
 
     public String getProvisionedProductType() {
@@ -698,11 +700,12 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
      * </p>
      * 
      * @param provisionedProductType
-     *        The type of provisioned product. The supported value is <code>CFN_STACK</code>.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
+     *        <code>CFN_STACKSET</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1151,7 +1154,8 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,14 @@ public class CreateFlowLogsRequestMarshaller implements Marshaller<Request<Creat
 
         if (createFlowLogsRequest.getTrafficType() != null) {
             request.addParameter("TrafficType", StringUtils.fromString(createFlowLogsRequest.getTrafficType()));
+        }
+
+        if (createFlowLogsRequest.getLogDestinationType() != null) {
+            request.addParameter("LogDestinationType", StringUtils.fromString(createFlowLogsRequest.getLogDestinationType()));
+        }
+
+        if (createFlowLogsRequest.getLogDestination() != null) {
+            request.addParameter("LogDestination", StringUtils.fromString(createFlowLogsRequest.getLogDestination()));
         }
 
         return request;

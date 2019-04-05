@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,12 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * You can create one or more AWS Direct Connect private virtual interfaces linking to your virtual private gateway.
- * </p>
- * <p>
- * Virtual private gateways can be managed using the Amazon Virtual Private Cloud (Amazon VPC) console or the <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">Amazon EC2
- * CreateVpnGateway action</a>.
+ * Information about a virtual private gateway for a private virtual interface.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualGateway" target="_top">AWS API
@@ -33,12 +28,49 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VirtualGateway implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     */
     private String virtualGatewayId;
-
+    /**
+     * <p>
+     * The state of the virtual private gateway. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pending</code>: Initial state after creating the virtual private gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: Ready for use by a private virtual interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: Initial state after deleting the virtual private gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send
+     * traffic over this gateway.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String virtualGatewayState;
 
     /**
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     * 
      * @param virtualGatewayId
+     *        The ID of the virtual private gateway.
      */
 
     public void setVirtualGatewayId(String virtualGatewayId) {
@@ -46,7 +78,11 @@ public class VirtualGateway implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     * 
+     * @return The ID of the virtual private gateway.
      */
 
     public String getVirtualGatewayId() {
@@ -54,7 +90,12 @@ public class VirtualGateway implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID of the virtual private gateway.
+     * </p>
+     * 
      * @param virtualGatewayId
+     *        The ID of the virtual private gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,7 +105,57 @@ public class VirtualGateway implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the virtual private gateway. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pending</code>: Initial state after creating the virtual private gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: Ready for use by a private virtual interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: Initial state after deleting the virtual private gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send
+     * traffic over this gateway.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param virtualGatewayState
+     *        The state of the virtual private gateway. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: Initial state after creating the virtual private gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available</code>: Ready for use by a private virtual interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>: Initial state after deleting the virtual private gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to
+     *        send traffic over this gateway.
+     *        </p>
+     *        </li>
      */
 
     public void setVirtualGatewayState(String virtualGatewayState) {
@@ -72,7 +163,56 @@ public class VirtualGateway implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The state of the virtual private gateway. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pending</code>: Initial state after creating the virtual private gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: Ready for use by a private virtual interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: Initial state after deleting the virtual private gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send
+     * traffic over this gateway.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The state of the virtual private gateway. The following are the possible values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>pending</code>: Initial state after creating the virtual private gateway.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>available</code>: Ready for use by a private virtual interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deleting</code>: Initial state after deleting the virtual private gateway.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to
+     *         send traffic over this gateway.
+     *         </p>
+     *         </li>
      */
 
     public String getVirtualGatewayState() {
@@ -80,7 +220,57 @@ public class VirtualGateway implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the virtual private gateway. The following are the possible values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pending</code>: Initial state after creating the virtual private gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: Ready for use by a private virtual interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: Initial state after deleting the virtual private gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send
+     * traffic over this gateway.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param virtualGatewayState
+     *        The state of the virtual private gateway. The following are the possible values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>pending</code>: Initial state after creating the virtual private gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>available</code>: Ready for use by a private virtual interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleting</code>: Initial state after deleting the virtual private gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to
+     *        send traffic over this gateway.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +280,8 @@ public class VirtualGateway implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

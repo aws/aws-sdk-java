@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before
-     * base64-encoding, is 1,000 KB.
+     * base64-encoding, is 1,000 KiB.
      * </p>
      */
     private java.nio.ByteBuffer data;
@@ -39,7 +39,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before
-     * base64-encoding, is 1,000 KB.
+     * base64-encoding, is 1,000 KiB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -54,7 +54,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param data
      *        The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob,
-     *        before base64-encoding, is 1,000 KB.
+     *        before base64-encoding, is 1,000 KiB.
      */
 
     public void setData(java.nio.ByteBuffer data) {
@@ -64,7 +64,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before
-     * base64-encoding, is 1,000 KB.
+     * base64-encoding, is 1,000 KiB.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -75,7 +75,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob,
-     *         before base64-encoding, is 1,000 KB.
+     *         before base64-encoding, is 1,000 KiB.
      */
 
     public java.nio.ByteBuffer getData() {
@@ -85,7 +85,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob, before
-     * base64-encoding, is 1,000 KB.
+     * base64-encoding, is 1,000 KiB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -100,7 +100,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param data
      *        The data blob, which is base64-encoded when the blob is serialized. The maximum size of the data blob,
-     *        before base64-encoding, is 1,000 KB.
+     *        before base64-encoding, is 1,000 KiB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +110,8 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

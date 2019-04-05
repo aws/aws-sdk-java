@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,11 +25,16 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
 
     /** Required. The ARN of the configuration. */
     private String arn;
+    /** Required. The date and time of the configuration revision. */
+    private java.util.Date created;
     /** Required. The description of the configuration. */
     private String description;
     /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
     private String engineType;
-    /** Required. The version of the broker engine. */
+    /**
+     * Required. The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
+     */
     private String engineVersion;
     /** Required. The unique ID that Amazon MQ generates for the configuration. */
     private String id;
@@ -40,6 +45,8 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * underscores, and tildes (- . _ ~). This value must be 1-150 characters long.
      */
     private String name;
+    /** The list of all tags associated with this configuration. */
+    private java.util.Map<String, String> tags;
 
     /**
      * Required. The ARN of the configuration.
@@ -72,6 +79,40 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
 
     public DescribeConfigurationResult withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     * 
+     * @param created
+     *        Required. The date and time of the configuration revision.
+     */
+
+    public void setCreated(java.util.Date created) {
+        this.created = created;
+    }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     * 
+     * @return Required. The date and time of the configuration revision.
+     */
+
+    public java.util.Date getCreated() {
+        return this.created;
+    }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     * 
+     * @param created
+     *        Required. The date and time of the configuration revision.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigurationResult withCreated(java.util.Date created) {
+        setCreated(created);
         return this;
     }
 
@@ -161,10 +202,12 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Required. The version of the broker engine.
+     * Required. The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
      * @param engineVersion
-     *        Required. The version of the broker engine.
+     *        Required. The version of the broker engine. For a list of supported engine versions, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -172,9 +215,11 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Required. The version of the broker engine.
+     * Required. The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
-     * @return Required. The version of the broker engine.
+     * @return Required. The version of the broker engine. For a list of supported engine versions, see
+     *         https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
 
     public String getEngineVersion() {
@@ -182,10 +227,12 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Required. The version of the broker engine.
+     * Required. The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * 
      * @param engineVersion
-     *        Required. The version of the broker engine.
+     *        Required. The version of the broker engine. For a list of supported engine versions, see
+     *        https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,7 +350,63 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * The list of all tags associated with this configuration.
+     * 
+     * @return The list of all tags associated with this configuration.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * The list of all tags associated with this configuration.
+     * 
+     * @param tags
+     *        The list of all tags associated with this configuration.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * The list of all tags associated with this configuration.
+     * 
+     * @param tags
+     *        The list of all tags associated with this configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigurationResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public DescribeConfigurationResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigurationResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -315,6 +418,8 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getCreated() != null)
+            sb.append("Created: ").append(getCreated()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getEngineType() != null)
@@ -326,7 +431,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
         if (getLatestRevision() != null)
             sb.append("LatestRevision: ").append(getLatestRevision()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -344,6 +451,10 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getCreated() == null ^ this.getCreated() == null)
+            return false;
+        if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -369,6 +480,10 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -378,12 +493,14 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEngineType() == null) ? 0 : getEngineType().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getLatestRevision() == null) ? 0 : getLatestRevision().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,12 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<ActivatedRule> rules;
+    /**
+     * <p>
+     * Tha Amazon Resource Name (ARN) of the web ACL.
+     * </p>
+     */
+    private String webACLArn;
 
     /**
      * <p>
@@ -365,7 +371,48 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Tha Amazon Resource Name (ARN) of the web ACL.
+     * </p>
+     * 
+     * @param webACLArn
+     *        Tha Amazon Resource Name (ARN) of the web ACL.
+     */
+
+    public void setWebACLArn(String webACLArn) {
+        this.webACLArn = webACLArn;
+    }
+
+    /**
+     * <p>
+     * Tha Amazon Resource Name (ARN) of the web ACL.
+     * </p>
+     * 
+     * @return Tha Amazon Resource Name (ARN) of the web ACL.
+     */
+
+    public String getWebACLArn() {
+        return this.webACLArn;
+    }
+
+    /**
+     * <p>
+     * Tha Amazon Resource Name (ARN) of the web ACL.
+     * </p>
+     * 
+     * @param webACLArn
+     *        Tha Amazon Resource Name (ARN) of the web ACL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL withWebACLArn(String webACLArn) {
+        setWebACLArn(webACLArn);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -384,7 +431,9 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
         if (getDefaultAction() != null)
             sb.append("DefaultAction: ").append(getDefaultAction()).append(",");
         if (getRules() != null)
-            sb.append("Rules: ").append(getRules());
+            sb.append("Rules: ").append(getRules()).append(",");
+        if (getWebACLArn() != null)
+            sb.append("WebACLArn: ").append(getWebACLArn());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +468,10 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
+        if (other.getWebACLArn() == null ^ this.getWebACLArn() == null)
+            return false;
+        if (other.getWebACLArn() != null && other.getWebACLArn().equals(this.getWebACLArn()) == false)
+            return false;
         return true;
     }
 
@@ -432,6 +485,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
         hashCode = prime * hashCode + ((getDefaultAction() == null) ? 0 : getDefaultAction().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getWebACLArn() == null) ? 0 : getWebACLArn().hashCode());
         return hashCode;
     }
 

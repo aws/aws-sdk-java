@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,14 +33,15 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
     private String notebookInstanceLifecycleConfigName;
     /**
      * <p>
-     * A shell script that runs only once, when you create a notebook instance.
+     * A shell script that runs only once, when you create a notebook instance. The shell script must be a
+     * base64-encoded string.
      * </p>
      */
     private java.util.List<NotebookInstanceLifecycleHook> onCreate;
     /**
      * <p>
      * A shell script that runs every time you start a notebook instance, including when you create the notebook
-     * instance.
+     * instance. The shell script must be a base64-encoded string.
      * </p>
      */
     private java.util.List<NotebookInstanceLifecycleHook> onStart;
@@ -87,10 +88,12 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
 
     /**
      * <p>
-     * A shell script that runs only once, when you create a notebook instance.
+     * A shell script that runs only once, when you create a notebook instance. The shell script must be a
+     * base64-encoded string.
      * </p>
      * 
-     * @return A shell script that runs only once, when you create a notebook instance.
+     * @return A shell script that runs only once, when you create a notebook instance. The shell script must be a
+     *         base64-encoded string.
      */
 
     public java.util.List<NotebookInstanceLifecycleHook> getOnCreate() {
@@ -99,11 +102,13 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
 
     /**
      * <p>
-     * A shell script that runs only once, when you create a notebook instance.
+     * A shell script that runs only once, when you create a notebook instance. The shell script must be a
+     * base64-encoded string.
      * </p>
      * 
      * @param onCreate
-     *        A shell script that runs only once, when you create a notebook instance.
+     *        A shell script that runs only once, when you create a notebook instance. The shell script must be a
+     *        base64-encoded string.
      */
 
     public void setOnCreate(java.util.Collection<NotebookInstanceLifecycleHook> onCreate) {
@@ -117,7 +122,8 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
 
     /**
      * <p>
-     * A shell script that runs only once, when you create a notebook instance.
+     * A shell script that runs only once, when you create a notebook instance. The shell script must be a
+     * base64-encoded string.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,7 +132,8 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
      * </p>
      * 
      * @param onCreate
-     *        A shell script that runs only once, when you create a notebook instance.
+     *        A shell script that runs only once, when you create a notebook instance. The shell script must be a
+     *        base64-encoded string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +149,13 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
 
     /**
      * <p>
-     * A shell script that runs only once, when you create a notebook instance.
+     * A shell script that runs only once, when you create a notebook instance. The shell script must be a
+     * base64-encoded string.
      * </p>
      * 
      * @param onCreate
-     *        A shell script that runs only once, when you create a notebook instance.
+     *        A shell script that runs only once, when you create a notebook instance. The shell script must be a
+     *        base64-encoded string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,11 +167,11 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
     /**
      * <p>
      * A shell script that runs every time you start a notebook instance, including when you create the notebook
-     * instance.
+     * instance. The shell script must be a base64-encoded string.
      * </p>
      * 
      * @return A shell script that runs every time you start a notebook instance, including when you create the notebook
-     *         instance.
+     *         instance. The shell script must be a base64-encoded string.
      */
 
     public java.util.List<NotebookInstanceLifecycleHook> getOnStart() {
@@ -172,12 +181,12 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
     /**
      * <p>
      * A shell script that runs every time you start a notebook instance, including when you create the notebook
-     * instance.
+     * instance. The shell script must be a base64-encoded string.
      * </p>
      * 
      * @param onStart
      *        A shell script that runs every time you start a notebook instance, including when you create the notebook
-     *        instance.
+     *        instance. The shell script must be a base64-encoded string.
      */
 
     public void setOnStart(java.util.Collection<NotebookInstanceLifecycleHook> onStart) {
@@ -192,7 +201,7 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
     /**
      * <p>
      * A shell script that runs every time you start a notebook instance, including when you create the notebook
-     * instance.
+     * instance. The shell script must be a base64-encoded string.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -202,7 +211,7 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
      * 
      * @param onStart
      *        A shell script that runs every time you start a notebook instance, including when you create the notebook
-     *        instance.
+     *        instance. The shell script must be a base64-encoded string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,12 +228,12 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
     /**
      * <p>
      * A shell script that runs every time you start a notebook instance, including when you create the notebook
-     * instance.
+     * instance. The shell script must be a base64-encoded string.
      * </p>
      * 
      * @param onStart
      *        A shell script that runs every time you start a notebook instance, including when you create the notebook
-     *        instance.
+     *        instance. The shell script must be a base64-encoded string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,7 +243,8 @@ public class CreateNotebookInstanceLifecycleConfigRequest extends com.amazonaws.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,8 @@ public class BatchDetectKeyPhrasesRequest extends com.amazonaws.AmazonWebService
     private java.util.List<String> textList;
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language.
+     * The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must be in
+     * the same language.
      * </p>
      */
     private String languageCode;
@@ -119,11 +120,14 @@ public class BatchDetectKeyPhrasesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language.
+     * The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must be in
+     * the same language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. All documents must be in the same language.
+     *        The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must
+     *        be in the same language.
+     * @see LanguageCode
      */
 
     public void setLanguageCode(String languageCode) {
@@ -132,10 +136,13 @@ public class BatchDetectKeyPhrasesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language.
+     * The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must be in
+     * the same language.
      * </p>
      * 
-     * @return The language of the input documents. All documents must be in the same language.
+     * @return The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must
+     *         be in the same language.
+     * @see LanguageCode
      */
 
     public String getLanguageCode() {
@@ -144,12 +151,15 @@ public class BatchDetectKeyPhrasesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language.
+     * The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must be in
+     * the same language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. All documents must be in the same language.
+     *        The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must
+     *        be in the same language.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
      */
 
     public BatchDetectKeyPhrasesRequest withLanguageCode(String languageCode) {
@@ -158,7 +168,26 @@ public class BatchDetectKeyPhrasesRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must be in
+     * the same language.
+     * </p>
+     * 
+     * @param languageCode
+     *        The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must
+     *        be in the same language.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public BatchDetectKeyPhrasesRequest withLanguageCode(LanguageCode languageCode) {
+        this.languageCode = languageCode.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

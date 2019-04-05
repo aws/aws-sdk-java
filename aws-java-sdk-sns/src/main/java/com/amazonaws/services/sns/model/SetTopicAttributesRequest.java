@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,11 +36,31 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
     private String topicArn;
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.
+     * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can
+     * publish or subscribe to the topic.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String attributeName;
     /**
@@ -64,9 +84,29 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * @param topicArn
      *        The ARN of the topic to modify.
      * @param attributeName
-     *        The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p>
+     *        A map of attributes with their corresponding values.</p>
      *        <p>
-     *        Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
+     *        The following lists the names, descriptions, and values of the special request parameters that the
+     *        <code>SetTopicAttributes</code> action uses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *        endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
+     *        can publish or subscribe to the topic.
+     *        </p>
+     *        </li>
      * @param attributeValue
      *        The new value for the attribute.
      */
@@ -118,16 +158,56 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.
+     * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can
+     * publish or subscribe to the topic.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeName
-     *        The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p>
+     *        A map of attributes with their corresponding values.</p>
      *        <p>
-     *        Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
+     *        The following lists the names, descriptions, and values of the special request parameters that the
+     *        <code>SetTopicAttributes</code> action uses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *        endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
+     *        can publish or subscribe to the topic.
+     *        </p>
+     *        </li>
      */
 
     public void setAttributeName(String attributeName) {
@@ -136,15 +216,55 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.
+     * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can
+     * publish or subscribe to the topic.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p>
+     * @return A map of attributes with their corresponding values.</p>
      *         <p>
-     *         Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
+     *         The following lists the names, descriptions, and values of the special request parameters that the
+     *         <code>SetTopicAttributes</code> action uses:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *         endpoints.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
+     *         can publish or subscribe to the topic.
+     *         </p>
+     *         </li>
      */
 
     public String getAttributeName() {
@@ -153,16 +273,56 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.
+     * A map of attributes with their corresponding values.
      * </p>
      * <p>
-     * Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>SetTopicAttributes</code> action uses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can
+     * publish or subscribe to the topic.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeName
-     *        The name of the attribute you want to set. Only a subset of the topic's attributes are mutable.</p>
+     *        A map of attributes with their corresponding values.</p>
      *        <p>
-     *        Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
+     *        The following lists the names, descriptions, and values of the special request parameters that the
+     *        <code>SetTopicAttributes</code> action uses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *        endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
+     *        can publish or subscribe to the topic.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,7 +372,8 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

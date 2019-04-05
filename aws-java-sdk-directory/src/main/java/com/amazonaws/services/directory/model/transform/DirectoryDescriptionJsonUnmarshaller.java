@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,13 +88,25 @@ public class DirectoryDescriptionJsonUnmarshaller implements Unmarshaller<Direct
                     context.nextToken();
                     directoryDescription.setStage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ShareStatus", targetDepth)) {
+                    context.nextToken();
+                    directoryDescription.setShareStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ShareMethod", targetDepth)) {
+                    context.nextToken();
+                    directoryDescription.setShareMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ShareNotes", targetDepth)) {
+                    context.nextToken();
+                    directoryDescription.setShareNotes(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LaunchTime", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setLaunchTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    directoryDescription.setLaunchTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StageLastUpdatedDateTime", targetDepth)) {
                     context.nextToken();
-                    directoryDescription.setStageLastUpdatedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    directoryDescription.setStageLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
@@ -127,6 +139,10 @@ public class DirectoryDescriptionJsonUnmarshaller implements Unmarshaller<Direct
                 if (context.testExpression("DesiredNumberOfDomainControllers", targetDepth)) {
                     context.nextToken();
                     directoryDescription.setDesiredNumberOfDomainControllers(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("OwnerDirectoryDescription", targetDepth)) {
+                    context.nextToken();
+                    directoryDescription.setOwnerDirectoryDescription(OwnerDirectoryDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class GetFunctionDefinitionVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("FunctionDefinitionId").build();
     private static final MarshallingInfo<String> FUNCTIONDEFINITIONVERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("FunctionDefinitionVersionId").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
 
     private static final GetFunctionDefinitionVersionRequestMarshaller instance = new GetFunctionDefinitionVersionRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class GetFunctionDefinitionVersionRequestMarshaller {
         try {
             protocolMarshaller.marshall(getFunctionDefinitionVersionRequest.getFunctionDefinitionId(), FUNCTIONDEFINITIONID_BINDING);
             protocolMarshaller.marshall(getFunctionDefinitionVersionRequest.getFunctionDefinitionVersionId(), FUNCTIONDEFINITIONVERSIONID_BINDING);
+            protocolMarshaller.marshall(getFunctionDefinitionVersionRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

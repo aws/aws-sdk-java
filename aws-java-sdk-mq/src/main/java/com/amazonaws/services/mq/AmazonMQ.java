@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,12 +49,12 @@ public interface AmazonMQ {
      * @return Result of the CreateBroker operation returned by the service.
      * @throws BadRequestException
      *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
-     * @throws InternalServerErrorException
-     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws UnauthorizedException
      *         HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. This Broker name already exists. Retry your request with another name.
+     *         HTTP Status Code 409: Conflict. This broker name already exists. Retry your request with another name.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.CreateBroker
@@ -65,13 +65,11 @@ public interface AmazonMQ {
 
     /**
      * Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the
-     * engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a
-     * configuration.
+     * engine type and version).
      * 
      * @param createConfigurationRequest
      *        Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration
-     *        (the engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a
-     *        configuration.
+     *        (the engine type and version).
      * @return Result of the CreateConfiguration operation returned by the service.
      * @throws BadRequestException
      *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
@@ -89,6 +87,26 @@ public interface AmazonMQ {
     CreateConfigurationResult createConfiguration(CreateConfigurationRequest createConfigurationRequest);
 
     /**
+     * Add a tag to a resource.
+     * 
+     * @param createTagsRequest
+     *        A map of the key-value pairs for the resource tag.
+     * @return Result of the CreateTags operation returned by the service.
+     * @throws NotFoundException
+     *         HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @sample AmazonMQ.CreateTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateTagsResult createTags(CreateTagsRequest createTagsRequest);
+
+    /**
      * Creates an ActiveMQ user.
      * 
      * @param createUserRequest
@@ -101,7 +119,7 @@ public interface AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. Retry your request.
+     *         HTTP Status Code 409: Conflict. Retrying your request might resolve the issue.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.CreateUser
@@ -128,6 +146,25 @@ public interface AmazonMQ {
      *      Documentation</a>
      */
     DeleteBrokerResult deleteBroker(DeleteBrokerRequest deleteBrokerRequest);
+
+    /**
+     * Remove a tag from a resource.
+     * 
+     * @param deleteTagsRequest
+     * @return Result of the DeleteTags operation returned by the service.
+     * @throws NotFoundException
+     *         HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @sample AmazonMQ.DeleteTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
 
     /**
      * Deletes an ActiveMQ user.
@@ -278,6 +315,25 @@ public interface AmazonMQ {
     ListConfigurationsResult listConfigurations(ListConfigurationsRequest listConfigurationsRequest);
 
     /**
+     * Lists tags for a resource.
+     * 
+     * @param listTagsRequest
+     * @return Result of the ListTags operation returned by the service.
+     * @throws NotFoundException
+     *         HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @sample AmazonMQ.ListTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsResult listTags(ListTagsRequest listTagsRequest);
+
+    /**
      * Returns a list of all ActiveMQ users.
      * 
      * @param listUsersRequest
@@ -327,6 +383,9 @@ public interface AmazonMQ {
      *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ConflictException
+     *         HTTP Status Code 409: Conflict. Concurrent broker update detected. Retrying your request might resolve
+     *         the issue.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.UpdateBroker
@@ -348,8 +407,7 @@ public interface AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. This configuration name already exists. Retry your request with another
-     *         configuration name.
+     *         HTTP Status Code 409: Conflict. Concurrent update to configuration. Retry to create a new revision.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your input and then retry your request.
      * @sample AmazonMQ.UpdateConfiguration
@@ -371,7 +429,7 @@ public interface AmazonMQ {
      * @throws InternalServerErrorException
      *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
      * @throws ConflictException
-     *         HTTP Status Code 409: Conflict. Retry your request.
+     *         HTTP Status Code 409: Conflict. Retrying your request might resolve the issue.
      * @throws ForbiddenException
      *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
      * @sample AmazonMQ.UpdateUser

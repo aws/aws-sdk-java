@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class DescribeVoicesRequestMarshaller {
 
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("LanguageCode").build();
+    private static final MarshallingInfo<Boolean> INCLUDEADDITIONALLANGUAGECODES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("IncludeAdditionalLanguageCodes").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
 
@@ -49,6 +51,7 @@ public class DescribeVoicesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeVoicesRequest.getLanguageCode(), LANGUAGECODE_BINDING);
+            protocolMarshaller.marshall(describeVoicesRequest.getIncludeAdditionalLanguageCodes(), INCLUDEADDITIONALLANGUAGECODES_BINDING);
             protocolMarshaller.marshall(describeVoicesRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

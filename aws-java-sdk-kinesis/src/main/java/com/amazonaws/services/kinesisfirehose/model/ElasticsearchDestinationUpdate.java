@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
-     * IAM role specified in <b>RoleARN</b>. For more information, see <a
+     * IAM role specified in <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a>.
      * </p>
@@ -65,7 +65,7 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
     private String typeName;
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
@@ -74,8 +74,8 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
     private String indexRotationPeriod;
     /**
      * <p>
-     * The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are
-     * used.
+     * The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default values
+     * are used.
      * </p>
      */
     private ElasticsearchBufferingHints bufferingHints;
@@ -179,7 +179,7 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
-     * IAM role specified in <b>RoleARN</b>. For more information, see <a
+     * IAM role specified in <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a>.
      * </p>
@@ -187,8 +187,8 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * @param domainARN
      *        The ARN of the Amazon ES domain. The IAM role must have permissions for 
      *        <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>, and
-     *        <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in <b>RoleARN</b>.
-     *        For more information, see <a
+     *        <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in
+     *        <code>RoleARN</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      */
@@ -201,15 +201,15 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
-     * IAM role specified in <b>RoleARN</b>. For more information, see <a
+     * IAM role specified in <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @return The ARN of the Amazon ES domain. The IAM role must have permissions for 
      *         <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>, and
-     *         <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in <b>RoleARN</b>.
-     *         For more information, see <a
+     *         <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in
+     *         <code>RoleARN</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a>.
      */
@@ -222,7 +222,7 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
-     * IAM role specified in <b>RoleARN</b>. For more information, see <a
+     * IAM role specified in <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a>.
      * </p>
@@ -230,8 +230,8 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * @param domainARN
      *        The ARN of the Amazon ES domain. The IAM role must have permissions for 
      *        <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>, and
-     *        <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in <b>RoleARN</b>.
-     *        For more information, see <a
+     *        <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in
+     *        <code>RoleARN</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -336,14 +336,14 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
-     *        The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code> to
+     *        The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to
      *        facilitate the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
      *        for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
@@ -356,13 +356,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * </p>
      * 
-     * @return The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code> to
+     * @return The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to
      *         facilitate the expiration of old data. For more information, see <a
      *         href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
      *         for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
@@ -375,14 +375,14 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
-     *        The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code> to
+     *        The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to
      *        facilitate the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
      *        for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
@@ -397,14 +397,14 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
-     *        The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code> to
+     *        The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to
      *        facilitate the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
      *        for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
@@ -417,14 +417,14 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
-     *        The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code> to
+     *        The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code> to
      *        facilitate the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
      *        for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
@@ -439,13 +439,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are
-     * used.
+     * The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default values
+     * are used.
      * </p>
      * 
      * @param bufferingHints
-     *        The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values
-     *        are used.
+     *        The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default
+     *        values are used.
      */
 
     public void setBufferingHints(ElasticsearchBufferingHints bufferingHints) {
@@ -454,12 +454,12 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are
-     * used.
+     * The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default values
+     * are used.
      * </p>
      * 
-     * @return The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values
-     *         are used.
+     * @return The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default
+     *         values are used.
      */
 
     public ElasticsearchBufferingHints getBufferingHints() {
@@ -468,13 +468,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are
-     * used.
+     * The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default values
+     * are used.
      * </p>
      * 
      * @param bufferingHints
-     *        The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values
-     *        are used.
+     *        The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default
+     *        values are used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -650,7 +650,8 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

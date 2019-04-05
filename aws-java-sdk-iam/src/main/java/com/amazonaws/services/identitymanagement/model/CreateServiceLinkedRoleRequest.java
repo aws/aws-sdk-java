@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,16 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS service to which this role is attached. You use a string similar to a URL but without the http:// in
-     * front. For example: <code>elasticbeanstalk.amazonaws.com</code>
+     * The service principal for the AWS service to which this role is attached. You use a string similar to a URL but
+     * without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
+     * role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the services that have <b>Yes </b>in
+     * the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation
+     * for that service.
      * </p>
      */
     private String aWSServiceName;
@@ -39,24 +47,44 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
      */
     private String description;
     /**
+     * <p/>
      * <p>
-     * A string that you provide, which is combined with the service name to form the complete role name. If you make
-     * multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each
-     * request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code>
-     * or <code>-debug</code> to the suffix.
+     * A string that you provide, which is combined with the service-provided prefix to form the complete role name. If
+     * you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for
+     * each request. Otherwise the request fails with a duplicate role name error. For example, you could add
+     * <code>-1</code> or <code>-debug</code> to the suffix.
+     * </p>
+     * <p>
+     * Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the
+     * operation fails, try the operation again without the suffix.
      * </p>
      */
     private String customSuffix;
 
     /**
      * <p>
-     * The AWS service to which this role is attached. You use a string similar to a URL but without the http:// in
-     * front. For example: <code>elasticbeanstalk.amazonaws.com</code>
+     * The service principal for the AWS service to which this role is attached. You use a string similar to a URL but
+     * without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
+     * role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the services that have <b>Yes </b>in
+     * the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation
+     * for that service.
      * </p>
      * 
      * @param aWSServiceName
-     *        The AWS service to which this role is attached. You use a string similar to a URL but without the http://
-     *        in front. For example: <code>elasticbeanstalk.amazonaws.com</code>
+     *        The service principal for the AWS service to which this role is attached. You use a string similar to a
+     *        URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>. </p>
+     *        <p>
+     *        Service principals are unique and case-sensitive. To find the exact service principal for your
+     *        service-linked role, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     *        Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the services that have <b>Yes
+     *        </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
+     *        documentation for that service.
      */
 
     public void setAWSServiceName(String aWSServiceName) {
@@ -65,12 +93,27 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS service to which this role is attached. You use a string similar to a URL but without the http:// in
-     * front. For example: <code>elasticbeanstalk.amazonaws.com</code>
+     * The service principal for the AWS service to which this role is attached. You use a string similar to a URL but
+     * without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
+     * role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the services that have <b>Yes </b>in
+     * the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation
+     * for that service.
      * </p>
      * 
-     * @return The AWS service to which this role is attached. You use a string similar to a URL but without the http://
-     *         in front. For example: <code>elasticbeanstalk.amazonaws.com</code>
+     * @return The service principal for the AWS service to which this role is attached. You use a string similar to a
+     *         URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>. </p>
+     *         <p>
+     *         Service principals are unique and case-sensitive. To find the exact service principal for your
+     *         service-linked role, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html"
+     *         >AWS Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the services that have
+     *         <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the
+     *         service-linked role documentation for that service.
      */
 
     public String getAWSServiceName() {
@@ -79,13 +122,28 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The AWS service to which this role is attached. You use a string similar to a URL but without the http:// in
-     * front. For example: <code>elasticbeanstalk.amazonaws.com</code>
+     * The service principal for the AWS service to which this role is attached. You use a string similar to a URL but
+     * without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * Service principals are unique and case-sensitive. To find the exact service principal for your service-linked
+     * role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     * Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the services that have <b>Yes </b>in
+     * the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation
+     * for that service.
      * </p>
      * 
      * @param aWSServiceName
-     *        The AWS service to which this role is attached. You use a string similar to a URL but without the http://
-     *        in front. For example: <code>elasticbeanstalk.amazonaws.com</code>
+     *        The service principal for the AWS service to which this role is attached. You use a string similar to a
+     *        URL but without the http:// in front. For example: <code>elasticbeanstalk.amazonaws.com</code>. </p>
+     *        <p>
+     *        Service principals are unique and case-sensitive. To find the exact service principal for your
+     *        service-linked role, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS
+     *        Services That Work with IAM</a> in the <i>IAM User Guide</i> and look for the services that have <b>Yes
+     *        </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role
+     *        documentation for that service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,18 +193,28 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p/>
      * <p>
-     * A string that you provide, which is combined with the service name to form the complete role name. If you make
-     * multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each
-     * request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code>
-     * or <code>-debug</code> to the suffix.
+     * A string that you provide, which is combined with the service-provided prefix to form the complete role name. If
+     * you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for
+     * each request. Otherwise the request fails with a duplicate role name error. For example, you could add
+     * <code>-1</code> or <code>-debug</code> to the suffix.
+     * </p>
+     * <p>
+     * Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the
+     * operation fails, try the operation again without the suffix.
      * </p>
      * 
      * @param customSuffix
-     *        A string that you provide, which is combined with the service name to form the complete role name. If you
-     *        make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code>
-     *        for each request. Otherwise the request fails with a duplicate role name error. For example, you could add
-     *        <code>-1</code> or <code>-debug</code> to the suffix.
+     *        <p>
+     *        A string that you provide, which is combined with the service-provided prefix to form the complete role
+     *        name. If you make multiple requests for the same service, then you must supply a different
+     *        <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error.
+     *        For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.
+     *        </p>
+     *        <p>
+     *        Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix
+     *        and the operation fails, try the operation again without the suffix.
      */
 
     public void setCustomSuffix(String customSuffix) {
@@ -154,17 +222,27 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p/>
      * <p>
-     * A string that you provide, which is combined with the service name to form the complete role name. If you make
-     * multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each
-     * request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code>
-     * or <code>-debug</code> to the suffix.
+     * A string that you provide, which is combined with the service-provided prefix to form the complete role name. If
+     * you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for
+     * each request. Otherwise the request fails with a duplicate role name error. For example, you could add
+     * <code>-1</code> or <code>-debug</code> to the suffix.
+     * </p>
+     * <p>
+     * Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the
+     * operation fails, try the operation again without the suffix.
      * </p>
      * 
-     * @return A string that you provide, which is combined with the service name to form the complete role name. If you
-     *         make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code>
-     *         for each request. Otherwise the request fails with a duplicate role name error. For example, you could
-     *         add <code>-1</code> or <code>-debug</code> to the suffix.
+     * @return <p>
+     *         A string that you provide, which is combined with the service-provided prefix to form the complete role
+     *         name. If you make multiple requests for the same service, then you must supply a different
+     *         <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error.
+     *         For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.
+     *         </p>
+     *         <p>
+     *         Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix
+     *         and the operation fails, try the operation again without the suffix.
      */
 
     public String getCustomSuffix() {
@@ -172,18 +250,28 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p/>
      * <p>
-     * A string that you provide, which is combined with the service name to form the complete role name. If you make
-     * multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for each
-     * request. Otherwise the request fails with a duplicate role name error. For example, you could add <code>-1</code>
-     * or <code>-debug</code> to the suffix.
+     * A string that you provide, which is combined with the service-provided prefix to form the complete role name. If
+     * you make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code> for
+     * each request. Otherwise the request fails with a duplicate role name error. For example, you could add
+     * <code>-1</code> or <code>-debug</code> to the suffix.
+     * </p>
+     * <p>
+     * Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix and the
+     * operation fails, try the operation again without the suffix.
      * </p>
      * 
      * @param customSuffix
-     *        A string that you provide, which is combined with the service name to form the complete role name. If you
-     *        make multiple requests for the same service, then you must supply a different <code>CustomSuffix</code>
-     *        for each request. Otherwise the request fails with a duplicate role name error. For example, you could add
-     *        <code>-1</code> or <code>-debug</code> to the suffix.
+     *        <p>
+     *        A string that you provide, which is combined with the service-provided prefix to form the complete role
+     *        name. If you make multiple requests for the same service, then you must supply a different
+     *        <code>CustomSuffix</code> for each request. Otherwise the request fails with a duplicate role name error.
+     *        For example, you could add <code>-1</code> or <code>-debug</code> to the suffix.
+     *        </p>
+     *        <p>
+     *        Some services do not support the <code>CustomSuffix</code> parameter. If you provide an optional suffix
+     *        and the operation fails, try the operation again without the suffix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,7 +281,8 @@ public class CreateServiceLinkedRoleRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

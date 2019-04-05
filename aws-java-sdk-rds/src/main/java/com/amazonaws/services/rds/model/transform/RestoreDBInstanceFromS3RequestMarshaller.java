@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -228,6 +228,11 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
             request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(restoreDBInstanceFromS3Request.getPerformanceInsightsKMSKeyId()));
         }
 
+        if (restoreDBInstanceFromS3Request.getPerformanceInsightsRetentionPeriod() != null) {
+            request.addParameter("PerformanceInsightsRetentionPeriod",
+                    StringUtils.fromInteger(restoreDBInstanceFromS3Request.getPerformanceInsightsRetentionPeriod()));
+        }
+
         if (!restoreDBInstanceFromS3Request.getEnableCloudwatchLogsExports().isEmpty()
                 || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceFromS3Request.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
             com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceFromS3Request
@@ -241,6 +246,35 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
                 }
                 enableCloudwatchLogsExportsListIndex++;
             }
+        }
+
+        if (!restoreDBInstanceFromS3Request.getProcessorFeatures().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceFromS3Request.getProcessorFeatures()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeaturesList = (com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceFromS3Request
+                    .getProcessorFeatures();
+            int processorFeaturesListIndex = 1;
+
+            for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+
+                if (processorFeaturesListValue.getName() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                            StringUtils.fromString(processorFeaturesListValue.getName()));
+                }
+
+                if (processorFeaturesListValue.getValue() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                }
+                processorFeaturesListIndex++;
+            }
+        }
+
+        if (restoreDBInstanceFromS3Request.getUseDefaultProcessorFeatures() != null) {
+            request.addParameter("UseDefaultProcessorFeatures", StringUtils.fromBoolean(restoreDBInstanceFromS3Request.getUseDefaultProcessorFeatures()));
+        }
+
+        if (restoreDBInstanceFromS3Request.getDeletionProtection() != null) {
+            request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBInstanceFromS3Request.getDeletionProtection()));
         }
 
         return request;

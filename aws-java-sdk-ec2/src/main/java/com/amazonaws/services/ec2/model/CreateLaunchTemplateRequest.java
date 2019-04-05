@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,11 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
+     * </p>
+     * <p>
+     * Constraint: Maximum 128 ASCII characters.
      * </p>
      */
     private String clientToken;
@@ -56,15 +59,20 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
+     * </p>
+     * <p>
+     * Constraint: Maximum 128 ASCII characters.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *        Idempotency</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.</p>
+     *        <p>
+     *        Constraint: Maximum 128 ASCII characters.
      */
 
     public void setClientToken(String clientToken) {
@@ -74,14 +82,19 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
+     * </p>
+     * <p>
+     * Constraint: Maximum 128 ASCII characters.
      * </p>
      * 
      * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *         Idempotency</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.</p>
+     *         <p>
+     *         Constraint: Maximum 128 ASCII characters.
      */
 
     public String getClientToken() {
@@ -91,15 +104,20 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
+     * </p>
+     * <p>
+     * Constraint: Maximum 128 ASCII characters.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *        Idempotency</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.</p>
+     *        <p>
+     *        Constraint: Maximum 128 ASCII characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,7 +258,8 @@ public class CreateLaunchTemplateRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

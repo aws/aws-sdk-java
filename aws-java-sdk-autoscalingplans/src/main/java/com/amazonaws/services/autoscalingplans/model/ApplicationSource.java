@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      * </p>
      */
     private String cloudFormationStackARN;
@@ -43,11 +43,11 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      * </p>
      * 
      * @param cloudFormationStackARN
-     *        The Amazon Resource Name (ARN) of a CloudFormation stack.
+     *        The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      */
 
     public void setCloudFormationStackARN(String cloudFormationStackARN) {
@@ -56,10 +56,10 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * @return The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      */
 
     public String getCloudFormationStackARN() {
@@ -68,11 +68,11 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      * </p>
      * 
      * @param cloudFormationStackARN
-     *        The Amazon Resource Name (ARN) of a CloudFormation stack.
+     *        The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,7 +152,8 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

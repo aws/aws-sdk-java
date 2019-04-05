@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -144,12 +144,12 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -160,6 +160,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the
+     * current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account
+     * that is the master account for an organization in AWS Organizations.
+     * </p>
+     */
+    private Boolean isOrganizationTrail;
 
     /**
      * <p>
@@ -856,12 +864,12 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -886,12 +894,12 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>
@@ -922,12 +930,12 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -951,12 +959,12 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *         arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *         arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      *         </p>
      *         </li>
      *         <li>
@@ -987,12 +995,12 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -1017,12 +1025,12 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>
@@ -1039,7 +1047,76 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the
+     * current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account
+     * that is the master account for an organization in AWS Organizations.
+     * </p>
+     * 
+     * @param isOrganizationTrail
+     *        Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only
+     *        for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of
+     *        an AWS account that is the master account for an organization in AWS Organizations.
+     */
+
+    public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
+        this.isOrganizationTrail = isOrganizationTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the
+     * current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account
+     * that is the master account for an organization in AWS Organizations.
+     * </p>
+     * 
+     * @return Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only
+     *         for the current AWS account. The default is false, and cannot be true unless the call is made on behalf
+     *         of an AWS account that is the master account for an organization in AWS Organizations.
+     */
+
+    public Boolean getIsOrganizationTrail() {
+        return this.isOrganizationTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the
+     * current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account
+     * that is the master account for an organization in AWS Organizations.
+     * </p>
+     * 
+     * @param isOrganizationTrail
+     *        Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only
+     *        for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of
+     *        an AWS account that is the master account for an organization in AWS Organizations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrailRequest withIsOrganizationTrail(Boolean isOrganizationTrail) {
+        setIsOrganizationTrail(isOrganizationTrail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the
+     * current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account
+     * that is the master account for an organization in AWS Organizations.
+     * </p>
+     * 
+     * @return Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only
+     *         for the current AWS account. The default is false, and cannot be true unless the call is made on behalf
+     *         of an AWS account that is the master account for an organization in AWS Organizations.
+     */
+
+    public Boolean isOrganizationTrail() {
+        return this.isOrganizationTrail;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1068,7 +1145,9 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getCloudWatchLogsRoleArn() != null)
             sb.append("CloudWatchLogsRoleArn: ").append(getCloudWatchLogsRoleArn()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getIsOrganizationTrail() != null)
+            sb.append("IsOrganizationTrail: ").append(getIsOrganizationTrail());
         sb.append("}");
         return sb.toString();
     }
@@ -1123,6 +1202,10 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getIsOrganizationTrail() == null ^ this.getIsOrganizationTrail() == null)
+            return false;
+        if (other.getIsOrganizationTrail() != null && other.getIsOrganizationTrail().equals(this.getIsOrganizationTrail()) == false)
+            return false;
         return true;
     }
 
@@ -1141,6 +1224,7 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getCloudWatchLogsLogGroupArn() == null) ? 0 : getCloudWatchLogsLogGroupArn().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getIsOrganizationTrail() == null) ? 0 : getIsOrganizationTrail().hashCode());
         return hashCode;
     }
 

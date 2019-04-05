@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -133,6 +133,8 @@ public enum DevicefarmActions implements Action {
     RenewOffering("devicefarm:RenewOffering"),
     /** Action for the ScheduleRun operation. */
     ScheduleRun("devicefarm:ScheduleRun"),
+    /** Action for the StopJob operation. */
+    StopJob("devicefarm:StopJob"),
     /** Action for the StopRemoteAccessSession operation. */
     StopRemoteAccessSession("devicefarm:StopRemoteAccessSession"),
     /** Action for the StopRun operation. */
@@ -147,6 +149,8 @@ public enum DevicefarmActions implements Action {
     UpdateNetworkProfile("devicefarm:UpdateNetworkProfile"),
     /** Action for the UpdateProject operation. */
     UpdateProject("devicefarm:UpdateProject"),
+    /** Action for the UpdateUpload operation. */
+    UpdateUpload("devicefarm:UpdateUpload"),
     /** Action for the UpdateVPCEConfiguration operation. */
     UpdateVPCEConfiguration("devicefarm:UpdateVPCEConfiguration"),
 

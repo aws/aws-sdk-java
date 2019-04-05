@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,12 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.Map<String, String> headers;
+    /**
+     * <p>
+     * The headers as a map from string to list of values to simulate an incoming invocation request.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<String>> multiValueHeaders;
     /**
      * <p>
      * A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate when
@@ -345,6 +351,67 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The headers as a map from string to list of values to simulate an incoming invocation request.
+     * </p>
+     * 
+     * @return The headers as a map from string to list of values to simulate an incoming invocation request.
+     */
+
+    public java.util.Map<String, java.util.List<String>> getMultiValueHeaders() {
+        return multiValueHeaders;
+    }
+
+    /**
+     * <p>
+     * The headers as a map from string to list of values to simulate an incoming invocation request.
+     * </p>
+     * 
+     * @param multiValueHeaders
+     *        The headers as a map from string to list of values to simulate an incoming invocation request.
+     */
+
+    public void setMultiValueHeaders(java.util.Map<String, java.util.List<String>> multiValueHeaders) {
+        this.multiValueHeaders = multiValueHeaders;
+    }
+
+    /**
+     * <p>
+     * The headers as a map from string to list of values to simulate an incoming invocation request.
+     * </p>
+     * 
+     * @param multiValueHeaders
+     *        The headers as a map from string to list of values to simulate an incoming invocation request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestInvokeMethodRequest withMultiValueHeaders(java.util.Map<String, java.util.List<String>> multiValueHeaders) {
+        setMultiValueHeaders(multiValueHeaders);
+        return this;
+    }
+
+    public TestInvokeMethodRequest addMultiValueHeadersEntry(String key, java.util.List<String> value) {
+        if (null == this.multiValueHeaders) {
+            this.multiValueHeaders = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.multiValueHeaders.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.multiValueHeaders.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into MultiValueHeaders.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestInvokeMethodRequest clearMultiValueHeadersEntries() {
+        this.multiValueHeaders = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate when
      * making the HTTPS request to the defined back-end endpoint.
      * </p>
@@ -451,7 +518,8 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -473,6 +541,8 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Body: ").append(getBody()).append(",");
         if (getHeaders() != null)
             sb.append("Headers: ").append(getHeaders()).append(",");
+        if (getMultiValueHeaders() != null)
+            sb.append("MultiValueHeaders: ").append(getMultiValueHeaders()).append(",");
         if (getClientCertificateId() != null)
             sb.append("ClientCertificateId: ").append(getClientCertificateId()).append(",");
         if (getStageVariables() != null)
@@ -515,6 +585,10 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
             return false;
+        if (other.getMultiValueHeaders() == null ^ this.getMultiValueHeaders() == null)
+            return false;
+        if (other.getMultiValueHeaders() != null && other.getMultiValueHeaders().equals(this.getMultiValueHeaders()) == false)
+            return false;
         if (other.getClientCertificateId() == null ^ this.getClientCertificateId() == null)
             return false;
         if (other.getClientCertificateId() != null && other.getClientCertificateId().equals(this.getClientCertificateId()) == false)
@@ -537,6 +611,7 @@ public class TestInvokeMethodRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getPathWithQueryString() == null) ? 0 : getPathWithQueryString().hashCode());
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
+        hashCode = prime * hashCode + ((getMultiValueHeaders() == null) ? 0 : getMultiValueHeaders().hashCode());
         hashCode = prime * hashCode + ((getClientCertificateId() == null) ? 0 : getClientCertificateId().hashCode());
         hashCode = prime * hashCode + ((getStageVariables() == null) ? 0 : getStageVariables().hashCode());
         return hashCode;

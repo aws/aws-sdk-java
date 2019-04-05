@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,8 +26,46 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The idempotency token for the create request. */
+    private String clientToken;
     /** A boolean value that specifies whether the detector is to be enabled. */
     private Boolean enable;
+    /** A enum value that specifies how frequently customer got Finding updates published. */
+    private String findingPublishingFrequency;
+
+    /**
+     * The idempotency token for the create request.
+     * 
+     * @param clientToken
+     *        The idempotency token for the create request.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * The idempotency token for the create request.
+     * 
+     * @return The idempotency token for the create request.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * The idempotency token for the create request.
+     * 
+     * @param clientToken
+     *        The idempotency token for the create request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDetectorRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
 
     /**
      * A boolean value that specifies whether the detector is to be enabled.
@@ -74,7 +112,59 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * A enum value that specifies how frequently customer got Finding updates published.
+     * 
+     * @param findingPublishingFrequency
+     *        A enum value that specifies how frequently customer got Finding updates published.
+     * @see FindingPublishingFrequency
+     */
+
+    public void setFindingPublishingFrequency(String findingPublishingFrequency) {
+        this.findingPublishingFrequency = findingPublishingFrequency;
+    }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates published.
+     * 
+     * @return A enum value that specifies how frequently customer got Finding updates published.
+     * @see FindingPublishingFrequency
+     */
+
+    public String getFindingPublishingFrequency() {
+        return this.findingPublishingFrequency;
+    }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates published.
+     * 
+     * @param findingPublishingFrequency
+     *        A enum value that specifies how frequently customer got Finding updates published.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingPublishingFrequency
+     */
+
+    public CreateDetectorRequest withFindingPublishingFrequency(String findingPublishingFrequency) {
+        setFindingPublishingFrequency(findingPublishingFrequency);
+        return this;
+    }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates published.
+     * 
+     * @param findingPublishingFrequency
+     *        A enum value that specifies how frequently customer got Finding updates published.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingPublishingFrequency
+     */
+
+    public CreateDetectorRequest withFindingPublishingFrequency(FindingPublishingFrequency findingPublishingFrequency) {
+        this.findingPublishingFrequency = findingPublishingFrequency.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -84,8 +174,12 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getEnable() != null)
-            sb.append("Enable: ").append(getEnable());
+            sb.append("Enable: ").append(getEnable()).append(",");
+        if (getFindingPublishingFrequency() != null)
+            sb.append("FindingPublishingFrequency: ").append(getFindingPublishingFrequency());
         sb.append("}");
         return sb.toString();
     }
@@ -100,9 +194,17 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof CreateDetectorRequest == false)
             return false;
         CreateDetectorRequest other = (CreateDetectorRequest) obj;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         if (other.getEnable() == null ^ this.getEnable() == null)
             return false;
         if (other.getEnable() != null && other.getEnable().equals(this.getEnable()) == false)
+            return false;
+        if (other.getFindingPublishingFrequency() == null ^ this.getFindingPublishingFrequency() == null)
+            return false;
+        if (other.getFindingPublishingFrequency() != null && other.getFindingPublishingFrequency().equals(this.getFindingPublishingFrequency()) == false)
             return false;
         return true;
     }
@@ -112,7 +214,9 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getEnable() == null) ? 0 : getEnable().hashCode());
+        hashCode = prime * hashCode + ((getFindingPublishingFrequency() == null) ? 0 : getFindingPublishingFrequency().hashCode());
         return hashCode;
     }
 

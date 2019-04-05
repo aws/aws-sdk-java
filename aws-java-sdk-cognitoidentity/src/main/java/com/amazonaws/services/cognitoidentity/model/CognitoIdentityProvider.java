@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A provider representing an Amazon Cognito Identity User Pool and its client ID.
+ * A provider representing an Amazon Cognito user pool and its client ID.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CognitoIdentityProvider"
@@ -30,14 +30,14 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The provider name for an Amazon Cognito Identity User Pool. For example,
+     * The provider name for an Amazon Cognito user pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      * </p>
      */
     private String providerName;
     /**
      * <p>
-     * The client ID for the Amazon Cognito Identity User Pool.
+     * The client ID for the Amazon Cognito user pool.
      * </p>
      */
     private String clientId;
@@ -45,17 +45,25 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
      * <p>
      * TRUE if server-side token validation is enabled for the identity provider’s token.
      * </p>
+     * <p>
+     * Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with
+     * the integrated user pools to make sure that the user has not been globally signed out or deleted before the
+     * identity pool provides an OIDC token or AWS credentials for the user.
+     * </p>
+     * <p>
+     * If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
+     * </p>
      */
     private Boolean serverSideTokenCheck;
 
     /**
      * <p>
-     * The provider name for an Amazon Cognito Identity User Pool. For example,
+     * The provider name for an Amazon Cognito user pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      * </p>
      * 
      * @param providerName
-     *        The provider name for an Amazon Cognito Identity User Pool. For example,
+     *        The provider name for an Amazon Cognito user pool. For example,
      *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      */
 
@@ -65,11 +73,11 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The provider name for an Amazon Cognito Identity User Pool. For example,
+     * The provider name for an Amazon Cognito user pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      * </p>
      * 
-     * @return The provider name for an Amazon Cognito Identity User Pool. For example,
+     * @return The provider name for an Amazon Cognito user pool. For example,
      *         <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      */
 
@@ -79,12 +87,12 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The provider name for an Amazon Cognito Identity User Pool. For example,
+     * The provider name for an Amazon Cognito user pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      * </p>
      * 
      * @param providerName
-     *        The provider name for an Amazon Cognito Identity User Pool. For example,
+     *        The provider name for an Amazon Cognito user pool. For example,
      *        <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -96,11 +104,11 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The client ID for the Amazon Cognito Identity User Pool.
+     * The client ID for the Amazon Cognito user pool.
      * </p>
      * 
      * @param clientId
-     *        The client ID for the Amazon Cognito Identity User Pool.
+     *        The client ID for the Amazon Cognito user pool.
      */
 
     public void setClientId(String clientId) {
@@ -109,10 +117,10 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The client ID for the Amazon Cognito Identity User Pool.
+     * The client ID for the Amazon Cognito user pool.
      * </p>
      * 
-     * @return The client ID for the Amazon Cognito Identity User Pool.
+     * @return The client ID for the Amazon Cognito user pool.
      */
 
     public String getClientId() {
@@ -121,11 +129,11 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The client ID for the Amazon Cognito Identity User Pool.
+     * The client ID for the Amazon Cognito user pool.
      * </p>
      * 
      * @param clientId
-     *        The client ID for the Amazon Cognito Identity User Pool.
+     *        The client ID for the Amazon Cognito user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,9 +146,24 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
      * <p>
      * TRUE if server-side token validation is enabled for the identity provider’s token.
      * </p>
+     * <p>
+     * Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with
+     * the integrated user pools to make sure that the user has not been globally signed out or deleted before the
+     * identity pool provides an OIDC token or AWS credentials for the user.
+     * </p>
+     * <p>
+     * If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
+     * </p>
      * 
      * @param serverSideTokenCheck
-     *        TRUE if server-side token validation is enabled for the identity provider’s token.
+     *        TRUE if server-side token validation is enabled for the identity provider’s token.</p>
+     *        <p>
+     *        Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check
+     *        with the integrated user pools to make sure that the user has not been globally signed out or deleted
+     *        before the identity pool provides an OIDC token or AWS credentials for the user.
+     *        </p>
+     *        <p>
+     *        If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
      */
 
     public void setServerSideTokenCheck(Boolean serverSideTokenCheck) {
@@ -151,8 +174,23 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
      * <p>
      * TRUE if server-side token validation is enabled for the identity provider’s token.
      * </p>
+     * <p>
+     * Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with
+     * the integrated user pools to make sure that the user has not been globally signed out or deleted before the
+     * identity pool provides an OIDC token or AWS credentials for the user.
+     * </p>
+     * <p>
+     * If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
+     * </p>
      * 
-     * @return TRUE if server-side token validation is enabled for the identity provider’s token.
+     * @return TRUE if server-side token validation is enabled for the identity provider’s token.</p>
+     *         <p>
+     *         Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will
+     *         check with the integrated user pools to make sure that the user has not been globally signed out or
+     *         deleted before the identity pool provides an OIDC token or AWS credentials for the user.
+     *         </p>
+     *         <p>
+     *         If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
      */
 
     public Boolean getServerSideTokenCheck() {
@@ -163,9 +201,24 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
      * <p>
      * TRUE if server-side token validation is enabled for the identity provider’s token.
      * </p>
+     * <p>
+     * Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with
+     * the integrated user pools to make sure that the user has not been globally signed out or deleted before the
+     * identity pool provides an OIDC token or AWS credentials for the user.
+     * </p>
+     * <p>
+     * If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
+     * </p>
      * 
      * @param serverSideTokenCheck
-     *        TRUE if server-side token validation is enabled for the identity provider’s token.
+     *        TRUE if server-side token validation is enabled for the identity provider’s token.</p>
+     *        <p>
+     *        Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check
+     *        with the integrated user pools to make sure that the user has not been globally signed out or deleted
+     *        before the identity pool provides an OIDC token or AWS credentials for the user.
+     *        </p>
+     *        <p>
+     *        If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,8 +231,23 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
      * <p>
      * TRUE if server-side token validation is enabled for the identity provider’s token.
      * </p>
+     * <p>
+     * Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with
+     * the integrated user pools to make sure that the user has not been globally signed out or deleted before the
+     * identity pool provides an OIDC token or AWS credentials for the user.
+     * </p>
+     * <p>
+     * If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
+     * </p>
      * 
-     * @return TRUE if server-side token validation is enabled for the identity provider’s token.
+     * @return TRUE if server-side token validation is enabled for the identity provider’s token.</p>
+     *         <p>
+     *         Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will
+     *         check with the integrated user pools to make sure that the user has not been globally signed out or
+     *         deleted before the identity pool provides an OIDC token or AWS credentials for the user.
+     *         </p>
+     *         <p>
+     *         If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.
      */
 
     public Boolean isServerSideTokenCheck() {
@@ -187,7 +255,8 @@ public class CognitoIdentityProvider implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

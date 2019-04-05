@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,18 @@ public class AssetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<String> ipv4Addresses;
+    /**
+     * <p>
+     * The tags related to the EC2 instance where the finding is generated.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * An array of the network interfaces interacting with the EC2 instance where the finding is generated.
+     * </p>
+     */
+    private java.util.List<NetworkInterface> networkInterfaces;
 
     /**
      * <p>
@@ -339,7 +351,148 @@ public class AssetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tags related to the EC2 instance where the finding is generated.
+     * </p>
+     * 
+     * @return The tags related to the EC2 instance where the finding is generated.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags related to the EC2 instance where the finding is generated.
+     * </p>
+     * 
+     * @param tags
+     *        The tags related to the EC2 instance where the finding is generated.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags related to the EC2 instance where the finding is generated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags related to the EC2 instance where the finding is generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetAttributes withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags related to the EC2 instance where the finding is generated.
+     * </p>
+     * 
+     * @param tags
+     *        The tags related to the EC2 instance where the finding is generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetAttributes withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of the network interfaces interacting with the EC2 instance where the finding is generated.
+     * </p>
+     * 
+     * @return An array of the network interfaces interacting with the EC2 instance where the finding is generated.
+     */
+
+    public java.util.List<NetworkInterface> getNetworkInterfaces() {
+        return networkInterfaces;
+    }
+
+    /**
+     * <p>
+     * An array of the network interfaces interacting with the EC2 instance where the finding is generated.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        An array of the network interfaces interacting with the EC2 instance where the finding is generated.
+     */
+
+    public void setNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+            return;
+        }
+
+        this.networkInterfaces = new java.util.ArrayList<NetworkInterface>(networkInterfaces);
+    }
+
+    /**
+     * <p>
+     * An array of the network interfaces interacting with the EC2 instance where the finding is generated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        An array of the network interfaces interacting with the EC2 instance where the finding is generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetAttributes withNetworkInterfaces(NetworkInterface... networkInterfaces) {
+        if (this.networkInterfaces == null) {
+            setNetworkInterfaces(new java.util.ArrayList<NetworkInterface>(networkInterfaces.length));
+        }
+        for (NetworkInterface ele : networkInterfaces) {
+            this.networkInterfaces.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of the network interfaces interacting with the EC2 instance where the finding is generated.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        An array of the network interfaces interacting with the EC2 instance where the finding is generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetAttributes withNetworkInterfaces(java.util.Collection<NetworkInterface> networkInterfaces) {
+        setNetworkInterfaces(networkInterfaces);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -360,7 +513,11 @@ public class AssetAttributes implements Serializable, Cloneable, StructuredPojo 
         if (getHostname() != null)
             sb.append("Hostname: ").append(getHostname()).append(",");
         if (getIpv4Addresses() != null)
-            sb.append("Ipv4Addresses: ").append(getIpv4Addresses());
+            sb.append("Ipv4Addresses: ").append(getIpv4Addresses()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getNetworkInterfaces() != null)
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces());
         sb.append("}");
         return sb.toString();
     }
@@ -399,6 +556,14 @@ public class AssetAttributes implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getIpv4Addresses() != null && other.getIpv4Addresses().equals(this.getIpv4Addresses()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
+            return false;
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
+            return false;
         return true;
     }
 
@@ -413,6 +578,8 @@ public class AssetAttributes implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAmiId() == null) ? 0 : getAmiId().hashCode());
         hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode());
         hashCode = prime * hashCode + ((getIpv4Addresses() == null) ? 0 : getIpv4Addresses().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         return hashCode;
     }
 

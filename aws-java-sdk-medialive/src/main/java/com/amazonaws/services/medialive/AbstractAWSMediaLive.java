@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public BatchUpdateScheduleResult batchUpdateSchedule(BatchUpdateScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateChannelResult createChannel(CreateChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -39,6 +44,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public CreateInputSecurityGroupResult createInputSecurityGroup(CreateInputSecurityGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTagsResult createTags(CreateTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,6 +68,16 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public DeleteReservationResult deleteReservation(DeleteReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeChannelResult describeChannel(DescribeChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,6 +93,21 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public DescribeOfferingResult describeOffering(DescribeOfferingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeReservationResult describeReservation(DescribeReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeScheduleResult describeSchedule(DescribeScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListChannelsResult listChannels(ListChannelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +119,26 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public ListInputsResult listInputs(ListInputsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListOfferingsResult listOfferings(ListOfferingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReservationsResult listReservations(ListReservationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

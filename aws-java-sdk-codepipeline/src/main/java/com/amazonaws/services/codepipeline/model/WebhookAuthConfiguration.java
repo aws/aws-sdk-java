@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The authentication applied to incoming webhook trigger requests.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/WebhookAuthConfiguration"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WebhookAuthConfiguration implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the AllowedIPRange
+     * property must be set, and this property must be set to a valid CIDR range.
+     * </p>
+     */
     private String allowedIPRange;
-
+    /**
+     * <p>
+     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must be set.
+     * </p>
+     */
     private String secretToken;
 
     /**
+     * <p>
+     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the AllowedIPRange
+     * property must be set, and this property must be set to a valid CIDR range.
+     * </p>
+     * 
      * @param allowedIPRange
+     *        The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
+     *        AllowedIPRange property must be set, and this property must be set to a valid CIDR range.
      */
 
     public void setAllowedIPRange(String allowedIPRange) {
@@ -38,7 +58,13 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the AllowedIPRange
+     * property must be set, and this property must be set to a valid CIDR range.
+     * </p>
+     * 
+     * @return The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
+     *         AllowedIPRange property must be set, and this property must be set to a valid CIDR range.
      */
 
     public String getAllowedIPRange() {
@@ -46,7 +72,14 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The property used to configure acceptance of webhooks within a specific IP range. For IP, only the AllowedIPRange
+     * property must be set, and this property must be set to a valid CIDR range.
+     * </p>
+     * 
      * @param allowedIPRange
+     *        The property used to configure acceptance of webhooks within a specific IP range. For IP, only the
+     *        AllowedIPRange property must be set, and this property must be set to a valid CIDR range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +89,13 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must be set.
+     * </p>
+     * 
      * @param secretToken
+     *        The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must
+     *        be set.
      */
 
     public void setSecretToken(String secretToken) {
@@ -64,7 +103,12 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must be set.
+     * </p>
+     * 
+     * @return The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must
+     *         be set.
      */
 
     public String getSecretToken() {
@@ -72,7 +116,13 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must be set.
+     * </p>
+     * 
      * @param secretToken
+     *        The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must
+     *        be set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,7 +132,8 @@ public class WebhookAuthConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

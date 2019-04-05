@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,11 +39,13 @@ public class SourceTableDetailsMarshaller {
     private static final MarshallingInfo<List> KEYSCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KeySchema").build();
     private static final MarshallingInfo<java.util.Date> TABLECREATIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableCreationDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableCreationDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughput").build();
     private static final MarshallingInfo<Long> ITEMCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ItemCount").build();
+    private static final MarshallingInfo<String> BILLINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingMode").build();
 
     private static final SourceTableDetailsMarshaller instance = new SourceTableDetailsMarshaller();
 
@@ -69,6 +71,7 @@ public class SourceTableDetailsMarshaller {
             protocolMarshaller.marshall(sourceTableDetails.getTableCreationDateTime(), TABLECREATIONDATETIME_BINDING);
             protocolMarshaller.marshall(sourceTableDetails.getProvisionedThroughput(), PROVISIONEDTHROUGHPUT_BINDING);
             protocolMarshaller.marshall(sourceTableDetails.getItemCount(), ITEMCOUNT_BINDING);
+            protocolMarshaller.marshall(sourceTableDetails.getBillingMode(), BILLINGMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

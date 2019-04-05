@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,7 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     private String taskType;
     /**
      * <p>
-     * The parameters used at the time that the task executed.
+     * The parameters used at the time that the task ran.
      * </p>
      */
     private String parameters;
@@ -75,13 +75,13 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     private String statusDetails;
     /**
      * <p>
-     * The time that the task started executing on the target.
+     * The time that the task started running on the target.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * The time that the task finished executing on the target.
+     * The time that the task finished running on the target.
      * </p>
      */
     private java.util.Date endTime;
@@ -328,11 +328,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The parameters used at the time that the task executed.
+     * The parameters used at the time that the task ran.
      * </p>
      * 
      * @param parameters
-     *        The parameters used at the time that the task executed.
+     *        The parameters used at the time that the task ran.
      */
 
     public void setParameters(String parameters) {
@@ -341,10 +341,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The parameters used at the time that the task executed.
+     * The parameters used at the time that the task ran.
      * </p>
      * 
-     * @return The parameters used at the time that the task executed.
+     * @return The parameters used at the time that the task ran.
      */
 
     public String getParameters() {
@@ -353,11 +353,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The parameters used at the time that the task executed.
+     * The parameters used at the time that the task ran.
      * </p>
      * 
      * @param parameters
-     *        The parameters used at the time that the task executed.
+     *        The parameters used at the time that the task ran.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,11 +467,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task started executing on the target.
+     * The time that the task started running on the target.
      * </p>
      * 
      * @param startTime
-     *        The time that the task started executing on the target.
+     *        The time that the task started running on the target.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -480,10 +480,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task started executing on the target.
+     * The time that the task started running on the target.
      * </p>
      * 
-     * @return The time that the task started executing on the target.
+     * @return The time that the task started running on the target.
      */
 
     public java.util.Date getStartTime() {
@@ -492,11 +492,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task started executing on the target.
+     * The time that the task started running on the target.
      * </p>
      * 
      * @param startTime
-     *        The time that the task started executing on the target.
+     *        The time that the task started running on the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,11 +507,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task finished executing on the target.
+     * The time that the task finished running on the target.
      * </p>
      * 
      * @param endTime
-     *        The time that the task finished executing on the target.
+     *        The time that the task finished running on the target.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -520,10 +520,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task finished executing on the target.
+     * The time that the task finished running on the target.
      * </p>
      * 
-     * @return The time that the task finished executing on the target.
+     * @return The time that the task finished running on the target.
      */
 
     public java.util.Date getEndTime() {
@@ -532,11 +532,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
 
     /**
      * <p>
-     * The time that the task finished executing on the target.
+     * The time that the task finished running on the target.
      * </p>
      * 
      * @param endTime
-     *        The time that the task finished executing on the target.
+     *        The time that the task finished running on the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -632,7 +632,8 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -653,7 +654,7 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
         if (getTaskType() != null)
             sb.append("TaskType: ").append(getTaskType()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters()).append(",");
+            sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusDetails() != null)
@@ -663,7 +664,7 @@ public class GetMaintenanceWindowExecutionTaskInvocationResult extends com.amazo
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getOwnerInformation() != null)
-            sb.append("OwnerInformation: ").append(getOwnerInformation()).append(",");
+            sb.append("OwnerInformation: ").append("***Sensitive Data Redacted***").append(",");
         if (getWindowTargetId() != null)
             sb.append("WindowTargetId: ").append(getWindowTargetId());
         sb.append("}");

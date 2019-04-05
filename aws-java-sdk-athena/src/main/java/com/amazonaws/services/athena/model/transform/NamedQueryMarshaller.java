@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class NamedQueryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryString").build();
     private static final MarshallingInfo<String> NAMEDQUERYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NamedQueryId").build();
+    private static final MarshallingInfo<String> WORKGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("WorkGroup").build();
 
     private static final NamedQueryMarshaller instance = new NamedQueryMarshaller();
 
@@ -59,6 +61,7 @@ public class NamedQueryMarshaller {
             protocolMarshaller.marshall(namedQuery.getDatabase(), DATABASE_BINDING);
             protocolMarshaller.marshall(namedQuery.getQueryString(), QUERYSTRING_BINDING);
             protocolMarshaller.marshall(namedQuery.getNamedQueryId(), NAMEDQUERYID_BINDING);
+            protocolMarshaller.marshall(namedQuery.getWorkGroup(), WORKGROUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

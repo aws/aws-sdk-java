@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
      * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
      * </p>
@@ -45,9 +45,9 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items that you want Amazon Route 53 to return in the response to a
-     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns
-     * up to 100 operations.
+     * The maximum number of items that you want AWS Cloud Map to return in the response to a
+     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
+     * returns up to 100 operations.
      * </p>
      */
     private Integer maxResults;
@@ -74,7 +74,7 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
      * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
      * </p>
@@ -89,10 +89,10 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </p>
      *        <note>
      *        <p>
-     *        Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria.
-     *        It's possible that no operations in the first <code>MaxResults</code> operations matched the specified
-     *        criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match
-     *        the criteria.
+     *        AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified
+     *        criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the
+     *        specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations
+     *        that match the criteria.
      *        </p>
      */
 
@@ -111,7 +111,7 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
      * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
      * </p>
@@ -125,10 +125,10 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </p>
      *         <note>
      *         <p>
-     *         Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria.
-     *         It's possible that no operations in the first <code>MaxResults</code> operations matched the specified
-     *         criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that
-     *         match the criteria.
+     *         AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified
+     *         criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the
+     *         specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations
+     *         that match the criteria.
      *         </p>
      */
 
@@ -147,7 +147,7 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <note>
      * <p>
-     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
      * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
      * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
      * </p>
@@ -162,10 +162,10 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </p>
      *        <note>
      *        <p>
-     *        Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria.
-     *        It's possible that no operations in the first <code>MaxResults</code> operations matched the specified
-     *        criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match
-     *        the criteria.
+     *        AWS Cloud Map gets <code>MaxResults</code> operations and then filters them based on the specified
+     *        criteria. It's possible that no operations in the first <code>MaxResults</code> operations matched the
+     *        specified criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations
+     *        that match the criteria.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -177,15 +177,15 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items that you want Amazon Route 53 to return in the response to a
-     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns
-     * up to 100 operations.
+     * The maximum number of items that you want AWS Cloud Map to return in the response to a
+     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
+     * returns up to 100 operations.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items that you want Amazon Route 53 to return in the response to a
-     *        <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53
-     *        returns up to 100 operations.
+     *        The maximum number of items that you want AWS Cloud Map to return in the response to a
+     *        <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud
+     *        Map returns up to 100 operations.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -194,14 +194,14 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items that you want Amazon Route 53 to return in the response to a
-     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns
-     * up to 100 operations.
+     * The maximum number of items that you want AWS Cloud Map to return in the response to a
+     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
+     * returns up to 100 operations.
      * </p>
      * 
-     * @return The maximum number of items that you want Amazon Route 53 to return in the response to a
-     *         <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53
-     *         returns up to 100 operations.
+     * @return The maximum number of items that you want AWS Cloud Map to return in the response to a
+     *         <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud
+     *         Map returns up to 100 operations.
      */
 
     public Integer getMaxResults() {
@@ -210,15 +210,15 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of items that you want Amazon Route 53 to return in the response to a
-     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns
-     * up to 100 operations.
+     * The maximum number of items that you want AWS Cloud Map to return in the response to a
+     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud Map
+     * returns up to 100 operations.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of items that you want Amazon Route 53 to return in the response to a
-     *        <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53
-     *        returns up to 100 operations.
+     *        The maximum number of items that you want AWS Cloud Map to return in the response to a
+     *        <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, AWS Cloud
+     *        Map returns up to 100 operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,7 +334,8 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,16 +26,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to
+     * sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included
+     * per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+     */
     private String cslgAtom;
-
+    /** Inserts a free-space box immediately after the moov box. */
     private String freeSpaceBox;
-
+    /**
+     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
+     * progressive downloading. Otherwise it is placed normally at the end.
+     */
     private String moovPlacement;
     /** Overrides the "Major Brand" field in the output file. Usually not necessary to specify. */
     private String mp4MajorBrand;
 
     /**
+     * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to
+     * sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included
+     * per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+     * 
      * @param cslgAtom
+     *        When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time
+     *        to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be
+     *        included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
      * @see Mp4CslgAtom
      */
 
@@ -44,7 +59,13 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to
+     * sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included
+     * per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+     * 
+     * @return When enabled, file composition times will start at zero, composition times in the 'ctts' (composition
+     *         time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box
+     *         will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
      * @see Mp4CslgAtom
      */
 
@@ -53,7 +74,14 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to
+     * sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included
+     * per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+     * 
      * @param cslgAtom
+     *        When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time
+     *        to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be
+     *        included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mp4CslgAtom
      */
@@ -64,7 +92,14 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to
+     * sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included
+     * per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
+     * 
      * @param cslgAtom
+     *        When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time
+     *        to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be
+     *        included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mp4CslgAtom
      */
@@ -75,7 +110,10 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts a free-space box immediately after the moov box.
+     * 
      * @param freeSpaceBox
+     *        Inserts a free-space box immediately after the moov box.
      * @see Mp4FreeSpaceBox
      */
 
@@ -84,7 +122,9 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Inserts a free-space box immediately after the moov box.
+     * 
+     * @return Inserts a free-space box immediately after the moov box.
      * @see Mp4FreeSpaceBox
      */
 
@@ -93,7 +133,10 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts a free-space box immediately after the moov box.
+     * 
      * @param freeSpaceBox
+     *        Inserts a free-space box immediately after the moov box.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mp4FreeSpaceBox
      */
@@ -104,7 +147,10 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Inserts a free-space box immediately after the moov box.
+     * 
      * @param freeSpaceBox
+     *        Inserts a free-space box immediately after the moov box.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mp4FreeSpaceBox
      */
@@ -115,7 +161,12 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
+     * progressive downloading. Otherwise it is placed normally at the end.
+     * 
      * @param moovPlacement
+     *        If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
+     *        progressive downloading. Otherwise it is placed normally at the end.
      * @see Mp4MoovPlacement
      */
 
@@ -124,7 +175,11 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
+     * progressive downloading. Otherwise it is placed normally at the end.
+     * 
+     * @return If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required
+     *         for progressive downloading. Otherwise it is placed normally at the end.
      * @see Mp4MoovPlacement
      */
 
@@ -133,7 +188,12 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
+     * progressive downloading. Otherwise it is placed normally at the end.
+     * 
      * @param moovPlacement
+     *        If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
+     *        progressive downloading. Otherwise it is placed normally at the end.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mp4MoovPlacement
      */
@@ -144,7 +204,12 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
+     * progressive downloading. Otherwise it is placed normally at the end.
+     * 
      * @param moovPlacement
+     *        If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
+     *        progressive downloading. Otherwise it is placed normally at the end.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mp4MoovPlacement
      */
@@ -189,7 +254,8 @@ public class Mp4Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

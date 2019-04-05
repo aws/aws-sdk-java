@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,7 +77,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * <p>
      * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
      * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
@@ -85,7 +85,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
      * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
      * is found, despite the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
@@ -354,7 +354,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        <p>
      *        If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
      *        exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
-     *        with a <code>ConditionalCheckFailedException</code>.
+     *        with a <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -362,7 +362,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
      *        the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
      *        If the value is found, despite the assumption that it does not exist, the operation fails with a
-     *        <code>ConditionalCheckFailedException</code>.
+     *        <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -492,7 +492,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * <p>
      * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
      * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
@@ -500,7 +500,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
      * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
      * is found, despite the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
@@ -534,7 +534,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        <p>
      *        If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
      *        exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
-     *        with a <code>ConditionalCheckFailedException</code>.
+     *        with a <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -542,7 +542,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
      *        the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
      *        If the value is found, despite the assumption that it does not exist, the operation fails with a
-     *        <code>ConditionalCheckFailedException</code>.
+     *        <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -582,7 +582,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * <p>
      * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
      * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
@@ -590,7 +590,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
      * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
      * is found, despite the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
@@ -623,7 +623,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *         <p>
      *         If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
      *         exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
-     *         with a <code>ConditionalCheckFailedException</code>.
+     *         with a <code>ConditionCheckFailedException</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -631,7 +631,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *         If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
      *         the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
      *         If the value is found, despite the assumption that it does not exist, the operation fails with a
-     *         <code>ConditionalCheckFailedException</code>.
+     *         <code>ConditionCheckFailedException</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -671,7 +671,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * <p>
      * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
      * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
@@ -679,7 +679,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
      * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
      * is found, despite the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
@@ -713,7 +713,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        <p>
      *        If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
      *        exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
-     *        with a <code>ConditionalCheckFailedException</code>.
+     *        with a <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -721,7 +721,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
      *        the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
      *        If the value is found, despite the assumption that it does not exist, the operation fails with a
-     *        <code>ConditionalCheckFailedException</code>.
+     *        <code>ConditionCheckFailedException</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -763,7 +763,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * <p>
      * If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already exists in
      * the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * <li>
@@ -771,7 +771,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in the
      * table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value
      * is found, despite the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.
+     * <code>ConditionCheckFailedException</code>.
      * </p>
      * </li>
      * </ul>
@@ -804,7 +804,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *         <p>
      *         If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute value already
      *         exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails
-     *         with a <code>ConditionalCheckFailedException</code>.
+     *         with a <code>ConditionCheckFailedException</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -812,7 +812,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *         If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute value does not exist in
      *         the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds.
      *         If the value is found, despite the assumption that it does not exist, the operation fails with a
-     *         <code>ConditionalCheckFailedException</code>.
+     *         <code>ConditionCheckFailedException</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -2881,7 +2881,8 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

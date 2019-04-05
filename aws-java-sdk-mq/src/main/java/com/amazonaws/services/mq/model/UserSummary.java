@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
-    /** The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE */
+    /** The type of change pending for the ActiveMQ user. */
     private String pendingChange;
     /**
      * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
@@ -35,10 +35,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     private String username;
 
     /**
-     * The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     * The type of change pending for the ActiveMQ user.
      * 
      * @param pendingChange
-     *        The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     *        The type of change pending for the ActiveMQ user.
      * @see ChangeType
      */
 
@@ -47,9 +47,9 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     * The type of change pending for the ActiveMQ user.
      * 
-     * @return The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     * @return The type of change pending for the ActiveMQ user.
      * @see ChangeType
      */
 
@@ -58,10 +58,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     * The type of change pending for the ActiveMQ user.
      * 
      * @param pendingChange
-     *        The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     *        The type of change pending for the ActiveMQ user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
      */
@@ -72,10 +72,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     * The type of change pending for the ActiveMQ user.
      * 
      * @param pendingChange
-     *        The type of change pending for the ActiveMQ user. Possible values: CREATE, UPDATE, DELETE
+     *        The type of change pending for the ActiveMQ user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
      */
@@ -126,7 +126,8 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

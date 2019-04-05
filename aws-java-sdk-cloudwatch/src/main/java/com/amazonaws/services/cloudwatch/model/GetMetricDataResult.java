@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,19 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
+     * An example of a message that may be returned is <code>Maximum number of allowed metrics exceeded</code>. If there
+     * is a message, as much of the operation as possible is still executed.
+     * </p>
+     * <p>
+     * A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
+     * about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned
+     * for that metric.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<MessageData> messages;
 
     /**
      * <p>
@@ -150,7 +163,137 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
+     * An example of a message that may be returned is <code>Maximum number of allowed metrics exceeded</code>. If there
+     * is a message, as much of the operation as possible is still executed.
+     * </p>
+     * <p>
+     * A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
+     * about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned
+     * for that metric.
+     * </p>
+     * 
+     * @return Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a
+     *         message. An example of a message that may be returned is
+     *         <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation
+     *         as possible is still executed.</p>
+     *         <p>
+     *         A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any
+     *         message about a specific metric returned by the operation appears in the <code>MetricDataResult</code>
+     *         object returned for that metric.
+     */
+
+    public java.util.List<MessageData> getMessages() {
+        if (messages == null) {
+            messages = new com.amazonaws.internal.SdkInternalList<MessageData>();
+        }
+        return messages;
+    }
+
+    /**
+     * <p>
+     * Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
+     * An example of a message that may be returned is <code>Maximum number of allowed metrics exceeded</code>. If there
+     * is a message, as much of the operation as possible is still executed.
+     * </p>
+     * <p>
+     * A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
+     * about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned
+     * for that metric.
+     * </p>
+     * 
+     * @param messages
+     *        Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a
+     *        message. An example of a message that may be returned is
+     *        <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation
+     *        as possible is still executed.</p>
+     *        <p>
+     *        A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any
+     *        message about a specific metric returned by the operation appears in the <code>MetricDataResult</code>
+     *        object returned for that metric.
+     */
+
+    public void setMessages(java.util.Collection<MessageData> messages) {
+        if (messages == null) {
+            this.messages = null;
+            return;
+        }
+
+        this.messages = new com.amazonaws.internal.SdkInternalList<MessageData>(messages);
+    }
+
+    /**
+     * <p>
+     * Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
+     * An example of a message that may be returned is <code>Maximum number of allowed metrics exceeded</code>. If there
+     * is a message, as much of the operation as possible is still executed.
+     * </p>
+     * <p>
+     * A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
+     * about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned
+     * for that metric.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMessages(java.util.Collection)} or {@link #withMessages(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param messages
+     *        Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a
+     *        message. An example of a message that may be returned is
+     *        <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation
+     *        as possible is still executed.</p>
+     *        <p>
+     *        A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any
+     *        message about a specific metric returned by the operation appears in the <code>MetricDataResult</code>
+     *        object returned for that metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMetricDataResult withMessages(MessageData... messages) {
+        if (this.messages == null) {
+            setMessages(new com.amazonaws.internal.SdkInternalList<MessageData>(messages.length));
+        }
+        for (MessageData ele : messages) {
+            this.messages.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
+     * An example of a message that may be returned is <code>Maximum number of allowed metrics exceeded</code>. If there
+     * is a message, as much of the operation as possible is still executed.
+     * </p>
+     * <p>
+     * A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
+     * about a specific metric returned by the operation appears in the <code>MetricDataResult</code> object returned
+     * for that metric.
+     * </p>
+     * 
+     * @param messages
+     *        Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a
+     *        message. An example of a message that may be returned is
+     *        <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation
+     *        as possible is still executed.</p>
+     *        <p>
+     *        A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any
+     *        message about a specific metric returned by the operation appears in the <code>MetricDataResult</code>
+     *        object returned for that metric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMetricDataResult withMessages(java.util.Collection<MessageData> messages) {
+        setMessages(messages);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -163,7 +306,9 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getMetricDataResults() != null)
             sb.append("MetricDataResults: ").append(getMetricDataResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMessages() != null)
+            sb.append("Messages: ").append(getMessages());
         sb.append("}");
         return sb.toString();
     }
@@ -186,6 +331,10 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getMessages() == null ^ this.getMessages() == null)
+            return false;
+        if (other.getMessages() != null && other.getMessages().equals(this.getMessages()) == false)
+            return false;
         return true;
     }
 
@@ -196,6 +345,7 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
 
         hashCode = prime * hashCode + ((getMetricDataResults() == null) ? 0 : getMetricDataResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMessages() == null) ? 0 : getMessages().hashCode());
         return hashCode;
     }
 

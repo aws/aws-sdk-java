@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,7 @@ public class PutMediaDecoder extends MessageToMessageDecoder<HttpObject> {
                 // Reader and writer index shift after discard. Update them
                 readerIndex = in.readerIndex();
                 writerIndex = in.writerIndex();
+                ReferenceCountUtil.release(json);
             }
         }
     }
@@ -123,6 +124,7 @@ public class PutMediaDecoder extends MessageToMessageDecoder<HttpObject> {
                 // Send a special ack event to acknowledge all events have been received.
                 if (httpObject instanceof LastHttpContent) {
                     decodedOut.add(new FinalAckEvent());
+                    ReferenceCountUtil.release(cumulation);
                 }
             }
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,22 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                 if (context.testExpression("healthStatus", targetDepth)) {
                     context.nextToken();
                     container.setHealthStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("cpu", targetDepth)) {
+                    context.nextToken();
+                    container.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("memory", targetDepth)) {
+                    context.nextToken();
+                    container.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("memoryReservation", targetDepth)) {
+                    context.nextToken();
+                    container.setMemoryReservation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("gpuIds", targetDepth)) {
+                    context.nextToken();
+                    container.setGpuIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

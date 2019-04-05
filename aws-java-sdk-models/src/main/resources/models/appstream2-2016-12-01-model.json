@@ -31,6 +31,29 @@
       ],
       "documentation":"<p>Associates the specified fleet with the specified stack.</p>"
     },
+    "BatchAssociateUserStack":{
+      "name":"BatchAssociateUserStack",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"BatchAssociateUserStackRequest"},
+      "output":{"shape":"BatchAssociateUserStackResult"},
+      "errors":[
+        {"shape":"OperationNotPermittedException"}
+      ],
+      "documentation":"<p>Associates the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.</p>"
+    },
+    "BatchDisassociateUserStack":{
+      "name":"BatchDisassociateUserStack",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"BatchDisassociateUserStackRequest"},
+      "output":{"shape":"BatchDisassociateUserStackResult"},
+      "documentation":"<p>Disassociates the specified users from the specified stacks.</p>"
+    },
     "CopyImage":{
       "name":"CopyImage",
       "http":{
@@ -62,7 +85,7 @@
         {"shape":"LimitExceededException"},
         {"shape":"InvalidAccountStatusException"}
       ],
-      "documentation":"<p>Creates a directory configuration.</p>"
+      "documentation":"<p>Creates a Directory Config object in AppStream 2.0. This object includes the information required to join streaming instances to an Active Directory domain.</p>"
     },
     "CreateFleet":{
       "name":"CreateFleet",
@@ -81,9 +104,10 @@
         {"shape":"InvalidRoleException"},
         {"shape":"ConcurrentModificationException"},
         {"shape":"InvalidParameterCombinationException"},
-        {"shape":"IncompatibleImageException"}
+        {"shape":"IncompatibleImageException"},
+        {"shape":"OperationNotPermittedException"}
       ],
-      "documentation":"<p>Creates a fleet.</p>"
+      "documentation":"<p>Creates a fleet. A fleet consists of streaming instances that run a specified image.</p>"
     },
     "CreateImageBuilder":{
       "name":"CreateImageBuilder",
@@ -102,9 +126,10 @@
         {"shape":"InvalidRoleException"},
         {"shape":"ConcurrentModificationException"},
         {"shape":"InvalidParameterCombinationException"},
-        {"shape":"IncompatibleImageException"}
+        {"shape":"IncompatibleImageException"},
+        {"shape":"OperationNotPermittedException"}
       ],
-      "documentation":"<p>Creates an image builder.</p> <p>The initial state of the builder is <code>PENDING</code>. When it is ready, the state is <code>RUNNING</code>.</p>"
+      "documentation":"<p>Creates an image builder. An image builder is a virtual machine that is used to create an image.</p> <p>The initial state of the builder is <code>PENDING</code>. When it is ready, the state is <code>RUNNING</code>.</p>"
     },
     "CreateImageBuilderStreamingURL":{
       "name":"CreateImageBuilderStreamingURL",
@@ -137,7 +162,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InvalidParameterCombinationException"}
       ],
-      "documentation":"<p>Creates a stack.</p>"
+      "documentation":"<p>Creates a stack to start streaming applications to users. A stack consists of an associated fleet, user access policies, and storage configurations. </p>"
     },
     "CreateStreamingURL":{
       "name":"CreateStreamingURL",
@@ -153,7 +178,24 @@
         {"shape":"OperationNotPermittedException"},
         {"shape":"InvalidParameterCombinationException"}
       ],
-      "documentation":"<p>Creates a URL to start a streaming session for the specified user.</p>"
+      "documentation":"<p>Creates a temporary URL to start an AppStream 2.0 streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup. </p>"
+    },
+    "CreateUser":{
+      "name":"CreateUser",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateUserRequest"},
+      "output":{"shape":"CreateUserResult"},
+      "errors":[
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"InvalidAccountStatusException"},
+        {"shape":"InvalidParameterCombinationException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"OperationNotPermittedException"}
+      ],
+      "documentation":"<p>Creates a new user in the user pool.</p>"
     },
     "DeleteDirectoryConfig":{
       "name":"DeleteDirectoryConfig",
@@ -167,7 +209,7 @@
         {"shape":"ResourceInUseException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Deletes the specified directory configuration.</p>"
+      "documentation":"<p>Deletes the specified Directory Config object from AppStream 2.0. This object includes the information required to join streaming instances to an Active Directory domain.</p>"
     },
     "DeleteFleet":{
       "name":"DeleteFleet",
@@ -198,7 +240,7 @@
         {"shape":"OperationNotPermittedException"},
         {"shape":"ConcurrentModificationException"}
       ],
-      "documentation":"<p>Deletes the specified image. You cannot delete an image that is currently in use. After you delete an image, you cannot provision new capacity using the image.</p>"
+      "documentation":"<p>Deletes the specified image. You cannot delete an image when it is in use. After you delete an image, you cannot provision new capacity using the image.</p>"
     },
     "DeleteImageBuilder":{
       "name":"DeleteImageBuilder",
@@ -215,6 +257,20 @@
       ],
       "documentation":"<p>Deletes the specified image builder and releases the capacity.</p>"
     },
+    "DeleteImagePermissions":{
+      "name":"DeleteImagePermissions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteImagePermissionsRequest"},
+      "output":{"shape":"DeleteImagePermissionsResult"},
+      "errors":[
+        {"shape":"ResourceNotAvailableException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Deletes permissions for the specified private image. After you delete permissions for an image, AWS accounts to which you previously granted these permissions can no longer use the image.</p>"
+    },
     "DeleteStack":{
       "name":"DeleteStack",
       "http":{
@@ -228,7 +284,20 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ConcurrentModificationException"}
       ],
-      "documentation":"<p>Deletes the specified stack. After this operation completes, the environment can no longer be activated and any reservations made for the stack are released.</p>"
+      "documentation":"<p>Deletes the specified stack. After the stack is deleted, the application streaming environment provided by the stack is no longer available to users. Also, any reservations made for application streaming sessions for the stack are released.</p>"
+    },
+    "DeleteUser":{
+      "name":"DeleteUser",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteUserRequest"},
+      "output":{"shape":"DeleteUserResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Deletes a user from the user pool.</p>"
     },
     "DescribeDirectoryConfigs":{
       "name":"DescribeDirectoryConfigs",
@@ -241,7 +310,7 @@
       "errors":[
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Describes the specified directory configurations. Note that although the response syntax in this topic includes the account password, this password is not returned in the actual response. </p>"
+      "documentation":"<p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. These objects include the information required to join streaming instances to an Active Directory domain. </p> <p>Although the response syntax in this topic includes the account password, this password is not returned in the actual response.</p>"
     },
     "DescribeFleets":{
       "name":"DescribeFleets",
@@ -254,7 +323,7 @@
       "errors":[
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Describes the specified fleets or all fleets in the account.</p>"
+      "documentation":"<p>Retrieves a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described.</p>"
     },
     "DescribeImageBuilders":{
       "name":"DescribeImageBuilders",
@@ -267,7 +336,20 @@
       "errors":[
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Describes the specified image builders or all image builders in the account.</p>"
+      "documentation":"<p>Retrieves a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described.</p>"
+    },
+    "DescribeImagePermissions":{
+      "name":"DescribeImagePermissions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeImagePermissionsRequest"},
+      "output":{"shape":"DescribeImagePermissionsResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Retrieves a list that describes the permissions for shared AWS account IDs on a private image that you own. </p>"
     },
     "DescribeImages":{
       "name":"DescribeImages",
@@ -278,9 +360,10 @@
       "input":{"shape":"DescribeImagesRequest"},
       "output":{"shape":"DescribeImagesResult"},
       "errors":[
+        {"shape":"InvalidParameterCombinationException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Describes the specified images or all images in the account.</p>"
+      "documentation":"<p>Retrieves a list that describes one or more specified images, if the image names or image ARNs are provided. Otherwise, all images in the account are described.</p>"
     },
     "DescribeSessions":{
       "name":"DescribeSessions",
@@ -293,7 +376,7 @@
       "errors":[
         {"shape":"InvalidParameterCombinationException"}
       ],
-      "documentation":"<p>Describes the streaming sessions for the specified stack and fleet. If a user ID is provided, only the streaming sessions for only that user are returned. If an authentication type is not provided, the default is to authenticate users using a streaming URL.</p>"
+      "documentation":"<p>Retrieves a list that describes the active streaming sessions for a specified stack and fleet. If a value for <code>UserId</code> is provided for the stack and fleet, only streaming sessions for that user are described. If an authentication type is not provided, the default is to authenticate users using a streaming URL.</p>"
     },
     "DescribeStacks":{
       "name":"DescribeStacks",
@@ -306,7 +389,47 @@
       "errors":[
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Describes the specified stacks or all stacks in the account.</p>"
+      "documentation":"<p>Retrieves a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all stacks in the account are described.</p>"
+    },
+    "DescribeUserStackAssociations":{
+      "name":"DescribeUserStackAssociations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeUserStackAssociationsRequest"},
+      "output":{"shape":"DescribeUserStackAssociationsResult"},
+      "errors":[
+        {"shape":"InvalidParameterCombinationException"}
+      ],
+      "documentation":"<p>Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the following:</p> <ul> <li> <p>The stack name</p> </li> <li> <p>The user name (email address of the user associated with the stack) and the authentication type for the user</p> </li> </ul>"
+    },
+    "DescribeUsers":{
+      "name":"DescribeUsers",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeUsersRequest"},
+      "output":{"shape":"DescribeUsersResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidParameterCombinationException"}
+      ],
+      "documentation":"<p>Retrieves a list that describes one or more specified users in the user pool.</p>"
+    },
+    "DisableUser":{
+      "name":"DisableUser",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisableUserRequest"},
+      "output":{"shape":"DisableUserResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Disables the specified user in the user pool. Users can't sign in to AppStream 2.0 until they are re-enabled. This action does not delete the user. </p>"
     },
     "DisassociateFleet":{
       "name":"DisassociateFleet",
@@ -323,6 +446,20 @@
       ],
       "documentation":"<p>Disassociates the specified fleet from the specified stack.</p>"
     },
+    "EnableUser":{
+      "name":"EnableUser",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"EnableUserRequest"},
+      "output":{"shape":"EnableUserResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InvalidAccountStatusException"}
+      ],
+      "documentation":"<p>Enables a user in the user pool. After being enabled, users can sign in to AppStream 2.0 and open applications from the stacks to which they are assigned.</p>"
+    },
     "ExpireSession":{
       "name":"ExpireSession",
       "http":{
@@ -331,7 +468,7 @@
       },
       "input":{"shape":"ExpireSessionRequest"},
       "output":{"shape":"ExpireSessionResult"},
-      "documentation":"<p>Stops the specified streaming session.</p>"
+      "documentation":"<p>Immediately stops the specified streaming session.</p>"
     },
     "ListAssociatedFleets":{
       "name":"ListAssociatedFleets",
@@ -341,7 +478,7 @@
       },
       "input":{"shape":"ListAssociatedFleetsRequest"},
       "output":{"shape":"ListAssociatedFleetsResult"},
-      "documentation":"<p>Lists the fleets associated with the specified stack.</p>"
+      "documentation":"<p>Retrieves the name of the fleet that is associated with the specified stack.</p>"
     },
     "ListAssociatedStacks":{
       "name":"ListAssociatedStacks",
@@ -351,7 +488,7 @@
       },
       "input":{"shape":"ListAssociatedStacksRequest"},
       "output":{"shape":"ListAssociatedStacksResult"},
-      "documentation":"<p>Lists the stacks associated with the specified fleet.</p>"
+      "documentation":"<p>Retrieves the name of the stack with which the specified fleet is associated.</p>"
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -364,7 +501,7 @@
       "errors":[
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Lists the tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html\">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>"
+      "documentation":"<p>Retrieves a list of all tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>For more information about tags, see <a href=\"https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html\">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>"
     },
     "StartFleet":{
       "name":"StartFleet",
@@ -442,7 +579,7 @@
         {"shape":"InvalidAccountStatusException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Adds or overwrites one or more tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this operation updates its value.</p> <p>To list the current tags for your resources, use <a>ListTagsForResource</a>. To disassociate tags from your resources, use <a>UntagResource</a>.</p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html\">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>"
+      "documentation":"<p>Adds or overwrites one or more tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p> <p>Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this operation updates its value.</p> <p>To list the current tags for your resources, use <a>ListTagsForResource</a>. To disassociate tags from your resources, use <a>UntagResource</a>.</p> <p>For more information about tags, see <a href=\"https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html\">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>"
     },
     "UntagResource":{
       "name":"UntagResource",
@@ -455,7 +592,7 @@
       "errors":[
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Disassociates the specified tags from the specified AppStream 2.0 resource.</p> <p>To list the current tags for your resources, use <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html\">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>"
+      "documentation":"<p>Disassociates one or more specified tags from the specified AppStream 2.0 resource.</p> <p>To list the current tags for your resources, use <a>ListTagsForResource</a>.</p> <p>For more information about tags, see <a href=\"https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html\">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>"
     },
     "UpdateDirectoryConfig":{
       "name":"UpdateDirectoryConfig",
@@ -470,7 +607,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ConcurrentModificationException"}
       ],
-      "documentation":"<p>Updates the specified directory configuration.</p>"
+      "documentation":"<p>Updates the specified Directory Config object in AppStream 2.0. This object includes the information required to join streaming instances to an Active Directory domain.</p>"
     },
     "UpdateFleet":{
       "name":"UpdateFleet",
@@ -494,6 +631,21 @@
       ],
       "documentation":"<p>Updates the specified fleet.</p> <p>If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name. If the fleet is in the <code>RUNNING</code> state, you can update the <code>DisplayName</code> and <code>ComputeCapacity</code> attributes. If the fleet is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it.</p>"
     },
+    "UpdateImagePermissions":{
+      "name":"UpdateImagePermissions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateImagePermissionsRequest"},
+      "output":{"shape":"UpdateImagePermissionsResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceNotAvailableException"},
+        {"shape":"LimitExceededException"}
+      ],
+      "documentation":"<p>Adds or updates permissions for the specified private image. </p>"
+    },
     "UpdateStack":{
       "name":"UpdateStack",
       "http":{
@@ -509,9 +661,10 @@
         {"shape":"InvalidParameterCombinationException"},
         {"shape":"LimitExceededException"},
         {"shape":"InvalidAccountStatusException"},
-        {"shape":"IncompatibleImageException"}
+        {"shape":"IncompatibleImageException"},
+        {"shape":"OperationNotPermittedException"}
       ],
-      "documentation":"<p>Updates the specified stack.</p>"
+      "documentation":"<p>Updates the specified fields for the specified stack.</p>"
     }
   },
   "shapes":{
@@ -526,6 +679,16 @@
       "min":1,
       "sensitive":true
     },
+    "Action":{
+      "type":"string",
+      "enum":[
+        "CLIPBOARD_COPY_FROM_LOCAL_DEVICE",
+        "CLIPBOARD_COPY_TO_LOCAL_DEVICE",
+        "FILE_UPLOAD",
+        "FILE_DOWNLOAD",
+        "PRINTING_TO_LOCAL_DEVICE"
+      ]
+    },
     "Application":{
       "type":"structure",
       "members":{
@@ -535,7 +698,7 @@
         },
         "DisplayName":{
           "shape":"String",
-          "documentation":"<p>The application name for display.</p>"
+          "documentation":"<p>The application name to display.</p>"
         },
         "IconURL":{
           "shape":"String",
@@ -560,6 +723,39 @@
       },
       "documentation":"<p>Describes an application in the application catalog.</p>"
     },
+    "ApplicationSettings":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Enables or disables persistent application settings for users during their streaming sessions. </p>"
+        },
+        "SettingsGroup":{
+          "shape":"SettingsGroup",
+          "documentation":"<p>The path prefix for the S3 bucket where users’ persistent application settings are stored. You can allow the same persistent application settings to be used across multiple stacks by specifying the same settings group for each stack. </p>"
+        }
+      },
+      "documentation":"<p>The persistent application settings for users of a stack.</p>"
+    },
+    "ApplicationSettingsResponse":{
+      "type":"structure",
+      "members":{
+        "Enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether persistent application settings are enabled for users during their streaming sessions.</p>"
+        },
+        "SettingsGroup":{
+          "shape":"SettingsGroup",
+          "documentation":"<p>The path prefix for the S3 bucket where users’ persistent application settings are stored.</p>"
+        },
+        "S3BucketName":{
+          "shape":"String",
+          "documentation":"<p>The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. </p>"
+        }
+      },
+      "documentation":"<p>Describes the persistent application settings for users of a stack.</p>"
+    },
     "Applications":{
       "type":"list",
       "member":{"shape":"Application"}
@@ -572,6 +768,10 @@
     "Arn":{
       "type":"string",
       "pattern":"^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$"
+    },
+    "ArnList":{
+      "type":"list",
+      "member":{"shape":"Arn"}
     },
     "AssociateFleetRequest":{
       "type":"structure",
@@ -602,6 +802,54 @@
         "SAML",
         "USERPOOL"
       ]
+    },
+    "AwsAccountId":{
+      "type":"string",
+      "pattern":"^\\d+$"
+    },
+    "AwsAccountIdList":{
+      "type":"list",
+      "member":{"shape":"AwsAccountId"},
+      "max":5,
+      "min":1
+    },
+    "BatchAssociateUserStackRequest":{
+      "type":"structure",
+      "required":["UserStackAssociations"],
+      "members":{
+        "UserStackAssociations":{
+          "shape":"UserStackAssociationList",
+          "documentation":"<p>The list of UserStackAssociation objects.</p>"
+        }
+      }
+    },
+    "BatchAssociateUserStackResult":{
+      "type":"structure",
+      "members":{
+        "errors":{
+          "shape":"UserStackAssociationErrorList",
+          "documentation":"<p>The list of UserStackAssociationError objects.</p>"
+        }
+      }
+    },
+    "BatchDisassociateUserStackRequest":{
+      "type":"structure",
+      "required":["UserStackAssociations"],
+      "members":{
+        "UserStackAssociations":{
+          "shape":"UserStackAssociationList",
+          "documentation":"<p>The list of UserStackAssociation objects.</p>"
+        }
+      }
+    },
+    "BatchDisassociateUserStackResult":{
+      "type":"structure",
+      "members":{
+        "errors":{
+          "shape":"UserStackAssociationErrorList",
+          "documentation":"<p>The list of UserStackAssociationError objects.</p>"
+        }
+      }
     },
     "Boolean":{"type":"boolean"},
     "BooleanObject":{"type":"boolean"},
@@ -717,7 +965,6 @@
       "type":"structure",
       "required":[
         "Name",
-        "ImageName",
         "InstanceType",
         "ComputeCapacity"
       ],
@@ -729,6 +976,10 @@
         "ImageName":{
           "shape":"String",
           "documentation":"<p>The name of the image used to create the fleet.</p>"
+        },
+        "ImageArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the public, private, or shared image to use.</p>"
         },
         "InstanceType":{
           "shape":"String",
@@ -748,19 +999,19 @@
         },
         "MaxUserDurationInSeconds":{
           "shape":"Integer",
-          "documentation":"<p>The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.</p>"
+          "documentation":"<p>The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.</p>"
         },
         "DisconnectTimeoutInSeconds":{
           "shape":"Integer",
-          "documentation":"<p>The time after disconnection when a session is considered to have ended, in seconds. If a user who was disconnected reconnects within this time interval, the user is connected to their previous session. Specify a value between 60 and 57600.</p>"
+          "documentation":"<p>The time after disconnection when a session is considered to have ended, in seconds. If a user who was disconnected reconnects within this time interval, the user is connected to their previous session. Specify a value between 60 and 360000.</p>"
         },
         "Description":{
           "shape":"Description",
-          "documentation":"<p>The description for display.</p>"
+          "documentation":"<p>The description to display.</p>"
         },
         "DisplayName":{
           "shape":"DisplayName",
-          "documentation":"<p>The fleet name for display.</p>"
+          "documentation":"<p>The fleet name to display.</p>"
         },
         "EnableDefaultInternetAccess":{
           "shape":"BooleanObject",
@@ -768,7 +1019,11 @@
         },
         "DomainJoinInfo":{
           "shape":"DomainJoinInfo",
-          "documentation":"<p>The information needed to join a Microsoft Active Directory domain.</p>"
+          "documentation":"<p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>"
+        },
+        "Tags":{
+          "shape":"Tags",
+          "documentation":"<p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p> <p>If you do not specify a value, the value is set to an empty string.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html\">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>"
         }
       }
     },
@@ -785,7 +1040,6 @@
       "type":"structure",
       "required":[
         "Name",
-        "ImageName",
         "InstanceType"
       ],
       "members":{
@@ -795,7 +1049,11 @@
         },
         "ImageName":{
           "shape":"String",
-          "documentation":"<p>The name of the image used to create the builder.</p>"
+          "documentation":"<p>The name of the image used to create the image builder.</p>"
+        },
+        "ImageArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the public, private, or shared image to use.</p>"
         },
         "InstanceType":{
           "shape":"String",
@@ -803,11 +1061,11 @@
         },
         "Description":{
           "shape":"Description",
-          "documentation":"<p>The description for display.</p>"
+          "documentation":"<p>The description to display.</p>"
         },
         "DisplayName":{
           "shape":"DisplayName",
-          "documentation":"<p>The image builder name for display.</p>"
+          "documentation":"<p>The image builder name to display.</p>"
         },
         "VpcConfig":{
           "shape":"VpcConfig",
@@ -819,11 +1077,15 @@
         },
         "DomainJoinInfo":{
           "shape":"DomainJoinInfo",
-          "documentation":"<p>The information needed to join a Microsoft Active Directory domain.</p>"
+          "documentation":"<p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>"
         },
         "AppstreamAgentVersion":{
           "shape":"AppstreamAgentVersion",
           "documentation":"<p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>"
+        },
+        "Tags":{
+          "shape":"Tags",
+          "documentation":"<p>The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p> <p>If you do not specify a value, the value is set to an empty string.</p> <p>For more information about tags, see <a href=\"https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html\">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>"
         }
       }
     },
@@ -868,16 +1130,16 @@
       "required":["Name"],
       "members":{
         "Name":{
-          "shape":"String",
+          "shape":"Name",
           "documentation":"<p>The name of the stack.</p>"
         },
         "Description":{
           "shape":"Description",
-          "documentation":"<p>The description for display.</p>"
+          "documentation":"<p>The description to display.</p>"
         },
         "DisplayName":{
           "shape":"DisplayName",
-          "documentation":"<p>The stack name for display.</p>"
+          "documentation":"<p>The stack name to display.</p>"
         },
         "StorageConnectors":{
           "shape":"StorageConnectorList",
@@ -890,6 +1152,18 @@
         "FeedbackURL":{
           "shape":"FeedbackURL",
           "documentation":"<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>"
+        },
+        "UserSettings":{
+          "shape":"UserSettingList",
+          "documentation":"<p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled. </p>"
+        },
+        "ApplicationSettings":{
+          "shape":"ApplicationSettings",
+          "documentation":"<p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>"
+        },
+        "Tags":{
+          "shape":"Tags",
+          "documentation":"<p>The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p> <p>If you do not specify a value, the value is set to an empty string.</p> <p>For more information about tags, see <a href=\"https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html\">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>"
         }
       }
     },
@@ -920,7 +1194,7 @@
         },
         "UserId":{
           "shape":"StreamingUrlUserId",
-          "documentation":"<p>The ID of the user.</p>"
+          "documentation":"<p>The identifier of the user.</p>"
         },
         "ApplicationId":{
           "shape":"String",
@@ -932,7 +1206,7 @@
         },
         "SessionContext":{
           "shape":"String",
-          "documentation":"<p>The session context. For more information, see <a href=\"http://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters\">Session Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>"
+          "documentation":"<p>The session context. For more information, see <a href=\"https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters\">Session Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>"
         }
       }
     },
@@ -947,6 +1221,40 @@
           "shape":"Timestamp",
           "documentation":"<p>The elapsed time, in seconds after the Unix epoch, when this URL expires.</p>"
         }
+      }
+    },
+    "CreateUserRequest":{
+      "type":"structure",
+      "required":[
+        "UserName",
+        "AuthenticationType"
+      ],
+      "members":{
+        "UserName":{
+          "shape":"Username",
+          "documentation":"<p>The email address of the user.</p>"
+        },
+        "MessageAction":{
+          "shape":"MessageAction",
+          "documentation":"<p>The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent. </p> <note> <p>The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.</p> </note>"
+        },
+        "FirstName":{
+          "shape":"UserAttributeValue",
+          "documentation":"<p>The first name, or given name, of the user.</p>"
+        },
+        "LastName":{
+          "shape":"UserAttributeValue",
+          "documentation":"<p>The last name, or surname, of the user.</p>"
+        },
+        "AuthenticationType":{
+          "shape":"AuthenticationType",
+          "documentation":"<p>The authentication type for the user. You must specify USERPOOL. </p>"
+        }
+      }
+    },
+    "CreateUserResult":{
+      "type":"structure",
+      "members":{
       }
     },
     "DeleteDirectoryConfigRequest":{
@@ -998,6 +1306,28 @@
         }
       }
     },
+    "DeleteImagePermissionsRequest":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "SharedAccountId"
+      ],
+      "members":{
+        "Name":{
+          "shape":"Name",
+          "documentation":"<p>The name of the private image.</p>"
+        },
+        "SharedAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>"
+        }
+      }
+    },
+    "DeleteImagePermissionsResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeleteImageRequest":{
       "type":"structure",
       "required":["Name"],
@@ -1028,6 +1358,28 @@
       }
     },
     "DeleteStackResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteUserRequest":{
+      "type":"structure",
+      "required":[
+        "UserName",
+        "AuthenticationType"
+      ],
+      "members":{
+        "UserName":{
+          "shape":"Username",
+          "documentation":"<p>The email address of the user.</p>"
+        },
+        "AuthenticationType":{
+          "shape":"AuthenticationType",
+          "documentation":"<p>The authentication type for the user. You must specify USERPOOL.</p>"
+        }
+      }
+    },
+    "DeleteUserResult":{
       "type":"structure",
       "members":{
       }
@@ -1118,12 +1470,73 @@
         }
       }
     },
+    "DescribeImagePermissionsRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"Name",
+          "documentation":"<p>The name of the private image for which to describe permissions. The image must be one that you own. </p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum size of each page of results.</p>"
+        },
+        "SharedAwsAccountIds":{
+          "shape":"AwsAccountIdList",
+          "documentation":"<p>The 12-digit identifier of one or more AWS accounts with which the image is shared.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
+        }
+      }
+    },
+    "DescribeImagePermissionsResult":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"Name",
+          "documentation":"<p>The name of the private image.</p>"
+        },
+        "SharedImagePermissionsList":{
+          "shape":"SharedImagePermissionsList",
+          "documentation":"<p>The permissions for a private image that you own. </p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>"
+        }
+      }
+    },
+    "DescribeImagesMaxResults":{
+      "type":"integer",
+      "box":true,
+      "max":25,
+      "min":0
+    },
     "DescribeImagesRequest":{
       "type":"structure",
       "members":{
         "Names":{
           "shape":"StringList",
-          "documentation":"<p>The names of the images to describe.</p>"
+          "documentation":"<p>The names of the public or private images to describe.</p>"
+        },
+        "Arns":{
+          "shape":"ArnList",
+          "documentation":"<p>The ARNs of the public, private, and shared images to describe.</p>"
+        },
+        "Type":{
+          "shape":"VisibilityType",
+          "documentation":"<p>The type of image (public, private, or shared) to describe. </p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
+        },
+        "MaxResults":{
+          "shape":"DescribeImagesMaxResults",
+          "documentation":"<p>The maximum size of each page of results.</p>"
         }
       }
     },
@@ -1133,6 +1546,10 @@
         "Images":{
           "shape":"ImageList",
           "documentation":"<p>Information about the images.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>"
         }
       }
     },
@@ -1153,7 +1570,7 @@
         },
         "UserId":{
           "shape":"UserId",
-          "documentation":"<p>The user ID.</p>"
+          "documentation":"<p>The user identifier.</p>"
         },
         "NextToken":{
           "shape":"String",
@@ -1165,7 +1582,7 @@
         },
         "AuthenticationType":{
           "shape":"AuthenticationType",
-          "documentation":"<p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user. The default is to authenticate users using a streaming URL.</p>"
+          "documentation":"<p>The authentication method. Specify <code>API</code> for a user authenticated using a streaming URL, <code>SAML</code> for a SAML 2.0-federated user, or <code>USERPOOL</code> for a user in the AppStream 2.0 user pool. The default is to authenticate users using a streaming URL.</p>"
         }
       }
     },
@@ -1208,6 +1625,75 @@
         }
       }
     },
+    "DescribeUserStackAssociationsRequest":{
+      "type":"structure",
+      "members":{
+        "StackName":{
+          "shape":"String",
+          "documentation":"<p>The name of the stack that is associated with the user.</p>"
+        },
+        "UserName":{
+          "shape":"Username",
+          "documentation":"<p>The email address of the user who is associated with the stack.</p>"
+        },
+        "AuthenticationType":{
+          "shape":"AuthenticationType",
+          "documentation":"<p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum size of each page of results.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
+        }
+      }
+    },
+    "DescribeUserStackAssociationsResult":{
+      "type":"structure",
+      "members":{
+        "UserStackAssociations":{
+          "shape":"UserStackAssociationList",
+          "documentation":"<p>The UserStackAssociation objects.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>"
+        }
+      }
+    },
+    "DescribeUsersRequest":{
+      "type":"structure",
+      "required":["AuthenticationType"],
+      "members":{
+        "AuthenticationType":{
+          "shape":"AuthenticationType",
+          "documentation":"<p>The authentication type for the users in the user pool to describe. You must specify USERPOOL.</p>"
+        },
+        "MaxResults":{
+          "shape":"Integer",
+          "documentation":"<p>The maximum size of each page of results.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
+        }
+      }
+    },
+    "DescribeUsersResult":{
+      "type":"structure",
+      "members":{
+        "Users":{
+          "shape":"UserList",
+          "documentation":"<p>Information about users in the user pool.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</p>"
+        }
+      }
+    },
     "Description":{
       "type":"string",
       "max":256
@@ -1233,7 +1719,7 @@
           "documentation":"<p>The time the directory configuration was created.</p>"
         }
       },
-      "documentation":"<p>Configuration information for the directory used to join domains.</p>"
+      "documentation":"<p>Describes the configuration information for the directory used to join a streaming instance to a Microsoft Active Directory domain.</p>"
     },
     "DirectoryConfigList":{
       "type":"list",
@@ -1243,6 +1729,28 @@
     "DirectoryNameList":{
       "type":"list",
       "member":{"shape":"DirectoryName"}
+    },
+    "DisableUserRequest":{
+      "type":"structure",
+      "required":[
+        "UserName",
+        "AuthenticationType"
+      ],
+      "members":{
+        "UserName":{
+          "shape":"Username",
+          "documentation":"<p>The email address of the user.</p>"
+        },
+        "AuthenticationType":{
+          "shape":"AuthenticationType",
+          "documentation":"<p>The authentication type for the user. You must specify USERPOOL.</p>"
+        }
+      }
+    },
+    "DisableUserResult":{
+      "type":"structure",
+      "members":{
+      }
     },
     "DisassociateFleetRequest":{
       "type":"structure",
@@ -1270,6 +1778,11 @@
       "type":"string",
       "max":100
     },
+    "Domain":{
+      "type":"string",
+      "documentation":"GSuite domain for GDrive integration.",
+      "max":64
+    },
     "DomainJoinInfo":{
       "type":"structure",
       "members":{
@@ -1282,7 +1795,34 @@
           "documentation":"<p>The distinguished name of the organizational unit for computer accounts.</p>"
         }
       },
-      "documentation":"<p>Contains the information needed to join a Microsoft Active Directory domain.</p>"
+      "documentation":"<p>Describes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>"
+    },
+    "DomainList":{
+      "type":"list",
+      "member":{"shape":"Domain"},
+      "max":10
+    },
+    "EnableUserRequest":{
+      "type":"structure",
+      "required":[
+        "UserName",
+        "AuthenticationType"
+      ],
+      "members":{
+        "UserName":{
+          "shape":"Username",
+          "documentation":"<p>The email address of the user.</p>"
+        },
+        "AuthenticationType":{
+          "shape":"AuthenticationType",
+          "documentation":"<p>The authentication type for the user. You must specify USERPOOL.</p>"
+        }
+      }
+    },
+    "EnableUserResult":{
+      "type":"structure",
+      "members":{
+      }
     },
     "ErrorMessage":{
       "type":"string",
@@ -1294,7 +1834,7 @@
       "members":{
         "SessionId":{
           "shape":"String",
-          "documentation":"<p>The ID of the streaming session.</p>"
+          "documentation":"<p>The identifier of the streaming session.</p>"
         }
       }
     },
@@ -1312,7 +1852,6 @@
       "required":[
         "Arn",
         "Name",
-        "ImageName",
         "InstanceType",
         "ComputeCapacityStatus",
         "State"
@@ -1328,15 +1867,19 @@
         },
         "DisplayName":{
           "shape":"String",
-          "documentation":"<p>The fleet name for display.</p>"
+          "documentation":"<p>The fleet name to display.</p>"
         },
         "Description":{
           "shape":"String",
-          "documentation":"<p>The description for display.</p>"
+          "documentation":"<p>The description to display.</p>"
         },
         "ImageName":{
           "shape":"String",
           "documentation":"<p>The name of the image used to create the fleet.</p>"
+        },
+        "ImageArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN for the public, private, or shared image.</p>"
         },
         "InstanceType":{
           "shape":"String",
@@ -1352,11 +1895,11 @@
         },
         "MaxUserDurationInSeconds":{
           "shape":"Integer",
-          "documentation":"<p>The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.</p>"
+          "documentation":"<p>The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.</p>"
         },
         "DisconnectTimeoutInSeconds":{
           "shape":"Integer",
-          "documentation":"<p>The time after disconnection when a session is considered to have ended, in seconds. If a user who was disconnected reconnects within this time interval, the user is connected to their previous session. Specify a value between 60 and 57600.</p>"
+          "documentation":"<p>The time after disconnection when a session is considered to have ended, in seconds. If a user who was disconnected reconnects within this time interval, the user is connected to their previous session. Specify a value between 60 and 360000. By default, this value is 900 seconds (15 minutes).</p>"
         },
         "State":{
           "shape":"FleetState",
@@ -1380,10 +1923,10 @@
         },
         "DomainJoinInfo":{
           "shape":"DomainJoinInfo",
-          "documentation":"<p>The information needed to join a Microsoft Active Directory domain.</p>"
+          "documentation":"<p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>"
         }
       },
-      "documentation":"<p>Contains the parameters for a fleet.</p>"
+      "documentation":"<p>Describes the parameters for a fleet.</p>"
     },
     "FleetAttribute":{
       "type":"string",
@@ -1487,7 +2030,7 @@
         },
         "DisplayName":{
           "shape":"String",
-          "documentation":"<p>The image name for display.</p>"
+          "documentation":"<p>The image name to display.</p>"
         },
         "State":{
           "shape":"ImageState",
@@ -1507,7 +2050,7 @@
         },
         "Description":{
           "shape":"String",
-          "documentation":"<p>The description for display.</p>"
+          "documentation":"<p>The description to display.</p>"
         },
         "StateChangeReason":{
           "shape":"ImageStateChangeReason",
@@ -1528,6 +2071,10 @@
         "AppstreamAgentVersion":{
           "shape":"AppstreamAgentVersion",
           "documentation":"<p>The version of the AppStream 2.0 agent to use for instances that are launched from this image. </p>"
+        },
+        "ImagePermissions":{
+          "shape":"ImagePermissions",
+          "documentation":"<p>The permissions to provide to the destination AWS account for the specified image.</p>"
         }
       },
       "documentation":"<p>Describes an image.</p>"
@@ -1550,11 +2097,11 @@
         },
         "Description":{
           "shape":"String",
-          "documentation":"<p>The description for display.</p>"
+          "documentation":"<p>The description to display.</p>"
         },
         "DisplayName":{
           "shape":"String",
-          "documentation":"<p>The image builder name for display.</p>"
+          "documentation":"<p>The image builder name to display.</p>"
         },
         "VpcConfig":{
           "shape":"VpcConfig",
@@ -1586,7 +2133,7 @@
         },
         "DomainJoinInfo":{
           "shape":"DomainJoinInfo",
-          "documentation":"<p>The information needed to join a Microsoft Active Directory domain.</p>"
+          "documentation":"<p>The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain. </p>"
         },
         "ImageBuilderErrors":{
           "shape":"ResourceErrors",
@@ -1594,10 +2141,10 @@
         },
         "AppstreamAgentVersion":{
           "shape":"AppstreamAgentVersion",
-          "documentation":"<p>The version of the AppStream 2.0 agent that is currently being used by this image builder. </p>"
+          "documentation":"<p>The version of the AppStream 2.0 agent that is currently being used by the image builder. </p>"
         }
       },
-      "documentation":"<p>Describes a streaming instance used for editing an image. New images are created from a snapshot through an image builder.</p>"
+      "documentation":"<p>Describes a virtual machine that is used to create an image. </p>"
     },
     "ImageBuilderList":{
       "type":"list",
@@ -1641,6 +2188,20 @@
     "ImageList":{
       "type":"list",
       "member":{"shape":"Image"}
+    },
+    "ImagePermissions":{
+      "type":"structure",
+      "members":{
+        "allowFleet":{
+          "shape":"BooleanObject",
+          "documentation":"<p>Indicates whether the image can be used for a fleet.</p>"
+        },
+        "allowImageBuilder":{
+          "shape":"BooleanObject",
+          "documentation":"<p>Indicates whether the image can be used for an image builder.</p>"
+        }
+      },
+      "documentation":"<p>Describes the permissions for an image. </p>"
     },
     "ImageState":{
       "type":"string",
@@ -1734,7 +2295,7 @@
       "members":{
         "Names":{
           "shape":"StringList",
-          "documentation":"<p>The names of the fleets.</p>"
+          "documentation":"<p>The name of the fleet.</p>"
         },
         "NextToken":{
           "shape":"String",
@@ -1761,7 +2322,7 @@
       "members":{
         "Names":{
           "shape":"StringList",
-          "documentation":"<p>The names of the stacks.</p>"
+          "documentation":"<p>The name of the stack.</p>"
         },
         "NextToken":{
           "shape":"String",
@@ -1789,6 +2350,19 @@
       }
     },
     "Long":{"type":"long"},
+    "MaxResults":{
+      "type":"integer",
+      "box":true,
+      "max":500,
+      "min":0
+    },
+    "MessageAction":{
+      "type":"string",
+      "enum":[
+        "SUPPRESS",
+        "RESEND"
+      ]
+    },
     "Metadata":{
       "type":"map",
       "key":{"shape":"String"},
@@ -1797,6 +2371,20 @@
     "Name":{
       "type":"string",
       "pattern":"^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$"
+    },
+    "NetworkAccessConfiguration":{
+      "type":"structure",
+      "members":{
+        "EniPrivateIpAddress":{
+          "shape":"String",
+          "documentation":"<p>The private IP address of the elastic network interface that is attached to instances in your VPC.</p>"
+        },
+        "EniId":{
+          "shape":"String",
+          "documentation":"<p>The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.</p>"
+        }
+      },
+      "documentation":"<p>Describes the network details of the fleet instance for the streaming session.</p>"
     },
     "OperationNotPermittedException":{
       "type":"structure",
@@ -1813,6 +2401,13 @@
     "OrganizationalUnitDistinguishedNamesList":{
       "type":"list",
       "member":{"shape":"OrganizationalUnitDistinguishedName"}
+    },
+    "Permission":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
     },
     "PlatformType":{
       "type":"string",
@@ -1889,7 +2484,7 @@
     "SecurityGroupIdList":{
       "type":"list",
       "member":{"shape":"String"},
-      "documentation":"<p>The security group IDs.</p>",
+      "documentation":"<p>The security group identifiers.</p>",
       "max":5
     },
     "ServiceAccountCredentials":{
@@ -1922,7 +2517,7 @@
       "members":{
         "Id":{
           "shape":"String",
-          "documentation":"<p>The ID of the streaming session.</p>"
+          "documentation":"<p>The identifier of the streaming session.</p>"
         },
         "UserId":{
           "shape":"UserId",
@@ -1940,12 +2535,35 @@
           "shape":"SessionState",
           "documentation":"<p>The current state of the streaming session.</p>"
         },
+        "ConnectionState":{
+          "shape":"SessionConnectionState",
+          "documentation":"<p>Specifies whether a user is connected to the streaming session. </p>"
+        },
+        "StartTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time when a streaming instance is dedicated for the user. </p>"
+        },
+        "MaxExpirationTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time when the streaming session is set to expire. This time is based on the <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming instance is terminated and the streaming session ends.</p>"
+        },
         "AuthenticationType":{
           "shape":"AuthenticationType",
-          "documentation":"<p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML federation (<code>SAML</code>).</p>"
+          "documentation":"<p>The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0 federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to authenticate users using a streaming URL. </p>"
+        },
+        "NetworkAccessConfiguration":{
+          "shape":"NetworkAccessConfiguration",
+          "documentation":"<p>The network details for the streaming session.</p>"
         }
       },
       "documentation":"<p>Describes a streaming session.</p>"
+    },
+    "SessionConnectionState":{
+      "type":"string",
+      "enum":[
+        "CONNECTED",
+        "NOT_CONNECTED"
+      ]
     },
     "SessionList":{
       "type":"list",
@@ -1954,12 +2572,37 @@
     },
     "SessionState":{
       "type":"string",
-      "documentation":"<p>Possible values for the state of a streaming session.</p>",
       "enum":[
         "ACTIVE",
         "PENDING",
         "EXPIRED"
       ]
+    },
+    "SettingsGroup":{
+      "type":"string",
+      "max":100
+    },
+    "SharedImagePermissions":{
+      "type":"structure",
+      "required":[
+        "sharedAccountId",
+        "imagePermissions"
+      ],
+      "members":{
+        "sharedAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The 12-digit identifier of the AWS account with which the image is shared.</p>"
+        },
+        "imagePermissions":{
+          "shape":"ImagePermissions",
+          "documentation":"<p>Describes the permissions for a shared image.</p>"
+        }
+      },
+      "documentation":"<p>Describes the permissions that are available to the specified AWS account for a shared image.</p>"
+    },
+    "SharedImagePermissionsList":{
+      "type":"list",
+      "member":{"shape":"SharedImagePermissions"}
     },
     "Stack":{
       "type":"structure",
@@ -1975,11 +2618,11 @@
         },
         "Description":{
           "shape":"String",
-          "documentation":"<p>The description for display.</p>"
+          "documentation":"<p>The description to display.</p>"
         },
         "DisplayName":{
           "shape":"String",
-          "documentation":"<p>The stack name for display.</p>"
+          "documentation":"<p>The stack name to display.</p>"
         },
         "CreatedTime":{
           "shape":"Timestamp",
@@ -2000,6 +2643,14 @@
         "StackErrors":{
           "shape":"StackErrors",
           "documentation":"<p>The errors for the stack.</p>"
+        },
+        "UserSettings":{
+          "shape":"UserSettingList",
+          "documentation":"<p>The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.</p>"
+        },
+        "ApplicationSettings":{
+          "shape":"ApplicationSettingsResponse",
+          "documentation":"<p>The persistent application settings for users of the stack.</p>"
         }
       },
       "documentation":"<p>Describes a stack.</p>"
@@ -2008,9 +2659,13 @@
       "type":"string",
       "enum":[
         "STORAGE_CONNECTORS",
+        "STORAGE_CONNECTOR_HOMEFOLDERS",
+        "STORAGE_CONNECTOR_GOOGLE_DRIVE",
+        "STORAGE_CONNECTOR_ONE_DRIVE",
         "REDIRECT_URL",
         "FEEDBACK_URL",
-        "THEME_NAME"
+        "THEME_NAME",
+        "USER_SETTINGS"
       ]
     },
     "StackAttributes":{
@@ -2131,9 +2786,13 @@
         "ResourceIdentifier":{
           "shape":"ResourceIdentifier",
           "documentation":"<p>The ARN of the storage connector.</p>"
+        },
+        "Domains":{
+          "shape":"DomainList",
+          "documentation":"<p>The names of the domains for the account.</p>"
         }
       },
-      "documentation":"<p>Describes a storage connector.</p>"
+      "documentation":"<p>Describes a connector to enable persistent storage for users.</p>"
     },
     "StorageConnectorList":{
       "type":"list",
@@ -2143,7 +2802,11 @@
     "StorageConnectorType":{
       "type":"string",
       "documentation":"<p>The type of storage connector.</p>",
-      "enum":["HOMEFOLDERS"]
+      "enum":[
+        "HOMEFOLDERS",
+        "GOOGLE_DRIVE",
+        "ONE_DRIVE"
+      ]
     },
     "StreamingUrlUserId":{
       "type":"string",
@@ -2162,7 +2825,7 @@
     "SubnetIdList":{
       "type":"list",
       "member":{"shape":"String"},
-      "documentation":"<p>The subnet IDs.</p>"
+      "documentation":"<p>The subnet identifiers.</p>"
     },
     "TagKey":{
       "type":"string",
@@ -2189,7 +2852,7 @@
         },
         "Tags":{
           "shape":"Tags",
-          "documentation":"<p>The tags to associate. A tag is a key-value pair (the value is optional). For example, <code>Environment=Test</code>, or, if you do not specify a value, <code>Environment=</code>. </p> <p>If you do not specify a value, we set the value to an empty string.</p>"
+          "documentation":"<p>The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p> <p>If you do not specify a value, the value is set to an empty string.</p>"
         }
       }
     },
@@ -2240,7 +2903,7 @@
       "members":{
         "DirectoryName":{
           "shape":"DirectoryName",
-          "documentation":"<p>The name of the directory configuration.</p>"
+          "documentation":"<p>The name of the Directory Config object.</p>"
         },
         "OrganizationalUnitDistinguishedNames":{
           "shape":"OrganizationalUnitDistinguishedNamesList",
@@ -2257,17 +2920,20 @@
       "members":{
         "DirectoryConfig":{
           "shape":"DirectoryConfig",
-          "documentation":"<p>Information about the directory configuration.</p>"
+          "documentation":"<p>Information about the Directory Config object.</p>"
         }
       }
     },
     "UpdateFleetRequest":{
       "type":"structure",
-      "required":["Name"],
       "members":{
         "ImageName":{
           "shape":"String",
           "documentation":"<p>The name of the image used to create the fleet.</p>"
+        },
+        "ImageArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the public, private, or shared image to use.</p>"
         },
         "Name":{
           "shape":"String",
@@ -2287,11 +2953,11 @@
         },
         "MaxUserDurationInSeconds":{
           "shape":"Integer",
-          "documentation":"<p>The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.</p>"
+          "documentation":"<p>The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000. By default, the value is 900 seconds (15 minutes).</p>"
         },
         "DisconnectTimeoutInSeconds":{
           "shape":"Integer",
-          "documentation":"<p>The time after disconnection when a session is considered to have ended, in seconds. If a user who was disconnected reconnects within this time interval, the user is connected to their previous session. Specify a value between 60 and 57600.</p>"
+          "documentation":"<p>The time after disconnection when a session is considered to have ended, in seconds. If a user who was disconnected reconnects within this time interval, the user is connected to their previous session. Specify a value between 60 and 360000. By default, the value is 900 seconds (15 minutes).</p>"
         },
         "DeleteVpcConfig":{
           "shape":"Boolean",
@@ -2300,11 +2966,11 @@
         },
         "Description":{
           "shape":"Description",
-          "documentation":"<p>The description for display.</p>"
+          "documentation":"<p>The description to display.</p>"
         },
         "DisplayName":{
           "shape":"DisplayName",
-          "documentation":"<p>The fleet name for display.</p>"
+          "documentation":"<p>The fleet name to display.</p>"
         },
         "EnableDefaultInternetAccess":{
           "shape":"BooleanObject",
@@ -2312,7 +2978,7 @@
         },
         "DomainJoinInfo":{
           "shape":"DomainJoinInfo",
-          "documentation":"<p>The information needed to join a Microsoft Active Directory domain.</p>"
+          "documentation":"<p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. </p>"
         },
         "AttributesToDelete":{
           "shape":"FleetAttributes",
@@ -2329,17 +2995,44 @@
         }
       }
     },
+    "UpdateImagePermissionsRequest":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "SharedAccountId",
+        "ImagePermissions"
+      ],
+      "members":{
+        "Name":{
+          "shape":"Name",
+          "documentation":"<p>The name of the private image.</p>"
+        },
+        "SharedAccountId":{
+          "shape":"AwsAccountId",
+          "documentation":"<p>The 12-digit identifier of the AWS account for which you want add or update image permissions.</p>"
+        },
+        "ImagePermissions":{
+          "shape":"ImagePermissions",
+          "documentation":"<p>The permissions for the image.</p>"
+        }
+      }
+    },
+    "UpdateImagePermissionsResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "UpdateStackRequest":{
       "type":"structure",
       "required":["Name"],
       "members":{
         "DisplayName":{
           "shape":"DisplayName",
-          "documentation":"<p>The stack name for display.</p>"
+          "documentation":"<p>The stack name to display.</p>"
         },
         "Description":{
           "shape":"Description",
-          "documentation":"<p>The description for display.</p>"
+          "documentation":"<p>The description to display.</p>"
         },
         "Name":{
           "shape":"String",
@@ -2360,11 +3053,19 @@
         },
         "FeedbackURL":{
           "shape":"FeedbackURL",
-          "documentation":"<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>"
+          "documentation":"<p>The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>"
         },
         "AttributesToDelete":{
           "shape":"StackAttributes",
           "documentation":"<p>The stack attributes to delete.</p>"
+        },
+        "UserSettings":{
+          "shape":"UserSettingList",
+          "documentation":"<p>The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.</p>"
+        },
+        "ApplicationSettings":{
+          "shape":"ApplicationSettings",
+          "documentation":"<p>The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.</p>"
         }
       }
     },
@@ -2377,16 +3078,157 @@
         }
       }
     },
+    "User":{
+      "type":"structure",
+      "required":["AuthenticationType"],
+      "members":{
+        "Arn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the user.</p>"
+        },
+        "UserName":{
+          "shape":"Username",
+          "documentation":"<p>The email address of the user.</p>"
+        },
+        "Enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether the user in the user pool is enabled.</p>"
+        },
+        "Status":{
+          "shape":"String",
+          "documentation":"<p>The status of the user in the user pool. The status can be one of the following:</p> <ul> <li> <p>UNCONFIRMED – The user is created but not confirmed.</p> </li> <li> <p>CONFIRMED – The user is confirmed.</p> </li> <li> <p>ARCHIVED – The user is no longer active.</p> </li> <li> <p>COMPROMISED – The user is disabled because of a potential security threat.</p> </li> <li> <p>UNKNOWN – The user status is not known.</p> </li> </ul>"
+        },
+        "FirstName":{
+          "shape":"UserAttributeValue",
+          "documentation":"<p>The first name, or given name, of the user.</p>"
+        },
+        "LastName":{
+          "shape":"UserAttributeValue",
+          "documentation":"<p>The last name, or surname, of the user.</p>"
+        },
+        "CreatedTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The date and time the user was created in the user pool.</p>"
+        },
+        "AuthenticationType":{
+          "shape":"AuthenticationType",
+          "documentation":"<p>The authentication type for the user.</p>"
+        }
+      },
+      "documentation":"<p>Describes a user in the user pool.</p>"
+    },
+    "UserAttributeValue":{
+      "type":"string",
+      "max":2048,
+      "pattern":"^[A-Za-z0-9_\\-\\s]+$",
+      "sensitive":true
+    },
     "UserId":{
       "type":"string",
       "max":32,
       "min":2
     },
+    "UserList":{
+      "type":"list",
+      "member":{"shape":"User"}
+    },
+    "UserSetting":{
+      "type":"structure",
+      "required":[
+        "Action",
+        "Permission"
+      ],
+      "members":{
+        "Action":{
+          "shape":"Action",
+          "documentation":"<p>The action that is enabled or disabled.</p>"
+        },
+        "Permission":{
+          "shape":"Permission",
+          "documentation":"<p>Indicates whether the action is enabled or disabled.</p>"
+        }
+      },
+      "documentation":"<p>Describes an action and whether the action is enabled or disabled for users during their streaming sessions.</p>"
+    },
+    "UserSettingList":{
+      "type":"list",
+      "member":{"shape":"UserSetting"},
+      "min":1
+    },
+    "UserStackAssociation":{
+      "type":"structure",
+      "required":[
+        "StackName",
+        "UserName",
+        "AuthenticationType"
+      ],
+      "members":{
+        "StackName":{
+          "shape":"String",
+          "documentation":"<p>The name of the stack that is associated with the user.</p>"
+        },
+        "UserName":{
+          "shape":"Username",
+          "documentation":"<p>The email address of the user who is associated with the stack.</p>"
+        },
+        "AuthenticationType":{
+          "shape":"AuthenticationType",
+          "documentation":"<p>The authentication type for the user.</p>"
+        },
+        "SendEmailNotification":{
+          "shape":"Boolean",
+          "documentation":"<p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>"
+        }
+      },
+      "documentation":"<p>Describes a user in the user pool and the associated stack.</p>"
+    },
+    "UserStackAssociationError":{
+      "type":"structure",
+      "members":{
+        "UserStackAssociation":{
+          "shape":"UserStackAssociation",
+          "documentation":"<p>Information about the user and associated stack.</p>"
+        },
+        "ErrorCode":{
+          "shape":"UserStackAssociationErrorCode",
+          "documentation":"<p>The error code for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>"
+        },
+        "ErrorMessage":{
+          "shape":"String",
+          "documentation":"<p>The error message for the error that is returned when a user can’t be associated with or disassociated from a stack.</p>"
+        }
+      },
+      "documentation":"<p>Describes the error that is returned when a user can’t be associated with or disassociated from a stack. </p>"
+    },
+    "UserStackAssociationErrorCode":{
+      "type":"string",
+      "enum":[
+        "STACK_NOT_FOUND",
+        "USER_NAME_NOT_FOUND",
+        "INTERNAL_ERROR"
+      ]
+    },
+    "UserStackAssociationErrorList":{
+      "type":"list",
+      "member":{"shape":"UserStackAssociationError"}
+    },
+    "UserStackAssociationList":{
+      "type":"list",
+      "member":{"shape":"UserStackAssociation"}
+    },
+    "Username":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+      "sensitive":true
+    },
     "VisibilityType":{
       "type":"string",
       "enum":[
         "PUBLIC",
-        "PRIVATE"
+        "PRIVATE",
+        "SHARED"
       ]
     },
     "VpcConfig":{
@@ -2394,15 +3236,15 @@
       "members":{
         "SubnetIds":{
           "shape":"SubnetIdList",
-          "documentation":"<p>The subnets to which a network interface is established from the fleet instance.</p>"
+          "documentation":"<p>The identifiers of the subnets to which a network interface is attached from the fleet instance or image builder instance. Fleet instances use one or two subnets. Image builder instances use one subnet.</p>"
         },
         "SecurityGroupIds":{
           "shape":"SecurityGroupIdList",
-          "documentation":"<p>The security groups for the fleet.</p>"
+          "documentation":"<p>The identifiers of the security groups for the fleet or image builder.</p>"
         }
       },
-      "documentation":"<p>Describes VPC configuration information.</p>"
+      "documentation":"<p>Describes VPC configuration information for fleets and image builders.</p>"
     }
   },
-  "documentation":"<fullname>Amazon AppStream 2.0</fullname> <p>You can use Amazon AppStream 2.0 to stream desktop applications to any device running a web browser, without rewriting them.</p>"
+  "documentation":"<fullname>Amazon AppStream 2.0</fullname> <p>This is the <i>Amazon AppStream 2.0 API Reference</i>. This reference provides descriptions and syntax for each of the actions and data types in AppStream 2.0. AppStream 2.0 is a fully managed application streaming service. You centrally manage your desktop applications on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0 manages the AWS resources required to host and run your applications, scales automatically, and provides access to your users on demand.</p> <p>To learn more about AppStream 2.0, see the following resources:</p> <ul> <li> <p> <a href=\"http://aws.amazon.com/appstream2\">Amazon AppStream 2.0 product page</a> </p> </li> <li> <p> <a href=\"http://aws.amazon.com/documentation/appstream2\">Amazon AppStream 2.0 documentation</a> </p> </li> </ul>"
 }

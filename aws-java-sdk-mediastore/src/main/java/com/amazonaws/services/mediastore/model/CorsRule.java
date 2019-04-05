@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * a JavaScript <code>XMLHttpRequest</code> object).
      * </p>
      * <p>
-     * Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one
+     * Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one
      * wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard
      * character to allow cross-origin access for all origins.
      * </p>
@@ -46,7 +46,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.
      * </p>
      * <p>
-     * Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.
+     * Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.
      * </p>
      */
     private java.util.List<String> allowedMethods;
@@ -88,7 +88,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * a JavaScript <code>XMLHttpRequest</code> object).
      * </p>
      * <p>
-     * Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one
+     * Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one
      * wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard
      * character to allow cross-origin access for all origins.
      * </p>
@@ -96,7 +96,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * @return One or more response headers that you want users to be able to access from their applications (for
      *         example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
      *         <p>
-     *         Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include
+     *         Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include
      *         only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only
      *         one wildcard character to allow cross-origin access for all origins.
      */
@@ -111,7 +111,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * a JavaScript <code>XMLHttpRequest</code> object).
      * </p>
      * <p>
-     * Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one
+     * Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one
      * wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard
      * character to allow cross-origin access for all origins.
      * </p>
@@ -120,7 +120,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      *        One or more response headers that you want users to be able to access from their applications (for
      *        example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
      *        <p>
-     *        Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include
+     *        Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include
      *        only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one
      *        wildcard character to allow cross-origin access for all origins.
      */
@@ -140,7 +140,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * a JavaScript <code>XMLHttpRequest</code> object).
      * </p>
      * <p>
-     * Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one
+     * Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one
      * wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard
      * character to allow cross-origin access for all origins.
      * </p>
@@ -154,7 +154,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      *        One or more response headers that you want users to be able to access from their applications (for
      *        example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
      *        <p>
-     *        Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include
+     *        Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include
      *        only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one
      *        wildcard character to allow cross-origin access for all origins.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -176,7 +176,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * a JavaScript <code>XMLHttpRequest</code> object).
      * </p>
      * <p>
-     * Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include only one
+     * Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include only one
      * wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one wildcard
      * character to allow cross-origin access for all origins.
      * </p>
@@ -185,7 +185,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      *        One or more response headers that you want users to be able to access from their applications (for
      *        example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
      *        <p>
-     *        Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string value can include
+     *        Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string value can include
      *        only one wildcard character (*), for example, http://*.example.com. Additionally, you can specify only one
      *        wildcard character to allow cross-origin access for all origins.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -201,12 +201,12 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.
      * </p>
      * <p>
-     * Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.
+     * Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.
      * </p>
      * 
      * @return Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p>
      *         <p>
-     *         Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code>
+     *         Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code>
      *         element.
      * @see MethodName
      */
@@ -220,13 +220,13 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.
      * </p>
      * <p>
-     * Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.
+     * Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.
      * </p>
      * 
      * @param allowedMethods
      *        Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p>
      *        <p>
-     *        Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code>
+     *        Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code>
      *        element.
      * @see MethodName
      */
@@ -245,7 +245,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.
      * </p>
      * <p>
-     * Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.
+     * Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -256,7 +256,7 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * @param allowedMethods
      *        Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p>
      *        <p>
-     *        Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code>
+     *        Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code>
      *        element.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MethodName
@@ -277,13 +277,13 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.
      * </p>
      * <p>
-     * Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.
+     * Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.
      * </p>
      * 
      * @param allowedMethods
      *        Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p>
      *        <p>
-     *        Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code>
+     *        Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code>
      *        element.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MethodName
@@ -299,13 +299,13 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
      * Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.
      * </p>
      * <p>
-     * Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.
+     * Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.
      * </p>
      * 
      * @param allowedMethods
      *        Identifies an HTTP method that the origin that is specified in the rule is allowed to execute.</p>
      *        <p>
-     *        Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code>
+     *        Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code>
      *        element.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MethodName
@@ -592,7 +592,8 @@ public class CorsRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

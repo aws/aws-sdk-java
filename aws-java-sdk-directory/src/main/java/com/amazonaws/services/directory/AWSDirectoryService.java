@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,9 +64,10 @@ public interface AWSDirectoryService {
      * client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -105,6 +106,29 @@ public interface AWSDirectoryService {
      */
     @Deprecated
     void setRegion(Region region);
+
+    /**
+     * <p>
+     * Accepts a directory sharing request that was sent from the directory owner account.
+     * </p>
+     * 
+     * @param acceptSharedDirectoryRequest
+     * @return Result of the AcceptSharedDirectory operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryAlreadySharedException
+     *         The specified directory has already been shared with this AWS account.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.AcceptSharedDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AcceptSharedDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AcceptSharedDirectoryResult acceptSharedDirectory(AcceptSharedDirectoryRequest acceptSharedDirectoryRequest);
 
     /**
      * <p>
@@ -194,9 +218,9 @@ public interface AWSDirectoryService {
      * Creates an AD Connector to connect to an on-premises directory.
      * </p>
      * <p>
-     * Before you call <i>ConnectDirectory</i>, ensure that all of the required permissions have been explicitly granted
-     * through a policy. For details about what permissions are required to run the <i>ConnectDirectory</i> operation,
-     * see <a
+     * Before you call <code>ConnectDirectory</code>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the
+     * <code>ConnectDirectory</code> operation, see <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
      * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
@@ -316,9 +340,9 @@ public interface AWSDirectoryService {
      * Creates a Simple AD directory.
      * </p>
      * <p>
-     * Before you call <i>CreateDirectory</i>, ensure that all of the required permissions have been explicitly granted
-     * through a policy. For details about what permissions are required to run the <i>CreateDirectory</i> operation,
-     * see <a
+     * Before you call <code>CreateDirectory</code>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the <code>CreateDirectory</code>
+     * operation, see <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
      * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
@@ -343,7 +367,33 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a Microsoft AD in the AWS cloud.
+     * Creates a subscription to forward real time Directory Service domain controller security logs to the specified
+     * CloudWatch log group in your AWS account.
+     * </p>
+     * 
+     * @param createLogSubscriptionRequest
+     * @return Result of the CreateLogSubscription operation returned by the service.
+     * @throws EntityAlreadyExistsException
+     *         The specified entity already exists.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InsufficientPermissionsException
+     *         The account does not have sufficient permission to perform the operation.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.CreateLogSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateLogSubscriptionResult createLogSubscription(CreateLogSubscriptionRequest createLogSubscriptionRequest);
+
+    /**
+     * <p>
+     * Creates an AWS Managed Microsoft AD directory.
      * </p>
      * <p>
      * Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been explicitly
@@ -354,7 +404,7 @@ public interface AWSDirectoryService {
      * </p>
      * 
      * @param createMicrosoftADRequest
-     *        Creates a Microsoft AD in the AWS cloud.
+     *        Creates an AWS Managed Microsoft AD directory.
      * @return Result of the CreateMicrosoftAD operation returned by the service.
      * @throws DirectoryLimitExceededException
      *         The maximum number of directories in the region has been reached. You can use the
@@ -406,23 +456,23 @@ public interface AWSDirectoryService {
     /**
      * <p>
      * AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example,
-     * you can establish a trust between your Microsoft AD in the AWS cloud, and your existing on-premises Microsoft
-     * Active Directory. This would allow you to provide users and groups access to resources in either domain, with a
-     * single set of credentials.
+     * you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises
+     * Microsoft Active Directory. This would allow you to provide users and groups access to resources in either
+     * domain, with a single set of credentials.
      * </p>
      * <p>
-     * This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS
-     * cloud and an external domain.
+     * This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD
+     * directory and an external domain. You can create either a forest trust or an external trust.
      * </p>
      * 
      * @param createTrustRequest
      *        AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For
-     *        example, you can establish a trust between your Microsoft AD in the AWS cloud, and your existing
+     *        example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing
      *        on-premises Microsoft Active Directory. This would allow you to provide users and groups access to
      *        resources in either domain, with a single set of credentials.</p>
      *        <p>
-     *        This action initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the
-     *        AWS cloud and an external domain.
+     *        This action initiates the creation of the AWS side of a trust relationship between an AWS Managed
+     *        Microsoft AD directory and an external domain.
      * @return Result of the CreateTrust operation returned by the service.
      * @throws EntityAlreadyExistsException
      *         The specified entity already exists.
@@ -473,9 +523,9 @@ public interface AWSDirectoryService {
      * Deletes an AWS Directory Service directory.
      * </p>
      * <p>
-     * Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions have been explicitly granted
-     * through a policy. For details about what permissions are required to run the <i>DeleteDirectory</i> operation,
-     * see <a
+     * Before you call <code>DeleteDirectory</code>, ensure that all of the required permissions have been explicitly
+     * granted through a policy. For details about what permissions are required to run the <code>DeleteDirectory</code>
+     * operation, see <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html"
      * >AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
      * </p>
@@ -494,6 +544,27 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest deleteDirectoryRequest);
+
+    /**
+     * <p>
+     * Deletes the specified log subscription.
+     * </p>
+     * 
+     * @param deleteLogSubscriptionRequest
+     * @return Result of the DeleteLogSubscription operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DeleteLogSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteLogSubscriptionResult deleteLogSubscription(DeleteLogSubscriptionRequest deleteLogSubscriptionRequest);
 
     /**
      * <p>
@@ -519,12 +590,12 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Deletes an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+     * Deletes an existing trust relationship between your AWS Managed Microsoft AD directory and an external domain.
      * </p>
      * 
      * @param deleteTrustRequest
-     *        Deletes the local side of an existing trust relationship between the Microsoft AD in the AWS cloud and the
-     *        external domain.
+     *        Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory
+     *        and the external domain.
      * @return Result of the DeleteTrust operation returned by the service.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
@@ -600,15 +671,15 @@ public interface AWSDirectoryService {
      * </p>
      * <p>
      * You can retrieve information about specific directories by passing the directory identifiers in the
-     * <i>DirectoryIds</i> parameter. Otherwise, all directories that belong to the current account are returned.
+     * <code>DirectoryIds</code> parameter. Otherwise, all directories that belong to the current account are returned.
      * </p>
      * <p>
-     * This operation supports pagination with the use of the <i>NextToken</i> request and response parameters. If more
-     * results are available, the <i>DescribeDirectoriesResult.NextToken</i> member contains a token that you pass in
-     * the next call to <a>DescribeDirectories</a> to retrieve the next set of items.
+     * This operation supports pagination with the use of the <code>NextToken</code> request and response parameters. If
+     * more results are available, the <code>DescribeDirectoriesResult.NextToken</code> member contains a token that you
+     * pass in the next call to <a>DescribeDirectories</a> to retrieve the next set of items.
      * </p>
      * <p>
-     * You can also specify a maximum number of return results with the <i>Limit</i> parameter.
+     * You can also specify a maximum number of return results with the <code>Limit</code> parameter.
      * </p>
      * 
      * @param describeDirectoriesRequest
@@ -619,7 +690,7 @@ public interface AWSDirectoryService {
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -647,7 +718,7 @@ public interface AWSDirectoryService {
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -690,6 +761,31 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Returns the shared directories in your account.
+     * </p>
+     * 
+     * @param describeSharedDirectoriesRequest
+     * @return Result of the DescribeSharedDirectories operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeSharedDirectories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSharedDirectories" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeSharedDirectoriesResult describeSharedDirectories(DescribeSharedDirectoriesRequest describeSharedDirectoriesRequest);
+
+    /**
+     * <p>
      * Obtains information about the directory snapshots that belong to this account.
      * </p>
      * <p>
@@ -709,7 +805,7 @@ public interface AWSDirectoryService {
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws ClientException
      *         A client exception has occurred.
      * @throws ServiceException
@@ -737,13 +833,14 @@ public interface AWSDirectoryService {
      * </p>
      * 
      * @param describeTrustsRequest
-     *        Describes the trust relationships for a particular Microsoft AD in the AWS cloud. If no input parameters
-     *        are are provided, such as directory ID or trust ID, this request describes all the trust relationships.
+     *        Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input
+     *        parameters are are provided, such as directory ID or trust ID, this request describes all the trust
+     *        relationships.
      * @return Result of the DescribeTrusts operation returned by the service.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -761,7 +858,7 @@ public interface AWSDirectoryService {
     /**
      * <p>
      * Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server
-     * for an AD Connector directory.
+     * for an AD Connector or Microsoft AD directory.
      * </p>
      * 
      * @param disableRadiusRequest
@@ -806,7 +903,7 @@ public interface AWSDirectoryService {
     /**
      * <p>
      * Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for
-     * an AD Connector directory.
+     * an AD Connector or Microsoft AD directory.
      * </p>
      * 
      * @param enableRadiusRequest
@@ -909,7 +1006,7 @@ public interface AWSDirectoryService {
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -924,13 +1021,34 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Lists the active log subscriptions for the AWS account.
+     * </p>
+     * 
+     * @param listLogSubscriptionsRequest
+     * @return Result of the ListLogSubscriptions operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ListLogSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListLogSubscriptionsResult listLogSubscriptions(ListLogSubscriptionsRequest listLogSubscriptionsRequest);
+
+    /**
+     * <p>
      * Lists all schema extensions applied to a Microsoft AD Directory.
      * </p>
      * 
      * @param listSchemaExtensionsRequest
      * @return Result of the ListSchemaExtensions operation returned by the service.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws ClientException
@@ -953,7 +1071,7 @@ public interface AWSDirectoryService {
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.
      * @throws InvalidNextTokenException
-     *         The <i>NextToken</i> value is not valid.
+     *         The <code>NextToken</code> value is not valid.
      * @throws InvalidParameterException
      *         One or more parameters are not valid.
      * @throws ClientException
@@ -990,6 +1108,29 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     RegisterEventTopicResult registerEventTopic(RegisterEventTopicRequest registerEventTopicRequest);
+
+    /**
+     * <p>
+     * Rejects a directory sharing request that was sent from the directory owner account.
+     * </p>
+     * 
+     * @param rejectSharedDirectoryRequest
+     * @return Result of the RejectSharedDirectory operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryAlreadySharedException
+     *         The specified directory has already been shared with this AWS account.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RejectSharedDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RejectSharedDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RejectSharedDirectoryResult rejectSharedDirectory(RejectSharedDirectoryRequest rejectSharedDirectoryRequest);
 
     /**
      * <p>
@@ -1037,6 +1178,34 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
+     * </p>
+     * 
+     * @param resetUserPasswordRequest
+     * @return Result of the ResetUserPassword operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws UserDoesNotExistException
+     *         The user provided a username that does not exist in your directory.
+     * @throws InvalidPasswordException
+     *         The new password provided by the user does not meet the password complexity requirements defined in your
+     *         directory.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ResetUserPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ResetUserPasswordResult resetUserPassword(ResetUserPasswordRequest resetUserPasswordRequest);
+
+    /**
+     * <p>
      * Restores a directory using an existing directory snapshot.
      * </p>
      * <p>
@@ -1068,6 +1237,55 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Shares a specified directory (<code>DirectoryId</code>) in your AWS account (directory owner) with another AWS
+     * account (directory consumer). With this operation you can use your directory from any AWS account and from any
+     * Amazon VPC within an AWS Region.
+     * </p>
+     * <p>
+     * When you share your AWS Managed Microsoft AD directory, AWS Directory Service creates a shared directory in the
+     * directory consumer account. This shared directory contains the metadata to provide access to the directory within
+     * the directory owner account. The shared directory is visible in all VPCs in the directory consumer account.
+     * </p>
+     * <p>
+     * The <code>ShareMethod</code> parameter determines whether the specified directory can be shared between AWS
+     * accounts inside the same AWS organization (<code>ORGANIZATIONS</code>). It also determines whether you can share
+     * the directory with any other AWS account either inside or outside of the organization (<code>HANDSHAKE</code>).
+     * </p>
+     * <p>
+     * The <code>ShareNotes</code> parameter is only used when <code>HANDSHAKE</code> is called, which sends a directory
+     * sharing request to the directory consumer.
+     * </p>
+     * 
+     * @param shareDirectoryRequest
+     * @return Result of the ShareDirectory operation returned by the service.
+     * @throws DirectoryAlreadySharedException
+     *         The specified directory has already been shared with this AWS account.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidTargetException
+     *         The specified shared target is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ShareLimitExceededException
+     *         The maximum number of AWS accounts that you can share with this directory has been reached.
+     * @throws OrganizationsException
+     *         Exception encountered while trying to access your AWS organization.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ShareDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ShareDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ShareDirectoryResult shareDirectory(ShareDirectoryRequest shareDirectoryRequest);
+
+    /**
+     * <p>
      * Applies a schema extension to a Microsoft AD directory.
      * </p>
      * 
@@ -1091,6 +1309,29 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     StartSchemaExtensionResult startSchemaExtension(StartSchemaExtensionRequest startSchemaExtensionRequest);
+
+    /**
+     * <p>
+     * Stops the directory sharing between the directory owner and consumer accounts.
+     * </p>
+     * 
+     * @param unshareDirectoryRequest
+     * @return Result of the UnshareDirectory operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidTargetException
+     *         The specified shared target is not valid.
+     * @throws DirectoryNotSharedException
+     *         The specified directory has not been shared with this AWS account.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UnshareDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UnshareDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UnshareDirectoryResult unshareDirectory(UnshareDirectoryRequest unshareDirectoryRequest);
 
     /**
      * <p>
@@ -1151,7 +1392,8 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector directory.
+     * Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector or
+     * Microsoft AD directory.
      * </p>
      * 
      * @param updateRadiusRequest
@@ -1173,15 +1415,37 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Updates the trust that has been set up between your AWS Managed Microsoft AD directory and an on-premises Active
+     * Directory.
+     * </p>
+     * 
+     * @param updateTrustRequest
+     * @return Result of the UpdateTrust operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UpdateTrust
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateTrustResult updateTrust(UpdateTrustRequest updateTrustRequest);
+
+    /**
+     * <p>
      * AWS Directory Service for Microsoft Active Directory allows you to configure and verify trust relationships.
      * </p>
      * <p>
-     * This action verifies a trust relationship between your Microsoft AD in the AWS cloud and an external domain.
+     * This action verifies a trust relationship between your AWS Managed Microsoft AD directory and an external domain.
      * </p>
      * 
      * @param verifyTrustRequest
-     *        Initiates the verification of an existing trust relationship between a Microsoft AD in the AWS cloud and
-     *        an external domain.
+     *        Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory
+     *        and an external domain.
      * @return Result of the VerifyTrust operation returned by the service.
      * @throws EntityDoesNotExistException
      *         The specified entity could not be found.

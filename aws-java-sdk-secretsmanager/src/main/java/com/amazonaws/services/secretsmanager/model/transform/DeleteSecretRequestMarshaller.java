@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class DeleteSecretRequestMarshaller {
             .marshallLocationName("SecretId").build();
     private static final MarshallingInfo<Long> RECOVERYWINDOWINDAYS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecoveryWindowInDays").build();
+    private static final MarshallingInfo<Boolean> FORCEDELETEWITHOUTRECOVERY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForceDeleteWithoutRecovery").build();
 
     private static final DeleteSecretRequestMarshaller instance = new DeleteSecretRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class DeleteSecretRequestMarshaller {
         try {
             protocolMarshaller.marshall(deleteSecretRequest.getSecretId(), SECRETID_BINDING);
             protocolMarshaller.marshall(deleteSecretRequest.getRecoveryWindowInDays(), RECOVERYWINDOWINDAYS_BINDING);
+            protocolMarshaller.marshall(deleteSecretRequest.getForceDeleteWithoutRecovery(), FORCEDELETEWITHOUTRECOVERY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

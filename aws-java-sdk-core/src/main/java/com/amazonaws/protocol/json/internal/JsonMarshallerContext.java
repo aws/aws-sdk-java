@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@ package com.amazonaws.protocol.json.internal;
 
 import com.amazonaws.Request;
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.protocol.MarshallingInfo;
+import com.amazonaws.protocol.MarshallingType;
 import com.amazonaws.protocol.json.StructuredJsonGenerator;
 import com.amazonaws.protocol.MarshallLocation;
 import com.amazonaws.protocol.ProtocolMarshaller;
@@ -83,10 +85,21 @@ public class JsonMarshallerContext {
      *
      * @param marshallLocation Current {@link MarshallLocation}
      * @param val              Value to marshall.
-     * @param paramName        Name of parameter to marshall.
+     * @param marshallingInfo        Name of parameter to marshall.
      */
+    public void marshall(MarshallLocation marshallLocation, Object val, MarshallingInfo marshallingInfo) {
+        marshallerRegistry().getMarshaller(marshallLocation, val).marshall(val, this, marshallingInfo);
+    }
+
     public void marshall(MarshallLocation marshallLocation, Object val, String paramName) {
-        marshallerRegistry().getMarshaller(marshallLocation, val).marshall(val, this, paramName);
+        marshallerRegistry().getMarshaller(marshallLocation, val)
+                            // construct a new MarshallingInfo to pass the marshallLocationName
+                            .marshall(val, this, MarshallingInfo.builder(new MarshallingType<Object>() {
+                                @Override
+                                public boolean isDefaultMarshallerForType(Class<?> type) {
+                                    return false;
+                                }
+                            }).marshallLocationName(paramName).build());
     }
 
     /**

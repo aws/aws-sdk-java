@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,11 +45,17 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<ContentModerationDetection> moderationLabels;
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of moderation labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of moderation labels.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Version number of the moderation detection model that was used to detect unsafe content.
+     * </p>
+     */
+    private String moderationModelVersion;
 
     /**
      * <p>
@@ -268,13 +274,13 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of moderation labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of moderation labels.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of moderation labels.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of moderation labels.
      */
 
     public void setNextToken(String nextToken) {
@@ -283,12 +289,12 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of moderation labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of moderation labels.
      * </p>
      * 
-     * @return If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *         request to retrieve the next set of moderation labels.
+     * @return If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *         subsequent request to retrieve the next set of moderation labels.
      */
 
     public String getNextToken() {
@@ -297,13 +303,13 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of moderation labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of moderation labels.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of moderation labels.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of moderation labels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,7 +319,48 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Version number of the moderation detection model that was used to detect unsafe content.
+     * </p>
+     * 
+     * @param moderationModelVersion
+     *        Version number of the moderation detection model that was used to detect unsafe content.
+     */
+
+    public void setModerationModelVersion(String moderationModelVersion) {
+        this.moderationModelVersion = moderationModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the moderation detection model that was used to detect unsafe content.
+     * </p>
+     * 
+     * @return Version number of the moderation detection model that was used to detect unsafe content.
+     */
+
+    public String getModerationModelVersion() {
+        return this.moderationModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the moderation detection model that was used to detect unsafe content.
+     * </p>
+     * 
+     * @param moderationModelVersion
+     *        Version number of the moderation detection model that was used to detect unsafe content.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetContentModerationResult withModerationModelVersion(String moderationModelVersion) {
+        setModerationModelVersion(moderationModelVersion);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -332,7 +379,9 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
         if (getModerationLabels() != null)
             sb.append("ModerationLabels: ").append(getModerationLabels()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getModerationModelVersion() != null)
+            sb.append("ModerationModelVersion: ").append(getModerationModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +416,10 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getModerationModelVersion() == null ^ this.getModerationModelVersion() == null)
+            return false;
+        if (other.getModerationModelVersion() != null && other.getModerationModelVersion().equals(this.getModerationModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -380,6 +433,7 @@ public class GetContentModerationResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getVideoMetadata() == null) ? 0 : getVideoMetadata().hashCode());
         hashCode = prime * hashCode + ((getModerationLabels() == null) ? 0 : getModerationLabels().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getModerationModelVersion() == null) ? 0 : getModerationModelVersion().hashCode());
         return hashCode;
     }
 

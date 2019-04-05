@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,7 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The unique identifier for the gateway local disk that is configured as a stored volume. Use <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to
      * list disk IDs for a gateway.
      * </p>
      */
@@ -69,7 +69,7 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
      * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
      * snapshots for your account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      */
@@ -86,10 +86,14 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     private Boolean preserveExistingData;
     /**
      * <p>
-     * The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. For
-     * example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The
-     * target name must be unique across all volumes of a gateway.
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      */
     private String targetName;
@@ -103,6 +107,20 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String networkInterfaceId;
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     */
+    private Boolean kMSEncrypted;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
+     * </p>
+     */
+    private String kMSKey;
 
     /**
      * @param gatewayARN
@@ -133,13 +151,13 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The unique identifier for the gateway local disk that is configured as a stored volume. Use <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to
      * list disk IDs for a gateway.
      * </p>
      * 
      * @param diskId
      *        The unique identifier for the gateway local disk that is configured as a stored volume. Use <a
-     *        href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html"
+     *        href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html"
      *        >ListLocalDisks</a> to list disk IDs for a gateway.
      */
 
@@ -150,12 +168,12 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The unique identifier for the gateway local disk that is configured as a stored volume. Use <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to
      * list disk IDs for a gateway.
      * </p>
      * 
      * @return The unique identifier for the gateway local disk that is configured as a stored volume. Use <a
-     *         href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html"
+     *         href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html"
      *         >ListLocalDisks</a> to list disk IDs for a gateway.
      */
 
@@ -166,13 +184,13 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The unique identifier for the gateway local disk that is configured as a stored volume. Use <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to
      * list disk IDs for a gateway.
      * </p>
      * 
      * @param diskId
      *        The unique identifier for the gateway local disk that is configured as a stored volume. Use <a
-     *        href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html"
+     *        href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html"
      *        >ListLocalDisks</a> to list disk IDs for a gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -187,7 +205,7 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
      * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
      * snapshots for your account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * 
@@ -195,7 +213,7 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      *        The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
      *        field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
      *        To list snapshots for your account use <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      *        >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      */
 
@@ -208,14 +226,14 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
      * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
      * snapshots for your account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * 
      * @return The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
      *         field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
      *         To list snapshots for your account use <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      *         >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      */
 
@@ -228,7 +246,7 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
      * you want to create the iSCSI storage volume from a snapshot otherwise do not include this field. To list
      * snapshots for your account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * 
@@ -236,7 +254,7 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      *        The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
      *        field if you want to create the iSCSI storage volume from a snapshot otherwise do not include this field.
      *        To list snapshots for your account use <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      *        >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -328,17 +346,25 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. For
-     * example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The
-     * target name must be unique across all volumes of a gateway.
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      * 
      * @param targetName
-     *        The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target
-     *        ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     *        arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     *        The target name must be unique across all volumes of a gateway.
+     *        The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *        target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *        of
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *        . The target name must be unique across all volumes on a gateway.</p>
+     *        <p>
+     *        If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *        the new target name.
      */
 
     public void setTargetName(String targetName) {
@@ -347,17 +373,24 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. For
-     * example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The
-     * target name must be unique across all volumes of a gateway.
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      * 
-     * @return The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target
-     *         ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     *         arn:aws
-     *         :storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The
-     *         target name must be unique across all volumes of a gateway.
+     * @return The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *         target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *         of
+     *         <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *         . The target name must be unique across all volumes on a gateway.</p>
+     *         <p>
+     *         If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *         the new target name.
      */
 
     public String getTargetName() {
@@ -366,17 +399,25 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. For
-     * example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume. The
-     * target name must be unique across all volumes of a gateway.
+     * The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the target ARN.
+     * For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * . The target name must be unique across all volumes on a gateway.
+     * </p>
+     * <p>
+     * If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as the new
+     * target name.
      * </p>
      * 
      * @param targetName
-     *        The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target
-     *        ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     *        arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     *        The target name must be unique across all volumes of a gateway.
+     *        The name of the iSCSI target used by an initiator to connect to a volume and used as a suffix for the
+     *        target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN
+     *        of
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *        . The target name must be unique across all volumes on a gateway.</p>
+     *        <p>
+     *        If you don't specify a value, Storage Gateway uses the value that was previously used for this volume as
+     *        the new target name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,7 +491,114 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @param kMSEncrypted
+     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        Amazon S3. Optional.
+     */
+
+    public void setKMSEncrypted(Boolean kMSEncrypted) {
+        this.kMSEncrypted = kMSEncrypted;
+    }
+
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *         Amazon S3. Optional.
+     */
+
+    public Boolean getKMSEncrypted() {
+        return this.kMSEncrypted;
+    }
+
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @param kMSEncrypted
+     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        Amazon S3. Optional.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStorediSCSIVolumeRequest withKMSEncrypted(Boolean kMSEncrypted) {
+        setKMSEncrypted(kMSEncrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *         Amazon S3. Optional.
+     */
+
+    public Boolean isKMSEncrypted() {
+        return this.kMSEncrypted;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
+     * </p>
+     * 
+     * @param kMSKey
+     *        The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can
+     *        only be set when KMSEncrypted is true. Optional.
+     */
+
+    public void setKMSKey(String kMSKey) {
+        this.kMSKey = kMSKey;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can
+     *         only be set when KMSEncrypted is true. Optional.
+     */
+
+    public String getKMSKey() {
+        return this.kMSKey;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
+     * </p>
+     * 
+     * @param kMSKey
+     *        The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can
+     *        only be set when KMSEncrypted is true. Optional.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStorediSCSIVolumeRequest withKMSKey(String kMSKey) {
+        setKMSKey(kMSKey);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -471,7 +619,11 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
         if (getTargetName() != null)
             sb.append("TargetName: ").append(getTargetName()).append(",");
         if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
+        if (getKMSEncrypted() != null)
+            sb.append("KMSEncrypted: ").append(getKMSEncrypted()).append(",");
+        if (getKMSKey() != null)
+            sb.append("KMSKey: ").append(getKMSKey());
         sb.append("}");
         return sb.toString();
     }
@@ -510,6 +662,14 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
+        if (other.getKMSEncrypted() == null ^ this.getKMSEncrypted() == null)
+            return false;
+        if (other.getKMSEncrypted() != null && other.getKMSEncrypted().equals(this.getKMSEncrypted()) == false)
+            return false;
+        if (other.getKMSKey() == null ^ this.getKMSKey() == null)
+            return false;
+        if (other.getKMSKey() != null && other.getKMSKey().equals(this.getKMSKey()) == false)
+            return false;
         return true;
     }
 
@@ -524,6 +684,8 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getPreserveExistingData() == null) ? 0 : getPreserveExistingData().hashCode());
         hashCode = prime * hashCode + ((getTargetName() == null) ? 0 : getTargetName().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getKMSEncrypted() == null) ? 0 : getKMSEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
         return hashCode;
     }
 

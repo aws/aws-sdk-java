@@ -38,6 +38,7 @@ public class Jackson {
     private static final ObjectWriter WRITER = MAPPER
             .configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true)
             .configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, true)
+            .configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
             .writerWithDefaultPrettyPrinter();
 
     static {

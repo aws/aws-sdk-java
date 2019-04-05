@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more Elastic GPU IDs.
+     * One or more Elastic Graphics accelerator IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> elasticGpuIds;
@@ -38,27 +38,28 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
-     * <code>availability-zone</code> - The Availability Zone in which the Elastic GPU resides.
+     * <code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code> | <code>IMPAIRED</code>).
+     * <code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> |
+     * <code>IMPAIRED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-state</code> - The state of the Elastic GPU (<code>ATTACHED</code>).
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example, <code>eg1.medium</code>.
+     * <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-id</code> - The ID of the instance to which the Elastic GPU is associated.
+     * <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.
      * </p>
      * </li>
      * </ul>
@@ -80,10 +81,10 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more Elastic GPU IDs.
+     * One or more Elastic Graphics accelerator IDs.
      * </p>
      * 
-     * @return One or more Elastic GPU IDs.
+     * @return One or more Elastic Graphics accelerator IDs.
      */
 
     public java.util.List<String> getElasticGpuIds() {
@@ -95,11 +96,11 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more Elastic GPU IDs.
+     * One or more Elastic Graphics accelerator IDs.
      * </p>
      * 
      * @param elasticGpuIds
-     *        One or more Elastic GPU IDs.
+     *        One or more Elastic Graphics accelerator IDs.
      */
 
     public void setElasticGpuIds(java.util.Collection<String> elasticGpuIds) {
@@ -113,7 +114,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more Elastic GPU IDs.
+     * One or more Elastic Graphics accelerator IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +123,7 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param elasticGpuIds
-     *        One or more Elastic GPU IDs.
+     *        One or more Elastic Graphics accelerator IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +139,11 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more Elastic GPU IDs.
+     * One or more Elastic Graphics accelerator IDs.
      * </p>
      * 
      * @param elasticGpuIds
-     *        One or more Elastic GPU IDs.
+     *        One or more Elastic Graphics accelerator IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,27 +159,28 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
-     * <code>availability-zone</code> - The Availability Zone in which the Elastic GPU resides.
+     * <code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code> | <code>IMPAIRED</code>).
+     * <code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> |
+     * <code>IMPAIRED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-state</code> - The state of the Elastic GPU (<code>ATTACHED</code>).
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example, <code>eg1.medium</code>.
+     * <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-id</code> - The ID of the instance to which the Elastic GPU is associated.
+     * <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.
      * </p>
      * </li>
      * </ul>
@@ -187,28 +189,30 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>availability-zone</code> - The Availability Zone in which the Elastic GPU resides.
+     *         <code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code> | <code>IMPAIRED</code>
-     *         ).
+     *         <code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> |
+     *         <code>IMPAIRED</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>elastic-gpu-state</code> - The state of the Elastic GPU (<code>ATTACHED</code>).
+     *         <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>elastic-gpu-type</code> - The type of Elastic GPU; for example, <code>eg1.medium</code>.
+     *         <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example,
+     *         <code>eg1.medium</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>instance-id</code> - The ID of the instance to which the Elastic GPU is associated.
+     *         <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is
+     *         associated.
      *         </p>
      *         </li>
      */
@@ -227,27 +231,28 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
-     * <code>availability-zone</code> - The Availability Zone in which the Elastic GPU resides.
+     * <code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code> | <code>IMPAIRED</code>).
+     * <code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> |
+     * <code>IMPAIRED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-state</code> - The state of the Elastic GPU (<code>ATTACHED</code>).
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example, <code>eg1.medium</code>.
+     * <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-id</code> - The ID of the instance to which the Elastic GPU is associated.
+     * <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.
      * </p>
      * </li>
      * </ul>
@@ -257,27 +262,29 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>availability-zone</code> - The Availability Zone in which the Elastic GPU resides.
+     *        <code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code> | <code>IMPAIRED</code>).
+     *        <code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> |
+     *        <code>IMPAIRED</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>elastic-gpu-state</code> - The state of the Elastic GPU (<code>ATTACHED</code>).
+     *        <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>elastic-gpu-type</code> - The type of Elastic GPU; for example, <code>eg1.medium</code>.
+     *        <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example,
+     *        <code>eg1.medium</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-id</code> - The ID of the instance to which the Elastic GPU is associated.
+     *        <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.
      *        </p>
      *        </li>
      */
@@ -298,27 +305,28 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
-     * <code>availability-zone</code> - The Availability Zone in which the Elastic GPU resides.
+     * <code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code> | <code>IMPAIRED</code>).
+     * <code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> |
+     * <code>IMPAIRED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-state</code> - The state of the Elastic GPU (<code>ATTACHED</code>).
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example, <code>eg1.medium</code>.
+     * <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-id</code> - The ID of the instance to which the Elastic GPU is associated.
+     * <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.
      * </p>
      * </li>
      * </ul>
@@ -333,27 +341,29 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>availability-zone</code> - The Availability Zone in which the Elastic GPU resides.
+     *        <code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code> | <code>IMPAIRED</code>).
+     *        <code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> |
+     *        <code>IMPAIRED</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>elastic-gpu-state</code> - The state of the Elastic GPU (<code>ATTACHED</code>).
+     *        <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>elastic-gpu-type</code> - The type of Elastic GPU; for example, <code>eg1.medium</code>.
+     *        <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example,
+     *        <code>eg1.medium</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-id</code> - The ID of the instance to which the Elastic GPU is associated.
+     *        <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -376,27 +386,28 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      * <ul>
      * <li>
      * <p>
-     * <code>availability-zone</code> - The Availability Zone in which the Elastic GPU resides.
+     * <code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code> | <code>IMPAIRED</code>).
+     * <code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> |
+     * <code>IMPAIRED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-state</code> - The state of the Elastic GPU (<code>ATTACHED</code>).
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example, <code>eg1.medium</code>.
+     * <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>instance-id</code> - The ID of the instance to which the Elastic GPU is associated.
+     * <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.
      * </p>
      * </li>
      * </ul>
@@ -406,27 +417,29 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>availability-zone</code> - The Availability Zone in which the Elastic GPU resides.
+     *        <code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code> | <code>IMPAIRED</code>).
+     *        <code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> |
+     *        <code>IMPAIRED</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>elastic-gpu-state</code> - The state of the Elastic GPU (<code>ATTACHED</code>).
+     *        <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>elastic-gpu-type</code> - The type of Elastic GPU; for example, <code>eg1.medium</code>.
+     *        <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example,
+     *        <code>eg1.medium</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-id</code> - The ID of the instance to which the Elastic GPU is associated.
+     *        <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -535,7 +548,8 @@ public class DescribeElasticGpusRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

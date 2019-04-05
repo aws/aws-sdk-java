@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.identitymanagement.AmazonIdentityManagementClientBuilder;
 import com.amazonaws.services.identitymanagement.waiters.AmazonIdentityManagementWaiters;
 
@@ -54,7 +56,7 @@ import com.amazonaws.services.identitymanagement.model.transform.*;
  * AWS Identity and Access Management (IAM) is a web service that you can use to manage users and user permissions under
  * your AWS account. This guide provides descriptions of IAM actions that you can call programmatically. For general
  * information about IAM, see <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a>. For the
- * user guide for IAM, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>.
+ * user guide for IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/">Using IAM</a>.
  * </p>
  * <note>
  * <p>
@@ -68,7 +70,7 @@ import com.amazonaws.services.identitymanagement.model.transform.*;
  * <p>
  * We recommend that you use the AWS SDKs to make programmatic API calls to IAM. However, you can also use the IAM Query
  * API to make direct calls to the IAM web service. To learn more about the IAM Query API, see <a
- * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
  * <i>Using IAM</i> guide. IAM supports GET and POST requests for all actions. That is, the API does not require you to
  * use GET for some actions and POST for others. However, GET requests are subject to the limitation size of a URL.
  * Therefore, for operations that require larger sizes, use a POST request.
@@ -84,7 +86,7 @@ import com.amazonaws.services.identitymanagement.model.transform.*;
  * </p>
  * <p>
  * To sign requests, we recommend that you use <a
- * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. If you have an
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. If you have an
  * existing application that uses Signature Version 2, you do not have to update it to use Signature Version 4. However,
  * some operations now require Signature Version 4. The documentation for operations that require version 4 indicate
  * this requirement.
@@ -98,19 +100,19 @@ import com.amazonaws.services.identitymanagement.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a>.
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS Security Credentials</a>.
  * This topic provides general information about the types of credentials used for accessing AWS.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM Best Practices</a>. This topic
+ * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html">IAM Best Practices</a>. This topic
  * presents a list of suggestions for using the IAM service to help secure your AWS resources.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a>.
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a>.
  * This set of topics walk you through the process of signing a request using an access key ID and secret access key.
  * </p>
  * </li>
@@ -119,6 +121,7 @@ import com.amazonaws.services.identitymanagement.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonIdentityManagementClient extends AmazonWebServiceClient implements AmazonIdentityManagement {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -131,6 +134,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     /**
      * List of exception unmarshallers for all modeled exceptions
@@ -221,6 +226,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     public AmazonIdentityManagementClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -285,6 +291,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -303,12 +310,28 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *        Object providing client parameters.
      */
     AmazonIdentityManagementClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on IAM using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonIdentityManagementClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
     private void init() {
+        exceptionUnmarshallers.add(new ConcurrentModificationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MalformedPolicyDocumentExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnmodifiableEntityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DeleteConflictExceptionUnmarshaller());
@@ -361,8 +384,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -396,6 +419,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddClientIDToOpenIDConnectProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -425,22 +451,22 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <note>
      * <p>
-     * The caller of this API must be granted the <code>PassRole</code> permission on the IAM role by a permission
+     * The caller of this API must be granted the <code>PassRole</code> permission on the IAM role by a permissions
      * policy.
      * </p>
      * </note>
      * <p>
      * For more information about roles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>. For more
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>. For more
      * information about instance profiles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
      * </p>
      * 
      * @param addRoleToInstanceProfileRequest
      * @return Result of the AddRoleToInstanceProfile operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
@@ -478,6 +504,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddRoleToInstanceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -502,8 +531,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param addUserToGroupRequest
      * @return Result of the AddUserToGroup operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -535,6 +564,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddUserToGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -561,15 +593,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param attachGroupPolicyRequest
      * @return Result of the AttachGroupPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -606,6 +638,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -636,15 +671,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Use this API to attach a <i>managed</i> policy to a role. To embed an inline policy in a role, use
      * <a>PutRolePolicy</a>. For more information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param attachRolePolicyRequest
      * @return Result of the AttachRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -685,6 +720,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -711,15 +749,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param attachUserPolicyRequest
      * @return Result of the AttachUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -756,6 +794,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachUserPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -779,15 +820,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * To change the password for a different user, see <a>UpdateLoginProfile</a>. For more information about modifying
-     * passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+     * passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
      * Passwords</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param changePasswordRequest
      * @return Result of the ChangePassword operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidUserTypeException
      *         The request was rejected because the type of user for the transaction was incorrect.
      * @throws LimitExceededException
@@ -828,6 +869,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangePassword");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -851,13 +895,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing
-     * the request. Because this operation works for access keys under the AWS account, you can use this operation to
-     * manage AWS account root user credentials. This is true even if the AWS account has no associated users.
+     * the request. This operation works for access keys under the AWS account. Consequently, you can use this operation
+     * to manage AWS account root user credentials. This is true even if the AWS account has no associated users.
      * </p>
      * <p>
      * For information about limits on the number of keys you can create, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
+     * Entities</a> in the <i>IAM User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -870,8 +914,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param createAccessKeyRequest
      * @return Result of the CreateAccessKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -903,6 +947,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccessKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -927,7 +974,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Creates an alias for your AWS account. For information about using an AWS account alias, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an Alias for Your AWS Account
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an Alias for Your AWS Account
      * ID</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -966,6 +1013,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccountAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -988,8 +1038,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For information about the number of groups you can create, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
+     * Entities</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createGroupRequest
@@ -1000,8 +1050,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateGroup
@@ -1030,6 +1080,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1048,12 +1101,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Creates a new instance profile. For information about instance profiles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
      * </p>
      * <p>
      * For information about the number of instance profiles you can create, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
+     * Entities</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createInstanceProfileRequest
@@ -1091,6 +1144,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstanceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1111,7 +1167,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Creates a password for the specified user, giving the user the ability to access AWS services through the AWS
      * Management Console. For more information about managing passwords, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing Passwords</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing Passwords</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * 
@@ -1120,8 +1176,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws PasswordPolicyViolationException
      *         The request was rejected because the provided password did not meet the requirements imposed by the
      *         account password policy.
@@ -1156,6 +1212,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoginProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1249,6 +1308,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOpenIDConnectProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1272,12 +1334,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * This operation creates a policy version with a version identifier of <code>v1</code> and sets v1 as the policy's
      * default version. For more information about policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * For more information about managed policies in general, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -1321,6 +1383,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1348,15 +1413,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createPolicyVersionRequest
      * @return Result of the CreatePolicyVersion operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
@@ -1393,6 +1458,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePolicyVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1412,10 +1480,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Creates a new role for your AWS account. For more information about roles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM Roles</a>. For information about
-     * limitations on role names and the number of roles you can create, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM Roles</a>. For information
+     * about limitations on role names and the number of roles you can create, go to <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
+     * Entities</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createRoleRequest
@@ -1430,6 +1498,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
+     * @throws ConcurrentModificationException
+     *         The request was rejected because multiple requests to change this object were submitted simultaneously.
+     *         Wait a few minutes and submit your request again.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateRole
@@ -1458,6 +1529,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1491,15 +1565,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <note>
      * <p>
-     * This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4</a>.
+     * This operation requires <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      * </p>
      * </note>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling SAML
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling SAML
      * 2.0 Federated Users to Access the AWS Management Console</a> and <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
      * Federation</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -1540,6 +1614,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSAMLProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1561,12 +1638,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * Creates an IAM role that is linked to a specific AWS service. The service controls the attached policies and when
      * the role can be deleted. This helps ensure that the service is not broken by an unexpectedly changed or deleted
      * role, which could put your AWS resources into an unknown state. Allowing the service to control the role helps
-     * improve service stability and proper cleanup when a service and its role are no longer needed.
-     * </p>
-     * <p>
-     * The name of the role is generated by combining the string that you specify for the <code>AWSServiceName</code>
-     * parameter with the string that you specify for the <code>CustomSuffix</code> parameter. The resulting name must
-     * be unique in your account or the request fails.
+     * improve service stability and proper cleanup when a service and its role are no longer needed. For more
+     * information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">Using
+     * Service-Linked Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * To attach a policy to this service-linked role, you must make the request using the AWS service that depends on
@@ -1581,8 +1655,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateServiceLinkedRole
@@ -1611,6 +1685,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateServiceLinkedRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1643,7 +1720,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about service-specific credentials, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">Using IAM with AWS
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">Using IAM with AWS
      * CodeCommit: Git Credentials, SSH Keys, and AWS Access Keys</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -1653,8 +1730,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceNotSupportedException
      *         The specified service does not support service-specific credentials.
      * @sample AmazonIdentityManagement.CreateServiceSpecificCredential
@@ -1684,6 +1761,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateServiceSpecificCredential");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1706,8 +1786,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For information about limitations on the number of IAM users you can create, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
+     * Entities</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param createUserRequest
@@ -1718,8 +1798,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws ConcurrentModificationException
+     *         The request was rejected because multiple requests to change this object were submitted simultaneously.
+     *         Wait a few minutes and submit your request again.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.CreateUser
@@ -1748,6 +1833,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1767,12 +1855,12 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use <a>EnableMFADevice</a>
      * to attach the MFA device to an IAM user. For more information about creating and working with virtual MFA
-     * devices, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using a Virtual
+     * devices, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using a Virtual
      * MFA Device</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * For information about limits on the number of MFA devices you can create, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on Entities</a> in
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on Entities</a> in
      * the <i>IAM User Guide</i>.
      * </p>
      * <important>
@@ -1818,6 +1906,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVirtualMFADevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1841,8 +1932,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about creating and working with virtual MFA devices, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using a Virtual MFA Device</a> in
-     * the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Enabling a Virtual Multi-factor
+     * Authentication (MFA) Device</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param deactivateMFADeviceRequest
@@ -1852,8 +1943,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         name that was deleted and then recreated. The error indicates that the request is likely to succeed if
      *         you try again after waiting several minutes. The error message describes the entity.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1885,6 +1976,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeactivateMFADevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1907,15 +2001,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing
-     * the request. Because this operation works for access keys under the AWS account, you can use this operation to
-     * manage AWS account root user credentials even if the AWS account has no associated users.
+     * the request. This operation works for access keys under the AWS account. Consequently, you can use this operation
+     * to manage AWS account root user credentials even if the AWS account has no associated users.
      * </p>
      * 
      * @param deleteAccessKeyRequest
      * @return Result of the DeleteAccessKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -1947,6 +2041,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1966,15 +2063,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Deletes the specified AWS account alias. For information about using an AWS account alias, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an Alias for Your AWS Account
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an Alias for Your AWS Account
      * ID</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param deleteAccountAliasRequest
      * @return Result of the DeleteAccountAlias operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -2006,6 +2103,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2030,8 +2130,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteAccountPasswordPolicyRequest
      * @return Result of the DeleteAccountPasswordPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -2063,6 +2163,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountPasswordPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2092,8 +2195,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteGroupRequest
      * @return Result of the DeleteGroup operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
@@ -2128,6 +2231,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2150,15 +2256,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * A group can also have managed policies attached to it. To detach a managed policy from a group, use
      * <a>DetachGroupPolicy</a>. For more information about policies, refer to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param deleteGroupPolicyRequest
      * @return Result of the DeleteGroupPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -2190,6 +2296,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2219,14 +2328,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </important>
      * <p>
      * For more information about instance profiles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
      * </p>
      * 
      * @param deleteInstanceProfileRequest
      * @return Result of the DeleteInstanceProfile operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
@@ -2261,6 +2370,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstanceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2285,7 +2397,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <important>
      * <p>
      * Deleting a user's password does not prevent a user from accessing AWS through the command line interface or the
-     * API. To prevent all user access you must also either make any access keys inactive or delete them. For more
+     * API. To prevent all user access, you must also either make any access keys inactive or delete them. For more
      * information about making keys inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
      * </p>
      * </important>
@@ -2297,8 +2409,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         name that was deleted and then recreated. The error indicates that the request is likely to succeed if
      *         you try again after waiting several minutes. The error message describes the entity.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -2330,6 +2442,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoginProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2364,8 +2479,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteOpenIDConnectProvider
@@ -2394,6 +2509,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOpenIDConnectProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2416,7 +2534,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * Before you can delete a managed policy, you must first detach the policy from all users, groups, and roles that
-     * it is attached to. In addition you must delete all the policy's versions. The following steps describe the
+     * it is attached to. In addition, you must delete all the policy's versions. The following steps describe the
      * process for deleting a managed policy:
      * </p>
      * <ul>
@@ -2442,15 +2560,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </ul>
      * <p>
      * For information about managed policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param deletePolicyRequest
      * @return Result of the DeletePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -2487,6 +2605,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2513,15 +2634,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For information about versions for managed policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param deletePolicyVersionRequest
      * @return Result of the DeletePolicyVersion operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -2558,6 +2679,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicyVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2577,7 +2701,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Deletes the specified role. The role must not have any policies attached. For more information about roles, go to
-     * <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>.
+     * <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>.
      * </p>
      * <important>
      * <p>
@@ -2590,8 +2714,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteRoleRequest
      * @return Result of the DeleteRole operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
@@ -2602,6 +2726,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
      *         service-linked role. You must request the change through that service.
+     * @throws ConcurrentModificationException
+     *         The request was rejected because multiple requests to change this object were submitted simultaneously.
+     *         Wait a few minutes and submit your request again.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteRole
@@ -2630,6 +2757,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2647,20 +2777,87 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Deletes the permissions boundary for the specified IAM role.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting the permissions boundary for a role might increase its permissions by allowing anyone who assumes the
+     * role to perform all the actions granted in its permissions policies.
+     * </p>
+     * </important>
+     * 
+     * @param deleteRolePermissionsBoundaryRequest
+     * @return Result of the DeleteRolePermissionsBoundary operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.DeleteRolePermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePermissionsBoundary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRolePermissionsBoundaryResult deleteRolePermissionsBoundary(DeleteRolePermissionsBoundaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRolePermissionsBoundary(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRolePermissionsBoundaryResult executeDeleteRolePermissionsBoundary(DeleteRolePermissionsBoundaryRequest deleteRolePermissionsBoundaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRolePermissionsBoundaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRolePermissionsBoundaryRequest> request = null;
+        Response<DeleteRolePermissionsBoundaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRolePermissionsBoundaryRequestMarshaller().marshall(super.beforeMarshalling(deleteRolePermissionsBoundaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRolePermissionsBoundary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteRolePermissionsBoundaryResult> responseHandler = new StaxResponseHandler<DeleteRolePermissionsBoundaryResult>(
+                    new DeleteRolePermissionsBoundaryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified inline policy that is embedded in the specified IAM role.
      * </p>
      * <p>
      * A role can also have managed policies attached to it. To detach a managed policy from a role, use
      * <a>DetachRolePolicy</a>. For more information about policies, refer to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param deleteRolePolicyRequest
      * @return Result of the DeleteRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -2696,6 +2893,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2723,8 +2923,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <note>
      * <p>
-     * This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4</a>.
+     * This operation requires <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      * </p>
      * </note>
      * 
@@ -2736,8 +2936,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteSAMLProvider
@@ -2766,6 +2966,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSAMLProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2789,15 +2992,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * The SSH public key deleted by this operation is used only for authenticating the associated IAM user to an AWS
      * CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository,
-     * see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
+     * see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
      * CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param deleteSSHPublicKeyRequest
      * @return Result of the DeleteSSHPublicKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.DeleteSSHPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey" target="_top">AWS API
      *      Documentation</a>
@@ -2824,6 +3027,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSSHPublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2846,7 +3052,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about working with server certificates, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
      * Certificates</a> in the <i>IAM User Guide</i>. This topic also includes a list of AWS services that can use the
      * server certificates that you manage with IAM.
      * </p>
@@ -2856,8 +3062,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * implications for your application. If Elastic Load Balancing doesn't detect the deletion of bound certificates,
      * it may continue to use the certificates. This could cause Elastic Load Balancing to stop accepting traffic. We
      * recommend that you remove the reference to the certificate from Elastic Load Balancing before using this command
-     * to delete the certificate. For more information, go to <a
-     * href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html"
+     * to delete the certificate. For more information, go to <a href=
+     * "https://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DeleteLoadBalancerListeners.html"
      * >DeleteLoadBalancerListeners</a> in the <i>Elastic Load Balancing API Reference</i>.
      * </p>
      * </important>
@@ -2865,8 +3071,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteServerCertificateRequest
      * @return Result of the DeleteServerCertificate operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
@@ -2901,6 +3107,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServerCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2935,15 +3144,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about service-linked roles, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
      * >Roles Terms and Concepts: AWS Service-Linked Role</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param deleteServiceLinkedRoleRequest
      * @return Result of the DeleteServiceLinkedRole operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -2975,6 +3184,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServiceLinkedRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2999,8 +3211,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteServiceSpecificCredentialRequest
      * @return Result of the DeleteServiceSpecificCredential operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.DeleteServiceSpecificCredential
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential"
      *      target="_top">AWS API Documentation</a>
@@ -3028,6 +3240,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServiceSpecificCredential");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3050,15 +3265,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing
-     * the request. Because this operation works for access keys under the AWS account, you can use this operation to
-     * manage AWS account root user credentials even if the AWS account has no associated IAM users.
+     * the request. This operation works for access keys under the AWS account. Consequently, you can use this operation
+     * to manage AWS account root user credentials even if the AWS account has no associated IAM users.
      * </p>
      * 
      * @param deleteSigningCertificateRequest
      * @return Result of the DeleteSigningCertificate operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -3090,6 +3305,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSigningCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3109,7 +3327,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Deletes the specified IAM user. The user must not belong to any groups or have any access keys, signing
-     * certificates, or attached policies.
+     * certificates, MFA devices enabled for AWS, or attached policies.
      * </p>
      * 
      * @param deleteUserRequest
@@ -3118,11 +3336,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
+     * @throws ConcurrentModificationException
+     *         The request was rejected because multiple requests to change this object were submitted simultaneously.
+     *         Wait a few minutes and submit your request again.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteUser
@@ -3151,6 +3372,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3168,20 +3392,83 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Deletes the permissions boundary for the specified IAM user.
+     * </p>
+     * <important>
+     * <p>
+     * Deleting the permissions boundary for a user might increase its permissions by allowing the user to perform all
+     * the actions granted in its permissions policies.
+     * </p>
+     * </important>
+     * 
+     * @param deleteUserPermissionsBoundaryRequest
+     * @return Result of the DeleteUserPermissionsBoundary operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.DeleteUserPermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPermissionsBoundary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteUserPermissionsBoundaryResult deleteUserPermissionsBoundary(DeleteUserPermissionsBoundaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUserPermissionsBoundary(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserPermissionsBoundaryResult executeDeleteUserPermissionsBoundary(DeleteUserPermissionsBoundaryRequest deleteUserPermissionsBoundaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteUserPermissionsBoundaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUserPermissionsBoundaryRequest> request = null;
+        Response<DeleteUserPermissionsBoundaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserPermissionsBoundaryRequestMarshaller().marshall(super.beforeMarshalling(deleteUserPermissionsBoundaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPermissionsBoundary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteUserPermissionsBoundaryResult> responseHandler = new StaxResponseHandler<DeleteUserPermissionsBoundaryResult>(
+                    new DeleteUserPermissionsBoundaryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified inline policy that is embedded in the specified IAM user.
      * </p>
      * <p>
      * A user can also have managed policies attached to it. To detach a managed policy from a user, use
      * <a>DetachUserPolicy</a>. For more information about policies, refer to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param deleteUserPolicyRequest
      * @return Result of the DeleteUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -3213,6 +3500,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3243,8 +3533,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param deleteVirtualMFADeviceRequest
      * @return Result of the DeleteVirtualMFADevice operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws DeleteConflictException
      *         The request was rejected because it attempted to delete a resource that has attached subordinate
      *         entities. The error message describes these entities.
@@ -3279,6 +3569,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVirtualMFADevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3302,15 +3595,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * A group can also have inline policies embedded with it. To delete an inline policy, use the
      * <a>DeleteGroupPolicy</a> API. For information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param detachGroupPolicyRequest
      * @return Result of the DetachGroupPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -3344,6 +3637,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3367,15 +3663,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * A role can also have inline policies embedded with it. To delete an inline policy, use the
      * <a>DeleteRolePolicy</a> API. For information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param detachRolePolicyRequest
      * @return Result of the DetachRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -3413,6 +3709,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3436,15 +3735,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * A user can also have inline policies embedded with it. To delete an inline policy, use the
      * <a>DeleteUserPolicy</a> API. For information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param detachUserPolicyRequest
      * @return Result of the DetachUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -3478,6 +3777,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachUserPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3515,8 +3817,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.EnableMFADevice
@@ -3545,6 +3847,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableMFADevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3564,7 +3869,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Generates a credential report for the AWS account. For more information about the credential report, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting Credential Reports</a> in
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting Credential Reports</a> in
      * the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -3601,6 +3906,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateCredentialReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3624,6 +3932,124 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Generates a request for a report that includes details about when an IAM resource (user, group, role, or policy)
+     * was last used in an attempt to access AWS services. Recent activity usually appears within four hours. IAM
+     * reports activity for the last 365 days, or less if your region began supporting this feature within the last
+     * year. For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
+     * >Regions Where Data Is Tracked</a>.
+     * </p>
+     * <important>
+     * <p>
+     * The service last accessed data includes all attempts to access an AWS API, not just the successful ones. This
+     * includes all attempts that were made using the AWS Management Console, the AWS API through any of the SDKs, or
+     * any of the command line tools. An unexpected entry in the service last accessed data does not mean that your
+     * account has been compromised, because the request might have been denied. Refer to your CloudTrail logs as the
+     * authoritative source for information about all API calls and whether they were successful or denied access. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging IAM Events with
+     * CloudTrail</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </important>
+     * <p>
+     * The <code>GenerateServiceLastAccessedDetails</code> operation returns a <code>JobId</code>. Use this parameter in
+     * the following operations to retrieve the following details from your report:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>GetServiceLastAccessedDetails</a> – Use this operation for users, groups, roles, or policies to list every AWS
+     * service that the resource could access using permissions policies. For each service, the response includes
+     * information about the most recent access attempt.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GetServiceLastAccessedDetailsWithEntities</a> – Use this operation for groups and policies to list information
+     * about the associated entities (users or roles) that attempted to access a specific AWS service.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To check the status of the <code>GenerateServiceLastAccessedDetails</code> request, use the <code>JobId</code>
+     * parameter in the same operations and test the <code>JobStatus</code> response parameter.
+     * </p>
+     * <p>
+     * For additional information about the permissions policies that allow an identity (user, group, or role) to access
+     * specific services, use the <a>ListPoliciesGrantingServiceAccess</a> operation.
+     * </p>
+     * <note>
+     * <p>
+     * Service last accessed data does not use other policy types when determining whether a resource could access a
+     * service. These other policy types include resource-based policies, access control lists, AWS Organizations
+     * policies, IAM permissions boundaries, and AWS STS assume role policies. It only applies permissions policy logic.
+     * For more about the evaluation of policy types, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     * >Evaluating Policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about service last accessed data, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing Policy Scope
+     * by Viewing User Activity</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param generateServiceLastAccessedDetailsRequest
+     * @return Result of the GenerateServiceLastAccessedDetails operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @sample AmazonIdentityManagement.GenerateServiceLastAccessedDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateServiceLastAccessedDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GenerateServiceLastAccessedDetailsResult generateServiceLastAccessedDetails(GenerateServiceLastAccessedDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGenerateServiceLastAccessedDetails(request);
+    }
+
+    @SdkInternalApi
+    final GenerateServiceLastAccessedDetailsResult executeGenerateServiceLastAccessedDetails(
+            GenerateServiceLastAccessedDetailsRequest generateServiceLastAccessedDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(generateServiceLastAccessedDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GenerateServiceLastAccessedDetailsRequest> request = null;
+        Response<GenerateServiceLastAccessedDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GenerateServiceLastAccessedDetailsRequestMarshaller()
+                        .marshall(super.beforeMarshalling(generateServiceLastAccessedDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateServiceLastAccessedDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GenerateServiceLastAccessedDetailsResult> responseHandler = new StaxResponseHandler<GenerateServiceLastAccessedDetailsResult>(
+                    new GenerateServiceLastAccessedDetailsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about when the specified access key was last used. The information includes the date and
      * time of last use, along with the AWS service and region that were specified in the last request made with that
      * key.
@@ -3632,8 +4058,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param getAccessKeyLastUsedRequest
      * @return Result of the GetAccessKeyLastUsed operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.GetAccessKeyLastUsed
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed" target="_top">AWS API
      *      Documentation</a>
@@ -3660,6 +4086,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessKeyLastUsed");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3725,6 +4154,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountAuthorizationDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3749,15 +4181,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Retrieves the password policy for the AWS account. For more information about using a password policy, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing an IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing an IAM
      * Password Policy</a>.
      * </p>
      * 
      * @param getAccountPasswordPolicyRequest
      * @return Result of the GetAccountPasswordPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetAccountPasswordPolicy
@@ -3786,6 +4218,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountPasswordPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3813,8 +4248,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For information about limitations on IAM entities, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
+     * Entities</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getAccountSummaryRequest
@@ -3847,6 +4282,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSummary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3912,6 +4350,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContextKeysForCustomPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3953,8 +4394,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param getContextKeysForPrincipalPolicyRequest
      * @return Result of the GetContextKeysForPrincipalPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @sample AmazonIdentityManagement.GetContextKeysForPrincipalPolicy
@@ -3984,6 +4425,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContextKeysForPrincipalPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4003,7 +4447,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Retrieves a credential report for the AWS account. For more information about the credential report, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting Credential Reports</a> in
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting Credential Reports</a> in
      * the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -4015,8 +4459,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws CredentialReportExpiredException
      *         The request was rejected because the most recent credential report has expired. To generate a new
      *         credential report, use <a>GenerateCredentialReport</a>. For more information about credential report
-     *         expiration, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting
-     *         Credential Reports</a> in the <i>IAM User Guide</i>.
+     *         expiration, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting Credential
+     *         Reports</a> in the <i>IAM User Guide</i>.
      * @throws CredentialReportNotReadyException
      *         The request was rejected because the credential report is still being generated.
      * @throws ServiceFailureException
@@ -4047,6 +4492,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCredentialReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4077,8 +4525,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param getGroupRequest
      * @return Result of the GetGroup operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetGroup
@@ -4107,6 +4555,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4141,15 +4592,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getGroupPolicyRequest
      * @return Result of the GetGroupPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetGroupPolicy
@@ -4178,6 +4629,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4198,15 +4652,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and
      * role. For more information about instance profiles, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a> in
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a> in
      * the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getInstanceProfileRequest
      * @return Result of the GetInstanceProfile operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetInstanceProfile
@@ -4235,6 +4689,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4260,8 +4717,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param getLoginProfileRequest
      * @return Result of the GetLoginProfile operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetLoginProfile
@@ -4290,6 +4747,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoginProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4316,8 +4776,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetOpenIDConnectProvider
@@ -4346,6 +4806,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOpenIDConnectProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4377,15 +4840,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getPolicyRequest
      * @return Result of the GetPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -4416,6 +4879,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4453,20 +4919,20 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about the types of policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getPolicyVersionRequest
      * @return Result of the GetPolicyVersion operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -4497,6 +4963,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicyVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4517,7 +4986,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Retrieves information about the specified role, including the role's path, GUID, ARN, and the role's trust policy
      * that grants permission to assume the role. For more information about roles, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>.
      * </p>
      * <note>
      * <p>
@@ -4531,8 +5000,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param getRoleRequest
      * @return Result of the GetRole operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetRole
@@ -4561,6 +5030,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4595,20 +5067,20 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * For more information about roles, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using Roles to Delegate Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using Roles to Delegate Permissions
      * and Federate Identities</a>.
      * </p>
      * 
      * @param getRolePolicyRequest
      * @return Result of the GetRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetRolePolicy
@@ -4637,6 +5109,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4659,16 +5134,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <note>
      * <p>
-     * This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4</a>.
+     * This operation requires <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      * </p>
      * </note>
      * 
      * @param getSAMLProviderRequest
      * @return Result of the GetSAMLProvider operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -4699,6 +5174,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSAMLProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4722,15 +5200,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * The SSH public key retrieved by this operation is used only for authenticating the associated IAM user to an AWS
      * CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository,
-     * see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
+     * see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
      * CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param getSSHPublicKeyRequest
      * @return Result of the GetSSHPublicKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws UnrecognizedPublicKeyEncodingException
      *         The request was rejected because the public key encoding format is unsupported or unrecognized.
      * @sample AmazonIdentityManagement.GetSSHPublicKey
@@ -4759,6 +5237,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSSHPublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4781,7 +5262,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about working with server certificates, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
      * Certificates</a> in the <i>IAM User Guide</i>. This topic includes a list of AWS services that can use the server
      * certificates that you manage with IAM.
      * </p>
@@ -4789,8 +5270,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param getServerCertificateRequest
      * @return Result of the GetServerCertificate operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetServerCertificate
@@ -4819,12 +5300,207 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServerCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<GetServerCertificateResult> responseHandler = new StaxResponseHandler<GetServerCertificateResult>(
                     new GetServerCertificateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * After you generate a user, group, role, or policy report using the
+     * <code>GenerateServiceLastAccessedDetails</code> operation, you can use the <code>JobId</code> parameter in
+     * <code>GetServiceLastAccessedDetails</code>. This operation retrieves the status of your report job and a list of
+     * AWS services that the resource (user, group, role, or managed policy) can access.
+     * </p>
+     * <note>
+     * <p>
+     * Service last accessed data does not use other policy types when determining whether a resource could access a
+     * service. These other policy types include resource-based policies, access control lists, AWS Organizations
+     * policies, IAM permissions boundaries, and AWS STS assume role policies. It only applies permissions policy logic.
+     * For more about the evaluation of policy types, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     * >Evaluating Policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * For each service that the resource could access using permissions policies, the operation returns details about
+     * the most recent access attempt. If there was no attempt, the service is listed without details about the most
+     * recent attempt to access the service. If the operation fails, the <code>GetServiceLastAccessedDetails</code>
+     * operation returns the reason that it failed.
+     * </p>
+     * <p>
+     * The <code>GetServiceLastAccessedDetails</code> operation returns a list of services that includes the number of
+     * entities that have attempted to access the service and the date and time of the last attempt. It also returns the
+     * ARN of the following entity, depending on the resource ARN that you used to generate the report:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>User</b> – Returns the user ARN that you used to generate the report
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Group</b> – Returns the ARN of the group member (user) that last attempted to access the service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Role</b> – Returns the role ARN that you used to generate the report
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Policy</b> – Returns the ARN of the user or role that last used the policy to attempt to access the service
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * By default, the list is sorted by service namespace.
+     * </p>
+     * 
+     * @param getServiceLastAccessedDetailsRequest
+     * @return Result of the GetServiceLastAccessedDetails operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @sample AmazonIdentityManagement.GetServiceLastAccessedDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetServiceLastAccessedDetailsResult getServiceLastAccessedDetails(GetServiceLastAccessedDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetServiceLastAccessedDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetServiceLastAccessedDetailsResult executeGetServiceLastAccessedDetails(GetServiceLastAccessedDetailsRequest getServiceLastAccessedDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getServiceLastAccessedDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetServiceLastAccessedDetailsRequest> request = null;
+        Response<GetServiceLastAccessedDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetServiceLastAccessedDetailsRequestMarshaller().marshall(super.beforeMarshalling(getServiceLastAccessedDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceLastAccessedDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetServiceLastAccessedDetailsResult> responseHandler = new StaxResponseHandler<GetServiceLastAccessedDetailsResult>(
+                    new GetServiceLastAccessedDetailsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * After you generate a group or policy report using the <code>GenerateServiceLastAccessedDetails</code> operation,
+     * you can use the <code>JobId</code> parameter in <code>GetServiceLastAccessedDetailsWithEntities</code>. This
+     * operation retrieves the status of your report job and a list of entities that could have used group or policy
+     * permissions to access the specified service.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Group</b> – For a group report, this operation returns a list of users in the group that could have used the
+     * group’s policies in an attempt to access the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Policy</b> – For a policy report, this operation returns a list of entities (users or roles) that could have
+     * used the policy in an attempt to access the service.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can also use this operation for user or role reports to retrieve details about those entities.
+     * </p>
+     * <p>
+     * If the operation fails, the <code>GetServiceLastAccessedDetailsWithEntities</code> operation returns the reason
+     * that it failed.
+     * </p>
+     * <p>
+     * By default, the list of associated entities is sorted by date, with the most recent access listed first.
+     * </p>
+     * 
+     * @param getServiceLastAccessedDetailsWithEntitiesRequest
+     * @return Result of the GetServiceLastAccessedDetailsWithEntities operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @sample AmazonIdentityManagement.GetServiceLastAccessedDetailsWithEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetailsWithEntities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetServiceLastAccessedDetailsWithEntitiesResult getServiceLastAccessedDetailsWithEntities(GetServiceLastAccessedDetailsWithEntitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetServiceLastAccessedDetailsWithEntities(request);
+    }
+
+    @SdkInternalApi
+    final GetServiceLastAccessedDetailsWithEntitiesResult executeGetServiceLastAccessedDetailsWithEntities(
+            GetServiceLastAccessedDetailsWithEntitiesRequest getServiceLastAccessedDetailsWithEntitiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getServiceLastAccessedDetailsWithEntitiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetServiceLastAccessedDetailsWithEntitiesRequest> request = null;
+        Response<GetServiceLastAccessedDetailsWithEntitiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetServiceLastAccessedDetailsWithEntitiesRequestMarshaller().marshall(super
+                        .beforeMarshalling(getServiceLastAccessedDetailsWithEntitiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceLastAccessedDetailsWithEntities");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetServiceLastAccessedDetailsWithEntitiesResult> responseHandler = new StaxResponseHandler<GetServiceLastAccessedDetailsWithEntitiesResult>(
+                    new GetServiceLastAccessedDetailsWithEntitiesResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4846,8 +5522,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param getServiceLinkedRoleDeletionStatusRequest
      * @return Result of the GetServiceLinkedRoleDeletionStatus operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -4880,6 +5556,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceLinkedRoleDeletionStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4908,8 +5587,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param getUserRequest
      * @return Result of the GetUser operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetUser
@@ -4938,6 +5617,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4977,15 +5659,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param getUserPolicyRequest
      * @return Result of the GetUserPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.GetUserPolicy
@@ -5014,6 +5696,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5031,7 +5716,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns information about the access key IDs associated with the specified IAM user. If there are none, the
+     * Returns information about the access key IDs associated with the specified IAM user. If there is none, the
      * operation returns an empty list.
      * </p>
      * <p>
@@ -5040,8 +5725,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
-     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * access key ID used to sign the request. This operation works for access keys under the AWS account. Consequently,
+     * you can use this operation to manage AWS account root user credentials even if the AWS account has no associated
      * users.
      * </p>
      * <note>
@@ -5054,8 +5739,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listAccessKeysRequest
      * @return Result of the ListAccessKeys operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListAccessKeys
@@ -5084,6 +5769,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccessKeys");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5108,8 +5796,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Lists the account alias associated with the AWS account (Note: you can have only one). For information about
-     * using an AWS account alias, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-     * an Alias for Your AWS Account ID</a> in the <i>IAM User Guide</i>.
+     * using an AWS account alias, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an Alias for Your AWS Account
+     * ID</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param listAccountAliasesRequest
@@ -5142,6 +5831,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountAliases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5170,7 +5862,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * An IAM group can also have inline policies embedded with it. To list the inline policies for a group, use the
      * <a>ListGroupPolicies</a> API. For information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
@@ -5183,8 +5875,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listAttachedGroupPoliciesRequest
      * @return Result of the ListAttachedGroupPolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -5215,6 +5907,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttachedGroupPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5238,7 +5933,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * An IAM role can also have inline policies embedded with it. To list the inline policies for a role, use the
      * <a>ListRolePolicies</a> API. For information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
@@ -5251,8 +5946,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listAttachedRolePoliciesRequest
      * @return Result of the ListAttachedRolePolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -5283,6 +5978,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttachedRolePolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5306,7 +6004,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * An IAM user can also have inline policies embedded with it. To list the inline policies for a user, use the
      * <a>ListUserPolicies</a> API. For information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
@@ -5319,8 +6017,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listAttachedUserPoliciesRequest
      * @return Result of the ListAttachedUserPolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -5351,6 +6049,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttachedUserPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5383,8 +6084,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listEntitiesForPolicyRequest
      * @return Result of the ListEntitiesForPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -5415,6 +6116,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEntitiesForPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5438,7 +6142,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * An IAM group can also have managed policies attached to it. To list the managed policies that are attached to a
      * group, use <a>ListAttachedGroupPolicies</a>. For more information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
@@ -5449,8 +6153,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listGroupPoliciesRequest
      * @return Result of the ListGroupPolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListGroupPolicies
@@ -5479,6 +6183,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5533,6 +6240,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5564,8 +6274,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listGroupsForUserRequest
      * @return Result of the ListGroupsForUser operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListGroupsForUser
@@ -5594,6 +6304,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupsForUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5614,7 +6327,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Lists the instance profiles that have the specified path prefix. If there are none, the operation returns an
      * empty list. For more information about instance profiles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
@@ -5650,6 +6363,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstanceProfiles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5675,7 +6391,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Lists the instance profiles that have the specified associated IAM role. If there are none, the operation returns
      * an empty list. For more information about instance profiles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
@@ -5684,8 +6400,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listInstanceProfilesForRoleRequest
      * @return Result of the ListInstanceProfilesForRole operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListInstanceProfilesForRole
@@ -5714,6 +6430,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstanceProfilesForRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5743,8 +6462,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listMFADevicesRequest
      * @return Result of the ListMFADevices operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListMFADevices
@@ -5773,6 +6492,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMFADevices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5829,6 +6551,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOpenIDConnectProviders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5866,7 +6591,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about managed policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -5900,6 +6625,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5922,20 +6650,124 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Retrieves a list of policies that the IAM identity (user, group, or role) can use to access each specified
+     * service.
+     * </p>
+     * <note>
+     * <p>
+     * This operation does not use other policy types when determining whether a resource could access a service. These
+     * other policy types include resource-based policies, access control lists, AWS Organizations policies, IAM
+     * permissions boundaries, and AWS STS assume role policies. It only applies permissions policy logic. For more
+     * about the evaluation of policy types, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
+     * >Evaluating Policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The list of policies returned by the operation depends on the ARN of the identity that you provide.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>User</b> – The list of policies includes the managed and inline policies that are attached to the user
+     * directly. The list also includes any additional managed and inline policies that are attached to the group to
+     * which the user belongs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Group</b> – The list of policies includes only the managed and inline policies that are attached to the group
+     * directly. Policies that are attached to the group’s user are not included.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Role</b> – The list of policies includes only the managed and inline policies that are attached to the role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For each managed policy, this operation returns the ARN and policy name. For each inline policy, it returns the
+     * policy name and the entity to which it is attached. Inline policies do not have an ARN. For more information
+     * about these policy types, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed Policies
+     * and Inline Policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * Policies that are attached to users and roles as permissions boundaries are not returned. To view which managed
+     * policy is currently used to set the permissions boundary for a user or role, use the <a>GetUser</a> or
+     * <a>GetRole</a> operations.
+     * </p>
+     * 
+     * @param listPoliciesGrantingServiceAccessRequest
+     * @return Result of the ListPoliciesGrantingServiceAccess operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @sample AmazonIdentityManagement.ListPoliciesGrantingServiceAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPoliciesGrantingServiceAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPoliciesGrantingServiceAccessResult listPoliciesGrantingServiceAccess(ListPoliciesGrantingServiceAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPoliciesGrantingServiceAccess(request);
+    }
+
+    @SdkInternalApi
+    final ListPoliciesGrantingServiceAccessResult executeListPoliciesGrantingServiceAccess(
+            ListPoliciesGrantingServiceAccessRequest listPoliciesGrantingServiceAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPoliciesGrantingServiceAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPoliciesGrantingServiceAccessRequest> request = null;
+        Response<ListPoliciesGrantingServiceAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPoliciesGrantingServiceAccessRequestMarshaller().marshall(super.beforeMarshalling(listPoliciesGrantingServiceAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPoliciesGrantingServiceAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListPoliciesGrantingServiceAccessResult> responseHandler = new StaxResponseHandler<ListPoliciesGrantingServiceAccessResult>(
+                    new ListPoliciesGrantingServiceAccessResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists information about the versions of the specified managed policy, including the version that is currently set
      * as the policy's default version.
      * </p>
      * <p>
      * For more information about managed policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param listPolicyVersionsRequest
      * @return Result of the ListPolicyVersions operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws ServiceFailureException
@@ -5966,6 +6798,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicyVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5989,7 +6824,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * An IAM role can also have managed policies attached to it. To list the managed policies that are attached to a
      * role, use <a>ListAttachedRolePolicies</a>. For more information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
@@ -6000,8 +6835,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listRolePoliciesRequest
      * @return Result of the ListRolePolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListRolePolicies
@@ -6030,6 +6865,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRolePolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6048,9 +6886,67 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Lists the tags that are attached to the specified role. The returned list of tags is sorted by tag key. For more
+     * information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+     * IAM Identities</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param listRoleTagsRequest
+     * @return Result of the ListRoleTags operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.ListRoleTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoleTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListRoleTagsResult listRoleTags(ListRoleTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRoleTags(request);
+    }
+
+    @SdkInternalApi
+    final ListRoleTagsResult executeListRoleTags(ListRoleTagsRequest listRoleTagsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRoleTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRoleTagsRequest> request = null;
+        Response<ListRoleTagsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRoleTagsRequestMarshaller().marshall(super.beforeMarshalling(listRoleTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRoleTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListRoleTagsResult> responseHandler = new StaxResponseHandler<ListRoleTagsResult>(new ListRoleTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the IAM roles that have the specified path prefix. If there are none, the operation returns an empty list.
      * For more information about roles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
@@ -6086,6 +6982,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRoles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6112,8 +7011,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <note>
      * <p>
-     * This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4</a>.
+     * This operation requires <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      * </p>
      * </note>
      * 
@@ -6147,6 +7046,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSAMLProviders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6170,13 +7072,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns information about the SSH public keys associated with the specified IAM user. If there are none, the
+     * Returns information about the SSH public keys associated with the specified IAM user. If there none exists, the
      * operation returns an empty list.
      * </p>
      * <p>
      * The SSH public keys returned by this operation are used only for authenticating the IAM user to an AWS CodeCommit
      * repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
      * CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * <p>
@@ -6187,8 +7089,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listSSHPublicKeysRequest
      * @return Result of the ListSSHPublicKeys operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.ListSSHPublicKeys
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys" target="_top">AWS API
      *      Documentation</a>
@@ -6215,6 +7117,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSSHPublicKeys");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6246,7 +7151,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about working with server certificates, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
      * Certificates</a> in the <i>IAM User Guide</i>. This topic also includes a list of AWS services that can use the
      * server certificates that you manage with IAM.
      * </p>
@@ -6281,6 +7186,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServerCertificates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6304,19 +7212,19 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns information about the service-specific credentials associated with the specified IAM user. If there are
-     * none, the operation returns an empty list. The service-specific credentials returned by this operation are used
+     * Returns information about the service-specific credentials associated with the specified IAM user. If none
+     * exists, the operation returns an empty list. The service-specific credentials returned by this operation are used
      * only for authenticating the IAM user to a specific service. For more information about using service-specific
      * credentials to authenticate to an AWS service, see <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set Up service-specific
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set Up service-specific
      * credentials</a> in the AWS CodeCommit User Guide.
      * </p>
      * 
      * @param listServiceSpecificCredentialsRequest
      * @return Result of the ListServiceSpecificCredentials operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceNotSupportedException
      *         The specified service does not support service-specific credentials.
      * @sample AmazonIdentityManagement.ListServiceSpecificCredentials
@@ -6345,6 +7253,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServiceSpecificCredentials");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6363,8 +7274,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns information about the signing certificates associated with the specified IAM user. If there are none, the
-     * operation returns an empty list.
+     * Returns information about the signing certificates associated with the specified IAM user. If there none exists,
+     * the operation returns an empty list.
      * </p>
      * <p>
      * Although each user is limited to a small number of signing certificates, you can still paginate the results using
@@ -6372,16 +7283,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
-     * access key ID used to sign the request for this API. Because this operation works for access keys under the AWS
-     * account, you can use this operation to manage AWS account root user credentials even if the AWS account has no
-     * associated users.
+     * access key ID used to sign the request for this API. This operation works for access keys under the AWS account.
+     * Consequently, you can use this operation to manage AWS account root user credentials even if the AWS account has
+     * no associated users.
      * </p>
      * 
      * @param listSigningCertificatesRequest
      * @return Result of the ListSigningCertificates operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListSigningCertificates
@@ -6410,6 +7321,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSigningCertificates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6438,7 +7352,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * An IAM user can also have managed policies attached to it. To list the managed policies that are attached to a
      * user, use <a>ListAttachedUserPolicies</a>. For more information about policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
@@ -6449,8 +7363,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param listUserPoliciesRequest
      * @return Result of the ListUserPolicies operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.ListUserPolicies
@@ -6479,12 +7393,73 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             StaxResponseHandler<ListUserPoliciesResult> responseHandler = new StaxResponseHandler<ListUserPoliciesResult>(
                     new ListUserPoliciesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the tags that are attached to the specified user. The returned list of tags is sorted by tag key. For more
+     * information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+     * IAM Identities</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param listUserTagsRequest
+     * @return Result of the ListUserTags operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.ListUserTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListUserTagsResult listUserTags(ListUserTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUserTags(request);
+    }
+
+    @SdkInternalApi
+    final ListUserTagsResult executeListUserTags(ListUserTagsRequest listUserTagsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listUserTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListUserTagsRequest> request = null;
+        Response<ListUserTagsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListUserTagsRequestMarshaller().marshall(super.beforeMarshalling(listUserTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListUserTagsResult> responseHandler = new StaxResponseHandler<ListUserTagsResult>(new ListUserTagsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6534,6 +7509,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6592,6 +7570,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVirtualMFADevices");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6620,19 +7601,19 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * A user can also have managed policies attached to it. To attach a managed policy to a group, use
      * <a>AttachGroupPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about
-     * policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+     * policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
      * Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * For information about limits on the number of inline policies that you can embed in a group, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
+     * Entities</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>
      * <p>
      * Because policy documents can be large, you should use POST rather than GET when calling
      * <code>PutGroupPolicy</code>. For general information about using the Query API with IAM, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * </note>
@@ -6646,8 +7627,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.PutGroupPolicy
@@ -6676,6 +7657,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6694,31 +7678,111 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Adds or updates the policy that is specified as the IAM role's permissions boundary. You can use an AWS managed
+     * policy or a customer managed policy to set the boundary for a role. Use the boundary to control the maximum
+     * permissions that the role can have. Setting a permissions boundary is an advanced feature that can affect the
+     * permissions for the role.
+     * </p>
+     * <p>
+     * You cannot set the boundary for a service-linked role.
+     * </p>
+     * <important>
+     * <p>
+     * Policies used as permissions boundaries do not provide permissions. You must also attach a permissions policy to
+     * the role. To learn how the effective permissions for a role are evaluated, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
+     * Evaluation Logic</a> in the IAM User Guide.
+     * </p>
+     * </important>
+     * 
+     * @param putRolePermissionsBoundaryRequest
+     * @return Result of the PutRolePermissionsBoundary operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
+     * @throws PolicyNotAttachableException
+     *         The request failed because AWS service role policies can only be attached to the service-linked role for
+     *         that service.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.PutRolePermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePermissionsBoundary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutRolePermissionsBoundaryResult putRolePermissionsBoundary(PutRolePermissionsBoundaryRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRolePermissionsBoundary(request);
+    }
+
+    @SdkInternalApi
+    final PutRolePermissionsBoundaryResult executePutRolePermissionsBoundary(PutRolePermissionsBoundaryRequest putRolePermissionsBoundaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putRolePermissionsBoundaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutRolePermissionsBoundaryRequest> request = null;
+        Response<PutRolePermissionsBoundaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRolePermissionsBoundaryRequestMarshaller().marshall(super.beforeMarshalling(putRolePermissionsBoundaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRolePermissionsBoundary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PutRolePermissionsBoundaryResult> responseHandler = new StaxResponseHandler<PutRolePermissionsBoundaryResult>(
+                    new PutRolePermissionsBoundaryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds or updates an inline policy document that is embedded in the specified IAM role.
      * </p>
      * <p>
      * When you embed an inline policy in a role, the inline policy is used as part of the role's access (permissions)
      * policy. The role's trust policy is created at the same time as the role, using <a>CreateRole</a>. You can update
      * a role's trust policy using <a>UpdateAssumeRolePolicy</a>. For more information about IAM roles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using Roles to Delegate Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using Roles to Delegate Permissions
      * and Federate Identities</a>.
      * </p>
      * <p>
      * A role can also have a managed policy attached to it. To attach a managed policy to a role, use
      * <a>AttachRolePolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about policies,
-     * see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies
+     * see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * For information about limits on the number of inline policies that you can embed with a role, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
+     * Entities</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>
      * <p>
      * Because policy documents can be large, you should use POST rather than GET when calling
      * <code>PutRolePolicy</code>. For general information about using the Query API with IAM, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * </note>
@@ -6732,8 +7796,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws UnmodifiableEntityException
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
@@ -6766,6 +7830,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6783,24 +7850,97 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Adds or updates the policy that is specified as the IAM user's permissions boundary. You can use an AWS managed
+     * policy or a customer managed policy to set the boundary for a user. Use the boundary to control the maximum
+     * permissions that the user can have. Setting a permissions boundary is an advanced feature that can affect the
+     * permissions for the user.
+     * </p>
+     * <important>
+     * <p>
+     * Policies that are used as permissions boundaries do not provide permissions. You must also attach a permissions
+     * policy to the user. To learn how the effective permissions for a user are evaluated, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM JSON Policy
+     * Evaluation Logic</a> in the IAM User Guide.
+     * </p>
+     * </important>
+     * 
+     * @param putUserPermissionsBoundaryRequest
+     * @return Result of the PutUserPermissionsBoundary operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws PolicyNotAttachableException
+     *         The request failed because AWS service role policies can only be attached to the service-linked role for
+     *         that service.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.PutUserPermissionsBoundary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutUserPermissionsBoundaryResult putUserPermissionsBoundary(PutUserPermissionsBoundaryRequest request) {
+        request = beforeClientExecution(request);
+        return executePutUserPermissionsBoundary(request);
+    }
+
+    @SdkInternalApi
+    final PutUserPermissionsBoundaryResult executePutUserPermissionsBoundary(PutUserPermissionsBoundaryRequest putUserPermissionsBoundaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putUserPermissionsBoundaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutUserPermissionsBoundaryRequest> request = null;
+        Response<PutUserPermissionsBoundaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutUserPermissionsBoundaryRequestMarshaller().marshall(super.beforeMarshalling(putUserPermissionsBoundaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutUserPermissionsBoundary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PutUserPermissionsBoundaryResult> responseHandler = new StaxResponseHandler<PutUserPermissionsBoundaryResult>(
+                    new PutUserPermissionsBoundaryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds or updates an inline policy document that is embedded in the specified IAM user.
      * </p>
      * <p>
      * An IAM user can also have a managed policy attached to it. To attach a managed policy to a user, use
      * <a>AttachUserPolicy</a>. To create a new managed policy, use <a>CreatePolicy</a>. For information about policies,
-     * see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies
+     * see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies
      * and Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * For information about limits on the number of inline policies that you can embed in a user, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM
+     * Entities</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>
      * <p>
      * Because policy documents can be large, you should use POST rather than GET when calling
      * <code>PutUserPolicy</code>. For general information about using the Query API with IAM, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in the
      * <i>IAM User Guide</i>.
      * </p>
      * </note>
@@ -6814,8 +7954,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.PutUserPolicy
@@ -6844,6 +7984,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutUserPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6874,8 +8017,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.RemoveClientIDFromOpenIDConnectProvider
@@ -6906,6 +8049,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveClientIDFromOpenIDConnectProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6935,16 +8081,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </important>
      * <p>
      * For more information about IAM roles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>. For more
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>. For more
      * information about instance profiles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
      * </p>
      * 
      * @param removeRoleFromInstanceProfileRequest
      * @return Result of the RemoveRoleFromInstanceProfile operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -6980,6 +8126,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveRoleFromInstanceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7004,8 +8153,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param removeUserFromGroupRequest
      * @return Result of the RemoveUserFromGroup operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -7037,6 +8186,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveUserFromGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7063,8 +8215,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param resetServiceSpecificCredentialRequest
      * @return Result of the ResetServiceSpecificCredential operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.ResetServiceSpecificCredential
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential"
      *      target="_top">AWS API Documentation</a>
@@ -7091,6 +8243,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetServiceSpecificCredential");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7113,7 +8268,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about creating and working with virtual MFA devices, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using a Virtual MFA Device</a> in
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using a Virtual MFA Device</a> in
      * the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -7123,8 +8278,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because the authentication code was not recognized. The error message describes
      *         the specific error.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -7156,6 +8311,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResyncMFADevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7182,15 +8340,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For information about managed policies, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and
      * Inline Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param setDefaultPolicyVersionRequest
      * @return Result of the SetDefaultPolicyVersion operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws LimitExceededException
@@ -7224,6 +8382,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetDefaultPolicyVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7297,6 +8458,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SimulateCustomPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7350,8 +8514,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param simulatePrincipalPolicyRequest
      * @return Result of the SimulatePrincipalPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws PolicyEvaluationException
@@ -7383,6 +8547,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SimulatePrincipalPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7401,26 +8568,377 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Adds one or more tags to an IAM role. The role can be a regular role or a service-linked role. If a tag with the
+     * same key name already exists, then that tag is overwritten with the new value.
+     * </p>
+     * <p>
+     * A tag consists of a key name and an associated value. By assigning tags to your resources, you can do the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Administrative grouping and discovery</b> - Attach tags to resources to aid in organization and search. For
+     * example, you could search for all resources with the key name <i>Project</i> and the value
+     * <i>MyImportantProject</i>. Or search for all resources with the key name <i>Cost Center</i> and the value
+     * <i>41200</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Access control</b> - Reference tags in IAM user-based and resource-based policies. You can use tags to
+     * restrict access to only an IAM user or role that has a specified tag attached. You can also restrict access to
+     * only those resources that have a certain tag attached. For examples of policies that show how to use tags to
+     * control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control Access
+     * Using IAM Tags</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Cost allocation</b> - Use tags to help track which individuals and teams are using which AWS resources.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Make sure that you have no invalid tags and that you do not exceed the allowed number of tags per role. In either
+     * case, the entire request fails and <i>no</i> tags are added to the role.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS always interprets the tag <code>Value</code> as a single string. If you need to store an array, you can store
+     * comma-separated values in the string. However, you must interpret the value in your code.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <p>
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param tagRoleRequest
+     * @return Result of the TagRole operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
+     *         The error message describes the limit exceeded.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws ConcurrentModificationException
+     *         The request was rejected because multiple requests to change this object were submitted simultaneously.
+     *         Wait a few minutes and submit your request again.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.TagRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagRole" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagRoleResult tagRole(TagRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagRole(request);
+    }
+
+    @SdkInternalApi
+    final TagRoleResult executeTagRole(TagRoleRequest tagRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagRoleRequest> request = null;
+        Response<TagRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagRoleRequestMarshaller().marshall(super.beforeMarshalling(tagRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<TagRoleResult> responseHandler = new StaxResponseHandler<TagRoleResult>(new TagRoleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags to an IAM user. If a tag with the same key name already exists, then that tag is
+     * overwritten with the new value.
+     * </p>
+     * <p>
+     * A tag consists of a key name and an associated value. By assigning tags to your resources, you can do the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Administrative grouping and discovery</b> - Attach tags to resources to aid in organization and search. For
+     * example, you could search for all resources with the key name <i>Project</i> and the value
+     * <i>MyImportantProject</i>. Or search for all resources with the key name <i>Cost Center</i> and the value
+     * <i>41200</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Access control</b> - Reference tags in IAM user-based and resource-based policies. You can use tags to
+     * restrict access to only an IAM requesting user or to a role that has a specified tag attached. You can also
+     * restrict access to only those resources that have a certain tag attached. For examples of policies that show how
+     * to use tags to control access, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control Access Using IAM Tags</a> in the
+     * <i>IAM User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Cost allocation</b> - Use tags to help track which individuals and teams are using which AWS resources.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * Make sure that you have no invalid tags and that you do not exceed the allowed number of tags per role. In either
+     * case, the entire request fails and <i>no</i> tags are added to the role.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS always interprets the tag <code>Value</code> as a single string. If you need to store an array, you can store
+     * comma-separated values in the string. However, you must interpret the value in your code.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * <p>
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param tagUserRequest
+     * @return Result of the TagUser operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
+     *         The error message describes the limit exceeded.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws ConcurrentModificationException
+     *         The request was rejected because multiple requests to change this object were submitted simultaneously.
+     *         Wait a few minutes and submit your request again.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.TagUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagUserResult tagUser(TagUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagUser(request);
+    }
+
+    @SdkInternalApi
+    final TagUserResult executeTagUser(TagUserRequest tagUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagUserRequest> request = null;
+        Response<TagUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagUserRequestMarshaller().marshall(super.beforeMarshalling(tagUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<TagUserResult> responseHandler = new StaxResponseHandler<TagUserResult>(new TagUserResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified tags from the role. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param untagRoleRequest
+     * @return Result of the UntagRole operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws ConcurrentModificationException
+     *         The request was rejected because multiple requests to change this object were submitted simultaneously.
+     *         Wait a few minutes and submit your request again.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.UntagRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagRole" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagRoleResult untagRole(UntagRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagRole(request);
+    }
+
+    @SdkInternalApi
+    final UntagRoleResult executeUntagRole(UntagRoleRequest untagRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagRoleRequest> request = null;
+        Response<UntagRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagRoleRequestMarshaller().marshall(super.beforeMarshalling(untagRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UntagRoleResult> responseHandler = new StaxResponseHandler<UntagRoleResult>(new UntagRoleResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified tags from the user. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param untagUserRequest
+     * @return Result of the UntagUser operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
+     * @throws ConcurrentModificationException
+     *         The request was rejected because multiple requests to change this object were submitted simultaneously.
+     *         Wait a few minutes and submit your request again.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.UntagUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagUserResult untagUser(UntagUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagUser(request);
+    }
+
+    @SdkInternalApi
+    final UntagUserResult executeUntagUser(UntagUserRequest untagUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagUserRequest> request = null;
+        Response<UntagUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagUserRequestMarshaller().marshall(super.beforeMarshalling(untagUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UntagUserResult> responseHandler = new StaxResponseHandler<UntagUserResult>(new UntagUserResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Changes the status of the specified access key from Active to Inactive, or vice versa. This operation can be used
      * to disable a user's key as part of a key rotation workflow.
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
-     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * access key ID used to sign the request. This operation works for access keys under the AWS account. Consequently,
+     * you can use this operation to manage AWS account root user credentials even if the AWS account has no associated
      * users.
      * </p>
      * <p>
      * For information about rotating keys, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing Keys and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html">Managing Keys and
      * Certificates</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param updateAccessKeyRequest
      * @return Result of the UpdateAccessKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -7452,6 +8970,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccessKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7487,15 +9008,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </note>
      * <p>
      * For more information about using a password policy, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing an IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing an IAM
      * Password Policy</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param updateAccountPasswordPolicyRequest
      * @return Result of the UpdateAccountPasswordPolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
@@ -7530,6 +9051,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountPasswordPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7550,15 +9074,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Updates the policy that grants an IAM entity permission to assume a role. This is typically referred to as the
      * "role trust policy". For more information about roles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using Roles to Delegate Permissions
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using Roles to Delegate Permissions
      * and Federate Identities</a>.
      * </p>
      * 
      * @param updateAssumeRolePolicyRequest
      * @return Result of the UpdateAssumeRolePolicy operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the policy document was malformed. The error message describes the
      *         specific error.
@@ -7597,6 +9121,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAssumeRolePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7620,7 +9147,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <important>
      * <p>
      * You should understand the implications of changing a group's path or name. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming Users and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_WorkingWithGroupsAndUsers.html">Renaming Users and
      * Groups</a> in the <i>IAM User Guide</i>.
      * </p>
      * </important> <note>
@@ -7629,7 +9156,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * and the new name. For example, to change the group named <code>Managers</code> to <code>MGRs</code>, the
      * principal must have a policy that allows them to update both groups. If the principal has permission to update
      * the <code>Managers</code> group, but not the <code>MGRs</code> group, then the update fails. For more information
-     * about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     * about permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
      * Management</a>.
      * </p>
      * </note>
@@ -7637,8 +9164,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param updateGroupRequest
      * @return Result of the UpdateGroup operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
@@ -7672,6 +9199,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7693,7 +9223,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * IAM users can change their own passwords by calling <a>ChangePassword</a>. For more information about modifying
-     * passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
+     * passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing
      * Passwords</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -7704,8 +9234,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         name that was deleted and then recreated. The error indicates that the request is likely to succeed if
      *         you try again after waiting several minutes. The error message describes the entity.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws PasswordPolicyViolationException
      *         The request was rejected because the provided password did not meet the requirements imposed by the
      *         account password policy.
@@ -7740,6 +9270,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLoginProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7772,8 +9305,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <note>
      * <p>
-     * Because trust for the OIDC provider is derived from the provider's certificate and is validated by the
-     * thumbprint, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code> operation to
+     * Trust for the OIDC provider is derived from the provider's certificate and is validated by the thumbprint.
+     * Therefore, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code> operation to
      * highly privileged users.
      * </p>
      * </note>
@@ -7783,8 +9316,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateOpenIDConnectProviderThumbprint
@@ -7815,6 +9348,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOpenIDConnectProviderThumbprint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7843,8 +9379,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
      *         service-linked role. You must request the change through that service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateRole
@@ -7873,6 +9409,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7890,7 +9429,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Use instead.
+     * Use <a>UpdateRole</a> instead.
      * </p>
      * <p>
      * Modifies only the description of a role. This operation performs the same function as the
@@ -7900,8 +9439,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param updateRoleDescriptionRequest
      * @return Result of the UpdateRoleDescription operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws UnmodifiableEntityException
      *         The request was rejected because only the service that depends on the service-linked role can modify or
      *         delete the role on your behalf. The error message includes the name of the service that depends on this
@@ -7934,6 +9473,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoleDescription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7956,16 +9498,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <note>
      * <p>
-     * This operation requires <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-     * Version 4</a>.
+     * This operation requires <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
      * </p>
      * </note>
      * 
      * @param updateSAMLProviderRequest
      * @return Result of the UpdateSAMLProvider operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws LimitExceededException
@@ -7999,6 +9541,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSAMLProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8024,15 +9569,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * The SSH public key affected by this operation is used only for authenticating the associated IAM user to an AWS
      * CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository,
-     * see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
+     * see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
      * CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * 
      * @param updateSSHPublicKeyRequest
      * @return Result of the UpdateSSHPublicKey operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.UpdateSSHPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey" target="_top">AWS API
      *      Documentation</a>
@@ -8059,6 +9604,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSSHPublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8081,7 +9629,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about working with server certificates, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
      * Certificates</a> in the <i>IAM User Guide</i>. This topic also includes a list of AWS services that can use the
      * server certificates that you manage with IAM.
      * </p>
@@ -8089,7 +9637,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * You should understand the implications of changing a server certificate's path or name. For more information, see
      * <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs_manage.html#RenamingServerCerts"
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs_manage.html#RenamingServerCerts"
      * >Renaming a Server Certificate</a> in the <i>IAM User Guide</i>.
      * </p>
      * </important> <note>
@@ -8099,7 +9647,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <code>ProdCert</code>, the principal must have a policy that allows them to update both certificates. If the
      * principal has permission to update the <code>ProductionCert</code> group, but not the <code>ProdCert</code>
      * certificate, then the update fails. For more information about permissions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User
      * Guide</i>.
      * </p>
      * </note>
@@ -8107,8 +9655,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @param updateServerCertificateRequest
      * @return Result of the UpdateServerCertificate operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws LimitExceededException
@@ -8142,6 +9690,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServerCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8162,14 +9713,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>.
      * Service-specific credentials that are inactive cannot be used for authentication to the service. This operation
-     * can be used to disable a user’s service-specific credential as part of a credential rotation work flow.
+     * can be used to disable a user's service-specific credential as part of a credential rotation work flow.
      * </p>
      * 
      * @param updateServiceSpecificCredentialRequest
      * @return Result of the UpdateServiceSpecificCredential operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @sample AmazonIdentityManagement.UpdateServiceSpecificCredential
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential"
      *      target="_top">AWS API Documentation</a>
@@ -8197,6 +9748,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServiceSpecificCredential");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8220,16 +9774,16 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
-     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * access key ID used to sign the request. This operation works for access keys under the AWS account. Consequently,
+     * you can use this operation to manage AWS account root user credentials even if the AWS account has no associated
      * users.
      * </p>
      * 
      * @param updateSigningCertificateRequest
      * @return Result of the UpdateSigningCertificate operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -8261,6 +9815,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSigningCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8284,8 +9841,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <important>
      * <p>
      * You should understand the implications of changing an IAM user's path or name. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_renaming">Renaming an IAM
-     * User</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html">Renaming an
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_renaming">Renaming an IAM
+     * User</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_manage_rename.html">Renaming an
      * IAM Group</a> in the <i>IAM User Guide</i>.
      * </p>
      * </important> <note>
@@ -8293,15 +9850,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * To change a user name, the requester must have appropriate permissions on both the source object and the target
      * object. For example, to change Bob to Robert, the entity making the request must have permission on Bob and
      * Robert, or must have permission on all (*). For more information about permissions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions and Policies</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions and Policies</a>.
      * </p>
      * </note>
      * 
      * @param updateUserRequest
      * @return Result of the UpdateUser operation returned by the service.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
@@ -8311,6 +9868,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user
      *         name that was deleted and then recreated. The error indicates that the request is likely to succeed if
      *         you try again after waiting several minutes. The error message describes the entity.
+     * @throws ConcurrentModificationException
+     *         The request was rejected because multiple requests to change this object were submitted simultaneously.
+     *         Wait a few minutes and submit your request again.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateUser
@@ -8339,6 +9899,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8362,7 +9925,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * The SSH public key uploaded by this operation can be used only for authenticating the associated IAM user to an
      * AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit
      * repository, see <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
      * CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * 
@@ -8372,8 +9935,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws InvalidPublicKeyException
      *         The request was rejected because the public key is malformed or otherwise invalid.
      * @throws DuplicateSSHPublicKeyException
@@ -8406,6 +9969,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadSSHPublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8428,21 +9994,21 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * certificate, a private key, and an optional certificate chain, which should all be PEM-encoded.
      * </p>
      * <p>
-     * We recommend that you use <a href="https://aws.amazon.com/certificate-manager/">AWS Certificate Manager</a> to
-     * provision, manage, and deploy your server certificates. With ACM you can request a certificate, deploy it to AWS
-     * resources, and let ACM handle certificate renewals for you. Certificates provided by ACM are free. For more
-     * information about using ACM, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate
+     * We recommend that you use <a href="https://docs.aws.amazon.com/certificate-manager/">AWS Certificate Manager</a>
+     * to provision, manage, and deploy your server certificates. With ACM you can request a certificate, deploy it to
+     * AWS resources, and let ACM handle certificate renewals for you. Certificates provided by ACM are free. For more
+     * information about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate
      * Manager User Guide</a>.
      * </p>
      * <p>
      * For more information about working with server certificates, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
      * Certificates</a> in the <i>IAM User Guide</i>. This topic includes a list of AWS services that can use the server
      * certificates that you manage with IAM.
      * </p>
      * <p>
      * For information about the number of server certificates you can upload, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html">Limitations on IAM Entities and
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html">Limitations on IAM Entities and
      * Objects</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>
@@ -8450,9 +10016,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * Because the body of the public key certificate, private key, and the certificate chain can be large, you should
      * use POST rather than GET when calling <code>UploadServerCertificate</code>. For information about setting up
      * signatures and authorization through the API, go to <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a> in
-     * the <i>AWS General Reference</i>. For general information about using the Query API with IAM, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html">Calling the API by Making HTTP Query
+     * href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a>
+     * in the <i>AWS General Reference</i>. For general information about using the Query API with IAM, go to <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html">Calling the API by Making HTTP Query
      * Requests</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
@@ -8497,6 +10063,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadServerCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8521,17 +10090,17 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the IAM user name is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
-     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * access key ID used to sign the request. This operation works for access keys under the AWS account. Consequently,
+     * you can use this operation to manage AWS account root user credentials even if the AWS account has no associated
      * users.
      * </p>
      * <note>
      * <p>
      * Because the body of an X.509 certificate can be large, you should use POST rather than GET when calling
      * <code>UploadSigningCertificate</code>. For information about setting up signatures and authorization through the
-     * API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API
+     * API, go to <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API
      * Requests</a> in the <i>AWS General Reference</i>. For general information about using the Query API with IAM, go
-     * to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in
+     * to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in
      * the <i>IAM User Guide</i>.
      * </p>
      * </note>
@@ -8551,8 +10120,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws DuplicateCertificateException
      *         The request was rejected because the same certificate is associated with an IAM user in the account.
      * @throws NoSuchEntityException
-     *         The request was rejected because it referenced an entity that does not exist. The error message describes
-     *         the entity.
+     *         The request was rejected because it referenced a resource entity that does not exist. The error message
+     *         describes the resource.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UploadSigningCertificate
@@ -8581,6 +10150,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UploadSigningCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8621,9 +10193,18 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -8633,7 +10214,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -8641,8 +10222,17 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

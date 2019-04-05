@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -25,6 +25,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.amazonaws.AbortedException;
 import com.amazonaws.Response;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
@@ -289,8 +290,12 @@ public class AmazonHttpClientTest {
     }
 
     private BasicHttpResponse createBasicHttpResponse() {
+        return createBasicHttpResponse(new ByteArrayInputStream(new byte[0]));
+    }
+
+    private BasicHttpResponse createBasicHttpResponse(InputStream content) {
         BasicHttpEntity entity = new BasicHttpEntity();
-        entity.setContent(new ByteArrayInputStream(new byte[0]));
+        entity.setContent(content);
 
         BasicHttpResponse response = new BasicHttpResponse(
                 new ProtocolVersion("http", 1, 1),
@@ -299,6 +304,7 @@ public class AmazonHttpClientTest {
         response.setEntity(entity);
         return response;
     }
+
 
     private HttpResponseHandler<AmazonWebServiceResponse<Object>> createStubResponseHandler() throws Exception {
         HttpResponseHandler<AmazonWebServiceResponse<Object>> handler =
@@ -586,5 +592,74 @@ public class AmazonHttpClientTest {
 
         // Verify that we called handler callbacks in proper sequence
         EasyMock.verify(mockHandler);
+    }
+
+    @Test
+    public void testReturnsResponseWhenRequestAbortFails() throws Exception {
+        final RuntimeException expectedThrown = new AbortedException("request was interrupted");
+
+        HttpResponseHandler<AmazonWebServiceResponse<Object>> handler =
+                EasyMock.createMock(HttpResponseHandler.class);
+
+        EasyMock
+                .expect(handler.needsConnectionLeftOpen())
+                .andReturn(true)
+                .anyTimes();
+
+        AmazonWebServiceResponse response = EasyMock.createMock(AmazonWebServiceResponse.class);
+
+        EasyMock
+                .expect(handler.handle(EasyMock.isA(HttpResponse.class)))
+                .andReturn(response);
+
+        EasyMock.replay(handler);
+
+        EasyMock.reset(httpClient);
+
+        EasyMock
+                .expect(httpClient.getConnectionManager())
+                .andReturn(null)
+                .anyTimes();
+
+        InputStream responseStream = EasyMock.createMock(InputStream.class);
+
+        responseStream.close();
+
+        EasyMock.expectLastCall().times(1);
+
+        EasyMock.replay(responseStream);
+
+        BasicHttpResponse httpResponse = createBasicHttpResponse(responseStream);
+
+        EasyMock
+                .expect(httpClient.execute(EasyMock.<HttpUriRequest>anyObject(),
+                        EasyMock.<HttpContext>anyObject()))
+                .andReturn(httpResponse)
+                .times(1);
+
+        EasyMock.replay(httpClient);
+
+        InputStream requestInputStream = new ByteArrayInputStream("foo".getBytes()){
+            @Override
+            public void close() throws IOException {
+                throw expectedThrown;
+            }
+        };
+
+        ExecutionContext context = new ExecutionContext();
+
+        Request<?> request = new DefaultRequest<Object>(null, "testsvc");
+        request.setEndpoint(java.net.URI.create(
+                "http://testsvc.region.amazonaws.com"));
+        request.setContent(requestInputStream);
+
+        Response<AmazonWebServiceResponse<Object>> awsResponse = client.requestExecutionBuilder().request(request).executionContext(context).execute(handler);
+
+        awsResponse.getHttpResponse().getContent().close();
+
+        EasyMock.verify(httpClient);
+
+        //verify that the response stream was closed
+        EasyMock.verify(responseStream);
     }
 }

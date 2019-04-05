@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class APNSVoipSandboxChannelResponse implements Serializable, Cloneable, 
     private String defaultAuthenticationMethod;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
-    /** If the channel is registered with a credential for authentication. */
+    /** Not used. Retained for backwards compatibility. */
     private Boolean hasCredential;
     /** If the channel is registered with a token key for authentication. */
     private Boolean hasTokenKey;
@@ -198,10 +198,10 @@ public class APNSVoipSandboxChannelResponse implements Serializable, Cloneable, 
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      * 
      * @param hasCredential
-     *        If the channel is registered with a credential for authentication.
+     *        Not used. Retained for backwards compatibility.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -209,9 +209,9 @@ public class APNSVoipSandboxChannelResponse implements Serializable, Cloneable, 
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      * 
-     * @return If the channel is registered with a credential for authentication.
+     * @return Not used. Retained for backwards compatibility.
      */
 
     public Boolean getHasCredential() {
@@ -219,10 +219,10 @@ public class APNSVoipSandboxChannelResponse implements Serializable, Cloneable, 
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      * 
      * @param hasCredential
-     *        If the channel is registered with a credential for authentication.
+     *        Not used. Retained for backwards compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,9 +232,9 @@ public class APNSVoipSandboxChannelResponse implements Serializable, Cloneable, 
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      * 
-     * @return If the channel is registered with a credential for authentication.
+     * @return Not used. Retained for backwards compatibility.
      */
 
     public Boolean isHasCredential() {
@@ -500,7 +500,8 @@ public class APNSVoipSandboxChannelResponse implements Serializable, Cloneable, 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

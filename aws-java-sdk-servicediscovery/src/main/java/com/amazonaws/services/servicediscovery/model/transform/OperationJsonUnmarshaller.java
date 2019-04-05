@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,11 +70,11 @@ public class OperationJsonUnmarshaller implements Unmarshaller<Operation, JsonUn
                 }
                 if (context.testExpression("CreateDate", targetDepth)) {
                     context.nextToken();
-                    operation.setCreateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    operation.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("UpdateDate", targetDepth)) {
                     context.nextToken();
-                    operation.setUpdateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    operation.setUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();

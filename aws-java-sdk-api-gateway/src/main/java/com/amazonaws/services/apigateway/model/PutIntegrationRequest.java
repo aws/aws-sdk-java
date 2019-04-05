@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,7 +81,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      * <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated
      * AWS service, if applicable. For example, for integration with the S3 API of
-     * <code><a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
+     * <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
      * <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      * <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
@@ -100,7 +100,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     private String connectionType;
     /**
      * <p>
-     * The (<a href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
+     * The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
      * the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
      * </p>
      */
@@ -463,7 +463,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      * <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated
      * AWS service, if applicable. For example, for integration with the S3 API of
-     * <code><a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
+     * <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
      * <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      * <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
@@ -497,7 +497,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      *        parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      *        <code>service_api</code> refers to the path to an AWS service resource, including the region of the
      *        integrated AWS service, if applicable. For example, for integration with the S3 API of
-     *        <code><a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     *        <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      *        the <code>uri</code> can be either
      *        <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      *        <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
@@ -535,7 +535,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      * <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated
      * AWS service, if applicable. For example, for integration with the S3 API of
-     * <code><a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
+     * <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
      * <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      * <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
@@ -568,7 +568,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      *         parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      *         <code>service_api</code> refers to the path to an AWS service resource, including the region of the
      *         integrated AWS service, if applicable. For example, for integration with the S3 API of
-     *         <code><a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     *         <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      *         the <code>uri</code> can be either
      *         <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      *         <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
@@ -606,7 +606,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      * <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated
      * AWS service, if applicable. For example, for integration with the S3 API of
-     * <code><a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
+     * <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the
      * <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      * <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
@@ -640,7 +640,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      *        parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing
      *        <code>service_api</code> refers to the path to an AWS service resource, including the region of the
      *        integrated AWS service, if applicable. For example, for integration with the S3 API of
-     *        <code><a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     *        <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      *        the <code>uri</code> can be either
      *        <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code> or
      *        <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code>
@@ -749,12 +749,12 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The (<a href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
+     * The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
      * the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
      * </p>
      * 
      * @param connectionId
-     *        The (<a href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code>
+     *        The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code>
      *        </a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and
      *        undefined, otherwise.
      */
@@ -765,11 +765,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The (<a href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
+     * The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
      * the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
      * </p>
      * 
-     * @return The (<a href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code>
+     * @return The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code>
      *         </a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and
      *         undefined, otherwise.
      */
@@ -780,12 +780,12 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The (<a href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
+     * The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of
      * the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.
      * </p>
      * 
      * @param connectionId
-     *        The (<a href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code>
+     *        The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code>
      *        </a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and
      *        undefined, otherwise.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1586,7 +1586,8 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

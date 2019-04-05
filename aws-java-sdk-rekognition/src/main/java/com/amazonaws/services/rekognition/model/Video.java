@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as use <code>Video</code> to
- * specify a video for analysis. The supported file formats are .mp4, .mov and .avi.
+ * Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as
+ * <a>StartLabelDetection</a> use <code>Video</code> to specify a video for analysis. The supported file formats are
+ * .mp4, .mov and .avi.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -74,7 +75,8 @@ public class Video implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

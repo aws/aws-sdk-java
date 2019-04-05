@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of compute environment.
+     * The name of the compute environment.
      * </p>
      */
     private String computeEnvironmentName;
@@ -38,11 +38,11 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of compute environment.
+     * The name of the compute environment.
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of compute environment.
+     *        The name of the compute environment.
      */
 
     public void setComputeEnvironmentName(String computeEnvironmentName) {
@@ -51,10 +51,10 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of compute environment.
+     * The name of the compute environment.
      * </p>
      * 
-     * @return The name of compute environment.
+     * @return The name of the compute environment.
      */
 
     public String getComputeEnvironmentName() {
@@ -63,11 +63,11 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of compute environment.
+     * The name of the compute environment.
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of compute environment.
+     *        The name of the compute environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,7 +117,8 @@ public class UpdateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

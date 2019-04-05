@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,12 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An array of <a>GatewayInfo</a> objects.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<GatewayInfo> gateways;
-
+    /**
+     * <p>
+     * Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways
+     * to list, this field does not appear in the response.
+     * </p>
+     */
     private String marker;
 
     /**
-     * @return
+     * <p>
+     * An array of <a>GatewayInfo</a> objects.
+     * </p>
+     * 
+     * @return An array of <a>GatewayInfo</a> objects.
      */
 
     public java.util.List<GatewayInfo> getGateways() {
@@ -39,7 +53,12 @@ public class ListGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * An array of <a>GatewayInfo</a> objects.
+     * </p>
+     * 
      * @param gateways
+     *        An array of <a>GatewayInfo</a> objects.
      */
 
     public void setGateways(java.util.Collection<GatewayInfo> gateways) {
@@ -53,12 +72,16 @@ public class ListGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
+     * An array of <a>GatewayInfo</a> objects.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGateways(java.util.Collection)} or {@link #withGateways(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param gateways
+     *        An array of <a>GatewayInfo</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -73,7 +96,12 @@ public class ListGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * An array of <a>GatewayInfo</a> objects.
+     * </p>
+     * 
      * @param gateways
+     *        An array of <a>GatewayInfo</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,7 +111,14 @@ public class ListGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways
+     * to list, this field does not appear in the response.
+     * </p>
+     * 
      * @param marker
+     *        Use the marker in your next request to fetch the next set of gateways in the list. If there are no more
+     *        gateways to list, this field does not appear in the response.
      */
 
     public void setMarker(String marker) {
@@ -91,7 +126,13 @@ public class ListGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * @return
+     * <p>
+     * Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways
+     * to list, this field does not appear in the response.
+     * </p>
+     * 
+     * @return Use the marker in your next request to fetch the next set of gateways in the list. If there are no more
+     *         gateways to list, this field does not appear in the response.
      */
 
     public String getMarker() {
@@ -99,7 +140,14 @@ public class ListGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * Use the marker in your next request to fetch the next set of gateways in the list. If there are no more gateways
+     * to list, this field does not appear in the response.
+     * </p>
+     * 
      * @param marker
+     *        Use the marker in your next request to fetch the next set of gateways in the list. If there are no more
+     *        gateways to list, this field does not appear in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,7 +157,8 @@ public class ListGatewaysResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ public class CommandInvocationMarshaller {
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
     private static final MarshallingInfo<java.util.Date> REQUESTEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> STATUSDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +58,8 @@ public class CommandInvocationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceRole").build();
     private static final MarshallingInfo<StructuredPojo> NOTIFICATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationConfig").build();
+    private static final MarshallingInfo<StructuredPojo> CLOUDWATCHOUTPUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchOutputConfig").build();
 
     private static final CommandInvocationMarshaller instance = new CommandInvocationMarshaller();
 
@@ -90,6 +92,7 @@ public class CommandInvocationMarshaller {
             protocolMarshaller.marshall(commandInvocation.getCommandPlugins(), COMMANDPLUGINS_BINDING);
             protocolMarshaller.marshall(commandInvocation.getServiceRole(), SERVICEROLE_BINDING);
             protocolMarshaller.marshall(commandInvocation.getNotificationConfig(), NOTIFICATIONCONFIG_BINDING);
+            protocolMarshaller.marshall(commandInvocation.getCloudWatchOutputConfig(), CLOUDWATCHOUTPUTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,8 @@ public class ConfigRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumExecutionFrequency").build();
     private static final MarshallingInfo<String> CONFIGRULESTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigRuleState").build();
+    private static final MarshallingInfo<String> CREATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CreatedBy").build();
 
     private static final ConfigRuleMarshaller instance = new ConfigRuleMarshaller();
 
@@ -71,6 +73,7 @@ public class ConfigRuleMarshaller {
             protocolMarshaller.marshall(configRule.getInputParameters(), INPUTPARAMETERS_BINDING);
             protocolMarshaller.marshall(configRule.getMaximumExecutionFrequency(), MAXIMUMEXECUTIONFREQUENCY_BINDING);
             protocolMarshaller.marshall(configRule.getConfigRuleState(), CONFIGRULESTATE_BINDING);
+            protocolMarshaller.marshall(configRule.getCreatedBy(), CREATEDBY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

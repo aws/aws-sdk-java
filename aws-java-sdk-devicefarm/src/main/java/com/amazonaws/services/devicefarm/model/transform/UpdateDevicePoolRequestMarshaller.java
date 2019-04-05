@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,10 @@ public class UpdateDevicePoolRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<List> RULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("rules").build();
+    private static final MarshallingInfo<Integer> MAXDEVICES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxDevices").build();
+    private static final MarshallingInfo<Boolean> CLEARMAXDEVICES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clearMaxDevices").build();
 
     private static final UpdateDevicePoolRequestMarshaller instance = new UpdateDevicePoolRequestMarshaller();
 
@@ -57,6 +61,8 @@ public class UpdateDevicePoolRequestMarshaller {
             protocolMarshaller.marshall(updateDevicePoolRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateDevicePoolRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateDevicePoolRequest.getRules(), RULES_BINDING);
+            protocolMarshaller.marshall(updateDevicePoolRequest.getMaxDevices(), MAXDEVICES_BINDING);
+            protocolMarshaller.marshall(updateDevicePoolRequest.getClearMaxDevices(), CLEARMAXDEVICES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

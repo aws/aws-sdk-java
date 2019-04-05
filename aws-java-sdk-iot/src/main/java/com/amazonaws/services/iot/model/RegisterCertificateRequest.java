@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     private String caCertificatePem;
     /**
      * <p>
-     * A boolean value that specifies if the CA certificate is set to active.
+     * A boolean value that specifies if the certificate is set to active.
      * </p>
      */
     @Deprecated
@@ -133,11 +133,11 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A boolean value that specifies if the CA certificate is set to active.
+     * A boolean value that specifies if the certificate is set to active.
      * </p>
      * 
      * @param setAsActive
-     *        A boolean value that specifies if the CA certificate is set to active.
+     *        A boolean value that specifies if the certificate is set to active.
      */
     @Deprecated
     public void setSetAsActive(Boolean setAsActive) {
@@ -146,10 +146,10 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A boolean value that specifies if the CA certificate is set to active.
+     * A boolean value that specifies if the certificate is set to active.
      * </p>
      * 
-     * @return A boolean value that specifies if the CA certificate is set to active.
+     * @return A boolean value that specifies if the certificate is set to active.
      */
     @Deprecated
     public Boolean getSetAsActive() {
@@ -158,11 +158,11 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A boolean value that specifies if the CA certificate is set to active.
+     * A boolean value that specifies if the certificate is set to active.
      * </p>
      * 
      * @param setAsActive
-     *        A boolean value that specifies if the CA certificate is set to active.
+     *        A boolean value that specifies if the certificate is set to active.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -173,10 +173,10 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A boolean value that specifies if the CA certificate is set to active.
+     * A boolean value that specifies if the certificate is set to active.
      * </p>
      * 
-     * @return A boolean value that specifies if the CA certificate is set to active.
+     * @return A boolean value that specifies if the certificate is set to active.
      */
     @Deprecated
     public Boolean isSetAsActive() {
@@ -257,7 +257,8 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

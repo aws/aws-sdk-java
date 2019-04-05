@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ReloadTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The Amazon Resource Name (ARN) of the replication task.
      * </p>
      */
     private String replicationTaskArn;
@@ -37,14 +37,28 @@ public class ReloadTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.List<TableToReload> tablesToReload;
+    /**
+     * <p>
+     * Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is
+     * enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is
+     * enabled for the task.
+     * </p>
+     * <p>
+     * Valid values: data-reload, validate-only
+     * </p>
+     * <p>
+     * Default value is data-reload.
+     * </p>
+     */
+    private String reloadOption;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The Amazon Resource Name (ARN) of the replication task.
      * </p>
      * 
      * @param replicationTaskArn
-     *        The Amazon Resource Name (ARN) of the replication instance.
+     *        The Amazon Resource Name (ARN) of the replication task.
      */
 
     public void setReplicationTaskArn(String replicationTaskArn) {
@@ -53,10 +67,10 @@ public class ReloadTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The Amazon Resource Name (ARN) of the replication task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the replication instance.
+     * @return The Amazon Resource Name (ARN) of the replication task.
      */
 
     public String getReplicationTaskArn() {
@@ -65,11 +79,11 @@ public class ReloadTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the replication instance.
+     * The Amazon Resource Name (ARN) of the replication task.
      * </p>
      * 
      * @param replicationTaskArn
-     *        The Amazon Resource Name (ARN) of the replication instance.
+     *        The Amazon Resource Name (ARN) of the replication task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,7 +163,127 @@ public class ReloadTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is
+     * enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is
+     * enabled for the task.
+     * </p>
+     * <p>
+     * Valid values: data-reload, validate-only
+     * </p>
+     * <p>
+     * Default value is data-reload.
+     * </p>
+     * 
+     * @param reloadOption
+     *        Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation
+     *        is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when
+     *        validation is enabled for the task. </p>
+     *        <p>
+     *        Valid values: data-reload, validate-only
+     *        </p>
+     *        <p>
+     *        Default value is data-reload.
+     * @see ReloadOptionValue
+     */
+
+    public void setReloadOption(String reloadOption) {
+        this.reloadOption = reloadOption;
+    }
+
+    /**
+     * <p>
+     * Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is
+     * enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is
+     * enabled for the task.
+     * </p>
+     * <p>
+     * Valid values: data-reload, validate-only
+     * </p>
+     * <p>
+     * Default value is data-reload.
+     * </p>
+     * 
+     * @return Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation
+     *         is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when
+     *         validation is enabled for the task. </p>
+     *         <p>
+     *         Valid values: data-reload, validate-only
+     *         </p>
+     *         <p>
+     *         Default value is data-reload.
+     * @see ReloadOptionValue
+     */
+
+    public String getReloadOption() {
+        return this.reloadOption;
+    }
+
+    /**
+     * <p>
+     * Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is
+     * enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is
+     * enabled for the task.
+     * </p>
+     * <p>
+     * Valid values: data-reload, validate-only
+     * </p>
+     * <p>
+     * Default value is data-reload.
+     * </p>
+     * 
+     * @param reloadOption
+     *        Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation
+     *        is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when
+     *        validation is enabled for the task. </p>
+     *        <p>
+     *        Valid values: data-reload, validate-only
+     *        </p>
+     *        <p>
+     *        Default value is data-reload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReloadOptionValue
+     */
+
+    public ReloadTablesRequest withReloadOption(String reloadOption) {
+        setReloadOption(reloadOption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation is
+     * enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when validation is
+     * enabled for the task.
+     * </p>
+     * <p>
+     * Valid values: data-reload, validate-only
+     * </p>
+     * <p>
+     * Default value is data-reload.
+     * </p>
+     * 
+     * @param reloadOption
+     *        Options for reload. Specify <code>data-reload</code> to reload the data and re-validate it if validation
+     *        is enabled. Specify <code>validate-only</code> to re-validate the table. This option applies only when
+     *        validation is enabled for the task. </p>
+     *        <p>
+     *        Valid values: data-reload, validate-only
+     *        </p>
+     *        <p>
+     *        Default value is data-reload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReloadOptionValue
+     */
+
+    public ReloadTablesRequest withReloadOption(ReloadOptionValue reloadOption) {
+        this.reloadOption = reloadOption.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -162,7 +296,9 @@ public class ReloadTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getReplicationTaskArn() != null)
             sb.append("ReplicationTaskArn: ").append(getReplicationTaskArn()).append(",");
         if (getTablesToReload() != null)
-            sb.append("TablesToReload: ").append(getTablesToReload());
+            sb.append("TablesToReload: ").append(getTablesToReload()).append(",");
+        if (getReloadOption() != null)
+            sb.append("ReloadOption: ").append(getReloadOption());
         sb.append("}");
         return sb.toString();
     }
@@ -185,6 +321,10 @@ public class ReloadTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTablesToReload() != null && other.getTablesToReload().equals(this.getTablesToReload()) == false)
             return false;
+        if (other.getReloadOption() == null ^ this.getReloadOption() == null)
+            return false;
+        if (other.getReloadOption() != null && other.getReloadOption().equals(this.getReloadOption()) == false)
+            return false;
         return true;
     }
 
@@ -195,6 +335,7 @@ public class ReloadTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getReplicationTaskArn() == null) ? 0 : getReplicationTaskArn().hashCode());
         hashCode = prime * hashCode + ((getTablesToReload() == null) ? 0 : getTablesToReload().hashCode());
+        hashCode = prime * hashCode + ((getReloadOption() == null) ? 0 : getReloadOption().hashCode());
         return hashCode;
     }
 

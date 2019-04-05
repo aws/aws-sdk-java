@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,6 +90,19 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private SplunkDestinationConfiguration splunkDestinationConfiguration;
+    /**
+     * <p>
+     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
+     * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
+     * information that can help you distinguish the delivery stream. For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the AWS Billing and Cost Management User Guide.
+     * </p>
+     * <p>
+     * You can specify up to 50 tags when creating a delivery stream.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -547,7 +560,130 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
+     * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
+     * information that can help you distinguish the delivery stream. For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the AWS Billing and Cost Management User Guide.
+     * </p>
+     * <p>
+     * You can specify up to 50 tags when creating a delivery stream.
+     * </p>
+     * 
+     * @return A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign
+     *         to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other
+     *         types of information that can help you distinguish the delivery stream. For more information about tags,
+     *         see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+     *         Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+     *         <p>
+     *         You can specify up to 50 tags when creating a delivery stream.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
+     * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
+     * information that can help you distinguish the delivery stream. For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the AWS Billing and Cost Management User Guide.
+     * </p>
+     * <p>
+     * You can specify up to 50 tags when creating a delivery stream.
+     * </p>
+     * 
+     * @param tags
+     *        A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign
+     *        to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other
+     *        types of information that can help you distinguish the delivery stream. For more information about tags,
+     *        see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+     *        <p>
+     *        You can specify up to 50 tags when creating a delivery stream.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
+     * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
+     * information that can help you distinguish the delivery stream. For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the AWS Billing and Cost Management User Guide.
+     * </p>
+     * <p>
+     * You can specify up to 50 tags when creating a delivery stream.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign
+     *        to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other
+     *        types of information that can help you distinguish the delivery stream. For more information about tags,
+     *        see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+     *        <p>
+     *        You can specify up to 50 tags when creating a delivery stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeliveryStreamRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
+     * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
+     * information that can help you distinguish the delivery stream. For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the AWS Billing and Cost Management User Guide.
+     * </p>
+     * <p>
+     * You can specify up to 50 tags when creating a delivery stream.
+     * </p>
+     * 
+     * @param tags
+     *        A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign
+     *        to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other
+     *        types of information that can help you distinguish the delivery stream. For more information about tags,
+     *        see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+     *        <p>
+     *        You can specify up to 50 tags when creating a delivery stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeliveryStreamRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -572,7 +708,9 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         if (getElasticsearchDestinationConfiguration() != null)
             sb.append("ElasticsearchDestinationConfiguration: ").append(getElasticsearchDestinationConfiguration()).append(",");
         if (getSplunkDestinationConfiguration() != null)
-            sb.append("SplunkDestinationConfiguration: ").append(getSplunkDestinationConfiguration());
+            sb.append("SplunkDestinationConfiguration: ").append(getSplunkDestinationConfiguration()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -624,6 +762,10 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getSplunkDestinationConfiguration() != null
                 && other.getSplunkDestinationConfiguration().equals(this.getSplunkDestinationConfiguration()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -640,6 +782,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getRedshiftDestinationConfiguration() == null) ? 0 : getRedshiftDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchDestinationConfiguration() == null) ? 0 : getElasticsearchDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSplunkDestinationConfiguration() == null) ? 0 : getSplunkDestinationConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

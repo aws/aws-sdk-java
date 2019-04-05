@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ import com.amazonaws.services.fms.model.*;
  * <p>
  * This is the <i>AWS Firewall Manager API Reference</i>. This guide is for developers who need detailed information
  * about the AWS Firewall Manager API actions, data types, and errors. For detailed information about AWS Firewall
- * Manager features, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
+ * Manager features, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
  * Firewall Manager Developer Guide</a>.
  * </p>
  */
@@ -47,13 +47,13 @@ public interface AWSFMS {
 
     /**
      * <p>
-     * Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with a master
-     * account in AWS Organizations or associated with a member account that has the appropriate permissions. If the
+     * Sets the AWS Firewall Manager administrator account. AWS Firewall Manager must be associated with the master
+     * account your AWS organization or associated with a member account that has the appropriate permissions. If the
      * account ID that you submit is not an AWS Organizations master account, AWS Firewall Manager will set the
      * appropriate permissions for the given member account.
      * </p>
      * <p>
-     * The account that you associate with AWS Firewall Manager is called the AWS Firewall manager administrator
+     * The account that you associate with AWS Firewall Manager is called the AWS Firewall Manager administrator
      * account.
      * </p>
      * 
@@ -120,8 +120,8 @@ public interface AWSFMS {
 
     /**
      * <p>
-     * Disassociates the account that has been set as the AWS Firewall Manager administrator account. You will need to
-     * submit an <code>AssociateAdminAccount</code> request to set a new account as the AWS Firewall administrator.
+     * Disassociates the account that has been set as the AWS Firewall Manager administrator account. To set a different
+     * account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request .
      * </p>
      * 
      * @param disassociateAdminAccountRequest
@@ -218,11 +218,33 @@ public interface AWSFMS {
      *         AWS Firewall Manager administrator.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws InvalidTypeException
+     *         The value of the <code>Type</code> parameter is invalid.
      * @sample AWSFMS.GetPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy" target="_top">AWS API
      *      Documentation</a>
      */
     GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest);
+
+    /**
+     * <p>
+     * If you created a Shield Advanced policy, returns policy-level attack summary information in the event of a
+     * potential DDoS attack.
+     * </p>
+     * 
+     * @param getProtectionStatusRequest
+     * @return Result of the GetProtectionStatus operation returned by the service.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.GetProtectionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtectionStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetProtectionStatusResult getProtectionStatus(GetProtectionStatusRequest getProtectionStatusRequest);
 
     /**
      * <p>
@@ -245,6 +267,28 @@ public interface AWSFMS {
 
     /**
      * <p>
+     * Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's AWS
+     * organization.
+     * </p>
+     * <p>
+     * The <code>ListMemberAccounts</code> must be submitted by the account that is set as the AWS Firewall Manager
+     * administrator.
+     * </p>
+     * 
+     * @param listMemberAccountsRequest
+     * @return Result of the ListMemberAccounts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.ListMemberAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListMemberAccountsResult listMemberAccounts(ListMemberAccountsRequest listMemberAccountsRequest);
+
+    /**
+     * <p>
      * Returns an array of <code>PolicySummary</code> objects in the response.
      * </p>
      * 
@@ -259,7 +303,7 @@ public interface AWSFMS {
      * @throws LimitExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
      *         in the <i>AWS WAF Developer Guide</i>.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
@@ -295,6 +339,19 @@ public interface AWSFMS {
      * <p>
      * Creates an AWS Firewall Manager policy.
      * </p>
+     * <p>
+     * Firewall Manager provides two types of policies: A Shield Advanced policy, which applies Shield Advanced
+     * protection to specified accounts and resources, or a WAF policy, which contains a rule group and defines which
+     * resources are to be protected by that rule group. A policy is specific to either WAF or Shield Advanced. If you
+     * want to enforce both WAF rules and Shield Advanced protection across accounts, you can create multiple policies.
+     * You can create one or more policies for WAF rules, and one or more policies for Shield Advanced.
+     * </p>
+     * <p>
+     * You must be subscribed to Shield Advanced to create a Shield Advanced policy. For more information on subscribing
+     * to Shield Advanced, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html"
+     * >CreateSubscription</a>.
+     * </p>
      * 
      * @param putPolicyRequest
      * @return Result of the PutPolicy operation returned by the service.
@@ -306,8 +363,15 @@ public interface AWSFMS {
      *         AWS Firewall Manager administrator.
      * @throws InvalidInputException
      *         The parameters of the request were invalid.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>AWS WAF Developer Guide</i>.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws InvalidTypeException
+     *         The value of the <code>Type</code> parameter is invalid.
      * @sample AWSFMS.PutPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy" target="_top">AWS API
      *      Documentation</a>

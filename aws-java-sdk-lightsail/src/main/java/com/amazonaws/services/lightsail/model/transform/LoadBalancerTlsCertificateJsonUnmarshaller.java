@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class LoadBalancerTlsCertificateJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
-                    loadBalancerTlsCertificate.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    loadBalancerTlsCertificate.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("location", targetDepth)) {
                     context.nextToken();
@@ -71,6 +71,10 @@ public class LoadBalancerTlsCertificateJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
                     loadBalancerTlsCertificate.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    loadBalancerTlsCertificate.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("loadBalancerName", targetDepth)) {
                     context.nextToken();
@@ -99,7 +103,7 @@ public class LoadBalancerTlsCertificateJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("issuedAt", targetDepth)) {
                     context.nextToken();
-                    loadBalancerTlsCertificate.setIssuedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    loadBalancerTlsCertificate.setIssuedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("issuer", targetDepth)) {
                     context.nextToken();
@@ -111,11 +115,11 @@ public class LoadBalancerTlsCertificateJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("notAfter", targetDepth)) {
                     context.nextToken();
-                    loadBalancerTlsCertificate.setNotAfter(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    loadBalancerTlsCertificate.setNotAfter(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("notBefore", targetDepth)) {
                     context.nextToken();
-                    loadBalancerTlsCertificate.setNotBefore(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    loadBalancerTlsCertificate.setNotBefore(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("renewalSummary", targetDepth)) {
                     context.nextToken();
@@ -127,7 +131,7 @@ public class LoadBalancerTlsCertificateJsonUnmarshaller implements Unmarshaller<
                 }
                 if (context.testExpression("revokedAt", targetDepth)) {
                     context.nextToken();
-                    loadBalancerTlsCertificate.setRevokedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    loadBalancerTlsCertificate.setRevokedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("serial", targetDepth)) {
                     context.nextToken();

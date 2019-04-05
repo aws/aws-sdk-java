@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The provided policy document does not meet the requirements of the specified policy type. For example, the syntax
+ * The provided policy document doesn't meet the requirements of the specified policy type. For example, the syntax
  * might be incorrect. For details about service control policy syntax, see <a
- * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
+ * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
  * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
  * </p>
  */

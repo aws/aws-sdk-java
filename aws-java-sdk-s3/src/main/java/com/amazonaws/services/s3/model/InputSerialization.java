@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,11 @@ public class InputSerialization implements Serializable, Cloneable {
      * Specifies JSON as object's input serialization format.
      */
     private JSONInput json;
+
+    /**
+     * Specifies Parquet as object's input serialization format.
+     */
+    private ParquetInput parquet;
 
     private String compressionType;
 
@@ -82,6 +87,28 @@ public class InputSerialization implements Serializable, Cloneable {
      */
     public InputSerialization withJson(JSONInput json) {
         setJson(json);
+        return this;
+    }
+
+    /**
+     * Specifies Parquet as object's input serialization format.
+     */
+    public ParquetInput getParquet() {
+        return parquet;
+    }
+
+    /**
+     * Specifies Parquet as object's input serialization format.
+     */
+    public void setParquet(ParquetInput parquet) {
+        this.parquet = parquet;
+    }
+
+    /**
+     * Specifies Parquet as object's input serialization format.
+     */
+    public InputSerialization withParquet(ParquetInput parquet) {
+        setParquet(parquet);
         return this;
     }
 

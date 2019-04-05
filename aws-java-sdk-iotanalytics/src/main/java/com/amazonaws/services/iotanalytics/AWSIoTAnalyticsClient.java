@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.iotanalytics.AWSIoTAnalyticsClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -49,30 +51,30 @@ import com.amazonaws.services.iotanalytics.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * AWS IoT Analytics provides advanced data analysis for AWS IoT. It allows you to collect large amounts of device data,
- * process messages, store them, and then query the data and run sophisticated analytics to make accurate decisions in
- * your IoT applications and machine learning use cases. AWS IoT Analytics enables advanced data exploration through
+ * AWS IoT Analytics allows you to collect large amounts of device data, process messages, and store them. You can then
+ * query the data and run sophisticated analytics on it. AWS IoT Analytics enables advanced data exploration through
  * integration with Jupyter Notebooks and data visualization through integration with Amazon QuickSight.
  * </p>
  * <p>
  * Traditional analytics and business intelligence tools are designed to process structured data. IoT data often comes
- * from devices that record noisy processes (such as temperature, motion, or sound). As a result, the data from these
+ * from devices that record noisy processes (such as temperature, motion, or sound). As a result the data from these
  * devices can have significant gaps, corrupted messages, and false readings that must be cleaned up before analysis can
  * occur. Also, IoT data is often only meaningful in the context of other data from external sources.
  * </p>
  * <p>
- * AWS IoT Analytics automates each of the steps required to analyze data from IoT devices. AWS IoT Analytics filters,
+ * AWS IoT Analytics automates the steps required to analyze data from IoT devices. AWS IoT Analytics filters,
  * transforms, and enriches IoT data before storing it in a time-series data store for analysis. You can set up the
  * service to collect only the data you need from your devices, apply mathematical transforms to process the data, and
  * enrich the data with device-specific metadata such as device type and location before storing it. Then, you can
  * analyze your data by running queries using the built-in SQL query engine, or perform more complex analytics and
- * machine learning inference. AWS IoT Analytics includes models for common IoT use cases so you can answer questions
- * like which devices are about to fail or which customers are at risk of abandoning their wearable devices.
+ * machine learning inference. AWS IoT Analytics includes pre-built models for common IoT use cases so you can answer
+ * questions like which devices are about to fail or which customers are at risk of abandoning their wearable devices.
  * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWSIoTAnalytics {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -83,6 +85,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -128,8 +132,23 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
      *        Object providing client parameters.
      */
     AWSIoTAnalyticsClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS IoT Analytics using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSIoTAnalyticsClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -187,6 +206,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchPutMessage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -247,6 +269,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelPipelineReprocessing");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -310,6 +335,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -328,13 +356,11 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Creates a data set. A data set stores data retrieved from a data store by applying an SQL action.
+     * Creates a data set. A data set stores data retrieved from a data store by applying a "queryAction" (a SQL query)
+     * or a "containerAction" (executing a containerized application). This operation creates the skeleton of a data
+     * set. The data set can be populated manually by calling "CreateDatasetContent" or automatically according to a
+     * "trigger" you specify.
      * </p>
-     * <note>
-     * <p>
-     * This operation creates the skeleton of a data set. To populate the data set, call "CreateDatasetContent".
-     * </p>
-     * </note>
      * 
      * @param createDatasetRequest
      * @return Result of the CreateDataset operation returned by the service.
@@ -376,6 +402,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -394,7 +423,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Creates the content of a data set by applying an SQL action.
+     * Creates the content of a data set by applying a "queryAction" (a SQL query) or a "containerAction" (executing a
+     * containerized application).
      * </p>
      * 
      * @param createDatasetContentRequest
@@ -435,6 +465,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatasetContent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -496,6 +529,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatastore");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -515,7 +551,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
     /**
      * <p>
      * Creates a pipeline. A pipeline consumes messages from one or more channels and allows you to process the messages
-     * before storing them in a data store.
+     * before storing them in a data store. You must specify both a <code>channel</code> and a <code>datastore</code>
+     * activity and, optionally, as many as 23 additional activities in the <code>pipelineActivities</code> array.
      * </p>
      * 
      * @param createPipelineRequest
@@ -558,6 +595,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePipeline");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -617,6 +657,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -679,6 +722,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -738,6 +784,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatasetContent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -797,6 +846,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatastore");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -856,6 +908,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePipeline");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -915,6 +970,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -974,6 +1032,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1033,6 +1094,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDatastore");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1092,6 +1156,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLoggingOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1152,6 +1219,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePipeline");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1211,6 +1281,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDatasetContent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1268,12 +1341,77 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannels");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListChannelsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListChannelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists information about data set contents that have been created.
+     * </p>
+     * 
+     * @param listDatasetContentsRequest
+     * @return Result of the ListDatasetContents operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was not valid.
+     * @throws InternalFailureException
+     *         There was an internal failure.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         A resource with the specified name could not be found.
+     * @sample AWSIoTAnalytics.ListDatasetContents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListDatasetContents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDatasetContentsResult listDatasetContents(ListDatasetContentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDatasetContents(request);
+    }
+
+    @SdkInternalApi
+    final ListDatasetContentsResult executeListDatasetContents(ListDatasetContentsRequest listDatasetContentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDatasetContentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDatasetContentsRequest> request = null;
+        Response<ListDatasetContentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDatasetContentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetContentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasetContents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDatasetContentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDatasetContentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1325,6 +1463,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1382,6 +1523,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatastores");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1439,6 +1583,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPipelines");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1457,7 +1604,76 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Lists the tags (metadata) which you have assigned to the resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was not valid.
+     * @throws InternalFailureException
+     *         There was an internal failure.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The command caused an internal limit to be exceeded.
+     * @throws ResourceNotFoundException
+     *         A resource with the specified name could not be found.
+     * @sample AWSIoTAnalytics.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets or updates the AWS IoT Analytics logging options.
+     * </p>
+     * <p>
+     * Note that if you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the
+     * change to take effect. Also, if you change the policy attached to the role you specified in the roleArn field
+     * (for example, to correct an invalid policy) it takes up to 5 minutes for that change to take effect.
      * </p>
      * 
      * @param putLoggingOptionsRequest
@@ -1496,6 +1712,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLoggingOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1553,6 +1772,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RunPipelineActivity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1613,6 +1835,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SampleChannelData");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1675,6 +1900,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartPipelineReprocessing");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1682,6 +1910,134 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<StartPipelineReprocessingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartPipelineReprocessingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was not valid.
+     * @throws InternalFailureException
+     *         There was an internal failure.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The command caused an internal limit to be exceeded.
+     * @throws ResourceNotFoundException
+     *         A resource with the specified name could not be found.
+     * @sample AWSIoTAnalytics.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the given tags (metadata) from the resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was not valid.
+     * @throws InternalFailureException
+     *         There was an internal failure.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The command caused an internal limit to be exceeded.
+     * @throws ResourceNotFoundException
+     *         A resource with the specified name could not be found.
+     * @sample AWSIoTAnalytics.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1735,6 +2091,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1794,6 +2153,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1853,6 +2215,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDatastore");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1871,7 +2236,8 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Updates the settings of a pipeline.
+     * Updates the settings of a pipeline. You must specify both a <code>channel</code> and a <code>datastore</code>
+     * activity and, optionally, as many as 23 additional activities in the <code>pipelineActivities</code> array.
      * </p>
      * 
      * @param updatePipelineRequest
@@ -1914,6 +2280,9 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTAnalytics");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePipeline");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1954,9 +2323,18 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1966,7 +2344,7 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1974,8 +2352,17 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

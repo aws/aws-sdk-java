@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateScalingPlanRequestMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> APPLICATIONSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationSource").build();
     private static final MarshallingInfo<String> SCALINGPLANNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScalingPlanName").build();
-    private static final MarshallingInfo<List> SCALINGINSTRUCTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScalingInstructions").build();
     private static final MarshallingInfo<Long> SCALINGPLANVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScalingPlanVersion").build();
+    private static final MarshallingInfo<StructuredPojo> APPLICATIONSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationSource").build();
+    private static final MarshallingInfo<List> SCALINGINSTRUCTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScalingInstructions").build();
 
     private static final UpdateScalingPlanRequestMarshaller instance = new UpdateScalingPlanRequestMarshaller();
 
@@ -53,10 +53,10 @@ public class UpdateScalingPlanRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(updateScalingPlanRequest.getApplicationSource(), APPLICATIONSOURCE_BINDING);
             protocolMarshaller.marshall(updateScalingPlanRequest.getScalingPlanName(), SCALINGPLANNAME_BINDING);
-            protocolMarshaller.marshall(updateScalingPlanRequest.getScalingInstructions(), SCALINGINSTRUCTIONS_BINDING);
             protocolMarshaller.marshall(updateScalingPlanRequest.getScalingPlanVersion(), SCALINGPLANVERSION_BINDING);
+            protocolMarshaller.marshall(updateScalingPlanRequest.getApplicationSource(), APPLICATIONSOURCE_BINDING);
+            protocolMarshaller.marshall(updateScalingPlanRequest.getScalingInstructions(), SCALINGINSTRUCTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to
+     * the default value FOLLOW. The service will automatically detect your input color space. If your input video has
+     * metadata indicating the wrong color space, or if your input video is missing color space metadata that should be
+     * there, specify the accurate color space here. If you choose HDR10, you can also correct inaccurate color space
+     * coefficients, using the HDR master display information controls. You must also set Color space usage
+     * (ColorSpaceUsage) to FORCE for the service to use these values.
+     */
     private String colorSpace;
-
+    /**
+     * There are two sources for color metadata, the input file and the job configuration (in the Color space and HDR
+     * master display informaiton settings). The Color space usage setting controls which takes precedence. FORCE: The
+     * system will use color metadata supplied by user, if any. If the user does not supply color metadata, the system
+     * will use data from the source. FALLBACK: The system will use color metadata from the source. If source has no
+     * color metadata, the system will use user-supplied color metadata values if available.
+     */
     private String colorSpaceUsage;
-
+    /**
+     * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR metadata or to provide missing
+     * metadata. These values vary depending on the input video and must be provided by a color grader. Range is 0 to
+     * 50,000; each increment represents 0.00002 in CIE1931 color coordinate. Note that these settings are not color
+     * correction. Note that if you are creating HDR outputs inside of an HLS CMAF package, to comply with the Apple
+     * specification, you must use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to HVC1
+     * (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High (MAIN10_HIGH). Set "Level" (H265Settings >
+     * codecLevel) to 5 (LEVEL_5).
+     */
     private Hdr10Metadata hdr10Metadata;
     /**
      * Use PID (Pid) to select specific video data from an input file. Specify this value as an integer; the system
@@ -42,9 +64,32 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
      * supported.
      */
     private Integer programNumber;
+    /**
+     * Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or
+     * specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video
+     * container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service
+     * rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of
+     * 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no
+     * rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service
+     * doesn't pass through rotation metadata.
+     */
+    private String rotate;
 
     /**
+     * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to
+     * the default value FOLLOW. The service will automatically detect your input color space. If your input video has
+     * metadata indicating the wrong color space, or if your input video is missing color space metadata that should be
+     * there, specify the accurate color space here. If you choose HDR10, you can also correct inaccurate color space
+     * coefficients, using the HDR master display information controls. You must also set Color space usage
+     * (ColorSpaceUsage) to FORCE for the service to use these values.
+     * 
      * @param colorSpace
+     *        If your input video has accurate color space metadata, or if you don't know about color space, leave this
+     *        set to the default value FOLLOW. The service will automatically detect your input color space. If your
+     *        input video has metadata indicating the wrong color space, or if your input video is missing color space
+     *        metadata that should be there, specify the accurate color space here. If you choose HDR10, you can also
+     *        correct inaccurate color space coefficients, using the HDR master display information controls. You must
+     *        also set Color space usage (ColorSpaceUsage) to FORCE for the service to use these values.
      * @see ColorSpace
      */
 
@@ -53,7 +98,19 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to
+     * the default value FOLLOW. The service will automatically detect your input color space. If your input video has
+     * metadata indicating the wrong color space, or if your input video is missing color space metadata that should be
+     * there, specify the accurate color space here. If you choose HDR10, you can also correct inaccurate color space
+     * coefficients, using the HDR master display information controls. You must also set Color space usage
+     * (ColorSpaceUsage) to FORCE for the service to use these values.
+     * 
+     * @return If your input video has accurate color space metadata, or if you don't know about color space, leave this
+     *         set to the default value FOLLOW. The service will automatically detect your input color space. If your
+     *         input video has metadata indicating the wrong color space, or if your input video is missing color space
+     *         metadata that should be there, specify the accurate color space here. If you choose HDR10, you can also
+     *         correct inaccurate color space coefficients, using the HDR master display information controls. You must
+     *         also set Color space usage (ColorSpaceUsage) to FORCE for the service to use these values.
      * @see ColorSpace
      */
 
@@ -62,7 +119,20 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to
+     * the default value FOLLOW. The service will automatically detect your input color space. If your input video has
+     * metadata indicating the wrong color space, or if your input video is missing color space metadata that should be
+     * there, specify the accurate color space here. If you choose HDR10, you can also correct inaccurate color space
+     * coefficients, using the HDR master display information controls. You must also set Color space usage
+     * (ColorSpaceUsage) to FORCE for the service to use these values.
+     * 
      * @param colorSpace
+     *        If your input video has accurate color space metadata, or if you don't know about color space, leave this
+     *        set to the default value FOLLOW. The service will automatically detect your input color space. If your
+     *        input video has metadata indicating the wrong color space, or if your input video is missing color space
+     *        metadata that should be there, specify the accurate color space here. If you choose HDR10, you can also
+     *        correct inaccurate color space coefficients, using the HDR master display information controls. You must
+     *        also set Color space usage (ColorSpaceUsage) to FORCE for the service to use these values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpace
      */
@@ -73,7 +143,20 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to
+     * the default value FOLLOW. The service will automatically detect your input color space. If your input video has
+     * metadata indicating the wrong color space, or if your input video is missing color space metadata that should be
+     * there, specify the accurate color space here. If you choose HDR10, you can also correct inaccurate color space
+     * coefficients, using the HDR master display information controls. You must also set Color space usage
+     * (ColorSpaceUsage) to FORCE for the service to use these values.
+     * 
      * @param colorSpace
+     *        If your input video has accurate color space metadata, or if you don't know about color space, leave this
+     *        set to the default value FOLLOW. The service will automatically detect your input color space. If your
+     *        input video has metadata indicating the wrong color space, or if your input video is missing color space
+     *        metadata that should be there, specify the accurate color space here. If you choose HDR10, you can also
+     *        correct inaccurate color space coefficients, using the HDR master display information controls. You must
+     *        also set Color space usage (ColorSpaceUsage) to FORCE for the service to use these values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpace
      */
@@ -84,7 +167,19 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * There are two sources for color metadata, the input file and the job configuration (in the Color space and HDR
+     * master display informaiton settings). The Color space usage setting controls which takes precedence. FORCE: The
+     * system will use color metadata supplied by user, if any. If the user does not supply color metadata, the system
+     * will use data from the source. FALLBACK: The system will use color metadata from the source. If source has no
+     * color metadata, the system will use user-supplied color metadata values if available.
+     * 
      * @param colorSpaceUsage
+     *        There are two sources for color metadata, the input file and the job configuration (in the Color space and
+     *        HDR master display informaiton settings). The Color space usage setting controls which takes precedence.
+     *        FORCE: The system will use color metadata supplied by user, if any. If the user does not supply color
+     *        metadata, the system will use data from the source. FALLBACK: The system will use color metadata from the
+     *        source. If source has no color metadata, the system will use user-supplied color metadata values if
+     *        available.
      * @see ColorSpaceUsage
      */
 
@@ -93,7 +188,18 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * There are two sources for color metadata, the input file and the job configuration (in the Color space and HDR
+     * master display informaiton settings). The Color space usage setting controls which takes precedence. FORCE: The
+     * system will use color metadata supplied by user, if any. If the user does not supply color metadata, the system
+     * will use data from the source. FALLBACK: The system will use color metadata from the source. If source has no
+     * color metadata, the system will use user-supplied color metadata values if available.
+     * 
+     * @return There are two sources for color metadata, the input file and the job configuration (in the Color space
+     *         and HDR master display informaiton settings). The Color space usage setting controls which takes
+     *         precedence. FORCE: The system will use color metadata supplied by user, if any. If the user does not
+     *         supply color metadata, the system will use data from the source. FALLBACK: The system will use color
+     *         metadata from the source. If source has no color metadata, the system will use user-supplied color
+     *         metadata values if available.
      * @see ColorSpaceUsage
      */
 
@@ -102,7 +208,19 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * There are two sources for color metadata, the input file and the job configuration (in the Color space and HDR
+     * master display informaiton settings). The Color space usage setting controls which takes precedence. FORCE: The
+     * system will use color metadata supplied by user, if any. If the user does not supply color metadata, the system
+     * will use data from the source. FALLBACK: The system will use color metadata from the source. If source has no
+     * color metadata, the system will use user-supplied color metadata values if available.
+     * 
      * @param colorSpaceUsage
+     *        There are two sources for color metadata, the input file and the job configuration (in the Color space and
+     *        HDR master display informaiton settings). The Color space usage setting controls which takes precedence.
+     *        FORCE: The system will use color metadata supplied by user, if any. If the user does not supply color
+     *        metadata, the system will use data from the source. FALLBACK: The system will use color metadata from the
+     *        source. If source has no color metadata, the system will use user-supplied color metadata values if
+     *        available.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpaceUsage
      */
@@ -113,7 +231,19 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * There are two sources for color metadata, the input file and the job configuration (in the Color space and HDR
+     * master display informaiton settings). The Color space usage setting controls which takes precedence. FORCE: The
+     * system will use color metadata supplied by user, if any. If the user does not supply color metadata, the system
+     * will use data from the source. FALLBACK: The system will use color metadata from the source. If source has no
+     * color metadata, the system will use user-supplied color metadata values if available.
+     * 
      * @param colorSpaceUsage
+     *        There are two sources for color metadata, the input file and the job configuration (in the Color space and
+     *        HDR master display informaiton settings). The Color space usage setting controls which takes precedence.
+     *        FORCE: The system will use color metadata supplied by user, if any. If the user does not supply color
+     *        metadata, the system will use data from the source. FALLBACK: The system will use color metadata from the
+     *        source. If source has no color metadata, the system will use user-supplied color metadata values if
+     *        available.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpaceUsage
      */
@@ -124,7 +254,22 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR metadata or to provide missing
+     * metadata. These values vary depending on the input video and must be provided by a color grader. Range is 0 to
+     * 50,000; each increment represents 0.00002 in CIE1931 color coordinate. Note that these settings are not color
+     * correction. Note that if you are creating HDR outputs inside of an HLS CMAF package, to comply with the Apple
+     * specification, you must use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to HVC1
+     * (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High (MAIN10_HIGH). Set "Level" (H265Settings >
+     * codecLevel) to 5 (LEVEL_5).
+     * 
      * @param hdr10Metadata
+     *        Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR metadata or to provide
+     *        missing metadata. These values vary depending on the input video and must be provided by a color grader.
+     *        Range is 0 to 50,000; each increment represents 0.00002 in CIE1931 color coordinate. Note that these
+     *        settings are not color correction. Note that if you are creating HDR outputs inside of an HLS CMAF
+     *        package, to comply with the Apple specification, you must use the following settings. Set
+     *        "MP4 packaging type" (writeMp4PackagingType) to HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile)
+     *        to Main10/High (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
      */
 
     public void setHdr10Metadata(Hdr10Metadata hdr10Metadata) {
@@ -132,7 +277,21 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR metadata or to provide missing
+     * metadata. These values vary depending on the input video and must be provided by a color grader. Range is 0 to
+     * 50,000; each increment represents 0.00002 in CIE1931 color coordinate. Note that these settings are not color
+     * correction. Note that if you are creating HDR outputs inside of an HLS CMAF package, to comply with the Apple
+     * specification, you must use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to HVC1
+     * (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High (MAIN10_HIGH). Set "Level" (H265Settings >
+     * codecLevel) to 5 (LEVEL_5).
+     * 
+     * @return Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR metadata or to provide
+     *         missing metadata. These values vary depending on the input video and must be provided by a color grader.
+     *         Range is 0 to 50,000; each increment represents 0.00002 in CIE1931 color coordinate. Note that these
+     *         settings are not color correction. Note that if you are creating HDR outputs inside of an HLS CMAF
+     *         package, to comply with the Apple specification, you must use the following settings. Set
+     *         "MP4 packaging type" (writeMp4PackagingType) to HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile)
+     *         to Main10/High (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
      */
 
     public Hdr10Metadata getHdr10Metadata() {
@@ -140,7 +299,22 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR metadata or to provide missing
+     * metadata. These values vary depending on the input video and must be provided by a color grader. Range is 0 to
+     * 50,000; each increment represents 0.00002 in CIE1931 color coordinate. Note that these settings are not color
+     * correction. Note that if you are creating HDR outputs inside of an HLS CMAF package, to comply with the Apple
+     * specification, you must use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to HVC1
+     * (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High (MAIN10_HIGH). Set "Level" (H265Settings >
+     * codecLevel) to 5 (LEVEL_5).
+     * 
      * @param hdr10Metadata
+     *        Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR metadata or to provide
+     *        missing metadata. These values vary depending on the input video and must be provided by a color grader.
+     *        Range is 0 to 50,000; each increment represents 0.00002 in CIE1931 color coordinate. Note that these
+     *        settings are not color correction. Note that if you are creating HDR outputs inside of an HLS CMAF
+     *        package, to comply with the Apple specification, you must use the following settings. Set
+     *        "MP4 packaging type" (writeMp4PackagingType) to HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile)
+     *        to Main10/High (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,7 +410,107 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or
+     * specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video
+     * container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service
+     * rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of
+     * 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no
+     * rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service
+     * doesn't pass through rotation metadata.
+     * 
+     * @param rotate
+     *        Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation
+     *        or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input
+     *        video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the
+     *        service rotate your video according to the rotation specified in the metadata. The rotation must be within
+     *        one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service
+     *        will default to no rotation. By default, the service does no rotation, even if your input video has
+     *        rotation metadata. The service doesn't pass through rotation metadata.
+     * @see InputRotate
+     */
+
+    public void setRotate(String rotate) {
+        this.rotate = rotate;
+    }
+
+    /**
+     * Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or
+     * specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video
+     * container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service
+     * rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of
+     * 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no
+     * rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service
+     * doesn't pass through rotation metadata.
+     * 
+     * @return Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation
+     *         or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input
+     *         video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have
+     *         the service rotate your video according to the rotation specified in the metadata. The rotation must be
+     *         within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the
+     *         service will default to no rotation. By default, the service does no rotation, even if your input video
+     *         has rotation metadata. The service doesn't pass through rotation metadata.
+     * @see InputRotate
+     */
+
+    public String getRotate() {
+        return this.rotate;
+    }
+
+    /**
+     * Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or
+     * specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video
+     * container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service
+     * rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of
+     * 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no
+     * rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service
+     * doesn't pass through rotation metadata.
+     * 
+     * @param rotate
+     *        Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation
+     *        or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input
+     *        video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the
+     *        service rotate your video according to the rotation specified in the metadata. The rotation must be within
+     *        one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service
+     *        will default to no rotation. By default, the service does no rotation, even if your input video has
+     *        rotation metadata. The service doesn't pass through rotation metadata.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputRotate
+     */
+
+    public VideoSelector withRotate(String rotate) {
+        setRotate(rotate);
+        return this;
+    }
+
+    /**
+     * Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or
+     * specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video
+     * container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service
+     * rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of
+     * 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no
+     * rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service
+     * doesn't pass through rotation metadata.
+     * 
+     * @param rotate
+     *        Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation
+     *        or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input
+     *        video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the
+     *        service rotate your video according to the rotation specified in the metadata. The rotation must be within
+     *        one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service
+     *        will default to no rotation. By default, the service does no rotation, even if your input video has
+     *        rotation metadata. The service doesn't pass through rotation metadata.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputRotate
+     */
+
+    public VideoSelector withRotate(InputRotate rotate) {
+        this.rotate = rotate.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -255,7 +529,9 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
         if (getPid() != null)
             sb.append("Pid: ").append(getPid()).append(",");
         if (getProgramNumber() != null)
-            sb.append("ProgramNumber: ").append(getProgramNumber());
+            sb.append("ProgramNumber: ").append(getProgramNumber()).append(",");
+        if (getRotate() != null)
+            sb.append("Rotate: ").append(getRotate());
         sb.append("}");
         return sb.toString();
     }
@@ -290,6 +566,10 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProgramNumber() != null && other.getProgramNumber().equals(this.getProgramNumber()) == false)
             return false;
+        if (other.getRotate() == null ^ this.getRotate() == null)
+            return false;
+        if (other.getRotate() != null && other.getRotate().equals(this.getRotate()) == false)
+            return false;
         return true;
     }
 
@@ -303,6 +583,7 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getHdr10Metadata() == null) ? 0 : getHdr10Metadata().hashCode());
         hashCode = prime * hashCode + ((getPid() == null) ? 0 : getPid().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
+        hashCode = prime * hashCode + ((getRotate() == null) ? 0 : getRotate().hashCode());
         return hashCode;
     }
 

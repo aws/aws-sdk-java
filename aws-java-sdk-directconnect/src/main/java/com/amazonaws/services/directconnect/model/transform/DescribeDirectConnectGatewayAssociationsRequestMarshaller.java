@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeDirectConnectGatewayAssociationsRequestMarshaller {
 
+    private static final MarshallingInfo<String> ASSOCIATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associationId").build();
+    private static final MarshallingInfo<String> ASSOCIATEDGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associatedGatewayId").build();
     private static final MarshallingInfo<String> DIRECTCONNECTGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("directConnectGatewayId").build();
-    private static final MarshallingInfo<String> VIRTUALGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualGatewayId").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<String> VIRTUALGATEWAYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualGatewayId").build();
 
     private static final DescribeDirectConnectGatewayAssociationsRequestMarshaller instance = new DescribeDirectConnectGatewayAssociationsRequestMarshaller();
 
@@ -52,10 +56,12 @@ public class DescribeDirectConnectGatewayAssociationsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(describeDirectConnectGatewayAssociationsRequest.getAssociationId(), ASSOCIATIONID_BINDING);
+            protocolMarshaller.marshall(describeDirectConnectGatewayAssociationsRequest.getAssociatedGatewayId(), ASSOCIATEDGATEWAYID_BINDING);
             protocolMarshaller.marshall(describeDirectConnectGatewayAssociationsRequest.getDirectConnectGatewayId(), DIRECTCONNECTGATEWAYID_BINDING);
-            protocolMarshaller.marshall(describeDirectConnectGatewayAssociationsRequest.getVirtualGatewayId(), VIRTUALGATEWAYID_BINDING);
             protocolMarshaller.marshall(describeDirectConnectGatewayAssociationsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(describeDirectConnectGatewayAssociationsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeDirectConnectGatewayAssociationsRequest.getVirtualGatewayId(), VIRTUALGATEWAYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

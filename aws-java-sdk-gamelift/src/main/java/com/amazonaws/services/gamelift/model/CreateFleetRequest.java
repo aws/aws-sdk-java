@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,7 +69,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * This parameter is no longer used. Instead, to specify where Amazon GameLift should store log files once a server
      * process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one or more
      * directory paths in <code>logParameters</code>. See more information in the <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      * >Server API Reference</a>.
      * </p>
      */
@@ -135,8 +135,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
     /**
      * <p>
-     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
+     * fleets in the group. Specify an existing metric group name, or provide a new name to create a new metric group. A
      * fleet can only be included in one metric group at a time.
      * </p>
      */
@@ -151,8 +151,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual Private Cloud
-     * service tools, including the VPC Dashboard in the AWS Management Console.
+     * same region where your fleet is deployed. Look up a VPC ID using the <a
+     * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
+     * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
+     * Amazon GameLift Fleets</a>.
      * </p>
      */
     private String peerVpcId;
@@ -163,11 +165,22 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
      * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
      * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
-     * Resources</a>.
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
+     * Access to External Services</a>.
      * </p>
      */
     private String fleetType;
+    /**
+     * <p>
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
+     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * external resources from a game server</a>.
+     * </p>
+     */
+    private String instanceRoleArn;
 
     /**
      * <p>
@@ -410,14 +423,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * This parameter is no longer used. Instead, to specify where Amazon GameLift should store log files once a server
      * process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one or more
      * directory paths in <code>logParameters</code>. See more information in the <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      * >Server API Reference</a>.
      * </p>
      * 
      * @return This parameter is no longer used. Instead, to specify where Amazon GameLift should store log files once a
      *         server process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one
      *         or more directory paths in <code>logParameters</code>. See more information in the <a href=
-     *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      *         >Server API Reference</a>.
      */
 
@@ -430,7 +443,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * This parameter is no longer used. Instead, to specify where Amazon GameLift should store log files once a server
      * process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one or more
      * directory paths in <code>logParameters</code>. See more information in the <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      * >Server API Reference</a>.
      * </p>
      * 
@@ -438,7 +451,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        This parameter is no longer used. Instead, to specify where Amazon GameLift should store log files once a
      *        server process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one
      *        or more directory paths in <code>logParameters</code>. See more information in the <a href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      *        >Server API Reference</a>.
      */
 
@@ -456,7 +469,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * This parameter is no longer used. Instead, to specify where Amazon GameLift should store log files once a server
      * process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one or more
      * directory paths in <code>logParameters</code>. See more information in the <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      * >Server API Reference</a>.
      * </p>
      * <p>
@@ -469,7 +482,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        This parameter is no longer used. Instead, to specify where Amazon GameLift should store log files once a
      *        server process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one
      *        or more directory paths in <code>logParameters</code>. See more information in the <a href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      *        >Server API Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -489,7 +502,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * This parameter is no longer used. Instead, to specify where Amazon GameLift should store log files once a server
      * process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one or more
      * directory paths in <code>logParameters</code>. See more information in the <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      * >Server API Reference</a>.
      * </p>
      * 
@@ -497,7 +510,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        This parameter is no longer used. Instead, to specify where Amazon GameLift should store log files once a
      *        server process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one
      *        or more directory paths in <code>logParameters</code>. See more information in the <a href=
-     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
      *        >Server API Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1058,14 +1071,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
+     * fleets in the group. Specify an existing metric group name, or provide a new name to create a new metric group. A
      * fleet can only be included in one metric group at a time.
      * </p>
      * 
-     * @return Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the
-     *         group. Use an existing metric group name to add this fleet to the group, or use a new name to create a
-     *         new metric group. A fleet can only be included in one metric group at a time.
+     * @return Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for
+     *         all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
+     *         metric group. A fleet can only be included in one metric group at a time.
      */
 
     public java.util.List<String> getMetricGroups() {
@@ -1074,15 +1087,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
+     * fleets in the group. Specify an existing metric group name, or provide a new name to create a new metric group. A
      * fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
-     *        Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group.
-     *        Use an existing metric group name to add this fleet to the group, or use a new name to create a new metric
-     *        group. A fleet can only be included in one metric group at a time.
+     *        Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for
+     *        all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
+     *        metric group. A fleet can only be included in one metric group at a time.
      */
 
     public void setMetricGroups(java.util.Collection<String> metricGroups) {
@@ -1096,8 +1109,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
+     * fleets in the group. Specify an existing metric group name, or provide a new name to create a new metric group. A
      * fleet can only be included in one metric group at a time.
      * </p>
      * <p>
@@ -1107,9 +1120,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param metricGroups
-     *        Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group.
-     *        Use an existing metric group name to add this fleet to the group, or use a new name to create a new metric
-     *        group. A fleet can only be included in one metric group at a time.
+     *        Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for
+     *        all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
+     *        metric group. A fleet can only be included in one metric group at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1125,15 +1138,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
-     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for all
+     * fleets in the group. Specify an existing metric group name, or provide a new name to create a new metric group. A
      * fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
-     *        Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group.
-     *        Use an existing metric group name to add this fleet to the group, or use a new name to create a new metric
-     *        group. A fleet can only be included in one metric group at a time.
+     *        Name of an Amazon CloudWatch metric group to add this fleet to. A metric group aggregates the metrics for
+     *        all fleets in the group. Specify an existing metric group name, or provide a new name to create a new
+     *        metric group. A fleet can only be included in one metric group at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1191,14 +1204,19 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual Private Cloud
-     * service tools, including the VPC Dashboard in the AWS Management Console.
+     * same region where your fleet is deployed. Look up a VPC ID using the <a
+     * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
+     * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
+     * Amazon GameLift Fleets</a>.
      * </p>
      * 
      * @param peerVpcId
      *        Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
-     *        in the same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual
-     *        Private Cloud service tools, including the VPC Dashboard in the AWS Management Console.
+     *        in the same region where your fleet is deployed. Look up a VPC ID using the <a
+     *        href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more
+     *        about VPC peering in <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
+     *        GameLift Fleets</a>.
      */
 
     public void setPeerVpcId(String peerVpcId) {
@@ -1208,13 +1226,18 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual Private Cloud
-     * service tools, including the VPC Dashboard in the AWS Management Console.
+     * same region where your fleet is deployed. Look up a VPC ID using the <a
+     * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
+     * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
+     * Amazon GameLift Fleets</a>.
      * </p>
      * 
      * @return Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
-     *         in the same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual
-     *         Private Cloud service tools, including the VPC Dashboard in the AWS Management Console.
+     *         in the same region where your fleet is deployed. Look up a VPC ID using the <a
+     *         href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more
+     *         about VPC peering in <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
+     *         Amazon GameLift Fleets</a>.
      */
 
     public String getPeerVpcId() {
@@ -1224,14 +1247,19 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
-     * same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual Private Cloud
-     * service tools, including the VPC Dashboard in the AWS Management Console.
+     * same region where your fleet is deployed. Look up a VPC ID using the <a
+     * href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more about VPC
+     * peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with
+     * Amazon GameLift Fleets</a>.
      * </p>
      * 
      * @param peerVpcId
      *        Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
-     *        in the same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual
-     *        Private Cloud service tools, including the VPC Dashboard in the AWS Management Console.
+     *        in the same region where your fleet is deployed. Look up a VPC ID using the <a
+     *        href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the AWS Management Console. Learn more
+     *        about VPC peering in <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
+     *        GameLift Fleets</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1247,8 +1275,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
      * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
      * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
-     * Resources</a>.
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
+     * Access to External Services</a>.
      * </p>
      * 
      * @param fleetType
@@ -1258,8 +1286,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
      *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
      *        instances with at <a
-     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose
-     *        Computing Resources</a>.
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
+     *        Set up Access to External Services</a>.
      * @see FleetType
      */
 
@@ -1274,8 +1302,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
      * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
      * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
-     * Resources</a>.
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
+     * Access to External Services</a>.
      * </p>
      * 
      * @return Indicates whether to use on-demand instances or spot instances for this fleet. If empty, the default is
@@ -1284,8 +1312,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
      *         in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
      *         instances with at <a
-     *         href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose
-     *         Computing Resources</a>.
+     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
+     *         Set up Access to External Services</a>.
      * @see FleetType
      */
 
@@ -1300,8 +1328,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
      * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
      * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
-     * Resources</a>.
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
+     * Access to External Services</a>.
      * </p>
      * 
      * @param fleetType
@@ -1311,8 +1339,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
      *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
      *        instances with at <a
-     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose
-     *        Computing Resources</a>.
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
+     *        Set up Access to External Services</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -1329,8 +1357,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
      * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
      * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
-     * Resources</a>.
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
+     * Access to External Services</a>.
      * </p>
      * 
      * @param fleetType
@@ -1340,8 +1368,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
      *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
      *        instances with at <a
-     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose
-     *        Computing Resources</a>.
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
+     *        Set up Access to External Services</a>.
      * @see FleetType
      */
 
@@ -1356,8 +1384,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * selected for this fleet. You can acquire on-demand instances at any time for a fixed price and keep them as long
      * as you need them. Spot instances have lower prices, but spot pricing is variable, and while in use they can be
      * interrupted (with a two-minute notification). Learn more about Amazon GameLift spot instances with at <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose Computing
-     * Resources</a>.
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html"> Set up
+     * Access to External Services</a>.
      * </p>
      * 
      * @param fleetType
@@ -1367,8 +1395,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        them as long as you need them. Spot instances have lower prices, but spot pricing is variable, and while
      *        in use they can be interrupted (with a two-minute notification). Learn more about Amazon GameLift spot
      *        instances with at <a
-     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html"> Choose
-     *        Computing Resources</a>.
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
+     *        Set up Access to External Services</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -1379,7 +1407,81 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
+     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * external resources from a game server</a>.
+     * </p>
+     * 
+     * @param instanceRoleArn
+     *        Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
+     *        on an instance in this fleet can assume the role, including install scripts, server processs, daemons
+     *        (background processes). Create a role or look up a role's ARN using the <a
+     *        href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
+     *        about using on-box credentials for your game servers at <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Access external resources from a game server</a>.
+     */
+
+    public void setInstanceRoleArn(String instanceRoleArn) {
+        this.instanceRoleArn = instanceRoleArn;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
+     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * external resources from a game server</a>.
+     * </p>
+     * 
+     * @return Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
+     *         on an instance in this fleet can assume the role, including install scripts, server processs, daemons
+     *         (background processes). Create a role or look up a role's ARN using the <a
+     *         href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
+     *         about using on-box credentials for your game servers at <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *         Access external resources from a game server</a>.
+     */
+
+    public String getInstanceRoleArn() {
+        return this.instanceRoleArn;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
+     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
+     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * external resources from a game server</a>.
+     * </p>
+     * 
+     * @param instanceRoleArn
+     *        Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
+     *        on an instance in this fleet can assume the role, including install scripts, server processs, daemons
+     *        (background processes). Create a role or look up a role's ARN using the <a
+     *        href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
+     *        about using on-box credentials for your game servers at <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     *        Access external resources from a game server</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withInstanceRoleArn(String instanceRoleArn) {
+        setInstanceRoleArn(instanceRoleArn);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1418,7 +1520,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getPeerVpcId() != null)
             sb.append("PeerVpcId: ").append(getPeerVpcId()).append(",");
         if (getFleetType() != null)
-            sb.append("FleetType: ").append(getFleetType());
+            sb.append("FleetType: ").append(getFleetType()).append(",");
+        if (getInstanceRoleArn() != null)
+            sb.append("InstanceRoleArn: ").append(getInstanceRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1494,6 +1598,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getFleetType() != null && other.getFleetType().equals(this.getFleetType()) == false)
             return false;
+        if (other.getInstanceRoleArn() == null ^ this.getInstanceRoleArn() == null)
+            return false;
+        if (other.getInstanceRoleArn() != null && other.getInstanceRoleArn().equals(this.getInstanceRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -1517,6 +1625,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getPeerVpcAwsAccountId() == null) ? 0 : getPeerVpcAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getPeerVpcId() == null) ? 0 : getPeerVpcId().hashCode());
         hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
+        hashCode = prime * hashCode + ((getInstanceRoleArn() == null) ? 0 : getInstanceRoleArn().hashCode());
         return hashCode;
     }
 

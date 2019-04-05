@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class InventoryDeletionStatusItemMarshaller {
     private static final MarshallingInfo<String> TYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TypeName").build();
     private static final MarshallingInfo<java.util.Date> DELETIONSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletionStartTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletionStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LASTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastStatus").build();
     private static final MarshallingInfo<String> LASTSTATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -40,7 +40,7 @@ public class InventoryDeletionStatusItemMarshaller {
     private static final MarshallingInfo<StructuredPojo> DELETIONSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletionSummary").build();
     private static final MarshallingInfo<java.util.Date> LASTSTATUSUPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastStatusUpdateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastStatusUpdateTime").timestampFormat("unixTimestamp").build();
 
     private static final InventoryDeletionStatusItemMarshaller instance = new InventoryDeletionStatusItemMarshaller();
 

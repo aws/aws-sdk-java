@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -105,8 +105,8 @@ public class EventSubscription implements Serializable, Cloneable {
     private String severity;
     /**
      * <p>
-     * A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the subscription is
-     * enabled.
+     * A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription
+     * is enabled.
      * </p>
      */
     private Boolean enabled;
@@ -682,12 +682,12 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the subscription is
-     * enabled.
+     * A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription
+     * is enabled.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the
+     *        A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the
      *        subscription is enabled.
      */
 
@@ -697,11 +697,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the subscription is
-     * enabled.
+     * A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription
+     * is enabled.
      * </p>
      * 
-     * @return A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the
+     * @return A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the
      *         subscription is enabled.
      */
 
@@ -711,12 +711,12 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the subscription is
-     * enabled.
+     * A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription
+     * is enabled.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the
+     *        A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the
      *        subscription is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -728,11 +728,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the subscription is
-     * enabled.
+     * A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription
+     * is enabled.
      * </p>
      * 
-     * @return A Boolean value indicating whether the subscription is enabled. <code>true</code> indicates the
+     * @return A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the
      *         subscription is enabled.
      */
 
@@ -814,7 +814,8 @@ public class EventSubscription implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

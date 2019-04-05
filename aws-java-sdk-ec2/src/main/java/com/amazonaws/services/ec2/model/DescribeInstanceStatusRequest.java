@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeInstanceStatusRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeInstanceStatus.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -52,6 +50,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -64,9 +67,15 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high byte
-     * is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid
-     * values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * is used for internal purposes and should be ignored. The low byte is set based on the state represented. The
+     * valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
      * <li>
@@ -164,6 +173,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -176,9 +190,15 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high byte
-     * is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid
-     * values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * is used for internal purposes and should be ignored. The low byte is set based on the state represented. The
+     * valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
      * <li>
@@ -235,6 +255,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         </li>
      *         <li>
      *         <p>
+     *         <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *         <code>2014-09-15T17:15:20.000Z</code>).
      *         </p>
@@ -247,8 +272,14 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *         </li>
      *         <li>
      *         <p>
+     *         <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     *         <code>2014-09-15T17:15:20.000Z</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The
-     *         high byte is an opaque internal value and should be ignored. The low byte is set based on the state
+     *         high byte is used for internal purposes and should be ignored. The low byte is set based on the state
      *         represented. The valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
      *         (stopping), and 80 (stopped).
      *         </p>
@@ -319,6 +350,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -331,9 +367,15 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high byte
-     * is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid
-     * values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * is used for internal purposes and should be ignored. The low byte is set based on the state represented. The
+     * valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
      * <li>
@@ -391,6 +433,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
@@ -403,8 +450,14 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     *        <code>2014-09-15T17:15:20.000Z</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high
-     *        byte is an opaque internal value and should be ignored. The low byte is set based on the state
+     *        byte is used for internal purposes and should be ignored. The low byte is set based on the state
      *        represented. The valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
      *        (stopping), and 80 (stopped).
      *        </p>
@@ -477,6 +530,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -489,9 +547,15 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high byte
-     * is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid
-     * values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * is used for internal purposes and should be ignored. The low byte is set based on the state represented. The
+     * valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
      * <li>
@@ -554,6 +618,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
@@ -566,8 +635,14 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     *        <code>2014-09-15T17:15:20.000Z</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high
-     *        byte is an opaque internal value and should be ignored. The low byte is set based on the state
+     *        byte is used for internal purposes and should be ignored. The low byte is set based on the state
      *        represented. The valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
      *        (stopping), and 80 (stopped).
      *        </p>
@@ -642,6 +717,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      * <code>2014-09-15T17:15:20.000Z</code>).
      * </p>
@@ -654,9 +734,15 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      * </li>
      * <li>
      * <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high byte
-     * is an opaque internal value and should be ignored. The low byte is set based on the state represented. The valid
-     * values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
+     * is used for internal purposes and should be ignored. The low byte is set based on the state represented. The
+     * valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64 (stopping), and 80 (stopped).
      * </p>
      * </li>
      * <li>
@@ -714,6 +800,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.instance-event-id</code> - The ID of the event whose date and time you are modifying.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>event.not-after</code> - The latest end time for the scheduled event (for example,
      *        <code>2014-09-15T17:15:20.000Z</code>).
      *        </p>
@@ -726,8 +817,14 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
      *        </li>
      *        <li>
      *        <p>
+     *        <code>event.not-before-deadline</code> - The deadline for starting the event (for example,
+     *        <code>2014-09-15T17:15:20.000Z</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>instance-state-code</code> - The code for the instance state, as a 16-bit unsigned integer. The high
-     *        byte is an opaque internal value and should be ignored. The low byte is set based on the state
+     *        byte is used for internal purposes and should be ignored. The low byte is set based on the state
      *        represented. The valid values are 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
      *        (stopping), and 80 (stopped).
      *        </p>
@@ -1074,7 +1171,8 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

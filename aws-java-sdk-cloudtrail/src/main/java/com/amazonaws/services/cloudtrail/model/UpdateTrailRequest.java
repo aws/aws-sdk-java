@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,7 +65,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If <code>Name</code> is a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     private String name;
@@ -154,12 +154,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -170,6 +170,17 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the
+     * current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account
+     * that is the master account for an organization in AWS Organizations. If the trail is not an organization trail
+     * and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the
+     * trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be
+     * deleted from all member accounts in the organization.
+     * </p>
+     */
+    private Boolean isOrganizationTrail;
 
     /**
      * <p>
@@ -208,7 +219,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If <code>Name</code> is a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param name
@@ -246,7 +257,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        If <code>Name</code> is a trail ARN, it must be in the format:
      *        </p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public void setName(String name) {
@@ -290,7 +301,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If <code>Name</code> is a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @return Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet
@@ -327,7 +338,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         If <code>Name</code> is a trail ARN, it must be in the format:
      *         </p>
      *         <p>
-     *         <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      */
 
     public String getName() {
@@ -371,7 +382,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If <code>Name</code> is a trail ARN, it must be in the format:
      * </p>
      * <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      * 
      * @param name
@@ -409,7 +420,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        If <code>Name</code> is a trail ARN, it must be in the format:
      *        </p>
      *        <p>
-     *        <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -936,12 +947,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -966,12 +977,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>
@@ -1002,12 +1013,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -1031,12 +1042,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *         arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *         arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      *         </p>
      *         </li>
      *         <li>
@@ -1067,12 +1078,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     * arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      * </p>
      * </li>
      * <li>
      * <p>
-     * arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     * arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      * </p>
      * </li>
      * <li>
@@ -1097,12 +1108,12 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
+     *        arn:aws:kms:us-east-2:123456789012:alias/MyAliasName
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+     *        arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012
      *        </p>
      *        </li>
      *        <li>
@@ -1119,7 +1130,100 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the
+     * current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account
+     * that is the master account for an organization in AWS Organizations. If the trail is not an organization trail
+     * and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the
+     * trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be
+     * deleted from all member accounts in the organization.
+     * </p>
+     * 
+     * @param isOrganizationTrail
+     *        Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only
+     *        for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of
+     *        an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an
+     *        organization trail and this is set to true, the trail will be created in all AWS accounts that belong to
+     *        the organization. If the trail is an organization trail and this is set to false, the trail will remain in
+     *        the current AWS account but be deleted from all member accounts in the organization.
+     */
+
+    public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
+        this.isOrganizationTrail = isOrganizationTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the
+     * current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account
+     * that is the master account for an organization in AWS Organizations. If the trail is not an organization trail
+     * and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the
+     * trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be
+     * deleted from all member accounts in the organization.
+     * </p>
+     * 
+     * @return Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only
+     *         for the current AWS account. The default is false, and cannot be true unless the call is made on behalf
+     *         of an AWS account that is the master account for an organization in AWS Organizations. If the trail is
+     *         not an organization trail and this is set to true, the trail will be created in all AWS accounts that
+     *         belong to the organization. If the trail is an organization trail and this is set to false, the trail
+     *         will remain in the current AWS account but be deleted from all member accounts in the organization.
+     */
+
+    public Boolean getIsOrganizationTrail() {
+        return this.isOrganizationTrail;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the
+     * current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account
+     * that is the master account for an organization in AWS Organizations. If the trail is not an organization trail
+     * and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the
+     * trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be
+     * deleted from all member accounts in the organization.
+     * </p>
+     * 
+     * @param isOrganizationTrail
+     *        Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only
+     *        for the current AWS account. The default is false, and cannot be true unless the call is made on behalf of
+     *        an AWS account that is the master account for an organization in AWS Organizations. If the trail is not an
+     *        organization trail and this is set to true, the trail will be created in all AWS accounts that belong to
+     *        the organization. If the trail is an organization trail and this is set to false, the trail will remain in
+     *        the current AWS account but be deleted from all member accounts in the organization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTrailRequest withIsOrganizationTrail(Boolean isOrganizationTrail) {
+        setIsOrganizationTrail(isOrganizationTrail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the
+     * current AWS account. The default is false, and cannot be true unless the call is made on behalf of an AWS account
+     * that is the master account for an organization in AWS Organizations. If the trail is not an organization trail
+     * and this is set to true, the trail will be created in all AWS accounts that belong to the organization. If the
+     * trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be
+     * deleted from all member accounts in the organization.
+     * </p>
+     * 
+     * @return Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only
+     *         for the current AWS account. The default is false, and cannot be true unless the call is made on behalf
+     *         of an AWS account that is the master account for an organization in AWS Organizations. If the trail is
+     *         not an organization trail and this is set to true, the trail will be created in all AWS accounts that
+     *         belong to the organization. If the trail is an organization trail and this is set to false, the trail
+     *         will remain in the current AWS account but be deleted from all member accounts in the organization.
+     */
+
+    public Boolean isOrganizationTrail() {
+        return this.isOrganizationTrail;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1148,7 +1252,9 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getCloudWatchLogsRoleArn() != null)
             sb.append("CloudWatchLogsRoleArn: ").append(getCloudWatchLogsRoleArn()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getIsOrganizationTrail() != null)
+            sb.append("IsOrganizationTrail: ").append(getIsOrganizationTrail());
         sb.append("}");
         return sb.toString();
     }
@@ -1203,6 +1309,10 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getIsOrganizationTrail() == null ^ this.getIsOrganizationTrail() == null)
+            return false;
+        if (other.getIsOrganizationTrail() != null && other.getIsOrganizationTrail().equals(this.getIsOrganizationTrail()) == false)
+            return false;
         return true;
     }
 
@@ -1221,6 +1331,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getCloudWatchLogsLogGroupArn() == null) ? 0 : getCloudWatchLogsLogGroupArn().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLogsRoleArn() == null) ? 0 : getCloudWatchLogsRoleArn().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getIsOrganizationTrail() == null) ? 0 : getIsOrganizationTrail().hashCode());
         return hashCode;
     }
 

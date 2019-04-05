@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -895,7 +895,8 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -914,15 +915,15 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getNameservers() != null)
             sb.append("Nameservers: ").append(getNameservers()).append(",");
         if (getAuthCode() != null)
-            sb.append("AuthCode: ").append(getAuthCode()).append(",");
+            sb.append("AuthCode: ").append("***Sensitive Data Redacted***").append(",");
         if (getAutoRenew() != null)
             sb.append("AutoRenew: ").append(getAutoRenew()).append(",");
         if (getAdminContact() != null)
-            sb.append("AdminContact: ").append(getAdminContact()).append(",");
+            sb.append("AdminContact: ").append("***Sensitive Data Redacted***").append(",");
         if (getRegistrantContact() != null)
-            sb.append("RegistrantContact: ").append(getRegistrantContact()).append(",");
+            sb.append("RegistrantContact: ").append("***Sensitive Data Redacted***").append(",");
         if (getTechContact() != null)
-            sb.append("TechContact: ").append(getTechContact()).append(",");
+            sb.append("TechContact: ").append("***Sensitive Data Redacted***").append(",");
         if (getPrivacyProtectAdminContact() != null)
             sb.append("PrivacyProtectAdminContact: ").append(getPrivacyProtectAdminContact()).append(",");
         if (getPrivacyProtectRegistrantContact() != null)

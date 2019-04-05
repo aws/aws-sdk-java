@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,19 +71,21 @@ public class PutAttributesRequestMarshaller implements Marshaller<Request<PutAtt
             }
         }
 
-        UpdateCondition expected = putAttributesRequest.getExpected();
-        if (expected != null) {
+        {
+            UpdateCondition expected = putAttributesRequest.getExpected();
+            if (expected != null) {
 
-            if (expected.getName() != null) {
-                request.addParameter("Expected.Name", StringUtils.fromString(expected.getName()));
-            }
+                if (expected.getName() != null) {
+                    request.addParameter("Expected.Name", StringUtils.fromString(expected.getName()));
+                }
 
-            if (expected.getValue() != null) {
-                request.addParameter("Expected.Value", StringUtils.fromString(expected.getValue()));
-            }
+                if (expected.getValue() != null) {
+                    request.addParameter("Expected.Value", StringUtils.fromString(expected.getValue()));
+                }
 
-            if (expected.getExists() != null) {
-                request.addParameter("Expected.Exists", StringUtils.fromBoolean(expected.getExists()));
+                if (expected.getExists() != null) {
+                    request.addParameter("Expected.Exists", StringUtils.fromBoolean(expected.getExists()));
+                }
             }
         }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The container instance ID or full ARN of the container instance to deregister. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the
      * container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For
      * example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
@@ -107,7 +107,7 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The container instance ID or full ARN of the container instance to deregister. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the
      * container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For
      * example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
@@ -115,7 +115,7 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * 
      * @param containerInstance
      *        The container instance ID or full ARN of the container instance to deregister. The ARN contains the
-     *        <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID
+     *        <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID
      *        of the container instance owner, the <code>container-instance</code> namespace, and then the container
      *        instance ID. For example,
      *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
@@ -129,14 +129,14 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The container instance ID or full ARN of the container instance to deregister. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the
      * container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For
      * example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
      * </p>
      * 
      * @return The container instance ID or full ARN of the container instance to deregister. The ARN contains the
-     *         <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID
+     *         <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID
      *         of the container instance owner, the <code>container-instance</code> namespace, and then the container
      *         instance ID. For example,
      *         <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
@@ -150,7 +150,7 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
     /**
      * <p>
      * The container instance ID or full ARN of the container instance to deregister. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID of the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID of the
      * container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For
      * example,
      * <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>.
@@ -158,7 +158,7 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
      * 
      * @param containerInstance
      *        The container instance ID or full ARN of the container instance to deregister. The ARN contains the
-     *        <code>arn:aws:ecs</code> namespace, followed by the region of the container instance, the AWS account ID
+     *        <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the AWS account ID
      *        of the container instance owner, the <code>container-instance</code> namespace, and then the container
      *        instance ID. For example,
      *        <code>arn:aws:ecs:<i>region</i>:<i>aws_account_id</i>:container-instance/<i>container_instance_ID</i> </code>
@@ -296,7 +296,8 @@ public class DeregisterContainerInstanceRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

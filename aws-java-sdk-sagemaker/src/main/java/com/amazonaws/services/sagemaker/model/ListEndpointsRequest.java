@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String sortBy;
     /**
      * <p>
-     * The sort order for results. The default is <code>Ascending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      */
     private String sortOrder;
@@ -148,11 +148,11 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The sort order for results. The default is <code>Ascending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for results. The default is <code>Ascending</code>.
+     *        The sort order for results. The default is <code>Descending</code>.
      * @see OrderKey
      */
 
@@ -162,10 +162,10 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The sort order for results. The default is <code>Ascending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
-     * @return The sort order for results. The default is <code>Ascending</code>.
+     * @return The sort order for results. The default is <code>Descending</code>.
      * @see OrderKey
      */
 
@@ -175,11 +175,11 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The sort order for results. The default is <code>Ascending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for results. The default is <code>Ascending</code>.
+     *        The sort order for results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderKey
      */
@@ -191,11 +191,11 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The sort order for results. The default is <code>Ascending</code>.
+     * The sort order for results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for results. The default is <code>Ascending</code>.
+     *        The sort order for results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrderKey
      */
@@ -551,7 +551,8 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

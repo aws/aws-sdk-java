@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,33 +15,7 @@ package com.amazonaws.services.directconnect.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * State of the direct connect gateway association.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <b>Associating</b>: The initial state after calling <a>CreateDirectConnectGatewayAssociation</a>.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Associated</b>: The direct connect gateway and virtual private gateway are successfully associated and ready to
- * pass traffic.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Disassociating</b>: The initial state after calling <a>DeleteDirectConnectGatewayAssociation</a>.
- * </p>
- * </li>
- * <li>
- * <p>
- * <b>Disassociated</b>: The virtual private gateway is successfully disassociated from the direct connect gateway.
- * Traffic flow between the direct connect gateway and virtual private gateway stops.
- * </p>
- * </li>
- * </ul>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DirectConnectGatewayAssociationState {
@@ -49,7 +23,8 @@ public enum DirectConnectGatewayAssociationState {
     Associating("associating"),
     Associated("associated"),
     Disassociating("disassociating"),
-    Disassociated("disassociated");
+    Disassociated("disassociated"),
+    Updating("updating");
 
     private String value;
 

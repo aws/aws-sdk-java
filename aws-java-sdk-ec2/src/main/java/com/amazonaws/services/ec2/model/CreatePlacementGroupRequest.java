@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreatePlacementGroupRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for CreatePlacementGroup.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreatePlacementGroupRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -30,7 +28,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A name for the placement group. Must be unique within the scope of your account for the region.
+     * A name for the placement group. Must be unique within the scope of your account for the Region.
      * </p>
      * <p>
      * Constraints: Up to 255 ASCII characters
@@ -43,6 +41,12 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      * </p>
      */
     private String strategy;
+    /**
+     * <p>
+     * The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.
+     * </p>
+     */
+    private Integer partitionCount;
 
     /**
      * Default constructor for CreatePlacementGroupRequest object. Callers should use the setter or fluent setter
@@ -56,7 +60,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      * methods to initialize any additional object members.
      * 
      * @param groupName
-     *        A name for the placement group. Must be unique within the scope of your account for the region.</p>
+     *        A name for the placement group. Must be unique within the scope of your account for the Region.</p>
      *        <p>
      *        Constraints: Up to 255 ASCII characters
      * @param strategy
@@ -72,7 +76,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      * methods to initialize any additional object members.
      * 
      * @param groupName
-     *        A name for the placement group. Must be unique within the scope of your account for the region.</p>
+     *        A name for the placement group. Must be unique within the scope of your account for the Region.</p>
      *        <p>
      *        Constraints: Up to 255 ASCII characters
      * @param strategy
@@ -85,14 +89,14 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A name for the placement group. Must be unique within the scope of your account for the region.
+     * A name for the placement group. Must be unique within the scope of your account for the Region.
      * </p>
      * <p>
      * Constraints: Up to 255 ASCII characters
      * </p>
      * 
      * @param groupName
-     *        A name for the placement group. Must be unique within the scope of your account for the region.</p>
+     *        A name for the placement group. Must be unique within the scope of your account for the Region.</p>
      *        <p>
      *        Constraints: Up to 255 ASCII characters
      */
@@ -103,13 +107,13 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A name for the placement group. Must be unique within the scope of your account for the region.
+     * A name for the placement group. Must be unique within the scope of your account for the Region.
      * </p>
      * <p>
      * Constraints: Up to 255 ASCII characters
      * </p>
      * 
-     * @return A name for the placement group. Must be unique within the scope of your account for the region.</p>
+     * @return A name for the placement group. Must be unique within the scope of your account for the Region.</p>
      *         <p>
      *         Constraints: Up to 255 ASCII characters
      */
@@ -120,14 +124,14 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * A name for the placement group. Must be unique within the scope of your account for the region.
+     * A name for the placement group. Must be unique within the scope of your account for the Region.
      * </p>
      * <p>
      * Constraints: Up to 255 ASCII characters
      * </p>
      * 
      * @param groupName
-     *        A name for the placement group. Must be unique within the scope of your account for the region.</p>
+     *        A name for the placement group. Must be unique within the scope of your account for the Region.</p>
      *        <p>
      *        Constraints: Up to 255 ASCII characters
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -212,6 +216,46 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
+     * <p>
+     * The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.
+     * </p>
+     * 
+     * @param partitionCount
+     *        The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.
+     */
+
+    public void setPartitionCount(Integer partitionCount) {
+        this.partitionCount = partitionCount;
+    }
+
+    /**
+     * <p>
+     * The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.
+     * </p>
+     * 
+     * @return The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.
+     */
+
+    public Integer getPartitionCount() {
+        return this.partitionCount;
+    }
+
+    /**
+     * <p>
+     * The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.
+     * </p>
+     * 
+     * @param partitionCount
+     *        The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePlacementGroupRequest withPartitionCount(Integer partitionCount) {
+        setPartitionCount(partitionCount);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -223,7 +267,8 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -236,7 +281,9 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getStrategy() != null)
-            sb.append("Strategy: ").append(getStrategy());
+            sb.append("Strategy: ").append(getStrategy()).append(",");
+        if (getPartitionCount() != null)
+            sb.append("PartitionCount: ").append(getPartitionCount());
         sb.append("}");
         return sb.toString();
     }
@@ -259,6 +306,10 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
             return false;
         if (other.getStrategy() != null && other.getStrategy().equals(this.getStrategy()) == false)
             return false;
+        if (other.getPartitionCount() == null ^ this.getPartitionCount() == null)
+            return false;
+        if (other.getPartitionCount() != null && other.getPartitionCount().equals(this.getPartitionCount()) == false)
+            return false;
         return true;
     }
 
@@ -269,6 +320,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
 
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getStrategy() == null) ? 0 : getStrategy().hashCode());
+        hashCode = prime * hashCode + ((getPartitionCount() == null) ? 0 : getPartitionCount().hashCode());
         return hashCode;
     }
 

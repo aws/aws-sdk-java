@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Thing indexing configuration.
+ * The thing indexing configuration. For more information, see <a
+ * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -32,12 +33,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains registry data only.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      * </p>
      * </li>
      * <li>
@@ -48,6 +49,25 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * </ul>
      */
     private String thingIndexingMode;
+    /**
+     * <p>
+     * Thing connectivity indexing mode. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, thingIndexMode
+     * must not be set to OFF.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OFF - Thing connectivity status indexing is disabled.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String thingConnectivityIndexingMode;
 
     /**
      * <p>
@@ -56,12 +76,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains registry data only.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      * </p>
      * </li>
      * <li>
@@ -72,16 +92,16 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * </ul>
      * 
      * @param thingIndexingMode
-     *        Thing indexing mode. Valid values are: </p>
+     *        Thing indexing mode. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        REGISTRY – Your thing index will contain only registry data.
+     *        REGISTRY – Your thing index contains registry data only.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     *        REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      *        </p>
      *        </li>
      *        <li>
@@ -103,12 +123,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains registry data only.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      * </p>
      * </li>
      * <li>
@@ -118,16 +138,16 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * </li>
      * </ul>
      * 
-     * @return Thing indexing mode. Valid values are: </p>
+     * @return Thing indexing mode. Valid values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         REGISTRY – Your thing index will contain only registry data.
+     *         REGISTRY – Your thing index contains registry data only.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     *         REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      *         </p>
      *         </li>
      *         <li>
@@ -149,12 +169,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains registry data only.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      * </p>
      * </li>
      * <li>
@@ -165,16 +185,16 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * </ul>
      * 
      * @param thingIndexingMode
-     *        Thing indexing mode. Valid values are: </p>
+     *        Thing indexing mode. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        REGISTRY – Your thing index will contain only registry data.
+     *        REGISTRY – Your thing index contains registry data only.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     *        REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      *        </p>
      *        </li>
      *        <li>
@@ -198,12 +218,12 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * <ul>
      * <li>
      * <p>
-     * REGISTRY – Your thing index will contain only registry data.
+     * REGISTRY – Your thing index contains registry data only.
      * </p>
      * </li>
      * <li>
      * <p>
-     * REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     * REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      * </p>
      * </li>
      * <li>
@@ -214,16 +234,16 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
      * </ul>
      * 
      * @param thingIndexingMode
-     *        Thing indexing mode. Valid values are: </p>
+     *        Thing indexing mode. Valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        REGISTRY – Your thing index will contain only registry data.
+     *        REGISTRY – Your thing index contains registry data only.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+     *        REGISTRY_AND_SHADOW - Your thing index contains registry and shadow data.
      *        </p>
      *        </li>
      *        <li>
@@ -241,7 +261,167 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Thing connectivity indexing mode. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, thingIndexMode
+     * must not be set to OFF.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OFF - Thing connectivity status indexing is disabled.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param thingConnectivityIndexingMode
+     *        Thing connectivity indexing mode. Valid values are: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing,
+     *        thingIndexMode must not be set to OFF.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OFF - Thing connectivity status indexing is disabled.
+     *        </p>
+     *        </li>
+     * @see ThingConnectivityIndexingMode
+     */
+
+    public void setThingConnectivityIndexingMode(String thingConnectivityIndexingMode) {
+        this.thingConnectivityIndexingMode = thingConnectivityIndexingMode;
+    }
+
+    /**
+     * <p>
+     * Thing connectivity indexing mode. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, thingIndexMode
+     * must not be set to OFF.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OFF - Thing connectivity status indexing is disabled.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Thing connectivity indexing mode. Valid values are: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing,
+     *         thingIndexMode must not be set to OFF.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OFF - Thing connectivity status indexing is disabled.
+     *         </p>
+     *         </li>
+     * @see ThingConnectivityIndexingMode
+     */
+
+    public String getThingConnectivityIndexingMode() {
+        return this.thingConnectivityIndexingMode;
+    }
+
+    /**
+     * <p>
+     * Thing connectivity indexing mode. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, thingIndexMode
+     * must not be set to OFF.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OFF - Thing connectivity status indexing is disabled.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param thingConnectivityIndexingMode
+     *        Thing connectivity indexing mode. Valid values are: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing,
+     *        thingIndexMode must not be set to OFF.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OFF - Thing connectivity status indexing is disabled.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ThingConnectivityIndexingMode
+     */
+
+    public ThingIndexingConfiguration withThingConnectivityIndexingMode(String thingConnectivityIndexingMode) {
+        setThingConnectivityIndexingMode(thingConnectivityIndexingMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Thing connectivity indexing mode. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing, thingIndexMode
+     * must not be set to OFF.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OFF - Thing connectivity status indexing is disabled.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param thingConnectivityIndexingMode
+     *        Thing connectivity indexing mode. Valid values are: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        STATUS – Your thing index contains connectivity status. To enable thing connectivity indexing,
+     *        thingIndexMode must not be set to OFF.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OFF - Thing connectivity status indexing is disabled.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ThingConnectivityIndexingMode
+     */
+
+    public ThingIndexingConfiguration withThingConnectivityIndexingMode(ThingConnectivityIndexingMode thingConnectivityIndexingMode) {
+        this.thingConnectivityIndexingMode = thingConnectivityIndexingMode.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -252,7 +432,9 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getThingIndexingMode() != null)
-            sb.append("ThingIndexingMode: ").append(getThingIndexingMode());
+            sb.append("ThingIndexingMode: ").append(getThingIndexingMode()).append(",");
+        if (getThingConnectivityIndexingMode() != null)
+            sb.append("ThingConnectivityIndexingMode: ").append(getThingConnectivityIndexingMode());
         sb.append("}");
         return sb.toString();
     }
@@ -271,6 +453,11 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
             return false;
         if (other.getThingIndexingMode() != null && other.getThingIndexingMode().equals(this.getThingIndexingMode()) == false)
             return false;
+        if (other.getThingConnectivityIndexingMode() == null ^ this.getThingConnectivityIndexingMode() == null)
+            return false;
+        if (other.getThingConnectivityIndexingMode() != null
+                && other.getThingConnectivityIndexingMode().equals(this.getThingConnectivityIndexingMode()) == false)
+            return false;
         return true;
     }
 
@@ -280,6 +467,7 @@ public class ThingIndexingConfiguration implements Serializable, Cloneable, Stru
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getThingIndexingMode() == null) ? 0 : getThingIndexingMode().hashCode());
+        hashCode = prime * hashCode + ((getThingConnectivityIndexingMode() == null) ? 0 : getThingConnectivityIndexingMode().hashCode());
         return hashCode;
     }
 

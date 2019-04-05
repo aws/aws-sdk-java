@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FileShareInfoMarshaller {
 
+    private static final MarshallingInfo<String> FILESHARETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareType").build();
     private static final MarshallingInfo<String> FILESHAREARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareARN").build();
     private static final MarshallingInfo<String> FILESHAREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,6 +54,7 @@ public class FileShareInfoMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(fileShareInfo.getFileShareType(), FILESHARETYPE_BINDING);
             protocolMarshaller.marshall(fileShareInfo.getFileShareARN(), FILESHAREARN_BINDING);
             protocolMarshaller.marshall(fileShareInfo.getFileShareId(), FILESHAREID_BINDING);
             protocolMarshaller.marshall(fileShareInfo.getFileShareStatus(), FILESHARESTATUS_BINDING);

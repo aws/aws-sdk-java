@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.stepfunctions.AWSStepFunctionsClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -64,12 +66,13 @@ import com.amazonaws.services.stepfunctions.model.transform.*;
  * Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale.
  * You can run tasks on AWS, your own servers, or any system that has access to AWS. You can access and use Step
  * Functions using the console, the AWS SDKs, or an HTTP API. For more information about Step Functions, see the <i> <a
- * href="http://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
+ * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
  * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AWSStepFunctions {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -79,7 +82,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
     private static final String DEFAULT_SIGNING_NAME = "states";
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
-    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+    protected static final com.amazonaws.services.stepfunctions.AWSStepFunctionsClientConfigurationFactory configFactory = new com.amazonaws.services.stepfunctions.AWSStepFunctionsClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -90,32 +95,17 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("ActivityDoesNotExist").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.ActivityDoesNotExistException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StateMachineLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.StateMachineLimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidToken").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidTokenException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDefinition").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.InvalidDefinitionException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidName").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.InvalidNameException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidOutput").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidOutputException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ActivityLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.ActivityLimitExceededException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("StateMachineAlreadyExists").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.StateMachineAlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ExecutionLimitExceeded").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.ExecutionLimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidExecutionInput").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidExecutionInputException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidArn").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.InvalidArnException.class))
@@ -126,9 +116,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("ActivityWorkerLimitExceeded").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.ActivityWorkerLimitExceededException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TaskDoesNotExist").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.TaskDoesNotExistException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TaskTimedOut").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.TaskTimedOutException.class))
                     .addErrorMetadata(
@@ -138,11 +125,35 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("MissingRequiredParameter").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.MissingRequiredParameterException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StateMachineDoesNotExist").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ExecutionDoesNotExist").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.ExecutionDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("StateMachineLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.StateMachineLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidToken").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.InvalidTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTags").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.TooManyTagsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOutput").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.InvalidOutputException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ActivityLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.ActivityLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidExecutionInput").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.InvalidExecutionInputException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TaskDoesNotExist").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.TaskDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("StateMachineDoesNotExist").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException.class));
 
     /**
@@ -228,6 +239,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
     public AWSStepFunctionsClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -293,6 +305,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -311,8 +324,23 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *        Object providing client parameters.
      */
     AWSStepFunctionsClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS SFN using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSStepFunctionsClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -329,12 +357,18 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Creates an activity. An activity is a task which you write in any programming language and host on any machine
-     * which has access to AWS Step Functions. Activities must poll Step Functions using the
-     * <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets
-     * Step Functions know the existence of your activity and returns an identifier for use in a state machine and when
-     * polling from the activity.
+     * Creates an activity. An activity is a task that you write in any programming language and host on any machine
+     * that has access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code>
+     * API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the
+     * existence of your activity and returns an identifier for use in a state machine and when polling from the
+     * activity.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param createActivityRequest
      * @return Result of the CreateActivity operation returned by the service.
@@ -343,6 +377,10 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *         activity can be created.
      * @throws InvalidNameException
      *         The provided name is invalid.
+     * @throws TooManyTagsException
+     *         You've exceeded the number of tags allowed for a resource. See the <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         Functions Developer Guide.
      * @sample AWSStepFunctions.CreateActivity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity" target="_top">AWS API
      *      Documentation</a>
@@ -369,6 +407,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateActivity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -392,6 +433,12 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured
      * language.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param createStateMachineRequest
      * @return Result of the CreateStateMachine operation returned by the service.
@@ -408,6 +455,10 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws StateMachineLimitExceededException
      *         The maximum number of state machines has been reached. Existing state machines must be deleted before a
      *         new state machine can be created.
+     * @throws TooManyTagsException
+     *         You've exceeded the number of tags allowed for a resource. See the <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         Functions Developer Guide.
      * @sample AWSStepFunctions.CreateStateMachine
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine" target="_top">AWS API
      *      Documentation</a>
@@ -434,6 +485,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStateMachine");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -485,6 +539,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteActivity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -543,6 +600,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStateMachine");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -563,6 +623,12 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * Describes an activity.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeActivityRequest
      * @return Result of the DescribeActivity operation returned by the service.
@@ -596,6 +662,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeActivity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -616,6 +685,12 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * Describes an execution.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeExecutionRequest
      * @return Result of the DescribeExecution operation returned by the service.
@@ -649,6 +724,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -669,6 +747,12 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * Describes a state machine.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeStateMachineRequest
      * @return Result of the DescribeStateMachine operation returned by the service.
@@ -702,6 +786,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStateMachine");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -722,6 +809,12 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * Describes the state machine associated with a specific execution.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param describeStateMachineForExecutionRequest
      * @return Result of the DescribeStateMachineForExecution operation returned by the service.
@@ -757,6 +850,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStateMachineForExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -786,6 +882,11 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than the maximum
      * time the service may hold the poll request).
+     * </p>
+     * <p>
+     * Polling with <code>GetActivityTask</code> can cause latency in some implementations. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling
+     * for Activity Tasks</a> in the Step Functions Developer Guide.
      * </p>
      * </important>
      * 
@@ -823,6 +924,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetActivityTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -846,9 +950,10 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * the latest events first.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * 
      * @param getExecutionHistoryRequest
@@ -885,6 +990,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetExecutionHistory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -906,10 +1014,17 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * Lists the existing activities.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listActivitiesRequest
      * @return Result of the ListActivities operation returned by the service.
@@ -941,6 +1056,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActivities");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -959,13 +1077,21 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the executions of a state machine that meet the filtering criteria.
+     * Lists the executions of a state machine that meet the filtering criteria. Results are sorted by time, with the
+     * most recent execution first.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listExecutionsRequest
      * @return Result of the ListExecutions operation returned by the service.
@@ -1001,6 +1127,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExecutions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1022,10 +1151,17 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * Lists the existing state machines.
      * </p>
      * <p>
-     * If a <code>nextToken</code> is returned by a previous call, there are more results available. To retrieve the
-     * next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other
-     * arguments unchanged.
+     * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
+     * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
+     * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param listStateMachinesRequest
      * @return Result of the ListStateMachines operation returned by the service.
@@ -1057,12 +1193,71 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStateMachines");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListStateMachinesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListStateMachinesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List tags for a given resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @sample AWSStepFunctions.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1110,6 +1305,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendTaskFailure");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1177,6 +1375,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendTaskHeartbeat");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1232,6 +1433,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendTaskSuccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1252,6 +1456,14 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * Starts a state machine execution.
      * </p>
+     * <note>
+     * <p>
+     * <code>StartExecution</code> is idempotent. If <code>StartExecution</code> is called with the same name and input
+     * as a running execution, the call will succeed and return the same response as the original request. If the
+     * execution is closed or if the input is different, it will return a 400 <code>ExecutionAlreadyExists</code> error.
+     * Names can be reused after 90 days.
+     * </p>
+     * </note>
      * 
      * @param startExecutionRequest
      * @return Result of the StartExecution operation returned by the service.
@@ -1300,6 +1512,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1353,6 +1568,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1371,16 +1589,132 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Add a tag to a Step Functions resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @throws TooManyTagsException
+     *         You've exceeded the number of tags allowed for a resource. See the <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         Functions Developer Guide.
+     * @sample AWSStepFunctions.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove a tag from a Step Functions resource
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @sample AWSStepFunctions.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an existing state machine by modifying its <code>definition</code> and/or <code>roleArn</code>. Running
-     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>.
+     * executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include
+     * at least one of <code>definition</code> or <code>roleArn</code> or you will receive a
+     * <code>MissingRequiredParameter</code> error.
      * </p>
      * <note>
      * <p>
      * All <code>StartExecution</code> calls within a few seconds will use the updated <code>definition</code> and
      * <code>roleArn</code>. Executions started immediately after calling <code>UpdateStateMachine</code> may use the
-     * previous state machine <code>definition</code> and <code>roleArn</code>. You must include at least one of
-     * <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
-     * error.
+     * previous state machine <code>definition</code> and <code>roleArn</code>.
      * </p>
      * </note>
      * 
@@ -1423,6 +1757,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStateMachine");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1463,9 +1800,18 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1475,7 +1821,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1483,8 +1829,17 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

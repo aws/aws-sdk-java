@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.stepfunctions.builder.states;
+
+import static com.amazonaws.services.stepfunctions.builder.internal.JacksonUtils.jsonToString;
+import static com.amazonaws.services.stepfunctions.builder.internal.JacksonUtils.objectToJsonNode;
+import static com.amazonaws.services.stepfunctions.builder.internal.JacksonUtils.stringToJsonNode;
 
 import com.amazonaws.services.stepfunctions.builder.ErrorCodes;
 import com.amazonaws.services.stepfunctions.builder.internal.Buildable;
@@ -110,6 +114,14 @@ public final class TaskState extends TransitionState {
     }
 
     /**
+     * @return The Parameters JSON document that may optionally transform the effective input to the task.
+     */
+    @JsonIgnore
+    public String getParameters() {
+        return jsonToString(pathContainer.getParameters());
+    }
+
+    /**
      * @return The transition that will occur when this task completes successfully.
      */
     public Transition getTransition() {
@@ -166,7 +178,8 @@ public final class TaskState extends TransitionState {
     /**
      * Builder for a {@link TaskState}.
      */
-    public static final class Builder extends TransitionStateBuilder implements InputOutputResultPathBuilder<Builder> {
+    public static final class Builder extends TransitionStateBuilder
+        implements InputOutputResultPathBuilder<Builder>, ParametersBuilder<Builder> {
 
         @JsonProperty(PropertyNames.RESOURCE)
         private String resource;
@@ -182,6 +195,7 @@ public final class TaskState extends TransitionState {
 
         private Transition.Builder transition = Transition.NULL_BUILDER;
 
+        @JsonUnwrapped
         private PathContainer.Builder pathContainer = PathContainer.builder();
 
         @JsonProperty(PropertyNames.RETRY)
@@ -220,6 +234,18 @@ public final class TaskState extends TransitionState {
         @Override
         public Builder outputPath(String outputPath) {
             pathContainer.outputPath(outputPath);
+            return this;
+        }
+
+        @Override
+        public Builder parameters(String parameters) {
+            pathContainer.parameters(stringToJsonNode("Parameters", parameters));
+            return this;
+        }
+
+        @Override
+        public Builder parameters(Object parameters) {
+            pathContainer.parameters(objectToJsonNode(parameters));
             return this;
         }
 

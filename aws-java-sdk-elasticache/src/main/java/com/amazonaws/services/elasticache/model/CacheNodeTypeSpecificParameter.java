@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,7 +81,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * <p>
      * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
      * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
      */
@@ -464,7 +464,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * <p>
      * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
      * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
      * 
@@ -472,7 +472,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
      *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
      *        Cluster</a>.
      * @see ChangeType
      */
@@ -485,14 +485,14 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * <p>
      * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
      * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
      * 
      * @return Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
      *         be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
      *         Cluster</a>.
      * @see ChangeType
      */
@@ -505,7 +505,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * <p>
      * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
      * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
      * 
@@ -513,7 +513,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
      *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
      *        Cluster</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
@@ -528,7 +528,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * <p>
      * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
      * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
      * 
@@ -536,7 +536,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
      *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
      *        Cluster</a>.
      * @see ChangeType
      */
@@ -549,7 +549,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      * <p>
      * Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to be
      * applied. You can force a reboot or wait until the next maintenance window's reboot. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
      * Cluster</a>.
      * </p>
      * 
@@ -557,7 +557,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      *        Indicates whether a change to the parameter is applied immediately or requires a reboot for the change to
      *        be applied. You can force a reboot or wait until the next maintenance window's reboot. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Clusters.Rebooting.html">Rebooting a
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting a
      *        Cluster</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
@@ -569,7 +569,8 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

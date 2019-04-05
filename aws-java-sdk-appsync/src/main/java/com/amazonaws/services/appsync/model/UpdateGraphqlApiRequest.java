@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
     private String name;
     /**
      * <p>
-     * The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code> object.
+     * The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.
      * </p>
      */
     private LogConfig logConfig;
@@ -51,13 +51,13 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
     private String authenticationType;
     /**
      * <p>
-     * The new Amazon Cognito User Pool configuration for the <code>GraphqlApi</code> object.
+     * The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.
      * </p>
      */
     private UserPoolConfig userPoolConfig;
     /**
      * <p>
-     * The Open Id Connect configuration configuration for the <code>GraphqlApi</code> object.
+     * The OpenID Connect configuration for the <code>GraphqlApi</code> object.
      * </p>
      */
     private OpenIDConnectConfig openIDConnectConfig;
@@ -144,11 +144,11 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code> object.
+     * The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.
      * </p>
      * 
      * @param logConfig
-     *        The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code> object.
+     *        The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.
      */
 
     public void setLogConfig(LogConfig logConfig) {
@@ -157,10 +157,10 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code> object.
+     * The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.
      * </p>
      * 
-     * @return The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code> object.
+     * @return The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.
      */
 
     public LogConfig getLogConfig() {
@@ -169,11 +169,11 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code> object.
+     * The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.
      * </p>
      * 
      * @param logConfig
-     *        The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code> object.
+     *        The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +243,11 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new Amazon Cognito User Pool configuration for the <code>GraphqlApi</code> object.
+     * The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.
      * </p>
      * 
      * @param userPoolConfig
-     *        The new Amazon Cognito User Pool configuration for the <code>GraphqlApi</code> object.
+     *        The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.
      */
 
     public void setUserPoolConfig(UserPoolConfig userPoolConfig) {
@@ -256,10 +256,10 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new Amazon Cognito User Pool configuration for the <code>GraphqlApi</code> object.
+     * The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.
      * </p>
      * 
-     * @return The new Amazon Cognito User Pool configuration for the <code>GraphqlApi</code> object.
+     * @return The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.
      */
 
     public UserPoolConfig getUserPoolConfig() {
@@ -268,11 +268,11 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new Amazon Cognito User Pool configuration for the <code>GraphqlApi</code> object.
+     * The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.
      * </p>
      * 
      * @param userPoolConfig
-     *        The new Amazon Cognito User Pool configuration for the <code>GraphqlApi</code> object.
+     *        The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,11 +283,11 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Open Id Connect configuration configuration for the <code>GraphqlApi</code> object.
+     * The OpenID Connect configuration for the <code>GraphqlApi</code> object.
      * </p>
      * 
      * @param openIDConnectConfig
-     *        The Open Id Connect configuration configuration for the <code>GraphqlApi</code> object.
+     *        The OpenID Connect configuration for the <code>GraphqlApi</code> object.
      */
 
     public void setOpenIDConnectConfig(OpenIDConnectConfig openIDConnectConfig) {
@@ -296,10 +296,10 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Open Id Connect configuration configuration for the <code>GraphqlApi</code> object.
+     * The OpenID Connect configuration for the <code>GraphqlApi</code> object.
      * </p>
      * 
-     * @return The Open Id Connect configuration configuration for the <code>GraphqlApi</code> object.
+     * @return The OpenID Connect configuration for the <code>GraphqlApi</code> object.
      */
 
     public OpenIDConnectConfig getOpenIDConnectConfig() {
@@ -308,11 +308,11 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Open Id Connect configuration configuration for the <code>GraphqlApi</code> object.
+     * The OpenID Connect configuration for the <code>GraphqlApi</code> object.
      * </p>
      * 
      * @param openIDConnectConfig
-     *        The Open Id Connect configuration configuration for the <code>GraphqlApi</code> object.
+     *        The OpenID Connect configuration for the <code>GraphqlApi</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,7 +322,8 @@ public class UpdateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

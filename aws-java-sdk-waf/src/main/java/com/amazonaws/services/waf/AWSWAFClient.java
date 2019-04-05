@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.waf.AWSWAFClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -53,13 +55,14 @@ import com.amazonaws.services.waf.model.waf.transform.*;
  * listed in the reference are available for protecting Amazon CloudFront distributions. You can use these actions and
  * data types via the endpoint <i>waf.amazonaws.com</i>. This guide is for developers who need detailed information
  * about the AWS WAF API actions, data types, and errors. For detailed information about AWS WAF features and an
- * overview of how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
+ * overview of how to use the AWS WAF API, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS
  * WAF Developer Guide</a>.
  * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -70,6 +73,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -100,6 +105,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentItemException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFNonexistentItemException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFServiceLinkedRoleErrorException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFServiceLinkedRoleErrorException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFInternalErrorException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFInternalErrorException.class))
@@ -203,6 +211,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
     public AWSWAFClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -266,6 +275,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
     public AWSWAFClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration, RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -284,8 +294,23 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *        Object providing client parameters.
      */
     AWSWAFClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on WAF using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSWAFClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -337,7 +362,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createByteMatchSetRequest
@@ -410,7 +435,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateByteMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet" target="_top">AWS API
@@ -438,6 +463,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateByteMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -490,7 +518,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createGeoMatchSetRequest
@@ -563,7 +591,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateGeoMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateGeoMatchSet" target="_top">AWS API
@@ -591,6 +619,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGeoMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -609,10 +640,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
     /**
      * <p>
-     * Creates an <a>IPSet</a>, which you use to specify which web requests you want to allow or block based on the IP
-     * addresses that the requests originate from. For example, if you're receiving a lot of requests from one or more
-     * individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can create
-     * an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF to block the requests.
+     * Creates an <a>IPSet</a>, which you use to specify which web requests that you want to allow or block based on the
+     * IP addresses that the requests originate from. For example, if you're receiving a lot of requests from one or
+     * more individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can
+     * create an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure an <code>IPSet</code>, perform the following steps:
@@ -643,7 +674,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createIPSetRequest
@@ -716,7 +747,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet" target="_top">AWS API
@@ -744,6 +775,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIPSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -866,7 +900,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRateBasedRuleRequest
@@ -936,7 +970,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateRateBasedRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule" target="_top">AWS API
@@ -964,6 +998,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRateBasedRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1019,7 +1056,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexMatchSetRequest
@@ -1034,7 +1071,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateRegexMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexMatchSet" target="_top">AWS API
@@ -1062,6 +1099,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegexMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1113,7 +1153,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRegexPatternSetRequest
@@ -1128,7 +1168,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateRegexPatternSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexPatternSet" target="_top">AWS API
@@ -1156,6 +1196,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegexPatternSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1178,7 +1221,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects,
      * and other predicates that identify the requests that you want to block. If you add more than one predicate to a
      * <code>Rule</code>, a request must match all of the specifications to be allowed or blocked. For example, suppose
-     * you add the following to a <code>Rule</code>:
+     * that you add the following to a <code>Rule</code>:
      * </p>
      * <ul>
      * <li>
@@ -1239,7 +1282,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleRequest
@@ -1309,7 +1352,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule" target="_top">AWS API
@@ -1337,6 +1380,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1380,7 +1426,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ul>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createRuleGroupRequest
@@ -1395,7 +1441,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup" target="_top">AWS API
@@ -1423,6 +1469,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRuleGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1477,7 +1526,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSizeConstraintSetRequest
@@ -1550,7 +1599,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateSizeConstraintSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet" target="_top">AWS
@@ -1579,6 +1628,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSizeConstraintSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1632,7 +1684,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createSqlInjectionMatchSetRequest
@@ -1706,7 +1758,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateSqlInjectionMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet" target="_top">AWS
@@ -1735,6 +1787,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSqlInjectionMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1807,7 +1862,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createWebACLRequest
@@ -1880,7 +1935,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL" target="_top">AWS API
@@ -1908,6 +1963,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWebACL");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1960,7 +2018,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param createXssMatchSetRequest
@@ -2034,7 +2092,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.CreateXssMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet" target="_top">AWS API
@@ -2062,6 +2120,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateXssMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2185,6 +2246,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteByteMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2307,6 +2371,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGeoMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2429,12 +2496,76 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIPSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteIPSetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteIPSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently deletes the <a>LoggingConfiguration</a> from the specified web ACL.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     * @return Result of the DeleteLoggingConfiguration operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @sample AWSWAF.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteLoggingConfigurationResult deleteLoggingConfiguration(DeleteLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLoggingConfigurationResult executeDeleteLoggingConfiguration(DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLoggingConfigurationRequest> request = null;
+        Response<DeleteLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoggingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteLoggingConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2488,6 +2619,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePermissionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2612,6 +2746,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRateBasedRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2735,6 +2872,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegexMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2833,6 +2973,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegexPatternSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2956,6 +3099,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3049,6 +3195,39 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         You tried to delete an <code>IPSet</code> that references one or more IP addresses.
      *         </p>
      *         </li>
+     * @throws WAFInvalidOperationException
+     *         The operation failed because there was nothing to do. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in
+     *         the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified
+     *         <code>IPSet</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the
+     *         <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
+     *         in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
+     *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
      * @sample AWSWAF.DeleteRuleGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRuleGroup" target="_top">AWS API
      *      Documentation</a>
@@ -3075,6 +3254,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRuleGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3199,6 +3381,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSizeConstraintSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3325,6 +3510,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSqlInjectionMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3446,6 +3634,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWebACL");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3570,6 +3761,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteXssMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3626,6 +3820,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetByteMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3690,6 +3887,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChangeToken");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3725,7 +3925,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </li>
      * <li>
      * <p>
-     * <code>IN_SYNC</code>: Propagation is complete.
+     * <code>INSYNC</code>: Propagation is complete.
      * </p>
      * </li>
      * </ul>
@@ -3762,6 +3962,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChangeTokenStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3818,6 +4021,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGeoMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3874,12 +4080,73 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIPSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<GetIPSetResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetIPSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
+     * </p>
+     * 
+     * @param getLoggingConfigurationRequest
+     * @return Result of the GetLoggingConfiguration operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetLoggingConfigurationResult getLoggingConfiguration(GetLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetLoggingConfigurationResult executeGetLoggingConfiguration(GetLoggingConfigurationRequest getLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLoggingConfigurationRequest> request = null;
+        Response<GetLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetLoggingConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3927,6 +4194,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPermissionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3984,6 +4254,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRateBasedRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4098,6 +4371,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRateBasedRuleManagedKeys");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4155,6 +4431,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegexMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4211,6 +4490,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegexPatternSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4268,6 +4550,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4325,6 +4610,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRuleGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4386,6 +4674,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSampledRequests");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4442,6 +4733,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSizeConstraintSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4500,6 +4794,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSqlInjectionMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4557,6 +4854,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWebACL");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4614,6 +4914,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetXssMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4723,6 +5026,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActivatedRulesInRuleGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4778,6 +5084,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListByteMatchSets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4832,6 +5141,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGeoMatchSets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4886,12 +5198,128 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIPSets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListIPSetsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIPSetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of <a>LoggingConfiguration</a> objects.
+     * </p>
+     * 
+     * @param listLoggingConfigurationsRequest
+     * @return Result of the ListLoggingConfigurations operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @sample AWSWAF.ListLoggingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListLoggingConfigurations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListLoggingConfigurationsResult listLoggingConfigurations(ListLoggingConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLoggingConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListLoggingConfigurationsResult executeListLoggingConfigurations(ListLoggingConfigurationsRequest listLoggingConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLoggingConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLoggingConfigurationsRequest> request = null;
+        Response<ListLoggingConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLoggingConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listLoggingConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggingConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLoggingConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListLoggingConfigurationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4940,6 +5368,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRateBasedRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4994,6 +5425,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegexMatchSets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5048,6 +5482,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegexPatternSets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5099,6 +5536,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuleGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5153,6 +5593,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5207,6 +5650,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSizeConstraintSets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5264,6 +5710,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSqlInjectionMatchSets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5319,6 +5768,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscribedRuleGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5374,6 +5826,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebACLs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5429,12 +5884,109 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListXssMatchSets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<ListXssMatchSetsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListXssMatchSetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a <a>LoggingConfiguration</a> with a specified web ACL.
+     * </p>
+     * <p>
+     * You can access information about all traffic that AWS WAF inspects using the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create an Amazon Kinesis Data Firehose .
+     * </p>
+     * <p>
+     * Create the data firehose with a PUT source and in the region that you are operating. However, if you are
+     * capturing logs for Amazon CloudFront, always create the firehose in US East (N. Virginia).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a
+     * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose. For more
+     * information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
+     * Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
+     * </p>
+     * 
+     * @param putLoggingConfigurationRequest
+     * @return Result of the PutLoggingConfiguration operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFServiceLinkedRoleErrorException
+     *         AWS WAF is not able to access the service linked role. This can be caused by a previous
+     *         <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20
+     *         seconds. Please try your request again. The service linked role can also be locked by a previous
+     *         <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you
+     *         recently made a <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again.
+     *         If you receive this same exception again, you will have to wait additional time until the role is
+     *         unlocked.
+     * @sample AWSWAF.PutLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutLoggingConfigurationResult putLoggingConfiguration(PutLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutLoggingConfigurationResult executePutLoggingConfiguration(PutLoggingConfigurationRequest putLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutLoggingConfigurationRequest> request = null;
+        Response<PutLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLoggingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutLoggingConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5471,8 +6023,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </li>
      * <li>
      * <p>
-     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and
-     * <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>,
+     * <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code>
+     * . Any extra or wildcard actions in the policy will be rejected.
      * </p>
      * </li>
      * <li>
@@ -5536,8 +6089,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         </li>
      *         <li>
      *         <p>
-     *         The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> or
-     *         <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     *         The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code>,
+     *         <code>waf-regional:UpdateWebACL</code>, <code>waf:GetRuleGroup</code> and
+     *         <code>waf-regional:GetRuleGroup</code> . Any extra or wildcard actions in the policy will be rejected.
      *         </p>
      *         </li>
      *         <li>
@@ -5586,6 +6140,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermissionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5668,7 +6225,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateByteMatchSetRequest
@@ -5703,12 +6260,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -5807,7 +6358,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateByteMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet" target="_top">AWS API
@@ -5835,6 +6386,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateByteMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5902,7 +6456,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateGeoMatchSetRequest
@@ -5940,12 +6494,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -6054,7 +6602,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateGeoMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateGeoMatchSet" target="_top">AWS API
@@ -6082,6 +6630,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGeoMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6124,8 +6675,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
-     * For more information about CIDR notation, see the Wikipedia entry <a
+     * AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
+     * ranges: /24, /32, /48, /56, /64, and /128. For more information about CIDR notation, see the Wikipedia entry <a
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
      * </p>
      * <p>
@@ -6186,8 +6737,11 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * one.
      * </p>
      * <p>
+     * You can insert a maximum of 1000 addresses in a single request.
+     * </p>
+     * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateIPSetRequest
@@ -6225,12 +6779,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -6339,7 +6887,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateIPSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet" target="_top">AWS API
@@ -6367,6 +6915,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIPSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6487,12 +7038,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         </li>
      *         <li>
      *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
@@ -6597,7 +7142,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateRateBasedRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRateBasedRule" target="_top">AWS API
@@ -6625,6 +7170,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRateBasedRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6702,7 +7250,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexMatchSetRequest
@@ -6717,7 +7265,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
@@ -6777,12 +7325,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         </li>
      *         <li>
      *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
@@ -6816,6 +7358,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRegexMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6900,7 +7445,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRegexPatternSetRequest
@@ -6913,7 +7458,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @throws WAFNonexistentItemException
      *         The operation failed because the referenced object doesn't exist.
@@ -6973,12 +7518,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         </li>
      *         <li>
      *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
@@ -7014,6 +7553,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRegexPatternSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7036,7 +7578,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * Inserts or deletes <a>Predicate</a> objects in a <code>Rule</code>. Each <code>Predicate</code> object identifies
      * a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that specifies the web requests that you want to
      * allow, block, or count. If you add more than one predicate to a <code>Rule</code>, a request must match all of
-     * the specifications to be allowed, blocked, or counted. For example, suppose you add the following to a
+     * the specifications to be allowed, blocked, or counted. For example, suppose that you add the following to a
      * <code>Rule</code>:
      * </p>
      * <ul>
@@ -7093,7 +7635,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleRequest
@@ -7131,12 +7673,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -7245,7 +7781,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule" target="_top">AWS API
@@ -7273,6 +7809,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7331,7 +7870,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateRuleGroupRequest
@@ -7399,12 +7938,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         </li>
      *         <li>
      *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
@@ -7412,7 +7945,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @throws WAFInvalidParameterException
      *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
@@ -7495,6 +8028,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRuleGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7534,6 +8070,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * Whether to perform any transformations on the request, such as converting it to lowercase, before checking its
      * length. Note that transformations of the request body are not supported because the AWS resource forwards only
      * the first <code>8192</code> bytes of your request to AWS WAF.
+     * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
      * </p>
      * </li>
      * <li>
@@ -7578,7 +8117,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSizeConstraintSetRequest
@@ -7620,12 +8159,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         </li>
      *         <li>
      *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
@@ -7730,7 +8263,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateSizeConstraintSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet" target="_top">AWS
@@ -7759,6 +8292,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSizeConstraintSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7791,7 +8327,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
@@ -7799,13 +8335,16 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for snippets of malicious SQL code.
      * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
      * </li>
      * </ul>
      * <p>
-     * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests you want to allow, block,
-     * or count. For example, if you're receiving requests that contain snippets of SQL code in the query string and you
-     * want to block the requests, you can create a <code>SqlInjectionMatchSet</code> with the applicable settings, and
-     * then configure AWS WAF to block the requests.
+     * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests that you want to allow,
+     * block, or count. For example, if you're receiving requests that contain snippets of SQL code in the query string
+     * and you want to block the requests, you can create a <code>SqlInjectionMatchSet</code> with the applicable
+     * settings, and then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure a <code>SqlInjectionMatchSet</code>, perform the following steps:
@@ -7831,7 +8370,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateSqlInjectionMatchSetRequest
@@ -7867,12 +8406,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -7971,7 +8504,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateSqlInjectionMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet" target="_top">AWS
@@ -8000,6 +8533,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSqlInjectionMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8033,8 +8569,8 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </li>
      * <li>
      * <p>
-     * The <code>Rules</code> that you want to add and/or delete. If you want to replace one <code>Rule</code> with
-     * another, you delete the existing <code>Rule</code> and add the new one.
+     * The <code>Rules</code> that you want to add or delete. If you want to replace one <code>Rule</code> with another,
+     * you delete the existing <code>Rule</code> and add the new one.
      * </p>
      * </li>
      * <li>
@@ -8048,10 +8584,10 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * The order in which you want AWS WAF to evaluate the <code>Rules</code> in a <code>WebACL</code>. If you add more
      * than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates each request against the
      * <code>Rules</code> in order based on the value of <code>Priority</code>. (The <code>Rule</code> that has the
-     * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all of the predicates
-     * (such as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes
-     * the corresponding action, allow or block, and doesn't evaluate the request against the remaining
-     * <code>Rules</code> in the <code>WebACL</code>, if any.
+     * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all the predicates (such
+     * as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes the
+     * corresponding action, allow or block, and doesn't evaluate the request against the remaining <code>Rules</code>
+     * in the <code>WebACL</code>, if any.
      * </p>
      * </li>
      * </ul>
@@ -8089,6 +8625,15 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * <code>WebACL</code>, to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
      * distribution.
      * </p>
+     * <p>
+     * The <code>ActivatedRule</code> can be a rule group. If you specify a rule group as your
+     * <code>ActivatedRule</code>, you can exclude specific rules from that rule group.
+     * </p>
+     * <p>
+     * If you already have a rule group associated with a web ACL and want to submit an <code>UpdateWebACL</code>
+     * request to exclude certain rules from that rule group, you must first remove the rule group from the web ACL, the
+     * re-insert it again, specifying the excluded rules. For details, see <a>ActivatedRule$ExcludedRules</a>.
+     * </p>
      * </li>
      * </ol>
      * <p>
@@ -8098,7 +8643,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateWebACLRequest
@@ -8140,12 +8685,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         </li>
      *         <li>
      *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
      *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
      *         </p>
@@ -8250,7 +8789,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @throws WAFSubscriptionNotFoundException
      *         The specified subscription does not exist.
@@ -8280,6 +8819,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWebACL");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8304,14 +8846,14 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * <ul>
      * <li>
      * <p>
-     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
+     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change an
      * <code>XssMatchTuple</code>, you delete the existing object and add a new one.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect and, if you want AWS WAF to
-     * inspect a header, the name of the header.
+     * inspect a header or custom query parameter, the name of the header or parameter.
      * </p>
      * </li>
      * <li>
@@ -8319,13 +8861,16 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * <code>TextTransformation</code>: Which text transformation, if any, to perform on the web request before
      * inspecting the request for cross-site scripting attacks.
      * </p>
+     * <p>
+     * You can only specify a single type of TextTransformation.
+     * </p>
      * </li>
      * </ul>
      * <p>
-     * You use <code>XssMatchSet</code> objects to specify which CloudFront requests you want to allow, block, or count.
-     * For example, if you're receiving requests that contain cross-site scripting attacks in the request body and you
-     * want to block the requests, you can create an <code>XssMatchSet</code> with the applicable settings, and then
-     * configure AWS WAF to block the requests.
+     * You use <code>XssMatchSet</code> objects to specify which CloudFront requests that you want to allow, block, or
+     * count. For example, if you're receiving requests that contain cross-site scripting attacks in the request body
+     * and you want to block the requests, you can create an <code>XssMatchSet</code> with the applicable settings, and
+     * then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure an <code>XssMatchSet</code>, perform the following steps:
@@ -8351,7 +8896,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * </ol>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
      * 
      * @param updateXssMatchSetRequest
@@ -8387,12 +8932,6 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      *         <p>
      *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
      *         in the specified <code>WebACL</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
-     *         specified <code>IPSet</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -8491,7 +9030,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * @throws WAFLimitsExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
      *         that you can create for an AWS account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
      *         Developer Guide</i>.
      * @sample AWSWAF.UpdateXssMatchSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet" target="_top">AWS API
@@ -8519,6 +9058,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAF");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateXssMatchSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8559,9 +9101,18 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -8571,7 +9122,7 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -8579,8 +9130,17 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

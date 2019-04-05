@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,10 @@ import javax.annotation.Generated;
  * <p>
  * A collection of the imported <a>DocumentationPart</a> identifiers.
  * </p>
- * <div class="remarks">This is used to return the result when documentation parts in an external (e.g., Swagger) file
+ * <div class="remarks">This is used to return the result when documentation parts in an external (e.g., OpenAPI) file
  * are imported into API Gateway</div> <div class="seeAlso"> <a
- * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an
- * API</a>, <a href="http://docs.aws.amazon.com/apigateway/api-reference/link-relation/documentationpart-import/">
+ * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting an
+ * API</a>, <a href="https://docs.aws.amazon.com/apigateway/api-reference/link-relation/documentationpart-import/">
  * documentationpart:import</a>, <a>DocumentationPart</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -182,7 +182,8 @@ public class ImportDocumentationPartsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

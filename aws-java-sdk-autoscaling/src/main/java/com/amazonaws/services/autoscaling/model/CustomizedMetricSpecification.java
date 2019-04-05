@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,33 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Configures a customized metric for a target tracking policy.
+ * Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Amazon EC2 Auto
+ * Scaling.
+ * </p>
+ * <p>
+ * To create your customized metric specification:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you
+ * create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom
+ * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in
+ * inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity
+ * increases.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For more information about CloudWatch, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch
+ * Concepts</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CustomizedMetricSpecification"
@@ -41,6 +67,10 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable {
     /**
      * <p>
      * The dimensions of the metric.
+     * </p>
+     * <p>
+     * Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling
+     * policy.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MetricDimension> dimensions;
@@ -141,8 +171,15 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable {
      * <p>
      * The dimensions of the metric.
      * </p>
+     * <p>
+     * Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling
+     * policy.
+     * </p>
      * 
-     * @return The dimensions of the metric.
+     * @return The dimensions of the metric.</p>
+     *         <p>
+     *         Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     *         scaling policy.
      */
 
     public java.util.List<MetricDimension> getDimensions() {
@@ -156,9 +193,16 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable {
      * <p>
      * The dimensions of the metric.
      * </p>
+     * <p>
+     * Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling
+     * policy.
+     * </p>
      * 
      * @param dimensions
-     *        The dimensions of the metric.
+     *        The dimensions of the metric.</p>
+     *        <p>
+     *        Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     *        scaling policy.
      */
 
     public void setDimensions(java.util.Collection<MetricDimension> dimensions) {
@@ -175,13 +219,20 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable {
      * The dimensions of the metric.
      * </p>
      * <p>
+     * Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling
+     * policy.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDimensions(java.util.Collection)} or {@link #withDimensions(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param dimensions
-     *        The dimensions of the metric.
+     *        The dimensions of the metric.</p>
+     *        <p>
+     *        Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     *        scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,9 +250,16 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable {
      * <p>
      * The dimensions of the metric.
      * </p>
+     * <p>
+     * Conditional: If you published your metric with dimensions, you must specify the same dimensions in your scaling
+     * policy.
+     * </p>
      * 
      * @param dimensions
-     *        The dimensions of the metric.
+     *        The dimensions of the metric.</p>
+     *        <p>
+     *        Conditional: If you published your metric with dimensions, you must specify the same dimensions in your
+     *        scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,7 +382,8 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

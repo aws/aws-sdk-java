@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
     private String allowedPattern;
     /**
      * <p>
-     * Array containing the list of values allowed for the parameter.
+     * An array containing the list of values allowed for the parameter.
      * </p>
      */
     private java.util.List<String> allowedValues;
@@ -50,7 +50,7 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      * Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+
      * </p>
      * <p>
-     * By adding a constraint description, such as "must contain only uppercase and lowercase letters, and numbers," you
+     * By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you
      * can display the following customized error message:
      * </p>
      * <p>
@@ -73,25 +73,25 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
     private String description;
     /**
      * <p>
-     * An integer value that determines the largest number of characters you want to allow for String types.
+     * An integer value that determines the largest number of characters that you want to allow for String types.
      * </p>
      */
     private Integer maxLength;
     /**
      * <p>
-     * A numeric value that determines the largest numeric value you want to allow for Number types.
+     * A numeric value that determines the largest numeric value that you want to allow for Number types.
      * </p>
      */
     private Integer maxValue;
     /**
      * <p>
-     * An integer value that determines the smallest number of characters you want to allow for String types.
+     * An integer value that determines the smallest number of characters that you want to allow for String types.
      * </p>
      */
     private Integer minLength;
     /**
      * <p>
-     * A numeric value that determines the smallest numeric value you want to allow for Number types.
+     * A numeric value that determines the smallest numeric value that you want to allow for Number types.
      * </p>
      */
     private Integer minValue;
@@ -125,30 +125,30 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      * String: A literal string.
      * </p>
      * <p>
-     * For example, users could specify "MyUserName".
+     * For example, users can specify "MyUserName".
      * </p>
      * <p>
-     * Number: An integer or float. AWS CloudFormation validates the parameter value as a number; however, when you use
+     * Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use
      * the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value
      * becomes a string.
      * </p>
      * <p>
-     * For example, users could specify "8888".
+     * For example, users might specify "8888".
      * </p>
      * <p>
      * List&lt;Number>: An array of integers or floats that are separated by commas. AWS CloudFormation validates the
-     * parameter value as numbers; however, when you use the parameter elsewhere in your template (for example, by using
+     * parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using
      * the Ref intrinsic function), the parameter value becomes a list of strings.
      * </p>
      * <p>
-     * For example, users could specify "80,20", and a Ref results in ["80","20"].
+     * For example, users might specify "80,20", and then Ref results in ["80","20"].
      * </p>
      * <p>
      * CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should
      * be one more than the total number of commas. Also, each member string is space-trimmed.
      * </p>
      * <p>
-     * For example, users could specify "test,dev,prod", and a Ref results in ["test","dev","prod"].
+     * For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].
      * </p>
      */
     private String type;
@@ -195,10 +195,10 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Array containing the list of values allowed for the parameter.
+     * An array containing the list of values allowed for the parameter.
      * </p>
      * 
-     * @return Array containing the list of values allowed for the parameter.
+     * @return An array containing the list of values allowed for the parameter.
      */
 
     public java.util.List<String> getAllowedValues() {
@@ -207,11 +207,11 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Array containing the list of values allowed for the parameter.
+     * An array containing the list of values allowed for the parameter.
      * </p>
      * 
      * @param allowedValues
-     *        Array containing the list of values allowed for the parameter.
+     *        An array containing the list of values allowed for the parameter.
      */
 
     public void setAllowedValues(java.util.Collection<String> allowedValues) {
@@ -225,7 +225,7 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Array containing the list of values allowed for the parameter.
+     * An array containing the list of values allowed for the parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -234,7 +234,7 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param allowedValues
-     *        Array containing the list of values allowed for the parameter.
+     *        An array containing the list of values allowed for the parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,11 +250,11 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Array containing the list of values allowed for the parameter.
+     * An array containing the list of values allowed for the parameter.
      * </p>
      * 
      * @param allowedValues
-     *        Array containing the list of values allowed for the parameter.
+     *        An array containing the list of values allowed for the parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,7 +273,7 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      * Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+
      * </p>
      * <p>
-     * By adding a constraint description, such as "must contain only uppercase and lowercase letters, and numbers," you
+     * By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you
      * can display the following customized error message:
      * </p>
      * <p>
@@ -289,7 +289,7 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      *        </p>
      *        <p>
      *        By adding a constraint description, such as
-     *        "must contain only uppercase and lowercase letters, and numbers," you can display the following customized
+     *        "must contain only uppercase and lowercase letters and numbers," you can display the following customized
      *        error message:
      *        </p>
      *        <p>
@@ -310,7 +310,7 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      * Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+
      * </p>
      * <p>
-     * By adding a constraint description, such as "must contain only uppercase and lowercase letters, and numbers," you
+     * By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you
      * can display the following customized error message:
      * </p>
      * <p>
@@ -325,8 +325,8 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      *         </p>
      *         <p>
      *         By adding a constraint description, such as
-     *         "must contain only uppercase and lowercase letters, and numbers," you can display the following
-     *         customized error message:
+     *         "must contain only uppercase and lowercase letters and numbers," you can display the following customized
+     *         error message:
      *         </p>
      *         <p>
      *         Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.
@@ -346,7 +346,7 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      * Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+
      * </p>
      * <p>
-     * By adding a constraint description, such as "must contain only uppercase and lowercase letters, and numbers," you
+     * By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you
      * can display the following customized error message:
      * </p>
      * <p>
@@ -362,7 +362,7 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      *        </p>
      *        <p>
      *        By adding a constraint description, such as
-     *        "must contain only uppercase and lowercase letters, and numbers," you can display the following customized
+     *        "must contain only uppercase and lowercase letters and numbers," you can display the following customized
      *        error message:
      *        </p>
      *        <p>
@@ -463,11 +463,11 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An integer value that determines the largest number of characters you want to allow for String types.
+     * An integer value that determines the largest number of characters that you want to allow for String types.
      * </p>
      * 
      * @param maxLength
-     *        An integer value that determines the largest number of characters you want to allow for String types.
+     *        An integer value that determines the largest number of characters that you want to allow for String types.
      */
 
     public void setMaxLength(Integer maxLength) {
@@ -476,10 +476,11 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An integer value that determines the largest number of characters you want to allow for String types.
+     * An integer value that determines the largest number of characters that you want to allow for String types.
      * </p>
      * 
-     * @return An integer value that determines the largest number of characters you want to allow for String types.
+     * @return An integer value that determines the largest number of characters that you want to allow for String
+     *         types.
      */
 
     public Integer getMaxLength() {
@@ -488,11 +489,11 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An integer value that determines the largest number of characters you want to allow for String types.
+     * An integer value that determines the largest number of characters that you want to allow for String types.
      * </p>
      * 
      * @param maxLength
-     *        An integer value that determines the largest number of characters you want to allow for String types.
+     *        An integer value that determines the largest number of characters that you want to allow for String types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -503,11 +504,11 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A numeric value that determines the largest numeric value you want to allow for Number types.
+     * A numeric value that determines the largest numeric value that you want to allow for Number types.
      * </p>
      * 
      * @param maxValue
-     *        A numeric value that determines the largest numeric value you want to allow for Number types.
+     *        A numeric value that determines the largest numeric value that you want to allow for Number types.
      */
 
     public void setMaxValue(Integer maxValue) {
@@ -516,10 +517,10 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A numeric value that determines the largest numeric value you want to allow for Number types.
+     * A numeric value that determines the largest numeric value that you want to allow for Number types.
      * </p>
      * 
-     * @return A numeric value that determines the largest numeric value you want to allow for Number types.
+     * @return A numeric value that determines the largest numeric value that you want to allow for Number types.
      */
 
     public Integer getMaxValue() {
@@ -528,11 +529,11 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A numeric value that determines the largest numeric value you want to allow for Number types.
+     * A numeric value that determines the largest numeric value that you want to allow for Number types.
      * </p>
      * 
      * @param maxValue
-     *        A numeric value that determines the largest numeric value you want to allow for Number types.
+     *        A numeric value that determines the largest numeric value that you want to allow for Number types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -543,11 +544,12 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An integer value that determines the smallest number of characters you want to allow for String types.
+     * An integer value that determines the smallest number of characters that you want to allow for String types.
      * </p>
      * 
      * @param minLength
-     *        An integer value that determines the smallest number of characters you want to allow for String types.
+     *        An integer value that determines the smallest number of characters that you want to allow for String
+     *        types.
      */
 
     public void setMinLength(Integer minLength) {
@@ -556,10 +558,11 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An integer value that determines the smallest number of characters you want to allow for String types.
+     * An integer value that determines the smallest number of characters that you want to allow for String types.
      * </p>
      * 
-     * @return An integer value that determines the smallest number of characters you want to allow for String types.
+     * @return An integer value that determines the smallest number of characters that you want to allow for String
+     *         types.
      */
 
     public Integer getMinLength() {
@@ -568,11 +571,12 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An integer value that determines the smallest number of characters you want to allow for String types.
+     * An integer value that determines the smallest number of characters that you want to allow for String types.
      * </p>
      * 
      * @param minLength
-     *        An integer value that determines the smallest number of characters you want to allow for String types.
+     *        An integer value that determines the smallest number of characters that you want to allow for String
+     *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -583,11 +587,11 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A numeric value that determines the smallest numeric value you want to allow for Number types.
+     * A numeric value that determines the smallest numeric value that you want to allow for Number types.
      * </p>
      * 
      * @param minValue
-     *        A numeric value that determines the smallest numeric value you want to allow for Number types.
+     *        A numeric value that determines the smallest numeric value that you want to allow for Number types.
      */
 
     public void setMinValue(Integer minValue) {
@@ -596,10 +600,10 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A numeric value that determines the smallest numeric value you want to allow for Number types.
+     * A numeric value that determines the smallest numeric value that you want to allow for Number types.
      * </p>
      * 
-     * @return A numeric value that determines the smallest numeric value you want to allow for Number types.
+     * @return A numeric value that determines the smallest numeric value that you want to allow for Number types.
      */
 
     public Integer getMinValue() {
@@ -608,11 +612,11 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A numeric value that determines the smallest numeric value you want to allow for Number types.
+     * A numeric value that determines the smallest numeric value that you want to allow for Number types.
      * </p>
      * 
      * @param minValue
-     *        A numeric value that determines the smallest numeric value you want to allow for Number types.
+     *        A numeric value that determines the smallest numeric value that you want to allow for Number types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -802,30 +806,30 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      * String: A literal string.
      * </p>
      * <p>
-     * For example, users could specify "MyUserName".
+     * For example, users can specify "MyUserName".
      * </p>
      * <p>
-     * Number: An integer or float. AWS CloudFormation validates the parameter value as a number; however, when you use
+     * Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use
      * the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value
      * becomes a string.
      * </p>
      * <p>
-     * For example, users could specify "8888".
+     * For example, users might specify "8888".
      * </p>
      * <p>
      * List&lt;Number>: An array of integers or floats that are separated by commas. AWS CloudFormation validates the
-     * parameter value as numbers; however, when you use the parameter elsewhere in your template (for example, by using
+     * parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using
      * the Ref intrinsic function), the parameter value becomes a list of strings.
      * </p>
      * <p>
-     * For example, users could specify "80,20", and a Ref results in ["80","20"].
+     * For example, users might specify "80,20", and then Ref results in ["80","20"].
      * </p>
      * <p>
      * CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should
      * be one more than the total number of commas. Also, each member string is space-trimmed.
      * </p>
      * <p>
-     * For example, users could specify "test,dev,prod", and a Ref results in ["test","dev","prod"].
+     * For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].
      * </p>
      * 
      * @param type
@@ -837,30 +841,30 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      *        String: A literal string.
      *        </p>
      *        <p>
-     *        For example, users could specify "MyUserName".
+     *        For example, users can specify "MyUserName".
      *        </p>
      *        <p>
-     *        Number: An integer or float. AWS CloudFormation validates the parameter value as a number; however, when
+     *        Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when
      *        you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the
      *        parameter value becomes a string.
      *        </p>
      *        <p>
-     *        For example, users could specify "8888".
+     *        For example, users might specify "8888".
      *        </p>
      *        <p>
      *        List&lt;Number>: An array of integers or floats that are separated by commas. AWS CloudFormation validates
-     *        the parameter value as numbers; however, when you use the parameter elsewhere in your template (for
+     *        the parameter value as numbers. However, when you use the parameter elsewhere in your template (for
      *        example, by using the Ref intrinsic function), the parameter value becomes a list of strings.
      *        </p>
      *        <p>
-     *        For example, users could specify "80,20", and a Ref results in ["80","20"].
+     *        For example, users might specify "80,20", and then Ref results in ["80","20"].
      *        </p>
      *        <p>
      *        CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings
      *        should be one more than the total number of commas. Also, each member string is space-trimmed.
      *        </p>
      *        <p>
-     *        For example, users could specify "test,dev,prod", and a Ref results in ["test","dev","prod"].
+     *        For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].
      */
 
     public void setType(String type) {
@@ -878,30 +882,30 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      * String: A literal string.
      * </p>
      * <p>
-     * For example, users could specify "MyUserName".
+     * For example, users can specify "MyUserName".
      * </p>
      * <p>
-     * Number: An integer or float. AWS CloudFormation validates the parameter value as a number; however, when you use
+     * Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use
      * the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value
      * becomes a string.
      * </p>
      * <p>
-     * For example, users could specify "8888".
+     * For example, users might specify "8888".
      * </p>
      * <p>
      * List&lt;Number>: An array of integers or floats that are separated by commas. AWS CloudFormation validates the
-     * parameter value as numbers; however, when you use the parameter elsewhere in your template (for example, by using
+     * parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using
      * the Ref intrinsic function), the parameter value becomes a list of strings.
      * </p>
      * <p>
-     * For example, users could specify "80,20", and a Ref results in ["80","20"].
+     * For example, users might specify "80,20", and then Ref results in ["80","20"].
      * </p>
      * <p>
      * CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should
      * be one more than the total number of commas. Also, each member string is space-trimmed.
      * </p>
      * <p>
-     * For example, users could specify "test,dev,prod", and a Ref results in ["test","dev","prod"].
+     * For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].
      * </p>
      * 
      * @return The type of the parameter.</p>
@@ -912,30 +916,30 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      *         String: A literal string.
      *         </p>
      *         <p>
-     *         For example, users could specify "MyUserName".
+     *         For example, users can specify "MyUserName".
      *         </p>
      *         <p>
-     *         Number: An integer or float. AWS CloudFormation validates the parameter value as a number; however, when
+     *         Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when
      *         you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the
      *         parameter value becomes a string.
      *         </p>
      *         <p>
-     *         For example, users could specify "8888".
+     *         For example, users might specify "8888".
      *         </p>
      *         <p>
      *         List&lt;Number>: An array of integers or floats that are separated by commas. AWS CloudFormation
-     *         validates the parameter value as numbers; however, when you use the parameter elsewhere in your template
+     *         validates the parameter value as numbers. However, when you use the parameter elsewhere in your template
      *         (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.
      *         </p>
      *         <p>
-     *         For example, users could specify "80,20", and a Ref results in ["80","20"].
+     *         For example, users might specify "80,20", and then Ref results in ["80","20"].
      *         </p>
      *         <p>
      *         CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings
      *         should be one more than the total number of commas. Also, each member string is space-trimmed.
      *         </p>
      *         <p>
-     *         For example, users could specify "test,dev,prod", and a Ref results in ["test","dev","prod"].
+     *         For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].
      */
 
     public String getType() {
@@ -953,30 +957,30 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      * String: A literal string.
      * </p>
      * <p>
-     * For example, users could specify "MyUserName".
+     * For example, users can specify "MyUserName".
      * </p>
      * <p>
-     * Number: An integer or float. AWS CloudFormation validates the parameter value as a number; however, when you use
+     * Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use
      * the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value
      * becomes a string.
      * </p>
      * <p>
-     * For example, users could specify "8888".
+     * For example, users might specify "8888".
      * </p>
      * <p>
      * List&lt;Number>: An array of integers or floats that are separated by commas. AWS CloudFormation validates the
-     * parameter value as numbers; however, when you use the parameter elsewhere in your template (for example, by using
+     * parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using
      * the Ref intrinsic function), the parameter value becomes a list of strings.
      * </p>
      * <p>
-     * For example, users could specify "80,20", and a Ref results in ["80","20"].
+     * For example, users might specify "80,20", and then Ref results in ["80","20"].
      * </p>
      * <p>
      * CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should
      * be one more than the total number of commas. Also, each member string is space-trimmed.
      * </p>
      * <p>
-     * For example, users could specify "test,dev,prod", and a Ref results in ["test","dev","prod"].
+     * For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].
      * </p>
      * 
      * @param type
@@ -988,30 +992,30 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
      *        String: A literal string.
      *        </p>
      *        <p>
-     *        For example, users could specify "MyUserName".
+     *        For example, users can specify "MyUserName".
      *        </p>
      *        <p>
-     *        Number: An integer or float. AWS CloudFormation validates the parameter value as a number; however, when
+     *        Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when
      *        you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the
      *        parameter value becomes a string.
      *        </p>
      *        <p>
-     *        For example, users could specify "8888".
+     *        For example, users might specify "8888".
      *        </p>
      *        <p>
      *        List&lt;Number>: An array of integers or floats that are separated by commas. AWS CloudFormation validates
-     *        the parameter value as numbers; however, when you use the parameter elsewhere in your template (for
+     *        the parameter value as numbers. However, when you use the parameter elsewhere in your template (for
      *        example, by using the Ref intrinsic function), the parameter value becomes a list of strings.
      *        </p>
      *        <p>
-     *        For example, users could specify "80,20", and a Ref results in ["80","20"].
+     *        For example, users might specify "80,20", and then Ref results in ["80","20"].
      *        </p>
      *        <p>
      *        CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings
      *        should be one more than the total number of commas. Also, each member string is space-trimmed.
      *        </p>
      *        <p>
-     *        For example, users could specify "test,dev,prod", and a Ref results in ["test","dev","prod"].
+     *        For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1021,7 +1025,8 @@ public class ParameterDefinition implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The unique ID of your Amazon Pinpoint application. */
     private String applicationId;
     /** The number of entries you want on each page in the response. */
     private String pageSize;
@@ -35,7 +36,10 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String token;
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -43,7 +47,9 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * The unique ID of your Amazon Pinpoint application.
+     * 
+     * @return The unique ID of your Amazon Pinpoint application.
      */
 
     public String getApplicationId() {
@@ -51,7 +57,10 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,7 +144,8 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,9 +21,13 @@ import javax.annotation.Generated;
 public enum StackAttribute {
 
     STORAGE_CONNECTORS("STORAGE_CONNECTORS"),
+    STORAGE_CONNECTOR_HOMEFOLDERS("STORAGE_CONNECTOR_HOMEFOLDERS"),
+    STORAGE_CONNECTOR_GOOGLE_DRIVE("STORAGE_CONNECTOR_GOOGLE_DRIVE"),
+    STORAGE_CONNECTOR_ONE_DRIVE("STORAGE_CONNECTOR_ONE_DRIVE"),
     REDIRECT_URL("REDIRECT_URL"),
     FEEDBACK_URL("FEEDBACK_URL"),
-    THEME_NAME("THEME_NAME");
+    THEME_NAME("THEME_NAME"),
+    USER_SETTINGS("USER_SETTINGS");
 
     private String value;
 

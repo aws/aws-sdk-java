@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,14 @@ public class CreateStageResultJsonUnmarshaller implements Unmarshaller<CreateSta
                     context.nextToken();
                     createStageResult.setCanarySettings(CanarySettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("tracingEnabled", targetDepth)) {
+                    context.nextToken();
+                    createStageResult.setTracingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("webAclArn", targetDepth)) {
+                    context.nextToken();
+                    createStageResult.setWebAclArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     createStageResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
@@ -105,11 +113,11 @@ public class CreateStageResultJsonUnmarshaller implements Unmarshaller<CreateSta
                 }
                 if (context.testExpression("createdDate", targetDepth)) {
                     context.nextToken();
-                    createStageResult.setCreatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createStageResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedDate", targetDepth)) {
                     context.nextToken();
-                    createStageResult.setLastUpdatedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createStageResult.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

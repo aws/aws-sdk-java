@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Permission granted to an entity (user, group) to access a certain aspect of another entity's mailbox.
+ * Permission granted to a user, group, or resource to access a certain aspect of another user, group, or resource
+ * mailbox.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/Permission" target="_top">AWS API
@@ -30,13 +31,13 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the entity (user or group) to which the permissions are granted.
+     * The identifier of the user, group, or resource to which the permissions are granted.
      * </p>
      */
     private String granteeId;
     /**
      * <p>
-     * The type of entity (user, group) of the entity referred to in GranteeId.
+     * The type of user, group, or resource referred to in GranteeId.
      * </p>
      */
     private String granteeType;
@@ -52,11 +53,11 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the entity (user or group) to which the permissions are granted.
+     * The identifier of the user, group, or resource to which the permissions are granted.
      * </p>
      * 
      * @param granteeId
-     *        The identifier of the entity (user or group) to which the permissions are granted.
+     *        The identifier of the user, group, or resource to which the permissions are granted.
      */
 
     public void setGranteeId(String granteeId) {
@@ -65,10 +66,10 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the entity (user or group) to which the permissions are granted.
+     * The identifier of the user, group, or resource to which the permissions are granted.
      * </p>
      * 
-     * @return The identifier of the entity (user or group) to which the permissions are granted.
+     * @return The identifier of the user, group, or resource to which the permissions are granted.
      */
 
     public String getGranteeId() {
@@ -77,11 +78,11 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the entity (user or group) to which the permissions are granted.
+     * The identifier of the user, group, or resource to which the permissions are granted.
      * </p>
      * 
      * @param granteeId
-     *        The identifier of the entity (user or group) to which the permissions are granted.
+     *        The identifier of the user, group, or resource to which the permissions are granted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +93,11 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of entity (user, group) of the entity referred to in GranteeId.
+     * The type of user, group, or resource referred to in GranteeId.
      * </p>
      * 
      * @param granteeType
-     *        The type of entity (user, group) of the entity referred to in GranteeId.
+     *        The type of user, group, or resource referred to in GranteeId.
      * @see MemberType
      */
 
@@ -106,10 +107,10 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of entity (user, group) of the entity referred to in GranteeId.
+     * The type of user, group, or resource referred to in GranteeId.
      * </p>
      * 
-     * @return The type of entity (user, group) of the entity referred to in GranteeId.
+     * @return The type of user, group, or resource referred to in GranteeId.
      * @see MemberType
      */
 
@@ -119,11 +120,11 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of entity (user, group) of the entity referred to in GranteeId.
+     * The type of user, group, or resource referred to in GranteeId.
      * </p>
      * 
      * @param granteeType
-     *        The type of entity (user, group) of the entity referred to in GranteeId.
+     *        The type of user, group, or resource referred to in GranteeId.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MemberType
      */
@@ -135,11 +136,11 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of entity (user, group) of the entity referred to in GranteeId.
+     * The type of user, group, or resource referred to in GranteeId.
      * </p>
      * 
      * @param granteeType
-     *        The type of entity (user, group) of the entity referred to in GranteeId.
+     *        The type of user, group, or resource referred to in GranteeId.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MemberType
      */
@@ -283,7 +284,8 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

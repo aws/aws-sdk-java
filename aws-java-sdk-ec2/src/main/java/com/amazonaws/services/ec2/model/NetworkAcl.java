@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,12 @@ public class NetworkAcl implements Serializable, Cloneable {
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * The ID of the AWS account that owns the network ACL.
+     * </p>
+     */
+    private String ownerId;
 
     /**
      * <p>
@@ -415,7 +421,48 @@ public class NetworkAcl implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The ID of the AWS account that owns the network ACL.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the network ACL.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the network ACL.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the network ACL.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the network ACL.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the network ACL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkAcl withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -436,7 +483,9 @@ public class NetworkAcl implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -475,6 +524,10 @@ public class NetworkAcl implements Serializable, Cloneable {
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
         return true;
     }
 
@@ -489,6 +542,7 @@ public class NetworkAcl implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkAclId() == null) ? 0 : getNetworkAclId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ public class SearchIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results, or null if there are no additional results.
      * </p>
      */
     private String nextToken;
@@ -30,14 +30,20 @@ public class SearchIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private java.util.List<ThingDocument> things;
+    /**
+     * <p>
+     * The thing groups that match the search query.
+     * </p>
+     */
+    private java.util.List<ThingGroupDocument> thingGroups;
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results, or null if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     *        The token used to get the next set of results, or null if there are no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -46,10 +52,10 @@ public class SearchIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results, or null if there are no additional results.
      * </p>
      * 
-     * @return The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * @return The token used to get the next set of results, or null if there are no additional results.
      */
 
     public String getNextToken() {
@@ -58,11 +64,11 @@ public class SearchIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results, or null if there are no additional results.
      * </p>
      * 
      * @param nextToken
-     *        The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     *        The token used to get the next set of results, or null if there are no additional results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,7 +148,78 @@ public class SearchIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The thing groups that match the search query.
+     * </p>
+     * 
+     * @return The thing groups that match the search query.
+     */
+
+    public java.util.List<ThingGroupDocument> getThingGroups() {
+        return thingGroups;
+    }
+
+    /**
+     * <p>
+     * The thing groups that match the search query.
+     * </p>
+     * 
+     * @param thingGroups
+     *        The thing groups that match the search query.
+     */
+
+    public void setThingGroups(java.util.Collection<ThingGroupDocument> thingGroups) {
+        if (thingGroups == null) {
+            this.thingGroups = null;
+            return;
+        }
+
+        this.thingGroups = new java.util.ArrayList<ThingGroupDocument>(thingGroups);
+    }
+
+    /**
+     * <p>
+     * The thing groups that match the search query.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setThingGroups(java.util.Collection)} or {@link #withThingGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param thingGroups
+     *        The thing groups that match the search query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchIndexResult withThingGroups(ThingGroupDocument... thingGroups) {
+        if (this.thingGroups == null) {
+            setThingGroups(new java.util.ArrayList<ThingGroupDocument>(thingGroups.length));
+        }
+        for (ThingGroupDocument ele : thingGroups) {
+            this.thingGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The thing groups that match the search query.
+     * </p>
+     * 
+     * @param thingGroups
+     *        The thing groups that match the search query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchIndexResult withThingGroups(java.util.Collection<ThingGroupDocument> thingGroups) {
+        setThingGroups(thingGroups);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -155,7 +232,9 @@ public class SearchIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getThings() != null)
-            sb.append("Things: ").append(getThings());
+            sb.append("Things: ").append(getThings()).append(",");
+        if (getThingGroups() != null)
+            sb.append("ThingGroups: ").append(getThingGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +257,10 @@ public class SearchIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getThings() != null && other.getThings().equals(this.getThings()) == false)
             return false;
+        if (other.getThingGroups() == null ^ this.getThingGroups() == null)
+            return false;
+        if (other.getThingGroups() != null && other.getThingGroups().equals(this.getThingGroups()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +271,7 @@ public class SearchIndexResult extends com.amazonaws.AmazonWebServiceResult<com.
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getThings() == null) ? 0 : getThings().hashCode());
+        hashCode = prime * hashCode + ((getThingGroups() == null) ? 0 : getThingGroups().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,12 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private String targetGroupArn;
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      */
     private String healthCheckProtocol;
@@ -52,14 +56,26 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private String healthCheckPath;
     /**
      * <p>
+     * Indicates whether health checks are enabled.
+     * </p>
+     */
+    private Boolean healthCheckEnabled;
+    /**
+     * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
     /**
      * <p>
      * [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      */
     private Integer healthCheckTimeoutSeconds;
@@ -79,6 +95,9 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      */
     private Matcher matcher;
@@ -125,13 +144,20 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP.
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.</p>
+     *        <p>
+     *        If the protocol of the target group is TCP, you can't modify this setting.
      * @see ProtocolEnum
      */
 
@@ -141,12 +167,19 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      * 
      * @return The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *         supported only if the protocol of the target group is TCP.
+     *         supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *         not supported for health checks.</p>
+     *         <p>
+     *         If the protocol of the target group is TCP, you can't modify this setting.
      * @see ProtocolEnum
      */
 
@@ -156,13 +189,20 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP.
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.</p>
+     *        <p>
+     *        If the protocol of the target group is TCP, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -174,13 +214,20 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP.
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.</p>
+     *        <p>
+     *        If the protocol of the target group is TCP, you can't modify this setting.
      * @see ProtocolEnum
      */
 
@@ -190,13 +237,20 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP.
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.</p>
+     *        <p>
+     *        If the protocol of the target group is TCP, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -288,14 +342,71 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * Indicates whether health checks are enabled.
+     * </p>
+     * 
+     * @param healthCheckEnabled
+     *        Indicates whether health checks are enabled.
+     */
+
+    public void setHealthCheckEnabled(Boolean healthCheckEnabled) {
+        this.healthCheckEnabled = healthCheckEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether health checks are enabled.
+     * </p>
+     * 
+     * @return Indicates whether health checks are enabled.
+     */
+
+    public Boolean getHealthCheckEnabled() {
+        return this.healthCheckEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether health checks are enabled.
+     * </p>
+     * 
+     * @param healthCheckEnabled
+     *        Indicates whether health checks are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyTargetGroupRequest withHealthCheckEnabled(Boolean healthCheckEnabled) {
+        setHealthCheckEnabled(healthCheckEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether health checks are enabled.
+     * </p>
+     * 
+     * @return Indicates whether health checks are enabled.
+     */
+
+    public Boolean isHealthCheckEnabled() {
+        return this.healthCheckEnabled;
+    }
+
+    /**
+     * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
      *        The approximate amount of time, in seconds, between health checks of an individual target. For Application
-     *        Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or
-     *        30 seconds.
+     *        Load Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30
+     *        seconds.</p>
+     *        <p>
+     *        If the protocol of the target group is TCP, you can't modify this setting.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -305,12 +416,17 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      * 
      * @return The approximate amount of time, in seconds, between health checks of an individual target. For
-     *         Application Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported
-     *         values are 10 or 30 seconds.
+     *         Application Load Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values
+     *         are 10 or 30 seconds.</p>
+     *         <p>
+     *         If the protocol of the target group is TCP, you can't modify this setting.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -320,13 +436,18 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The approximate amount of time, in seconds, between health checks of an individual target. For Application Load
-     * Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds.
+     * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
      *        The approximate amount of time, in seconds, between health checks of an individual target. For Application
-     *        Load Balancers, the range is 5 to 300 seconds. For Network Load Balancers, the supported values are 10 or
-     *        30 seconds.
+     *        Load Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30
+     *        seconds.</p>
+     *        <p>
+     *        If the protocol of the target group is TCP, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -339,10 +460,15 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.
      * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
+     * </p>
      * 
      * @param healthCheckTimeoutSeconds
      *        [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health
-     *        check.
+     *        check.</p>
+     *        <p>
+     *        If the protocol of the target group is TCP, you can't modify this setting.
      */
 
     public void setHealthCheckTimeoutSeconds(Integer healthCheckTimeoutSeconds) {
@@ -353,9 +479,14 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.
      * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
+     * </p>
      * 
      * @return [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health
-     *         check.
+     *         check.</p>
+     *         <p>
+     *         If the protocol of the target group is TCP, you can't modify this setting.
      */
 
     public Integer getHealthCheckTimeoutSeconds() {
@@ -366,10 +497,15 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.
      * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
+     * </p>
      * 
      * @param healthCheckTimeoutSeconds
      *        [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health
-     *        check.
+     *        check.</p>
+     *        <p>
+     *        If the protocol of the target group is TCP, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -469,9 +605,15 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
+     * </p>
      * 
      * @param matcher
-     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a
+     *        target.</p>
+     *        <p>
+     *        If the protocol of the target group is TCP, you can't modify this setting.
      */
 
     public void setMatcher(Matcher matcher) {
@@ -482,8 +624,14 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
+     * </p>
      * 
-     * @return [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     * @return [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a
+     *         target.</p>
+     *         <p>
+     *         If the protocol of the target group is TCP, you can't modify this setting.
      */
 
     public Matcher getMatcher() {
@@ -494,9 +642,15 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
      * </p>
+     * <p>
+     * If the protocol of the target group is TCP, you can't modify this setting.
+     * </p>
      * 
      * @param matcher
-     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a
+     *        target.</p>
+     *        <p>
+     *        If the protocol of the target group is TCP, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,7 +660,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -524,6 +679,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("HealthCheckPort: ").append(getHealthCheckPort()).append(",");
         if (getHealthCheckPath() != null)
             sb.append("HealthCheckPath: ").append(getHealthCheckPath()).append(",");
+        if (getHealthCheckEnabled() != null)
+            sb.append("HealthCheckEnabled: ").append(getHealthCheckEnabled()).append(",");
         if (getHealthCheckIntervalSeconds() != null)
             sb.append("HealthCheckIntervalSeconds: ").append(getHealthCheckIntervalSeconds()).append(",");
         if (getHealthCheckTimeoutSeconds() != null)
@@ -564,6 +721,10 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getHealthCheckPath() != null && other.getHealthCheckPath().equals(this.getHealthCheckPath()) == false)
             return false;
+        if (other.getHealthCheckEnabled() == null ^ this.getHealthCheckEnabled() == null)
+            return false;
+        if (other.getHealthCheckEnabled() != null && other.getHealthCheckEnabled().equals(this.getHealthCheckEnabled()) == false)
+            return false;
         if (other.getHealthCheckIntervalSeconds() == null ^ this.getHealthCheckIntervalSeconds() == null)
             return false;
         if (other.getHealthCheckIntervalSeconds() != null && other.getHealthCheckIntervalSeconds().equals(this.getHealthCheckIntervalSeconds()) == false)
@@ -596,6 +757,7 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getHealthCheckProtocol() == null) ? 0 : getHealthCheckProtocol().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckPort() == null) ? 0 : getHealthCheckPort().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckPath() == null) ? 0 : getHealthCheckPath().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckEnabled() == null) ? 0 : getHealthCheckEnabled().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckIntervalSeconds() == null) ? 0 : getHealthCheckIntervalSeconds().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckTimeoutSeconds() == null) ? 0 : getHealthCheckTimeoutSeconds().hashCode());
         hashCode = prime * hashCode + ((getHealthyThresholdCount() == null) ? 0 : getHealthyThresholdCount().hashCode());

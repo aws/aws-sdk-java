@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,10 @@ public class RefreshCacheRequestMarshaller {
 
     private static final MarshallingInfo<String> FILESHAREARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareARN").build();
+    private static final MarshallingInfo<List> FOLDERLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FolderList").build();
+    private static final MarshallingInfo<Boolean> RECURSIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Recursive").build();
 
     private static final RefreshCacheRequestMarshaller instance = new RefreshCacheRequestMarshaller();
 
@@ -47,6 +52,8 @@ public class RefreshCacheRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(refreshCacheRequest.getFileShareARN(), FILESHAREARN_BINDING);
+            protocolMarshaller.marshall(refreshCacheRequest.getFolderList(), FOLDERLIST_BINDING);
+            protocolMarshaller.marshall(refreshCacheRequest.getRecursive(), RECURSIVE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -124,36 +124,39 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
                             StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));
                 }
 
-                Ebs ebs = blockDeviceMappingsListValue.getEbs();
-                if (ebs != null) {
+                {
+                    Ebs ebs = blockDeviceMappingsListValue.getEbs();
+                    if (ebs != null) {
 
-                    if (ebs.getSnapshotId() != null) {
-                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId",
-                                StringUtils.fromString(ebs.getSnapshotId()));
-                    }
+                        if (ebs.getSnapshotId() != null) {
+                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId",
+                                    StringUtils.fromString(ebs.getSnapshotId()));
+                        }
 
-                    if (ebs.getVolumeSize() != null) {
-                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize",
-                                StringUtils.fromInteger(ebs.getVolumeSize()));
-                    }
+                        if (ebs.getVolumeSize() != null) {
+                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize",
+                                    StringUtils.fromInteger(ebs.getVolumeSize()));
+                        }
 
-                    if (ebs.getVolumeType() != null) {
-                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
-                                StringUtils.fromString(ebs.getVolumeType()));
-                    }
+                        if (ebs.getVolumeType() != null) {
+                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
+                                    StringUtils.fromString(ebs.getVolumeType()));
+                        }
 
-                    if (ebs.getDeleteOnTermination() != null) {
-                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
-                                StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
-                    }
+                        if (ebs.getDeleteOnTermination() != null) {
+                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
+                                    StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
+                        }
 
-                    if (ebs.getIops() != null) {
-                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebs.getIops()));
-                    }
+                        if (ebs.getIops() != null) {
+                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Iops",
+                                    StringUtils.fromInteger(ebs.getIops()));
+                        }
 
-                    if (ebs.getEncrypted() != null) {
-                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
-                                StringUtils.fromBoolean(ebs.getEncrypted()));
+                        if (ebs.getEncrypted() != null) {
+                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
+                                    StringUtils.fromBoolean(ebs.getEncrypted()));
+                        }
                     }
                 }
 
@@ -165,11 +168,13 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
             }
         }
 
-        InstanceMonitoring instanceMonitoring = createLaunchConfigurationRequest.getInstanceMonitoring();
-        if (instanceMonitoring != null) {
+        {
+            InstanceMonitoring instanceMonitoring = createLaunchConfigurationRequest.getInstanceMonitoring();
+            if (instanceMonitoring != null) {
 
-            if (instanceMonitoring.getEnabled() != null) {
-                request.addParameter("InstanceMonitoring.Enabled", StringUtils.fromBoolean(instanceMonitoring.getEnabled()));
+                if (instanceMonitoring.getEnabled() != null) {
+                    request.addParameter("InstanceMonitoring.Enabled", StringUtils.fromBoolean(instanceMonitoring.getEnabled()));
+                }
             }
         }
 

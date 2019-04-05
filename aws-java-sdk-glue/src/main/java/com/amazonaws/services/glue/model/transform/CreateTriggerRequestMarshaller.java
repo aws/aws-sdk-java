@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -42,6 +43,8 @@ public class CreateTriggerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Boolean> STARTONCREATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartOnCreation").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateTriggerRequestMarshaller instance = new CreateTriggerRequestMarshaller();
 
@@ -66,6 +69,7 @@ public class CreateTriggerRequestMarshaller {
             protocolMarshaller.marshall(createTriggerRequest.getActions(), ACTIONS_BINDING);
             protocolMarshaller.marshall(createTriggerRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createTriggerRequest.getStartOnCreation(), STARTONCREATION_BINDING);
+            protocolMarshaller.marshall(createTriggerRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

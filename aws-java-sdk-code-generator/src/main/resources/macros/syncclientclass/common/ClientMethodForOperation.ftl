@@ -35,12 +35,45 @@
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "${metadata.serviceId}");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "${operationModel.operationName}");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                   awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            <#if operationModel.endpointDiscovery?has_content>
+                URI cachedEndpoint = null;
+                if (endpointDiscoveryEnabled) {
+                    cachedEndpoint = cache.get(awsCredentialsProvider.getCredentials().getAWSAccessKeyId(), false, endpoint);
+                }
+            </#if>
+
+
+           <#if operationModel.endpointTrait?has_content>
+               URI endpointTraitHost = null;
+               if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                   <#local inputShape = operationModel.inputShape />
+                   <#local hostPrefixProcessor = operationModel.getHostPrefixProcessor() />
+                   <#list hostPrefixProcessor.c2jNames as memberName>
+                       <#local memberShape = inputShape.getMemberByC2jName(memberName) />
+                       ValidationUtils.assertStringNotEmpty(${operationModel.input.variableName}.${memberShape.getterMethodName}(), "${memberName}");
+                   </#list>
+
+                   String hostPrefix = "${operationModel.endpointTrait.hostPrefix}";
+                   String resolvedHostPrefix = String.format("${hostPrefixProcessor.hostWithStringSpecifier}"
+                   <#list hostPrefixProcessor.c2jNames as memberName>
+                        <#local memberShape = inputShape.getMemberByC2jName(memberName) />
+                        , ${operationModel.input.variableName}.${memberShape.getterMethodName}()
+                   </#list>
+                        );
+
+                   endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+               }
+           </#if>
+
             <#if operationModel.returnType??>
-                <@ResponseHandlerCreation.content operationModel, metadata, "new ${operationModel.syncReturnType}${metadata.unmarshallerClassSuffix}()", operationModel.returnType.returnType />
+                <@ResponseHandlerCreation.content customConfig, operationModel, metadata, "new ${operationModel.syncReturnType}${metadata.unmarshallerClassSuffix}()", operationModel.returnType.returnType />
                 response = <@ClientInvokeMethodInvocation.content operationModel />
 
 
@@ -59,7 +92,7 @@
 
                 return response.getAwsResponse();
             <#else>
-                <@ResponseHandlerCreation.content operationModel, metadata, "null", "Void" />
+                <@ResponseHandlerCreation.content customConfig, operationModel, metadata, "null", "Void" />
                 <@ClientInvokeMethodInvocation.content operationModel />
             </#if>
 

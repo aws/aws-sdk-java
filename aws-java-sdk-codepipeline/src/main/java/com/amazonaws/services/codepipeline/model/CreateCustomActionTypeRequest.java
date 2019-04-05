@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * You can refer to a name in the configuration properties of the custom action within the URL templates by
      * following the format of {Config:name}, as long as the configuration property is both required and not secret. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
      * Action for a Pipeline</a>.
      * </p>
      * </note>
@@ -338,7 +338,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * You can refer to a name in the configuration properties of the custom action within the URL templates by
      * following the format of {Config:name}, as long as the configuration property is both required and not secret. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
      * Action for a Pipeline</a>.
      * </p>
      * </note>
@@ -348,8 +348,8 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      *         You can refer to a name in the configuration properties of the custom action within the URL templates by
      *         following the format of {Config:name}, as long as the configuration property is both required and not
      *         secret. For more information, see <a
-     *         href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
-     *         Custom Action for a Pipeline</a>.
+     *         href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     *         a Custom Action for a Pipeline</a>.
      *         </p>
      */
 
@@ -366,7 +366,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * You can refer to a name in the configuration properties of the custom action within the URL templates by
      * following the format of {Config:name}, as long as the configuration property is both required and not secret. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
      * Action for a Pipeline</a>.
      * </p>
      * </note>
@@ -377,7 +377,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      *        You can refer to a name in the configuration properties of the custom action within the URL templates by
      *        following the format of {Config:name}, as long as the configuration property is both required and not
      *        secret. For more information, see <a
-     *        href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
      *        Custom Action for a Pipeline</a>.
      *        </p>
      */
@@ -400,7 +400,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * You can refer to a name in the configuration properties of the custom action within the URL templates by
      * following the format of {Config:name}, as long as the configuration property is both required and not secret. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
      * Action for a Pipeline</a>.
      * </p>
      * </note>
@@ -416,7 +416,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      *        You can refer to a name in the configuration properties of the custom action within the URL templates by
      *        following the format of {Config:name}, as long as the configuration property is both required and not
      *        secret. For more information, see <a
-     *        href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
      *        Custom Action for a Pipeline</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -441,7 +441,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * You can refer to a name in the configuration properties of the custom action within the URL templates by
      * following the format of {Config:name}, as long as the configuration property is both required and not secret. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a Custom
      * Action for a Pipeline</a>.
      * </p>
      * </note>
@@ -452,7 +452,7 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      *        You can refer to a name in the configuration properties of the custom action within the URL templates by
      *        following the format of {Config:name}, as long as the configuration property is both required and not
      *        secret. For more information, see <a
-     *        href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create a
      *        Custom Action for a Pipeline</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -544,7 +544,8 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

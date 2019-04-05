@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,35 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * A map of attributes with their corresponding values.
+     * </p>
+     * <p>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can
+     * publish or subscribe to the topic.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
 
     /**
      * Default constructor for CreateTopicRequest object. Callers should use the setter or fluent setter (with...)
@@ -122,7 +151,207 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A map of attributes with their corresponding values.
+     * </p>
+     * <p>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can
+     * publish or subscribe to the topic.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A map of attributes with their corresponding values.</p>
+     *         <p>
+     *         The following lists the names, descriptions, and values of the special request parameters that the
+     *         <code>CreateTopic</code> action uses:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *         endpoints.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
+     *         can publish or subscribe to the topic.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.Map<String, String> getAttributes() {
+        if (attributes == null) {
+            attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        return attributes;
+    }
+
+    /**
+     * <p>
+     * A map of attributes with their corresponding values.
+     * </p>
+     * <p>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can
+     * publish or subscribe to the topic.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param attributes
+     *        A map of attributes with their corresponding values.</p>
+     *        <p>
+     *        The following lists the names, descriptions, and values of the special request parameters that the
+     *        <code>CreateTopic</code> action uses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *        endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
+     *        can publish or subscribe to the topic.
+     *        </p>
+     *        </li>
+     */
+
+    public void setAttributes(java.util.Map<String, String> attributes) {
+        this.attributes = attributes == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(attributes);
+    }
+
+    /**
+     * <p>
+     * A map of attributes with their corresponding values.
+     * </p>
+     * <p>
+     * The following lists the names, descriptions, and values of the special request parameters that the
+     * <code>CreateTopic</code> action uses:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     * endpoints.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can
+     * publish or subscribe to the topic.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param attributes
+     *        A map of attributes with their corresponding values.</p>
+     *        <p>
+     *        The following lists the names, descriptions, and values of the special request parameters that the
+     *        <code>CreateTopic</code> action uses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S
+     *        endpoints.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
+     *        can publish or subscribe to the topic.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTopicRequest withAttributes(java.util.Map<String, String> attributes) {
+        setAttributes(attributes);
+        return this;
+    }
+
+    public CreateTopicRequest addAttributesEntry(String key, String value) {
+        if (null == this.attributes) {
+            this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        if (this.attributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.attributes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Attributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTopicRequest clearAttributesEntries() {
+        this.attributes = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -133,7 +362,9 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getAttributes() != null)
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -152,6 +383,10 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getAttributes() == null ^ this.getAttributes() == null)
+            return false;
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -161,6 +396,7 @@ public class CreateTopicRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class CreateThingGroupRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private ThingGroupProperties thingGroupProperties;
+    /**
+     * <p>
+     * Metadata which can be used to manage the thing group.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -160,7 +166,78 @@ public class CreateThingGroupRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Metadata which can be used to manage the thing group.
+     * </p>
+     * 
+     * @return Metadata which can be used to manage the thing group.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the thing group.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the thing group.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the thing group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the thing group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateThingGroupRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the thing group.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the thing group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateThingGroupRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -175,7 +252,9 @@ public class CreateThingGroupRequest extends com.amazonaws.AmazonWebServiceReque
         if (getParentGroupName() != null)
             sb.append("ParentGroupName: ").append(getParentGroupName()).append(",");
         if (getThingGroupProperties() != null)
-            sb.append("ThingGroupProperties: ").append(getThingGroupProperties());
+            sb.append("ThingGroupProperties: ").append(getThingGroupProperties()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -202,6 +281,10 @@ public class CreateThingGroupRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getThingGroupProperties() != null && other.getThingGroupProperties().equals(this.getThingGroupProperties()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -213,6 +296,7 @@ public class CreateThingGroupRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getThingGroupName() == null) ? 0 : getThingGroupName().hashCode());
         hashCode = prime * hashCode + ((getParentGroupName() == null) ? 0 : getParentGroupName().hashCode());
         hashCode = prime * hashCode + ((getThingGroupProperties() == null) ? 0 : getThingGroupProperties().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

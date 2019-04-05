@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      */
     private String workspaceId;
@@ -42,7 +42,7 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
     private String connectionState;
     /**
      * <p>
-     * The timestamp of the connection state check.
+     * The timestamp of the connection status check.
      * </p>
      */
     private java.util.Date connectionStateCheckTimestamp;
@@ -55,11 +55,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the WorkSpace.
+     *        The identifier of the WorkSpace.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -68,10 +68,10 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
-     * @return The ID of the WorkSpace.
+     * @return The identifier of the WorkSpace.
      */
 
     public String getWorkspaceId() {
@@ -80,11 +80,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the WorkSpace.
+     * The identifier of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the WorkSpace.
+     *        The identifier of the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +168,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The timestamp of the connection state check.
+     * The timestamp of the connection status check.
      * </p>
      * 
      * @param connectionStateCheckTimestamp
-     *        The timestamp of the connection state check.
+     *        The timestamp of the connection status check.
      */
 
     public void setConnectionStateCheckTimestamp(java.util.Date connectionStateCheckTimestamp) {
@@ -181,10 +181,10 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The timestamp of the connection state check.
+     * The timestamp of the connection status check.
      * </p>
      * 
-     * @return The timestamp of the connection state check.
+     * @return The timestamp of the connection status check.
      */
 
     public java.util.Date getConnectionStateCheckTimestamp() {
@@ -193,11 +193,11 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The timestamp of the connection state check.
+     * The timestamp of the connection status check.
      * </p>
      * 
      * @param connectionStateCheckTimestamp
-     *        The timestamp of the connection state check.
+     *        The timestamp of the connection status check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,7 +247,8 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

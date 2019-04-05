@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,9 @@ public class ReplicaGlobalSecondaryIndexSettingsUpdateMarshaller {
             .marshallLocationName("IndexName").build();
     private static final MarshallingInfo<Long> PROVISIONEDREADCAPACITYUNITS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedReadCapacityUnits").build();
+    private static final MarshallingInfo<StructuredPojo> PROVISIONEDREADCAPACITYAUTOSCALINGSETTINGSUPDATE_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ProvisionedReadCapacityAutoScalingSettingsUpdate").build();
 
     private static final ReplicaGlobalSecondaryIndexSettingsUpdateMarshaller instance = new ReplicaGlobalSecondaryIndexSettingsUpdateMarshaller();
 
@@ -50,6 +53,8 @@ public class ReplicaGlobalSecondaryIndexSettingsUpdateMarshaller {
         try {
             protocolMarshaller.marshall(replicaGlobalSecondaryIndexSettingsUpdate.getIndexName(), INDEXNAME_BINDING);
             protocolMarshaller.marshall(replicaGlobalSecondaryIndexSettingsUpdate.getProvisionedReadCapacityUnits(), PROVISIONEDREADCAPACITYUNITS_BINDING);
+            protocolMarshaller.marshall(replicaGlobalSecondaryIndexSettingsUpdate.getProvisionedReadCapacityAutoScalingSettingsUpdate(),
+                    PROVISIONEDREADCAPACITYAUTOSCALINGSETTINGSUPDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

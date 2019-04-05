@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Represents the output of a <code>BatchWrite</code> operation.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWriteOperation" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWriteOperation" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -85,8 +85,8 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Creates an index object. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     * search</a> for more information.
      * </p>
      */
     private BatchCreateIndex createIndex;
@@ -104,20 +104,26 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     private BatchDetachFromIndex detachFromIndex;
     /**
      * <p>
-     * Attaches a typed link to a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Attaches a typed link to a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      */
     private BatchAttachTypedLink attachTypedLink;
     /**
      * <p>
-     * Detaches a typed link from a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Detaches a typed link from a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      */
     private BatchDetachTypedLink detachTypedLink;
+    /**
+     * <p>
+     * Updates a given object's attributes.
+     * </p>
+     */
+    private BatchUpdateLinkAttributes updateLinkAttributes;
 
     /**
      * <p>
@@ -482,14 +488,14 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Creates an index object. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     * search</a> for more information.
      * </p>
      * 
      * @param createIndex
      *        Creates an index object. See <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for
-     *        more information.
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     *        search</a> for more information.
      */
 
     public void setCreateIndex(BatchCreateIndex createIndex) {
@@ -499,13 +505,13 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Creates an index object. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     * search</a> for more information.
      * </p>
      * 
      * @return Creates an index object. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for
-     *         more information.
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     *         search</a> for more information.
      */
 
     public BatchCreateIndex getCreateIndex() {
@@ -515,14 +521,14 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Creates an index object. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     * search</a> for more information.
      * </p>
      * 
      * @param createIndex
      *        Creates an index object. See <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for
-     *        more information.
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and
+     *        search</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -613,15 +619,15 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Attaches a typed link to a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Attaches a typed link to a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param attachTypedLink
-     *        Attaches a typed link to a specified source and target object. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        Attaches a typed link to a specified source and target object. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      */
 
     public void setAttachTypedLink(BatchAttachTypedLink attachTypedLink) {
@@ -630,14 +636,14 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Attaches a typed link to a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Attaches a typed link to a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
-     * @return Attaches a typed link to a specified source and target object. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink"
-     *         >Typed link</a>.
+     * @return Attaches a typed link to a specified source and target object. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *         >Typed Links</a>.
      */
 
     public BatchAttachTypedLink getAttachTypedLink() {
@@ -646,15 +652,15 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Attaches a typed link to a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Attaches a typed link to a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param attachTypedLink
-     *        Attaches a typed link to a specified source and target object. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        Attaches a typed link to a specified source and target object. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -665,15 +671,15 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Detaches a typed link from a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Detaches a typed link from a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param detachTypedLink
-     *        Detaches a typed link from a specified source and target object. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        Detaches a typed link from a specified source and target object. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      */
 
     public void setDetachTypedLink(BatchDetachTypedLink detachTypedLink) {
@@ -682,14 +688,14 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Detaches a typed link from a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Detaches a typed link from a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
-     * @return Detaches a typed link from a specified source and target object. For more information, see <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink"
-     *         >Typed link</a>.
+     * @return Detaches a typed link from a specified source and target object. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *         >Typed Links</a>.
      */
 
     public BatchDetachTypedLink getDetachTypedLink() {
@@ -698,15 +704,15 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Detaches a typed link from a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Detaches a typed link from a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param detachTypedLink
-     *        Detaches a typed link from a specified source and target object. For more information, see <a
-     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     *        link</a>.
+     *        Detaches a typed link from a specified source and target object. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     *        >Typed Links</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -716,7 +722,48 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Updates a given object's attributes.
+     * </p>
+     * 
+     * @param updateLinkAttributes
+     *        Updates a given object's attributes.
+     */
+
+    public void setUpdateLinkAttributes(BatchUpdateLinkAttributes updateLinkAttributes) {
+        this.updateLinkAttributes = updateLinkAttributes;
+    }
+
+    /**
+     * <p>
+     * Updates a given object's attributes.
+     * </p>
+     * 
+     * @return Updates a given object's attributes.
+     */
+
+    public BatchUpdateLinkAttributes getUpdateLinkAttributes() {
+        return this.updateLinkAttributes;
+    }
+
+    /**
+     * <p>
+     * Updates a given object's attributes.
+     * </p>
+     * 
+     * @param updateLinkAttributes
+     *        Updates a given object's attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchWriteOperation withUpdateLinkAttributes(BatchUpdateLinkAttributes updateLinkAttributes) {
+        setUpdateLinkAttributes(updateLinkAttributes);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -753,7 +800,9 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
         if (getAttachTypedLink() != null)
             sb.append("AttachTypedLink: ").append(getAttachTypedLink()).append(",");
         if (getDetachTypedLink() != null)
-            sb.append("DetachTypedLink: ").append(getDetachTypedLink());
+            sb.append("DetachTypedLink: ").append(getDetachTypedLink()).append(",");
+        if (getUpdateLinkAttributes() != null)
+            sb.append("UpdateLinkAttributes: ").append(getUpdateLinkAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -824,6 +873,10 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getDetachTypedLink() != null && other.getDetachTypedLink().equals(this.getDetachTypedLink()) == false)
             return false;
+        if (other.getUpdateLinkAttributes() == null ^ this.getUpdateLinkAttributes() == null)
+            return false;
+        if (other.getUpdateLinkAttributes() != null && other.getUpdateLinkAttributes().equals(this.getUpdateLinkAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -846,6 +899,7 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getDetachFromIndex() == null) ? 0 : getDetachFromIndex().hashCode());
         hashCode = prime * hashCode + ((getAttachTypedLink() == null) ? 0 : getAttachTypedLink().hashCode());
         hashCode = prime * hashCode + ((getDetachTypedLink() == null) ? 0 : getDetachTypedLink().hashCode());
+        hashCode = prime * hashCode + ((getUpdateLinkAttributes() == null) ? 0 : getUpdateLinkAttributes().hashCode());
         return hashCode;
     }
 

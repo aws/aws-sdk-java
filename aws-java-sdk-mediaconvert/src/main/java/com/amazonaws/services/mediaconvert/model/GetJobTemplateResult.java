@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,14 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetJobTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /** A job template is a pre-made set of encoding instructions that you can use to quickly create a job. */
     private JobTemplate jobTemplate;
 
     /**
+     * A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+     * 
      * @param jobTemplate
+     *        A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
      */
 
     public void setJobTemplate(JobTemplate jobTemplate) {
@@ -34,7 +38,9 @@ public class GetJobTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * @return
+     * A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+     * 
+     * @return A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
      */
 
     public JobTemplate getJobTemplate() {
@@ -42,7 +48,10 @@ public class GetJobTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
+     * 
      * @param jobTemplate
+     *        A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -52,7 +61,8 @@ public class GetJobTemplateResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

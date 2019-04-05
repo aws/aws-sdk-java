@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -178,6 +178,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<DeviceInstance> instances;
+    /**
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     */
+    private String availability;
 
     /**
      * <p>
@@ -1390,7 +1397,91 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     * 
+     * @param availability
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
+     * @see DeviceAvailability
+     */
+
+    public void setAvailability(String availability) {
+        this.availability = availability;
+    }
+
+    /**
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     * 
+     * @return Reflects how likely a device will be available for a test run. It is currently available in the
+     *         ListDevices and GetDevice API methods.
+     * @see DeviceAvailability
+     */
+
+    public String getAvailability() {
+        return this.availability;
+    }
+
+    /**
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     * 
+     * @param availability
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceAvailability
+     */
+
+    public Device withAvailability(String availability) {
+        setAvailability(availability);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     * 
+     * @param availability
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
+     * @see DeviceAvailability
+     */
+
+    public void setAvailability(DeviceAvailability availability) {
+        withAvailability(availability);
+    }
+
+    /**
+     * <p>
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
+     * </p>
+     * 
+     * @param availability
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceAvailability
+     */
+
+    public Device withAvailability(DeviceAvailability availability) {
+        this.availability = availability.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -1439,7 +1530,9 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         if (getFleetName() != null)
             sb.append("FleetName: ").append(getFleetName()).append(",");
         if (getInstances() != null)
-            sb.append("Instances: ").append(getInstances());
+            sb.append("Instances: ").append(getInstances()).append(",");
+        if (getAvailability() != null)
+            sb.append("Availability: ").append(getAvailability());
         sb.append("}");
         return sb.toString();
     }
@@ -1534,6 +1627,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
             return false;
+        if (other.getAvailability() == null ^ this.getAvailability() == null)
+            return false;
+        if (other.getAvailability() != null && other.getAvailability().equals(this.getAvailability()) == false)
+            return false;
         return true;
     }
 
@@ -1562,6 +1659,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         hashCode = prime * hashCode + ((getFleetName() == null) ? 0 : getFleetName().hashCode());
         hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime * hashCode + ((getAvailability() == null) ? 0 : getAvailability().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -599,32 +599,28 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * more DynamoDB tables with the same table name in the provided regions.
      * </p>
      * <p>
-     * Tables can only be added as the replicas of a global table group under the following conditions:
+     * If you want to add a new replica table to a global table, each of the following conditions must be true:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The tables must have the same name.
+     * The table must have the same primary key as all of the other replicas.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The tables must contain no items.
+     * The table must have the same name as all of the other replicas.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The tables must have the same hash key and sort key (if present).
+     * The table must have DynamoDB Streams enabled, with the stream containing both the new and the old images of the
+     * item.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The tables must have same provisioned and maximum write capacity units.
+     * None of the replica tables in the global table can contain any data.
      * </p>
      * </li>
      * </ul>
@@ -642,12 +638,19 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * The global secondary indexes must have the same hash key and sort key (if present).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * The global secondary indexes must have the same provisioned and maximum write capacity units.
-     * </p>
-     * </li>
      * </ul>
+     * <important>
+     * <p>
+     * Write capacity settings should be set consistently across your replica tables and secondary indexes. DynamoDB
+     * strongly recommends enabling auto scaling to manage the write capacity settings for all of your global tables
+     * replicas and indexes.
+     * </p>
+     * <p>
+     * If you prefer to manage write capacity settings manually, you should provision equal replicated write capacity
+     * units to your replica tables. You should also provision equal replicated write capacity units to matching
+     * secondary indexes across your global table.
+     * </p>
+     * </important>
      * 
      * @param createGlobalTableRequest
      * @return A Java Future containing the result of the CreateGlobalTable operation returned by the service.
@@ -663,32 +666,28 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * more DynamoDB tables with the same table name in the provided regions.
      * </p>
      * <p>
-     * Tables can only be added as the replicas of a global table group under the following conditions:
+     * If you want to add a new replica table to a global table, each of the following conditions must be true:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The tables must have the same name.
+     * The table must have the same primary key as all of the other replicas.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The tables must contain no items.
+     * The table must have the same name as all of the other replicas.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The tables must have the same hash key and sort key (if present).
+     * The table must have DynamoDB Streams enabled, with the stream containing both the new and the old images of the
+     * item.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The tables must have same provisioned and maximum write capacity units.
+     * None of the replica tables in the global table can contain any data.
      * </p>
      * </li>
      * </ul>
@@ -706,12 +705,19 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * The global secondary indexes must have the same hash key and sort key (if present).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * The global secondary indexes must have the same provisioned and maximum write capacity units.
-     * </p>
-     * </li>
      * </ul>
+     * <important>
+     * <p>
+     * Write capacity settings should be set consistently across your replica tables and secondary indexes. DynamoDB
+     * strongly recommends enabling auto scaling to manage the write capacity settings for all of your global tables
+     * replicas and indexes.
+     * </p>
+     * <p>
+     * If you prefer to manage write capacity settings manually, you should provision equal replicated write capacity
+     * units to your replica tables. You should also provision equal replicated write capacity units to matching
+     * secondary indexes across your global table.
+     * </p>
+     * </important>
      * 
      * @param createGlobalTableRequest
      * @param asyncHandler
@@ -1119,6 +1125,37 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
     java.util.concurrent.Future<DescribeContinuousBackupsResult> describeContinuousBackupsAsync(
             DescribeContinuousBackupsRequest describeContinuousBackupsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeContinuousBackupsRequest, DescribeContinuousBackupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the regional endpoint information.
+     * </p>
+     * 
+     * @param describeEndpointsRequest
+     * @return A Java Future containing the result of the DescribeEndpoints operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DescribeEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest describeEndpointsRequest);
+
+    /**
+     * <p>
+     * Returns the regional endpoint information.
+     * </p>
+     * 
+     * @param describeEndpointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEndpoints operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest describeEndpointsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult> asyncHandler);
 
     /**
      * <p>
@@ -2630,6 +2667,262 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * <code>TransactGetItems</code> is a synchronous operation that atomically retrieves multiple items from one or
+     * more tables (but not from indexes) in a single account and region. A <code>TransactGetItems</code> call can
+     * contain up to 10 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure that
+     * specifies an item to retrieve from a table in the account and region. A call to <code>TransactGetItems</code>
+     * cannot retrieve items from tables in more than one AWS account or region.
+     * </p>
+     * <p>
+     * DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following is true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A conflicting operation is in the process of updating an item to be read.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is insufficient provisioned capacity for the transaction to be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is a user error, such as an invalid data format.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param transactGetItemsRequest
+     * @return A Java Future containing the result of the TransactGetItems operation returned by the service.
+     * @sample AmazonDynamoDBAsync.TransactGetItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TransactGetItemsResult> transactGetItemsAsync(TransactGetItemsRequest transactGetItemsRequest);
+
+    /**
+     * <p>
+     * <code>TransactGetItems</code> is a synchronous operation that atomically retrieves multiple items from one or
+     * more tables (but not from indexes) in a single account and region. A <code>TransactGetItems</code> call can
+     * contain up to 10 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure that
+     * specifies an item to retrieve from a table in the account and region. A call to <code>TransactGetItems</code>
+     * cannot retrieve items from tables in more than one AWS account or region.
+     * </p>
+     * <p>
+     * DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following is true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A conflicting operation is in the process of updating an item to be read.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is insufficient provisioned capacity for the transaction to be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is a user error, such as an invalid data format.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param transactGetItemsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TransactGetItems operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.TransactGetItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TransactGetItemsResult> transactGetItemsAsync(TransactGetItemsRequest transactGetItemsRequest,
+            com.amazonaws.handlers.AsyncHandler<TransactGetItemsRequest, TransactGetItemsResult> asyncHandler);
+
+    /**
+     * <p>
+     * <code>TransactWriteItems</code> is a synchronous write operation that groups up to 10 action requests. These
+     * actions can target items in different tables, but not in different AWS accounts or regions, and no two actions
+     * can target the same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the
+     * same item.
+     * </p>
+     * <p>
+     * The actions are completed atomically so that either all of them succeed, or all of them fail. They are defined by
+     * the following objects:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Put</code>  &#x97;   Initiates a <code>PutItem</code> operation to write a new item. This structure
+     * specifies the primary key of the item to be written, the name of the table to write it in, an optional condition
+     * expression that must be satisfied for the write to succeed, a list of the item's attributes, and a field
+     * indicating whether or not to retrieve the item's attributes if the condition is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Update</code>  &#x97;   Initiates an <code>UpdateItem</code> operation to update an existing item. This
+     * structure specifies the primary key of the item to be updated, the name of the table where it resides, an
+     * optional condition expression that must be satisfied for the update to succeed, an expression that defines one or
+     * more attributes to be updated, and a field indicating whether or not to retrieve the item's attributes if the
+     * condition is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Delete</code>  &#x97;   Initiates a <code>DeleteItem</code> operation to delete an existing item. This
+     * structure specifies the primary key of the item to be deleted, the name of the table where it resides, an
+     * optional condition expression that must be satisfied for the deletion to succeed, and a field indicating whether
+     * or not to retrieve the item's attributes if the condition is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConditionCheck</code>  &#x97;   Applies a condition to an item that is not being modified by the
+     * transaction. This structure specifies the primary key of the item to be checked, the name of the table where it
+     * resides, a condition expression that must be satisfied for the transaction to succeed, and a field indicating
+     * whether or not to retrieve the item's attributes if the condition is not met.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * DynamoDB rejects the entire <code>TransactWriteItems</code> request if any of the following is true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A condition in one of the condition expressions is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A conflicting operation is in the process of updating the same item.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is insufficient provisioned capacity for the transaction to be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An item size becomes too large (bigger than 400 KB), a Local Secondary Index (LSI) becomes too large, or a
+     * similar validation error occurs because of changes made by the transaction.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is a user error, such as an invalid data format.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param transactWriteItemsRequest
+     * @return A Java Future containing the result of the TransactWriteItems operation returned by the service.
+     * @sample AmazonDynamoDBAsync.TransactWriteItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactWriteItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TransactWriteItemsResult> transactWriteItemsAsync(TransactWriteItemsRequest transactWriteItemsRequest);
+
+    /**
+     * <p>
+     * <code>TransactWriteItems</code> is a synchronous write operation that groups up to 10 action requests. These
+     * actions can target items in different tables, but not in different AWS accounts or regions, and no two actions
+     * can target the same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the
+     * same item.
+     * </p>
+     * <p>
+     * The actions are completed atomically so that either all of them succeed, or all of them fail. They are defined by
+     * the following objects:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Put</code>  &#x97;   Initiates a <code>PutItem</code> operation to write a new item. This structure
+     * specifies the primary key of the item to be written, the name of the table to write it in, an optional condition
+     * expression that must be satisfied for the write to succeed, a list of the item's attributes, and a field
+     * indicating whether or not to retrieve the item's attributes if the condition is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Update</code>  &#x97;   Initiates an <code>UpdateItem</code> operation to update an existing item. This
+     * structure specifies the primary key of the item to be updated, the name of the table where it resides, an
+     * optional condition expression that must be satisfied for the update to succeed, an expression that defines one or
+     * more attributes to be updated, and a field indicating whether or not to retrieve the item's attributes if the
+     * condition is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Delete</code>  &#x97;   Initiates a <code>DeleteItem</code> operation to delete an existing item. This
+     * structure specifies the primary key of the item to be deleted, the name of the table where it resides, an
+     * optional condition expression that must be satisfied for the deletion to succeed, and a field indicating whether
+     * or not to retrieve the item's attributes if the condition is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConditionCheck</code>  &#x97;   Applies a condition to an item that is not being modified by the
+     * transaction. This structure specifies the primary key of the item to be checked, the name of the table where it
+     * resides, a condition expression that must be satisfied for the transaction to succeed, and a field indicating
+     * whether or not to retrieve the item's attributes if the condition is not met.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * DynamoDB rejects the entire <code>TransactWriteItems</code> request if any of the following is true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A condition in one of the condition expressions is not met.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A conflicting operation is in the process of updating the same item.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is insufficient provisioned capacity for the transaction to be completed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An item size becomes too large (bigger than 400 KB), a Local Secondary Index (LSI) becomes too large, or a
+     * similar validation error occurs because of changes made by the transaction.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There is a user error, such as an invalid data format.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param transactWriteItemsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TransactWriteItems operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.TransactWriteItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactWriteItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TransactWriteItemsResult> transactWriteItemsAsync(TransactWriteItemsRequest transactWriteItemsRequest,
+            com.amazonaws.handlers.AsyncHandler<TransactWriteItemsRequest, TransactWriteItemsResult> asyncHandler);
 
     /**
      * <p>

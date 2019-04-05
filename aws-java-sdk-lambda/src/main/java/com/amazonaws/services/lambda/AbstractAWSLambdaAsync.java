@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,19 @@ import com.amazonaws.services.lambda.model.*;
 public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLambdaAsync {
 
     protected AbstractAWSLambdaAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddLayerVersionPermissionResult> addLayerVersionPermissionAsync(AddLayerVersionPermissionRequest request) {
+
+        return addLayerVersionPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddLayerVersionPermissionResult> addLayerVersionPermissionAsync(AddLayerVersionPermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddLayerVersionPermissionRequest, AddLayerVersionPermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -131,6 +144,19 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteLayerVersionResult> deleteLayerVersionAsync(DeleteLayerVersionRequest request) {
+
+        return deleteLayerVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLayerVersionResult> deleteLayerVersionAsync(DeleteLayerVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLayerVersionRequest, DeleteLayerVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccountSettingsResult> getAccountSettingsAsync(GetAccountSettingsRequest request) {
 
         return getAccountSettingsAsync(request, null);
@@ -191,6 +217,32 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     @Override
     public java.util.concurrent.Future<GetFunctionConfigurationResult> getFunctionConfigurationAsync(GetFunctionConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFunctionConfigurationRequest, GetFunctionConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLayerVersionResult> getLayerVersionAsync(GetLayerVersionRequest request) {
+
+        return getLayerVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLayerVersionResult> getLayerVersionAsync(GetLayerVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLayerVersionRequest, GetLayerVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLayerVersionPolicyResult> getLayerVersionPolicyAsync(GetLayerVersionPolicyRequest request) {
+
+        return getLayerVersionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLayerVersionPolicyResult> getLayerVersionPolicyAsync(GetLayerVersionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLayerVersionPolicyRequest, GetLayerVersionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -322,6 +374,32 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     }
 
     @Override
+    public java.util.concurrent.Future<ListLayerVersionsResult> listLayerVersionsAsync(ListLayerVersionsRequest request) {
+
+        return listLayerVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLayerVersionsResult> listLayerVersionsAsync(ListLayerVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLayerVersionsRequest, ListLayerVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLayersResult> listLayersAsync(ListLayersRequest request) {
+
+        return listLayersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLayersResult> listLayersAsync(ListLayersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLayersRequest, ListLayersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
 
         return listTagsAsync(request, null);
@@ -348,6 +426,19 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     }
 
     @Override
+    public java.util.concurrent.Future<PublishLayerVersionResult> publishLayerVersionAsync(PublishLayerVersionRequest request) {
+
+        return publishLayerVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishLayerVersionResult> publishLayerVersionAsync(PublishLayerVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PublishLayerVersionRequest, PublishLayerVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PublishVersionResult> publishVersionAsync(PublishVersionRequest request) {
 
         return publishVersionAsync(request, null);
@@ -369,6 +460,19 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     @Override
     public java.util.concurrent.Future<PutFunctionConcurrencyResult> putFunctionConcurrencyAsync(PutFunctionConcurrencyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutFunctionConcurrencyRequest, PutFunctionConcurrencyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveLayerVersionPermissionResult> removeLayerVersionPermissionAsync(RemoveLayerVersionPermissionRequest request) {
+
+        return removeLayerVersionPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveLayerVersionPermissionResult> removeLayerVersionPermissionAsync(RemoveLayerVersionPermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveLayerVersionPermissionRequest, RemoveLayerVersionPermissionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an IP access control group.
+ * Describes an IP access control group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspacesIpGroup" target="_top">AWS API
@@ -30,7 +30,7 @@ public class WorkspacesIpGroup implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      */
     private String groupId;
@@ -55,11 +55,11 @@ public class WorkspacesIpGroup implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the group.
+     *        The identifier of the group.
      */
 
     public void setGroupId(String groupId) {
@@ -68,10 +68,10 @@ public class WorkspacesIpGroup implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      * 
-     * @return The ID of the group.
+     * @return The identifier of the group.
      */
 
     public String getGroupId() {
@@ -80,11 +80,11 @@ public class WorkspacesIpGroup implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the group.
+     * The identifier of the group.
      * </p>
      * 
      * @param groupId
-     *        The ID of the group.
+     *        The identifier of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,7 +247,8 @@ public class WorkspacesIpGroup implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

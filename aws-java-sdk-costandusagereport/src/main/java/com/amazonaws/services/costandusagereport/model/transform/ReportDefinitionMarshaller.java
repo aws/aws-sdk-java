@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,10 @@ public class ReportDefinitionMarshaller {
             .marshallLocationName("S3Region").build();
     private static final MarshallingInfo<List> ADDITIONALARTIFACTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalArtifacts").build();
+    private static final MarshallingInfo<Boolean> REFRESHCLOSEDREPORTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RefreshClosedReports").build();
+    private static final MarshallingInfo<String> REPORTVERSIONING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReportVersioning").build();
 
     private static final ReportDefinitionMarshaller instance = new ReportDefinitionMarshaller();
 
@@ -72,6 +76,8 @@ public class ReportDefinitionMarshaller {
             protocolMarshaller.marshall(reportDefinition.getS3Prefix(), S3PREFIX_BINDING);
             protocolMarshaller.marshall(reportDefinition.getS3Region(), S3REGION_BINDING);
             protocolMarshaller.marshall(reportDefinition.getAdditionalArtifacts(), ADDITIONALARTIFACTS_BINDING);
+            protocolMarshaller.marshall(reportDefinition.getRefreshClosedReports(), REFRESHCLOSEDREPORTS_BINDING);
+            protocolMarshaller.marshall(reportDefinition.getReportVersioning(), REPORTVERSIONING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

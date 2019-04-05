@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * </p>
  * <p>
  * <p>
- * With Application Auto Scaling, you can configure automatic scaling for your scalable AWS resources. You can use
+ * With Application Auto Scaling, you can configure automatic scaling for your scalable resources. You can use
  * Application Auto Scaling to accomplish the following tasks:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Define scaling policies to automatically scale your AWS resources
+ * Define scaling policies to automatically scale your AWS or custom resources
  * </p>
  * </li>
  * <li>
@@ -53,68 +53,70 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * </li>
  * </ul>
  * <p>
- * Application Auto Scaling can scale the following AWS resources:
+ * Application Auto Scaling can scale the following resources:
  * </p>
  * <ul>
  * <li>
  * <p>
  * Amazon ECS services. For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service Auto Scaling</a>
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service Auto Scaling</a>
  * in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * </li>
  * <li>
  * <p>
  * Amazon EC2 Spot fleets. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-auto-scaling.html">Automatic Scaling for Spot
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-auto-scaling.html">Automatic Scaling for Spot
  * Fleet</a> in the <i>Amazon EC2 User Guide</i>.
  * </p>
  * </li>
  * <li>
  * <p>
  * Amazon EMR clusters. For more information, see <a
- * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html">Using Automatic
+ * href="https://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html">Using Automatic
  * Scaling in Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
  * </p>
  * </li>
  * <li>
  * <p>
  * AppStream 2.0 fleets. For more information, see <a
- * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Fleet Auto Scaling for Amazon
+ * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Fleet Auto Scaling for Amazon
  * AppStream 2.0</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
  * </p>
  * </li>
  * <li>
  * <p>
  * Provisioned read and write capacity for Amazon DynamoDB tables and global secondary indexes. For more information,
- * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html">Managing Throughput
+ * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html">Managing Throughput
  * Capacity Automatically with DynamoDB Auto Scaling</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  * </li>
  * <li>
  * <p>
  * Amazon Aurora Replicas. For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using Amazon Aurora
- * Auto Scaling with Aurora Replicas</a>.
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Integrating.AutoScaling.html">Using Amazon
+ * Aurora Auto Scaling with Aurora Replicas</a>.
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon SageMaker endpoints. For more information, see <a
- * href="http://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html">Automatically Scaling Amazon
+ * Amazon SageMaker endpoint variants. For more information, see <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html">Automatically Scaling Amazon
  * SageMaker Models</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Custom resources provided by your own applications or services. More information is available in our <a
+ * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
  * </p>
  * </li>
  * </ul>
  * <p>
- * To configure automatic scaling for multiple resources across multiple services, use AWS Auto Scaling to create a
- * scaling plan for your application. For more information, see <a href="http://aws.amazon.com/autoscaling">AWS Auto
- * Scaling</a>.
- * </p>
- * <p>
- * For a list of supported regions, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS Regions and Endpoints: Application
- * Auto Scaling</a> in the <i>AWS General Reference</i>.
+ * To learn more about Application Auto Scaling, including information about granting IAM users required permissions for
+ * Application Auto Scaling actions, see the <a
+ * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html"
+ * >Application Auto Scaling User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -137,9 +139,10 @@ public interface AWSApplicationAutoScaling {
      * protocol from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -349,7 +352,7 @@ public interface AWSApplicationAutoScaling {
      *         Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is
      *         unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the
      *         role ARN specified for a scalable target does not have permission to call the CloudWatch <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html"
      *         >DescribeAlarms</a> on your behalf.
      * @throws InvalidNextTokenException
      *         The next token supplied was invalid.
@@ -401,7 +404,7 @@ public interface AWSApplicationAutoScaling {
      * <p>
      * Each scalable target is identified by a service namespace, resource ID, and scalable dimension. A scaling policy
      * applies to the scalable target identified by those three attributes. You cannot create a scaling policy until you
-     * register the scalable target using <a>RegisterScalableTarget</a>.
+     * have registered the resource as a scalable target using <a>RegisterScalableTarget</a>.
      * </p>
      * <p>
      * To update a policy, specify its policy name and the parameters that you want to change. Any parameters that you
@@ -411,6 +414,20 @@ public interface AWSApplicationAutoScaling {
      * You can view the scaling policies for a service namespace using <a>DescribeScalingPolicies</a>. If you are no
      * longer using a scaling policy, you can delete it using <a>DeleteScalingPolicy</a>.
      * </p>
+     * <p>
+     * Multiple scaling policies can be in force at the same time for the same scalable target. You can have one or more
+     * target tracking scaling policies, one or more step scaling policies, or both. However, there is a chance that
+     * multiple policies could conflict, instructing the scalable target to scale out or in at the same time.
+     * Application Auto Scaling gives precedence to the policy that provides the largest capacity for both scale in and
+     * scale out. For example, if one policy increases capacity by 3, another policy increases capacity by 200 percent,
+     * and the current capacity is 10, Application Auto Scaling uses the policy with the highest calculated capacity
+     * (200% of 10 = 20) and scales out to 30.
+     * </p>
+     * <p>
+     * Learn more about how to work with scaling policies in the <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html"
+     * >Application Auto Scaling User Guide</a>.
+     * </p>
      * 
      * @param putScalingPolicyRequest
      * @return Result of the PutScalingPolicy operation returned by the service.
@@ -418,7 +435,7 @@ public interface AWSApplicationAutoScaling {
      *         An exception was thrown for a validation issue. Review the available parameters for the API request.
      * @throws LimitExceededException
      *         A per-account resource limit is exceeded. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
+     *         "https://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
      *         >Application Auto Scaling Limits</a>.
      * @throws ObjectNotFoundException
      *         The specified object could not be found. For any operation that depends on the existence of a scalable
@@ -432,7 +449,7 @@ public interface AWSApplicationAutoScaling {
      *         Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is
      *         unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the
      *         role ARN specified for a scalable target does not have permission to call the CloudWatch <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html"
      *         >DescribeAlarms</a> on your behalf.
      * @throws InternalServiceException
      *         The service encountered an internal error.
@@ -449,7 +466,7 @@ public interface AWSApplicationAutoScaling {
      * <p>
      * Each scalable target is identified by a service namespace, resource ID, and scalable dimension. A scheduled
      * action applies to the scalable target identified by those three attributes. You cannot create a scheduled action
-     * until you register the scalable target using <a>RegisterScalableTarget</a>.
+     * until you have registered the resource as a scalable target using <a>RegisterScalableTarget</a>.
      * </p>
      * <p>
      * To update an action, specify its name and the parameters that you want to change. If you don't specify start and
@@ -460,6 +477,11 @@ public interface AWSApplicationAutoScaling {
      * You can view the scheduled actions using <a>DescribeScheduledActions</a>. If you are no longer using a scheduled
      * action, you can delete it using <a>DeleteScheduledAction</a>.
      * </p>
+     * <p>
+     * Learn more about how to work with scheduled actions in the <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html"
+     * >Application Auto Scaling User Guide</a>.
+     * </p>
      * 
      * @param putScheduledActionRequest
      * @return Result of the PutScheduledAction operation returned by the service.
@@ -467,7 +489,7 @@ public interface AWSApplicationAutoScaling {
      *         An exception was thrown for a validation issue. Review the available parameters for the API request.
      * @throws LimitExceededException
      *         A per-account resource limit is exceeded. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
+     *         "https://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
      *         >Application Auto Scaling Limits</a>.
      * @throws ObjectNotFoundException
      *         The specified object could not be found. For any operation that depends on the existence of a scalable
@@ -488,13 +510,16 @@ public interface AWSApplicationAutoScaling {
     /**
      * <p>
      * Registers or updates a scalable target. A scalable target is a resource that Application Auto Scaling can scale
-     * out or scale in. After you have registered a scalable target, you can use this operation to update the minimum
-     * and maximum values for its scalable dimension.
+     * out and scale in. Each scalable target has a resource ID, scalable dimension, and namespace, as well as values
+     * for minimum and maximum capacity.
      * </p>
      * <p>
-     * After you register a scalable target, you can create and apply scaling policies using <a>PutScalingPolicy</a>.
-     * You can view the scaling policies for a service namespace using <a>DescribeScalableTargets</a>. If you no longer
-     * need a scalable target, you can deregister it using <a>DeregisterScalableTarget</a>.
+     * After you register a scalable target, you do not need to register it again to use other Application Auto Scaling
+     * operations. To see which resources have been registered, use <a>DescribeScalableTargets</a>. You can also view
+     * the scaling policies for a service namespace using <a>DescribeScalableTargets</a>.
+     * </p>
+     * <p>
+     * If you no longer need a scalable target, you can deregister it using <a>DeregisterScalableTarget</a>.
      * </p>
      * 
      * @param registerScalableTargetRequest
@@ -503,7 +528,7 @@ public interface AWSApplicationAutoScaling {
      *         An exception was thrown for a validation issue. Review the available parameters for the API request.
      * @throws LimitExceededException
      *         A per-account resource limit is exceeded. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
+     *         "https://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
      *         >Application Auto Scaling Limits</a>.
      * @throws ConcurrentUpdateException
      *         Concurrent updates caused an exception, for example, if you request an update to an Application Auto

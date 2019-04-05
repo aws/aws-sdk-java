@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,21 +27,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda process
-     * privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
+     * If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda
+     * process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
      */
     private Boolean autoAddGroupOwner;
     /** The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional. */
     private String groupOwner;
 
     /**
-     * If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda process
-     * privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
+     * If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda
+     * process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
      * 
      * @param autoAddGroupOwner
-     *        If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda
-     *        process privileges. Thus the Lambda process will have the file access permissions of the added Linux
-     *        group.
+     *        If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the
+     *        Lambda process privileges. Thus the Lambda process will have the file access permissions of the added
+     *        Linux group.
      */
 
     public void setAutoAddGroupOwner(Boolean autoAddGroupOwner) {
@@ -49,12 +49,12 @@ public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda process
-     * privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
+     * If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda
+     * process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
      * 
-     * @return If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda
-     *         process privileges. Thus the Lambda process will have the file access permissions of the added Linux
-     *         group.
+     * @return If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the
+     *         Lambda process privileges. Thus the Lambda process will have the file access permissions of the added
+     *         Linux group.
      */
 
     public Boolean getAutoAddGroupOwner() {
@@ -62,13 +62,13 @@ public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda process
-     * privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
+     * If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda
+     * process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
      * 
      * @param autoAddGroupOwner
-     *        If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda
-     *        process privileges. Thus the Lambda process will have the file access permissions of the added Linux
-     *        group.
+     *        If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the
+     *        Lambda process privileges. Thus the Lambda process will have the file access permissions of the added
+     *        Linux group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,12 +78,12 @@ public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda process
-     * privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
+     * If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda
+     * process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
      * 
-     * @return If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda
-     *         process privileges. Thus the Lambda process will have the file access permissions of the added Linux
-     *         group.
+     * @return If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the
+     *         Lambda process privileges. Thus the Lambda process will have the file access permissions of the added
+     *         Linux group.
      */
 
     public Boolean isAutoAddGroupOwner() {
@@ -128,7 +128,8 @@ public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

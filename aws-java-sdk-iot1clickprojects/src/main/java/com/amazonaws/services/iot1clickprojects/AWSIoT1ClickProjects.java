@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ import com.amazonaws.services.iot1clickprojects.model.*;
  * </p>
  * <p>
  * <p>
- * The AWS IoT 1-Click Project API Reference
+ * The AWS IoT 1-Click Projects API Reference
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -232,6 +232,56 @@ public interface AWSIoT1ClickProjects {
      *      target="_top">AWS API Documentation</a>
      */
     ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest);
+
+    /**
+     * <p>
+     * Lists the tags (metadata key/value pairs) which you have assigned to the resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalFailureException
+     * @throws InvalidRequestException
+     * @throws ResourceNotFoundException
+     * @sample AWSIoT1ClickProjects.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Creates or modifies tags for a resource. Tags are key/value pairs (metadata) that can be used to manage a
+     * resource. For more information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalFailureException
+     * @throws InvalidRequestException
+     * @throws ResourceNotFoundException
+     * @sample AWSIoT1ClickProjects.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags (metadata key/value pairs) from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalFailureException
+     * @throws InvalidRequestException
+     * @throws ResourceNotFoundException
+     * @sample AWSIoT1ClickProjects.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iot1click-projects-2018-05-14/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

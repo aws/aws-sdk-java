@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon Technologies, Inc.
+ * Copyright 2011-2019 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -176,6 +176,13 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         if (multipartUploadCallable.isMultipartUpload()) {
             publishProgress(listener, ProgressEventType.TRANSFER_COMPLETED_EVENT);
         }
+    }
+
+    /**
+     * Marks the upload as a failure.
+     */
+    void uploadFailure() {
+        transfer.setState(TransferState.Failed);
     }
 
     /**

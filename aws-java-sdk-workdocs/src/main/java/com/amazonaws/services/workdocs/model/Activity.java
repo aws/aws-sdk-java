@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,14 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date timeStamp;
+    /**
+     * <p>
+     * Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity
+     * performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the
+     * subfolders and documents within the parent folder (the indirect activity).
+     * </p>
+     */
+    private Boolean isIndirectActivity;
     /**
      * <p>
      * The ID of the organization.
@@ -189,6 +197,74 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
     public Activity withTimeStamp(java.util.Date timeStamp) {
         setTimeStamp(timeStamp);
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity
+     * performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the
+     * subfolders and documents within the parent folder (the indirect activity).
+     * </p>
+     * 
+     * @param isIndirectActivity
+     *        Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity
+     *        performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of
+     *        the subfolders and documents within the parent folder (the indirect activity).
+     */
+
+    public void setIsIndirectActivity(Boolean isIndirectActivity) {
+        this.isIndirectActivity = isIndirectActivity;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity
+     * performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the
+     * subfolders and documents within the parent folder (the indirect activity).
+     * </p>
+     * 
+     * @return Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity
+     *         performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of
+     *         the subfolders and documents within the parent folder (the indirect activity).
+     */
+
+    public Boolean getIsIndirectActivity() {
+        return this.isIndirectActivity;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity
+     * performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the
+     * subfolders and documents within the parent folder (the indirect activity).
+     * </p>
+     * 
+     * @param isIndirectActivity
+     *        Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity
+     *        performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of
+     *        the subfolders and documents within the parent folder (the indirect activity).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Activity withIsIndirectActivity(Boolean isIndirectActivity) {
+        setIsIndirectActivity(isIndirectActivity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity
+     * performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the
+     * subfolders and documents within the parent folder (the indirect activity).
+     * </p>
+     * 
+     * @return Indicates whether an activity is indirect or direct. An indirect activity results from a direct activity
+     *         performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of
+     *         the subfolders and documents within the parent folder (the indirect activity).
+     */
+
+    public Boolean isIndirectActivity() {
+        return this.isIndirectActivity;
     }
 
     /**
@@ -441,7 +517,8 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -455,6 +532,8 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
             sb.append("Type: ").append(getType()).append(",");
         if (getTimeStamp() != null)
             sb.append("TimeStamp: ").append(getTimeStamp()).append(",");
+        if (getIsIndirectActivity() != null)
+            sb.append("IsIndirectActivity: ").append(getIsIndirectActivity()).append(",");
         if (getOrganizationId() != null)
             sb.append("OrganizationId: ").append(getOrganizationId()).append(",");
         if (getInitiator() != null)
@@ -488,6 +567,10 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
         if (other.getTimeStamp() == null ^ this.getTimeStamp() == null)
             return false;
         if (other.getTimeStamp() != null && other.getTimeStamp().equals(this.getTimeStamp()) == false)
+            return false;
+        if (other.getIsIndirectActivity() == null ^ this.getIsIndirectActivity() == null)
+            return false;
+        if (other.getIsIndirectActivity() != null && other.getIsIndirectActivity().equals(this.getIsIndirectActivity()) == false)
             return false;
         if (other.getOrganizationId() == null ^ this.getOrganizationId() == null)
             return false;
@@ -523,6 +606,7 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getTimeStamp() == null) ? 0 : getTimeStamp().hashCode());
+        hashCode = prime * hashCode + ((getIsIndirectActivity() == null) ? 0 : getIsIndirectActivity().hashCode());
         hashCode = prime * hashCode + ((getOrganizationId() == null) ? 0 : getOrganizationId().hashCode());
         hashCode = prime * hashCode + ((getInitiator() == null) ? 0 : getInitiator().hashCode());
         hashCode = prime * hashCode + ((getParticipants() == null) ? 0 : getParticipants().hashCode());

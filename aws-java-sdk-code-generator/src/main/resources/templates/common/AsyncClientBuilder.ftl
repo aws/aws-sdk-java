@@ -38,6 +38,10 @@ public final class ${metadata.asyncClientBuilderClassName}
         super(CLIENT_CONFIG_FACTORY);
     }
 
+    <#if AdditionalBuilderMethods?has_content>
+        <@AdditionalBuilderMethods.content .data_model, metadata.asyncClientBuilderClassName />
+    </#if>
+
     /**
      * Construct an asynchronous implementation of ${metadata.asyncInterface} using the
      * current builder configuration.

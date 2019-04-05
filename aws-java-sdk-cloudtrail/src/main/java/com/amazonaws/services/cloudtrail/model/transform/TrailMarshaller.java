@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,8 @@ public class TrailMarshaller {
             .marshallLocationName("KmsKeyId").build();
     private static final MarshallingInfo<Boolean> HASCUSTOMEVENTSELECTORS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HasCustomEventSelectors").build();
+    private static final MarshallingInfo<Boolean> ISORGANIZATIONTRAIL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsOrganizationTrail").build();
 
     private static final TrailMarshaller instance = new TrailMarshaller();
 
@@ -86,6 +88,7 @@ public class TrailMarshaller {
             protocolMarshaller.marshall(trail.getCloudWatchLogsRoleArn(), CLOUDWATCHLOGSROLEARN_BINDING);
             protocolMarshaller.marshall(trail.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(trail.getHasCustomEventSelectors(), HASCUSTOMEVENTSELECTORS_BINDING);
+            protocolMarshaller.marshall(trail.getIsOrganizationTrail(), ISORGANIZATIONTRAIL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

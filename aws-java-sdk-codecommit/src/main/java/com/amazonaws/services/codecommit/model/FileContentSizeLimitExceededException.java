@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The file cannot be added because it is too large. The maximum file size that can be added using PutFile is 6 MB. For
- * files larger than 6 MB but smaller than 2 GB, add them using a Git client.
+ * The file cannot be added because it is too large. The maximum file size that can be added using PutFile is 6 MB, and
+ * the combined file content change size is 7 MB. Consider making these changes using a Git client.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

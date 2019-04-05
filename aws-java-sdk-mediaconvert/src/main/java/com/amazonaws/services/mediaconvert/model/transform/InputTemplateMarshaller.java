@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class InputTemplateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterEnable").build();
     private static final MarshallingInfo<Integer> FILTERSTRENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterStrength").build();
+    private static final MarshallingInfo<StructuredPojo> IMAGEINSERTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageInserter").build();
     private static final MarshallingInfo<List> INPUTCLIPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputClippings").build();
     private static final MarshallingInfo<Integer> PROGRAMNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -77,6 +79,7 @@ public class InputTemplateMarshaller {
             protocolMarshaller.marshall(inputTemplate.getDenoiseFilter(), DENOISEFILTER_BINDING);
             protocolMarshaller.marshall(inputTemplate.getFilterEnable(), FILTERENABLE_BINDING);
             protocolMarshaller.marshall(inputTemplate.getFilterStrength(), FILTERSTRENGTH_BINDING);
+            protocolMarshaller.marshall(inputTemplate.getImageInserter(), IMAGEINSERTER_BINDING);
             protocolMarshaller.marshall(inputTemplate.getInputClippings(), INPUTCLIPPINGS_BINDING);
             protocolMarshaller.marshall(inputTemplate.getProgramNumber(), PROGRAMNUMBER_BINDING);
             protocolMarshaller.marshall(inputTemplate.getPsiControl(), PSICONTROL_BINDING);

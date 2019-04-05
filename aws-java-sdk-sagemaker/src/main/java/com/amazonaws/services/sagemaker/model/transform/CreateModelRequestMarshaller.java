@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,12 +32,16 @@ public class CreateModelRequestMarshaller {
             .marshallLocationName("ModelName").build();
     private static final MarshallingInfo<StructuredPojo> PRIMARYCONTAINER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrimaryContainer").build();
+    private static final MarshallingInfo<List> CONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Containers").build();
     private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRoleArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
+    private static final MarshallingInfo<Boolean> ENABLENETWORKISOLATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableNetworkIsolation").build();
 
     private static final CreateModelRequestMarshaller instance = new CreateModelRequestMarshaller();
 
@@ -57,9 +61,11 @@ public class CreateModelRequestMarshaller {
         try {
             protocolMarshaller.marshall(createModelRequest.getModelName(), MODELNAME_BINDING);
             protocolMarshaller.marshall(createModelRequest.getPrimaryContainer(), PRIMARYCONTAINER_BINDING);
+            protocolMarshaller.marshall(createModelRequest.getContainers(), CONTAINERS_BINDING);
             protocolMarshaller.marshall(createModelRequest.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(createModelRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createModelRequest.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(createModelRequest.getEnableNetworkIsolation(), ENABLENETWORKISOLATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

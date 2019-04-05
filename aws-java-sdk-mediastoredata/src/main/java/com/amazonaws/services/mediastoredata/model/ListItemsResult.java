@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,23 +25,26 @@ public class ListItemsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Metadata entries for the folders and objects at the requested path.
+     * The metadata entries for the folders and objects at the requested path.
      * </p>
      */
     private java.util.List<Item> items;
     /**
      * <p>
-     * The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.
+     * The token that can be used in a request to view the next set of results. For example, you submit a
+     * <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service
+     * returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the
+     * next batch of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Metadata entries for the folders and objects at the requested path.
+     * The metadata entries for the folders and objects at the requested path.
      * </p>
      * 
-     * @return Metadata entries for the folders and objects at the requested path.
+     * @return The metadata entries for the folders and objects at the requested path.
      */
 
     public java.util.List<Item> getItems() {
@@ -50,11 +53,11 @@ public class ListItemsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Metadata entries for the folders and objects at the requested path.
+     * The metadata entries for the folders and objects at the requested path.
      * </p>
      * 
      * @param items
-     *        Metadata entries for the folders and objects at the requested path.
+     *        The metadata entries for the folders and objects at the requested path.
      */
 
     public void setItems(java.util.Collection<Item> items) {
@@ -68,7 +71,7 @@ public class ListItemsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Metadata entries for the folders and objects at the requested path.
+     * The metadata entries for the folders and objects at the requested path.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +80,7 @@ public class ListItemsResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param items
-     *        Metadata entries for the folders and objects at the requested path.
+     *        The metadata entries for the folders and objects at the requested path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +96,11 @@ public class ListItemsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Metadata entries for the folders and objects at the requested path.
+     * The metadata entries for the folders and objects at the requested path.
      * </p>
      * 
      * @param items
-     *        Metadata entries for the folders and objects at the requested path.
+     *        The metadata entries for the folders and objects at the requested path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +111,17 @@ public class ListItemsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.
+     * The token that can be used in a request to view the next set of results. For example, you submit a
+     * <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service
+     * returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the
+     * next batch of results.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.
+     *        The token that can be used in a request to view the next set of results. For example, you submit a
+     *        <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The
+     *        service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used
+     *        to fetch the next batch of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +130,16 @@ public class ListItemsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.
+     * The token that can be used in a request to view the next set of results. For example, you submit a
+     * <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service
+     * returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the
+     * next batch of results.
      * </p>
      * 
-     * @return The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.
+     * @return The token that can be used in a request to view the next set of results. For example, you submit a
+     *         <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The
+     *         service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be
+     *         used to fetch the next batch of results.
      */
 
     public String getNextToken() {
@@ -133,11 +148,17 @@ public class ListItemsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.
+     * The token that can be used in a request to view the next set of results. For example, you submit a
+     * <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service
+     * returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the
+     * next batch of results.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> used to request the next page of results using <code>ListItems</code>.
+     *        The token that can be used in a request to view the next set of results. For example, you submit a
+     *        <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The
+     *        service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used
+     *        to fetch the next batch of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,7 +168,8 @@ public class ListItemsResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

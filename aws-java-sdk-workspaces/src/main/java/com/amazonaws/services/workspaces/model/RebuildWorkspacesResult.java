@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,17 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the WorkSpace if it could not be rebuilt.
+     * Information about the WorkSpace that could not be rebuilt.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest> failedRequests;
 
     /**
      * <p>
-     * Information about the WorkSpace if it could not be rebuilt.
+     * Information about the WorkSpace that could not be rebuilt.
      * </p>
      * 
-     * @return Information about the WorkSpace if it could not be rebuilt.
+     * @return Information about the WorkSpace that could not be rebuilt.
      */
 
     public java.util.List<FailedWorkspaceChangeRequest> getFailedRequests() {
@@ -47,11 +47,11 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the WorkSpace if it could not be rebuilt.
+     * Information about the WorkSpace that could not be rebuilt.
      * </p>
      * 
      * @param failedRequests
-     *        Information about the WorkSpace if it could not be rebuilt.
+     *        Information about the WorkSpace that could not be rebuilt.
      */
 
     public void setFailedRequests(java.util.Collection<FailedWorkspaceChangeRequest> failedRequests) {
@@ -65,7 +65,7 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the WorkSpace if it could not be rebuilt.
+     * Information about the WorkSpace that could not be rebuilt.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param failedRequests
-     *        Information about the WorkSpace if it could not be rebuilt.
+     *        Information about the WorkSpace that could not be rebuilt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the WorkSpace if it could not be rebuilt.
+     * Information about the WorkSpace that could not be rebuilt.
      * </p>
      * 
      * @param failedRequests
-     *        Information about the WorkSpace if it could not be rebuilt.
+     *        Information about the WorkSpace that could not be rebuilt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,7 +104,8 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

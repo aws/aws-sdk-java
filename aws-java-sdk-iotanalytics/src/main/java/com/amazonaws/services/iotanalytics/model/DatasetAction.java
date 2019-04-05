@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A "DatasetAction" object specifying the query that creates the data set content.
+ * A "DatasetAction" object that specifies how data set contents are automatically created.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetAction" target="_top">AWS API
@@ -30,24 +30,31 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the data set action.
+     * The name of the data set action by which data set contents are automatically created.
      * </p>
      */
     private String actionName;
     /**
      * <p>
-     * An "SqlQueryDatasetAction" object that contains the SQL query to modify the message.
+     * An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
      * </p>
      */
     private SqlQueryDatasetAction queryAction;
+    /**
+     * <p>
+     * Information which allows the system to run a containerized application in order to create the data set contents.
+     * The application must be in a Docker container along with any needed support libraries.
+     * </p>
+     */
+    private ContainerDatasetAction containerAction;
 
     /**
      * <p>
-     * The name of the data set action.
+     * The name of the data set action by which data set contents are automatically created.
      * </p>
      * 
      * @param actionName
-     *        The name of the data set action.
+     *        The name of the data set action by which data set contents are automatically created.
      */
 
     public void setActionName(String actionName) {
@@ -56,10 +63,10 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the data set action.
+     * The name of the data set action by which data set contents are automatically created.
      * </p>
      * 
-     * @return The name of the data set action.
+     * @return The name of the data set action by which data set contents are automatically created.
      */
 
     public String getActionName() {
@@ -68,11 +75,11 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the data set action.
+     * The name of the data set action by which data set contents are automatically created.
      * </p>
      * 
      * @param actionName
-     *        The name of the data set action.
+     *        The name of the data set action by which data set contents are automatically created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +90,11 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An "SqlQueryDatasetAction" object that contains the SQL query to modify the message.
+     * An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
      * </p>
      * 
      * @param queryAction
-     *        An "SqlQueryDatasetAction" object that contains the SQL query to modify the message.
+     *        An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
      */
 
     public void setQueryAction(SqlQueryDatasetAction queryAction) {
@@ -96,10 +103,10 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An "SqlQueryDatasetAction" object that contains the SQL query to modify the message.
+     * An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
      * </p>
      * 
-     * @return An "SqlQueryDatasetAction" object that contains the SQL query to modify the message.
+     * @return An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
      */
 
     public SqlQueryDatasetAction getQueryAction() {
@@ -108,11 +115,11 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An "SqlQueryDatasetAction" object that contains the SQL query to modify the message.
+     * An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
      * </p>
      * 
      * @param queryAction
-     *        An "SqlQueryDatasetAction" object that contains the SQL query to modify the message.
+     *        An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,7 +129,54 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Information which allows the system to run a containerized application in order to create the data set contents.
+     * The application must be in a Docker container along with any needed support libraries.
+     * </p>
+     * 
+     * @param containerAction
+     *        Information which allows the system to run a containerized application in order to create the data set
+     *        contents. The application must be in a Docker container along with any needed support libraries.
+     */
+
+    public void setContainerAction(ContainerDatasetAction containerAction) {
+        this.containerAction = containerAction;
+    }
+
+    /**
+     * <p>
+     * Information which allows the system to run a containerized application in order to create the data set contents.
+     * The application must be in a Docker container along with any needed support libraries.
+     * </p>
+     * 
+     * @return Information which allows the system to run a containerized application in order to create the data set
+     *         contents. The application must be in a Docker container along with any needed support libraries.
+     */
+
+    public ContainerDatasetAction getContainerAction() {
+        return this.containerAction;
+    }
+
+    /**
+     * <p>
+     * Information which allows the system to run a containerized application in order to create the data set contents.
+     * The application must be in a Docker container along with any needed support libraries.
+     * </p>
+     * 
+     * @param containerAction
+     *        Information which allows the system to run a containerized application in order to create the data set
+     *        contents. The application must be in a Docker container along with any needed support libraries.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatasetAction withContainerAction(ContainerDatasetAction containerAction) {
+        setContainerAction(containerAction);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -135,7 +189,9 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
         if (getActionName() != null)
             sb.append("ActionName: ").append(getActionName()).append(",");
         if (getQueryAction() != null)
-            sb.append("QueryAction: ").append(getQueryAction());
+            sb.append("QueryAction: ").append(getQueryAction()).append(",");
+        if (getContainerAction() != null)
+            sb.append("ContainerAction: ").append(getContainerAction());
         sb.append("}");
         return sb.toString();
     }
@@ -158,6 +214,10 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getQueryAction() != null && other.getQueryAction().equals(this.getQueryAction()) == false)
             return false;
+        if (other.getContainerAction() == null ^ this.getContainerAction() == null)
+            return false;
+        if (other.getContainerAction() != null && other.getContainerAction().equals(this.getContainerAction()) == false)
+            return false;
         return true;
     }
 
@@ -168,6 +228,7 @@ public class DatasetAction implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getActionName() == null) ? 0 : getActionName().hashCode());
         hashCode = prime * hashCode + ((getQueryAction() == null) ? 0 : getQueryAction().hashCode());
+        hashCode = prime * hashCode + ((getContainerAction() == null) ? 0 : getContainerAction().hashCode());
         return hashCode;
     }
 

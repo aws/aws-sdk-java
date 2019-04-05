@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      */
     private String status;
@@ -46,8 +46,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     * Status</a>. StatusDetails can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -109,19 +109,19 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     private String statusDetails;
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      */
     private Integer responseCode;
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      */
     private java.util.Date responseStartDateTime;
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      */
     private java.util.Date responseFinishDateTime;
@@ -245,11 +245,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
@@ -259,10 +259,10 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
-     * @return The status of this plugin. You can execute a document with multiple plugins.
+     * @return The status of this plugin. You can run a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
@@ -272,11 +272,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandPluginStatus
      */
@@ -288,11 +288,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @see CommandPluginStatus
      */
 
@@ -302,11 +302,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of this plugin. You can execute a document with multiple plugins.
+     * The status of this plugin. You can run a document with multiple plugins.
      * </p>
      * 
      * @param status
-     *        The status of this plugin. You can execute a document with multiple plugins.
+     *        The status of this plugin. You can run a document with multiple plugins.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandPluginStatus
      */
@@ -321,8 +321,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     * Status</a>. StatusDetails can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -385,8 +385,9 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
      *        results than Status. For more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     *        Status</a>. StatusDetails can be one of the following values:</p>
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -455,8 +456,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     * Status</a>. StatusDetails can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -518,8 +519,9 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * @return A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      *         includes states resulting from error and concurrency control parameters. StatusDetails can show different
      *         results than Status. For more information about these statuses, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     *         Status</a>. StatusDetails can be one of the following values:</p>
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *         Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *         following values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -588,8 +590,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
      * than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     * Status</a>. StatusDetails can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding Command
+     * Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -652,8 +654,9 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        A detailed status of the plugin execution. StatusDetails includes more information than Status because it
      *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
      *        results than Status. For more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     *        Status</a>. StatusDetails can be one of the following values:</p>
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     *        Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+     *        following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -721,11 +724,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      * 
      * @param responseCode
-     *        A numeric response code generated after executing the plugin.
+     *        A numeric response code generated after running the plugin.
      */
 
     public void setResponseCode(Integer responseCode) {
@@ -734,10 +737,10 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      * 
-     * @return A numeric response code generated after executing the plugin.
+     * @return A numeric response code generated after running the plugin.
      */
 
     public Integer getResponseCode() {
@@ -746,11 +749,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric response code generated after executing the plugin.
+     * A numeric response code generated after running the plugin.
      * </p>
      * 
      * @param responseCode
-     *        A numeric response code generated after executing the plugin.
+     *        A numeric response code generated after running the plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -761,11 +764,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      * 
      * @param responseStartDateTime
-     *        The time the plugin started executing.
+     *        The time the plugin started running.
      */
 
     public void setResponseStartDateTime(java.util.Date responseStartDateTime) {
@@ -774,10 +777,10 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      * 
-     * @return The time the plugin started executing.
+     * @return The time the plugin started running.
      */
 
     public java.util.Date getResponseStartDateTime() {
@@ -786,11 +789,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin started executing.
+     * The time the plugin started running.
      * </p>
      * 
      * @param responseStartDateTime
-     *        The time the plugin started executing.
+     *        The time the plugin started running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -801,11 +804,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
      * @param responseFinishDateTime
-     *        The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     *        The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      */
 
     public void setResponseFinishDateTime(java.util.Date responseFinishDateTime) {
@@ -814,10 +817,10 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
-     * @return The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * @return The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      */
 
     public java.util.Date getResponseFinishDateTime() {
@@ -826,11 +829,11 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     * The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * </p>
      * 
      * @param responseFinishDateTime
-     *        The time the plugin stopped executing. Could stop prematurely if, for example, a cancel command was sent.
+     *        The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1284,7 +1287,8 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

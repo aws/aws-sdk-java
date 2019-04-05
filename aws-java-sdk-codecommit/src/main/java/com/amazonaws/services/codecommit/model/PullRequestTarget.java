@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,12 @@ public class PullRequestTarget implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String sourceCommit;
+    /**
+     * <p>
+     * The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     * </p>
+     */
+    private String mergeBase;
     /**
      * <p>
      * Returns metadata about the state of the merge, including whether the merge has been made.
@@ -294,6 +300,46 @@ public class PullRequestTarget implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     * </p>
+     * 
+     * @param mergeBase
+     *        The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     */
+
+    public void setMergeBase(String mergeBase) {
+        this.mergeBase = mergeBase;
+    }
+
+    /**
+     * <p>
+     * The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     * </p>
+     * 
+     * @return The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     */
+
+    public String getMergeBase() {
+        return this.mergeBase;
+    }
+
+    /**
+     * <p>
+     * The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     * </p>
+     * 
+     * @param mergeBase
+     *        The commit ID of the most recent commit that the source branch and the destination branch have in common.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PullRequestTarget withMergeBase(String mergeBase) {
+        setMergeBase(mergeBase);
+        return this;
+    }
+
+    /**
+     * <p>
      * Returns metadata about the state of the merge, including whether the merge has been made.
      * </p>
      * 
@@ -333,7 +379,8 @@ public class PullRequestTarget implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -353,6 +400,8 @@ public class PullRequestTarget implements Serializable, Cloneable, StructuredPoj
             sb.append("DestinationCommit: ").append(getDestinationCommit()).append(",");
         if (getSourceCommit() != null)
             sb.append("SourceCommit: ").append(getSourceCommit()).append(",");
+        if (getMergeBase() != null)
+            sb.append("MergeBase: ").append(getMergeBase()).append(",");
         if (getMergeMetadata() != null)
             sb.append("MergeMetadata: ").append(getMergeMetadata());
         sb.append("}");
@@ -389,6 +438,10 @@ public class PullRequestTarget implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getSourceCommit() != null && other.getSourceCommit().equals(this.getSourceCommit()) == false)
             return false;
+        if (other.getMergeBase() == null ^ this.getMergeBase() == null)
+            return false;
+        if (other.getMergeBase() != null && other.getMergeBase().equals(this.getMergeBase()) == false)
+            return false;
         if (other.getMergeMetadata() == null ^ this.getMergeMetadata() == null)
             return false;
         if (other.getMergeMetadata() != null && other.getMergeMetadata().equals(this.getMergeMetadata()) == false)
@@ -406,6 +459,7 @@ public class PullRequestTarget implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getDestinationReference() == null) ? 0 : getDestinationReference().hashCode());
         hashCode = prime * hashCode + ((getDestinationCommit() == null) ? 0 : getDestinationCommit().hashCode());
         hashCode = prime * hashCode + ((getSourceCommit() == null) ? 0 : getSourceCommit().hashCode());
+        hashCode = prime * hashCode + ((getMergeBase() == null) ? 0 : getMergeBase().hashCode());
         hashCode = prime * hashCode + ((getMergeMetadata() == null) ? 0 : getMergeMetadata().hashCode());
         return hashCode;
     }

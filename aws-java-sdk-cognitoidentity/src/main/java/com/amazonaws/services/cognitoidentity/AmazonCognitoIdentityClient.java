@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.cognitoidentity.AmazonCognitoIdentityClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -48,44 +50,32 @@ import com.amazonaws.services.cognitoidentity.model.transform.*;
  * Client for accessing Amazon Cognito Identity. All service calls made using this client are blocking, and will not
  * return until the service call completes.
  * <p>
- * <fullname>Amazon Cognito</fullname>
+ * <fullname>Amazon Cognito Federated Identities</fullname>
  * <p>
- * Amazon Cognito is a web service that delivers scoped temporary credentials to mobile devices and other untrusted
- * environments. Amazon Cognito uniquely identifies a device and supplies the user with a consistent identity over the
- * lifetime of an application.
+ * Amazon Cognito Federated Identities is a web service that delivers scoped temporary credentials to mobile devices and
+ * other untrusted environments. It uniquely identifies a device and supplies the user with a consistent identity over
+ * the lifetime of an application.
  * </p>
  * <p>
- * Using Amazon Cognito, you can enable authentication with one or more third-party identity providers (Facebook,
- * Google, or Login with Amazon), and you can also choose to support unauthenticated access from your app. Cognito
- * delivers a unique identifier for each user and acts as an OpenID token provider trusted by AWS Security Token Service
- * (STS) to access temporary, limited-privilege AWS credentials.
+ * Using Amazon Cognito Federated Identities, you can enable authentication with one or more third-party identity
+ * providers (Facebook, Google, or Login with Amazon) or an Amazon Cognito user pool, and you can also choose to support
+ * unauthenticated access from your app. Cognito delivers a unique identifier for each user and acts as an OpenID token
+ * provider trusted by AWS Security Token Service (STS) to access temporary, limited-privilege AWS credentials.
  * </p>
  * <p>
- * To provide end-user credentials, first make an unsigned call to <a>GetId</a>. If the end user is authenticated with
- * one of the supported identity providers, set the <code>Logins</code> map with the identity provider token.
- * <code>GetId</code> returns a unique identifier for the user.
+ * For a description of the authentication flow from the Amazon Cognito Developer Guide see <a
+ * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Authentication Flow</a>.
  * </p>
  * <p>
- * Next, make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects the same <code>Logins</code> map
- * as the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned by <code>GetId</code>.
- * Assuming your identity pool has been configured via the <a>SetIdentityPoolRoles</a> operation,
- * <code>GetCredentialsForIdentity</code> will return AWS credentials for your use. If your pool has not been configured
- * with <code>SetIdentityPoolRoles</code>, or if you want to follow legacy flow, make an unsigned call to
- * <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS and retrieve AWS credentials. This call
- * expects the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code>
- * originally returned by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code> can be passed to the STS
- * operation <a href="http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">
- * AssumeRoleWithWebIdentity</a> to retrieve AWS credentials.
- * </p>
- * <p>
- * If you want to use Amazon Cognito in an Android, iOS, or Unity application, you will probably want to make API calls
- * via the AWS Mobile SDK. To learn more, see the <a href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK
- * Developer Guide</a>.
+ * For more information see <a
+ * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon Cognito Federated
+ * Identities</a>.
  * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implements AmazonCognitoIdentity {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -96,6 +86,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -221,6 +213,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
     public AmazonCognitoIdentityClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -286,6 +279,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
             RequestMetricCollector requestMetricCollector) {
         super(clientConfiguration, requestMetricCollector);
         this.awsCredentialsProvider = awsCredentialsProvider;
+        this.advancedConfig = AdvancedConfig.EMPTY;
         init();
     }
 
@@ -304,8 +298,23 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *        Object providing client parameters.
      */
     AmazonCognitoIdentityClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon Cognito Identity using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonCognitoIdentityClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -398,6 +407,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIdentityPool");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -457,6 +469,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIdentities");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -475,7 +490,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Deletes a user pool. Once a pool is deleted, users will not be able to authenticate with the pool.
+     * Deletes an identity pool. Once a pool is deleted, users will not be able to authenticate with the pool.
      * </p>
      * <p>
      * You must use AWS Developer credentials to call this API.
@@ -520,6 +535,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIdentityPool");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -584,6 +602,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -648,6 +669,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityPool");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -721,6 +745,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCredentialsForIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -791,6 +818,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -856,6 +886,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityPoolRoles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -878,7 +911,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.
      * </p>
      * <p>
-     * The OpenId token is valid for 15 minutes.
+     * The OpenId token is valid for 10 minutes.
      * </p>
      * <p>
      * This is a public API. You do not need any credentials to call this API.
@@ -927,6 +960,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOpenIdToken");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1007,6 +1043,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOpenIdTokenForDeveloperIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1026,7 +1065,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Lists the identities in a pool.
+     * Lists the identities in an identity pool.
      * </p>
      * <p>
      * You must use AWS Developer credentials to call this API.
@@ -1071,6 +1110,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentities");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1104,6 +1146,8 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      *         Thrown when a user is not authorized to access the requested resource.
      * @throws TooManyRequestsException
      *         Thrown when a request is throttled.
+     * @throws ResourceNotFoundException
+     *         Thrown when the requested resource (for example, a dataset or record) does not exist.
      * @throws InternalErrorException
      *         Thrown when the service encounters an error during processing the request.
      * @sample AmazonCognitoIdentity.ListIdentityPools
@@ -1132,6 +1176,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentityPools");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1150,13 +1197,88 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
+     * Lists the tags that are assigned to an Amazon Cognito identity pool.
+     * </p>
+     * <p>
+     * A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.
+     * </p>
+     * <p>
+     * You can use this action up to 10 times per second, per account.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         Thrown for missing or bad input parameter(s).
+     * @throws ResourceNotFoundException
+     *         Thrown when the requested resource (for example, a dataset or record) does not exist.
+     * @throws NotAuthorizedException
+     *         Thrown when a user is not authorized to access the requested resource.
+     * @throws TooManyRequestsException
+     *         Thrown when a request is throttled.
+     * @throws InternalErrorException
+     *         Thrown when the service encounters an error during processing the request.
+     * @sample AmazonCognitoIdentity.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of
-     * <code>DeveloperUserIdentifier</code>s associated with an <code>IdentityId</code> for an existing identity. Either
-     * <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these
-     * values, the other value will be searched in the database and returned as a part of the response. If you supply
-     * both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are
-     * verified against the database, the response returns both values and is the same as the request. Otherwise a
+     * <code>DeveloperUserIdentifier</code> values associated with an <code>IdentityId</code> for an existing identity.
+     * Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one
+     * of these values, the other value will be searched in the database and returned as a part of the response. If you
+     * supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values
+     * are verified against the database, the response returns both values and is the same as the request. Otherwise a
      * <code>ResourceConflictException</code> is thrown.
+     * </p>
+     * <p>
+     * <code>LookupDeveloperIdentity</code> is intended for low-throughput control plane operations: for example, to
+     * enable customer service to locate an identity ID by username. If you are using it for higher-volume operations
+     * such as user authentication, your requests are likely to be throttled. <a>GetOpenIdTokenForDeveloperIdentity</a>
+     * is a better option for higher-volume operations for user authentication.
      * </p>
      * <p>
      * You must use AWS Developer credentials to call this API.
@@ -1204,6 +1326,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LookupDeveloperIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1229,6 +1354,11 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * <code>SourceUserIdentifier</code>) with the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>
      * . Only developer-authenticated users can be merged. If the users to be merged are associated with the same public
      * provider, but as two different users, an exception will be thrown.
+     * </p>
+     * <p>
+     * The number of linked logins is limited to 20. So, the number of linked logins for the source user,
+     * <code>SourceUserIdentifier</code>, and the destination user, <code>DestinationUserIdentifier</code>, together
+     * should not be larger than 20. Otherwise, an exception will be thrown.
      * </p>
      * <p>
      * You must use AWS Developer credentials to call this API.
@@ -1276,6 +1406,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MergeDeveloperIdentities");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1345,12 +1478,92 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityPoolRoles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<SetIdentityPoolRolesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetIdentityPoolRolesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label that you can use to categorize and
+     * manage identity pools in different ways, such as by purpose, owner, environment, or other criteria.
+     * </p>
+     * <p>
+     * Each tag consists of a key and value, both of which you define. A key is a general category for more specific
+     * values. For example, if you have two versions of an identity pool, one for testing and another for production,
+     * you might assign an <code>Environment</code> tag key to both identity pools. The value of this key might be
+     * <code>Test</code> for one identity pool and <code>Production</code> for the other.
+     * </p>
+     * <p>
+     * Tags are useful for cost tracking and access control. You can activate your tags so that they appear on the
+     * Billing and Cost Management console, where you can track the costs associated with your identity pools. In an IAM
+     * policy, you can constrain permissions for identity pools based on specific tags or tag values.
+     * </p>
+     * <p>
+     * You can use this action up to 5 times per second, per account. An identity pool can have as many as 50 tags.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         Thrown for missing or bad input parameter(s).
+     * @throws ResourceNotFoundException
+     *         Thrown when the requested resource (for example, a dataset or record) does not exist.
+     * @throws NotAuthorizedException
+     *         Thrown when a user is not authorized to access the requested resource.
+     * @throws TooManyRequestsException
+     *         Thrown when a request is throttled.
+     * @throws InternalErrorException
+     *         Thrown when the service encounters an error during processing the request.
+     * @sample AmazonCognitoIdentity.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1413,6 +1626,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnlinkDeveloperIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1482,6 +1698,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnlinkIdentity");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1500,7 +1719,70 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Updates a user pool.
+     * Removes the specified tags from an Amazon Cognito identity pool. You can use this action up to 5 times per
+     * second, per account
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         Thrown for missing or bad input parameter(s).
+     * @throws ResourceNotFoundException
+     *         Thrown when the requested resource (for example, a dataset or record) does not exist.
+     * @throws NotAuthorizedException
+     *         Thrown when a user is not authorized to access the requested resource.
+     * @throws TooManyRequestsException
+     *         Thrown when a request is throttled.
+     * @throws InternalErrorException
+     *         Thrown when the service encounters an error during processing the request.
+     * @sample AmazonCognitoIdentity.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an identity pool.
      * </p>
      * <p>
      * You must use AWS Developer credentials to call this API.
@@ -1551,6 +1833,9 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIdentityPool");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1591,9 +1876,18 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -1603,7 +1897,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -1611,8 +1905,17 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

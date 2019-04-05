@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
+     * </p>
+     * <p>
+     * NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in your block
+     * device mapping has no effect.
      * </p>
      * <p>
      * Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
@@ -103,8 +107,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
+     * </p>
+     * <p>
+     * NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in your block
+     * device mapping has no effect.
      * </p>
      * <p>
      * Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
@@ -115,8 +123,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @param virtualName
      *        The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      *        instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     *        <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After
-     *        you connect to the instance, you must mount the volume.</p>
+     *        <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type.
+     *        After you connect to the instance, you must mount the volume.</p>
+     *        <p>
+     *        NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in
+     *        your block device mapping has no effect.
+     *        </p>
      *        <p>
      *        Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
      *        instance. When you launch an M3 instance, we ignore any instance store volumes specified in the block
@@ -131,8 +143,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
+     * </p>
+     * <p>
+     * NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in your block
+     * device mapping has no effect.
      * </p>
      * <p>
      * Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
@@ -142,8 +158,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * 
      * @return The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0.
      *         An instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code>
-     *         and <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type.
+     *         and <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type.
      *         After you connect to the instance, you must mount the volume.</p>
+     *         <p>
+     *         NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in
+     *         your block device mapping has no effect.
+     *         </p>
      *         <p>
      *         Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for
      *         the instance. When you launch an M3 instance, we ignore any instance store volumes specified in the block
@@ -158,8 +178,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
+     * <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type. After you
      * connect to the instance, you must mount the volume.
+     * </p>
+     * <p>
+     * NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in your block
+     * device mapping has no effect.
      * </p>
      * <p>
      * Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
@@ -170,8 +194,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * @param virtualName
      *        The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      *        instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
-     *        <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After
-     *        you connect to the instance, you must mount the volume.</p>
+     *        <code>ephemeral1</code>. The number of available instance store volumes depends on the instance type.
+     *        After you connect to the instance, you must mount the volume.</p>
+     *        <p>
+     *        NVMe instance store volumes are automatically enumerated and assigned a device name. Including them in
+     *        your block device mapping has no effect.
+     *        </p>
      *        <p>
      *        Constraints: For M3 instances, you must specify instance store volumes in the block device mapping for the
      *        instance. When you launch an M3 instance, we ignore any instance store volumes specified in the block
@@ -265,7 +293,8 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

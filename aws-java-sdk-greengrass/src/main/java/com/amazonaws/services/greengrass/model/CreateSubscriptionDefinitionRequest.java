@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class CreateSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
     private SubscriptionDefinitionVersion initialVersion;
     /** The name of the subscription definition. */
     private String name;
+    /** Tag(s) to add to the new resource */
+    private java.util.Map<String, String> tags;
 
     /**
      * A client token used to correlate requests and responses.
@@ -135,7 +137,63 @@ public class CreateSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Tag(s) to add to the new resource
+     * 
+     * @return Tag(s) to add to the new resource
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * Tag(s) to add to the new resource
+     * 
+     * @param tags
+     *        Tag(s) to add to the new resource
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * Tag(s) to add to the new resource
+     * 
+     * @param tags
+     *        Tag(s) to add to the new resource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubscriptionDefinitionRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateSubscriptionDefinitionRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubscriptionDefinitionRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -150,7 +208,9 @@ public class CreateSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
         if (getInitialVersion() != null)
             sb.append("InitialVersion: ").append(getInitialVersion()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -177,6 +237,10 @@ public class CreateSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +252,7 @@ public class CreateSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getAmznClientToken() == null) ? 0 : getAmznClientToken().hashCode());
         hashCode = prime * hashCode + ((getInitialVersion() == null) ? 0 : getInitialVersion().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

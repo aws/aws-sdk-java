@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,10 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
             request.addParameter("AutomatedSnapshotRetentionPeriod", StringUtils.fromInteger(modifyClusterRequest.getAutomatedSnapshotRetentionPeriod()));
         }
 
+        if (modifyClusterRequest.getManualSnapshotRetentionPeriod() != null) {
+            request.addParameter("ManualSnapshotRetentionPeriod", StringUtils.fromInteger(modifyClusterRequest.getManualSnapshotRetentionPeriod()));
+        }
+
         if (modifyClusterRequest.getPreferredMaintenanceWindow() != null) {
             request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(modifyClusterRequest.getPreferredMaintenanceWindow()));
         }
@@ -132,6 +136,18 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
 
         if (modifyClusterRequest.getEnhancedVpcRouting() != null) {
             request.addParameter("EnhancedVpcRouting", StringUtils.fromBoolean(modifyClusterRequest.getEnhancedVpcRouting()));
+        }
+
+        if (modifyClusterRequest.getMaintenanceTrackName() != null) {
+            request.addParameter("MaintenanceTrackName", StringUtils.fromString(modifyClusterRequest.getMaintenanceTrackName()));
+        }
+
+        if (modifyClusterRequest.getEncrypted() != null) {
+            request.addParameter("Encrypted", StringUtils.fromBoolean(modifyClusterRequest.getEncrypted()));
+        }
+
+        if (modifyClusterRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(modifyClusterRequest.getKmsKeyId()));
         }
 
         return request;

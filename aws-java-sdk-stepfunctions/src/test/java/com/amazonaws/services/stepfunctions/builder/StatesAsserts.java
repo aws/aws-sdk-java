@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,12 +29,22 @@ public class StatesAsserts {
         final JsonNode expected = loadExpected(resourcePath);
         assertEquals(expected, serialize(stateMachine));
         assertEquals(expected, serialize(roundTripStateMachine(stateMachine)));
+        assertEquals(expected, serialize(roundTripPrettyStateMachine(stateMachine)));
     }
 
     public static void assertStateMachineMatches(String resourcePathPrefix, String resourceName, StateMachine stateMachine) {
         final JsonNode expected = loadExpected(String.format("%s/%s", resourcePathPrefix, resourceName));
         assertEquals(expected, serialize(stateMachine));
         assertEquals(expected, serialize(roundTripStateMachine(stateMachine)));
+        assertEquals(expected, serialize(roundTripPrettyStateMachine(stateMachine)));
+    }
+
+    public static void assertJsonEquals(String expected, String actual) {
+        try {
+            assertEquals(MAPPER.readTree(expected), MAPPER.readTree(actual));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
@@ -45,6 +55,16 @@ public class StatesAsserts {
      */
     private static StateMachine roundTripStateMachine(StateMachine stateMachine) {
         return StateMachine.fromJson(stateMachine.toJson()).build();
+    }
+
+    /**
+     * Serializes StateMachine into pretty formatted JSON and deserialize back into a StateMachine from the JSON.
+     *
+     * @param stateMachine State machine to round trip.
+     * @return Round-tripped state machine.
+     */
+    private static StateMachine roundTripPrettyStateMachine(StateMachine stateMachine) {
+        return StateMachine.fromJson(stateMachine.toPrettyJson()).build();
     }
 
     private static JsonNode serialize(StateMachine stateMachine) {

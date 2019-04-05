@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,17 +54,17 @@ public class DBClusterBacktrackStaxUnmarshaller implements Unmarshaller<DBCluste
                 }
 
                 if (context.testExpression("BacktrackTo", targetDepth)) {
-                    dBClusterBacktrack.setBacktrackTo(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBClusterBacktrack.setBacktrackTo(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("BacktrackedFrom", targetDepth)) {
-                    dBClusterBacktrack.setBacktrackedFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBClusterBacktrack.setBacktrackedFrom(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("BacktrackRequestCreationTime", targetDepth)) {
-                    dBClusterBacktrack.setBacktrackRequestCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    dBClusterBacktrack.setBacktrackRequestCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
 

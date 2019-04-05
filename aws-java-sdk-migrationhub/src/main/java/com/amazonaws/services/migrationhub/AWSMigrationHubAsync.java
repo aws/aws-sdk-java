@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -807,8 +807,9 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
      * </li>
      * <li>
      * <p>
-     * Note the instructions regarding the special use case of the <code>ResourceAttributeList</code> parameter when
-     * specifying any "VM" related value.
+     * Note the instructions regarding the special use case of the <a href=
+     * "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList"
+     * > <code>ResourceAttributeList</code> </a> parameter when specifying any "VM" related value.
      * </p>
      * </li>
      * </ul>
@@ -844,8 +845,9 @@ public interface AWSMigrationHubAsync extends AWSMigrationHub {
      * </li>
      * <li>
      * <p>
-     * Note the instructions regarding the special use case of the <code>ResourceAttributeList</code> parameter when
-     * specifying any "VM" related value.
+     * Note the instructions regarding the special use case of the <a href=
+     * "https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList"
+     * > <code>ResourceAttributeList</code> </a> parameter when specifying any "VM" related value.
      * </p>
      * </li>
      * </ul>

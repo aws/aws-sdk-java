@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InputAttachmentMarshaller {
 
+    private static final MarshallingInfo<String> INPUTATTACHMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputAttachmentName").build();
     private static final MarshallingInfo<String> INPUTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputId").build();
     private static final MarshallingInfo<StructuredPojo> INPUTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,7 @@ public class InputAttachmentMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(inputAttachment.getInputAttachmentName(), INPUTATTACHMENTNAME_BINDING);
             protocolMarshaller.marshall(inputAttachment.getInputId(), INPUTID_BINDING);
             protocolMarshaller.marshall(inputAttachment.getInputSettings(), INPUTSETTINGS_BINDING);
         } catch (Exception e) {

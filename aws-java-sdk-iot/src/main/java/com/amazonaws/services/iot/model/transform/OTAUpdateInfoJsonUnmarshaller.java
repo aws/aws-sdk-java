@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,11 @@ public class OTAUpdateInfoJsonUnmarshaller implements Unmarshaller<OTAUpdateInfo
                 }
                 if (context.testExpression("creationDate", targetDepth)) {
                     context.nextToken();
-                    oTAUpdateInfo.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    oTAUpdateInfo.setCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("lastModifiedDate", targetDepth)) {
                     context.nextToken();
-                    oTAUpdateInfo.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    oTAUpdateInfo.setLastModifiedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
@@ -71,6 +71,10 @@ public class OTAUpdateInfoJsonUnmarshaller implements Unmarshaller<OTAUpdateInfo
                 if (context.testExpression("targets", targetDepth)) {
                     context.nextToken();
                     oTAUpdateInfo.setTargets(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("awsJobExecutionsRolloutConfig", targetDepth)) {
+                    context.nextToken();
+                    oTAUpdateInfo.setAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("targetSelection", targetDepth)) {
                     context.nextToken();

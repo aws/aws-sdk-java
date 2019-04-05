@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,14 +34,20 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<InputDestination> destinations;
     /** The generated ID of the input (unique for user account, immutable). */
     private String id;
+    /** A list of MediaConnect Flows for this input. */
+    private java.util.List<MediaConnectFlow> mediaConnectFlows;
     /** The user-assigned name (This is a mutable value). */
     private String name;
-    /** A list of IDs for all the security groups attached to the input. */
+    /** The Amazon Resource Name (ARN) of the role this input assumes during and after creation. */
+    private String roleArn;
+    /** A list of IDs for all the Input Security Groups attached to the input. */
     private java.util.List<String> securityGroups;
     /** A list of the sources of the input (PULL-type). */
     private java.util.List<InputSource> sources;
 
     private String state;
+    /** A collection of key-value pairs. */
+    private java.util.Map<String, String> tags;
 
     private String type;
 
@@ -242,6 +248,68 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A list of MediaConnect Flows for this input.
+     * 
+     * @return A list of MediaConnect Flows for this input.
+     */
+
+    public java.util.List<MediaConnectFlow> getMediaConnectFlows() {
+        return mediaConnectFlows;
+    }
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     * 
+     * @param mediaConnectFlows
+     *        A list of MediaConnect Flows for this input.
+     */
+
+    public void setMediaConnectFlows(java.util.Collection<MediaConnectFlow> mediaConnectFlows) {
+        if (mediaConnectFlows == null) {
+            this.mediaConnectFlows = null;
+            return;
+        }
+
+        this.mediaConnectFlows = new java.util.ArrayList<MediaConnectFlow>(mediaConnectFlows);
+    }
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMediaConnectFlows(java.util.Collection)} or {@link #withMediaConnectFlows(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param mediaConnectFlows
+     *        A list of MediaConnect Flows for this input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withMediaConnectFlows(MediaConnectFlow... mediaConnectFlows) {
+        if (this.mediaConnectFlows == null) {
+            setMediaConnectFlows(new java.util.ArrayList<MediaConnectFlow>(mediaConnectFlows.length));
+        }
+        for (MediaConnectFlow ele : mediaConnectFlows) {
+            this.mediaConnectFlows.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     * 
+     * @param mediaConnectFlows
+     *        A list of MediaConnect Flows for this input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withMediaConnectFlows(java.util.Collection<MediaConnectFlow> mediaConnectFlows) {
+        setMediaConnectFlows(mediaConnectFlows);
+        return this;
+    }
+
+    /**
      * The user-assigned name (This is a mutable value).
      * 
      * @param name
@@ -276,9 +344,43 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A list of IDs for all the security groups attached to the input.
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
      * 
-     * @return A list of IDs for all the security groups attached to the input.
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+     * 
+     * @return The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * A list of IDs for all the Input Security Groups attached to the input.
+     * 
+     * @return A list of IDs for all the Input Security Groups attached to the input.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -286,10 +388,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A list of IDs for all the security groups attached to the input.
+     * A list of IDs for all the Input Security Groups attached to the input.
      * 
      * @param securityGroups
-     *        A list of IDs for all the security groups attached to the input.
+     *        A list of IDs for all the Input Security Groups attached to the input.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -302,7 +404,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A list of IDs for all the security groups attached to the input.
+     * A list of IDs for all the Input Security Groups attached to the input.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
@@ -310,7 +412,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param securityGroups
-     *        A list of IDs for all the security groups attached to the input.
+     *        A list of IDs for all the Input Security Groups attached to the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,10 +427,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A list of IDs for all the security groups attached to the input.
+     * A list of IDs for all the Input Security Groups attached to the input.
      * 
      * @param securityGroups
-     *        A list of IDs for all the security groups attached to the input.
+     *        A list of IDs for all the Input Security Groups attached to the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,6 +542,61 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A collection of key-value pairs.
+     * 
+     * @return A collection of key-value pairs.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * A collection of key-value pairs.
+     * 
+     * @param tags
+     *        A collection of key-value pairs.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * A collection of key-value pairs.
+     * 
+     * @param tags
+     *        A collection of key-value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public Input addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * @param type
      * @see InputType
      */
@@ -480,7 +637,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -498,14 +656,20 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             sb.append("Destinations: ").append(getDestinations()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getMediaConnectFlows() != null)
+            sb.append("MediaConnectFlows: ").append(getMediaConnectFlows()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getSecurityGroups() != null)
             sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getSources() != null)
             sb.append("Sources: ").append(getSources()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType());
         sb.append("}");
@@ -538,9 +702,17 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getMediaConnectFlows() == null ^ this.getMediaConnectFlows() == null)
+            return false;
+        if (other.getMediaConnectFlows() != null && other.getMediaConnectFlows().equals(this.getMediaConnectFlows()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
         if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
             return false;
@@ -553,6 +725,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
@@ -570,10 +746,13 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAttachedChannels() == null) ? 0 : getAttachedChannels().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getMediaConnectFlows() == null) ? 0 : getMediaConnectFlows().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }

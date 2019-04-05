@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,9 +51,10 @@ public interface AWSXRay {
      * client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -112,6 +113,80 @@ public interface AWSXRay {
 
     /**
      * <p>
+     * Creates a group resource with a name and a filter expression.
+     * </p>
+     * 
+     * @param createGroupRequest
+     * @return Result of the CreateGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.CreateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateGroupResult createGroup(CreateGroupRequest createGroupRequest);
+
+    /**
+     * <p>
+     * Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with
+     * <a>GetSamplingRules</a>, and evaluate each rule in ascending order of <i>priority</i> for each request. If a rule
+     * matches, the service records a trace, borrowing it from the reservoir size. After 10 seconds, the service reports
+     * back to X-Ray with <a>GetSamplingTargets</a> to get updated versions of each in-use rule. The updated rule
+     * contains a trace quota that the service can use instead of borrowing from the reservoir.
+     * </p>
+     * 
+     * @param createSamplingRuleRequest
+     * @return Result of the CreateSamplingRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws RuleLimitExceededException
+     *         You have reached the maximum number of sampling rules.
+     * @sample AWSXRay.CreateSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateSamplingRuleResult createSamplingRule(CreateSamplingRuleRequest createSamplingRuleRequest);
+
+    /**
+     * <p>
+     * Deletes a group resource.
+     * </p>
+     * 
+     * @param deleteGroupRequest
+     * @return Result of the DeleteGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.DeleteGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a sampling rule.
+     * </p>
+     * 
+     * @param deleteSamplingRuleRequest
+     * @return Result of the DeleteSamplingRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.DeleteSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteSamplingRuleResult deleteSamplingRule(DeleteSamplingRuleRequest deleteSamplingRuleRequest);
+
+    /**
+     * <p>
      * Retrieves the current encryption configuration for X-Ray data.
      * </p>
      * 
@@ -126,6 +201,91 @@ public interface AWSXRay {
      *      Documentation</a>
      */
     GetEncryptionConfigResult getEncryptionConfig(GetEncryptionConfigRequest getEncryptionConfigRequest);
+
+    /**
+     * <p>
+     * Retrieves group resource details.
+     * </p>
+     * 
+     * @param getGroupRequest
+     * @return Result of the GetGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetGroupResult getGroup(GetGroupRequest getGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves all active group details.
+     * </p>
+     * 
+     * @param getGroupsRequest
+     * @return Result of the GetGroups operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetGroupsResult getGroups(GetGroupsRequest getGroupsRequest);
+
+    /**
+     * <p>
+     * Retrieves all sampling rules.
+     * </p>
+     * 
+     * @param getSamplingRulesRequest
+     * @return Result of the GetSamplingRules operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetSamplingRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSamplingRulesResult getSamplingRules(GetSamplingRulesRequest getSamplingRulesRequest);
+
+    /**
+     * <p>
+     * Retrieves information about recent sampling results for all sampling rules.
+     * </p>
+     * 
+     * @param getSamplingStatisticSummariesRequest
+     * @return Result of the GetSamplingStatisticSummaries operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetSamplingStatisticSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingStatisticSummaries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSamplingStatisticSummariesResult getSamplingStatisticSummaries(GetSamplingStatisticSummariesRequest getSamplingStatisticSummariesRequest);
+
+    /**
+     * <p>
+     * Requests a sampling quota for rules that the service is using to sample requests.
+     * </p>
+     * 
+     * @param getSamplingTargetsRequest
+     * @return Result of the GetSamplingTargets operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetSamplingTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetSamplingTargets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetSamplingTargetsResult getSamplingTargets(GetSamplingTargetsRequest getSamplingTargetsRequest);
 
     /**
      * <p>
@@ -326,6 +486,40 @@ public interface AWSXRay {
      *      Documentation</a>
      */
     PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest putTraceSegmentsRequest);
+
+    /**
+     * <p>
+     * Updates a group resource.
+     * </p>
+     * 
+     * @param updateGroupRequest
+     * @return Result of the UpdateGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.UpdateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest);
+
+    /**
+     * <p>
+     * Modifies a sampling rule's configuration.
+     * </p>
+     * 
+     * @param updateSamplingRuleRequest
+     * @return Result of the UpdateSamplingRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.UpdateSamplingRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateSamplingRuleResult updateSamplingRule(UpdateSamplingRuleRequest updateSamplingRuleRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

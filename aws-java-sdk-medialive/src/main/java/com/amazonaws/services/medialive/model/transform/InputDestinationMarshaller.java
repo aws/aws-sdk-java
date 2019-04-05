@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class InputDestinationMarshaller {
             .marshallLocationName("port").build();
     private static final MarshallingInfo<String> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("url").build();
+    private static final MarshallingInfo<StructuredPojo> VPC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpc").build();
 
     private static final InputDestinationMarshaller instance = new InputDestinationMarshaller();
 
@@ -53,6 +55,7 @@ public class InputDestinationMarshaller {
             protocolMarshaller.marshall(inputDestination.getIp(), IP_BINDING);
             protocolMarshaller.marshall(inputDestination.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(inputDestination.getUrl(), URL_BINDING);
+            protocolMarshaller.marshall(inputDestination.getVpc(), VPC_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

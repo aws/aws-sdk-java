@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.transcribe.AmazonTranscribeClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -55,6 +57,7 @@ import com.amazonaws.services.transcribe.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonTranscribeClient extends AmazonWebServiceClient implements AmazonTranscribe {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -65,6 +68,8 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -103,8 +108,23 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      *        Object providing client parameters.
      */
     AmazonTranscribeClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon Transcribe Service using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonTranscribeClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -128,8 +148,8 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param createVocabularyRequest
      * @return Result of the CreateVocabulary operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
-     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
@@ -137,8 +157,11 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         The <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with
-     *         a different name.
+     *         When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code> field is a
+     *         duplicate of a previously entered job name. Resend your request with a different name.</p>
+     *         <p>
+     *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same
+     *         time. Resend the second request later.
      * @sample AmazonTranscribe.CreateVocabulary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary" target="_top">AWS
      *      API Documentation</a>
@@ -165,6 +188,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVocabulary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -183,17 +209,83 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Deletes a previously submitted transcription job along with any other generated results such as the
+     * transcription, models, and so on.
+     * </p>
+     * 
+     * @param deleteTranscriptionJobRequest
+     * @return Result of the DeleteTranscriptionJob operation returned by the service.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.DeleteTranscriptionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTranscriptionJobResult deleteTranscriptionJob(DeleteTranscriptionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTranscriptionJob(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTranscriptionJobResult executeDeleteTranscriptionJob(DeleteTranscriptionJobRequest deleteTranscriptionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTranscriptionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTranscriptionJobRequest> request = null;
+        Response<DeleteTranscriptionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTranscriptionJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTranscriptionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTranscriptionJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTranscriptionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteTranscriptionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a vocabulary from Amazon Transcribe.
      * </p>
      * 
      * @param deleteVocabularyRequest
      * @return Result of the DeleteVocabulary operation returned by the service.
      * @throws NotFoundException
-     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
-     *         again.
+     *         We can't find the requested resource. Check the name and try your request again.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @sample AmazonTranscribe.DeleteVocabulary
@@ -222,6 +314,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVocabulary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -248,8 +343,8 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param getTranscriptionJobRequest
      * @return Result of the GetTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
-     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
@@ -257,8 +352,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws NotFoundException
-     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
-     *         again.
+     *         We can't find the requested resource. Check the name and try your request again.
      * @sample AmazonTranscribe.GetTranscriptionJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob" target="_top">AWS
      *      API Documentation</a>
@@ -285,6 +379,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTranscriptionJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -309,16 +406,15 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param getVocabularyRequest
      * @return Result of the GetVocabulary operation returned by the service.
      * @throws NotFoundException
-     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
-     *         again.
+     *         We can't find the requested resource. Check the name and try your request again.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
-     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @sample AmazonTranscribe.GetVocabulary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary" target="_top">AWS API
@@ -346,6 +442,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVocabulary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -370,8 +469,8 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param listTranscriptionJobsRequest
      * @return Result of the ListTranscriptionJobs operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
-     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
@@ -404,6 +503,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTranscriptionJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -430,8 +532,8 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param listVocabulariesRequest
      * @return Result of the ListVocabularies operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
-     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
@@ -464,6 +566,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVocabularies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -488,8 +593,8 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @param startTranscriptionJobRequest
      * @return Result of the StartTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
-     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
@@ -497,8 +602,11 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         The <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with
-     *         a different name.
+     *         When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code> field is a
+     *         duplicate of a previously entered job name. Resend your request with a different name.</p>
+     *         <p>
+     *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same
+     *         time. Resend the second request later.
      * @sample AmazonTranscribe.StartTranscriptionJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob"
      *      target="_top">AWS API Documentation</a>
@@ -525,6 +633,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTranscriptionJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -544,14 +655,15 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Updates an existing vocabulary with new values.
+     * Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the
+     * existing information with the values that you provide in the request.
      * </p>
      * 
      * @param updateVocabularyRequest
      * @return Result of the UpdateVocabulary operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
-     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
@@ -559,8 +671,13 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws NotFoundException
-     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
-     *         again.
+     *         We can't find the requested resource. Check the name and try your request again.
+     * @throws ConflictException
+     *         When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code> field is a
+     *         duplicate of a previously entered job name. Resend your request with a different name.</p>
+     *         <p>
+     *         When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same
+     *         time. Resend the second request later.
      * @sample AmazonTranscribe.UpdateVocabulary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary" target="_top">AWS
      *      API Documentation</a>
@@ -587,6 +704,9 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transcribe");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVocabulary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -627,9 +747,18 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -639,7 +768,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -647,8 +776,17 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

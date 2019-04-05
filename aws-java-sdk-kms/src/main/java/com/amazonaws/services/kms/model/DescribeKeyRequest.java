@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,12 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Describes the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and
+     * returns its <code>KeyId</code> and <code>Arn</code> in the response.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -78,7 +83,12 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Describes the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and
+     * returns its <code>KeyId</code> and <code>Arn</code> in the response.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -115,7 +125,12 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key (CMK).</p>
+     *        Describes the specified customer master key (CMK). </p>
+     *        <p>
+     *        If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a>
+     *        and returns its <code>KeyId</code> and <code>Arn</code> in the response.
+     *        </p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *        alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN
@@ -157,7 +172,12 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Describes the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and
+     * returns its <code>KeyId</code> and <code>Arn</code> in the response.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -193,7 +213,12 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest im
      * alias ARN, use <a>ListAliases</a>.
      * </p>
      * 
-     * @return A unique identifier for the customer master key (CMK).</p>
+     * @return Describes the specified customer master key (CMK). </p>
+     *         <p>
+     *         If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a>
+     *         and returns its <code>KeyId</code> and <code>Arn</code> in the response.
+     *         </p>
      *         <p>
      *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *         alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key
@@ -235,7 +260,12 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for the customer master key (CMK).
+     * Describes the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and
+     * returns its <code>KeyId</code> and <code>Arn</code> in the response.
      * </p>
      * <p>
      * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
@@ -272,7 +302,12 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param keyId
-     *        A unique identifier for the customer master key (CMK).</p>
+     *        Describes the specified customer master key (CMK). </p>
+     *        <p>
+     *        If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a
+     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a>
+     *        and returns its <code>KeyId</code> and <code>Arn</code> in the response.
+     *        </p>
      *        <p>
      *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
      *        alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN
@@ -424,7 +459,8 @@ public class DescribeKeyRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

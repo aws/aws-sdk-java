@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     private String scalingPlanName;
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      */
     private Long scalingPlanVersion;
@@ -65,8 +65,8 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -107,7 +107,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -135,7 +135,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * </ul>
@@ -222,11 +222,11 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version of the scaling plan.
+     *        The version number of the scaling plan.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -235,10 +235,10 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      * 
-     * @return The version of the scaling plan.
+     * @return The version number of the scaling plan.
      */
 
     public Long getScalingPlanVersion() {
@@ -247,11 +247,11 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The version of the scaling plan.
+     * The version number of the scaling plan.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version of the scaling plan.
+     *        The version number of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,8 +338,8 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -379,8 +379,8 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
-     *        Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+     *        Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -426,8 +426,8 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -466,8 +466,8 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      *         </li>
      *         <li>
      *         <p>
-     *         Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is
-     *         the Spot fleet request ID. Example:
+     *         Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is
+     *         the Spot Fleet request ID. Example:
      *         <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *         </p>
      *         </li>
@@ -514,8 +514,8 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
-     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      * </p>
      * </li>
      * <li>
@@ -555,8 +555,8 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
-     *        Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+     *        Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -602,7 +602,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -630,7 +630,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * </ul>
@@ -650,7 +650,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
@@ -678,7 +678,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *        Available for Aurora MySQL-compatible edition.
+     *        Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -705,7 +705,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -733,7 +733,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * </ul>
@@ -753,7 +753,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *         <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      *         </p>
      *         </li>
      *         <li>
@@ -781,7 +781,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      *         <li>
      *         <p>
      *         <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *         Available for Aurora MySQL-compatible edition.
+     *         Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -808,7 +808,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -836,7 +836,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * </ul>
@@ -856,7 +856,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
@@ -884,7 +884,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *        Available for Aurora MySQL-compatible edition.
+     *        Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -913,7 +913,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      * </p>
      * </li>
      * <li>
@@ -941,7 +941,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * </ul>
@@ -961,7 +961,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.
      *        </p>
      *        </li>
      *        <li>
@@ -989,7 +989,7 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *        Available for Aurora MySQL-compatible edition.
+     *        Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1327,7 +1327,8 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

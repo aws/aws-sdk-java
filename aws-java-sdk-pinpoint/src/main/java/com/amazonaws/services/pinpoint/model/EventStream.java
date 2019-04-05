@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class EventStream implements Serializable, Cloneable, StructuredPojo {
      */
     private String destinationStreamArn;
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
      * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
      */
@@ -128,12 +128,12 @@ public class EventStream implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
      * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
      * 
      * @param externalId
-     *        DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
+     *        (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
      *        Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
      *        for IAM roles assumed by Amazon Pinpoint.
      */
@@ -143,13 +143,13 @@ public class EventStream implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
      * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
      * 
-     * @return DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
-     *         Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
-     *         for IAM roles assumed by Amazon Pinpoint.
+     * @return (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used
+     *         by Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not
+     *         recommended for IAM roles assumed by Amazon Pinpoint.
      */
 
     public String getExternalId() {
@@ -157,12 +157,12 @@ public class EventStream implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
      * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
      * 
      * @param externalId
-     *        DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
+     *        (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
      *        Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
      *        for IAM roles assumed by Amazon Pinpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -276,7 +276,8 @@ public class EventStream implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

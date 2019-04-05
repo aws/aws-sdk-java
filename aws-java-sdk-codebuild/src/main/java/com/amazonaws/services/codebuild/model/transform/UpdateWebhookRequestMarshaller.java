@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.codebuild.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class UpdateWebhookRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("branchFilter").build();
     private static final MarshallingInfo<Boolean> ROTATESECRET_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rotateSecret").build();
+    private static final MarshallingInfo<List> FILTERGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filterGroups").build();
 
     private static final UpdateWebhookRequestMarshaller instance = new UpdateWebhookRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class UpdateWebhookRequestMarshaller {
             protocolMarshaller.marshall(updateWebhookRequest.getProjectName(), PROJECTNAME_BINDING);
             protocolMarshaller.marshall(updateWebhookRequest.getBranchFilter(), BRANCHFILTER_BINDING);
             protocolMarshaller.marshall(updateWebhookRequest.getRotateSecret(), ROTATESECRET_BINDING);
+            protocolMarshaller.marshall(updateWebhookRequest.getFilterGroups(), FILTERGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

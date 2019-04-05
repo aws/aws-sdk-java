@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -2027,6 +2027,39 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<StopJobResult> stopJobAsync(StopJobRequest request) {
+
+        return stopJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopJobResult> stopJobAsync(final StopJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopJobRequest, StopJobResult> asyncHandler) {
+        final StopJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopJobResult>() {
+            @Override
+            public StopJobResult call() throws Exception {
+                StopJobResult result = null;
+
+                try {
+                    result = executeStopJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopRemoteAccessSessionResult> stopRemoteAccessSessionAsync(StopRemoteAccessSessionRequest request) {
 
         return stopRemoteAccessSessionAsync(request, null);
@@ -2242,6 +2275,39 @@ public class AWSDeviceFarmAsyncClient extends AWSDeviceFarmClient implements AWS
 
                 try {
                     result = executeUpdateProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUploadResult> updateUploadAsync(UpdateUploadRequest request) {
+
+        return updateUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUploadResult> updateUploadAsync(final UpdateUploadRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateUploadRequest, UpdateUploadResult> asyncHandler) {
+        final UpdateUploadRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateUploadResult>() {
+            @Override
+            public UpdateUploadResult call() throws Exception {
+                UpdateUploadResult result = null;
+
+                try {
+                    result = executeUpdateUpload(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

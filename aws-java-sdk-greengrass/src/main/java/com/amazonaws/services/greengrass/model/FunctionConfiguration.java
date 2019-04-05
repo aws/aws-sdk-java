@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,13 +34,16 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     private String execArgs;
     /** The name of the function executable. */
     private String executable;
-    /** The memory size, in KB, which the function requires. */
+    /**
+     * The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when
+     * you run the Lambda function without containerization.
+     */
     private Integer memorySize;
     /** True if the function is pinned. Pinned means the function is long-lived and starts when the core starts. */
     private Boolean pinned;
     /**
      * The allowed function execution time, after which Lambda should terminate the function. This timeout still applies
-     * to pinned lambdas for each request.
+     * to pinned Lambda functions for each request.
      */
     private Integer timeout;
 
@@ -198,10 +201,12 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The memory size, in KB, which the function requires.
+     * The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when
+     * you run the Lambda function without containerization.
      * 
      * @param memorySize
-     *        The memory size, in KB, which the function requires.
+     *        The memory size, in KB, which the function requires. This setting is not applicable and should be cleared
+     *        when you run the Lambda function without containerization.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -209,9 +214,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The memory size, in KB, which the function requires.
+     * The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when
+     * you run the Lambda function without containerization.
      * 
-     * @return The memory size, in KB, which the function requires.
+     * @return The memory size, in KB, which the function requires. This setting is not applicable and should be cleared
+     *         when you run the Lambda function without containerization.
      */
 
     public Integer getMemorySize() {
@@ -219,10 +226,12 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The memory size, in KB, which the function requires.
+     * The memory size, in KB, which the function requires. This setting is not applicable and should be cleared when
+     * you run the Lambda function without containerization.
      * 
      * @param memorySize
-     *        The memory size, in KB, which the function requires.
+     *        The memory size, in KB, which the function requires. This setting is not applicable and should be cleared
+     *        when you run the Lambda function without containerization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,11 +286,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * The allowed function execution time, after which Lambda should terminate the function. This timeout still applies
-     * to pinned lambdas for each request.
+     * to pinned Lambda functions for each request.
      * 
      * @param timeout
      *        The allowed function execution time, after which Lambda should terminate the function. This timeout still
-     *        applies to pinned lambdas for each request.
+     *        applies to pinned Lambda functions for each request.
      */
 
     public void setTimeout(Integer timeout) {
@@ -290,10 +299,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * The allowed function execution time, after which Lambda should terminate the function. This timeout still applies
-     * to pinned lambdas for each request.
+     * to pinned Lambda functions for each request.
      * 
      * @return The allowed function execution time, after which Lambda should terminate the function. This timeout still
-     *         applies to pinned lambdas for each request.
+     *         applies to pinned Lambda functions for each request.
      */
 
     public Integer getTimeout() {
@@ -302,11 +311,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * The allowed function execution time, after which Lambda should terminate the function. This timeout still applies
-     * to pinned lambdas for each request.
+     * to pinned Lambda functions for each request.
      * 
      * @param timeout
      *        The allowed function execution time, after which Lambda should terminate the function. This timeout still
-     *        applies to pinned lambdas for each request.
+     *        applies to pinned Lambda functions for each request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,7 +325,8 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

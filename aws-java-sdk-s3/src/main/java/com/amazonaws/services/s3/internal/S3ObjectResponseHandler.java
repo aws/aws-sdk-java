@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,14 +54,10 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
         ObjectMetadata metadata = object.getObjectMetadata();
         populateObjectMetadata(response, metadata);
 
-        object.setObjectContent(new S3ObjectInputStream(abortableIs(response), response.getHttpRequest()));
+        object.setObjectContent(new S3ObjectInputStream(response.getContent(), response.getHttpRequest()));
 
         awsResponse.setResult(object);
         return awsResponse;
-    }
-
-    private S3AbortableInputStream abortableIs(HttpResponse response) {
-        return new S3AbortableInputStream(response.getContent(), response.getHttpRequest(), getContentLength(response));
     }
 
     /**

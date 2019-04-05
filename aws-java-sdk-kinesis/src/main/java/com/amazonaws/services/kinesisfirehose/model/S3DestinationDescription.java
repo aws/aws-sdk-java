@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,13 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
      * </p>
      */
     private String prefix;
+    /**
+     * <p>
+     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
+     * appears immediately following the bucket name.
+     * </p>
+     */
+    private String errorOutputPrefix;
     /**
      * <p>
      * The buffering option. If no value is specified, <code>BufferingHints</code> object default values are used.
@@ -244,6 +251,52 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     public S3DestinationDescription withPrefix(String prefix) {
         setPrefix(prefix);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
+     * appears immediately following the bucket name.
+     * </p>
+     * 
+     * @param errorOutputPrefix
+     *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
+     *        prefix appears immediately following the bucket name.
+     */
+
+    public void setErrorOutputPrefix(String errorOutputPrefix) {
+        this.errorOutputPrefix = errorOutputPrefix;
+    }
+
+    /**
+     * <p>
+     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
+     * appears immediately following the bucket name.
+     * </p>
+     * 
+     * @return A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
+     *         prefix appears immediately following the bucket name.
+     */
+
+    public String getErrorOutputPrefix() {
+        return this.errorOutputPrefix;
+    }
+
+    /**
+     * <p>
+     * A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix
+     * appears immediately following the bucket name.
+     * </p>
+     * 
+     * @param errorOutputPrefix
+     *        A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This
+     *        prefix appears immediately following the bucket name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3DestinationDescription withErrorOutputPrefix(String errorOutputPrefix) {
+        setErrorOutputPrefix(errorOutputPrefix);
         return this;
     }
 
@@ -444,7 +497,8 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -460,6 +514,8 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
             sb.append("BucketARN: ").append(getBucketARN()).append(",");
         if (getPrefix() != null)
             sb.append("Prefix: ").append(getPrefix()).append(",");
+        if (getErrorOutputPrefix() != null)
+            sb.append("ErrorOutputPrefix: ").append(getErrorOutputPrefix()).append(",");
         if (getBufferingHints() != null)
             sb.append("BufferingHints: ").append(getBufferingHints()).append(",");
         if (getCompressionFormat() != null)
@@ -494,6 +550,10 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
             return false;
         if (other.getPrefix() != null && other.getPrefix().equals(this.getPrefix()) == false)
             return false;
+        if (other.getErrorOutputPrefix() == null ^ this.getErrorOutputPrefix() == null)
+            return false;
+        if (other.getErrorOutputPrefix() != null && other.getErrorOutputPrefix().equals(this.getErrorOutputPrefix()) == false)
+            return false;
         if (other.getBufferingHints() == null ^ this.getBufferingHints() == null)
             return false;
         if (other.getBufferingHints() != null && other.getBufferingHints().equals(this.getBufferingHints()) == false)
@@ -521,6 +581,7 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getBucketARN() == null) ? 0 : getBucketARN().hashCode());
         hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode());
+        hashCode = prime * hashCode + ((getErrorOutputPrefix() == null) ? 0 : getErrorOutputPrefix().hashCode());
         hashCode = prime * hashCode + ((getBufferingHints() == null) ? 0 : getBufferingHints().hashCode());
         hashCode = prime * hashCode + ((getCompressionFormat() == null) ? 0 : getCompressionFormat().hashCode());
         hashCode = prime * hashCode + ((getEncryptionConfiguration() == null) ? 0 : getEncryptionConfiguration().hashCode());

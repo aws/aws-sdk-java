@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,7 @@ public class BatchParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of
-     * times to retry the failed job execution. Valid values are 1 to 10. When you specify a retry strategy here, it
+     * times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it
      * overrides the retry strategy defined in the job definition.
      * </p>
      */
@@ -199,13 +199,13 @@ public class BatchParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of
-     * times to retry the failed job execution. Valid values are 1 to 10. When you specify a retry strategy here, it
+     * times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it
      * overrides the retry strategy defined in the job definition.
      * </p>
      * 
      * @param retryStrategy
      *        The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the
-     *        number of times to retry the failed job execution. Valid values are 1 to 10. When you specify a retry
+     *        number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry
      *        strategy here, it overrides the retry strategy defined in the job definition.
      */
 
@@ -216,12 +216,12 @@ public class BatchParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of
-     * times to retry the failed job execution. Valid values are 1 to 10. When you specify a retry strategy here, it
+     * times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it
      * overrides the retry strategy defined in the job definition.
      * </p>
      * 
      * @return The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the
-     *         number of times to retry the failed job execution. Valid values are 1 to 10. When you specify a retry
+     *         number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry
      *         strategy here, it overrides the retry strategy defined in the job definition.
      */
 
@@ -232,13 +232,13 @@ public class BatchParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of
-     * times to retry the failed job execution. Valid values are 1 to 10. When you specify a retry strategy here, it
+     * times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it
      * overrides the retry strategy defined in the job definition.
      * </p>
      * 
      * @param retryStrategy
      *        The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the
-     *        number of times to retry the failed job execution. Valid values are 1 to 10. When you specify a retry
+     *        number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry
      *        strategy here, it overrides the retry strategy defined in the job definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -249,7 +249,8 @@ public class BatchParameters implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

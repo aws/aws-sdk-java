@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MsSmoothGroupSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into
+     * a single audio stream.
+     */
     private String audioDeduplication;
     /**
      * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
@@ -33,18 +37,28 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
      * input file. If your job has multiple inputs, the service uses the filename of the first input file.
      */
     private String destination;
-
+    /** Settings associated with the destination. Will vary based on the type of destination */
+    private DestinationSettings destinationSettings;
+    /** If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider. */
     private MsSmoothEncryptionSettings encryption;
     /**
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     * compatible with GOP size and framerate.
+     * compatible with GOP size and frame rate.
      */
     private Integer fragmentLength;
-
+    /**
+     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
+     * manifest. Valid options are utf8 and utf16.
+     */
     private String manifestEncoding;
 
     /**
+     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into
+     * a single audio stream.
+     * 
      * @param audioDeduplication
+     *        COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output
+     *        group into a single audio stream.
      * @see MsSmoothAudioDeduplication
      */
 
@@ -53,7 +67,11 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into
+     * a single audio stream.
+     * 
+     * @return COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output
+     *         group into a single audio stream.
      * @see MsSmoothAudioDeduplication
      */
 
@@ -62,7 +80,12 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into
+     * a single audio stream.
+     * 
      * @param audioDeduplication
+     *        COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output
+     *        group into a single audio stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MsSmoothAudioDeduplication
      */
@@ -73,7 +96,12 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into
+     * a single audio stream.
+     * 
      * @param audioDeduplication
+     *        COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output
+     *        group into a single audio stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MsSmoothAudioDeduplication
      */
@@ -133,7 +161,44 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @param destinationSettings
+     *        Settings associated with the destination. Will vary based on the type of destination
+     */
+
+    public void setDestinationSettings(DestinationSettings destinationSettings) {
+        this.destinationSettings = destinationSettings;
+    }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @return Settings associated with the destination. Will vary based on the type of destination
+     */
+
+    public DestinationSettings getDestinationSettings() {
+        return this.destinationSettings;
+    }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of destination
+     * 
+     * @param destinationSettings
+     *        Settings associated with the destination. Will vary based on the type of destination
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MsSmoothGroupSettings withDestinationSettings(DestinationSettings destinationSettings) {
+        setDestinationSettings(destinationSettings);
+        return this;
+    }
+
+    /**
+     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
+     * 
      * @param encryption
+     *        If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
      */
 
     public void setEncryption(MsSmoothEncryptionSettings encryption) {
@@ -141,7 +206,9 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
+     * 
+     * @return If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
      */
 
     public MsSmoothEncryptionSettings getEncryption() {
@@ -149,7 +216,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
+     * 
      * @param encryption
+     *        If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +230,11 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     * compatible with GOP size and framerate.
+     * compatible with GOP size and frame rate.
      * 
      * @param fragmentLength
      *        Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     *        compatible with GOP size and framerate.
+     *        compatible with GOP size and frame rate.
      */
 
     public void setFragmentLength(Integer fragmentLength) {
@@ -173,10 +243,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     * compatible with GOP size and framerate.
+     * compatible with GOP size and frame rate.
      * 
      * @return Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must
-     *         be compatible with GOP size and framerate.
+     *         be compatible with GOP size and frame rate.
      */
 
     public Integer getFragmentLength() {
@@ -185,11 +255,11 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     * compatible with GOP size and framerate.
+     * compatible with GOP size and frame rate.
      * 
      * @param fragmentLength
      *        Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     *        compatible with GOP size and framerate.
+     *        compatible with GOP size and frame rate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,7 +269,12 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
+     * manifest. Valid options are utf8 and utf16.
+     * 
      * @param manifestEncoding
+     *        Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
+     *        manifest. Valid options are utf8 and utf16.
      * @see MsSmoothManifestEncoding
      */
 
@@ -208,7 +283,11 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
+     * manifest. Valid options are utf8 and utf16.
+     * 
+     * @return Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
+     *         manifest. Valid options are utf8 and utf16.
      * @see MsSmoothManifestEncoding
      */
 
@@ -217,7 +296,12 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
+     * manifest. Valid options are utf8 and utf16.
+     * 
      * @param manifestEncoding
+     *        Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
+     *        manifest. Valid options are utf8 and utf16.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MsSmoothManifestEncoding
      */
@@ -228,7 +312,12 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
+     * manifest. Valid options are utf8 and utf16.
+     * 
      * @param manifestEncoding
+     *        Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client
+     *        manifest. Valid options are utf8 and utf16.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MsSmoothManifestEncoding
      */
@@ -239,7 +328,8 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -253,6 +343,8 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
             sb.append("AudioDeduplication: ").append(getAudioDeduplication()).append(",");
         if (getDestination() != null)
             sb.append("Destination: ").append(getDestination()).append(",");
+        if (getDestinationSettings() != null)
+            sb.append("DestinationSettings: ").append(getDestinationSettings()).append(",");
         if (getEncryption() != null)
             sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getFragmentLength() != null)
@@ -281,6 +373,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
             return false;
         if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
             return false;
+        if (other.getDestinationSettings() == null ^ this.getDestinationSettings() == null)
+            return false;
+        if (other.getDestinationSettings() != null && other.getDestinationSettings().equals(this.getDestinationSettings()) == false)
+            return false;
         if (other.getEncryption() == null ^ this.getEncryption() == null)
             return false;
         if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false)
@@ -303,6 +399,7 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getAudioDeduplication() == null) ? 0 : getAudioDeduplication().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
+        hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getFragmentLength() == null) ? 0 : getFragmentLength().hashCode());
         hashCode = prime * hashCode + ((getManifestEncoding() == null) ? 0 : getManifestEncoding().hashCode());

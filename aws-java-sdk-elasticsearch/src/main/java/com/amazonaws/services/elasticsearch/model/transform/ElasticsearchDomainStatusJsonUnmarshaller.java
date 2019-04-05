@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,6 +81,10 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<E
                     context.nextToken();
                     elasticsearchDomainStatus.setProcessing(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("UpgradeProcessing", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setUpgradeProcessing(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("ElasticsearchVersion", targetDepth)) {
                     context.nextToken();
                     elasticsearchDomainStatus.setElasticsearchVersion(context.getUnmarshaller(String.class).unmarshall(context));
@@ -113,6 +117,10 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<E
                     context.nextToken();
                     elasticsearchDomainStatus.setEncryptionAtRestOptions(EncryptionAtRestOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("NodeToNodeEncryptionOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AdvancedOptions", targetDepth)) {
                     context.nextToken();
                     elasticsearchDomainStatus.setAdvancedOptions(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
@@ -122,6 +130,10 @@ public class ElasticsearchDomainStatusJsonUnmarshaller implements Unmarshaller<E
                     context.nextToken();
                     elasticsearchDomainStatus.setLogPublishingOptions(new MapUnmarshaller<String, LogPublishingOption>(context.getUnmarshaller(String.class),
                             LogPublishingOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("ServiceSoftwareOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchDomainStatus.setServiceSoftwareOptions(ServiceSoftwareOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

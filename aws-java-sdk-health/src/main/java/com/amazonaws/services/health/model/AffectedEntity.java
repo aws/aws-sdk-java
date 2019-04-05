@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,9 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The unique identifier for the event. Format:
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     * . Example:
+     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     private String eventArn;
@@ -50,6 +51,8 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String entityValue;
+
+    private String entityUrl;
     /**
      * <p>
      * The 12-digit AWS account number that contains the affected entity.
@@ -131,14 +134,16 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The unique identifier for the event. Format:
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     * . Example:
+     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @param eventArn
      *        The unique identifier for the event. Format:
-     *        <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     *        <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     *        <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     *        . Example:
+     *        <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      */
 
     public void setEventArn(String eventArn) {
@@ -148,13 +153,15 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The unique identifier for the event. Format:
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     * . Example:
+     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @return The unique identifier for the event. Format:
-     *         <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     *         <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     *         <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     *         . Example:
+     *         <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      */
 
     public String getEventArn() {
@@ -164,14 +171,16 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The unique identifier for the event. Format:
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     * <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     * . Example:
+     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @param eventArn
      *        The unique identifier for the event. Format:
-     *        <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example:
-     *        <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
+     *        <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
+     *        . Example:
+     *        <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,6 +226,32 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
 
     public AffectedEntity withEntityValue(String entityValue) {
         setEntityValue(entityValue);
+        return this;
+    }
+
+    /**
+     * @param entityUrl
+     */
+
+    public void setEntityUrl(String entityUrl) {
+        this.entityUrl = entityUrl;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getEntityUrl() {
+        return this.entityUrl;
+    }
+
+    /**
+     * @param entityUrl
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AffectedEntity withEntityUrl(String entityUrl) {
+        setEntityUrl(entityUrl);
         return this;
     }
 
@@ -445,7 +480,8 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -461,6 +497,8 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
             sb.append("EventArn: ").append(getEventArn()).append(",");
         if (getEntityValue() != null)
             sb.append("EntityValue: ").append(getEntityValue()).append(",");
+        if (getEntityUrl() != null)
+            sb.append("EntityUrl: ").append(getEntityUrl()).append(",");
         if (getAwsAccountId() != null)
             sb.append("AwsAccountId: ").append(getAwsAccountId()).append(",");
         if (getLastUpdatedTime() != null)
@@ -495,6 +533,10 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEntityValue() != null && other.getEntityValue().equals(this.getEntityValue()) == false)
             return false;
+        if (other.getEntityUrl() == null ^ this.getEntityUrl() == null)
+            return false;
+        if (other.getEntityUrl() != null && other.getEntityUrl().equals(this.getEntityUrl()) == false)
+            return false;
         if (other.getAwsAccountId() == null ^ this.getAwsAccountId() == null)
             return false;
         if (other.getAwsAccountId() != null && other.getAwsAccountId().equals(this.getAwsAccountId()) == false)
@@ -522,6 +564,7 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEntityArn() == null) ? 0 : getEntityArn().hashCode());
         hashCode = prime * hashCode + ((getEventArn() == null) ? 0 : getEventArn().hashCode());
         hashCode = prime * hashCode + ((getEntityValue() == null) ? 0 : getEntityValue().hashCode());
+        hashCode = prime * hashCode + ((getEntityUrl() == null) ? 0 : getEntityUrl().hashCode());
         hashCode = prime * hashCode + ((getAwsAccountId() == null) ? 0 : getAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());

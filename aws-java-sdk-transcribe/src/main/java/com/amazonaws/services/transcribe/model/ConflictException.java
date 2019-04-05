@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with a different
- * name.
+ * When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code> field is a duplicate of
+ * a previously entered job name. Resend your request with a different name.
+ * </p>
+ * <p>
+ * When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same time. Resend
+ * the second request later.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

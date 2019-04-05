@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An attribute that is associated with the <a>Facet</a>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/FacetAttribute" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/FacetAttribute" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -38,7 +38,7 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A facet attribute consists of either a definition or a reference. This structure contains the attribute
      * definition. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      */
@@ -46,7 +46,7 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An attribute reference that is associated with the attribute. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      */
@@ -102,14 +102,14 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A facet attribute consists of either a definition or a reference. This structure contains the attribute
      * definition. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param attributeDefinition
      *        A facet attribute consists of either a definition or a reference. This structure contains the attribute
-     *        definition. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        definition. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      */
 
@@ -121,13 +121,13 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A facet attribute consists of either a definition or a reference. This structure contains the attribute
      * definition. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @return A facet attribute consists of either a definition or a reference. This structure contains the attribute
      *         definition. See <a href=
-     *         "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *         "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *         >Attribute References</a> for more information.
      */
 
@@ -139,14 +139,14 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A facet attribute consists of either a definition or a reference. This structure contains the attribute
      * definition. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param attributeDefinition
      *        A facet attribute consists of either a definition or a reference. This structure contains the attribute
-     *        definition. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        definition. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -159,13 +159,13 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An attribute reference that is associated with the attribute. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param attributeReference
-     *        An attribute reference that is associated with the attribute. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        An attribute reference that is associated with the attribute. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      */
 
@@ -176,12 +176,12 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An attribute reference that is associated with the attribute. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @return An attribute reference that is associated with the attribute. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *         >Attribute References</a> for more information.
      */
 
@@ -192,13 +192,13 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An attribute reference that is associated with the attribute. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      * >Attribute References</a> for more information.
      * </p>
      * 
      * @param attributeReference
-     *        An attribute reference that is associated with the attribute. See <a href=
-     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences"
+     *        An attribute reference that is associated with the attribute. See <a
+     *        href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html"
      *        >Attribute References</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -282,7 +282,8 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

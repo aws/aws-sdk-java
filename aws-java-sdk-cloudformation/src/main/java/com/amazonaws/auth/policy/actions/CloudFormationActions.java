@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,12 +49,16 @@ public enum CloudFormationActions implements Action {
     DescribeAccountLimits("cloudformation:DescribeAccountLimits"),
     /** Action for the DescribeChangeSet operation. */
     DescribeChangeSet("cloudformation:DescribeChangeSet"),
+    /** Action for the DescribeStackDriftDetectionStatus operation. */
+    DescribeStackDriftDetectionStatus("cloudformation:DescribeStackDriftDetectionStatus"),
     /** Action for the DescribeStackEvents operation. */
     DescribeStackEvents("cloudformation:DescribeStackEvents"),
     /** Action for the DescribeStackInstance operation. */
     DescribeStackInstance("cloudformation:DescribeStackInstance"),
     /** Action for the DescribeStackResource operation. */
     DescribeStackResource("cloudformation:DescribeStackResource"),
+    /** Action for the DescribeStackResourceDrifts operation. */
+    DescribeStackResourceDrifts("cloudformation:DescribeStackResourceDrifts"),
     /** Action for the DescribeStackResources operation. */
     DescribeStackResources("cloudformation:DescribeStackResources"),
     /** Action for the DescribeStackSet operation. */
@@ -63,6 +67,10 @@ public enum CloudFormationActions implements Action {
     DescribeStackSetOperation("cloudformation:DescribeStackSetOperation"),
     /** Action for the DescribeStacks operation. */
     DescribeStacks("cloudformation:DescribeStacks"),
+    /** Action for the DetectStackDrift operation. */
+    DetectStackDrift("cloudformation:DetectStackDrift"),
+    /** Action for the DetectStackResourceDrift operation. */
+    DetectStackResourceDrift("cloudformation:DetectStackResourceDrift"),
     /** Action for the EstimateTemplateCost operation. */
     EstimateTemplateCost("cloudformation:EstimateTemplateCost"),
     /** Action for the ExecuteChangeSet operation. */

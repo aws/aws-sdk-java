@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -205,6 +205,33 @@ public class SDKGlobalConfiguration {
     public static final String PROFILING_SYSTEM_PROPERTY =
         "com.amazonaws.sdk.enableRuntimeProfiling";
 
+    /**
+     * The default port used by client side monitoring.
+     */
+    public static final int DEFAULT_AWS_CSM_PORT = 31000;
+
+    /**
+     * The default client Id used by client side monitoring.
+     */
+    public static final String DEFAULT_AWS_CSM_CLIENT_ID = "";
+
+    /**
+     * System property to enable/disable client side monitoring.
+     */
+    public static final String AWS_CSM_ENABLED_SYSTEM_PROPERTY = "com.amazonaws.sdk.csm.enabled";
+
+    /**
+     * System property to set the port of the out of process client side
+     * monitoring agent.
+     */
+    public static final String AWS_CSM_PORT_SYSTEM_PROPERTY = "com.amazonaws.sdk.csm.port";
+
+    /**
+     * System property to set the client ID to use for client side monitoring
+     * events.
+     */
+    public static final String AWS_CSM_CLIENT_ID_SYSTEM_PROPERTY = "com.amazonaws.sdk.csm.clientId";
+
     /////////////////////// Environment Variables ///////////////////////
     /** Environment variable name for the AWS access key ID */
     public static final String ACCESS_KEY_ENV_VAR = "AWS_ACCESS_KEY_ID";
@@ -266,6 +293,22 @@ public class SDKGlobalConfiguration {
      */
     public static final String AWS_EC2_METADATA_DISABLED_SYSTEM_PROPERTY = "com.amazonaws.sdk.disableEc2Metadata";
 
+    /*
+     * Environment variable to enable/disable client side monitoring.
+     */
+    public static final String AWS_CSM_ENABLED_ENV_VAR = "AWS_CSM_ENABLED";
+
+    /**
+     * Environment varaible to set the port of the out of process client side
+     * monitoring agent.
+     */
+    public static final String AWS_CSM_PORT_ENV_VAR = "AWS_CSM_PORT";
+
+    /**
+     * Environment variable to set the client ID to use for client side
+     * monitoring events.
+     */
+    public static final String AWS_CSM_CLIENT_ID_ENV_VAR = "AWS_CSM_CLIENT_ID";
 
     /**
      * @deprecated by {@link SDKGlobalTime#setGlobalTimeOffset(int)}

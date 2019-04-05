@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,16 +20,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional health check. If you specify
- * settings for a health check, Amazon Route 53 associates the health check with all the records that you specify in
+ * settings for a health check, AWS Cloud Map associates the health check with the records that you specify in
  * <code>DnsConfig</code>.
+ * </p>
+ * <important>
+ * <p>
+ * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+ * <code>HealthCheckConfig</code> but not both.
+ * </p>
+ * </important>
+ * <p>
+ * Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health
+ * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+ * </p>
+ * <p>
+ * Note the following about configuring health checks.
  * </p>
  * <p>
  * <b>A and AAAA records</b>
  * </p>
  * <p>
- * If <code>DnsConfig</code> includes configurations for both A and AAAA records, Route 53 creates a health check that
- * uses the IPv4 address to check the health of the resource. If the endpoint that is specified by the IPv4 address is
- * unhealthy, Route 53 considers both the A and AAAA records to be unhealthy.
+ * If <code>DnsConfig</code> includes configurations for both A and AAAA records, AWS Cloud Map creates a health check
+ * that uses the IPv4 address to check the health of the resource. If the endpoint that is specified by the IPv4 address
+ * is unhealthy, Route 53 considers both the A and AAAA records to be unhealthy.
  * </p>
  * <p>
  * <b>CNAME records</b>
@@ -43,12 +56,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <b>Request interval</b>
  * </p>
  * <p>
- * The health check uses 30 seconds as the request interval. This is the number of seconds between the time that each
- * Route 53 health checker gets a response from your endpoint and the time that it sends the next health check request.
- * A health checker in each data center around the world sends your endpoint a health check request every 30 seconds. On
- * average, your endpoint receives a health check request about every two seconds. Health checkers in different data
- * centers don't coordinate with one another, so you'll sometimes see several requests per second followed by a few
- * seconds with no health checks at all.
+ * A Route 53 health checker in each health-checking region sends a health check request to an endpoint every 30
+ * seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers
+ * don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with
+ * no health checks at all.
  * </p>
  * <p>
  * <b>Health checking regions</b>
@@ -63,8 +74,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <b>Alias records</b>
  * </p>
  * <p>
- * When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, Route 53 creates an
- * alias record. Note the following:
+ * When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a
+ * Route 53 alias record. Note the following:
  * </p>
  * <ul>
  * <li>
@@ -84,8 +95,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
- * Pricing</a>.
+ * <b>Charges for health checks</b>
+ * </p>
+ * <p>
+ * Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health
+ * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/HealthCheckConfig" target="_top">AWS
@@ -128,6 +142,9 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.
      * </p>
+     * <p>
+     * If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.
+     * </p>
      * </li>
      * </ul>
      * <p>
@@ -141,8 +158,12 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The path that you want Route 53 to request when performing health checks. The path can be any value for which
      * your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as the file
-     * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service and a
-     * leading forward slash (<code>/</code>) character.
+     * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you
+     * don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.
+     * </p>
+     * <p>
+     * If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for
+     * <code>ResourcePath</code>.
      * </p>
      */
     private String resourcePath;
@@ -190,6 +211,9 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.
      * </p>
+     * <p>
+     * If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.
+     * </p>
      * </li>
      * </ul>
      * <p>
@@ -228,6 +252,10 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <b>TCP</b>: Route 53 tries to establish a TCP connection.
+     *        </p>
+     *        <p>
+     *        If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>
+     *        .
      *        </p>
      *        </li>
      *        </ul>
@@ -276,6 +304,9 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.
      * </p>
+     * <p>
+     * If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.
+     * </p>
      * </li>
      * </ul>
      * <p>
@@ -313,6 +344,10 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      *         <li>
      *         <p>
      *         <b>TCP</b>: Route 53 tries to establish a TCP connection.
+     *         </p>
+     *         <p>
+     *         If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for
+     *         <code>ResourcePath</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -361,6 +396,9 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.
      * </p>
+     * <p>
+     * If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.
+     * </p>
      * </li>
      * </ul>
      * <p>
@@ -399,6 +437,10 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <b>TCP</b>: Route 53 tries to establish a TCP connection.
+     *        </p>
+     *        <p>
+     *        If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>
+     *        .
      *        </p>
      *        </li>
      *        </ul>
@@ -449,6 +491,9 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.
      * </p>
+     * <p>
+     * If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.
+     * </p>
      * </li>
      * </ul>
      * <p>
@@ -488,6 +533,10 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      *        <p>
      *        <b>TCP</b>: Route 53 tries to establish a TCP connection.
      *        </p>
+     *        <p>
+     *        If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>
+     *        .
+     *        </p>
      *        </li>
      *        </ul>
      *        <p>
@@ -507,15 +556,23 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The path that you want Route 53 to request when performing health checks. The path can be any value for which
      * your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as the file
-     * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service and a
-     * leading forward slash (<code>/</code>) character.
+     * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you
+     * don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.
+     * </p>
+     * <p>
+     * If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for
+     * <code>ResourcePath</code>.
      * </p>
      * 
      * @param resourcePath
      *        The path that you want Route 53 to request when performing health checks. The path can be any value for
      *        which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as
      *        the file <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the
-     *        service and a leading forward slash (<code>/</code>) character.
+     *        service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>
+     *        .</p>
+     *        <p>
+     *        If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for
+     *        <code>ResourcePath</code>.
      */
 
     public void setResourcePath(String resourcePath) {
@@ -526,14 +583,22 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The path that you want Route 53 to request when performing health checks. The path can be any value for which
      * your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as the file
-     * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service and a
-     * leading forward slash (<code>/</code>) character.
+     * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you
+     * don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.
+     * </p>
+     * <p>
+     * If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for
+     * <code>ResourcePath</code>.
      * </p>
      * 
      * @return The path that you want Route 53 to request when performing health checks. The path can be any value for
      *         which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as
      *         the file <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the
-     *         service and a leading forward slash (<code>/</code>) character.
+     *         service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>
+     *         .</p>
+     *         <p>
+     *         If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for
+     *         <code>ResourcePath</code>.
      */
 
     public String getResourcePath() {
@@ -544,15 +609,23 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The path that you want Route 53 to request when performing health checks. The path can be any value for which
      * your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as the file
-     * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service and a
-     * leading forward slash (<code>/</code>) character.
+     * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you
+     * don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.
+     * </p>
+     * <p>
+     * If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for
+     * <code>ResourcePath</code>.
      * </p>
      * 
      * @param resourcePath
      *        The path that you want Route 53 to request when performing health checks. The path can be any value for
      *        which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as
      *        the file <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the
-     *        service and a leading forward slash (<code>/</code>) character.
+     *        service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>
+     *        .</p>
+     *        <p>
+     *        If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for
+     *        <code>ResourcePath</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -621,7 +694,8 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,11 +35,13 @@ public class InstanceSnapshotMarshaller {
     private static final MarshallingInfo<String> SUPPORTCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportCode").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
     private static final MarshallingInfo<String> PROGRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -79,6 +81,7 @@ public class InstanceSnapshotMarshaller {
             protocolMarshaller.marshall(instanceSnapshot.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(instanceSnapshot.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(instanceSnapshot.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(instanceSnapshot.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(instanceSnapshot.getState(), STATE_BINDING);
             protocolMarshaller.marshall(instanceSnapshot.getProgress(), PROGRESS_BINDING);
             protocolMarshaller.marshall(instanceSnapshot.getFromAttachedDisks(), FROMATTACHEDDISKS_BINDING);

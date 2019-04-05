@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private Channel channel;
+    /**
+     * <p>
+     * Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     * </p>
+     */
+    private ChannelStatistics statistics;
 
     /**
      * <p>
@@ -71,7 +77,49 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     * </p>
+     * 
+     * @param statistics
+     *        Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     */
+
+    public void setStatistics(ChannelStatistics statistics) {
+        this.statistics = statistics;
+    }
+
+    /**
+     * <p>
+     * Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     * </p>
+     * 
+     * @return Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the
+     *         request.
+     */
+
+    public ChannelStatistics getStatistics() {
+        return this.statistics;
+    }
+
+    /**
+     * <p>
+     * Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     * </p>
+     * 
+     * @param statistics
+     *        Statistics about the channel. Included if the 'includeStatistics' parameter is set to true in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelResult withStatistics(ChannelStatistics statistics) {
+        setStatistics(statistics);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -82,7 +130,9 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getChannel() != null)
-            sb.append("Channel: ").append(getChannel());
+            sb.append("Channel: ").append(getChannel()).append(",");
+        if (getStatistics() != null)
+            sb.append("Statistics: ").append(getStatistics());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +151,10 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getChannel() != null && other.getChannel().equals(this.getChannel()) == false)
             return false;
+        if (other.getStatistics() == null ^ this.getStatistics() == null)
+            return false;
+        if (other.getStatistics() != null && other.getStatistics().equals(this.getStatistics()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +164,7 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getChannel() == null) ? 0 : getChannel().hashCode());
+        hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         return hashCode;
     }
 

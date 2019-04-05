@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,9 @@ import com.amazonaws.services.lightsail.model.*;
  * <p>
  * <p>
  * Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers.
- * Lightsail includes everything you need to launch your project quickly - a virtual machine, SSD-based storage, data
- * transfer, DNS management, and a static IP - for a low, predictable price. You manage those Lightsail servers through
- * the Lightsail console or by using the API or command-line interface (CLI).
+ * Lightsail includes everything you need to launch your project quickly - a virtual machine, a managed database,
+ * SSD-based storage, data transfer, DNS management, and a static IP - for a low, predictable price. You manage those
+ * Lightsail servers through the Lightsail console or by using the API or command-line interface (CLI).
  * </p>
  * <p>
  * For more information about Lightsail concepts and tasks, see the <a
@@ -81,6 +81,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * Attaches a block storage disk to a running or stopped Lightsail instance and exposes it to the instance with the
      * specified disk name.
      * </p>
+     * <p>
+     * The <code>attach disk</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by diskName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param attachDiskRequest
      * @return A Java Future containing the result of the AttachDisk operation returned by the service.
@@ -94,6 +100,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Attaches a block storage disk to a running or stopped Lightsail instance and exposes it to the instance with the
      * specified disk name.
+     * </p>
+     * <p>
+     * The <code>attach disk</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by diskName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param attachDiskRequest
@@ -116,6 +128,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * After some time, the instances are attached to the load balancer and the health check status is available.
      * </p>
+     * <p>
+     * The <code>attach instances to load balancer</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param attachInstancesToLoadBalancerRequest
      * @return A Java Future containing the result of the AttachInstancesToLoadBalancer operation returned by the
@@ -133,6 +151,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * After some time, the instances are attached to the load balancer and the health check status is available.
+     * </p>
+     * <p>
+     * The <code>attach instances to load balancer</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param attachInstancesToLoadBalancerRequest
@@ -160,6 +184,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code> operation with
      * the non-attached certificate, and it will replace the existing one and become the attached certificate.
      * </p>
+     * <p>
+     * The <code>attach load balancer tls certificate</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param attachLoadBalancerTlsCertificateRequest
      * @return A Java Future containing the result of the AttachLoadBalancerTlsCertificate operation returned by the
@@ -180,6 +210,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * Once you create and validate your certificate, you can attach it to your load balancer. You can also use this API
      * to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code> operation with
      * the non-attached certificate, and it will replace the existing one and become the attached certificate.
+     * </p>
+     * <p>
+     * The <code>attach load balancer tls certificate</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param attachLoadBalancerTlsCertificateRequest
@@ -232,6 +268,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Closes the public ports on a specific Amazon Lightsail instance.
      * </p>
+     * <p>
+     * The <code>close instance public ports</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param closeInstancePublicPortsRequest
      * @return A Java Future containing the result of the CloseInstancePublicPorts operation returned by the service.
@@ -244,6 +286,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Closes the public ports on a specific Amazon Lightsail instance.
+     * </p>
+     * <p>
+     * The <code>close instance public ports</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param closeInstancePublicPortsRequest
@@ -261,11 +309,99 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Copies an instance or disk snapshot from one AWS Region to another in Amazon Lightsail.
+     * </p>
+     * 
+     * @param copySnapshotRequest
+     * @return A Java Future containing the result of the CopySnapshot operation returned by the service.
+     * @sample AmazonLightsailAsync.CopySnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CopySnapshotResult> copySnapshotAsync(CopySnapshotRequest copySnapshotRequest);
+
+    /**
+     * <p>
+     * Copies an instance or disk snapshot from one AWS Region to another in Amazon Lightsail.
+     * </p>
+     * 
+     * @param copySnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CopySnapshot operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.CopySnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CopySnapshotResult> copySnapshotAsync(CopySnapshotRequest copySnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<CopySnapshotRequest, CopySnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance from an exported Amazon Lightsail
+     * snapshot. This operation results in a CloudFormation stack record that can be used to track the AWS
+     * CloudFormation stack created. Use the <code>get cloud formation stack records</code> operation to get a list of
+     * the CloudFormation stacks created.
+     * </p>
+     * <important>
+     * <p>
+     * Wait until after your new Amazon EC2 instance is created before running the
+     * <code>create cloud formation stack</code> operation again with the same export snapshot record.
+     * </p>
+     * </important>
+     * 
+     * @param createCloudFormationStackRequest
+     * @return A Java Future containing the result of the CreateCloudFormationStack operation returned by the service.
+     * @sample AmazonLightsailAsync.CreateCloudFormationStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCloudFormationStackResult> createCloudFormationStackAsync(
+            CreateCloudFormationStackRequest createCloudFormationStackRequest);
+
+    /**
+     * <p>
+     * Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance from an exported Amazon Lightsail
+     * snapshot. This operation results in a CloudFormation stack record that can be used to track the AWS
+     * CloudFormation stack created. Use the <code>get cloud formation stack records</code> operation to get a list of
+     * the CloudFormation stacks created.
+     * </p>
+     * <important>
+     * <p>
+     * Wait until after your new Amazon EC2 instance is created before running the
+     * <code>create cloud formation stack</code> operation again with the same export snapshot record.
+     * </p>
+     * </important>
+     * 
+     * @param createCloudFormationStackRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCloudFormationStack operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.CreateCloudFormationStack
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCloudFormationStackResult> createCloudFormationStackAsync(
+            CreateCloudFormationStackRequest createCloudFormationStackRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCloudFormationStackRequest, CreateCloudFormationStackResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a block storage disk that can be attached to a Lightsail instance in the same Availability Zone (e.g.,
      * <code>us-east-2a</code>). The disk is created in the regional endpoint that you send the HTTP request to. For
      * more information, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail"
      * >Regions and Availability Zones in Lightsail</a>.
+     * </p>
+     * <p>
+     * The <code>create disk</code> operation supports tag-based access control via request tags. For more information,
+     * see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createDiskRequest
@@ -283,6 +419,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * more information, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail"
      * >Regions and Availability Zones in Lightsail</a>.
+     * </p>
+     * <p>
+     * The <code>create disk</code> operation supports tag-based access control via request tags. For more information,
+     * see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createDiskRequest
@@ -306,6 +448,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * "https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail"
      * >Regions and Availability Zones in Lightsail</a>.
      * </p>
+     * <p>
+     * The <code>create disk from snapshot</code> operation supports tag-based access control via request tags and
+     * resource tags applied to the resource identified by diskSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createDiskFromSnapshotRequest
      * @return A Java Future containing the result of the CreateDiskFromSnapshot operation returned by the service.
@@ -322,6 +470,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * HTTP request to. For more information, see <a href=
      * "https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail"
      * >Regions and Availability Zones in Lightsail</a>.
+     * </p>
+     * <p>
+     * The <code>create disk from snapshot</code> operation supports tag-based access control via request tags and
+     * resource tags applied to the resource identified by diskSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createDiskFromSnapshotRequest
@@ -351,6 +505,20 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * remount the disk to ensure a consistent and complete snapshot. You may remount and use your disk while the
      * snapshot status is pending.
      * </p>
+     * <p>
+     * You can also use this operation to create a snapshot of an instance's system volume. You might want to do this,
+     * for example, to recover data from the system volume of a botched instance or to create a backup of the system
+     * volume like you would for a block storage disk. To create a snapshot of a system volume, just define the
+     * <code>instance name</code> parameter when issuing the snapshot command, and a snapshot of the defined instance's
+     * system volume will be created. After the snapshot is available, you can create a block storage disk from the
+     * snapshot and attach it to a running instance to access the data on the disk.
+     * </p>
+     * <p>
+     * The <code>create disk snapshot</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createDiskSnapshotRequest
      * @return A Java Future containing the result of the CreateDiskSnapshot operation returned by the service.
@@ -374,6 +542,20 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * remount the disk to ensure a consistent and complete snapshot. You may remount and use your disk while the
      * snapshot status is pending.
      * </p>
+     * <p>
+     * You can also use this operation to create a snapshot of an instance's system volume. You might want to do this,
+     * for example, to recover data from the system volume of a botched instance or to create a backup of the system
+     * volume like you would for a block storage disk. To create a snapshot of a system volume, just define the
+     * <code>instance name</code> parameter when issuing the snapshot command, and a snapshot of the defined instance's
+     * system volume will be created. After the snapshot is available, you can create a block storage disk from the
+     * snapshot and attach it to a running instance to access the data on the disk.
+     * </p>
+     * <p>
+     * The <code>create disk snapshot</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createDiskSnapshotRequest
      * @param asyncHandler
@@ -392,6 +574,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Creates a domain resource for the specified domain (e.g., example.com).
      * </p>
+     * <p>
+     * The <code>create domain</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createDomainRequest
      * @return A Java Future containing the result of the CreateDomain operation returned by the service.
@@ -404,6 +592,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Creates a domain resource for the specified domain (e.g., example.com).
+     * </p>
+     * <p>
+     * The <code>create domain</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createDomainRequest
@@ -421,8 +615,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates one of the following entry records associated with the domain: A record, CNAME record, TXT record, or MX
-     * record.
+     * Creates one of the following entry records associated with the domain: Address (A), canonical name (CNAME), mail
+     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
+     * </p>
+     * <p>
+     * The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createDomainEntryRequest
@@ -435,8 +635,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates one of the following entry records associated with the domain: A record, CNAME record, TXT record, or MX
-     * record.
+     * Creates one of the following entry records associated with the domain: Address (A), canonical name (CNAME), mail
+     * exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).
+     * </p>
+     * <p>
+     * The <code>create domain entry</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createDomainEntryRequest
@@ -457,6 +663,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * Creates a snapshot of a specific virtual private server, or <i>instance</i>. You can use a snapshot to create a
      * new instance that is based on that snapshot.
      * </p>
+     * <p>
+     * The <code>create instance snapshot</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createInstanceSnapshotRequest
      * @return A Java Future containing the result of the CreateInstanceSnapshot operation returned by the service.
@@ -470,6 +682,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Creates a snapshot of a specific virtual private server, or <i>instance</i>. You can use a snapshot to create a
      * new instance that is based on that snapshot.
+     * </p>
+     * <p>
+     * The <code>create instance snapshot</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createInstanceSnapshotRequest
@@ -487,7 +705,17 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>.
+     * Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>. Create instances using active
+     * blueprints. Inactive blueprints are listed to support customers with existing instances but are not necessarily
+     * available for launch of new instances. Blueprints are marked inactive when they become outdated due to operating
+     * system updates or new application releases. Use the get blueprints operation to return a list of available
+     * blueprints.
+     * </p>
+     * <p>
+     * The <code>create instances</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createInstancesRequest
@@ -500,7 +728,17 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>.
+     * Creates one or more Amazon Lightsail virtual private servers, or <i>instances</i>. Create instances using active
+     * blueprints. Inactive blueprints are listed to support customers with existing instances but are not necessarily
+     * available for launch of new instances. Blueprints are marked inactive when they become outdated due to operating
+     * system updates or new application releases. Use the get blueprints operation to return a list of available
+     * blueprints.
+     * </p>
+     * <p>
+     * The <code>create instances</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createInstancesRequest
@@ -521,6 +759,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * Uses a specific snapshot as a blueprint for creating one or more new instances that are based on that identical
      * configuration.
      * </p>
+     * <p>
+     * The <code>create instances from snapshot</code> operation supports tag-based access control via request tags and
+     * resource tags applied to the resource identified by instanceSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createInstancesFromSnapshotRequest
      * @return A Java Future containing the result of the CreateInstancesFromSnapshot operation returned by the service.
@@ -535,6 +779,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Uses a specific snapshot as a blueprint for creating one or more new instances that are based on that identical
      * configuration.
+     * </p>
+     * <p>
+     * The <code>create instances from snapshot</code> operation supports tag-based access control via request tags and
+     * resource tags applied to the resource identified by instanceSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createInstancesFromSnapshotRequest
@@ -553,7 +803,13 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates sn SSH key pair.
+     * Creates an SSH key pair.
+     * </p>
+     * <p>
+     * The <code>create key pair</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -566,7 +822,13 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates sn SSH key pair.
+     * Creates an SSH key pair.
+     * </p>
+     * <p>
+     * The <code>create key pair</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createKeyPairRequest
@@ -593,6 +855,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * When you create a load balancer, you can specify a unique name and port settings. To change additional load
      * balancer settings, use the <code>UpdateLoadBalancerAttribute</code> operation.
      * </p>
+     * <p>
+     * The <code>create load balancer</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createLoadBalancerRequest
      * @return A Java Future containing the result of the CreateLoadBalancer operation returned by the service.
@@ -612,6 +880,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * When you create a load balancer, you can specify a unique name and port settings. To change additional load
      * balancer settings, use the <code>UpdateLoadBalancerAttribute</code> operation.
+     * </p>
+     * <p>
+     * The <code>create load balancer</code> operation supports tag-based access control via request tags. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createLoadBalancerRequest
@@ -634,6 +908,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
      * </p>
+     * <p>
+     * The <code>create load balancer tls certificate</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param createLoadBalancerTlsCertificateRequest
      * @return A Java Future containing the result of the CreateLoadBalancerTlsCertificate operation returned by the
@@ -651,6 +931,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+     * </p>
+     * <p>
+     * The <code>create load balancer tls certificate</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param createLoadBalancerTlsCertificateRequest
@@ -670,6 +956,155 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Creates a new database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>create relational database</code> operation supports tag-based access control via request tags. For
+     * more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param createRelationalDatabaseRequest
+     * @return A Java Future containing the result of the CreateRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.CreateRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseResult> createRelationalDatabaseAsync(CreateRelationalDatabaseRequest createRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Creates a new database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>create relational database</code> operation supports tag-based access control via request tags. For
+     * more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param createRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.CreateRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseResult> createRelationalDatabaseAsync(CreateRelationalDatabaseRequest createRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRelationalDatabaseRequest, CreateRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new database from an existing database snapshot in Amazon Lightsail.
+     * </p>
+     * <p>
+     * You can create a new database from a snapshot in if something goes wrong with your original database, or to
+     * change it to a different plan, such as a high availability or standard plan.
+     * </p>
+     * <p>
+     * The <code>create relational database from snapshot</code> operation supports tag-based access control via request
+     * tags and resource tags applied to the resource identified by relationalDatabaseSnapshotName. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param createRelationalDatabaseFromSnapshotRequest
+     * @return A Java Future containing the result of the CreateRelationalDatabaseFromSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.CreateRelationalDatabaseFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseFromSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseFromSnapshotResult> createRelationalDatabaseFromSnapshotAsync(
+            CreateRelationalDatabaseFromSnapshotRequest createRelationalDatabaseFromSnapshotRequest);
+
+    /**
+     * <p>
+     * Creates a new database from an existing database snapshot in Amazon Lightsail.
+     * </p>
+     * <p>
+     * You can create a new database from a snapshot in if something goes wrong with your original database, or to
+     * change it to a different plan, such as a high availability or standard plan.
+     * </p>
+     * <p>
+     * The <code>create relational database from snapshot</code> operation supports tag-based access control via request
+     * tags and resource tags applied to the resource identified by relationalDatabaseSnapshotName. For more
+     * information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param createRelationalDatabaseFromSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRelationalDatabaseFromSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.CreateRelationalDatabaseFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseFromSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseFromSnapshotResult> createRelationalDatabaseFromSnapshotAsync(
+            CreateRelationalDatabaseFromSnapshotRequest createRelationalDatabaseFromSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRelationalDatabaseFromSnapshotRequest, CreateRelationalDatabaseFromSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a snapshot of your database in Amazon Lightsail. You can use snapshots for backups, to make copies of a
+     * database, and to save data before deleting a database.
+     * </p>
+     * <p>
+     * The <code>create relational database snapshot</code> operation supports tag-based access control via request
+     * tags. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param createRelationalDatabaseSnapshotRequest
+     * @return A Java Future containing the result of the CreateRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.CreateRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseSnapshotResult> createRelationalDatabaseSnapshotAsync(
+            CreateRelationalDatabaseSnapshotRequest createRelationalDatabaseSnapshotRequest);
+
+    /**
+     * <p>
+     * Creates a snapshot of your database in Amazon Lightsail. You can use snapshots for backups, to make copies of a
+     * database, and to save data before deleting a database.
+     * </p>
+     * <p>
+     * The <code>create relational database snapshot</code> operation supports tag-based access control via request
+     * tags. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param createRelationalDatabaseSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.CreateRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRelationalDatabaseSnapshotResult> createRelationalDatabaseSnapshotAsync(
+            CreateRelationalDatabaseSnapshotRequest createRelationalDatabaseSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRelationalDatabaseSnapshotRequest, CreateRelationalDatabaseSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified block storage disk. The disk must be in the <code>available</code> state (not attached to a
      * Lightsail instance).
      * </p>
@@ -678,6 +1113,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * The disk may remain in the <code>deleting</code> state for several minutes.
      * </p>
      * </note>
+     * <p>
+     * The <code>delete disk</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by diskName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteDiskRequest
      * @return A Java Future containing the result of the DeleteDisk operation returned by the service.
@@ -697,6 +1138,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * The disk may remain in the <code>deleting</code> state for several minutes.
      * </p>
      * </note>
+     * <p>
+     * The <code>delete disk</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by diskName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteDiskRequest
      * @param asyncHandler
@@ -721,6 +1168,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * not needed for any other snapshot is removed. So regardless of which prior snapshots have been deleted, all
      * active snapshots will have access to all the information needed to restore the disk.
      * </p>
+     * <p>
+     * The <code>delete disk snapshot</code> operation supports tag-based access control via resource tags applied to
+     * the resource identified by diskSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteDiskSnapshotRequest
      * @return A Java Future containing the result of the DeleteDiskSnapshot operation returned by the service.
@@ -740,6 +1193,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * not needed for any other snapshot is removed. So regardless of which prior snapshots have been deleted, all
      * active snapshots will have access to all the information needed to restore the disk.
      * </p>
+     * <p>
+     * The <code>delete disk snapshot</code> operation supports tag-based access control via resource tags applied to
+     * the resource identified by diskSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteDiskSnapshotRequest
      * @param asyncHandler
@@ -758,6 +1217,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Deletes the specified domain recordset and all of its domain records.
      * </p>
+     * <p>
+     * The <code>delete domain</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteDomainRequest
      * @return A Java Future containing the result of the DeleteDomain operation returned by the service.
@@ -770,6 +1235,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Deletes the specified domain recordset and all of its domain records.
+     * </p>
+     * <p>
+     * The <code>delete domain</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteDomainRequest
@@ -789,6 +1260,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Deletes a specific domain entry.
      * </p>
+     * <p>
+     * The <code>delete domain entry</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteDomainEntryRequest
      * @return A Java Future containing the result of the DeleteDomainEntry operation returned by the service.
@@ -801,6 +1278,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Deletes a specific domain entry.
+     * </p>
+     * <p>
+     * The <code>delete domain entry</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteDomainEntryRequest
@@ -820,6 +1303,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Deletes a specific Amazon Lightsail virtual private server, or <i>instance</i>.
      * </p>
+     * <p>
+     * The <code>delete instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteInstanceRequest
      * @return A Java Future containing the result of the DeleteInstance operation returned by the service.
@@ -832,6 +1321,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Deletes a specific Amazon Lightsail virtual private server, or <i>instance</i>.
+     * </p>
+     * <p>
+     * The <code>delete instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteInstanceRequest
@@ -851,6 +1346,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Deletes a specific snapshot of a virtual private server (or <i>instance</i>).
      * </p>
+     * <p>
+     * The <code>delete instance snapshot</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by instanceSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteInstanceSnapshotRequest
      * @return A Java Future containing the result of the DeleteInstanceSnapshot operation returned by the service.
@@ -863,6 +1364,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Deletes a specific snapshot of a virtual private server (or <i>instance</i>).
+     * </p>
+     * <p>
+     * The <code>delete instance snapshot</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by instanceSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteInstanceSnapshotRequest
@@ -882,6 +1389,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Deletes a specific SSH key pair.
      * </p>
+     * <p>
+     * The <code>delete key pair</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by keyPairName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteKeyPairRequest
      * @return A Java Future containing the result of the DeleteKeyPair operation returned by the service.
@@ -894,6 +1407,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Deletes a specific SSH key pair.
+     * </p>
+     * <p>
+     * The <code>delete key pair</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by keyPairName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteKeyPairRequest
@@ -911,8 +1430,65 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to
+     * authenticate an instance. This operation enables the Lightsail browser-based SSH or RDP clients to connect to the
+     * instance after a host key mismatch.
+     * </p>
+     * <important>
+     * <p>
+     * Perform this operation only if you were expecting the host key or certificate mismatch or if you are familiar
+     * with the new host key or certificate on the instance. For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection"
+     * >Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP client</a>.
+     * </p>
+     * </important>
+     * 
+     * @param deleteKnownHostKeysRequest
+     * @return A Java Future containing the result of the DeleteKnownHostKeys operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteKnownHostKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKnownHostKeysResult> deleteKnownHostKeysAsync(DeleteKnownHostKeysRequest deleteKnownHostKeysRequest);
+
+    /**
+     * <p>
+     * Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to
+     * authenticate an instance. This operation enables the Lightsail browser-based SSH or RDP clients to connect to the
+     * instance after a host key mismatch.
+     * </p>
+     * <important>
+     * <p>
+     * Perform this operation only if you were expecting the host key or certificate mismatch or if you are familiar
+     * with the new host key or certificate on the instance. For more information, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection"
+     * >Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP client</a>.
+     * </p>
+     * </important>
+     * 
+     * @param deleteKnownHostKeysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteKnownHostKeys operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteKnownHostKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKnownHostKeys" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKnownHostKeysResult> deleteKnownHostKeysAsync(DeleteKnownHostKeysRequest deleteKnownHostKeysRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteKnownHostKeysRequest, DeleteKnownHostKeysResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a Lightsail load balancer and all its associated SSL/TLS certificates. Once the load balancer is deleted,
      * you will need to create a new load balancer, create a new certificate, and verify domain ownership again.
+     * </p>
+     * <p>
+     * The <code>delete load balancer</code> operation supports tag-based access control via resource tags applied to
+     * the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteLoadBalancerRequest
@@ -927,6 +1503,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Deletes a Lightsail load balancer and all its associated SSL/TLS certificates. Once the load balancer is deleted,
      * you will need to create a new load balancer, create a new certificate, and verify domain ownership again.
+     * </p>
+     * <p>
+     * The <code>delete load balancer</code> operation supports tag-based access control via resource tags applied to
+     * the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteLoadBalancerRequest
@@ -946,6 +1528,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Deletes an SSL/TLS certificate associated with a Lightsail load balancer.
      * </p>
+     * <p>
+     * The <code>delete load balancer tls certificate</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param deleteLoadBalancerTlsCertificateRequest
      * @return A Java Future containing the result of the DeleteLoadBalancerTlsCertificate operation returned by the
@@ -960,6 +1548,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Deletes an SSL/TLS certificate associated with a Lightsail load balancer.
+     * </p>
+     * <p>
+     * The <code>delete load balancer tls certificate</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param deleteLoadBalancerTlsCertificateRequest
@@ -979,8 +1573,104 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Deletes a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>delete relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param deleteRelationalDatabaseRequest
+     * @return A Java Future containing the result of the DeleteRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRelationalDatabaseResult> deleteRelationalDatabaseAsync(DeleteRelationalDatabaseRequest deleteRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Deletes a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>delete relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param deleteRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRelationalDatabaseResult> deleteRelationalDatabaseAsync(DeleteRelationalDatabaseRequest deleteRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRelationalDatabaseRequest, DeleteRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a database snapshot in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>delete relational database snapshot</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param deleteRelationalDatabaseSnapshotRequest
+     * @return A Java Future containing the result of the DeleteRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.DeleteRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRelationalDatabaseSnapshotResult> deleteRelationalDatabaseSnapshotAsync(
+            DeleteRelationalDatabaseSnapshotRequest deleteRelationalDatabaseSnapshotRequest);
+
+    /**
+     * <p>
+     * Deletes a database snapshot in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>delete relational database snapshot</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param deleteRelationalDatabaseSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.DeleteRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRelationalDatabaseSnapshotResult> deleteRelationalDatabaseSnapshotAsync(
+            DeleteRelationalDatabaseSnapshotRequest deleteRelationalDatabaseSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRelationalDatabaseSnapshotRequest, DeleteRelationalDatabaseSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
      * Detaches a stopped block storage disk from a Lightsail instance. Make sure to unmount any file systems on the
      * device within your operating system before stopping the instance and detaching the disk.
+     * </p>
+     * <p>
+     * The <code>detach disk</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by diskName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param detachDiskRequest
@@ -995,6 +1685,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Detaches a stopped block storage disk from a Lightsail instance. Make sure to unmount any file systems on the
      * device within your operating system before stopping the instance and detaching the disk.
+     * </p>
+     * <p>
+     * The <code>detach disk</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by diskName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param detachDiskRequest
@@ -1017,6 +1713,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * This operation waits until the instances are no longer needed before they are detached from the load balancer.
      * </p>
+     * <p>
+     * The <code>detach instances from load balancer</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param detachInstancesFromLoadBalancerRequest
      * @return A Java Future containing the result of the DetachInstancesFromLoadBalancer operation returned by the
@@ -1034,6 +1736,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * This operation waits until the instances are no longer needed before they are detached from the load balancer.
+     * </p>
+     * <p>
+     * The <code>detach instances from load balancer</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param detachInstancesFromLoadBalancerRequest
@@ -1112,6 +1820,79 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<DownloadDefaultKeyPairResult> downloadDefaultKeyPairAsync(DownloadDefaultKeyPairRequest downloadDefaultKeyPairRequest,
             com.amazonaws.handlers.AsyncHandler<DownloadDefaultKeyPairRequest, DownloadDefaultKeyPairResult> asyncHandler);
+
+    /**
+     * <p>
+     * Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute Cloud (Amazon EC2).
+     * This operation results in an export snapshot record that can be used with the
+     * <code>create cloud formation stack</code> operation to create new Amazon EC2 instances.
+     * </p>
+     * <p>
+     * Exported instance snapshots appear in Amazon EC2 as Amazon Machine Images (AMIs), and the instance system disk
+     * appears as an Amazon Elastic Block Store (Amazon EBS) volume. Exported disk snapshots appear in Amazon EC2 as
+     * Amazon EBS volumes. Snapshots are exported to the same Amazon Web Services Region in Amazon EC2 as the source
+     * Lightsail snapshot.
+     * </p>
+     * <p/>
+     * <p>
+     * The <code>export snapshot</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by sourceSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Use the <code>get instance snapshots</code> or <code>get disk snapshots</code> operations to get a list of
+     * snapshots that you can export to Amazon EC2.
+     * </p>
+     * </note>
+     * 
+     * @param exportSnapshotRequest
+     * @return A Java Future containing the result of the ExportSnapshot operation returned by the service.
+     * @sample AmazonLightsailAsync.ExportSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExportSnapshotResult> exportSnapshotAsync(ExportSnapshotRequest exportSnapshotRequest);
+
+    /**
+     * <p>
+     * Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute Cloud (Amazon EC2).
+     * This operation results in an export snapshot record that can be used with the
+     * <code>create cloud formation stack</code> operation to create new Amazon EC2 instances.
+     * </p>
+     * <p>
+     * Exported instance snapshots appear in Amazon EC2 as Amazon Machine Images (AMIs), and the instance system disk
+     * appears as an Amazon Elastic Block Store (Amazon EBS) volume. Exported disk snapshots appear in Amazon EC2 as
+     * Amazon EBS volumes. Snapshots are exported to the same Amazon Web Services Region in Amazon EC2 as the source
+     * Lightsail snapshot.
+     * </p>
+     * <p/>
+     * <p>
+     * The <code>export snapshot</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by sourceSnapshotName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Use the <code>get instance snapshots</code> or <code>get disk snapshots</code> operations to get a list of
+     * snapshots that you can export to Amazon EC2.
+     * </p>
+     * </note>
+     * 
+     * @param exportSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportSnapshot operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.ExportSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExportSnapshotResult> exportSnapshotAsync(ExportSnapshotRequest exportSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportSnapshotRequest, ExportSnapshotResult> asyncHandler);
 
     /**
      * <p>
@@ -1211,6 +1992,49 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<GetBundlesResult> getBundlesAsync(GetBundlesRequest getBundlesRequest,
             com.amazonaws.handlers.AsyncHandler<GetBundlesRequest, GetBundlesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the CloudFormation stack record created as a result of the <code>create cloud formation stack</code>
+     * operation.
+     * </p>
+     * <p>
+     * An AWS CloudFormation stack is used to create a new Amazon EC2 instance from an exported Lightsail snapshot.
+     * </p>
+     * 
+     * @param getCloudFormationStackRecordsRequest
+     * @return A Java Future containing the result of the GetCloudFormationStackRecords operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetCloudFormationStackRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCloudFormationStackRecords"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCloudFormationStackRecordsResult> getCloudFormationStackRecordsAsync(
+            GetCloudFormationStackRecordsRequest getCloudFormationStackRecordsRequest);
+
+    /**
+     * <p>
+     * Returns the CloudFormation stack record created as a result of the <code>create cloud formation stack</code>
+     * operation.
+     * </p>
+     * <p>
+     * An AWS CloudFormation stack is used to create a new Amazon EC2 instance from an exported Lightsail snapshot.
+     * </p>
+     * 
+     * @param getCloudFormationStackRecordsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCloudFormationStackRecords operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetCloudFormationStackRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCloudFormationStackRecords"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCloudFormationStackRecordsResult> getCloudFormationStackRecordsAsync(
+            GetCloudFormationStackRecordsRequest getCloudFormationStackRecordsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCloudFormationStackRecordsRequest, GetCloudFormationStackRecordsResult> asyncHandler);
 
     /**
      * <p>
@@ -1416,6 +2240,45 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Returns the export snapshot record created as a result of the <code>export snapshot</code> operation.
+     * </p>
+     * <p>
+     * An export snapshot record can be used to create a new Amazon EC2 instance and its related resources with the
+     * <code>create cloud formation stack</code> operation.
+     * </p>
+     * 
+     * @param getExportSnapshotRecordsRequest
+     * @return A Java Future containing the result of the GetExportSnapshotRecords operation returned by the service.
+     * @sample AmazonLightsailAsync.GetExportSnapshotRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetExportSnapshotRecords"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExportSnapshotRecordsResult> getExportSnapshotRecordsAsync(GetExportSnapshotRecordsRequest getExportSnapshotRecordsRequest);
+
+    /**
+     * <p>
+     * Returns the export snapshot record created as a result of the <code>export snapshot</code> operation.
+     * </p>
+     * <p>
+     * An export snapshot record can be used to create a new Amazon EC2 instance and its related resources with the
+     * <code>create cloud formation stack</code> operation.
+     * </p>
+     * 
+     * @param getExportSnapshotRecordsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetExportSnapshotRecords operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetExportSnapshotRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetExportSnapshotRecords"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExportSnapshotRecordsResult> getExportSnapshotRecordsAsync(GetExportSnapshotRecordsRequest getExportSnapshotRecordsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetExportSnapshotRecordsRequest, GetExportSnapshotRecordsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a specific Amazon Lightsail instance, which is a virtual private server.
      * </p>
      * 
@@ -1449,6 +2312,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Returns temporary SSH keys you can use to connect to a specific virtual private server, or <i>instance</i>.
      * </p>
+     * <p>
+     * The <code>get instance access details</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param getInstanceAccessDetailsRequest
      * @return A Java Future containing the result of the GetInstanceAccessDetails operation returned by the service.
@@ -1461,6 +2330,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Returns temporary SSH keys you can use to connect to a specific virtual private server, or <i>instance</i>.
+     * </p>
+     * <p>
+     * The <code>get instance access details</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param getInstanceAccessDetailsRequest
@@ -1984,7 +2859,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code>
-     * parameter to also return the availability zones in a region.
+     * parameter to also return the Availability Zones in a region.
      * </p>
      * 
      * @param getRegionsRequest
@@ -1998,7 +2873,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code>
-     * parameter to also return the availability zones in a region.
+     * parameter to also return the Availability Zones in a region.
      * </p>
      * 
      * @param getRegionsRequest
@@ -2013,6 +2888,454 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<GetRegionsResult> getRegionsAsync(GetRegionsRequest getRegionsRequest,
             com.amazonaws.handlers.AsyncHandler<GetRegionsRequest, GetRegionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseRequest
+     * @return A Java Future containing the result of the GetRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseResult> getRelationalDatabaseAsync(GetRelationalDatabaseRequest getRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseResult> getRelationalDatabaseAsync(GetRelationalDatabaseRequest getRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseRequest, GetRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of available database blueprints in Amazon Lightsail. A blueprint describes the major engine
+     * version of a database.
+     * </p>
+     * <p>
+     * You can use a blueprint ID to create a new database that runs a specific database engine.
+     * </p>
+     * 
+     * @param getRelationalDatabaseBlueprintsRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseBlueprints operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseBlueprints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBlueprints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseBlueprintsResult> getRelationalDatabaseBlueprintsAsync(
+            GetRelationalDatabaseBlueprintsRequest getRelationalDatabaseBlueprintsRequest);
+
+    /**
+     * <p>
+     * Returns a list of available database blueprints in Amazon Lightsail. A blueprint describes the major engine
+     * version of a database.
+     * </p>
+     * <p>
+     * You can use a blueprint ID to create a new database that runs a specific database engine.
+     * </p>
+     * 
+     * @param getRelationalDatabaseBlueprintsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseBlueprints operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseBlueprints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBlueprints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseBlueprintsResult> getRelationalDatabaseBlueprintsAsync(
+            GetRelationalDatabaseBlueprintsRequest getRelationalDatabaseBlueprintsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseBlueprintsRequest, GetRelationalDatabaseBlueprintsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list of bundles that are available in Amazon Lightsail. A bundle describes the performance
+     * specifications for a database.
+     * </p>
+     * <p>
+     * You can use a bundle ID to create a new database with explicit performance specifications.
+     * </p>
+     * 
+     * @param getRelationalDatabaseBundlesRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseBundles operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBundles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseBundlesResult> getRelationalDatabaseBundlesAsync(
+            GetRelationalDatabaseBundlesRequest getRelationalDatabaseBundlesRequest);
+
+    /**
+     * <p>
+     * Returns the list of bundles that are available in Amazon Lightsail. A bundle describes the performance
+     * specifications for a database.
+     * </p>
+     * <p>
+     * You can use a bundle ID to create a new database with explicit performance specifications.
+     * </p>
+     * 
+     * @param getRelationalDatabaseBundlesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseBundles operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseBundles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseBundlesResult> getRelationalDatabaseBundlesAsync(
+            GetRelationalDatabaseBundlesRequest getRelationalDatabaseBundlesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseBundlesRequest, GetRelationalDatabaseBundlesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of events for a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseEventsRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseEvents operation returned by the service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseEventsResult> getRelationalDatabaseEventsAsync(
+            GetRelationalDatabaseEventsRequest getRelationalDatabaseEventsRequest);
+
+    /**
+     * <p>
+     * Returns a list of events for a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseEvents operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseEventsResult> getRelationalDatabaseEventsAsync(
+            GetRelationalDatabaseEventsRequest getRelationalDatabaseEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseEventsRequest, GetRelationalDatabaseEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of log events for a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseLogEventsRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseLogEvents operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseLogEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseLogEventsResult> getRelationalDatabaseLogEventsAsync(
+            GetRelationalDatabaseLogEventsRequest getRelationalDatabaseLogEventsRequest);
+
+    /**
+     * <p>
+     * Returns a list of log events for a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseLogEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseLogEvents operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseLogEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseLogEventsResult> getRelationalDatabaseLogEventsAsync(
+            GetRelationalDatabaseLogEventsRequest getRelationalDatabaseLogEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseLogEventsRequest, GetRelationalDatabaseLogEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of available log streams for a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseLogStreamsRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseLogStreams operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseLogStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogStreams"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseLogStreamsResult> getRelationalDatabaseLogStreamsAsync(
+            GetRelationalDatabaseLogStreamsRequest getRelationalDatabaseLogStreamsRequest);
+
+    /**
+     * <p>
+     * Returns a list of available log streams for a specific database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseLogStreamsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseLogStreams operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseLogStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogStreams"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseLogStreamsResult> getRelationalDatabaseLogStreamsAsync(
+            GetRelationalDatabaseLogStreamsRequest getRelationalDatabaseLogStreamsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseLogStreamsRequest, GetRelationalDatabaseLogStreamsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the current, previous, or pending versions of the master user password for a Lightsail database.
+     * </p>
+     * <p>
+     * The <code>asdf</code> operation GetRelationalDatabaseMasterUserPassword supports tag-based access control via
+     * resource tags applied to the resource identified by relationalDatabaseName.
+     * </p>
+     * 
+     * @param getRelationalDatabaseMasterUserPasswordRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseMasterUserPassword operation returned by
+     *         the service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseMasterUserPassword
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMasterUserPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseMasterUserPasswordResult> getRelationalDatabaseMasterUserPasswordAsync(
+            GetRelationalDatabaseMasterUserPasswordRequest getRelationalDatabaseMasterUserPasswordRequest);
+
+    /**
+     * <p>
+     * Returns the current, previous, or pending versions of the master user password for a Lightsail database.
+     * </p>
+     * <p>
+     * The <code>asdf</code> operation GetRelationalDatabaseMasterUserPassword supports tag-based access control via
+     * resource tags applied to the resource identified by relationalDatabaseName.
+     * </p>
+     * 
+     * @param getRelationalDatabaseMasterUserPasswordRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseMasterUserPassword operation returned by
+     *         the service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseMasterUserPassword
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMasterUserPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseMasterUserPasswordResult> getRelationalDatabaseMasterUserPasswordAsync(
+            GetRelationalDatabaseMasterUserPasswordRequest getRelationalDatabaseMasterUserPasswordRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseMasterUserPasswordRequest, GetRelationalDatabaseMasterUserPasswordResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the data points of the specified metric for a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseMetricDataRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseMetricData operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseMetricDataResult> getRelationalDatabaseMetricDataAsync(
+            GetRelationalDatabaseMetricDataRequest getRelationalDatabaseMetricDataRequest);
+
+    /**
+     * <p>
+     * Returns the data points of the specified metric for a database in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseMetricDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseMetricData operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseMetricDataResult> getRelationalDatabaseMetricDataAsync(
+            GetRelationalDatabaseMetricDataRequest getRelationalDatabaseMetricDataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseMetricDataRequest, GetRelationalDatabaseMetricDataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns all of the runtime parameters offered by the underlying database software, or engine, for a specific
+     * database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * In addition to the parameter names and values, this operation returns other information about each parameter.
+     * This information includes whether changes require a reboot, whether the parameter is modifiable, the allowed
+     * values, and the data types.
+     * </p>
+     * 
+     * @param getRelationalDatabaseParametersRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseParameters operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseParametersResult> getRelationalDatabaseParametersAsync(
+            GetRelationalDatabaseParametersRequest getRelationalDatabaseParametersRequest);
+
+    /**
+     * <p>
+     * Returns all of the runtime parameters offered by the underlying database software, or engine, for a specific
+     * database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * In addition to the parameter names and values, this operation returns other information about each parameter.
+     * This information includes whether changes require a reboot, whether the parameter is modifiable, the allowed
+     * values, and the data types.
+     * </p>
+     * 
+     * @param getRelationalDatabaseParametersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseParameters operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseParametersResult> getRelationalDatabaseParametersAsync(
+            GetRelationalDatabaseParametersRequest getRelationalDatabaseParametersRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseParametersRequest, GetRelationalDatabaseParametersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a specific database snapshot in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseSnapshotRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseSnapshotResult> getRelationalDatabaseSnapshotAsync(
+            GetRelationalDatabaseSnapshotRequest getRelationalDatabaseSnapshotRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific database snapshot in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseSnapshot operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseSnapshotResult> getRelationalDatabaseSnapshotAsync(
+            GetRelationalDatabaseSnapshotRequest getRelationalDatabaseSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseSnapshotRequest, GetRelationalDatabaseSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about all of your database snapshots in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseSnapshotsRequest
+     * @return A Java Future containing the result of the GetRelationalDatabaseSnapshots operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabaseSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseSnapshotsResult> getRelationalDatabaseSnapshotsAsync(
+            GetRelationalDatabaseSnapshotsRequest getRelationalDatabaseSnapshotsRequest);
+
+    /**
+     * <p>
+     * Returns information about all of your database snapshots in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabaseSnapshotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabaseSnapshots operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabaseSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabaseSnapshotsResult> getRelationalDatabaseSnapshotsAsync(
+            GetRelationalDatabaseSnapshotsRequest getRelationalDatabaseSnapshotsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabaseSnapshotsRequest, GetRelationalDatabaseSnapshotsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about all of your databases in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabasesRequest
+     * @return A Java Future containing the result of the GetRelationalDatabases operation returned by the service.
+     * @sample AmazonLightsailAsync.GetRelationalDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabasesResult> getRelationalDatabasesAsync(GetRelationalDatabasesRequest getRelationalDatabasesRequest);
+
+    /**
+     * <p>
+     * Returns information about all of your databases in Amazon Lightsail.
+     * </p>
+     * 
+     * @param getRelationalDatabasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRelationalDatabases operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetRelationalDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRelationalDatabasesResult> getRelationalDatabasesAsync(GetRelationalDatabasesRequest getRelationalDatabasesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRelationalDatabasesRequest, GetRelationalDatabasesResult> asyncHandler);
 
     /**
      * <p>
@@ -2142,6 +3465,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Adds public ports to an Amazon Lightsail instance.
      * </p>
+     * <p>
+     * The <code>open instance public ports</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param openInstancePublicPortsRequest
      * @return A Java Future containing the result of the OpenInstancePublicPorts operation returned by the service.
@@ -2154,6 +3483,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Adds public ports to an Amazon Lightsail instance.
+     * </p>
+     * <p>
+     * The <code>open instance public ports</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param openInstancePublicPortsRequest
@@ -2205,6 +3540,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * Sets the specified open ports for an Amazon Lightsail instance, and closes all ports for every protocol not
      * included in the current request.
      * </p>
+     * <p>
+     * The <code>put instance public ports</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param putInstancePublicPortsRequest
      * @return A Java Future containing the result of the PutInstancePublicPorts operation returned by the service.
@@ -2218,6 +3559,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Sets the specified open ports for an Amazon Lightsail instance, and closes all ports for every protocol not
      * included in the current request.
+     * </p>
+     * <p>
+     * The <code>put instance public ports</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param putInstancePublicPortsRequest
@@ -2235,9 +3582,13 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Restarts a specific instance. When your Amazon Lightsail instance is finished rebooting, Lightsail assigns a new
-     * public IP address. To use the same IP address after restarting, create a static IP address and attach it to the
-     * instance.
+     * Restarts a specific instance.
+     * </p>
+     * <p>
+     * The <code>reboot instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param rebootInstanceRequest
@@ -2250,9 +3601,13 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Restarts a specific instance. When your Amazon Lightsail instance is finished rebooting, Lightsail assigns a new
-     * public IP address. To use the same IP address after restarting, create a static IP address and attach it to the
-     * instance.
+     * Restarts a specific instance.
+     * </p>
+     * <p>
+     * The <code>reboot instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param rebootInstanceRequest
@@ -2267,6 +3622,49 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<RebootInstanceResult> rebootInstanceAsync(RebootInstanceRequest rebootInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<RebootInstanceRequest, RebootInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Restarts a specific database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>reboot relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param rebootRelationalDatabaseRequest
+     * @return A Java Future containing the result of the RebootRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.RebootRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RebootRelationalDatabaseResult> rebootRelationalDatabaseAsync(RebootRelationalDatabaseRequest rebootRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Restarts a specific database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>reboot relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param rebootRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RebootRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.RebootRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RebootRelationalDatabaseResult> rebootRelationalDatabaseAsync(RebootRelationalDatabaseRequest rebootRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<RebootRelationalDatabaseRequest, RebootRelationalDatabaseResult> asyncHandler);
 
     /**
      * <p>
@@ -2301,8 +3699,22 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the reboot instance
-     * operation.
+     * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the
+     * <code>reboot instance</code> operation.
+     * </p>
+     * <note>
+     * <p>
+     * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
+     * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
+     * more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>start instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param startInstanceRequest
@@ -2315,8 +3727,22 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the reboot instance
-     * operation.
+     * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the
+     * <code>reboot instance</code> operation.
+     * </p>
+     * <note>
+     * <p>
+     * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
+     * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
+     * more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>start instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param startInstanceRequest
@@ -2334,7 +3760,66 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Starts a specific database from a stopped state in Amazon Lightsail. To restart a database, use the
+     * <code>reboot relational database</code> operation.
+     * </p>
+     * <p>
+     * The <code>start relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param startRelationalDatabaseRequest
+     * @return A Java Future containing the result of the StartRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.StartRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartRelationalDatabaseResult> startRelationalDatabaseAsync(StartRelationalDatabaseRequest startRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Starts a specific database from a stopped state in Amazon Lightsail. To restart a database, use the
+     * <code>reboot relational database</code> operation.
+     * </p>
+     * <p>
+     * The <code>start relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param startRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.StartRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartRelationalDatabaseResult> startRelationalDatabaseAsync(StartRelationalDatabaseRequest startRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<StartRelationalDatabaseRequest, StartRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops a specific Amazon Lightsail instance that is currently running.
+     * </p>
+     * <note>
+     * <p>
+     * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
+     * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
+     * more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>stop instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param stopInstanceRequest
@@ -2349,6 +3834,20 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Stops a specific Amazon Lightsail instance that is currently running.
      * </p>
+     * <note>
+     * <p>
+     * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
+     * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
+     * more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>stop instance</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by instanceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param stopInstanceRequest
      * @param asyncHandler
@@ -2362,6 +3861,98 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<StopInstanceResult> stopInstanceAsync(StopInstanceRequest stopInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<StopInstanceRequest, StopInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a specific database that is currently running in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>stop relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param stopRelationalDatabaseRequest
+     * @return A Java Future containing the result of the StopRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.StopRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopRelationalDatabaseResult> stopRelationalDatabaseAsync(StopRelationalDatabaseRequest stopRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Stops a specific database that is currently running in Amazon Lightsail.
+     * </p>
+     * <p>
+     * The <code>stop relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param stopRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.StopRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopRelationalDatabaseResult> stopRelationalDatabaseAsync(StopRelationalDatabaseRequest stopRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<StopRelationalDatabaseRequest, StopRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds one or more tags to the specified Amazon Lightsail resource. Each resource can have a maximum of 50 tags.
+     * Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information
+     * about tags, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * <p>
+     * The <code>tag resource</code> operation supports tag-based access control via request tags and resource tags
+     * applied to the resource identified by resourceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonLightsailAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to the specified Amazon Lightsail resource. Each resource can have a maximum of 50 tags.
+     * Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information
+     * about tags, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.
+     * </p>
+     * <p>
+     * The <code>tag resource</code> operation supports tag-based access control via request tags and resource tags
+     * applied to the resource identified by resourceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -2396,7 +3987,56 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Deletes the specified set of tag keys and their values from the specified Amazon Lightsail resource.
+     * </p>
+     * <p>
+     * The <code>untag resource</code> operation supports tag-based access control via request tags and resource tags
+     * applied to the resource identified by resourceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonLightsailAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes the specified set of tag keys and their values from the specified Amazon Lightsail resource.
+     * </p>
+     * <p>
+     * The <code>untag resource</code> operation supports tag-based access control via request tags and resource tags
+     * applied to the resource identified by resourceName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a domain recordset after it is created.
+     * </p>
+     * <p>
+     * The <code>update domain entry</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param updateDomainEntryRequest
@@ -2410,6 +4050,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Updates a domain recordset after it is created.
+     * </p>
+     * <p>
+     * The <code>update domain entry</code> operation supports tag-based access control via resource tags applied to the
+     * resource identified by domainName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param updateDomainEntryRequest
@@ -2429,6 +4075,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Updates the specified attribute for a load balancer. You can only update one attribute at a time.
      * </p>
+     * <p>
+     * The <code>update load balancer attribute</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
      * 
      * @param updateLoadBalancerAttributeRequest
      * @return A Java Future containing the result of the UpdateLoadBalancerAttribute operation returned by the service.
@@ -2442,6 +4094,12 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Updates the specified attribute for a load balancer. You can only update one attribute at a time.
+     * </p>
+     * <p>
+     * The <code>update load balancer attribute</code> operation supports tag-based access control via resource tags
+     * applied to the resource identified by loadBalancerName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
      * </p>
      * 
      * @param updateLoadBalancerAttributeRequest
@@ -2457,5 +4115,117 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     java.util.concurrent.Future<UpdateLoadBalancerAttributeResult> updateLoadBalancerAttributeAsync(
             UpdateLoadBalancerAttributeRequest updateLoadBalancerAttributeRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateLoadBalancerAttributeRequest, UpdateLoadBalancerAttributeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows the update of one or more attributes of a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * Updates are applied immediately, or in cases where the updates could result in an outage, are applied during the
+     * database's predefined maintenance window.
+     * </p>
+     * <p>
+     * The <code>update relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param updateRelationalDatabaseRequest
+     * @return A Java Future containing the result of the UpdateRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsync.UpdateRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRelationalDatabaseResult> updateRelationalDatabaseAsync(UpdateRelationalDatabaseRequest updateRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Allows the update of one or more attributes of a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * Updates are applied immediately, or in cases where the updates could result in an outage, are applied during the
+     * database's predefined maintenance window.
+     * </p>
+     * <p>
+     * The <code>update relational database</code> operation supports tag-based access control via resource tags applied
+     * to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param updateRelationalDatabaseRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRelationalDatabase operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.UpdateRelationalDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabase"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRelationalDatabaseResult> updateRelationalDatabaseAsync(UpdateRelationalDatabaseRequest updateRelationalDatabaseRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRelationalDatabaseRequest, UpdateRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows the update of one or more parameters of a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * Parameter updates don't cause outages; therefore, their application is not subject to the preferred maintenance
+     * window. However, there are two ways in which paramater updates are applied: <code>dynamic</code> or
+     * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply type are applied immediately.
+     * Parameters marked with a <code>pending-reboot</code> apply type are applied only after the database is rebooted
+     * using the <code>reboot relational database</code> operation.
+     * </p>
+     * <p>
+     * The <code>update relational database parameters</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param updateRelationalDatabaseParametersRequest
+     * @return A Java Future containing the result of the UpdateRelationalDatabaseParameters operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.UpdateRelationalDatabaseParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabaseParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRelationalDatabaseParametersResult> updateRelationalDatabaseParametersAsync(
+            UpdateRelationalDatabaseParametersRequest updateRelationalDatabaseParametersRequest);
+
+    /**
+     * <p>
+     * Allows the update of one or more parameters of a database in Amazon Lightsail.
+     * </p>
+     * <p>
+     * Parameter updates don't cause outages; therefore, their application is not subject to the preferred maintenance
+     * window. However, there are two ways in which paramater updates are applied: <code>dynamic</code> or
+     * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply type are applied immediately.
+     * Parameters marked with a <code>pending-reboot</code> apply type are applied only after the database is rebooted
+     * using the <code>reboot relational database</code> operation.
+     * </p>
+     * <p>
+     * The <code>update relational database parameters</code> operation supports tag-based access control via resource
+     * tags applied to the resource identified by relationalDatabaseName. For more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
+     * >Lightsail Dev Guide</a>.
+     * </p>
+     * 
+     * @param updateRelationalDatabaseParametersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRelationalDatabaseParameters operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.UpdateRelationalDatabaseParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabaseParameters"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRelationalDatabaseParametersResult> updateRelationalDatabaseParametersAsync(
+            UpdateRelationalDatabaseParametersRequest updateRelationalDatabaseParametersRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRelationalDatabaseParametersRequest, UpdateRelationalDatabaseParametersResult> asyncHandler);
 
 }

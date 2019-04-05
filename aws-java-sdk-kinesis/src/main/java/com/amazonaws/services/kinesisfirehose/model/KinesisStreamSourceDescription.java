@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
     private String roleARN;
     /**
      * <p>
-     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time stamp.
+     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.
      * </p>
      */
     private java.util.Date deliveryStartTimestamp;
@@ -157,12 +157,11 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time stamp.
+     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.
      * </p>
      * 
      * @param deliveryStartTimestamp
-     *        Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time
-     *        stamp.
+     *        Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.
      */
 
     public void setDeliveryStartTimestamp(java.util.Date deliveryStartTimestamp) {
@@ -171,11 +170,11 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time stamp.
+     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.
      * </p>
      * 
-     * @return Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time
-     *         stamp.
+     * @return Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this
+     *         timestamp.
      */
 
     public java.util.Date getDeliveryStartTimestamp() {
@@ -184,12 +183,11 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time stamp.
+     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.
      * </p>
      * 
      * @param deliveryStartTimestamp
-     *        Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time
-     *        stamp.
+     *        Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,7 +197,8 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

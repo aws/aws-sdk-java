@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,15 +26,50 @@ import com.amazonaws.services.alexaforbusiness.model.*;
  * </p>
  * <p>
  * <p>
- * Alexa for Business makes it easy for you to use Alexa in your organization. Alexa for Business gives you the tools
- * you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own
- * context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also
- * these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your
- * products and services, providing context-aware voice experiences for your customers.
+ * Alexa for Business helps you use Alexa in your organization. Alexa for Business provides you with the tools to manage
+ * Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills
+ * using the Alexa Skills Kit and the Alexa for Business API operations. You can also make these available as private
+ * skills for your organization. Alexa for Business makes it efficient to voice-enable your products and services, thus
+ * providing context-aware voice experiences for your customers. Device makers building with the Alexa Voice Service
+ * (AVS) can create fully integrated solutions, register their products with Alexa for Business, and manage them as
+ * shared devices in their organization.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
+
+    /**
+     * <p>
+     * Associates a skill with the organization under the customer's AWS account. If a skill is private, the user
+     * implicitly accepts access to this skill during enablement.
+     * </p>
+     * 
+     * @param approveSkillRequest
+     * @return A Java Future containing the result of the ApproveSkill operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.ApproveSkill
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ApproveSkillResult> approveSkillAsync(ApproveSkillRequest approveSkillRequest);
+
+    /**
+     * <p>
+     * Associates a skill with the organization under the customer's AWS account. If a skill is private, the user
+     * implicitly accepts access to this skill during enablement.
+     * </p>
+     * 
+     * @param approveSkillRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ApproveSkill operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.ApproveSkill
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ApproveSkillResult> approveSkillAsync(ApproveSkillRequest approveSkillRequest,
+            com.amazonaws.handlers.AsyncHandler<ApproveSkillRequest, ApproveSkillResult> asyncHandler);
 
     /**
      * <p>
@@ -143,6 +178,72 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Associates a skill with a skill group.
+     * </p>
+     * 
+     * @param associateSkillWithSkillGroupRequest
+     * @return A Java Future containing the result of the AssociateSkillWithSkillGroup operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsync.AssociateSkillWithSkillGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSkillWithSkillGroupResult> associateSkillWithSkillGroupAsync(
+            AssociateSkillWithSkillGroupRequest associateSkillWithSkillGroupRequest);
+
+    /**
+     * <p>
+     * Associates a skill with a skill group.
+     * </p>
+     * 
+     * @param associateSkillWithSkillGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateSkillWithSkillGroup operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.AssociateSkillWithSkillGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSkillWithSkillGroupResult> associateSkillWithSkillGroupAsync(
+            AssociateSkillWithSkillGroupRequest associateSkillWithSkillGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateSkillWithSkillGroupRequest, AssociateSkillWithSkillGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Makes a private skill available for enrolled users to enable on their devices.
+     * </p>
+     * 
+     * @param associateSkillWithUsersRequest
+     * @return A Java Future containing the result of the AssociateSkillWithUsers operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.AssociateSkillWithUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSkillWithUsersResult> associateSkillWithUsersAsync(AssociateSkillWithUsersRequest associateSkillWithUsersRequest);
+
+    /**
+     * <p>
+     * Makes a private skill available for enrolled users to enable on their devices.
+     * </p>
+     * 
+     * @param associateSkillWithUsersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateSkillWithUsers operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.AssociateSkillWithUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSkillWithUsersResult> associateSkillWithUsersAsync(AssociateSkillWithUsersRequest associateSkillWithUsersRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateSkillWithUsersRequest, AssociateSkillWithUsersResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an address book with the specified details.
      * </p>
      * 
@@ -171,6 +272,74 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<CreateAddressBookResult> createAddressBookAsync(CreateAddressBookRequest createAddressBookRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAddressBookRequest, CreateAddressBookResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or
+     * weekly interval.
+     * </p>
+     * 
+     * @param createBusinessReportScheduleRequest
+     * @return A Java Future containing the result of the CreateBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsync.CreateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(
+            CreateBusinessReportScheduleRequest createBusinessReportScheduleRequest);
+
+    /**
+     * <p>
+     * Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or
+     * weekly interval.
+     * </p>
+     * 
+     * @param createBusinessReportScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.CreateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(
+            CreateBusinessReportScheduleRequest createBusinessReportScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBusinessReportScheduleRequest, CreateBusinessReportScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a new conference provider under the user's AWS account.
+     * </p>
+     * 
+     * @param createConferenceProviderRequest
+     * @return A Java Future containing the result of the CreateConferenceProvider operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.CreateConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(CreateConferenceProviderRequest createConferenceProviderRequest);
+
+    /**
+     * <p>
+     * Adds a new conference provider under the user's AWS account.
+     * </p>
+     * 
+     * @param createConferenceProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConferenceProvider operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.CreateConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(CreateConferenceProviderRequest createConferenceProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConferenceProviderRequest, CreateConferenceProviderResult> asyncHandler);
 
     /**
      * <p>
@@ -360,6 +529,72 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Deletes the recurring report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param deleteBusinessReportScheduleRequest
+     * @return A Java Future containing the result of the DeleteBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsync.DeleteBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(
+            DeleteBusinessReportScheduleRequest deleteBusinessReportScheduleRequest);
+
+    /**
+     * <p>
+     * Deletes the recurring report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param deleteBusinessReportScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.DeleteBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(
+            DeleteBusinessReportScheduleRequest deleteBusinessReportScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBusinessReportScheduleRequest, DeleteBusinessReportScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a conference provider.
+     * </p>
+     * 
+     * @param deleteConferenceProviderRequest
+     * @return A Java Future containing the result of the DeleteConferenceProvider operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.DeleteConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConferenceProviderResult> deleteConferenceProviderAsync(DeleteConferenceProviderRequest deleteConferenceProviderRequest);
+
+    /**
+     * <p>
+     * Deletes a conference provider.
+     * </p>
+     * 
+     * @param deleteConferenceProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConferenceProvider operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.DeleteConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConferenceProviderResult> deleteConferenceProviderAsync(DeleteConferenceProviderRequest deleteConferenceProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConferenceProviderRequest, DeleteConferenceProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a contact by the contact ARN.
      * </p>
      * 
@@ -388,6 +623,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest deleteContactRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteContactRequest, DeleteContactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a device from Alexa For Business.
+     * </p>
+     * 
+     * @param deleteDeviceRequest
+     * @return A Java Future containing the result of the DeleteDevice operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.DeleteDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(DeleteDeviceRequest deleteDeviceRequest);
+
+    /**
+     * <p>
+     * Removes a device from Alexa For Business.
+     * </p>
+     * 
+     * @param deleteDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDevice operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.DeleteDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(DeleteDeviceRequest deleteDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDeviceRequest, DeleteDeviceResult> asyncHandler);
 
     /**
      * <p>
@@ -481,6 +747,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<DeleteRoomSkillParameterResult> deleteRoomSkillParameterAsync(DeleteRoomSkillParameterRequest deleteRoomSkillParameterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRoomSkillParameterRequest, DeleteRoomSkillParameterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Unlinks a third-party account from a skill.
+     * </p>
+     * 
+     * @param deleteSkillAuthorizationRequest
+     * @return A Java Future containing the result of the DeleteSkillAuthorization operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.DeleteSkillAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSkillAuthorizationResult> deleteSkillAuthorizationAsync(DeleteSkillAuthorizationRequest deleteSkillAuthorizationRequest);
+
+    /**
+     * <p>
+     * Unlinks a third-party account from a skill.
+     * </p>
+     * 
+     * @param deleteSkillAuthorizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSkillAuthorization operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.DeleteSkillAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSkillAuthorizationResult> deleteSkillAuthorizationAsync(DeleteSkillAuthorizationRequest deleteSkillAuthorizationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSkillAuthorizationRequest, DeleteSkillAuthorizationResult> asyncHandler);
 
     /**
      * <p>
@@ -618,6 +915,74 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Disassociates a skill from a skill group.
+     * </p>
+     * 
+     * @param disassociateSkillFromSkillGroupRequest
+     * @return A Java Future containing the result of the DisassociateSkillFromSkillGroup operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsync.DisassociateSkillFromSkillGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
+            DisassociateSkillFromSkillGroupRequest disassociateSkillFromSkillGroupRequest);
+
+    /**
+     * <p>
+     * Disassociates a skill from a skill group.
+     * </p>
+     * 
+     * @param disassociateSkillFromSkillGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateSkillFromSkillGroup operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.DisassociateSkillFromSkillGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
+            DisassociateSkillFromSkillGroupRequest disassociateSkillFromSkillGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromSkillGroupRequest, DisassociateSkillFromSkillGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.
+     * </p>
+     * 
+     * @param disassociateSkillFromUsersRequest
+     * @return A Java Future containing the result of the DisassociateSkillFromUsers operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.DisassociateSkillFromUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSkillFromUsersResult> disassociateSkillFromUsersAsync(
+            DisassociateSkillFromUsersRequest disassociateSkillFromUsersRequest);
+
+    /**
+     * <p>
+     * Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.
+     * </p>
+     * 
+     * @param disassociateSkillFromUsersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateSkillFromUsers operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.DisassociateSkillFromUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSkillFromUsersResult> disassociateSkillFromUsersAsync(
+            DisassociateSkillFromUsersRequest disassociateSkillFromUsersRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromUsersRequest, DisassociateSkillFromUsersResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in
      * the room.
      * </p>
@@ -655,6 +1020,39 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Forgets smart home appliances associated to a room.
+     * </p>
+     * 
+     * @param forgetSmartHomeAppliancesRequest
+     * @return A Java Future containing the result of the ForgetSmartHomeAppliances operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.ForgetSmartHomeAppliances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ForgetSmartHomeAppliancesResult> forgetSmartHomeAppliancesAsync(
+            ForgetSmartHomeAppliancesRequest forgetSmartHomeAppliancesRequest);
+
+    /**
+     * <p>
+     * Forgets smart home appliances associated to a room.
+     * </p>
+     * 
+     * @param forgetSmartHomeAppliancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ForgetSmartHomeAppliances operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.ForgetSmartHomeAppliances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ForgetSmartHomeAppliancesResult> forgetSmartHomeAppliancesAsync(
+            ForgetSmartHomeAppliancesRequest forgetSmartHomeAppliancesRequest,
+            com.amazonaws.handlers.AsyncHandler<ForgetSmartHomeAppliancesRequest, ForgetSmartHomeAppliancesResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets address the book details by the address book ARN.
      * </p>
      * 
@@ -683,6 +1081,68 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<GetAddressBookResult> getAddressBookAsync(GetAddressBookRequest getAddressBookRequest,
             com.amazonaws.handlers.AsyncHandler<GetAddressBookRequest, GetAddressBookResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the existing conference preferences.
+     * </p>
+     * 
+     * @param getConferencePreferenceRequest
+     * @return A Java Future containing the result of the GetConferencePreference operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.GetConferencePreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConferencePreferenceResult> getConferencePreferenceAsync(GetConferencePreferenceRequest getConferencePreferenceRequest);
+
+    /**
+     * <p>
+     * Retrieves the existing conference preferences.
+     * </p>
+     * 
+     * @param getConferencePreferenceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConferencePreference operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.GetConferencePreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConferencePreferenceResult> getConferencePreferenceAsync(GetConferencePreferenceRequest getConferencePreferenceRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConferencePreferenceRequest, GetConferencePreferenceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets details about a specific conference provider.
+     * </p>
+     * 
+     * @param getConferenceProviderRequest
+     * @return A Java Future containing the result of the GetConferenceProvider operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.GetConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConferenceProviderResult> getConferenceProviderAsync(GetConferenceProviderRequest getConferenceProviderRequest);
+
+    /**
+     * <p>
+     * Gets details about a specific conference provider.
+     * </p>
+     * 
+     * @param getConferenceProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConferenceProvider operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.GetConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConferenceProviderResult> getConferenceProviderAsync(GetConferenceProviderRequest getConferenceProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConferenceProviderRequest, GetConferenceProviderResult> asyncHandler);
 
     /**
      * <p>
@@ -745,6 +1205,39 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(GetDeviceRequest getDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the configured values for the user enrollment invitation email template.
+     * </p>
+     * 
+     * @param getInvitationConfigurationRequest
+     * @return A Java Future containing the result of the GetInvitationConfiguration operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.GetInvitationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(
+            GetInvitationConfigurationRequest getInvitationConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves the configured values for the user enrollment invitation email template.
+     * </p>
+     * 
+     * @param getInvitationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInvitationConfiguration operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.GetInvitationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(
+            GetInvitationConfigurationRequest getInvitationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInvitationConfigurationRequest, GetInvitationConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -872,9 +1365,71 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Lists the Device Event history for up to 30 days. If EventType isn't specified in the request, this returns a
-     * list of all device events in reverse chronological order. If EventType is specified, this returns a list of
-     * device events for that EventType in reverse chronological order.
+     * Lists the details of the schedules that a user configured.
+     * </p>
+     * 
+     * @param listBusinessReportSchedulesRequest
+     * @return A Java Future containing the result of the ListBusinessReportSchedules operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.ListBusinessReportSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(
+            ListBusinessReportSchedulesRequest listBusinessReportSchedulesRequest);
+
+    /**
+     * <p>
+     * Lists the details of the schedules that a user configured.
+     * </p>
+     * 
+     * @param listBusinessReportSchedulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBusinessReportSchedules operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.ListBusinessReportSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(
+            ListBusinessReportSchedulesRequest listBusinessReportSchedulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBusinessReportSchedulesRequest, ListBusinessReportSchedulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists conference providers under a specific AWS account.
+     * </p>
+     * 
+     * @param listConferenceProvidersRequest
+     * @return A Java Future containing the result of the ListConferenceProviders operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.ListConferenceProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConferenceProvidersResult> listConferenceProvidersAsync(ListConferenceProvidersRequest listConferenceProvidersRequest);
+
+    /**
+     * <p>
+     * Lists conference providers under a specific AWS account.
+     * </p>
+     * 
+     * @param listConferenceProvidersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListConferenceProviders operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.ListConferenceProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConferenceProvidersResult> listConferenceProvidersAsync(ListConferenceProvidersRequest listConferenceProvidersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListConferenceProvidersRequest, ListConferenceProvidersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the device event history, including device connection status, for up to 30 days.
      * </p>
      * 
      * @param listDeviceEventsRequest
@@ -887,9 +1442,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Lists the Device Event history for up to 30 days. If EventType isn't specified in the request, this returns a
-     * list of all device events in reverse chronological order. If EventType is specified, this returns a list of
-     * device events for that EventType in reverse chronological order.
+     * Lists the device event history, including device connection status, for up to 30 days.
      * </p>
      * 
      * @param listDeviceEventsRequest
@@ -938,7 +1491,106 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Lists all tags for a specific resource.
+     * Lists all categories in the Alexa skill store.
+     * </p>
+     * 
+     * @param listSkillsStoreCategoriesRequest
+     * @return A Java Future containing the result of the ListSkillsStoreCategories operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.ListSkillsStoreCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSkillsStoreCategoriesResult> listSkillsStoreCategoriesAsync(
+            ListSkillsStoreCategoriesRequest listSkillsStoreCategoriesRequest);
+
+    /**
+     * <p>
+     * Lists all categories in the Alexa skill store.
+     * </p>
+     * 
+     * @param listSkillsStoreCategoriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSkillsStoreCategories operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.ListSkillsStoreCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSkillsStoreCategoriesResult> listSkillsStoreCategoriesAsync(
+            ListSkillsStoreCategoriesRequest listSkillsStoreCategoriesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSkillsStoreCategoriesRequest, ListSkillsStoreCategoriesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all skills in the Alexa skill store by category.
+     * </p>
+     * 
+     * @param listSkillsStoreSkillsByCategoryRequest
+     * @return A Java Future containing the result of the ListSkillsStoreSkillsByCategory operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsync.ListSkillsStoreSkillsByCategory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSkillsStoreSkillsByCategoryResult> listSkillsStoreSkillsByCategoryAsync(
+            ListSkillsStoreSkillsByCategoryRequest listSkillsStoreSkillsByCategoryRequest);
+
+    /**
+     * <p>
+     * Lists all skills in the Alexa skill store by category.
+     * </p>
+     * 
+     * @param listSkillsStoreSkillsByCategoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSkillsStoreSkillsByCategory operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.ListSkillsStoreSkillsByCategory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSkillsStoreSkillsByCategoryResult> listSkillsStoreSkillsByCategoryAsync(
+            ListSkillsStoreSkillsByCategoryRequest listSkillsStoreSkillsByCategoryRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSkillsStoreSkillsByCategoryRequest, ListSkillsStoreSkillsByCategoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all of the smart home appliances associated with a room.
+     * </p>
+     * 
+     * @param listSmartHomeAppliancesRequest
+     * @return A Java Future containing the result of the ListSmartHomeAppliances operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.ListSmartHomeAppliances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSmartHomeAppliancesResult> listSmartHomeAppliancesAsync(ListSmartHomeAppliancesRequest listSmartHomeAppliancesRequest);
+
+    /**
+     * <p>
+     * Lists all of the smart home appliances associated with a room.
+     * </p>
+     * 
+     * @param listSmartHomeAppliancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSmartHomeAppliances operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.ListSmartHomeAppliances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSmartHomeAppliancesResult> listSmartHomeAppliancesAsync(ListSmartHomeAppliancesRequest listSmartHomeAppliancesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSmartHomeAppliancesRequest, ListSmartHomeAppliancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all tags for the specified resource.
      * </p>
      * 
      * @param listTagsRequest
@@ -951,7 +1603,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Lists all tags for a specific resource.
+     * Lists all tags for the specified resource.
      * </p>
      * 
      * @param listTagsRequest
@@ -966,6 +1618,70 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets the conference preferences on a specific conference provider at the account level.
+     * </p>
+     * 
+     * @param putConferencePreferenceRequest
+     * @return A Java Future containing the result of the PutConferencePreference operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.PutConferencePreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(PutConferencePreferenceRequest putConferencePreferenceRequest);
+
+    /**
+     * <p>
+     * Sets the conference preferences on a specific conference provider at the account level.
+     * </p>
+     * 
+     * @param putConferencePreferenceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutConferencePreference operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.PutConferencePreference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(PutConferencePreferenceRequest putConferencePreferenceRequest,
+            com.amazonaws.handlers.AsyncHandler<PutConferencePreferenceRequest, PutConferencePreferenceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Configures the email template for the user enrollment invitation with the specified attributes.
+     * </p>
+     * 
+     * @param putInvitationConfigurationRequest
+     * @return A Java Future containing the result of the PutInvitationConfiguration operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.PutInvitationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(
+            PutInvitationConfigurationRequest putInvitationConfigurationRequest);
+
+    /**
+     * <p>
+     * Configures the email template for the user enrollment invitation with the specified attributes.
+     * </p>
+     * 
+     * @param putInvitationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutInvitationConfiguration operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.PutInvitationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(
+            PutInvitationConfigurationRequest putInvitationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutInvitationConfigurationRequest, PutInvitationConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -999,6 +1715,109 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<PutRoomSkillParameterResult> putRoomSkillParameterAsync(PutRoomSkillParameterRequest putRoomSkillParameterRequest,
             com.amazonaws.handlers.AsyncHandler<PutRoomSkillParameterRequest, PutRoomSkillParameterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Links a user's account to a third-party skill provider. If this API operation is called by an assumed IAM role,
+     * the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the
+     * IAM role.
+     * </p>
+     * 
+     * @param putSkillAuthorizationRequest
+     * @return A Java Future containing the result of the PutSkillAuthorization operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.PutSkillAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutSkillAuthorizationResult> putSkillAuthorizationAsync(PutSkillAuthorizationRequest putSkillAuthorizationRequest);
+
+    /**
+     * <p>
+     * Links a user's account to a third-party skill provider. If this API operation is called by an assumed IAM role,
+     * the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the
+     * IAM role.
+     * </p>
+     * 
+     * @param putSkillAuthorizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutSkillAuthorization operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.PutSkillAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutSkillAuthorizationResult> putSkillAuthorizationAsync(PutSkillAuthorizationRequest putSkillAuthorizationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutSkillAuthorizationRequest, PutSkillAuthorizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service
+     * (AVS).
+     * </p>
+     * 
+     * @param registerAVSDeviceRequest
+     * @return A Java Future containing the result of the RegisterAVSDevice operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.RegisterAVSDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterAVSDeviceResult> registerAVSDeviceAsync(RegisterAVSDeviceRequest registerAVSDeviceRequest);
+
+    /**
+     * <p>
+     * Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service
+     * (AVS).
+     * </p>
+     * 
+     * @param registerAVSDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterAVSDevice operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.RegisterAVSDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterAVSDeviceResult> registerAVSDeviceAsync(RegisterAVSDeviceRequest registerAVSDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterAVSDeviceRequest, RegisterAVSDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a skill from the organization under a user's AWS account. If the skill is a private skill, it moves
+     * to an AcceptStatus of PENDING. Any private or public skill that is rejected can be added later by calling the
+     * ApproveSkill API.
+     * </p>
+     * 
+     * @param rejectSkillRequest
+     * @return A Java Future containing the result of the RejectSkill operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.RejectSkill
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectSkillResult> rejectSkillAsync(RejectSkillRequest rejectSkillRequest);
+
+    /**
+     * <p>
+     * Disassociates a skill from the organization under a user's AWS account. If the skill is a private skill, it moves
+     * to an AcceptStatus of PENDING. Any private or public skill that is rejected can be added later by calling the
+     * ApproveSkill API.
+     * </p>
+     * 
+     * @param rejectSkillRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RejectSkill operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.RejectSkill
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RejectSkillResult> rejectSkillAsync(RejectSkillRequest rejectSkillRequest,
+            com.amazonaws.handlers.AsyncHandler<RejectSkillRequest, RejectSkillResult> asyncHandler);
 
     /**
      * <p>
@@ -1349,6 +2168,43 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Initiates the discovery of any smart home appliances associated with the room.
+     * </p>
+     * 
+     * @param startSmartHomeApplianceDiscoveryRequest
+     * @return A Java Future containing the result of the StartSmartHomeApplianceDiscovery operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsync.StartSmartHomeApplianceDiscovery
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSmartHomeApplianceDiscoveryResult> startSmartHomeApplianceDiscoveryAsync(
+            StartSmartHomeApplianceDiscoveryRequest startSmartHomeApplianceDiscoveryRequest);
+
+    /**
+     * <p>
+     * Initiates the discovery of any smart home appliances associated with the room.
+     * </p>
+     * 
+     * @param startSmartHomeApplianceDiscoveryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSmartHomeApplianceDiscovery operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.StartSmartHomeApplianceDiscovery
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSmartHomeApplianceDiscoveryResult> startSmartHomeApplianceDiscoveryAsync(
+            StartSmartHomeApplianceDiscoveryRequest startSmartHomeApplianceDiscoveryRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSmartHomeApplianceDiscoveryRequest, StartSmartHomeApplianceDiscoveryResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds metadata tags to a specified resource.
      * </p>
      * 
@@ -1439,6 +2295,72 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<UpdateAddressBookResult> updateAddressBookAsync(UpdateAddressBookRequest updateAddressBookRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAddressBookRequest, UpdateAddressBookResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration of the report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param updateBusinessReportScheduleRequest
+     * @return A Java Future containing the result of the UpdateBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsync.UpdateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(
+            UpdateBusinessReportScheduleRequest updateBusinessReportScheduleRequest);
+
+    /**
+     * <p>
+     * Updates the configuration of the report delivery schedule with the specified schedule ARN.
+     * </p>
+     * 
+     * @param updateBusinessReportScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateBusinessReportSchedule operation returned by the
+     *         service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.UpdateBusinessReportSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(
+            UpdateBusinessReportScheduleRequest updateBusinessReportScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateBusinessReportScheduleRequest, UpdateBusinessReportScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing conference provider's settings.
+     * </p>
+     * 
+     * @param updateConferenceProviderRequest
+     * @return A Java Future containing the result of the UpdateConferenceProvider operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.UpdateConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConferenceProviderResult> updateConferenceProviderAsync(UpdateConferenceProviderRequest updateConferenceProviderRequest);
+
+    /**
+     * <p>
+     * Updates an existing conference provider's settings.
+     * </p>
+     * 
+     * @param updateConferenceProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConferenceProvider operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.UpdateConferenceProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConferenceProviderResult> updateConferenceProviderAsync(UpdateConferenceProviderRequest updateConferenceProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConferenceProviderRequest, UpdateConferenceProviderResult> asyncHandler);
 
     /**
      * <p>

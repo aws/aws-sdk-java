@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,14 +46,14 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * An Application Load Balancer makes routing and load balancing decisions at the application layer (HTTP/HTTPS). A
- * Network Load Balancer makes routing and load balancing decisions at the transport layer (TCP). Both Application Load
- * Balancers and Network Load Balancers can route requests to one or more ports on each EC2 instance or container
+ * Network Load Balancer makes routing and load balancing decisions at the transport layer (TCP/TLS). Both Application
+ * Load Balancers and Network Load Balancers can route requests to one or more ports on each EC2 instance or container
  * instance in your virtual private cloud (VPC).
  * </p>
  * <p>
  * A Classic Load Balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or the
  * application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. For more information, see the <a
- * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User Guide</a>.
+ * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User Guide</a>.
  * </p>
  * <p>
  * This reference covers the 2015-12-01 API, which supports Application Load Balancers and Network Load Balancers. The

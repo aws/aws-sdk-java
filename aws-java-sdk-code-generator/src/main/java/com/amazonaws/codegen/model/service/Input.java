@@ -25,6 +25,8 @@ public class Input {
 
     private XmlNamespace xmlNamespace;
 
+    private boolean hostLabel;
+
     public String getShape() {
         return shape;
     }
@@ -55,5 +57,13 @@ public class Input {
 
     public void setXmlNamespace(XmlNamespace xmlNamespace) {
         this.xmlNamespace = xmlNamespace;
+    }
+
+    public boolean isHostLabel() {
+        return hostLabel;
+    }
+
+    public void setHostLabel(boolean hostLabel) {
+        this.hostLabel = hostLabel;
     }
 }

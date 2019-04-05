@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -275,6 +275,19 @@ public class AbstractAWSIoTAnalyticsAsync extends AbstractAWSIoTAnalytics implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListDatasetContentsResult> listDatasetContentsAsync(ListDatasetContentsRequest request) {
+
+        return listDatasetContentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasetContentsResult> listDatasetContentsAsync(ListDatasetContentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDatasetContentsRequest, ListDatasetContentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDatasetsResult> listDatasetsAsync(ListDatasetsRequest request) {
 
         return listDatasetsAsync(request, null);
@@ -309,6 +322,19 @@ public class AbstractAWSIoTAnalyticsAsync extends AbstractAWSIoTAnalytics implem
     @Override
     public java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(ListPipelinesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPipelinesRequest, ListPipelinesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -361,6 +387,32 @@ public class AbstractAWSIoTAnalyticsAsync extends AbstractAWSIoTAnalytics implem
     @Override
     public java.util.concurrent.Future<StartPipelineReprocessingResult> startPipelineReprocessingAsync(StartPipelineReprocessingRequest request,
             com.amazonaws.handlers.AsyncHandler<StartPipelineReprocessingRequest, StartPipelineReprocessingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,15 +34,15 @@ public class ConfigRuleEvaluationStatusMarshaller {
     private static final MarshallingInfo<String> CONFIGRULEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigRuleId").build();
     private static final MarshallingInfo<java.util.Date> LASTSUCCESSFULINVOCATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulInvocationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulInvocationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTFAILEDINVOCATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastFailedInvocationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastFailedInvocationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTSUCCESSFULEVALUATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulEvaluationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulEvaluationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTFAILEDEVALUATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastFailedEvaluationTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastFailedEvaluationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> FIRSTACTIVATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirstActivatedTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirstActivatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> LASTERRORCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastErrorCode").build();
     private static final MarshallingInfo<String> LASTERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)

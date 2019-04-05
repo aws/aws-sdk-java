@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,11 +62,11 @@ public class CreateAccountStatusJsonUnmarshaller implements Unmarshaller<CreateA
                 }
                 if (context.testExpression("RequestedTimestamp", targetDepth)) {
                     context.nextToken();
-                    createAccountStatus.setRequestedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createAccountStatus.setRequestedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("CompletedTimestamp", targetDepth)) {
                     context.nextToken();
-                    createAccountStatus.setCompletedTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    createAccountStatus.setCompletedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("AccountId", targetDepth)) {
                     context.nextToken();

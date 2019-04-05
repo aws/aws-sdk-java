@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the output of a transcription job.
+ * Identifies the location of a transcription.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Transcript" target="_top">AWS API
@@ -30,21 +30,33 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 location where the transcription result is stored. Use this URI to access the results of the transcription
-     * job.
+     * The location where the transcription is stored.
+     * </p>
+     * <p>
+     * Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code>
+     * field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon
+     * Transcribe, this is a shareable URL that provides secure access to that location.
      * </p>
      */
     private String transcriptFileUri;
 
     /**
      * <p>
-     * The S3 location where the transcription result is stored. Use this URI to access the results of the transcription
-     * job.
+     * The location where the transcription is stored.
+     * </p>
+     * <p>
+     * Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code>
+     * field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon
+     * Transcribe, this is a shareable URL that provides secure access to that location.
      * </p>
      * 
      * @param transcriptFileUri
-     *        The S3 location where the transcription result is stored. Use this URI to access the results of the
-     *        transcription job.
+     *        The location where the transcription is stored.</p>
+     *        <p>
+     *        Use this URI to access the transcription. If you specified an S3 bucket in the
+     *        <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose
+     *        to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to
+     *        that location.
      */
 
     public void setTranscriptFileUri(String transcriptFileUri) {
@@ -53,12 +65,20 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 location where the transcription result is stored. Use this URI to access the results of the transcription
-     * job.
+     * The location where the transcription is stored.
+     * </p>
+     * <p>
+     * Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code>
+     * field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon
+     * Transcribe, this is a shareable URL that provides secure access to that location.
      * </p>
      * 
-     * @return The S3 location where the transcription result is stored. Use this URI to access the results of the
-     *         transcription job.
+     * @return The location where the transcription is stored.</p>
+     *         <p>
+     *         Use this URI to access the transcription. If you specified an S3 bucket in the
+     *         <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you
+     *         chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure
+     *         access to that location.
      */
 
     public String getTranscriptFileUri() {
@@ -67,13 +87,21 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 location where the transcription result is stored. Use this URI to access the results of the transcription
-     * job.
+     * The location where the transcription is stored.
+     * </p>
+     * <p>
+     * Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code>
+     * field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon
+     * Transcribe, this is a shareable URL that provides secure access to that location.
      * </p>
      * 
      * @param transcriptFileUri
-     *        The S3 location where the transcription result is stored. Use this URI to access the results of the
-     *        transcription job.
+     *        The location where the transcription is stored.</p>
+     *        <p>
+     *        Use this URI to access the transcription. If you specified an S3 bucket in the
+     *        <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose
+     *        to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to
+     *        that location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,7 +111,8 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

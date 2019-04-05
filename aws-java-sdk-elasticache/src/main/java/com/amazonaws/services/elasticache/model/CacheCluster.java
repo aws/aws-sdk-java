@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -122,6 +122,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
+     * <p>
+     * <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -160,14 +164,29 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
+     * For a complete listing of node types and specifications, see:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Memcached</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Redis</a>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String cacheNodeType;
     /**
@@ -356,6 +375,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * you create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      */
@@ -368,6 +391,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To enable
      * at-rest encryption on a cluster you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you
      * create a cluster.
+     * </p>
+     * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -595,6 +622,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
+     * <p>
+     * <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -633,14 +664,29 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
+     * For a complete listing of node types and specifications, see:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Memcached</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Redis</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cacheNodeType
      *        The name of the compute and memory capacity node type for the cluster.</p>
@@ -714,6 +760,11 @@ public class CacheCluster implements Serializable, Cloneable {
      *        <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *        </p>
+     *        <p>
+     *        <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     *        <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+     *        <code>cache.r4.16xlarge</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -753,13 +804,28 @@ public class CacheCluster implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of node types and specifications, see <a
-     *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        either <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Redis</a>.
+     *        For a complete listing of node types and specifications, see:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     *        >Cache Node Type-Specific Parameters for Memcached</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     *        >Cache Node Type-Specific Parameters for Redis</a>
+     *        </p>
+     *        </li>
      */
 
     public void setCacheNodeType(String cacheNodeType) {
@@ -839,6 +905,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
+     * <p>
+     * <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -877,14 +947,29 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
+     * For a complete listing of node types and specifications, see:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Memcached</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Redis</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The name of the compute and memory capacity node type for the cluster.</p>
      *         <p>
@@ -957,6 +1042,11 @@ public class CacheCluster implements Serializable, Cloneable {
      *         <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      *         <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *         </p>
+     *         <p>
+     *         <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     *         <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+     *         <code>cache.r4.16xlarge</code>
+     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -996,13 +1086,28 @@ public class CacheCluster implements Serializable, Cloneable {
      *         </li>
      *         </ul>
      *         <p>
-     *         For a complete listing of node types and specifications, see <a
-     *         href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *         either <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     *         >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     *         >Cache Node Type-Specific Parameters for Redis</a>.
+     *         For a complete listing of node types and specifications, see:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href=
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     *         >Cache Node Type-Specific Parameters for Memcached</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href=
+     *         "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     *         >Cache Node Type-Specific Parameters for Redis</a>
+     *         </p>
+     *         </li>
      */
 
     public String getCacheNodeType() {
@@ -1082,6 +1187,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
      * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      * </p>
+     * <p>
+     * <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>,
+     * <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -1120,14 +1229,29 @@ public class CacheCluster implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * For a complete listing of node types and specifications, see <a
-     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either
-     * <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     * >Cache Node Type-Specific Parameters for Redis</a>.
+     * For a complete listing of node types and specifications, see:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Memcached</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     * >Cache Node Type-Specific Parameters for Redis</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cacheNodeType
      *        The name of the compute and memory capacity node type for the cluster.</p>
@@ -1201,6 +1325,11 @@ public class CacheCluster implements Serializable, Cloneable {
      *        <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      *        <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
      *        </p>
+     *        <p>
+     *        <b>R4 node types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     *        <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
+     *        <code>cache.r4.16xlarge</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -1240,13 +1369,28 @@ public class CacheCluster implements Serializable, Cloneable {
      *        </li>
      *        </ul>
      *        <p>
-     *        For a complete listing of node types and specifications, see <a
-     *        href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and
-     *        either <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Memcached</a> or <a href=
-     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
-     *        >Cache Node Type-Specific Parameters for Redis</a>.
+     *        For a complete listing of node types and specifications, see:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific"
+     *        >Cache Node Type-Specific Parameters for Memcached</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific"
+     *        >Cache Node Type-Specific Parameters for Redis</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2524,6 +2668,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * you create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -2533,6 +2681,10 @@ public class CacheCluster implements Serializable, Cloneable {
      *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
      *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
      *        <code>true</code> when you create a cluster.
+     *        </p>
+     *        <p>
+     *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *        <code>3.2.6</code> or <code>4.x</code>.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -2552,6 +2704,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * you create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -2560,6 +2716,10 @@ public class CacheCluster implements Serializable, Cloneable {
      *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
      *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
      *         <code>true</code> when you create a cluster.
+     *         </p>
+     *         <p>
+     *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *         <code>3.2.6</code> or <code>4.x</code>.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -2579,6 +2739,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * you create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -2588,6 +2752,10 @@ public class CacheCluster implements Serializable, Cloneable {
      *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
      *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
      *        <code>true</code> when you create a cluster.
+     *        </p>
+     *        <p>
+     *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *        <code>3.2.6</code> or <code>4.x</code>.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -2609,6 +2777,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * you create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -2617,6 +2789,10 @@ public class CacheCluster implements Serializable, Cloneable {
      *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
      *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
      *         <code>true</code> when you create a cluster.
+     *         </p>
+     *         <p>
+     *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *         <code>3.2.6</code> or <code>4.x</code>.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -2636,6 +2812,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -2645,6 +2825,10 @@ public class CacheCluster implements Serializable, Cloneable {
      *        You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To
      *        enable at-rest encryption on a cluster you must set <code>AtRestEncryptionEnabled</code> to
      *        <code>true</code> when you create a cluster.
+     *        </p>
+     *        <p>
+     *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *        <code>3.2.6</code> or <code>4.x</code>.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -2664,6 +2848,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -2672,6 +2860,10 @@ public class CacheCluster implements Serializable, Cloneable {
      *         You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To
      *         enable at-rest encryption on a cluster you must set <code>AtRestEncryptionEnabled</code> to
      *         <code>true</code> when you create a cluster.
+     *         </p>
+     *         <p>
+     *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *         <code>3.2.6</code> or <code>4.x</code>.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -2691,6 +2883,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -2700,6 +2896,10 @@ public class CacheCluster implements Serializable, Cloneable {
      *        You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster is created. To
      *        enable at-rest encryption on a cluster you must set <code>AtRestEncryptionEnabled</code> to
      *        <code>true</code> when you create a cluster.
+     *        </p>
+     *        <p>
+     *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *        <code>3.2.6</code> or <code>4.x</code>.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -2721,6 +2921,10 @@ public class CacheCluster implements Serializable, Cloneable {
      * create a cluster.
      * </p>
      * <p>
+     * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     * <code>3.2.6</code> or <code>4.x</code>.
+     * </p>
+     * <p>
      * Default: <code>false</code>
      * </p>
      * 
@@ -2731,6 +2935,10 @@ public class CacheCluster implements Serializable, Cloneable {
      *         <code>true</code> when you create a cluster.
      *         </p>
      *         <p>
+     *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
+     *         <code>3.2.6</code> or <code>4.x</code>.
+     *         </p>
+     *         <p>
      *         Default: <code>false</code>
      */
 
@@ -2739,7 +2947,8 @@ public class CacheCluster implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

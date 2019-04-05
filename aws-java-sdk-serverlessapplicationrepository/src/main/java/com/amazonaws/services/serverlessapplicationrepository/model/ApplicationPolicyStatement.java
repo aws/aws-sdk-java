@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,28 +30,15 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A list of supported actions:
-     * </p>
-     * <p>
-     * GetApplication
-     * </p>
-     * <p>
-     * CreateCloudFormationChangeSet
-     * </p>
-     * <p>
-     * ListApplicationVersions
-     * </p>
-     * <p>
-     * SearchApplications
-     * </p>
-     * <p>
-     * Deploy (Note: This action enables all other actions above.)
+     * For the list of actions supported for this operation, see <a href=
+     * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     * >Application Permissions</a>.
      * </p>
      */
     private java.util.List<String> actions;
     /**
      * <p>
-     * An AWS account ID, or * to make the application public.
+     * An array of AWS account IDs, or * to make the application public.
      * </p>
      */
     private java.util.List<String> principals;
@@ -64,39 +51,14 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A list of supported actions:
-     * </p>
-     * <p>
-     * GetApplication
-     * </p>
-     * <p>
-     * CreateCloudFormationChangeSet
-     * </p>
-     * <p>
-     * ListApplicationVersions
-     * </p>
-     * <p>
-     * SearchApplications
-     * </p>
-     * <p>
-     * Deploy (Note: This action enables all other actions above.)
+     * For the list of actions supported for this operation, see <a href=
+     * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     * >Application Permissions</a>.
      * </p>
      * 
-     * @return A list of supported actions:</p>
-     *         <p>
-     *         GetApplication
-     *         </p>
-     *         <p>
-     *         CreateCloudFormationChangeSet
-     *         </p>
-     *         <p>
-     *         ListApplicationVersions
-     *         </p>
-     *         <p>
-     *         SearchApplications
-     *         </p>
-     *         <p>
-     *         Deploy (Note: This action enables all other actions above.)
+     * @return For the list of actions supported for this operation, see <a href=
+     *         "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     *         >Application Permissions</a>.
      */
 
     public java.util.List<String> getActions() {
@@ -105,40 +67,15 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A list of supported actions:
-     * </p>
-     * <p>
-     * GetApplication
-     * </p>
-     * <p>
-     * CreateCloudFormationChangeSet
-     * </p>
-     * <p>
-     * ListApplicationVersions
-     * </p>
-     * <p>
-     * SearchApplications
-     * </p>
-     * <p>
-     * Deploy (Note: This action enables all other actions above.)
+     * For the list of actions supported for this operation, see <a href=
+     * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     * >Application Permissions</a>.
      * </p>
      * 
      * @param actions
-     *        A list of supported actions:</p>
-     *        <p>
-     *        GetApplication
-     *        </p>
-     *        <p>
-     *        CreateCloudFormationChangeSet
-     *        </p>
-     *        <p>
-     *        ListApplicationVersions
-     *        </p>
-     *        <p>
-     *        SearchApplications
-     *        </p>
-     *        <p>
-     *        Deploy (Note: This action enables all other actions above.)
+     *        For the list of actions supported for this operation, see <a href=
+     *        "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     *        >Application Permissions</a>.
      */
 
     public void setActions(java.util.Collection<String> actions) {
@@ -152,22 +89,9 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A list of supported actions:
-     * </p>
-     * <p>
-     * GetApplication
-     * </p>
-     * <p>
-     * CreateCloudFormationChangeSet
-     * </p>
-     * <p>
-     * ListApplicationVersions
-     * </p>
-     * <p>
-     * SearchApplications
-     * </p>
-     * <p>
-     * Deploy (Note: This action enables all other actions above.)
+     * For the list of actions supported for this operation, see <a href=
+     * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     * >Application Permissions</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -176,21 +100,9 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param actions
-     *        A list of supported actions:</p>
-     *        <p>
-     *        GetApplication
-     *        </p>
-     *        <p>
-     *        CreateCloudFormationChangeSet
-     *        </p>
-     *        <p>
-     *        ListApplicationVersions
-     *        </p>
-     *        <p>
-     *        SearchApplications
-     *        </p>
-     *        <p>
-     *        Deploy (Note: This action enables all other actions above.)
+     *        For the list of actions supported for this operation, see <a href=
+     *        "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     *        >Application Permissions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,40 +118,15 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A list of supported actions:
-     * </p>
-     * <p>
-     * GetApplication
-     * </p>
-     * <p>
-     * CreateCloudFormationChangeSet
-     * </p>
-     * <p>
-     * ListApplicationVersions
-     * </p>
-     * <p>
-     * SearchApplications
-     * </p>
-     * <p>
-     * Deploy (Note: This action enables all other actions above.)
+     * For the list of actions supported for this operation, see <a href=
+     * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     * >Application Permissions</a>.
      * </p>
      * 
      * @param actions
-     *        A list of supported actions:</p>
-     *        <p>
-     *        GetApplication
-     *        </p>
-     *        <p>
-     *        CreateCloudFormationChangeSet
-     *        </p>
-     *        <p>
-     *        ListApplicationVersions
-     *        </p>
-     *        <p>
-     *        SearchApplications
-     *        </p>
-     *        <p>
-     *        Deploy (Note: This action enables all other actions above.)
+     *        For the list of actions supported for this operation, see <a href=
+     *        "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     *        >Application Permissions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,10 +137,10 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An AWS account ID, or * to make the application public.
+     * An array of AWS account IDs, or * to make the application public.
      * </p>
      * 
-     * @return An AWS account ID, or * to make the application public.
+     * @return An array of AWS account IDs, or * to make the application public.
      */
 
     public java.util.List<String> getPrincipals() {
@@ -262,11 +149,11 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An AWS account ID, or * to make the application public.
+     * An array of AWS account IDs, or * to make the application public.
      * </p>
      * 
      * @param principals
-     *        An AWS account ID, or * to make the application public.
+     *        An array of AWS account IDs, or * to make the application public.
      */
 
     public void setPrincipals(java.util.Collection<String> principals) {
@@ -280,7 +167,7 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An AWS account ID, or * to make the application public.
+     * An array of AWS account IDs, or * to make the application public.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -289,7 +176,7 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param principals
-     *        An AWS account ID, or * to make the application public.
+     *        An array of AWS account IDs, or * to make the application public.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,11 +192,11 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An AWS account ID, or * to make the application public.
+     * An array of AWS account IDs, or * to make the application public.
      * </p>
      * 
      * @param principals
-     *        An AWS account ID, or * to make the application public.
+     *        An array of AWS account IDs, or * to make the application public.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,7 +246,8 @@ public class ApplicationPolicyStatement implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

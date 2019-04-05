@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,9 +35,9 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case
-     * sensitive). You can get a list of availability zones by using the <a
+     * sensitive). You can get a list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      */
     private String availabilityZone;
@@ -89,6 +89,15 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String keyPairName;
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -171,16 +180,16 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case
-     * sensitive). You can get a list of availability zones by using the <a
+     * sensitive). You can get a list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code>
-     *        (case sensitive). You can get a list of availability zones by using the <a
+     *        (case sensitive). You can get a list of Availability Zones by using the <a
      *        href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     *        operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     *        operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -190,15 +199,15 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case
-     * sensitive). You can get a list of availability zones by using the <a
+     * sensitive). You can get a list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      * 
      * @return The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code>
-     *         (case sensitive). You can get a list of availability zones by using the <a
+     *         (case sensitive). You can get a list of Availability Zones by using the <a
      *         href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     *         operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     *         operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      */
 
     public String getAvailabilityZone() {
@@ -208,16 +217,16 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code> (case
-     * sensitive). You can get a list of availability zones by using the <a
+     * sensitive). You can get a list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     * operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     * operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone in which to create your instance. Use the following format: <code>us-east-2a</code>
-     *        (case sensitive). You can get a list of availability zones by using the <a
+     *        (case sensitive). You can get a list of Availability Zones by using the <a
      *        href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get regions</a>
-     *        operation. Be sure to add the <code>include availability zones</code> parameter to your request.
+     *        operation. Be sure to add the <code>include Availability Zones</code> parameter to your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -520,7 +529,98 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @return The tag keys and optional values to add to the resource during create.</p>
+     *         <p>
+     *         To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstancesRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tag keys and optional values to add to the resource during create.
+     * </p>
+     * <p>
+     * To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * </p>
+     * 
+     * @param tags
+     *        The tag keys and optional values to add to the resource during create.</p>
+     *        <p>
+     *        To tag a resource after it has been created, see the <code>tag resource</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstancesRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -543,7 +643,9 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
         if (getUserData() != null)
             sb.append("UserData: ").append(getUserData()).append(",");
         if (getKeyPairName() != null)
-            sb.append("KeyPairName: ").append(getKeyPairName());
+            sb.append("KeyPairName: ").append(getKeyPairName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -586,6 +688,10 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getKeyPairName() != null && other.getKeyPairName().equals(this.getKeyPairName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -601,6 +707,7 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
         hashCode = prime * hashCode + ((getKeyPairName() == null) ? 0 : getKeyPairName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

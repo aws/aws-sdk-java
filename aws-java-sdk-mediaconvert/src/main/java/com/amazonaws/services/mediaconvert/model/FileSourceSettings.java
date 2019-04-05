@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FileSourceSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708
+     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     */
     private String convert608To708;
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
@@ -36,7 +40,12 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     private Integer timeDelta;
 
     /**
+     * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708
+     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * 
      * @param convert608To708
+     *        If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of
+     *        the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
      * @see FileSourceConvert608To708
      */
 
@@ -45,7 +54,11 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708
+     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * 
+     * @return If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of
+     *         the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
      * @see FileSourceConvert608To708
      */
 
@@ -54,7 +67,12 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708
+     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * 
      * @param convert608To708
+     *        If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of
+     *        the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileSourceConvert608To708
      */
@@ -65,7 +83,12 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708
+     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * 
      * @param convert608To708
+     *        If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of
+     *        the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileSourceConvert608To708
      */
@@ -150,7 +173,8 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

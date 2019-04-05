@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ import com.amazonaws.protocol.json.*;
 import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
 import com.amazonaws.services.costexplorer.AWSCostExplorerClientBuilder;
 
 import com.amazonaws.AmazonServiceException;
@@ -49,7 +51,7 @@ import com.amazonaws.services.costexplorer.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * The Cost Explorer API allows you to programmatically query your cost and usage data. You can query for aggregated
+ * The Cost Explorer API enables you to programmatically query your cost and usage data. You can query for aggregated
  * data such as total monthly costs or total daily usage. You can also query for granular data, such as the number of
  * daily write operations for Amazon DynamoDB database tables in your production environment.
  * </p>
@@ -62,7 +64,7 @@ import com.amazonaws.services.costexplorer.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * https://ce.us-east-1.amazonaws.com
+ * <code>https://ce.us-east-1.amazonaws.com</code>
  * </p>
  * </li>
  * </ul>
@@ -74,6 +76,7 @@ import com.amazonaws.services.costexplorer.model.transform.*;
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWSCostExplorer {
+
     /** Provider for AWS credentials. */
     private final AWSCredentialsProvider awsCredentialsProvider;
 
@@ -84,6 +87,8 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
 
     private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
             new JsonClientMetadata()
@@ -122,8 +127,23 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      *        Object providing client parameters.
      */
     AWSCostExplorerClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on AWS Cost Explorer using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AWSCostExplorerClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
         super(clientParams);
         this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
         init();
     }
 
@@ -143,9 +163,10 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric, such as
      * <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter
      * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
-     * range. For a complete list of valid dimensions, see the
-     * <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> </code>
-     * operation. Master accounts in an organization in AWS Organizations have access to all member accounts.
+     * range. For a complete list of valid dimensions, see the <a
+     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
+     * >GetDimensionValues</a> operation. Master accounts in an organization in AWS Organizations have access to all
+     * member accounts.
      * </p>
      * 
      * @param getCostAndUsageRequest
@@ -187,12 +208,72 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCostAndUsage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
             HttpResponseHandler<AmazonWebServiceResponse<GetCostAndUsageResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCostAndUsageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period
+     * that you select, based on your past costs.
+     * </p>
+     * 
+     * @param getCostForecastRequest
+     * @return Result of the GetCostForecast operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @sample AWSCostExplorer.GetCostForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetCostForecastResult getCostForecast(GetCostForecastRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCostForecast(request);
+    }
+
+    @SdkInternalApi
+    final GetCostForecastResult executeGetCostForecast(GetCostForecastRequest getCostForecastRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCostForecastRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCostForecastRequest> request = null;
+        Response<GetCostForecastResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCostForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCostForecastRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCostForecast");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCostForecastResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCostForecastResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -248,6 +329,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDimensionValues");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -266,7 +350,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Retrieves the reservation coverage for your account. This allows you to see how much of your Amazon Elastic
+     * Retrieves the reservation coverage for your account. This enables you to see how much of your Amazon Elastic
      * Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a
      * reservation. An organization's master account can see the coverage of the associated member accounts. For any
      * time period, you can filter data about reservation usage by the following dimensions:
@@ -338,8 +422,8 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * </p>
      * 
      * @param getReservationCoverageRequest
-     *        You can use the following request parameters to query for how much of your instance usage is covered by a
-     *        reservation.
+     *        You can use the following request parameters to query for how much of your instance usage a reservation
+     *        covered.
      * @return Result of the GetReservationCoverage operation returned by the service.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
@@ -373,6 +457,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReservationCoverage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -402,12 +489,12 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * RI to purchase to maximize your estimated savings.
      * </p>
      * <p>
-     * For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and c4 family usage in the US West
-     * (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family usage.
-     * AWS recommends the smallest size instance in an instance family. This makes it easier to purchase a size-flexible
-     * RI. AWS also shows the equal number of normalized units so that you can purchase any instance size that you want.
-     * For this example, your RI recommendation would be for <code>c4.large</code>, because that is the smallest size
-     * instance in the c4 instance family.
+     * For example, AWS automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US
+     * West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family
+     * usage. AWS recommends the smallest size instance in an instance family. This makes it easier to purchase a
+     * size-flexible RI. AWS also shows the equal number of normalized units so that you can purchase any instance size
+     * that you want. For this example, your RI recommendation would be for <code>c4.large</code> because that is the
+     * smallest size instance in the c4 instance family.
      * </p>
      * 
      * @param getReservationPurchaseRecommendationRequest
@@ -446,6 +533,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReservationPurchaseRecommendation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -505,6 +595,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReservationUtilization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -567,6 +660,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -607,9 +703,18 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
     private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
             ExecutionContext executionContext) {
 
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
         executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
     }
 
     /**
@@ -619,7 +724,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
     private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
             HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
 
-        return doInvoke(request, responseHandler, executionContext);
+        return doInvoke(request, responseHandler, executionContext, null, null);
     }
 
     /**
@@ -627,8 +732,17 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * ExecutionContext beforehand.
      **/
     private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
-            ExecutionContext executionContext) {
-        request.setEndpoint(endpoint);
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
         request.setTimeOffset(timeOffset);
 
         HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,16 @@ public class AbstractAWSShield implements AWSShield {
     }
 
     @Override
+    public AssociateDRTLogBucketResult associateDRTLogBucket(AssociateDRTLogBucketRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateDRTRoleResult associateDRTRole(AssociateDRTRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateProtectionResult createProtection(CreateProtectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -53,6 +63,7 @@ public class AbstractAWSShield implements AWSShield {
     }
 
     @Override
+    @Deprecated
     public DeleteSubscriptionResult deleteSubscription(DeleteSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,12 +74,32 @@ public class AbstractAWSShield implements AWSShield {
     }
 
     @Override
+    public DescribeDRTAccessResult describeDRTAccess(DescribeDRTAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEmergencyContactSettingsResult describeEmergencyContactSettings(DescribeEmergencyContactSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeProtectionResult describeProtection(DescribeProtectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeSubscriptionResult describeSubscription(DescribeSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateDRTLogBucketResult disassociateDRTLogBucket(DisassociateDRTLogBucketRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateDRTRoleResult disassociateDRTRole(DisassociateDRTRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +115,16 @@ public class AbstractAWSShield implements AWSShield {
 
     @Override
     public ListProtectionsResult listProtections(ListProtectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateEmergencyContactSettingsResult updateEmergencyContactSettings(UpdateEmergencyContactSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSubscriptionResult updateSubscription(UpdateSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

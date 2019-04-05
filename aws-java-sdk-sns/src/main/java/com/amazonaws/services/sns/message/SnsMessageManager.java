@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,6 +16,7 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.regions.DefaultAwsRegionProviderChain;
 import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.sns.AmazonSNS;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -69,7 +70,7 @@ public class SnsMessageManager {
      */
     public SnsMessageManager(String region) {
         this.endpoint = RegionUtils.getRegion(region).getServiceEndpoint(AmazonSNS.ENDPOINT_PREFIX);
-        this.signatureVerifier = new SignatureVerifier(client, endpoint, "sns." + RegionUtils.getRegion(region).getDomain());
+        this.signatureVerifier = new SignatureVerifier(client, endpoint, resolveCertCommonName(region));
         this.messageUnmarshaller = new SnsMessageUnmarshaller(client);
     }
 
@@ -111,4 +112,20 @@ public class SnsMessageManager {
         }
     }
 
+    //TODO SNS team will use a consistent pattern for certificate naming. Then remove the special handling based on region
+    private String resolveCertCommonName(String region) {
+        if (Regions.CN_NORTH_1.getName().equals(region)) {
+            return "sns-cn-north-1.amazonaws.com.cn";
+        }
+
+        if (Regions.CN_NORTHWEST_1.getName().equals(region)) {
+            return "sns-cn-northwest-1.amazonaws.com.cn";
+        }
+
+        if (Regions.GovCloud.getName().equals(region)) {
+            return "sns-us-gov-west-1.amazonaws.com";
+        }
+
+        return "sns." + RegionUtils.getRegion(region).getDomain();
+    }
 }

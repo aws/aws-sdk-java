@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The repository does not contain any pull requests with that pull request ID. Check to make sure you have provided the
- * correct repository name for the pull request.
+ * The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify the correct
+ * repository name for the pull request ID.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

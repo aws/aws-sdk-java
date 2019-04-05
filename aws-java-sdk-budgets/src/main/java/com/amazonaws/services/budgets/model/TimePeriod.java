@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The period of time covered by a budget. Has a start date and an end date. The start date must come before the end
- * date. There are no restrictions on the end date.
+ * The period of time that is covered by a budget. The period has a start date and an end date. The start date must come
+ * before the end date. There are no restrictions on the end date.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,8 +29,8 @@ public class TimePeriod implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the
-     * start of your chosen time period (i.e. DAILY, MONTHLY, QUARTERLY, ANNUALLY). For example, if you created your
-     * budget on January 24th 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to
+     * start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your
+     * budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to
      * <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to
      * <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and
      * the API.
@@ -56,8 +56,8 @@ public class TimePeriod implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the
-     * start of your chosen time period (i.e. DAILY, MONTHLY, QUARTERLY, ANNUALLY). For example, if you created your
-     * budget on January 24th 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to
+     * start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your
+     * budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to
      * <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to
      * <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and
      * the API.
@@ -68,11 +68,11 @@ public class TimePeriod implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param start
      *        The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to
-     *        the start of your chosen time period (i.e. DAILY, MONTHLY, QUARTERLY, ANNUALLY). For example, if you
-     *        created your budget on January 24th 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set
-     *        your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start
-     *        date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management
-     *        console and the API.</p>
+     *        the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created
+     *        your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start
+     *        date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to
+     *        <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console
+     *        and the API.</p>
      *        <p>
      *        You can change your start date with the <code>UpdateBudget</code> operation.
      */
@@ -84,8 +84,8 @@ public class TimePeriod implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the
-     * start of your chosen time period (i.e. DAILY, MONTHLY, QUARTERLY, ANNUALLY). For example, if you created your
-     * budget on January 24th 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to
+     * start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your
+     * budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to
      * <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to
      * <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and
      * the API.
@@ -95,8 +95,8 @@ public class TimePeriod implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to
-     *         the start of your chosen time period (i.e. DAILY, MONTHLY, QUARTERLY, ANNUALLY). For example, if you
-     *         created your budget on January 24th 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set
+     *         the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you
+     *         created your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set
      *         your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start
      *         date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost
      *         Management console and the API.</p>
@@ -111,8 +111,8 @@ public class TimePeriod implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to the
-     * start of your chosen time period (i.e. DAILY, MONTHLY, QUARTERLY, ANNUALLY). For example, if you created your
-     * budget on January 24th 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to
+     * start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your
+     * budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start date to
      * <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to
      * <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console and
      * the API.
@@ -123,11 +123,11 @@ public class TimePeriod implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param start
      *        The start date for a budget. If you created your budget and didn't specify a start date, AWS defaults to
-     *        the start of your chosen time period (i.e. DAILY, MONTHLY, QUARTERLY, ANNUALLY). For example, if you
-     *        created your budget on January 24th 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set
-     *        your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start
-     *        date to <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management
-     *        console and the API.</p>
+     *        the start of your chosen time period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created
+     *        your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start
+     *        date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS set your start date to
+     *        <code>01/01/18 00:00 UTC</code>. The defaults are the same for the AWS Billing and Cost Management console
+     *        and the API.</p>
      *        <p>
      *        You can change your start date with the <code>UpdateBudget</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -212,7 +212,8 @@ public class TimePeriod implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class TableDescriptionMarshaller {
     private static final MarshallingInfo<String> TABLESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableStatus").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDateTime").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughput").build();
     private static final MarshallingInfo<Long> TABLESIZEBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
@@ -48,6 +48,8 @@ public class TableDescriptionMarshaller {
             .marshallLocationName("TableArn").build();
     private static final MarshallingInfo<String> TABLEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TableId").build();
+    private static final MarshallingInfo<StructuredPojo> BILLINGMODESUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingModeSummary").build();
     private static final MarshallingInfo<List> LOCALSECONDARYINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LocalSecondaryIndexes").build();
     private static final MarshallingInfo<List> GLOBALSECONDARYINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -89,6 +91,7 @@ public class TableDescriptionMarshaller {
             protocolMarshaller.marshall(tableDescription.getItemCount(), ITEMCOUNT_BINDING);
             protocolMarshaller.marshall(tableDescription.getTableArn(), TABLEARN_BINDING);
             protocolMarshaller.marshall(tableDescription.getTableId(), TABLEID_BINDING);
+            protocolMarshaller.marshall(tableDescription.getBillingModeSummary(), BILLINGMODESUMMARY_BINDING);
             protocolMarshaller.marshall(tableDescription.getLocalSecondaryIndexes(), LOCALSECONDARYINDEXES_BINDING);
             protocolMarshaller.marshall(tableDescription.getGlobalSecondaryIndexes(), GLOBALSECONDARYINDEXES_BINDING);
             protocolMarshaller.marshall(tableDescription.getStreamSpecification(), STREAMSPECIFICATION_BINDING);

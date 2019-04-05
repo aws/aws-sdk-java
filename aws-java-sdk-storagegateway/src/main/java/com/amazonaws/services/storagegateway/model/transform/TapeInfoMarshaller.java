@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class TapeInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TapeStatus").build();
     private static final MarshallingInfo<String> GATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
+    private static final MarshallingInfo<String> POOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PoolId").build();
 
     private static final TapeInfoMarshaller instance = new TapeInfoMarshaller();
 
@@ -59,6 +61,7 @@ public class TapeInfoMarshaller {
             protocolMarshaller.marshall(tapeInfo.getTapeSizeInBytes(), TAPESIZEINBYTES_BINDING);
             protocolMarshaller.marshall(tapeInfo.getTapeStatus(), TAPESTATUS_BINDING);
             protocolMarshaller.marshall(tapeInfo.getGatewayARN(), GATEWAYARN_BINDING);
+            protocolMarshaller.marshall(tapeInfo.getPoolId(), POOLID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

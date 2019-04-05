@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class FilteredLogEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the log stream this event belongs to.
+     * The name of the log stream to which this event belongs.
      * </p>
      */
     private String logStreamName;
@@ -61,11 +61,11 @@ public class FilteredLogEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the log stream this event belongs to.
+     * The name of the log stream to which this event belongs.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the log stream this event belongs to.
+     *        The name of the log stream to which this event belongs.
      */
 
     public void setLogStreamName(String logStreamName) {
@@ -74,10 +74,10 @@ public class FilteredLogEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the log stream this event belongs to.
+     * The name of the log stream to which this event belongs.
      * </p>
      * 
-     * @return The name of the log stream this event belongs to.
+     * @return The name of the log stream to which this event belongs.
      */
 
     public String getLogStreamName() {
@@ -86,11 +86,11 @@ public class FilteredLogEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the log stream this event belongs to.
+     * The name of the log stream to which this event belongs.
      * </p>
      * 
      * @param logStreamName
-     *        The name of the log stream this event belongs to.
+     *        The name of the log stream to which this event belongs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,7 +260,8 @@ public class FilteredLogEvent implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code>
+     * <code>redis3.2</code> | <code>redis4.0</code>
      * </p>
      * <p>
      * Constraints:
@@ -204,7 +204,7 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code>
+     * <code>redis3.2</code> | <code>redis4.0</code>
      * </p>
      * <p>
      * Constraints:
@@ -231,7 +231,7 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      *        The name of a specific cache parameter group family to return details for.</p>
      *        <p>
      *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     *        <code>redis3.2</code>
+     *        <code>redis3.2</code> | <code>redis4.0</code>
      *        </p>
      *        <p>
      *        Constraints:
@@ -264,7 +264,7 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code>
+     * <code>redis3.2</code> | <code>redis4.0</code>
      * </p>
      * <p>
      * Constraints:
@@ -290,7 +290,7 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * @return The name of a specific cache parameter group family to return details for.</p>
      *         <p>
      *         Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     *         <code>redis3.2</code>
+     *         <code>redis3.2</code> | <code>redis4.0</code>
      *         </p>
      *         <p>
      *         Constraints:
@@ -323,7 +323,7 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <p>
      * Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     * <code>redis3.2</code>
+     * <code>redis3.2</code> | <code>redis4.0</code>
      * </p>
      * <p>
      * Constraints:
@@ -350,7 +350,7 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
      *        The name of a specific cache parameter group family to return details for.</p>
      *        <p>
      *        Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
-     *        <code>redis3.2</code>
+     *        <code>redis3.2</code> | <code>redis4.0</code>
      *        </p>
      *        <p>
      *        Constraints:
@@ -577,7 +577,8 @@ public class DescribeCacheEngineVersionsRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

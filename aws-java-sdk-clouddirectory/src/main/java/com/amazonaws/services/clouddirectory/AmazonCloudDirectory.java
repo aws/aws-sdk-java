@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,10 @@ import com.amazonaws.services.clouddirectory.model.*;
  * <p>
  * Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of
  * cloud-scale web, mobile, and IoT applications. This guide describes the Cloud Directory operations that you can call
- * programmatically and includes detailed information on data types and errors. For information about AWS Directory
- * Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a
- * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS Directory Service
- * Administration Guide</a>.
+ * programmatically and includes detailed information on data types and errors. For information about Cloud Directory
+ * features, see <a href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a
+ * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html">Amazon Cloud
+ * Directory Developer Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -56,9 +56,10 @@ public interface AmazonCloudDirectory {
      * protocol from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
-     * endpoints for all AWS services, see: <a
-     * href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
-     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * endpoints for all AWS services, see: <a href=
+     * "https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-choose-endpoint"
+     * > https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-region-selection.html#region-selection-
+     * choose-endpoint</a>
      * <p>
      * <b>This method is not threadsafe. An endpoint should be configured when the client is created and before any
      * service requests are made. Changing it afterwards creates inevitable race conditions for any service requests in
@@ -122,7 +123,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -133,7 +134,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.AddFacetToObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AddFacetToObject"
      *      target="_top">AWS API Documentation</a>
      */
     AddFacetToObjectResult addFacetToObject(AddFacetToObjectRequest addFacetToObjectRequest);
@@ -163,17 +164,20 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws SchemaAlreadyExistsException
+     *         Indicates that a schema could not be created due to a naming conflict. Please select a different name and
+     *         then try again.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidAttachmentException
-     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with the same
-     *         name has occurred. Rename the link or the schema and then try again.
+     *         Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link
+     *         type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.
      * @sample AmazonCloudDirectory.ApplySchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ApplySchema" target="_top">AWS API
      *      Documentation</a>
      */
     ApplySchemaResult applySchema(ApplySchemaRequest applySchemaRequest);
@@ -214,7 +218,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -226,14 +230,14 @@ public interface AmazonCloudDirectory {
      *         Indicates that a link could not be created due to a naming conflict. Choose a different name and then try
      *         again.
      * @throws InvalidAttachmentException
-     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with the same
-     *         name has occurred. Rename the link or the schema and then try again.
+     *         Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link
+     *         type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.
      * @throws ValidationException
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.AttachObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachObject" target="_top">AWS
      *      API Documentation</a>
      */
     AttachObjectResult attachObject(AttachObjectRequest attachObjectRequest);
@@ -262,7 +266,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -273,7 +277,7 @@ public interface AmazonCloudDirectory {
      * @throws NotPolicyException
      *         Indicates that the requested operation can only operate on policy objects.
      * @sample AmazonCloudDirectory.AttachPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachPolicy" target="_top">AWS
      *      API Documentation</a>
      */
     AttachPolicyResult attachPolicy(AttachPolicyRequest attachPolicyRequest);
@@ -302,15 +306,15 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @throws DirectoryNotEnabledException
      *         Operations are only permitted on enabled directories.
      * @throws InvalidAttachmentException
-     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with the same
-     *         name has occurred. Rename the link or the schema and then try again.
+     *         Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link
+     *         type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws LinkNameAlreadyInUseException
@@ -322,16 +326,16 @@ public interface AmazonCloudDirectory {
      * @throws NotIndexException
      *         Indicates that the requested operation can only operate on index objects.
      * @sample AmazonCloudDirectory.AttachToIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachToIndex" target="_top">AWS
      *      API Documentation</a>
      */
     AttachToIndexResult attachToIndex(AttachToIndexRequest attachToIndexRequest);
 
     /**
      * <p>
-     * Attaches a typed link to a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Attaches a typed link to a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param attachTypedLinkRequest
@@ -353,7 +357,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -362,14 +366,14 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidAttachmentException
-     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with the same
-     *         name has occurred. Rename the link or the schema and then try again.
+     *         Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link
+     *         type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.
      * @throws ValidationException
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.AttachTypedLink
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachTypedLink" target="_top">AWS
      *      API Documentation</a>
      */
     AttachTypedLinkResult attachTypedLink(AttachTypedLinkRequest attachTypedLinkRequest);
@@ -398,14 +402,14 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @throws DirectoryNotEnabledException
      *         Operations are only permitted on enabled directories.
      * @sample AmazonCloudDirectory.BatchRead
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchRead" target="_top">AWS API
      *      Documentation</a>
      */
     BatchReadResult batchRead(BatchReadRequest batchReadRequest);
@@ -434,7 +438,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -443,7 +447,7 @@ public interface AmazonCloudDirectory {
      * @throws BatchWriteException
      *         A <code>BatchWrite</code> exception has occurred.
      * @sample AmazonCloudDirectory.BatchWrite
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWrite" target="_top">AWS API
      *      Documentation</a>
      */
     BatchWriteResult batchWrite(BatchWriteRequest batchWriteRequest);
@@ -452,6 +456,12 @@ public interface AmazonCloudDirectory {
      * <p>
      * Creates a <a>Directory</a> by copying the published schema into the directory. A directory cannot be created
      * without a schema.
+     * </p>
+     * <p>
+     * You can also quickly create a directory using a managed schema, called the <code>QuickStartSchema</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed Schema</a>
+     * in the <i>Amazon Cloud Directory Developer Guide</i>.
      * </p>
      * 
      * @param createDirectoryRequest
@@ -473,7 +483,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -483,7 +493,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonCloudDirectory.CreateDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     CreateDirectoryResult createDirectory(CreateDirectoryRequest createDirectoryRequest);
@@ -512,7 +522,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -525,7 +535,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.CreateFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateFacet" target="_top">AWS API
      *      Documentation</a>
      */
     CreateFacetResult createFacet(CreateFacetRequest createFacetRequest);
@@ -533,8 +543,8 @@ public interface AmazonCloudDirectory {
     /**
      * <p>
      * Creates an index object. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.html">Indexing and
+     * search</a> for more information.
      * </p>
      * 
      * @param createIndexRequest
@@ -556,7 +566,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -572,7 +582,7 @@ public interface AmazonCloudDirectory {
      * @throws UnsupportedIndexTypeException
      *         Indicates that the requested index type is not supported.
      * @sample AmazonCloudDirectory.CreateIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateIndex" target="_top">AWS API
      *      Documentation</a>
      */
     CreateIndexResult createIndex(CreateIndexRequest createIndexRequest);
@@ -603,7 +613,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -619,7 +629,7 @@ public interface AmazonCloudDirectory {
      * @throws UnsupportedIndexTypeException
      *         Indicates that the requested index type is not supported.
      * @sample AmazonCloudDirectory.CreateObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateObject" target="_top">AWS
      *      API Documentation</a>
      */
     CreateObjectResult createObject(CreateObjectRequest createObjectRequest);
@@ -667,7 +677,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -677,16 +687,16 @@ public interface AmazonCloudDirectory {
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @sample AmazonCloudDirectory.CreateSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateSchema" target="_top">AWS
      *      API Documentation</a>
      */
     CreateSchemaResult createSchema(CreateSchemaRequest createSchemaRequest);
 
     /**
      * <p>
-     * Creates a <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Creates a <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param createTypedLinkFacetRequest
@@ -708,7 +718,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -721,7 +731,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.CreateTypedLinkFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateTypedLinkFacet"
      *      target="_top">AWS API Documentation</a>
      */
     CreateTypedLinkFacetResult createTypedLinkFacet(CreateTypedLinkFacetRequest createTypedLinkFacetRequest);
@@ -747,7 +757,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -763,7 +773,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidArnException
      *         Indicates that the provided ARN value is not valid.
      * @sample AmazonCloudDirectory.DeleteDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest deleteDirectoryRequest);
@@ -793,7 +803,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -805,14 +815,17 @@ public interface AmazonCloudDirectory {
      *         Occurs when deleting a facet that contains an attribute that is a target to an attribute reference in a
      *         different facet.
      * @sample AmazonCloudDirectory.DeleteFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteFacet" target="_top">AWS API
      *      Documentation</a>
      */
     DeleteFacetResult deleteFacet(DeleteFacetRequest deleteFacetRequest);
 
     /**
      * <p>
-     * Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted.
+     * Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted. The
+     * maximum number of attributes that can be deleted during an object deletion is 30. For more information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory
+     * Limits</a>.
      * </p>
      * 
      * @param deleteObjectRequest
@@ -834,7 +847,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -846,7 +859,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that the requested operation cannot be completed because the object has not been detached from
      *         the tree.
      * @sample AmazonCloudDirectory.DeleteObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteObject" target="_top">AWS
      *      API Documentation</a>
      */
     DeleteObjectResult deleteObject(DeleteObjectRequest deleteObjectRequest);
@@ -875,7 +888,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -885,16 +898,16 @@ public interface AmazonCloudDirectory {
      *         The object could not be deleted because links still exist. Remove the links and then try the operation
      *         again.
      * @sample AmazonCloudDirectory.DeleteSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteSchema" target="_top">AWS
      *      API Documentation</a>
      */
     DeleteSchemaResult deleteSchema(DeleteSchemaRequest deleteSchemaRequest);
 
     /**
      * <p>
-     * Deletes a <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Deletes a <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param deleteTypedLinkFacetRequest
@@ -916,7 +929,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -925,7 +938,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetNotFoundException
      *         The specified <a>Facet</a> could not be found.
      * @sample AmazonCloudDirectory.DeleteTypedLinkFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteTypedLinkFacet"
      *      target="_top">AWS API Documentation</a>
      */
     DeleteTypedLinkFacetResult deleteTypedLinkFacet(DeleteTypedLinkFacetRequest deleteTypedLinkFacetRequest);
@@ -954,7 +967,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -967,7 +980,7 @@ public interface AmazonCloudDirectory {
      * @throws NotIndexException
      *         Indicates that the requested operation can only operate on index objects.
      * @sample AmazonCloudDirectory.DetachFromIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachFromIndex" target="_top">AWS
      *      API Documentation</a>
      */
     DetachFromIndexResult detachFromIndex(DetachFromIndexRequest detachFromIndexRequest);
@@ -997,7 +1010,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1009,7 +1022,7 @@ public interface AmazonCloudDirectory {
      *         Occurs when any invalid operations are performed on an object that is not a node, such as calling
      *         <code>ListObjectChildren</code> for a leaf node object.
      * @sample AmazonCloudDirectory.DetachObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachObject" target="_top">AWS
      *      API Documentation</a>
      */
     DetachObjectResult detachObject(DetachObjectRequest detachObjectRequest);
@@ -1038,7 +1051,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1049,16 +1062,16 @@ public interface AmazonCloudDirectory {
      * @throws NotPolicyException
      *         Indicates that the requested operation can only operate on policy objects.
      * @sample AmazonCloudDirectory.DetachPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachPolicy" target="_top">AWS
      *      API Documentation</a>
      */
     DetachPolicyResult detachPolicy(DetachPolicyRequest detachPolicyRequest);
 
     /**
      * <p>
-     * Detaches a typed link from a specified source and target object. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Detaches a typed link from a specified source and target object. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param detachTypedLinkRequest
@@ -1080,7 +1093,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1091,7 +1104,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.DetachTypedLink
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachTypedLink" target="_top">AWS
      *      API Documentation</a>
      */
     DetachTypedLinkResult detachTypedLink(DetachTypedLinkRequest detachTypedLinkRequest);
@@ -1118,7 +1131,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1131,7 +1144,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidArnException
      *         Indicates that the provided ARN value is not valid.
      * @sample AmazonCloudDirectory.DisableDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DisableDirectory"
      *      target="_top">AWS API Documentation</a>
      */
     DisableDirectoryResult disableDirectory(DisableDirectoryRequest disableDirectoryRequest);
@@ -1158,7 +1171,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1171,7 +1184,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidArnException
      *         Indicates that the provided ARN value is not valid.
      * @sample AmazonCloudDirectory.EnableDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/EnableDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     EnableDirectoryResult enableDirectory(EnableDirectoryRequest enableDirectoryRequest);
@@ -1200,14 +1213,14 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonCloudDirectory.GetAppliedSchemaVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetAppliedSchemaVersion"
      *      target="_top">AWS API Documentation</a>
      */
     GetAppliedSchemaVersionResult getAppliedSchemaVersion(GetAppliedSchemaVersionRequest getAppliedSchemaVersionRequest);
@@ -1236,12 +1249,12 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @sample AmazonCloudDirectory.GetDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     GetDirectoryResult getDirectory(GetDirectoryRequest getDirectoryRequest);
@@ -1271,7 +1284,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1280,10 +1293,50 @@ public interface AmazonCloudDirectory {
      * @throws FacetNotFoundException
      *         The specified <a>Facet</a> could not be found.
      * @sample AmazonCloudDirectory.GetFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetFacet" target="_top">AWS API
      *      Documentation</a>
      */
     GetFacetResult getFacet(GetFacetRequest getFacetRequest);
+
+    /**
+     * <p>
+     * Retrieves attributes that are associated with a typed link.
+     * </p>
+     * 
+     * @param getLinkAttributesRequest
+     * @return Result of the GetLinkAttributes operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         Operations are only permitted on enabled directories.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
+     * @sample AmazonCloudDirectory.GetLinkAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetLinkAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLinkAttributesResult getLinkAttributes(GetLinkAttributesRequest getLinkAttributesRequest);
 
     /**
      * <p>
@@ -1309,7 +1362,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1320,7 +1373,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.GetObjectAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     GetObjectAttributesResult getObjectAttributes(GetObjectAttributesRequest getObjectAttributesRequest);
@@ -1349,7 +1402,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1358,7 +1411,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonCloudDirectory.GetObjectInformation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectInformation"
      *      target="_top">AWS API Documentation</a>
      */
     GetObjectInformationResult getObjectInformation(GetObjectInformationRequest getObjectInformationRequest);
@@ -1366,8 +1419,8 @@ public interface AmazonCloudDirectory {
     /**
      * <p>
      * Retrieves a JSON representation of the schema. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON Schema
-     * Format</a> for more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON
+     * Schema Format</a> for more information.
      * </p>
      * 
      * @param getSchemaAsJsonRequest
@@ -1389,7 +1442,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1398,16 +1451,16 @@ public interface AmazonCloudDirectory {
      * @throws ValidationException
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @sample AmazonCloudDirectory.GetSchemaAsJson
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetSchemaAsJson" target="_top">AWS
      *      API Documentation</a>
      */
     GetSchemaAsJsonResult getSchemaAsJson(GetSchemaAsJsonRequest getSchemaAsJsonRequest);
 
     /**
      * <p>
-     * Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param getTypedLinkFacetInformationRequest
@@ -1429,7 +1482,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1440,7 +1493,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetNotFoundException
      *         The specified <a>Facet</a> could not be found.
      * @sample AmazonCloudDirectory.GetTypedLinkFacetInformation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetTypedLinkFacetInformation"
      *      target="_top">AWS API Documentation</a>
      */
     GetTypedLinkFacetInformationResult getTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest getTypedLinkFacetInformationRequest);
@@ -1470,7 +1523,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1479,7 +1532,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListAppliedSchemaArns
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAppliedSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     ListAppliedSchemaArnsResult listAppliedSchemaArns(ListAppliedSchemaArnsRequest listAppliedSchemaArnsRequest);
@@ -1508,7 +1561,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1517,7 +1570,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonCloudDirectory.ListAttachedIndices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAttachedIndices"
      *      target="_top">AWS API Documentation</a>
      */
     ListAttachedIndicesResult listAttachedIndices(ListAttachedIndicesRequest listAttachedIndicesRequest);
@@ -1546,7 +1599,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1555,7 +1608,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListDevelopmentSchemaArns
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDevelopmentSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     ListDevelopmentSchemaArnsResult listDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest listDevelopmentSchemaArnsRequest);
@@ -1584,14 +1637,14 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListDirectories
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDirectories" target="_top">AWS
      *      API Documentation</a>
      */
     ListDirectoriesResult listDirectories(ListDirectoriesRequest listDirectoriesRequest);
@@ -1620,7 +1673,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1631,7 +1684,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListFacetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     ListFacetAttributesResult listFacetAttributes(ListFacetAttributesRequest listFacetAttributesRequest);
@@ -1660,7 +1713,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1669,7 +1722,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListFacetNames
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetNames" target="_top">AWS
      *      API Documentation</a>
      */
     ListFacetNamesResult listFacetNames(ListFacetNamesRequest listFacetNamesRequest);
@@ -1677,9 +1730,9 @@ public interface AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listIncomingTypedLinksRequest
@@ -1701,7 +1754,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1714,7 +1767,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.ListIncomingTypedLinks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIncomingTypedLinks"
      *      target="_top">AWS API Documentation</a>
      */
     ListIncomingTypedLinksResult listIncomingTypedLinks(ListIncomingTypedLinksRequest listIncomingTypedLinksRequest);
@@ -1745,7 +1798,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1758,10 +1811,39 @@ public interface AmazonCloudDirectory {
      * @throws NotIndexException
      *         Indicates that the requested operation can only operate on index objects.
      * @sample AmazonCloudDirectory.ListIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIndex" target="_top">AWS API
      *      Documentation</a>
      */
     ListIndexResult listIndex(ListIndexRequest listIndexRequest);
+
+    /**
+     * <p>
+     * Lists the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the
+     * minor version revisions in that family are listed instead.
+     * </p>
+     * 
+     * @param listManagedSchemaArnsRequest
+     * @return Result of the ListManagedSchemaArns operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws InvalidNextTokenException
+     *         Indicates that the <code>NextToken</code> value is not valid.
+     * @sample AmazonCloudDirectory.ListManagedSchemaArns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListManagedSchemaArns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListManagedSchemaArnsResult listManagedSchemaArns(ListManagedSchemaArnsRequest listManagedSchemaArnsRequest);
 
     /**
      * <p>
@@ -1787,7 +1869,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1800,7 +1882,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.ListObjectAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     ListObjectAttributesResult listObjectAttributes(ListObjectAttributesRequest listObjectAttributesRequest);
@@ -1829,7 +1911,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1843,7 +1925,7 @@ public interface AmazonCloudDirectory {
      *         Occurs when any invalid operations are performed on an object that is not a node, such as calling
      *         <code>ListObjectChildren</code> for a leaf node object.
      * @sample AmazonCloudDirectory.ListObjectChildren
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectChildren"
      *      target="_top">AWS API Documentation</a>
      */
     ListObjectChildrenResult listObjectChildren(ListObjectChildrenRequest listObjectChildrenRequest);
@@ -1852,8 +1934,8 @@ public interface AmazonCloudDirectory {
      * <p>
      * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
      * objects. For more information about objects, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
-     * Structure</a>.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html"
+     * >Directory Structure</a>.
      * </p>
      * <p>
      * Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory
@@ -1882,7 +1964,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1893,7 +1975,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonCloudDirectory.ListObjectParentPaths
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParentPaths"
      *      target="_top">AWS API Documentation</a>
      */
     ListObjectParentPathsResult listObjectParentPaths(ListObjectParentPathsRequest listObjectParentPathsRequest);
@@ -1922,7 +2004,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1935,7 +2017,7 @@ public interface AmazonCloudDirectory {
      * @throws CannotListParentOfRootException
      *         Cannot list the parents of a <a>Directory</a> root.
      * @sample AmazonCloudDirectory.ListObjectParents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParents"
      *      target="_top">AWS API Documentation</a>
      */
     ListObjectParentsResult listObjectParents(ListObjectParentsRequest listObjectParentsRequest);
@@ -1964,7 +2046,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -1975,7 +2057,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListObjectPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectPolicies"
      *      target="_top">AWS API Documentation</a>
      */
     ListObjectPoliciesResult listObjectPolicies(ListObjectPoliciesRequest listObjectPoliciesRequest);
@@ -1983,9 +2065,9 @@ public interface AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
-     * supports filtering by typed link facet and identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * supports filtering by typed link facet and identity attributes. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listOutgoingTypedLinksRequest
@@ -2007,7 +2089,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2020,7 +2102,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.ListOutgoingTypedLinks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListOutgoingTypedLinks"
      *      target="_top">AWS API Documentation</a>
      */
     ListOutgoingTypedLinksResult listOutgoingTypedLinks(ListOutgoingTypedLinksRequest listOutgoingTypedLinksRequest);
@@ -2049,7 +2131,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2062,7 +2144,7 @@ public interface AmazonCloudDirectory {
      * @throws NotPolicyException
      *         Indicates that the requested operation can only operate on policy objects.
      * @sample AmazonCloudDirectory.ListPolicyAttachments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPolicyAttachments"
      *      target="_top">AWS API Documentation</a>
      */
     ListPolicyAttachmentsResult listPolicyAttachments(ListPolicyAttachmentsRequest listPolicyAttachmentsRequest);
@@ -2092,7 +2174,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2101,7 +2183,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListPublishedSchemaArns
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPublishedSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     ListPublishedSchemaArnsResult listPublishedSchemaArns(ListPublishedSchemaArnsRequest listPublishedSchemaArnsRequest);
@@ -2131,7 +2213,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2141,7 +2223,7 @@ public interface AmazonCloudDirectory {
      *         Can occur for multiple reasons such as when you tag a resource that doesn’t exist or if you specify a
      *         higher number of tags for a resource than the allowed limit. Allowed limit is 50 tags per resource.
      * @sample AmazonCloudDirectory.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
@@ -2149,9 +2231,9 @@ public interface AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listTypedLinkFacetAttributesRequest
@@ -2173,7 +2255,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2184,7 +2266,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListTypedLinkFacetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     ListTypedLinkFacetAttributesResult listTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest listTypedLinkFacetAttributesRequest);
@@ -2192,8 +2274,9 @@ public interface AmazonCloudDirectory {
     /**
      * <p>
      * Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see
-     * <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param listTypedLinkFacetNamesRequest
@@ -2215,7 +2298,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2224,7 +2307,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListTypedLinkFacetNames
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetNames"
      *      target="_top">AWS API Documentation</a>
      */
     ListTypedLinkFacetNamesResult listTypedLinkFacetNames(ListTypedLinkFacetNamesRequest listTypedLinkFacetNamesRequest);
@@ -2235,8 +2318,9 @@ public interface AmazonCloudDirectory {
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+     * root from the target object are ignored. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies"
+     * >Policies</a>.
      * </p>
      * 
      * @param lookupPolicyRequest
@@ -2258,7 +2342,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2269,7 +2353,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonCloudDirectory.LookupPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/LookupPolicy" target="_top">AWS
      *      API Documentation</a>
      */
     LookupPolicyResult lookupPolicy(LookupPolicyRequest lookupPolicyRequest);
@@ -2298,7 +2382,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2307,7 +2391,7 @@ public interface AmazonCloudDirectory {
      * @throws SchemaAlreadyPublishedException
      *         Indicates that a schema is already published.
      * @sample AmazonCloudDirectory.PublishSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PublishSchema" target="_top">AWS
      *      API Documentation</a>
      */
     PublishSchemaResult publishSchema(PublishSchemaRequest publishSchemaRequest);
@@ -2315,8 +2399,8 @@ public interface AmazonCloudDirectory {
     /**
      * <p>
      * Allows a schema to be updated using JSON upload. Only available for development schemas. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON Schema
-     * Format</a> for more information.
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON
+     * Schema Format</a> for more information.
      * </p>
      * 
      * @param putSchemaFromJsonRequest
@@ -2338,7 +2422,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2347,7 +2431,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidRuleException
      *         Occurs when any of the rule parameter keys or values are invalid.
      * @sample AmazonCloudDirectory.PutSchemaFromJson
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PutSchemaFromJson"
      *      target="_top">AWS API Documentation</a>
      */
     PutSchemaFromJsonResult putSchemaFromJson(PutSchemaFromJsonRequest putSchemaFromJsonRequest);
@@ -2376,7 +2460,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2387,7 +2471,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.RemoveFacetFromObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/RemoveFacetFromObject"
      *      target="_top">AWS API Documentation</a>
      */
     RemoveFacetFromObjectResult removeFacetFromObject(RemoveFacetFromObjectRequest removeFacetFromObjectRequest);
@@ -2416,7 +2500,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2426,7 +2510,7 @@ public interface AmazonCloudDirectory {
      *         Can occur for multiple reasons such as when you tag a resource that doesn’t exist or if you specify a
      *         higher number of tags for a resource than the allowed limit. Allowed limit is 50 tags per resource.
      * @sample AmazonCloudDirectory.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
@@ -2455,7 +2539,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2465,7 +2549,7 @@ public interface AmazonCloudDirectory {
      *         Can occur for multiple reasons such as when you tag a resource that doesn’t exist or if you specify a
      *         higher number of tags for a resource than the allowed limit. Allowed limit is 50 tags per resource.
      * @sample AmazonCloudDirectory.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UntagResource" target="_top">AWS
      *      API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
@@ -2511,12 +2595,14 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @throws InvalidFacetUpdateException
      *         An attempt to modify a <a>Facet</a> resulted in an invalid schema exception.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws FacetNotFoundException
@@ -2524,10 +2610,51 @@ public interface AmazonCloudDirectory {
      * @throws InvalidRuleException
      *         Occurs when any of the rule parameter keys or values are invalid.
      * @sample AmazonCloudDirectory.UpdateFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateFacet" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateFacetResult updateFacet(UpdateFacetRequest updateFacetRequest);
+
+    /**
+     * <p>
+     * Updates a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s
+     * identity, as defined by its <code>IdentityAttributeOrder</code>.
+     * </p>
+     * 
+     * @param updateLinkAttributesRequest
+     * @return Result of the UpdateLinkAttributes operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         Operations are only permitted on enabled directories.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
+     * @sample AmazonCloudDirectory.UpdateLinkAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateLinkAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLinkAttributesResult updateLinkAttributes(UpdateLinkAttributesRequest updateLinkAttributesRequest);
 
     /**
      * <p>
@@ -2553,7 +2680,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2561,10 +2688,13 @@ public interface AmazonCloudDirectory {
      *         Operations are only permitted on enabled directories.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
+     * @throws LinkNameAlreadyInUseException
+     *         Indicates that a link could not be created due to a naming conflict. Choose a different name and then try
+     *         again.
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.UpdateObjectAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateObjectAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     UpdateObjectAttributesResult updateObjectAttributes(UpdateObjectAttributesRequest updateObjectAttributesRequest);
@@ -2593,23 +2723,23 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonCloudDirectory.UpdateSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateSchema" target="_top">AWS
      *      API Documentation</a>
      */
     UpdateSchemaResult updateSchema(UpdateSchemaRequest updateSchemaRequest);
 
     /**
      * <p>
-     * Updates a <a>TypedLinkFacet</a>. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.
+     * Updates a <a>TypedLinkFacet</a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink"
+     * >Typed Links</a>.
      * </p>
      * 
      * @param updateTypedLinkFacetRequest
@@ -2631,7 +2761,7 @@ public interface AmazonCloudDirectory {
      *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
@@ -2646,7 +2776,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidRuleException
      *         Occurs when any of the rule parameter keys or values are invalid.
      * @sample AmazonCloudDirectory.UpdateTypedLinkFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateTypedLinkFacet"
      *      target="_top">AWS API Documentation</a>
      */
     UpdateTypedLinkFacetResult updateTypedLinkFacet(UpdateTypedLinkFacetRequest updateTypedLinkFacetRequest);
@@ -2685,10 +2815,13 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidAttachmentException
-     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with the same
-     *         name has occurred. Rename the link or the schema and then try again.
+     *         Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link
+     *         type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.
+     * @throws SchemaAlreadyExistsException
+     *         Indicates that a schema could not be created due to a naming conflict. Please select a different name and
+     *         then try again.
      * @sample AmazonCloudDirectory.UpgradeAppliedSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradeAppliedSchema"
      *      target="_top">AWS API Documentation</a>
      */
     UpgradeAppliedSchemaResult upgradeAppliedSchema(UpgradeAppliedSchemaRequest upgradeAppliedSchemaRequest);
@@ -2724,14 +2857,14 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidAttachmentException
-     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with the same
-     *         name has occurred. Rename the link or the schema and then try again.
+     *         Indicates that an attempt to make an attachment was invalid. For example, attaching two nodes with a link
+     *         type that is not applicable to the nodes or attempting to apply a schema to a directory a second time.
      * @throws LimitExceededException
      *         Indicates that limits are exceeded. See <a
-     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a> for more
      *         information.
      * @sample AmazonCloudDirectory.UpgradePublishedSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradePublishedSchema"
      *      target="_top">AWS API Documentation</a>
      */
     UpgradePublishedSchemaResult upgradePublishedSchema(UpgradePublishedSchemaRequest upgradePublishedSchemaRequest);

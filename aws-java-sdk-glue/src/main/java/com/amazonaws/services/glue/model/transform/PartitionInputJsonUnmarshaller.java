@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class PartitionInputJsonUnmarshaller implements Unmarshaller<PartitionInp
                 }
                 if (context.testExpression("LastAccessTime", targetDepth)) {
                     context.nextToken();
-                    partitionInput.setLastAccessTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    partitionInput.setLastAccessTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("StorageDescriptor", targetDepth)) {
                     context.nextToken();
@@ -67,7 +67,7 @@ public class PartitionInputJsonUnmarshaller implements Unmarshaller<PartitionInp
                 }
                 if (context.testExpression("LastAnalyzedTime", targetDepth)) {
                     context.nextToken();
-                    partitionInput.setLastAnalyzedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    partitionInput.setLastAnalyzedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

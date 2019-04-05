@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,11 @@ public class AggregateEvaluationResultJsonUnmarshaller implements Unmarshaller<A
                 }
                 if (context.testExpression("ResultRecordedTime", targetDepth)) {
                     context.nextToken();
-                    aggregateEvaluationResult.setResultRecordedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    aggregateEvaluationResult.setResultRecordedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("ConfigRuleInvokedTime", targetDepth)) {
                     context.nextToken();
-                    aggregateEvaluationResult.setConfigRuleInvokedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                    aggregateEvaluationResult.setConfigRuleInvokedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Annotation", targetDepth)) {
                     context.nextToken();

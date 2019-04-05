@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,12 @@ public class NodeGroupMember implements Serializable, Cloneable {
      * </p>
      */
     private String cacheNodeId;
-
+    /**
+     * <p>
+     * The information required for client programs to connect to a node for read operations. The read endpoint is only
+     * applicable on Redis (cluster mode disabled) clusters.
+     * </p>
+     */
     private Endpoint readEndpoint;
     /**
      * <p>
@@ -48,7 +53,8 @@ public class NodeGroupMember implements Serializable, Cloneable {
     private String preferredAvailabilityZone;
     /**
      * <p>
-     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
+     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is
+     * only applicable for Redis (cluster mode disabled) replication groups.
      * </p>
      */
     private String currentRole;
@@ -134,7 +140,14 @@ public class NodeGroupMember implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The information required for client programs to connect to a node for read operations. The read endpoint is only
+     * applicable on Redis (cluster mode disabled) clusters.
+     * </p>
+     * 
      * @param readEndpoint
+     *        The information required for client programs to connect to a node for read operations. The read endpoint
+     *        is only applicable on Redis (cluster mode disabled) clusters.
      */
 
     public void setReadEndpoint(Endpoint readEndpoint) {
@@ -142,7 +155,13 @@ public class NodeGroupMember implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The information required for client programs to connect to a node for read operations. The read endpoint is only
+     * applicable on Redis (cluster mode disabled) clusters.
+     * </p>
+     * 
+     * @return The information required for client programs to connect to a node for read operations. The read endpoint
+     *         is only applicable on Redis (cluster mode disabled) clusters.
      */
 
     public Endpoint getReadEndpoint() {
@@ -150,7 +169,14 @@ public class NodeGroupMember implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The information required for client programs to connect to a node for read operations. The read endpoint is only
+     * applicable on Redis (cluster mode disabled) clusters.
+     * </p>
+     * 
      * @param readEndpoint
+     *        The information required for client programs to connect to a node for read operations. The read endpoint
+     *        is only applicable on Redis (cluster mode disabled) clusters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,11 +227,13 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
+     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is
+     * only applicable for Redis (cluster mode disabled) replication groups.
      * </p>
      * 
      * @param currentRole
-     *        The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
+     *        The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This
+     *        member is only applicable for Redis (cluster mode disabled) replication groups.
      */
 
     public void setCurrentRole(String currentRole) {
@@ -214,10 +242,12 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
+     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is
+     * only applicable for Redis (cluster mode disabled) replication groups.
      * </p>
      * 
-     * @return The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
+     * @return The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This
+     *         member is only applicable for Redis (cluster mode disabled) replication groups.
      */
 
     public String getCurrentRole() {
@@ -226,11 +256,13 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
+     * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is
+     * only applicable for Redis (cluster mode disabled) replication groups.
      * </p>
      * 
      * @param currentRole
-     *        The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
+     *        The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This
+     *        member is only applicable for Redis (cluster mode disabled) replication groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,7 +272,8 @@ public class NodeGroupMember implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

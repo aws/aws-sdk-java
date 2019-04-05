@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -40,6 +41,12 @@ public class CreateStackRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedirectURL").build();
     private static final MarshallingInfo<String> FEEDBACKURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeedbackURL").build();
+    private static final MarshallingInfo<List> USERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UserSettings").build();
+    private static final MarshallingInfo<StructuredPojo> APPLICATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationSettings").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateStackRequestMarshaller instance = new CreateStackRequestMarshaller();
 
@@ -63,6 +70,9 @@ public class CreateStackRequestMarshaller {
             protocolMarshaller.marshall(createStackRequest.getStorageConnectors(), STORAGECONNECTORS_BINDING);
             protocolMarshaller.marshall(createStackRequest.getRedirectURL(), REDIRECTURL_BINDING);
             protocolMarshaller.marshall(createStackRequest.getFeedbackURL(), FEEDBACKURL_BINDING);
+            protocolMarshaller.marshall(createStackRequest.getUserSettings(), USERSETTINGS_BINDING);
+            protocolMarshaller.marshall(createStackRequest.getApplicationSettings(), APPLICATIONSETTINGS_BINDING);
+            protocolMarshaller.marshall(createStackRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,8 +54,8 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      */
     private String path;
@@ -68,15 +68,15 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the instance profile. For more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      */
     private String instanceProfileId;
     /**
      * <p>
      * The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use
-     * them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.
      * </p>
      */
@@ -97,13 +97,13 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @param path
      *        The path to the instance profile. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>Using IAM</i> guide.
      */
 
@@ -114,12 +114,12 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @return The path to the instance profile. For more information about paths, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>Using IAM</i> guide.
      */
 
@@ -130,13 +130,13 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the instance profile. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @param path
      *        The path to the instance profile. For more information about paths, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>Using IAM</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -189,13 +189,13 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the instance profile. For more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @param instanceProfileId
      *        The stable and unique string identifying the instance profile. For more information about IDs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>Using IAM</i> guide.
      */
 
@@ -206,12 +206,12 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the instance profile. For more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @return The stable and unique string identifying the instance profile. For more information about IDs, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>Using IAM</i> guide.
      */
 
@@ -222,13 +222,13 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the instance profile. For more information about IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>Using
-     * IAM</i> guide.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     * <i>Using IAM</i> guide.
      * </p>
      * 
      * @param instanceProfileId
      *        The stable and unique string identifying the instance profile. For more information about IDs, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>Using IAM</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -241,14 +241,14 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use
-     * them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to
      *        use them in policies, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>Using IAM</i> guide.
      */
 
@@ -259,13 +259,13 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use
-     * them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how
      *         to use them in policies, see <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>Using IAM</i> guide.
      */
 
@@ -276,14 +276,14 @@ public class InstanceProfile implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use
-     * them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>Using IAM</i> guide.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to
      *        use them in policies, see <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>Using IAM</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -407,7 +407,8 @@ public class InstanceProfile implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,19 +33,19 @@ public class JobExecutionSummary implements Serializable, Cloneable, StructuredP
     private String status;
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was queued.
+     * The time, in seconds since the epoch, when the job execution was queued.
      * </p>
      */
     private java.util.Date queuedAt;
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution started.
+     * The time, in seconds since the epoch, when the job execution started.
      * </p>
      */
     private java.util.Date startedAt;
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * The time, in seconds since the epoch, when the job execution was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
@@ -118,11 +118,11 @@ public class JobExecutionSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was queued.
+     * The time, in seconds since the epoch, when the job execution was queued.
      * </p>
      * 
      * @param queuedAt
-     *        The time, in milliseconds since the epoch, when the job execution was queued.
+     *        The time, in seconds since the epoch, when the job execution was queued.
      */
 
     public void setQueuedAt(java.util.Date queuedAt) {
@@ -131,10 +131,10 @@ public class JobExecutionSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was queued.
+     * The time, in seconds since the epoch, when the job execution was queued.
      * </p>
      * 
-     * @return The time, in milliseconds since the epoch, when the job execution was queued.
+     * @return The time, in seconds since the epoch, when the job execution was queued.
      */
 
     public java.util.Date getQueuedAt() {
@@ -143,11 +143,11 @@ public class JobExecutionSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was queued.
+     * The time, in seconds since the epoch, when the job execution was queued.
      * </p>
      * 
      * @param queuedAt
-     *        The time, in milliseconds since the epoch, when the job execution was queued.
+     *        The time, in seconds since the epoch, when the job execution was queued.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,11 +158,11 @@ public class JobExecutionSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution started.
+     * The time, in seconds since the epoch, when the job execution started.
      * </p>
      * 
      * @param startedAt
-     *        The time, in milliseconds since the epoch, when the job execution started.
+     *        The time, in seconds since the epoch, when the job execution started.
      */
 
     public void setStartedAt(java.util.Date startedAt) {
@@ -171,10 +171,10 @@ public class JobExecutionSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution started.
+     * The time, in seconds since the epoch, when the job execution started.
      * </p>
      * 
-     * @return The time, in milliseconds since the epoch, when the job execution started.
+     * @return The time, in seconds since the epoch, when the job execution started.
      */
 
     public java.util.Date getStartedAt() {
@@ -183,11 +183,11 @@ public class JobExecutionSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution started.
+     * The time, in seconds since the epoch, when the job execution started.
      * </p>
      * 
      * @param startedAt
-     *        The time, in milliseconds since the epoch, when the job execution started.
+     *        The time, in seconds since the epoch, when the job execution started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,11 +198,11 @@ public class JobExecutionSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * The time, in seconds since the epoch, when the job execution was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The time, in milliseconds since the epoch, when the job execution was last updated.
+     *        The time, in seconds since the epoch, when the job execution was last updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -211,10 +211,10 @@ public class JobExecutionSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * The time, in seconds since the epoch, when the job execution was last updated.
      * </p>
      * 
-     * @return The time, in milliseconds since the epoch, when the job execution was last updated.
+     * @return The time, in seconds since the epoch, when the job execution was last updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -223,11 +223,11 @@ public class JobExecutionSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * The time, in seconds since the epoch, when the job execution was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The time, in milliseconds since the epoch, when the job execution was last updated.
+     *        The time, in seconds since the epoch, when the job execution was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,7 +284,8 @@ public class JobExecutionSummary implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

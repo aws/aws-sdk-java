@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,8 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
     private String dimension;
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      */
     private Integer quantity;
@@ -213,11 +214,13 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      * 
      * @param quantity
-     *        The quantity of usage consumed by the customer for the given dimension and time.
+     *        The quantity of usage consumed by the customer for the given dimension and time. Defaults to
+     *        <code>0</code> if not specified.
      */
 
     public void setQuantity(Integer quantity) {
@@ -226,10 +229,12 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      * 
-     * @return The quantity of usage consumed by the customer for the given dimension and time.
+     * @return The quantity of usage consumed by the customer for the given dimension and time. Defaults to
+     *         <code>0</code> if not specified.
      */
 
     public Integer getQuantity() {
@@ -238,11 +243,13 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quantity of usage consumed by the customer for the given dimension and time.
+     * The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if
+     * not specified.
      * </p>
      * 
      * @param quantity
-     *        The quantity of usage consumed by the customer for the given dimension and time.
+     *        The quantity of usage consumed by the customer for the given dimension and time. Defaults to
+     *        <code>0</code> if not specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,7 +259,8 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

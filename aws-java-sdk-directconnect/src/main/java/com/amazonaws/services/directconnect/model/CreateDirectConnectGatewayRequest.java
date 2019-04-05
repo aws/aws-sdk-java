@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the CreateDirectConnectGateway operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGateway"
  *      target="_top">AWS API Documentation</a>
@@ -30,48 +27,26 @@ public class CreateDirectConnectGatewayRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "My direct connect gateway"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the Direct Connect gateway.
      * </p>
      */
     private String directConnectGatewayName;
     /**
      * <p>
      * The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the
-     * connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294
-     * </p>
-     * <p>
-     * Example: 65200
-     * </p>
-     * <p>
-     * Default: 64512
+     * connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The
+     * default is 64512.
      * </p>
      */
     private Long amazonSideAsn;
 
     /**
      * <p>
-     * The name of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "My direct connect gateway"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayName
-     *        The name of the direct connect gateway.</p>
-     *        <p>
-     *        Example: "My direct connect gateway"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The name of the Direct Connect gateway.
      */
 
     public void setDirectConnectGatewayName(String directConnectGatewayName) {
@@ -80,21 +55,10 @@ public class CreateDirectConnectGatewayRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "My direct connect gateway"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the Direct Connect gateway.
      * </p>
      * 
-     * @return The name of the direct connect gateway.</p>
-     *         <p>
-     *         Example: "My direct connect gateway"
-     *         </p>
-     *         <p>
-     *         Default: None
+     * @return The name of the Direct Connect gateway.
      */
 
     public String getDirectConnectGatewayName() {
@@ -103,22 +67,11 @@ public class CreateDirectConnectGatewayRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the direct connect gateway.
-     * </p>
-     * <p>
-     * Example: "My direct connect gateway"
-     * </p>
-     * <p>
-     * Default: None
+     * The name of the Direct Connect gateway.
      * </p>
      * 
      * @param directConnectGatewayName
-     *        The name of the direct connect gateway.</p>
-     *        <p>
-     *        Example: "My direct connect gateway"
-     *        </p>
-     *        <p>
-     *        Default: None
+     *        The name of the Direct Connect gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,24 +83,14 @@ public class CreateDirectConnectGatewayRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the
-     * connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294
-     * </p>
-     * <p>
-     * Example: 65200
-     * </p>
-     * <p>
-     * Default: 64512
+     * connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The
+     * default is 64512.
      * </p>
      * 
      * @param amazonSideAsn
      *        The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side
      *        of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to
-     *        4,294,967,294 </p>
-     *        <p>
-     *        Example: 65200
-     *        </p>
-     *        <p>
-     *        Default: 64512
+     *        4,294,967,294. The default is 64512.
      */
 
     public void setAmazonSideAsn(Long amazonSideAsn) {
@@ -157,23 +100,13 @@ public class CreateDirectConnectGatewayRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the
-     * connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294
-     * </p>
-     * <p>
-     * Example: 65200
-     * </p>
-     * <p>
-     * Default: 64512
+     * connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The
+     * default is 64512.
      * </p>
      * 
      * @return The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side
      *         of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to
-     *         4,294,967,294 </p>
-     *         <p>
-     *         Example: 65200
-     *         </p>
-     *         <p>
-     *         Default: 64512
+     *         4,294,967,294. The default is 64512.
      */
 
     public Long getAmazonSideAsn() {
@@ -183,24 +116,14 @@ public class CreateDirectConnectGatewayRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the
-     * connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294
-     * </p>
-     * <p>
-     * Example: 65200
-     * </p>
-     * <p>
-     * Default: 64512
+     * connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The
+     * default is 64512.
      * </p>
      * 
      * @param amazonSideAsn
      *        The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side
      *        of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to
-     *        4,294,967,294 </p>
-     *        <p>
-     *        Example: 65200
-     *        </p>
-     *        <p>
-     *        Default: 64512
+     *        4,294,967,294. The default is 64512.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,7 +133,8 @@ public class CreateDirectConnectGatewayRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

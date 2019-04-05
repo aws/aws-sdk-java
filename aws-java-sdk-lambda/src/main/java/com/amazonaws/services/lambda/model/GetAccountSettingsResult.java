@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,12 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Limits that are related to concurrency and code storage.
+     * </p>
+     */
     private AccountLimit accountLimit;
-
+    /**
+     * <p>
+     * The number of functions and amount of storage in use.
+     * </p>
+     */
     private AccountUsage accountUsage;
 
     /**
+     * <p>
+     * Limits that are related to concurrency and code storage.
+     * </p>
+     * 
      * @param accountLimit
+     *        Limits that are related to concurrency and code storage.
      */
 
     public void setAccountLimit(AccountLimit accountLimit) {
@@ -36,7 +50,11 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * Limits that are related to concurrency and code storage.
+     * </p>
+     * 
+     * @return Limits that are related to concurrency and code storage.
      */
 
     public AccountLimit getAccountLimit() {
@@ -44,7 +62,12 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * Limits that are related to concurrency and code storage.
+     * </p>
+     * 
      * @param accountLimit
+     *        Limits that are related to concurrency and code storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +77,12 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The number of functions and amount of storage in use.
+     * </p>
+     * 
      * @param accountUsage
+     *        The number of functions and amount of storage in use.
      */
 
     public void setAccountUsage(AccountUsage accountUsage) {
@@ -62,7 +90,11 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * @return
+     * <p>
+     * The number of functions and amount of storage in use.
+     * </p>
+     * 
+     * @return The number of functions and amount of storage in use.
      */
 
     public AccountUsage getAccountUsage() {
@@ -70,7 +102,12 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The number of functions and amount of storage in use.
+     * </p>
+     * 
      * @param accountUsage
+     *        The number of functions and amount of storage in use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +117,8 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

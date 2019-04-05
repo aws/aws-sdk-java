@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class AccountAggregationSource implements Serializable, Cloneable, Struct
     private com.amazonaws.internal.SdkInternalList<String> accountIds;
     /**
      * <p>
-     * If true, aggreagate existing AWS Config regions and future regions.
+     * If true, aggregate existing AWS Config regions and future regions.
      * </p>
      */
     private Boolean allAwsRegions;
@@ -122,11 +122,11 @@ public class AccountAggregationSource implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If true, aggreagate existing AWS Config regions and future regions.
+     * If true, aggregate existing AWS Config regions and future regions.
      * </p>
      * 
      * @param allAwsRegions
-     *        If true, aggreagate existing AWS Config regions and future regions.
+     *        If true, aggregate existing AWS Config regions and future regions.
      */
 
     public void setAllAwsRegions(Boolean allAwsRegions) {
@@ -135,10 +135,10 @@ public class AccountAggregationSource implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If true, aggreagate existing AWS Config regions and future regions.
+     * If true, aggregate existing AWS Config regions and future regions.
      * </p>
      * 
-     * @return If true, aggreagate existing AWS Config regions and future regions.
+     * @return If true, aggregate existing AWS Config regions and future regions.
      */
 
     public Boolean getAllAwsRegions() {
@@ -147,11 +147,11 @@ public class AccountAggregationSource implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If true, aggreagate existing AWS Config regions and future regions.
+     * If true, aggregate existing AWS Config regions and future regions.
      * </p>
      * 
      * @param allAwsRegions
-     *        If true, aggreagate existing AWS Config regions and future regions.
+     *        If true, aggregate existing AWS Config regions and future regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,10 +162,10 @@ public class AccountAggregationSource implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If true, aggreagate existing AWS Config regions and future regions.
+     * If true, aggregate existing AWS Config regions and future regions.
      * </p>
      * 
-     * @return If true, aggreagate existing AWS Config regions and future regions.
+     * @return If true, aggregate existing AWS Config regions and future regions.
      */
 
     public Boolean isAllAwsRegions() {
@@ -246,7 +246,8 @@ public class AccountAggregationSource implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

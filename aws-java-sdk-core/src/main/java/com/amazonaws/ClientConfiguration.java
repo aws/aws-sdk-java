@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -153,6 +153,13 @@ public class ClientConfiguration {
      * The default configuration is to use HTTPS for all requests for increased security.
      */
     private Protocol protocol = Protocol.HTTPS;
+
+    /**
+     * The protocol to use when connecting to an HTTP proxy.
+     * <p>
+     * The default configuration is to use {@link Protocol#HTTP}.
+     */
+    private Protocol proxyProtocol = Protocol.HTTP;
 
     /** Optionally specifies the proxy host to connect through. */
     private String proxyHost = null;
@@ -339,6 +346,14 @@ public class ClientConfiguration {
      */
     private final ApacheHttpClientConfig apacheHttpClientConfig;
 
+    /**
+     * Configuration option to disable the host prefix injection.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    private boolean disableHostPrefixInjection;
+
     public ClientConfiguration() {
         apacheHttpClientConfig = new ApacheHttpClientConfig();
     }
@@ -351,6 +366,7 @@ public class ClientConfiguration {
         this.throttleRetries = other.useThrottledRetries();
         this.localAddress = other.getLocalAddress();
         this.protocol = other.getProtocol();
+        this.proxyProtocol = other.getProxyProtocol();
         this.proxyDomain = other.getProxyDomain();
         this.proxyHost = other.getProxyHost();
         this.proxyPassword = other.getProxyPassword();
@@ -384,6 +400,7 @@ public class ClientConfiguration {
         this.headers.clear();
         this.headers.putAll(other.getHeaders());
         this.maxConsecutiveRetriesBeforeThrottling = other.getMaxConsecutiveRetriesBeforeThrottling();
+        this.disableHostPrefixInjection = other.disableHostPrefixInjection;
     }
 
     /**
@@ -597,6 +614,33 @@ public class ClientConfiguration {
      */
     private String getSystemProperty(String property) {
         return System.getProperty(property);
+    }
+
+    /**
+     * @return The {@link Protocol} to use for connecting to the proxy.
+     */
+    public Protocol getProxyProtocol() {
+        return proxyProtocol;
+    }
+
+    /**
+     * Set the {@link Protocol} to use for connecting to the proxy.
+     *
+     * @param proxyProtocol The protocol.
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withProxyProtocol(Protocol proxyProtocol) {
+        this.proxyProtocol = proxyProtocol == null ? Protocol.HTTP : proxyProtocol;
+        return this;
+    }
+
+    /**
+     * Set the {@link Protocol} to use for connecting to the proxy.
+     *
+     * @param proxyProtocol The protocol.
+     */
+    public void setProxyProtocol(Protocol proxyProtocol) {
+        withProxyProtocol(proxyProtocol);
     }
 
     /**
@@ -2155,5 +2199,36 @@ public class ClientConfiguration {
      */
     public Map<String, String> getHeaders() {
         return Collections.unmodifiableMap(headers);
+    }
+
+    /**
+     * Returns the boolean value to indicate if the host prefix injection is disabled or not.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    public boolean isDisableHostPrefixInjection() {
+        return disableHostPrefixInjection;
+    }
+
+    /**
+     * Sets the configuration option to disable the host prefix injection.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    public void setDisableHostPrefixInjection(boolean disableHostPrefixInjection) {
+        this.disableHostPrefixInjection = disableHostPrefixInjection;
+    }
+
+    /**
+     * Sets the configuration option to disable the host prefix injection.
+     *
+     * The hostPrefix template is specified in the service model and is used by the SDK to modify the endpoint
+     * the request is sent to. Host prefix injection is enabled by default. This option can be set to disable the behavior.
+     */
+    public ClientConfiguration withDisableHostPrefixInjection(boolean disableHostPrefixInjection) {
+        setDisableHostPrefixInjection(disableHostPrefixInjection);
+        return this;
     }
 }

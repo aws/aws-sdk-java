@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded.
      * </p>
      */
@@ -33,7 +33,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded.
      * </p>
      * <p>
@@ -48,7 +48,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param plaintext
-     *        The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
+     *        The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise,
      *        it is not encoded.
      */
 
@@ -58,7 +58,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded.
      * </p>
      * <p>
@@ -69,8 +69,8 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
      * {@code position}.
      * </p>
      * 
-     * @return The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
-     *         it is not encoded.
+     * @return The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded.
+     *         Otherwise, it is not encoded.
      */
 
     public java.nio.ByteBuffer getPlaintext() {
@@ -79,7 +79,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise, it is
+     * The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise, it is
      * not encoded.
      * </p>
      * <p>
@@ -94,7 +94,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param plaintext
-     *        The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encoded. Otherwise,
+     *        The random byte string. When you use the HTTP API or the AWS CLI, the value is Base64-encdoded. Otherwise,
      *        it is not encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -105,7 +105,8 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -116,7 +117,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlaintext() != null)
-            sb.append("Plaintext: ").append(getPlaintext());
+            sb.append("Plaintext: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

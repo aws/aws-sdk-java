@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <fullname>AWS OpsWorks CM</fullname>
  * <p>
  * AWS OpsWorks for configuration management (CM) is a service that runs and manages configuration management servers.
+ * You can use AWS OpsWorks CM to create and manage AWS OpsWorks for Chef Automate and AWS OpsWorks for Puppet
+ * Enterprise servers, and add or remove nodes for the servers to manage.
  * </p>
  * <p>
  * <b>Glossary of terms</b>
@@ -89,7 +91,37 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * opsworks-cm.us-east-2.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.us-west-1.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * opsworks-cm.us-west-2.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.ap-northeast-1.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.ap-southeast-1.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.ap-southeast-2.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.eu-central-1.amazonaws.com
  * </p>
  * </li>
  * <li>
@@ -663,6 +695,39 @@ public class AWSOpsWorksCMAsyncClient extends AWSOpsWorksCMClient implements AWS
 
                 try {
                     result = executeDisassociateNode(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportServerEngineAttributeResult> exportServerEngineAttributeAsync(ExportServerEngineAttributeRequest request) {
+
+        return exportServerEngineAttributeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportServerEngineAttributeResult> exportServerEngineAttributeAsync(final ExportServerEngineAttributeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportServerEngineAttributeRequest, ExportServerEngineAttributeResult> asyncHandler) {
+        final ExportServerEngineAttributeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportServerEngineAttributeResult>() {
+            @Override
+            public ExportServerEngineAttributeResult call() throws Exception {
+                ExportServerEngineAttributeResult result = null;
+
+                try {
+                    result = executeExportServerEngineAttribute(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

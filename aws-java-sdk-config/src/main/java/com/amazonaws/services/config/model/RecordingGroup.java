@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,12 +48,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * For a list of supported resource types, see <a
- * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+ * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
  * >Supported Resource Types</a>.
  * </p>
  * <p>
  * For more information, see <a
- * href="http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources AWS
+ * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources AWS
  * Config Records</a>.
  * </p>
  * 
@@ -110,7 +110,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
-     * "http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+     * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
      * >Supported AWS Resource Types</a>.
      * </p>
      */
@@ -395,7 +395,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
-     * "http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+     * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
      * >Supported AWS Resource Types</a>.
      * </p>
      * 
@@ -413,7 +413,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a
      *         href=
-     *         "http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+     *         "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
      *         >Supported AWS Resource Types</a>.
      * @see ResourceType
      */
@@ -440,7 +440,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
-     * "http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+     * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
      * >Supported AWS Resource Types</a>.
      * </p>
      * 
@@ -459,7 +459,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a
      *        href=
-     *        "http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+     *        "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
      *        >Supported AWS Resource Types</a>.
      * @see ResourceType
      */
@@ -488,7 +488,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
-     * "http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+     * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
      * >Supported AWS Resource Types</a>.
      * </p>
      * <p>
@@ -512,7 +512,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a
      *        href=
-     *        "http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+     *        "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
      *        >Supported AWS Resource Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
@@ -543,7 +543,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
-     * "http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+     * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
      * >Supported AWS Resource Types</a>.
      * </p>
      * 
@@ -562,7 +562,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a
      *        href=
-     *        "http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+     *        "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
      *        >Supported AWS Resource Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
@@ -588,7 +588,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
-     * "http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+     * "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
      * >Supported AWS Resource Types</a>.
      * </p>
      * 
@@ -607,7 +607,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a
      *        href=
-     *        "http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
+     *        "https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
      *        >Supported AWS Resource Types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
@@ -627,7 +627,8 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

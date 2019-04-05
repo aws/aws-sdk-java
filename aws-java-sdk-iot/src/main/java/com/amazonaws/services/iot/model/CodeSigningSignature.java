@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,56 +27,10 @@ public class CodeSigningSignature implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A stream of the code signing signature.
-     * </p>
-     */
-    private Stream stream;
-    /**
-     * <p>
      * A base64 encoded binary representation of the code signing signature.
      * </p>
      */
     private java.nio.ByteBuffer inlineDocument;
-
-    /**
-     * <p>
-     * A stream of the code signing signature.
-     * </p>
-     * 
-     * @param stream
-     *        A stream of the code signing signature.
-     */
-
-    public void setStream(Stream stream) {
-        this.stream = stream;
-    }
-
-    /**
-     * <p>
-     * A stream of the code signing signature.
-     * </p>
-     * 
-     * @return A stream of the code signing signature.
-     */
-
-    public Stream getStream() {
-        return this.stream;
-    }
-
-    /**
-     * <p>
-     * A stream of the code signing signature.
-     * </p>
-     * 
-     * @param stream
-     *        A stream of the code signing signature.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CodeSigningSignature withStream(Stream stream) {
-        setStream(stream);
-        return this;
-    }
 
     /**
      * <p>
@@ -146,7 +100,8 @@ public class CodeSigningSignature implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -156,8 +111,6 @@ public class CodeSigningSignature implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStream() != null)
-            sb.append("Stream: ").append(getStream()).append(",");
         if (getInlineDocument() != null)
             sb.append("InlineDocument: ").append(getInlineDocument());
         sb.append("}");
@@ -174,10 +127,6 @@ public class CodeSigningSignature implements Serializable, Cloneable, Structured
         if (obj instanceof CodeSigningSignature == false)
             return false;
         CodeSigningSignature other = (CodeSigningSignature) obj;
-        if (other.getStream() == null ^ this.getStream() == null)
-            return false;
-        if (other.getStream() != null && other.getStream().equals(this.getStream()) == false)
-            return false;
         if (other.getInlineDocument() == null ^ this.getInlineDocument() == null)
             return false;
         if (other.getInlineDocument() != null && other.getInlineDocument().equals(this.getInlineDocument()) == false)
@@ -190,7 +139,6 @@ public class CodeSigningSignature implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getStream() == null) ? 0 : getStream().hashCode());
         hashCode = prime * hashCode + ((getInlineDocument() == null) ? 0 : getInlineDocument().hashCode());
         return hashCode;
     }

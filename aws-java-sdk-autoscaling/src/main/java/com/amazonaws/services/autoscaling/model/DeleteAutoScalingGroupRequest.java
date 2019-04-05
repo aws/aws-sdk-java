@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DeleteAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private String autoScalingGroupName;
     /**
      * <p>
-     * Specifies that the group will be deleted along with all instances associated with the group, without waiting for
+     * Specifies that the group is to be deleted along with all instances associated with the group, without waiting for
      * all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
      * </p>
      */
@@ -81,12 +81,12 @@ public class DeleteAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies that the group will be deleted along with all instances associated with the group, without waiting for
+     * Specifies that the group is to be deleted along with all instances associated with the group, without waiting for
      * all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
      * </p>
      * 
      * @param forceDelete
-     *        Specifies that the group will be deleted along with all instances associated with the group, without
+     *        Specifies that the group is to be deleted along with all instances associated with the group, without
      *        waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated
      *        with the group.
      */
@@ -97,11 +97,11 @@ public class DeleteAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies that the group will be deleted along with all instances associated with the group, without waiting for
+     * Specifies that the group is to be deleted along with all instances associated with the group, without waiting for
      * all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
      * </p>
      * 
-     * @return Specifies that the group will be deleted along with all instances associated with the group, without
+     * @return Specifies that the group is to be deleted along with all instances associated with the group, without
      *         waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated
      *         with the group.
      */
@@ -112,12 +112,12 @@ public class DeleteAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies that the group will be deleted along with all instances associated with the group, without waiting for
+     * Specifies that the group is to be deleted along with all instances associated with the group, without waiting for
      * all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
      * </p>
      * 
      * @param forceDelete
-     *        Specifies that the group will be deleted along with all instances associated with the group, without
+     *        Specifies that the group is to be deleted along with all instances associated with the group, without
      *        waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated
      *        with the group.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -130,11 +130,11 @@ public class DeleteAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specifies that the group will be deleted along with all instances associated with the group, without waiting for
+     * Specifies that the group is to be deleted along with all instances associated with the group, without waiting for
      * all instances to be terminated. This parameter also deletes any lifecycle actions associated with the group.
      * </p>
      * 
-     * @return Specifies that the group will be deleted along with all instances associated with the group, without
+     * @return Specifies that the group is to be deleted along with all instances associated with the group, without
      *         waiting for all instances to be terminated. This parameter also deletes any lifecycle actions associated
      *         with the group.
      */
@@ -144,7 +144,8 @@ public class DeleteAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

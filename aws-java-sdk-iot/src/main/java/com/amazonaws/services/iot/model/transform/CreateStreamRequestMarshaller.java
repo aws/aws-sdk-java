@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class CreateStreamRequestMarshaller {
             .marshallLocationName("files").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateStreamRequestMarshaller instance = new CreateStreamRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class CreateStreamRequestMarshaller {
             protocolMarshaller.marshall(createStreamRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createStreamRequest.getFiles(), FILES_BINDING);
             protocolMarshaller.marshall(createStreamRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createStreamRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

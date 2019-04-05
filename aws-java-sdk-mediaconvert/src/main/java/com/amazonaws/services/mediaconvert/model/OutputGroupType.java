@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming)
+ * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum OutputGroupType {
@@ -23,7 +23,8 @@ public enum OutputGroupType {
     HLS_GROUP_SETTINGS("HLS_GROUP_SETTINGS"),
     DASH_ISO_GROUP_SETTINGS("DASH_ISO_GROUP_SETTINGS"),
     FILE_GROUP_SETTINGS("FILE_GROUP_SETTINGS"),
-    MS_SMOOTH_GROUP_SETTINGS("MS_SMOOTH_GROUP_SETTINGS");
+    MS_SMOOTH_GROUP_SETTINGS("MS_SMOOTH_GROUP_SETTINGS"),
+    CMAF_GROUP_SETTINGS("CMAF_GROUP_SETTINGS");
 
     private String value;
 

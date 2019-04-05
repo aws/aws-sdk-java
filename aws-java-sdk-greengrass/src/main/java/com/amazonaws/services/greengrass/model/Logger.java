@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,10 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
 
     /** The component that will be subject to logging. */
     private String component;
-    /** The id of the logger. */
+    /**
+     * A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max
+     * length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+     */
     private String id;
     /** The level of the logs. */
     private String level;
@@ -101,10 +104,12 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max
+     * length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
      * 
      * @param id
-     *        The id of the logger.
+     *        A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition
+     *        version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
      */
 
     public void setId(String id) {
@@ -112,9 +117,11 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max
+     * length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
      * 
-     * @return The id of the logger.
+     * @return A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition
+     *         version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
      */
 
     public String getId() {
@@ -122,10 +129,12 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition version. Max
+     * length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
      * 
      * @param id
-     *        The id of the logger.
+     *        A descriptive or arbitrary ID for the logger. This value must be unique within the logger definition
+     *        version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,7 +304,8 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

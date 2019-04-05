@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,15 +35,15 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
     private Boolean allowDnsResolutionFromRemoteVpc;
     /**
      * <p>
-     * If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC via ClassicLink
-     * to instances in a peer VPC.
+     * If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using
+     * ClassicLink to instances in a peer VPC.
      * </p>
      */
     private Boolean allowEgressFromLocalClassicLinkToRemoteVpc;
     /**
      * <p>
      * If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to
-     * a peer VPC via ClassicLink.
+     * a peer VPC using ClassicLink.
      * </p>
      */
     private Boolean allowEgressFromLocalVpcToRemoteClassicLink;
@@ -110,12 +110,12 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC via ClassicLink
-     * to instances in a peer VPC.
+     * If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using
+     * ClassicLink to instances in a peer VPC.
      * </p>
      * 
      * @param allowEgressFromLocalClassicLinkToRemoteVpc
-     *        If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC via
+     *        If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using
      *        ClassicLink to instances in a peer VPC.
      */
 
@@ -125,11 +125,11 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC via ClassicLink
-     * to instances in a peer VPC.
+     * If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using
+     * ClassicLink to instances in a peer VPC.
      * </p>
      * 
-     * @return If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC via
+     * @return If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using
      *         ClassicLink to instances in a peer VPC.
      */
 
@@ -139,12 +139,12 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC via ClassicLink
-     * to instances in a peer VPC.
+     * If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using
+     * ClassicLink to instances in a peer VPC.
      * </p>
      * 
      * @param allowEgressFromLocalClassicLinkToRemoteVpc
-     *        If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC via
+     *        If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using
      *        ClassicLink to instances in a peer VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -156,11 +156,11 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC via ClassicLink
-     * to instances in a peer VPC.
+     * If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using
+     * ClassicLink to instances in a peer VPC.
      * </p>
      * 
-     * @return If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC via
+     * @return If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using
      *         ClassicLink to instances in a peer VPC.
      */
 
@@ -171,12 +171,12 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
     /**
      * <p>
      * If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to
-     * a peer VPC via ClassicLink.
+     * a peer VPC using ClassicLink.
      * </p>
      * 
      * @param allowEgressFromLocalVpcToRemoteClassicLink
      *        If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's
-     *        linked to a peer VPC via ClassicLink.
+     *        linked to a peer VPC using ClassicLink.
      */
 
     public void setAllowEgressFromLocalVpcToRemoteClassicLink(Boolean allowEgressFromLocalVpcToRemoteClassicLink) {
@@ -186,11 +186,11 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
     /**
      * <p>
      * If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to
-     * a peer VPC via ClassicLink.
+     * a peer VPC using ClassicLink.
      * </p>
      * 
      * @return If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's
-     *         linked to a peer VPC via ClassicLink.
+     *         linked to a peer VPC using ClassicLink.
      */
 
     public Boolean getAllowEgressFromLocalVpcToRemoteClassicLink() {
@@ -200,12 +200,12 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
     /**
      * <p>
      * If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to
-     * a peer VPC via ClassicLink.
+     * a peer VPC using ClassicLink.
      * </p>
      * 
      * @param allowEgressFromLocalVpcToRemoteClassicLink
      *        If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's
-     *        linked to a peer VPC via ClassicLink.
+     *        linked to a peer VPC using ClassicLink.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,11 +217,11 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
     /**
      * <p>
      * If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to
-     * a peer VPC via ClassicLink.
+     * a peer VPC using ClassicLink.
      * </p>
      * 
      * @return If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's
-     *         linked to a peer VPC via ClassicLink.
+     *         linked to a peer VPC using ClassicLink.
      */
 
     public Boolean isAllowEgressFromLocalVpcToRemoteClassicLink() {
@@ -229,7 +229,8 @@ public class PeeringConnectionOptions implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class OutputGroup implements Serializable, Cloneable, StructuredPojo {
     private String customName;
     /** Name of the output group */
     private String name;
-
+    /** Output Group settings, including type */
     private OutputGroupSettings outputGroupSettings;
     /** This object holds groups of encoding settings, one group of settings per output. */
     private java.util.List<Output> outputs;
@@ -120,7 +120,10 @@ public class OutputGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Output Group settings, including type
+     * 
      * @param outputGroupSettings
+     *        Output Group settings, including type
      */
 
     public void setOutputGroupSettings(OutputGroupSettings outputGroupSettings) {
@@ -128,7 +131,9 @@ public class OutputGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Output Group settings, including type
+     * 
+     * @return Output Group settings, including type
      */
 
     public OutputGroupSettings getOutputGroupSettings() {
@@ -136,7 +141,10 @@ public class OutputGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Output Group settings, including type
+     * 
      * @param outputGroupSettings
+     *        Output Group settings, including type
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,7 +216,8 @@ public class OutputGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,8 @@ public class CreateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
      * be disabled for the OriginEndpoint.
      */
     private Integer startoverWindowSeconds;
+
+    private java.util.Map<String, String> tags;
     /**
      * Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time
      * delay in effect for the OriginEndpoint.
@@ -354,6 +356,53 @@ public class CreateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * @return
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * @param tags
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOriginEndpointRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateOriginEndpointRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOriginEndpointRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time
      * delay in effect for the OriginEndpoint.
      * 
@@ -456,7 +505,8 @@ public class CreateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -484,6 +534,8 @@ public class CreateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("MssPackage: ").append(getMssPackage()).append(",");
         if (getStartoverWindowSeconds() != null)
             sb.append("StartoverWindowSeconds: ").append(getStartoverWindowSeconds()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getTimeDelaySeconds() != null)
             sb.append("TimeDelaySeconds: ").append(getTimeDelaySeconds()).append(",");
         if (getWhitelist() != null)
@@ -538,6 +590,10 @@ public class CreateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getStartoverWindowSeconds() != null && other.getStartoverWindowSeconds().equals(this.getStartoverWindowSeconds()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getTimeDelaySeconds() == null ^ this.getTimeDelaySeconds() == null)
             return false;
         if (other.getTimeDelaySeconds() != null && other.getTimeDelaySeconds().equals(this.getTimeDelaySeconds()) == false)
@@ -563,6 +619,7 @@ public class CreateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getManifestName() == null) ? 0 : getManifestName().hashCode());
         hashCode = prime * hashCode + ((getMssPackage() == null) ? 0 : getMssPackage().hashCode());
         hashCode = prime * hashCode + ((getStartoverWindowSeconds() == null) ? 0 : getStartoverWindowSeconds().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTimeDelaySeconds() == null) ? 0 : getTimeDelaySeconds().hashCode());
         hashCode = prime * hashCode + ((getWhitelist() == null) ? 0 : getWhitelist().hashCode());
         return hashCode;

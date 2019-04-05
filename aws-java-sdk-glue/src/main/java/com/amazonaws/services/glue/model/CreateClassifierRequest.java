@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,12 @@ public class CreateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private CreateJsonClassifierRequest jsonClassifier;
+    /**
+     * <p>
+     * A <code>CsvClassifier</code> object specifying the classifier to create.
+     * </p>
+     */
+    private CreateCsvClassifierRequest csvClassifier;
 
     /**
      * <p>
@@ -165,7 +171,48 @@ public class CreateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * A <code>CsvClassifier</code> object specifying the classifier to create.
+     * </p>
+     * 
+     * @param csvClassifier
+     *        A <code>CsvClassifier</code> object specifying the classifier to create.
+     */
+
+    public void setCsvClassifier(CreateCsvClassifierRequest csvClassifier) {
+        this.csvClassifier = csvClassifier;
+    }
+
+    /**
+     * <p>
+     * A <code>CsvClassifier</code> object specifying the classifier to create.
+     * </p>
+     * 
+     * @return A <code>CsvClassifier</code> object specifying the classifier to create.
+     */
+
+    public CreateCsvClassifierRequest getCsvClassifier() {
+        return this.csvClassifier;
+    }
+
+    /**
+     * <p>
+     * A <code>CsvClassifier</code> object specifying the classifier to create.
+     * </p>
+     * 
+     * @param csvClassifier
+     *        A <code>CsvClassifier</code> object specifying the classifier to create.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClassifierRequest withCsvClassifier(CreateCsvClassifierRequest csvClassifier) {
+        setCsvClassifier(csvClassifier);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -180,7 +227,9 @@ public class CreateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
         if (getXMLClassifier() != null)
             sb.append("XMLClassifier: ").append(getXMLClassifier()).append(",");
         if (getJsonClassifier() != null)
-            sb.append("JsonClassifier: ").append(getJsonClassifier());
+            sb.append("JsonClassifier: ").append(getJsonClassifier()).append(",");
+        if (getCsvClassifier() != null)
+            sb.append("CsvClassifier: ").append(getCsvClassifier());
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +256,10 @@ public class CreateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getJsonClassifier() != null && other.getJsonClassifier().equals(this.getJsonClassifier()) == false)
             return false;
+        if (other.getCsvClassifier() == null ^ this.getCsvClassifier() == null)
+            return false;
+        if (other.getCsvClassifier() != null && other.getCsvClassifier().equals(this.getCsvClassifier()) == false)
+            return false;
         return true;
     }
 
@@ -218,6 +271,7 @@ public class CreateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getGrokClassifier() == null) ? 0 : getGrokClassifier().hashCode());
         hashCode = prime * hashCode + ((getXMLClassifier() == null) ? 0 : getXMLClassifier().hashCode());
         hashCode = prime * hashCode + ((getJsonClassifier() == null) ? 0 : getJsonClassifier().hashCode());
+        hashCode = prime * hashCode + ((getCsvClassifier() == null) ? 0 : getCsvClassifier().hashCode());
         return hashCode;
     }
 

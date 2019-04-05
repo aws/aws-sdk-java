@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
      * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry included in the result.
+     * explicit deny overrides any allow. Inaddition, the deny statement is the only entry included in the result.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Statement> matchedStatements;
@@ -79,7 +79,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      */
@@ -248,13 +248,13 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
      * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry included in the result.
+     * explicit deny overrides any allow. Inaddition, the deny statement is the only entry included in the result.
      * </p>
      * 
      * @return A list of the statements in the input policies that determine the result for this scenario. Remember that
      *         even if multiple statements allow the operation on the resource, if only one statement denies that
-     *         operation, then the explicit deny overrides any allow, and the deny statement is the only entry included
-     *         in the result.
+     *         operation, then the explicit deny overrides any allow. Inaddition, the deny statement is the only entry
+     *         included in the result.
      */
 
     public java.util.List<Statement> getMatchedStatements() {
@@ -268,14 +268,14 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
      * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry included in the result.
+     * explicit deny overrides any allow. Inaddition, the deny statement is the only entry included in the result.
      * </p>
      * 
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this scenario. Remember that
      *        even if multiple statements allow the operation on the resource, if only one statement denies that
-     *        operation, then the explicit deny overrides any allow, and the deny statement is the only entry included
-     *        in the result.
+     *        operation, then the explicit deny overrides any allow. Inaddition, the deny statement is the only entry
+     *        included in the result.
      */
 
     public void setMatchedStatements(java.util.Collection<Statement> matchedStatements) {
@@ -291,7 +291,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
      * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry included in the result.
+     * explicit deny overrides any allow. Inaddition, the deny statement is the only entry included in the result.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -302,8 +302,8 @@ public class EvaluationResult implements Serializable, Cloneable {
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this scenario. Remember that
      *        even if multiple statements allow the operation on the resource, if only one statement denies that
-     *        operation, then the explicit deny overrides any allow, and the deny statement is the only entry included
-     *        in the result.
+     *        operation, then the explicit deny overrides any allow. Inaddition, the deny statement is the only entry
+     *        included in the result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,14 +321,14 @@ public class EvaluationResult implements Serializable, Cloneable {
      * <p>
      * A list of the statements in the input policies that determine the result for this scenario. Remember that even if
      * multiple statements allow the operation on the resource, if only one statement denies that operation, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry included in the result.
+     * explicit deny overrides any allow. Inaddition, the deny statement is the only entry included in the result.
      * </p>
      * 
      * @param matchedStatements
      *        A list of the statements in the input policies that determine the result for this scenario. Remember that
      *        even if multiple statements allow the operation on the resource, if only one statement denies that
-     *        operation, then the explicit deny overrides any allow, and the deny statement is the only entry included
-     *        in the result.
+     *        operation, then the explicit deny overrides any allow. Inaddition, the deny statement is the only entry
+     *        included in the result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -498,7 +498,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      * 
@@ -506,7 +506,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         resource policies, this parameter explains how each set of policies contributes to the final evaluation
      *         decision. When simulating cross-account access to a resource, both the resource-based policy and the
      *         caller's IAM policy must grant access. See <a
-     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
      *         Roles Differ from Resource-based Policies</a>
      */
 
@@ -523,7 +523,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      * 
@@ -532,7 +532,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
      *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
      *        caller's IAM policy must grant access. See <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
      *        Roles Differ from Resource-based Policies</a>
      */
 
@@ -546,7 +546,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * policies, this parameter explains how each set of policies contributes to the final evaluation decision. When
      * simulating cross-account access to a resource, both the resource-based policy and the caller's IAM policy must
      * grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM Roles
      * Differ from Resource-based Policies</a>
      * </p>
      * 
@@ -555,7 +555,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        resource policies, this parameter explains how each set of policies contributes to the final evaluation
      *        decision. When simulating cross-account access to a resource, both the resource-based policy and the
      *        caller's IAM policy must grant access. See <a
-     *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How IAM
      *        Roles Differ from Resource-based Policies</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -664,7 +664,8 @@ public class EvaluationResult implements Serializable, Cloneable {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,9 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
 
     /** User-specified id. This is used in an output group or an output. */
     private String id;
-    /** Destination settings for output; one for each redundant encoder. */
+    /** Destination settings for a MediaPackage output; one destination for both encoders. */
+    private java.util.List<MediaPackageOutputDestinationSettings> mediaPackageSettings;
+    /** Destination settings for a standard output; one destination for each redundant encoder. */
     private java.util.List<OutputDestinationSettings> settings;
 
     /**
@@ -66,9 +68,71 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Destination settings for output; one for each redundant encoder.
+     * Destination settings for a MediaPackage output; one destination for both encoders.
      * 
-     * @return Destination settings for output; one for each redundant encoder.
+     * @return Destination settings for a MediaPackage output; one destination for both encoders.
+     */
+
+    public java.util.List<MediaPackageOutputDestinationSettings> getMediaPackageSettings() {
+        return mediaPackageSettings;
+    }
+
+    /**
+     * Destination settings for a MediaPackage output; one destination for both encoders.
+     * 
+     * @param mediaPackageSettings
+     *        Destination settings for a MediaPackage output; one destination for both encoders.
+     */
+
+    public void setMediaPackageSettings(java.util.Collection<MediaPackageOutputDestinationSettings> mediaPackageSettings) {
+        if (mediaPackageSettings == null) {
+            this.mediaPackageSettings = null;
+            return;
+        }
+
+        this.mediaPackageSettings = new java.util.ArrayList<MediaPackageOutputDestinationSettings>(mediaPackageSettings);
+    }
+
+    /**
+     * Destination settings for a MediaPackage output; one destination for both encoders.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMediaPackageSettings(java.util.Collection)} or {@link #withMediaPackageSettings(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param mediaPackageSettings
+     *        Destination settings for a MediaPackage output; one destination for both encoders.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputDestination withMediaPackageSettings(MediaPackageOutputDestinationSettings... mediaPackageSettings) {
+        if (this.mediaPackageSettings == null) {
+            setMediaPackageSettings(new java.util.ArrayList<MediaPackageOutputDestinationSettings>(mediaPackageSettings.length));
+        }
+        for (MediaPackageOutputDestinationSettings ele : mediaPackageSettings) {
+            this.mediaPackageSettings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Destination settings for a MediaPackage output; one destination for both encoders.
+     * 
+     * @param mediaPackageSettings
+     *        Destination settings for a MediaPackage output; one destination for both encoders.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputDestination withMediaPackageSettings(java.util.Collection<MediaPackageOutputDestinationSettings> mediaPackageSettings) {
+        setMediaPackageSettings(mediaPackageSettings);
+        return this;
+    }
+
+    /**
+     * Destination settings for a standard output; one destination for each redundant encoder.
+     * 
+     * @return Destination settings for a standard output; one destination for each redundant encoder.
      */
 
     public java.util.List<OutputDestinationSettings> getSettings() {
@@ -76,10 +140,10 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Destination settings for output; one for each redundant encoder.
+     * Destination settings for a standard output; one destination for each redundant encoder.
      * 
      * @param settings
-     *        Destination settings for output; one for each redundant encoder.
+     *        Destination settings for a standard output; one destination for each redundant encoder.
      */
 
     public void setSettings(java.util.Collection<OutputDestinationSettings> settings) {
@@ -92,7 +156,7 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Destination settings for output; one for each redundant encoder.
+     * Destination settings for a standard output; one destination for each redundant encoder.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSettings(java.util.Collection)} or {@link #withSettings(java.util.Collection)} if you want to override
@@ -100,7 +164,7 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param settings
-     *        Destination settings for output; one for each redundant encoder.
+     *        Destination settings for a standard output; one destination for each redundant encoder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,10 +179,10 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Destination settings for output; one for each redundant encoder.
+     * Destination settings for a standard output; one destination for each redundant encoder.
      * 
      * @param settings
-     *        Destination settings for output; one for each redundant encoder.
+     *        Destination settings for a standard output; one destination for each redundant encoder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,7 +192,8 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -140,6 +205,8 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
         sb.append("{");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getMediaPackageSettings() != null)
+            sb.append("MediaPackageSettings: ").append(getMediaPackageSettings()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings());
         sb.append("}");
@@ -160,6 +227,10 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getMediaPackageSettings() == null ^ this.getMediaPackageSettings() == null)
+            return false;
+        if (other.getMediaPackageSettings() != null && other.getMediaPackageSettings().equals(this.getMediaPackageSettings()) == false)
+            return false;
         if (other.getSettings() == null ^ this.getSettings() == null)
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
@@ -173,6 +244,7 @@ public class OutputDestination implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getMediaPackageSettings() == null) ? 0 : getMediaPackageSettings().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         return hashCode;
     }

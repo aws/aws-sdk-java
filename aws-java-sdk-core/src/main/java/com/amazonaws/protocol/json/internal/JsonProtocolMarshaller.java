@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -90,6 +90,7 @@ public class JsonProtocolMarshaller<OrigRequest> implements ProtocolRequestMarsh
                                  .payloadMarshaller(MarshallingType.JSON_VALUE, SimpleTypeJsonMarshallers.STRING)
                                  .payloadMarshaller(MarshallingType.INTEGER, SimpleTypeJsonMarshallers.INTEGER)
                                  .payloadMarshaller(MarshallingType.LONG, SimpleTypeJsonMarshallers.LONG)
+                                 .payloadMarshaller(MarshallingType.SHORT, SimpleTypeJsonMarshallers.SHORT)
                                  .payloadMarshaller(MarshallingType.DOUBLE, SimpleTypeJsonMarshallers.DOUBLE)
                                  .payloadMarshaller(MarshallingType.FLOAT, SimpleTypeJsonMarshallers.FLOAT)
                                  .payloadMarshaller(MarshallingType.BIG_DECIMAL, SimpleTypeJsonMarshallers.BIG_DECIMAL)
@@ -114,6 +115,7 @@ public class JsonProtocolMarshaller<OrigRequest> implements ProtocolRequestMarsh
                                  .queryParamMarshaller(MarshallingType.STRING, QueryParamMarshallers.STRING)
                                  .queryParamMarshaller(MarshallingType.INTEGER, QueryParamMarshallers.INTEGER)
                                  .queryParamMarshaller(MarshallingType.LONG, QueryParamMarshallers.LONG)
+                                 .queryParamMarshaller(MarshallingType.SHORT, QueryParamMarshallers.SHORT)
                                  .queryParamMarshaller(MarshallingType.DOUBLE, QueryParamMarshallers.DOUBLE)
                                  .queryParamMarshaller(MarshallingType.FLOAT, QueryParamMarshallers.FLOAT)
                                  .queryParamMarshaller(MarshallingType.BOOLEAN, QueryParamMarshallers.BOOLEAN)
@@ -161,7 +163,7 @@ public class JsonProtocolMarshaller<OrigRequest> implements ProtocolRequestMarsh
             marshallBinaryPayload(val);
         } else {
             marshallerRegistry.getMarshaller(marshallingInfo.marshallLocation(), marshallingInfo.marshallingType(), val)
-                              .marshall(val, marshallerContext, marshallingInfo.marshallLocationName());
+                              .marshall(val, marshallerContext, marshallingInfo);
         }
     }
 

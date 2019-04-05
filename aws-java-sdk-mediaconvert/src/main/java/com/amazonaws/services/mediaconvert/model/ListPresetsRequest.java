@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,19 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /** Optionally, specify a preset category to limit responses to only presets from that category. */
     private String category;
-
+    /**
+     * Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+     */
     private String listBy;
     /** Optional. Number of presets, up to twenty, that will be returned at one time */
     private Integer maxResults;
     /** Use this string, provided with the response to a previous request, to request the next batch of presets. */
     private String nextToken;
-
+    /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     */
     private String order;
 
     /**
@@ -71,7 +77,12 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+     * 
      * @param listBy
+     *        Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or
+     *        chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
      * @see PresetListBy
      */
 
@@ -80,7 +91,11 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+     * 
+     * @return Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or
+     *         chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
      * @see PresetListBy
      */
 
@@ -89,7 +104,12 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+     * 
      * @param listBy
+     *        Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or
+     *        chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PresetListBy
      */
@@ -100,7 +120,12 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or
+     * chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
+     * 
      * @param listBy
+     *        Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or
+     *        chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PresetListBy
      */
@@ -179,7 +204,12 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @see Order
      */
 
@@ -188,7 +218,11 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
+     * @return When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *         DESCENDING order. Default varies by resource.
      * @see Order
      */
 
@@ -197,7 +231,12 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */
@@ -208,7 +247,12 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     * DESCENDING order. Default varies by resource.
+     * 
      * @param order
+     *        When you request lists of resources, you can optionally specify whether they are sorted in ASCENDING or
+     *        DESCENDING order. Default varies by resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Order
      */
@@ -219,7 +263,8 @@ public class ListPresetsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ProfileMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfileArn").build();
     private static final MarshallingInfo<String> PROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfileName").build();
+    private static final MarshallingInfo<Boolean> ISDEFAULT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsDefault").build();
     private static final MarshallingInfo<String> ADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Address").build();
     private static final MarshallingInfo<String> TIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -47,6 +49,8 @@ public class ProfileMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxVolumeLimit").build();
     private static final MarshallingInfo<Boolean> PSTNENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PSTNEnabled").build();
+    private static final MarshallingInfo<String> ADDRESSBOOKARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddressBookArn").build();
 
     private static final ProfileMarshaller instance = new ProfileMarshaller();
 
@@ -66,6 +70,7 @@ public class ProfileMarshaller {
         try {
             protocolMarshaller.marshall(profile.getProfileArn(), PROFILEARN_BINDING);
             protocolMarshaller.marshall(profile.getProfileName(), PROFILENAME_BINDING);
+            protocolMarshaller.marshall(profile.getIsDefault(), ISDEFAULT_BINDING);
             protocolMarshaller.marshall(profile.getAddress(), ADDRESS_BINDING);
             protocolMarshaller.marshall(profile.getTimezone(), TIMEZONE_BINDING);
             protocolMarshaller.marshall(profile.getDistanceUnit(), DISTANCEUNIT_BINDING);
@@ -74,6 +79,7 @@ public class ProfileMarshaller {
             protocolMarshaller.marshall(profile.getSetupModeDisabled(), SETUPMODEDISABLED_BINDING);
             protocolMarshaller.marshall(profile.getMaxVolumeLimit(), MAXVOLUMELIMIT_BINDING);
             protocolMarshaller.marshall(profile.getPSTNEnabled(), PSTNENABLED_BINDING);
+            protocolMarshaller.marshall(profile.getAddressBookArn(), ADDRESSBOOKARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

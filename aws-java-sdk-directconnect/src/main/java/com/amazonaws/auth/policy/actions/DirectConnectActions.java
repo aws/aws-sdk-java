@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,8 @@ public enum DirectConnectActions implements Action {
     /** Represents any action executed on AWS Direct Connect. */
     AllDirectConnectActions("directconnect:*"),
 
+    /** Action for the AcceptDirectConnectGatewayAssociationProposal operation. */
+    AcceptDirectConnectGatewayAssociationProposal("directconnect:AcceptDirectConnectGatewayAssociationProposal"),
     /** Action for the AllocateConnectionOnInterconnect operation. */
     AllocateConnectionOnInterconnect("directconnect:AllocateConnectionOnInterconnect"),
     /** Action for the AllocateHostedConnection operation. */
@@ -53,6 +55,8 @@ public enum DirectConnectActions implements Action {
     CreateDirectConnectGateway("directconnect:CreateDirectConnectGateway"),
     /** Action for the CreateDirectConnectGatewayAssociation operation. */
     CreateDirectConnectGatewayAssociation("directconnect:CreateDirectConnectGatewayAssociation"),
+    /** Action for the CreateDirectConnectGatewayAssociationProposal operation. */
+    CreateDirectConnectGatewayAssociationProposal("directconnect:CreateDirectConnectGatewayAssociationProposal"),
     /** Action for the CreateInterconnect operation. */
     CreateInterconnect("directconnect:CreateInterconnect"),
     /** Action for the CreateLag operation. */
@@ -69,6 +73,8 @@ public enum DirectConnectActions implements Action {
     DeleteDirectConnectGateway("directconnect:DeleteDirectConnectGateway"),
     /** Action for the DeleteDirectConnectGatewayAssociation operation. */
     DeleteDirectConnectGatewayAssociation("directconnect:DeleteDirectConnectGatewayAssociation"),
+    /** Action for the DeleteDirectConnectGatewayAssociationProposal operation. */
+    DeleteDirectConnectGatewayAssociationProposal("directconnect:DeleteDirectConnectGatewayAssociationProposal"),
     /** Action for the DeleteInterconnect operation. */
     DeleteInterconnect("directconnect:DeleteInterconnect"),
     /** Action for the DeleteLag operation. */
@@ -81,6 +87,8 @@ public enum DirectConnectActions implements Action {
     DescribeConnections("directconnect:DescribeConnections"),
     /** Action for the DescribeConnectionsOnInterconnect operation. */
     DescribeConnectionsOnInterconnect("directconnect:DescribeConnectionsOnInterconnect"),
+    /** Action for the DescribeDirectConnectGatewayAssociationProposals operation. */
+    DescribeDirectConnectGatewayAssociationProposals("directconnect:DescribeDirectConnectGatewayAssociationProposals"),
     /** Action for the DescribeDirectConnectGatewayAssociations operation. */
     DescribeDirectConnectGatewayAssociations("directconnect:DescribeDirectConnectGatewayAssociations"),
     /** Action for the DescribeDirectConnectGatewayAttachments operation. */
@@ -111,8 +119,12 @@ public enum DirectConnectActions implements Action {
     TagResource("directconnect:TagResource"),
     /** Action for the UntagResource operation. */
     UntagResource("directconnect:UntagResource"),
+    /** Action for the UpdateDirectConnectGatewayAssociation operation. */
+    UpdateDirectConnectGatewayAssociation("directconnect:UpdateDirectConnectGatewayAssociation"),
     /** Action for the UpdateLag operation. */
     UpdateLag("directconnect:UpdateLag"),
+    /** Action for the UpdateVirtualInterfaceAttributes operation. */
+    UpdateVirtualInterfaceAttributes("directconnect:UpdateVirtualInterfaceAttributes"),
 
     ;
 

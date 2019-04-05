@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -332,8 +332,8 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Adds specified tags to a resource with the specified ARN. Existing tags on a resource are not changed if they are
-     * not specified in the request parameters.
+     * Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they
+     * are not specified in the request parameters.
      * </p>
      * 
      * @param tagRequest
@@ -346,8 +346,8 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Adds specified tags to a resource with the specified ARN. Existing tags on a resource are not changed if they are
-     * not specified in the request parameters.
+     * Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they
+     * are not specified in the request parameters.
      * </p>
      * 
      * @param tagRequest

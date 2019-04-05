@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The plain language name for the query.
+     * The query name.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A brief explanation of the query.
+     * The query description.
      * </p>
      */
     private String description;
@@ -45,7 +45,7 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
     private String database;
     /**
      * <p>
-     * The text of the query itself. In other words, all query statements.
+     * The contents of the query with all query statements.
      * </p>
      */
     private String queryString;
@@ -63,14 +63,20 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
      * </important>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * The name of the workgroup in which the named query is being created.
+     * </p>
+     */
+    private String workGroup;
 
     /**
      * <p>
-     * The plain language name for the query.
+     * The query name.
      * </p>
      * 
      * @param name
-     *        The plain language name for the query.
+     *        The query name.
      */
 
     public void setName(String name) {
@@ -79,10 +85,10 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The plain language name for the query.
+     * The query name.
      * </p>
      * 
-     * @return The plain language name for the query.
+     * @return The query name.
      */
 
     public String getName() {
@@ -91,11 +97,11 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The plain language name for the query.
+     * The query name.
      * </p>
      * 
      * @param name
-     *        The plain language name for the query.
+     *        The query name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,11 +112,11 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A brief explanation of the query.
+     * The query description.
      * </p>
      * 
      * @param description
-     *        A brief explanation of the query.
+     *        The query description.
      */
 
     public void setDescription(String description) {
@@ -119,10 +125,10 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A brief explanation of the query.
+     * The query description.
      * </p>
      * 
-     * @return A brief explanation of the query.
+     * @return The query description.
      */
 
     public String getDescription() {
@@ -131,11 +137,11 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A brief explanation of the query.
+     * The query description.
      * </p>
      * 
      * @param description
-     *        A brief explanation of the query.
+     *        The query description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,11 +192,11 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The text of the query itself. In other words, all query statements.
+     * The contents of the query with all query statements.
      * </p>
      * 
      * @param queryString
-     *        The text of the query itself. In other words, all query statements.
+     *        The contents of the query with all query statements.
      */
 
     public void setQueryString(String queryString) {
@@ -199,10 +205,10 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The text of the query itself. In other words, all query statements.
+     * The contents of the query with all query statements.
      * </p>
      * 
-     * @return The text of the query itself. In other words, all query statements.
+     * @return The contents of the query with all query statements.
      */
 
     public String getQueryString() {
@@ -211,11 +217,11 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The text of the query itself. In other words, all query statements.
+     * The contents of the query with all query statements.
      * </p>
      * 
      * @param queryString
-     *        The text of the query itself. In other words, all query statements.
+     *        The contents of the query with all query statements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,7 +319,48 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * <p>
+     * The name of the workgroup in which the named query is being created.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup in which the named query is being created.
+     */
+
+    public void setWorkGroup(String workGroup) {
+        this.workGroup = workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup in which the named query is being created.
+     * </p>
+     * 
+     * @return The name of the workgroup in which the named query is being created.
+     */
+
+    public String getWorkGroup() {
+        return this.workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup in which the named query is being created.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup in which the named query is being created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNamedQueryRequest withWorkGroup(String workGroup) {
+        setWorkGroup(workGroup);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -332,7 +379,9 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
         if (getQueryString() != null)
             sb.append("QueryString: ").append(getQueryString()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getWorkGroup() != null)
+            sb.append("WorkGroup: ").append(getWorkGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +416,10 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getWorkGroup() == null ^ this.getWorkGroup() == null)
+            return false;
+        if (other.getWorkGroup() != null && other.getWorkGroup().equals(this.getWorkGroup()) == false)
+            return false;
         return true;
     }
 
@@ -380,6 +433,7 @@ public class CreateNamedQueryRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
         hashCode = prime * hashCode + ((getQueryString() == null) ? 0 : getQueryString().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String principalId;
+    /**
+     * <p>
+     * The ID of the invited user.
+     * </p>
+     */
+    private String inviteePrincipalId;
     /**
      * <p>
      * The role.
@@ -96,6 +102,46 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
 
     public ShareResult withPrincipalId(String principalId) {
         setPrincipalId(principalId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the invited user.
+     * </p>
+     * 
+     * @param inviteePrincipalId
+     *        The ID of the invited user.
+     */
+
+    public void setInviteePrincipalId(String inviteePrincipalId) {
+        this.inviteePrincipalId = inviteePrincipalId;
+    }
+
+    /**
+     * <p>
+     * The ID of the invited user.
+     * </p>
+     * 
+     * @return The ID of the invited user.
+     */
+
+    public String getInviteePrincipalId() {
+        return this.inviteePrincipalId;
+    }
+
+    /**
+     * <p>
+     * The ID of the invited user.
+     * </p>
+     * 
+     * @param inviteePrincipalId
+     *        The ID of the invited user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ShareResult withInviteePrincipalId(String inviteePrincipalId) {
+        setInviteePrincipalId(inviteePrincipalId);
         return this;
     }
 
@@ -326,7 +372,8 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
@@ -338,6 +385,8 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getPrincipalId() != null)
             sb.append("PrincipalId: ").append(getPrincipalId()).append(",");
+        if (getInviteePrincipalId() != null)
+            sb.append("InviteePrincipalId: ").append(getInviteePrincipalId()).append(",");
         if (getRole() != null)
             sb.append("Role: ").append(getRole()).append(",");
         if (getStatus() != null)
@@ -345,7 +394,7 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
         if (getShareId() != null)
             sb.append("ShareId: ").append(getShareId()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage());
+            sb.append("StatusMessage: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -363,6 +412,10 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
         if (other.getPrincipalId() == null ^ this.getPrincipalId() == null)
             return false;
         if (other.getPrincipalId() != null && other.getPrincipalId().equals(this.getPrincipalId()) == false)
+            return false;
+        if (other.getInviteePrincipalId() == null ^ this.getInviteePrincipalId() == null)
+            return false;
+        if (other.getInviteePrincipalId() != null && other.getInviteePrincipalId().equals(this.getInviteePrincipalId()) == false)
             return false;
         if (other.getRole() == null ^ this.getRole() == null)
             return false;
@@ -389,6 +442,7 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPrincipalId() == null) ? 0 : getPrincipalId().hashCode());
+        hashCode = prime * hashCode + ((getInviteePrincipalId() == null) ? 0 : getInviteePrincipalId().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getShareId() == null) ? 0 : getShareId().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,14 +27,16 @@ import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.client.AwsAsyncClientParams;
 import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.monitoring.MonitoringListener;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.metrics.RequestMetricCollector;
+import com.amazonaws.monitoring.CsmConfigurationProvider;
+import com.amazonaws.monitoring.DefaultCsmConfigurationProviderChain;
 import com.amazonaws.regions.AwsRegionProvider;
 import com.amazonaws.regions.DefaultAwsRegionProviderChain;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.regions.Regions;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -70,12 +72,16 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
      */
     private final AwsRegionProvider regionProvider;
 
+    private final AdvancedConfig.Builder advancedConfig = AdvancedConfig.builder();
+
     private AWSCredentialsProvider credentials;
     private ClientConfiguration clientConfig;
     private RequestMetricCollector metricsCollector;
     private Region region;
     private List<RequestHandler2> requestHandlers;
     private EndpointConfiguration endpointConfiguration;
+    private CsmConfigurationProvider csmConfig;
+    private MonitoringListener monitoringListener;
 
     protected AwsClientBuilder(ClientConfigurationFactory clientConfigFactory) {
         this(clientConfigFactory, DEFAULT_REGION_PROVIDER);
@@ -236,7 +242,23 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
      * @return This object for method chaining.
      */
     public final Subclass withRegion(String region) {
-        return withRegion(RegionUtils.getRegion(region));
+        return withRegion(getRegionObject(region));
+    }
+
+    /**
+     * Lookups the {@link Region} object for the given string region name.
+     *
+     * @param regionStr Region name.
+     * @return Region object.
+     * @throws SdkClientException If region cannot be found in the metadata.
+     */
+    private Region getRegionObject(String regionStr) {
+        Region regionObj = RegionUtils.getRegion(regionStr);
+        if (regionObj == null) {
+            throw new SdkClientException(String.format("Could not find region information for '%s' in SDK metadata.",
+                                                             regionStr));
+        }
+        return regionObj;
     }
 
     /**
@@ -316,12 +338,77 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
     }
 
     /**
+     * Gets the {@link MonitoringListener} in use by the builder.
+     */
+    public final MonitoringListener getMonitoringListener() {
+        return this.monitoringListener;
+    }
+
+    /**
+     * Sets a custom MonitoringListener to use for the client.
+     *
+     * @param monitoringListener Custom Monitoring Listener to use.
+     */
+    public final void setMonitoringListener(MonitoringListener monitoringListener) {
+        this.monitoringListener = monitoringListener;
+    }
+
+    /**
+     * Sets a custom MonitoringListener to use for the client.
+     *
+     * @param monitoringListener Custom MonitoringListener to use.
+     * @return This object for method chaining.
+     */
+    public final Subclass withMonitoringListener(MonitoringListener monitoringListener) {
+        setMonitoringListener(monitoringListener);
+        return getSubclass();
+    }
+
+    /**
      * Request handlers are copied to a new list to avoid mutation, if no request handlers are
      * provided to the builder we supply an empty list.
      */
     private List<RequestHandler2> resolveRequestHandlers() {
         return (requestHandlers == null) ? new ArrayList<RequestHandler2>() :
                 new ArrayList<RequestHandler2>(requestHandlers);
+    }
+
+    public CsmConfigurationProvider getClientSideMonitoringConfigurationProvider() {
+        return csmConfig;
+    }
+
+    public void setClientSideMonitoringConfigurationProvider(CsmConfigurationProvider csmConfig) {
+        this.csmConfig = csmConfig;
+    }
+
+    public Subclass withClientSideMonitoringConfigurationProvider(
+            CsmConfigurationProvider csmConfig) {
+        setClientSideMonitoringConfigurationProvider(csmConfig);
+        return getSubclass();
+    }
+
+    private CsmConfigurationProvider resolveClientSideMonitoringConfig() {
+        return csmConfig == null ? DefaultCsmConfigurationProviderChain.getInstance() : csmConfig;
+    }
+
+    /**
+     * Get the current value of an advanced config option.
+     * @param key Key of value to get.
+     * @param <T> Type of value to get.
+     * @return Value if set, otherwise null.
+     */
+    protected final <T> T getAdvancedConfig(AdvancedConfig.Key<T> key) {
+        return advancedConfig.get(key);
+    }
+
+    /**
+     * Sets the value of an advanced config option.
+     * @param key Key of value to set.
+     * @param value The new value.
+     * @param <T> Type of value.
+     */
+    protected final <T> void putAdvancedConfig(AdvancedConfig.Key<T> key, T value) {
+        advancedConfig.put(key, value);
     }
 
     /**
@@ -354,6 +441,10 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         return new SyncBuilderParams();
     }
 
+    protected final AdvancedConfig getAdvancedConfig() {
+        return advancedConfig.build();
+    }
+
     private void setRegion(AmazonWebServiceClient client) {
         if (region != null && endpointConfiguration != null) {
             throw new IllegalStateException("Only one of Region or EndpointConfiguration may be set.");
@@ -366,7 +457,7 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         } else {
             final String region = determineRegionFromRegionProvider();
             if (region != null) {
-                client.setRegion(RegionUtils.getRegion(region));
+                client.setRegion(getRegionObject(region));
             } else {
                 throw new SdkClientException(
                         "Unable to find a region via the region provider chain. " +
@@ -406,12 +497,18 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         private final AWSCredentialsProvider _credentials;
         private final RequestMetricCollector _metricsCollector;
         private final List<RequestHandler2> _requestHandlers;
+        private final CsmConfigurationProvider _csmConfig;
+        private final MonitoringListener _monitoringListener;
+        private final AdvancedConfig _advancedConfig;
 
         protected SyncBuilderParams() {
             this._clientConfig = resolveClientConfiguration();
             this._credentials = resolveCredentials();
             this._metricsCollector = metricsCollector;
             this._requestHandlers = resolveRequestHandlers();
+            this._csmConfig = resolveClientSideMonitoringConfig();
+            this._monitoringListener = monitoringListener;
+            this._advancedConfig = advancedConfig.build();
         }
 
         @Override
@@ -432,6 +529,21 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         @Override
         public List<RequestHandler2> getRequestHandlers() {
             return this._requestHandlers;
+        }
+
+        @Override
+        public CsmConfigurationProvider getClientSideMonitoringConfigurationProvider() {
+            return this._csmConfig;
+        }
+
+        @Override
+        public MonitoringListener getMonitoringListener() {
+            return this._monitoringListener;
+        }
+
+        @Override
+        public AdvancedConfig getAdvancedConfig() {
+            return _advancedConfig;
         }
 
         @Override

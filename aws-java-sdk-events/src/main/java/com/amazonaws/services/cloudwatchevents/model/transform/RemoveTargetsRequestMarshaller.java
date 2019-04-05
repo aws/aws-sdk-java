@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class RemoveTargetsRequestMarshaller {
             .marshallLocationName("Rule").build();
     private static final MarshallingInfo<List> IDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Ids").build();
+    private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Force").build();
 
     private static final RemoveTargetsRequestMarshaller instance = new RemoveTargetsRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class RemoveTargetsRequestMarshaller {
         try {
             protocolMarshaller.marshall(removeTargetsRequest.getRule(), RULE_BINDING);
             protocolMarshaller.marshall(removeTargetsRequest.getIds(), IDS_BINDING);
+            protocolMarshaller.marshall(removeTargetsRequest.getForce(), FORCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

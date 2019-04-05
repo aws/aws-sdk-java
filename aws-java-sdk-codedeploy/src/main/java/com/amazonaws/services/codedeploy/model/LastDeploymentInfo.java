@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      */
     private String deploymentId;
@@ -42,24 +42,24 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
     private String status;
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group completed.
+     * A timestamp that indicates when the most recent deployment to the deployment group was complete.
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group started.
+     * A timestamp that indicates when the most recent deployment to the deployment group started.
      * </p>
      */
     private java.util.Date createTime;
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
      * @param deploymentId
-     *        The deployment ID.
+     *        The unique ID of a deployment.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -68,10 +68,10 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
-     * @return The deployment ID.
+     * @return The unique ID of a deployment.
      */
 
     public String getDeploymentId() {
@@ -80,11 +80,11 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The deployment ID.
+     * The unique ID of a deployment.
      * </p>
      * 
      * @param deploymentId
-     *        The deployment ID.
+     *        The unique ID of a deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +168,11 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group completed.
+     * A timestamp that indicates when the most recent deployment to the deployment group was complete.
      * </p>
      * 
      * @param endTime
-     *        A timestamp indicating when the most recent deployment to the deployment group completed.
+     *        A timestamp that indicates when the most recent deployment to the deployment group was complete.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -181,10 +181,10 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group completed.
+     * A timestamp that indicates when the most recent deployment to the deployment group was complete.
      * </p>
      * 
-     * @return A timestamp indicating when the most recent deployment to the deployment group completed.
+     * @return A timestamp that indicates when the most recent deployment to the deployment group was complete.
      */
 
     public java.util.Date getEndTime() {
@@ -193,11 +193,11 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group completed.
+     * A timestamp that indicates when the most recent deployment to the deployment group was complete.
      * </p>
      * 
      * @param endTime
-     *        A timestamp indicating when the most recent deployment to the deployment group completed.
+     *        A timestamp that indicates when the most recent deployment to the deployment group was complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +208,11 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group started.
+     * A timestamp that indicates when the most recent deployment to the deployment group started.
      * </p>
      * 
      * @param createTime
-     *        A timestamp indicating when the most recent deployment to the deployment group started.
+     *        A timestamp that indicates when the most recent deployment to the deployment group started.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -221,10 +221,10 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group started.
+     * A timestamp that indicates when the most recent deployment to the deployment group started.
      * </p>
      * 
-     * @return A timestamp indicating when the most recent deployment to the deployment group started.
+     * @return A timestamp that indicates when the most recent deployment to the deployment group started.
      */
 
     public java.util.Date getCreateTime() {
@@ -233,11 +233,11 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group started.
+     * A timestamp that indicates when the most recent deployment to the deployment group started.
      * </p>
      * 
      * @param createTime
-     *        A timestamp indicating when the most recent deployment to the deployment group started.
+     *        A timestamp that indicates when the most recent deployment to the deployment group started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,7 +247,8 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Returns a string representation of this object; useful for testing and debugging.
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
      *
      * @return A string representation of this object.
      *
