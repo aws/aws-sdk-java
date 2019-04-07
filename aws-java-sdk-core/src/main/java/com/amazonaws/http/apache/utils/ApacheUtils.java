@@ -28,6 +28,7 @@ import org.apache.http.auth.Credentials;
 import org.apache.http.auth.NTCredentials;
 import org.apache.http.client.AuthCache;
 import org.apache.http.client.CredentialsProvider;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.entity.BufferedHttpEntity;
@@ -137,6 +138,12 @@ public class ApacheUtils {
         addPreemptiveAuthenticationProxy(clientContext, settings);
 
         clientContext.setAttribute(HttpContextUtils.DISABLE_SOCKET_PROXY_PROPERTY, settings.disableSocketProxy());
+        try {
+            // don't normalize URIs - the default behavior before httpclient 4.5.7
+            clientContext.setRequestConfig(RequestConfig.custom().setNormalizeUri(false).build());
+        } catch (NoSuchMethodError e) {
+            // this method was added in httpclient 4.5.8
+        }
         return clientContext;
 
     }

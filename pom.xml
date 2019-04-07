@@ -253,7 +253,7 @@
         the aggregate ZIP artifact -->
       <javax.mail.version>1.4.6</javax.mail.version>
       <jre.version>1.6</jre.version>
-      <httpcomponents.httpclient.version>4.5.5</httpcomponents.httpclient.version>
+      <httpcomponents.httpclient.version>4.5.9</httpcomponents.httpclient.version>
       <!-- These properties are used by cucumber tests related code -->
       <cucumber.info.cukes.version>1.2.4</cucumber.info.cukes.version>
       <cucumber.guice.version>4.0</cucumber.guice.version>
