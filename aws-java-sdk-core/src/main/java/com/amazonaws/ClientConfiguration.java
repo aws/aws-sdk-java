@@ -621,43 +621,20 @@ public class ClientConfiguration {
     /**
      * Returns the value for the given environment variable.
      */
-    private String getEnvironmentVariable(String variable) {
-        return System.getenv(variable);
+    private String getEnvironmentVariable(String environmentVariable) {
+        return System.getenv(environmentVariable);
     }
 
     /**
-     * Returns a URL object for the given environment variable, if can be constructed, null otherwise.
+     * Returns the value for the given environment variable if its set, otherwise returns
+     * the lowercase version of variable.
      */
-    private URL getUrlFromEnvironmentVariable(String variable) {
-        try {
-            return new URL(getEnvironmentVariable(variable));
-        } catch (MalformedURLException e) {
-            return null;
+    private String getEnvironmentVariableCaseInsensitive(String environmentVariable) {
+        if (getEnvironmentVariable(environmentVariable) != null) {
+            return getEnvironmentVariable(environmentVariable);
+        } else {
+            return getEnvironmentVariable(environmentVariable.toLowerCase());
         }
-    }
-
-    /**
-     * Returns a URL object for the environment variable HTTPS_PROXY or https_proxy if it is set, null otherwise.
-     */
-    private URL getHttpsProxyUrlFromEnvironment() {
-        if (getUrlFromEnvironmentVariable("HTTPS_PROXY") != null) {
-            return getUrlFromEnvironmentVariable("HTTPS_PROXY");
-        } else if (getUrlFromEnvironmentVariable("https_proxy") != null) {
-            return getUrlFromEnvironmentVariable("https_proxy");
-        }
-        return null;
-    }
-
-    /**
-     * Returns the a URL object for the environment variable HTTP_PROXY or http_proxy if it is set, null otherwise.
-     */
-    private URL getHttpProxyUrlFromEnvironment() {
-        if (getUrlFromEnvironmentVariable("HTTP_PROXY") != null) {
-            return getUrlFromEnvironmentVariable("HTTP_PROXY");
-        } else if (getUrlFromEnvironmentVariable("http_proxy") != null) {
-            return getUrlFromEnvironmentVariable("http_proxy");
-        }
-        return null;
     }
 
     /**
@@ -707,16 +684,13 @@ public class ClientConfiguration {
      * variable HTTP_PROXY/http_proxy.
      */
     private String getProxyHostEnvironment() {
-        if (getProtocol() == Protocol.HTTPS) {
-            if (getHttpsProxyUrlFromEnvironment() != null) {
-                return getHttpsProxyUrlFromEnvironment().getHost();
-            }
-        } else {
-            if (getHttpProxyUrlFromEnvironment() != null) {
-                return getHttpProxyUrlFromEnvironment().getHost();
-            }
+        try {
+            return getProtocol() == Protocol.HTTPS
+                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getHost()
+                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getHost();
+        } catch (MalformedURLException e) {
+            return null;
         }
-        return null;
     }
 
     /**
@@ -793,16 +767,13 @@ public class ClientConfiguration {
      * variable HTTP_PROXY/http_proxy.
      */
     private int getProxyPortEnvironment() {
-        if (getProtocol() == Protocol.HTTPS) {
-            if (getHttpsProxyUrlFromEnvironment() != null) {
-                return getHttpsProxyUrlFromEnvironment().getPort();
-            }
-        } else {
-            if (getHttpProxyUrlFromEnvironment() != null) {
-                return getHttpProxyUrlFromEnvironment().getPort();
-            }
+        try {
+            return getProtocol() == Protocol.HTTPS
+                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getPort()
+                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getPort();
+        } catch (MalformedURLException e) {
+            return proxyPort;
         }
-        return proxyPort;
     }
 
     /**
@@ -901,16 +872,13 @@ public class ClientConfiguration {
      * the value of the environment variable HTTP_PROXY/http_proxy.
      */
     private String getProxyUsernameEnvironment() {
-        if (getProtocol() == Protocol.HTTPS) {
-            if (getHttpsProxyUrlFromEnvironment() != null) {
-                return getHttpsProxyUrlFromEnvironment().getUserInfo().split(":", 2)[0];
-            }
-        } else {
-            if (getHttpProxyUrlFromEnvironment() != null) {
-                return getHttpProxyUrlFromEnvironment().getUserInfo().split(":", 2)[0];
-            }
+        try {
+            return getProtocol() == Protocol.HTTPS
+                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getUserInfo().split(":", 2)[0]
+                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getUserInfo().split(":", 2)[0];
+        } catch (MalformedURLException e) {
+            return null;
         }
-        return null;
     }
 
     /**
@@ -982,16 +950,13 @@ public class ClientConfiguration {
      * variable HTTP_PROXY/http_proxy.
      */
     private String getProxyPasswordEnvironment() {
-        if (getProtocol() == Protocol.HTTPS) {
-            if (getHttpsProxyUrlFromEnvironment() != null) {
-                return getHttpsProxyUrlFromEnvironment().getUserInfo().split(":", 2)[1];
-            }
-        } else {
-            if (getHttpProxyUrlFromEnvironment() != null) {
-                return getHttpProxyUrlFromEnvironment().getUserInfo().split(":", 2)[1];
-            }
+        try {
+            return getProtocol() == Protocol.HTTPS
+                    ? new URL(getEnvironmentVariableCaseInsensitive("HTTPS_PROXY")).getUserInfo().split(":", 2)[1]
+                    : new URL(getEnvironmentVariableCaseInsensitive("HTTP_PROXY")).getUserInfo().split(":", 2)[1];
+        } catch (MalformedURLException e) {
+            return null;
         }
-        return null;
     }
 
     /**
@@ -1125,11 +1090,7 @@ public class ClientConfiguration {
      * Returns the value of the environment variable NO_PROXY/no_proxy.
      */
     private String getNonProxyHostsEnvironment() {
-        if (getEnvironmentVariable("NO_PROXY") != null) {
-            return getEnvironmentVariable("NO_PROXY");
-        } else {
-            return getEnvironmentVariable("no_proxy");
-        }
+        return getEnvironmentVariableCaseInsensitive("NO_PROXY");
     }
 
     /**
