@@ -186,12 +186,23 @@ public class ClientConfigurationTest {
         assertEquals(config.getProxyHost(), "foo");
         System.clearProperty("http.proxyHost");
 
+        System.setProperty("https.proxyPort", "bad");
+        config = new ClientConfiguration();
+        assertEquals(config.getProxyPort(), -1);
+        System.clearProperty("https.proxyPort");
+
         System.setProperty("https.proxyPort", "8443");
         config = new ClientConfiguration();
         assertEquals(config.getProxyPort(), 8443);
         config.setProtocol(Protocol.HTTP);
         assertEquals(config.getProxyPort(), -1);
         System.clearProperty("https.proxyPort");
+
+        System.setProperty("http.proxyPort", "bad");
+        config = new ClientConfiguration();
+        config.setProtocol(Protocol.HTTP);
+        assertEquals(config.getProxyPort(), -1);
+        System.clearProperty("http.proxyPort");
 
         System.setProperty("http.proxyPort", "8080");
         config = new ClientConfiguration();

@@ -749,11 +749,10 @@ public class ClientConfiguration {
      * if the system property is not set with a valid port number.
      */
     private int getProxyPortProperty() {
-        final String proxyPortString = (getProtocol() == Protocol.HTTPS)
-                    ? getSystemProperty("https.proxyPort")
-                    : getSystemProperty("http.proxyPort");
         try {
-            return Integer.parseInt(proxyPortString);
+            return getProtocol() == Protocol.HTTPS
+                    ? Integer.parseInt(getSystemProperty("https.proxyPort"))
+                    : Integer.parseInt(getSystemProperty("http.proxyPort"));
         } catch (NumberFormatException e) {
             return proxyPort;
         }
