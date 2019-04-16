@@ -1020,6 +1020,16 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws InvalidSmsRoleAccessPolicyException
+     *         This exception is returned when the role provided for SMS configuration does not have permission to
+     *         publish using Amazon SNS.
+     * @throws InvalidEmailRoleAccessPolicyException
+     *         This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code:
+     *         400.
+     * @throws InvalidSmsRoleTrustRelationshipException
+     *         This exception is thrown when the trust relationship is invalid for the role provided for SMS
+     *         configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b> or the external ID
+     *         provided in the role does not match what is provided in the SMS configuration for the user pool.
      * @sample AWSCognitoIdentityProvider.AdminUpdateUserAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes"
      *      target="_top">AWS API Documentation</a>

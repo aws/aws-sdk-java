@@ -59,7 +59,7 @@ public class ModifyClusterMaintenanceRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't
-     * specify an end time. The duration must be 14 days or less.
+     * specify an end time. The duration must be 45 days or less.
      * </p>
      */
     private Integer deferMaintenanceDuration;
@@ -285,12 +285,12 @@ public class ModifyClusterMaintenanceRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't
-     * specify an end time. The duration must be 14 days or less.
+     * specify an end time. The duration must be 45 days or less.
      * </p>
      * 
      * @param deferMaintenanceDuration
      *        An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't
-     *        specify an end time. The duration must be 14 days or less.
+     *        specify an end time. The duration must be 45 days or less.
      */
 
     public void setDeferMaintenanceDuration(Integer deferMaintenanceDuration) {
@@ -300,11 +300,11 @@ public class ModifyClusterMaintenanceRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't
-     * specify an end time. The duration must be 14 days or less.
+     * specify an end time. The duration must be 45 days or less.
      * </p>
      * 
      * @return An integer indicating the duration of the maintenance window in days. If you specify a duration, you
-     *         can't specify an end time. The duration must be 14 days or less.
+     *         can't specify an end time. The duration must be 45 days or less.
      */
 
     public Integer getDeferMaintenanceDuration() {
@@ -314,12 +314,12 @@ public class ModifyClusterMaintenanceRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't
-     * specify an end time. The duration must be 14 days or less.
+     * specify an end time. The duration must be 45 days or less.
      * </p>
      * 
      * @param deferMaintenanceDuration
      *        An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't
-     *        specify an end time. The duration must be 14 days or less.
+     *        specify an end time. The duration must be 45 days or less.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

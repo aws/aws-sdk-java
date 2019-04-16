@@ -445,7 +445,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
     }
 
     /**
-     * Remove a tag from a resource.
+     * Removes a tag from a resource.
      * 
      * @param deleteTagsRequest
      * @return Result of the DeleteTags operation returned by the service.
@@ -608,6 +608,122 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeBrokerResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeBrokerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Describe available engine types and versions.
+     * 
+     * @param describeBrokerEngineTypesRequest
+     * @return Result of the DescribeBrokerEngineTypes operation returned by the service.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @sample AmazonMQ.DescribeBrokerEngineTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerEngineTypes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeBrokerEngineTypesResult describeBrokerEngineTypes(DescribeBrokerEngineTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBrokerEngineTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBrokerEngineTypesResult executeDescribeBrokerEngineTypes(DescribeBrokerEngineTypesRequest describeBrokerEngineTypesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeBrokerEngineTypesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeBrokerEngineTypesRequest> request = null;
+        Response<DescribeBrokerEngineTypesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeBrokerEngineTypesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeBrokerEngineTypesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBrokerEngineTypes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBrokerEngineTypesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeBrokerEngineTypesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Describe available broker instance options.
+     * 
+     * @param describeBrokerInstanceOptionsRequest
+     * @return Result of the DescribeBrokerInstanceOptions operation returned by the service.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @sample AmazonMQ.DescribeBrokerInstanceOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBrokerInstanceOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeBrokerInstanceOptionsResult describeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBrokerInstanceOptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBrokerInstanceOptionsResult executeDescribeBrokerInstanceOptions(DescribeBrokerInstanceOptionsRequest describeBrokerInstanceOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeBrokerInstanceOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeBrokerInstanceOptionsRequest> request = null;
+        Response<DescribeBrokerInstanceOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeBrokerInstanceOptionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeBrokerInstanceOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mq");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBrokerInstanceOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBrokerInstanceOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeBrokerInstanceOptionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

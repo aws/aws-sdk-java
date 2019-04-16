@@ -44,11 +44,15 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String scheduleDescription;
-
+    /**
+     * <p>
+     * An optional set of tags you can use to search for the schedule.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
-
+    /** <p/> */
     private Boolean dryRun;
-
+    /** <p/> */
     private Integer nextInvocations;
 
     /**
@@ -213,7 +217,11 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * An optional set of tags you can use to search for the schedule.
+     * </p>
+     * 
+     * @return An optional set of tags you can use to search for the schedule.
      */
 
     public java.util.List<Tag> getTags() {
@@ -224,7 +232,12 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * An optional set of tags you can use to search for the schedule.
+     * </p>
+     * 
      * @param tags
+     *        An optional set of tags you can use to search for the schedule.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -238,12 +251,16 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * An optional set of tags you can use to search for the schedule.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        An optional set of tags you can use to search for the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,7 +275,12 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * An optional set of tags you can use to search for the schedule.
+     * </p>
+     * 
      * @param tags
+     *        An optional set of tags you can use to search for the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,6 +290,8 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p/>
+     * 
      * @param dryRun
      */
 
@@ -276,6 +300,8 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -284,6 +310,8 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p/>
+     * 
      * @param dryRun
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -294,6 +322,8 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -302,6 +332,8 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p/>
+     * 
      * @param nextInvocations
      */
 
@@ -310,6 +342,8 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -318,6 +352,8 @@ public class CreateSnapshotScheduleRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p/>
+     * 
      * @param nextInvocations
      * @return Returns a reference to this object so that method calls can be chained together.
      */

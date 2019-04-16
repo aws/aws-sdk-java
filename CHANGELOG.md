@@ -1,3 +1,28 @@
+# __1.11.535__ __2019-04-16__
+## __AWS Organizations__
+  - ### Features
+    - Documentation updates for organizations
+
+## __AWS Storage Gateway__
+  - ### Features
+    - This change allows you to select either a weekly or monthly maintenance window for your volume or tape gateway. It also allows you to tag your tape and volume resources on creation by adding a Tag value on calls to the respective api endpoints.
+
+## __Amazon CloudWatch__
+  - ### Features
+    - Documentation updates for monitoring
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - This release adds support for the new email configuration in Amazon Cognito User Pools. You can now specify whether Amazon Cognito emails your users by using its built-in email functionality or your Amazon SES email configuration.
+
+## __Amazon Redshift__
+  - ### Features
+    - DescribeResize can now return percent of data transferred from source cluster to target cluster for a classic resize.
+
+## __AmazonMQ__
+  - ### Features
+    - This release adds the ability to retrieve information about broker engines and broker instance options. See Broker Engine Types and Broker Instance Options in the Amazon MQ REST API Reference.
+
 # __1.11.534__ __2019-04-05__
 ## __AWS Elemental MediaConvert__
   - ### Features

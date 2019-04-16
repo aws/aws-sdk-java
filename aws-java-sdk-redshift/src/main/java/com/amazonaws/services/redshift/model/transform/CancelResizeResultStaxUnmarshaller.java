@@ -134,6 +134,11 @@ public class CancelResizeResultStaxUnmarshaller implements Unmarshaller<CancelRe
                     cancelResizeResult.setTargetEncryptionType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("DataTransferProgressPercent", targetDepth)) {
+                    cancelResizeResult.setDataTransferProgressPercent(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cancelResizeResult;

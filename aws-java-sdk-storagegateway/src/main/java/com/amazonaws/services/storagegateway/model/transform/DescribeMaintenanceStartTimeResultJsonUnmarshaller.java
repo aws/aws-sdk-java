@@ -64,6 +64,10 @@ public class DescribeMaintenanceStartTimeResultJsonUnmarshaller implements Unmar
                     context.nextToken();
                     describeMaintenanceStartTimeResult.setDayOfWeek(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("DayOfMonth", targetDepth)) {
+                    context.nextToken();
+                    describeMaintenanceStartTimeResult.setDayOfMonth(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("Timezone", targetDepth)) {
                     context.nextToken();
                     describeMaintenanceStartTimeResult.setTimezone(context.getUnmarshaller(String.class).unmarshall(context));

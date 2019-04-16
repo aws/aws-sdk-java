@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class CreateTapeWithBarcodeRequestMarshaller {
             .marshallLocationName("KMSKey").build();
     private static final MarshallingInfo<String> POOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PoolId").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateTapeWithBarcodeRequestMarshaller instance = new CreateTapeWithBarcodeRequestMarshaller();
 
@@ -62,6 +65,7 @@ public class CreateTapeWithBarcodeRequestMarshaller {
             protocolMarshaller.marshall(createTapeWithBarcodeRequest.getKMSEncrypted(), KMSENCRYPTED_BINDING);
             protocolMarshaller.marshall(createTapeWithBarcodeRequest.getKMSKey(), KMSKEY_BINDING);
             protocolMarshaller.marshall(createTapeWithBarcodeRequest.getPoolId(), POOLID_BINDING);
+            protocolMarshaller.marshall(createTapeWithBarcodeRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

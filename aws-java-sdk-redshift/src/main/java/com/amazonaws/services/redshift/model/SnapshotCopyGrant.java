@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For more information about managing snapshot copy grants, go to <a
- * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
+ * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
  * Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
  * </p>
  * 

@@ -75,7 +75,7 @@ public class ReservedNodeOffering implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RecurringCharge> recurringCharges;
-
+    /** <p/> */
     private String reservedNodeOfferingType;
 
     /**
@@ -440,6 +440,8 @@ public class ReservedNodeOffering implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param reservedNodeOfferingType
      * @see ReservedNodeOfferingType
      */
@@ -449,6 +451,8 @@ public class ReservedNodeOffering implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @return
      * @see ReservedNodeOfferingType
      */
@@ -458,6 +462,8 @@ public class ReservedNodeOffering implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param reservedNodeOfferingType
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReservedNodeOfferingType
@@ -469,6 +475,8 @@ public class ReservedNodeOffering implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param reservedNodeOfferingType
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReservedNodeOfferingType

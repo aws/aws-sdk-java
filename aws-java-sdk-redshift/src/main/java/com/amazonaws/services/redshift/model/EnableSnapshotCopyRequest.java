@@ -42,7 +42,7 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Constraints: Must be the name of a valid AWS Region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
      * Amazon Web Services General Reference.
      * </p>
      */
@@ -145,7 +145,7 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Constraints: Must be the name of a valid AWS Region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
      * Amazon Web Services General Reference.
      * </p>
      * 
@@ -153,7 +153,7 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
      *        The destination AWS Region that you want to copy snapshots to.</p>
      *        <p>
      *        Constraints: Must be the name of a valid AWS Region. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
      *        in the Amazon Web Services General Reference.
      */
 
@@ -167,14 +167,14 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Constraints: Must be the name of a valid AWS Region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
      * Amazon Web Services General Reference.
      * </p>
      * 
      * @return The destination AWS Region that you want to copy snapshots to.</p>
      *         <p>
      *         Constraints: Must be the name of a valid AWS Region. For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
      *         in the Amazon Web Services General Reference.
      */
 
@@ -188,7 +188,7 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Constraints: Must be the name of a valid AWS Region. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the
      * Amazon Web Services General Reference.
      * </p>
      * 
@@ -196,7 +196,7 @@ public class EnableSnapshotCopyRequest extends com.amazonaws.AmazonWebServiceReq
      *        The destination AWS Region that you want to copy snapshots to.</p>
      *        <p>
      *        Constraints: Must be the name of a valid AWS Region. For more information, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a>
      *        in the Amazon Web Services General Reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -36,7 +36,7 @@ import com.amazonaws.services.redshift.model.*;
  * when a command has been applied. In this reference, the parameter descriptions indicate whether a change is applied
  * immediately, on the next instance reboot, or during the next maintenance window. For a summary of the Amazon Redshift
  * cluster management interfaces, go to <a
- * href="http://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html">Using the Amazon Redshift Management
+ * href="https://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html">Using the Amazon Redshift Management
  * Interfaces</a>.
  * </p>
  * <p>
@@ -46,10 +46,11 @@ import com.amazonaws.services.redshift.model.*;
  * </p>
  * <p>
  * If you are a first-time user of Amazon Redshift, we recommend that you begin by reading the <a
- * href="http://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html">Amazon Redshift Getting Started Guide</a>.
+ * href="https://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html">Amazon Redshift Getting Started
+ * Guide</a>.
  * </p>
  * <p>
- * If you are a database developer, the <a href="http://docs.aws.amazon.com/redshift/latest/dg/welcome.html">Amazon
+ * If you are a database developer, the <a href="https://docs.aws.amazon.com/redshift/latest/dg/welcome.html">Amazon
  * Redshift Database Developer Guide</a> explains how to design, build, query, and maintain the databases that make up
  * your data warehouse.
  * </p>
@@ -110,7 +111,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * You must also associate the security group with a cluster so that clients running on these IP addresses or the
      * EC2 instance are authorized to connect to the cluster. For information about managing security groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working with Security
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working with Security
      * Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -144,7 +145,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * You must also associate the security group with a cluster so that clients running on these IP addresses or the
      * EC2 instance are authorized to connect to the cluster. For information about managing security groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working with Security
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working with Security
      * Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -169,7 +170,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
      * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -187,7 +188,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
      * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -314,7 +315,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
      * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -339,7 +340,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
      * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -364,8 +365,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
      * subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster. For more
      * information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param createClusterRequest
@@ -384,8 +385,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
      * subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster. For more
      * information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param createClusterRequest
@@ -413,7 +414,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * Parameters in the parameter group define specific behavior that applies to the databases you create on the
      * cluster. For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -437,7 +438,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * Parameters in the parameter group define specific behavior that applies to the databases you create on the
      * cluster. For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -460,7 +461,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For information about managing security groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
      * Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -478,7 +479,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For information about managing security groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
      * Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -501,7 +502,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
      * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -519,7 +520,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
      * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -543,7 +544,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For information about subnet groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon Redshift
      * Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -562,7 +563,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For information about subnet groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon Redshift
      * Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -655,8 +656,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * The command returns a public key, which you must store in the HSM. In addition to creating the HSM certificate,
      * you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to store and
      * use encryption keys in the HSM. For more information, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware Security Modules</a> in the
-     * Amazon Redshift Cluster Management Guide.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware Security Modules</a> in
+     * the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
      * @param createHsmClientCertificateRequest
@@ -676,8 +677,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * The command returns a public key, which you must store in the HSM. In addition to creating the HSM certificate,
      * you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to store and
      * use encryption keys in the HSM. For more information, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware Security Modules</a> in the
-     * Amazon Redshift Cluster Management Guide.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware Security Modules</a> in
+     * the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
      * @param createHsmClientCertificateRequest
@@ -701,7 +702,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * In addition to creating an HSM configuration, you must also create an HSM client certificate. For more
-     * information, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
+     * information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
      * Security Modules</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
@@ -721,7 +722,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * In addition to creating an HSM configuration, you must also create an HSM client certificate. For more
-     * information, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
+     * information, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware
      * Security Modules</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
@@ -745,7 +746,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about managing snapshot copy grants, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
      * Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -765,7 +766,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about managing snapshot copy grants, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
      * Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -868,8 +869,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * Deletes a previously provisioned cluster. A successful response from the web service indicates that the request
      * was received correctly. Use <a>DescribeClusters</a> to monitor the status of the deletion. The delete operation
      * cannot be canceled or reverted once submitted. For more information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
      * If you want to shut down the cluster and retain it for future use, set <i>SkipFinalClusterSnapshot</i> to
@@ -880,8 +881,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param deleteClusterRequest
@@ -897,8 +898,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * Deletes a previously provisioned cluster. A successful response from the web service indicates that the request
      * was received correctly. Use <a>DescribeClusters</a> to monitor the status of the deletion. The delete operation
      * cannot be canceled or reverted once submitted. For more information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
      * If you want to shut down the cluster and retain it for future use, set <i>SkipFinalClusterSnapshot</i> to
@@ -909,8 +910,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param deleteClusterRequest
@@ -981,7 +982,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </note>
      * <p>
      * For information about managing security groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
      * Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -1006,7 +1007,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </note>
      * <p>
      * For information about managing security groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
      * Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -1369,7 +1370,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -1402,7 +1403,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -1460,7 +1461,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -1486,7 +1487,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -1511,7 +1512,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For information about managing security groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
      * Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -1542,7 +1543,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For information about managing security groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
      * Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -1764,7 +1765,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before
      * creating any clusters to learn more about the Amazon Redshift versions. For more information about managing
-     * clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+     * clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
      * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -1780,7 +1781,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before
      * creating any clusters to learn more about the Amazon Redshift versions. For more information about managing
-     * clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+     * clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
      * Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -1817,8 +1818,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * Returns properties of provisioned clusters including general cluster properties, cluster database properties,
      * maintenance and backup properties, and security and access properties. This operation supports pagination. For
      * more information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
      * If you specify both tag keys and tag values in the same request, Amazon Redshift returns all clusters that match
@@ -1844,8 +1845,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * Returns properties of provisioned clusters including general cluster properties, cluster database properties,
      * maintenance and backup properties, and security and access properties. This operation supports pagination. For
      * more information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
      * If you specify both tag keys and tag values in the same request, Amazon Redshift returns all clusters that match
@@ -1892,7 +1893,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -1912,7 +1913,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -1935,7 +1936,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * Displays a list of event categories for all event source types, or for a specified source type. For a list of the
      * event categories and source types, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon Redshift
      * Event Notifications</a>.
      * </p>
      * 
@@ -1951,7 +1952,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <p>
      * Displays a list of event categories for all event source types, or for a specified source type. For a list of the
      * event categories and source types, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon Redshift
      * Event Notifications</a>.
      * </p>
      * 
@@ -2286,8 +2287,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * specify, and the node types you can request. The node types differ by available storage, memory, CPU and price.
      * With the cost involved you might want to obtain a list of cluster options in the specific region and specify
      * values when creating a cluster. For more information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param describeOrderableClusterOptionsRequest
@@ -2307,8 +2308,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * specify, and the node types you can request. The node types differ by available storage, memory, CPU and price.
      * With the cost involved you might want to obtain a list of cluster options in the specific region and specify
      * values when creating a cluster. For more information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param describeOrderableClusterOptionsRequest
@@ -2352,7 +2353,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about reserved node offerings, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved
      * Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -2376,7 +2377,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about reserved node offerings, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved
      * Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -2506,7 +2507,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about managing snapshot copy grants, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
      * Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -2526,7 +2527,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about managing snapshot copy grants, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database
      * Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -2929,14 +2930,14 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * specify one or more database user groups that the user will join at log on. By default, the temporary credentials
      * expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds
      * (60 minutes). For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using IAM Authentication
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using IAM Authentication
      * to Generate Database User Credentials</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
      * The AWS Identity and Access Management (IAM)user or role that executes GetClusterCredentials must have an IAM
      * policy attached that allows access to all necessary actions and resources. For more information about
      * permissions, see <a href=
-     * "http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources"
+     * "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources"
      * >Resource Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2969,14 +2970,14 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * specify one or more database user groups that the user will join at log on. By default, the temporary credentials
      * expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds
      * (60 minutes). For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using IAM Authentication
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/generating-user-credentials.html">Using IAM Authentication
      * to Generate Database User Credentials</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
      * The AWS Identity and Access Management (IAM)user or role that executes GetClusterCredentials must have an IAM
      * policy attached that allows access to all necessary actions and resources. For more information about
      * permissions, see <a href=
-     * "http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources"
+     * "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html#redshift-policy-resources.getclustercredentials-resources"
      * >Resource Policies for GetClusterCredentials</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -3049,8 +3050,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * preferred maintenance window, or change the master user password. Resetting a cluster password or modifying the
      * security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a
      * reboot for parameters to take effect. For more information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
      * You can also change node type and the number of nodes to scale up or down the cluster. When resizing a cluster,
@@ -3071,8 +3072,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * preferred maintenance window, or change the master user password. Resetting a cluster password or modifying the
      * security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a
      * reboot for parameters to take effect. For more information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
      * You can also change node type and the number of nodes to scale up or down the cluster. When resizing a cluster,
@@ -3203,7 +3204,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -3222,7 +3223,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about parameters and parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -3453,7 +3454,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about reserved node offerings, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved
      * Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -3475,7 +3476,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about reserved node offerings, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved
      * Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -3499,8 +3500,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * during which the cluster status is set to <code>rebooting</code>. A cluster event is created when the reboot is
      * completed. Any pending cluster modifications (see <a>ModifyCluster</a>) are applied at this reboot. For more
      * information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param rebootClusterRequest
@@ -3517,8 +3518,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * during which the cluster status is set to <code>rebooting</code>. A cluster event is created when the reboot is
      * completed. Any pending cluster modifications (see <a>ModifyCluster</a>) are applied at this reboot. For more
      * information about managing clusters, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
-     * the <i>Amazon Redshift Cluster Management Guide</i>.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a>
+     * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param rebootClusterRequest
@@ -3694,7 +3695,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
      * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -3720,7 +3721,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
      * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -3797,7 +3798,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2
      * security group. To add an ingress rule, see <a>AuthorizeClusterSecurityGroupIngress</a>. For information about
      * managing security groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
      * Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -3816,7 +3817,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2
      * security group. To add an ingress rule, see <a>AuthorizeClusterSecurityGroupIngress</a>. For information about
      * managing security groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster
      * Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -3842,7 +3843,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
      * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
@@ -3861,7 +3862,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * <p>
      * For more information about working with snapshots, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a>
      * in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 

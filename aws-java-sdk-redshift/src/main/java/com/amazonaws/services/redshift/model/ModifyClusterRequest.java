@@ -250,7 +250,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * group in the cluster parameter group family for the new version must be specified. The new cluster parameter
      * group can be the default for that cluster parameter group family. For more information about parameters and
      * parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -335,7 +335,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
      * more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      */
@@ -344,7 +344,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -1808,7 +1808,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * group in the cluster parameter group family for the new version must be specified. The new cluster parameter
      * group can be the default for that cluster parameter group family. For more information about parameters and
      * parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -1822,7 +1822,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        parameter group in the cluster parameter group family for the new version must be specified. The new
      *        cluster parameter group can be the default for that cluster parameter group family. For more information
      *        about parameters and parameter groups, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      *        </p>
      *        <p>
@@ -1842,7 +1842,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * group in the cluster parameter group family for the new version must be specified. The new cluster parameter
      * group can be the default for that cluster parameter group family. For more information about parameters and
      * parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -1855,8 +1855,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         parameter group in the cluster parameter group family for the new version must be specified. The new
      *         cluster parameter group can be the default for that cluster parameter group family. For more information
      *         about parameters and parameter groups, go to <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
-     *         Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      *         </p>
      *         <p>
      *         Example: <code>1.0</code>
@@ -1875,7 +1875,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * group in the cluster parameter group family for the new version must be specified. The new cluster parameter
      * group can be the default for that cluster parameter group family. For more information about parameters and
      * parameter groups, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      * Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * <p>
@@ -1889,7 +1889,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        parameter group in the cluster parameter group family for the new version must be specified. The new
      *        cluster parameter group can be the default for that cluster parameter group family. For more information
      *        about parameters and parameter groups, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift
      *        Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      *        </p>
      *        <p>
@@ -2376,7 +2376,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
      * more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
@@ -2385,7 +2385,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
      *        gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *        >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      */
 
@@ -2400,7 +2400,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
      * more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
@@ -2408,7 +2408,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
      *         gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *         >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      */
 
@@ -2423,7 +2423,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
      * more information about provisioning clusters in EC2-VPC, go to <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
      * 
@@ -2432,7 +2432,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
      *        gateway. For more information about provisioning clusters in EC2-VPC, go to <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *        >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2446,7 +2446,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2459,7 +2459,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param enhancedVpcRouting
      *        An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *        cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
      *        in the Amazon Redshift Cluster Management Guide.</p>
      *        <p>
      *        If this option is <code>true</code>, enhanced VPC routing is enabled.
@@ -2476,7 +2476,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2488,8 +2488,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *         cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
-     *         in the Amazon Redshift Cluster Management Guide.</p>
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC
+     *         Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
      *         <p>
      *         If this option is <code>true</code>, enhanced VPC routing is enabled.
      *         </p>
@@ -2505,7 +2505,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2518,7 +2518,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param enhancedVpcRouting
      *        An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *        cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *        href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
+     *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
      *        in the Amazon Redshift Cluster Management Guide.</p>
      *        <p>
      *        If this option is <code>true</code>, enhanced VPC routing is enabled.
@@ -2537,7 +2537,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster
      * that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the
      * Amazon Redshift Cluster Management Guide.
      * </p>
      * <p>
@@ -2549,8 +2549,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a
      *         cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a
-     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a>
-     *         in the Amazon Redshift Cluster Management Guide.</p>
+     *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC
+     *         Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
      *         <p>
      *         If this option is <code>true</code>, enhanced VPC routing is enabled.
      *         </p>

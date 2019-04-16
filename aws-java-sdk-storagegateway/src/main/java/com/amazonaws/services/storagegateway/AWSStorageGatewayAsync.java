@@ -28,7 +28,7 @@ import com.amazonaws.services.storagegateway.model.*;
  * <fullname>AWS Storage Gateway Service</fullname>
  * <p>
  * AWS Storage Gateway is the service that connects an on-premises software appliance with cloud-based storage to
- * provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage
+ * provide seamless and secure integration between an organization's on-premises IT environment and the AWS storage
  * infrastructure. The service enables you to securely upload data to the AWS cloud for cost effective backup and rapid
  * disaster recovery.
  * </p>
@@ -301,7 +301,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </li>
      * </ul>
      * <p>
-     * You can create a maximum of 10 tags for each resource. Virtual tapes and storage volumes that are recovered to a
+     * You can create a maximum of 50 tags for each resource. Virtual tapes and storage volumes that are recovered to a
      * new gateway maintain their tags.
      * </p>
      * 
@@ -344,7 +344,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </li>
      * </ul>
      * <p>
-     * You can create a maximum of 10 tags for each resource. Virtual tapes and storage volumes that are recovered to a
+     * You can create a maximum of 50 tags for each resource. Virtual tapes and storage volumes that are recovered to a
      * new gateway maintain their tags.
      * </p>
      * 
@@ -775,7 +775,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage
      * (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in
-     * Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis.
+     * Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
      * This API enables you to take ad-hoc snapshot. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
      * >Editing a Snapshot Schedule</a>.
@@ -827,7 +827,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage
      * (S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS) volume in
-     * Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad-hoc basis.
+     * Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
      * This API enables you to take ad-hoc snapshot. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
      * >Editing a Snapshot Schedule</a>.
@@ -2893,6 +2893,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
      * >Getting Notified About File Operations</a>.
      * </p>
+     * <p>
+     * When this API is called, it only initiates the refresh operation. When the API call completes and returns a
+     * success code, it doesn't necessarily mean that the file refresh has completed. You should use the
+     * refresh-complete notification to determine that the operation has completed before you check for new files on the
+     * gateway file share. You can subscribe to be notified through an CloudWatch event when your
+     * <code>RefreshCache</code> operation completes.
+     * </p>
      * 
      * @param refreshCacheRequest
      *        RefreshCacheInput
@@ -2911,6 +2918,13 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * CloudWatch event when your RefreshCache operation completes. For more information, see <a href=
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
      * >Getting Notified About File Operations</a>.
+     * </p>
+     * <p>
+     * When this API is called, it only initiates the refresh operation. When the API call completes and returns a
+     * success code, it doesn't necessarily mean that the file refresh has completed. You should use the
+     * refresh-complete notification to determine that the operation has completed before you check for new files on the
+     * gateway file share. You can subscribe to be notified through an CloudWatch event when your
+     * <code>RefreshCache</code> operation completes.
      * </p>
      * 
      * @param refreshCacheRequest
@@ -3635,6 +3649,11 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      *        <ul>
      *        <li>
      *        <p>
+     *        <a>UpdateMaintenanceStartTimeInput$DayOfMonth</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a>
      *        </p>
      *        </li>
@@ -3665,6 +3684,11 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * @param updateMaintenanceStartTimeRequest
      *        A JSON object containing the following fields:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <a>UpdateMaintenanceStartTimeInput$DayOfMonth</a>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a>

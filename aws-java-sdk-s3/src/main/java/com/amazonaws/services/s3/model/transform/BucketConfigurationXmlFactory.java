@@ -600,7 +600,7 @@ public class BucketConfigurationXmlFactory {
                 }
 
                 xml.start("StorageClass");
-                xml.value(t.getStorageClass().toString());
+                xml.value(t.getStorageClassAsString());
                 xml.end(); // <StorageClass>
                 xml.end(); // </Transition>
             }
@@ -623,7 +623,7 @@ public class BucketConfigurationXmlFactory {
                 }
 
                 xml.start("StorageClass");
-                xml.value(t.getStorageClass().toString());
+                xml.value(t.getStorageClassAsString());
                 xml.end(); // </StorageClass>
                 xml.end(); // </NoncurrentVersionTransition>
             }

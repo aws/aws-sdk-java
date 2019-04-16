@@ -108,7 +108,7 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first must
- * associate a payment instrument, such as a credit card, with the account. Follow the steps at <a href=
+ * associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href=
  * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
  * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
  * Organizations User Guide</i>.
@@ -117,7 +117,7 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must
- * associate a payment instrument, such as a credit card, with the account. Follow the steps at <a href=
+ * associate a valid payment instrument, such as a credit card, with the account. Follow the steps at <a href=
  * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
  * >To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
  * Organizations User Guide</i>.

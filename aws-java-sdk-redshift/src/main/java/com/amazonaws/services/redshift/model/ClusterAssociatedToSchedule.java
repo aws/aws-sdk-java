@@ -16,6 +16,7 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ClusterAssociatedToSchedule"
  *      target="_top">AWS API Documentation</a>
@@ -23,11 +24,14 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ClusterAssociatedToSchedule implements Serializable, Cloneable {
 
+    /** <p/> */
     private String clusterIdentifier;
-
+    /** <p/> */
     private String scheduleAssociationState;
 
     /**
+     * <p/>
+     * 
      * @param clusterIdentifier
      */
 
@@ -36,6 +40,8 @@ public class ClusterAssociatedToSchedule implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -44,6 +50,8 @@ public class ClusterAssociatedToSchedule implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param clusterIdentifier
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -54,6 +62,8 @@ public class ClusterAssociatedToSchedule implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param scheduleAssociationState
      * @see ScheduleState
      */
@@ -63,6 +73,8 @@ public class ClusterAssociatedToSchedule implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @return
      * @see ScheduleState
      */
@@ -72,6 +84,8 @@ public class ClusterAssociatedToSchedule implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param scheduleAssociationState
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScheduleState
@@ -83,6 +97,8 @@ public class ClusterAssociatedToSchedule implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param scheduleAssociationState
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScheduleState

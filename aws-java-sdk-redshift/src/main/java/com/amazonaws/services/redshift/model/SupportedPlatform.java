@@ -26,9 +26,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SupportedPlatform implements Serializable, Cloneable {
 
+    /** <p/> */
     private String name;
 
     /**
+     * <p/>
+     * 
      * @param name
      */
 
@@ -37,6 +40,8 @@ public class SupportedPlatform implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -45,6 +50,8 @@ public class SupportedPlatform implements Serializable, Cloneable {
     }
 
     /**
+     * <p/>
+     * 
      * @param name
      * @return Returns a reference to this object so that method calls can be chained together.
      */
