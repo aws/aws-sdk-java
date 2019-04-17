@@ -25,17 +25,17 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more account attributes.
+     * Information about the account attributes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AccountAttribute> accountAttributes;
 
     /**
      * <p>
-     * Information about one or more account attributes.
+     * Information about the account attributes.
      * </p>
      * 
-     * @return Information about one or more account attributes.
+     * @return Information about the account attributes.
      */
 
     public java.util.List<AccountAttribute> getAccountAttributes() {
@@ -47,11 +47,11 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more account attributes.
+     * Information about the account attributes.
      * </p>
      * 
      * @param accountAttributes
-     *        Information about one or more account attributes.
+     *        Information about the account attributes.
      */
 
     public void setAccountAttributes(java.util.Collection<AccountAttribute> accountAttributes) {
@@ -65,7 +65,7 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more account attributes.
+     * Information about the account attributes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param accountAttributes
-     *        Information about one or more account attributes.
+     *        Information about the account attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about one or more account attributes.
+     * Information about the account attributes.
      * </p>
      * 
      * @param accountAttributes
-     *        Information about one or more account attributes.
+     *        Information about the account attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

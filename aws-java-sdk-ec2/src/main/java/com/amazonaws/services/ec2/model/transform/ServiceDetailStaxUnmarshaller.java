@@ -99,6 +99,11 @@ public class ServiceDetailStaxUnmarshaller implements Unmarshaller<ServiceDetail
                     serviceDetail.setAcceptanceRequired(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("managesVpcEndpoints", targetDepth)) {
+                    serviceDetail.setManagesVpcEndpoints(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return serviceDetail;

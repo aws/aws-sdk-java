@@ -1276,9 +1276,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [EC2-VPC only] Adds one or more egress rules to a security group for use with a VPC. Specifically, this action
-     * permits instances to send traffic to one or more destination IPv4 or IPv6 CIDR address ranges, or to one or more
-     * destination security groups for the same VPC. This action doesn't apply to security groups for use in
+     * [EC2-VPC only] Adds the specified egress rules to a security group for use with a VPC. Specifically, this action
+     * permits instances to send traffic to the specified destination IPv4 or IPv6 CIDR address ranges, or to the
+     * specified destination security groups for the same VPC. This action doesn't apply to security groups for use in
      * EC2-Classic. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
      * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. For more information about security group limits,
@@ -1307,9 +1307,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [EC2-VPC only] Adds one or more egress rules to a security group for use with a VPC. Specifically, this action
-     * permits instances to send traffic to one or more destination IPv4 or IPv6 CIDR address ranges, or to one or more
-     * destination security groups for the same VPC. This action doesn't apply to security groups for use in
+     * [EC2-VPC only] Adds the specified egress rules to a security group for use with a VPC. Specifically, this action
+     * permits instances to send traffic to the specified destination IPv4 or IPv6 CIDR address ranges, or to the
+     * specified destination security groups for the same VPC. This action doesn't apply to security groups for use in
      * EC2-Classic. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your
      * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. For more information about security group limits,
@@ -1343,21 +1343,20 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Adds one or more ingress rules to a security group.
+     * Adds the specified ingress rules to a security group.
      * </p>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
      * </p>
      * <p>
-     * [EC2-Classic] This action gives one or more IPv4 CIDR address ranges permission to access a security group in
-     * your account, or gives one or more security groups (called the <i>source groups</i>) permission to access a
-     * security group for your account. A source group can be for your own AWS account, or another. You can have up to
-     * 100 rules per group.
+     * [EC2-Classic] This action gives the IPv4 CIDR address ranges permission to access a security group in your
+     * account, or gives the security groups (called the <i>source groups</i>) permission to access a security group for
+     * your account. A source group can be for your own AWS account, or another. You can have up to 100 rules per group.
      * </p>
      * <p>
-     * [EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address ranges permission to access a security group in
-     * your VPC, or gives one or more other security groups (called the <i>source groups</i>) permission to access a
+     * [EC2-VPC] This action gives the specified IPv4 or IPv6 CIDR address ranges permission to access a security group
+     * in your VPC, or gives the specified security groups (called the <i>source groups</i>) permission to access a
      * security group for your VPC. The security groups must all be for the same VPC or a peer VPC in a VPC peering
      * connection. For more information about VPC security group limits, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a>.
@@ -1378,21 +1377,20 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Adds one or more ingress rules to a security group.
+     * Adds the specified ingress rules to a security group.
      * </p>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
      * </p>
      * <p>
-     * [EC2-Classic] This action gives one or more IPv4 CIDR address ranges permission to access a security group in
-     * your account, or gives one or more security groups (called the <i>source groups</i>) permission to access a
-     * security group for your account. A source group can be for your own AWS account, or another. You can have up to
-     * 100 rules per group.
+     * [EC2-Classic] This action gives the IPv4 CIDR address ranges permission to access a security group in your
+     * account, or gives the security groups (called the <i>source groups</i>) permission to access a security group for
+     * your account. A source group can be for your own AWS account, or another. You can have up to 100 rules per group.
      * </p>
      * <p>
-     * [EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address ranges permission to access a security group in
-     * your VPC, or gives one or more other security groups (called the <i>source groups</i>) permission to access a
+     * [EC2-VPC] This action gives the specified IPv4 or IPv6 CIDR address ranges permission to access a security group
+     * in your VPC, or gives the specified security groups (called the <i>source groups</i>) permission to access a
      * security group for your VPC. The security groups must all be for the same VPC or a peer VPC in a VPC peering
      * connection. For more information about VPC security group limits, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a>.
@@ -2683,7 +2681,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createImageRequest
-     *        Contains the parameters for CreateImage.
      * @return A Java Future containing the result of the CreateImage operation returned by the service.
      * @sample AmazonEC2Async.CreateImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage" target="_top">AWS API
@@ -2707,7 +2704,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createImageRequest
-     *        Contains the parameters for CreateImage.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -3797,8 +3793,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified Amazon EC2 resource or resources. Each resource can have a
-     * maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique per resource.
+     * Adds or overwrites the specified tags for the specified Amazon EC2 resource or resources. Each resource can have
+     * a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique per resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -3819,8 +3815,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Adds or overwrites one or more tags for the specified Amazon EC2 resource or resources. Each resource can have a
-     * maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique per resource.
+     * Adds or overwrites the specified tags for the specified Amazon EC2 resource or resources. Each resource can have
+     * a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique per resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -6214,7 +6210,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your Elastic IP addresses.
+     * Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
@@ -6232,7 +6228,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your Elastic IP addresses.
+     * Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
@@ -6337,9 +6333,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of the Availability Zones that are available to you. The results include zones only for the
-     * region you're currently using. If there is an event impacting an Availability Zone, you can use this request to
-     * view the state and any provided message for that Availability Zone.
+     * Describes the Availability Zones that are available to you. The results include zones only for the region you're
+     * currently using. If there is an event impacting an Availability Zone, you can use this request to view the state
+     * and any provided message for that Availability Zone.
      * </p>
      * <p>
      * For more information, see <a
@@ -6358,9 +6354,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of the Availability Zones that are available to you. The results include zones only for the
-     * region you're currently using. If there is an event impacting an Availability Zone, you can use this request to
-     * view the state and any provided message for that Availability Zone.
+     * Describes the Availability Zones that are available to you. The results include zones only for the region you're
+     * currently using. If there is an event impacting an Availability Zone, you can use this request to view the state
+     * and any provided message for that Availability Zone.
      * </p>
      * <p>
      * For more information, see <a
@@ -6399,7 +6395,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your bundling tasks.
+     * Describes the specified bundle tasks or all of your bundle tasks.
      * </p>
      * <note>
      * <p>
@@ -6410,7 +6406,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param describeBundleTasksRequest
-     *        Contains the parameters for DescribeBundleTasks.
      * @return A Java Future containing the result of the DescribeBundleTasks operation returned by the service.
      * @sample AmazonEC2Async.DescribeBundleTasks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks" target="_top">AWS API
@@ -6420,7 +6415,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your bundling tasks.
+     * Describes the specified bundle tasks or all of your bundle tasks.
      * </p>
      * <note>
      * <p>
@@ -6431,7 +6426,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param describeBundleTasksRequest
-     *        Contains the parameters for DescribeBundleTasks.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -7622,9 +7616,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images available to you include
-     * public images, private images that you own, and private images owned by other AWS accounts but for which you have
-     * explicit launch permissions.
+     * Describes the specified images (AMIs, AKIs, and ARIs) available to you or all of the images available to you.
+     * </p>
+     * <p>
+     * The images available to you include public images, private images that you own, and private images owned by other
+     * AWS accounts for which you have explicit launch permissions.
      * </p>
      * <note>
      * <p>
@@ -7633,7 +7629,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param describeImagesRequest
-     *        Contains the parameters for DescribeImages.
      * @return A Java Future containing the result of the DescribeImages operation returned by the service.
      * @sample AmazonEC2Async.DescribeImages
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages" target="_top">AWS API
@@ -7643,9 +7638,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images available to you include
-     * public images, private images that you own, and private images owned by other AWS accounts but for which you have
-     * explicit launch permissions.
+     * Describes the specified images (AMIs, AKIs, and ARIs) available to you or all of the images available to you.
+     * </p>
+     * <p>
+     * The images available to you include public images, private images that you own, and private images owned by other
+     * AWS accounts for which you have explicit launch permissions.
      * </p>
      * <note>
      * <p>
@@ -7654,7 +7651,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </note>
      * 
      * @param describeImagesRequest
-     *        Contains the parameters for DescribeImages.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -7823,7 +7819,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the credit option for CPU usage of one or more of your T2 or T3 instances. The credit options are
+     * Describes the credit option for CPU usage of the specified T2 or T3 instances. The credit options are
      * <code>standard</code> and <code>unlimited</code>.
      * </p>
      * <p>
@@ -7863,7 +7859,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the credit option for CPU usage of one or more of your T2 or T3 instances. The credit options are
+     * Describes the credit option for CPU usage of the specified T2 or T3 instances. The credit options are
      * <code>standard</code> and <code>unlimited</code>.
      * </p>
      * <p>
@@ -7908,8 +7904,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the status of one or more instances. By default, only running instances are described, unless you
-     * specifically indicate to return the status of all instances.
+     * Describes the status of the specified instances or all of your instances. By default, only running instances are
+     * described, unless you specifically indicate to return the status of all instances.
      * </p>
      * <p>
      * Instance status includes the following components:
@@ -7953,8 +7949,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the status of one or more instances. By default, only running instances are described, unless you
-     * specifically indicate to return the status of all instances.
+     * Describes the status of the specified instances or all of your instances. By default, only running instances are
+     * described, unless you specifically indicate to return the status of all instances.
      * </p>
      * <p>
      * Instance status includes the following components:
@@ -8018,7 +8014,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your instances.
+     * Describes the specified instances or all of your instances.
      * </p>
      * <p>
      * If you specify one or more instance IDs, Amazon EC2 returns information for those instances. If you do not
@@ -8046,7 +8042,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your instances.
+     * Describes the specified instances or all of your instances.
      * </p>
      * <p>
      * If you specify one or more instance IDs, Amazon EC2 returns information for those instances. If you do not
@@ -8140,7 +8136,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your key pairs.
+     * Describes the specified key pairs or all of your key pairs.
      * </p>
      * <p>
      * For more information about key pairs, see <a
@@ -8158,7 +8154,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your key pairs.
+     * Describes the specified key pairs or all of your key pairs.
      * </p>
      * <p>
      * For more information about key pairs, see <a
@@ -8523,7 +8519,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your placement groups. For more information, see <a
+     * Describes the specified placement groups or all of your placement groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -8538,7 +8534,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your placement groups. For more information, see <a
+     * Describes the specified placement groups or all of your placement groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -8725,7 +8721,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more regions that are currently available to you.
+     * Describes the regions that are currently available to you.
      * </p>
      * <p>
      * For a list of the regions supported by Amazon EC2, see <a
@@ -8742,7 +8738,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more regions that are currently available to you.
+     * Describes the regions that are currently available to you.
      * </p>
      * <p>
      * For a list of the regions supported by Amazon EC2, see <a
@@ -9269,7 +9265,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your security groups.
+     * Describes the specified security groups or all of your security groups.
      * </p>
      * <p>
      * A security group is for use with instances either in the EC2-Classic platform or in a specific VPC. For more
@@ -9289,7 +9285,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your security groups.
+     * Describes the specified security groups or all of your security groups.
      * </p>
      * <p>
      * A security group is for use with instances either in the EC2-Classic platform or in a specific VPC. For more
@@ -9374,9 +9370,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of the EBS snapshots available to you. Available snapshots include public snapshots
-     * available for use by any AWS account, private snapshots that you own, and private snapshots owned by another AWS
-     * account for which you've been given explicit create volume permissions.
+     * Describes the specified EBS snapshots available to you or all of the EBS snapshots available to you.
+     * </p>
+     * <p>
+     * The snapshots available to you include public snapshots, private snapshots that you own, and private snapshots
+     * owned by other AWS accounts for which you have explicit create volume permissions.
      * </p>
      * <p>
      * The create volume permissions fall into the following categories:
@@ -9434,7 +9432,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSnapshotsRequest
-     *        Contains the parameters for DescribeSnapshots.
      * @return A Java Future containing the result of the DescribeSnapshots operation returned by the service.
      * @sample AmazonEC2Async.DescribeSnapshots
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots" target="_top">AWS API
@@ -9444,9 +9441,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of the EBS snapshots available to you. Available snapshots include public snapshots
-     * available for use by any AWS account, private snapshots that you own, and private snapshots owned by another AWS
-     * account for which you've been given explicit create volume permissions.
+     * Describes the specified EBS snapshots available to you or all of the EBS snapshots available to you.
+     * </p>
+     * <p>
+     * The snapshots available to you include public snapshots, private snapshots that you own, and private snapshots
+     * owned by other AWS accounts for which you have explicit create volume permissions.
      * </p>
      * <p>
      * The create volume permissions fall into the following categories:
@@ -9504,7 +9503,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeSnapshotsRequest
-     *        Contains the parameters for DescribeSnapshots.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -9964,7 +9962,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of the tags for your EC2 resources.
+     * Describes the specified tags for your EC2 resources.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -9982,7 +9980,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of the tags for your EC2 resources.
+     * Describes the specified tags for your EC2 resources.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -10246,7 +10244,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVolumeStatusRequest
-     *        Contains the parameters for DescribeVolumeStatus.
      * @return A Java Future containing the result of the DescribeVolumeStatus operation returned by the service.
      * @sample AmazonEC2Async.DescribeVolumeStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus" target="_top">AWS API
@@ -10294,7 +10291,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVolumeStatusRequest
-     *        Contains the parameters for DescribeVolumeStatus.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -10324,7 +10320,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the specified EBS volumes.
+     * Describes the specified EBS volumes or all of your EBS volumes.
      * </p>
      * <p>
      * If you are describing a long list of volumes, you can paginate the output to make the list more manageable. The
@@ -10340,7 +10336,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVolumesRequest
-     *        Contains the parameters for DescribeVolumes.
      * @return A Java Future containing the result of the DescribeVolumes operation returned by the service.
      * @sample AmazonEC2Async.DescribeVolumes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes" target="_top">AWS API
@@ -10350,7 +10345,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the specified EBS volumes.
+     * Describes the specified EBS volumes or all of your EBS volumes.
      * </p>
      * <p>
      * If you are describing a long list of volumes, you can paginate the output to make the list more manageable. The
@@ -10366,7 +10361,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVolumesRequest
-     *        Contains the parameters for DescribeVolumes.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -14474,7 +14468,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot
+     * Requests a reboot of the specified instances. This operation is asynchronous; it only queues a request to reboot
      * the specified instances. The operation succeeds if the instances are valid and belong to you. Requests to reboot
      * terminated instances are ignored.
      * </p>
@@ -14497,7 +14491,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot
+     * Requests a reboot of the specified instances. This operation is asynchronous; it only queues a request to reboot
      * the specified instances. The operation succeeds if the instances are valid and belong to you. Requests to reboot
      * terminated instances are ignored.
      * </p>
@@ -15561,7 +15555,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [EC2-VPC only] Removes one or more egress rules from a security group for EC2-VPC. This action doesn't apply to
+     * [EC2-VPC only] Removes the specified egress rules from a security group for EC2-VPC. This action doesn't apply to
      * security groups for use in EC2-Classic. To remove a rule, the values that you specify (for example, ports) must
      * match the existing rule's values exactly.
      * </p>
@@ -15587,7 +15581,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [EC2-VPC only] Removes one or more egress rules from a security group for EC2-VPC. This action doesn't apply to
+     * [EC2-VPC only] Removes the specified egress rules from a security group for EC2-VPC. This action doesn't apply to
      * security groups for use in EC2-Classic. To remove a rule, the values that you specify (for example, ports) must
      * match the existing rule's values exactly.
      * </p>
@@ -15618,7 +15612,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Removes one or more ingress rules from a security group. To remove a rule, the values that you specify (for
+     * Removes the specified ingress rules from a security group. To remove a rule, the values that you specify (for
      * example, ports) must match the existing rule's values exactly.
      * </p>
      * <note>
@@ -15649,7 +15643,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Removes one or more ingress rules from a security group. To remove a rule, the values that you specify (for
+     * Removes the specified ingress rules from a security group. To remove a rule, the values that you specify (for
      * example, ports) must match the existing rule's values exactly.
      * </p>
      * <note>
@@ -16200,8 +16194,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Shuts down one or more instances. This operation is idempotent; if you terminate an instance more than once, each
-     * call succeeds.
+     * Shuts down the specified instances. This operation is idempotent; if you terminate an instance more than once,
+     * each call succeeds.
      * </p>
      * <p>
      * If you specify multiple instances and the request fails (for example, because of a single incorrect instance ID),
@@ -16239,8 +16233,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Shuts down one or more instances. This operation is idempotent; if you terminate an instance more than once, each
-     * call succeeds.
+     * Shuts down the specified instances. This operation is idempotent; if you terminate an instance more than once,
+     * each call succeeds.
      * </p>
      * <p>
      * If you specify multiple instances and the request fails (for example, because of a single incorrect instance ID),

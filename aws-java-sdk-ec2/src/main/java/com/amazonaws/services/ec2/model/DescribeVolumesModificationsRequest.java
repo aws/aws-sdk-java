@@ -28,14 +28,13 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more volume IDs for which in-progress modifications will be described.
+     * The IDs of the volumes for which in-progress modifications will be described.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> volumeIds;
     /**
      * <p>
-     * One or more filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
-     * <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
+     * The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>, <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
      * <code>original-iops</code>, <code>original-volume-type</code>, <code>start-time</code>.
      * </p>
      */
@@ -55,10 +54,10 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more volume IDs for which in-progress modifications will be described.
+     * The IDs of the volumes for which in-progress modifications will be described.
      * </p>
      * 
-     * @return One or more volume IDs for which in-progress modifications will be described.
+     * @return The IDs of the volumes for which in-progress modifications will be described.
      */
 
     public java.util.List<String> getVolumeIds() {
@@ -70,11 +69,11 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more volume IDs for which in-progress modifications will be described.
+     * The IDs of the volumes for which in-progress modifications will be described.
      * </p>
      * 
      * @param volumeIds
-     *        One or more volume IDs for which in-progress modifications will be described.
+     *        The IDs of the volumes for which in-progress modifications will be described.
      */
 
     public void setVolumeIds(java.util.Collection<String> volumeIds) {
@@ -88,7 +87,7 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more volume IDs for which in-progress modifications will be described.
+     * The IDs of the volumes for which in-progress modifications will be described.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,7 +96,7 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param volumeIds
-     *        One or more volume IDs for which in-progress modifications will be described.
+     *        The IDs of the volumes for which in-progress modifications will be described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +112,11 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more volume IDs for which in-progress modifications will be described.
+     * The IDs of the volumes for which in-progress modifications will be described.
      * </p>
      * 
      * @param volumeIds
-     *        One or more volume IDs for which in-progress modifications will be described.
+     *        The IDs of the volumes for which in-progress modifications will be described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,12 +127,11 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
-     * <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
+     * The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>, <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
      * <code>original-iops</code>, <code>original-volume-type</code>, <code>start-time</code>.
      * </p>
      * 
-     * @return One or more filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
+     * @return The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
      *         <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>,
      *         <code>original-size</code>, <code>original-iops</code>, <code>original-volume-type</code>,
      *         <code>start-time</code>.
@@ -148,13 +146,12 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
-     * <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
+     * The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>, <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
      * <code>original-iops</code>, <code>original-volume-type</code>, <code>start-time</code>.
      * </p>
      * 
      * @param filters
-     *        One or more filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
+     *        The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
      *        <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>,
      *        <code>original-size</code>, <code>original-iops</code>, <code>original-volume-type</code>,
      *        <code>start-time</code>.
@@ -171,8 +168,7 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
-     * <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
+     * The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>, <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
      * <code>original-iops</code>, <code>original-volume-type</code>, <code>start-time</code>.
      * </p>
      * <p>
@@ -182,7 +178,7 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param filters
-     *        One or more filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
+     *        The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
      *        <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>,
      *        <code>original-size</code>, <code>original-iops</code>, <code>original-volume-type</code>,
      *        <code>start-time</code>.
@@ -201,13 +197,12 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
-     * <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
+     * The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>, <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>, <code>original-size</code>,
      * <code>original-iops</code>, <code>original-volume-type</code>, <code>start-time</code>.
      * </p>
      * 
      * @param filters
-     *        One or more filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
+     *        The filters. Supported filters: <code>volume-id</code>, <code>modification-state</code>,
      *        <code>target-size</code>, <code>target-iops</code>, <code>target-volume-type</code>,
      *        <code>original-size</code>, <code>original-iops</code>, <code>original-volume-type</code>,
      *        <code>start-time</code>.

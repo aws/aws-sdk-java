@@ -20,16 +20,14 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeSnapshotsRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeSnapshots.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeSnapshotsRequest> {
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -39,9 +37,9 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
+     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
+     * with the user-configured AWS account alias, which is set from the IAM console.
      * </p>
      * </li>
      * <li>
@@ -120,19 +118,19 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
     private String nextToken;
     /**
      * <p>
-     * Describes the snapshots owned by one or more owners.
+     * Describes the snapshots owned by these owners.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ownerIds;
     /**
      * <p>
-     * One or more AWS accounts IDs that can create volumes from the snapshot.
+     * The IDs of the AWS accounts that can create volumes from the snapshot.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> restorableByUserIds;
     /**
      * <p>
-     * One or more snapshot IDs.
+     * The snapshot IDs.
      * </p>
      * <p>
      * Default: Describes the snapshots for which you have create volume permissions.
@@ -142,7 +140,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -152,9 +150,9 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
+     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
+     * with the user-configured AWS account alias, which is set from the IAM console.
      * </p>
      * </li>
      * <li>
@@ -209,7 +207,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -218,9 +216,9 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> |
-     *         <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     *         user-configured AWS account alias, which is set from the IAM console.
+     *         <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code>
+     *         | <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be
+     *         confused with the user-configured AWS account alias, which is set from the IAM console.
      *         </p>
      *         </li>
      *         <li>
@@ -284,7 +282,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -294,9 +292,9 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
+     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
+     * with the user-configured AWS account alias, which is set from the IAM console.
      * </p>
      * </li>
      * <li>
@@ -352,7 +350,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -361,9 +359,9 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> |
-     *        <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     *        user-configured AWS account alias, which is set from the IAM console.
+     *        <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
+     *        <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be
+     *        confused with the user-configured AWS account alias, which is set from the IAM console.
      *        </p>
      *        </li>
      *        <li>
@@ -429,7 +427,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -439,9 +437,9 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
+     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
+     * with the user-configured AWS account alias, which is set from the IAM console.
      * </p>
      * </li>
      * <li>
@@ -502,7 +500,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -511,9 +509,9 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> |
-     *        <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     *        user-configured AWS account alias, which is set from the IAM console.
+     *        <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
+     *        <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be
+     *        confused with the user-configured AWS account alias, which is set from the IAM console.
      *        </p>
      *        </li>
      *        <li>
@@ -581,7 +579,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -591,9 +589,9 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
+     * <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused
+     * with the user-configured AWS account alias, which is set from the IAM console.
      * </p>
      * </li>
      * <li>
@@ -649,7 +647,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -658,9 +656,9 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> |
-     *        <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     *        user-configured AWS account alias, which is set from the IAM console.
+     *        <code>owner-alias</code> - Value from an Amazon-maintained list (<code>amazon</code> | <code>self</code> |
+     *        <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be
+     *        confused with the user-configured AWS account alias, which is set from the IAM console.
      *        </p>
      *        </li>
      *        <li>
@@ -860,10 +858,10 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Describes the snapshots owned by one or more owners.
+     * Describes the snapshots owned by these owners.
      * </p>
      * 
-     * @return Describes the snapshots owned by one or more owners.
+     * @return Describes the snapshots owned by these owners.
      */
 
     public java.util.List<String> getOwnerIds() {
@@ -875,11 +873,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Describes the snapshots owned by one or more owners.
+     * Describes the snapshots owned by these owners.
      * </p>
      * 
      * @param ownerIds
-     *        Describes the snapshots owned by one or more owners.
+     *        Describes the snapshots owned by these owners.
      */
 
     public void setOwnerIds(java.util.Collection<String> ownerIds) {
@@ -893,7 +891,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Describes the snapshots owned by one or more owners.
+     * Describes the snapshots owned by these owners.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -902,7 +900,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param ownerIds
-     *        Describes the snapshots owned by one or more owners.
+     *        Describes the snapshots owned by these owners.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -918,11 +916,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Describes the snapshots owned by one or more owners.
+     * Describes the snapshots owned by these owners.
      * </p>
      * 
      * @param ownerIds
-     *        Describes the snapshots owned by one or more owners.
+     *        Describes the snapshots owned by these owners.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -933,10 +931,10 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more AWS accounts IDs that can create volumes from the snapshot.
+     * The IDs of the AWS accounts that can create volumes from the snapshot.
      * </p>
      * 
-     * @return One or more AWS accounts IDs that can create volumes from the snapshot.
+     * @return The IDs of the AWS accounts that can create volumes from the snapshot.
      */
 
     public java.util.List<String> getRestorableByUserIds() {
@@ -948,11 +946,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more AWS accounts IDs that can create volumes from the snapshot.
+     * The IDs of the AWS accounts that can create volumes from the snapshot.
      * </p>
      * 
      * @param restorableByUserIds
-     *        One or more AWS accounts IDs that can create volumes from the snapshot.
+     *        The IDs of the AWS accounts that can create volumes from the snapshot.
      */
 
     public void setRestorableByUserIds(java.util.Collection<String> restorableByUserIds) {
@@ -966,7 +964,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more AWS accounts IDs that can create volumes from the snapshot.
+     * The IDs of the AWS accounts that can create volumes from the snapshot.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -975,7 +973,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param restorableByUserIds
-     *        One or more AWS accounts IDs that can create volumes from the snapshot.
+     *        The IDs of the AWS accounts that can create volumes from the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -991,11 +989,11 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more AWS accounts IDs that can create volumes from the snapshot.
+     * The IDs of the AWS accounts that can create volumes from the snapshot.
      * </p>
      * 
      * @param restorableByUserIds
-     *        One or more AWS accounts IDs that can create volumes from the snapshot.
+     *        The IDs of the AWS accounts that can create volumes from the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1006,13 +1004,13 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more snapshot IDs.
+     * The snapshot IDs.
      * </p>
      * <p>
      * Default: Describes the snapshots for which you have create volume permissions.
      * </p>
      * 
-     * @return One or more snapshot IDs.</p>
+     * @return The snapshot IDs.</p>
      *         <p>
      *         Default: Describes the snapshots for which you have create volume permissions.
      */
@@ -1026,14 +1024,14 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more snapshot IDs.
+     * The snapshot IDs.
      * </p>
      * <p>
      * Default: Describes the snapshots for which you have create volume permissions.
      * </p>
      * 
      * @param snapshotIds
-     *        One or more snapshot IDs.</p>
+     *        The snapshot IDs.</p>
      *        <p>
      *        Default: Describes the snapshots for which you have create volume permissions.
      */
@@ -1049,7 +1047,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more snapshot IDs.
+     * The snapshot IDs.
      * </p>
      * <p>
      * Default: Describes the snapshots for which you have create volume permissions.
@@ -1061,7 +1059,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param snapshotIds
-     *        One or more snapshot IDs.</p>
+     *        The snapshot IDs.</p>
      *        <p>
      *        Default: Describes the snapshots for which you have create volume permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1079,14 +1077,14 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more snapshot IDs.
+     * The snapshot IDs.
      * </p>
      * <p>
      * Default: Describes the snapshots for which you have create volume permissions.
      * </p>
      * 
      * @param snapshotIds
-     *        One or more snapshot IDs.</p>
+     *        The snapshot IDs.</p>
      *        <p>
      *        Default: Describes the snapshots for which you have create volume permissions.
      * @return Returns a reference to this object so that method calls can be chained together.

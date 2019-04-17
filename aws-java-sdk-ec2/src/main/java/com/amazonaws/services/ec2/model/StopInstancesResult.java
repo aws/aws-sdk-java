@@ -25,17 +25,17 @@ public class StopInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Information about one or more stopped instances.
+     * Information about the stopped instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceStateChange> stoppingInstances;
 
     /**
      * <p>
-     * Information about one or more stopped instances.
+     * Information about the stopped instances.
      * </p>
      * 
-     * @return Information about one or more stopped instances.
+     * @return Information about the stopped instances.
      */
 
     public java.util.List<InstanceStateChange> getStoppingInstances() {
@@ -47,11 +47,11 @@ public class StopInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Information about one or more stopped instances.
+     * Information about the stopped instances.
      * </p>
      * 
      * @param stoppingInstances
-     *        Information about one or more stopped instances.
+     *        Information about the stopped instances.
      */
 
     public void setStoppingInstances(java.util.Collection<InstanceStateChange> stoppingInstances) {
@@ -65,7 +65,7 @@ public class StopInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Information about one or more stopped instances.
+     * Information about the stopped instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class StopInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param stoppingInstances
-     *        Information about one or more stopped instances.
+     *        Information about the stopped instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class StopInstancesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Information about one or more stopped instances.
+     * Information about the stopped instances.
      * </p>
      * 
      * @param stoppingInstances
-     *        Information about one or more stopped instances.
+     *        Information about the stopped instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

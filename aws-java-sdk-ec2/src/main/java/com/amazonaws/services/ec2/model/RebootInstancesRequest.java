@@ -27,7 +27,7 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -44,7 +44,7 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
      * to initialize any additional object members.
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The instance IDs.
      */
     public RebootInstancesRequest(java.util.List<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -52,10 +52,10 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * 
-     * @return One or more instance IDs.
+     * @return The instance IDs.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -67,11 +67,11 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The instance IDs.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -85,7 +85,7 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -94,7 +94,7 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The instance IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,11 +110,11 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The instance IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

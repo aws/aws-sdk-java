@@ -34,7 +34,7 @@ public class AccountAttribute implements Serializable, Cloneable {
     private String attributeName;
     /**
      * <p>
-     * One or more values for the account attribute.
+     * The values for the account attribute.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AccountAttributeValue> attributeValues;
@@ -81,10 +81,10 @@ public class AccountAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more values for the account attribute.
+     * The values for the account attribute.
      * </p>
      * 
-     * @return One or more values for the account attribute.
+     * @return The values for the account attribute.
      */
 
     public java.util.List<AccountAttributeValue> getAttributeValues() {
@@ -96,11 +96,11 @@ public class AccountAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more values for the account attribute.
+     * The values for the account attribute.
      * </p>
      * 
      * @param attributeValues
-     *        One or more values for the account attribute.
+     *        The values for the account attribute.
      */
 
     public void setAttributeValues(java.util.Collection<AccountAttributeValue> attributeValues) {
@@ -114,7 +114,7 @@ public class AccountAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more values for the account attribute.
+     * The values for the account attribute.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,7 +123,7 @@ public class AccountAttribute implements Serializable, Cloneable {
      * </p>
      * 
      * @param attributeValues
-     *        One or more values for the account attribute.
+     *        The values for the account attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class AccountAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more values for the account attribute.
+     * The values for the account attribute.
      * </p>
      * 
      * @param attributeValues
-     *        One or more values for the account attribute.
+     *        The values for the account attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

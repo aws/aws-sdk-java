@@ -20,18 +20,15 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateImageRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for CreateImage.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateImageRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<CreateImageRequest> {
 
     /**
      * <p>
-     * Information about one or more block device mappings. This parameter cannot be used to modify the encryption
-     * status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a>
-     * action.
+     * Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
+     * snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -92,14 +89,12 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about one or more block device mappings. This parameter cannot be used to modify the encryption
-     * status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a>
-     * action.
+     * Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
+     * snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * </p>
      * 
-     * @return Information about one or more block device mappings. This parameter cannot be used to modify the
-     *         encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the
-     *         <a>CopyImage</a> action.
+     * @return Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing
+     *         volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -111,15 +106,13 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about one or more block device mappings. This parameter cannot be used to modify the encryption
-     * status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a>
-     * action.
+     * Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
+     * snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        Information about one or more block device mappings. This parameter cannot be used to modify the
-     *        encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the
-     *        <a>CopyImage</a> action.
+     *        Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing
+     *        volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -133,9 +126,8 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about one or more block device mappings. This parameter cannot be used to modify the encryption
-     * status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a>
-     * action.
+     * Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
+     * snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -144,9 +136,8 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @param blockDeviceMappings
-     *        Information about one or more block device mappings. This parameter cannot be used to modify the
-     *        encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the
-     *        <a>CopyImage</a> action.
+     *        Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing
+     *        volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,15 +153,13 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about one or more block device mappings. This parameter cannot be used to modify the encryption
-     * status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a>
-     * action.
+     * Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or
+     * snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        Information about one or more block device mappings. This parameter cannot be used to modify the
-     *        encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the
-     *        <a>CopyImage</a> action.
+     *        Tthe block device mappings. This parameter cannot be used to modify the encryption status of existing
+     *        volumes or snapshots. To create an AMI with encrypted snapshots, use the <a>CopyImage</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

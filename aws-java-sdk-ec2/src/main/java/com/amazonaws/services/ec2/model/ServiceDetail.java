@@ -74,6 +74,13 @@ public class ServiceDetail implements Serializable, Cloneable {
      * </p>
      */
     private Boolean acceptanceRequired;
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
+     * Endpoint API is restricted.
+     * </p>
+     */
+    private Boolean managesVpcEndpoints;
 
     /**
      * <p>
@@ -519,6 +526,66 @@ public class ServiceDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
+     * Endpoint API is restricted.
+     * </p>
+     * 
+     * @param managesVpcEndpoints
+     *        Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
+     *        the VPC Endpoint API is restricted.
+     */
+
+    public void setManagesVpcEndpoints(Boolean managesVpcEndpoints) {
+        this.managesVpcEndpoints = managesVpcEndpoints;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
+     * Endpoint API is restricted.
+     * </p>
+     * 
+     * @return Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
+     *         the VPC Endpoint API is restricted.
+     */
+
+    public Boolean getManagesVpcEndpoints() {
+        return this.managesVpcEndpoints;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
+     * Endpoint API is restricted.
+     * </p>
+     * 
+     * @param managesVpcEndpoints
+     *        Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
+     *        the VPC Endpoint API is restricted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceDetail withManagesVpcEndpoints(Boolean managesVpcEndpoints) {
+        setManagesVpcEndpoints(managesVpcEndpoints);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
+     * Endpoint API is restricted.
+     * </p>
+     * 
+     * @return Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
+     *         the VPC Endpoint API is restricted.
+     */
+
+    public Boolean isManagesVpcEndpoints() {
+        return this.managesVpcEndpoints;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -545,7 +612,9 @@ public class ServiceDetail implements Serializable, Cloneable {
         if (getVpcEndpointPolicySupported() != null)
             sb.append("VpcEndpointPolicySupported: ").append(getVpcEndpointPolicySupported()).append(",");
         if (getAcceptanceRequired() != null)
-            sb.append("AcceptanceRequired: ").append(getAcceptanceRequired());
+            sb.append("AcceptanceRequired: ").append(getAcceptanceRequired()).append(",");
+        if (getManagesVpcEndpoints() != null)
+            sb.append("ManagesVpcEndpoints: ").append(getManagesVpcEndpoints());
         sb.append("}");
         return sb.toString();
     }
@@ -592,6 +661,10 @@ public class ServiceDetail implements Serializable, Cloneable {
             return false;
         if (other.getAcceptanceRequired() != null && other.getAcceptanceRequired().equals(this.getAcceptanceRequired()) == false)
             return false;
+        if (other.getManagesVpcEndpoints() == null ^ this.getManagesVpcEndpoints() == null)
+            return false;
+        if (other.getManagesVpcEndpoints() != null && other.getManagesVpcEndpoints().equals(this.getManagesVpcEndpoints()) == false)
+            return false;
         return true;
     }
 
@@ -608,6 +681,7 @@ public class ServiceDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
         hashCode = prime * hashCode + ((getVpcEndpointPolicySupported() == null) ? 0 : getVpcEndpointPolicySupported().hashCode());
         hashCode = prime * hashCode + ((getAcceptanceRequired() == null) ? 0 : getAcceptanceRequired().hashCode());
+        hashCode = prime * hashCode + ((getManagesVpcEndpoints() == null) ? 0 : getManagesVpcEndpoints().hashCode());
         return hashCode;
     }
 

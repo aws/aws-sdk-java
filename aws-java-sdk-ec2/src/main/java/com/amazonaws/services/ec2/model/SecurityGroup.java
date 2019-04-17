@@ -40,7 +40,7 @@ public class SecurityGroup implements Serializable, Cloneable {
     private String groupName;
     /**
      * <p>
-     * One or more inbound rules associated with the security group.
+     * The inbound rules associated with the security group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
@@ -58,7 +58,7 @@ public class SecurityGroup implements Serializable, Cloneable {
     private String groupId;
     /**
      * <p>
-     * [EC2-VPC] One or more outbound rules associated with the security group.
+     * [EC2-VPC] The outbound rules associated with the security group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissionsEgress;
@@ -157,10 +157,10 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more inbound rules associated with the security group.
+     * The inbound rules associated with the security group.
      * </p>
      * 
-     * @return One or more inbound rules associated with the security group.
+     * @return The inbound rules associated with the security group.
      */
 
     public java.util.List<IpPermission> getIpPermissions() {
@@ -172,11 +172,11 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more inbound rules associated with the security group.
+     * The inbound rules associated with the security group.
      * </p>
      * 
      * @param ipPermissions
-     *        One or more inbound rules associated with the security group.
+     *        The inbound rules associated with the security group.
      */
 
     public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
@@ -190,7 +190,7 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more inbound rules associated with the security group.
+     * The inbound rules associated with the security group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -199,7 +199,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param ipPermissions
-     *        One or more inbound rules associated with the security group.
+     *        The inbound rules associated with the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,11 +215,11 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more inbound rules associated with the security group.
+     * The inbound rules associated with the security group.
      * </p>
      * 
      * @param ipPermissions
-     *        One or more inbound rules associated with the security group.
+     *        The inbound rules associated with the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,10 +310,10 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC] One or more outbound rules associated with the security group.
+     * [EC2-VPC] The outbound rules associated with the security group.
      * </p>
      * 
-     * @return [EC2-VPC] One or more outbound rules associated with the security group.
+     * @return [EC2-VPC] The outbound rules associated with the security group.
      */
 
     public java.util.List<IpPermission> getIpPermissionsEgress() {
@@ -325,11 +325,11 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC] One or more outbound rules associated with the security group.
+     * [EC2-VPC] The outbound rules associated with the security group.
      * </p>
      * 
      * @param ipPermissionsEgress
-     *        [EC2-VPC] One or more outbound rules associated with the security group.
+     *        [EC2-VPC] The outbound rules associated with the security group.
      */
 
     public void setIpPermissionsEgress(java.util.Collection<IpPermission> ipPermissionsEgress) {
@@ -343,7 +343,7 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC] One or more outbound rules associated with the security group.
+     * [EC2-VPC] The outbound rules associated with the security group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -352,7 +352,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param ipPermissionsEgress
-     *        [EC2-VPC] One or more outbound rules associated with the security group.
+     *        [EC2-VPC] The outbound rules associated with the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,11 +368,11 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC] One or more outbound rules associated with the security group.
+     * [EC2-VPC] The outbound rules associated with the security group.
      * </p>
      * 
      * @param ipPermissionsEgress
-     *        [EC2-VPC] One or more outbound rules associated with the security group.
+     *        [EC2-VPC] The outbound rules associated with the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

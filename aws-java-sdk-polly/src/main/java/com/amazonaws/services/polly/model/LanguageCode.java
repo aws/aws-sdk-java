@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum LanguageCode {
 
+    Arb("arb"),
     CmnCN("cmn-CN"),
     CyGB("cy-GB"),
     DaDK("da-DK"),

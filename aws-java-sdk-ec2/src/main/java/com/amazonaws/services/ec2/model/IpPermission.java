@@ -50,14 +50,14 @@ public class IpPermission implements Serializable, Cloneable {
     private String ipProtocol;
     /**
      * <p>
-     * [EC2-VPC only] One or more IPv6 ranges.
+     * [EC2-VPC only] The IPv6 ranges.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Ipv6Range> ipv6Ranges;
     /**
      * <p>
-     * [EC2-VPC only] One or more prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is
-     * the AWS service that you want to access through a VPC endpoint from instances associated with the security group.
+     * [EC2-VPC only] The prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is the AWS
+     * service that you want to access through a VPC endpoint from instances associated with the security group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PrefixListId> prefixListIds;
@@ -71,13 +71,13 @@ public class IpPermission implements Serializable, Cloneable {
     private Integer toPort;
     /**
      * <p>
-     * One or more security group and AWS account ID pairs.
+     * The security group and AWS account ID pairs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<UserIdGroupPair> userIdGroupPairs;
     /**
      * <p>
-     * One or more IPv4 ranges.
+     * The IPv4 ranges.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IpRange> ipv4Ranges;
@@ -225,10 +225,10 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC only] One or more IPv6 ranges.
+     * [EC2-VPC only] The IPv6 ranges.
      * </p>
      * 
-     * @return [EC2-VPC only] One or more IPv6 ranges.
+     * @return [EC2-VPC only] The IPv6 ranges.
      */
 
     public java.util.List<Ipv6Range> getIpv6Ranges() {
@@ -240,11 +240,11 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC only] One or more IPv6 ranges.
+     * [EC2-VPC only] The IPv6 ranges.
      * </p>
      * 
      * @param ipv6Ranges
-     *        [EC2-VPC only] One or more IPv6 ranges.
+     *        [EC2-VPC only] The IPv6 ranges.
      */
 
     public void setIpv6Ranges(java.util.Collection<Ipv6Range> ipv6Ranges) {
@@ -258,7 +258,7 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC only] One or more IPv6 ranges.
+     * [EC2-VPC only] The IPv6 ranges.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -267,7 +267,7 @@ public class IpPermission implements Serializable, Cloneable {
      * </p>
      * 
      * @param ipv6Ranges
-     *        [EC2-VPC only] One or more IPv6 ranges.
+     *        [EC2-VPC only] The IPv6 ranges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,11 +283,11 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC only] One or more IPv6 ranges.
+     * [EC2-VPC only] The IPv6 ranges.
      * </p>
      * 
      * @param ipv6Ranges
-     *        [EC2-VPC only] One or more IPv6 ranges.
+     *        [EC2-VPC only] The IPv6 ranges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,12 +298,12 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC only] One or more prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is
-     * the AWS service that you want to access through a VPC endpoint from instances associated with the security group.
+     * [EC2-VPC only] The prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is the AWS
+     * service that you want to access through a VPC endpoint from instances associated with the security group.
      * </p>
      * 
-     * @return [EC2-VPC only] One or more prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>,
-     *         this is the AWS service that you want to access through a VPC endpoint from instances associated with the
+     * @return [EC2-VPC only] The prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is
+     *         the AWS service that you want to access through a VPC endpoint from instances associated with the
      *         security group.
      */
 
@@ -316,14 +316,14 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC only] One or more prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is
-     * the AWS service that you want to access through a VPC endpoint from instances associated with the security group.
+     * [EC2-VPC only] The prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is the AWS
+     * service that you want to access through a VPC endpoint from instances associated with the security group.
      * </p>
      * 
      * @param prefixListIds
-     *        [EC2-VPC only] One or more prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>,
-     *        this is the AWS service that you want to access through a VPC endpoint from instances associated with the
-     *        security group.
+     *        [EC2-VPC only] The prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is
+     *        the AWS service that you want to access through a VPC endpoint from instances associated with the security
+     *        group.
      */
 
     public void setPrefixListIds(java.util.Collection<PrefixListId> prefixListIds) {
@@ -337,8 +337,8 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC only] One or more prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is
-     * the AWS service that you want to access through a VPC endpoint from instances associated with the security group.
+     * [EC2-VPC only] The prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is the AWS
+     * service that you want to access through a VPC endpoint from instances associated with the security group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -347,9 +347,9 @@ public class IpPermission implements Serializable, Cloneable {
      * </p>
      * 
      * @param prefixListIds
-     *        [EC2-VPC only] One or more prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>,
-     *        this is the AWS service that you want to access through a VPC endpoint from instances associated with the
-     *        security group.
+     *        [EC2-VPC only] The prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is
+     *        the AWS service that you want to access through a VPC endpoint from instances associated with the security
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -365,14 +365,14 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-VPC only] One or more prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is
-     * the AWS service that you want to access through a VPC endpoint from instances associated with the security group.
+     * [EC2-VPC only] The prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is the AWS
+     * service that you want to access through a VPC endpoint from instances associated with the security group.
      * </p>
      * 
      * @param prefixListIds
-     *        [EC2-VPC only] One or more prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>,
-     *        this is the AWS service that you want to access through a VPC endpoint from instances associated with the
-     *        security group.
+     *        [EC2-VPC only] The prefix list IDs for an AWS service. With <a>AuthorizeSecurityGroupEgress</a>, this is
+     *        the AWS service that you want to access through a VPC endpoint from instances associated with the security
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,10 +435,10 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group and AWS account ID pairs.
+     * The security group and AWS account ID pairs.
      * </p>
      * 
-     * @return One or more security group and AWS account ID pairs.
+     * @return The security group and AWS account ID pairs.
      */
 
     public java.util.List<UserIdGroupPair> getUserIdGroupPairs() {
@@ -450,11 +450,11 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group and AWS account ID pairs.
+     * The security group and AWS account ID pairs.
      * </p>
      * 
      * @param userIdGroupPairs
-     *        One or more security group and AWS account ID pairs.
+     *        The security group and AWS account ID pairs.
      */
 
     public void setUserIdGroupPairs(java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
@@ -468,7 +468,7 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group and AWS account ID pairs.
+     * The security group and AWS account ID pairs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -477,7 +477,7 @@ public class IpPermission implements Serializable, Cloneable {
      * </p>
      * 
      * @param userIdGroupPairs
-     *        One or more security group and AWS account ID pairs.
+     *        The security group and AWS account ID pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,11 +493,11 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group and AWS account ID pairs.
+     * The security group and AWS account ID pairs.
      * </p>
      * 
      * @param userIdGroupPairs
-     *        One or more security group and AWS account ID pairs.
+     *        The security group and AWS account ID pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,10 +508,10 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IPv4 ranges.
+     * The IPv4 ranges.
      * </p>
      * 
-     * @return One or more IPv4 ranges.
+     * @return The IPv4 ranges.
      */
 
     public java.util.List<IpRange> getIpv4Ranges() {
@@ -523,11 +523,11 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IPv4 ranges.
+     * The IPv4 ranges.
      * </p>
      * 
      * @param ipv4Ranges
-     *        One or more IPv4 ranges.
+     *        The IPv4 ranges.
      */
 
     public void setIpv4Ranges(java.util.Collection<IpRange> ipv4Ranges) {
@@ -541,7 +541,7 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IPv4 ranges.
+     * The IPv4 ranges.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -550,7 +550,7 @@ public class IpPermission implements Serializable, Cloneable {
      * </p>
      * 
      * @param ipv4Ranges
-     *        One or more IPv4 ranges.
+     *        The IPv4 ranges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -566,11 +566,11 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IPv4 ranges.
+     * The IPv4 ranges.
      * </p>
      * 
      * @param ipv4Ranges
-     *        One or more IPv4 ranges.
+     *        The IPv4 ranges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

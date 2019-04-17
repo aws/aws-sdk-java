@@ -27,9 +27,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
-     * and its encryption status is used for the volume encryption status.
+     * The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because
+     * only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -65,9 +65,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private Integer ipv6AddressCount;
     /**
      * <p>
-     * [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network
-     * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
-     * request. You cannot specify this option if you've specified a minimum number of instances to launch.
+     * [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
+     * cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
@@ -152,7 +152,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String ramdiskId;
     /**
      * <p>
-     * One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
+     * The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -164,7 +164,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group
+     * [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security group
      * IDs instead.
      * </p>
      * <p>
@@ -254,7 +254,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String instanceInitiatedShutdownBehavior;
     /**
      * <p>
-     * One or more network interfaces.
+     * The network interfaces.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
@@ -398,14 +398,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
-     * and its encryption status is used for the volume encryption status.
+     * The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because
+     * only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.
      * </p>
      * 
-     * @return One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
-     *         This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
-     *         it is not blank and its encryption status is used for the volume encryption status.
+     * @return The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     *         because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is
+     *         not blank and its encryption status is used for the volume encryption status.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -417,15 +417,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
-     * and its encryption status is used for the volume encryption status.
+     * The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because
+     * only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
-     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
-     *        it is not blank and its encryption status is used for the volume encryption status.
+     *        The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     *        because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is
+     *        not blank and its encryption status is used for the volume encryption status.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -439,9 +439,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
-     * and its encryption status is used for the volume encryption status.
+     * The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because
+     * only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -450,9 +450,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
-     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
-     *        it is not blank and its encryption status is used for the volume encryption status.
+     *        The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     *        because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is
+     *        not blank and its encryption status is used for the volume encryption status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -468,15 +468,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
-     * because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank
-     * and its encryption status is used for the volume encryption status.
+     * The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is because
+     * only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.
      * </p>
      * 
      * @param blockDeviceMappings
-     *        One or more block device mapping entries. You can't specify both a snapshot ID and an encryption value.
-     *        This is because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume,
-     *        it is not blank and its encryption status is used for the volume encryption status.
+     *        The block device mapping entries. You can't specify both a snapshot ID and an encryption value. This is
+     *        because only blank volumes can be encrypted on creation. If a snapshot is the basis for a volume, it is
+     *        not blank and its encryption status is used for the volume encryption status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -724,18 +724,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network
-     * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
-     * request. You cannot specify this option if you've specified a minimum number of instances to launch.
+     * [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
+     * cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
-     * @return [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
-     *         network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
-     *         the same request. You cannot specify this option if you've specified a minimum number of instances to
-     *         launch.</p>
+     * @return [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network
+     *         interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
+     *         request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
      *         <p>
      *         You cannot specify this option and the network interfaces option in the same request.
      */
@@ -749,19 +748,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network
-     * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
-     * request. You cannot specify this option if you've specified a minimum number of instances to launch.
+     * [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
+     * cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
      * @param ipv6Addresses
-     *        [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
-     *        network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
-     *        the same request. You cannot specify this option if you've specified a minimum number of instances to
-     *        launch.</p>
+     *        [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface.
+     *        You cannot specify this option and the option to assign a number of IPv6 addresses in the same request.
+     *        You cannot specify this option if you've specified a minimum number of instances to launch.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
      */
@@ -777,9 +775,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network
-     * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
-     * request. You cannot specify this option if you've specified a minimum number of instances to launch.
+     * [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
+     * cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
@@ -791,10 +789,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param ipv6Addresses
-     *        [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
-     *        network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
-     *        the same request. You cannot specify this option if you've specified a minimum number of instances to
-     *        launch.</p>
+     *        [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface.
+     *        You cannot specify this option and the option to assign a number of IPv6 addresses in the same request.
+     *        You cannot specify this option if you've specified a minimum number of instances to launch.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -812,19 +809,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network
-     * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
-     * request. You cannot specify this option if you've specified a minimum number of instances to launch.
+     * [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
+     * cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot
+     * specify this option if you've specified a minimum number of instances to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
      * @param ipv6Addresses
-     *        [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
-     *        network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
-     *        the same request. You cannot specify this option if you've specified a minimum number of instances to
-     *        launch.</p>
+     *        [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface.
+     *        You cannot specify this option and the option to assign a number of IPv6 addresses in the same request.
+     *        You cannot specify this option if you've specified a minimum number of instances to launch.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1315,7 +1311,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
+     * The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -1324,7 +1320,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
-     * @return One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
+     * @return The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *         <p>
      *         Default: Amazon EC2 uses the default security group.
      *         </p>
@@ -1341,7 +1337,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
+     * The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -1351,7 +1347,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param securityGroupIds
-     *        One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
+     *        The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
      *        </p>
@@ -1370,7 +1366,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
+     * The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -1385,7 +1381,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param securityGroupIds
-     *        One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
+     *        The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
      *        </p>
@@ -1406,7 +1402,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.
+     * The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -1416,7 +1412,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param securityGroupIds
-     *        One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
+     *        The IDs of the security groups. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
      *        </p>
@@ -1432,7 +1428,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group
+     * [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security group
      * IDs instead.
      * </p>
      * <p>
@@ -1442,7 +1438,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
-     * @return [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
+     * @return [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
      *         group IDs instead.</p>
      *         <p>
      *         You cannot specify this option and the network interfaces option in the same request.
@@ -1460,7 +1456,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group
+     * [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security group
      * IDs instead.
      * </p>
      * <p>
@@ -1471,7 +1467,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param securityGroups
-     *        [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
+     *        [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
      *        group IDs instead.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
@@ -1491,7 +1487,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group
+     * [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security group
      * IDs instead.
      * </p>
      * <p>
@@ -1507,7 +1503,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param securityGroups
-     *        [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
+     *        [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
      *        group IDs instead.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
@@ -1529,7 +1525,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group
+     * [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security group
      * IDs instead.
      * </p>
      * <p>
@@ -1540,7 +1536,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param securityGroups
-     *        [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
+     *        [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
      *        group IDs instead.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
@@ -2136,13 +2132,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more network interfaces.
+     * The network interfaces.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
-     * @return One or more network interfaces.</p>
+     * @return The network interfaces.</p>
      *         <p>
      *         You cannot specify this option and the network interfaces option in the same request.
      */
@@ -2156,14 +2152,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more network interfaces.
+     * The network interfaces.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.</p>
+     *        The network interfaces.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
      */
@@ -2179,7 +2175,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more network interfaces.
+     * The network interfaces.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
@@ -2191,7 +2187,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.</p>
+     *        The network interfaces.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2209,14 +2205,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * One or more network interfaces.
+     * The network interfaces.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.</p>
+     *        The network interfaces.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.

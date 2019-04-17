@@ -85,6 +85,11 @@ public class ServiceConfigurationStaxUnmarshaller implements Unmarshaller<Servic
                     continue;
                 }
 
+                if (context.testExpression("managesVpcEndpoints", targetDepth)) {
+                    serviceConfiguration.setManagesVpcEndpoints(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("networkLoadBalancerArnSet", targetDepth)) {
                     serviceConfiguration.withNetworkLoadBalancerArns(new ArrayList<String>());
                     continue;

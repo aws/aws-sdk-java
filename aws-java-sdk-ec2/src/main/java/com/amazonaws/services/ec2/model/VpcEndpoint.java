@@ -88,6 +88,12 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private Boolean privateDnsEnabled;
     /**
      * <p>
+     * Indicates whether the VPC Endpoint is being managed by its service.
+     * </p>
+     */
+    private Boolean requesterManaged;
+    /**
+     * <p>
      * (Interface endpoint) One or more network interfaces for the endpoint.
      * </p>
      */
@@ -684,6 +690,58 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates whether the VPC Endpoint is being managed by its service.
+     * </p>
+     * 
+     * @param requesterManaged
+     *        Indicates whether the VPC Endpoint is being managed by its service.
+     */
+
+    public void setRequesterManaged(Boolean requesterManaged) {
+        this.requesterManaged = requesterManaged;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPC Endpoint is being managed by its service.
+     * </p>
+     * 
+     * @return Indicates whether the VPC Endpoint is being managed by its service.
+     */
+
+    public Boolean getRequesterManaged() {
+        return this.requesterManaged;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPC Endpoint is being managed by its service.
+     * </p>
+     * 
+     * @param requesterManaged
+     *        Indicates whether the VPC Endpoint is being managed by its service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withRequesterManaged(Boolean requesterManaged) {
+        setRequesterManaged(requesterManaged);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPC Endpoint is being managed by its service.
+     * </p>
+     * 
+     * @return Indicates whether the VPC Endpoint is being managed by its service.
+     */
+
+    public Boolean isRequesterManaged() {
+        return this.requesterManaged;
+    }
+
+    /**
+     * <p>
      * (Interface endpoint) One or more network interfaces for the endpoint.
      * </p>
      * 
@@ -900,6 +958,8 @@ public class VpcEndpoint implements Serializable, Cloneable {
             sb.append("Groups: ").append(getGroups()).append(",");
         if (getPrivateDnsEnabled() != null)
             sb.append("PrivateDnsEnabled: ").append(getPrivateDnsEnabled()).append(",");
+        if (getRequesterManaged() != null)
+            sb.append("RequesterManaged: ").append(getRequesterManaged()).append(",");
         if (getNetworkInterfaceIds() != null)
             sb.append("NetworkInterfaceIds: ").append(getNetworkInterfaceIds()).append(",");
         if (getDnsEntries() != null)
@@ -960,6 +1020,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
             return false;
         if (other.getPrivateDnsEnabled() != null && other.getPrivateDnsEnabled().equals(this.getPrivateDnsEnabled()) == false)
             return false;
+        if (other.getRequesterManaged() == null ^ this.getRequesterManaged() == null)
+            return false;
+        if (other.getRequesterManaged() != null && other.getRequesterManaged().equals(this.getRequesterManaged()) == false)
+            return false;
         if (other.getNetworkInterfaceIds() == null ^ this.getNetworkInterfaceIds() == null)
             return false;
         if (other.getNetworkInterfaceIds() != null && other.getNetworkInterfaceIds().equals(this.getNetworkInterfaceIds()) == false)
@@ -990,6 +1054,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsEnabled() == null) ? 0 : getPrivateDnsEnabled().hashCode());
+        hashCode = prime * hashCode + ((getRequesterManaged() == null) ? 0 : getRequesterManaged().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceIds() == null) ? 0 : getNetworkInterfaceIds().hashCode());
         hashCode = prime * hashCode + ((getDnsEntries() == null) ? 0 : getDnsEntries().hashCode());
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());

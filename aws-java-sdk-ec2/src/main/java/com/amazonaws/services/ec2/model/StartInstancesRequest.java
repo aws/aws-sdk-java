@@ -27,7 +27,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -50,7 +50,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
      * to initialize any additional object members.
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The IDs of the instances.
      */
     public StartInstancesRequest(java.util.List<String> instanceIds) {
         setInstanceIds(instanceIds);
@@ -58,10 +58,10 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances.
      * </p>
      * 
-     * @return One or more instance IDs.
+     * @return The IDs of the instances.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -73,11 +73,11 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The IDs of the instances.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -91,7 +91,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -100,7 +100,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The IDs of the instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +116,11 @@ public class StartInstancesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The IDs of the instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

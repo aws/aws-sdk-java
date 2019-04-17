@@ -55,8 +55,8 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     private String groupName;
     /**
      * <p>
-     * One or more sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the
-     * same set of permissions.
+     * The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the same set
+     * of permissions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
@@ -109,8 +109,8 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
      *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
      *        or the security group name in the request.
      * @param ipPermissions
-     *        One or more sets of IP permissions. You can't specify a source security group and a CIDR IP address range
-     *        in the same set of permissions.
+     *        The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the
+     *        same set of permissions.
      */
     public RevokeSecurityGroupIngressRequest(String groupName, java.util.List<IpPermission> ipPermissions) {
         setGroupName(groupName);
@@ -297,12 +297,12 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * One or more sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the
-     * same set of permissions.
+     * The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the same set
+     * of permissions.
      * </p>
      * 
-     * @return One or more sets of IP permissions. You can't specify a source security group and a CIDR IP address range
-     *         in the same set of permissions.
+     * @return The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the
+     *         same set of permissions.
      */
 
     public java.util.List<IpPermission> getIpPermissions() {
@@ -314,13 +314,13 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * One or more sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the
-     * same set of permissions.
+     * The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the same set
+     * of permissions.
      * </p>
      * 
      * @param ipPermissions
-     *        One or more sets of IP permissions. You can't specify a source security group and a CIDR IP address range
-     *        in the same set of permissions.
+     *        The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the
+     *        same set of permissions.
      */
 
     public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
@@ -334,8 +334,8 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * One or more sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the
-     * same set of permissions.
+     * The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the same set
+     * of permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -344,8 +344,8 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
      * </p>
      * 
      * @param ipPermissions
-     *        One or more sets of IP permissions. You can't specify a source security group and a CIDR IP address range
-     *        in the same set of permissions.
+     *        The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the
+     *        same set of permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,13 +361,13 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * One or more sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the
-     * same set of permissions.
+     * The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the same set
+     * of permissions.
      * </p>
      * 
      * @param ipPermissions
-     *        One or more sets of IP permissions. You can't specify a source security group and a CIDR IP address range
-     *        in the same set of permissions.
+     *        The sets of IP permissions. You can't specify a source security group and a CIDR IP address range in the
+     *        same set of permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,17 +25,17 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Information about one or more regions.
+     * Information about the regions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Region> regions;
 
     /**
      * <p>
-     * Information about one or more regions.
+     * Information about the regions.
      * </p>
      * 
-     * @return Information about one or more regions.
+     * @return Information about the regions.
      */
 
     public java.util.List<Region> getRegions() {
@@ -47,11 +47,11 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Information about one or more regions.
+     * Information about the regions.
      * </p>
      * 
      * @param regions
-     *        Information about one or more regions.
+     *        Information about the regions.
      */
 
     public void setRegions(java.util.Collection<Region> regions) {
@@ -65,7 +65,7 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Information about one or more regions.
+     * Information about the regions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param regions
-     *        Information about one or more regions.
+     *        Information about the regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DescribeRegionsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Information about one or more regions.
+     * Information about the regions.
      * </p>
      * 
      * @param regions
-     *        Information about one or more regions.
+     *        Information about the regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

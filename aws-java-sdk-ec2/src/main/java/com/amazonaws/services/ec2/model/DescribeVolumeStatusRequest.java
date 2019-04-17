@@ -20,9 +20,7 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVolumeStatusRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeVolumeStatus.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -30,7 +28,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -124,7 +122,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
     private String nextToken;
     /**
      * <p>
-     * One or more volume IDs.
+     * The IDs of the volumes.
      * </p>
      * <p>
      * Default: Describes all your volumes.
@@ -134,7 +132,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -205,7 +203,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -284,7 +282,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -356,7 +354,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -437,7 +435,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -514,7 +512,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -597,7 +595,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -669,7 +667,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -875,13 +873,13 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more volume IDs.
+     * The IDs of the volumes.
      * </p>
      * <p>
      * Default: Describes all your volumes.
      * </p>
      * 
-     * @return One or more volume IDs.</p>
+     * @return The IDs of the volumes.</p>
      *         <p>
      *         Default: Describes all your volumes.
      */
@@ -895,14 +893,14 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more volume IDs.
+     * The IDs of the volumes.
      * </p>
      * <p>
      * Default: Describes all your volumes.
      * </p>
      * 
      * @param volumeIds
-     *        One or more volume IDs.</p>
+     *        The IDs of the volumes.</p>
      *        <p>
      *        Default: Describes all your volumes.
      */
@@ -918,7 +916,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more volume IDs.
+     * The IDs of the volumes.
      * </p>
      * <p>
      * Default: Describes all your volumes.
@@ -930,7 +928,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param volumeIds
-     *        One or more volume IDs.</p>
+     *        The IDs of the volumes.</p>
      *        <p>
      *        Default: Describes all your volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -948,14 +946,14 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more volume IDs.
+     * The IDs of the volumes.
      * </p>
      * <p>
      * Default: Describes all your volumes.
      * </p>
      * 
      * @param volumeIds
-     *        One or more volume IDs.</p>
+     *        The IDs of the volumes.</p>
      *        <p>
      *        Default: Describes all your volumes.
      * @return Returns a reference to this object so that method calls can be chained together.

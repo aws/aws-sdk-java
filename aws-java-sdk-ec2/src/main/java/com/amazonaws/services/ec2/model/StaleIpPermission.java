@@ -42,13 +42,13 @@ public class StaleIpPermission implements Serializable, Cloneable {
     private String ipProtocol;
     /**
      * <p>
-     * One or more IP ranges. Not applicable for stale security group rules.
+     * The IP ranges. Not applicable for stale security group rules.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ipRanges;
     /**
      * <p>
-     * One or more prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * The prefix list IDs for an AWS service. Not applicable for stale security group rules.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> prefixListIds;
@@ -61,8 +61,8 @@ public class StaleIpPermission implements Serializable, Cloneable {
     private Integer toPort;
     /**
      * <p>
-     * One or more security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status
-     * of the VPC peering connection.
+     * The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status of the
+     * VPC peering connection.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<UserIdGroupPair> userIdGroupPairs;
@@ -161,10 +161,10 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IP ranges. Not applicable for stale security group rules.
+     * The IP ranges. Not applicable for stale security group rules.
      * </p>
      * 
-     * @return One or more IP ranges. Not applicable for stale security group rules.
+     * @return The IP ranges. Not applicable for stale security group rules.
      */
 
     public java.util.List<String> getIpRanges() {
@@ -176,11 +176,11 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IP ranges. Not applicable for stale security group rules.
+     * The IP ranges. Not applicable for stale security group rules.
      * </p>
      * 
      * @param ipRanges
-     *        One or more IP ranges. Not applicable for stale security group rules.
+     *        The IP ranges. Not applicable for stale security group rules.
      */
 
     public void setIpRanges(java.util.Collection<String> ipRanges) {
@@ -194,7 +194,7 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IP ranges. Not applicable for stale security group rules.
+     * The IP ranges. Not applicable for stale security group rules.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -203,7 +203,7 @@ public class StaleIpPermission implements Serializable, Cloneable {
      * </p>
      * 
      * @param ipRanges
-     *        One or more IP ranges. Not applicable for stale security group rules.
+     *        The IP ranges. Not applicable for stale security group rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,11 +219,11 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more IP ranges. Not applicable for stale security group rules.
+     * The IP ranges. Not applicable for stale security group rules.
      * </p>
      * 
      * @param ipRanges
-     *        One or more IP ranges. Not applicable for stale security group rules.
+     *        The IP ranges. Not applicable for stale security group rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,10 +234,10 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * The prefix list IDs for an AWS service. Not applicable for stale security group rules.
      * </p>
      * 
-     * @return One or more prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * @return The prefix list IDs for an AWS service. Not applicable for stale security group rules.
      */
 
     public java.util.List<String> getPrefixListIds() {
@@ -249,11 +249,11 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * The prefix list IDs for an AWS service. Not applicable for stale security group rules.
      * </p>
      * 
      * @param prefixListIds
-     *        One or more prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     *        The prefix list IDs for an AWS service. Not applicable for stale security group rules.
      */
 
     public void setPrefixListIds(java.util.Collection<String> prefixListIds) {
@@ -267,7 +267,7 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * The prefix list IDs for an AWS service. Not applicable for stale security group rules.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -276,7 +276,7 @@ public class StaleIpPermission implements Serializable, Cloneable {
      * </p>
      * 
      * @param prefixListIds
-     *        One or more prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     *        The prefix list IDs for an AWS service. Not applicable for stale security group rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,11 +292,11 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * The prefix list IDs for an AWS service. Not applicable for stale security group rules.
      * </p>
      * 
      * @param prefixListIds
-     *        One or more prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     *        The prefix list IDs for an AWS service. Not applicable for stale security group rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,12 +353,12 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status
-     * of the VPC peering connection.
+     * The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status of the
+     * VPC peering connection.
      * </p>
      * 
-     * @return One or more security group pairs. Returns the ID of the referenced security group and VPC, and the ID and
-     *         status of the VPC peering connection.
+     * @return The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status
+     *         of the VPC peering connection.
      */
 
     public java.util.List<UserIdGroupPair> getUserIdGroupPairs() {
@@ -370,13 +370,13 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status
-     * of the VPC peering connection.
+     * The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status of the
+     * VPC peering connection.
      * </p>
      * 
      * @param userIdGroupPairs
-     *        One or more security group pairs. Returns the ID of the referenced security group and VPC, and the ID and
-     *        status of the VPC peering connection.
+     *        The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status
+     *        of the VPC peering connection.
      */
 
     public void setUserIdGroupPairs(java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
@@ -390,8 +390,8 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status
-     * of the VPC peering connection.
+     * The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status of the
+     * VPC peering connection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -400,8 +400,8 @@ public class StaleIpPermission implements Serializable, Cloneable {
      * </p>
      * 
      * @param userIdGroupPairs
-     *        One or more security group pairs. Returns the ID of the referenced security group and VPC, and the ID and
-     *        status of the VPC peering connection.
+     *        The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status
+     *        of the VPC peering connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,13 +417,13 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status
-     * of the VPC peering connection.
+     * The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status of the
+     * VPC peering connection.
      * </p>
      * 
      * @param userIdGroupPairs
-     *        One or more security group pairs. Returns the ID of the referenced security group and VPC, and the ID and
-     *        status of the VPC peering connection.
+     *        The security group pairs. Returns the ID of the referenced security group and VPC, and the ID and status
+     *        of the VPC peering connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

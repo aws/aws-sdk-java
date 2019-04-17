@@ -28,17 +28,17 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more account attribute names.
+     * The account attribute names.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> attributeNames;
 
     /**
      * <p>
-     * One or more account attribute names.
+     * The account attribute names.
      * </p>
      * 
-     * @return One or more account attribute names.
+     * @return The account attribute names.
      * @see AccountAttributeName
      */
 
@@ -51,11 +51,11 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more account attribute names.
+     * The account attribute names.
      * </p>
      * 
      * @param attributeNames
-     *        One or more account attribute names.
+     *        The account attribute names.
      * @see AccountAttributeName
      */
 
@@ -70,7 +70,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more account attribute names.
+     * The account attribute names.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
      * </p>
      * 
      * @param attributeNames
-     *        One or more account attribute names.
+     *        The account attribute names.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountAttributeName
      */
@@ -96,11 +96,11 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more account attribute names.
+     * The account attribute names.
      * </p>
      * 
      * @param attributeNames
-     *        One or more account attribute names.
+     *        The account attribute names.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountAttributeName
      */
@@ -112,11 +112,11 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more account attribute names.
+     * The account attribute names.
      * </p>
      * 
      * @param attributeNames
-     *        One or more account attribute names.
+     *        The account attribute names.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountAttributeName
      */

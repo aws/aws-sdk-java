@@ -28,13 +28,13 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-Classic only] One or more security groups.
+     * [EC2-Classic only] The security groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> groups;
     /**
      * <p>
-     * One or more instances.
+     * The instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Instance> instances;
@@ -66,10 +66,10 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-Classic only] One or more security groups.
+     * [EC2-Classic only] The security groups.
      * </p>
      * 
-     * @return [EC2-Classic only] One or more security groups.
+     * @return [EC2-Classic only] The security groups.
      */
 
     public java.util.List<GroupIdentifier> getGroups() {
@@ -81,11 +81,11 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-Classic only] One or more security groups.
+     * [EC2-Classic only] The security groups.
      * </p>
      * 
      * @param groups
-     *        [EC2-Classic only] One or more security groups.
+     *        [EC2-Classic only] The security groups.
      */
 
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
@@ -99,7 +99,7 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-Classic only] One or more security groups.
+     * [EC2-Classic only] The security groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -108,7 +108,7 @@ public class Reservation implements Serializable, Cloneable {
      * </p>
      * 
      * @param groups
-     *        [EC2-Classic only] One or more security groups.
+     *        [EC2-Classic only] The security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [EC2-Classic only] One or more security groups.
+     * [EC2-Classic only] The security groups.
      * </p>
      * 
      * @param groups
-     *        [EC2-Classic only] One or more security groups.
+     *        [EC2-Classic only] The security groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,10 +139,10 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more instances.
+     * The instances.
      * </p>
      * 
-     * @return One or more instances.
+     * @return The instances.
      */
 
     public java.util.List<Instance> getInstances() {
@@ -154,11 +154,11 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more instances.
+     * The instances.
      * </p>
      * 
      * @param instances
-     *        One or more instances.
+     *        The instances.
      */
 
     public void setInstances(java.util.Collection<Instance> instances) {
@@ -172,7 +172,7 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more instances.
+     * The instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -181,7 +181,7 @@ public class Reservation implements Serializable, Cloneable {
      * </p>
      * 
      * @param instances
-     *        One or more instances.
+     *        The instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,11 +197,11 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more instances.
+     * The instances.
      * </p>
      * 
      * @param instances
-     *        One or more instances.
+     *        The instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

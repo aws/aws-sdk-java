@@ -110,6 +110,11 @@ public class VpcEndpointStaxUnmarshaller implements Unmarshaller<VpcEndpoint, St
                     continue;
                 }
 
+                if (context.testExpression("requesterManaged", targetDepth)) {
+                    vpcEndpoint.setRequesterManaged(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("networkInterfaceIdSet", targetDepth)) {
                     vpcEndpoint.withNetworkInterfaceIds(new ArrayList<String>());
                     continue;

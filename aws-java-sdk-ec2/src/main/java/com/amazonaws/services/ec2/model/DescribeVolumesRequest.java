@@ -20,16 +20,14 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeVolumesRequestMarshaller;
 
 /**
- * <p>
- * Contains the parameters for DescribeVolumes.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeVolumesRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, DryRunSupportedRequest<DescribeVolumesRequest> {
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -121,7 +119,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more volume IDs.
+     * The volume IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> volumeIds;
@@ -159,7 +157,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * to initialize any additional object members.
      * 
      * @param volumeIds
-     *        One or more volume IDs.
+     *        The volume IDs.
      */
     public DescribeVolumesRequest(java.util.List<String> volumeIds) {
         setVolumeIds(volumeIds);
@@ -167,7 +165,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -256,7 +254,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -353,7 +351,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -443,7 +441,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -542,7 +540,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -637,7 +635,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -738,7 +736,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -828,7 +826,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -924,10 +922,10 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more volume IDs.
+     * The volume IDs.
      * </p>
      * 
-     * @return One or more volume IDs.
+     * @return The volume IDs.
      */
 
     public java.util.List<String> getVolumeIds() {
@@ -939,11 +937,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more volume IDs.
+     * The volume IDs.
      * </p>
      * 
      * @param volumeIds
-     *        One or more volume IDs.
+     *        The volume IDs.
      */
 
     public void setVolumeIds(java.util.Collection<String> volumeIds) {
@@ -957,7 +955,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more volume IDs.
+     * The volume IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -966,7 +964,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </p>
      * 
      * @param volumeIds
-     *        One or more volume IDs.
+     *        The volume IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -982,11 +980,11 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more volume IDs.
+     * The volume IDs.
      * </p>
      * 
      * @param volumeIds
-     *        One or more volume IDs.
+     *        The volume IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

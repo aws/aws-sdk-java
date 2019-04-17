@@ -27,7 +27,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -503,7 +503,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * <p>
      * Default: Describes all your instances.
@@ -527,7 +527,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -1000,7 +1000,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1489,7 +1489,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -1963,7 +1963,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2453,7 +2453,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -2932,7 +2932,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -3424,7 +3424,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -3898,7 +3898,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -4385,13 +4385,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * <p>
      * Default: Describes all your instances.
      * </p>
      * 
-     * @return One or more instance IDs.</p>
+     * @return The instance IDs.</p>
      *         <p>
      *         Default: Describes all your instances.
      */
@@ -4405,14 +4405,14 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * <p>
      * Default: Describes all your instances.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.</p>
+     *        The instance IDs.</p>
      *        <p>
      *        Default: Describes all your instances.
      */
@@ -4428,7 +4428,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * <p>
      * Default: Describes all your instances.
@@ -4440,7 +4440,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.</p>
+     *        The instance IDs.</p>
      *        <p>
      *        Default: Describes all your instances.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -4458,14 +4458,14 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The instance IDs.
      * </p>
      * <p>
      * Default: Describes all your instances.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.</p>
+     *        The instance IDs.</p>
      *        <p>
      *        Default: Describes all your instances.
      * @return Returns a reference to this object so that method calls can be chained together.

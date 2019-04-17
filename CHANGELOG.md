@@ -1,3 +1,12 @@
+# __1.11.536__ __2019-04-17__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for requester-managed Interface VPC Endpoints (powered by AWS PrivateLink). The feature prevents VPC endpoint owners from accidentally deleting or otherwise mismanaging the VPC endpoints of some AWS VPC endpoint services.
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly adds Arabic language support with new female voice - "Zeina"
+
 # __1.11.535__ __2019-04-16__
 ## __AWS Organizations__
   - ### Features

@@ -25,7 +25,7 @@ public class DescribeVolumesModificationsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of returned <a>VolumeModification</a> objects.
+     * Information about the volume modifications.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VolumeModification> volumesModifications;
@@ -38,10 +38,10 @@ public class DescribeVolumesModificationsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of returned <a>VolumeModification</a> objects.
+     * Information about the volume modifications.
      * </p>
      * 
-     * @return A list of returned <a>VolumeModification</a> objects.
+     * @return Information about the volume modifications.
      */
 
     public java.util.List<VolumeModification> getVolumesModifications() {
@@ -53,11 +53,11 @@ public class DescribeVolumesModificationsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of returned <a>VolumeModification</a> objects.
+     * Information about the volume modifications.
      * </p>
      * 
      * @param volumesModifications
-     *        A list of returned <a>VolumeModification</a> objects.
+     *        Information about the volume modifications.
      */
 
     public void setVolumesModifications(java.util.Collection<VolumeModification> volumesModifications) {
@@ -71,7 +71,7 @@ public class DescribeVolumesModificationsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of returned <a>VolumeModification</a> objects.
+     * Information about the volume modifications.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class DescribeVolumesModificationsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param volumesModifications
-     *        A list of returned <a>VolumeModification</a> objects.
+     *        Information about the volume modifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class DescribeVolumesModificationsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of returned <a>VolumeModification</a> objects.
+     * Information about the volume modifications.
      * </p>
      * 
      * @param volumesModifications
-     *        A list of returned <a>VolumeModification</a> objects.
+     *        Information about the volume modifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

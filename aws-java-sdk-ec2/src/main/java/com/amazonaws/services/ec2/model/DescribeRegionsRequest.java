@@ -27,7 +27,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -45,14 +45,14 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The names of one or more regions.
+     * The names of the regions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> regionNames;
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -67,7 +67,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * </ul>
      * 
-     * @return One or more filters.</p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -91,7 +91,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -107,7 +107,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -133,7 +133,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -154,7 +154,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * </p>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -182,7 +182,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more filters.
+     * The filters.
      * </p>
      * <ul>
      * <li>
@@ -198,7 +198,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * 
      * @param filters
-     *        One or more filters.</p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -221,10 +221,10 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The names of one or more regions.
+     * The names of the regions.
      * </p>
      * 
-     * @return The names of one or more regions.
+     * @return The names of the regions.
      */
 
     public java.util.List<String> getRegionNames() {
@@ -236,11 +236,11 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The names of one or more regions.
+     * The names of the regions.
      * </p>
      * 
      * @param regionNames
-     *        The names of one or more regions.
+     *        The names of the regions.
      */
 
     public void setRegionNames(java.util.Collection<String> regionNames) {
@@ -254,7 +254,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The names of one or more regions.
+     * The names of the regions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -263,7 +263,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * </p>
      * 
      * @param regionNames
-     *        The names of one or more regions.
+     *        The names of the regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +279,11 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The names of one or more regions.
+     * The names of the regions.
      * </p>
      * 
      * @param regionNames
-     *        The names of one or more regions.
+     *        The names of the regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

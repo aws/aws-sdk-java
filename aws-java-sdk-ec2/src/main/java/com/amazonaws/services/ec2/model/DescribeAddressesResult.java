@@ -25,17 +25,17 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about one or more Elastic IP addresses.
+     * Information about the Elastic IP addresses.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Address> addresses;
 
     /**
      * <p>
-     * Information about one or more Elastic IP addresses.
+     * Information about the Elastic IP addresses.
      * </p>
      * 
-     * @return Information about one or more Elastic IP addresses.
+     * @return Information about the Elastic IP addresses.
      */
 
     public java.util.List<Address> getAddresses() {
@@ -47,11 +47,11 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about one or more Elastic IP addresses.
+     * Information about the Elastic IP addresses.
      * </p>
      * 
      * @param addresses
-     *        Information about one or more Elastic IP addresses.
+     *        Information about the Elastic IP addresses.
      */
 
     public void setAddresses(java.util.Collection<Address> addresses) {
@@ -65,7 +65,7 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about one or more Elastic IP addresses.
+     * Information about the Elastic IP addresses.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param addresses
-     *        Information about one or more Elastic IP addresses.
+     *        Information about the Elastic IP addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DescribeAddressesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about one or more Elastic IP addresses.
+     * Information about the Elastic IP addresses.
      * </p>
      * 
      * @param addresses
-     *        Information about one or more Elastic IP addresses.
+     *        Information about the Elastic IP addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

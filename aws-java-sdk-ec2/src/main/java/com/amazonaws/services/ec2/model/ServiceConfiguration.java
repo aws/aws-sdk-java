@@ -64,6 +64,13 @@ public class ServiceConfiguration implements Serializable, Cloneable {
     private Boolean acceptanceRequired;
     /**
      * <p>
+     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
+     * Endpoint API is restricted.
+     * </p>
+     */
+    private Boolean managesVpcEndpoints;
+    /**
+     * <p>
      * The Amazon Resource Names (ARNs) of the Network Load Balancers for the service.
      * </p>
      */
@@ -424,6 +431,66 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
+     * Endpoint API is restricted.
+     * </p>
+     * 
+     * @param managesVpcEndpoints
+     *        Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
+     *        the VPC Endpoint API is restricted.
+     */
+
+    public void setManagesVpcEndpoints(Boolean managesVpcEndpoints) {
+        this.managesVpcEndpoints = managesVpcEndpoints;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
+     * Endpoint API is restricted.
+     * </p>
+     * 
+     * @return Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
+     *         the VPC Endpoint API is restricted.
+     */
+
+    public Boolean getManagesVpcEndpoints() {
+        return this.managesVpcEndpoints;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
+     * Endpoint API is restricted.
+     * </p>
+     * 
+     * @param managesVpcEndpoints
+     *        Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
+     *        the VPC Endpoint API is restricted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceConfiguration withManagesVpcEndpoints(Boolean managesVpcEndpoints) {
+        setManagesVpcEndpoints(managesVpcEndpoints);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using the VPC
+     * Endpoint API is restricted.
+     * </p>
+     * 
+     * @return Indicates whether the service manages it's VPC Endpoints. Management of the service VPC Endpoints using
+     *         the VPC Endpoint API is restricted.
+     */
+
+    public Boolean isManagesVpcEndpoints() {
+        return this.managesVpcEndpoints;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Names (ARNs) of the Network Load Balancers for the service.
      * </p>
      * 
@@ -632,6 +699,8 @@ public class ServiceConfiguration implements Serializable, Cloneable {
             sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
         if (getAcceptanceRequired() != null)
             sb.append("AcceptanceRequired: ").append(getAcceptanceRequired()).append(",");
+        if (getManagesVpcEndpoints() != null)
+            sb.append("ManagesVpcEndpoints: ").append(getManagesVpcEndpoints()).append(",");
         if (getNetworkLoadBalancerArns() != null)
             sb.append("NetworkLoadBalancerArns: ").append(getNetworkLoadBalancerArns()).append(",");
         if (getBaseEndpointDnsNames() != null)
@@ -676,6 +745,10 @@ public class ServiceConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getAcceptanceRequired() != null && other.getAcceptanceRequired().equals(this.getAcceptanceRequired()) == false)
             return false;
+        if (other.getManagesVpcEndpoints() == null ^ this.getManagesVpcEndpoints() == null)
+            return false;
+        if (other.getManagesVpcEndpoints() != null && other.getManagesVpcEndpoints().equals(this.getManagesVpcEndpoints()) == false)
+            return false;
         if (other.getNetworkLoadBalancerArns() == null ^ this.getNetworkLoadBalancerArns() == null)
             return false;
         if (other.getNetworkLoadBalancerArns() != null && other.getNetworkLoadBalancerArns().equals(this.getNetworkLoadBalancerArns()) == false)
@@ -702,6 +775,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getServiceState() == null) ? 0 : getServiceState().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         hashCode = prime * hashCode + ((getAcceptanceRequired() == null) ? 0 : getAcceptanceRequired().hashCode());
+        hashCode = prime * hashCode + ((getManagesVpcEndpoints() == null) ? 0 : getManagesVpcEndpoints().hashCode());
         hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getBaseEndpointDnsNames() == null) ? 0 : getBaseEndpointDnsNames().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());

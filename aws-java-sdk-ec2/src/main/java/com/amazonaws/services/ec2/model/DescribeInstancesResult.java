@@ -25,7 +25,7 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Zero or more reservations.
+     * Information about the reservations.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Reservation> reservations;
@@ -39,10 +39,10 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Zero or more reservations.
+     * Information about the reservations.
      * </p>
      * 
-     * @return Zero or more reservations.
+     * @return Information about the reservations.
      */
 
     public java.util.List<Reservation> getReservations() {
@@ -54,11 +54,11 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Zero or more reservations.
+     * Information about the reservations.
      * </p>
      * 
      * @param reservations
-     *        Zero or more reservations.
+     *        Information about the reservations.
      */
 
     public void setReservations(java.util.Collection<Reservation> reservations) {
@@ -72,7 +72,7 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Zero or more reservations.
+     * Information about the reservations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param reservations
-     *        Zero or more reservations.
+     *        Information about the reservations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class DescribeInstancesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Zero or more reservations.
+     * Information about the reservations.
      * </p>
      * 
      * @param reservations
-     *        Zero or more reservations.
+     *        Information about the reservations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
