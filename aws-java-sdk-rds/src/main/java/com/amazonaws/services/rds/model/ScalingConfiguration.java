@@ -76,6 +76,25 @@ public class ScalingConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private Integer secondsUntilAutoPause;
+    /**
+     * <p>
+     * The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.
+     * </p>
+     * <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
+     * </p>
+     * <p>
+     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
+     * period.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     * > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     */
+    private String timeoutAction;
 
     /**
      * <p>
@@ -376,6 +395,124 @@ public class ScalingConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.
+     * </p>
+     * <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
+     * </p>
+     * <p>
+     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
+     * period.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     * > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param timeoutAction
+     *        The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     *        <code>RollbackCapacityChange</code>.</p>
+     *        <p>
+     *        <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as
+     *        possible.
+     *        </p>
+     *        <p>
+     *        <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the
+     *        timeout period.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     *        > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public void setTimeoutAction(String timeoutAction) {
+        this.timeoutAction = timeoutAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.
+     * </p>
+     * <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
+     * </p>
+     * <p>
+     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
+     * period.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     * > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @return The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     *         <code>RollbackCapacityChange</code>.</p>
+     *         <p>
+     *         <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as
+     *         possible.
+     *         </p>
+     *         <p>
+     *         <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the
+     *         timeout period.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     *         > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public String getTimeoutAction() {
+        return this.timeoutAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     * <code>RollbackCapacityChange</code>.
+     * </p>
+     * <p>
+     * <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.
+     * </p>
+     * <p>
+     * <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the timeout
+     * period.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     * > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param timeoutAction
+     *        The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or
+     *        <code>RollbackCapacityChange</code>.</p>
+     *        <p>
+     *        <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as
+     *        possible.
+     *        </p>
+     *        <p>
+     *        <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point is not found in the
+     *        timeout period.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"
+     *        > Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingConfiguration withTimeoutAction(String timeoutAction) {
+        setTimeoutAction(timeoutAction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -394,7 +531,9 @@ public class ScalingConfiguration implements Serializable, Cloneable {
         if (getAutoPause() != null)
             sb.append("AutoPause: ").append(getAutoPause()).append(",");
         if (getSecondsUntilAutoPause() != null)
-            sb.append("SecondsUntilAutoPause: ").append(getSecondsUntilAutoPause());
+            sb.append("SecondsUntilAutoPause: ").append(getSecondsUntilAutoPause()).append(",");
+        if (getTimeoutAction() != null)
+            sb.append("TimeoutAction: ").append(getTimeoutAction());
         sb.append("}");
         return sb.toString();
     }
@@ -425,6 +564,10 @@ public class ScalingConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getSecondsUntilAutoPause() != null && other.getSecondsUntilAutoPause().equals(this.getSecondsUntilAutoPause()) == false)
             return false;
+        if (other.getTimeoutAction() == null ^ this.getTimeoutAction() == null)
+            return false;
+        if (other.getTimeoutAction() != null && other.getTimeoutAction().equals(this.getTimeoutAction()) == false)
+            return false;
         return true;
     }
 
@@ -437,6 +580,7 @@ public class ScalingConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getAutoPause() == null) ? 0 : getAutoPause().hashCode());
         hashCode = prime * hashCode + ((getSecondsUntilAutoPause() == null) ? 0 : getSecondsUntilAutoPause().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutAction() == null) ? 0 : getTimeoutAction().hashCode());
         return hashCode;
     }
 

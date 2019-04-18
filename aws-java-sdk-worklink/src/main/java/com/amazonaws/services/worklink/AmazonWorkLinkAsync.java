@@ -39,6 +39,37 @@ public interface AmazonWorkLinkAsync extends AmazonWorkLink {
 
     /**
      * <p>
+     * Specifies a domain to be associated to Amazon WorkLink.
+     * </p>
+     * 
+     * @param associateDomainRequest
+     * @return A Java Future containing the result of the AssociateDomain operation returned by the service.
+     * @sample AmazonWorkLinkAsync.AssociateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateDomainResult> associateDomainAsync(AssociateDomainRequest associateDomainRequest);
+
+    /**
+     * <p>
+     * Specifies a domain to be associated to Amazon WorkLink.
+     * </p>
+     * 
+     * @param associateDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateDomain operation returned by the service.
+     * @sample AmazonWorkLinkAsyncHandler.AssociateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateDomainResult> associateDomainAsync(AssociateDomainRequest associateDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateDomainRequest, AssociateDomainResult> asyncHandler);
+
+    /**
+     * <p>
      * Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated
      * websites within the company network.
      * </p>
@@ -276,6 +307,37 @@ public interface AmazonWorkLinkAsync extends AmazonWorkLink {
 
     /**
      * <p>
+     * Provides information about the domain.
+     * </p>
+     * 
+     * @param describeDomainRequest
+     * @return A Java Future containing the result of the DescribeDomain operation returned by the service.
+     * @sample AmazonWorkLinkAsync.DescribeDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDomainResult> describeDomainAsync(DescribeDomainRequest describeDomainRequest);
+
+    /**
+     * <p>
+     * Provides information about the domain.
+     * </p>
+     * 
+     * @param describeDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDomain operation returned by the service.
+     * @sample AmazonWorkLinkAsyncHandler.DescribeDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDomainResult> describeDomainAsync(DescribeDomainRequest describeDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainRequest, DescribeDomainResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides basic information for the specified fleet, excluding identity provider, networking, and device
      * configuration details.
      * </p>
@@ -379,6 +441,39 @@ public interface AmazonWorkLinkAsync extends AmazonWorkLink {
 
     /**
      * <p>
+     * Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon
+     * WorkLink.
+     * </p>
+     * 
+     * @param disassociateDomainRequest
+     * @return A Java Future containing the result of the DisassociateDomain operation returned by the service.
+     * @sample AmazonWorkLinkAsync.DisassociateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateDomainResult> disassociateDomainAsync(DisassociateDomainRequest disassociateDomainRequest);
+
+    /**
+     * <p>
+     * Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon
+     * WorkLink.
+     * </p>
+     * 
+     * @param disassociateDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateDomain operation returned by the service.
+     * @sample AmazonWorkLinkAsyncHandler.DisassociateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateDomainResult> disassociateDomainAsync(DisassociateDomainRequest disassociateDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateDomainRequest, DisassociateDomainResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes a certificate authority (CA).
      * </p>
      * 
@@ -445,6 +540,37 @@ public interface AmazonWorkLinkAsync extends AmazonWorkLink {
 
     /**
      * <p>
+     * Retrieves a list of domains associated to a specified fleet.
+     * </p>
+     * 
+     * @param listDomainsRequest
+     * @return A Java Future containing the result of the ListDomains operation returned by the service.
+     * @sample AmazonWorkLinkAsync.ListDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest listDomainsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of domains associated to a specified fleet.
+     * </p>
+     * 
+     * @param listDomainsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDomains operation returned by the service.
+     * @sample AmazonWorkLinkAsyncHandler.ListDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest listDomainsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of fleets for the current account and Region.
      * </p>
      * 
@@ -508,6 +634,68 @@ public interface AmazonWorkLinkAsync extends AmazonWorkLink {
     java.util.concurrent.Future<ListWebsiteCertificateAuthoritiesResult> listWebsiteCertificateAuthoritiesAsync(
             ListWebsiteCertificateAuthoritiesRequest listWebsiteCertificateAuthoritiesRequest,
             com.amazonaws.handlers.AsyncHandler<ListWebsiteCertificateAuthoritiesRequest, ListWebsiteCertificateAuthoritiesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Moves a domain to ACTIVE status if it was in the INACTIVE status.
+     * </p>
+     * 
+     * @param restoreDomainAccessRequest
+     * @return A Java Future containing the result of the RestoreDomainAccess operation returned by the service.
+     * @sample AmazonWorkLinkAsync.RestoreDomainAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreDomainAccessResult> restoreDomainAccessAsync(RestoreDomainAccessRequest restoreDomainAccessRequest);
+
+    /**
+     * <p>
+     * Moves a domain to ACTIVE status if it was in the INACTIVE status.
+     * </p>
+     * 
+     * @param restoreDomainAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestoreDomainAccess operation returned by the service.
+     * @sample AmazonWorkLinkAsyncHandler.RestoreDomainAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreDomainAccessResult> restoreDomainAccessAsync(RestoreDomainAccessRequest restoreDomainAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<RestoreDomainAccessRequest, RestoreDomainAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Moves a domain to INACTIVE status if it was in the ACTIVE status.
+     * </p>
+     * 
+     * @param revokeDomainAccessRequest
+     * @return A Java Future containing the result of the RevokeDomainAccess operation returned by the service.
+     * @sample AmazonWorkLinkAsync.RevokeDomainAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeDomainAccessResult> revokeDomainAccessAsync(RevokeDomainAccessRequest revokeDomainAccessRequest);
+
+    /**
+     * <p>
+     * Moves a domain to INACTIVE status if it was in the ACTIVE status.
+     * </p>
+     * 
+     * @param revokeDomainAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RevokeDomainAccess operation returned by the service.
+     * @sample AmazonWorkLinkAsyncHandler.RevokeDomainAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeDomainAccessResult> revokeDomainAccessAsync(RevokeDomainAccessRequest revokeDomainAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<RevokeDomainAccessRequest, RevokeDomainAccessResult> asyncHandler);
 
     /**
      * <p>
@@ -644,6 +832,37 @@ public interface AmazonWorkLinkAsync extends AmazonWorkLink {
     java.util.concurrent.Future<UpdateDevicePolicyConfigurationResult> updateDevicePolicyConfigurationAsync(
             UpdateDevicePolicyConfigurationRequest updateDevicePolicyConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDevicePolicyConfigurationRequest, UpdateDevicePolicyConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates domain metadata, such as DisplayName.
+     * </p>
+     * 
+     * @param updateDomainMetadataRequest
+     * @return A Java Future containing the result of the UpdateDomainMetadata operation returned by the service.
+     * @sample AmazonWorkLinkAsync.UpdateDomainMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDomainMetadataResult> updateDomainMetadataAsync(UpdateDomainMetadataRequest updateDomainMetadataRequest);
+
+    /**
+     * <p>
+     * Updates domain metadata, such as DisplayName.
+     * </p>
+     * 
+     * @param updateDomainMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDomainMetadata operation returned by the service.
+     * @sample AmazonWorkLinkAsyncHandler.UpdateDomainMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDomainMetadataResult> updateDomainMetadataAsync(UpdateDomainMetadataRequest updateDomainMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDomainMetadataRequest, UpdateDomainMetadataResult> asyncHandler);
 
     /**
      * <p>

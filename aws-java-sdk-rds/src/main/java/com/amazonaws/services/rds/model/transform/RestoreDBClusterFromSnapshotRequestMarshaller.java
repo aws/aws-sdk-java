@@ -172,6 +172,10 @@ public class RestoreDBClusterFromSnapshotRequestMarshaller implements
                 if (scalingConfiguration.getSecondsUntilAutoPause() != null) {
                     request.addParameter("ScalingConfiguration.SecondsUntilAutoPause", StringUtils.fromInteger(scalingConfiguration.getSecondsUntilAutoPause()));
                 }
+
+                if (scalingConfiguration.getTimeoutAction() != null) {
+                    request.addParameter("ScalingConfiguration.TimeoutAction", StringUtils.fromString(scalingConfiguration.getTimeoutAction()));
+                }
             }
         }
 

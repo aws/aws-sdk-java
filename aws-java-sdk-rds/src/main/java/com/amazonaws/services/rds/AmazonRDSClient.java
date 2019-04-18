@@ -1715,9 +1715,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     /**
      * <p>
      * Creates a new DB instance that acts as a Read Replica for an existing source DB instance. You can create a Read
-     * Replica for a DB instance running MySQL, MariaDB, or PostgreSQL. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with PostgreSQL, MySQL,
-     * and MariaDB Read Replicas</a> in the <i>Amazon RDS User Guide</i>.
+     * Replica for a DB instance running MySQL, MariaDB, Oracle, or PostgreSQL. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with Read Replicas</a>
+     * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Amazon Aurora doesn't support this action. You must call the <code>CreateDBInstance</code> action to create a DB

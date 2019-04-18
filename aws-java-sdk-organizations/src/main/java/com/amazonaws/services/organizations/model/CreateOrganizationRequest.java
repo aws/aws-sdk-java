@@ -38,6 +38,9 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
      * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
+     * <p>
+     * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -64,6 +67,9 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
      * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
+     * <p>
+     * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -85,6 +91,9 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        account. For more information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
      *        >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     *        </p>
+     *        <p>
+     *        The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
      *        </p>
      *        </li>
      *        <li>
@@ -116,6 +125,9 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
      * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
+     * <p>
+     * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -136,6 +148,10 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *         account. For more information, see <a href=
      *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
      *         >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     *         </p>
+     *         <p>
+     *         The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US)
+     *         Region.
      *         </p>
      *         </li>
      *         <li>
@@ -167,6 +183,9 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
      * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
+     * <p>
+     * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -188,6 +207,9 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        account. For more information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
      *        >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     *        </p>
+     *        <p>
+     *        The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
      *        </p>
      *        </li>
      *        <li>
@@ -221,6 +243,9 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
      * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
+     * <p>
+     * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -242,6 +267,9 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        account. For more information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
      *        >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     *        </p>
+     *        <p>
+     *        The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
      *        </p>
      *        </li>
      *        <li>
@@ -273,6 +301,9 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
      * >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
+     * <p>
+     * The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -294,6 +325,9 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      *        account. For more information, see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
      *        >Consolidated billing</a> in the <i>AWS Organizations User Guide</i>.
+     *        </p>
+     *        <p>
+     *        The consolidated billing feature subset isn't available for organizations in the AWS GovCloud (US) Region.
      *        </p>
      *        </li>
      *        <li>

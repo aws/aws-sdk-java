@@ -28,6 +28,11 @@ public class AbstractAmazonWorkLink implements AmazonWorkLink {
     }
 
     @Override
+    public AssociateDomainResult associateDomain(AssociateDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateWebsiteCertificateAuthorityResult associateWebsiteCertificateAuthority(AssociateWebsiteCertificateAuthorityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,6 +68,11 @@ public class AbstractAmazonWorkLink implements AmazonWorkLink {
     }
 
     @Override
+    public DescribeDomainResult describeDomain(DescribeDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeFleetMetadataResult describeFleetMetadata(DescribeFleetMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -78,6 +88,11 @@ public class AbstractAmazonWorkLink implements AmazonWorkLink {
     }
 
     @Override
+    public DisassociateDomainResult disassociateDomain(DisassociateDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateWebsiteCertificateAuthorityResult disassociateWebsiteCertificateAuthority(DisassociateWebsiteCertificateAuthorityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -88,12 +103,27 @@ public class AbstractAmazonWorkLink implements AmazonWorkLink {
     }
 
     @Override
+    public ListDomainsResult listDomains(ListDomainsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListFleetsResult listFleets(ListFleetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListWebsiteCertificateAuthoritiesResult listWebsiteCertificateAuthorities(ListWebsiteCertificateAuthoritiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RestoreDomainAccessResult restoreDomainAccess(RestoreDomainAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RevokeDomainAccessResult revokeDomainAccess(RevokeDomainAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,6 +144,11 @@ public class AbstractAmazonWorkLink implements AmazonWorkLink {
 
     @Override
     public UpdateDevicePolicyConfigurationResult updateDevicePolicyConfiguration(UpdateDevicePolicyConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDomainMetadataResult updateDomainMetadata(UpdateDomainMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

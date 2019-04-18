@@ -4683,6 +4683,9 @@
       }, {
         "name" : "INTERNAL_SERVER_ERROR",
         "value" : "INTERNAL_SERVER_ERROR"
+      }, {
+        "name" : "OVER_LIMIT",
+        "value" : "OVER_LIMIT"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -23627,6 +23630,9 @@
         "name" : "IMPORT_COMPLETE",
         "value" : "IMPORT_COMPLETE"
       }, {
+        "name" : "IMPORT_COMPLETE_WITH_ERRORS",
+        "value" : "IMPORT_COMPLETE_WITH_ERRORS"
+      }, {
         "name" : "IMPORT_FAILED",
         "value" : "IMPORT_FAILED"
       }, {
@@ -23647,6 +23653,9 @@
       }, {
         "name" : "DELETE_FAILED_LIMIT_EXCEEDED",
         "value" : "DELETE_FAILED_LIMIT_EXCEEDED"
+      }, {
+        "name" : "INTERNAL_ERROR",
+        "value" : "INTERNAL_ERROR"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

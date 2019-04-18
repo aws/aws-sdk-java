@@ -67,6 +67,39 @@ public class AmazonWorkLinkAsyncClient extends AmazonWorkLinkClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateDomainResult> associateDomainAsync(AssociateDomainRequest request) {
+
+        return associateDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateDomainResult> associateDomainAsync(final AssociateDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateDomainRequest, AssociateDomainResult> asyncHandler) {
+        final AssociateDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateDomainResult>() {
+            @Override
+            public AssociateDomainResult call() throws Exception {
+                AssociateDomainResult result = null;
+
+                try {
+                    result = executeAssociateDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateWebsiteCertificateAuthorityResult> associateWebsiteCertificateAuthorityAsync(
             AssociateWebsiteCertificateAuthorityRequest request) {
 
@@ -306,6 +339,39 @@ public class AmazonWorkLinkAsyncClient extends AmazonWorkLinkClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainResult> describeDomainAsync(DescribeDomainRequest request) {
+
+        return describeDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainResult> describeDomainAsync(final DescribeDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDomainRequest, DescribeDomainResult> asyncHandler) {
+        final DescribeDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDomainResult>() {
+            @Override
+            public DescribeDomainResult call() throws Exception {
+                DescribeDomainResult result = null;
+
+                try {
+                    result = executeDescribeDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFleetMetadataResult> describeFleetMetadataAsync(DescribeFleetMetadataRequest request) {
 
         return describeFleetMetadataAsync(request, null);
@@ -409,6 +475,39 @@ public class AmazonWorkLinkAsyncClient extends AmazonWorkLinkClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateDomainResult> disassociateDomainAsync(DisassociateDomainRequest request) {
+
+        return disassociateDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateDomainResult> disassociateDomainAsync(final DisassociateDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateDomainRequest, DisassociateDomainResult> asyncHandler) {
+        final DisassociateDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateDomainResult>() {
+            @Override
+            public DisassociateDomainResult call() throws Exception {
+                DisassociateDomainResult result = null;
+
+                try {
+                    result = executeDisassociateDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateWebsiteCertificateAuthorityResult> disassociateWebsiteCertificateAuthorityAsync(
             DisassociateWebsiteCertificateAuthorityRequest request) {
 
@@ -477,6 +576,39 @@ public class AmazonWorkLinkAsyncClient extends AmazonWorkLinkClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(ListDomainsRequest request) {
+
+        return listDomainsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(final ListDomainsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler) {
+        final ListDomainsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDomainsResult>() {
+            @Override
+            public ListDomainsResult call() throws Exception {
+                ListDomainsResult result = null;
+
+                try {
+                    result = executeListDomains(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFleetsResult> listFleetsAsync(ListFleetsRequest request) {
 
         return listFleetsAsync(request, null);
@@ -529,6 +661,72 @@ public class AmazonWorkLinkAsyncClient extends AmazonWorkLinkClient implements A
 
                 try {
                     result = executeListWebsiteCertificateAuthorities(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreDomainAccessResult> restoreDomainAccessAsync(RestoreDomainAccessRequest request) {
+
+        return restoreDomainAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreDomainAccessResult> restoreDomainAccessAsync(final RestoreDomainAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreDomainAccessRequest, RestoreDomainAccessResult> asyncHandler) {
+        final RestoreDomainAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestoreDomainAccessResult>() {
+            @Override
+            public RestoreDomainAccessResult call() throws Exception {
+                RestoreDomainAccessResult result = null;
+
+                try {
+                    result = executeRestoreDomainAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeDomainAccessResult> revokeDomainAccessAsync(RevokeDomainAccessRequest request) {
+
+        return revokeDomainAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeDomainAccessResult> revokeDomainAccessAsync(final RevokeDomainAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RevokeDomainAccessRequest, RevokeDomainAccessResult> asyncHandler) {
+        final RevokeDomainAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RevokeDomainAccessResult>() {
+            @Override
+            public RevokeDomainAccessResult call() throws Exception {
+                RevokeDomainAccessResult result = null;
+
+                try {
+                    result = executeRevokeDomainAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -666,6 +864,39 @@ public class AmazonWorkLinkAsyncClient extends AmazonWorkLinkClient implements A
 
                 try {
                     result = executeUpdateDevicePolicyConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainMetadataResult> updateDomainMetadataAsync(UpdateDomainMetadataRequest request) {
+
+        return updateDomainMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDomainMetadataResult> updateDomainMetadataAsync(final UpdateDomainMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDomainMetadataRequest, UpdateDomainMetadataResult> asyncHandler) {
+        final UpdateDomainMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDomainMetadataResult>() {
+            @Override
+            public UpdateDomainMetadataResult call() throws Exception {
+                UpdateDomainMetadataResult result = null;
+
+                try {
+                    result = executeUpdateDomainMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

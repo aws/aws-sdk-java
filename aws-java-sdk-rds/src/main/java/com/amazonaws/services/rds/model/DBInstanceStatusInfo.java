@@ -40,7 +40,7 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
     private Boolean normal;
     /**
      * <p>
-     * Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop
+     * Status of the DB instance. For a StatusType of Read Replica, the values can be replicating, replication stop
      * point set, replication stop point reached, error, stopped, or terminated.
      * </p>
      */
@@ -151,12 +151,12 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop
+     * Status of the DB instance. For a StatusType of Read Replica, the values can be replicating, replication stop
      * point set, replication stop point reached, error, stopped, or terminated.
      * </p>
      * 
      * @param status
-     *        Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication
+     *        Status of the DB instance. For a StatusType of Read Replica, the values can be replicating, replication
      *        stop point set, replication stop point reached, error, stopped, or terminated.
      */
 
@@ -166,11 +166,11 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop
+     * Status of the DB instance. For a StatusType of Read Replica, the values can be replicating, replication stop
      * point set, replication stop point reached, error, stopped, or terminated.
      * </p>
      * 
-     * @return Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication
+     * @return Status of the DB instance. For a StatusType of Read Replica, the values can be replicating, replication
      *         stop point set, replication stop point reached, error, stopped, or terminated.
      */
 
@@ -180,12 +180,12 @@ public class DBInstanceStatusInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop
+     * Status of the DB instance. For a StatusType of Read Replica, the values can be replicating, replication stop
      * point set, replication stop point reached, error, stopped, or terminated.
      * </p>
      * 
      * @param status
-     *        Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication
+     *        Status of the DB instance. For a StatusType of Read Replica, the values can be replicating, replication
      *        stop point set, replication stop point reached, error, stopped, or terminated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

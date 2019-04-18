@@ -72,6 +72,10 @@ public class CreateAccountStatusJsonUnmarshaller implements Unmarshaller<CreateA
                     context.nextToken();
                     createAccountStatus.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("GovCloudAccountId", targetDepth)) {
+                    context.nextToken();
+                    createAccountStatus.setGovCloudAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("FailureReason", targetDepth)) {
                     context.nextToken();
                     createAccountStatus.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));

@@ -80,6 +80,19 @@ public class AbstractAWSOrganizationsAsync extends AbstractAWSOrganizations impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGovCloudAccountResult> createGovCloudAccountAsync(CreateGovCloudAccountRequest request) {
+
+        return createGovCloudAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGovCloudAccountResult> createGovCloudAccountAsync(CreateGovCloudAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateGovCloudAccountRequest, CreateGovCloudAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateOrganizationResult> createOrganizationAsync(CreateOrganizationRequest request) {
 
         return createOrganizationAsync(request, null);

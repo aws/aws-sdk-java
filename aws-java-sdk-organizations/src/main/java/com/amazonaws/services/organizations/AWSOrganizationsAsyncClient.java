@@ -506,6 +506,39 @@ public class AWSOrganizationsAsyncClient extends AWSOrganizationsClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGovCloudAccountResult> createGovCloudAccountAsync(CreateGovCloudAccountRequest request) {
+
+        return createGovCloudAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGovCloudAccountResult> createGovCloudAccountAsync(final CreateGovCloudAccountRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGovCloudAccountRequest, CreateGovCloudAccountResult> asyncHandler) {
+        final CreateGovCloudAccountRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateGovCloudAccountResult>() {
+            @Override
+            public CreateGovCloudAccountResult call() throws Exception {
+                CreateGovCloudAccountResult result = null;
+
+                try {
+                    result = executeCreateGovCloudAccount(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateOrganizationResult> createOrganizationAsync(CreateOrganizationRequest request) {
 
         return createOrganizationAsync(request, null);

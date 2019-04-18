@@ -98,7 +98,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
     private Boolean supportsLogExportsToCloudwatchLogs;
     /**
      * <p>
-     * Indicates whether the database engine version supports read replicas.
+     * Indicates whether the database engine version supports Read Replicas.
      * </p>
      */
     private Boolean supportsReadReplica;
@@ -738,11 +738,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the database engine version supports read replicas.
+     * Indicates whether the database engine version supports Read Replicas.
      * </p>
      * 
      * @param supportsReadReplica
-     *        Indicates whether the database engine version supports read replicas.
+     *        Indicates whether the database engine version supports Read Replicas.
      */
 
     public void setSupportsReadReplica(Boolean supportsReadReplica) {
@@ -751,10 +751,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the database engine version supports read replicas.
+     * Indicates whether the database engine version supports Read Replicas.
      * </p>
      * 
-     * @return Indicates whether the database engine version supports read replicas.
+     * @return Indicates whether the database engine version supports Read Replicas.
      */
 
     public Boolean getSupportsReadReplica() {
@@ -763,11 +763,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the database engine version supports read replicas.
+     * Indicates whether the database engine version supports Read Replicas.
      * </p>
      * 
      * @param supportsReadReplica
-     *        Indicates whether the database engine version supports read replicas.
+     *        Indicates whether the database engine version supports Read Replicas.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -778,10 +778,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the database engine version supports read replicas.
+     * Indicates whether the database engine version supports Read Replicas.
      * </p>
      * 
-     * @return Indicates whether the database engine version supports read replicas.
+     * @return Indicates whether the database engine version supports Read Replicas.
      */
 
     public Boolean isSupportsReadReplica() {

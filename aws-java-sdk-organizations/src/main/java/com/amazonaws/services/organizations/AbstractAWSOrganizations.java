@@ -58,6 +58,11 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
     }
 
     @Override
+    public CreateGovCloudAccountResult createGovCloudAccount(CreateGovCloudAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateOrganizationResult createOrganization(CreateOrganizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

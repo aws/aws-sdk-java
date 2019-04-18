@@ -61,9 +61,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String masterUsername;
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine you use. For example, this value returns
-     * MySQL, MariaDB, or PostgreSQL information when returning values from CreateDBInstanceReadReplica since Read
-     * Replicas are only supported for these engines.
+     * The meaning of this parameter differs according to the database engine you use.
      * </p>
      * <p>
      * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
@@ -656,9 +654,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine you use. For example, this value returns
-     * MySQL, MariaDB, or PostgreSQL information when returning values from CreateDBInstanceReadReplica since Read
-     * Replicas are only supported for these engines.
+     * The meaning of this parameter differs according to the database engine you use.
      * </p>
      * <p>
      * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
@@ -679,9 +675,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBName
-     *        The meaning of this parameter differs according to the database engine you use. For example, this value
-     *        returns MySQL, MariaDB, or PostgreSQL information when returning values from CreateDBInstanceReadReplica
-     *        since Read Replicas are only supported for these engines.</p>
+     *        The meaning of this parameter differs according to the database engine you use.</p>
      *        <p>
      *        <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
      *        </p>
@@ -706,9 +700,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine you use. For example, this value returns
-     * MySQL, MariaDB, or PostgreSQL information when returning values from CreateDBInstanceReadReplica since Read
-     * Replicas are only supported for these engines.
+     * The meaning of this parameter differs according to the database engine you use.
      * </p>
      * <p>
      * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
@@ -728,9 +720,7 @@ public class DBInstance implements Serializable, Cloneable {
      * apply to an Oracle DB instance.
      * </p>
      * 
-     * @return The meaning of this parameter differs according to the database engine you use. For example, this value
-     *         returns MySQL, MariaDB, or PostgreSQL information when returning values from CreateDBInstanceReadReplica
-     *         since Read Replicas are only supported for these engines.</p>
+     * @return The meaning of this parameter differs according to the database engine you use.</p>
      *         <p>
      *         <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
      *         </p>
@@ -755,9 +745,7 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The meaning of this parameter differs according to the database engine you use. For example, this value returns
-     * MySQL, MariaDB, or PostgreSQL information when returning values from CreateDBInstanceReadReplica since Read
-     * Replicas are only supported for these engines.
+     * The meaning of this parameter differs according to the database engine you use.
      * </p>
      * <p>
      * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
@@ -778,9 +766,7 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBName
-     *        The meaning of this parameter differs according to the database engine you use. For example, this value
-     *        returns MySQL, MariaDB, or PostgreSQL information when returning values from CreateDBInstanceReadReplica
-     *        since Read Replicas are only supported for these engines.</p>
+     *        The meaning of this parameter differs according to the database engine you use.</p>
      *        <p>
      *        <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
      *        </p>

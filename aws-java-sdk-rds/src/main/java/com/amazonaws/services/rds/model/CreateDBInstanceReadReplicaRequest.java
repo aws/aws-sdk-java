@@ -43,12 +43,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB instance.
+     * Must be the identifier of an existing MySQL, MariaDB, Oracle, or PostgreSQL DB instance.
      * </p>
      * </li>
      * <li>
      * <p>
      * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica Limitations
+     * with Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -145,8 +152,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Integer iops;
     /**
      * <p>
-     * The option group the DB instance is associated with. If omitted, the default option group for the engine
-     * specified is used.
+     * The option group the DB instance is associated with. If omitted, the option group associated with the source
+     * instance is used.
      * </p>
      */
     private String optionGroupName;
@@ -375,7 +382,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Boolean enableIAMDatabaseAuthentication;
     /**
      * <p>
-     * True to enable Performance Insights for the read replica, and otherwise false.
+     * True to enable Performance Insights for the Read Replica, and otherwise false.
      * </p>
      * <p>
      * For more information, see <a
@@ -453,12 +460,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB instance.
+     *        Must be the identifier of an existing MySQL, MariaDB, Oracle, or PostgreSQL DB instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the limitations of Oracle Read Replicas, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica
+     *        Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -550,12 +564,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB instance.
+     * Must be the identifier of an existing MySQL, MariaDB, Oracle, or PostgreSQL DB instance.
      * </p>
      * </li>
      * <li>
      * <p>
      * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica Limitations
+     * with Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -594,12 +615,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB instance.
+     *        Must be the identifier of an existing MySQL, MariaDB, Oracle, or PostgreSQL DB instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the limitations of Oracle Read Replicas, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica
+     *        Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -645,12 +673,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB instance.
+     * Must be the identifier of an existing MySQL, MariaDB, Oracle, or PostgreSQL DB instance.
      * </p>
      * </li>
      * <li>
      * <p>
      * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica Limitations
+     * with Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -688,12 +723,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB instance.
+     *         Must be the identifier of an existing MySQL, MariaDB, Oracle, or PostgreSQL DB instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For the limitations of Oracle Read Replicas, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica
+     *         Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -739,12 +781,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB instance.
+     * Must be the identifier of an existing MySQL, MariaDB, Oracle, or PostgreSQL DB instance.
      * </p>
      * </li>
      * <li>
      * <p>
      * Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the limitations of Oracle Read Replicas, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica Limitations
+     * with Oracle</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -783,12 +832,19 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be the identifier of an existing MySQL, MariaDB, or PostgreSQL DB instance.
+     *        Must be the identifier of an existing MySQL, MariaDB, Oracle, or PostgreSQL DB instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Can specify a DB instance that is a MySQL Read Replica only if the source is running MySQL 5.6 or later.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the limitations of Oracle Read Replicas, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Read Replica
+     *        Limitations with Oracle</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1262,13 +1318,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The option group the DB instance is associated with. If omitted, the default option group for the engine
-     * specified is used.
+     * The option group the DB instance is associated with. If omitted, the option group associated with the source
+     * instance is used.
      * </p>
      * 
      * @param optionGroupName
-     *        The option group the DB instance is associated with. If omitted, the default option group for the engine
-     *        specified is used.
+     *        The option group the DB instance is associated with. If omitted, the option group associated with the
+     *        source instance is used.
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -1277,12 +1333,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The option group the DB instance is associated with. If omitted, the default option group for the engine
-     * specified is used.
+     * The option group the DB instance is associated with. If omitted, the option group associated with the source
+     * instance is used.
      * </p>
      * 
-     * @return The option group the DB instance is associated with. If omitted, the default option group for the engine
-     *         specified is used.
+     * @return The option group the DB instance is associated with. If omitted, the option group associated with the
+     *         source instance is used.
      */
 
     public String getOptionGroupName() {
@@ -1291,13 +1347,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The option group the DB instance is associated with. If omitted, the default option group for the engine
-     * specified is used.
+     * The option group the DB instance is associated with. If omitted, the option group associated with the source
+     * instance is used.
      * </p>
      * 
      * @param optionGroupName
-     *        The option group the DB instance is associated with. If omitted, the default option group for the engine
-     *        specified is used.
+     *        The option group the DB instance is associated with. If omitted, the option group associated with the
+     *        source instance is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2841,7 +2897,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * True to enable Performance Insights for the read replica, and otherwise false.
+     * True to enable Performance Insights for the Read Replica, and otherwise false.
      * </p>
      * <p>
      * For more information, see <a
@@ -2850,7 +2906,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the read replica, and otherwise false. </p>
+     *        True to enable Performance Insights for the Read Replica, and otherwise false. </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
@@ -2863,7 +2919,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * True to enable Performance Insights for the read replica, and otherwise false.
+     * True to enable Performance Insights for the Read Replica, and otherwise false.
      * </p>
      * <p>
      * For more information, see <a
@@ -2871,7 +2927,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Insights</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
-     * @return True to enable Performance Insights for the read replica, and otherwise false. </p>
+     * @return True to enable Performance Insights for the Read Replica, and otherwise false. </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
@@ -2884,7 +2940,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * True to enable Performance Insights for the read replica, and otherwise false.
+     * True to enable Performance Insights for the Read Replica, and otherwise false.
      * </p>
      * <p>
      * For more information, see <a
@@ -2893,7 +2949,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the read replica, and otherwise false. </p>
+     *        True to enable Performance Insights for the Read Replica, and otherwise false. </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
@@ -2908,7 +2964,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * True to enable Performance Insights for the read replica, and otherwise false.
+     * True to enable Performance Insights for the Read Replica, and otherwise false.
      * </p>
      * <p>
      * For more information, see <a
@@ -2916,7 +2972,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * Insights</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
-     * @return True to enable Performance Insights for the read replica, and otherwise false. </p>
+     * @return True to enable Performance Insights for the Read Replica, and otherwise false. </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon

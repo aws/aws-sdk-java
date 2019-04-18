@@ -178,6 +178,63 @@ public interface AWSKafka {
     ListNodesResult listNodes(ListNodesRequest listNodesRequest);
 
     /**
+     * <p>
+     * Returns a list of tags attached to a resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws NotFoundException
+     *         The resource could not be found due to incorrect input. Correct your request and then retry it.
+     * @throws BadRequestException
+     *         Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws InternalServerErrorException
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     * @sample AWSKafka.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Tag a resource with given tags.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The resource could not be found due to incorrect input. Correct your request and then retry it.
+     * @throws BadRequestException
+     *         Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws InternalServerErrorException
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     * @sample AWSKafka.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Remove tags of a resource by given tag keys.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws NotFoundException
+     *         The resource could not be found due to incorrect input. Correct your request and then retry it.
+     * @throws BadRequestException
+     *         Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws InternalServerErrorException
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     * @sample AWSKafka.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

@@ -48,6 +48,9 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
      * A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
      * engine mode.
      * </p>
+     * <p>
+     * When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.
+     * </p>
      */
     private Boolean autoPause;
     /**
@@ -57,6 +60,13 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
      * </p>
      */
     private Integer secondsUntilAutoPause;
+    /**
+     * <p>
+     * The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
+     * <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.
+     * </p>
+     */
+    private String timeoutAction;
 
     /**
      * <p>
@@ -143,10 +153,15 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
      * A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
      * engine mode.
      * </p>
+     * <p>
+     * When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.
+     * </p>
      * 
      * @param autoPause
      *        A value that indicates whether automatic pause is allowed for the Aurora DB cluster in
-     *        <code>serverless</code> DB engine mode.
+     *        <code>serverless</code> DB engine mode.</p>
+     *        <p>
+     *        When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.
      */
 
     public void setAutoPause(Boolean autoPause) {
@@ -158,9 +173,14 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
      * A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
      * engine mode.
      * </p>
+     * <p>
+     * When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.
+     * </p>
      * 
      * @return A value that indicates whether automatic pause is allowed for the Aurora DB cluster in
-     *         <code>serverless</code> DB engine mode.
+     *         <code>serverless</code> DB engine mode.</p>
+     *         <p>
+     *         When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.
      */
 
     public Boolean getAutoPause() {
@@ -172,10 +192,15 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
      * A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
      * engine mode.
      * </p>
+     * <p>
+     * When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.
+     * </p>
      * 
      * @param autoPause
      *        A value that indicates whether automatic pause is allowed for the Aurora DB cluster in
-     *        <code>serverless</code> DB engine mode.
+     *        <code>serverless</code> DB engine mode.</p>
+     *        <p>
+     *        When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,9 +214,14 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
      * A value that indicates whether automatic pause is allowed for the Aurora DB cluster in <code>serverless</code> DB
      * engine mode.
      * </p>
+     * <p>
+     * When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.
+     * </p>
      * 
      * @return A value that indicates whether automatic pause is allowed for the Aurora DB cluster in
-     *         <code>serverless</code> DB engine mode.
+     *         <code>serverless</code> DB engine mode.</p>
+     *         <p>
+     *         When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.
      */
 
     public Boolean isAutoPause() {
@@ -245,6 +275,52 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
+     * <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.
+     * </p>
+     * 
+     * @param timeoutAction
+     *        The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
+     *        <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.
+     */
+
+    public void setTimeoutAction(String timeoutAction) {
+        this.timeoutAction = timeoutAction;
+    }
+
+    /**
+     * <p>
+     * The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
+     * <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.
+     * </p>
+     * 
+     * @return The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
+     *         <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.
+     */
+
+    public String getTimeoutAction() {
+        return this.timeoutAction;
+    }
+
+    /**
+     * <p>
+     * The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
+     * <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.
+     * </p>
+     * 
+     * @param timeoutAction
+     *        The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
+     *        <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingConfigurationInfo withTimeoutAction(String timeoutAction) {
+        setTimeoutAction(timeoutAction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -263,7 +339,9 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
         if (getAutoPause() != null)
             sb.append("AutoPause: ").append(getAutoPause()).append(",");
         if (getSecondsUntilAutoPause() != null)
-            sb.append("SecondsUntilAutoPause: ").append(getSecondsUntilAutoPause());
+            sb.append("SecondsUntilAutoPause: ").append(getSecondsUntilAutoPause()).append(",");
+        if (getTimeoutAction() != null)
+            sb.append("TimeoutAction: ").append(getTimeoutAction());
         sb.append("}");
         return sb.toString();
     }
@@ -294,6 +372,10 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
             return false;
         if (other.getSecondsUntilAutoPause() != null && other.getSecondsUntilAutoPause().equals(this.getSecondsUntilAutoPause()) == false)
             return false;
+        if (other.getTimeoutAction() == null ^ this.getTimeoutAction() == null)
+            return false;
+        if (other.getTimeoutAction() != null && other.getTimeoutAction().equals(this.getTimeoutAction()) == false)
+            return false;
         return true;
     }
 
@@ -306,6 +388,7 @@ public class ScalingConfigurationInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getAutoPause() == null) ? 0 : getAutoPause().hashCode());
         hashCode = prime * hashCode + ((getSecondsUntilAutoPause() == null) ? 0 : getSecondsUntilAutoPause().hashCode());
+        hashCode = prime * hashCode + ((getTimeoutAction() == null) ? 0 : getTimeoutAction().hashCode());
         return hashCode;
     }
 

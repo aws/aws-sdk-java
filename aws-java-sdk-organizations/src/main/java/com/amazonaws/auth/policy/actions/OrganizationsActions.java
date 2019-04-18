@@ -33,6 +33,8 @@ public enum OrganizationsActions implements Action {
     CancelHandshake("organizations:CancelHandshake"),
     /** Action for the CreateAccount operation. */
     CreateAccount("organizations:CreateAccount"),
+    /** Action for the CreateGovCloudAccount operation. */
+    CreateGovCloudAccount("organizations:CreateGovCloudAccount"),
     /** Action for the CreateOrganization operation. */
     CreateOrganization("organizations:CreateOrganization"),
     /** Action for the CreateOrganizationalUnit operation. */

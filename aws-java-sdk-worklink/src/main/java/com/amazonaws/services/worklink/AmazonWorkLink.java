@@ -48,6 +48,31 @@ public interface AmazonWorkLink {
 
     /**
      * <p>
+     * Specifies a domain to be associated to Amazon WorkLink.
+     * </p>
+     * 
+     * @param associateDomainRequest
+     * @return Result of the AssociateDomain operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.AssociateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/AssociateDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AssociateDomainResult associateDomain(AssociateDomainRequest associateDomainRequest);
+
+    /**
+     * <p>
      * Imports the root certificate of a certificate authority (CA) used to obtain TLS certificates used by associated
      * websites within the company network.
      * </p>
@@ -217,6 +242,29 @@ public interface AmazonWorkLink {
 
     /**
      * <p>
+     * Provides information about the domain.
+     * </p>
+     * 
+     * @param describeDomainRequest
+     * @return Result of the DescribeDomain operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.DescribeDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DescribeDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeDomainResult describeDomain(DescribeDomainRequest describeDomainRequest);
+
+    /**
+     * <p>
      * Provides basic information for the specified fleet, excluding identity provider, networking, and device
      * configuration details.
      * </p>
@@ -289,6 +337,30 @@ public interface AmazonWorkLink {
 
     /**
      * <p>
+     * Disassociates a domain from Amazon WorkLink. End users lose the ability to access the domain with Amazon
+     * WorkLink.
+     * </p>
+     * 
+     * @param disassociateDomainRequest
+     * @return Result of the DisassociateDomain operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.DisassociateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/DisassociateDomain" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DisassociateDomainResult disassociateDomain(DisassociateDomainRequest disassociateDomainRequest);
+
+    /**
+     * <p>
      * Removes a certificate authority (CA).
      * </p>
      * 
@@ -336,6 +408,27 @@ public interface AmazonWorkLink {
 
     /**
      * <p>
+     * Retrieves a list of domains associated to a specified fleet.
+     * </p>
+     * 
+     * @param listDomainsRequest
+     * @return Result of the ListDomains operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.ListDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/ListDomains" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest);
+
+    /**
+     * <p>
      * Retrieves a list of fleets for the current account and Region.
      * </p>
      * 
@@ -375,6 +468,52 @@ public interface AmazonWorkLink {
      *      target="_top">AWS API Documentation</a>
      */
     ListWebsiteCertificateAuthoritiesResult listWebsiteCertificateAuthorities(ListWebsiteCertificateAuthoritiesRequest listWebsiteCertificateAuthoritiesRequest);
+
+    /**
+     * <p>
+     * Moves a domain to ACTIVE status if it was in the INACTIVE status.
+     * </p>
+     * 
+     * @param restoreDomainAccessRequest
+     * @return Result of the RestoreDomainAccess operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.RestoreDomainAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RestoreDomainAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RestoreDomainAccessResult restoreDomainAccess(RestoreDomainAccessRequest restoreDomainAccessRequest);
+
+    /**
+     * <p>
+     * Moves a domain to INACTIVE status if it was in the ACTIVE status.
+     * </p>
+     * 
+     * @param revokeDomainAccessRequest
+     * @return Result of the RevokeDomainAccess operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.RevokeDomainAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/RevokeDomainAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RevokeDomainAccessResult revokeDomainAccess(RevokeDomainAccessRequest revokeDomainAccessRequest);
 
     /**
      * <p>
@@ -467,6 +606,29 @@ public interface AmazonWorkLink {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateDevicePolicyConfigurationResult updateDevicePolicyConfiguration(UpdateDevicePolicyConfigurationRequest updateDevicePolicyConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates domain metadata, such as DisplayName.
+     * </p>
+     * 
+     * @param updateDomainMetadataRequest
+     * @return Result of the UpdateDomainMetadata operation returned by the service.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The requested resource was not found.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit.
+     * @sample AmazonWorkLink.UpdateDomainMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/worklink-2018-09-25/UpdateDomainMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateDomainMetadataResult updateDomainMetadata(UpdateDomainMetadataRequest updateDomainMetadataRequest);
 
     /**
      * <p>
