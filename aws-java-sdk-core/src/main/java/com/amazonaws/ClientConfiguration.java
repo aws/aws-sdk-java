@@ -630,11 +630,9 @@ public class ClientConfiguration {
      * the lowercase version of variable.
      */
     private String getEnvironmentVariableCaseInsensitive(String environmentVariable) {
-        if (getEnvironmentVariable(environmentVariable) != null) {
-            return getEnvironmentVariable(environmentVariable);
-        } else {
-            return getEnvironmentVariable(environmentVariable.toLowerCase());
-        }
+        return getEnvironmentVariable(environmentVariable) != null
+                ? getEnvironmentVariable(environmentVariable)
+                : getEnvironmentVariable(environmentVariable.toLowerCase());
     }
 
     /**
