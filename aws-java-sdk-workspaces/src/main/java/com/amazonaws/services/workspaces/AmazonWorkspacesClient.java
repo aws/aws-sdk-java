@@ -522,7 +522,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Creates the specified tags for the specified WorkSpaces resource.
+     * Creates the specified tags for the specified WorkSpace.
      * </p>
      * 
      * @param createTagsRequest
@@ -702,7 +702,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Deletes the specified tags from the specified WorkSpaces resource.
+     * Deletes the specified tags from the specified WorkSpace.
      * </p>
      * 
      * @param deleteTagsRequest
@@ -1044,7 +1044,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Describes the specified tags for the specified WorkSpaces resource.
+     * Describes the specified tags for the specified WorkSpace.
      * </p>
      * 
      * @param describeTagsRequest
@@ -1478,6 +1478,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *         This operation is not supported.
      * @throws AccessDeniedException
      *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
      * @sample AmazonWorkspaces.ImportWorkspaceImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage"
      *      target="_top">AWS API Documentation</a>

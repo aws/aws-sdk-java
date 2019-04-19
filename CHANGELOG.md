@@ -1,3 +1,16 @@
+# __1.11.538__ __2019-04-19__
+## __AWS Resource Groups__
+  - ### Features
+    - The AWS Resource Groups service increased the query size limit to 4096 bytes.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - Amazon Transcribe - support transcriptions from audio sources in Spanish Spanish (es-ES).
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Added a new reserved field.
+
 # __1.11.537__ __2019-04-18__
 ## __AWS Application Discovery Service__
   - ### Features

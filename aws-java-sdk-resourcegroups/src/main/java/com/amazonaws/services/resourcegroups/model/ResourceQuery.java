@@ -50,14 +50,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * An EC2 instance that has the following two tags: <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     * <code>{"Key":"Version","Values":["2"]}</code>
+     * An EC2 instance that has the following two tags: <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     * <code>{"Key":"Version","Value":"2"}</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An S3 bucket that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     * {"Key":"Version","Values":["1"]}
+     * An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and {"Key":"Version","Value":"1"}
      * </p>
      * </li>
      * </ul>
@@ -69,13 +68,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Values":["Deploy"]}</code>.
+     * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An RDS database that has the following two tags: <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     * <code>{"Key":"Version","Values":["4"]}</code>
+     * An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     * <code>{"Key":"Version","Value":"4"}</code>
      * </p>
      * </li>
      * </ul>
@@ -113,14 +112,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * An EC2 instance that has the following two tags: <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     * <code>{"Key":"Version","Values":["2"]}</code>
+     * An EC2 instance that has the following two tags: <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     * <code>{"Key":"Version","Value":"2"}</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An S3 bucket that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     * {"Key":"Version","Values":["1"]}
+     * An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and {"Key":"Version","Value":"1"}
      * </p>
      * </li>
      * </ul>
@@ -132,13 +130,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Values":["Deploy"]}</code>.
+     * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An RDS database that has the following two tags: <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     * <code>{"Key":"Version","Values":["4"]}</code>
+     * An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     * <code>{"Key":"Version","Value":"4"}</code>
      * </p>
      * </li>
      * </ul>
@@ -167,14 +165,14 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        An EC2 instance that has the following two tags: <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     *        <code>{"Key":"Version","Values":["2"]}</code>
+     *        An EC2 instance that has the following two tags: <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     *        <code>{"Key":"Version","Value":"2"}</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An S3 bucket that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     *        {"Key":"Version","Values":["1"]}
+     *        An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and
+     *        {"Key":"Version","Value":"1"}
      *        </p>
      *        </li>
      *        </ul>
@@ -186,13 +184,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        An EC2 instance that has only the following tag: <code>{"Key":"Stage","Values":["Deploy"]}</code>.
+     *        An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An RDS database that has the following two tags: <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     *        <code>{"Key":"Version","Values":["4"]}</code>
+     *        An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     *        <code>{"Key":"Version","Value":"4"}</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -228,14 +226,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * An EC2 instance that has the following two tags: <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     * <code>{"Key":"Version","Values":["2"]}</code>
+     * An EC2 instance that has the following two tags: <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     * <code>{"Key":"Version","Value":"2"}</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An S3 bucket that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     * {"Key":"Version","Values":["1"]}
+     * An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and {"Key":"Version","Value":"1"}
      * </p>
      * </li>
      * </ul>
@@ -247,13 +244,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Values":["Deploy"]}</code>.
+     * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An RDS database that has the following two tags: <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     * <code>{"Key":"Version","Values":["4"]}</code>
+     * An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     * <code>{"Key":"Version","Value":"4"}</code>
      * </p>
      * </li>
      * </ul>
@@ -281,14 +278,14 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         An EC2 instance that has the following two tags: <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     *         <code>{"Key":"Version","Values":["2"]}</code>
+     *         An EC2 instance that has the following two tags: <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     *         <code>{"Key":"Version","Value":"2"}</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         An S3 bucket that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     *         {"Key":"Version","Values":["1"]}
+     *         An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and
+     *         {"Key":"Version","Value":"1"}
      *         </p>
      *         </li>
      *         </ul>
@@ -300,13 +297,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         An EC2 instance that has only the following tag: <code>{"Key":"Stage","Values":["Deploy"]}</code>.
+     *         An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         An RDS database that has the following two tags: <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     *         <code>{"Key":"Version","Values":["4"]}</code>
+     *         An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     *         <code>{"Key":"Version","Value":"4"}</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -342,14 +339,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * An EC2 instance that has the following two tags: <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     * <code>{"Key":"Version","Values":["2"]}</code>
+     * An EC2 instance that has the following two tags: <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     * <code>{"Key":"Version","Value":"2"}</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An S3 bucket that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     * {"Key":"Version","Values":["1"]}
+     * An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and {"Key":"Version","Value":"1"}
      * </p>
      * </li>
      * </ul>
@@ -361,13 +357,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Values":["Deploy"]}</code>.
+     * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An RDS database that has the following two tags: <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     * <code>{"Key":"Version","Values":["4"]}</code>
+     * An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     * <code>{"Key":"Version","Value":"4"}</code>
      * </p>
      * </li>
      * </ul>
@@ -396,14 +392,14 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        An EC2 instance that has the following two tags: <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     *        <code>{"Key":"Version","Values":["2"]}</code>
+     *        An EC2 instance that has the following two tags: <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     *        <code>{"Key":"Version","Value":"2"}</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An S3 bucket that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     *        {"Key":"Version","Values":["1"]}
+     *        An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and
+     *        {"Key":"Version","Value":"1"}
      *        </p>
      *        </li>
      *        </ul>
@@ -415,13 +411,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        An EC2 instance that has only the following tag: <code>{"Key":"Stage","Values":["Deploy"]}</code>.
+     *        An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An RDS database that has the following two tags: <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     *        <code>{"Key":"Version","Values":["4"]}</code>
+     *        An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     *        <code>{"Key":"Version","Value":"4"}</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -459,14 +455,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * An EC2 instance that has the following two tags: <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     * <code>{"Key":"Version","Values":["2"]}</code>
+     * An EC2 instance that has the following two tags: <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     * <code>{"Key":"Version","Value":"2"}</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * An S3 bucket that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     * {"Key":"Version","Values":["1"]}
+     * An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and {"Key":"Version","Value":"1"}
      * </p>
      * </li>
      * </ul>
@@ -478,13 +473,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Values":["Deploy"]}</code>.
+     * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An RDS database that has the following two tags: <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     * <code>{"Key":"Version","Values":["4"]}</code>
+     * An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     * <code>{"Key":"Version","Value":"4"}</code>
      * </p>
      * </li>
      * </ul>
@@ -513,14 +508,14 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        An EC2 instance that has the following two tags: <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
-     *        <code>{"Key":"Version","Values":["2"]}</code>
+     *        An EC2 instance that has the following two tags: <code>{"Key":"Stage","Value":"Deploy"}</code>, and
+     *        <code>{"Key":"Version","Value":"2"}</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An S3 bucket that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
-     *        {"Key":"Version","Values":["1"]}
+     *        An S3 bucket that has the following two tags: {"Key":"Stage","Value":"Test"}, and
+     *        {"Key":"Version","Value":"1"}
      *        </p>
      *        </li>
      *        </ul>
@@ -532,13 +527,13 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        An EC2 instance that has only the following tag: <code>{"Key":"Stage","Values":["Deploy"]}</code>.
+     *        An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        An RDS database that has the following two tags: <code>{"Key":"Stage","Values":["Archived"]}</code>, and
-     *        <code>{"Key":"Version","Values":["4"]}</code>
+     *        An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
+     *        <code>{"Key":"Version","Value":"4"}</code>
      *        </p>
      *        </li>
      *        </ul>

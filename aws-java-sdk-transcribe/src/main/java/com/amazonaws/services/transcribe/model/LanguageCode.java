@@ -29,7 +29,8 @@ public enum LanguageCode {
     PtBR("pt-BR"),
     FrFR("fr-FR"),
     ItIT("it-IT"),
-    KoKR("ko-KR");
+    KoKR("ko-KR"),
+    EsES("es-ES");
 
     private String value;
 

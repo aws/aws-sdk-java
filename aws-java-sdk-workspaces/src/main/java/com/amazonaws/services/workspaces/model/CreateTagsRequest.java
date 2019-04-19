@@ -27,27 +27,24 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * The tags. Each WorkSpace can have a maximum of 50 tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      * </p>
      * 
      * @param resourceId
-     *        The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
-     *        directories, images, custom bundles, and IP access control groups.
+     *        The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      */
 
     public void setResourceId(String resourceId) {
@@ -56,12 +53,10 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      * </p>
      * 
-     * @return The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
-     *         directories, images, custom bundles, and IP access control groups.
+     * @return The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      */
 
     public String getResourceId() {
@@ -70,13 +65,11 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      * </p>
      * 
      * @param resourceId
-     *        The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
-     *        directories, images, custom bundles, and IP access control groups.
+     *        The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,10 +80,10 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * The tags. Each WorkSpace can have a maximum of 50 tags.
      * </p>
      * 
-     * @return The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * @return The tags. Each WorkSpace can have a maximum of 50 tags.
      */
 
     public java.util.List<Tag> getTags() {
@@ -102,11 +95,11 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * The tags. Each WorkSpace can have a maximum of 50 tags.
      * </p>
      * 
      * @param tags
-     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     *        The tags. Each WorkSpace can have a maximum of 50 tags.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -120,7 +113,7 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * The tags. Each WorkSpace can have a maximum of 50 tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,7 +122,7 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tags
-     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     *        The tags. Each WorkSpace can have a maximum of 50 tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +138,11 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     * The tags. Each WorkSpace can have a maximum of 50 tags.
      * </p>
      * 
      * @param tags
-     *        The tags. Each WorkSpaces resource can have a maximum of 50 tags.
+     *        The tags. Each WorkSpace can have a maximum of 50 tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

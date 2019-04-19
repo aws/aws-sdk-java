@@ -449,7 +449,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns a list of tags that are associated with a resource, specified by an ARN.
+     * Returns a list of tags that are associated with a resource group, specified by an ARN.
      * </p>
      * 
      * @param getTagsRequest
