@@ -109,6 +109,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("ParameterMaxVersionLimitExceeded").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.ParameterMaxVersionLimitExceededException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PoliciesLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.PoliciesLimitExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidKeyId").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidKeyIdException.class))
                     .addErrorMetadata(
@@ -244,6 +247,12 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedInventoryItemContextException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventoryItemContextException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPolicyAttributeException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidPolicyAttributeException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IncompatiblePolicyException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.IncompatiblePolicyException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidUpdate").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidUpdateException.class))
                     .addErrorMetadata(
@@ -369,6 +378,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOutputLocation").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputLocationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPolicyTypeException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidPolicyTypeException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ParameterLimitExceeded").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.ParameterLimitExceededException.class))
@@ -6588,6 +6600,16 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         The parameter name is not valid.
      * @throws UnsupportedParameterTypeException
      *         The parameter type is not supported.
+     * @throws PoliciesLimitExceededException
+     *         You specified more than the maximum number of allowed policies for the parameter. The maximum is 10.
+     * @throws InvalidPolicyTypeException
+     *         The policy type is not supported. Parameter Store supports the following policy types: Expiration,
+     *         ExpirationNotification, and NoChangeNotification.
+     * @throws InvalidPolicyAttributeException
+     *         A policy attribute or its value is invalid.
+     * @throws IncompatiblePolicyException
+     *         There is a conflict in the policies specified for this parameter. You can't, for example, specify two
+     *         Expiration policies for a parameter. Review your policies, and try again.
      * @sample AWSSimpleSystemsManagement.PutParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter" target="_top">AWS API
      *      Documentation</a>

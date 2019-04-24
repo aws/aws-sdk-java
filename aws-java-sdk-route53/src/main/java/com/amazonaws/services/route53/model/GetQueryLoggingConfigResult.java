@@ -25,21 +25,24 @@ public class GetQueryLoggingConfigResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A complex type that contains information about the query logging configuration that you specified in a
-     * <a>GetQueryLoggingConfig</a> request.
+     * A complex type that contains information about the query logging configuration that you specified in a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html"
+     * >GetQueryLoggingConfig</a> request.
      * </p>
      */
     private QueryLoggingConfig queryLoggingConfig;
 
     /**
      * <p>
-     * A complex type that contains information about the query logging configuration that you specified in a
-     * <a>GetQueryLoggingConfig</a> request.
+     * A complex type that contains information about the query logging configuration that you specified in a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html"
+     * >GetQueryLoggingConfig</a> request.
      * </p>
      * 
      * @param queryLoggingConfig
-     *        A complex type that contains information about the query logging configuration that you specified in a
-     *        <a>GetQueryLoggingConfig</a> request.
+     *        A complex type that contains information about the query logging configuration that you specified in a <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">
+     *        GetQueryLoggingConfig</a> request.
      */
 
     public void setQueryLoggingConfig(QueryLoggingConfig queryLoggingConfig) {
@@ -48,12 +51,14 @@ public class GetQueryLoggingConfigResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A complex type that contains information about the query logging configuration that you specified in a
-     * <a>GetQueryLoggingConfig</a> request.
+     * A complex type that contains information about the query logging configuration that you specified in a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html"
+     * >GetQueryLoggingConfig</a> request.
      * </p>
      * 
-     * @return A complex type that contains information about the query logging configuration that you specified in a
-     *         <a>GetQueryLoggingConfig</a> request.
+     * @return A complex type that contains information about the query logging configuration that you specified in a <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">
+     *         GetQueryLoggingConfig</a> request.
      */
 
     public QueryLoggingConfig getQueryLoggingConfig() {
@@ -62,13 +67,15 @@ public class GetQueryLoggingConfigResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A complex type that contains information about the query logging configuration that you specified in a
-     * <a>GetQueryLoggingConfig</a> request.
+     * A complex type that contains information about the query logging configuration that you specified in a <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html"
+     * >GetQueryLoggingConfig</a> request.
      * </p>
      * 
      * @param queryLoggingConfig
-     *        A complex type that contains information about the query logging configuration that you specified in a
-     *        <a>GetQueryLoggingConfig</a> request.
+     *        A complex type that contains information about the query logging configuration that you specified in a <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">
+     *        GetQueryLoggingConfig</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

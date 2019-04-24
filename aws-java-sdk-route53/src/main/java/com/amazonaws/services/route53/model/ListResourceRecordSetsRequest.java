@@ -60,6 +60,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
+     * <b>API Gateway custom regional API or edge-optimized API</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distribution</b>: A or AAAA
      * </p>
      * </li>
@@ -70,12 +75,17 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>ELB load balancer</b>: A | AAAA
+     * <b>Elastic Load Balancing load balancer</b>: A | AAAA
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -228,6 +238,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
+     * <b>API Gateway custom regional API or edge-optimized API</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distribution</b>: A or AAAA
      * </p>
      * </li>
@@ -238,12 +253,17 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>ELB load balancer</b>: A | AAAA
+     * <b>Elastic Load Balancing load balancer</b>: A | AAAA
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -276,6 +296,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>API Gateway custom regional API or edge-optimized API</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>CloudFront distribution</b>: A or AAAA
      *        </p>
      *        </li>
@@ -286,12 +311,17 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ELB load balancer</b>: A | AAAA
+     *        <b>Elastic Load Balancing load balancer</b>: A | AAAA
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>Amazon S3 bucket</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon VPC interface VPC endpoint</b>: A
      *        </p>
      *        </li>
      *        <li>
@@ -331,6 +361,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
+     * <b>API Gateway custom regional API or edge-optimized API</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distribution</b>: A or AAAA
      * </p>
      * </li>
@@ -341,12 +376,17 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>ELB load balancer</b>: A | AAAA
+     * <b>Elastic Load Balancing load balancer</b>: A | AAAA
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -378,6 +418,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
+     *         <b>API Gateway custom regional API or edge-optimized API</b>: A
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <b>CloudFront distribution</b>: A or AAAA
      *         </p>
      *         </li>
@@ -388,12 +433,17 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ELB load balancer</b>: A | AAAA
+     *         <b>Elastic Load Balancing load balancer</b>: A | AAAA
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <b>Amazon S3 bucket</b>: A
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon VPC interface VPC endpoint</b>: A
      *         </p>
      *         </li>
      *         <li>
@@ -433,6 +483,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
+     * <b>API Gateway custom regional API or edge-optimized API</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distribution</b>: A or AAAA
      * </p>
      * </li>
@@ -443,12 +498,17 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>ELB load balancer</b>: A | AAAA
+     * <b>Elastic Load Balancing load balancer</b>: A | AAAA
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -481,6 +541,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>API Gateway custom regional API or edge-optimized API</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>CloudFront distribution</b>: A or AAAA
      *        </p>
      *        </li>
@@ -491,12 +556,17 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ELB load balancer</b>: A | AAAA
+     *        <b>Elastic Load Balancing load balancer</b>: A | AAAA
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>Amazon S3 bucket</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon VPC interface VPC endpoint</b>: A
      *        </p>
      *        </li>
      *        <li>
@@ -538,6 +608,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
+     * <b>API Gateway custom regional API or edge-optimized API</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distribution</b>: A or AAAA
      * </p>
      * </li>
@@ -548,12 +623,17 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>ELB load balancer</b>: A | AAAA
+     * <b>Elastic Load Balancing load balancer</b>: A | AAAA
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -586,6 +666,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>API Gateway custom regional API or edge-optimized API</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>CloudFront distribution</b>: A or AAAA
      *        </p>
      *        </li>
@@ -596,12 +681,17 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ELB load balancer</b>: A | AAAA
+     *        <b>Elastic Load Balancing load balancer</b>: A | AAAA
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>Amazon S3 bucket</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon VPC interface VPC endpoint</b>: A
      *        </p>
      *        </li>
      *        <li>
@@ -641,6 +731,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
+     * <b>API Gateway custom regional API or edge-optimized API</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distribution</b>: A or AAAA
      * </p>
      * </li>
@@ -651,12 +746,17 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <b>ELB load balancer</b>: A | AAAA
+     * <b>Elastic Load Balancing load balancer</b>: A | AAAA
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>Amazon S3 bucket</b>: A
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon VPC interface VPC endpoint</b>: A
      * </p>
      * </li>
      * <li>
@@ -689,6 +789,11 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>API Gateway custom regional API or edge-optimized API</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>CloudFront distribution</b>: A or AAAA
      *        </p>
      *        </li>
@@ -699,12 +804,17 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ELB load balancer</b>: A | AAAA
+     *        <b>Elastic Load Balancing load balancer</b>: A | AAAA
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>Amazon S3 bucket</b>: A
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon VPC interface VPC endpoint</b>: A
      *        </p>
      *        </li>
      *        <li>

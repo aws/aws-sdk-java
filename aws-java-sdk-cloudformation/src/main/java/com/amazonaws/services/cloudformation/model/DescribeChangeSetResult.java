@@ -60,7 +60,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of <code>Parameter</code> structures that describes the input parameters and their values used to create
      * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      */
@@ -340,13 +340,13 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of <code>Parameter</code> structures that describes the input parameters and their values used to create
      * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * 
      * @return A list of <code>Parameter</code> structures that describes the input parameters and their values used to
      *         create the change set. For more information, see the <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *         data type.
      */
 
@@ -361,14 +361,14 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of <code>Parameter</code> structures that describes the input parameters and their values used to create
      * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that describes the input parameters and their values used to
      *        create the change set. For more information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *        data type.
      */
 
@@ -385,7 +385,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of <code>Parameter</code> structures that describes the input parameters and their values used to create
      * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * <p>
@@ -397,7 +397,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * @param parameters
      *        A list of <code>Parameter</code> structures that describes the input parameters and their values used to
      *        create the change set. For more information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *        data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -416,14 +416,14 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A list of <code>Parameter</code> structures that describes the input parameters and their values used to create
      * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that describes the input parameters and their values used to
      *        create the change set. For more information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *        data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

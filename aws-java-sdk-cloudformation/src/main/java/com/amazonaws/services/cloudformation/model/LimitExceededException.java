@@ -19,9 +19,9 @@ import javax.annotation.Generated;
  * The quota for the resource has already been reached.
  * </p>
  * <p>
- * For information on stack set limitations, see <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html">Limitations of
- * StackSets</a>.
+ * For information on resource and stack limitations, see <a
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in the
+ * <i>AWS CloudFormation User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

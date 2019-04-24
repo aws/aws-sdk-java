@@ -32,8 +32,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * property. Documents stored in an S3 bucket don't need to be base64 encoded.
  * </p>
  * <p>
- * The AWS Region for the S3 bucket that contains the S3 object must match the Region that you use for Amazon Textract
- * operations.
+ * The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon
+ * Textract operations.
  * </p>
  * <p>
  * If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't
@@ -52,7 +52,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A blob of documents bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB.
+     * A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of bytes is 5
+     * MB. The document bytes must be in PNG or JPG format.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
+     * the <code>Bytes</code> field.
      * </p>
      */
     private java.nio.ByteBuffer bytes;
@@ -65,7 +70,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A blob of documents bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB.
+     * A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of bytes is 5
+     * MB. The document bytes must be in PNG or JPG format.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
+     * the <code>Bytes</code> field.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -79,7 +89,11 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param bytes
-     *        A blob of documents bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB.
+     *        A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of
+     *        bytes is 5 MB. The document bytes must be in PNG or JPG format.</p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field.
      */
 
     public void setBytes(java.nio.ByteBuffer bytes) {
@@ -88,7 +102,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A blob of documents bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB.
+     * A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of bytes is 5
+     * MB. The document bytes must be in PNG or JPG format.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
+     * the <code>Bytes</code> field.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -98,7 +117,11 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return A blob of documents bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB.
+     * @return A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of
+     *         bytes is 5 MB. The document bytes must be in PNG or JPG format.</p>
+     *         <p>
+     *         If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes
+     *         passed using the <code>Bytes</code> field.
      */
 
     public java.nio.ByteBuffer getBytes() {
@@ -107,7 +130,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A blob of documents bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB.
+     * A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of bytes is 5
+     * MB. The document bytes must be in PNG or JPG format.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using
+     * the <code>Bytes</code> field.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -121,7 +149,11 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param bytes
-     *        A blob of documents bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB.
+     *        A blob of base-64 encoded documents bytes. The maximum size of a document that's provided in a blob of
+     *        bytes is 5 MB. The document bytes must be in PNG or JPG format.</p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

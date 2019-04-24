@@ -160,6 +160,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGatewayGroupResult> createGatewayGroupAsync(CreateGatewayGroupRequest request) {
+
+        return createGatewayGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGatewayGroupResult> createGatewayGroupAsync(CreateGatewayGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateGatewayGroupRequest, CreateGatewayGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProfileResult> createProfileAsync(CreateProfileRequest request) {
 
         return createProfileAsync(request, null);
@@ -272,6 +285,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(DeleteDeviceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDeviceRequest, DeleteDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest request) {
+
+        return deleteGatewayGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteGatewayGroupRequest, DeleteGatewayGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -502,6 +528,32 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest request) {
+
+        return getGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetGatewayRequest, GetGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayGroupResult> getGatewayGroupAsync(GetGatewayGroupRequest request) {
+
+        return getGatewayGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayGroupResult> getGatewayGroupAsync(GetGatewayGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetGatewayGroupRequest, GetGatewayGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(GetInvitationConfigurationRequest request) {
 
         return getInvitationConfigurationAsync(request, null);
@@ -601,6 +653,32 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(ListDeviceEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDeviceEventsRequest, ListDeviceEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewayGroupsResult> listGatewayGroupsAsync(ListGatewayGroupsRequest request) {
+
+        return listGatewayGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewayGroupsResult> listGatewayGroupsAsync(ListGatewayGroupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListGatewayGroupsRequest, ListGatewayGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest request) {
+
+        return listGatewaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -995,6 +1073,32 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     @Override
     public java.util.concurrent.Future<UpdateDeviceResult> updateDeviceAsync(UpdateDeviceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDeviceRequest, UpdateDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayResult> updateGatewayAsync(UpdateGatewayRequest request) {
+
+        return updateGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayResult> updateGatewayAsync(UpdateGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateGatewayRequest, UpdateGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(UpdateGatewayGroupRequest request) {
+
+        return updateGatewayGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(UpdateGatewayGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateGatewayGroupRequest, UpdateGatewayGroupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -80,6 +80,15 @@ public class ParameterMetadataJsonUnmarshaller implements Unmarshaller<Parameter
                     context.nextToken();
                     parameterMetadata.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("Tier", targetDepth)) {
+                    context.nextToken();
+                    parameterMetadata.setTier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Policies", targetDepth)) {
+                    context.nextToken();
+                    parameterMetadata.setPolicies(new ListUnmarshaller<ParameterInlinePolicy>(ParameterInlinePolicyJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

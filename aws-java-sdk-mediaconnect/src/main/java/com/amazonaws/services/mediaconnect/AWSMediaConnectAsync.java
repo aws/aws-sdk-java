@@ -234,7 +234,7 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<ListFlowsRequest, ListFlowsResult> asyncHandler);
 
     /**
-     * Lists all tags associated with the resource.
+     * List all tags on an AWS Elemental MediaConnect resource
      * 
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
@@ -245,7 +245,7 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
-     * Lists all tags associated with the resource.
+     * List all tags on an AWS Elemental MediaConnect resource
      * 
      * @param listTagsForResourceRequest
      * @param asyncHandler
@@ -375,12 +375,13 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<StopFlowRequest, StopFlowResult> asyncHandler);
 
     /**
-     * Associates the specified tags to a resource. If the request does not mention an existing tag associated with the
-     * resource, that tag is not changed.
+     * Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are
+     * not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated
+     * with that resource are deleted as well.
      * 
      * @param tagResourceRequest
-     *        The tags to add to the resource. Tag keys can have a maximum character length of 128 characters, and tag
-     *        values can have a maximum length of 256 characters.
+     *        The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AWSMediaConnectAsync.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource" target="_top">AWS API
@@ -389,12 +390,13 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
-     * Associates the specified tags to a resource. If the request does not mention an existing tag associated with the
-     * resource, that tag is not changed.
+     * Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are
+     * not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated
+     * with that resource are deleted as well.
      * 
      * @param tagResourceRequest
-     *        The tags to add to the resource. Tag keys can have a maximum character length of 128 characters, and tag
-     *        values can have a maximum length of 256 characters.
+     *        The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -408,7 +410,7 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
-     * Deletes the specified tags from a resource.
+     * Deletes specified tags from a resource.
      * 
      * @param untagResourceRequest
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
@@ -419,7 +421,7 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
     /**
-     * Deletes the specified tags from a resource.
+     * Deletes specified tags from a resource.
      * 
      * @param untagResourceRequest
      * @param asyncHandler

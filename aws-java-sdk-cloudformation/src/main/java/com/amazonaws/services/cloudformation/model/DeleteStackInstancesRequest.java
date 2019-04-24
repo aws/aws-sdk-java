@@ -56,7 +56,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
      * >Stack set operation options</a>.
      * </p>
      */
@@ -313,7 +313,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
      * >Stack set operation options</a>.
      * </p>
      * 
@@ -322,7 +322,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *        reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
      *        >Stack set operation options</a>.
      */
 
@@ -337,7 +337,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
      * >Stack set operation options</a>.
      * </p>
      * 
@@ -345,7 +345,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *         reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
      *         >Stack set operation options</a>.
      */
 
@@ -360,7 +360,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
      * >Stack set operation options</a>.
      * </p>
      * 
@@ -369,7 +369,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *        reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
      *        >Stack set operation options</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -386,7 +386,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
      * >Stack set operation options</a>.
      * </p>
      * 
@@ -394,7 +394,7 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      *         reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
      *         >Stack set operation options</a>.
      */
 

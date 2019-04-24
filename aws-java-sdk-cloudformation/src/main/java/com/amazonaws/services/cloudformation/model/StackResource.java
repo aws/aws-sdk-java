@@ -54,7 +54,7 @@ public class StackResource implements Serializable, Cloneable {
     /**
      * <p>
      * Type of resource. (For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
      * Resource Types Reference</a> in the AWS CloudFormation User Guide.)
      * </p>
      */
@@ -263,14 +263,14 @@ public class StackResource implements Serializable, Cloneable {
     /**
      * <p>
      * Type of resource. (For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
      * Resource Types Reference</a> in the AWS CloudFormation User Guide.)
      * </p>
      * 
      * @param resourceType
-     *        Type of resource. (For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     *        AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)
+     *        Type of resource. (For more information, go to <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
+     *        Resource Types Reference</a> in the AWS CloudFormation User Guide.)
      */
 
     public void setResourceType(String resourceType) {
@@ -280,13 +280,13 @@ public class StackResource implements Serializable, Cloneable {
     /**
      * <p>
      * Type of resource. (For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
      * Resource Types Reference</a> in the AWS CloudFormation User Guide.)
      * </p>
      * 
      * @return Type of resource. (For more information, go to <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     *         AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *         > AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)
      */
 
     public String getResourceType() {
@@ -296,14 +296,14 @@ public class StackResource implements Serializable, Cloneable {
     /**
      * <p>
      * Type of resource. (For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
      * Resource Types Reference</a> in the AWS CloudFormation User Guide.)
      * </p>
      * 
      * @param resourceType
-     *        Type of resource. (For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     *        AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)
+     *        Type of resource. (For more information, go to <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"> AWS
+     *        Resource Types Reference</a> in the AWS CloudFormation User Guide.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

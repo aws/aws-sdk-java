@@ -592,7 +592,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
     }
 
     /**
-     * Lists all tags associated with the resource.
+     * List all tags on an AWS Elemental MediaConnect resource
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -900,12 +900,13 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
     }
 
     /**
-     * Associates the specified tags to a resource. If the request does not mention an existing tag associated with the
-     * resource, that tag is not changed.
+     * Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are
+     * not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated
+     * with that resource are deleted as well.
      * 
      * @param tagResourceRequest
-     *        The tags to add to the resource. Tag keys can have a maximum character length of 128 characters, and tag
-     *        values can have a maximum length of 256 characters.
+     *        The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum
+     *        character length of 128 characters, and tag values can have a maximum length of 256 characters.
      * @return Result of the TagResource operation returned by the service.
      * @throws NotFoundException
      *         The requested resource was not found
@@ -959,7 +960,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
     }
 
     /**
-     * Deletes the specified tags from a resource.
+     * Deletes specified tags from a resource.
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.

@@ -42,8 +42,7 @@ public class AssociationExecution implements Serializable, Cloneable, Structured
     private String associationVersion;
     /**
      * <p>
-     * The execution ID for the association. If the association does not run at intervals or according to a schedule,
-     * then the ExecutionID is the same as the AssociationID.
+     * The execution ID for the association.
      * </p>
      */
     private String executionId;
@@ -160,13 +159,11 @@ public class AssociationExecution implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The execution ID for the association. If the association does not run at intervals or according to a schedule,
-     * then the ExecutionID is the same as the AssociationID.
+     * The execution ID for the association.
      * </p>
      * 
      * @param executionId
-     *        The execution ID for the association. If the association does not run at intervals or according to a
-     *        schedule, then the ExecutionID is the same as the AssociationID.
+     *        The execution ID for the association.
      */
 
     public void setExecutionId(String executionId) {
@@ -175,12 +172,10 @@ public class AssociationExecution implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The execution ID for the association. If the association does not run at intervals or according to a schedule,
-     * then the ExecutionID is the same as the AssociationID.
+     * The execution ID for the association.
      * </p>
      * 
-     * @return The execution ID for the association. If the association does not run at intervals or according to a
-     *         schedule, then the ExecutionID is the same as the AssociationID.
+     * @return The execution ID for the association.
      */
 
     public String getExecutionId() {
@@ -189,13 +184,11 @@ public class AssociationExecution implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The execution ID for the association. If the association does not run at intervals or according to a schedule,
-     * then the ExecutionID is the same as the AssociationID.
+     * The execution ID for the association.
      * </p>
      * 
      * @param executionId
-     *        The execution ID for the association. If the association does not run at intervals or according to a
-     *        schedule, then the ExecutionID is the same as the AssociationID.
+     *        The execution ID for the association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

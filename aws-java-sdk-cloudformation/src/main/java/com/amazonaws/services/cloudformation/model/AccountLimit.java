@@ -17,7 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The AccountLimit data type.
+ * The AccountLimit data type. For more information about account limits, see <a
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">AWS CloudFormation
+ * Limits</a> in the <i>AWS CloudFormation User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/AccountLimit" target="_top">AWS API
@@ -28,7 +30,7 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the account limit. Currently, the only account limit is <code>StackLimit</code>.
+     * The name of the account limit.
      * </p>
      */
     private String name;
@@ -41,11 +43,11 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the account limit. Currently, the only account limit is <code>StackLimit</code>.
+     * The name of the account limit.
      * </p>
      * 
      * @param name
-     *        The name of the account limit. Currently, the only account limit is <code>StackLimit</code>.
+     *        The name of the account limit.
      */
 
     public void setName(String name) {
@@ -54,10 +56,10 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the account limit. Currently, the only account limit is <code>StackLimit</code>.
+     * The name of the account limit.
      * </p>
      * 
-     * @return The name of the account limit. Currently, the only account limit is <code>StackLimit</code>.
+     * @return The name of the account limit.
      */
 
     public String getName() {
@@ -66,11 +68,11 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the account limit. Currently, the only account limit is <code>StackLimit</code>.
+     * The name of the account limit.
      * </p>
      * 
      * @param name
-     *        The name of the account limit. Currently, the only account limit is <code>StackLimit</code>.
+     *        The name of the account limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

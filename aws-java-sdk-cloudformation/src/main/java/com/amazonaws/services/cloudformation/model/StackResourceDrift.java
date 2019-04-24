@@ -20,8 +20,8 @@ import javax.annotation.Generated;
  * Contains the drift information for a resource that has been checked for drift. This includes actual and expected
  * property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly
  * defined in the stack template are checked for drift. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated
- * Configuration Changes to Stacks and Resources</a>.
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+ * Unregulated Configuration Changes to Stacks and Resources</a>.
  * </p>
  * <p>
  * Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift

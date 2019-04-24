@@ -33,7 +33,7 @@ public class DescribeStackResourceDriftsResult extends com.amazonaws.AmazonWebSe
      * checked for drift. Resources that have not yet been checked for drift are not included. Resources that do not
      * currently support drift detection are not checked, and so not included. For a list of resources that support
      * drift detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      */
@@ -58,7 +58,7 @@ public class DescribeStackResourceDriftsResult extends com.amazonaws.AmazonWebSe
      * checked for drift. Resources that have not yet been checked for drift are not included. Resources that do not
      * currently support drift detection are not checked, and so not included. For a list of resources that support
      * drift detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * 
@@ -70,7 +70,7 @@ public class DescribeStackResourceDriftsResult extends com.amazonaws.AmazonWebSe
      *         been checked for drift. Resources that have not yet been checked for drift are not included. Resources
      *         that do not currently support drift detection are not checked, and so not included. For a list of
      *         resources that support drift detection, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *         >Resources that Support Drift Detection</a>.
      */
 
@@ -91,7 +91,7 @@ public class DescribeStackResourceDriftsResult extends com.amazonaws.AmazonWebSe
      * checked for drift. Resources that have not yet been checked for drift are not included. Resources that do not
      * currently support drift detection are not checked, and so not included. For a list of resources that support
      * drift detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * 
@@ -103,7 +103,7 @@ public class DescribeStackResourceDriftsResult extends com.amazonaws.AmazonWebSe
      *        checked for drift. Resources that have not yet been checked for drift are not included. Resources that do
      *        not currently support drift detection are not checked, and so not included. For a list of resources that
      *        support drift detection, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *        >Resources that Support Drift Detection</a>.
      */
 
@@ -126,7 +126,7 @@ public class DescribeStackResourceDriftsResult extends com.amazonaws.AmazonWebSe
      * checked for drift. Resources that have not yet been checked for drift are not included. Resources that do not
      * currently support drift detection are not checked, and so not included. For a list of resources that support
      * drift detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * <p>
@@ -143,7 +143,7 @@ public class DescribeStackResourceDriftsResult extends com.amazonaws.AmazonWebSe
      *        checked for drift. Resources that have not yet been checked for drift are not included. Resources that do
      *        not currently support drift detection are not checked, and so not included. For a list of resources that
      *        support drift detection, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *        >Resources that Support Drift Detection</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -168,7 +168,7 @@ public class DescribeStackResourceDriftsResult extends com.amazonaws.AmazonWebSe
      * checked for drift. Resources that have not yet been checked for drift are not included. Resources that do not
      * currently support drift detection are not checked, and so not included. For a list of resources that support
      * drift detection, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      * >Resources that Support Drift Detection</a>.
      * </p>
      * 
@@ -180,7 +180,7 @@ public class DescribeStackResourceDriftsResult extends com.amazonaws.AmazonWebSe
      *        checked for drift. Resources that have not yet been checked for drift are not included. Resources that do
      *        not currently support drift detection are not checked, and so not included. For a list of resources that
      *        support drift detection, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
      *        >Resources that Support Drift Detection</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

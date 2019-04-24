@@ -35,7 +35,8 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
      * are detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable elements (
+     * <code>SELECTION_ELEMENT</code>) that are detected are returned, whatever the value of <code>FeatureTypes</code>.
      * </p>
      */
     private java.util.List<String> featureTypes;
@@ -49,8 +50,9 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
     private String clientRequestToken;
     /**
      * <p>
-     * The unique identifier you specify to identify the job in the completion status that's published to the Amazon SNS
-     * topic.
+     * An identifier you specify that's included in the completion notification that's published to the Amazon SNS
+     * topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.
      * </p>
      */
     private String jobTag;
@@ -105,12 +107,15 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
      * are detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable elements (
+     * <code>SELECTION_ELEMENT</code>) that are detected are returned, whatever the value of <code>FeatureTypes</code>.
      * </p>
      * 
      * @return A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
      *         that are detected in the input document. Add FORMS to return detected fields and the associated text. To
-     *         perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     *         perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
+     *         elements (<code>SELECTION_ELEMENT</code>) that are detected are returned, whatever the value of
+     *         <code>FeatureTypes</code>.
      * @see FeatureType
      */
 
@@ -122,13 +127,16 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
      * are detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable elements (
+     * <code>SELECTION_ELEMENT</code>) that are detected are returned, whatever the value of <code>FeatureTypes</code>.
      * </p>
      * 
      * @param featureTypes
      *        A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
      *        that are detected in the input document. Add FORMS to return detected fields and the associated text. To
-     *        perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     *        perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable elements
+     *        (<code>SELECTION_ELEMENT</code>) that are detected are returned, whatever the value of
+     *        <code>FeatureTypes</code>.
      * @see FeatureType
      */
 
@@ -145,7 +153,8 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
      * are detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable elements (
+     * <code>SELECTION_ELEMENT</code>) that are detected are returned, whatever the value of <code>FeatureTypes</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -156,7 +165,9 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
      * @param featureTypes
      *        A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
      *        that are detected in the input document. Add FORMS to return detected fields and the associated text. To
-     *        perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     *        perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable elements
+     *        (<code>SELECTION_ELEMENT</code>) that are detected are returned, whatever the value of
+     *        <code>FeatureTypes</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeatureType
      */
@@ -175,13 +186,16 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
      * are detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable elements (
+     * <code>SELECTION_ELEMENT</code>) that are detected are returned, whatever the value of <code>FeatureTypes</code>.
      * </p>
      * 
      * @param featureTypes
      *        A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
      *        that are detected in the input document. Add FORMS to return detected fields and the associated text. To
-     *        perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     *        perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable elements
+     *        (<code>SELECTION_ELEMENT</code>) that are detected are returned, whatever the value of
+     *        <code>FeatureTypes</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeatureType
      */
@@ -195,13 +209,16 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
      * <p>
      * A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that
      * are detected in the input document. Add FORMS to return detected fields and the associated text. To perform both
-     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     * types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable elements (
+     * <code>SELECTION_ELEMENT</code>) that are detected are returned, whatever the value of <code>FeatureTypes</code>.
      * </p>
      * 
      * @param featureTypes
      *        A list of the types of analysis to perform. Add TABLES to the list to return information about the tables
      *        that are detected in the input document. Add FORMS to return detected fields and the associated text. To
-     *        perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>.
+     *        perform both types of analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable elements
+     *        (<code>SELECTION_ELEMENT</code>) that are detected are returned, whatever the value of
+     *        <code>FeatureTypes</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FeatureType
      */
@@ -273,13 +290,15 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique identifier you specify to identify the job in the completion status that's published to the Amazon SNS
-     * topic.
+     * An identifier you specify that's included in the completion notification that's published to the Amazon SNS
+     * topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.
      * </p>
      * 
      * @param jobTag
-     *        The unique identifier you specify to identify the job in the completion status that's published to the
-     *        Amazon SNS topic.
+     *        An identifier you specify that's included in the completion notification that's published to the Amazon
+     *        SNS topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax
+     *        form or a receipt, that the completion notification corresponds to.
      */
 
     public void setJobTag(String jobTag) {
@@ -288,12 +307,14 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique identifier you specify to identify the job in the completion status that's published to the Amazon SNS
-     * topic.
+     * An identifier you specify that's included in the completion notification that's published to the Amazon SNS
+     * topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.
      * </p>
      * 
-     * @return The unique identifier you specify to identify the job in the completion status that's published to the
-     *         Amazon SNS topic.
+     * @return An identifier you specify that's included in the completion notification that's published to the Amazon
+     *         SNS topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax
+     *         form or a receipt, that the completion notification corresponds to.
      */
 
     public String getJobTag() {
@@ -302,13 +323,15 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique identifier you specify to identify the job in the completion status that's published to the Amazon SNS
-     * topic.
+     * An identifier you specify that's included in the completion notification that's published to the Amazon SNS
+     * topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax form or a
+     * receipt, that the completion notification corresponds to.
      * </p>
      * 
      * @param jobTag
-     *        The unique identifier you specify to identify the job in the completion status that's published to the
-     *        Amazon SNS topic.
+     *        An identifier you specify that's included in the completion notification that's published to the Amazon
+     *        SNS topic. For example, you can use <code>JobTag</code> to identify the type of document, such as a tax
+     *        form or a receipt, that the completion notification corresponds to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

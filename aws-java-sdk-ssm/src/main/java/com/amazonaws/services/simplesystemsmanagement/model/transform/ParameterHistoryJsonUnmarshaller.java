@@ -88,6 +88,15 @@ public class ParameterHistoryJsonUnmarshaller implements Unmarshaller<ParameterH
                     context.nextToken();
                     parameterHistory.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("Tier", targetDepth)) {
+                    context.nextToken();
+                    parameterHistory.setTier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Policies", targetDepth)) {
+                    context.nextToken();
+                    parameterHistory.setPolicies(new ListUnmarshaller<ParameterInlinePolicy>(ParameterInlinePolicyJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

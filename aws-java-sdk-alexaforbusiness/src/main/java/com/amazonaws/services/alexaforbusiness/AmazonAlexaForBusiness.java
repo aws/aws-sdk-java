@@ -223,6 +223,23 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Creates a gateway group with the specified details.
+     * </p>
+     * 
+     * @param createGatewayGroupRequest
+     * @return Result of the CreateGatewayGroup operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @sample AmazonAlexaForBusiness.CreateGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateGatewayGroupResult createGatewayGroup(CreateGatewayGroupRequest createGatewayGroupRequest);
+
+    /**
+     * <p>
      * Creates a new room profile with the specified details.
      * </p>
      * 
@@ -379,6 +396,21 @@ public interface AmazonAlexaForBusiness {
      *      API Documentation</a>
      */
     DeleteDeviceResult deleteDevice(DeleteDeviceRequest deleteDeviceRequest);
+
+    /**
+     * <p>
+     * Deletes a gateway group.
+     * </p>
+     * 
+     * @param deleteGatewayGroupRequest
+     * @return Result of the DeleteGatewayGroup operation returned by the service.
+     * @throws ResourceAssociatedException
+     *         Another resource is associated with the resource in the request.
+     * @sample AmazonAlexaForBusiness.DeleteGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteGatewayGroupResult deleteGatewayGroup(DeleteGatewayGroupRequest deleteGatewayGroupRequest);
 
     /**
      * <p>
@@ -656,6 +688,36 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Retrieves the details of a gateway.
+     * </p>
+     * 
+     * @param getGatewayRequest
+     * @return Result of the GetGateway operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.GetGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetGatewayResult getGateway(GetGatewayRequest getGatewayRequest);
+
+    /**
+     * <p>
+     * Retrieves the details of a gateway group.
+     * </p>
+     * 
+     * @param getGatewayGroupRequest
+     * @return Result of the GetGatewayGroup operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.GetGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetGatewayGroupResult getGatewayGroup(GetGatewayGroupRequest getGatewayGroupRequest);
+
+    /**
+     * <p>
      * Retrieves the configured values for the user enrollment invitation email template.
      * </p>
      * 
@@ -769,6 +831,34 @@ public interface AmazonAlexaForBusiness {
      *      target="_top">AWS API Documentation</a>
      */
     ListDeviceEventsResult listDeviceEvents(ListDeviceEventsRequest listDeviceEventsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details of a specific gateway group.
+     * </p>
+     * 
+     * @param listGatewayGroupsRequest
+     * @return Result of the ListGatewayGroups operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListGatewayGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListGatewayGroupsResult listGatewayGroups(ListGatewayGroupsRequest listGatewayGroupsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of gateway summaries. Use GetGateway to retrieve details of a specific gateway. An optional
+     * gateway group ARN can be provided to only retrieve gateway summaries of gateways that are associated with that
+     * gateway group ARN.
+     * </p>
+     * 
+     * @param listGatewaysRequest
+     * @return Result of the ListGateways operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListGatewaysResult listGateways(ListGatewaysRequest listGatewaysRequest);
 
     /**
      * <p>
@@ -1239,6 +1329,42 @@ public interface AmazonAlexaForBusiness {
      *      API Documentation</a>
      */
     UpdateDeviceResult updateDevice(UpdateDeviceRequest updateDeviceRequest);
+
+    /**
+     * <p>
+     * Updates the details of a gateway. If any optional field is not provided, the existing corresponding value is left
+     * unmodified.
+     * </p>
+     * 
+     * @param updateGatewayRequest
+     * @return Result of the UpdateGateway operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws NameInUseException
+     *         The name sent in the request is already in use.
+     * @sample AmazonAlexaForBusiness.UpdateGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateGatewayResult updateGateway(UpdateGatewayRequest updateGatewayRequest);
+
+    /**
+     * <p>
+     * Updates the details of a gateway group. If any optional field is not provided, the existing corresponding value
+     * is left unmodified.
+     * </p>
+     * 
+     * @param updateGatewayGroupRequest
+     * @return Result of the UpdateGatewayGroup operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws NameInUseException
+     *         The name sent in the request is already in use.
+     * @sample AmazonAlexaForBusiness.UpdateGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateGatewayGroupResult updateGatewayGroup(UpdateGatewayGroupRequest updateGatewayGroupRequest);
 
     /**
      * <p>

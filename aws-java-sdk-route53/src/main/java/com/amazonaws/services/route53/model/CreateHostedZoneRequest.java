@@ -48,7 +48,9 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs
-     * with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
+     * with the hosted zone, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html"
+     * >AssociateVPCWithHostedZone</a> after you create a hosted zone.
      * </p>
      */
     private VPC vPC;
@@ -86,8 +88,9 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to
-     * the reusable delegation set when you created it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.
+     * the reusable delegation set when you created it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">
+     * CreateReusableDelegationSet</a>.
      * </p>
      */
     private String delegationSetId;
@@ -216,7 +219,9 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs
-     * with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
+     * with the hosted zone, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html"
+     * >AssociateVPCWithHostedZone</a> after you create a hosted zone.
      * </p>
      * 
      * @param vPC
@@ -224,7 +229,9 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      *        associating with this hosted zone.</p>
      *        <p>
      *        You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon
-     *        VPCs with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
+     *        VPCs with the hosted zone, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html"
+     *        >AssociateVPCWithHostedZone</a> after you create a hosted zone.
      */
 
     public void setVPC(VPC vPC) {
@@ -238,14 +245,18 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs
-     * with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
+     * with the hosted zone, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html"
+     * >AssociateVPCWithHostedZone</a> after you create a hosted zone.
      * </p>
      * 
      * @return (Private hosted zones only) A complex type that contains information about the Amazon VPC that you're
      *         associating with this hosted zone.</p>
      *         <p>
      *         You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon
-     *         VPCs with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
+     *         VPCs with the hosted zone, use <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html"
+     *         >AssociateVPCWithHostedZone</a> after you create a hosted zone.
      */
 
     public VPC getVPC() {
@@ -259,7 +270,9 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs
-     * with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
+     * with the hosted zone, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html"
+     * >AssociateVPCWithHostedZone</a> after you create a hosted zone.
      * </p>
      * 
      * @param vPC
@@ -267,7 +280,9 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      *        associating with this hosted zone.</p>
      *        <p>
      *        You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon
-     *        VPCs with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
+     *        VPCs with the hosted zone, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html"
+     *        >AssociateVPCWithHostedZone</a> after you create a hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,14 +485,17 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to
-     * the reusable delegation set when you created it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.
+     * the reusable delegation set when you created it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">
+     * CreateReusableDelegationSet</a>.
      * </p>
      * 
      * @param delegationSetId
      *        If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53
      *        assigned to the reusable delegation set when you created it. For more information about reusable
-     *        delegation sets, see <a>CreateReusableDelegationSet</a>.
+     *        delegation sets, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html"
+     *        >CreateReusableDelegationSet</a>.
      */
 
     public void setDelegationSetId(String delegationSetId) {
@@ -487,13 +505,16 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to
-     * the reusable delegation set when you created it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.
+     * the reusable delegation set when you created it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">
+     * CreateReusableDelegationSet</a>.
      * </p>
      * 
      * @return If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53
      *         assigned to the reusable delegation set when you created it. For more information about reusable
-     *         delegation sets, see <a>CreateReusableDelegationSet</a>.
+     *         delegation sets, see <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html"
+     *         >CreateReusableDelegationSet</a>.
      */
 
     public String getDelegationSetId() {
@@ -503,14 +524,17 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to
-     * the reusable delegation set when you created it. For more information about reusable delegation sets, see
-     * <a>CreateReusableDelegationSet</a>.
+     * the reusable delegation set when you created it. For more information about reusable delegation sets, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">
+     * CreateReusableDelegationSet</a>.
      * </p>
      * 
      * @param delegationSetId
      *        If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53
      *        assigned to the reusable delegation set when you created it. For more information about reusable
-     *        delegation sets, see <a>CreateReusableDelegationSet</a>.
+     *        delegation sets, see <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html"
+     *        >CreateReusableDelegationSet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

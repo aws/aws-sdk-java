@@ -118,6 +118,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
      * </p>
      * <p>
@@ -138,6 +143,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -165,8 +175,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      */
     private String setIdentifier;
@@ -470,9 +480,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<ResourceRecord> resourceRecords;
     /**
      * <p>
-     * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you're
-     * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
+     * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or
+     * an Amazon S3 bucket, that you want to route traffic to.
      * </p>
      * <p>
      * If you're creating resource records sets for a private hosted zone, note the following:
@@ -480,7 +489,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     * You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.
      * </p>
      * </li>
      * <li>
@@ -540,7 +550,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
      * </p>
      * </li>
@@ -801,6 +811,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
      *        </p>
      *        <p>
@@ -821,6 +836,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>Amazon S3 buckets:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -936,6 +956,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
      *        </p>
      *        <p>
@@ -956,6 +981,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>Amazon S3 buckets:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1346,6 +1376,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
      * </p>
      * <p>
@@ -1366,6 +1401,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -1421,6 +1461,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
      *        </p>
      *        <p>
@@ -1441,6 +1486,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>Amazon S3 buckets:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1501,6 +1551,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
      * </p>
      * <p>
@@ -1521,6 +1576,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -1575,6 +1635,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
+     *         <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <b>CloudFront distributions:</b> <code>A</code>
      *         </p>
      *         <p>
@@ -1595,6 +1660,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <b>Amazon S3 buckets:</b> <code>A</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1655,6 +1725,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
      * </p>
      * <p>
@@ -1675,6 +1750,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -1730,6 +1810,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
      *        </p>
      *        <p>
@@ -1750,6 +1835,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>Amazon S3 buckets:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1812,6 +1902,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
      * </p>
      * <p>
@@ -1832,6 +1927,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -1887,6 +1987,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
      *        </p>
      *        <p>
@@ -1907,6 +2012,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>Amazon S3 buckets:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1967,6 +2077,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <b>CloudFront distributions:</b> <code>A</code>
      * </p>
      * <p>
@@ -1987,6 +2102,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>Amazon S3 buckets:</b> <code>A</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      * </p>
      * </li>
      * <li>
@@ -2042,6 +2162,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <b>CloudFront distributions:</b> <code>A</code>
      *        </p>
      *        <p>
@@ -2062,6 +2187,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>Amazon S3 buckets:</b> <code>A</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2095,8 +2225,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param setIdentifier
@@ -2107,7 +2237,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        unique for each resource record set. </p>
      *        <p>
      *        For information about routing policies, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
      *        Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
@@ -2124,8 +2254,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @return <i>Resource record sets that have a routing policy other than simple:</i> An identifier that
@@ -2135,7 +2265,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         unique for each resource record set. </p>
      *         <p>
      *         For information about routing policies, see <a
-     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *         href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
      *         Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      */
 
@@ -2152,8 +2282,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </p>
      * <p>
      * For information about routing policies, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
-     * in the <i>Amazon Route 53 Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     * Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param setIdentifier
@@ -2164,7 +2294,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        unique for each resource record set. </p>
      *        <p>
      *        For information about routing policies, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
+     *        href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing
      *        Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4593,9 +4723,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you're
-     * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
+     * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or
+     * an Amazon S3 bucket, that you want to route traffic to.
      * </p>
      * <p>
      * If you're creating resource records sets for a private hosted zone, note the following:
@@ -4603,7 +4732,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     * You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.
      * </p>
      * </li>
      * <li>
@@ -4622,17 +4752,16 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </ul>
      * 
      * @param aliasTarget
-     *        <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic
-     *        Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to
-     *        which you're redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
-     *        subdomain.</p>
+     *        <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront
+     *        distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
      *        <p>
      *        If you're creating resource records sets for a private hosted zone, note the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     *        You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     *        distribution.
      *        </p>
      *        </li>
      *        <li>
@@ -4656,9 +4785,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you're
-     * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
+     * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or
+     * an Amazon S3 bucket, that you want to route traffic to.
      * </p>
      * <p>
      * If you're creating resource records sets for a private hosted zone, note the following:
@@ -4666,7 +4794,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     * You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.
      * </p>
      * </li>
      * <li>
@@ -4684,17 +4813,16 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * </ul>
      * 
-     * @return <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic
-     *         Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to
-     *         which you're redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
-     *         subdomain.</p>
+     * @return <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront
+     *         distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
      *         <p>
      *         If you're creating resource records sets for a private hosted zone, note the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     *         You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     *         distribution.
      *         </p>
      *         </li>
      *         <li>
@@ -4718,9 +4846,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic Beanstalk
-     * environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to which you're
-     * redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized subdomain.
+     * <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or
+     * an Amazon S3 bucket, that you want to route traffic to.
      * </p>
      * <p>
      * If you're creating resource records sets for a private hosted zone, note the following:
@@ -4728,7 +4855,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     * You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     * distribution.
      * </p>
      * </li>
      * <li>
@@ -4747,17 +4875,16 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </ul>
      * 
      * @param aliasTarget
-     *        <i>Alias resource record sets only:</i> Information about the CloudFront distribution, AWS Elastic
-     *        Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon Route 53 resource record set to
-     *        which you're redirecting queries. The AWS Elastic Beanstalk environment must have a regionalized
-     *        subdomain.</p>
+     *        <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront
+     *        distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
      *        <p>
      *        If you're creating resource records sets for a private hosted zone, note the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        You can't create alias resource record sets for CloudFront distributions in a private hosted zone.
+     *        You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront
+     *        distribution.
      *        </p>
      *        </li>
      *        <li>
@@ -4822,7 +4949,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
      * </p>
      * </li>
@@ -5003,7 +5130,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
      *        </p>
      *        </li>
@@ -5191,7 +5318,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
      * </p>
      * </li>
@@ -5371,7 +5498,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <a href=
-     *         "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *         >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
      *         </p>
      *         </li>
@@ -5561,7 +5688,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <li>
      * <p>
      * <a href=
-     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
      * </p>
      * </li>
@@ -5742,7 +5869,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
+     *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
      *        </p>
      *        </li>

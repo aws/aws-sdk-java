@@ -31,40 +31,42 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * User-defined criteria for sending commands that target instances that meet the criteria. Key can be
-     * tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target instances
-     * using Key,Value parameters, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
-     * >Targeting Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.
+     * User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code> can be
+     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how to send
+     * commands that target instances using <code>Key,Value</code> parameters, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
+     * >Using Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     * value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
-     * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
+     * you could specify <code>value:WebServer</code> to run a command on instances that include Amazon EC2 tags of
+     * <code>ServerRole,WebServer</code>. For more information about how to send commands that target instances using
+     * <code>Key,Value</code> parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using Targets and
+     * Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
 
     /**
      * <p>
-     * User-defined criteria for sending commands that target instances that meet the criteria. Key can be
-     * tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target instances
-     * using Key,Value parameters, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
-     * >Targeting Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.
+     * User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code> can be
+     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how to send
+     * commands that target instances using <code>Key,Value</code> parameters, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
+     * >Using Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param key
-     *        User-defined criteria for sending commands that target instances that meet the criteria. Key can be
-     *        tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target
-     *        instances using Key,Value parameters, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
-     *        >Targeting Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code>
+     *        can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how
+     *        to send commands that target instances using <code>Key,Value</code> parameters, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
+     *        >Using Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User
+     *        Guide</i>.
      */
 
     public void setKey(String key) {
@@ -73,18 +75,19 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * User-defined criteria for sending commands that target instances that meet the criteria. Key can be
-     * tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target instances
-     * using Key,Value parameters, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
-     * >Targeting Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.
+     * User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code> can be
+     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how to send
+     * commands that target instances using <code>Key,Value</code> parameters, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
+     * >Using Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
-     * @return User-defined criteria for sending commands that target instances that meet the criteria. Key can be
-     *         tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target
-     *         instances using Key,Value parameters, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
-     *         >Targeting Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @return User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code>
+     *         can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about
+     *         how to send commands that target instances using <code>Key,Value</code> parameters, see <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
+     *         >Using Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User
+     *         Guide</i>.
      */
 
     public String getKey() {
@@ -93,19 +96,20 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * User-defined criteria for sending commands that target instances that meet the criteria. Key can be
-     * tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target instances
-     * using Key,Value parameters, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
-     * >Targeting Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.
+     * User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code> can be
+     * <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how to send
+     * commands that target instances using <code>Key,Value</code> parameters, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
+     * >Using Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param key
-     *        User-defined criteria for sending commands that target instances that meet the criteria. Key can be
-     *        tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target
-     *        instances using Key,Value parameters, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
-     *        >Targeting Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code>
+     *        can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how
+     *        to send commands that target instances using <code>Key,Value</code> parameters, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
+     *        >Using Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,18 +120,20 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     * value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
-     * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
+     * you could specify <code>value:WebServer</code> to run a command on instances that include Amazon EC2 tags of
+     * <code>ServerRole,WebServer</code>. For more information about how to send commands that target instances using
+     * <code>Key,Value</code> parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using Targets and
+     * Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
-     * @return User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     *         value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For
-     *         more information about how to send commands that target instances using Key,Value parameters, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *         Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @return User-defined criteria that maps to <code>Key</code>. For example, if you specified
+     *         <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
+     *         that include Amazon EC2 tags of <code>ServerRole,WebServer</code>. For more information about how to send
+     *         commands that target instances using <code>Key,Value</code> parameters, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     *         Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public java.util.List<String> getValues() {
@@ -139,19 +145,21 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     * value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
-     * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
+     * you could specify <code>value:WebServer</code> to run a command on instances that include Amazon EC2 tags of
+     * <code>ServerRole,WebServer</code>. For more information about how to send commands that target instances using
+     * <code>Key,Value</code> parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using Targets and
+     * Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param values
-     *        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     *        value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For
-     *        more information about how to send commands that target instances using Key,Value parameters, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
+     *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
+     *        that include Amazon EC2 tags of <code>ServerRole,WebServer</code>. For more information about how to send
+     *        commands that target instances using <code>Key,Value</code> parameters, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     *        Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -165,11 +173,12 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     * value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
-     * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
+     * you could specify <code>value:WebServer</code> to run a command on instances that include Amazon EC2 tags of
+     * <code>ServerRole,WebServer</code>. For more information about how to send commands that target instances using
+     * <code>Key,Value</code> parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using Targets and
+     * Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -178,11 +187,12 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     *        value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For
-     *        more information about how to send commands that target instances using Key,Value parameters, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
+     *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
+     *        that include Amazon EC2 tags of <code>ServerRole,WebServer</code>. For more information about how to send
+     *        commands that target instances using <code>Key,Value</code> parameters, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     *        Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,19 +208,21 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     * value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
-     * to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
+     * you could specify <code>value:WebServer</code> to run a command on instances that include Amazon EC2 tags of
+     * <code>ServerRole,WebServer</code>. For more information about how to send commands that target instances using
+     * <code>Key,Value</code> parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using Targets and
+     * Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param values
-     *        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
-     *        value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For
-     *        more information about how to send commands that target instances using Key,Value parameters, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *        Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
+     *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
+     *        that include Amazon EC2 tags of <code>ServerRole,WebServer</code>. For more information about how to send
+     *        commands that target instances using <code>Key,Value</code> parameters, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     *        Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

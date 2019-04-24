@@ -46,7 +46,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      */
@@ -204,7 +204,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * 
@@ -214,7 +214,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      *         InsufficientCapabilities error.</p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *         >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * @see Capability
      */
@@ -234,7 +234,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * 
@@ -245,7 +245,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      *        error.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * @see Capability
      */
@@ -267,7 +267,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * <p>
@@ -283,7 +283,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      *        error.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
@@ -307,7 +307,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * 
@@ -318,7 +318,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      *        error.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
@@ -337,7 +337,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * 
@@ -348,7 +348,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      *        error.</p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability

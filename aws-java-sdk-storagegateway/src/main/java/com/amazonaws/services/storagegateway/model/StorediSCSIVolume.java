@@ -111,7 +111,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     private java.util.Date createdDate;
     /**
      * <p>
-     * The size of the data stored on the volume in bytes.
+     * The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that
+     * are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns
+     * but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size
+     * of the volume, which is the value that is used to calculate your bill.
      * </p>
      * <note>
      * <p>
@@ -693,7 +696,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The size of the data stored on the volume in bytes.
+     * The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that
+     * are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns
+     * but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size
+     * of the volume, which is the value that is used to calculate your bill.
      * </p>
      * <note>
      * <p>
@@ -702,7 +708,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @param volumeUsedInBytes
-     *        The size of the data stored on the volume in bytes. </p> <note>
+     *        The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks
+     *        that are touched, instead of the actual amount of data written. This value can be useful for sequential
+     *        write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
+     *        from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
      *        <p>
      *        This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
      *        </p>
@@ -714,7 +723,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The size of the data stored on the volume in bytes.
+     * The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that
+     * are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns
+     * but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size
+     * of the volume, which is the value that is used to calculate your bill.
      * </p>
      * <note>
      * <p>
@@ -722,7 +734,11 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * </p>
      * </note>
      * 
-     * @return The size of the data stored on the volume in bytes. </p> <note>
+     * @return The size of the data stored on the volume in bytes. This value is calculated based on the number of
+     *         blocks that are touched, instead of the actual amount of data written. This value can be useful for
+     *         sequential write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is
+     *         different from the compressed size of the volume, which is the value that is used to calculate your
+     *         bill.</p> <note>
      *         <p>
      *         This value is not available for volumes created prior to May 13, 2015, until you store data on the
      *         volume.
@@ -735,7 +751,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The size of the data stored on the volume in bytes.
+     * The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks that
+     * are touched, instead of the actual amount of data written. This value can be useful for sequential write patterns
+     * but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size
+     * of the volume, which is the value that is used to calculate your bill.
      * </p>
      * <note>
      * <p>
@@ -744,7 +763,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @param volumeUsedInBytes
-     *        The size of the data stored on the volume in bytes. </p> <note>
+     *        The size of the data stored on the volume in bytes. This value is calculated based on the number of blocks
+     *        that are touched, instead of the actual amount of data written. This value can be useful for sequential
+     *        write patterns but less accurate for random write patterns. <code>VolumeUsedInBytes</code> is different
+     *        from the compressed size of the volume, which is the value that is used to calculate your bill.</p> <note>
      *        <p>
      *        This value is not available for volumes created prior to May 13, 2015, until you store data on the volume.
      *        </p>

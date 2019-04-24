@@ -30,7 +30,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Maintenance Window ID where the task is registered.
+     * The ID of the Maintenance Window where the task is registered.
      * </p>
      */
     private String windowId;
@@ -105,7 +105,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     private String serviceRoleArn;
     /**
      * <p>
-     * The maximum number of targets this task can be run for in parallel.
+     * The maximum number of targets this task can be run for, in parallel.
      * </p>
      */
     private String maxConcurrency;
@@ -130,11 +130,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Maintenance Window ID where the task is registered.
+     * The ID of the Maintenance Window where the task is registered.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID where the task is registered.
+     *        The ID of the Maintenance Window where the task is registered.
      */
 
     public void setWindowId(String windowId) {
@@ -143,10 +143,10 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Maintenance Window ID where the task is registered.
+     * The ID of the Maintenance Window where the task is registered.
      * </p>
      * 
-     * @return The Maintenance Window ID where the task is registered.
+     * @return The ID of the Maintenance Window where the task is registered.
      */
 
     public String getWindowId() {
@@ -155,11 +155,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Maintenance Window ID where the task is registered.
+     * The ID of the Maintenance Window where the task is registered.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID where the task is registered.
+     *        The ID of the Maintenance Window where the task is registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -699,11 +699,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of targets this task can be run for in parallel.
+     * The maximum number of targets this task can be run for, in parallel.
      * </p>
      * 
      * @param maxConcurrency
-     *        The maximum number of targets this task can be run for in parallel.
+     *        The maximum number of targets this task can be run for, in parallel.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -712,10 +712,10 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of targets this task can be run for in parallel.
+     * The maximum number of targets this task can be run for, in parallel.
      * </p>
      * 
-     * @return The maximum number of targets this task can be run for in parallel.
+     * @return The maximum number of targets this task can be run for, in parallel.
      */
 
     public String getMaxConcurrency() {
@@ -724,11 +724,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum number of targets this task can be run for in parallel.
+     * The maximum number of targets this task can be run for, in parallel.
      * </p>
      * 
      * @param maxConcurrency
-     *        The maximum number of targets this task can be run for in parallel.
+     *        The maximum number of targets this task can be run for, in parallel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

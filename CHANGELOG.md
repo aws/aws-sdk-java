@@ -1,3 +1,44 @@
+# __1.11.539__ __2019-04-24__
+## __AWS CloudFormation__
+  - ### Features
+    - Documentation updates for cloudformation
+
+## __AWS MediaConnect__
+  - ### Features
+    - Adds support for ListEntitlements pagination.
+
+## __AWS MediaTailor__
+  - ### Features
+    - AWS Elemental MediaTailor SDK now includes a new parameter to support origin servers that produce single-period DASH manifests.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - AWS Storage Gateway now supports Access Control Lists (ACLs) on File Gateway SMB shares, enabling you to apply fine grained access controls for Active Directory users and groups.
+
+## __Alexa For Business__
+  - ### Features
+    - This release adds support for the Alexa for Business gateway and gateway group APIs.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - You can now launch the new Amazon EC2 general purpose burstable instance types T3a that feature AMD EPYC processors.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - A new parameter "feature-name" is added to the add-role and remove-role db cluster APIs. The value for the parameter is optional for Aurora MySQL compatible database clusters, but mandatory for Aurora PostgresQL. You can find the valid list of values using describe db engine versions API.
+
+## __Amazon Route 53__
+  - ### Features
+    - Amazon Route 53 now supports the Asia Pacific (Hong Kong) Region (ap-east-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This release updates AWS Systems Manager APIs to allow customers to configure parameters to use either the standard-parameter tier (the default tier) or the advanced-parameter tier. It allows customers to create parameters with larger values and attach parameter policies to an Advanced Parameter. 
+
+## __Amazon Textract__
+  - ### Features
+    - This release adds support for checkbox also known as SELECTION_ELEMENT in Amazon Textract.
+
 # __1.11.538__ __2019-04-19__
 ## __AWS Resource Groups__
   - ### Features

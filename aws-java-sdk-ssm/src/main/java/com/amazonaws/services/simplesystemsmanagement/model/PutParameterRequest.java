@@ -91,7 +91,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /**
      * <p>
-     * The parameter value that you want to add to the system.
+     * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
+     * parameters have a value limit of 8 KB.
      * </p>
      */
     private String value;
@@ -180,6 +181,61 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
+     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * </p>
+     * <p>
+     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
+     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * </p>
+     * <p>
+     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
+     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
+     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
+     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
+     * than standard parameters.
+     * </p>
+     * <p>
+     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
+     * you must delete it and recreate it as a new standard parameter. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     */
+    private String tier;
+    /**
+     * <p>
+     * One or more policies to apply to a parameter. This action takes a JSON array. Parameter Store supports the
+     * following policy types:
+     * </p>
+     * <p>
+     * Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify the
+     * expiration date. You can update the expiration date and time by updating the policy. Updating the
+     * <i>parameter</i> does not affect the expiration date and time. When the expiration time is reached, Parameter
+     * Store deletes the parameter.
+     * </p>
+     * <p>
+     * ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about the
+     * expiration. By using this policy, you can receive notification before or after the expiration time is reached, in
+     * units of days or hours.
+     * </p>
+     * <p>
+     * NoChangeNotification: This policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret needs to be changed within a
+     * period of time, but it has not been changed.
+     * </p>
+     * <p>
+     * All existing policies are preserved until you send new policies or an empty policy. For more information about
+     * parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>.
+     * </p>
+     */
+    private String policies;
 
     /**
      * <p>
@@ -572,11 +628,13 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The parameter value that you want to add to the system.
+     * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
+     * parameters have a value limit of 8 KB.
      * </p>
      * 
      * @param value
-     *        The parameter value that you want to add to the system.
+     *        The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB.
+     *        Advanced parameters have a value limit of 8 KB.
      */
 
     public void setValue(String value) {
@@ -585,10 +643,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The parameter value that you want to add to the system.
+     * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
+     * parameters have a value limit of 8 KB.
      * </p>
      * 
-     * @return The parameter value that you want to add to the system.
+     * @return The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB.
+     *         Advanced parameters have a value limit of 8 KB.
      */
 
     public String getValue() {
@@ -597,11 +657,13 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The parameter value that you want to add to the system.
+     * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
+     * parameters have a value limit of 8 KB.
      * </p>
      * 
      * @param value
-     *        The parameter value that you want to add to the system.
+     *        The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB.
+     *        Advanced parameters have a value limit of 8 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1309,6 +1371,460 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
+     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * </p>
+     * <p>
+     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
+     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * </p>
+     * <p>
+     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
+     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
+     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
+     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
+     * than standard parameters.
+     * </p>
+     * <p>
+     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
+     * you must delete it and recreate it as a new standard parameter. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param tier
+     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
+     *        value limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000
+     *        standard parameters per account and per Region. Standard parameters are offered at no additional cost.</p>
+     *        <p>
+     *        Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can
+     *        create a maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a
+     *        charge.
+     *        </p>
+     *        <p>
+     *        If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
+     *        standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't
+     *        revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
+     *        parameter would result in data loss because the system would truncate the size of the parameter from 8 KB
+     *        to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters
+     *        use a different form of encryption than standard parameters.
+     *        </p>
+     *        <p>
+     *        If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced
+     *        parameter, you must delete it and recreate it as a new standard parameter. For more information, see <a
+     *        href
+     *        ="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
+     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @see ParameterTier
+     */
+
+    public void setTier(String tier) {
+        this.tier = tier;
+    }
+
+    /**
+     * <p>
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
+     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * </p>
+     * <p>
+     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
+     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * </p>
+     * <p>
+     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
+     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
+     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
+     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
+     * than standard parameters.
+     * </p>
+     * <p>
+     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
+     * you must delete it and recreate it as a new standard parameter. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @return Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
+     *         value limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000
+     *         standard parameters per account and per Region. Standard parameters are offered at no additional
+     *         cost.</p>
+     *         <p>
+     *         Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can
+     *         create a maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a
+     *         charge.
+     *         </p>
+     *         <p>
+     *         If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using
+     *         the standard tier. You can change a standard parameter to an advanced parameter at any time. But you
+     *         can't revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
+     *         parameter would result in data loss because the system would truncate the size of the parameter from 8 KB
+     *         to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters
+     *         use a different form of encryption than standard parameters.
+     *         </p>
+     *         <p>
+     *         If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced
+     *         parameter, you must delete it and recreate it as a new standard parameter. For more information, see <a
+     *         href
+     *         ="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
+     *         >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @see ParameterTier
+     */
+
+    public String getTier() {
+        return this.tier;
+    }
+
+    /**
+     * <p>
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
+     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * </p>
+     * <p>
+     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
+     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * </p>
+     * <p>
+     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
+     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
+     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
+     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
+     * than standard parameters.
+     * </p>
+     * <p>
+     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
+     * you must delete it and recreate it as a new standard parameter. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param tier
+     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
+     *        value limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000
+     *        standard parameters per account and per Region. Standard parameters are offered at no additional cost.</p>
+     *        <p>
+     *        Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can
+     *        create a maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a
+     *        charge.
+     *        </p>
+     *        <p>
+     *        If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
+     *        standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't
+     *        revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
+     *        parameter would result in data loss because the system would truncate the size of the parameter from 8 KB
+     *        to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters
+     *        use a different form of encryption than standard parameters.
+     *        </p>
+     *        <p>
+     *        If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced
+     *        parameter, you must delete it and recreate it as a new standard parameter. For more information, see <a
+     *        href
+     *        ="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
+     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ParameterTier
+     */
+
+    public PutParameterRequest withTier(String tier) {
+        setTier(tier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
+     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * </p>
+     * <p>
+     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
+     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * </p>
+     * <p>
+     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
+     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
+     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
+     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
+     * than standard parameters.
+     * </p>
+     * <p>
+     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
+     * you must delete it and recreate it as a new standard parameter. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param tier
+     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
+     *        value limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000
+     *        standard parameters per account and per Region. Standard parameters are offered at no additional cost.</p>
+     *        <p>
+     *        Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can
+     *        create a maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a
+     *        charge.
+     *        </p>
+     *        <p>
+     *        If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
+     *        standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't
+     *        revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
+     *        parameter would result in data loss because the system would truncate the size of the parameter from 8 KB
+     *        to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters
+     *        use a different form of encryption than standard parameters.
+     *        </p>
+     *        <p>
+     *        If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced
+     *        parameter, you must delete it and recreate it as a new standard parameter. For more information, see <a
+     *        href
+     *        ="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
+     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @see ParameterTier
+     */
+
+    public void setTier(ParameterTier tier) {
+        withTier(tier);
+    }
+
+    /**
+     * <p>
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
+     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * </p>
+     * <p>
+     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
+     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * </p>
+     * <p>
+     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
+     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
+     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
+     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
+     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
+     * than standard parameters.
+     * </p>
+     * <p>
+     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
+     * you must delete it and recreate it as a new standard parameter. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param tier
+     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
+     *        value limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000
+     *        standard parameters per account and per Region. Standard parameters are offered at no additional cost.</p>
+     *        <p>
+     *        Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can
+     *        create a maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a
+     *        charge.
+     *        </p>
+     *        <p>
+     *        If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
+     *        standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't
+     *        revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
+     *        parameter would result in data loss because the system would truncate the size of the parameter from 8 KB
+     *        to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters
+     *        use a different form of encryption than standard parameters.
+     *        </p>
+     *        <p>
+     *        If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced
+     *        parameter, you must delete it and recreate it as a new standard parameter. For more information, see <a
+     *        href
+     *        ="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
+     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ParameterTier
+     */
+
+    public PutParameterRequest withTier(ParameterTier tier) {
+        this.tier = tier.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more policies to apply to a parameter. This action takes a JSON array. Parameter Store supports the
+     * following policy types:
+     * </p>
+     * <p>
+     * Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify the
+     * expiration date. You can update the expiration date and time by updating the policy. Updating the
+     * <i>parameter</i> does not affect the expiration date and time. When the expiration time is reached, Parameter
+     * Store deletes the parameter.
+     * </p>
+     * <p>
+     * ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about the
+     * expiration. By using this policy, you can receive notification before or after the expiration time is reached, in
+     * units of days or hours.
+     * </p>
+     * <p>
+     * NoChangeNotification: This policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret needs to be changed within a
+     * period of time, but it has not been changed.
+     * </p>
+     * <p>
+     * All existing policies are preserved until you send new policies or an empty policy. For more information about
+     * parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>.
+     * </p>
+     * 
+     * @param policies
+     *        One or more policies to apply to a parameter. This action takes a JSON array. Parameter Store supports the
+     *        following policy types:</p>
+     *        <p>
+     *        Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify
+     *        the expiration date. You can update the expiration date and time by updating the policy. Updating the
+     *        <i>parameter</i> does not affect the expiration date and time. When the expiration time is reached,
+     *        Parameter Store deletes the parameter.
+     *        </p>
+     *        <p>
+     *        ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about
+     *        the expiration. By using this policy, you can receive notification before or after the expiration time is
+     *        reached, in units of days or hours.
+     *        </p>
+     *        <p>
+     *        NoChangeNotification: This policy triggers a CloudWatch event if a parameter has not been modified for a
+     *        specified period of time. This policy type is useful when, for example, a secret needs to be changed
+     *        within a period of time, but it has not been changed.
+     *        </p>
+     *        <p>
+     *        All existing policies are preserved until you send new policies or an empty policy. For more information
+     *        about parameter policies, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html"
+     *        >Working with Parameter Policies</a>.
+     */
+
+    public void setPolicies(String policies) {
+        this.policies = policies;
+    }
+
+    /**
+     * <p>
+     * One or more policies to apply to a parameter. This action takes a JSON array. Parameter Store supports the
+     * following policy types:
+     * </p>
+     * <p>
+     * Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify the
+     * expiration date. You can update the expiration date and time by updating the policy. Updating the
+     * <i>parameter</i> does not affect the expiration date and time. When the expiration time is reached, Parameter
+     * Store deletes the parameter.
+     * </p>
+     * <p>
+     * ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about the
+     * expiration. By using this policy, you can receive notification before or after the expiration time is reached, in
+     * units of days or hours.
+     * </p>
+     * <p>
+     * NoChangeNotification: This policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret needs to be changed within a
+     * period of time, but it has not been changed.
+     * </p>
+     * <p>
+     * All existing policies are preserved until you send new policies or an empty policy. For more information about
+     * parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>.
+     * </p>
+     * 
+     * @return One or more policies to apply to a parameter. This action takes a JSON array. Parameter Store supports
+     *         the following policy types:</p>
+     *         <p>
+     *         Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify
+     *         the expiration date. You can update the expiration date and time by updating the policy. Updating the
+     *         <i>parameter</i> does not affect the expiration date and time. When the expiration time is reached,
+     *         Parameter Store deletes the parameter.
+     *         </p>
+     *         <p>
+     *         ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about
+     *         the expiration. By using this policy, you can receive notification before or after the expiration time is
+     *         reached, in units of days or hours.
+     *         </p>
+     *         <p>
+     *         NoChangeNotification: This policy triggers a CloudWatch event if a parameter has not been modified for a
+     *         specified period of time. This policy type is useful when, for example, a secret needs to be changed
+     *         within a period of time, but it has not been changed.
+     *         </p>
+     *         <p>
+     *         All existing policies are preserved until you send new policies or an empty policy. For more information
+     *         about parameter policies, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html"
+     *         >Working with Parameter Policies</a>.
+     */
+
+    public String getPolicies() {
+        return this.policies;
+    }
+
+    /**
+     * <p>
+     * One or more policies to apply to a parameter. This action takes a JSON array. Parameter Store supports the
+     * following policy types:
+     * </p>
+     * <p>
+     * Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify the
+     * expiration date. You can update the expiration date and time by updating the policy. Updating the
+     * <i>parameter</i> does not affect the expiration date and time. When the expiration time is reached, Parameter
+     * Store deletes the parameter.
+     * </p>
+     * <p>
+     * ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about the
+     * expiration. By using this policy, you can receive notification before or after the expiration time is reached, in
+     * units of days or hours.
+     * </p>
+     * <p>
+     * NoChangeNotification: This policy triggers a CloudWatch event if a parameter has not been modified for a
+     * specified period of time. This policy type is useful when, for example, a secret needs to be changed within a
+     * period of time, but it has not been changed.
+     * </p>
+     * <p>
+     * All existing policies are preserved until you send new policies or an empty policy. For more information about
+     * parameter policies, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
+     * with Parameter Policies</a>.
+     * </p>
+     * 
+     * @param policies
+     *        One or more policies to apply to a parameter. This action takes a JSON array. Parameter Store supports the
+     *        following policy types:</p>
+     *        <p>
+     *        Expiration: This policy deletes the parameter after it expires. When you create the policy, you specify
+     *        the expiration date. You can update the expiration date and time by updating the policy. Updating the
+     *        <i>parameter</i> does not affect the expiration date and time. When the expiration time is reached,
+     *        Parameter Store deletes the parameter.
+     *        </p>
+     *        <p>
+     *        ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that notifies you about
+     *        the expiration. By using this policy, you can receive notification before or after the expiration time is
+     *        reached, in units of days or hours.
+     *        </p>
+     *        <p>
+     *        NoChangeNotification: This policy triggers a CloudWatch event if a parameter has not been modified for a
+     *        specified period of time. This policy type is useful when, for example, a secret needs to be changed
+     *        within a period of time, but it has not been changed.
+     *        </p>
+     *        <p>
+     *        All existing policies are preserved until you send new policies or an empty policy. For more information
+     *        about parameter policies, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html"
+     *        >Working with Parameter Policies</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutParameterRequest withPolicies(String policies) {
+        setPolicies(policies);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1335,7 +1851,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getAllowedPattern() != null)
             sb.append("AllowedPattern: ").append(getAllowedPattern()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getTier() != null)
+            sb.append("Tier: ").append(getTier()).append(",");
+        if (getPolicies() != null)
+            sb.append("Policies: ").append(getPolicies());
         sb.append("}");
         return sb.toString();
     }
@@ -1382,6 +1902,14 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getTier() == null ^ this.getTier() == null)
+            return false;
+        if (other.getTier() != null && other.getTier().equals(this.getTier()) == false)
+            return false;
+        if (other.getPolicies() == null ^ this.getPolicies() == null)
+            return false;
+        if (other.getPolicies() != null && other.getPolicies().equals(this.getPolicies()) == false)
+            return false;
         return true;
     }
 
@@ -1398,6 +1926,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getOverwrite() == null) ? 0 : getOverwrite().hashCode());
         hashCode = prime * hashCode + ((getAllowedPattern() == null) ? 0 : getAllowedPattern().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
+        hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
         return hashCode;
     }
 

@@ -42,11 +42,11 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53
-     * doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
@@ -90,11 +90,12 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route
-     *        53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even
-     *        though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>
@@ -129,11 +130,12 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route
-     *        53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even
-     *        though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>
@@ -166,11 +168,11 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53
-     * doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
@@ -195,11 +197,12 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route
-     *        53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even
-     *        though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>
@@ -231,11 +234,11 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53
-     * doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
@@ -259,11 +262,12 @@ public class Change implements Serializable, Cloneable {
      *         </p>
      *         <important>
      *         <p>
-     *         To delete the resource record set that is associated with a traffic policy instance, use
-     *         <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *         automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
-     *         Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for
-     *         it even though it's no longer in use.
+     *         To delete the resource record set that is associated with a traffic policy instance, use <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *         >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *         you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *         automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *         it's no longer in use.
      *         </p>
      *         </important></li>
      *         <li>
@@ -295,11 +299,11 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53
-     * doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
@@ -324,11 +328,12 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route
-     *        53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even
-     *        though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>
@@ -362,11 +367,11 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53
-     * doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
@@ -391,11 +396,12 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route
-     *        53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even
-     *        though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>
@@ -427,11 +433,11 @@ public class Change implements Serializable, Cloneable {
      * </p>
      * <important>
      * <p>
-     * To delete the resource record set that is associated with a traffic policy instance, use
-     * <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     * automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53
-     * doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though
-     * it's no longer in use.
+     * To delete the resource record set that is associated with a traffic policy instance, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     * >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you
+     * delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically
+     * delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use.
      * </p>
      * </important></li>
      * <li>
@@ -456,11 +462,12 @@ public class Change implements Serializable, Cloneable {
      *        </p>
      *        <important>
      *        <p>
-     *        To delete the resource record set that is associated with a traffic policy instance, use
-     *        <code> <a>DeleteTrafficPolicyInstance</a> </code>. Amazon Route 53 will delete the resource record set
-     *        automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route
-     *        53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even
-     *        though it's no longer in use.
+     *        To delete the resource record set that is associated with a traffic policy instance, use <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html"
+     *        >DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If
+     *        you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
+     *        automatically delete the traffic policy instance, and you'll continue to be charged for it even though
+     *        it's no longer in use.
      *        </p>
      *        </important></li>
      *        <li>

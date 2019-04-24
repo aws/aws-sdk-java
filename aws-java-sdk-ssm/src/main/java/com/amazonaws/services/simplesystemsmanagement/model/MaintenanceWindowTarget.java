@@ -30,7 +30,7 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Maintenance Window ID where the target is registered.
+     * The ID of the Maintenance Window to register the target with.
      * </p>
      */
     private String windowId;
@@ -42,22 +42,32 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
     private String windowTargetId;
     /**
      * <p>
-     * The type of target.
+     * The type of target that is being registered with the Maintenance Window.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets, either instances or tags.
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>
+     * </p>
+     * <p>
+     * Tags are specified using the following format:
+     * </p>
+     * <p>
+     * <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this Maintenance Window.
+     * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
+     * these targets in this Maintenance Window.
      * </p>
      */
     private String ownerInformation;
@@ -69,18 +79,18 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
     private String name;
     /**
      * <p>
-     * A description of the target.
+     * A description for the target.
      * </p>
      */
     private String description;
 
     /**
      * <p>
-     * The Maintenance Window ID where the target is registered.
+     * The ID of the Maintenance Window to register the target with.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID where the target is registered.
+     *        The ID of the Maintenance Window to register the target with.
      */
 
     public void setWindowId(String windowId) {
@@ -89,10 +99,10 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Maintenance Window ID where the target is registered.
+     * The ID of the Maintenance Window to register the target with.
      * </p>
      * 
-     * @return The Maintenance Window ID where the target is registered.
+     * @return The ID of the Maintenance Window to register the target with.
      */
 
     public String getWindowId() {
@@ -101,11 +111,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The Maintenance Window ID where the target is registered.
+     * The ID of the Maintenance Window to register the target with.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID where the target is registered.
+     *        The ID of the Maintenance Window to register the target with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +166,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of target.
+     * The type of target that is being registered with the Maintenance Window.
      * </p>
      * 
      * @param resourceType
-     *        The type of target.
+     *        The type of target that is being registered with the Maintenance Window.
      * @see MaintenanceWindowResourceType
      */
 
@@ -170,10 +180,10 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of target.
+     * The type of target that is being registered with the Maintenance Window.
      * </p>
      * 
-     * @return The type of target.
+     * @return The type of target that is being registered with the Maintenance Window.
      * @see MaintenanceWindowResourceType
      */
 
@@ -183,11 +193,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of target.
+     * The type of target that is being registered with the Maintenance Window.
      * </p>
      * 
      * @param resourceType
-     *        The type of target.
+     *        The type of target that is being registered with the Maintenance Window.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowResourceType
      */
@@ -199,11 +209,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of target.
+     * The type of target that is being registered with the Maintenance Window.
      * </p>
      * 
      * @param resourceType
-     *        The type of target.
+     *        The type of target that is being registered with the Maintenance Window.
      * @see MaintenanceWindowResourceType
      */
 
@@ -213,11 +223,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The type of target.
+     * The type of target that is being registered with the Maintenance Window.
      * </p>
      * 
      * @param resourceType
-     *        The type of target.
+     *        The type of target that is being registered with the Maintenance Window.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowResourceType
      */
@@ -229,14 +239,33 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets, either instances or tags.
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>
+     * </p>
+     * <p>
+     * Tags are specified using the following format:
+     * </p>
+     * <p>
+     * <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * </p>
      * 
-     * @return The targets (either instances or tags). Instances are specified using
-     *         Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *         name&gt;,Values=&lt;tag value&gt;.
+     * @return The targets, either instances or tags.</p>
+     *         <p>
+     *         Specify instances using the following format:
+     *         </p>
+     *         <p>
+     *         <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>
+     *         </p>
+     *         <p>
+     *         Tags are specified using the following format:
+     *         </p>
+     *         <p>
+     *         <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      */
 
     public java.util.List<Target> getTargets() {
@@ -248,15 +277,34 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets, either instances or tags.
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>
+     * </p>
+     * <p>
+     * Tags are specified using the following format:
+     * </p>
+     * <p>
+     * <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        The targets, either instances or tags.</p>
+     *        <p>
+     *        Specify instances using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>
+     *        </p>
+     *        <p>
+     *        Tags are specified using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -270,9 +318,19 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets, either instances or tags.
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>
+     * </p>
+     * <p>
+     * Tags are specified using the following format:
+     * </p>
+     * <p>
+     * <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -281,9 +339,18 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        The targets, either instances or tags.</p>
+     *        <p>
+     *        Specify instances using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>
+     *        </p>
+     *        <p>
+     *        Tags are specified using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,15 +366,34 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets, either instances or tags.
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>
+     * </p>
+     * <p>
+     * Tags are specified using the following format:
+     * </p>
+     * <p>
+     * <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        The targets, either instances or tags.</p>
+     *        <p>
+     *        Specify instances using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>
+     *        </p>
+     *        <p>
+     *        Tags are specified using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,13 +404,13 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this Maintenance Window.
+     * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
+     * these targets in this Maintenance Window.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *        targets in this Maintenance Window.
+     *        A user-provided value that will be included in any CloudWatch events that are raised while running tasks
+     *        for these targets in this Maintenance Window.
      */
 
     public void setOwnerInformation(String ownerInformation) {
@@ -333,12 +419,12 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this Maintenance Window.
+     * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
+     * these targets in this Maintenance Window.
      * </p>
      * 
-     * @return User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *         targets in this Maintenance Window.
+     * @return A user-provided value that will be included in any CloudWatch events that are raised while running tasks
+     *         for these targets in this Maintenance Window.
      */
 
     public String getOwnerInformation() {
@@ -347,13 +433,13 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * User-provided value that will be included in any CloudWatch events raised while running tasks for these targets
-     * in this Maintenance Window.
+     * A user-provided value that will be included in any CloudWatch events that are raised while running tasks for
+     * these targets in this Maintenance Window.
      * </p>
      * 
      * @param ownerInformation
-     *        User-provided value that will be included in any CloudWatch events raised while running tasks for these
-     *        targets in this Maintenance Window.
+     *        A user-provided value that will be included in any CloudWatch events that are raised while running tasks
+     *        for these targets in this Maintenance Window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,11 +490,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A description of the target.
+     * A description for the target.
      * </p>
      * 
      * @param description
-     *        A description of the target.
+     *        A description for the target.
      */
 
     public void setDescription(String description) {
@@ -417,10 +503,10 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A description of the target.
+     * A description for the target.
      * </p>
      * 
-     * @return A description of the target.
+     * @return A description for the target.
      */
 
     public String getDescription() {
@@ -429,11 +515,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A description of the target.
+     * A description for the target.
      * </p>
      * 
      * @param description
-     *        A description of the target.
+     *        A description for the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,6 +48,10 @@ public class RemoveRoleFromDBClusterRequestMarshaller implements Marshaller<Requ
             request.addParameter("RoleArn", StringUtils.fromString(removeRoleFromDBClusterRequest.getRoleArn()));
         }
 
+        if (removeRoleFromDBClusterRequest.getFeatureName() != null) {
+            request.addParameter("FeatureName", StringUtils.fromString(removeRoleFromDBClusterRequest.getFeatureName()));
+        }
+
         return request;
     }
 

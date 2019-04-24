@@ -29,7 +29,7 @@ public class GetStackPolicyResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * Structure containing the stack policy body. (For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
      * Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)
      * </p>
      */
@@ -38,14 +38,14 @@ public class GetStackPolicyResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * Structure containing the stack policy body. (For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
      * Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)
      * </p>
      * 
      * @param stackPolicyBody
      *        Structure containing the stack policy body. (For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
-     *        Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
+     *        Prevent Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)
      */
 
     public void setStackPolicyBody(String stackPolicyBody) {
@@ -55,12 +55,12 @@ public class GetStackPolicyResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * Structure containing the stack policy body. (For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
      * Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)
      * </p>
      * 
      * @return Structure containing the stack policy body. (For more information, go to <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      *         Prevent Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)
      */
 
@@ -71,14 +71,14 @@ public class GetStackPolicyResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * Structure containing the stack policy body. (For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
      * Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)
      * </p>
      * 
      * @param stackPolicyBody
      *        Structure containing the stack policy body. (For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
-     *        Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
+     *        Prevent Updates to Stack Resources</a> in the AWS CloudFormation User Guide.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

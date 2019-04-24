@@ -45,7 +45,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -58,7 +58,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
      * located in an Amazon S3 bucket. For more information, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -71,7 +71,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      */
@@ -151,43 +151,43 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
@@ -251,7 +251,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If the list of resource types doesn't include a resource that you're creating, the stack creation fails. By
      * default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access Management (IAM)
      * uses this parameter for AWS CloudFormation-specific condition keys in IAM policies. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
      * with AWS Identity and Access Management</a>.
      * </p>
      */
@@ -283,7 +283,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Structure containing the stack policy body. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
      * Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
@@ -419,7 +419,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -430,7 +430,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param templateBody
      *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *        bytes. For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
      *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -445,7 +445,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -455,7 +455,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *         bytes. For more information, go to <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
      *         Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -470,7 +470,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -481,7 +481,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param templateBody
      *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *        bytes. For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
      *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -498,7 +498,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
      * located in an Amazon S3 bucket. For more information, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -509,7 +509,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param templateURL
      *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
      *        that is located in an Amazon S3 bucket. For more information, go to the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
      *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -524,7 +524,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
      * located in an Amazon S3 bucket. For more information, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -534,7 +534,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
      *         that is located in an Amazon S3 bucket. For more information, go to the <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
      *         Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -549,7 +549,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
      * located in an Amazon S3 bucket. For more information, go to the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
      * <p>
@@ -560,7 +560,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param templateURL
      *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
      *        that is located in an Amazon S3 bucket. For more information, go to the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
      *        Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
@@ -577,13 +577,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * 
      * @return A list of <code>Parameter</code> structures that specify input parameters for the stack. For more
      *         information, see the <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *         data type.
      */
 
@@ -598,14 +598,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that specify input parameters for the stack. For more
      *        information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *        data type.
      */
 
@@ -622,7 +622,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * <p>
@@ -634,7 +634,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param parameters
      *        A list of <code>Parameter</code> structures that specify input parameters for the stack. For more
      *        information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *        data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -653,14 +653,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * A list of <code>Parameter</code> structures that specify input parameters for the stack. For more information,
      * see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
      * type.
      * </p>
      * 
      * @param parameters
      *        A list of <code>Parameter</code> structures that specify input parameters for the stack. For more
      *        information, see the <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
      *        data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -967,43 +967,43 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
@@ -1095,45 +1095,45 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      *         AWS::IAM::AccessKey</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      *         AWS::IAM::Group</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      *         AWS::IAM::InstanceProfile</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      *         AWS::IAM::Policy</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      *         AWS::IAM::Role</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      *         AWS::IAM::User</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      *         AWS::IAM::UserToGroupAddition</a>
      *         </p>
      *         </li>
@@ -1236,43 +1236,43 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
@@ -1364,45 +1364,46 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      *        AWS::IAM::AccessKey</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      *        AWS::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      *        AWS::IAM::InstanceProfile</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      *        AWS::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      *        AWS::IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      *        AWS::IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      *        AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
@@ -1507,43 +1508,43 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
@@ -1640,45 +1641,46 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      *        AWS::IAM::AccessKey</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      *        AWS::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      *        AWS::IAM::InstanceProfile</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      *        AWS::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      *        AWS::IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      *        AWS::IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      *        AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
@@ -1785,43 +1787,43 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
@@ -1913,45 +1915,46 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      *        AWS::IAM::AccessKey</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      *        AWS::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      *        AWS::IAM::InstanceProfile</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      *        AWS::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      *        AWS::IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      *        AWS::IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      *        AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
@@ -2053,43 +2056,43 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      * AWS::IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * AWS::IAM::Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      * AWS::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      * AWS::IAM::Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      * AWS::IAM::Role</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      * AWS::IAM::User</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      * AWS::IAM::UserToGroupAddition</a>
      * </p>
      * </li>
@@ -2181,45 +2184,46 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
      *        AWS::IAM::AccessKey</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      *        AWS::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
      *        AWS::IAM::InstanceProfile</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
      *        AWS::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
      *        AWS::IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
      *        AWS::IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
      *        AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
@@ -2298,7 +2302,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If the list of resource types doesn't include a resource that you're creating, the stack creation fails. By
      * default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access Management (IAM)
      * uses this parameter for AWS CloudFormation-specific condition keys in IAM policies. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
      * with AWS Identity and Access Management</a>.
      * </p>
      * 
@@ -2314,7 +2318,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         By default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access
      *         Management (IAM) uses this parameter for AWS CloudFormation-specific condition keys in IAM policies. For
      *         more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
      *         Access with AWS Identity and Access Management</a>.
      */
 
@@ -2338,7 +2342,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If the list of resource types doesn't include a resource that you're creating, the stack creation fails. By
      * default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access Management (IAM)
      * uses this parameter for AWS CloudFormation-specific condition keys in IAM policies. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
      * with AWS Identity and Access Management</a>.
      * </p>
      * 
@@ -2355,7 +2359,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        By default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access
      *        Management (IAM) uses this parameter for AWS CloudFormation-specific condition keys in IAM policies. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
      *        Access with AWS Identity and Access Management</a>.
      */
 
@@ -2381,7 +2385,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If the list of resource types doesn't include a resource that you're creating, the stack creation fails. By
      * default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access Management (IAM)
      * uses this parameter for AWS CloudFormation-specific condition keys in IAM policies. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
      * with AWS Identity and Access Management</a>.
      * </p>
      * <p>
@@ -2403,7 +2407,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        By default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access
      *        Management (IAM) uses this parameter for AWS CloudFormation-specific condition keys in IAM policies. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
      *        Access with AWS Identity and Access Management</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2431,7 +2435,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * If the list of resource types doesn't include a resource that you're creating, the stack creation fails. By
      * default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access Management (IAM)
      * uses this parameter for AWS CloudFormation-specific condition keys in IAM policies. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access
      * with AWS Identity and Access Management</a>.
      * </p>
      * 
@@ -2448,7 +2452,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        By default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access
      *        Management (IAM) uses this parameter for AWS CloudFormation-specific condition keys in IAM policies. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
      *        Access with AWS Identity and Access Management</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2662,16 +2666,16 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Structure containing the stack policy body. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
      * Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @param stackPolicyBody
      *        Structure containing the stack policy body. For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
-     *        Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
-     *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
+     *        Prevent Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either
+     *        the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      */
 
     public void setStackPolicyBody(String stackPolicyBody) {
@@ -2681,13 +2685,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Structure containing the stack policy body. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
      * Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @return Structure containing the stack policy body. For more information, go to <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
      *         Prevent Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify
      *         either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      */
@@ -2699,16 +2703,16 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Structure containing the stack policy body. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
      * Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * </p>
      * 
      * @param stackPolicyBody
      *        Structure containing the stack policy body. For more information, go to <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent
-     *        Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either the
-     *        <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
+     *        Prevent Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>. You can specify either
+     *        the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

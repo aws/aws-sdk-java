@@ -25,7 +25,7 @@ public class StartDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the document text-detection job. Use <code>JobId</code> to identify the job in a subsequent
+     * The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent
      * call to <code>GetDocumentAnalysis</code>.
      * </p>
      */
@@ -33,12 +33,12 @@ public class StartDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the document text-detection job. Use <code>JobId</code> to identify the job in a subsequent
+     * The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent
      * call to <code>GetDocumentAnalysis</code>.
      * </p>
      * 
      * @param jobId
-     *        The identifier for the document text-detection job. Use <code>JobId</code> to identify the job in a
+     *        The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a
      *        subsequent call to <code>GetDocumentAnalysis</code>.
      */
 
@@ -48,11 +48,11 @@ public class StartDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the document text-detection job. Use <code>JobId</code> to identify the job in a subsequent
+     * The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent
      * call to <code>GetDocumentAnalysis</code>.
      * </p>
      * 
-     * @return The identifier for the document text-detection job. Use <code>JobId</code> to identify the job in a
+     * @return The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a
      *         subsequent call to <code>GetDocumentAnalysis</code>.
      */
 
@@ -62,12 +62,12 @@ public class StartDocumentAnalysisResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the document text-detection job. Use <code>JobId</code> to identify the job in a subsequent
+     * The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent
      * call to <code>GetDocumentAnalysis</code>.
      * </p>
      * 
      * @param jobId
-     *        The identifier for the document text-detection job. Use <code>JobId</code> to identify the job in a
+     *        The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a
      *        subsequent call to <code>GetDocumentAnalysis</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

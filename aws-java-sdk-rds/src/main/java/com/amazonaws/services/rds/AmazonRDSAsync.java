@@ -154,6 +154,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Associates an AWS Identity and Access Management (IAM) role with a DB instance.
      * </p>
+     * <note>
+     * <p>
+     * To add a role to a DB instance, the status of the DB instance must be <code>available</code>.
+     * </p>
+     * </note>
      * 
      * @param addRoleToDBInstanceRequest
      * @return A Java Future containing the result of the AddRoleToDBInstance operation returned by the service.
@@ -167,6 +172,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Associates an AWS Identity and Access Management (IAM) role with a DB instance.
      * </p>
+     * <note>
+     * <p>
+     * To add a role to a DB instance, the status of the DB instance must be <code>available</code>.
+     * </p>
+     * </note>
      * 
      * @param addRoleToDBInstanceRequest
      * @param asyncHandler

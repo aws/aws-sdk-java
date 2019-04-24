@@ -95,6 +95,13 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
     private Boolean requesterPays;
     /**
      * <p>
+     * If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share. If it
+     * is set to "false", it indicates that file and directory permissions are mapped to the POSIX permission.
+     * </p>
+     */
+    private Boolean sMBACLEnabled;
+    /**
+     * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
      * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
@@ -724,6 +731,70 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share. If it
+     * is set to "false", it indicates that file and directory permissions are mapped to the POSIX permission.
+     * </p>
+     * 
+     * @param sMBACLEnabled
+     *        If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share.
+     *        If it is set to "false", it indicates that file and directory permissions are mapped to the POSIX
+     *        permission.
+     */
+
+    public void setSMBACLEnabled(Boolean sMBACLEnabled) {
+        this.sMBACLEnabled = sMBACLEnabled;
+    }
+
+    /**
+     * <p>
+     * If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share. If it
+     * is set to "false", it indicates that file and directory permissions are mapped to the POSIX permission.
+     * </p>
+     * 
+     * @return If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file
+     *         share. If it is set to "false", it indicates that file and directory permissions are mapped to the POSIX
+     *         permission.
+     */
+
+    public Boolean getSMBACLEnabled() {
+        return this.sMBACLEnabled;
+    }
+
+    /**
+     * <p>
+     * If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share. If it
+     * is set to "false", it indicates that file and directory permissions are mapped to the POSIX permission.
+     * </p>
+     * 
+     * @param sMBACLEnabled
+     *        If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share.
+     *        If it is set to "false", it indicates that file and directory permissions are mapped to the POSIX
+     *        permission.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SMBFileShareInfo withSMBACLEnabled(Boolean sMBACLEnabled) {
+        setSMBACLEnabled(sMBACLEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file share. If it
+     * is set to "false", it indicates that file and directory permissions are mapped to the POSIX permission.
+     * </p>
+     * 
+     * @return If this value is set to "true", indicates that ACL (access control list) is enabled on the SMB file
+     *         share. If it is set to "false", it indicates that file and directory permissions are mapped to the POSIX
+     *         permission.
+     */
+
+    public Boolean isSMBACLEnabled() {
+        return this.sMBACLEnabled;
+    }
+
+    /**
+     * <p>
      * A list of users or groups in the Active Directory that are allowed to access the file share. A group must be
      * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
@@ -1055,6 +1126,8 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
             sb.append("GuessMIMETypeEnabled: ").append(getGuessMIMETypeEnabled()).append(",");
         if (getRequesterPays() != null)
             sb.append("RequesterPays: ").append(getRequesterPays()).append(",");
+        if (getSMBACLEnabled() != null)
+            sb.append("SMBACLEnabled: ").append(getSMBACLEnabled()).append(",");
         if (getValidUserList() != null)
             sb.append("ValidUserList: ").append(getValidUserList()).append(",");
         if (getInvalidUserList() != null)
@@ -1133,6 +1206,10 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getRequesterPays() != null && other.getRequesterPays().equals(this.getRequesterPays()) == false)
             return false;
+        if (other.getSMBACLEnabled() == null ^ this.getSMBACLEnabled() == null)
+            return false;
+        if (other.getSMBACLEnabled() != null && other.getSMBACLEnabled().equals(this.getSMBACLEnabled()) == false)
+            return false;
         if (other.getValidUserList() == null ^ this.getValidUserList() == null)
             return false;
         if (other.getValidUserList() != null && other.getValidUserList().equals(this.getValidUserList()) == false)
@@ -1171,6 +1248,7 @@ public class SMBFileShareInfo implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getReadOnly() == null) ? 0 : getReadOnly().hashCode());
         hashCode = prime * hashCode + ((getGuessMIMETypeEnabled() == null) ? 0 : getGuessMIMETypeEnabled().hashCode());
         hashCode = prime * hashCode + ((getRequesterPays() == null) ? 0 : getRequesterPays().hashCode());
+        hashCode = prime * hashCode + ((getSMBACLEnabled() == null) ? 0 : getSMBACLEnabled().hashCode());
         hashCode = prime * hashCode + ((getValidUserList() == null) ? 0 : getValidUserList().hashCode());
         hashCode = prime * hashCode + ((getInvalidUserList() == null) ? 0 : getInvalidUserList().hashCode());
         hashCode = prime * hashCode + ((getAuthentication() == null) ? 0 : getAuthentication().hashCode());

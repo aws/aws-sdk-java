@@ -2534,6 +2534,16 @@ public interface AWSSimpleSystemsManagement {
      *         The parameter name is not valid.
      * @throws UnsupportedParameterTypeException
      *         The parameter type is not supported.
+     * @throws PoliciesLimitExceededException
+     *         You specified more than the maximum number of allowed policies for the parameter. The maximum is 10.
+     * @throws InvalidPolicyTypeException
+     *         The policy type is not supported. Parameter Store supports the following policy types: Expiration,
+     *         ExpirationNotification, and NoChangeNotification.
+     * @throws InvalidPolicyAttributeException
+     *         A policy attribute or its value is invalid.
+     * @throws IncompatiblePolicyException
+     *         There is a conflict in the policies specified for this parameter. You can't, for example, specify two
+     *         Expiration policies for a parameter. Review your policies, and try again.
      * @sample AWSSimpleSystemsManagement.PutParameter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter" target="_top">AWS API
      *      Documentation</a>

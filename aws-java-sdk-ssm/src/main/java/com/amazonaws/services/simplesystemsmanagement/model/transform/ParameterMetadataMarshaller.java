@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +44,10 @@ public class ParameterMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedPattern").build();
     private static final MarshallingInfo<Long> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Version").build();
+    private static final MarshallingInfo<String> TIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tier").build();
+    private static final MarshallingInfo<List> POLICIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Policies").build();
 
     private static final ParameterMetadataMarshaller instance = new ParameterMetadataMarshaller();
 
@@ -68,6 +73,8 @@ public class ParameterMetadataMarshaller {
             protocolMarshaller.marshall(parameterMetadata.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(parameterMetadata.getAllowedPattern(), ALLOWEDPATTERN_BINDING);
             protocolMarshaller.marshall(parameterMetadata.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(parameterMetadata.getTier(), TIER_BINDING);
+            protocolMarshaller.marshall(parameterMetadata.getPolicies(), POLICIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

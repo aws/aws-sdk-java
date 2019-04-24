@@ -69,7 +69,7 @@ public class StackSet implements Serializable, Cloneable {
      * The capabilities that are allowed in the stack set. Some stack set templates might include resources that can
      * affect permissions in your AWS account—for example, by creating new AWS Identity and Access Management (IAM)
      * users. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
      * </p>
      */
@@ -419,14 +419,14 @@ public class StackSet implements Serializable, Cloneable {
      * The capabilities that are allowed in the stack set. Some stack set templates might include resources that can
      * affect permissions in your AWS account—for example, by creating new AWS Identity and Access Management (IAM)
      * users. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
      * </p>
      * 
      * @return The capabilities that are allowed in the stack set. Some stack set templates might include resources that
      *         can affect permissions in your AWS account—for example, by creating new AWS Identity and Access
      *         Management (IAM) users. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *         >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
      * @see Capability
      */
@@ -443,7 +443,7 @@ public class StackSet implements Serializable, Cloneable {
      * The capabilities that are allowed in the stack set. Some stack set templates might include resources that can
      * affect permissions in your AWS account—for example, by creating new AWS Identity and Access Management (IAM)
      * users. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
      * </p>
      * 
@@ -451,7 +451,7 @@ public class StackSet implements Serializable, Cloneable {
      *        The capabilities that are allowed in the stack set. Some stack set templates might include resources that
      *        can affect permissions in your AWS account—for example, by creating new AWS Identity and Access Management
      *        (IAM) users. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
      * @see Capability
      */
@@ -470,7 +470,7 @@ public class StackSet implements Serializable, Cloneable {
      * The capabilities that are allowed in the stack set. Some stack set templates might include resources that can
      * affect permissions in your AWS account—for example, by creating new AWS Identity and Access Management (IAM)
      * users. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
      * </p>
      * <p>
@@ -483,7 +483,7 @@ public class StackSet implements Serializable, Cloneable {
      *        The capabilities that are allowed in the stack set. Some stack set templates might include resources that
      *        can affect permissions in your AWS account—for example, by creating new AWS Identity and Access Management
      *        (IAM) users. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
@@ -504,7 +504,7 @@ public class StackSet implements Serializable, Cloneable {
      * The capabilities that are allowed in the stack set. Some stack set templates might include resources that can
      * affect permissions in your AWS account—for example, by creating new AWS Identity and Access Management (IAM)
      * users. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
      * </p>
      * 
@@ -512,7 +512,7 @@ public class StackSet implements Serializable, Cloneable {
      *        The capabilities that are allowed in the stack set. Some stack set templates might include resources that
      *        can affect permissions in your AWS account—for example, by creating new AWS Identity and Access Management
      *        (IAM) users. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
@@ -528,7 +528,7 @@ public class StackSet implements Serializable, Cloneable {
      * The capabilities that are allowed in the stack set. Some stack set templates might include resources that can
      * affect permissions in your AWS account—for example, by creating new AWS Identity and Access Management (IAM)
      * users. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
      * </p>
      * 
@@ -536,7 +536,7 @@ public class StackSet implements Serializable, Cloneable {
      *        The capabilities that are allowed in the stack set. Some stack set templates might include resources that
      *        can affect permissions in your AWS account—for example, by creating new AWS Identity and Access Management
      *        (IAM) users. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability

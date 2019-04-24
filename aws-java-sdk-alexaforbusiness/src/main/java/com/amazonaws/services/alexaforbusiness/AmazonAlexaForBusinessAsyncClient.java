@@ -401,6 +401,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGatewayGroupResult> createGatewayGroupAsync(CreateGatewayGroupRequest request) {
+
+        return createGatewayGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGatewayGroupResult> createGatewayGroupAsync(final CreateGatewayGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGatewayGroupRequest, CreateGatewayGroupResult> asyncHandler) {
+        final CreateGatewayGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateGatewayGroupResult>() {
+            @Override
+            public CreateGatewayGroupResult call() throws Exception {
+                CreateGatewayGroupResult result = null;
+
+                try {
+                    result = executeCreateGatewayGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProfileResult> createProfileAsync(CreateProfileRequest request) {
 
         return createProfileAsync(request, null);
@@ -682,6 +715,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeDeleteDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest request) {
+
+        return deleteGatewayGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(final DeleteGatewayGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGatewayGroupRequest, DeleteGatewayGroupResult> asyncHandler) {
+        final DeleteGatewayGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteGatewayGroupResult>() {
+            @Override
+            public DeleteGatewayGroupResult call() throws Exception {
+                DeleteGatewayGroupResult result = null;
+
+                try {
+                    result = executeDeleteGatewayGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1264,6 +1330,72 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest request) {
+
+        return getGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(final GetGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGatewayRequest, GetGatewayResult> asyncHandler) {
+        final GetGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGatewayResult>() {
+            @Override
+            public GetGatewayResult call() throws Exception {
+                GetGatewayResult result = null;
+
+                try {
+                    result = executeGetGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayGroupResult> getGatewayGroupAsync(GetGatewayGroupRequest request) {
+
+        return getGatewayGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayGroupResult> getGatewayGroupAsync(final GetGatewayGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGatewayGroupRequest, GetGatewayGroupResult> asyncHandler) {
+        final GetGatewayGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGatewayGroupResult>() {
+            @Override
+            public GetGatewayGroupResult call() throws Exception {
+                GetGatewayGroupResult result = null;
+
+                try {
+                    result = executeGetGatewayGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(GetInvitationConfigurationRequest request) {
 
         return getInvitationConfigurationAsync(request, null);
@@ -1512,6 +1644,72 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeListDeviceEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewayGroupsResult> listGatewayGroupsAsync(ListGatewayGroupsRequest request) {
+
+        return listGatewayGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewayGroupsResult> listGatewayGroupsAsync(final ListGatewayGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGatewayGroupsRequest, ListGatewayGroupsResult> asyncHandler) {
+        final ListGatewayGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGatewayGroupsResult>() {
+            @Override
+            public ListGatewayGroupsResult call() throws Exception {
+                ListGatewayGroupsResult result = null;
+
+                try {
+                    result = executeListGatewayGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest request) {
+
+        return listGatewaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(final ListGatewaysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler) {
+        final ListGatewaysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGatewaysResult>() {
+            @Override
+            public ListGatewaysResult call() throws Exception {
+                ListGatewaysResult result = null;
+
+                try {
+                    result = executeListGateways(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2506,6 +2704,72 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeUpdateDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayResult> updateGatewayAsync(UpdateGatewayRequest request) {
+
+        return updateGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayResult> updateGatewayAsync(final UpdateGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateGatewayRequest, UpdateGatewayResult> asyncHandler) {
+        final UpdateGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateGatewayResult>() {
+            @Override
+            public UpdateGatewayResult call() throws Exception {
+                UpdateGatewayResult result = null;
+
+                try {
+                    result = executeUpdateGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(UpdateGatewayGroupRequest request) {
+
+        return updateGatewayGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(final UpdateGatewayGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateGatewayGroupRequest, UpdateGatewayGroupResult> asyncHandler) {
+        final UpdateGatewayGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateGatewayGroupResult>() {
+            @Override
+            public UpdateGatewayGroupResult call() throws Exception {
+                UpdateGatewayGroupResult result = null;
+
+                try {
+                    result = executeUpdateGatewayGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -374,6 +374,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Creates a gateway group with the specified details.
+     * </p>
+     * 
+     * @param createGatewayGroupRequest
+     * @return A Java Future containing the result of the CreateGatewayGroup operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.CreateGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGatewayGroupResult> createGatewayGroupAsync(CreateGatewayGroupRequest createGatewayGroupRequest);
+
+    /**
+     * <p>
+     * Creates a gateway group with the specified details.
+     * </p>
+     * 
+     * @param createGatewayGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGatewayGroup operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.CreateGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGatewayGroupResult> createGatewayGroupAsync(CreateGatewayGroupRequest createGatewayGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGatewayGroupRequest, CreateGatewayGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new room profile with the specified details.
      * </p>
      * 
@@ -654,6 +685,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(DeleteDeviceRequest deleteDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDeviceRequest, DeleteDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a gateway group.
+     * </p>
+     * 
+     * @param deleteGatewayGroupRequest
+     * @return A Java Future containing the result of the DeleteGatewayGroup operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.DeleteGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest deleteGatewayGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a gateway group.
+     * </p>
+     * 
+     * @param deleteGatewayGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGatewayGroup operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.DeleteGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest deleteGatewayGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGatewayGroupRequest, DeleteGatewayGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -1208,6 +1270,68 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Retrieves the details of a gateway.
+     * </p>
+     * 
+     * @param getGatewayRequest
+     * @return A Java Future containing the result of the GetGateway operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.GetGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest getGatewayRequest);
+
+    /**
+     * <p>
+     * Retrieves the details of a gateway.
+     * </p>
+     * 
+     * @param getGatewayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGateway operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.GetGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest getGatewayRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGatewayRequest, GetGatewayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the details of a gateway group.
+     * </p>
+     * 
+     * @param getGatewayGroupRequest
+     * @return A Java Future containing the result of the GetGatewayGroup operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.GetGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetGatewayGroupResult> getGatewayGroupAsync(GetGatewayGroupRequest getGatewayGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves the details of a gateway group.
+     * </p>
+     * 
+     * @param getGatewayGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGatewayGroup operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.GetGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetGatewayGroupResult> getGatewayGroupAsync(GetGatewayGroupRequest getGatewayGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGatewayGroupRequest, GetGatewayGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the configured values for the user enrollment invitation email template.
      * </p>
      * 
@@ -1457,6 +1581,72 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(ListDeviceEventsRequest listDeviceEventsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDeviceEventsRequest, ListDeviceEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details of a specific gateway group.
+     * </p>
+     * 
+     * @param listGatewayGroupsRequest
+     * @return A Java Future containing the result of the ListGatewayGroups operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.ListGatewayGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGatewayGroupsResult> listGatewayGroupsAsync(ListGatewayGroupsRequest listGatewayGroupsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details of a specific gateway group.
+     * </p>
+     * 
+     * @param listGatewayGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListGatewayGroups operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.ListGatewayGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGatewayGroupsResult> listGatewayGroupsAsync(ListGatewayGroupsRequest listGatewayGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListGatewayGroupsRequest, ListGatewayGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of gateway summaries. Use GetGateway to retrieve details of a specific gateway. An optional
+     * gateway group ARN can be provided to only retrieve gateway summaries of gateways that are associated with that
+     * gateway group ARN.
+     * </p>
+     * 
+     * @param listGatewaysRequest
+     * @return A Java Future containing the result of the ListGateways operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.ListGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest listGatewaysRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of gateway summaries. Use GetGateway to retrieve details of a specific gateway. An optional
+     * gateway group ARN can be provided to only retrieve gateway summaries of gateways that are associated with that
+     * gateway group ARN.
+     * </p>
+     * 
+     * @param listGatewaysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListGateways operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.ListGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest listGatewaysRequest,
+            com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler);
 
     /**
      * <p>
@@ -2423,6 +2613,72 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      */
     java.util.concurrent.Future<UpdateDeviceResult> updateDeviceAsync(UpdateDeviceRequest updateDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDeviceRequest, UpdateDeviceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the details of a gateway. If any optional field is not provided, the existing corresponding value is left
+     * unmodified.
+     * </p>
+     * 
+     * @param updateGatewayRequest
+     * @return A Java Future containing the result of the UpdateGateway operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.UpdateGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGatewayResult> updateGatewayAsync(UpdateGatewayRequest updateGatewayRequest);
+
+    /**
+     * <p>
+     * Updates the details of a gateway. If any optional field is not provided, the existing corresponding value is left
+     * unmodified.
+     * </p>
+     * 
+     * @param updateGatewayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGateway operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.UpdateGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGatewayResult> updateGatewayAsync(UpdateGatewayRequest updateGatewayRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGatewayRequest, UpdateGatewayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the details of a gateway group. If any optional field is not provided, the existing corresponding value
+     * is left unmodified.
+     * </p>
+     * 
+     * @param updateGatewayGroupRequest
+     * @return A Java Future containing the result of the UpdateGatewayGroup operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.UpdateGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(UpdateGatewayGroupRequest updateGatewayGroupRequest);
+
+    /**
+     * <p>
+     * Updates the details of a gateway group. If any optional field is not provided, the existing corresponding value
+     * is left unmodified.
+     * </p>
+     * 
+     * @param updateGatewayGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGatewayGroup operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.UpdateGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(UpdateGatewayGroupRequest updateGatewayGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGatewayGroupRequest, UpdateGatewayGroupResult> asyncHandler);
 
     /**
      * <p>

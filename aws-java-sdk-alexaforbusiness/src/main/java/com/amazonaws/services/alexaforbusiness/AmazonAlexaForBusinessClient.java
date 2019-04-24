@@ -92,6 +92,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("SkillNotLinkedException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.SkillNotLinkedException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAssociatedException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.ResourceAssociatedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NameInUseException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.NameInUseException.class))
                     .addErrorMetadata(
@@ -747,6 +750,62 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Creates a gateway group with the specified details.
+     * </p>
+     * 
+     * @param createGatewayGroupRequest
+     * @return Result of the CreateGatewayGroup operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits.
+     * @sample AmazonAlexaForBusiness.CreateGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateGatewayGroupResult createGatewayGroup(CreateGatewayGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGatewayGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateGatewayGroupResult executeCreateGatewayGroup(CreateGatewayGroupRequest createGatewayGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGatewayGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGatewayGroupRequest> request = null;
+        Response<CreateGatewayGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGatewayGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGatewayGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGatewayGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGatewayGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGatewayGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new room profile with the specified details.
      * </p>
      * 
@@ -1249,6 +1308,60 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a gateway group.
+     * </p>
+     * 
+     * @param deleteGatewayGroupRequest
+     * @return Result of the DeleteGatewayGroup operation returned by the service.
+     * @throws ResourceAssociatedException
+     *         Another resource is associated with the resource in the request.
+     * @sample AmazonAlexaForBusiness.DeleteGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteGatewayGroupResult deleteGatewayGroup(DeleteGatewayGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGatewayGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGatewayGroupResult executeDeleteGatewayGroup(DeleteGatewayGroupRequest deleteGatewayGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGatewayGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGatewayGroupRequest> request = null;
+        Response<DeleteGatewayGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGatewayGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGatewayGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGatewayGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteGatewayGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteGatewayGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2218,6 +2331,114 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Retrieves the details of a gateway.
+     * </p>
+     * 
+     * @param getGatewayRequest
+     * @return Result of the GetGateway operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.GetGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetGatewayResult getGateway(GetGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGateway(request);
+    }
+
+    @SdkInternalApi
+    final GetGatewayResult executeGetGateway(GetGatewayRequest getGatewayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGatewayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGatewayRequest> request = null;
+        Response<GetGatewayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGatewayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGateway");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGatewayResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGatewayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the details of a gateway group.
+     * </p>
+     * 
+     * @param getGatewayGroupRequest
+     * @return Result of the GetGatewayGroup operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @sample AmazonAlexaForBusiness.GetGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetGatewayGroupResult getGatewayGroup(GetGatewayGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGatewayGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetGatewayGroupResult executeGetGatewayGroup(GetGatewayGroupRequest getGatewayGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGatewayGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGatewayGroupRequest> request = null;
+        Response<GetGatewayGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGatewayGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGatewayGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGatewayGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGatewayGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGatewayGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the configured values for the user enrollment invitation email template.
      * </p>
      * 
@@ -2641,6 +2862,112 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDeviceEventsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDeviceEventsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of gateway group summaries. Use GetGatewayGroup to retrieve details of a specific gateway group.
+     * </p>
+     * 
+     * @param listGatewayGroupsRequest
+     * @return Result of the ListGatewayGroups operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListGatewayGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListGatewayGroupsResult listGatewayGroups(ListGatewayGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGatewayGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListGatewayGroupsResult executeListGatewayGroups(ListGatewayGroupsRequest listGatewayGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGatewayGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGatewayGroupsRequest> request = null;
+        Response<ListGatewayGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGatewayGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGatewayGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGatewayGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListGatewayGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGatewayGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of gateway summaries. Use GetGateway to retrieve details of a specific gateway. An optional
+     * gateway group ARN can be provided to only retrieve gateway summaries of gateways that are associated with that
+     * gateway group ARN.
+     * </p>
+     * 
+     * @param listGatewaysRequest
+     * @return Result of the ListGateways operation returned by the service.
+     * @sample AmazonAlexaForBusiness.ListGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListGatewaysResult listGateways(ListGatewaysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGateways(request);
+    }
+
+    @SdkInternalApi
+    final ListGatewaysResult executeListGateways(ListGatewaysRequest listGatewaysRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGatewaysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGatewaysRequest> request = null;
+        Response<ListGatewaysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGatewaysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGatewaysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGateways");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListGatewaysResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGatewaysResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4301,6 +4628,120 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the details of a gateway. If any optional field is not provided, the existing corresponding value is left
+     * unmodified.
+     * </p>
+     * 
+     * @param updateGatewayRequest
+     * @return Result of the UpdateGateway operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws NameInUseException
+     *         The name sent in the request is already in use.
+     * @sample AmazonAlexaForBusiness.UpdateGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateGatewayResult updateGateway(UpdateGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGateway(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGatewayResult executeUpdateGateway(UpdateGatewayRequest updateGatewayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGatewayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGatewayRequest> request = null;
+        Response<UpdateGatewayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGatewayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGateway");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGatewayResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGatewayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the details of a gateway group. If any optional field is not provided, the existing corresponding value
+     * is left unmodified.
+     * </p>
+     * 
+     * @param updateGatewayGroupRequest
+     * @return Result of the UpdateGatewayGroup operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found.
+     * @throws NameInUseException
+     *         The name sent in the request is already in use.
+     * @sample AmazonAlexaForBusiness.UpdateGatewayGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateGatewayGroupResult updateGatewayGroup(UpdateGatewayGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGatewayGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGatewayGroupResult executeUpdateGatewayGroup(UpdateGatewayGroupRequest updateGatewayGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGatewayGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGatewayGroupRequest> request = null;
+        Response<UpdateGatewayGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGatewayGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGatewayGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGatewayGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGatewayGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGatewayGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

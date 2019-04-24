@@ -618,9 +618,9 @@ public final class ReflectionUtils {
         return null;
     }
 
-    interface RandomSupplier<T> {
+    public interface RandomSupplier<T> {
         T getNext();
-        Class<T> targetClass();
+        Class<? super T> targetClass();
     }
 
     private ReflectionUtils() {
