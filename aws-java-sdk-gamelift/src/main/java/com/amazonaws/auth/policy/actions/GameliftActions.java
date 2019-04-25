@@ -45,6 +45,8 @@ public enum GameliftActions implements Action {
     CreatePlayerSession("gamelift:CreatePlayerSession"),
     /** Action for the CreatePlayerSessions operation. */
     CreatePlayerSessions("gamelift:CreatePlayerSessions"),
+    /** Action for the CreateScript operation. */
+    CreateScript("gamelift:CreateScript"),
     /** Action for the CreateVpcPeeringAuthorization operation. */
     CreateVpcPeeringAuthorization("gamelift:CreateVpcPeeringAuthorization"),
     /** Action for the CreateVpcPeeringConnection operation. */
@@ -63,6 +65,8 @@ public enum GameliftActions implements Action {
     DeleteMatchmakingRuleSet("gamelift:DeleteMatchmakingRuleSet"),
     /** Action for the DeleteScalingPolicy operation. */
     DeleteScalingPolicy("gamelift:DeleteScalingPolicy"),
+    /** Action for the DeleteScript operation. */
+    DeleteScript("gamelift:DeleteScript"),
     /** Action for the DeleteVpcPeeringAuthorization operation. */
     DeleteVpcPeeringAuthorization("gamelift:DeleteVpcPeeringAuthorization"),
     /** Action for the DeleteVpcPeeringConnection operation. */
@@ -105,6 +109,8 @@ public enum GameliftActions implements Action {
     DescribeRuntimeConfiguration("gamelift:DescribeRuntimeConfiguration"),
     /** Action for the DescribeScalingPolicies operation. */
     DescribeScalingPolicies("gamelift:DescribeScalingPolicies"),
+    /** Action for the DescribeScript operation. */
+    DescribeScript("gamelift:DescribeScript"),
     /** Action for the DescribeVpcPeeringAuthorizations operation. */
     DescribeVpcPeeringAuthorizations("gamelift:DescribeVpcPeeringAuthorizations"),
     /** Action for the DescribeVpcPeeringConnections operation. */
@@ -119,6 +125,8 @@ public enum GameliftActions implements Action {
     ListBuilds("gamelift:ListBuilds"),
     /** Action for the ListFleets operation. */
     ListFleets("gamelift:ListFleets"),
+    /** Action for the ListScripts operation. */
+    ListScripts("gamelift:ListScripts"),
     /** Action for the PutScalingPolicy operation. */
     PutScalingPolicy("gamelift:PutScalingPolicy"),
     /** Action for the RequestUploadCredentials operation. */
@@ -159,6 +167,8 @@ public enum GameliftActions implements Action {
     UpdateMatchmakingConfiguration("gamelift:UpdateMatchmakingConfiguration"),
     /** Action for the UpdateRuntimeConfiguration operation. */
     UpdateRuntimeConfiguration("gamelift:UpdateRuntimeConfiguration"),
+    /** Action for the UpdateScript operation. */
+    UpdateScript("gamelift:UpdateScript"),
     /** Action for the ValidateMatchmakingRuleSet operation. */
     ValidateMatchmakingRuleSet("gamelift:ValidateMatchmakingRuleSet"),
 

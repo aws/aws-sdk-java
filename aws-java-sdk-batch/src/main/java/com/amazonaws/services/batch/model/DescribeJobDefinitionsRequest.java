@@ -27,7 +27,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A space-separated list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
+     * A list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
      * </p>
      */
     private java.util.List<String> jobDefinitions;
@@ -72,10 +72,10 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A space-separated list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
+     * A list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
      * </p>
      * 
-     * @return A space-separated list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
+     * @return A list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
      */
 
     public java.util.List<String> getJobDefinitions() {
@@ -84,11 +84,11 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A space-separated list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
+     * A list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
      * </p>
      * 
      * @param jobDefinitions
-     *        A space-separated list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
+     *        A list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
      */
 
     public void setJobDefinitions(java.util.Collection<String> jobDefinitions) {
@@ -102,7 +102,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A space-separated list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
+     * A list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -111,7 +111,7 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param jobDefinitions
-     *        A space-separated list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
+     *        A list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +127,11 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A space-separated list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
+     * A list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
      * </p>
      * 
      * @param jobDefinitions
-     *        A space-separated list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
+     *        A list of up to 100 job definition names or full Amazon Resource Name (ARN) entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

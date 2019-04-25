@@ -247,7 +247,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -608,7 +608,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -793,7 +793,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
      *        >Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ComparisonOperator
      */
@@ -979,7 +979,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1164,7 +1164,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      *         </ul>
      *         <p>
      *         For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
      *         >Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ComparisonOperator
      */
@@ -1350,7 +1350,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1535,7 +1535,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
      *        >Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
@@ -1723,7 +1723,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1908,7 +1908,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
      *        >Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ComparisonOperator
      */
@@ -2094,7 +2094,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
      * Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2279,7 +2279,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html"
      *        >Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator

@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Lambda function access policy is limited to 20 KB.
+ * The permissions policy for the resource is too large. <a
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

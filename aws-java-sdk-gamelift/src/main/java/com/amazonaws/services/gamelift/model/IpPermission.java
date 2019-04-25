@@ -19,9 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on Amazon
- * GameLift. Each game session hosted on a fleet is assigned a unique combination of IP address and port number, which
- * must fall into the fleet's allowed ranges. This combination is included in the <a>GameSession</a> object.
+ * A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an Amazon
+ * GameLift. New game sessions that are started on the fleet are assigned an IP address/port number combination, which
+ * must fall into the fleet's allowed ranges. For fleets created with a custom game server, the ranges reflect the
+ * server's game session assignments. For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges,
+ * one for TCP messaging and one for UDP for use by the Realtime servers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/IpPermission" target="_top">AWS API

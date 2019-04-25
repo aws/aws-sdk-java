@@ -29,6 +29,8 @@ public class ListFleetsRequestMarshaller {
 
     private static final MarshallingInfo<String> BUILDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("BuildId").build();
+    private static final MarshallingInfo<String> SCRIPTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ScriptId").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Limit").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +53,7 @@ public class ListFleetsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listFleetsRequest.getBuildId(), BUILDID_BINDING);
+            protocolMarshaller.marshall(listFleetsRequest.getScriptId(), SCRIPTID_BINDING);
             protocolMarshaller.marshall(listFleetsRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(listFleetsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

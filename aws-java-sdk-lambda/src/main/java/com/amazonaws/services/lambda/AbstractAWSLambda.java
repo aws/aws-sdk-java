@@ -118,6 +118,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public GetLayerVersionByArnResult getLayerVersionByArn(GetLayerVersionByArnRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetLayerVersionPolicyResult getLayerVersionPolicy(GetLayerVersionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

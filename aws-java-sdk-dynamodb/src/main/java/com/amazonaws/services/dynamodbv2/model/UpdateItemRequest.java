@@ -49,7 +49,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      * >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -57,7 +57,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -65,7 +65,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -233,8 +233,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on update expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items
-     * and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
+     * Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private String updateExpression;
@@ -267,7 +267,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -308,7 +308,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -336,8 +336,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -367,7 +367,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -395,7 +395,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        for both the partition key and the sort key.
      * @param attributeUpdates
      *        This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public UpdateItemRequest(String tableName, java.util.Map<String, AttributeValue> key, java.util.Map<String, AttributeValueUpdate> attributeUpdates) {
@@ -419,7 +419,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        for both the partition key and the sort key.
      * @param attributeUpdates
      *        This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param returnValues
      *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
@@ -487,7 +487,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        for both the partition key and the sort key.
      * @param attributeUpdates
      *        This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param returnValues
      *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
@@ -677,12 +677,12 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      * >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *         >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -693,13 +693,13 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      * >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributeUpdates
      *        This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -710,13 +710,13 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      * >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param attributeUpdates
      *        This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -750,13 +750,13 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *         >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -767,14 +767,14 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expected
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *        >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -785,14 +785,14 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expected
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *        >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -826,14 +826,14 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -845,13 +845,13 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *         href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *         >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -863,14 +863,14 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
@@ -884,14 +884,14 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @see ConditionalOperator
      */
@@ -903,14 +903,14 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      * >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param conditionalOperator
      *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html"
      *        >ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConditionalOperator
@@ -1626,8 +1626,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on update expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items
-     * and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
+     * Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param updateExpression
@@ -1739,7 +1739,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        For more information on update expressions, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      *        >Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1857,8 +1857,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on update expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items
-     * and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
+     * Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return An expression that defines one or more attributes to be updated, the action to be performed on them, and
@@ -1969,7 +1969,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <p>
      *         For more information on update expressions, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      *         >Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2087,8 +2087,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on update expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items
-     * and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
+     * Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param updateExpression
@@ -2200,7 +2200,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        For more information on update expressions, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html"
      *        >Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2239,7 +2239,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2271,7 +2271,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        For more information on condition expressions, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2308,7 +2308,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2339,7 +2339,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </ul>
      *         <p>
      *         For more information on condition expressions, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2376,7 +2376,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * For more information on condition expressions, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2408,7 +2408,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        For more information on condition expressions, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2454,7 +2454,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -2482,8 +2482,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2520,7 +2520,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         The name of this attribute conflicts with a reserved word, so it cannot be used directly in an
      *         expression. (For the complete list of reserved words, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *         Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *         following for <code>ExpressionAttributeNames</code>:
      *         </p>
@@ -2549,7 +2549,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </note>
      *         <p>
      *         For more information on expression attribute names, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *         >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2593,7 +2593,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -2621,8 +2621,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2660,7 +2660,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -2689,7 +2689,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2733,7 +2733,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For
      * the complete list of reserved words, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for
      * <code>ExpressionAttributeNames</code>:
      * </p>
@@ -2761,8 +2761,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * For more information on expression attribute names, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     * For more information on expression attribute names, see <a href=
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      * >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2800,7 +2800,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression.
      *        (For the complete list of reserved words, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
      *        Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the
      *        following for <code>ExpressionAttributeNames</code>:
      *        </p>
@@ -2829,7 +2829,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </note>
      *        <p>
      *        For more information on expression attribute names, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html"
      *        >Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2885,7 +2885,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2912,7 +2912,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         <p>
      *         For more information on expression attribute values, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *         >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2945,7 +2945,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2973,7 +2973,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -3006,7 +3006,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For more information on expression attribute values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      * >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -3034,7 +3034,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        <p>
      *        For more information on expression attribute values, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html"
      *        >Specifying Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

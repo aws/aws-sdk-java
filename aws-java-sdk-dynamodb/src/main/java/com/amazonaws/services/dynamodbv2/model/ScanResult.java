@@ -52,7 +52,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code>
      * value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -82,7 +82,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -259,7 +259,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code>
      * value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -270,7 +270,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      *        The number of items evaluated, before any <code>ScanFilter</code> is applied. A high
      *        <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
      *        <code>Scan</code> operation. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      *        ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
@@ -286,7 +286,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code>
      * value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -296,7 +296,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * @return The number of items evaluated, before any <code>ScanFilter</code> is applied. A high
      *         <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
      *         <code>Scan</code> operation. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      *         ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *         <p>
      *         If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
@@ -312,7 +312,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * The number of items evaluated, before any <code>ScanFilter</code> is applied. A high <code>ScannedCount</code>
      * value with few, or no, <code>Count</code> results indicates an inefficient <code>Scan</code> operation. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      * ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -323,7 +323,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      *        The number of items evaluated, before any <code>ScanFilter</code> is applied. A high
      *        <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient
      *        <code>Scan</code> operation. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and
      *        ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        If you did not use a filter in the request, then <code>ScannedCount</code> is the same as
@@ -460,7 +460,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -469,7 +469,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
      *        parameter was specified. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -483,7 +483,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -491,7 +491,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      *         provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *         operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
      *         parameter was specified. For more information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      *         >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -505,7 +505,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * throughput consumed, along with statistics for the table and any indexes involved in the operation.
      * <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was
      * specified. For more information, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      * >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -514,7 +514,7 @@ public class ScanResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      *        provisioned throughput consumed, along with statistics for the table and any indexes involved in the
      *        operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code>
      *        parameter was specified. For more information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
      *        >Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

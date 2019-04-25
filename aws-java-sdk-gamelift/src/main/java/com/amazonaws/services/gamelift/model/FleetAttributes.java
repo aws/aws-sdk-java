@@ -200,7 +200,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.
+     * instances with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -232,6 +232,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String buildId;
+    /**
+     * <p>
+     * Unique identifier for a Realtime script.
+     * </p>
+     */
+    private String scriptId;
     /**
      * <p>
      * Path to a game server executable in the fleet's build, specified for fleets created before 2016-08-04 (or AWS SDK
@@ -307,11 +313,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> stoppedActions;
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
-     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
-     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
+     * using on-box credentials for your game servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
      * external resources from a game server</a>.
      * </p>
      */
@@ -761,7 +768,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.
+     * instances with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -800,7 +807,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating
-     *        new instances with the game build and starting server processes.
+     *        new instances with the game build or Realtime script and starting server processes.
      *        </p>
      *        </li>
      *        <li>
@@ -846,7 +853,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.
+     * instances with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -884,7 +891,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet,
-     *         creating new instances with the game build and starting server processes.
+     *         creating new instances with the game build or Realtime script and starting server processes.
      *         </p>
      *         </li>
      *         <li>
@@ -930,7 +937,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.
+     * instances with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -969,7 +976,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating
-     *        new instances with the game build and starting server processes.
+     *        new instances with the game build or Realtime script and starting server processes.
      *        </p>
      *        </li>
      *        <li>
@@ -1017,7 +1024,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.
+     * instances with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -1056,7 +1063,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating
-     *        new instances with the game build and starting server processes.
+     *        new instances with the game build or Realtime script and starting server processes.
      *        </p>
      *        </li>
      *        <li>
@@ -1102,7 +1109,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
-     * instances with the game build and starting server processes.
+     * instances with the game build or Realtime script and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -1141,7 +1148,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating
-     *        new instances with the game build and starting server processes.
+     *        new instances with the game build or Realtime script and starting server processes.
      *        </p>
      *        </li>
      *        <li>
@@ -1210,6 +1217,46 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     public FleetAttributes withBuildId(String buildId) {
         setBuildId(buildId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for a Realtime script.
+     * </p>
+     * 
+     * @param scriptId
+     *        Unique identifier for a Realtime script.
+     */
+
+    public void setScriptId(String scriptId) {
+        this.scriptId = scriptId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for a Realtime script.
+     * </p>
+     * 
+     * @return Unique identifier for a Realtime script.
+     */
+
+    public String getScriptId() {
+        return this.scriptId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for a Realtime script.
+     * </p>
+     * 
+     * @param scriptId
+     *        Unique identifier for a Realtime script.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetAttributes withScriptId(String scriptId) {
+        setScriptId(scriptId);
         return this;
     }
 
@@ -1939,19 +1986,20 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
-     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
-     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
+     * using on-box credentials for your game servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
      * external resources from a game server</a>.
      * </p>
      * 
      * @param instanceRoleArn
-     *        Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
-     *        on an instance in this fleet can assume the role, including install scripts, server processs, daemons
-     *        (background processes). Create a role or look up a role's ARN using the <a
-     *        href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
+     *        Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
+     *        set, any application that runs on an instance in this fleet can assume the role, including install
+     *        scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using the
+     *        <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
      *        about using on-box credentials for your game servers at <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      *        Access external resources from a game server</a>.
@@ -1963,19 +2011,20 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
-     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
-     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
+     * using on-box credentials for your game servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
      * external resources from a game server</a>.
      * </p>
      * 
-     * @return Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
-     *         on an instance in this fleet can assume the role, including install scripts, server processs, daemons
-     *         (background processes). Create a role or look up a role's ARN using the <a
-     *         href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
-     *         about using on-box credentials for your game servers at <a
+     * @return Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
+     *         set, any application that runs on an instance in this fleet can assume the role, including install
+     *         scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using
+     *         the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn
+     *         more about using on-box credentials for your game servers at <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      *         Access external resources from a game server</a>.
      */
@@ -1986,19 +2035,20 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs on an
-     * instance in this fleet can assume the role, including install scripts, server processs, daemons (background
-     * processes). Create a role or look up a role's ARN using the <a href="https://console.aws.amazon.com/iam/">IAM
-     * dashboard</a> in the AWS Management Console. Learn more about using on-box credentials for your game servers at
-     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
+     * Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN set,
+     * any application that runs on an instance in this fleet can assume the role, including install scripts, server
+     * processes, daemons (background processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more about
+     * using on-box credentials for your game servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access
      * external resources from a game server</a>.
      * </p>
      * 
      * @param instanceRoleArn
-     *        Unique identifier for an AWS IAM role that manages access to your AWS services. Any application that runs
-     *        on an instance in this fleet can assume the role, including install scripts, server processs, daemons
-     *        (background processes). Create a role or look up a role's ARN using the <a
-     *        href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
+     *        Unique identifier for an AWS IAM role that manages access to your AWS services. With an instance role ARN
+     *        set, any application that runs on an instance in this fleet can assume the role, including install
+     *        scripts, server processes, daemons (background processes). Create a role or look up a role's ARN using the
+     *        <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS Management Console. Learn more
      *        about using on-box credentials for your game servers at <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      *        Access external resources from a game server</a>.
@@ -2042,6 +2092,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
             sb.append("Status: ").append(getStatus()).append(",");
         if (getBuildId() != null)
             sb.append("BuildId: ").append(getBuildId()).append(",");
+        if (getScriptId() != null)
+            sb.append("ScriptId: ").append(getScriptId()).append(",");
         if (getServerLaunchPath() != null)
             sb.append("ServerLaunchPath: ").append(getServerLaunchPath()).append(",");
         if (getServerLaunchParameters() != null)
@@ -2114,6 +2166,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getBuildId() != null && other.getBuildId().equals(this.getBuildId()) == false)
             return false;
+        if (other.getScriptId() == null ^ this.getScriptId() == null)
+            return false;
+        if (other.getScriptId() != null && other.getScriptId().equals(this.getScriptId()) == false)
+            return false;
         if (other.getServerLaunchPath() == null ^ this.getServerLaunchPath() == null)
             return false;
         if (other.getServerLaunchPath() != null && other.getServerLaunchPath().equals(this.getServerLaunchPath()) == false)
@@ -2169,6 +2225,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getTerminationTime() == null) ? 0 : getTerminationTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getBuildId() == null) ? 0 : getBuildId().hashCode());
+        hashCode = prime * hashCode + ((getScriptId() == null) ? 0 : getScriptId().hashCode());
         hashCode = prime * hashCode + ((getServerLaunchPath() == null) ? 0 : getServerLaunchPath().hashCode());
         hashCode = prime * hashCode + ((getServerLaunchParameters() == null) ? 0 : getServerLaunchParameters().hashCode());
         hashCode = prime * hashCode + ((getLogPaths() == null) ? 0 : getLogPaths().hashCode());

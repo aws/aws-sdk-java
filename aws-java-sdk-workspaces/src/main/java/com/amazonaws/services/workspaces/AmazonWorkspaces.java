@@ -184,7 +184,7 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Creates the specified tags for the specified WorkSpace.
+     * Creates the specified tags for the specified WorkSpaces resource.
      * </p>
      * 
      * @param createTagsRequest
@@ -247,7 +247,7 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Deletes the specified tags from the specified WorkSpace.
+     * Deletes the specified tags from the specified WorkSpaces resource.
      * </p>
      * 
      * @param deleteTagsRequest
@@ -351,7 +351,7 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes the specified tags for the specified WorkSpace.
+     * Describes the specified tags for the specified WorkSpaces resource.
      * </p>
      * 
      * @param describeTagsRequest

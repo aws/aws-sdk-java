@@ -42,7 +42,7 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
-     * Version that is associated with this build. Version strings do not need to be unique.
+     * Version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      */
     private String version;
@@ -129,11 +129,11 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version that is associated with this build. Version strings do not need to be unique.
+     * Version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
      * @param version
-     *        Version that is associated with this build. Version strings do not need to be unique.
+     *        Version that is associated with a build or script. Version strings do not need to be unique.
      */
 
     public void setVersion(String version) {
@@ -142,10 +142,10 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version that is associated with this build. Version strings do not need to be unique.
+     * Version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
-     * @return Version that is associated with this build. Version strings do not need to be unique.
+     * @return Version that is associated with a build or script. Version strings do not need to be unique.
      */
 
     public String getVersion() {
@@ -154,11 +154,11 @@ public class UpdateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version that is associated with this build. Version strings do not need to be unique.
+     * Version that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
      * @param version
-     *        Version that is associated with this build. Version strings do not need to be unique.
+     *        Version that is associated with a build or script. Version strings do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

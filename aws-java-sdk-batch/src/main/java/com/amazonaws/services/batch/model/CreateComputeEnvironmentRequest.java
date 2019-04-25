@@ -50,7 +50,9 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Details of the compute resources managed by the compute environment. This parameter is required for managed
-     * compute environments.
+     * compute environments. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      */
     private ComputeResource computeResources;
@@ -299,12 +301,16 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Details of the compute resources managed by the compute environment. This parameter is required for managed
-     * compute environments.
+     * compute environments. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param computeResources
      *        Details of the compute resources managed by the compute environment. This parameter is required for
-     *        managed compute environments.
+     *        managed compute environments. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        Environments</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public void setComputeResources(ComputeResource computeResources) {
@@ -314,11 +320,15 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Details of the compute resources managed by the compute environment. This parameter is required for managed
-     * compute environments.
+     * compute environments. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @return Details of the compute resources managed by the compute environment. This parameter is required for
-     *         managed compute environments.
+     *         managed compute environments. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *         Environments</a> in the <i>AWS Batch User Guide</i>.
      */
 
     public ComputeResource getComputeResources() {
@@ -328,12 +338,16 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * Details of the compute resources managed by the compute environment. This parameter is required for managed
-     * compute environments.
+     * compute environments. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in
+     * the <i>AWS Batch User Guide</i>.
      * </p>
      * 
      * @param computeResources
      *        Details of the compute resources managed by the compute environment. This parameter is required for
-     *        managed compute environments.
+     *        managed compute environments. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     *        Environments</a> in the <i>AWS Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

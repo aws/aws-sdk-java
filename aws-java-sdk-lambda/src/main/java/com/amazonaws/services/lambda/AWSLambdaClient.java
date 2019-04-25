@@ -388,7 +388,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws PolicyLengthExceededException
-     *         Lambda function access policy is limited to 20 KB.
+     *         The permissions policy for the resource is too large. <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
      * @throws PreconditionFailedException
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
      *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
@@ -475,7 +476,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws PolicyLengthExceededException
-     *         Lambda function access policy is limited to 20 KB.
+     *         The permissions policy for the resource is too large. <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
      * @throws TooManyRequestsException
      *         Request throughput limit exceeded.
      * @throws PreconditionFailedException
@@ -737,7 +739,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         Request throughput limit exceeded.
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
      * @sample AWSLambda.CreateFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction" target="_top">AWS API
      *      Documentation</a>
@@ -1495,6 +1497,71 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
+     * Returns information about a version of an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>, with a link
+     * to download the layer archive that's valid for 10 minutes.
+     * </p>
+     * 
+     * @param getLayerVersionByArnRequest
+     * @return Result of the GetLayerVersionByArn operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     *         Request throughput limit exceeded.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @sample AWSLambda.GetLayerVersionByArn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetLayerVersionByArnResult getLayerVersionByArn(GetLayerVersionByArnRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLayerVersionByArn(request);
+    }
+
+    @SdkInternalApi
+    final GetLayerVersionByArnResult executeGetLayerVersionByArn(GetLayerVersionByArnRequest getLayerVersionByArnRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLayerVersionByArnRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLayerVersionByArnRequest> request = null;
+        Response<GetLayerVersionByArnResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLayerVersionByArnRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLayerVersionByArnRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lambda");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLayerVersionByArn");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLayerVersionByArnResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLayerVersionByArnResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the permission policy for a version of an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. For more
      * information, see <a>AddLayerVersionPermission</a>.
@@ -1636,6 +1703,12 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>. To record function errors for
      * asynchronous invocations, configure your function with a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
+     * </p>
+     * <p>
+     * When an error occurs, your function may be invoked multiple times. Retry behavior varies by error type, client,
+     * event source, and invocation type. For example, if you invoke a function asynchronously and it returns an error,
+     * Lambda executes the function up to two more times. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry Behavior</a>.
      * </p>
      * <p>
      * The status code in the API response doesn't reflect function errors. Error codes are reserved for errors that
@@ -2307,7 +2380,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
      * @sample AWSLambda.PublishLayerVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion" target="_top">AWS API
      *      Documentation</a>
@@ -2383,7 +2456,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         Request throughput limit exceeded.
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
      * @throws PreconditionFailedException
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
      *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
@@ -2939,7 +3012,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         Request throughput limit exceeded.
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
      * @throws PreconditionFailedException
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
      *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
@@ -2991,7 +3064,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Modify the version-specifc settings of a Lambda function.
+     * Modify the version-specific settings of a Lambda function.
      * </p>
      * <p>
      * These settings can vary between versions of a function and are locked when you publish a version. You can't

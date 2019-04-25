@@ -58,7 +58,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
      * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
@@ -333,7 +333,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
      * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
@@ -342,9 +342,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param nodeProperties
      *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
      *        a job, it becomes a multi-node parallel job. For more information, see <a
-     *        href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     *        Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-     *        <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     *        Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
+     *        is <code>container</code>, then you must specify either <code>containerProperties</code> or
      *        <code>nodeProperties</code>.
      */
 
@@ -356,7 +356,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
      * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
@@ -364,7 +364,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * 
      * @return An object with various properties specific to multi-node parallel jobs. If you specify node properties
      *         for a job, it becomes a multi-node parallel job. For more information, see <a
-     *         href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
      *         Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
      *         is <code>container</code>, then you must specify either <code>containerProperties</code> or
      *         <code>nodeProperties</code>.
@@ -378,7 +378,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * <p>
      * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
      * it becomes a multi-node parallel job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
      * Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either <code>containerProperties</code> or
      * <code>nodeProperties</code>.
@@ -387,9 +387,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param nodeProperties
      *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
      *        a job, it becomes a multi-node parallel job. For more information, see <a
-     *        href="http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     *        Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-     *        <code>container</code>, then you must specify either <code>containerProperties</code> or
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
+     *        Parallel Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's <code>type</code> parameter
+     *        is <code>container</code>, then you must specify either <code>containerProperties</code> or
      *        <code>nodeProperties</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

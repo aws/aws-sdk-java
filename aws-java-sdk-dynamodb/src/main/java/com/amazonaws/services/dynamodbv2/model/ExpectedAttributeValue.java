@@ -63,7 +63,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -311,7 +311,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * For information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -336,7 +336,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public ExpectedAttributeValue(AttributeValue value) {
@@ -402,7 +402,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -414,7 +414,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -432,7 +432,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -443,7 +443,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      *         >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -461,7 +461,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -473,7 +473,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
      *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2682,7 +2682,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * For information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2703,7 +2703,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *         </p>
      *         <p>
      *         For information on specifying data types in JSON, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
      *         Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2731,7 +2731,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * For information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2753,7 +2753,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        </p>
      *        <p>
      *        For information on specifying data types in JSON, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
      *        Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2786,7 +2786,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * For information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -2813,7 +2813,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        </p>
      *        <p>
      *        For information on specifying data types in JSON, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
      *        Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2848,7 +2848,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      * </p>
      * <p>
      * For information on specifying data types in JSON, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2870,7 +2870,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      *        </p>
      *        <p>
      *        For information on specifying data types in JSON, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data
      *        Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

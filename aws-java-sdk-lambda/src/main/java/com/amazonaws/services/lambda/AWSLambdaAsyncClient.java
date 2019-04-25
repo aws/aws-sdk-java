@@ -780,6 +780,39 @@ public class AWSLambdaAsyncClient extends AWSLambdaClient implements AWSLambdaAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetLayerVersionByArnResult> getLayerVersionByArnAsync(GetLayerVersionByArnRequest request) {
+
+        return getLayerVersionByArnAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLayerVersionByArnResult> getLayerVersionByArnAsync(final GetLayerVersionByArnRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLayerVersionByArnRequest, GetLayerVersionByArnResult> asyncHandler) {
+        final GetLayerVersionByArnRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLayerVersionByArnResult>() {
+            @Override
+            public GetLayerVersionByArnResult call() throws Exception {
+                GetLayerVersionByArnResult result = null;
+
+                try {
+                    result = executeGetLayerVersionByArn(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetLayerVersionPolicyResult> getLayerVersionPolicyAsync(GetLayerVersionPolicyRequest request) {
 
         return getLayerVersionPolicyAsync(request, null);

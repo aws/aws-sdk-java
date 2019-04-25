@@ -88,6 +88,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public CreateScriptResult createScript(CreateScriptRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateVpcPeeringAuthorizationResult createVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -129,6 +134,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteScriptResult deleteScript(DeleteScriptRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -238,6 +248,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public DescribeScriptResult describeScript(DescribeScriptRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeVpcPeeringAuthorizationsResult describeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -269,6 +284,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public ListFleetsResult listFleets(ListFleetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListScriptsResult listScripts(ListScriptsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -369,6 +389,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public UpdateRuntimeConfigurationResult updateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateScriptResult updateScript(UpdateScriptRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

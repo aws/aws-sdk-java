@@ -742,6 +742,41 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Returns information about a version of an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>, with a link
+     * to download the layer archive that's valid for 10 minutes.
+     * </p>
+     * 
+     * @param getLayerVersionByArnRequest
+     * @return A Java Future containing the result of the GetLayerVersionByArn operation returned by the service.
+     * @sample AWSLambdaAsync.GetLayerVersionByArn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLayerVersionByArnResult> getLayerVersionByArnAsync(GetLayerVersionByArnRequest getLayerVersionByArnRequest);
+
+    /**
+     * <p>
+     * Returns information about a version of an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>, with a link
+     * to download the layer archive that's valid for 10 minutes.
+     * </p>
+     * 
+     * @param getLayerVersionByArnRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLayerVersionByArn operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.GetLayerVersionByArn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLayerVersionByArnResult> getLayerVersionByArnAsync(GetLayerVersionByArnRequest getLayerVersionByArnRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLayerVersionByArnRequest, GetLayerVersionByArnResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the permission policy for a version of an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>. For more
      * information, see <a>AddLayerVersionPermission</a>.
@@ -824,6 +859,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
      * </p>
      * <p>
+     * When an error occurs, your function may be invoked multiple times. Retry behavior varies by error type, client,
+     * event source, and invocation type. For example, if you invoke a function asynchronously and it returns an error,
+     * Lambda executes the function up to two more times. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry Behavior</a>.
+     * </p>
+     * <p>
      * The status code in the API response doesn't reflect function errors. Error codes are reserved for errors that
      * prevent your function from executing, such as permissions errors, <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>, or issues with your function's
@@ -861,6 +902,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>. To record function errors for
      * asynchronous invocations, configure your function with a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead letter queue</a>.
+     * </p>
+     * <p>
+     * When an error occurs, your function may be invoked multiple times. Retry behavior varies by error type, client,
+     * event source, and invocation type. For example, if you invoke a function asynchronously and it returns an error,
+     * Lambda executes the function up to two more times. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry Behavior</a>.
      * </p>
      * <p>
      * The status code in the API response doesn't reflect function errors. Error codes are reserved for errors that
@@ -1601,7 +1648,7 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Modify the version-specifc settings of a Lambda function.
+     * Modify the version-specific settings of a Lambda function.
      * </p>
      * <p>
      * These settings can vary between versions of a function and are locked when you publish a version. You can't
@@ -1623,7 +1670,7 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Modify the version-specifc settings of a Lambda function.
+     * Modify the version-specific settings of a Lambda function.
      * </p>
      * <p>
      * These settings can vary between versions of a function and are locked when you publish a version. You can't

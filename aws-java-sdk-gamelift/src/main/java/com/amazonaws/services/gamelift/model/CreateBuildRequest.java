@@ -37,7 +37,7 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
-     * Version that is associated with this build. Version strings do not need to be unique. You can use
+     * Version that is associated with a build or script. Version strings do not need to be unique. You can use
      * <a>UpdateBuild</a> to change this value later.
      * </p>
      */
@@ -46,8 +46,8 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Information indicating where your game build files are stored. Use this parameter only when creating a build with
      * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
-     * key, as well as a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3
-     * bucket must be in the same region that you want to create a new build in.
+     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access your Amazon S3 bucket.
+     * The S3 bucket must be in the same region that you want to create a new build in.
      * </p>
      */
     private S3Location storageLocation;
@@ -109,12 +109,12 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version that is associated with this build. Version strings do not need to be unique. You can use
+     * Version that is associated with a build or script. Version strings do not need to be unique. You can use
      * <a>UpdateBuild</a> to change this value later.
      * </p>
      * 
      * @param version
-     *        Version that is associated with this build. Version strings do not need to be unique. You can use
+     *        Version that is associated with a build or script. Version strings do not need to be unique. You can use
      *        <a>UpdateBuild</a> to change this value later.
      */
 
@@ -124,11 +124,11 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version that is associated with this build. Version strings do not need to be unique. You can use
+     * Version that is associated with a build or script. Version strings do not need to be unique. You can use
      * <a>UpdateBuild</a> to change this value later.
      * </p>
      * 
-     * @return Version that is associated with this build. Version strings do not need to be unique. You can use
+     * @return Version that is associated with a build or script. Version strings do not need to be unique. You can use
      *         <a>UpdateBuild</a> to change this value later.
      */
 
@@ -138,12 +138,12 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Version that is associated with this build. Version strings do not need to be unique. You can use
+     * Version that is associated with a build or script. Version strings do not need to be unique. You can use
      * <a>UpdateBuild</a> to change this value later.
      * </p>
      * 
      * @param version
-     *        Version that is associated with this build. Version strings do not need to be unique. You can use
+     *        Version that is associated with a build or script. Version strings do not need to be unique. You can use
      *        <a>UpdateBuild</a> to change this value later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -157,15 +157,15 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Information indicating where your game build files are stored. Use this parameter only when creating a build with
      * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
-     * key, as well as a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3
-     * bucket must be in the same region that you want to create a new build in.
+     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access your Amazon S3 bucket.
+     * The S3 bucket must be in the same region that you want to create a new build in.
      * </p>
      * 
      * @param storageLocation
      *        Information indicating where your game build files are stored. Use this parameter only when creating a
      *        build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
-     *        S3 bucket name and key, as well as a role ARN that you set up to allow Amazon GameLift to access your
-     *        Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
+     *        S3 bucket name and key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access
+     *        your Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
      */
 
     public void setStorageLocation(S3Location storageLocation) {
@@ -176,14 +176,15 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Information indicating where your game build files are stored. Use this parameter only when creating a build with
      * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
-     * key, as well as a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3
-     * bucket must be in the same region that you want to create a new build in.
+     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access your Amazon S3 bucket.
+     * The S3 bucket must be in the same region that you want to create a new build in.
      * </p>
      * 
      * @return Information indicating where your game build files are stored. Use this parameter only when creating a
      *         build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
-     *         S3 bucket name and key, as well as a role ARN that you set up to allow Amazon GameLift to access your
-     *         Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
+     *         S3 bucket name and key, as well as a the ARN for a role that you set up to allow Amazon GameLift to
+     *         access your Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new
+     *         build in.
      */
 
     public S3Location getStorageLocation() {
@@ -194,15 +195,15 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Information indicating where your game build files are stored. Use this parameter only when creating a build with
      * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
-     * key, as well as a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3
-     * bucket must be in the same region that you want to create a new build in.
+     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access your Amazon S3 bucket.
+     * The S3 bucket must be in the same region that you want to create a new build in.
      * </p>
      * 
      * @param storageLocation
      *        Information indicating where your game build files are stored. Use this parameter only when creating a
      *        build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
-     *        S3 bucket name and key, as well as a role ARN that you set up to allow Amazon GameLift to access your
-     *        Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
+     *        S3 bucket name and key, as well as a the ARN for a role that you set up to allow Amazon GameLift to access
+     *        your Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sqs.buffered;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -221,7 +222,7 @@ class QueueBuffer {
      *         back to the service to fetch the results
      */
     private boolean canBeRetrievedFromQueueBuffer(ReceiveMessageRequest rq) {
-        return !hasRequestedQueueAttributes(rq) && !hasRequestedMessageAttributes(rq) && isBufferingEnabled()
+        return !hasRequestedQueueAttributes(rq) && requestedMessageAttributesAreCompatible(rq) && isBufferingEnabled()
                 && (rq.getVisibilityTimeout() == null);
     }
 
@@ -233,10 +234,11 @@ class QueueBuffer {
     }
 
     /**
-     * @return True if request has been configured to return message attributes. False otherwise
+     * @return True if request has been configured to return compatible message attributes. False otherwise.
      */
-    private boolean hasRequestedMessageAttributes(ReceiveMessageRequest rq) {
-        return rq.getMessageAttributeNames() != null && !rq.getMessageAttributeNames().isEmpty();
+    // TODO-RS: If useful, extend this to support any subset of attributes instead of an exact match.
+    private boolean requestedMessageAttributesAreCompatible(ReceiveMessageRequest rq) {
+        return rq.getMessageAttributeNames().equals(config.getReceiveMessageAttributeNames());
     }
 
     /**

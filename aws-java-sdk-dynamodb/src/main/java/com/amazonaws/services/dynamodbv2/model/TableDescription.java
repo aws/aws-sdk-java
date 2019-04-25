@@ -97,8 +97,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private java.util.List<KeySchemaElement> keySchema;
@@ -696,8 +696,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return The primary key structure for the table. Each <code>KeySchemaElement</code> consists of:</p>
@@ -738,7 +738,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *         </ul>
      *         <p>
      *         For more information about primary keys, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
      *         >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -787,8 +787,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keySchema
@@ -830,7 +830,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        </ul>
      *        <p>
      *        For more information about primary keys, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
      *        >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -884,8 +884,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -932,7 +932,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        </ul>
      *        <p>
      *        For more information about primary keys, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
      *        >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -988,8 +988,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * For more information about primary keys, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     * >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param keySchema
@@ -1031,7 +1031,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        </ul>
      *        <p>
      *        For more information about primary keys, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey"
      *        >Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -28,7 +28,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * For an overview on tagging DynamoDB resources, see <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the
+ * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the
  * <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  * 

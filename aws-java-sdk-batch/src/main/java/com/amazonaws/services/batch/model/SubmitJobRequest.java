@@ -43,7 +43,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
      * 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS Batch User
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS Batch User
      * Guide</i>.
      * </p>
      */
@@ -205,14 +205,14 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
      * 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS Batch User
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS Batch User
      * Guide</i>.
      * </p>
      * 
      * @param arrayProperties
      *        The array properties for the submitted job, such as the size of the array. The array size can be between 2
      *        and 10,000. If you specify array properties for a job, it becomes an array job. For more information, see
-     *        <a href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS
+     *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS
      *        Batch User Guide</i>.
      */
 
@@ -224,13 +224,13 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
      * 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS Batch User
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS Batch User
      * Guide</i>.
      * </p>
      * 
      * @return The array properties for the submitted job, such as the size of the array. The array size can be between
      *         2 and 10,000. If you specify array properties for a job, it becomes an array job. For more information,
-     *         see <a href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the
+     *         see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the
      *         <i>AWS Batch User Guide</i>.
      */
 
@@ -242,14 +242,14 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
      * 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS Batch User
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS Batch User
      * Guide</i>.
      * </p>
      * 
      * @param arrayProperties
      *        The array properties for the submitted job, such as the size of the array. The array size can be between 2
      *        and 10,000. If you specify array properties for a job, it becomes an array job. For more information, see
-     *        <a href="http://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS
+     *        <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>AWS
      *        Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

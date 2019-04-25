@@ -15,6 +15,10 @@
 
 package com.amazonaws.services.sqs.buffered;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.amazonaws.AmazonClientException;
 
 public class QueueBufferConfig {
@@ -110,6 +114,17 @@ public class QueueBufferConfig {
     public static final int LONGPOLL_WAIT_TIMEOUT_SECONDS_DEFAULT = 20;
 
     /**
+     * Specifies the message attributes receive calls will request. Only receive requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require message attributes
+     * will not be fulfilled from buffers.
+     */
+    private List<String> receiveMessageAttributeNames = RECEIVE_MESSAGE_ATTRIBUTE_NAMES_DEFAULT;
+
+    public static final List<String> RECEIVE_MESSAGE_ATTRIBUTE_NAMES_DEFAULT = Collections.emptyList();
+
+    /**
      * Option to configure flushOnShutdown. Enabling this option will flush the pending requests in the
      * {@link SendQueueBuffer} during shutdown.
      * <p>
@@ -151,6 +166,7 @@ public class QueueBufferConfig {
         maxInflightReceiveBatches = other.maxInflightReceiveBatches;
         visibilityTimeoutSeconds = other.visibilityTimeoutSeconds;
         flushOnShutdown = other.flushOnShutdown;
+        receiveMessageAttributeNames = other.receiveMessageAttributeNames;
     }
 
     @Override
@@ -439,6 +455,44 @@ public class QueueBufferConfig {
         return this;
     }
 
+    /**
+     * Specifies the message attributes receive calls will request. Only receive requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require message attributes
+     * will not be fulfilled from buffers.
+     */
+    public List<String> getReceiveMessageAttributeNames() {
+        return receiveMessageAttributeNames;
+    }
+
+    /**
+     * Specifies the message attributes receive calls will request. Only receive requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require message attributes
+     * will not be fulfilled from buffers.
+     */
+    public void setReceiveMessageAttributeNames(List<String> receiveMessageAttributeNames) {
+        if (receiveMessageAttributeNames == null) {
+            this.receiveMessageAttributeNames = Collections.emptyList();
+        } else {
+            this.receiveMessageAttributeNames = Collections.unmodifiableList(new ArrayList<String>(receiveMessageAttributeNames));
+        }
+    }
+
+    /**
+     * Specifies the message attributes receive calls will request. Only receive requests that
+     * request the same set of attributes will be satisfied from the receive buffers.
+     * <p>
+     * The default value is an empty list, so any receive requests that require message attributes
+     * will not be fulfilled from buffers.
+     */
+    public QueueBufferConfig withReceiveMessageAttributeNames(List<String> receiveMessageAttributes) {
+        setReceiveMessageAttributeNames(receiveMessageAttributes);
+        return this;
+    }
+    
     /**
      * Returns the flushOnShutdown value. The default value is false which indicates flushOnShutdown is disabled.
      *

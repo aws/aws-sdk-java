@@ -44,7 +44,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the attributes that make up the primary key for a table or an index. The attributes in
      * <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -97,7 +97,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -263,7 +263,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      */
@@ -315,6 +315,13 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private SSESpecification sSESpecification;
+    /**
+     * <p>
+     * A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * Default constructor for CreateTableRequest object. Callers should use the setter or fluent setter (with...)
@@ -333,7 +340,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *        <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *        the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        Each <code>KeySchemaElement</code> in the array is composed of:
@@ -385,7 +392,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public CreateTableRequest(String tableName, java.util.List<KeySchemaElement> keySchema) {
@@ -405,7 +412,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *        <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *        the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        Each <code>KeySchemaElement</code> in the array is composed of:
@@ -457,7 +464,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param provisionedThroughput
      *        Represents the provisioned throughput settings for a specified table or index. The settings can be
@@ -469,7 +476,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For current minimum and maximum provisioned throughput values, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
      *        <i>Amazon DynamoDB Developer Guide</i>.
      */
     public CreateTableRequest(java.util.List<AttributeDefinition> attributeDefinitions, String tableName, java.util.List<KeySchemaElement> keySchema,
@@ -594,7 +601,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the attributes that make up the primary key for a table or an index. The attributes in
      * <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -647,14 +654,14 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *         <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *         the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *         <p>
      *         Each <code>KeySchemaElement</code> in the array is composed of:
@@ -706,7 +713,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      *         >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -718,7 +725,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the attributes that make up the primary key for a table or an index. The attributes in
      * <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -771,7 +778,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -779,7 +786,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *        <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *        the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        Each <code>KeySchemaElement</code> in the array is composed of:
@@ -831,7 +838,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -848,7 +855,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the attributes that make up the primary key for a table or an index. The attributes in
      * <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -901,7 +908,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -914,7 +921,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *        <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *        the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        Each <code>KeySchemaElement</code> in the array is composed of:
@@ -966,7 +973,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -985,7 +992,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies the attributes that make up the primary key for a table or an index. The attributes in
      * <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information,
-     * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     * see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      * the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
@@ -1038,7 +1045,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      * >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -1046,7 +1053,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Specifies the attributes that make up the primary key for a table or an index. The attributes in
      *        <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in
      *        the <i>Amazon DynamoDB Developer Guide</i>.</p>
      *        <p>
      *        Each <code>KeySchemaElement</code> in the array is composed of:
@@ -1098,7 +1105,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
+     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key"
      *        >Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2362,7 +2369,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2375,7 +2382,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For current minimum and maximum provisioned throughput values, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
      *        <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2394,7 +2401,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2406,7 +2413,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         <p>
      *         For current minimum and maximum provisioned throughput values, see <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
      *         <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2425,7 +2432,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For current minimum and maximum provisioned throughput values, see <a
-     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon
      * DynamoDB Developer Guide</i>.
      * </p>
      * 
@@ -2438,7 +2445,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For current minimum and maximum provisioned throughput values, see <a
-     *        href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the
      *        <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2743,6 +2750,88 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.
+     * </p>
+     * 
+     * @return A list of key-value pairs to label the table. For more information, see <a
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for
+     *         DynamoDB</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs to label the table. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for
+     *        DynamoDB</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs to label the table. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for
+     *        DynamoDB</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs to label the table. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key-value pairs to label the table. For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for
+     *        DynamoDB</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2771,7 +2860,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getStreamSpecification() != null)
             sb.append("StreamSpecification: ").append(getStreamSpecification()).append(",");
         if (getSSESpecification() != null)
-            sb.append("SSESpecification: ").append(getSSESpecification());
+            sb.append("SSESpecification: ").append(getSSESpecification()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -2822,6 +2913,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getSSESpecification() != null && other.getSSESpecification().equals(this.getSSESpecification()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -2839,6 +2934,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
         hashCode = prime * hashCode + ((getStreamSpecification() == null) ? 0 : getStreamSpecification().hashCode());
         hashCode = prime * hashCode + ((getSSESpecification() == null) ? 0 : getSSESpecification().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
