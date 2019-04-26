@@ -89,8 +89,8 @@ public class Role implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
-     * <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private AttachedPermissionsBoundary permissionsBoundary;
@@ -483,16 +483,16 @@ public class Role implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
-     * <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundary
      *        The ARN of the policy used to set the permissions boundary for the role.</p>
      *        <p>
      *        For more information about permissions boundaries, see <a
-     *        href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a>
-     *        in the <i>IAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
      */
 
     public void setPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
@@ -505,15 +505,15 @@ public class Role implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
-     * <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The ARN of the policy used to set the permissions boundary for the role.</p>
      *         <p>
      *         For more information about permissions boundaries, see <a
-     *         href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities
-     *         </a> in the <i>IAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *         Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
      */
 
     public AttachedPermissionsBoundary getPermissionsBoundary() {
@@ -526,16 +526,16 @@ public class Role implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a> in the
-     * <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
+     * for IAM Identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundary
      *        The ARN of the policy used to set the permissions boundary for the role.</p>
      *        <p>
      *        For more information about permissions boundaries, see <a
-     *        href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities </a>
-     *        in the <i>IAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

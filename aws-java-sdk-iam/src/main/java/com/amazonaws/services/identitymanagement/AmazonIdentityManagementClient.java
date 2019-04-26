@@ -1257,7 +1257,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </li>
      * <li>
      * <p>
-     * A list of thumbprints of the server certificate(s) that the IdP uses.
+     * A list of thumbprints of the server certificate(s) that the IdP uses
      * </p>
      * </li>
      * </ul>
@@ -1266,8 +1266,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <note>
      * <p>
-     * Because trust for the OIDC provider is derived from the IAM provider that this operation creates, it is best to
-     * limit access to the <a>CreateOpenIDConnectProvider</a> operation to highly privileged users.
+     * The trust for the OIDC provider is derived from the IAM provider that this operation creates. Therefore, it is
+     * best to limit access to the <a>CreateOpenIDConnectProvider</a> operation to highly privileged users.
      * </p>
      * </note>
      * 
@@ -1553,7 +1553,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * The SAML provider resource that you create with this operation can be used as a principal in an IAM role's trust
-     * policy. Such a policy can enable federated users who sign-in using the SAML IdP to assume the role. You can
+     * policy. Such a policy can enable federated users who sign in using the SAML IdP to assume the role. You can
      * create an IAM role that supports Web-based single sign-on (SSO) to the AWS Management Console or one that
      * supports API access to AWS.
      * </p>
@@ -1866,8 +1866,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <important>
      * <p>
      * The seed information contained in the QR code and the Base32 string should be treated like any other secret
-     * access information, such as your AWS access keys or your passwords. After you provision your virtual device, you
-     * should ensure that the information is destroyed following secure procedures.
+     * access information. In other words, protect the seed information as you would your AWS access keys or your
+     * passwords. After you provision your virtual device, you should ensure that the information is destroyed following
+     * secure procedures.
      * </p>
      * </important>
      * 
@@ -2781,8 +2782,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <important>
      * <p>
-     * Deleting the permissions boundary for a role might increase its permissions by allowing anyone who assumes the
-     * role to perform all the actions granted in its permissions policies.
+     * Deleting the permissions boundary for a role might increase its permissions. For example, it might allow anyone
+     * who assumes the role to perform all the actions granted in its permissions policies.
      * </p>
      * </important>
      * 
@@ -3326,9 +3327,58 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Deletes the specified IAM user. The user must not belong to any groups or have any access keys, signing
-     * certificates, MFA devices enabled for AWS, or attached policies.
+     * Deletes the specified IAM user. Unlike the AWS Management Console, when you delete a user programmatically, you
+     * must delete the items attached to the user manually, or the deletion fails. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting an
+     * IAM User</a>. Before attempting to delete a user, remove the following items:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Password (<a>DeleteLoginProfile</a>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Access keys (<a>DeleteAccessKey</a>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signing certificate (<a>DeleteSigningCertificate</a>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SSH public key (<a>DeleteSSHPublicKey</a>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Git credentials (<a>DeleteServiceSpecificCredential</a>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Multi-factor authentication (MFA) device (<a>DeactivateMFADevice</a>, <a>DeleteVirtualMFADevice</a>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Inline policies (<a>DeleteUserPolicy</a>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Attached managed policies (<a>DetachUserPolicy</a>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group memberships (<a>RemoveUserFromGroup</a>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteUserRequest
      * @return Result of the DeleteUser operation returned by the service.
@@ -3934,7 +3984,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Generates a request for a report that includes details about when an IAM resource (user, group, role, or policy)
      * was last used in an attempt to access AWS services. Recent activity usually appears within four hours. IAM
-     * reports activity for the last 365 days, or less if your region began supporting this feature within the last
+     * reports activity for the last 365 days, or less if your Region began supporting this feature within the last
      * year. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
      * >Regions Where Data Is Tracked</a>.
@@ -4051,7 +4101,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     /**
      * <p>
      * Retrieves information about when the specified access key was last used. The information includes the date and
-     * time of last use, along with the AWS service and region that were specified in the last request made with that
+     * time of last use, along with the AWS service and Region that were specified in the last request made with that
      * key.
      * </p>
      * 
@@ -5343,9 +5393,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * operation returns the reason that it failed.
      * </p>
      * <p>
-     * The <code>GetServiceLastAccessedDetails</code> operation returns a list of services that includes the number of
-     * entities that have attempted to access the service and the date and time of the last attempt. It also returns the
-     * ARN of the following entity, depending on the resource ARN that you used to generate the report:
+     * The <code>GetServiceLastAccessedDetails</code> operation returns a list of services. This list includes the
+     * number of entities that have attempted to access the service and the date and time of the last attempt. It also
+     * returns the ARN of the following entity, depending on the resource ARN that you used to generate the report:
      * </p>
      * <ul>
      * <li>
@@ -5654,7 +5704,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </note>
      * <p>
      * An IAM user can also have managed policies attached to it. To retrieve a managed policy document that is attached
-     * to a user, use <a>GetPolicy</a> to determine the policy's default version, then use <a>GetPolicyVersion</a> to
+     * to a user, use <a>GetPolicy</a> to determine the policy's default version. Then use <a>GetPolicyVersion</a> to
      * retrieve the policy document.
      * </p>
      * <p>
@@ -7072,7 +7122,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns information about the SSH public keys associated with the specified IAM user. If there none exists, the
+     * Returns information about the SSH public keys associated with the specified IAM user. If none exists, the
      * operation returns an empty list.
      * </p>
      * <p>
@@ -7274,8 +7324,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns information about the signing certificates associated with the specified IAM user. If there none exists,
-     * the operation returns an empty list.
+     * Returns information about the signing certificates associated with the specified IAM user. If none exists, the
+     * operation returns an empty list.
      * </p>
      * <p>
      * Although each user is limited to a small number of signing certificates, you can still paginate the results using
@@ -8403,6 +8453,82 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Sets the specified version of the global endpoint token as the token version used for the AWS account.
+     * </p>
+     * <p>
+     * By default, AWS Security Token Service (STS) is available as a global service, and all STS requests go to a
+     * single endpoint at <code>https://sts.amazonaws.com</code>. AWS recommends using Regional STS endpoints to reduce
+     * latency, build in redundancy, and increase session token availability. For information about Regional endpoints
+     * for STS, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">AWS Regions and
+     * Endpoints</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * <p>
+     * If you make an STS call to the global endpoint, the resulting session tokens might be valid in some Regions but
+     * not others. It depends on the version that is set in this operation. Version 1 tokens are valid only in AWS
+     * Regions that are available by default. These tokens do not work in manually enabled Regions, such as Asia Pacific
+     * (Hong Kong). Version 2 tokens are valid in all Regions. However, version 2 tokens are longer and might affect
+     * systems where you temporarily store tokens. For information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * Deactivating STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * To view the current session token version, see the <code>GlobalEndpointTokenVersion</code> entry in the response
+     * of the <a>GetAccountSummary</a> operation.
+     * </p>
+     * 
+     * @param setSecurityTokenServicePreferencesRequest
+     * @return Result of the SetSecurityTokenServicePreferences operation returned by the service.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.SetSecurityTokenServicePreferences
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetSecurityTokenServicePreferences"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SetSecurityTokenServicePreferencesResult setSecurityTokenServicePreferences(SetSecurityTokenServicePreferencesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetSecurityTokenServicePreferences(request);
+    }
+
+    @SdkInternalApi
+    final SetSecurityTokenServicePreferencesResult executeSetSecurityTokenServicePreferences(
+            SetSecurityTokenServicePreferencesRequest setSecurityTokenServicePreferencesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setSecurityTokenServicePreferencesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetSecurityTokenServicePreferencesRequest> request = null;
+        Response<SetSecurityTokenServicePreferencesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetSecurityTokenServicePreferencesRequestMarshaller()
+                        .marshall(super.beforeMarshalling(setSecurityTokenServicePreferencesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IAM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSecurityTokenServicePreferences");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<SetSecurityTokenServicePreferencesResult> responseHandler = new StaxResponseHandler<SetSecurityTokenServicePreferencesResult>(
+                    new SetSecurityTokenServicePreferencesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Simulate how a set of IAM policies and optionally a resource-based policy works with a list of API operations and
      * AWS resources to determine the policies' effective permissions. The policies are provided as strings.
      * </p>
@@ -8493,7 +8619,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * the simulation.
      * </p>
      * <p>
-     * The simulation does not perform the API operations, it only checks the authorization to determine if the
+     * The simulation does not perform the API operations; it only checks the authorization to determine if the
      * simulated policies allow or deny the operations.
      * </p>
      * <p>
@@ -8923,10 +9049,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * to disable a user's key as part of a key rotation workflow.
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
-     * access key ID used to sign the request. This operation works for access keys under the AWS account. Consequently,
-     * you can use this operation to manage AWS account root user credentials even if the AWS account has no associated
-     * users.
+     * If the <code>UserName</code> is not specified, the user name is determined implicitly based on the AWS access key
+     * ID used to sign the request. This operation works for access keys under the AWS account. Consequently, you can
+     * use this operation to manage AWS account root user credentials even if the AWS account has no associated users.
      * </p>
      * <p>
      * For information about rotating keys, see <a
@@ -9994,11 +10119,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * certificate, a private key, and an optional certificate chain, which should all be PEM-encoded.
      * </p>
      * <p>
-     * We recommend that you use <a href="https://docs.aws.amazon.com/certificate-manager/">AWS Certificate Manager</a>
-     * to provision, manage, and deploy your server certificates. With ACM you can request a certificate, deploy it to
-     * AWS resources, and let ACM handle certificate renewals for you. Certificates provided by ACM are free. For more
-     * information about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate
-     * Manager User Guide</a>.
+     * We recommend that you use <a href="https://docs.aws.amazon.com/acm/">AWS Certificate Manager</a> to provision,
+     * manage, and deploy your server certificates. With ACM you can request a certificate, deploy it to AWS resources,
+     * and let ACM handle certificate renewals for you. Certificates provided by ACM are free. For more information
+     * about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User
+     * Guide</a>.
      * </p>
      * <p>
      * For more information about working with server certificates, see <a
@@ -10089,9 +10214,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * certificate, its default status is <code>Active</code>.
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the IAM user name is determined implicitly based on the AWS
-     * access key ID used to sign the request. This operation works for access keys under the AWS account. Consequently,
-     * you can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * If the <code>UserName</code> is not specified, the IAM user name is determined implicitly based on the AWS access
+     * key ID used to sign the request. This operation works for access keys under the AWS account. Consequently, you
+     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
      * users.
      * </p>
      * <note>

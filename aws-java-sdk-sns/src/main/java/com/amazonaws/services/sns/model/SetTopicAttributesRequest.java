@@ -61,6 +61,22 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String attributeName;
     /**
@@ -105,6 +121,23 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
      *        can publish or subscribe to the topic.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attribute applies only to <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *        custom CMK. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+     *        Terms</a>. For more examples, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *        >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      *        </p>
      *        </li>
      * @param attributeValue
@@ -183,6 +216,22 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeName
      *        A map of attributes with their corresponding values.</p>
@@ -206,6 +255,23 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
      *        can publish or subscribe to the topic.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attribute applies only to <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *        custom CMK. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+     *        Terms</a>. For more examples, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *        >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      *        </p>
      *        </li>
      */
@@ -241,6 +307,22 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A map of attributes with their corresponding values.</p>
      *         <p>
@@ -263,6 +345,23 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
      *         can publish or subscribe to the topic.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attribute applies only to <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
+     *         >server-side-encryption</a>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *         custom CMK. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+     *         Terms</a>. For more examples, see <a href=
+     *         "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *         >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      *         </p>
      *         </li>
      */
@@ -298,6 +397,22 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attribute applies only to <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key Terms</a>. For
+     * more examples, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param attributeName
      *        A map of attributes with their corresponding values.</p>
@@ -321,6 +436,23 @@ public class SetTopicAttributesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        <code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner
      *        can publish or subscribe to the topic.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attribute applies only to <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html"
+     *        >server-side-encryption</a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a
+     *        custom CMK. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+     *        Terms</a>. For more examples, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *        >KeyId</a> in the <i>AWS Key Management Service API Reference</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

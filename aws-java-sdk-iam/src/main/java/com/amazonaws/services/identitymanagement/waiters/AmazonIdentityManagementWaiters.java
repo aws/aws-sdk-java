@@ -44,6 +44,19 @@ public class AmazonIdentityManagementWaiters {
     }
 
     /**
+     * Builds a RoleExists waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetRoleRequest> roleExists() {
+
+        return new WaiterBuilder<GetRoleRequest, GetRoleResult>().withSdkFunction(new GetRoleFunction(client))
+                .withAcceptors(new HttpSuccessStatusAcceptor(WaiterState.SUCCESS), new RoleExists.IsNoSuchEntityMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(1)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a InstanceProfileExists waiter by using custom parameters waiterParameters and other parameters defined in
      * the waiters specification, and then polls until it determines whether the resource entered the desired state or
      * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -53,6 +66,19 @@ public class AmazonIdentityManagementWaiters {
         return new WaiterBuilder<GetInstanceProfileRequest, GetInstanceProfileResult>().withSdkFunction(new GetInstanceProfileFunction(client))
                 .withAcceptors(new HttpSuccessStatusAcceptor(WaiterState.SUCCESS), new HttpFailureStatusAcceptor(404, WaiterState.RETRY))
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(1)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a PolicyExists waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetPolicyRequest> policyExists() {
+
+        return new WaiterBuilder<GetPolicyRequest, GetPolicyResult>().withSdkFunction(new GetPolicyFunction(client))
+                .withAcceptors(new HttpSuccessStatusAcceptor(WaiterState.SUCCESS), new PolicyExists.IsNoSuchEntityMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(1)))
                 .withExecutorService(executorService).build();
     }
 

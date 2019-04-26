@@ -89,7 +89,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with "http://"
+     * For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
      * </p>
      * </li>
      * <li>
@@ -243,7 +243,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>http</code> protocol, the endpoint is an URL beginning with "http://"
+     *        For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
      *        </p>
      *        </li>
      *        <li>
@@ -625,7 +625,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with "http://"
+     * For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
      * </p>
      * </li>
      * <li>
@@ -670,7 +670,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>http</code> protocol, the endpoint is an URL beginning with "http://"
+     *        For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
      *        </p>
      *        </li>
      *        <li>
@@ -721,7 +721,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with "http://"
+     * For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
      * </p>
      * </li>
      * <li>
@@ -765,7 +765,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <ul>
      *         <li>
      *         <p>
-     *         For the <code>http</code> protocol, the endpoint is an URL beginning with "http://"
+     *         For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
      *         </p>
      *         </li>
      *         <li>
@@ -816,7 +816,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * For the <code>http</code> protocol, the endpoint is an URL beginning with "http://"
+     * For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
      * </p>
      * </li>
      * <li>
@@ -861,7 +861,7 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        For the <code>http</code> protocol, the endpoint is an URL beginning with "http://"
+     *        For the <code>http</code> protocol, the endpoint is an URL beginning with "https://"
      *        </p>
      *        </li>
      *        <li>

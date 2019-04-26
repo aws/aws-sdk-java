@@ -4599,6 +4599,41 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<SetSecurityTokenServicePreferencesResult> setSecurityTokenServicePreferencesAsync(
+            SetSecurityTokenServicePreferencesRequest request) {
+
+        return setSecurityTokenServicePreferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSecurityTokenServicePreferencesResult> setSecurityTokenServicePreferencesAsync(
+            final SetSecurityTokenServicePreferencesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetSecurityTokenServicePreferencesRequest, SetSecurityTokenServicePreferencesResult> asyncHandler) {
+        final SetSecurityTokenServicePreferencesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetSecurityTokenServicePreferencesResult>() {
+            @Override
+            public SetSecurityTokenServicePreferencesResult call() throws Exception {
+                SetSecurityTokenServicePreferencesResult result = null;
+
+                try {
+                    result = executeSetSecurityTokenServicePreferences(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SimulateCustomPolicyResult> simulateCustomPolicyAsync(SimulateCustomPolicyRequest request) {
 
         return simulateCustomPolicyAsync(request, null);

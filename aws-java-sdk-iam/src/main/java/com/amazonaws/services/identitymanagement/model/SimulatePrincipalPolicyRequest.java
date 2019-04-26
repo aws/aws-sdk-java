@@ -124,12 +124,12 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used as the
-     * account owner of any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code>
-     * parameter is not specified, then the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based
-     * policy and account that owns the resource is different from the account that owns the simulated calling user
-     * <code>CallerArn</code>.
+     * resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
+     * specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If
+     * the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
+     * policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource is different from the account that
+     * owns the simulated calling user <code>CallerArn</code>.
      * </p>
      */
     private String resourceOwner;
@@ -1022,22 +1022,22 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used as the
-     * account owner of any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code>
-     * parameter is not specified, then the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based
-     * policy and account that owns the resource is different from the account that owns the simulated calling user
-     * <code>CallerArn</code>.
+     * resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
+     * specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If
+     * the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
+     * policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource is different from the account that
+     * owns the simulated calling user <code>CallerArn</code>.
      * </p>
      * 
      * @param resourceOwner
      *        An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in
-     *        the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     *        used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
-     *        <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
-     *        policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is
-     *        required only if you specify a resource-based policy and account that owns the resource is different from
-     *        the account that owns the simulated calling user <code>CallerArn</code>.
+     *        the resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code>
+     *        is specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
+     *        simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources
+     *        and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>. This
+     *        parameter is required only if you specify a resource-based policy and account that owns the resource is
+     *        different from the account that owns the simulated calling user <code>CallerArn</code>.
      */
 
     public void setResourceOwner(String resourceOwner) {
@@ -1047,21 +1047,21 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used as the
-     * account owner of any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code>
-     * parameter is not specified, then the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based
-     * policy and account that owns the resource is different from the account that owns the simulated calling user
-     * <code>CallerArn</code>.
+     * resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
+     * specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If
+     * the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
+     * policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource is different from the account that
+     * owns the simulated calling user <code>CallerArn</code>.
      * </p>
      * 
      * @return An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in
-     *         the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     *         used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
-     *         <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
-     *         policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is
-     *         required only if you specify a resource-based policy and account that owns the resource is different from
-     *         the account that owns the simulated calling user <code>CallerArn</code>.
+     *         the resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code>
+     *         is specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
+     *         simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources
+     *         and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>. This
+     *         parameter is required only if you specify a resource-based policy and account that owns the resource is
+     *         different from the account that owns the simulated calling user <code>CallerArn</code>.
      */
 
     public String getResourceOwner() {
@@ -1071,22 +1071,22 @@ public class SimulatePrincipalPolicyRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in the
-     * resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also used as the
-     * account owner of any <code>ResourcePolicy</code> included in the simulation. If the <code>ResourceOwner</code>
-     * parameter is not specified, then the owner of the resources and the resource policy defaults to the account of
-     * the identity provided in <code>CallerArn</code>. This parameter is required only if you specify a resource-based
-     * policy and account that owns the resource is different from the account that owns the simulated calling user
-     * <code>CallerArn</code>.
+     * resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code> is
+     * specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If
+     * the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
+     * policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is required
+     * only if you specify a resource-based policy and account that owns the resource is different from the account that
+     * owns the simulated calling user <code>CallerArn</code>.
      * </p>
      * 
      * @param resourceOwner
      *        An AWS account ID that specifies the owner of any simulated resource that does not identify its owner in
-     *        the resource ARN, such as an S3 bucket or object. If <code>ResourceOwner</code> is specified, it is also
-     *        used as the account owner of any <code>ResourcePolicy</code> included in the simulation. If the
-     *        <code>ResourceOwner</code> parameter is not specified, then the owner of the resources and the resource
-     *        policy defaults to the account of the identity provided in <code>CallerArn</code>. This parameter is
-     *        required only if you specify a resource-based policy and account that owns the resource is different from
-     *        the account that owns the simulated calling user <code>CallerArn</code>.
+     *        the resource ARN. Examples of resource ARNs include an S3 bucket or object. If <code>ResourceOwner</code>
+     *        is specified, it is also used as the account owner of any <code>ResourcePolicy</code> included in the
+     *        simulation. If the <code>ResourceOwner</code> parameter is not specified, then the owner of the resources
+     *        and the resource policy defaults to the account of the identity provided in <code>CallerArn</code>. This
+     *        parameter is required only if you specify a resource-based policy and account that owns the resource is
+     *        different from the account that owns the simulated calling user <code>CallerArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -253,6 +253,8 @@ public enum IdentityManagementActions implements Action {
     ResyncMFADevice("iam:ResyncMFADevice"),
     /** Action for the SetDefaultPolicyVersion operation. */
     SetDefaultPolicyVersion("iam:SetDefaultPolicyVersion"),
+    /** Action for the SetSecurityTokenServicePreferences operation. */
+    SetSecurityTokenServicePreferences("iam:SetSecurityTokenServicePreferences"),
     /** Action for the SimulateCustomPolicy operation. */
     SimulateCustomPolicy("iam:SimulateCustomPolicy"),
     /** Action for the SimulatePrincipalPolicy operation. */

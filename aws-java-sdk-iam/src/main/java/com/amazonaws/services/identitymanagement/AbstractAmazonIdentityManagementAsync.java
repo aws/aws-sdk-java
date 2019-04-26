@@ -2031,6 +2031,21 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<SetSecurityTokenServicePreferencesResult> setSecurityTokenServicePreferencesAsync(
+            SetSecurityTokenServicePreferencesRequest request) {
+
+        return setSecurityTokenServicePreferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetSecurityTokenServicePreferencesResult> setSecurityTokenServicePreferencesAsync(
+            SetSecurityTokenServicePreferencesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetSecurityTokenServicePreferencesRequest, SetSecurityTokenServicePreferencesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SimulateCustomPolicyResult> simulateCustomPolicyAsync(SimulateCustomPolicyRequest request) {
 
         return simulateCustomPolicyAsync(request, null);

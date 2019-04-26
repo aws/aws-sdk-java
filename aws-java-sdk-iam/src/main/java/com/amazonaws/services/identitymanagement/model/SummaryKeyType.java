@@ -44,7 +44,8 @@ public enum SummaryKeyType {
     PolicySizeQuota("PolicySizeQuota"),
     PolicyVersionsInUse("PolicyVersionsInUse"),
     PolicyVersionsInUseQuota("PolicyVersionsInUseQuota"),
-    VersionsPerPolicyQuota("VersionsPerPolicyQuota");
+    VersionsPerPolicyQuota("VersionsPerPolicyQuota"),
+    GlobalEndpointTokenVersion("GlobalEndpointTokenVersion");
 
     private String value;
 

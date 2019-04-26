@@ -719,6 +719,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     }
 
     @Override
+    public SetSecurityTokenServicePreferencesResult setSecurityTokenServicePreferences(SetSecurityTokenServicePreferencesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SimulateCustomPolicyResult simulateCustomPolicy(SimulateCustomPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

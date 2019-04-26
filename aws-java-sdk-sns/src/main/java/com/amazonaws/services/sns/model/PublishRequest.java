@@ -39,9 +39,6 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String topicArn;
     /**
      * <p>
-     * Either TopicArn or EndpointArn, but not both.
-     * </p>
-     * <p>
      * If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the
      * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.
      * </p>
@@ -188,8 +185,8 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For information about sending different messages for each protocol using the AWS Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create Different
-     * Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
      * </p>
      * <p>
      * Valid value: <code>json</code>
@@ -498,16 +495,11 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Either TopicArn or EndpointArn, but not both.
-     * </p>
-     * <p>
      * If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the
      * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.
      * </p>
      * 
      * @param targetArn
-     *        Either TopicArn or EndpointArn, but not both.</p>
-     *        <p>
      *        If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the
      *        <code>PhoneNumber</code> or <code>TopicArn</code> parameters.
      */
@@ -518,16 +510,11 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Either TopicArn or EndpointArn, but not both.
-     * </p>
-     * <p>
      * If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the
      * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.
      * </p>
      * 
-     * @return Either TopicArn or EndpointArn, but not both.</p>
-     *         <p>
-     *         If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the
+     * @return If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the
      *         <code>PhoneNumber</code> or <code>TopicArn</code> parameters.
      */
 
@@ -537,16 +524,11 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Either TopicArn or EndpointArn, but not both.
-     * </p>
-     * <p>
      * If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the
      * <code>PhoneNumber</code> or <code>TopicArn</code> parameters.
      * </p>
      * 
      * @param targetArn
-     *        Either TopicArn or EndpointArn, but not both.</p>
-     *        <p>
      *        If you don't specify a value for the <code>TargetArn</code> parameter, you must specify a value for the
      *        <code>PhoneNumber</code> or <code>TopicArn</code> parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1288,8 +1270,8 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For information about sending different messages for each protocol using the AWS Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create Different
-     * Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
      * </p>
      * <p>
      * Valid value: <code>json</code>
@@ -1318,7 +1300,8 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </p>
      *        <p>
      *        For information about sending different messages for each protocol using the AWS Management Console, go to
-     *        <a href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     *        <a
+     *        href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      *        Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started
      *        Guide</i>.
      *        </p>
@@ -1355,8 +1338,8 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For information about sending different messages for each protocol using the AWS Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create Different
-     * Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
      * </p>
      * <p>
      * Valid value: <code>json</code>
@@ -1384,10 +1367,9 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         </p>
      *         <p>
      *         For information about sending different messages for each protocol using the AWS Management Console, go
-     *         to <a
-     *         href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     *         Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started
-     *         Guide</i>.
+     *         to <a href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">
+     *         Create Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting
+     *         Started Guide</i>.
      *         </p>
      *         <p>
      *         Valid value: <code>json</code>
@@ -1422,8 +1404,8 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * <p>
      * For information about sending different messages for each protocol using the AWS Management Console, go to <a
-     * href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create Different
-     * Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
+     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started Guide</i>.
      * </p>
      * <p>
      * Valid value: <code>json</code>
@@ -1452,7 +1434,8 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        </p>
      *        <p>
      *        For information about sending different messages for each protocol using the AWS Management Console, go to
-     *        <a href="http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
+     *        <a
+     *        href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
      *        Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification Service Getting Started
      *        Guide</i>.
      *        </p>
